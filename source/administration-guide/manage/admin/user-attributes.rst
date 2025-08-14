@@ -23,13 +23,15 @@ If you plan to synchronize system properties with your AD/LDAP or SAML identity 
   - ``config.json`` setting: ``".AccessControlSettings.EnableUserManagedAttributes: false”,`` with options ``true`` and ``false``.
   - Environment variable: ``MM_ACCESSCONTROLSETTINGS_ENABLEUSERMANAGEDATTRIBUTES``
 
+  Additionally, from mobile app v2.31.0, user attributes are fully supported on mobile devices. Mobile users can both view and manage profile attributes directly from the mobile app. Mobile attribute support requires the same server-side configuration, and no additional mobile-specific setup is required.
+
 .. tab:: Mattermost v10.9 or later
 
   From Mattermost Enterprise v10.9, the ability to create and manage system properties as a Mattermost system admin requires no manual setup. 
 
 .. tab:: Mattermost v10.8
 
-  You'll need Mattermost Enterprise v10.8 or later deployment, and be a Mattermost system admin to enable the system properties feature flag, ``MM_FEATUREFLAGS_CUSTOMPROFILEATTRIBUTES`` to create and manage system properties. See the Mattermost developer documentation for details on `enabling feature flags in a self-hosted deployment <https://developers.mattermost.com/contribute/more-info/server/feature-flags/#self-hosted-and-local-development>`_. Mattermost Cloud customers can request this feature flag be enabled by contacting their Mattermost Account Manager or by `creating a support ticket <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=11184911962004>`_ request.
+  You'll need Mattermost Enterprise v10.8 or later, and be a Mattermost system admin to enable the system properties feature flag, ``MM_FEATUREFLAGS_CUSTOMPROFILEATTRIBUTES`` to create and manage system properties. See the Mattermost developer documentation for details on `enabling feature flags in a self-hosted deployment <https://developers.mattermost.com/contribute/more-info/server/feature-flags/#self-hosted-and-local-development>`_. Mattermost Cloud customers can request this feature flag be enabled by contacting their Mattermost Account Manager or by `creating a support ticket <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=11184911962004>`_ request.
 
 Add attributes
 ~~~~~~~~~~~~~~

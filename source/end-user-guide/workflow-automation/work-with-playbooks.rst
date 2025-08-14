@@ -1,7 +1,7 @@
 Work with collaborative playbooks
 ==================================
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 A collaborative playbook is a checklist of the tasks that make up your processes. Collaborative playbooks allow you to take codified knowledge and processes and make them accessible and editable by your organization and team. When you're setting up your playbook, you'll be able to break tasks down, and assign actions to them - such as using a slash command to start a Zoom call. You can also decide whether to use the same channel every time your playbook is run, or a new one.
@@ -43,7 +43,7 @@ Edit a playbook
 
 You can change a playbook’s configuration at any time, but changes will only be applied to future incidents. Ongoing or ended incidents previously started from that playbook remain unchanged.
 
-1. Go to **product menu > Playbooks**.
+1. Go to **Product menu > Playbooks**.
 2. Find the playbook you want to edit.
 
    - Only public playbooks and private playbooks that you're a member of are listed. System admins have unrestricted access to all playbooks on the team.
