@@ -1916,11 +1916,11 @@ mmctl compliance-export
 Manage compliance export jobs for archiving channel data to third-party compliance systems.
 
    Child Commands
-      -  `mmctl compliance-export cancel` - Cancel a compliance export job
+      -  `mmctl compliance-export cancel`_ - Cancel a compliance export job
       -  `mmctl compliance-export create`_ - Create a new compliance export job
-      -  `mmctl compliance-export download` - Download a compliance export file
-      -  `mmctl compliance-export list` - List compliance export jobs, sorted by creation date descending (newest first)
-      -  `mmctl compliance-export show` - Show compliance export job
+      -  `mmctl compliance-export download`_ - Download a compliance export file
+      -  `mmctl compliance-export list`_ - List compliance export jobs, sorted by creation date descending (newest first)
+      -  `mmctl compliance-export show`_ - Show compliance export job
 
 mmctl compliance-export cancel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1942,7 +1942,9 @@ Cancel an ongoing compliance export job.
    mmctl compliance-export cancel o98rj3ur83dp5dppfyk5yk6osy   
 
 **Options**
-   
+
+.. code-block:: sh
+
    -h, --help   help for cancel
 
 **Options inherited from parent commands**
