@@ -8,6 +8,10 @@ From Mattermost v10.8, ensure your teams always have the critical information th
 
 System attributes enable you to customize user profile attributes to match your organization's unique needs and streamline collaboration while keeping user data centralized and consistent. The attributes you define, such as position, rank, or location, are :doc:`attributes users can manage as part of their user profile </end-user-guide/preferences/manage-your-profile>`. These custom profile attributes supplement existing user details visible from the user's profile picture.
 
+.. important::
+
+  **v10.11 Security Enhancement for ABAC**: Starting from v10.11, user-editable attributes cannot be used in attribute-based access control policies by default to prevent security bypasses. If you plan to use user-editable attributes in ABAC policies, system administrators must explicitly enable this functionality using the :ref:`Allow user-editable attributes in access control <administration-guide/configure/system-attributes:allow user-editable attributes in access control>` configuration setting.
+
 .. image:: ../../../images/cpa-properties.png
   :alt: Mobile examples of a user profile with custom user attributes added as system attributes.
 

@@ -11,7 +11,11 @@ Enforcing strict access controls based on user attributes eliminates manual role
 Before you begin
 ------------------
 
-Attribute-based access controls require defined user attributes that are either synchronized from an external system (such as LDAP or SAML) or manually configured and enabled on your Mattermost server. You'll need to :doc:`configure user attributes </administration-guide/manage/admin/user-attributes>` in the System Console first befopre creating access policies.
+Attribute-based access controls require defined user attributes that are either synchronized from an external system (such as LDAP or SAML) or manually configured and enabled on your Mattermost server. You'll need to :doc:`configure user attributes </administration-guide/manage/admin/user-attributes>` in the System Console first before creating access policies.
+
+.. important::
+
+  **v10.11 Security Enhancement**: Starting from v10.11, user-editable attributes are restricted from use in ABAC policies by default to prevent users from bypassing access controls by modifying their own profile attributes. System administrators can explicitly enable user-editable attributes in ABAC policies using the :ref:`Allow user-editable attributes in access control <administration-guide/configure/system-attributes:allow user-editable attributes in access control>` configuration setting if required.
 
 Once user attributes are defined, go to **System Console > System Attributes > Attribute-Based Access** to enable attribute-based access controls for your Mattermost instance. This functionality requires a Mattermost Enterprise Advanced license.
 
