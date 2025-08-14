@@ -118,7 +118,7 @@ From Mattermost v10.10, controls whether pinned posts are preserved when data re
 Custom retention policy
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Set how long Mattermost keeps messages across specific teams and channels by specifying a name for the custom retention policy, setting a duration value in days or years, and specifying the teams and channels that will follow this policy. Note that the attachment retention time cannot be set on custom policy levels and the global retention time for attachments is always applied.
+Set how long Mattermost keeps messages across specific teams and channels by specifying a name for the custom retention policy, setting a duration value in days or years, and specifying the teams and channels that will follow this policy. The attachment retention time cannot be set on custom policy levels and the global retention time for attachments is always applied.
 
 .. config:setting:: data-deletion-time
   :displayname: Data deletion time (Data Retention)
