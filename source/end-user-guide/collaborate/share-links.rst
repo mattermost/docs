@@ -65,5 +65,5 @@ Deep links must be formatted in Mattermost as follows:
 
 - Deep link to a team: ``mattermost://<your-Mattermost-server-URL>/<team-name>``
 - Deep link to a channel: ``mattermost://<your-Mattermost-server-URL>/<team-name>/channels/<channel-name>``
-- Deep link to a message or thread: ``mattermost://<your-Mattermost-server-URL>/<team-name>/pl/<post-id>``
+- Deep link to a channel message or thread: ``mattermost://<your-Mattermost-server-URL>/<team-name>/pl/<post-id>``
 - Deep link to a direct message: ``mattermost://<your-Mattermost-server-URL>/<team-name>/messages/@<user-name>``
