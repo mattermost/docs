@@ -1725,11 +1725,13 @@ Show a custom slash command. Commands can be specified by command ID. Returns co
 mmctl completion
 ----------------
 
-Generate autocompletion scripts for ``bash`` and ``zsh``.
+Generate autocompletion scripts for ``bash``, ``fish``, ``powershell``, and ``zsh``.
 
    Child Commands
-      -  `mmctl completion bash`_ - Edit the configuration settings
-      -  `mmctl completion zsh`_ - Get the value of a configuration setting
+      -  `mmctl completion bash`_ - Generate the autocompletion script for bash
+      -  `mmctl completion fish`_ - Generate the autocompletion script for fish
+      -  `mmctl completion powershell`_ - Generate the autocompletion script for powershell
+      -  `mmctl completion zsh`_ - Generate the autocompletion script for zsh
 
 **Options**
 
@@ -1742,7 +1744,7 @@ mmctl completion bash
 
 **Description**
 
-Generate the ``bash`` autocompletion scripts.
+Generate the ``bash`` autocompletion scripts. This script depends on the 'bash-completion' package. If it is not installed already, you can install it via your OS's package manager.
 
 To load completion, run:
 
@@ -1752,7 +1754,7 @@ To load completion, run:
 
 To configure your ``bash`` shell to load completions for each session, add the above line to your ``~/.bashrc``.
 
-**Format**
+To load completion, run:
 
 .. code-block:: sh
 
@@ -1763,6 +1765,91 @@ To configure your ``bash`` shell to load completions for each session, add the a
 .. code-block:: sh
 
    -h, --help   help for bash
+   --no-descriptions   disable completion descriptions
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl completion fish
+~~~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Generate the ``fish`` autocompletion scripts.
+
+To load completion, run:
+
+.. code-block:: sh
+
+   . <(mmctl completion fish)
+
+To configure your ``fish`` shell to load completions for each session, add the above line to your ``~/.zshrc``.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl completion fish [flags]
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for fish
+   --no-descriptions   disable completion descriptions
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl completion powershell
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Generate the ``powershell`` autocompletion scripts.
+
+To load completion, run:
+
+.. code-block:: sh
+
+   . <(mmctl completion powershell)
+
+To configure your ``powershell`` shell to load completions for each session, add the above line to your ``~/.zshrc``.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl completion powershell [flags]
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for powershell
+   --no-descriptions   disable completion descriptions
 
 **Options inherited from parent commands**
 
@@ -1804,6 +1891,7 @@ To configure your ``zsh`` shell to load completions for each session, add the ab
 .. code-block:: sh
 
    -h, --help   help for zsh
+   --no-descriptions   disable completion descriptions
 
 **Options inherited from parent commands**
 
@@ -1822,7 +1910,10 @@ To configure your ``zsh`` shell to load completions for each session, add the ab
 mmctl compliance-export
 -----------------------
 
-Manage compliance exports.
+.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
+Manage compliance export jobs for archiving channel data to third-party compliance systems.
 
    Child Commands
       -  `mmctl compliance-export cancel`_ - Cancel a compliance export job
@@ -1831,32 +1922,12 @@ Manage compliance exports.
       -  `mmctl compliance-export list`_ - List compliance export jobs, sorted by creation date descending (newest first)
       -  `mmctl compliance-export show`_ - Show compliance export job
 
-**Options**
-
-.. code-block:: sh
-
-   -h, --help   help for compliance_export
-
-**Options inherited from parent commands**
-
-.. code-block:: sh
-
-   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
-   --disable-pager                disables paged output
-   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
-   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
-   --json                         the output format will be in json format
-   --local                        allows communicating with the server through a unix socket
-   --quiet                        prevent mmctl to generate output for the commands
-   --strict                       will only run commands if the mmctl version matches the server one
-   --suppress-warnings            disables printing warning messages
-
 mmctl compliance-export cancel
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
-Cancel a compliance export job by job ID.
+Cancel an ongoing compliance export job.
 
 **Format**
 
@@ -1868,7 +1939,7 @@ Cancel a compliance export job by job ID.
 
 .. code-block:: sh
 
-   mmctl compliance-export cancel o98rj3ur83dp5dppfyk5yk6osy
+   mmctl compliance-export cancel o98rj3ur83dp5dppfyk5yk6osy   
 
 **Options**
 
@@ -1891,16 +1962,14 @@ Cancel a compliance export job by job ID.
    --suppress-warnings            disables printing warning messages
 
 mmctl compliance-export create
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
-Create a compliance export job, of type ``csv`` or ``actiance`` or ``globalrelay``. 
+Create a new compliance export job to archive channel messages, direct messages, file uploads, and posts from plugins, bots, or webhooks. Supported export formats include CSV, Actiance XML, and Global Relay EML for integration with third-party compliance systems.
 
-.. note::
-
+   - If ``--date`` is set, the job will run for one day, from 12am to 12am (minus one millisecond) inclusively.
    - Running a compliance export job from mmctl will NOT affect the next scheduled job's ``batch_start_time``. This means that if you run a compliance export job from mmctl, the next scheduled job will run from the ``batch_end_time`` of the previous scheduled job, as usual.
-   - If ``--date`` is set, the job will run for one day, from 12am to 12am (minus one millisecond) inclusively, in the format with timezone offset: ``YYYY-MM-DD -0000``. E.g., ``2024-10-21 -0400`` for Oct 21, 2024 EDT timezone. ``2023-11-01 +0000`` for Nov 01, 2023 UTC. If set, the ``start`` and ``end`` flags will be ignored.
 
 **Format**
 
@@ -1908,20 +1977,20 @@ Create a compliance export job, of type ``csv`` or ``actiance`` or ``globalrelay
 
    mmctl compliance-export create [complianceExportType] --date "2025-03-27 -0400" [flags]
 
-**Examples**
+**Example**
 
 .. code-block:: sh
 
-   compliance-export create csv --date "2025-03-27 -0400"
+   mmctl compliance-export create csv --date "2025-03-27 -0400"
 
 **Options**
 
 .. code-block:: sh
 
-   --date "YYYY-MM-DD -0000"   Run the export for one day, from 12am to 12am (minus one millisecond) inclusively, in the format with timezone offset: ``YYYY-MM-DD -0000``. 
-   --end 1743134400000         The end timestamp in unix milliseconds. Posts with ``updateAt <= end`` will be exported. If set, ``start`` must be set as well. eg, ``1743134400000`` for 2025-03-28 EDT.
+   --date "YYYY-MM-DD -0000"   Run the export for one day, from 12am to 12am (minus one millisecond) inclusively, in the format with timezone offset: ``YYYY-MM-DD -0000``. E.g., ``2024-10-21 -0400`` for Oct 21, 2024 EDT timezone. ``2023-11-01 +0000`` for Nov 01, 2023 UTC. If set, the ``start`` and ``end`` flags will be ignored.
+   --end 1743134400000         The end timestamp in unix milliseconds. Posts with updateAt <= end will be exported. If set, ``start`` must be set as well. eg, ``1743134400000`` for 2025-03-28 EDT.
    -h, --help                  help for create
-   --start 1743048000000       The start timestamp in unix milliseconds. Posts with ``updateAt >= start`` will be exported. If set, ``end`` must be set as well. eg, ``1743048000000`` for 2025-03-27 EDT.
+   --start 1743048000000       The start timestamp in unix milliseconds. Posts with updateAt >= start will be exported. If set, ``end`` must be set as well. eg, ``1743048000000`` for 2025-03-27 EDT.
 
 **Options inherited from parent commands**
 
@@ -1948,27 +2017,41 @@ Download a compliance export file.
 
 .. code-block:: sh
 
-   mmctl compliance-export download [complianceExportJobID] [output filepath (optional)] [flags]
+  mmctl compliance-export download [complianceExportJobID] [output filepath (optional)] [flags]
 
-**Examples**
+**Example**
 
 .. code-block:: sh
 
-   compliance-export download o98rj3ur83dp5dppfyk5yk6osy
-
+  mmctl compliance-export download o98rj3ur83dp5dppfyk5yk6osy
+  
 **Options**
 
 .. code-block:: sh
 
-   -h, --help          help for download
+   -h, --help       help for list
    --num-retries int   Number of retries if the download fails (default 5)
+   
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
 
 mmctl compliance-export list
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
-List compliance export jobs, sorted by creation date descending (newest first).
+Lists all compliance export jobs, sorted by creation date descending (newest first).
 
 **Format**
 
@@ -1976,16 +2059,14 @@ List compliance export jobs, sorted by creation date descending (newest first).
 
    mmctl compliance-export list [flags]
 
-**Examples**
-
 **Options**
 
 .. code-block:: sh
 
-   --all            Fetch all compliance export jobs. --page flag will be ignored if provided
    -h, --help       help for list
+   --all            Fetch all compliance export jobs. --page flag will be ignored if provided
    --page int       Page number to fetch for the list of compliance export jobs
-   --per-page int   Number of compliance export jobs to be fetched (maximum 200)
+   --per-page int   Number of compliance export jobs to be fetched (default 200)
 
 **Options inherited from parent commands**
 
