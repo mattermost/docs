@@ -8,15 +8,13 @@ From Mattermost v10.8, ensure your teams always have the critical information th
 
 System attributes enable you to customize user profile attributes to match your organization's unique needs and streamline collaboration while keeping user data centralized and consistent. The attributes you define, such as position, rank, or location, are :doc:`attributes users can manage as part of their user profile </end-user-guide/preferences/manage-your-profile>`. These custom profile attributes supplement existing user details visible from the user's profile picture.
 
-.. important::
-   
-   **Starting from Mattermost v10.11**: User-editable attributes are restricted by default for security purposes. When user attributes are used in :doc:`Attribute-Based Access Control (ABAC) policies </administration-guide/manage/admin/attribute-based-access-control>`, users can no longer edit these attributes directly to prevent potential security bypasses. System administrators must enable user editing for specific attributes through configuration settings if required.
-
 .. image:: ../../../images/cpa-properties.png
   :alt: Mobile examples of a user profile with custom user attributes added as system attributes.
 
 Before you begin
 ~~~~~~~~~~~~~~~~~
+
+If you plan to synchronize system properties with your AD/LDAP or SAML identity provider, ensure AD/LDAP or SAML synchronization is already enabled and configured. See the :doc:`AD/LDAP groups </administration-guide/onboard/ad-ldap-groups-synchronization>` product documentation or :ref:`SAML 2.0 <administration-guide/configure/authentication-configuration-settings:saml 2.0>` configuration settings documentation for details.
 
 .. tab:: Mattermost v10.11 or later
   
@@ -32,8 +30,6 @@ Before you begin
 .. tab:: Mattermost v10.8
 
   You'll need Mattermost Enterprise v10.8 or later deployment, and be a Mattermost system admin to enable the system properties feature flag, ``MM_FEATUREFLAGS_CUSTOMPROFILEATTRIBUTES`` to create and manage system properties. See the Mattermost developer documentation for details on `enabling feature flags in a self-hosted deployment <https://developers.mattermost.com/contribute/more-info/server/feature-flags/#self-hosted-and-local-development>`_. Mattermost Cloud customers can request this feature flag be enabled by contacting their Mattermost Account Manager or by `creating a support ticket <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=11184911962004>`_ request.
-
-If you plan to synchronize system properties with your AD/LDAP or SAML identity provider, ensure AD/LDAP or SAML synchronization is already enabled and configured. See the :doc:`AD/LDAP groups </administration-guide/onboard/ad-ldap-groups-synchronization>` product documentation or :ref:`SAML 2.0 <administration-guide/configure/authentication-configuration-settings:saml 2.0>` configuration settings documentation for details.
 
 Add attributes
 ~~~~~~~~~~~~~~
