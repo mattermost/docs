@@ -45,9 +45,11 @@ Access the following configuration settings in the System Console by going to **
 Global retention policy for messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Set how long Mattermost keeps messages across all teams and channels. Doesn't apply to custom retention policies. Requires the :ref:`global retention policy for messages <administration-guide/configure/compliance-configuration-settings:global retention policy for messages>` configuration setting to be set to ``true``.
+Set how long Mattermost keeps messages across all teams and channels. This value is not used for any teams and channels that have a custom retention policy applied . Requires the :ref:`global retention policy for messages <administration-guide/configure/compliance-configuration-settings:global retention policy for messages>` configuration setting to be set to ``true``.
 
 By default, messages are kept forever. If **Hours**, **Days**, or **Years** is chosen, set how many hours, days, or years messages are kept in Mattermost. Messages older than the duration you set will be deleted nightly. The minimum message retention time is one hour.
+
+The global retention time for messages can be superseded on a team or channel level by creating custom policies with unique post retention times See the `Custom retention policy <#custom-retention-policy>`__ section below for details. 
 
 +--------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MessageRetentionHours": 1`` with numerical input.                           |
@@ -67,7 +69,7 @@ By default, messages are kept forever. If **Hours**, **Days**, or **Years** is c
 Global retention policy for files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Set how long Mattermost keeps files across all teams and channels. Doesn't apply to custom retention policies. Requires the :ref:`global retention policy for files <administration-guide/configure/compliance-configuration-settings:global retention policy for files>` configuration setting to be set to ``true``.
+Set how long Mattermost keeps files across all teams and channels. Custom policies on team and channel level don't apply to file attachments. The global retention time for files will be used even if a custom policy for messages is in place. Requires the :ref:`global retention policy for files <administration-guide/configure/compliance-configuration-settings:global retention policy for files>` configuration setting to be set to ``true``.
 
 By default, files are kept forever. If **Hours**, **Days**, or **Years** is chosen, set how many hours, days, or years files are kept in Mattermost. Files older than the duration you set will be deleted nightly. The minimum file retention time is one hour.
 
@@ -116,7 +118,7 @@ From Mattermost v10.10, controls whether pinned posts are preserved when data re
 Custom retention policy
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Set how long Mattermost keeps messages and files across specific teams and channels by specifying a name for the custom retention policy, setting a duration value in days or years, and specifying the teams and channels that will follow this policy.
+Set how long Mattermost keeps messages across specific teams and channels by specifying a name for the custom retention policy, setting a duration value in days or years, and specifying the teams and channels that will follow this policy. The attachment retention time cannot be set on custom policy levels and the global retention time for attachments is always applied.
 
 .. config:setting:: data-deletion-time
   :displayname: Data deletion time (Data Retention)
