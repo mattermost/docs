@@ -15,6 +15,10 @@ Attribute-based access controls require defined user attributes that are either 
 
 Once user attributes are defined, go to **System Console > System Attributes > Attribute-Based Access** to enable attribute-based access controls for your Mattermost instance. This functionality requires a Mattermost Enterprise Advanced license.
 
+.. important::
+   
+   **Starting from Mattermost v10.11**: For enhanced security, user attributes used in ABAC policies are automatically restricted from user editing to prevent potential access control bypasses. Only system administrators can enable user editing permissions for specific attributes when appropriate. This ensures that access control policies remain secure and cannot be circumvented by users modifying their own profile attributes.
+
 Once enabled, you have 2 ways to configure access policies in Mattermost:
 
 - `Attribute-based access rules <#define-access-control-policies>`__ you can assign across multiple channels.

@@ -8,6 +8,10 @@ From Mattermost v10.8, ensure your teams always have the critical information th
 
 System attributes enable you to customize user profile attributes to match your organization's unique needs and streamline collaboration while keeping user data centralized and consistent. The attributes you define, such as position, rank, or location, are :doc:`attributes users can manage as part of their user profile </end-user-guide/preferences/manage-your-profile>`. These custom profile attributes supplement existing user details visible from the user's profile picture.
 
+.. important::
+   
+   **Starting from Mattermost v10.11**: User-editable attributes are restricted by default for security purposes. When user attributes are used in :doc:`Attribute-Based Access Control (ABAC) policies </administration-guide/manage/admin/attribute-based-access-control>`, users can no longer edit these attributes directly to prevent potential security bypasses. System administrators must enable user editing for specific attributes through configuration settings if required.
+
 .. image:: ../../../images/cpa-properties.png
   :alt: Mobile examples of a user profile with custom user attributes added as system attributes.
 
@@ -61,6 +65,8 @@ Manage attributes
 - **Order**: Control the order you want attributes to appear in user profiles by dragging and dropping them in the list.
 
 - **Delete**: Delete attributes you no longer need or want by selecting **More** |more-icon| and selecting **Delete property**.
+
+- **User Edit Permissions** *(v10.11+)*: By default, attributes used in ABAC policies cannot be edited by users. To allow user editing for specific attributes, administrators can enable this through the **More** |more-icon| menu and selecting **Allow user editing**. This should only be enabled for attributes that do not impact security access controls.
 
 In cases where multiple system admins manage system attributes, refresh your web browser instance to see real-time updates to system attributes made by other admins.
 
