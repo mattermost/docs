@@ -8,6 +8,10 @@ From Mattermost v10.9, system admins in large or complex organizations who requi
 
 Enforcing strict access controls based on user attributes eliminates manual role adjustment processes that can lead to security risks, inefficiencies, or inappropriate access, while maintaining security and compliance by ensuring that only authorized users can access specific Mattermost channels.
 
+.. important::
+   
+   **Mattermost v10.11 Security Enhancement**: Starting from Mattermost v10.11, user-editable attributes used in ABAC policies are restricted by default to prevent users from bypassing access controls by editing their own profile attributes. This security enhancement ensures that access control policies cannot be circumvented through profile modifications. System administrators can explicitly enable user editing for specific attributes through the User Edit Permissions feature when appropriate.
+
 Before you begin
 ------------------
 
