@@ -1,7 +1,7 @@
 Work with runs
 ==============
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 A run is the execution of a collaborative playbook. You can start each run in a new channel or you can elect to use the same channel for multiple runs.
