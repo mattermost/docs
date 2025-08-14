@@ -43,7 +43,7 @@ Edit a playbook
 
 You can change a playbook’s configuration at any time, but changes will only be applied to future incidents. Ongoing or ended incidents previously started from that playbook remain unchanged.
 
-1. Go to **product menu > Playbooks**.
+1. Go to **Product menu > Playbooks**.
 2. Find the playbook you want to edit.
 
    - Only public playbooks and private playbooks that you're a member of are listed. System admins have unrestricted access to all playbooks on the team.
