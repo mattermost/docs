@@ -16,7 +16,7 @@ Before you begin
 
 .. tab:: Mattermost v10.11 or later
 
-  From Mattermost Enterprise v10.11 and mobile app v2.31, user attributes are fully supported on mobile devices. Mobile users can both view and manage profile attributes directly from the mobile app. Mobile attribute support requires the same server-side configuration, and no additional mobile-specific setup is required.
+  From Mattermost Enterprise v10.11 and mobile app v2.31.0, user attributes are fully supported on mobile devices. Mobile users can both view and manage profile attributes directly from the mobile app. Mobile attribute support requires the same server-side configuration, and no additional mobile-specific setup is required.
 
 .. tab:: Mattermost v10.9 or later
 

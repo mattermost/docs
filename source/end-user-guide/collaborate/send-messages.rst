@@ -92,7 +92,7 @@ All users can edit their own sent messages, unless the system admin has :doc:`re
 
   .. tip::
 
-    From Mattermost v10.11 and mobile app v2.31, when editing messages on mobile, you can also view, delete, and save message attachments as you would when using Mattermost in a web browser or the desktop app.
+    From Mattermost v10.11 and mobile app v2.31.0, when editing messages on mobile, you can also view, delete, and save message attachments as you would when using Mattermost in a web browser or the desktop app.
 
 Delete messages
 ----------------
