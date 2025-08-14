@@ -1,7 +1,7 @@
 Metrics and goals
 =================
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Workflow dashboards unlock insights about the performance of workflows across organizations. They compare the output metrics from different runs of collaborative playbooks, against targets and historical performance. Each time a collaborative playbook is run, you can update the workflow dashboard for the team and stakeholders to review, where dashboard components are customized per playbook.

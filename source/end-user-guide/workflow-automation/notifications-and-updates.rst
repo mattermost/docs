@@ -1,7 +1,7 @@
 Notifications and updates
 =========================
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 There are multiple ways to receive collaborative playbook updates and notifications.

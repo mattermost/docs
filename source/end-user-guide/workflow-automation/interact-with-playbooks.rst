@@ -1,7 +1,7 @@
 Interact with playbooks
 =======================
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Slash commands

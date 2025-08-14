@@ -1,7 +1,7 @@
 Learn about collaborative playbooks
 ====================================
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 A collaborative playbook is a repeatable process that is measured and refined over time. For example, the steps you follow when dealing with an outage, a software release, or welcoming a new member of your team can all be made into a playbook. 
