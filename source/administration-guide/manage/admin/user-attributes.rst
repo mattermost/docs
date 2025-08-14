@@ -1,5 +1,5 @@
 User attributes
-=======================
+=================
 
 .. include:: ../../../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -18,11 +18,18 @@ System attributes enable you to customize user profile attributes to match your 
 Before you begin
 ~~~~~~~~~~~~~~~~~
 
-.. tab:: Mattermost Enterprise v10.9 or later
+.. tab:: Mattermost v10.11 or later
+  
+  From Mattermost v10.11, user-managed attributes are excluded from ABAC rules for security reasons. If your organization uses ABAC (which requires Enterprise Edition Advanced), a system admin can explicitly enable user-managed attributes for ABAC by setting ``EnableUserManagedAttributes`` in ``config.json`` or via an environment variable as noted below. This configuration setting isn't managed using the System Console, and is disabled by default to ensure that access control policies remain secure and can’t be circumvented by users modifying their own profile attributes.
+
+  - ``config.json`` setting: ``".AccessControlSettings.EnableUserManagedAttributes: false”,`` with options ``true`` and ``false``.
+  - Environment variable: ``MM_ACCESSCONTROLSETTINGS_ENABLEUSERMANAGEDATTRIBUTES``
+
+.. tab:: Mattermost v10.9 or later
 
   From Mattermost Enterprise v10.9, the ability to create and manage system properties as a Mattermost system admin requires no manual setup. 
 
-.. tab:: Mattermost Enterprise v10.8
+.. tab:: Mattermost v10.8
 
   You'll need Mattermost Enterprise v10.8 or later deployment, and be a Mattermost system admin to enable the system properties feature flag, ``MM_FEATUREFLAGS_CUSTOMPROFILEATTRIBUTES`` to create and manage system properties. See the Mattermost developer documentation for details on `enabling feature flags in a self-hosted deployment <https://developers.mattermost.com/contribute/more-info/server/feature-flags/#self-hosted-and-local-development>`_. Mattermost Cloud customers can request this feature flag be enabled by contacting their Mattermost Account Manager or by `creating a support ticket <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=11184911962004>`_ request.
 
