@@ -16,7 +16,18 @@ Playbooks monitor channels for keywords or user actions to trigger a structured 
 Configuration
 --------------
 
-Playbooks comes pre-packaged, installed, and enabled with Mattermost server. Access playbooks by selecting the product menu located in the top-left corner of the Mattermost interface. 
+Playbooks comes pre-packaged, installed, and enabled with Mattermost server. 
+
+Access
+------
+
+.. tab:: Web/Desktop
+
+  Access playbooks using a web browser or the desktop app by selecting the product menu located in the top-left corner of the Mattermost interface and then selecting **Playbooks**.
+
+.. tab:: Mobile
+
+  From Mattermost v10.11 and mobile app v2.31, you can access playbooks from the mobile app in read-only mode. :ref:`Playbooks slash commands <end-user-guide/workflow-automation/interact-with-playbooks:slash commands>` are supported in the mobile app, but actions like starting runs or updating checklists aren’t available through the mobile interface.
 
 Usage
 -----
