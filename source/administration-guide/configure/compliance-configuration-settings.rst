@@ -49,7 +49,7 @@ Set how long Mattermost keeps messages across all teams and channels. This value
 
 By default, messages are kept forever. If **Hours**, **Days**, or **Years** is chosen, set how many hours, days, or years messages are kept in Mattermost. Messages older than the duration you set will be deleted nightly. The minimum message retention time is one hour.
 
-The global retention time for messages can be superseded on a team or channel level by creating custom policies with unique post retention times (see *Custom retention policy* below). 
+The global retention time for messages can be superseded on a team or channel level by creating custom policies with unique post retention times See the `Custom retention policy <#custom-retention-policy>`__ section below for details. 
 
 +--------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MessageRetentionHours": 1`` with numerical input.                           |
