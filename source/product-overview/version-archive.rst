@@ -442,8 +442,6 @@ If you want to check that the version of Mattermost you are installing is the of
 
   We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to seamlessly unlock Enterprise features should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
 
-  Mattermost Team Edition v10.10.2 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-10-feature-release>`__ - `Download <https://releases.mattermost.com/10.10.2/mattermost-team-10.10.2-linux-amd64.tar.gz?src=arc>`__
-    - ``https://releases.mattermost.com/10.10.2/mattermost-team-10.10.2-linux-amd64.tar.gz``
   Mattermost Team Edition v10.11.1 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-11-extended-support-release>`__ - `Download <https://releases.mattermost.com/10.11.1/mattermost-team-10.11.1-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.11.1/mattermost-team-10.11.1-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``b2516cef733251d1adc4cfac93b4955cc054c775368d14f65fd120ed8517f260``
