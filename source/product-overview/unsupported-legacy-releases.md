@@ -728,7 +728,7 @@ If you upgrade from a release earlier than v7.5, please read the other [Importan
 #### Boards
  - Added support for person, multi-person, and date property filters in Boards.
  - Added support for person property groups in Boards.
- - See [the docs](https://docs.mattermost.com/project-management/groups-filter-sort.html#work-with-groups-filter-and-sort) for more details.
+ - See [the docs](https://docs.mattermost.com/end-user-guide/project-management/groups-filter-sort.html) for more details.
 
 ### Improvements
 
@@ -887,9 +887,9 @@ If you upgrade from a release earlier than v7.5, please read the other [Importan
  - Please see [the docs](https://docs.mattermost.com/configure/plugins-configuration-settings.html#calls) for additional details on configuration setting updates.
 
 #### Boards
- - Boards now supports [file attachments](https://docs.mattermost.com/project-management/work-with-cards.html#attach-files), including PDFs, images, videos, and any other file types.
- - Users can now [drag and drop boards and categories](https://docs.mattermost.com/project-management/navigate-boards.html#manage-boards-on-the-sidebar) on the sidebar and organize them in any order they prefer.
- - The [template picker](https://docs.mattermost.com/project-management/work-with-boards.html#choose-a-board-template) has been improved to make it easier for users to find the best template for their project.
+ - Boards now supports [file attachments](https://docs.mattermost.com/end-user-guide/project-management/work-with-cards.html#attach-files), including PDFs, images, videos, and any other file types.
+ - Users can now [drag and drop boards and categories](https://docs.mattermost.com/end-user-guide/project-management/navigate-boards.html#manage-boards-on-the-sidebar) on the sidebar and organize them in any order they prefer.
+ - The [template picker](https://docs.mattermost.com/end-user-guide/project-management/work-with-boards.html#choose-a-board-template) has been improved to make it easier for users to find the best template for their project.
  
 #### Playbooks
  - Added an option to [run playbooks](https://docs.mattermost.com/playbooks/work-with-playbooks.html#runs-and-channel-behavior) without creating a new channel every time in order to reduce the unnecessary overhead.
@@ -1078,12 +1078,12 @@ If you upgrade from a release earlier than v7.4, please read the other [Importan
  - Added new message threads with emoji reactions and @mentions to calls. After joining a call, expand the widget to the window mode, and then select the comment button to access the real-time message thread in the right-hand sidebar.
 
 #### Boards
- - Added additional standard [board templates](https://docs.mattermost.com/project-management/work-with-boards.html#choose-a-board-template) to help users kick-off their next projects.
- - Filters now support all [text properties](https://docs.mattermost.com/project-management/work-with-cards.html#work-with-property-types).
- - Added two new tiles for System Console [Boards metrics](https://docs.mattermost.com/configure/reporting-configuration-settings.html#site-statistics) under **System Console > Site Statistics**.
+ - Added additional standard [board templates](https://docs.mattermost.com/end-user-guide/project-management/work-with-boards.html#choose-a-board-template) to help users kick-off their next projects.
+ - Filters now support all [text properties](https://docs.mattermost.com/end-user-guide/project-management/work-with-cards.html#work-with-property-types).
+ - Added two new tiles for System Console [Boards metrics](https://docs.mattermost.com/administration-guide/configure/reporting-configuration-settings.html#site-statistics) under **System Console > Site Statistics**.
  
 #### Last active status
- - Added a [“Last active” status](https://docs.mattermost.com/channels/channels-settings.html#share-last-active-time) to the profile popover and to the **Direct Message** channel header that indicates when a user was last online. This status only displays for users who are Away, Offline, or in do-not-disturb (DND). This can be disabled via **Settings > Display > Share last active time**.
+ - Added a [“Last active” status](https://docs.mattermost.com/end-user-guide/preferences/manage-your-display-options.html#share-last-active-time) to the profile popover and to the **Direct Message** channel header that indicates when a user was last online. This status only displays for users who are Away, Offline, or in do-not-disturb (DND). This can be disabled via **Settings > Display > Share last active time**.
 
 ### Improvements
 
@@ -1199,15 +1199,15 @@ Mattermost v7.4.0 contains a medium severity level security fix. [Upgrading](htt
 ### Highlights
 
 #### Boards
- - Added new [board roles](https://docs.mattermost.com/project-management/share-and-collaborate.html#roles), **Commenter** and **Viewer**.
- - Added [minimum default board roles](https://docs.mattermost.com/project-management/share-and-collaborate.html#manage-team-access) to reduce permissioning ambiguity and to prevent security loopholes.
- - Added support for [guest accounts](https://docs.mattermost.com/onboard/guest-accounts.html).
- - Added the ability to add a team member to a board by selecting their name from [an autocomplete list](https://docs.mattermost.com/project-management/work-with-cards.html#mention-people).
+ - Added new [board roles](https://docs.mattermost.com/end-user-guide/project-management/share-and-collaborate.html#roles), **Commenter** and **Viewer**.
+ - Added [minimum default board roles](https://docs.mattermost.com/end-user-guide/project-management/share-and-collaborate.html#manage-team-access) to reduce permissioning ambiguity and to prevent security loopholes.
+ - Added support for [guest accounts](https://docs.mattermost.com/administration-guide/onboard/guest-accounts.html).
+ - Added the ability to add a team member to a board by selecting their name from [an autocomplete list](https://docs.mattermost.com/end-user-guide/project-management/work-with-cards.html#mention-people).
  - Added channel notifications for linked boards.
- - Added a new [multi-person property](https://docs.mattermost.com/project-management/work-with-cards.html#work-with-property-types) to easily set multiple assignees or owners on a card.
+ - Added a new [multi-person property](https://docs.mattermost.com/end-user-guide/project-management/work-with-cards.html#work-with-property-types) to easily set multiple assignees or owners on a card.
 
 #### Calls
- - Added new [keyboard shortcuts for Calls](https://docs.mattermost.com/channels/keyboard-shortcuts-for-channels.html#calls-shortcuts).
+ - Added new [keyboard shortcuts for Calls](https://docs.mattermost.com//end-user-guide/collaborate/keyboard-shortcuts.html#calls).
 
 ### Improvements
 
@@ -1222,7 +1222,7 @@ Mattermost v7.4.0 contains a medium severity level security fix. [Upgrading](htt
 
 ### Bug Fixes
  - Fixed an issue with a nil point exception error during imports.
- - Fixed an issue where users were unable to download a [Support Packet](https://docs.mattermost.com/manage/admin/generating-support-packet.html) using the Desktop App.
+ - Fixed an issue where users were unable to download a [Support Packet](https://docs.mattermost.com/administration-guide/manage/admin/generating-support-packet.html) using the Desktop App.
  - Fixed an issue with the **Message forward** modal where the auto-complete in the comment box moved with the text cursor.
  - Fixed an issue where muted channels with an at-mention were displayed under the **Unreads** section of the channel switcher.
  - Fixed an issue where the Collapsed Reply Threads setting was displayed in the **System Console > Experimental Features** section.
@@ -12769,7 +12769,7 @@ Release date: 2016-04-16
 
 #### TPNS and EAS options
 
-- [Enterprise App Store](https://docs.mattermost.com/deployment/push.html#enterprise-app-store-eas) (EAS) and [Test Push Notification Service](https://docs.mattermost.com/configure/push-notification-configuration-settings.html#test-push-notifications-service-tpns) (TPNS) option are now included in **System Console** > **Email Settings** > **Push Notification Settings** as built-in options.
+- [Enterprise App Store](https://docs.mattermost.com/administration-guide/configure/environment-configuration-settings.html#push-notification-server-location) (EAS) and [Test Push Notification Service](https://docs.mattermost.com/administration-guide/configure/environment-configuration-settings.html#test-push-notifications-service-tpns) (TPNS) option are now included in **System Console** > **Email Settings** > **Push Notification Settings** as built-in options.
 
 ### Languages
 

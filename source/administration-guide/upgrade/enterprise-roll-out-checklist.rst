@@ -67,8 +67,8 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 
 - Review Mattermost security features
 
- - Resource: https://docs.mattermost.com/about/security.html
- 
+ - Resource: https://docs.mattermost.com/security-guide/security-guide-index.html
+
 - Determine monitoring requirements
 
  - Database, network, storage, log integrity
@@ -81,7 +81,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 - Determine encryption policies
 
  - Resource: https://docs.mattermost.com/deployment-guide/encryption-options.html
- - Resource: https://docs.mattermost.com/install/transport-encryption.html
+ - Resource: https://docs.mattermost.com/deployment-guide/transport-encryption.html
 
 - Determine system administration access policies
 
@@ -89,7 +89,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 
 - Define and configure authentication policies
 
- - Resource: https://docs.mattermost.com/about/corporate-directory-integration.html
+ - Resource: https://docs.mattermost.com/product-overview/corporate-directory-integration.html
 
 - Determine requirements for multi-factor authentication
 
@@ -102,7 +102,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 
 - Define your mobile usage policy
 
- - Resource: https://docs.mattermost.com/deployment-guide/mobile-overview.html
+ - Resource: https://docs.mattermost.com/deployment-guide/mobile/mobile-app-deployment.html
 
 - Evaluate external network access requirements
  
@@ -115,7 +115,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 - Finalize production environment design basing hardware on expected usage and requirements for high availability
 
  - Resource: https://docs.mattermost.com/deployment-guide/application-architecture.html
- - Resource: https://docs.mattermost.com/deployment-guide/index.html 
+ - Resource: https://docs.mattermost.com/deployment-guide/deployment-guide-index.html 
  - Resource: https://docs.mattermost.com/administration-guide/scale/scaling-for-enterprise.html 
  - Resource: https://docs.mattermost.com/administration-guide/scale/high-availability-cluster-based-deployment.html
 
@@ -161,15 +161,15 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 
  - Configure SMTP for email notifications
 
-  - Resource: https://docs.mattermost.com/install/smtp-email-setup.html
+  - Resource: https://docs.mattermost.com/administration-guide/configure/smtp-email.html
 
  - Set up Elasticsearch (highly recommended if your organization anticipates over two million posts)
 
-  - Resource: https://docs.mattermost.com/administration-guide/scale/elasticsearch.html
+  - Resource: https://docs.mattermost.com/administration-guide/scale/elasticsearch-setup.html
 
 - Document network configuration
 
- - Example: https://docs.mattermost.com/getting-started/architecture-overview.html#reference-architectures 
+ - Example: https://docs.mattermost.com/administration-guide/scale/backing-storage-benchmarks.html 
 
 4. Configure and customize your Mattermost site
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -201,7 +201,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 
 - Define and test disaster recovery policy and processes
 
- - Resource: https://docs.mattermost.com/install/install-kubernetes.html#using-mattermost-operator-functionality
+ - Resource: https://docs.mattermost.com/deployment-guide/server/deploy-kubernetes.html
  - Resource: https://docs.mattermost.com/administration-guide/scale/high-availability-cluster-based-deployment.html#upgrade-guide 
 
 - Performance test production environment
@@ -228,7 +228,7 @@ Now that you have an environment in place, we recommend working through the foll
 - Determine and create a team structure for your environment
 
  - Recommendation: Start with fewer teams in your early roll out
- - Resource: https://docs.mattermost.com/messaging/organizing-channels.html 
+ - Resource: https://docs.mattermost.com/end-user-guide/collaborate/channel-naming-conventions.html 
 
 - Determine and create key channels to support your users. A default Town Square channel is created automatically and available on every team.
 
@@ -273,22 +273,21 @@ Now that you have an environment in place, we recommend working through the foll
 
 - Notify users in advance of roll out
 
- - Sample email: https://docs.mattermost.com/getting-started/welcome-email-to-end-users.html
+ - Sample email: https://docs.mattermost.com/administration-guide/upgrade/welcome-email-to-end-users.html
 
 4. Deploy client apps
 ^^^^^^^^^^^^^^^^^^^^^
 
 - Roll out desktop app 
 
- - Resource: https://docs.mattermost.com/end-user-guide/collaborate/install-desktop-app.html
- - Resource: https://docs.mattermost.com/deployment-guide/desktop-app.html
+ - Resource: https://docs.mattermost.com/deployment-guide/desktop/desktop-app-deployment.html
  - (Optional) Use the MSI installer to install on Windows machines
 
   - Resource: https://docs.mattermost.com/deployment-guide/desktop/desktop-msi-installer-and-group-policy-install.html
 
 - Roll out mobile app
 
- - Resource: https://docs.mattermost.com/deployment-guide/mobile-overview.html
+ - Resource: https://docs.mattermost.com/deployment-guide/mobile/mobile-app-deployment.html
  - (Optional) Use an EMM provider
 
   - Resource: https://docs.mattermost.com/deployment-guide/mobile/deploy-mobile-apps-using-emm-provider.html 
@@ -334,7 +333,7 @@ Now that you have an environment in place, we recommend working through the foll
 - Understand management tools available to support users
 
  - mmctl Command Line Tool Resource: https://docs.mattermost.com/administration-guide/manage/mmctl-command-line-tool.html
- - Command Line Tools Resource: https://docs.mattermost.c../administration-guide/manage/command-line-tools.html
+ - Command Line Tools Resource: https://docs.mattermost.com/administration-guide/manage/command-line-tools.html
 
 Review the roll out 
 ~~~~~~~~~~~~~~~~~~~
@@ -345,8 +344,6 @@ We recommend that you review your rollout on a cadence that matches your iterati
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Perform end-user surveys and measure satisfaction
-
- - Optional resource within Mattermost: https://mattermost.com/marketplace/matterpoll/
 
 - Verify use case fulfillment from original requirements gathering
 
@@ -399,10 +396,10 @@ We recommend that you review your rollout on a cadence that matches your iterati
 
 - Perform the first upgrade
 
- - Resource: https://docs.mattermost.c../administration-guide/upgrade/upgrading-mattermost-server.html
+ - Resource: https://docs.mattermost.com/administration-guide/upgrade/upgrading-mattermost-server.html
 
 - Determine upgrade schedule based on Mattermost release schedules and life cycle
 
- - Resource: https://docs.mattermost.com/about/releases-lifecycle.html
+ - Resource: https://docs.mattermost.com/product-overview/releases-lifecycle.html
 
 - Run System checks and either address or set address-by date	
