@@ -4,9 +4,107 @@
 ```{include} common-esr-support-upgrade.md
 ```
 
+(release-v10.11-extended-support-release)=
+## Release v10.11 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
+
+- **10.11.1, released 2025-08-15**
+  - Fixed an issue with login being kept in a web view instead of redirecting to the mobile app when using OAuth for login [MM-65015](https://mattermost.atlassian.net/browse/MM-65015).
+  - Upgraded to go1.24.5, and reverted to bullseye to maintain glibc <2.34 compatibility for older deployment environments [MM-64865](https://mattermost.atlassian.net/browse/MM-64865).
+  - Mattermost v10.11.1 contains no database or functional changes.
+- **10.11.0, released 2025-08-15**
+  - Original 10.11.0 release.
+
+```{Important}
+If you upgrade from a release earlier than v10.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
+```
+
+### Highlights
+ - Enabled **System Console** user interface for ``AuditSettings`` by default. 
+
+### Improvements
+
+#### User Interface (UI)
+ - Pre-packaged Calls plugin [v1.10.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.10.0).
+ - Pre-packaged Boards plugin [v9.1.5](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.5).
+ - Pre-packaged Playbooks plugin [v2.3.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.3.0). 
+ - Improved the date and time picker usability across **Custom Status**, **Scheduled Messages**, **Do Not Disturb**, and **Reminder** modals. The entire input area is now clickable, keyboard navigation works properly in time selection menus, and consistent relative date formatting is used throughout. 
+ - Improved the **Permissions** table expand/collapse animation and prevented text from overflowing. 
+ - Added an aria-label to the file preview back/forward buttons. 
+ - Modified the input to have the minimum/maximum length validation work the same as the validation around ``required``, and replaced **Create Team** input with an **Input** component. 
+ - Improved the YouTube video preview user interface. 
+ - Removed the minimum-width for the right-hand side when the window size is <400px. 
+ - Added a status region for the channel filter dropdown. 
+ - Removed the NPS plugin from pre-packaged plugins. 
+
+#### Administration
+ - Signatures are now always validated for pre-packaged plugins. 
+ - Disabled the **Add a license** button when the license is set by an environment variable. 
+ - Improved database connection spikes on user disconnect by processing status updates in batches. 
+ - Improved the efficiency of getting sidebar categories from the database. 
+ - Added a database schema dump to the Support Packet.
+
+#### mmctl Changes
+ - Added ``AuthData`` to mmctl user search output. 
+ - mmctl: Added ``compliance export list`` command. 
+ - mmctl: Added ``compliance export show`` and ``cancel`` commands. 
+ - mmctl: Added ``compliance export download`` command. 
+ - mmctl: Added ``compliance export create`` command. 
+
+### Bug Fixes
+ - Fixed an issue with the onboarding checklist being cut off when on multiple teams. 
+ - Fixed an issue where the **Thread Menu** would not have its actions read by a screen reader. 
+ - Fixed an issue where some users would not get a warning when joining a private channel. 
+ - Fixed an issue with the overflow formatting on the suggestion list. 
+ - Fixed an issue with the **Delete** button aria-label on **User Groups** list modal. 
+ - Fixed some semantic HTML issues with the use of ``header``. 
+ - Fixed various accessibility issues for the **Create Channel** modal. 
+ - Fixed more accessibility issues around search. 
+ - Fixed **Create User Group** modal accessibility issues. 
+ - Fixed mobile view accessibility issues. 
+ - Fixed an issue with accents. 
+ - Fixed an issue with rendering of remote user at-mentions in the web app. 
+ - Fixed a potential panic when running the ``mmctl ldap job show`` without the required argument. 
+ - Fixed an issue in the LDAP sync, such that users with an updated attribute were being accidentally added to the groups of another LDAP record, if that LDAP record had a blank ID. 
+ - Fixed an issue with the ``in:`` filter not showing an autocomplete on small screens.
+ - Fixed an issue with the color of borders in **Browse Channels** and **Direct Message** modals.
+
+### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to all plans:
+ - Under ``ServiceSettings`` in ``config.json``:
+   - Added ``DeleteAccountLink`` configuration setting to add a configurable account deletion link. 
+ - Under ``ClusterSettings`` in ``config.json``:
+   - Added ``EnableGossipEncryption`` to replace ``EnableExperimentalGossipEncryption`` to transition Gossip Encryption functionality to Generally Available. For new installations, the setting will now default to ``on``. Any existing values will still be preserved. 
+
+#### Changes to Professional and Enterprise plans: 
+ - Added a ``ContentFlaggingSettings`` configuration section.
+
+#### Changes to Enterprise Advanced plan: 
+ - Under ``NativeAppSettings`` in ``config.json``:
+   - Added two new configuration settings ``MobileEnableSecureFilePreview`` and ``MobileAllowPdfLinkNavigation`` available on Enterprise Advanced to further lock down files on mobile.
+ - Under ``AccessControlSettings`` in ``config.json``:
+   - Added ``EnableUserManagedAttributes`` configuration setting to allow using user-editable attributes. These attributes are not allowed by default.
+
+### API Changes
+ - Introduced new Plugin APIs to support audit logging. 
+ - Updated the patch channel API doc to include channel banners. 
+
+### Go Version
+ - v10.11 is built with Go ``v1.24.5``.
+
+### Contributors
+ - [abbas-dependable-naqvi](https://github.com/abbas-dependable-naqvi), [agarciamontoro](https://github.com/agarciamontoro), [agnivade](https://github.com/agnivade), [akeiss](https://translate.mattermost.com/user/akeiss), [alexis](https://translate.mattermost.com/user/alexis), [alirezaalavi87](https://github.com/alirezaalavi87), [amyblais](https://github.com/amyblais), [andrleite](https://github.com/andrleite), [angeloskyratzakos](https://github.com/angeloskyratzakos), [Arusekk](https://github.com/Arusekk), [asaadmahmood](https://github.com/asaadmahmood), [BenCookie95](https://github.com/BenCookie95), [calebroseland](https://github.com/calebroseland), [catalintomai](https://github.com/catalintomai), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [cyrusjc](https://github.com/cyrusjc), [danielsischy](https://github.com/danielsischy), [danilvalov](https://github.com/danilvalov), [davidkrauser](https://github.com/davidkrauser), [devinbinnie](https://github.com/devinbinnie), [DHaussermann](https://github.com/DHaussermann), [DSchalla](https://github.com/DSchalla), [enahum](https://github.com/enahum), [enzowritescode](https://github.com/enzowritescode), [esarafianou](https://github.com/esarafianou), [fmartingr](https://github.com/fmartingr), [frankps](https://translate.mattermost.com/user/frankps), [fsilye](https://github.com/fsilye), [gabrieljackson](https://github.com/gabrieljackson), [hanzei](https://github.com/hanzei), [harshilsharma63](https://github.com/harshilsharma63), [hmhealey](https://github.com/hmhealey), [isacikgoz](https://github.com/isacikgoz), [jesperfj](https://translate.mattermost.com/user/jesperfj), [jgheithcock](https://github.com/jgheithcock), [johnsonbrothers](https://github.com/johnsonbrothers), [jprusch](https://github.com/jprusch), [JulienTant](https://github.com/JulienTant), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [Kshitij-Katiyar](https://github.com/Kshitij-Katiyar), [larkox](https://github.com/larkox), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [luca.palomba](https://translate.mattermost.com/user/luca.palomba), [lynn915](https://github.com/lynn915), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [majo](https://translate.mattermost.com/user/majo), [mansil](https://github.com/mansil), [marianunez](https://github.com/marianunez), [master7](https://translate.mattermost.com/user/master7), [matthewbirtch](https://github.com/matthewbirtch), [mgdelacroix](https://github.com/mgdelacroix), [Morgansvk](https://github.com/Morgansvk), [neflyte](https://github.com/neflyte), [neil-karania](https://github.com/neil-karania), [nickmisasi](https://github.com/nickmisasi), [panoramix360](https://github.com/panoramix360), [pineoak-audio](https://github.com/pineoak-audio), [pvev](https://github.com/pvev), [rahimrahman](https://github.com/rahimrahman), [Rajat-Dabade](https://github.com/Rajat-Dabade), [Reinkard](https://github.com/Reinkard), [roberson-io](https://github.com/roberson-io), [rohithchandran-mattermost](https://github.com/rohithchandran-mattermost), [rOt779kVceSgL](https://translate.mattermost.com/user/rOt779kVceSgL), [rtfm98](https://github.com/rtfm98), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [Sharuru](https://translate.mattermost.com/user/Sharuru), [stafot](https://github.com/stafot), [streamer45](https://github.com/streamer45), [svelle](https://github.com/svelle), [ThrRip](https://github.com/ThrRip), [tnir](https://translate.mattermost.com/user/tnir), [toffguy77](https://github.com/toffguy77), [vish9812](https://github.com/vish9812), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [yasserfaraazkhan](https://github.com/yasserfaraazkhan)
+
 (release-v10.10-feature-release)=
 ## Release v10.10 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
+- **10.10.2, released 2025-08-14**
+  - Mattermost v10.10.2 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Boards plugin [v9.1.5](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.5).
+  - Fixed an issue with the onboarding checklist being cut off when on multiple teams [MM-64919](https://mattermost.atlassian.net/browse/MM-64919).
+  - Upgraded to go1.24.5, and reverted to bullseye to maintain glibc <2.34 compatibility for older deployment environments [MM-64865](https://mattermost.atlassian.net/browse/MM-64865).
+  - Mattermost v10.10.2 contains no database or functional changes.
 - **10.10.1, released 2025-07-16**
   - Mattermost v10.10.1 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v10.10.1 contains no database or functional changes.
@@ -112,7 +210,8 @@ New setting options were added to ``config.json``. Below is a list of the additi
 ## Release v10.9 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
 - **10.9.4, released 2025-07-22**
-  - Mattermost v10.9.4 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v10.9.4 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Boards plugin [v9.1.5](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.5).
   - Mattermost v10.9.4 contains no database or functional changes.
 - **10.9.3, released 2025-07-08**
   - Mattermost v10.9.3 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
@@ -232,8 +331,8 @@ New setting options were added to ``config.json``. Below is a list of the additi
 ## Release v10.8 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
 - **10.8.4, released 2025-07-22**
-  - Mattermost v10.8.4 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Pre-packaged Boards plugin version [v9.1.4](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.4).
+  - Mattermost v10.8.4 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Boards plugin version [v9.1.5](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.5).
   - Mattermost v10.8.4 contains no database or functional changes.
 - **10.8.3, released 2025-06-18**
   - Mattermost v10.8.3 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
@@ -536,8 +635,8 @@ New setting options were added to ``config.json``. Below is a list of the additi
 ## Release v10.5 - [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
 - **10.5.9, released 2025-07-22**
-  - Mattermost v10.5.9 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Pre-packaged Boards plugin version [v9.1.4](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.4).
+  - Mattermost v10.5.9 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Boards plugin version [v9.1.5](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.5).
   - Pre-packaged Agents plugin [v1.2.4](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.2.4).
   - Pre-packaged Calls plugin [v1.9.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.9.2).
   - Fixed an issue where overridden webhook usernames did not appear in replies when Threaded Discussions were disabled [MM-63564](https://mattermost.atlassian.net/browse/MM-63564).
