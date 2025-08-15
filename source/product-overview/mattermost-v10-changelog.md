@@ -4,6 +4,31 @@
 ```{include} common-esr-support-upgrade.md
 ```
 
+(release-v10.12-feature-release)=
+## Release v10.12 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
+
+- **10.12.0, released 2025-09-16**
+  - Original 10.12.0 release.
+
+```{Important}
+If you upgrade from a release earlier than v10.11, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
+```
+
+### Highlights
+ - This is a placeholder for v10.12 feature highlights.
+
+### Improvements
+- This is a placeholder for v10.12 improvements.
+
+### Bug Fixes
+- This is a placeholder for v10.12 bug fixes.
+
+### Security Fixes
+- This is a placeholder for v10.12 security fixes if any.
+
+### Compatibility
+- This is a placeholder for v10.12 compatibility notes.
+
 (release-v10.11-extended-support-release)=
 ## Release v10.11 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
