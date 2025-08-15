@@ -97,6 +97,12 @@ From Mattermost v9.6, Mattermost Enterprise and Professional customers can expor
 2. `Filter <#filter-user-searches>`__ the user data as needed.
 3. Select **Export** located in the top right corner of the System Console interface, and then select **Export data**. You'll receive the report in CSV format as a direct message in Mattermost.
 
+.. config:setting:: deactivate-users
+  :displayname: Deactivate users
+  :systemconsole: Site Configuration > Users and Teams
+  :configjson: N/A
+  :environment: N/A
+
 Deactivate users
 ~~~~~~~~~~~~~~~~~
 
@@ -104,16 +110,13 @@ To delete a user from your Mattermost deployment, you can deactivate the user's 
 
 .. note::
 
-  From Mattermost v10.10, when a user account is deactivated, the account's :ref:`availability <end-user-guide/preferences/set-your-status-availability:set your availability>` is automatically set to offline.
-
-.. note::
-
-  LDAP-managed users must be deactivated through LDAP, and can't be deactivated using the System Console or the API.
+  - From Mattermost v10.10, when a user account is deactivated, the account's :ref:`availability <end-user-guide/preferences/set-your-status-availability:set your availability>` is automatically set to offline.
+  - LDAP-managed users must be deactivated through LDAP, and can't be deactivated using the System Console or the API.
 
 1. Go to **System Console > User Management > Users** to access all user accounts.
 2. Select a **User** that you wish to activate or deactivate.
 3. If the selected user is currently active, you can find the **Deactivate** button in the **User Configuration** page.
-4. Select **Deactivate**, and confirm the deactivation.
+4. Select **Deactivate**, and confirm the deactivation. You can re-activate a deactivated user by selecting **Activate**.
 
 .. image:: ../../images/deactivate-user.png
   :alt: Deactivate a user in Mattermost using the System Console.
@@ -125,15 +128,59 @@ To delete a user from your Mattermost deployment, you can deactivate the user's 
 What happens to deactivated user integrations?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. important::
+If you deactivate a Mattermost user who has integrations tied to their user account, consider the following consequences and recommendations based on the integration type:
 
-  If you deactivate a Mattermost user who has integrations tied to their user account, consider the following consequences and recommendations based on the integration type:
+- **Slash commands** will continue to work after user deactivation. Consider deleting the existing slash command and creating a new slash command associated with a different user account to decouple sensitive token data from the deactivated user account. Alternatively, consider regenerating the token of the existing slash command. Check that the deactivated user doesn't have access to the slash command **Request URL** which is the callback URL to receive the HTTP POST or GET event request when the slash command is run.
+- **Outgoing webhooks** will continue to work after user deactivation. Consider regenerating the webhook token and check that the deactivated user no longer has access to the callback URLs, as having access would result in the deactivating user receiving the outgoing webhooks.
+- **Incoming webhooks** will continue to work after user deactivation. Because the `URL produced <https://developers.mattermost.com/integrate/webhooks/incoming/#create-an-incoming-webhook>`_ includes ``xxx-generatedkey-xxx``, anyone who has the URL can post messages to the Mattermost instance. We recommend removing the incoming webhook and creating a new one associated with a different user account. 
+- **Bot accounts** won't continue to work after user deactivation when the :ref:`disable bot accounts when owner is deactivated <administration-guide/configure/integrations-configuration-settings:disable bot accounts when owner is deactivated>` is enabled. This configuration setting is enabled by default.
+- **OAuth apps** won't continue to work after user deactivation, and associated tokens are deleted. Manual action is needed to keep these integrations running.
 
-  - **Slash commands** will continue to work after user deactivation. Consider deleting the existing slash command and creating a new slash command associated with a different user account to decouple sensitive token data from the deactivated user account. Alternatively, consider regenerating the token of the existing slash command. Check that the deactivated user doesn't have access to the slash command **Request URL** which is the callback URL to receive the HTTP POST or GET event request when the slash command is run.
-  - **Outgoing webhooks** will continue to work after user deactivation. Consider regenerating the webhook token and check that the deactivated user no longer has access to the callback URLs, as having access would result in the deactivating user receiving the outgoing webhooks.
-  - **Incoming webhooks** will continue to work after user deactivation. Because the `URL produced <https://developers.mattermost.com/integrate/webhooks/incoming/#create-an-incoming-webhook>`_ includes ``xxx-generatedkey-xxx``, anyone who has the URL can post messages to the Mattermost instance. We recommend removing the incoming webhook and creating a new one associated with a different user account. 
-  - **Bot accounts** won't continue to work after user deactivation when the :ref:`disable bot accounts when owner is deactivated <administration-guide/configure/integrations-configuration-settings:disable bot accounts when owner is deactivated>` is enabled. This configuration setting is enabled by default.
-  - **OAuth apps** won't continue to work after user deactivation, and associated tokens are deleted. Manual action is needed to keep these integrations running.
+Delete users
+~~~~~~~~~~~~~
+
+*Available from Mattermost Server v10.11*
+
+When using email/password for authentication, you can enable users to permanently delete their own accounts, or you can delete user accounts as a system administrator.
+
+.. config:setting:: delete-users
+  :displayname: Delete users
+  :systemconsole: Site Configuration > Users and Teams
+  :configjson: DeleteAccountLink
+  :environment: N/A
+
+Enable account deletion
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Define the URL for a **Delete Account Link** that users can access by going to their profile and selecting **Security > Delete Your Account**. Leave this field blank to hide the abiltiy for users to delete their account. 
+
++-----------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ServiceSettings.DeleteAccountLink": ""`` with string input.  |
++-----------------------------------------------------------------------------------------------------------+
+
+When a user deletes their account, deleted accounts cannot be reactivated, and the user is automatically removed from all teams and channels.
+
+What data is removed?
+^^^^^^^^^^^^^^^^^^^^^
+
+When a user deletes their account, the following data is permanently removed:
+
+- User profile information (name, email, username)
+- User preferences and settings
+- User authentication credentials
+- Direct message channel memberships
+- Team and channel memberships
+- User session data
+
+What data is retained?
+^^^^^^^^^^^^^^^^^^^^^^^
+
+The following data remains in the system after account deletion:
+
+- Message content in public and private channels (displayed as **Deleted User**)
+- File uploads and attachments shared in channels
+- Channel and team audit logs that reference the user's actions
+- Integration logs and webhook history
 
 Manage user's roles
 ~~~~~~~~~~~~~~~~~~~~
@@ -259,8 +306,9 @@ Groups
 | to Mattermost groups.                                         | - ``config.json setting``: N/A                              |
 |                                                               | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
-
-See the :doc:`AD/LDAP groups </administration-guide/onboard/ad-ldap-groups-synchronization>` documentation for details.
+| See the :doc:`AD/LDAP groups </administration-guide/onboard/ad-ldap-groups-synchronization>` documentation for              |
+| details.                                                                                                                    |
++---------------------------------------------------------------+-------------------------------------------------------------+
 
 ----
 
@@ -572,8 +620,7 @@ Archive a channel
 .. image:: ../../images/archive-a-channel.png
   :alt: Archive a channel using the System Console.
 
-.. tip::
-
+.. tip::                                                                                                                                                                
   Channels can be deleted with all content, including posts in the database, using the :ref:`mmctl channel delete <administration-guide/manage/mmctl-command-line-tool:mmctl channel delete>` tool.
 
 ----
@@ -589,8 +636,8 @@ Permissions
 |                                                                     | - ``config.json setting``: N/A                              |
 |                                                                     | - Environment variable: N/A                                 |
 +---------------------------------------------------------------------+-------------------------------------------------------------+
-
-See :doc:`advanced permissions </administration-guide/onboard/advanced-permissions>` documentation for details.
+| See :doc:`advanced permissions </administration-guide/onboard/advanced-permissions>` documentation for details                    |
++---------------------------------------------------------------------+-------------------------------------------------------------+
 
 ----
 
@@ -602,5 +649,6 @@ System roles
 |                                                                      | - ``config.json setting``: N/A                             |
 |                                                                      | - Environment variable: N/A                                |
 +----------------------------------------------------------------------+------------------------------------------------------------+
-
-See the :doc:`delegated granular administration </administration-guide/onboard/delegated-granular-administration>` documentation for details.
+| See the :doc:`delegated granular administration </administration-guide/onboard/delegated-granular-administration>`                |
+| documentation for details                                                                                                         |
++----------------------------------------------------------------------+------------------------------------------------------------+

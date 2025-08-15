@@ -9,6 +9,34 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 ```{include} common-esr-support.md
 ```
 
+(release-v2-31-0)=
+## 2.31.0 Release
+ - Release Date: August 15, 2025
+ - Server Versions Supported: Server v10.5.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v10.5.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#esr-life-cycle-changes) (ESR) v9.11.0 has ended and upgrading to server ESR v10.5.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 6s devices and later with iOS 15.1+ are required.
+
+### Improvements
+ - Enhanced Secure Previews: Introduced a more secure way to preview supported images, videos, and PDF files while restricting other file types, downloads, and sharing. Requires an Enterprise Advanced license.
+ - Added the ability to delete/edit file attachments on existing posts.
+ - Playbooks Support: Initial version integrating with Playbooks with the ability to view runs and check/uncheck tasks in checklists.
+ - Added an accessibility check to disable animations when required.
+ - Added support for multi/select types and text subtypes for Custom Profile Attributes.
+
+### Bug Fixes
+ - Fixed the hashtag rendering to work with the minimum hashtag length configuration.
+ - Fixed an error when saving non-editable Custom Profile Attributes.
+
+### Open Source Components
+ - Added ``@mattermost/secure-pdf-viewer`` to https://github.com/mattermost/mattermost-mobile.
+
+### Known Issues
+ - Users are unable to adjust the font size via the OS font size setting.
+ - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
+
 (release-v2-30-0)=
 ## 2.30.0 Release
  - Release Date: July 16, 2025
