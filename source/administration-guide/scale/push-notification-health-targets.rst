@@ -4,7 +4,7 @@ Push notification health targets
 .. include:: ../../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-When using the `Mattermost Notification Health <https://grafana.com/grafana/dashend-user-guide/boards/21305-mattermost-notification-health>`_ Grafana dashboard to track different types of notifications sent from Mattermost, we recommend adhering to the following mobile push notification health targets to ensure a performant production deployment of Mattermost.
+When using the `Mattermost Notification Health <https://grafana.com/grafana/dashboards/21305-mattermost-notification-health>`_ Grafana dashboard to track different types of notifications sent from Mattermost, we recommend adhering to the following mobile push notification health targets to ensure a performant production deployment of Mattermost.
 
 .. note::
 

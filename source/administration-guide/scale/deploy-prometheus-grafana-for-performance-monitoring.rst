@@ -106,7 +106,7 @@ To help you get started, you can download three sample dashboards shared in Graf
 
 .. tip::
 
-   See `this Grafana guide <https://grafana.com/docs/grafana/v7.5/dashend-user-guide/boards/export-import/>`_ to learn how to import Grafana dashboards either from the UI or from the HTTP API.
+   See `this Grafana guide <https://grafana.com/docs/grafana/v7.5/dashboards/export-import/>`_ to learn how to import Grafana dashboards either from the UI or from the HTTP API.
 
 - `Mattermost Performance Monitoring v2 <https://grafana.com/grafana/dashboards/15582-mattermost-performance-monitoring-v2/>`_, which contains detailed charts for performance monitoring including application, cluster, job server, and system metrics.
 - `Mattermost Notification Health Monitoring <https://grafana.com/grafana/dashboards/21305-mattermost-notification-health/>`_, which can be used to track different types of notifications sent from Mattermost. Accessing and enabling Mattermost Notification Health Monitoring requires the feature flag ``NotificationMonitoring`` to be set to ``true``. System admins can :ref:`disable notification monitoring data collection <administration-guide/configure/site-configuration-settings:enable notification monitoring>` through the System Console.
