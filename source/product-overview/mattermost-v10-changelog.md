@@ -7,27 +7,37 @@
 (release-v10.12-feature-release)=
 ## Release v10.12 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
-- **10.12.0, released 2025-09-16**
-  - Original 10.12.0 release.
+**Release day: 2025-09-16**
 
 ```{Important}
-If you upgrade from a release earlier than v10.11, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
+If you upgrade from a release earlier than v10.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
 ```
 
-### Highlights
- - This is a placeholder for v10.12 feature highlights.
+### Compatibility
+ - Updated minimum Edge and Chrome versions to 138+.
 
 ### Improvements
-- This is a placeholder for v10.12 improvements.
+
+#### User Interface (UI)
+ - Improved screen reader readouts and accessibility of various autocomplete components.
+ - Improved screen reader readouts of various autocomplete components.
 
 ### Bug Fixes
-- This is a placeholder for v10.12 bug fixes.
+ - Fixed an issue where pasting a link when a text was selected didn't format the selected text as a markdown link when editing the post. 
+ - Fixed an issue where emoji picker items were being selected by pressing the space bar. 
+ - Fixed a potential crash in ``UpdatePost``. 
+ - Fixed 403 errors that occurred when loading custom profile attributes for unauthenticated users. 
+ - Fixed an issue where the back button was not showing on the desktop external login redirect page. 
+ - Fixed an issue were unreads from muted channels were shown in the favicon/desktop app. 
+ - Fixed an issue where extra content was not accounted for in the focus order. 
+ - Fixed an issue where results were not allowed to be read on filter without a search term. 
+ - Fixed an issue where some webhooks would not show. 
 
-### Security Fixes
-- This is a placeholder for v10.12 security fixes if any.
+### Go Version
+ - v10.12 is built with Go ``v1.24.5``.
 
-### Compatibility
-- This is a placeholder for v10.12 compatibility notes.
+### Contributors
+ - 
 
 (release-v10.11-extended-support-release)=
 ## Release v10.11 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
