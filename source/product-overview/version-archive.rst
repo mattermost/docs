@@ -448,7 +448,7 @@ If you want to check that the version of Mattermost you are installing is the of
     - GPG Signature: https://releases.mattermost.com/10.11.1/mattermost-team-10.11.1-linux-amd64.tar.gz.sig
     - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v10.11.1/sbom-mattermost-v10.11.1.json
   Mattermost Team Edition v10.10.2 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-10-feature-release>`__ - `Download <https://releases.mattermost.com/10.10.2/mattermost-team-10.10.2-linux-amd64.tar.gz?src=arc>`__
-    - ``https://releases.mattermost.com/10.10.2/mattermost-team-10.10.2-linux-amd64.tar.gz`
+    - ``https://releases.mattermost.com/10.10.2/mattermost-team-10.10.2-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``57d58210339189349d2d67ab684a2c34aabfeed563983060598aa9f4af1b426e``
     - GPG Signature: https://releases.mattermost.com/10.10.2/mattermost-team-10.10.2-linux-amd64.tar.gz.sig
     - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v10.10.2/sbom-mattermost-v10.10.2.json
