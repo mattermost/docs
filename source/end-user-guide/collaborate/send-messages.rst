@@ -4,12 +4,9 @@ Send messages
 .. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-You can send messages in public and private channels as well as to other users in Mattermost.
+You can send messages in public and private channels as well as to other users in Mattermost. Depending on when you compose a message, you can send it immediately, :doc:`schedule it for later </end-user-guide/collaborate/schedule-messages>`, or :doc:`set its priority </end-user-guide/collaborate/message-priority>`. 
 
-.. tip::
-
-  - When you send messages in a channel, depending on the :doc:`channel actions configured </end-user-guide/collaborate/create-channels>`, specific words in the post can trigger a prompt to run a playbook. Access **Channel Actions** from the channel name drop-down menu in the center pane to see what automatic actions have been configured for the current channel.
-  - If you're sending a direct message to another user, Mattermost warns you when the recipient's availability is set to :ref:`Do Not Disturb <end-user-guide/preferences/set-your-status-availability:set your availability>`, and when the recipient's local time is outside of regular business hours (between 10PM and 6AM). This warning displays directly above the message text field.
+Mattermost may notify you when a recipient's availability is set to :ref:`Do Not Disturb <end-user-guide/preferences/set-your-status-availability:set your availability>`, and the recipient's local time is outside of regular business hours (between 10PM and 6AM). This warning displays directly above the message text field.
 
 .. tab:: Web/Desktop
 
@@ -93,6 +90,10 @@ All users can edit their own sent messages, unless the system admin has :doc:`re
     :alt: Type the updated message and tap save to save the edited message.
     :scale: 30
 
+  .. tip::
+
+    From Mattermost v10.11 and mobile app v2.31.0, when editing messages on mobile, you can also view, delete, and save message attachments as you would when using Mattermost in a web browser or the desktop app.
+
 Delete messages
 ----------------
 
@@ -143,10 +144,8 @@ Do more with your messages
 
   Using a RTL plugin, Mattermost can automatically detect and display messages written using right-to-left scripts, such as Arabic, Hebrew, or Persian. Your system admin must install the `RTL Plugin <https://github.com/QueraTeam/mattermost-rtl>`_ to enable this functionality.
 
-Express yourself in Mattermost messages using the following features:
+Do more with your Mattermost messages using the following features:
 
-- :doc:`Schedule messages </end-user-guide/collaborate/schedule-messages>`
-- :doc:`Set message priority </end-user-guide/collaborate/message-priority>`
 - :doc:`Format messages </end-user-guide/collaborate/format-messages>`
 - :doc:`Mention people </end-user-guide/collaborate/mention-people>`
 - :doc:`Share files </end-user-guide/collaborate/share-files-in-messages>`
