@@ -9,12 +9,12 @@
 
 ## Frequency
 
-Mattermost releases a new desktop app version every 4 months, in February, May, August, and November in [binary form](https://docs.mattermost.com/collaborate/install-desktop-app.html). See the [Desktop app changelog](/about/desktop-app-changelog) for release details.
+Mattermost releases a new desktop app version every 4 months, in February, May, August, and November in [binary form](https://docs.mattermost.com/end-user-guide/collaborate/install-desktop-app.html). See the [Desktop app changelog](/product-overview/desktop-app-changelog) for release details.
 
 
 ```{Important}
 - From Mattermost v9.11, Mattermost server extended releases are now paired with Mattermost desktop app extended releases. For an optimal user experience and for the latest security fixes, we strongly recommend updating desktop clients to the latest version your Mattermost server supports. See the table below for server compatibility, and see the [Mattermost extended support releases](#extended-support-releases) documentation to learn more about extended releases.
-- If you prefer to control the server and client releases, we recommend disabling automatic client updates to prevent users from upgrading their desktop client to a version your server doesn't support. See the [install Mattermost desktop app](https://docs.mattermost.com/collaborate/install-desktop-app.html) documentation for platform-specific details on automatic app updates.
+- If you prefer to control the server and client releases, we recommend disabling automatic client updates to prevent users from upgrading their desktop client to a version your server doesn't support. See the [install Mattermost desktop app](https://docs.mattermost.com/end-user-guide/collaborate/install-desktop-app.html) documentation for platform-specific details on automatic app updates.
 ```
 
 ## Latest releases
