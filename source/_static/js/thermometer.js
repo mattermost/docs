@@ -152,23 +152,28 @@ jqueryReady(() => {
                 console.debug(
                     `eventValue=${eventValue}, currentValue=${currentValue}`
                 );
-                if (currentValue !== '' && eventValue > 0) {
-                    // Google Analytics event
-                    const dataLayer = window.dataLayer || [];
-                    dataLayer.push({
-                        event: 'rateThisPage',
-                        eventLabel: rating,
-                        eventValue: eventValue,
-                        eventFeedback: currentValue,
+                if (eventValue > 0) {
+                    // Send feedback to Mattermost channel
+                    const feedbackData = {
+                        text: `**Page Feedback Received**\n\n**Page:** ${window.location.href}\n**Rating:** ${rating}\n**Feedback:** ${currentValue || 'No additional feedback provided'}`,
+                        username: 'Documentation Feedback',
+                        icon_emoji: rating === 'Yes' ? ':smile:' : rating === 'Somewhat' ? ':neutral_face:' : ':frowning:'
+                    };
+
+                    // TODO: Replace with your Mattermost webhook URL
+                    // TODO: Set webhook URL via environment variable or config
+                    const webhookUrl = process.env.MATTERMOST_FEEDBACK_WEBHOOK ||
+                    'WEBHOOK_URL_NOT_SET';
+                    
+                    fetch(webhookUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(feedbackData),
+                    }).catch(error => {
+                        console.error('Failed to send feedback to Mattermost:', error);
                     });
-                    // Rudderstack event
-                    if (typeof rudderanalytics !== 'undefined') {
-                        rudderanalytics.track('feedback_submitted', {
-                            label: rating,
-                            rating: eventValue,
-                            feedback: currentValue,
-                        });
-                    }
                 }
                 jqueryParents(
                     evt.target,
