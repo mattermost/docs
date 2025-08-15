@@ -87,7 +87,25 @@ def doctree_read(app: Sphinx, doctree: nodes.document):
         if len(app.env.tocs[app.env.docname][0]) == 1:
             app.env.tocs[app.env.docname][0].append(updated_tocs)
         else:
-            app.env.tocs[app.env.docname][0][1] = updated_tocs
+            # SAFE FIX: Check if the original structure has toctree nodes
+            # If it does, leave it completely unchanged to preserve left navigation
+            original_toc_item = app.env.tocs[app.env.docname][0][1]
+            has_toctree = False
+            
+            if hasattr(original_toc_item, 'children') and original_toc_item.children:
+                for child in original_toc_item.children:
+                    if isinstance(child, addnodes.toctree):
+                        has_toctree = True
+                        break
+            
+            if has_toctree:
+                # SAFE APPROACH: For now, preserve left navigation completely
+                # This means workflow-automation.rst won't get right-pane tab labels
+                # but left navigation will work correctly
+                pass  # Keep original structure unchanged
+            else:
+                # Only apply tab modifications if no toctree nodes are present
+                app.env.tocs[app.env.docname][0][1] = updated_tocs
 
 
 def html_page_context(

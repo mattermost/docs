@@ -9,15 +9,16 @@
 ```
 
 ## Frequency
-Mattermost releases a new server version on the 16th of each month in [binary form](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html). 
-- See the [v10 changelog](https://docs.mattermost.com/about/mattermost-v10-changelog.html) for details on what's coming and changing in the next major release. 
-- See the [v9 changelog](https://docs.mattermost.com/about/mattermost-v9-changelog.html) for details on v9.x server releases.
-- See the [unsupported Mattermost legacy releases](https://docs.mattermost.com/about/unsupported-legacy-releases.html) documentation for details on older, unsupported  Mattermost releases.
+Mattermost releases a new server version on the 16th of each month in [binary form](https://docs.mattermost.com/administration-guide/upgrade/upgrading-mattermost-server.html). 
+- See the [v10 changelog](https://docs.mattermost.com/product-overview/mattermost-v10-changelog.html) for details on what's coming and changing in the next major release. 
+- See the [v9 changelog](https://docs.mattermost.com/product-overview/mattermost-v9-changelog.html) for details on v9.x server releases.
+- See the [unsupported Mattermost legacy releases](https://docs.mattermost.com/product-overview/unsupported-legacy-releases.html) documentation for details on older, unsupported  Mattermost releases.
 
 ## Latest releases
 
 | **Release** | **Released on** | **Support ends** |
 |:---|:---|:---|
+| v10.11 [Download](https://releases.mattermost.com/10.11.1/mattermost-10.11.1-linux-amd64.tar.gz) \| {ref}`Changelog <release-v10.11-extended-support-release>` \| <details class="mm-sbom"><summary>SBOM</summary><ul><li><a href="https://github.com/mattermost/mattermost/releases/download/v10.11.1/sbom-mattermost-v10.11.1.json">Team Edition</a></li><li><a href="https://releases.mattermost.com/10.11.1/sbom-enterprise-v10.11.1.json">Enterprise</a></li></ul></details> | 2025-08-15 | 2026-08-15 {ref}`EXTENDED <release-types>` |
 | v10.10 [Download](https://releases.mattermost.com/10.10.1/mattermost-10.10.1-linux-amd64.tar.gz) \| {ref}`Changelog <release-v10.10-feature-release>` \| <details class="mm-sbom"><summary>SBOM</summary><ul><li><a href="https://github.com/mattermost/mattermost/releases/download/v10.10.1/sbom-mattermost-v10.10.1.json">Team Edition</a></li><li><a href="https://releases.mattermost.com/10.10.1/sbom-enterprise-v10.10.1.json">Enterprise</a></li></ul></details> | 2025-07-16 | 2025-10-15 |
 | v10.9 [Download](https://releases.mattermost.com/10.9.4/mattermost-10.9.4-linux-amd64.tar.gz) \| {ref}`Changelog <release-v10.9-feature-release>` \| <details class="mm-sbom"><summary>SBOM</summary><ul><li><a href="https://github.com/mattermost/mattermost/releases/download/v10.9.4/sbom-mattermost-v10.9.4.json">Team Edition</a></li><li><a href="https://releases.mattermost.com/10.9.4/sbom-enterprise-v10.9.4.json">Enterprise</a></li></ul></details> | 2025-06-16 | 2025-09-15 |
 | v10.8 [Download](https://releases.mattermost.com/10.8.4/mattermost-10.8.4-linux-amd64.tar.gz) \| {ref}`Changelog <release-v10.8-feature-release>` \| <details class="mm-sbom"><summary>SBOM</summary><ul><li><a href="https://github.com/mattermost/mattermost/releases/download/v10.8.4/sbom-mattermost-v10.8.4.json">Team Edition</a></li><li><a href="https://releases.mattermost.com/10.8.4/sbom-enterprise-v10.8.4.json">Enterprise</a></li></ul></details> | 2025-05-16 | 2025-08-15 |
