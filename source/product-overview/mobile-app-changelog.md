@@ -20,13 +20,11 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - iPhone 6s devices and later with iOS 15.1+ are required.
 
 ### Improvements
- - TBD
+ - Updated the app to target Android 15 (API level 35).
 
 ### Bug Fixes
- - TBD
-
-### Open Source Components
- - TBD
+ - Fixed an issue where channel links were not enabled on the title of message attachments.
+ - Fixed a sorting problem when moving a field from custom profile attributes to the first position.
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
