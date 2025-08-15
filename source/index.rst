@@ -5,7 +5,7 @@ Mattermost's purpose is to accelerate the world's mission critical work by devel
 
 .. image:: /images/ime.png
    :alt: Infographic titled "Mattermost: The Intelligent Mission Environment", showcasing Mattermost as an AI-powered, self-hosted collaboration platform for defense, security, and critical enterprises. It highlights use cases in Cyber Defense, Development, Security, and Operations (DevSecOps), and Mission Operations; a secure collaborative workflow with messaging, automation, audio/screenshare, project tracking, and AI tools; an integration platform with extensible architecture; and a deployment solution with Kubernetes-based, cyber-resilient scalability.
-   :target: about/product.html
+   :target: product-overview/product-overview-index.html
 
 .. toctree::
    :maxdepth: 1
