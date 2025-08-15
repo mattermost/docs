@@ -9,18 +9,19 @@
 
 ## Frequency
 
-Mattermost releases a new desktop app version every 4 months, in February, May, August, and November in [binary form](https://docs.mattermost.com/collaborate/install-desktop-app.html). See the [Desktop app changelog](/about/desktop-app-changelog) for release details.
+Mattermost releases a new desktop app version every 4 months, in February, May, August, and November in [binary form](https://docs.mattermost.com/end-user-guide/collaborate/install-desktop-app.html). See the [Desktop app changelog](/product-overview/desktop-app-changelog) for release details.
 
 
 ```{Important}
 - From Mattermost v9.11, Mattermost server extended releases are now paired with Mattermost desktop app extended releases. For an optimal user experience and for the latest security fixes, we strongly recommend updating desktop clients to the latest version your Mattermost server supports. See the table below for server compatibility, and see the [Mattermost extended support releases](#extended-support-releases) documentation to learn more about extended releases.
-- If you prefer to control the server and client releases, we recommend disabling automatic client updates to prevent users from upgrading their desktop client to a version your server doesn't support. See the [install Mattermost desktop app](https://docs.mattermost.com/collaborate/install-desktop-app.html) documentation for platform-specific details on automatic app updates.
+- If you prefer to control the server and client releases, we recommend disabling automatic client updates to prevent users from upgrading their desktop client to a version your server doesn't support. See the [install Mattermost desktop app](https://docs.mattermost.com/end-user-guide/collaborate/install-desktop-app.html) documentation for platform-specific details on automatic app updates.
 ```
 
 ## Latest releases
 
 | **Release** | **Released on** | **Support ends** | **Compatible with** |
 |:---|:---|:---|:---|
+| v5.13 [Download](https://github.com/mattermost/desktop/releases/tag/v5.13.0) \| {ref}`Changelog <release-v5-13>` \| [SBOM download](https://github.com/mattermost/desktop/releases/download/v5.13.0/sbom-desktop-v5.13.0.json) | 2025-08-15 | 2025-11-15 | {ref}`v10.11 <release-v10.11-extended-support-release>`, {ref}`v10.10 <release-v10.10-feature-release>`, {ref}`v10.9 <release-v10.9-feature-release>`, {ref}`v10.5 <release-v10.5-extended-support-release>` |
 | v5.12 [Download](https://github.com/mattermost/desktop/releases/tag/v5.12.1) \| {ref}`Changelog <release-v5-12>` \| [SBOM download](https://github.com/mattermost/desktop/releases/download/v5.12.1/sbom-desktop-v5.12.1.json) | 2025-05-16 | 2025-08-15 | {ref}`v10.10 <release-v10.10-feature-release>`, {ref}`v10.9 <release-v10.9-feature-release>`, {ref}`v10.8 <release-v10.8-feature-release>`, {ref}`v10.7 <release-v10.7-feature-release>`, {ref}`v10.6 <release-v10.6-feature-release>`, {ref}`v10.5 <release-v10.5-extended-support-release>` |
 | v5.11 [Download](https://github.com/mattermost/desktop/releases/tag/v5.11.3) \| {ref}`Changelog <release-v5-11>` | 2025-02-14 | 2025-11-15 | {ref}`v10.7 <release-v10.7-feature-release>`, {ref}`v10.6 <release-v10.6-feature-release>`, {ref}`v10.5 <release-v10.5-extended-support-release>`, {ref}`v10.4 <release-v10.4-feature-release>`, {ref}`v10.3 <release-v10.3-feature-release>`, {ref}`v9.11 <release-v9-11-extended-support-release>` |
 | v5.10 [Download](https://github.com/mattermost/desktop/releases/tag/v5.10.2) \| {ref}`Changelog <release-v5-10>` | 2024-11-15 | 2025-02-13 | {ref}`v10.2 <release-v10.2-feature-release>`, {ref}`v10.1 <release-v10.1-feature-release>`, {ref}`v10.0 <release-v10.0-major-release>`, {ref}`v9.11 <release-v9-11-extended-support-release>`, {ref}`v9.5 <release-v9-5-extended-support-release>` |
