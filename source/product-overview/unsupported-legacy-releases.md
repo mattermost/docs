@@ -8717,7 +8717,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 #### Actiance Support (Beta) ([Enterprise Edition E20](https://mattermost.com/pricing/) Add-On)
 
-- Compliance export support for [Smarsh](https://www.smarsh.com/) (formally known as Actiance) as a compliance solution. Learn more [here](https://docs.mattermost.com/comply/compliance-export.html).
+- Compliance export support for [Smarsh](https://www.smarsh.com/) (formerly known as Actiance) as a compliance solution. Learn more [here](https://docs.mattermost.com/comply/compliance-export.html).
 - Access compliance export from the **System Console > Advanced > Compliance Export (Beta)**.
 
 ### Improvements
