@@ -47,7 +47,7 @@ Install the plugin
     Step 3. Manual Install Inside the Environment
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    In the Mattermost System Console, a Mattermost system admin goes to **Plugins > Plugin Management** and uses the **Upload Plugin** option. They the Mattermost system admin configures the plugin, as described below.
+    In the Mattermost System Console, a Mattermost system admin goes to **Plugins > Plugin Management** and uses the **Upload Plugin** option to upload the package file. Then the Mattermost system admin configures the plugin, as described below.
 
 Mattermost configuration
 ------------------------
