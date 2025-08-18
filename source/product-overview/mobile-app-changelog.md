@@ -26,6 +26,9 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Fixed an issue where channel links were not enabled on the title of message attachments.
  - Fixed a sorting problem when moving a field from custom profile attributes to the first position.
 
+### Open Source Components
+ - Added ``@formatjs/intl-relativetimeformat`` to https://github.com/mattermost/mattermost-mobile.
+
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
