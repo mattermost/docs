@@ -17,37 +17,12 @@ Mattermost Cloud Enterprise customers can request the Boards plugins be enabled 
 Install the plugin
 -------------------
 
-.. tab:: Fully Connected
-    :parse-titles:
+The following steps apply to customers in fully connected environments as well as Denied, Disrupted, Intermittent, and Limited (DDIL) environments. A Mattermost system admin must perform the following steps in Mattermost.
 
-    A Mattermost system admin must perform the following steps in Mattermost.
-
-    1. Download the latest Mattermost Boards plugin binary file from the `Mattermost Boards Releases <https://github.com/mattermost/mattermost-plugin-boards/releases>`_ page.
-    2. Log in to your Mattermost System Console as a system admin.
-    3. Go to **Plugins > Plugin Management**.
-    4. Select **Upload Plugin** to upload the Boards plugin binary file you downloaded from the Mattermost Releases page.
-
-.. tab:: DDIL (Restricted/Contested)
-    :parse-titles:
-
-    This workflow usually involves a 3-step process that includes an external staging machine, an approved transfer path, and a manual installation.
-
-    Step 1. Download Outside the Air Gap
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-    A system admin uses a separate internet-connected workstation, such as a jump box, staging system, or unclassified host, to download the plugin package from the `Mattermost Boards Releases <https://github.com/mattermost/mattermost-plugin-boards/releases>`_ page. The admin verifies the package hash and signature against Mattermost-provided checksums for authenticity.
-
-    The downloaded plugin package ``.tar.gz`` file contains the plugin binary, manifest, and required assets and is scanned for malware. Additional whitelisting or aproval tickets may also be required.
-
-    Step 2. Transfer Into the Restricted Network
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-    The package must be transfered into the restricted network using an approved transfer mechanism, which may include encrypted, scanned USB media, secure removable drives, burning to CD/DVD, or using approved cross-domain transfer tools.
-
-    Step 3. Manual Install Inside the Environment
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-    In the Mattermost System Console, a Mattermost system admin goes to **Plugins > Plugin Management** and uses the **Upload Plugin** option to upload the package file. Then the Mattermost system admin configures the plugin, as described below.
+1. Download the latest Mattermost Boards plugin binary file from the `Mattermost Boards Releases <https://github.com/mattermost/mattermost-plugin-boards/releases>`_ page.
+2. Log in to your Mattermost System Console as a system admin.
+3. Go to **Plugins > Plugin Management**.
+4. Select **Upload Plugin** to upload the Boards plugin binary file you downloaded from the Mattermost Releases page.
 
 Mattermost configuration
 ------------------------
