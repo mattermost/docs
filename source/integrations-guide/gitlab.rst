@@ -56,7 +56,7 @@ Install the GitLab integration from the in-product App Marketplace:
    - **Enable for public and private projects**: Shows previews for both public and private repositories. 
 
      .. warning::
-        This setting might leak confidential code into public channels when users with access to private GitLab repositories post permalinks in public Mattermost channels. The plugin automatically generates previews using the poster's GitLab permissions, allowing other channel members without access to view the confidential code.
+        This setting has the potential to leak confidential code into public channels in cases where users with access to private GitLab repositories post permalinks in public Mattermost channels. The plugin automatically generates previews using the poster's GitLab permissions, allowing other channel members without access to view the confidential code.
 
    - **Disable**: Completely disables code preview functionality.
 
