@@ -27,36 +27,133 @@ Mattermost AppConfig values
 
 The following table shows all the configuration options that can be sent from the EMM provider of your choice to the Mattermost mobile apps. You can also :download:`download an XML template </samples/mattermost-specfile.xml>` of the configuration file for use with your EMM provider. 
 
-+------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+------------------+-------------+--------------------------+
-| Key                    | Description                                                                                                                                                                                                     | Type   | Default Value | Valid Values     | iOS Support | Android for Work Support |
-+========================+=================================================================================================================================================================================================================+========+===============+==================+=============+==========================+
-| inAppPinCode           | Require users to authenticate as the device owner before using the app. Prompts for fingerprint or passcode when the app first opens and when the app has been in the background for more than five minutes.    | String | ``false``     | ``true | false`` | Yes         | Yes                      |
-+------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+------------------+-------------+--------------------------+
-| blurApplicationScreen  | Blur the app when it's set to background to protect any confidential on-screen information. On Android, it also prevents taking screenshots of the app.                                                         | String | ``false``     | ``true | false`` | Yes         | Yes                      |
-+------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+------------------+-------------+--------------------------+
-| jailbreakDetection     | Disable app launch on jailbroken or rooted devices.                                                                                                                                                             | String | ``false``     | ``true | false`` | Yes         | Yes                      |
-+------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+------------------+-------------+--------------------------+
-| copyAndPasteProtection | Disable the ability to copy from or paste into any text inputs in the app.                                                                                                                                      | String | ``false``     | ``true | false`` | Yes         | Yes (since v1.24.0)      |
-+------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+------------------+-------------+--------------------------+
-| serverUrl              | Set a default Mattermost server URL. Supports a single server only while v2.0 of the mobile app supports multiple server connections.                                                                           | String |               | URL              | Yes         | Yes                      |
-+------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+------------------+-------------+--------------------------+
-| serverName             | Automatically populates the server display name for the URL specified in serverURL.                                                                                                                             | String |               | alphanumeric or  | Yes         | Yes                      |
-|                        |                                                                                                                                                                                                                 |        |               | empty            |             |                          |
-+------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+------------------+-------------+--------------------------+
-| allowOtherServers      | Allow the user to change the above server URL. If set to ``true``, users can connect to multiple servers that aren't specified in the server URL setting.                                                       | String | ``true``      | ``true | false`` | Yes         | Yes                      |
-|                        | If set to ``false``, users can only connect to a single defined server.                                                                                                                                         |        |               |                  |             |                          |
-+------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+------------------+-------------+--------------------------+
-| username               | Set the username or email address to use to authenticate against the Mattermost Server.                                                                                                                         | String |               |                  | Yes         | Yes                      |
-+------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+------------------+-------------+--------------------------+
-| useVPN                 | Enable connection to the Mattermost Server to use a per-app VPN or VPN on-demand.                                                                                                                               | String | ``false``     | ``true | false`` | Yes         | No                       |
-+------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+------------------+-------------+--------------------------+
-| timeoutVPN             | Set how long the request waits (in milliseconds) for an initial VPN connection to establish before timeout.                                                                                                     | String | 30000         |                  | Yes         | No                       |
-+------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+------------------+-------------+--------------------------+
-| vendor                 | Name of the EMM vendor or company deploying the app. Used in help text when prompting for passcodes so users are aware why the app is being protected.                                                          | String | Mattermost    |                  | Yes         | Yes                      |
-+------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+------------------+-------------+--------------------------+
-| inAppSessionAuth       | Use the app's internal browser for SSO instead of an external browser. From Mattermost v10.2 and mobile v2.2.1, deprecated in favor of the                                                                      | String | ``false``     | ``true | false`` | Yes         | Yes                      |
-|                        | :ref:`mobile external browser <administration-guide/configure/site-configuration-settings:mobile external browser>` server configuration setting.                                                               |        |               |                  |             |                          |
-+------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+------------------+-------------+--------------------------+
+.. raw:: html
+
+   <style>
+     table.mattermost-plans {
+       border-collapse: collapse;
+       width: 100%;
+       font-size: 0.95em;
+     }
+     table.mattermost-plans th, table.mattermost-plans td {
+       border: 1px solid #888;
+       padding: 6px 8px;
+       vertical-align: top;
+     }
+     /* Dark mode border color */
+     body:not([data-custom-theme="light"]) table.mattermost-plans th, 
+     body:not([data-custom-theme="light"]) table.mattermost-plans td {
+       border-color: #666;
+     }
+     table.mattermost-plans th {
+       background: #f2f2f2;
+       font-weight: bold;
+       text-align: left;
+     }
+     /* Dark mode support for table headers */
+     body:not([data-custom-theme="light"]) table.mattermost-plans th {
+       background: #444;
+       color: #fff;
+     }
+   </style>
+
+   <table class="mattermost-plans">
+     <thead>
+       <tr>
+         <th>Key</th>
+         <th>Description</th>
+         <th>Default/Valid Values</th>
+         <th>iOS Support</th>
+         <th>Android for Work Support</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr>
+         <td><strong><code>inAppPinCode</code></strong><br><em>String</em></td>
+         <td>Require users to authenticate as the device owner before using the app. Prompts for fingerprint or passcode when the app first opens and when the app has been in the background for more than five minutes.</td>
+         <td>Default: <code>false</code><br>Valid: <code>true | false</code></td>
+         <td><img src="../../_static/images/check-circle-green.svg"></td>
+         <td><img src="../../_static/images/check-circle-green.svg"></td>
+       </tr>
+       <tr>
+         <td><strong><code>blurApplicationScreen</code></strong><br><em>String</em></td>
+         <td>Blur the app when it's set to background to protect any confidential on-screen information. On Android, it also prevents taking screenshots of the app.</td>
+         <td>Default: <code>false</code><br>Valid: <code>true | false</code></td>
+         <td><img src="../../_static/images/check-circle-green.svg"></td>
+         <td><img src="../../_static/images/check-circle-green.svg"></td>
+       </tr>
+       <tr>
+         <td><strong><code>jailbreakDetection</code></strong><br><em>String</em></td>
+         <td>Disable app launch on jailbroken or rooted devices.</td>
+         <td>Default: <code>false</code><br>Valid: <code>true | false</code></td>
+         <td><img src="../../_static/images/check-circle-green.svg"></td>
+         <td><img src="../../_static/images/check-circle-green.svg"></td>
+       </tr>
+       <tr>
+         <td><strong><code>copyAndPasteProtection</code></strong><br><em>String</em></td>
+         <td>Disable the ability to copy from or paste into any text inputs in the app.</td>
+         <td>Default: <code>false</code><br>Valid: <code>true | false</code></td>
+         <td><img src="../../_static/images/check-circle-green.svg"></td>
+         <td><img src="../../_static/images/check-circle-green.svg"> (since v1.24.0)</td>
+       </tr>
+       <tr>
+         <td><strong><code>serverUrl</code></strong><br><em>String</em></td>
+         <td>Set a default Mattermost server URL. Supports a single server only while v2.0 of the mobile app supports multiple server connections.</td>
+         <td>Valid: URL</td>
+         <td><img src="../../_static/images/check-circle-green.svg"></td>
+         <td><img src="../../_static/images/check-circle-green.svg"></td>
+       </tr>
+       <tr>
+         <td><strong><code>serverName</code></strong><br><em>String</em></td>
+         <td>Automatically populates the server display name for the URL specified in serverURL.</td>
+         <td>Valid: alphanumeric or empty</td>
+         <td><img src="../../_static/images/check-circle-green.svg"></td>
+         <td><img src="../../_static/images/check-circle-green.svg"></td>
+       </tr>
+       <tr>
+         <td><strong><code>allowOtherServers</code></strong><br><em>String</em></td>
+         <td>Allow the user to change the above server URL. If set to <code>true</code>, users can connect to multiple servers that aren't specified in the server URL setting. If set to <code>false</code>, users can only connect to a single defined server.</td>
+         <td>Default: <code>true</code><br>Valid: <code>true | false</code></td>
+         <td><img src="../../_static/images/check-circle-green.svg"></td>
+         <td><img src="../../_static/images/check-circle-green.svg"></td>
+       </tr>
+       <tr>
+         <td><strong><code>username</code></strong><br><em>String</em></td>
+         <td>Set the username or email address to use to authenticate against the Mattermost Server.</td>
+         <td></td>
+         <td><img src="../../_static/images/check-circle-green.svg"></td>
+         <td><img src="../../_static/images/check-circle-green.svg"></td>
+       </tr>
+       <tr>
+         <td><strong><code>useVPN</code></strong><br><em>String</em></td>
+         <td>Enable connection to the Mattermost Server to use a per-app VPN or VPN on-demand.</td>
+         <td>Default: <code>false</code><br>Valid: <code>true | false</code></td>
+         <td><img src="../../_static/images/check-circle-green.svg"></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td><strong><code>timeoutVPN</code></strong><br><em>String</em></td>
+         <td>Set how long the request waits (in milliseconds) for an initial VPN connection to establish before timeout.</td>
+         <td>Default: 30000</td>
+         <td><img src="../../_static/images/check-circle-green.svg"></td>
+         <td></td>
+       </tr>
+       <tr>
+         <td><strong><code>vendor</code></strong><br><em>String</em></td>
+         <td>Name of the EMM vendor or company deploying the app. Used in help text when prompting for passcodes so users are aware why the app is being protected.</td>
+         <td>Default: Mattermost</td>
+         <td><img src="../../_static/images/check-circle-green.svg"></td>
+         <td><img src="../../_static/images/check-circle-green.svg"></td>
+       </tr>
+       <tr>
+         <td><strong><code>inAppSessionAuth</code></strong><br><em>String</em></td>
+         <td>Use the app's internal browser for SSO instead of an external browser. From Mattermost v10.2 and mobile v2.2.1, deprecated in favor of the <a href="../../administration-guide/configure/site-configuration-settings.html#mobile-external-browser">mobile external browser</a> server configuration setting.</td>
+         <td>Default: <code>false</code><br>Valid: <code>true | false</code></td>
+         <td><img src="../../_static/images/check-circle-green.svg"></td>
+         <td><img src="../../_static/images/check-circle-green.svg"></td>
+       </tr>
+     </tbody>
+   </table>
 
 Other AppConfig settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
