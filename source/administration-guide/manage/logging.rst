@@ -7,12 +7,18 @@ Mattermost logging
 Mattermost provides 3 independent logging systems that can be configured separately with separate log files and rotation policies to meet different operational and compliance needs:
 
 .. csv-table::
-   :header: "Logging Type", "Captures", "Production Recommendation", "Configuration Priority"
-   :widths: 25, 30, 25, 20
+   :header: "Logging Type & Capture", "Production Recommendation", "Configuration Priority"
+   :widths: 45, 25, 30
 
-   "Log Settings", "All general Mattermost server operations, errors, startup/initialization, API calls, and system events.", "Always enabled. Console: INFO, File: INFO", "**High** - Essential for operations"
-   "Audit Log Settings", "Security and compliance events, user actions, API access, authentication events, and administrative changes.", "Enable if compliance is required", "**Medium** - Based on regulatory needs"
-   "Notification Log Settings", "Notification subsystem events, push notifications, email delivery, mobile notification processing.", "Enable for notification troubleshooting", "**Low** - Enable when debugging issues"
+   "**Log Settings**
+
+   All general Mattermost server operations, errors, startup/initialization, API calls, and system events.", "Always enabled. Console: INFO, File: INFO", "**High** - Essential for operations"
+   "**Audit Log Settings**
+
+   Security and compliance events, user actions, API access, authentication events, and administrative changes.", "Enable if compliance is required", "**Medium** - Based on regulatory needs"
+   "**Notification Log Settings**
+
+   Notification subsystem events, push notifications, email delivery, mobile notification processing.", "Enable for notification troubleshooting", "**Low** - Enable when debugging issues"
 
 By default, all Mattermost plans write logs to both the console and to the ``mattermost.log`` file in a machine-readable JSON format for log aggregation tools. Mattermost Enterprise and Professional customers can additionally log directly to syslog and TCP socket destination targets. Audit and notification logging are designed to be asynchronous to minimize performance impact.
 
