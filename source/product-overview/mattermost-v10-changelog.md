@@ -22,16 +22,19 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
  - Improved screen reader readouts and accessibility of various autocomplete components.
  - Improved screen reader readouts of various autocomplete components.
 
+#### Administration
+ - Added an endpoint to check for upgradability, and correct error message and disable button are now shown if upgrade is not possible.
+
 ### Bug Fixes
- - Fixed an issue where pasting a link when a text was selected didn't format the selected text as a markdown link when editing the post. 
- - Fixed an issue where emoji picker items were being selected by pressing the space bar. 
- - Fixed a potential crash in ``UpdatePost``. 
- - Fixed 403 errors that occurred when loading custom profile attributes for unauthenticated users. 
- - Fixed an issue where the back button was not showing on the desktop external login redirect page. 
- - Fixed an issue were unreads from muted channels were shown in the favicon/desktop app. 
- - Fixed an issue where extra content was not accounted for in the focus order. 
- - Fixed an issue where results were not allowed to be read on filter without a search term. 
- - Fixed an issue where some webhooks would not show. 
+ - Fixed an issue where pasting a link when a text was selected didn't format the selected text as a markdown link when editing the post.
+ - Fixed an issue where emoji picker items were being selected by pressing the space bar.
+ - Fixed a potential crash in ``UpdatePost``.
+ - Fixed 403 errors that occurred when loading custom profile attributes for unauthenticated users.
+ - Fixed an issue where the back button was not showing on the desktop external login redirect page.
+ - Fixed an issue were unreads from muted channels were shown in the favicon/desktop app.
+ - Fixed an issue where extra content was not accounted for in the focus order.
+ - Fixed an issue where results were not allowed to be read on filter without a search term.
+ - Fixed an issue where some webhooks would not show.
 
 ### Go Version
  - v10.12 is built with Go ``v1.24.5``.
