@@ -48,7 +48,7 @@ The Mattermost Kubernetes Operator can be installed using Helm.
 
     kubectl create ns mattermost-operator
 
-5. Install the Mattermost Operator. If you don't specify a version, the latest version of the Mattermost Operator will be installed.
+5. Install the Mattermost Operator. If you don't specify a version, the latest version of the Mattermost Operator will be installed. We recommend using the latest version of the Mattermost Operator. 
 
   .. code-block:: sh
 
@@ -109,7 +109,7 @@ Step 3: Deploy Mattermost
   * ``metadata.name``: The name of your Mattermost deployment in Kubernetes.
   * ``spec.size``: The size of your installation (e.g., "100users", "1000users", etc.).
   * ``spec.ingress.host``: The DNS name for your Mattermost installation.
-  * ``spec.version``: The Mattermost version. See the :doc:`server version archive </product-overview/version-archive>` for available versions.
+  * ``spec.version``: The Mattermost version. See the :doc:`server version archive </product-overview/version-archive>` for available versions. We recommend using a :doc:`supported version </product-overview/release-policy>` of Mattermost in conjunction with the latest version of the Mattermost Operator.
   * ``spec.licenseSecret``: The name of the Kubernetes secret containing your license (required for Enterprise).
 
   For a full list of configurable fields, see the `example manifest <https://github.com/mattermost/mattermost-operator/blob/master/docs/examples/mattermost_full.yaml>`_ and the `Custom Resource Definition <https://github.com/mattermost/mattermost-operator/blob/master/config/crd/bases/installation.mattermost.com_mattermosts.yaml>`_.
