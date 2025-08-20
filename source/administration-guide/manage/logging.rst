@@ -7,12 +7,18 @@ Mattermost logging
 Mattermost provides 3 independent logging systems that can be configured separately with separate log files and rotation policies to meet different operational and compliance needs:
 
 .. csv-table::
-   :header: "Logging Type", "Captures", "Production Recommendation", "Configuration Priority"
-   :widths: 25, 30, 25, 20
+   :header: "Logging Type & Capture", "Production Recommendation", "Configuration Priority"
+   :widths: 45, 25, 30
 
-   "Log Settings", "All general Mattermost server operations, errors, startup/initialization, API calls, and system events.", "Always enabled. Console: INFO, File: INFO", "**High** - Essential for operations"
-   "Audit Log Settings", "Security and compliance events, user actions, API access, authentication events, and administrative changes.", "Enable if compliance is required", "**Medium** - Based on regulatory needs"
-   "Notification Log Settings", "Notification subsystem events, push notifications, email delivery, mobile notification processing.", "Enable for notification troubleshooting", "**Low** - Enable when debugging issues"
+   "**Log Settings**
+
+   All general Mattermost server operations, errors, startup/initialization, API calls, and system events.", "Always enabled. Console: INFO, File: INFO", "**High** - Essential for operations"
+   "**Audit Log Settings**
+
+   Security and compliance events, user actions, API access, authentication events, and administrative changes.", "Enable if compliance is required", "**Medium** - Based on regulatory needs"
+   "**Notification Log Settings**
+
+   Notification subsystem events, push notifications, email delivery, mobile notification processing.", "Enable for notification troubleshooting", "**Low** - Enable when debugging issues"
 
 By default, all Mattermost plans write logs to both the console and to the ``mattermost.log`` file in a machine-readable JSON format for log aggregation tools. Mattermost Enterprise and Professional customers can additionally log directly to syslog and TCP socket destination targets. Audit and notification logging are designed to be asynchronous to minimize performance impact.
 
@@ -106,19 +112,41 @@ Audit logging
 .. include:: ../../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-By default, Mattermost doesn’t write audit logs locally to a file on the server. You can enable and customize experimental audit logging in Mattermost to record activities and events performed within a Mattermost :doc:`workspace </end-user-guide/end-user-guide-index>`, such as access to the Mattermost REST API or mmctl. The ability to enable audit logging in Mattermost is currently in :ref:`Beta <administration-guide/manage/feature-labels:beta>`.
+By default, Mattermost doesn’t write audit logs locally to a file on the server, and the ability to enable audit logging in Mattermost is currently in :ref:`Beta <administration-guide/manage/feature-labels:beta>`.
 
-- Audit logs are recorded asynchronously to reduce latency to the caller, and are stored separately from general logging.
-- During short spans of inability to write to targets, the audit records buffer in memory with a configurable maximum record cap. Based on typical audit record volumes, it could take many minutes to fill the buffer. After that, the records are dropped, and the record drop event is logged.
-- You can customize console logs for general and notification activities. See the :ref:`Logging configuration settings <administration-guide/configure/environment-configuration-settings:logging>` for details.
-- In addition, you can output audit log records to any combination of `console <#console-target-configuration-options>`__, `local file <#file-target-configuration-options>`__, `syslog <#syslog-target-configuration-options>`__, and `TCP socket <#tcp-target-configuration-options>`__ targets, each featuring additional customization. See `Advanced Logging <#advanced-logging>`__ for details.
+You can enable and customize advanced audit logging in Mattermost to record activities and events performed within Mattermost, such as user access to the Mattermost REST API or mmctl. Audit logs are recorded asynchronously to reduce latency to the caller, and are stored separately from general logging. During short spans of inability to write to targets, the audit records buffer in memory with a configurable maximum record cap. Based on typical audit record volumes, it could take many minutes to fill the buffer. After that, the records are dropped, and the record drop event is logged.
 
 .. note::
 
-    - From Mattermost v7.2, experimental audit logging is a breaking change from previous releases in cases where customers looking to parse previous audit logs with the new format.
-    - The format and content of an audit log record has changed to become standardized for all events using a :doc:`standard JSON schema </administration-guide/comply/embedded-json-audit-log-schema>`.
-    - Existing tools which ingest or parse audit log records may need to be modified.
-    - From Mattermost v9.3, you can enable and customize advanced logging for AD/LDAP events separately from other logging.
+    From Mattermost v7.2, audit logging is a breaking change from previous releases in cases where customers looking to parse previous audit logs with the new format. The format and content of an audit log record has changed to become standardized for all events using a :doc:`standard JSON schema </administration-guide/comply/embedded-json-audit-log-schema>`. Existing tools which ingest or parse audit log records may need to be modified.
+
+    From Mattermost v9.3, you can enable and customize advanced logging for AD/LDAP events separately from other logging.
+
+.. tab:: Self-Hosted Deployments
+
+    Go to **System Console > Compliance > Audit Logging** to customize audit logging. You can use the sample JSON below as a starting point. 
+    
+    You can customize console logs for :ref:`general <administration-guide/configure/environment-configuration-settings:log settings>` and :ref:`notification <administration-guide/configure/environment-configuration-settings:notification logging>` activities. 
+    
+    Additionally, you can also output audit log records to any combination of `console <#console-target-configuration-options>`__, `local file <#file-target-configuration-options>`__, `syslog <#syslog-target-configuration-options>`__, and `TCP socket <#tcp-target-configuration-options>`__ targets, each featuring additional customization. See `Advanced Logging <#advanced-logging>`__ below for details.
+
+.. tab:: Cloud Deployments
+
+    From Mattermost v10.11, go to **System Console > Compliance > Audit Logging** to customize audit logging. You can use the sample JSON below as a starting point. Prior to Mattermost v10.11, customize audit logging by going to **System Console > Experimental > Features > Audit Logging**.
+
+    .. note::
+
+        - From Mattermost v10.11, Cloud deployments include certificate-based audit logging capabilities not available within self-hosted deployments.
+        - Cloud-based deployments use the following self-hosted audit logging default values: 
+
+            - FileEnabled: false
+            - FileMaxSizeMB: 100
+            - FileMaxAgeDays: 0 (no limit)
+            - FileMaxBackups: 0 (retain all)
+            - FileCompress: false
+            - FileMaxQueueSize: 1000
+
+        - Cloud deployments can't configure local file-based audit logging, and all file-related settings are hidden.
 
 ----
 

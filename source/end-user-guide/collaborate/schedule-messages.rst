@@ -4,7 +4,7 @@ Schedule messages
 .. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-There are times when you want to send a message, but you don’t want it sent immediately. For example, it may be after working hours for the recipient. Scheduled messages can include a :doc:`priority </end-user-guide/collaborate/message-priority>`, :ref:`request acknowledgements <end-user-guide/collaborate/message-priority:request acknowledgements>`, include :doc:`file attachments </end-user-guide/collaborate/share-files-in-messages>`, and include anything that a non-scheduled message can contain.
+There are times when you want to send a message, but you don’t want it sent immediately. For example, it may be after working hours for the recipient. Scheduled messages can include a :doc:`priority </end-user-guide/collaborate/message-priority>`, :ref:`request acknowledgements <end-user-guide/collaborate/message-priority:request acknowledgements>`, include :doc:`file attachments </end-user-guide/collaborate/share-files-in-messages>`, and include anything that a non-scheduled message can contain, except :doc:`slash commands </end-user-guide/collaborate/built-in-slash-commands>`.
 
 .. tab:: Web/Desktop
 
