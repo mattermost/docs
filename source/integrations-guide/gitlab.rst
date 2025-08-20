@@ -63,15 +63,13 @@ Install the GitLab integration from the in-product App Marketplace:
 
    **Supported Permalink Types:**
 
-   - File permalinks: Shows first 10 lines
    - Single line permalinks: Shows target line plus 3 lines of context
-   - Line range permalinks: Shows specified line range
+   - File permalinks: Shows file information (no code preview)
+   - Line range permalinks: Shows file information (no code preview)
 
    **Preview Limits:**
 
-   - Maximum 10 lines displayed per preview
-   - Line ranges exceeding 10 lines are truncated with an indicator
-   - Maximum 10 permalink replacements per message
+   - Maximum 10 lines displayed per preview (single line permalinks may show fewer preview lines due to context limits)
 
 Enable
 ------
