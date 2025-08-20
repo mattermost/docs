@@ -19,7 +19,6 @@ Mattermost Server v11.0.0 (October 2025)
 - The version of React used by the Mattermost web app will be updated from React 17 to React 18. See more details in `this forum post <https://forum.mattermost.com/t/upgrading-the-mattermost-web-app-to-react-18-v11/25000>`__.
 - Omnibus support will be deprecated.
 - Separate notification log file will be deprecated. If admins want to continue using a separate log file for notification logs, they can use the ``AdvancedLoggingJSON`` configuration.
-- The default ``maxOpenConns/maxIdleConns`` settings in ``model.Config`` will be adjusted. Admins can choose to update their own settings to match the recommended defaults.
 - Deprecated ``include_removed_members`` option in ``api/v4/ldap/sync`` will be removed. Admins can use the LDAP setting ``ReAddRemovedMembers``.
 - All telemetry support will be removed from Mattermost. The system will no longer collect or send telemetry data to external services.
 - Format query parameter requirement in ``/api/v4/config/client`` endpoint will be deprecated.
