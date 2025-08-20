@@ -44,12 +44,12 @@ Yes. Mattermost supports :ref:`SAML 2.0 <administration-guide/onboard/sso-saml:s
 Can it be used securely on BYOD mobile?
 ---------------------------------------
 
-Yes. Mattermost supports :doc:`mobile security controls </security-guide/security/mobile-security>` like restricting file downloads, screen capture, and external sharing.
+Yes. Mattermost supports :doc:`mobile security controls </security-guide/mobile-security>` like restricting file downloads, screen capture, and external sharing.
 
 Can it be used securely on mobile with MDM controls?
 ----------------------------------------------------
 
-Yes. Mattermost supports :doc:`mobile device management (MDM) policies </security-guide/security/mobile-security>`, while also including :doc:`mobile security controls </security-guide/security/mobile-security>` like restricting file downloads, screen capture, and external sharing.
+Yes. Mattermost supports :doc:`mobile device management (MDM) policies </security-guide/mobile-security>`, while also including :doc:`mobile security controls </security-guide/mobile-security>` like restricting file downloads, screen capture, and external sharing.
 
 Do you have existing STIGs or documentation to support RMF/ATO efforts?
 -----------------------------------------------------------------------
