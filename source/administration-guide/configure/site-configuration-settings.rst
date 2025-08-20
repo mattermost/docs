@@ -1363,7 +1363,7 @@ Threaded discussions
 
 .. important::
 
-  Customers upgrading from a legacy Mattermost release prior to v7.0 must review the `administrator's guide to enabling threaded discussions <https://support.mattermost.com/hc/en-us/articles/6880701948564-Administrator-s-guide-to-enabling-Collapsed-Reply-Threads>`_ (formally known as Collapsed Reply Threads) prior to enabling this functionality.
+  Customers upgrading from a legacy Mattermost release prior to v7.0 must review the `administrator's guide to enabling threaded discussions <https://support.mattermost.com/hc/en-us/articles/6880701948564-Administrator-s-guide-to-enabling-Collapsed-Reply-Threads>`_ (formerly known as Collapsed Reply Threads) prior to enabling this functionality.
 
 +---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 | - **Always On**: **(Default)** Enables :doc:`threaded discussions                                             | - System Config path: **Site Configuration > Posts**                      |

@@ -1080,7 +1080,7 @@ AI Agents
 
 .. note::
 
-  Mattermost Agents is formally known as Mattermost Copilot.
+  Mattermost Agents is formerly known as Mattermost Copilot.
 
 Access the following Mattermost Agents configuration settings in the System Console by going to **Plugins > Agents**.
 
