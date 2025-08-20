@@ -29,6 +29,11 @@ Add a server
       :alt: Connect the desktop app to a Mattermost Server using options located in the top left corner of the Mattermost screen.
 
   2. Enter the server URL. Server URLs must begin with either ``http://`` or ``https://``.
+
+    .. tip::
+
+      Can't find your Mattermost server URL? Ask your company’s IT department or your Mattermost system admin for your organization’s **Mattermost Site URL**. It’ll look something like ``https://example.com/company/mattermost``, ``mattermost.yourcompanydomain.com``, or ``chat.yourcompanydomain.com``. These URLs could also end in ``.net``.
+
   3. Enter the server's Display Name.
   4. Optionally, enter a **Pre-shared Secret** if required by your server configuration.
 
@@ -40,9 +45,6 @@ Add a server
 
       If your server requires a pre-shared secret for enhanced security, ask your system administrator for the **Pre-shared Secret** value. This is an additional security measure that some organizations use to control access to their Mattermost server.
 
-    .. tip::
-
-      Can't find your Mattermost server URL? Ask your company’s IT department or your Mattermost system admin for your organization’s **Mattermost Site URL**. It’ll look something like ``https://example.com/company/mattermost``, ``mattermost.yourcompanydomain.com``, or ``chat.yourcompanydomain.com``. These URLs could also end in ``.net``.
 
   5. Select **Add**.
 
@@ -52,6 +54,11 @@ Add a server
 
   1. Tap **Add a server**.
   2. Enter the server URL. Server URLs must begin with either ``http://`` or ``https://``.
+
+  .. tip::
+
+      Can't find your Mattermost server URL? Ask your company’s IT department or your Mattermost system admin for your organization’s **Mattermost Site URL**. It’ll look something like ``https://example.com/company/mattermost``, ``mattermost.yourcompanydomain.com``, or ``chat.yourcompanydomain.com``. These URLs could also end in ``.net``.
+
   3. Enter the server's Display Name.
   4. Optionally, enter a **Pre-shared Secret** if required by your server configuration.
 
@@ -61,9 +68,6 @@ Add a server
 
   5. Tap **Done**.
 
-  .. tip::
-
-      Can't find your Mattermost server URL? Ask your company’s IT department or your Mattermost system admin for your organization’s **Mattermost Site URL**. It’ll look something like ``https://example.com/company/mattermost``, ``mattermost.yourcompanydomain.com``, or ``chat.yourcompanydomain.com``. These URLs could also end in ``.net``.
 
 Edit a server
 --------------
