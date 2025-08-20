@@ -104,6 +104,8 @@ You can customize the timezone used for timestamps in Mattermost and in email no
 
     Select **Timezone > Edit** to select your timezone.
 
+    From Mattermost v10.10, you can also select **Automatic** to set your timezone automatically based on your computer's timezone settings. This option is enabled by default.
+
 .. tab:: Mobile
 
     Tap **Timezone** to set your timezone automatically based on your mobile device preference.
