@@ -17,7 +17,7 @@ Mattermost Server v11.0.0 (October 2025)
 - The ``registerPostDropdownMenuComponent`` hook in the web app’s plugin API will be removed in favour of ``registerPostDropdownMenuAction``. See more details in `this forum post <https://forum.mattermost.com/t/deprecating-a-post-dropdown-menu-component-plugin-api-v11/25001>`__.
 - The web app will no longer expose the `Styled Components <https://styled-components.com/>`__ dependency for use by web app plugins. See more details in `this forum post <https://forum.mattermost.com/t/removing-styled-components-export-for-web-app-plugins-v11/25002>`__.
 - The version of React used by the Mattermost web app will be updated from React 17 to React 18. See more details in `this forum post <https://forum.mattermost.com/t/upgrading-the-mattermost-web-app-to-react-18-v11/25000>`__.
-- Omnibus support will be deprecated.
+- Omnibus support will be deprecated. The last ``mattermost-omnibus`` release will be v10.12.
 - Separate notification log file will be deprecated. If admins want to continue using a separate log file for notification logs, they can use the ``AdvancedLoggingJSON`` configuration.
 - Deprecated ``include_removed_members`` option in ``api/v4/ldap/sync`` will be removed. Admins can use the LDAP setting ``ReAddRemovedMembers``.
 - All telemetry support will be removed from Mattermost. The system will no longer collect or send telemetry data to external services.
