@@ -4,7 +4,7 @@ CMMC Compliance
 Overview
 --------
 
-The `Cybersecurity Maturity Model Certification (CMMC) 2.0 <https://dodcio.defense.gov/CMMC/>`_ is a `U.S. Department of Defense (DoD) <https://www.defense.gov/>`_ program that requires all contractors, subcontractors, and suppliers who handle Federal Contract Information (FCI) or Controlled Unclassified Information (CUI) to achieve certification. Whether your organization works directly with the DoD or as part of the `Defense Industrial Base (DIB) <https://www.cisa.gov/topics/critical-infrastructure-security-and-resilience/critical-infrastructure-sectors/defense-industrial-base-sector>`_ supply chain, demonstrating compliance is mandatory to maintain contract eligibility.
+The `Cybersecurity Maturity Model Certification (CMMC) 2.0 <https://dodcio.defense.gov/CMMC/>`_ is a U.S. Department of Defense (DoD) program that requires all contractors, subcontractors, and suppliers who handle Federal Contract Information (FCI) or Controlled Unclassified Information (CUI) to achieve certification. Whether your organization works directly with the DoD or as part of the Defense Industrial Base (DIB) supply chain, demonstrating compliance is mandatory to maintain contract eligibility.
 
 Achieving CMMC compliance is not guaranteed as it depends on proper configuration, policies, and broader organizational practices outside the software’s scope. However, this document outlines how Mattermost’s features can help U.S. Department of Defense contractors and subcontractors address specific `Level 2 requirements <https://dodcio.defense.gov/Portals/0/Documents/CMMC/AssessmentGuideL2v2.pdf>`_. 
 
@@ -28,7 +28,7 @@ Authentication and Multi-Factor Authentication (MFA)
 
 Secure authentication is critical for protecting Controlled Unclassified Information (CUI). Mattermost offers several features to strengthen user authentication in alignment with CMMC requirements:
 
-**Unique User Identification**: Each Mattermost user has a unique account (username/email), satisfying the need for unique IDs (IA 3.5.1). Administrators can disable generic or shared accounts and require login via enterprise SSO or individual credentials, ensuring accountability.
+**Unique User Identification**: Each Mattermost user has a unique account (username/email), satisfying the need for unique IDs (IA 3.5.1). Administrators can :ref:`deactivate accounts <administration-guide/configure/user-management-configuration-settings:deactivate users>` that are found to be generic or shared, and when integrated with enterprise SSO or LDAP, organizational policies can prevent shared account use.
 
 **Password Policy Enforcement**: For built-in authentication, Mattermost administrators can :ref:`enforce strong password requirements <administration-guide/configure/authentication-configuration-settings:password>` (minimum length, complexity). This helps meet IA 3.5.2 by requiring robust passwords and reducing the risk of credential compromise.
 
@@ -39,7 +39,7 @@ Secure authentication is critical for protecting Controlled Unclassified Informa
 Audit Logging and Accountability
 ---------------------------------
 
-CMMC Level 2 (`NIST 800-171 <https://csrc.nist.gov/pubs/sp/800/171/r2/upd1/final>`_) places heavy emphasis on audit logging and the ability to track and monitor system activity (Audit & Accountability, AU 3.3.x controls). Mattermost provides built-in logging and monitoring features that help meet these requirements:
+CMMC Level 2 (NIST 800-171) places heavy emphasis on audit logging and the ability to track and monitor system activity (Audit & Accountability, AU 3.3.x controls). Mattermost provides built-in logging and monitoring features that help meet these requirements:
 
 **System and Application Audit Logs**: Mattermost records server and application events in an :ref:`audit log <administration-guide/manage/logging:audit logging>` (:doc:`JSON format </administration-guide/comply/embedded-json-audit-log-schema>`). This includes security-relevant events such as logins, account creations, permission changes, server configuration changes, and more. Enterprise editions can send logs to external :ref:`syslog or monitoring systems <administration-guide/manage/logging:syslog target configuration options>` in real time. These logs provide the evidence needed for AU.3.3.1 (“generate audit records for user/activity”) and support analysis of incidents.
 
