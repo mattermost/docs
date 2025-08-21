@@ -124,6 +124,11 @@ Download Legal Hold data
 
 Select the **Download** |download-icon| icon to download a copy of the preserved data to a location on your local machine. Note, no data will be available to download until at least one scheduled job is completed. This may take up to 24 hours.
 
+How to view the downloaded Legal Hold zip file
+:::::::::::::::::::::::::::::::::::::::::::::::
+
+To make use of the Legal Hold data you use the processor tool (that we release on our github repo `here <https://github.com/mattermost/mattermost-plugin-legal-hold/releases>`_). This will output a self-contained html site you can open with your browser.
+
 Step 5: Release a Legal Hold
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
