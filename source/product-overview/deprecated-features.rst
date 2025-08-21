@@ -23,6 +23,7 @@ Mattermost Server v11.0.0 (October 2025)
 - All telemetry support will be removed from Mattermost. The system will no longer collect or send telemetry data to external services.
 - Format query parameter requirement in ``/api/v4/config/client`` endpoint will be deprecated.
 - Deprecated mmctl commands and flags will be removed.
+- Removing experimental certificate-based authentication feature. ``ExperimentalSettings.ClientSideCertEnable`` must be false to start the server.
 
 Removed features by Mattermost version
 ----------------------------------------
