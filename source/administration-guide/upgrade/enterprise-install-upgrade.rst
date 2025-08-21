@@ -1,9 +1,6 @@
 Upgrading Team Edition to Enterprise Edition
 =============================================
 
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
 If you're evaluating Mattermost using Team Edition, you'll need to upgrade to Mattermost Enterprise Edition before you can start a trial or upload a license that enables Enterprise features. The open source Mattermost Team Edition is functionally identical to the commercial Enterprise Edition, but there is no ability to start a trial or unlock paid features.
 
 
@@ -63,7 +60,7 @@ GitLab Omnibus runs the open source Mattermost Team Edition. To upgrade to Matte
 
 
 Troubleshooting
-_______________
+---------------
 
 
 Permissions and limitations
