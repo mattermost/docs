@@ -181,3 +181,81 @@ How do I manage storage costs and version retention in S3?
 If you plan to use an existing S3 bucket for Legal Hold data storage, and your existing S3 bucket has versioning enabled, we strongly recommend using a dedicated S3 bucket with versioning disabled. 
 
 The Legal Hold plugin frequently modifies files in the ``legalhold`` directory, and when S3 bucket versioning is enabled, each modification creates a new version. This can result in a rapid accumulation of object versions, increased storage costs, potential performance impact, higher S3 API usage, and complicating version management over time. See the `S3 Lifecycle Rules <https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html>`_ documentation for additional details.
+
+How to view the downloaded Legal Hold zip file
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To make use of the Legal Hold data, you use the processor tool that is released on the `GitHub repository releases page <https://github.com/mattermost/mattermost-plugin-legal-hold/releases>`_. The processor tool will output a self-contained HTML site that you can open with your browser.
+
+Download the processor tool
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. Go to the `Legal Hold plugin releases page <https://github.com/mattermost/mattermost-plugin-legal-hold/releases>`_.
+2. Download the appropriate processor binary for your operating system:
+   - ``processor-v1.0.2-darwin-amd64`` for macOS (Intel)
+   - ``processor-v1.0.2-darwin-arm64`` for macOS (Apple Silicon)
+   - ``processor-v1.0.2-linux-amd64`` for Linux
+   - ``processor-v1.0.2-windows-amd64.exe`` for Windows
+
+Using the processor tool
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Once you have downloaded the processor tool and a Legal Hold zip file from Mattermost:
+
+1. **Make the processor executable** (macOS/Linux only):
+
+   .. code-block:: bash
+
+     chmod +x processor-v1.0.2-darwin-amd64
+
+2. **Run the processor on your Legal Hold zip file**:
+
+   .. code-block:: bash
+
+     ./processor-v1.0.2-darwin-amd64 /path/to/your-legal-hold.zip
+
+3. **Open the generated HTML site**: The processor will create an ``output`` directory containing a self-contained HTML site. Open the ``index.html`` file in your web browser to view the Legal Hold data in a user-friendly format.
+
+Verifying Legal Hold authenticity
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you have the Legal Hold secret key (available from the System Console), you can verify the authenticity of the Legal Hold data:
+
+.. code-block:: bash
+
+  ./processor-v1.0.2-darwin-amd64 --legal-hold-secret YOUR_SECRET_KEY /path/to/your-legal-hold.zip
+
+The processor will verify the integrity of the data and display the verification status.
+
+Processor tool features
+^^^^^^^^^^^^^^^^^^^^^^^
+
+The processor tool provides the following capabilities:
+
+- **HTML output**: Converts Legal Hold data into a readable HTML format with navigation and search functionality
+- **Data verification**: Validates the authenticity and integrity of Legal Hold data when used with the secret key  
+- **Cross-platform support**: Available for Windows, macOS, and Linux
+- **Offline viewing**: Generated HTML sites are self-contained and can be viewed without internet connectivity
+- **User-friendly interface**: Presents messages, files, and metadata in an organized, searchable format
+
+Command line options
+^^^^^^^^^^^^^^^^^^^^^
+
+The processor tool supports the following command line options:
+
+- ``--legal-hold-secret <key>``: Verify the authenticity of the Legal Hold data using the provided secret key
+- ``--output <directory>``: Specify a custom output directory for the generated HTML site (default: ``output``)
+- ``--help``: Display help information and usage examples
+
+Example usage:
+
+.. code-block:: bash
+
+  # Basic usage
+  ./processor legal-hold-data.zip
+  
+  # With secret key verification
+  ./processor --legal-hold-secret abc123... legal-hold-data.zip
+  
+  # Custom output directory
+  ./processor --output /tmp/legal-hold-review legal-hold-data.zip
