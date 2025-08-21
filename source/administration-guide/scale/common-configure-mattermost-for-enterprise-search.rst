@@ -32,6 +32,11 @@ Set **Enable Elasticsearch for search queries** to ``true``, and setting **Enabl
 
   For high post volume deployments, we strongly encourage you to read and properly configure the Mattermost :ref:`LiveIndexingBatchSize <administration-guide/configure/environment-configuration-settings:live indexing batch size>` configuration setting.
 
+
+.. warning::
+
+   For high post volume deployments, we also strongly recommend *disabling* Database Search once Elasticsearch or AWS OpenSearch is fully configured and running. The Mattermost Server will fall back on Database search if ElasticSearch or OpenSearch are unavailable which can lead to performance degradation on high post volume deployments.
+
 Once the configuration is saved, new posts made to the database are automatically indexed on the Elasticsearch or AWS OpenSearch server.
 
 Enterprise search limitations
