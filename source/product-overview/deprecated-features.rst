@@ -10,7 +10,7 @@ Mattermost Server v11.0.0 (October 2025)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - The ``TeamSettings.ExperimentalViewArchivedChannels`` setting will be deprecated in favor of a new setting, ``TeamSettings.BrowseArchivedPublicChannels``. See more details in `this forum post <https://forum.mattermost.com/t/viewing-accessing-archived-channels-v11/22626>`__.
-- Playbooks will be unsupported for Free Edition and Professional customers. Professional customers using Playbooks can contact their Customer Success Manager to discuss potential upgrade options with discounting applied as appropriate. Additional details can be found in the `Clarification on Playbooks in Mattermost v10 <https://forum.mattermost.com/t/clarification-on-playbooks-in-mattermost-v10/20563>`__ article on the Mattermost Discussion Forums.
+- Playbooks will be unsupported for Free Edition. Professional, Enterprise, and Enterprise Advanced plan will automatically be upgraded to Playbooks v2 with no expeceted downtime.
 - Experimental Bleve Search functionality will be retired. See more details in `this forum post <https://forum.mattermost.com/t/transitioning-from-bleve-search-in-mattermost-v11/22982>`__.
 - Support for MySQL will be ended. See more details in `this forum post <https://forum.mattermost.com/t/transition-to-postgresql/19551>`__.
 - The ``ExperimentalStrictCSRFEnforcement`` setting will be renamed to ``StrictCSRFEnforcement`` and the default value will be changed to ``true`` for new installations. See more details in `this forum post <https://forum.mattermost.com/t/default-value-of-the-experimental-strict-csrf-enforcement-setting-to-be-changed-to-true-v11/23139>`__.
