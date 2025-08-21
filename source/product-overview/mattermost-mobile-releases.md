@@ -58,11 +58,11 @@ We strongly recommend using the latest mobile app release available that contain
 
 Note that the below versions have not yet been tested. The information below is subject to change.
 
-| **Release** | **Releasing on** | **Support ends** | **Compatible with** |
-|:---|:---|:---|:---|
-| v2.37 | 2026-02-16 | 2026-03-15 | v11.4, v11.3, v11.2, v11.1, v10.11 |
-| v2.36 | 2026-01-16 | 2026-02-15 | v11.3, v11.2, v11.1, v11.0, v10.11 |
-| v2.35 | 2025-12-16 | 2026-01-15 | v11.2, v11.1, v11.0, v10.12, v10.11 |
-| v2.34 | 2025-11-16 | 2025-12-15 | v11.1, v11.0, v10.12, v10.11 |
-| v2.33 | 2025-10-16 | 2025-11-15 | v11.0, v10.12, v10.11, v10.5 |
-| v2.32 | 2025-09-16 | 2025-10-15 | v10.12, v10.11, v10.10, v10.5 |
+| **Release** | **Support** | **Compatible with** |
+|:---|:---|:---|
+| v2.37 | Releasing: 2026-02-16<br/>Support Ends: 2026-03-15 | v11.4, v11.3, v11.2, v11.1, v10.11 |
+| v2.36 | Releasing: 2026-01-16<br/>Support Ends: 2026-02-15 | v11.3, v11.2, v11.1, v11.0, v10.11 |
+| v2.35 | Releasing: 2025-12-16<br/>Support Ends: 2026-01-15 | v11.2, v11.1, v11.0, v10.12, v10.11 |
+| v2.34 | Releasing: 2025-11-16<br/>Support Ends: 2025-12-15 | v11.1, v11.0, v10.12, v10.11 |
+| v2.33 | Releasing: 2025-10-16<br/>Support Ends: 2025-11-15 | v11.0, v10.12, v10.11, v10.5 |
+| v2.32 | Releasing: 2025-09-16<br/>Support Ends: 2025-10-15 | v10.12, v10.11, v10.10, v10.5 |
