@@ -1,5 +1,5 @@
-Enterprise install and upgrade
-===============================
+Upgrading Team Edition to Enterprise Edition
+=============================================
 
 .. include:: ../../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
@@ -8,55 +8,22 @@ Mattermost Enterprise Edition is free to use in "team mode" without Enterprise f
 
 Once you've downloaded and installed Mattermost, start an Enterprise trial via **Product menu > System Console > Edition and License > Start trial**. View pricing and feature information online, and talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ to purchase a license key.
 
-Installing Enterprise Edition
------------------------------
-
-See the :doc:`Deploy Mattermost </deployment-guide/deployment-guide-index>` page to install Mattermost Enterprise Edition.
-
-Upgrading to Mattermost Enterprise Edition
---------------------------------------------
-
 Checking your Mattermost edition and version
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------------------
 
 To check your edition and version from the web or desktop interface, open **Product menu > About Mattermost**.
 
 - **Mattermost Enterprise Edition** indicates you can apply a license key to enable Enterprise features.
 - **Mattermost Team Edition** indicates you're using the open source version and need to upgrade (per upgrade instructions below) before a license key can be applied.
 
-Upgrading to Enterprise Edition from Mattermost Team Edition
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Upgrading to Enterprise Edition from Team Edition
+--------------------------------------------------
 
 The open source Mattermost Team Edition is functionally identical to the commercial Mattermost Enterprise Edition in its free "team mode", but there is no ability to unlock Enterprise features.
 
 To enable unlocking Enterprise features, replace the Mattermost Team Edition binary with a Mattermost Enterprise Edition binary via an :doc:`upgrade procedure </administration-guide/upgrade/upgrading-mattermost-server>`.
 
 If you'd like to back up Mattermost prior to upgrading, :doc:`the migration guide </administration-guide/onboard/migrating-to-mattermost>` outlines the process required to back up and restore your database.
-
-Upgrading to Enterprise Edition in GitLab Omnibus
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-GitLab Omnibus runs the open source Mattermost Team Edition. To upgrade to Mattermost Enterprise Edition, follow these steps:
-
-1. Disable the built-in Mattermost instance on GitLab Omnibus:
-
-- Go to ``/etc/gitlab/gitlab.rb`` and set the following line to false:
-
-.. code-block:: text
-
-   mattermost['enable'] = false
-
-- Then run the following command to apply the updated setting:
-
-.. code-block::
-  
-  sudo gitlab-ctl reconfigure
-
-2. Install Mattermost using one of the guides above.
-3. Migrate the database used by GitLab Mattermost for your new Enterprise Edition instance.
-4. (Optional) Set up `GitLab slash command integration <https://docs.gitlab.com/ee/user/project/integrations/mattermost_slash_commands.html>`_ with your Mattermost instance.
-
-If you need to migrate Team Edition prior to install, :doc:`follow the migration guide </administration-guide/onboard/migrating-to-mattermost>`.
 
 Upgrading Enterprise Edition to a newer version
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -70,7 +37,6 @@ If you're running a Linux system with x86-64 architecture, you can convert Team 
 
 .. note::
 
-  * If you're using Mattermost in a managed environment, such as GitLab Omnibus, and want to start an Enterprise Edition trial, you can use this tool. However if you plan to upgrade permanently and scale your production environment, we strongly recommend installing a new standalone server and following the appropriate :doc:`migration process </administration-guide/onboard/migrating-to-mattermost>`.
   * If you're using a modified version of Mattermost, using this tool will overwrite your changes and replace them with the official Enterprise Edition binary.
   * For versions prior to v5.27, please follow :ref:`these upgrade instructions <administration-guide/upgrade/upgrading-mattermost-server:upgrade team edition to enterprise edition>`.
 
@@ -83,7 +49,7 @@ The Mattermost version listed in **Product menu > System Console > Edition and L
 Permissions and limitations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you're using a package manager, such as GitLab Omnibus, to manage your Mattermost installation the Mattermost system user won't have sufficient permissions to perform the upgrade. If this is the case, you'll need to change the file permissions manually.
+If you're using a package manager to manage your Mattermost installation the Mattermost system user won't have sufficient permissions to perform the upgrade. If this is the case, you'll need to change the file permissions manually.
 
 Changing the permissions in this way doesn't affect your Mattermost deployment or impact any data. The permission change is done solely for the upgrade.
 
@@ -101,8 +67,6 @@ In the Mattermost System Console, retry the upgrade. When the upgrade is complet
 
   chown <OriginalFileOwner> <PathToBinaryFile>
   chmod -w <PathToBinaryFile>
-
-Note that automated updates or actions performed by other system admins after the conversion can overwrite the changes, possibly reverting the system to Team Edition. This includes the ``run gitlab-ctl configure`` command to update Mattermost within GitLab Omnibus. If this occurs, you won't be able to use Enterprise Edition features until converting the server back, but none of your data will be affected.
 
 Troubleshooting
 ~~~~~~~~~~~~~~~~
@@ -145,9 +109,48 @@ If your Mattermost deployment is part of a managed package you may receive file 
 Incompatible system architecture
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This tool is currently only compatible with Linux systems using x86-64 architecture. If you’re running Mattermost on a different architecture, please follow the manual upgrade process.
+This tool is currently only compatible with Linux systems using x86-64 architecture. If you're running Mattermost on a different architecture, please follow the manual upgrade process.
 
-Can’t retrieve Enterprise Edition binary file
+Can't retrieve Enterprise Edition binary file
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If the upgrade fails due to file retrieval failure, unavailable binary, or connectivity error, please check your proxy settings and try again. If the problem persists, follow the manual upgrade process instead.
+
+GitLab Omnibus Integration
+--------------------------
+
+Upgrading to Enterprise Edition in GitLab Omnibus
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+GitLab Omnibus runs the open source Mattermost Team Edition. To upgrade to Mattermost Enterprise Edition, follow these steps:
+
+1. Disable the built-in Mattermost instance on GitLab Omnibus:
+
+- Go to ``/etc/gitlab/gitlab.rb`` and set the following line to false:
+
+.. code-block:: text
+
+   mattermost['enable'] = false
+
+- Then run the following command to apply the updated setting:
+
+.. code-block::
+  
+  sudo gitlab-ctl reconfigure
+
+2. Install Mattermost using one of the guides above.
+3. Migrate the database used by GitLab Mattermost for your new Enterprise Edition instance.
+4. (Optional) Set up `GitLab slash command integration <https://docs.gitlab.com/ee/user/project/integrations/mattermost_slash_commands.html>`_ with your Mattermost instance.
+
+If you need to migrate Team Edition prior to install, :doc:`follow the migration guide </administration-guide/onboard/migrating-to-mattermost>`.
+
+Troubleshooting GitLab Integration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+GitLab-specific issues when upgrading from Team Edition to Enterprise Edition can occur due to the managed nature of GitLab Omnibus installations.
+
+.. note::
+
+  If you're using Mattermost in GitLab Omnibus and want to start an Enterprise Edition trial, you can use the built-in conversion tool. However if you plan to upgrade permanently and scale your production environment, we strongly recommend installing a new standalone server and following the appropriate :doc:`migration process </administration-guide/onboard/migrating-to-mattermost>`.
+
+Automated updates or actions performed by other system admins after the conversion can overwrite the changes, possibly reverting the system to Team Edition. This includes the ``run gitlab-ctl configure`` command to update Mattermost within GitLab Omnibus. If this occurs, you won't be able to use Enterprise Edition features until converting the server back, but none of your data will be affected.
