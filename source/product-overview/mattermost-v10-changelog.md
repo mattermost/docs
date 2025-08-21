@@ -20,7 +20,6 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 
 #### User Interface (UI)
  - Improved screen reader readouts and accessibility of various autocomplete components.
- - Improved screen reader readouts of various autocomplete components.
 
 #### Administration
  - Added an endpoint to check for upgradability, and correct error message and disable button are now shown if upgrade is not possible.
