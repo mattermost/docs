@@ -49,7 +49,7 @@ Mattermost Enterprise Advanced is the :doc:`Intelligent Mission Environment </pr
 
 - :doc:`Classified and Sensitive Information Controls </end-user-guide/collaborate/display-channel-banners>`
 - :doc:`Zero Trust Security </administration-guide/manage/admin/attribute-based-access-control>` with dynamic attribute-based policy controls, environmental atributes, and User Authoritative Source integration
-- :doc:`Mobile security </security-guide/security/mobile-security>` controls
+- :doc:`Mobile security </security-guide/mobile-security>` controls
 - :doc:`Air-gapped deployment workflows </deployment-guide/server/air-gapped-deployment>`
 
 Visit the :doc:`Mattermost Plans </product-overview/plans>` page to learn more about the capabilities and features available in Enterprise Advanced. 

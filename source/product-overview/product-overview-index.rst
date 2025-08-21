@@ -36,7 +36,7 @@ See the :doc:`Use Case Guide </use-case-guide/use-cases-index>` to learn how ope
 Secure collaborative workflow
 -----------------------------
 
-Built on an extensible open-core architecture, Mattermost offers an array of collaborative tools across :doc:`managed Windows, Mac, or Linux desktop applications </deployment-guide/desktop/desktop-app-deployment>`, secure web browsers with or without internet access, bring your own device (BYOD) or :doc:`mobile device management (MDM)-managed mobile </security-guide/security/mobile-security>`, and :doc:`embedded Microsoft 365 </integrations-guide/mattermost-mission-collaboration-for-m365>` user experiences.
+Built on an extensible open-core architecture, Mattermost offers an array of collaborative tools across :doc:`managed Windows, Mac, or Linux desktop applications </deployment-guide/desktop/desktop-app-deployment>`, secure web browsers with or without internet access, bring your own device (BYOD) or :doc:`mobile device management (MDM)-managed mobile </security-guide/mobile-security>`, and :doc:`embedded Microsoft 365 </integrations-guide/mattermost-mission-collaboration-for-m365>` user experiences.
 
 Messaging collaboration
 ~~~~~~~~~~~~~~~~~~~~~~~~
