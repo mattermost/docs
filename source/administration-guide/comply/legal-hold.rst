@@ -163,6 +163,49 @@ Can a Legal Hold be applied retroactively to collect past data?
 
 Yes, but this is only guaranteed for existing and future messages/files once Legal Hold is activated. It won't recover messages or files that were deleted before the Legal Hold was activated.
 
+How to view the downloaded Legal Hold zip file
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To make use of the Legal Hold data you use the processor tool (that we release on our github repo `here <https://github.com/mattermost/mattermost-plugin-legal-hold/releases>`_). This will output a self-contained html site you can open with your browser.
+
+Download the processor tool
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. Navigate to the `Legal Hold Plugin releases page <https://github.com/mattermost/mattermost-plugin-legal-hold/releases>`_.
+2. Download the appropriate processor binary for your operating system:
+   - ``processor-v1.0.2-darwin-amd64`` (macOS Intel)
+   - ``processor-v1.0.2-darwin-arm64`` (macOS Apple Silicon)
+   - ``processor-v1.0.2-linux-amd64`` (Linux)
+   - ``processor-v1.0.2-windows-amd64.exe`` (Windows)
+
+Use the processor tool
+^^^^^^^^^^^^^^^^^^^^^^
+
+The processor tool converts the downloaded Legal Hold zip file into a viewable HTML format. Here's the typical usage:
+
+.. code-block:: bash
+
+   ./processor-v1.0.2-darwin-amd64 /path/to/legal-hold.zip
+
+**Command arguments explained:**
+
+- ``./processor-v1.0.2-darwin-amd64``: The processor executable (name varies by platform)
+- ``/path/to/legal-hold.zip``: Path to the Legal Hold zip file downloaded from Mattermost
+
+**Optional arguments:**
+
+- ``--output /custom/output/path``: Specify custom output directory (default: current directory)
+- ``--legal-hold-secret <KEY>``: Verify authenticity using the Legal Hold secret key
+- ``--help``: Display help information
+
+**Example with secret verification:**
+
+.. code-block:: bash
+
+   ./processor-v1.0.2-darwin-amd64 /path/to/legal-hold.zip --legal-hold-secret abc123def456
+
+The processor will create a self-contained HTML site that you can open in any web browser to view and search through the Legal Hold data.
+
 Is Legal Hold the same as e-discovery?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
