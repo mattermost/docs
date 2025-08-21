@@ -13,3 +13,10 @@ Take Mattermost wherever you go by `installing the Mattermost mobile app <https:
 .. tip::
 
   You can set up multi-factor authentication for Mattermost if your system admin has :ref:`enabled your ability to do so <administration-guide/configure/authentication-configuration-settings:enable multi-factor authentication>`. See the :doc:`manage security preferences </end-user-guide/preferences/manage-your-security-preferences>` documentation for details.
+
+Mattermost on Chromebooks
+--------------------------
+
+Mattermost Android mobile app for Android isn't supported on Chromebooks. While some Android applications can run on ChromeOS devices, the Mattermost app isn't optimized for this environment and may not function as expected.
+
+For the best experience on Chromebooks, we recommend accessing Mattermost through the web app using the Chrome browser. Alternatively, ChromeOS users can also choose to install the web app as a Progressive Web App (PWA) directly from the browser for an app-like experience with a desktop icon and windowed view.

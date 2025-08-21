@@ -61,6 +61,7 @@ Mobile apps
 
     - `*` Integrated Windows Authentication is not supported by Mattermost mobile apps. If you use ADFS we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
     - The minimum and target content size is 320 x 460 pixels, matching the available space when the mobile app is opened in Safari on the minimum supported iOS device.
+    - The Mattermost mobile app for Android isn't supported on Chromebooks. Access Mattermost using the Chrome web browser, or install the web app as a Progressive Web App (PWA) directly from the browser for an app-like experience with a desktop icon and windowed view.
 
 Mobile web
 ^^^^^^^^^^
