@@ -181,3 +181,31 @@ How do I manage storage costs and version retention in S3?
 If you plan to use an existing S3 bucket for Legal Hold data storage, and your existing S3 bucket has versioning enabled, we strongly recommend using a dedicated S3 bucket with versioning disabled. 
 
 The Legal Hold plugin frequently modifies files in the ``legalhold`` directory, and when S3 bucket versioning is enabled, each modification creates a new version. This can result in a rapid accumulation of object versions, increased storage costs, potential performance impact, higher S3 API usage, and complicating version management over time. See the `S3 Lifecycle Rules <https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html>`_ documentation for additional details.
+
+How to view the downloaded Legal Hold zip file
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To make use of the Legal Hold data you use the processor tool (that we release on our github repo `here <https://github.com/mattermost/mattermost-plugin-legal-hold/releases#:~:text=processor%2Dv1.0.2%2Ddarwin%2Damd64>`_). This will output a self-contained html site you can open with your browser.
+
+**Download and setup the processor tool:**
+
+1. Download the appropriate processor binary for your platform from the `GitHub releases page <https://github.com/mattermost/mattermost-plugin-legal-hold/releases>`_.
+2. On macOS and Linux, make the processor executable:
+
+.. code-block:: bash
+
+   $ chmod +x processor-v1.0.2-darwin-amd64
+
+**Usage:**
+
+.. code-block:: bash
+
+   $ ./processor --legal-hold-data ./legalholddata.zip --output-path ./path/to/where/you/want/the/html/output --legal-hold-secret "your secret"
+
+**Arguments:**
+
+- ``--legal-hold-data``: Path to the Legal Hold zip file downloaded from Mattermost
+- ``--output-path``: Directory where the HTML output will be generated
+- ``--legal-hold-secret``: (Optional) The Legal Hold secret key for authenticity verification
+
+The processor will generate a self-contained HTML site that you can open in your web browser to view and search through the Legal Hold data.
