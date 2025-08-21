@@ -22,7 +22,7 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
  - Improved screen reader readouts and accessibility of various autocomplete components.
 
 #### Administration
- - Added an endpoint to check for upgradability, and correct error message and disable button are now shown if upgrade is not possible.
+ - Added an endpoint to check for upgradability. Also, a correct error message is now shown and the “Upgrade Server and Start trial” button is disabled if an upgrade is not possible.
 
 ### Bug Fixes
  - Fixed an issue where pasting a link when a text was selected didn't format the selected text as a Markdown link when editing the message.
@@ -32,8 +32,8 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
  - Fixed an issue where the **Back** button was not showing on the desktop external login redirect page.
  - Fixed an issue were unread messages from muted channels were shown in the favicon/desktop app.
  - Fixed an issue where extra content was not accounted for in the focus order.
- - Fixed an issue where results were not allowed to be read on filter without a search term.
- - Fixed an issue where some webhooks would not show.
+ - Fixed an issue where search filters were not readable by screen readers when a search term had not been typed in before reading the number of results.
+ - Fixed an issue where the content of webhook posts did not display.
 
 ### Go Version
  - v10.12 is built with Go ``v1.24.5``.
