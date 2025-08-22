@@ -25,7 +25,7 @@ redirects_map = {
 "about/mobile.html":
         "https://docs.mattermost.com/product-overview/mobile.html",
 "about/security/zero-trust.html":
-        "https://docs.mattermost.com/security-guide/security/zero-trust.html",
+        "https://docs.mattermost.com/security-guide/zero-trust.html",
 "about/certifications-and-compliance.html":
         "https://docs.mattermost.com/product-overview/certifications-and-compliance.html",
 "about/cloud-dedicated.html":
@@ -125,9 +125,9 @@ redirects_map = {
 "about/security.html":
         "https://docs.mattermost.com/security-guide/security-guide-index.html",
 "about/security/dependency-vulnerability-analysis.html":
-        "https://docs.mattermost.com/security-guide/security/dependency-vulnerability-analysis.html",
+        "https://docs.mattermost.com/security-guide/dependency-vulnerability-analysis.html",
 "about/security/mobile-security.html":
-        "https://docs.mattermost.com/security-guide/security/mobile-security.html",
+        "https://docs.mattermost.com/security-guide/mobile-security.html",
 "about/self-hosted-subscriptions.html":
         "https://docs.mattermost.com/product-overview/self-hosted-subscriptions.html",
 "about/self-sovereign-collaboration.html":
