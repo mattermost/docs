@@ -55,7 +55,7 @@ Critical infrastructure DevSecOps must align with strict security, audit, and co
 - **Apply granular role-based access controls** using :doc:`advanced permissions </administration-guide/onboard/advanced-permissions>` and :ref:`channel-specific configurations <administration-guide/manage/team-channel-members:advanced access controls>` to protect sensitive workflows.
 - **Support supply chain security coordination** by using :doc:`Playbooks </end-user-guide/workflow-automation>` to manage SBOM reviews, vendor risk analysis, and software intake workflows across internal and external teams.
 - **Enforce secure collaboration behavior** through :doc:`custom Terms of Service </administration-guide/comply/custom-terms-of-service>`, :doc:`data retention policies </administration-guide/comply/data-retention-policy>`, and user authentication tied to :doc:`SSO and Entra ID </administration-guide/onboard/sso-entraid>`.
-- **Deploy in line** with :doc:`Zero Trust </security-guide/security/zero-trust>` principles with :ref:`self-managed, segmented deployments <deployment-guide/server/server-deployment-planning:deployment options>` that enforce identity, access, and policy boundaries—suitable for classified or sovereign cloud environments.
+- **Deploy in line** with :doc:`Zero Trust </security-guide/zero-trust>` principles with :ref:`self-managed, segmented deployments <deployment-guide/server/server-deployment-planning:deployment options>` that enforce identity, access, and policy boundaries—suitable for classified or sovereign cloud environments.
 
 Get Started
 -----------
