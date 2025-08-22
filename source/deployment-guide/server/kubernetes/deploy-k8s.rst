@@ -256,11 +256,10 @@ This command can be used to review the Mattermost Operator or Mattermost server 
   - To customize your production deployment, refer to the :doc:`configuration settings documentation </administration-guide/configure/configuration-settings>`.
   - If you encounter issues during deployment, consult the :doc:`deployment troubleshooting guide </deployment-guide/deployment-troubleshooting>`.
 
-
 Frequently Asked Questions
---------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 What is the Operator's version compatibility with Mattermost Server?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 While generally speaking, the Operator should be compatible with most, or all versions of Mattermost Server, we recommend always using the latest version of the Operator in conjunction with a :doc:`supported version </product-overview/release-policy>` of Mattermost Server.
