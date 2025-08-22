@@ -194,7 +194,7 @@ To make use of the Legal Hold data, you use the processor tool (that we release 
 
 .. code-block:: bash
 
-   $ chmod +x processor-v1.0.2-darwin-amd64
+   $ chmod +x processor-vX.X.X-<platform>   # Replace with the actual filename you downloaded
 
 **Usage:**
 
