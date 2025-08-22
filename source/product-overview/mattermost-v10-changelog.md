@@ -7,6 +7,10 @@
 (release-v10.11-extended-support-release)=
 ## Release v10.11 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **10.11.2, released 2025-08-22**
+  - Mattermost v10.11.2 contains high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue where the content of webhook posts did not display [MM-64626](https://mattermost.atlassian.net/browse/MM-64626).
+  - Mattermost v10.11.2 contains no database or functional changes.
 - **10.11.1, released 2025-08-15**
   - Fixed an issue with login being kept in a web view instead of redirecting to the mobile app when using OAuth for login [MM-65015](https://mattermost.atlassian.net/browse/MM-65015).
   - Upgraded to go1.24.5, and reverted to bullseye to maintain glibc <2.34 compatibility for older deployment environments [MM-64865](https://mattermost.atlassian.net/browse/MM-64865).
