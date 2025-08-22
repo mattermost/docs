@@ -4,7 +4,7 @@ Use built-in slash commands
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-You can interact with Mattermost users, channels, conversations, and more using `built-in slash commands <#slash-commands>`_, or interact with the data model programmatically using `API endpoints <https://api.mattermost.com/>`__.
+You can interact with Mattermost users, channels, conversations, and more using `built-in slash commands <#slash-commands>`_, or interact with the data model programmatically using `API endpoints <https://api.mattermost.com/>`__. Responses are posted as the user who invoked the command, with possible username/icon overrides.
 
 Slash commands
 --------------
@@ -69,4 +69,3 @@ More useful slash commands
 - Display a list of keyboard shortcuts using ``/shortcuts``.
 - Open the **Settings** screen using ``/settings``.
 - Log out of Mattermost using ``/logout``.
-

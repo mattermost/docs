@@ -3,12 +3,12 @@ Incoming Webhooks
 
 Incoming webhooks allow external applications to post messages into Mattermost channels and direct messages. They are a simple way to receive notifications and data from other services in real-time.
 
-You can create an incoming webhook in Mattermost, which generates a unique URL. External systems send HTTP POST requests to that URL with a JSON payload containing the message text and optional formatting (attachments, images, links, etc.) 
+You can create an incoming webhook in Mattermost, which generates a unique URL. External systems send HTTP POST requests to that URL with a JSON payload containing the message text and optional formatting (attachments, images, links, etc.). Messages are created under the webhook’s configured user (typically the creator). Username/icon can be overridden in the payload.
 
 For example, your monitoring tool detects high CPU usage and sends an alert message directly into your **#devops-alerts** channel. All webhook posts will display a ``BOT`` indicator next to the username in Mattermost clients to help prevent against phishing attacks.
 
-Create an Incoming Webhook
---------------------------
+Create
+------
 
 1.  In Mattermost, go to **Product Menu > Integrations**. If you don't have the **Integrations** option, incoming webhooks may not be enabled on your Mattermost server or may be disabled for non-admins. A System Admin can enable them from **System Console > Integrations > Integration Management**.
 
@@ -36,8 +36,8 @@ Create an Incoming Webhook
   .. image:: ../images/incoming-webhook-created.png
     :alt: Dialog box showing the incoming webhook URL.
 
-Use an Incoming Webhook
-------------------------
+Use
+---
 
 To post a message, your application needs to send an HTTP POST request to the webhook URL with a JSON payload in the request body.
 
@@ -49,8 +49,8 @@ A successful request will receive an HTTP 200 response with `ok` in the response
 
 For compatibility with Slack incoming webhooks, if no ``Content-Type`` header is set, the request body must be prefixed with ``payload=``.
 
-Post examples from incoming webhooks
---------------------------------------
+Post examples
+--------------
 
 Here are some examples of simple messages posted using incoming webhooks:
 
@@ -198,3 +198,18 @@ Common error messages include:
 - **Unable to parse incoming data**: The JSON payload is malformed.
 
 If your integration posts the JSON payload as plain text instead of a rendered message, ensure the request includes the ``Content-Type: application/json`` header.
+
+Do More with Incoming Webhooks
+-------------------------------
+
+Transform basic message posts into rich, interactive notifications by including buttons, menus, and other interactive elements in your webhook messages, making them more engaging and useful for your team.
+
+- `Message Attachments <https://developers.mattermost.com/integrate/reference/message-attachments/>`_: Present rich, structured summaries such as status, priority, fields, links, or images for faster triage and comprehension. (Slack‑compatible schema.)
+- `Interactive Messages <https://developers.mattermost.com/integrate/plugins/interactive-messages>`_: Make notifications actionable with buttons or menus such as Acknowledge, Assign, or Escalate that enable an immediate user response without switching tools or context.
+- `Interactive Dialogs <https://developers.mattermost.com/integrate/plugins/interactive-dialogs/>`_: Guide users to successful outcomes when interactions need structured input or confirmation (for example, “Acknowledge with note” or “Assign to user”). Improve data quality with required fields, minimum/maximum input lengths, server‑driven user/channel pickers, validated defaults, inline field errors, placeholders, and help text that help users enter the right data the first time.
+- `Message Priority <https://developers.mattermost.com/integrate/reference/message-priority/>`_: Set ``priority`` to elevate critical posts and optionally request acknowledgements or persistent notifications.
+
+.. tip::
+
+    - Need a dedicated identity, permissions scoping, or need to post outside of webhook/command flows? Use a `bot account <https://developers.mattermost.com/integrate/reference/bot-accounts/>`_ if you need a more permanent solution than using overrides for simple branding.
+    - If your system later needs to call Mattermost APIs (e.g., post follow-ups, open dialogs), authenticate with a bot user `personal access token <https://developers.mattermost.com/integrate/reference/personal-access-token/>`_. We recommend avoiding human/System Admin personal access tokens for automations and rotating and storing tokens securely.

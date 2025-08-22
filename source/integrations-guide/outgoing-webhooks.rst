@@ -1,12 +1,12 @@
 Outgoing Webhooks
 =================
 
-Outgoing webhooks let Mattermost send data out when users post messages that match certain triggers. You can configure a trigger word or phrase in a specific channel, along with a destination URL. When someone posts a matching message, Mattermost sends the post content to the external URL via HTTP POST. The receiving system can then process the data and optionally respond with a message back to Mattermost.
+Outgoing webhooks let Mattermost send data out when users post messages that match certain triggers. You can configure a trigger word or phrase in a specific channel, along with a destination URL. When someone posts a matching message, Mattermost sends the post content to the external URL via HTTP POST. The receiving system can then process the data and optionally respond with a message back to Mattermost. Response posts are created under the outgoing webhook’s creator. Username/icon can be overridden in the response.
 
 For example, a user types ``/weather Boston`` as a message, and your webhook calls a weather API, which sends the current forecast back into the channel. When a message in a specified channel matches one of the trigger words, an HTTP POST request is sent to the designated URL, allowing the external application to respond.
 
-Create an Outgoing Webhook
---------------------------
+Create
+-------
 
 1. In Mattermost, go to **Product Menu > Integrations**. If you don't have the **Integrations** option, outgoing webhooks may not be enabled on your Mattermost server or may be disabled for non-admins. A System Admin can enable them from **System Console > Integrations > Integration Management**.
 
@@ -50,8 +50,8 @@ Create an Outgoing Webhook
 .. image:: ../images/outgoing-webhook-created.png
    :alt: Dialog box showing the outgoing webhook token.
 
-Use an Outgoing Webhook
------------------------
+Use
+---
 
 When a message triggers the webhook, Mattermost will send an HTTP POST request to the callback URL(s) you specified.
 
@@ -161,3 +161,20 @@ This response would produce a threaded reply to the original message that trigge
   :width: 400
 
 You can also include :doc:`message attachments </integrations-guide/message-attachments>` and :doc:`interactive messages </integrations-guide/interactive-messages>` in your response to create more advanced workflows.
+
+Do More with Outgoing Webhooks
+------------------------------
+
+Turn keyword-triggered callbacks into guided, in-channel workflows by returning buttons, menus, and other interactive elements in your webhook responses so users can act immediately.
+
+- `Message Attachments <https://developers.mattermost.com/integrate/reference/message-attachments/>`_: Return rich, structured results (IDs, statuses, fields, links, images) for quick confirmation and follow-up.
+- `Interactive Messages <https://developers.mattermost.com/integrate/plugins/interactive-messages/>`_: Present next-step actions (Acknowledge, Assign, Escalate) as buttons/menus directly in your response—no context switching.
+- `Interactive Dialogs <https://developers.mattermost.com/integrate/plugins/interactive-dialogs/>`_: When a button/menu click requires more info (e.g., “Acknowledge with note”, “Assign to user”), open a dialog to collect structured inputs with required fields, min/max lengths, server-driven user/channel pickers, validated defaults, inline field errors, placeholders, and help text.
+- `Message Priority <https://developers.mattermost.com/integrate/reference/message-priority/>`_: Include ``priority`` in your response to mark critical updates and optionally request acknowledgements or persistent notifications.
+
+.. note::
+
+  - Outgoing webhook responses support attachments and interactive actions. When a user clicks an action, your integration receives a signed trigger ID and can open an interactive dialog via the dialog API. You can also control visibility with the response type (in-channel vs ephemeral).
+  - Need a dedicated identity, permissions scoping, or need to post outside of webhook/command flows? Use a `bot account <https://developers.mattermost.com/integrate/reference/bot-accounts/>`_ if you need a more permanent solution than using overrides for simple branding.
+  - If your command backend needs to call Mattermost APIs (e.g., posting messages, ephemeral posts, opening interactive dialogs, etc.), authenticate with a bot user `personal access token <https://developers.mattermost.com/integrate/reference/personal-access-token/>`_. We recommend avoiding human/System Admin personal access tokens for automations and rotating and storing tokens securely.
+  - Looking to support private channels, direct messages, and autocomplete? Use a :doc:`built-in slash command </integrations-guide/built-in-slash-commands>`, or create a `custom slash command <https://developers.mattermost.com/integrate/slash-commands/custom/>`_. You can additionally tegrate Mattermost with custom integrations hosted within your internal OAuth infrastructure `using the Client Credentials OAuth 2.0 grant type <https://developers.mattermost.com/integrate/slash-commands/outgoing-oauth-connections/>`_. Mattermost also makes it easy to `migrate integrations written for Slack to Mattermost <https://developers.mattermost.com/integrate/slash-commands/slack/>`_.
