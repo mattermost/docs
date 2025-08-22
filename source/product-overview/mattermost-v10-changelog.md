@@ -4,6 +4,43 @@
 ```{include} common-esr-support-upgrade.md
 ```
 
+(release-v10.12-feature-release)=
+## Release v10.12 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
+
+**Release day: 2025-09-16**
+
+```{Important}
+If you upgrade from a release earlier than v10.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
+```
+
+### Compatibility
+ - Updated minimum Edge and Chrome versions to 138+.
+
+### Improvements
+
+#### User Interface (UI)
+ - Improved screen reader readouts and accessibility of various autocomplete components.
+
+#### Administration
+ - Added an endpoint to check for upgradability. Also, a correct error message is now shown and the “Upgrade Server and Start trial” button is disabled if an upgrade is not possible.
+
+### Bug Fixes
+ - Fixed an issue where pasting a link when a text was selected didn't format the selected text as a Markdown link when editing the message.
+ - Fixed an issue where emoji picker items were being selected by pressing the space bar.
+ - Fixed a potential crash in ``UpdatePost``.
+ - Fixed 403 errors that occurred when loading custom profile attributes for unauthenticated users.
+ - Fixed an issue where the **Back** button was not showing on the desktop external login redirect page.
+ - Fixed an issue were unread messages from muted channels were shown in the favicon/desktop app.
+ - Fixed an issue where extra content was not accounted for in the focus order.
+ - Fixed an issue where search filters were not readable by screen readers when a search term had not been typed in before reading the number of results.
+ - Fixed an issue where the content of webhook posts did not display.
+
+### Go Version
+ - v10.12 is built with Go ``v1.24.5``.
+
+### Contributors
+ - 
+
 (release-v10.11-extended-support-release)=
 ## Release v10.11 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
