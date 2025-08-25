@@ -2219,6 +2219,9 @@ See the `AWS <https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.ht
 Enable server-side encryption for Amazon S3
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. include:: ../../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
+
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Enable server-side encryption for Amazon S3.                  | - System Config path: **Environment > File Storage**                     |
 |                                                               | - ``config.json`` setting: ``".FileSettings.AmazonS3SSE: false",``       |
