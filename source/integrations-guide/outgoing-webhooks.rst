@@ -15,7 +15,7 @@ Create
 
 2. From the Integrations page, select **Outgoing Webhooks**.
 
-  .. image:: /images/manage-webhooks.png
+  .. image:: ../images/manage-webhooks.png
     :alt: Dialog box showing the option to add an outgoing webhook.
 
 3. Select **Add Outgoing Webhook**.
@@ -119,21 +119,21 @@ The JSON response can contain the following parameters:
    * - Parameter
      - Description
    * - ``text``
-     - (Required if ``attachments`` is not set) `Markdown-formatted <https://docs.mattermost.com/messaging/formatting-text.html>`_ message.
+     - (Required if ``attachments`` is not set) :doc:`Markdown-formatted </end-user-guide/collaborate/format-messages>` message.
    * - ``response_type``
      - Set to ``comment`` to reply to the message that triggered the webhook. Defaults to ``post``, which creates a new message.
    * - ``username``
-     - Overrides the default username. Requires `Enable integrations to override usernames <https://docs.mattermost.com/configure/configuration-settings.html#enable-integrations-to-override-usernames>`_ to be enabled.
+     - Overrides the default username. Requires :ref:`Enable integrations to override usernames <administration-guide/configure/integrations-configuration-settings:enable integrations to override usernames>` to be enabled.
    * - ``icon_url``
-     - Overrides the default profile picture. Requires `Enable integrations to override profile picture icons <https://docs.mattermost.com/configure/configuration-settings.html#enable-integrations-to-override-profile-picture-icons>`_ to be enabled.
+     - Overrides the default profile picture. Requires :ref:`Enable integrations to override profile picture icons <administration-guide/configure/integrations-configuration-settings:enable integrations to override profile picture icons>` to be enabled.
    * - ``attachments``
-     - (Required if ``text`` is not set) An array of :doc:`message attachment </integrations-guide/message-attachments>` objects.
+     - (Required if ``text`` is not set) An array of `message attachment <https://developers.mattermost.com/integrate/reference/message-attachments/>`_ objects.
    * - ``type``
      - Sets the post type, mainly for plugins. If set, must begin with ``custom_``.
    * - ``props``
      - A JSON object for storing metadata.
    * - ``priority``
-     - Sets the priority of the message. See :doc:`message priorities </integrations-guide/message-priorities>`.
+     - Sets the priority of the message. See `message priorities <https://developers.mattermost.com/integrate/reference/message-priority/>`_.
 
 Example with Parameters
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -160,7 +160,7 @@ This response would produce a threaded reply to the original message that trigge
   :alt: Example of a full response from an outgoing webhook.
   :width: 400
 
-You can also include :doc:`message attachments </integrations-guide/message-attachments>` and :doc:`interactive messages </integrations-guide/interactive-messages>` in your response to create more advanced workflows.
+You can also include `message attachments <https://developers.mattermost.com/integrate/reference/message-attachments/>`_ and `interactive messages <https://developers.mattermost.com/integrate/plugins/interactive-messages/>`_ in your response to create more advanced workflows.
 
 Do More with Outgoing Webhooks
 ------------------------------

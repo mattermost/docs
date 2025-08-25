@@ -28,6 +28,11 @@ A :doc:`slash command </integrations-guide/run-slash-commands>` is similar to an
 
 Slash commands enable users to trigger custom actions, such as creating Jira tickets or GitHub pull requests within Mattermost channels. See the :doc:`built-in slash commands </integrations-guide/built-in-slash-commands>` available and see the `custom slash command <https://developers.mattermost.com/integrate/slash-commands/custom/>`_ developer documentation to learn more about creating your own custom slash commands.
 
+Webhooks
+--------
+
+Webhooks are a powerful way to integrate Mattermost with other applications and services. They allow you to send real-time data from Mattermost to external systems or receive data from those systems into Mattermost. Webhooks can be used for a variety of purposes, such as sending notifications, triggering workflows, or updating external systems based on events in Mattermost. See the :doc:`webhook integrations </integrations-guide/webhook-integrations>` documentation for details on working with :doc:`incoming </integrations-guide/incoming-webhooks>` and :doc:`outgoing webhooks </integrations-guide/outgoing-webhooks>`.
+
 Bots
 -----
 

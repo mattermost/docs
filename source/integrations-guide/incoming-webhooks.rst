@@ -17,7 +17,7 @@ Create
 
 2. From the Integrations page, select **Incoming Webhooks**.
 
-  .. image:: /images/manage-webhooks.png
+  .. image:: ../images/manage-webhooks.png
     :alt: Dialog box showing the option to add an incoming webhook.
 
 3. Select **Add Incoming Webhook**.
@@ -88,22 +88,22 @@ The JSON payload can contain the following parameters:
      - Description
    * - ``text``
      - Yes (if ``attachments`` is not set)
-     - `Markdown-formatted <https://docs.mattermost.com/messaging/formatting-text.html>`_ message. Use ``@<username>``, ``@channel``, and ``@here`` for notifications.
+     - :doc:`Markdown-formatted </end-user-guide/collaborate/format-messages>` message. Use ``@<username>``, ``@channel``, and ``@here`` for notifications.
    * - ``channel``
      - No
      - Overrides the default channel. Use the channel's name (e.g., ``town-square``), not the display name. Use ``@<username>`` to send a Direct Message. The webhook can post to any public channel, and any private channel the creator is a member of.
    * - ``username``
      - No
-     - Overrides the default username. The `Enable integrations to override usernames <https://docs.mattermost.com/configure/configuration-settings.html#enable-integrations-to-override-usernames>`_ setting must be enabled.
+     - Overrides the default username. The :ref:`Enable integrations to override usernames <administration-guide/configure/integrations-configuration-settings:enable integrations to override usernames>` setting must be enabled.
    * - ``icon_url``
      - No
-     - Overrides the default profile picture URL. The `Enable integrations to override profile picture icons <https://docs.mattermost.com/configure/configuration-settings.html#enable-integrations-to-override-profile-picture-icons>`_ setting must be enabled.
+     - Overrides the default profile picture URL. The :ref:`Enable integrations to override profile picture icons <administration-guide/configure/integrations-configuration-settings:enable integrations to override profile picture icons>` setting must be enabled.
    * - ``icon_emoji``
      - No
-     - Overrides the ``icon_url`` with an emoji. Use the emoji name (e.g., ``:tada:``). The `Enable integrations to override profile picture icons <https://docs.mattermost.com/configure/configuration-settings.html#enable-integrations-to-override-profile-picture-icons>`_ setting must be enabled.
+     - Overrides the ``icon_url`` with an emoji. Use the emoji name (e.g., ``:tada:``). The :ref:`Enable integrations to override profile picture icons <administration-guide/configure/integrations-configuration-settings:enable integrations to override profile picture icons>` setting must be enabled.
    * - ``attachments``
      - Yes (if ``text`` is not set)
-     - An array of :doc:`message attachment </integrations-guide/message-attachments>` objects for richer formatting.
+     - An array of `message attachment <https://developers.mattermost.com/integrate/reference/message-attachments/>`_ objects for richer formatting.
    * - ``type``
      - No
      - Sets the post type, mainly for use by plugins. If set, must begin with ``custom_``.
@@ -112,7 +112,7 @@ The JSON payload can contain the following parameters:
      - A JSON object for storing metadata. The ``card`` property can be used to display extra Markdown-formatted text in the post's info panel (RHS). This is available in Mattermost v5.14 and later, and is not yet supported on mobile.
    * - ``priority``
      - No
-     - Sets the priority of the message. See :doc:`message priorities </integrations-guide/message-priorities>`.
+     - Sets the priority of the message. See `message priorities <https://developers.mattermost.com/integrate/reference/message-priority/>`_.
 
 Example with Parameters
 ~~~~~~~~~~~~~~~~~~~~~~~
