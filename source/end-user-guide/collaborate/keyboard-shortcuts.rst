@@ -7,8 +7,8 @@ Mattermost keyboard shortcuts
   :titlesonly:
 
   Keyboard accessibility </end-user-guide/collaborate/keyboard-accessibility>
-  Run slash commands </end-user-guide/collaborate/run-slash-commands>
-  Built-in-slash-commands </end-user-guide/collaborate/built-in-slash-commands>
+  Run slash commands </integrations-guide/run-slash-commands>
+  Built-in-slash-commands </integrations-guide/built-in-slash-commands>
 
 .. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
