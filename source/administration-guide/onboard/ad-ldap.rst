@@ -7,7 +7,7 @@ AD/LDAP setup
 Overview
 --------
 
-Mattermost offers “Same Sign-On” with Microsoft AD/LDAP (formally known as Active Directory/LDAP). Enable the same credentials used in on-prem AD/LDAP deployments to be reused in Mattermost, with optional :doc:`multi-factor authentication </administration-guide/onboard/multi-factor-authentication>`.
+Mattermost offers “Same Sign-On” with Microsoft AD/LDAP (formerly known as Active Directory/LDAP). Enable the same credentials used in on-prem AD/LDAP deployments to be reused in Mattermost, with optional :doc:`multi-factor authentication </administration-guide/onboard/multi-factor-authentication>`.
 
 AD/LDAP is a service that stores authentication and authorization details of users on your organization's network. When you integrate your AD/LDAP system with Mattermost, users can log into Mattermost without having to create new credentials. User accounts are managed in AD/LDAP, and changes are synchronized with Mattermost.
 

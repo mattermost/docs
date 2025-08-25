@@ -36,7 +36,7 @@ If you would also like to get email alerts, you can follow `these instructions <
 Configure alerts
 ----------------
 
-The `Mattermost dashboards <https://grafana.com/grafana/dashend-user-guide/boards/?search=mattermost>`_ for Grafana come with some partially pre-configured alerts on the following charts:
+The `Mattermost dashboards <https://grafana.com/grafana/dashboards/?search=mattermost>`_ for Grafana come with some partially pre-configured alerts on the following charts:
 
 * CPU Utilization Rate
 * Memory Usage

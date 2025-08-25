@@ -27,9 +27,9 @@ Install Prometheus
 
       # my global config
       global:
-        scrape_interval:     60s # By default, scrape targets every 15 seconds.
-        evaluation_interval: 60s # By default, scrape targets every 15 seconds.
-        # scrape_timeout is set to the global default (10s).
+         scrape_interval:     5s # Set to 5 seconds for optimal performance monitoring.
+         evaluation_interval: 5s # Set to 5 seconds for optimal performance monitoring.
+         # scrape_timeout is set to the global default (10s).
 
         # Attach these labels to any time series or alerts when communicating with
         # external systems (federation, remote storage, Alertmanager).
@@ -47,8 +47,8 @@ Install Prometheus
         # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
         - job_name: 'prometheus'
 
-        # Override the global default and scrape targets from this job every five seconds.
-        # scrape_interval: 5s
+         # The scrape_interval can be overridden per job if needed (5s matches the global default).
+         # scrape_interval: 5s
 
         # metrics_path defaults to '/metrics'
         # scheme defaults to 'http'.
@@ -106,16 +106,16 @@ To help you get started, you can download three sample dashboards shared in Graf
 
 .. tip::
 
-   See `this Grafana guide <https://grafana.com/docs/grafana/v7.5/dashend-user-guide/boards/export-import/>`_ to learn how to import Grafana dashboards either from the UI or from the HTTP API.
+   See `this Grafana guide <https://grafana.com/docs/grafana/v7.5/dashboards/export-import/>`_ to learn how to import Grafana dashboards either from the UI or from the HTTP API.
 
-- `Mattermost Performance Monitoring v2 <https://grafana.com/grafana/dashend-user-guide/boards/15582-mattermost-performance-monitoring-v2/>`_, which contains detailed charts for performance monitoring including application, cluster, job server, and system metrics.
-- `Mattermost Notification Health Monitoring <https://grafana.com/grafana/dashend-user-guide/boards/21305-mattermost-notification-health>`_, which can be used to track different types of notifications sent from Mattermost. Accessing and enabling Mattermost Notification Health Monitoring requires the feature flag ``NotificationMonitoring`` to be set to ``true``. System admins can :ref:`disable notification monitoring data collection <administration-guide/configure/site-configuration-settings:enable notification monitoring>` through the System Console.
-- `Mattermost Web App Performance Metrics <https://grafana.com/grafana/dashend-user-guide/boards/21460-web-app-metrics/>`_, which contains detailed metrics for client-side performance, including web vitals and Mattermost-specifc metrics.
-- `Mattermost Desktop App Performance Metrics <https://grafana.com/grafana/dashend-user-guide/boards/22736-desktop-app-metrics/>`_, which contains detailed metrics for client-side desktop performance, including CPU and memory usage metrics.
-- `Mattermost Mobile App Performance Metrics <https://grafana.com/grafana/dashend-user-guide/boards/21695-mobile-performance-metrics/>`_, which contains detailed metrics for client-side mobile performance, including web vitals and Mattermost-specifc metrics.
-- `Mattermost Threaded Discussion Metrics <https://grafana.com/grafana/dashend-user-guide/boards/15581-collapsed-reply-threads-performance/>`_, which contains detailed metrics on the queries involved in our threaded discussions feature.
-- `Mattermost Performance KPI Metrics <https://grafana.com/grafana/dashend-user-guide/boards/2539-mattermost-performance-kpi-metrics/>`_, which contains key metrics for monitoring performance and system health.
-- `Mattermost Performance Monitoring (Bonus Metrics) <https://grafana.com/grafana/dashend-user-guide/boards/2545-mattermost-performance-monitoring-bonus-metrics/>`_, which contains additional metrics such as emails sent or files uploaded, which may be important to monitor in some deployments.
+- `Mattermost Performance Monitoring v2 <https://grafana.com/grafana/dashboards/15582-mattermost-performance-monitoring-v2/>`_, which contains detailed charts for performance monitoring including application, cluster, job server, and system metrics.
+- `Mattermost Notification Health Monitoring <https://grafana.com/grafana/dashboards/21305-mattermost-notification-health/>`_, which can be used to track different types of notifications sent from Mattermost. Accessing and enabling Mattermost Notification Health Monitoring requires the feature flag ``NotificationMonitoring`` to be set to ``true``. System admins can :ref:`disable notification monitoring data collection <administration-guide/configure/site-configuration-settings:enable notification monitoring>` through the System Console.
+- `Mattermost Web App Performance Metrics <https://grafana.com/grafana/dashboards/21460-web-app-metrics/>`_, which contains detailed metrics for client-side performance, including web vitals and Mattermost-specifc metrics.
+- `Mattermost Desktop App Performance Metrics <https://grafana.com/grafana/dashboards/22736-desktop-app-metrics/>`_, which contains detailed metrics for client-side desktop performance, including CPU and memory usage metrics.
+- `Mattermost Mobile App Performance Metrics <https://grafana.com/grafana/dashboards/21695-mobile-performance-metrics/>`_, which contains detailed metrics for client-side mobile performance, including web vitals and Mattermost-specifc metrics.
+- `Mattermost Threaded Discussion Metrics <https://grafana.com/grafana/dashboards/15581-collapsed-reply-threads-performance/>`_, which contains detailed metrics on the queries involved in our threaded discussions feature.
+- `Mattermost Performance KPI Metrics <https://grafana.com/grafana/dashboards/2539-mattermost-performance-kpi-metrics/>`_, which contains key metrics for monitoring performance and system health.
+- `Mattermost Performance Monitoring (Bonus Metrics) <https://grafana.com/grafana/dashboards/2545-mattermost-performance-monitoring-bonus-metrics/>`_, which contains additional metrics such as emails sent or files uploaded, which may be important to monitor in some deployments.
 
 What's collected?
 -----------------

@@ -6,7 +6,7 @@ Mattermost Agents Admin Guide
 
 .. note::
 
-  Mattermost Agents is formally known as Mattermost Copilot.
+  Mattermost Agents is formerly known as Mattermost Copilot.
 
 .. toctree::
    :maxdepth: 1

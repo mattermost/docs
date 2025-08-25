@@ -15,6 +15,8 @@ Attribute-based access controls require defined user attributes that are either 
 
 Once user attributes are defined, go to **System Console > System Attributes > Attribute-Based Access** to enable attribute-based access controls for your Mattermost instance. This functionality requires a Mattermost Enterprise Advanced license.
 
+From Mattermost v10.11, user-managed attributes are excluded from attribute-based access control (ABAC) rules by default for security reasons. This prevents access control policies from being circumvented by users editing their own profile attributes. To include user-managed attributes in ABAC rules, a system admin must explicitly enable the ``EnableUserManagedAttributes`` configuration setting. See the :ref:`user attribute <administration-guide/manage/admin/user-attributes:before you begin>` documentation for details on enabling this feature. This configuration setting is available only in Enterprise Edition Advanced and is disabled by default.
+
 Once enabled, you have 2 ways to configure access policies in Mattermost:
 
 - `Attribute-based access rules <#define-access-control-policies>`__ you can assign across multiple channels.
@@ -36,37 +38,37 @@ You can add multiple rules to a single policy, and each rule can include multipl
 
 4. Define the attribute-based access rules to restrict channel membership.
 
-  .. tab:: Simple Mode
+    .. tab:: Simple Mode
 
-    Simple Mode is ideal for simple and straightforward access control scenarios. Each row is a single condition that must be met for a user to comply with the policy. Simple Mode only supports simple conditions without nested logic or mixed logical operators. All rules are combined with a logical AND operator ``&&``.
+      Simple Mode is ideal for simple and straightforward access control scenarios. Each row is a single condition that must be met for a user to comply with the policy. Simple Mode only supports simple conditions without nested logic or mixed logical operators. All rules are combined with a logical AND operator ``&&``.
 
-    1. Select **Add attribute** and select the attribute you want to use for access control.
-    2. Specify how you want the attribute to match the user profile. You can choose from the following options:
+      1. Select **Add attribute** and select the attribute you want to use for access control.
+      2. Specify how you want the attribute to match the user profile. You can choose from the following options:
 
-        - **Is**: The attribute must be an exact match of the value.
-        - **Is not**: The attribute must not contain specified value.
-        - **In**: The attribute must match at least one value.
-        - **Starts with**: The attribute value must start with the specified value.
-        - **Ends with**: The attribute value must end with the specified value.
-        - **Contains**: The attribute value must exist somewhere with the specified value.
+          - **Is**: The attribute must be an exact match of the value.
+          - **Is not**: The attribute must not contain specified value.
+          - **In**: The attribute must match at least one value.
+          - **Starts with**: The attribute value must start with the specified value.
+          - **Ends with**: The attribute value must end with the specified value.
+          - **Contains**: The attribute value must exist somewhere with the specified value.
 
-    3. Specify the attribute values that users must have to be granted access to the channel. 
+      3. Specify the attribute values that users must have to be granted access to the channel. 
 
-  .. tab:: Advanced Mode
+    .. tab:: Advanced Mode
 
-    Advanced Mode is ideal for complex access control scenarios that require CEL syntax to combine multiple conditions with logical operators that support rules like ``user.<attribute> == <value>``, using ``&&`` / ``||`` (and/or) for multiple conditions, and ``()`` to group conditions. The CEL Expression Editor provides real-time syntax validation and feedback, as well as context-aware autocomplete for attributes, operators, and attribute values.
+      Advanced Mode is ideal for complex access control scenarios that require CEL syntax to combine multiple conditions with logical operators that support rules like ``user.<attribute> == <value>``, using ``&&`` / ``||`` (and/or) for multiple conditions, and ``()`` to group conditions. The CEL Expression Editor provides real-time syntax validation and feedback, as well as context-aware autocomplete for attributes, operators, and attribute values.
 
-    You can also start defining rules in Simple Mode and then switch to Advanced Mode to refine the rules further as needed. However, you'll be blocked from switching from Advanced back to Simple Mode if one of the following are true:
+      You can also start defining rules in Simple Mode and then switch to Advanced Mode to refine the rules further as needed. However, you'll be blocked from switching from Advanced back to Simple Mode if one of the following are true:
 
-    * Mixed logical operators are used between conditions.
-    * Nested logic/grouping (parentheses) are present.
-    * Unsupported operators or expressions are detected.
+      * Mixed logical operators are used between conditions.
+      * Nested logic/grouping (parentheses) are present.
+      * Unsupported operators or expressions are detected.
 
-    The syntax structure is ``user.<attribute> <operator> <value>``.
+      The syntax structure is ``user.<attribute> <operator> <value>``.
 
-    As you type, autocompletes show available attributes. As you select attributes, autocomplete suggests appropriate CEL operators. After selecting an operator, when attribute values are pre-defined, autocomplete suggests values to choose from. Mattermost will explicitly indicate issues such as missing operators, incorrect syntax, or incomplete conditions.
+      As you type, autocompletes show available attributes. As you select attributes, autocomplete suggests appropriate CEL operators. After selecting an operator, when attribute values are pre-defined, autocomplete suggests values to choose from. Mattermost will explicitly indicate issues such as missing operators, incorrect syntax, or incomplete conditions.
 
-    Select the **Validate syntax** bar to check the syntax of your rule. If the syntax is valid, the bar will turn green and display a message indicating that the syntax is valid. If there are any issues, the bar will turn red and display an error message.
+      Select the **Validate syntax** bar to check the syntax of your rule. If the syntax is valid, the bar will turn green and display a message indicating that the syntax is valid. If there are any issues, the bar will turn red and display an error message.
 
 Test rules
 ~~~~~~~~~~~

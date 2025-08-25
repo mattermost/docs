@@ -25,7 +25,7 @@ redirects_map = {
 "about/mobile.html":
         "https://docs.mattermost.com/product-overview/mobile.html",
 "about/security/zero-trust.html":
-        "https://docs.mattermost.com/security-guide/security/zero-trust.html",
+        "https://docs.mattermost.com/security-guide/zero-trust.html",
 "about/certifications-and-compliance.html":
         "https://docs.mattermost.com/product-overview/certifications-and-compliance.html",
 "about/cloud-dedicated.html":
@@ -125,9 +125,9 @@ redirects_map = {
 "about/security.html":
         "https://docs.mattermost.com/security-guide/security-guide-index.html",
 "about/security/dependency-vulnerability-analysis.html":
-        "https://docs.mattermost.com/security-guide/security/dependency-vulnerability-analysis.html",
+        "https://docs.mattermost.com/security-guide/dependency-vulnerability-analysis.html",
 "about/security/mobile-security.html":
-        "https://docs.mattermost.com/security-guide/security/mobile-security.html",
+        "https://docs.mattermost.com/security-guide/mobile-security.html",
 "about/self-hosted-subscriptions.html":
         "https://docs.mattermost.com/product-overview/self-hosted-subscriptions.html",
 "about/self-sovereign-collaboration.html":
@@ -2229,7 +2229,7 @@ redirects_map = {
 "deployment/deployment#file-store.html":
 	"https://docs.mattermost.com/deployment-guide/deployment-overview.html#file-store",
 "deployment/desktop-app-deployment.html":
-	"https://docs.mattermost.com/deployment-guide/desktop-app.html",
+	"https://docs.mattermost.com/deployment-guide/desktop/desktop-app-deployment.html",
 "deployment/elasticsearch.html":
 	"https://docs.mattermost.com/administration-guide/scale/elasticsearch-setup.html",
 "deployment/enterprise-deployment-guide.html":
@@ -2253,7 +2253,7 @@ redirects_map = {
 "deployment/metrics.html":
 	"https://docs.mattermost.com/administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring.html",
 "deployment/mobile-app-deployment.html":
-	"https://docs.mattermost.com/deployment-guide/mobile-overview.html",
+	"https://docs.mattermost.com/deployment-guide/mobile/mobile-app-deployment.html",
 "deployment/on-boarding.html":
 	"https://docs.mattermost.com/administration-guide/upgrade/admin-onboarding-tasks.html",
 "deployment/on-boarding.html#common-tasks":

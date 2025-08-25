@@ -53,7 +53,7 @@ The volume configuration for Prometheus should look like the code below in the `
 
 Once you set this up, run ``docker-compose`` as described in `Dockprom Repository <https://github.com/stefanprodan/dockprom?tab=readme-ov-file#install>`__. 
 
-You can also use our `Mattermost Performance Monitoring v2 <https://grafana.com/grafana/dashend-user-guide/boards/15582-mattermost-performance-monitoring-v2/>`_ dashboard by simply importing it into Grafana.
+You can also use our `Mattermost Performance Monitoring v2 <https://grafana.com/grafana/dashboards/15582-mattermost-performance-monitoring-v2/>`_ dashboard by simply importing it into Grafana.
 
 1. Open Grafana (``<localhost>:3000`` by default) and then log into it. 
 2. Once you log in, go to the **Plus** |plus| icon on the left sidebar, and then select **Import**.
