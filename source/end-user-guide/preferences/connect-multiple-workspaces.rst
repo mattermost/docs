@@ -37,7 +37,7 @@ Add a server
   3. Enter the server's Display Name.
   4. Optionally, enter a **Pre-authentication Secret** if required by your server configuration.
 
-    .. image:: ../../images/desktop-server-add-psk.png
+    .. image:: ../../images/desktop-server-add-2.jpg
       :alt: Desktop app server setup dialog showing the optional pre-authentication secret field.
 
 
@@ -81,7 +81,7 @@ Edit a server
 
   2. Modify the server's display name, URL, or pre-authentication secret, then select **Save**.
 
-    .. image:: ../../images/desktop-edit-server-psk.png
+    .. image:: ../../images/desktop-edit-server-2.jpg
       :alt: Edit server dialog showing display name, URL, and pre-authentication secret fields.
 
 .. tab:: Mobile
