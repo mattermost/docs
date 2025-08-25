@@ -7,13 +7,12 @@ Integrations Guide
    :titlesonly:
 
    pre-built-integrations
-   microsoft-integrations
    run-slash-commands
    webhook-integrations
 
 Mattermost provides a variety of methods to add functionality and customize the end-user experience to suit your organization's needs, whether you want to add new user capabilities with slash commands, build an advanced chatbot, or completely change the functionality of your server.
 
-Learn about the :doc:`pre-built integrations </integrations-guide/pre-built-integrations>` that come with your Mattermost deployment, :doc:`integrations specific to the Microsoft ecosystem </integrations-guide/microsoft-integrations>`, and :doc:`webhook integrations </integrations-guide/webhook-integrations>`.
+Learn about the :doc:`pre-built integrations </integrations-guide/pre-built-integrations>` that come with your Mattermost deployment, :ref:`integrations specific to the Microsoft ecosystem <integrations-guide/pre-built-integrations:microsoft integrations>`, and :doc:`webhook integrations </integrations-guide/webhook-integrations>`.
 
 In addition, a wide array of open source integrations are available and ready to use from Mattermost and our community. To see a list of open source integrations available, please see the `Mattermost Marketplace <https://mattermost.com/marketplace/>`_.
 

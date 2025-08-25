@@ -4355,7 +4355,7 @@ redirects_map = {
 "guides/pre-built-integrations.html":
         "https://docs.mattermost.com/integrations-guide/pre-built-integrations.html",
 "guides/microsoft-integrations.html":
-        "https://docs.mattermost.com/integrations-guide/microsoft-integrations.html",
+        "https://docs.mattermost.com/integrations-guide/pre-built-integrations/microsoft-integrations.html",
 
 # URL restructuring redirects for Issue #8172 - Updated URL Slugs to match new Guides
 # Product Overview Guide redirects
