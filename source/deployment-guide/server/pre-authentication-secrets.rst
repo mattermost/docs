@@ -3,9 +3,7 @@ Pre-authentication secrets
 
 For mobile and desktop applications only, Mattermost deployments can use a reverse proxy to validate pre-authentication secrets before allowing requests to reach the Mattermost server. This adds an additional security layer by checking for the ``X-Mattermost-Preauth-Secret`` header.
 
-.. note::
-
-  Pre-authentication secrets are only supported for mobile and desktop applications. Web browser clients do not support this feature.
+Pre-authentication secrets are only supported for mobile and desktop applications. Web browser clients don't support this feature.
 
 .. important::
 
