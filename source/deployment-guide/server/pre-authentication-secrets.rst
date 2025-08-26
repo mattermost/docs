@@ -7,7 +7,7 @@ Pre-authentication secrets are only supported for mobile and desktop application
 
 .. important::
 
-  The ``/api/v4/notifications/ack`` endpoint should be whitelisted (allowed without pre-authentication secret validation) to ensure proper notification acknowledgment functionality for mobile applications.
+  We recommend whitelisting the ``/api/v4/notifications/ack`` endpoint (allowed without pre-authentication secret validation) to ensure proper notification acknowledgement functionality for mobile applications.
 
 NGINX configuration example
 ---------------------------
