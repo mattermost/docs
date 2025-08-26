@@ -25,33 +25,33 @@ Mattermost Server v11.0.0 (October 2025)
 - Experimental certificate-based authentication feature will be removed. ``ExperimentalSettings.ClientSideCertEnable`` must be ``false`` to start the server.
 - Separate notification log file will be deprecated. If admins want to continue using a separate log file for notification logs, they can use the ``AdvancedLoggingJSON`` configuration. An example configuration to use is:
 
-.. code-block:: sql
+.. code-block:: sh
 
- { 
-   "LogSettings": { 
-     "AdvancedLoggingJSON": { 
-       "notifications_file": { 
-         "type": "file", 
-         "format": "json", 
-         "levels": [ 
-             {"id": 300, "name": "NotificationError"}, 
-             {"id": 301, "name": "NotificationWarn"}, 
-             {"id": 302, "name": "NotificationInfo"}, 
-             {"id": 303, "name": "NotificationDebug"}, 
-             {"id": 304, "name": "NotificationTrace"} 
-         ], 
-         "options": { 
-             "filename": "notifications.log", 
-             "max_size": 100, 
-             "max_age": 0, 
-             "max_backups": 0, 
-             "compress": true 
-         }, 
-         "maxqueuesize": 1000 
-       } 
-     } 
-   } 
- }
+  {
+    "LogSettings": {
+      "AdvancedLoggingJSON": {
+        "notifications_file": {
+          "type": "file",
+          "format": "json",
+          "levels": [
+              {"id": 300, "name": "NotificationError"},
+              {"id": 301, "name": "NotificationWarn"},
+              {"id": 302, "name": "NotificationInfo"},
+              {"id": 303, "name": "NotificationDebug"},
+              {"id": 304, "name": "NotificationTrace"}
+          ],
+          "options": {
+              "filename": "notifications.log",
+              "max_size": 100,
+              "max_age": 0,
+              "max_backups": 0,
+              "compress": true
+          }, 
+          "maxqueuesize": 1000 
+        }
+      }
+    }
+  }
 
 Removed features by Mattermost version
 ----------------------------------------
