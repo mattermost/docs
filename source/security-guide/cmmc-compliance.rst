@@ -87,4 +87,6 @@ CMMC Level 2 includes controls to safeguard information during storage and trans
 
 **Antivirus Scanning**: To address system integrity requirements (SI 3.14.5 for scanning files for malware), Mattermost can integrate with antivirus tools. A `ClamAV plugin <https://mattermost.com/marketplace/antivirus-plugin/>`_ is available that scans files uploaded to Mattermost for viruses and malware. When enabled, this helps ensure that malicious files are detected and quarantined, protecting users and meeting the intent of controls on detecting and protecting against malware (SI 3.14.4 and SI 3.14.5). Administrators should also keep the Mattermost server host up-to-date with security patches and monitor for vulnerabilities (SI 3.14.1/3.14.2), as part of overall system integrity maintenance.
 
-`Book a live demo with a Mattermost expert <https://mattermost.com/request-demo/>`_ to explore tailored solutions for your organization’s secure collaboration needs.
+Register to our `Trust site <https://trust.mattermost.com/>`_ to see a full listing of all controls mapped to Mattermost features. 
+
+`Book a live demo <https://mattermost.com/request-demo/>`_  or `talk to a Mattermost expert <https://mattermost.com/contact-sales/>`_ to explore tailored solutions for your organization’s secure collaboration needs. Or try Mattermost yourself with a `1-hour preview <https://mattermost.com/sign-up/>`_ for instant access to a live sandbox environment.
