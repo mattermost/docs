@@ -2890,6 +2890,8 @@ redirects_map = {
         "https://developers.mattermost.com/integrate/reference/bot-accounts/",
 "integrations/cloud-slash-commands.html":
         "https://developers.mattermost.com/integrate/slash-commands/",
+"integrations-guide/pre-built-integrations.html":
+        "https://docs.mattermost.com/integrations-guide/popular-integrations.html",
 
 # Manage redirects
 "manage/admin/attribute-based-access-control.html":
@@ -4353,9 +4355,9 @@ redirects_map = {
 "about/integrations.html":
         "https://docs.mattermost.com/integrations-guide/integrations-guide-index.html",
 "guides/pre-built-integrations.html":
-        "https://docs.mattermost.com/integrations-guide/pre-built-integrations.html",
+        "https://docs.mattermost.com/integrations-guide/popular-integrations.html",
 "guides/microsoft-integrations.html":
-        "https://docs.mattermost.com/integrations-guide/microsoft-integrations.html",
+        "https://docs.mattermost.com/integrations-guide/popular-integrations/microsoft-integrations.html",
 
 # URL restructuring redirects for Issue #8172 - Updated URL Slugs to match new Guides
 # Product Overview Guide redirects

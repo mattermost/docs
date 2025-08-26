@@ -6,20 +6,19 @@ Integrations Guide
    :hidden:
    :titlesonly:
 
-   pre-built-integrations
-   microsoft-integrations
+   popular-integrations
    run-slash-commands
    webhook-integrations
 
 Mattermost provides a variety of methods to add functionality and customize the end-user experience to suit your organization's needs, whether you want to add new user capabilities with slash commands, build an advanced chatbot, or completely change the functionality of your server.
 
-Learn about the :doc:`pre-built integrations </integrations-guide/pre-built-integrations>` that come with your Mattermost deployment, :doc:`integrations specific to the Microsoft ecosystem </integrations-guide/microsoft-integrations>`, and :doc:`webhook integrations </integrations-guide/webhook-integrations>`.
+Learn about the :doc:`popluar pre-built integrations </integrations-guide/popular-integrations>` that come with your Mattermost deployment, :ref:`integrations specific to the Microsoft ecosystem <integrations-guide/popular-integrations:microsoft integrations>`, and :doc:`webhook integrations </integrations-guide/webhook-integrations>`.
 
 In addition, a wide array of open source integrations are available and ready to use from Mattermost and our community. To see a list of open source integrations available, please see the `Mattermost Marketplace <https://mattermost.com/marketplace/>`_.
 
 For self-hosted deployments in small setups, you might host integrations on the same server on which Mattermost is installed. For larger deployments, you can set up a separate server for integrations, or add them to the server on which the external application is hosted. For example, if you're self-hosting a Jira server, you could deploy a Jira integration on the Jira server itself. When self-hosting restrictions are less strict, AWS, Heroku, and other public cloud options can also be used.
 
-You can customize Mattermost with the following capabilities and frameworks.
+You can customize Mattermost with the following integration capabilities and frameworks.
 
 Slash commands
 ---------------
