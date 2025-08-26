@@ -37,6 +37,4 @@ Here's an example partial NGINX configuration that validates the pre-authenticat
       }
   }
 
-.. important::
-
-  Replace ``your-secure-pre-auth-secret-here`` with a strong, unique secret that will be configured in your mobile and desktop applications. Store this secret securely and rotate it regularly as part of your security practices.
+Replace ``your-secure-pre-auth-secret-here`` with a strong, unique secret that will be configured in your mobile and desktop applications. Store this secret securely and rotate it regularly as part of your security practices.
