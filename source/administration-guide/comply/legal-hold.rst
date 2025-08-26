@@ -206,6 +206,4 @@ To make use of the Legal Hold data, you use the `processor tool <https://github.
 
 - ``--legal-hold-data``: Path to the Legal Hold zip file downloaded from Mattermost
 - ``--output-path``: Directory where the HTML output will be generated
-- ``--legal-hold-secret``: (Optional) The Legal Hold secret key for authenticity verification
-
-The processor will generate a self-contained HTML site that you can open in your web browser to view and search through the Legal Hold data.
+- ``--legal-hold-secret``: (Optional) Used as a security measure for an operator to ensure the authenticity of a downloaded zip file. The operator can copy the key corresponding to a particular "hold" from the Legal Hold Plugin settings page in the System Console by selecting the **Show** |preview-icon| icon next to the Legal Hold entry.
