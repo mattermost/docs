@@ -181,3 +181,43 @@ How do I manage storage costs and version retention in S3?
 If you plan to use an existing S3 bucket for Legal Hold data storage, and your existing S3 bucket has versioning enabled, we strongly recommend using a dedicated S3 bucket with versioning disabled. 
 
 The Legal Hold plugin frequently modifies files in the ``legalhold`` directory, and when S3 bucket versioning is enabled, each modification creates a new version. This can result in a rapid accumulation of object versions, increased storage costs, potential performance impact, higher S3 API usage, and complicating version management over time. See the `S3 Lifecycle Rules <https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html>`_ documentation for additional details.
+
+How to view the downloaded Legal Hold zip file
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To make use of the Legal Hold data you use the processor tool that we release on our GitHub repo `here <https://github.com/mattermost/mattermost-plugin-legal-hold/releases>`__. This will output a self-contained HTML site you can open with your browser.
+
+Download and setup the processor tool
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. Visit the `mattermost-plugin-legal-hold releases page <https://github.com/mattermost/mattermost-plugin-legal-hold/releases>`__.
+2. Download the processor binary for your operating system:
+   - **macOS (Intel)**: ``processor-vX.X.X-darwin-amd64``
+   - **macOS (Apple Silicon)**: ``processor-vX.X.X-darwin-arm64``
+   - **Linux**: ``processor-vX.X.X-linux-amd64``
+   - **Windows**: ``processor-vX.X.X-windows-amd64.exe``
+3. Make the processor executable (macOS and Linux only):
+
+.. code-block:: bash
+
+   chmod +x processor-vX.X.X-darwin-amd64
+
+Using the processor tool
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+The basic usage of the processor tool is:
+
+.. code-block:: bash
+
+   $ ./processor --legal-hold-data ./legalholddata.zip --output-path ./path/to/where/you/want/the/html/output --legal-hold-secret "your secret"
+
+**Command arguments:**
+
+- ``--legal-hold-data``: Path to the Legal Hold zip file downloaded from Mattermost
+- ``--output-path``: Directory where the HTML output will be generated
+- ``--legal-hold-secret``: (Optional) Used as a security measure for an operator to ensure the authenticity of a downloaded zip file. The operator can copy the key corresponding to a particular "hold" from the Legal Hold Plugin settings page in the System Console by selecting the **Show** |preview-icon| icon next to the Legal Hold entry.
+
+.. image:: ../../images/legal-hold-secret.png
+  :alt: Legal Hold Secret Key interface showing the Show button to reveal the secret key for authenticity verification.
+
+The processor tool will generate a self-contained HTML site that you can open in any web browser to view and search through the Legal Hold data offline.
