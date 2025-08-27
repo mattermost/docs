@@ -143,7 +143,7 @@ Features include:
 - Pre-packaged integrations with most common developer tools, including Jira, GitHub, GitLab, Zoom, and more.
 - Tools for :doc:`custom branding </administration-guide/configure/custom-branding-tools>` and :doc:`themes </end-user-guide/preferences/customize-your-theme>`.
 - :doc:`Multi-factor authentication </administration-guide/onboard/multi-factor-authentication>`.
-- Single Sign-on with :doc:`GitLab </administration-guide/onboard/sso-gitlab>` using the OAuth 2.0 standard.
+- Single Sign-on with :doc:`GitLab </administration-guide/onboard/sso-gitlab>` using the OAuth 2.0 standard. **Note**: GitLab SSO is no longer available starting with Mattermost server v11.0.0.
 - :doc:`Granular system permissions </administration-guide/onboard/advanced-permissions>`.
 - Highly customizable `third-party bots, integrations <https://mattermost.com/marketplace/#publicApps>`_, and :doc:`command line tools </administration-guide/manage/mmctl-command-line-tool>`.
 - Extensive integration support via `webhooks, APIs, drivers <https://developers.mattermost.com/integrate/other-integrations/>`_, and `third-party extensions <https://mattermost.com/marketplace/>`_.
