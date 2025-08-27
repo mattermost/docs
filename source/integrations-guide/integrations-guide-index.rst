@@ -105,7 +105,7 @@ If you have an integration that outputs a payload in a different format, you nee
 If there's no translation layer, Mattermost won't understand the data you're sending.
 
 What are attachments?
----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
 When "attachments" are mentioned in Mattermost integrations documentation, it refers to Slack's message attachments functionality. These "attachments" can be optionally added as an array in the data sent by an integration, and are used to customize the formatting of the message.
 
