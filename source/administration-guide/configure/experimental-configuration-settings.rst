@@ -1049,52 +1049,64 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 
 .. config:setting:: enable-client-side-certification
-  :displayname: Enable client-side certification (Experimental)
+  :displayname: Enable client-side certification (Experimental) - Removed in v11.0
   :systemconsole: N/A
   :configjson: ClientSideCertEnable
   :environment: N/A
 
-  - **true**: Enables client-side certification for your Mattermost server.
+  .. important::
+     This configuration setting has been removed in Mattermost server v11.0. Setting ``ClientSideCertEnable`` to ``true`` will prevent the server from starting in v11.0 and later versions.
+
+  - **true**: Enables client-side certification for your Mattermost server. (Mattermost v10.12 and earlier only)
   - **false**: **(Default)** Client-side certification is disabled.
 
-Enable client-side certification
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enable client-side certification (Removed in v11.0)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-**True**: Enables client-side certification for your Mattermost server. See :doc:`the documentation </administration-guide/onboard/certificate-based-authentication>` to learn more.
+.. important::
+   This feature has been removed in Mattermost server v11.0. The configuration setting is no longer available and will prevent server startup if present in the configuration file.
+
+**True**: Enables client-side certification for your Mattermost server on versions v10.12 and earlier. See :doc:`the documentation </administration-guide/onboard/certificate-based-authentication>` to learn more.
 
 **False**: Client-side certification is disabled.
 
 +------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ClientSideCertEnable": false`` with options ``true`` and ``false``. |
+| This feature's ``config.json`` setting was ``"ClientSideCertEnable": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: client-side-certification-login-method
-  :displayname: Client-side certification login method (Experimental)
+  :displayname: Client-side certification login method (Experimental) - Removed in v11.0
   :systemconsole: N/A
   :configjson: ClientSideCertCheck
   :environment: N/A
 
-  - **primary**: After the client side certificate is verified, user's email is retrieved from the certificate and is used to log in without a password.
-  - **secondary**: **(Default)** After the client side certificate is verified, user's email is retrieved from the certificate and matched against the one supplied by the user. If they match, the user logs in with regular email/password credentials.
+  .. important::
+     This configuration setting has been removed in Mattermost server v11.0 along with the certificate-based authentication feature.
 
-Client-side certification login method
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  - **primary**: After the client side certificate is verified, user's email is retrieved from the certificate and is used to log in without a password. (Mattermost v10.12 and earlier only)
+  - **secondary**: **(Default)** After the client side certificate is verified, user's email is retrieved from the certificate and matched against the one supplied by the user. If they match, the user logs in with regular email/password credentials. (Mattermost v10.12 and earlier only)
+
+Client-side certification login method (Removed in v11.0)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-Used in combination with the ``ClientSideCertEnable`` configuration setting.
+.. important::
+   This feature has been removed in Mattermost server v11.0 along with the certificate-based authentication feature.
+
+Used in combination with the ``ClientSideCertEnable`` configuration setting on Mattermost v10.12 and earlier.
 
 **Primary**: After the client side certificate is verified, user's email is retrieved from the certificate and is used to log in without a password.
 
 **Secondary**: After the client side certificate is verified, user's email is retrieved from the certificate and matched against the one supplied by the user. If they match, the user logs in with regular email/password credentials.
 
-+----------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ClientSideCertCheck": "secondary"`` with options ``"primary"`` and ``"secondary"``. |
-+----------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting was ``"ClientSideCertCheck": "secondary"`` with options ``"primary"`` and ``"secondary"``. |
++------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: export-output-directory
   :displayname: Export output directory (Experimental)
