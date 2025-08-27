@@ -65,7 +65,7 @@ Frequently Asked Questions
 ---------------------------
 
 What integrations come pre-packaged with Mattermost Server?
-------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 See the :doc:`integrations guide </integrations-guide/integrations-guide-index>` documentation for details on pre-packaged integrations available with Mattermost Server.
 
