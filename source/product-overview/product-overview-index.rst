@@ -46,7 +46,7 @@ Messaging collaboration
 - :ref:`Public <end-user-guide/collaborate/channel-types:public channels>` and :ref:`private <end-user-guide/collaborate/channel-types:private channels>` channels, :ref:`direct messages <end-user-guide/collaborate/channel-types:direct message channels>`, and :doc:`threaded conversations </end-user-guide/collaborate/organize-conversations>` for structured operational coordination.
 - :doc:`Role-based access controls </end-user-guide/collaborate/learn-about-roles>` and :ref:`audit logs <administration-guide/manage/logging:audit logging>` to support need-to-know enforcement.
 - Configurable :doc:`notifications </end-user-guide/preferences/manage-your-notifications>` (e.g., :ref:`alerts <end-user-guide/preferences/manage-your-notifications:default notifications>`, :doc:`keyword triggers </end-user-guide/preferences/manage-your-mentions-keywords-notifications>`, :doc:`muting </end-user-guide/preferences/manage-your-channel-specific-notifications>`) to surface high-priority activity.
-- Integrated ChatOps capabilities via :ref:`slash commands <integrations-guide/integrations-guide-index:custom slash commands>`, :ref:`bots <integrations-guide/integrations-guide-index:bots>`, and :ref:`incoming webhooks <integrations-guide/integrations-guide-index:webhooks>` for real-time automation and system alerts.
+- Integrated ChatOps capabilities via :doc:`slash commands </integrations-guide/run-slash-commands>`, :ref:`bots <integrations-guide/integrations-guide-index:bots>`, and :doc:`webhooks </integrations-guide/webhook-integrations>` for real-time automation and system alerts.
 - :ref:`Pinning <end-user-guide/collaborate/save-pin-messages:pin messages>`, :doc:`bookmarking </end-user-guide/collaborate/manage-channel-bookmarks>`, and :doc:`advanced search </end-user-guide/collaborate/search-for-messages>` to maintain continuity and context in high-volume environments.
 - Cross-platform support on web, desktop, and mobile clients for flexible field to command and control access.
 
@@ -123,7 +123,7 @@ Key capabilities include:
 
 - Secure video integrations: Embed secure video platforms such as `Pexip <https://mattermost.com/marketplace/pexip-video-connect/>`_, `Webex <https://mattermost.com/marketplace/webex-cloud/>`_, and Jitsi for sovereign mission collaboration.
 - Pre-packaged and custom integrations: Quickly connect with systems like :doc:`GitHub </integrations-guide/github>`, :doc:`GitLab </integrations-guide/gitlab>`, :doc:`Jira </integrations-guide/jira>`, :doc:`ServiceNow </integrations-guide/servicenow>`, `Jenkins <https://mattermost.com/marketplace/jenkins-plugin-2/>`_, and `PagerDuty <https://mattermost.com/marketplace/pagerduty/>`_.
-- :ref:`Webhooks <integrations-guide/integrations-guide-index:webhooks>` and :ref:`slash commands <integrations-guide/integrations-guide-index:custom slash commands>`: Enable real-time, event-driven automation and user-triggered actions directly from chat.
+- :doc:`Webhooks </integrations-guide/webhook-integrations>` and :doc:`slash commands </integrations-guide/run-slash-commands>`: Enable real-time, event-driven automation and user-triggered actions directly from chat.
 - Plugin architecture: Extend the Mattermost core with `custom UI components, server-side logic, and third-party services <https://developers.mattermost.com/integrate/customization/>`_.
 
 Learn more in our :doc:`Integrations Guide </integrations-guide/integrations-guide-index>`.

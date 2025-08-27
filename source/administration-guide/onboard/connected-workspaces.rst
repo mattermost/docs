@@ -64,7 +64,7 @@ Create a secure connection
 
     By default, only system admins can use slash commands to create workspace connections. You can grant the ability to **Manage Shared Channels** and **Managed Secure Connections** to Mattermost users by modifying permissions of the :ref:`system scheme <administration-guide/onboard/advanced-permissions:system scheme>` or :ref:`team override scheme <administration-guide/onboard/advanced-permissions:team override scheme>`.
 
-    System admins can :doc:`run the following slash command </end-user-guide/collaborate/run-slash-commands>` to create a secure connection invitation:
+    System admins can :doc:`run the following slash command </integrations-guide/run-slash-commands>` to create a secure connection invitation:
 
     ``/secure-connection create --name <--displayname> --password``
 

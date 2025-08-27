@@ -131,12 +131,13 @@ Calls
 
 Integrations
 ~~~~~~~~~~~~
+
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 |                                            **Feature**                                                          |   **Web**   | **Desktop** |    **Mobile**   |
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 | :ref:`Slash commands <end-user-guide/workflow-automation/interact-with-playbooks:slash commands>`               | |checkmark| | |checkmark| | Partial Support |
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
-| :doc:`Server-side plugins </integrations-guide/pre-built-integrations>`                                         | |checkmark| | |checkmark| | |checkmark|     |
+| :doc:`Server-side plugins </integrations-guide/popular-integrations>`                                           | |checkmark| | |checkmark| | |checkmark|     |
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 | `Interactive dialogs <https://developers.mattermost.com/integrate/plugins/interactive-dialogs/>`_               | |checkmark| | |checkmark| |                 |
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+

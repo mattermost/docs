@@ -201,7 +201,7 @@ redirects_map = {
 "collaborate/browse-channels.html":
         "https://docs.mattermost.com/end-user-guide/collaborate/browse-channels.html",
 "collaborate/built-in-slash-commands.html":
-        "https://docs.mattermost.com/end-user-guide/collaborate/built-in-slash-commands.html",
+        "https://docs.mattermost.com/integrations-guide/built-in-slash-commands.html",
 "collaborate/channel-header-purpose.html":
         "https://docs.mattermost.com/end-user-guide/collaborate/channel-header-purpose.html",
 "collaborate/channel-naming-conventions.html":
@@ -275,7 +275,7 @@ redirects_map = {
 "collaborate/reply-to-messages.html":
         "https://docs.mattermost.com/end-user-guide/collaborate/reply-to-messages.html",
 "collaborate/run-slash-commands.html":
-        "https://docs.mattermost.com/end-user-guide/collaborate/run-slash-commands.html",
+        "https://docs.mattermost.com/integration-guide/run-slash-commands.html",
 "collaborate/save-pin-messages.html":
         "https://docs.mattermost.com/end-user-guide/collaborate/save-pin-messages.html",
 "collaborate/schedule-messages.html":
@@ -593,7 +593,7 @@ redirects_map = {
 "channels/channels-settings.html":
         "https://docs.mattermost.com/end-user-guide/collaborate/channels-settings.html",
 "channels/interact-with-channels.html":
-        "https://docs.mattermost.com/end-user-guide/collaborate/run-slash-commands.html",
+        "https://docs.mattermost.com/integration-guide/run-slash-commands.html",
 "channels/send-messages.html":
         "https://docs.mattermost.com/end-user-guide/collaborate/send-messages.html",
 "channels/message-priority.html":
@@ -627,7 +627,7 @@ redirects_map = {
 "channels/keyboard-shortcuts-for-channels.html":
         "https://docs.mattermost.com/end-user-guide/collaborate/keyboard-shortcuts-for-channels.html",
 "channels/run-slash-commands.html":
-        "https://docs.mattermost.com/end-user-guide/collaborate/run-slash-commands.html",
+        "https://docs.mattermost.com/integration-guide/run-slash-commands.html",
 "channels/extend-channels-functionality.html":
         "https://docs.mattermost.com/end-user-guide/collaborate/extend-channels-functionality.html",
 "channels/collaborate-using-mattermost-for-microsoft-teams.html":
@@ -719,7 +719,7 @@ redirects_map = {
 "channels/channels-settings.html#advanced":
         "https://docs.mattermost.com/end-user-guide/collaborate/channels-settings.html#advanced",
 "channels/interact-with-channels.html#slash-commands":
-        "https://docs.mattermost.com/end-user-guide/collaborate/run-slash-commands.html",
+        "https://docs.mattermost.com/integration-guide/run-slash-commands.html",
 "channels/send-messages.html#draft-messages":
         "https://docs.mattermost.com/end-user-guide/collaborate/send-messages.html#draft-messages",
 "channels/send-messages.html#edit-or-delete-messages":
@@ -838,7 +838,7 @@ redirects_map = {
 "cloud/cloud-administration/cloud-compliance.html":
         "https://docs.mattermost.com/administration-guide/comply/cloud-compliance-and-oversight.html",
 "cloud/cloud-integrations/cloud-slash-commands.html":
-	"https://docs.mattermost.com/end-user-guide/collaborate/run-slash-commands.html",
+	"https://docs.mattermost.com/integration-guide/run-slash-commands.html",
 "cloud/cloud-administration/compliance-export.html":
 	"https://docs.mattermost.com/administration-guide/comply/compliance-export.html",
 "cloud/cloud-administration/custom-terms-of-service.html":
@@ -2516,7 +2516,7 @@ redirects_map = {
 "help/messaging/emoji.html":
         "https://docs.mattermost.com/end-user-guide/collaborate/react-to-messages.html",
 "help/messaging/executing-commands.html":
-        "https://docs.mattermost.com/end-user-guide/collaborate/run-slash-commands.html",
+        "https://docs.mattermost.com/integration-guide/run-slash-commands.html",
 "help/messaging/flagging-messages.html":
         "https://docs.mattermost.com/end-user-guide/collaborate/save-pin-messages.html",
 "help/messaging/formatting-text.html":
@@ -2890,6 +2890,8 @@ redirects_map = {
         "https://developers.mattermost.com/integrate/reference/bot-accounts/",
 "integrations/cloud-slash-commands.html":
         "https://developers.mattermost.com/integrate/slash-commands/",
+"integrations-guide/pre-built-integrations.html":
+        "https://docs.mattermost.com/integrations-guide/popular-integrations.html",
 
 # Manage redirects
 "manage/admin/attribute-based-access-control.html":
@@ -3234,11 +3236,11 @@ redirects_map = {
 "messaging/customizing-theme-colors.html#standard-themes":
         "https://docs.mattermost.com/end-user-guide/preferences/customize-your-theme.html",
 "messaging/executing-slash-commands.html":
-        "https://docs.mattermost.com/end-user-guide/collaborate/run-slash-commands.html",
+        "https://docs.mattermost.com/integration-guide/run-slash-commands.html",
 "messaging/executing-slash-commands.html#built-in-commands":
-        "https://docs.mattermost.com/end-user-guide/collaborate/run-slash-commands.html",
+        "https://docs.mattermost.com/integration-guide/run-slash-commands.html",
 "messaging/executing-slash-commands.html#custom-commands":
-        "https://docs.mattermost.com/end-user-guide/collaborate/run-slash-commands.html",
+        "https://docs.mattermost.com/integration-guide/run-slash-commands.html",
 "messaging/extending-messaging-with-integrations.html":
         "https://mattermost.com/marketplace/",
 "messaging/formatting-text.html":
@@ -4353,9 +4355,9 @@ redirects_map = {
 "about/integrations.html":
         "https://docs.mattermost.com/integrations-guide/integrations-guide-index.html",
 "guides/pre-built-integrations.html":
-        "https://docs.mattermost.com/integrations-guide/pre-built-integrations.html",
+        "https://docs.mattermost.com/integrations-guide/popular-integrations.html",
 "guides/microsoft-integrations.html":
-        "https://docs.mattermost.com/integrations-guide/microsoft-integrations.html",
+        "https://docs.mattermost.com/integrations-guide/popular-integrations/microsoft-integrations.html",
 
 # URL restructuring redirects for Issue #8172 - Updated URL Slugs to match new Guides
 # Product Overview Guide redirects
