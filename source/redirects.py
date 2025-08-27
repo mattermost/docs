@@ -57,7 +57,7 @@ redirects_map = {
 "about/faq-business.html#copyright-and-licensing-of-mattermost-server-open-source-code":
 	"https://docs.mattermost.com/product-overview/faq-license.html#open-source-derivative-work-of-mattermost",
 "about/faq-community.html":
-        "https://docs.mattermost.com/product-overview/faq-community.html",
+        "https://docs.mattermost.com/get-help/contribute-to-documentation#frequently-asked-questions.html",
 "about/faq-design-decisions.html":
         "https://docs.mattermost.com/product-overview/faq-design-decisions.html",
 "about/faq-enterprise.html":
@@ -69,23 +69,23 @@ redirects_map = {
 "about/faq-general.html":
         "https://docs.mattermost.com/product-overview/faq-general.html",
 "about/faq-high-trust.html":
-        "https://docs.mattermost.com/product-overview/faq-high-trust.html",
+        "https://docs.mattermost.com/security-guide#frequently-asked-questions.html",
 "about/faq-illicit-use.html":
         "https://docs.mattermost.com/product-overview/faq-illicit-use.html",
 "about/faq-integrations.html":
-        "https://docs.mattermost.com/product-overview/faq-integrations.html",
+        "https://docs.mattermost.com/integrations-guide/integrations-guide-index#frequently-asked-questions.html",
 "about/faq-license.html":
         "https://docs.mattermost.com/product-overview/faq-license.html",
 "about/faq-mattermost-source-available-license.html":
         "https://docs.mattermost.com/product-overview/faq-mattermost-source-available-license.html",
 "about/faq-notifications.html":
-        "https://docs.mattermost.com/product-overview/faq-notifications.html",
+        "https://docs.mattermost.com/end-user-guide/preferences/troubleshoot-notifications#frequently-asked-questions.html",
 "about/faq-product.html":
-        "https://docs.mattermost.com/product-overview/faq-product.html",
+        "https://docs.mattermost.com/product-overview/client-availability.html",
 "about/faq-use-cases.html":
         "https://docs.mattermost.com/product-overview/faq-use-cases.html",
 "about/faq-video-audio-screensharing.html":
-        "https://docs.mattermost.com/product-overview/faq-video-audio-screensharing.html",
+        "https://docs.mattermost.com/end-user-guide/collaborate/audio-and-screensharing.html",
 "about/integrated-security-operations.html":
         "https://docs.mattermost.com/use-case-guide/integrated-security-operations.html",
 "about/license-and-subscription.html#do-you-have-a-program-for-official-non-profits-open-source-projects-and-charities":
@@ -2875,7 +2875,7 @@ redirects_map = {
 "integrations/cloud-embedding.html":
 	"https://developers.mattermost.com/integrate/admin-guide/admin-embedding/",
 "integrations/integration-faq.html":
-        "https://docs.mattermost.com/product-overview/faq-integrations.html",
+        "https://docs.mattermost.com/integrations-guide/integrations-guide-index.html#frequently-asked-questions",
 "integrations/jira.html":
         "https://github.com/mattermost/mattermost-plugin-jira#readme",
 "integrations/net-promoter-score.html":

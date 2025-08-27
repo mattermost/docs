@@ -1,10 +1,7 @@
-Product
-========
+Client Availability
+===================
 
-What features are available on different Mattermost clients?
-------------------------------------------------------------
-
-The following chart highlights the end user features of Mattermost and their support across Web, Desktop, and Mobile applications (iOS and Android).
+The following tables highlight the end user features of Mattermost and their support across Web, Desktop, and Mobile applications (iOS and Android).
 
 Messages
 ~~~~~~~~
