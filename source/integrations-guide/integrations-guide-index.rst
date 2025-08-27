@@ -79,7 +79,7 @@ While you're welcome to use the Mattermost source code under its open source lic
 To learn more about why we strongly believe that users and customers should always have access to their data, please read `why we created Mattermost <https://mattermost.com/about-us/>`_.
 
 What's the difference between incoming and outgoing webhooks?
--------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A webhook is a way for one app to send real-time data to another app.
 
