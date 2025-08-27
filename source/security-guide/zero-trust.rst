@@ -133,4 +133,4 @@ Enhance learning from incidents, ensure historical accountability, reduce future
 
 By embedding Zero Trust principles across access, monitoring, data management, and incident response, Mattermost equips organizations with the tools needed to safeguard collaboration workflows in today's evolving threat landscape. 
 
-Discover how Mattermost can transform your Zero Trust strategy today. Book a live demo with a `Mattermost Zero Trust expert <https://mattermost.com/contact-sales/>`_ to explore tailored solutions for your organization’s secure collaboration needs.
+Discover how Mattermost can transform your Zero Trust strategy today. Book a live demo with a `Mattermost Zero Trust Expert <https://mattermost.com/contact-sales/>`_ to explore tailored solutions for your organization’s secure collaboration needs.
