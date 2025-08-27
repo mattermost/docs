@@ -70,7 +70,7 @@ What integrations come pre-packaged with Mattermost Server?
 See the :doc:`integrations guide </integrations-guide/integrations-guide-index>` documentation for details on pre-packaged integrations available with Mattermost Server.
 
 Can I use Mattermost to add messaging functionality to my proprietary SaaS service?
-------------------------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost is an open source, self-hosted alternative to proprietary SaaS services that lock in the data of users and customers.
 
