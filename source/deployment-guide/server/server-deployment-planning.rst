@@ -131,3 +131,29 @@ When a PostgreSQL version reaches its end of life (EOL), Mattermost will require
 ``*`` Forcasted release version and date.
 
 Customers will have 9 months to plan, test, and upgrade their PostgreSQL version before the new requirement takes effect. This policy aims to provide clarity and transparency so you can align database upgrades with the Mattermost release schedule. Contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_. to discuss your options.
+
+Migrating from Omnibus deployments
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. warning::
+
+  Both Mattermost Omnibus and GitLab Omnibus support are deprecated as of Mattermost server v11.0.0. The last ``mattermost-omnibus`` release is v10.12. 
+
+If you're currently using Omnibus (either Mattermost Omnibus or GitLab Omnibus) for your Mattermost deployment, you'll need to migrate to an alternative deployment method before upgrading to Mattermost v11 or later. System administrators should plan this migration carefully to minimize downtime and ensure data integrity.
+
+**Recommended migration paths:**
+
+1. **Kubernetes deployment** (recommended for production): Offers scalability, high availability, and automated management. See :doc:`Deploy with Kubernetes </deployment-guide/server/deploy-kubernetes>` for detailed instructions.
+
+2. **Linux server installation**: Provides direct control over the deployment. See :doc:`Deploy with Linux </deployment-guide/server/deploy-linux>` for step-by-step guidance.
+
+3. **Container-based deployment**: Suitable for smaller installations. See :doc:`Deploy with Containers </deployment-guide/server/deploy-containers>` for Docker-based deployment options.
+
+**Migration planning considerations:**
+
+* **Data backup**: Always create a complete backup of your Mattermost database and configuration before beginning migration
+* **Configuration transfer**: Document current configuration settings and ensure they're properly transferred to the new deployment method  
+* **User communication**: Plan appropriate user communication and downtime windows
+* **Testing**: Test the new deployment method in a staging environment before migrating production
+
+For assistance with migration planning, contact `Mattermost Support <https://support.mattermost.com/>`_ or consult the `community forums <https://forum.mattermost.com/>`_ for guidance from other system administrators who have completed similar migrations.
