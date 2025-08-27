@@ -93,7 +93,7 @@ What's a slash command?
 A slash command is similar to an outgoing webhook, but instead of listening to a channel it is used as a command tool. This means if you type in a slash command it will not be posted to a channel, whereas an outgoing webhook is only triggered by posted messages.
 
 What does Slack-compatible mean?
---------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Slack compatible means that Mattermost accepts integrations that have a payload in the same format as Slack's legacy "Message Attachment" payload. If you have a Slack integration, you should be able to set it up in Mattermost without changing the format of the message being sent over.   
 
