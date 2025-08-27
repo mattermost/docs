@@ -51,6 +51,17 @@ Before you begin
 
 Make sure that you understand how to :doc:`prepare for your upgrade </administration-guide/upgrade/prepare-to-upgrade-mattermost>`, familiarize yourself with all :doc:`software and hardware requirements </deployment-guide/software-hardware-requirements>`, read the :doc:`important upgrade notes </administration-guide/upgrade/important-upgrade-notes>` and that you understand each step of the upgrade process documented below before starting a Mattermost upgrade. If you have questions or concerns, you can ask on the Mattermost forum at https://forum.mattermost.com/.
 
+.. warning::
+
+  **Important considerations for Mattermost v11.0 upgrades:**
+
+  **Bleve search deprecated:** Bleve search functionality has been removed in Mattermost v11.0. 
+  
+  - If you have ``DisableDatabaseSearch=false`` (default), your upgrade will be graceful and search will continue working with database search.
+  - If you have ``DisableDatabaseSearch=true``, **search will become non-functional after upgrading until you change this setting to ``false``** or configure Elasticsearch/OpenSearch.
+  
+  **Action required:** Before upgrading to v11.0, check your configuration and plan accordingly to avoid search functionality disruption.
+
 **Gather the following information before starting the upgrade:**
 
 - **Existing install directory - {install-path}**: If you don't know where Mattermost Server is installed, use the ``whereis mattermost`` command to find standard binary places and $PATH. 

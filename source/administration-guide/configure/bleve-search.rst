@@ -1,8 +1,16 @@
-Bleve search (experimental)
-===========================
+Bleve search (experimental) [DEPRECATED]
+========================================
 
 .. include:: ../../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
+
+.. warning::
+
+  **Bleve search has been deprecated in Mattermost v11.0** and is no longer available. This documentation is maintained for reference purposes only for users running Mattermost versions prior to v11.0.
+
+  For enterprise search capabilities, we recommend configuring :doc:`Elasticsearch </administration-guide/scale/elasticsearch-setup>` or :doc:`AWS OpenSearch </administration-guide/scale/opensearch-setup>` instead.
+
+  **Important for v11.0 upgrades:** If you currently have ``DisableDatabaseSearch`` set to ``true`` in your configuration, you must set it to ``false`` after upgrading to v11.0, or search functionality will become non-functional until this setting is changed.
 
 Bleve is a search engine that uses Lucene-style full-text search and indexing. This style of search and indexing helps overcome limitations of the default database search such as challenges with characters and advanced search capabilities.
 

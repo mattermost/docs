@@ -957,9 +957,15 @@ Disable database search
 Search behavior in Mattermost depends on which search engines are enabled:
 
 - When :doc:`Elasticsearch </administration-guide/scale/elasticsearch-setup>` or :doc:`AWS OpenSearch </administration-guide/scale/opensearch-setup>` is enabled, Mattermost will try to use it first.
-- If Elasticsearch fails or is disabled, Mattermost will attempt to use :doc:`Bleve </administration-guide/configure/bleve-search>`, if enabled. If this occurs, you will see the warning ``Encountered error on SearchPostsInTeamForUser``.
-- If these fail or are disabled, Mattermost tries to search the database directly, if this is enabled.
+- If Elasticsearch fails or is disabled, Mattermost tries to search the database directly, if this is enabled.
 - If all of the above methods fail or are disabled, the search results will be empty.
+
+.. warning::
+
+  **Bleve search deprecated in Mattermost v11.0:** Bleve search is no longer available starting from Mattermost v11.0. If you are upgrading from a version that used Bleve search:
+  
+  - **Database search enabled** (``DisableDatabaseSearch=false``): Upgrade is graceful and search will continue to work using database search.
+  - **Database search disabled** (``DisableDatabaseSearch=true``): **Search becomes non-functional after upgrade until you set ``DisableDatabaseSearch=false``**, or configure Elasticsearch/OpenSearch for enterprise search capabilities.
 
 .. note::
 
