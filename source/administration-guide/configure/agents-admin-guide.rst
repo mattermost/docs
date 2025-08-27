@@ -15,6 +15,7 @@ Mattermost Agents Admin Guide
 
    LLM provider configuration guide </agents/docs/providers.md>
    Implementing Sovereign AI </agents/docs/sovereign_ai.md>
+   URL rendering configuration <agents-url-rendering.md>
 
 .. include:: /agents/docs/admin_guide.md
   :parser: myst
