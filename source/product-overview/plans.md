@@ -334,3 +334,5 @@ See a [complete list of features](https://mattermost.com/pricing) on the Matterm
 ```{note}
 Mattermost Enterprise Advanced requires a Mattermost Server running v10.9 or later and a <a href="https://docs.mattermost.com/deploy/server/preparations.html#database-preparation">PostgreSQL database</a>. Enterprise plugins must be updated to support the new license (most of which are pre-packaged from v10.9).
 ```
+
+[Book a live demo](https://mattermost.com/request-demo/) or [talk to a Mattermost expert](https://mattermost.com/contact-sales/) to explore tailored solutions for your organization's secure collaboration needs. Or try Mattermost yourself with a [1-hour preview](https://mattermost.com/sign-up/) for instant access to a live sandbox environment.
