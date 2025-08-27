@@ -98,7 +98,7 @@ What does Slack-compatible mean?
 Slack compatible means that Mattermost accepts integrations that have a payload in the same format as Slack's legacy "Message Attachment" payload. If you have a Slack integration, you should be able to set it up in Mattermost without changing the format of the message being sent over.   
 
 What if I have a webhook from somewhere other than Slack?
----------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you have an integration that outputs a payload in a different format, you need to write an intermediate application, such as N8N.io, Zapier, or Integromat, to act as a translation layer to change it to the format Mattermost uses. Since there’s currently no general standard for webhook formatting, this is unavoidable and just a part of how webhooks work.
 
