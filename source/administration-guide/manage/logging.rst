@@ -4,7 +4,13 @@ Mattermost logging
 .. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost provides 3 independent logging systems that can be configured separately with separate log files and rotation policies to meet different operational and compliance needs:
+Mattermost provides independent logging systems that can be configured separately with separate log files and rotation policies to meet different operational and compliance needs:
+
+.. note::
+
+   **Mattermost v11.0 and later**: Separate notification log files have been removed. Notification logs are now integrated into the main logging system. To continue using separate notification log files, use the :ref:`AdvancedLoggingJSON <administration-guide/manage/logging:advanced logging>` configuration.
+
+**Available logging systems:**
 
 .. csv-table::
    :header: "Logging Type & Capture", "Production Recommendation", "Configuration Priority"
@@ -16,23 +22,23 @@ Mattermost provides 3 independent logging systems that can be configured separat
    "**Audit Log Settings**
 
    Security and compliance events, user actions, API access, authentication events, and administrative changes.", "Enable if compliance is required", "**Medium** - Based on regulatory needs"
-   "**Notification Log Settings**
+   "**Notification Log Settings (v10.x and earlier)**
 
    Notification subsystem events, push notifications, email delivery, mobile notification processing.", "Enable for notification troubleshooting", "**Low** - Enable when debugging issues"
 
-By default, all Mattermost plans write logs to both the console and to the ``mattermost.log`` file in a machine-readable JSON format for log aggregation tools. Mattermost Enterprise and Professional customers can additionally log directly to syslog and TCP socket destination targets. Audit and notification logging are designed to be asynchronous to minimize performance impact.
+By default, all Mattermost plans write logs to both the console and to the ``mattermost.log`` file in a machine-readable JSON format for log aggregation tools. Mattermost Enterprise and Professional customers can additionally log directly to syslog and TCP socket destination targets. Audit logging is designed to be asynchronous to minimize performance impact. For Mattermost v10.x and earlier, notification logging is also designed to be asynchronous.
 
 System admins can customize the following logging options based on your business practices and needs by going to **System Console > Environment > Logging** or by editing the ``config.json`` file directly.
 
 Console logs
 ------------
 
-Console logs feature verbose debug level log messages for general and notification activities that are written to the console using the standard output stream (stdout). You can customize console logs for general and notification activities. See the :ref:`Logging configuration settings <administration-guide/configure/environment-configuration-settings:logging>` for details.
+Console logs feature verbose debug level log messages for general activities that are written to the console using the standard output stream (stdout). For Mattermost v10.x and earlier, you can customize console logs for general and notification activities. See the :ref:`Logging configuration settings <administration-guide/configure/environment-configuration-settings:logging>` for details.
 
 File logs
 ---------
 
-File logs feature info level log messages for general and notification activities, including errors and information around startup, and initialization and webhook debug messages. The file is stored in ``./logs/mattermost.log``, rotated at 100 MB, and archived to a separate file in the same directory. You can customize file logs for general and notification activities. See the :ref:`Logging configuration settings <administration-guide/configure/environment-configuration-settings:logging>` for details.
+File logs feature info level log messages for general activities, including errors and information around startup, and initialization and webhook debug messages. The file is stored in ``./logs/mattermost.log``, rotated at 100 MB, and archived to a separate file in the same directory. For Mattermost v10.x and earlier, you can customize file logs for general and notification activities. See the :ref:`Logging configuration settings <administration-guide/configure/environment-configuration-settings:logging>` for details.
 
 .. tip::
 
@@ -43,7 +49,7 @@ You can optionally output log records to any combination of `console <#console-t
 Define logging output
 ---------------------
 
-Define logging output for general and notification activities in JSON format in the System Console by going to **Environment > Logging > Advanced Logging** or by editing the ``config.json`` file directly. You can use the sample JSON below as a starting point.
+Define logging output for general activities in JSON format in the System Console by going to **Environment > Logging > Advanced Logging** or by editing the ``config.json`` file directly. For Mattermost v10.x and earlier, you can also define logging output for notification activities. You can use the sample JSON below as a starting point.
 
 .. code-block:: JSON
 
@@ -156,7 +162,7 @@ Advanced logging
 .. include:: ../../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-System admins can output log and audit records general, audit, and notification activities to any combination of `console <#console-target-configuration-options>`__, `local file <#file-target-configuration-options>`__, `syslog <#syslog-target-configuration-options>`__, and `TCP socket <#tcp-target-configuration-options>`__ targets. Each output target features additional configuration options you can customize for your Mattermost deployment.
+System admins can output log and audit records for general and audit activities to any combination of `console <#console-target-configuration-options>`__, `local file <#file-target-configuration-options>`__, `syslog <#syslog-target-configuration-options>`__, and `TCP socket <#tcp-target-configuration-options>`__ targets. For Mattermost v10.x and earlier, notification activities can also be output to these targets. Each output target features additional configuration options you can customize for your Mattermost deployment.
 
 .. tip::
 

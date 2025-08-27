@@ -23,9 +23,16 @@ Mattermost Server v11.0.0 (October 2025)
 - Format query parameter requirement in ``/api/v4/config/client`` endpoint will be deprecated.
 - Deprecated mmctl commands and flags will be removed.
 - Experimental certificate-based authentication feature will be removed. ``ExperimentalSettings.ClientSideCertEnable`` must be ``false`` to start the server.
-- Separate notification log file will be deprecated. If admins want to continue using a separate log file for notification logs, they can use the ``AdvancedLoggingJSON`` configuration. An example configuration to use is:
 
-.. code-block:: sh
+Removed features by Mattermost version
+----------------------------------------
+
+Mattermost Server v11.0.0
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Separate notification log files have been removed. If admins want to continue using a separate log file for notification logs, they can use the ``AdvancedLoggingJSON`` configuration. An example configuration to use is:
+
+.. code-block:: json
 
   {
     "LogSettings": {
@@ -52,9 +59,6 @@ Mattermost Server v11.0.0 (October 2025)
       }
     }
   }
-
-Removed features by Mattermost version
-----------------------------------------
 
 Mattermost Server v10.8.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~

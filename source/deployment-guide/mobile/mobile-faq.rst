@@ -136,7 +136,7 @@ The following payload shows an example of the json that is transmitted to the pu
 
 where the following definitions are applied:
 
-- ``ack_id``: An ephemeral identifier generated per notification that determines whether the notification sent was received by the device (using same method that generates identifiers to the rest of the models in the server). This information is available in the ``notifications.log`` file on the Mattermost server. The ``ack_id`` is only used for receipt delivery from the mobile app to the Mattermost server to confirm whether the notification sent was received. 
+- ``ack_id``: An ephemeral identifier generated per notification that determines whether the notification sent was received by the device (using same method that generates identifiers to the rest of the models in the server). For Mattermost v11.0 and later, this information is available in the main ``mattermost.log`` file. For earlier versions, this information is available in the ``notifications.log`` file on the Mattermost server. The ``ack_id`` is only used for receipt delivery from the mobile app to the Mattermost server to confirm whether the notification sent was received. 
 - ``server_id``: A server identifier created on the server, called ``DiagnosticId``. In the future, this value will be used in the mobile app (for multi-server support) to identify which server the notification belongs to.
 - ``device_id``: The token that APNs and FCM return when you allow the device to receive notifications. So when the user logs into Mattermost, Mattermost sends this ``device_id`` to attach it to the session. If the session is terminated, the ``device_id`` is no longer present in the server database because the session record is removed. When the user logs back in, the ``device_id`` is registered again with the same value because the identifier is specific to the device. This value won't be the same across apps or devices owned by the same person, but will be the same for each session the user creates from the same app on the same device.
 - ``version``: Tells the mobile app how data is structured so it can parse it properly. Current value is ``v2``.
@@ -387,8 +387,10 @@ Since the ``deviceId`` relates to the application, connections through the web b
 
 Where can I find mobile message notification logs?
 -------------------------------------------------------------
-Notification messages are logged to the ``notifications.log`` file.
-System admins must enable notification logs in the ``config.json`` file by setting ``EnableFile`` to ``true``, and specifying an optional file location via ``FileLocation``. When no location is configured, the ``notifications.log`` file is stored in the default Mattermost directory. See the :ref:`logging configuration settings <administration-guide/configure/environment-configuration-settings:logging>` documentation for details.
+
+**Mattermost v11.0 and later**: Notification messages are integrated into the main Mattermost logging system and logged to the ``mattermost.log`` file. To continue using separate notification log files, system admins can use the :ref:`AdvancedLoggingJSON <administration-guide/manage/logging:advanced logging>` configuration.
+
+**Mattermost v10.x and earlier**: Notification messages are logged to the ``notifications.log`` file. System admins must enable notification logs in the ``config.json`` file by setting ``EnableFile`` to ``true``, and specifying an optional file location via ``FileLocation``. When no location is configured, the ``notifications.log`` file is stored in the default Mattermost directory. See the :ref:`logging configuration settings <administration-guide/configure/environment-configuration-settings:logging>` documentation for details.
 
 The team members / users can access their notification logs based on their device platform.
 Android users can view the logs using ``logcat``.
