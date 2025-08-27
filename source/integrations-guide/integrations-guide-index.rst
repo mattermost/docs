@@ -88,7 +88,7 @@ In Mattermost, incoming webhooks receive data from external applications and mak
 Outgoing webhooks are triggered based on a rule in Mattermost and takes data (the message, and some contextual info) from Mattermost and send it to an external application. The receiving server of the outgoing webhook can then post a response back in Mattermost. They're great for listening for a specific word, and then notifying external applications when a trigger word is used.
 
 What's a slash command?
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 A slash command is similar to an outgoing webhook, but instead of listening to a channel it is used as a command tool. This means if you type in a slash command it will not be posted to a channel, whereas an outgoing webhook is only triggered by posted messages.
 
