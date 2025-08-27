@@ -112,7 +112,7 @@ When "attachments" are mentioned in Mattermost integrations documentation, it re
 Mattermost doesn't currently support the ability to attach files to a post made via webhook. You can use the API to attach files to a message if needed. 
 
 Where can I find existing integrations?
----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Visit the `Mattermost Marketplace <https://mattermost.com/marketplace>`__ to access open source integrations to common tools like Jira, Jenkins, and GitLab, along with interactive bot applications, and other communication tools that are freely available for use and customization. 
 
