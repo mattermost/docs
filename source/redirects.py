@@ -2835,6 +2835,8 @@ redirects_map = {
         "https://docs.mattermost.com/deployment-guide/server/deploy-kubernetes.html",
 "install/install-kubernetes.html#does-the-mattermost-operator-replace-the-mattermost-helm-chart":
         "https://docs.mattermost.com/deployment-guide/server/deploy-kubernetes.html",
+"install/install-docker.html":
+        "https://docs.mattermost.com/deployment-guide/server/deploy-containers.html",
 "install/install-docker.html#deploy-mattermost-on-docker-for-production-use":
         "https://docs.mattermost.com/deployment-guide/server/deploy-containers.html",
 "install/install-docker.html#installing-a-different-version-of-mattermost":
