@@ -30,7 +30,7 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
  - Fixed a potential crash in ``UpdatePost``.
  - Fixed 403 errors that occurred when loading custom profile attributes for unauthenticated users.
  - Fixed an issue where the **Back** button was not showing on the desktop external login redirect page.
- - Fixed an issue were unread messages from muted channels were shown in the favicon/desktop app.
+ - Fixed an issue where unread messages from muted channels were shown in the favicon/desktop app.
  - Fixed an issue where extra content was not accounted for in the focus order.
  - Fixed an issue where search filters were not readable by screen readers when a search term had not been typed in before reading the number of results.
  - Fixed an issue where the content of webhook posts did not display.
