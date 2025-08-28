@@ -18,7 +18,7 @@ Using this URL populates the SAML SSO URL and the Identity Provider Issuer URL f
 
 This is currently supported for Okta and Microsoft ADFS server 2012 and 2016. OneLogin support will be added in a future release. 
 
-For detailed steps, view the :doc:`Configure SAML with Okta <sso-saml-okta>`, :doc:`Configure SAML with Microsoft ADFS for Windows Server 2012 <sso-saml-adfs>`, and :doc:`Configure SAML with Microsoft ADFS using Microsoft Windows Server 2016 <sso-saml-adfs-msws2016>` documentation. See the encryption options documentation for details on what :ref:`encryption methods <deployment-guide/encryption-options:saml encryption support>` Mattermost supports for SAML.
+For detailed steps, view the :doc:`Configure SAML with Okta <sso-saml-okta>`, :doc:`Configure SAML with Microsoft ADFS for Windows Server 2012 <sso-saml-adfs>`, and :doc:`Configure SAML with Microsoft ADFS using Microsoft Windows Server 2016 <sso-saml-adfs-msws2016>` documentation. See the encryption options documentation for details on what :ref:`encryption methods <deployment-guide/encryption-options:saml encryption support>` Mattermost supports for SAML, including AES-256-GCM encryption support introduced in v10.9.
 
 SAML providers
 --------------
