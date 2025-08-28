@@ -27,7 +27,7 @@ The SAML Single sign-on integration offers the following benefits:
   
   - If configuring Mattermost to use the EU-Login system for authentication, please be aware that their `issuerURI` field is what Mattermost calls "Service Provider Identifier".
   - For more information about SAML, see `this article from Varonis <https://www.varonis.com/blog/what-is-saml/>`_, and `this conceptual example from DUO <https://duo.com/blog/the-beer-drinkers-guide-to-saml>`_.
-  - See the encryption options documentation for details on what :ref:`encryption methods <deployment-guide/encryption-options:saml encryption support>` Mattermost supports for SAML, including AES-256-GCM encryption support introduced in v10.9.
+  - See the encryption options documentation for details on what :ref:`encryption methods <deployment-guide/encryption-options:saml encryption support>` Mattermost supports for SAML.
 
 .. toctree::
   :titlesonly:
