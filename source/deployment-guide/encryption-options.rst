@@ -58,7 +58,7 @@ Mattermost supports the following encryption methods for SAML:
 
 * aes128-gcm
 * aes192-gcm
-* aes256-gcm (supported in v10.9+ and backported to v10.6.5+)
+* aes256-gcm
 * aes128-cbc
 * aes256-cbc
 
