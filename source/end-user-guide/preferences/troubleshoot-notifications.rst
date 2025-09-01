@@ -162,3 +162,51 @@ The operating system you're running Mattermost on can also block Mattermost noti
     2. Under **Application Notifications**, ensure notifications are enabled.
 
     Also ensure that macOS’ **Focus mode** is turned off. See the Apple Support `Focus mode <https://support.apple.com/en-ca/guide/mac-help/mchl999b7c1a/mac>`_ documentation to learn more.
+
+Frequently Asked Questions
+---------------------------
+
+What determines if a desktop notification should be triggered?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Desktop notifications are triggered under to following conditions. Click to expand the flow chart.
+
+.. image:: ../../images/desktop_notification_chart.png
+  :alt: A flow diagram shows how Mattermost Desktop App notifications are triggered when a message is posted.
+  :width: 239px
+  :height: 232px
+
+What determines if an email notification should be triggered?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Email notifications are triggered under to following conditions. Click to expand the flow chart.
+
+.. image:: ../../images/email_notification_chart.png
+  :alt: A flow diagram shows how Mattermost email notifications are triggered when a message is posted.
+  :width: 239px
+  :height: 232px
+
+What determines if a mobile push notification should be triggered?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mobile push notifications are triggered under to following conditions. Click to expand the flow chart.
+
+.. image:: ../../images/push_notification_chart.png
+  :alt: A flow diagram shows how Mattermost mobile push notifications are triggered when a message is posted.
+  :width: 239px
+  :height: 232px
+
+.. _tpns:
+
+Are mobile push notifications free?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes, push notifications are free if you compile your own `push-proxy service <https://github.com/mattermost/mattermost-push-proxy>`__. Push notifications are also free if you use the hosted Test Push Notification Service (TPNS) provided by Mattermost, Inc.
+
+TPNS, hosted at `https://push-test.mattermost.com <https://push-test.mattermost.com>`_, offers transport-level encryption, but not production-level service level agreements (SLAs).
+
+If you need production-level SLAs for push notifications, you can either compile your own push-proxy service, with your own key, or you can use a paid option and become a Mattermost Professional subscriber `agreeing to our Conditions of Use <https://mattermost.com/terms-of-use/>`_, which enables you to use a production-level Hosted Push Notification Service (HPNS) at ``https://push.mattermost.com``.
+
+Learn more about :ref:`our push notification service <administration-guide/configure/environment-configuration-settings:enable push notifications>`.
+
+`Book a live demo <https://mattermost.com/request-demo/>`_  or `talk to a Mattermost expert <https://mattermost.com/contact-sales/>`_ to explore tailored solutions for your organization's secure collaboration needs. Or try Mattermost yourself with a `1-hour preview <https://mattermost.com/sign-up/>`_ for instant access to a live sandbox environment.

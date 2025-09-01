@@ -137,7 +137,7 @@ When messages in Mattermost include images, you can control whether an image pre
     Select **Default Appearance of Image Previews > Edit** to expand or collapse all image links and image attachments.
 
     .. tip::
-        This setting can also be controlled using the :doc:`slash commands </end-user-guide/collaborate/run-slash-commands>` ``/expand`` and ``/collapse``.
+        This setting can also be controlled using the :doc:`slash commands </integrations-guide/run-slash-commands>` ``/expand`` and ``/collapse``.
 
 .. tab:: Mobile
 

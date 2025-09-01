@@ -122,3 +122,5 @@ Mattermost performs monthly upgrades to your instance with the latest patch rele
 Mattermost may conduct unscheduled maintenance to address high-severity issues affecting the security, availability, or reliability of your instance. Maintenance windows are announced in advance on https://status.mattermost.com/
 
 Mattermost Cloud uses a Cloud-First Release Strategy with Ring-Based staged releases aligned to Mattermost licenses with a 24 hour soak time for :doc:`Mattermost Cloud Dedicated </product-overview/cloud-dedicated>` and for Enterprise customers using :doc:`Mattermost Cloud Shared </product-overview/cloud-shared>`.
+
+`Book a live demo <https://mattermost.com/request-demo/>`_  or `talk to a Mattermost expert <https://mattermost.com/contact-sales/>`_ to explore tailored solutions for your organization's secure collaboration needs. Or try Mattermost yourself with a `1-hour preview <https://mattermost.com/sign-up/>`_ for instant access to a live sandbox environment.
