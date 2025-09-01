@@ -115,4 +115,6 @@ After setting up your Mattermost instance using either method:
 * Review the :doc:`Application architecture </deployment-guide/application-architecture>` to understand the system better
 * Consider :doc:`Server deployment </deployment-guide/server/server-deployment-planning>` for a production deployment
 
-For additional help or questions, visit the `Mattermost community forums <https://forum.mattermost.com/>`_ or refer to the :doc:`Deployment troubleshooting </deployment-guide/deployment-troubleshooting>` guide. 
+For additional help or questions, visit the `Mattermost community forums <https://forum.mattermost.com/>`_ or refer to the :doc:`Deployment troubleshooting </deployment-guide/deployment-troubleshooting>` guide.
+
+`Book a live demo <https://mattermost.com/request-demo/>`_  or `talk to a Mattermost expert <https://mattermost.com/contact-sales/>`_ to explore tailored solutions for your organization's secure collaboration needs. Or try Mattermost yourself with a `1-hour preview <https://mattermost.com/sign-up/>`_ for instant access to a live sandbox environment. 

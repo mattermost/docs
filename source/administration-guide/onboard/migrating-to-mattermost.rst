@@ -86,3 +86,5 @@ The following instructions migrate Mattermost from one server to another by back
 8. Test that the system is working by going to the URL of an existing team. You may need to refresh your Mattermost browser page in order to get the latest updates from the upgrade.
 
 Once your migration is complete and verified, you can optionally :ref:`upgrade the Team Edition of Mattermost to Enterprise Edition using the upgrade guide <administration-guide/upgrade/upgrading-mattermost-server:upgrade team edition to enterprise edition>`.
+
+`Book a live demo <https://mattermost.com/request-demo/>`_  or `talk to a Mattermost expert <https://mattermost.com/contact-sales/>`_ to explore tailored solutions for your organization's secure collaboration needs. Or try Mattermost yourself with a `1-hour preview <https://mattermost.com/sign-up/>`_ for instant access to a live sandbox environment.
