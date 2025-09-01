@@ -237,3 +237,5 @@ Are you 508 compliant?
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Yes, the Mattermost platform is compliant with 508. See the :doc:`accessibility compliance policy </product-overview/accessibility-compliance-policy>` documentation for details.
+
+`Book a live demo <https://mattermost.com/request-demo/>`_  or `talk to a Mattermost expert <https://mattermost.com/contact-sales/>`_ to explore tailored solutions for your organization's secure collaboration needs. Or try Mattermost yourself with a `1-hour preview <https://mattermost.com/sign-up/>`_ for instant access to a live sandbox environment.
