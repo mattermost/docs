@@ -25,6 +25,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 ### Bug Fixes
  - Fixed an issue where channel links were not enabled on the title of message attachments.
  - Fixed a sorting problem when moving a field from custom profile attributes to the first position.
+ - Fixed an issue where playbooks did not update in some cases.
 
 ### Open Source Components
  - Added ``@formatjs/intl-relativetimeformat`` to https://github.com/mattermost/mattermost-mobile.
