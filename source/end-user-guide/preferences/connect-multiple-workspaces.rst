@@ -41,11 +41,6 @@ Add a server
       :alt: Desktop app server setup dialog showing the optional pre-authentication secret field.
 
 
-    .. tip::
-
-      If your server requires a pre-authentication secret for enhanced security, ask your system administrator for the **Pre-authentication Secret** value. This is an additional security measure that some organizations use to control access to their Mattermost server.
-
-
   5. Select **Add**.
 
 .. tab:: Mobile
