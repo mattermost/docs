@@ -56,4 +56,4 @@ Features marked with an asterisk above ``*`` will be available in a future 2025 
 Get Started
 -----------
 
-`Talk to an Expert <https://mattermost.com/contact-sales/>`_ to explore how Mattermost can support mission-ready mobile collaboration. Whether you're securing communications on government-issued devices or enabling compliant collaboration on personal phones, Mattermost provides the control, trust, and extensibility needed to stay connected—without compromise. 
+`Book a live demo <https://mattermost.com/request-demo/>`_  or `talk to a Mattermost expert <https://mattermost.com/contact-sales/>`_ to explore how Mattermost can support mission-ready mobile collaboration. Or try Mattermost yourself with a `1-hour preview <https://mattermost.com/sign-up/>`_ for instant access to a live sandbox environment. Whether you're securing communications on government-issued devices or enabling compliant collaboration on personal phones, Mattermost provides the control, trust, and extensibility needed to stay connected—without compromise. 
