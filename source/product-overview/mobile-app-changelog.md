@@ -21,7 +21,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 
 ### Improvements
  - Updated the app to target Android 15 (API level 35).
- - Added a new pre-shared secret input to the server form.
+ - Added a new pre-authentication secret configuration to the server connection. This secret will be sent as a header in every request made to the Mattermost instance.
 
 ### Bug Fixes
  - Fixed an issue where channel links were not enabled on the title of message attachments.
