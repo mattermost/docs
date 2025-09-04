@@ -9,7 +9,7 @@ Removed features in upcoming versions
 Mattermost Server v11.0.0 (October 2025)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- GitLab Mattermost and GitLab SSO will be deprecated. Deployments with GitLab SSO can stay on v10.11 ESR for 12 months of security updates while exploring commercial or nonprofit options. See more details in `this forum post <https://forum.mattermost.com/t/mattermost-v11-changes-in-free-offerings/25126>`__.
+- GitLab SSO will be deprecated from Team Edition. Deployments using GitLab SSO can remain on v10.11 ESR (with 12 months of security updates) while transitioning to our new free offering Mattermost Entry, or exploring commercial/nonprofit options. See more details in `this forum post <https://forum.mattermost.com/t/mattermost-v11-changes-in-free-offerings/25126>`__.
 - The ``TeamSettings.ExperimentalViewArchivedChannels`` setting will be deprecated. Archived channels will always be accessible, subject to normal channel membership. The server will fail to start if this setting is set to ``false``; to deny access to archived channels, mark them as private and remove affected channel members.
 - Playbooks will stop working for Team Edition. Professional, Enterprise, and Enterprise Advanced plans will automatically be upgraded to Playbooks v2 with no expected downtime.
 - Experimental Bleve Search functionality will be retired. See more details in `this forum post <https://forum.mattermost.com/t/transitioning-from-bleve-search-in-mattermost-v11/22982>`__.
