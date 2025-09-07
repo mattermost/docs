@@ -5,6 +5,8 @@ For mobile and desktop applications only, Mattermost deployments can use a rever
 
 Pre-authentication secrets are only supported for mobile and desktop applications. Web browser clients don't support this feature.
 
+When pre-authentication secret validation fails, the reverse proxy must return the ``X-Reject-Reason: pre-auth`` header along with the 403 status code. This header allows mobile and desktop applications to specifically identify pre-authentication failures and provide appropriate error messaging to users.
+
 .. important::
 
   We recommend whitelisting the ``/api/v4/notifications/ack`` endpoint (allowed without pre-authentication secret validation) to ensure proper notification acknowledgement functionality for mobile applications.
@@ -30,6 +32,8 @@ Here's an example partial NGINX configuration that validates the pre-authenticat
       location / {
           # Check if X-Mattermost-Preauth-Secret header matches expected value
           if ($http_x_mattermost_preauth_secret != $expected_secret) {
+              add_header X-Reject-Reason pre-auth always;
+              add_header Cache-Control "no-store" always;
               return 403 "Forbidden: Invalid pre-authentication secret";
           }
 
