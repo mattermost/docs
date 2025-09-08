@@ -1,10 +1,13 @@
 # v9 Changelog
 
+```{eval-rst}
+.. meta::
+  :page_title: Mattermost Server v9 Release Notes
+```
 
 ```{Important}
 ```{include} common-esr-support-upgrade.md
 ```
-
 
 (release-v9-11-extended-support-release)=
 ## Release v9.11 - [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#release-types)
