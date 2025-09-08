@@ -1,6 +1,9 @@
 Server
 ======
 
+.. meta::
+	:page_title: Mattermost Server
+
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
