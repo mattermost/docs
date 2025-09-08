@@ -87,7 +87,7 @@ Edit a server
       :width: 300px
       :alt: In the Mattermost mobile app, swipe left on an existing server connection entry to edit the connection.
 
-  2. Modify the server's display name then tap **Save**.
+  2. Modify the server's display name or pre-authentication secret, and then tap **Save**.
 
     .. image:: ../../images/mobile-edit-server.jpg
       :alt: Mobile app edit server screen showing display name fields.
