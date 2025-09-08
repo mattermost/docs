@@ -1,3 +1,6 @@
+.. meta::
+   :page_title: Intelligent Mission Environment from Mattermost
+
 Overview
 =========
 
