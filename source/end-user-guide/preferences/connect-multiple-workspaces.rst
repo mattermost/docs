@@ -35,7 +35,7 @@ Add a server
       Can't find your Mattermost server URL? Ask your company’s IT department or your Mattermost system admin for your organization’s **Mattermost Site URL**. It’ll look something like ``https://example.com/company/mattermost``, ``mattermost.yourcompanydomain.com``, or ``chat.yourcompanydomain.com``. These URLs could also end in ``.net``.
 
   3. Enter the server's Display Name.
-  4. Optionally toggle the **Advanced settings** section to enter a **Pre-authentication Secret**. This is an additional security measure that some organizations use to control access to the Mattermost server. Your system admin can provide you with the **Pre-authentication Secret** value if required.
+  4. Optionally toggle the **Advanced** section to enter a **Pre-authentication Secret**. This is an additional security measure that some organizations use to control access to the Mattermost server. Your system admin can provide you with the **Pre-authentication Secret** value if required.
 
     .. image:: ../../images/desktop-server-add-2.jpg
       :alt: Desktop app server setup dialog showing the optional pre-authentication secret field.
