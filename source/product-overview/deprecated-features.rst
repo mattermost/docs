@@ -9,7 +9,8 @@ Removed features in upcoming versions
 Mattermost Server v11.0.0 (October 2025)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- The ``TeamSettings.ExperimentalViewArchivedChannels`` setting will be deprecated. Archived channels will always be accessible, subject to normal channel membership. The server will fail to start if this setting is set to ``false``; to deny access to archived channels, mark them as private and remove affected channel members.
+- GitLab SSO will be deprecated from Team Edition. Deployments using GitLab SSO can remain on v10.11 ESR (with 12 months of security updates) while transitioning to our new free offering Mattermost Entry, or exploring commercial/nonprofit options. See more details in `this forum post <https://forum.mattermost.com/t/mattermost-v11-changes-in-free-offerings/25126>`__.
+- The ``TeamSettings.ExperimentalViewArchivedChannels`` setting will be deprecated. Archived channels will always be accessible, subject to normal channel membership. The server will fail to start if this setting is set to ``false``; to deny access to archived channels, mark them as private and remove affected channel members. See more details in `this forum post <https://forum.mattermost.com/t/viewing-accessing-archived-channels-v11/22626>`__.
 - Playbooks will stop working for Team Edition. Professional, Enterprise, and Enterprise Advanced plans will automatically be upgraded to Playbooks v2 with no expected downtime.
 - Experimental Bleve Search functionality will be retired. See more details in `this forum post <https://forum.mattermost.com/t/transitioning-from-bleve-search-in-mattermost-v11/22982>`__.
 - Support for MySQL will be ended. See more details in `this forum post <https://forum.mattermost.com/t/transition-to-postgresql/19551>`__.
@@ -17,7 +18,7 @@ Mattermost Server v11.0.0 (October 2025)
 - The ``registerPostDropdownMenuComponent`` hook in the web app’s plugin API will be removed in favour of ``registerPostDropdownMenuAction``. See more details in `this forum post <https://forum.mattermost.com/t/deprecating-a-post-dropdown-menu-component-plugin-api-v11/25001>`__.
 - The web app will no longer expose the `Styled Components <https://styled-components.com/>`__ dependency for use by web app plugins. See more details in `this forum post <https://forum.mattermost.com/t/removing-styled-components-export-for-web-app-plugins-v11/25002>`__.
 - The version of React used by the Mattermost web app will be updated from React 17 to React 18. See more details in `this forum post <https://forum.mattermost.com/t/upgrading-the-mattermost-web-app-to-react-18-v11/25000>`__.
-- Omnibus support will be deprecated. The last ``mattermost-omnibus`` release will be v10.12.
+- Omnibus support will be deprecated. The last ``mattermost-omnibus`` release will be v10.12. See more details in `this forum post <https://forum.mattermost.com/t/mattermost-omnibus-to-reach-end-of-life-v11/25175>`__.
 - Deprecated ``include_removed_members`` option in ``api/v4/ldap/sync`` will be removed. Admins can use the LDAP setting ``ReAddRemovedMembers``.
 - All telemetry support will be removed from Mattermost. The system will no longer collect or send telemetry data to external services.
 - Format query parameter requirement in ``/api/v4/config/client`` endpoint will be deprecated.
