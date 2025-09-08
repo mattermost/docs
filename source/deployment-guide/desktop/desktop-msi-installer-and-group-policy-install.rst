@@ -198,6 +198,6 @@ Use the ``APPLICATIONFOLDER`` parameter to specify an installation directory for
 
 **Command Prompt:** ``msiexec /i mattermost-desktop-v5.13.1-x64.msi APPLICATIONFOLDER="<install directory>"``
 
-**PowerShell:** ``Start-Process -FilePath "$env:systemroot\system32\msiexec.exe" -ArgumentList '/i mattermost-desktop-v5.13.1-x64.msi APPLICATIONFOLDER="<install directory>"``
+**PowerShell:** ``Start-Process -FilePath "$env:systemroot\system32\msiexec.exe" -ArgumentList '/i mattermost-desktop-v5.13.1-x64.msi APPLICATIONFOLDER="<install directory>"'``
 
 Change this command as new versions of the Mattermost Desktop App are released.
