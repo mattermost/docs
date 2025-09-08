@@ -188,7 +188,7 @@ Use the ``ALLUSERS`` parameter to install the MSI for all users:
 
 .. note::
    - Installing the MSI for all users disables automatic updates for the desktop app on Windows.
-   - To disable automatic updates on a per-user basis, use the ``DISABLEAUTOUPDATE`` parameter: ``msiexec /i mattermost-desktop-v5.11.2-x64.msi DISABLEAUTOUPDATE=1``
+   - To disable automatic updates on a per-user basis, use the ``DISABLEAUTOUPDATE`` parameter: ``msiexec /i mattermost-desktop-v5.13.1-x64.msi DISABLEAUTOUPDATE=1``
 
 Specify an install directory
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -196,8 +196,8 @@ Specify an install directory
 
 Use the ``APPLICATIONFOLDER`` parameter to specify an installation directory for the MSI installation:
 
-**Command Prompt:** ``msiexec /i mattermost-desktop-v5.13.1-x64.msi APPLICATIONFOLDER="<install directory>""
+**Command Prompt:** ``msiexec /i mattermost-desktop-v5.13.1-x64.msi APPLICATIONFOLDER="<install directory>"``
 
-**PowerShell:** ``Start-Process -FilePath "$env:systemroot\system32\msiexec.exe" -ArgumentList '/i mattermost-desktop-v5.13.1-x64.msi APPLICATIONFOLDER="<install directory>"'"
+**PowerShell:** ``Start-Process -FilePath "$env:systemroot\system32\msiexec.exe" -ArgumentList '/i mattermost-desktop-v5.13.1-x64.msi APPLICATIONFOLDER="<install directory>"``
 
 Change this command as new versions of the Mattermost Desktop App are released.
