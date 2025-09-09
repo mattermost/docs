@@ -9,7 +9,16 @@ When pre-authentication secret validation fails, the reverse proxy must return t
 
 .. important::
 
-  We recommend whitelisting the ``/api/v4/notifications/ack`` endpoint (allowed without pre-authentication secret validation) to ensure proper notification acknowledgement functionality for mobile applications.
+  We recommend whitelisting certain endpoints where the pre-authentication header may not be available. The specific endpoints depend on your authentication configuration:
+
+  - ``/api/v4/notifications/ack`` - Required for proper notification acknowledgement functionality
+  - ``/api/v4/config/client`` - Required for authentication flows that redirect to the browser, such as SAML, OAuth and OpenID.
+
+  **Additional endpoints based on your authentication setup:**
+
+  - SAML: ``/login/sso/saml``
+  - OpenID: ``/oauth/{service:[A-Za-z0-9]+}/complete``, ``/oauth/{service:[A-Za-z0-9]+}/login``, ``/oauth/{service:[A-Za-z0-9]+}/mobile_login``, ``/oauth/{service:[A-Za-z0-9]+}/signup``
+  - OAuth: ``/api/v3/oauth/{service:[A-Za-z0-9]+}/complete``, ``/signup/{service:[A-Za-z0-9]+}/complete``, ``/login/{service:[A-Za-z0-9]+}/complete``
 
 NGINX configuration example
 ---------------------------
@@ -24,10 +33,41 @@ Here's an example partial NGINX configuration that validates the pre-authenticat
       # Define the expected pre-auth secret
       set $expected_secret "your-secure-pre-auth-secret-here";
 
-      # Whitelist the notifications/ack endpoint (no pre-auth secret required)
+      # Whitelist endpoints where pre-auth secret may not be available
       location = /api/v4/notifications/ack {
+         # Pass through without verifying pre-auth secret validation
          # ...
       }
+      
+      location = /api/v4/config/client {
+         # Pass through without verifying pre-auth secret validation
+         # ...
+      }
+
+      # Additional whitelisted endpoints based on authentication configuration
+      # Uncomment and configure as needed for your setup:
+      # Note: Replace {service:[A-Za-z0-9]+} with your specific service names
+      # (e.g., google, gitlab, openid, office365) or use the regex pattern for multiple services
+      
+      # SAML
+      # location = /login/sso/saml {
+      #    # ...
+      # }
+      
+      # OpenID/OAuth patterns (use regex for multiple services)
+      # location ~ ^/oauth/[A-Za-z0-9]+/(complete|login|mobile_login|signup)$ {
+      #    # ...
+      # }
+      # Or for specific services:
+      # location ~ ^/oauth/(google|gitlab|office365)/(complete|login|mobile_login|signup)$ {
+      #    # ...
+      # }
+      # location ~ ^/api/v3/oauth/[A-Za-z0-9]+/complete$ {
+      #    # ...
+      # }
+      # location ~ ^/(signup|login)/[A-Za-z0-9]+/complete$ {
+      #    # ...
+      # }
 
       location / {
           # Check if X-Mattermost-Preauth-Secret header matches expected value
