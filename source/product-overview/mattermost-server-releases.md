@@ -1,6 +1,11 @@
 (mattermost-server-releases)=
 # Server Releases
 
+```{eval-rst}
+.. meta::
+    :page_title: Mattermost Server Releases
+```
+
 ```{include} ../_static/badges/allplans-selfhosted.md
 ```
 

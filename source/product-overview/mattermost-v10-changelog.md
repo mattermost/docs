@@ -1,5 +1,10 @@
 # v10 Changelog
 
+```{eval-rst}
+.. meta::
+  :page_title: Mattermost Server v10 Release Notes
+```
+
 ```{Important}
 ```{include} common-esr-support-upgrade.md
 ```
