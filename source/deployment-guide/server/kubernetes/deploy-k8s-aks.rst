@@ -101,6 +101,13 @@ Step 2: Upgrade Mattermost via your AKS cluster
 
 4. Select **Save** and wait for the upgrade.
 
+Looking for a sovereign deployment on Azure Local?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For organizations requiring on-premises deployments with data sovereignty, **Azure Local** (formerly Azure Stack HCI) provides a hybrid cloud platform that enables you to run Mattermost on-premises while maintaining integration with Microsoft Teams and M365. 
+
+We recommend engaging **Mattermost Professional Services** for Azure Local deployments to ensure optimal configuration and compliance with your security requirements. `Talk to an Expert <https://mattermost.com/contact-sales/>`_ to discuss your Azure Local deployment needs.
+
 .. important::
 
   You are responsible for Azure costs associated with any infrastructure you spin up to host a Mattermost server, and Azure credits cannot be applied towards the purchase of a Mattermost license.
