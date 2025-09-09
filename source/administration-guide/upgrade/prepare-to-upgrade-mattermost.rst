@@ -59,9 +59,8 @@ We strongly recommend that you:
 
 ```{eval-rst}
 .. important::
-   
+
    .. include:: ../../product-overview/common-esr-support-upgrade.md
-      :parser: myst_parser.sphinx_
 ```
 
 v6.0 database schema migrations
