@@ -49,7 +49,7 @@ Site URL
 
 +---------------------------------------------------------------+---------------------------------------------------------------+
 | The URL that users use to access Mattermost.                  | - System Config path: **Environment > Web Server**            |
-| The port number is required if it’s not a standard port,      | - ``config.json`` setting: ``.ServiceSettings.SiteURL",``     |
+| The port number is required if it’s not a standard port,      | - ``config.json`` setting: ``ServiceSettings`` > ``SiteURL``     |
 | such as 80 or 443. This field is required.                    | - Environment variable: ``MM_SERVICESETTINGS_SITEURL``        |
 |                                                               |                                                               |
 | Select the **Test Live URL** button in the System Console     |                                                               |
@@ -78,7 +78,7 @@ Maximum URL length
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The longest URL, in characters, including query parameters,   | - System Config path: N/A                                                |
-| accepted by the Mattermost server. Longer URLs are rejected,  | - ``config.json`` setting: ``.ServiceSettings.MaximumURLLength: 2048",`` |
+| accepted by the Mattermost server. Longer URLs are rejected,  | - ``config.json`` setting: ``ServiceSettings`` > ``MaximumURLLength`` > ``2048`` |
 | and API calls fail with an error.                             | - Environment variable: ``MM_SERVICESETTINGS_MAXIMUMURLLENGTH``          |
 |                                                               |                                                                          |
 | Numeric value. Default is **2048** characters.                |                                                                          |
@@ -98,7 +98,7 @@ Web server listen address
 
 +---------------------------------------------------------------+------------------------------------------------------------------+
 | The address and port to which to bind and listen.             | - System Config path: **Environment > Web Server**               |
-| Specifying ``:8065`` will bind to all network interfaces.     | - ``config.json`` setting: ``".ServiceSettings.ListenAddress",`` |
+| Specifying ``:8065`` will bind to all network interfaces.     | - ``config.json`` setting: ``ServiceSettings`` > ``ListenAddress`` |
 | Specifying ``127.0.0.1:8065`` will only bind to the network   | - Environment variable: ``MM_SERVICESETTINGS_LISTENADDRESS``     |
 | interface having that IP address.                             |                                                                  |
 |                                                               |                                                                  |
@@ -121,7 +121,7 @@ Forward port 80 to 443
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Forward insecure traffic from port 80 to port 443.            | - System Config path: **Environment > Web Server**                       |
-|                                                               | - ``config.json`` setting: ``".ServiceSettings.Forward80To443: false",`` |
+|                                                               | - ``config.json`` setting: ``ServiceSettings`` > ``Forward80To443`` > ``false`` |
 | - **true**: Forwards all insecure traffic from port 80 to     | - Environment variable: ``MM_SERVICESETTINGS_FORWARD80TO443``            |
 |   secure port 443.                                            |                                                                          |
 | - **false**: **(Default)** When using a proxy such as NGINX   |                                                                          |
@@ -144,7 +144,7 @@ Web server connection security
 
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
 | Connection security between Mattermost clients and the server.        | - System Config path: **Environment > Web Server**                    |
-|                                                                       | - ``config.json`` setting: ``".ServiceSettings.ConnectionSecurity",`` |
+|                                                                       | - ``config.json`` setting: ``ServiceSettings`` > ``ConnectionSecurity`` |
 | - **Not specified**: Mattermost will connect over an unsecure         | - Environment variable: ``MM_SERVICESETTINGS_CONNECTIONSECURITY``     |
 |   connection.                                                         |                                                                       |
 | - **TLS**: Encrypts the communication between Mattermost              |                                                                       |
@@ -165,7 +165,7 @@ TLS certificate file
 
 +--------------------------------------------------------+------------------------------------------------------------------+
 | The path to the certificate file to use for TLS        | - System Config path: **Environment > Web Server**               |
-| connection security.                                   | - ``config.json`` setting: ``".ServiceSettings.TLSCertFile",``   |
+| connection security.                                   | - ``config.json`` setting: ``ServiceSettings`` > ``TLSCertFile``   |
 |                                                        | - Environment variable: ``MM_SERVICESETTINGS_TLSCERTFILE``       |
 | String input.                                          |                                                                  |
 +--------------------------------------------------------+------------------------------------------------------------------+
@@ -182,7 +182,7 @@ TLS key file
 
 +--------------------------------------------------------+---------------------------------------------------------------+
 | The path to the TLS key file to use for TLS            | - System Config path: **Environment > Web Server**            |
-| connection security.                                   | - ``config.json`` setting: ``".ServiceSettings.TLSKeyFile",`` |
+| connection security.                                   | - ``config.json`` setting: ``ServiceSettings`` > ``TLSKeyFile`` |
 |                                                        | - Environment variable: ``MM_SERVICESETTINGS_TLSKEYFILE``     |
 | String input.                                          |                                                               |
 +--------------------------------------------------------+---------------------------------------------------------------+
@@ -202,7 +202,7 @@ Use Let's Encrypt
 
 +-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | Enable the automatic retrieval of certificates from Let’s Encrypt.                            | - System Config path: **Environment > Web Server**                       |
-|                                                                                               | - ``config.json`` setting: ``".ServiceSettings.UseLetsEncrypt: false",`` |
+|                                                                                               | - ``config.json`` setting: ``ServiceSettings`` > ``UseLetsEncrypt`` > ``false`` |
 |                                                                                               | - Environment variable: ``MM_SERVICESETTINGS_USELETSENCRYPT``            |
 | - **true**: The certificate will be retrieved when a client                                   |                                                                          |
 |   attempts to connect from a new domain. This will work with                                  |                                                                          |
@@ -226,7 +226,7 @@ Let's Encrypt certificate cache file
 
 +--------------------------------------------------------+------------------------------------------------------------------------------------+
 | The path to the file where certificates and other data | - System Config path: **Environment > Web Server**                                 |
-| about the Let’s Encrypt service will be stored.        | - ``config.json`` setting: ``".ServiceSettings.LetsEncryptCertificateCacheFile",`` |
+| about the Let’s Encrypt service will be stored.        | - ``config.json`` setting: ``ServiceSettings`` > ``LetsEncryptCertificateCacheFile`` |
 |                                                        | - Environment variable: ``MM_SERVICESETTINGS_LETSENCRYPTCERTIFICATECACHEFILE``     |
 | File path input.                                       |                                                                                    |
 +--------------------------------------------------------+------------------------------------------------------------------------------------+
@@ -243,7 +243,7 @@ Read timeout
 
 +---------------------------------------------------------+---------------------------------------------------------------------+
 | Maximum time allowed from when the connection is        | - System Config path: **Environment > Web Server**                  |
-| accepted to when the request body is fully read.        | - ``config.json`` setting: ``".ServiceSettings.ReadTimeout: 300",`` |
+| accepted to when the request body is fully read.        | - ``config.json`` setting: ``ServiceSettings`` > ``ReadTimeout`` > ``300`` |
 |                                                         | - Environment variable: ``MM_SERVICESETTINGS_READTIMEOUT``          |
 | Numerical input in seconds. Default is **300** seconds. |                                                                     |
 +---------------------------------------------------------+---------------------------------------------------------------------+
@@ -263,7 +263,7 @@ Write timeout
 
 +----------------------------------------------------------+-----------------------------------------------------------------------------+
 | - If using HTTP (insecure), this is the maximum time     | - System Config path: **Environment > Web Server**                          |
-|   allowed from the end of reading the request headers    | - ``config.json`` setting: ``".ServiceSettings.WriteTimeout: 300",``        |
+|   allowed from the end of reading the request headers    | - ``config.json`` setting: ``ServiceSettings`` > ``WriteTimeout`` > ``300``        |
 |   until the response is written.                         | - Environment variable: ``MM_SERVICESETTINGS_WRITETIMEOUT``                 |
 | - If using HTTPS, it's the total time from when the      |                                                                             |
 |   connection is accepted until the response is written.  |                                                                             |
@@ -283,7 +283,7 @@ Idle timeout
 
 +---------------------------------------------------------+---------------------------------------------------------------------+
 | Set an explicit idle timeout in the HTTP server.        | - System Config path: **Environment > Web Server**                  |
-| This is the maximum time allowed before an idle         | - ``config.json`` setting: ``".ServiceSettings.IdleTimeout: 300",`` |
+| This is the maximum time allowed before an idle         | - ``config.json`` setting: ``ServiceSettings`` > ``IdleTimeout`` > ``300`` |
 | connection is disconnected.                             | - Environment variable: ``MM_SERVICESETTINGS_IDLETIMEOUT``          |
 |                                                         |                                                                     |
 | Numerical input in seconds. Default is **300** seconds. |                                                                     |
@@ -304,7 +304,7 @@ Webserver mode
 
 +---------------------------------------------------------------------+------------------------------------------------------------------------+
 | We recommend gzip to improve performance unless your                | - System Config path: **Environment > Web Server**                     |
-| environment has specific restrictions, such as a web proxy that     | - ``config.json`` setting: ``".ServiceSettings.WebserverMode: gzip",`` |
+| environment has specific restrictions, such as a web proxy that     | - ``config.json`` setting: ``ServiceSettings`` > ``WebserverMode`` > ``"gzip"`` |
 | distributes gzip files poorly.                                      | - Environment variable: ``MM_SERVICESETTINGS_WEBSERVERMODE``           |
 |                                                                     |                                                                        |
 | - **gzip**: **(Default)** The Mattermost server will serve static   |                                                                        |
@@ -330,7 +330,7 @@ Enable insecure outgoing connections
 
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 | Configure Mattermost to allow insecure outgoing connections.  | - System Config path: **Environment > Web Server**                                          |
-|                                                               | - ``config.json`` setting: ``".ServiceSettings.EnableInsecureOutgoingConnections: false",`` |
+|                                                               | - ``config.json`` setting: ``ServiceSettings`` > ``EnableInsecureOutgoingConnections`` > ``false`` |
 | - **true**: Outgoing HTTPS requests, including S3 clients,    | - Environment variable: ``MM_SERVICESETTINGS_ENABLEINSECUREOUTGOINGCONNECTIONS``            |
 |   can accept unverified, self-signed certificates.            |                                                                                             |
 |   For example, outgoing webhooks to a server with a           |                                                                                             |
@@ -356,7 +356,7 @@ Managed resource paths
 
 +--------------------------------------------------------+-------------------------------------------------------------------------+
 | A comma-separated list of paths within the Mattermost  | - System Config path: **Environment > Web Server**                      |
-| domain that are managed by a third party service       | - ``config.json`` setting: ``".ServiceSettings.ManagedResourcePaths",`` |
+| domain that are managed by a third party service       | - ``config.json`` setting: ``ServiceSettings`` > ``ManagedResourcePaths`` |
 | instead of Mattermost itself.                          | - Environment variable: ``MM_SERVICESETTINGS_MANAGEDRESOURCEPATHS``     |
 |                                                        |                                                                         |
 | Links to these paths will be opened in a new           |                                                                         |
@@ -418,7 +418,7 @@ Websocket URL
 
 +--------------------------------------------------------+---------------------------------------------------------------------+
 | You can configure the server to instruct clients       | - System Config path: N/A                                           |
-| on where they should try to connect websockets to.     | - ``config.json`` setting: ``".ServiceSettings.WebsocketURL: "",``  |
+| on where they should try to connect websockets to.     | - ``config.json`` setting: ``ServiceSettings`` > ``WebsocketURL`` > ``""``  |
 |                                                        | - Environment variable: ``MM_SERVICESETTINGS_WEBSOCKETURL``         |
 | String input.                                          |                                                                     |
 +--------------------------------------------------------+---------------------------------------------------------------------+
@@ -442,7 +442,7 @@ License file location
 
 +--------------------------------------------------------+----------------------------------------------------------------------------+
 | The path and filename of the license file on disk.     | - System Config path: N/A                                                  |
-| On startup, if Mattermost can't find a valid license   | - ``config.json`` setting: ``".ServiceSettings.LicenseFileLocation: "",``  |
+| On startup, if Mattermost can't find a valid license   | - ``config.json`` setting: ``ServiceSettings`` > ``LicenseFileLocation`` > ``""``  |
 | in the database from a previous upload, it looks in    | - Environment variable: ``MM_SERVICESETTINGS_LICENSEFILELOCATION``         |
 | this path for the license file.                        |                                                                            |
 |                                                        |                                                                            |
@@ -462,7 +462,7 @@ TLS minimum version
 
 +--------------------------------------------------------+---------------------------------------------------------------------+
 | The minimum TLS version used by the Mattermost server. | - System Config path: N/A                                           |
-|                                                        | - ``config.json`` setting: ``".ServiceSettings.TLSMinVer: 1.2",``   |
+|                                                        | - ``config.json`` setting: ``ServiceSettings`` > ``TLSMinVer`` > ``1.2``   |
 | String input. Default is **1.2**.                      | - Environment variable: ``MM_SERVICESETTINGS_TLSMINVER``            |
 +--------------------------------------------------------+---------------------------------------------------------------------+
 
@@ -482,7 +482,7 @@ Trusted proxy IP header
 
 +--------------------------------------------------------+------------------------------------------------------------------------------+
 | Specified headers that will be checked, one by one,    | - System Config path: N/A                                                    |
-| for IP addresses (order is important).                 | - ``config.json`` setting: ``".ServiceSettings.TrustedProxyIPHeader: []",``  |
+| for IP addresses (order is important).                 | - ``config.json`` setting: ``ServiceSettings`` > ``TrustedProxyIPHeader`` > ``[]``  |
 | All other headers are ignored.                         | - Environment variable: ``MM_SERVICESETTINGS_TRUSTEDPROXYIPHEADER``          |
 |                                                        |                                                                              |
 | String array input consisting of header names,         |                                                                              |
@@ -509,7 +509,7 @@ Enable Strict Transport Security (HSTS)
 
 +--------------------------------------------------------+-------------------------------------------------------------------------------+
 | - **true**: Adds the Strict Transport Security (HSTS)  | - System Config path: N/A                                                     |
-|   header to all responses, forcing the browser to      | - ``config.json`` setting: ``".ServiceSettings.TLSStrictTransport: false",``  |
+|   header to all responses, forcing the browser to      | - ``config.json`` setting: ``ServiceSettings`` > ``TLSStrictTransport`` > ``false``  |
 |   request all resources via HTTPS.                     | - Environment variable: ``MM_SERVICESETTINGS_TLSSTRICTTRANSPORT``             |
 | - **false**: **(Default)** No restrictions on TLS      |                                                                               |
 |   transport. Strict Transport Security (HSTS) header   |                                                                               |
@@ -530,7 +530,7 @@ Secure TLS transport expiry
 
 +--------------------------------------------------------+----------------------------------------------------------------------------------------+
 | The time, in seconds, that the browser remembers a     | - System Config path: N/A                                                              |
-| site is only to be accessed using HTTPS. After this    | - ``config.json`` setting: ``".ServiceSettings.TLSStrictTransportMaxAge: 63072000",``  |
+| site is only to be accessed using HTTPS. After this    | - ``config.json`` setting: ``ServiceSettings`` > ``TLSStrictTransportMaxAge`` > ``63072000``  |
 | period, a site can't be accessed using HTTP unless     | - Environment variable: ``MM_SERVICESETTINGS_TLSSTRICTTRANSPORTMAXAGE``                |
 | ``TLSStrictTransport`` is set to ``true``.             |                                                                                        |
 |                                                        |                                                                                        |
@@ -551,7 +551,7 @@ TLS cipher overwrites
 
 +--------------------------------------------------------+-----------------------------------------------------------------------------+
 | Set TLS ciphers overwrites to meet requirements from   | - System Config path: N/A                                                   |
-| legacy clients which don't support modern ciphers,     | - ``config.json`` setting: ``".ServiceSettings.TLSOverwriteCiphers: []",``  |
+| legacy clients which don't support modern ciphers,     | - ``config.json`` setting: ``ServiceSettings`` > ``TLSOverwriteCiphers`` > ``[]``  |
 | or to limit the types of accepted ciphers.             | - Environment variable: ``MM_SERVICESETTINGS_TLSOVERWRITECIPHERS``          |
 |                                                        |                                                                             |
 | If none specified, the Mattermost server assumes a     |                                                                             |
@@ -578,7 +578,7 @@ Goroutine health threshold
 
 +--------------------------------------------------------+----------------------------------------------------------------------------------+
 | Set a threshold on the number of goroutines when the   | - System Config path: N/A                                                        |
-| Mattermost system is considered to be in a healthy     | - ``config.json`` setting: ``".ServiceSettings.GoroutineHealthThreshold: -1",``  |
+| Mattermost system is considered to be in a healthy     | - ``config.json`` setting: ``ServiceSettings`` > ``GoroutineHealthThreshold`` > ``-1``  |
 | state.                                                 | - Environment variable: ``MM_SERVICESETTINGS_GOROUTINEHEALTHTHRESHOLD``          |
 |                                                        |                                                                                  |
 | When goroutines exceed this limit, a warning is        |                                                                                  |
@@ -602,7 +602,7 @@ Allow cookies for subdomains
 
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
 | - **true**: **(Default)** Allows cookies for           | - System Config path: N/A                                                           |
-|   subdomains by setting the domain parameter on        | - ``config.json`` setting: ``".ServiceSettings.AllowCookiesForSubdomains: true",``  |
+|   subdomains by setting the domain parameter on        | - ``config.json`` setting: ``ServiceSettings`` > ``AllowCookiesForSubdomains`` > ``true``  |
 |   Mattermost cookies.                                  | - Environment variable: ``MM_SERVICESETTINGS_ALLOWCOOKIESFORSUBDOMAINS``            |
 | - **false**: Cookies not allowed for subdomains.       |                                                                                     |
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
@@ -622,7 +622,7 @@ Cluster log timeout
 
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Define the frequency, in milliseconds, of cluster      | - System Config path: N/A                                                               |
-| request time logging for performance monitoring.       | - ``config.json`` setting: ``".ServiceSettings.ClusterLogTimeoutMilliseconds: 2000",``  |
+| request time logging for performance monitoring.       | - ``config.json`` setting: ``ServiceSettings`` > ``ClusterLogTimeoutMilliseconds`` > ``2000``  |
 |                                                        | - Environment variable: ``MM_SERVICESETTINGS_CLUSTERLOGTIMEOUTMILLISECONDS``            |
 |                                                        |                                                                                         |
 | Numerical input. Default is **2000** milliseconds      |                                                                                         |
@@ -643,7 +643,7 @@ Maximum payload size
 
 +-----------------------------------------------------------+-------------------------------------------------------------------------------------+
 | The maximum payload size in bytes for all APIs except     | - System Config path: N/A                                                           |
-| APIs that receive a file as an input.                     | - ``config.json`` setting: ``".ServiceSettings.MaximumPayloadSizeBytes: 300000",``  |
+| APIs that receive a file as an input.                     | - ``config.json`` setting: ``ServiceSettings`` > ``MaximumPayloadSizeBytes`` > ``300000``  |
 |                                                           | - Environment variable: ``MM_SERVICESETTINGS_MAXIMUMPAYLOADSIZEBYTES``              |
 | For example, the upload attachment API or the API to      |                                                                                     |
 | upload a custom emoji.                                    |                                                                                     |
@@ -676,7 +676,7 @@ Driver name
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The type of database. Can be either:                          | - System Config path: N/A                                                |
-|                                                               | - ``config.json`` setting: ``".SqlSettings.DriverName",``                |
+|                                                               | - ``config.json`` setting: ``SqlSettings`` > ``DriverName``                |
 | - **mysql**: **(Default)** Enables driver to MySQL database.  | - Environment variable: ``MM_SQLSETTINGS_DRIVERNAME``                    |
 | - **postgres**: Enables driver to PostgreSQL database.        |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -693,7 +693,7 @@ Data source
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The connection string to the master database.                 | - System Config path: N/A                                                |
-|                                                               | - ``config.json`` setting: ``".SqlSettings.DataSource",``                |
+|                                                               | - ``config.json`` setting: ``SqlSettings`` > ``DataSource``                |
 | String input.                                                 | - Environment variable: ``MM_SQLSETTINGS_DATASOURCE``                    |
 |                                                               |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -808,7 +808,7 @@ Maximum open connections
 
 +--------------------------------------------------------+------------------------------------------------------------------+
 | The maximum number of open connections to the          | - System Config path: **Environment > Database**                 |
-| database.                                              | - ``config.json`` setting: ``".SqlSettings.MaxOpenConns": 300,`` |
+| database.                                              | - ``config.json`` setting: ``SqlSettings`` > ``MaxOpenConns`` > ``300`` |
 |                                                        | - Environment variable: ``MM_SQLSETTINGS_MAXOPENCONNS``          |
 | Numerical input. Default is **300** for self-hosted    |                                                                  |
 | deployments, and **100** for Cloud deployments.        |                                                                  |
@@ -826,7 +826,7 @@ Query timeout
 
 +--------------------------------------------------------+------------------------------------------------------------------+
 | The amount of time to wait, in seconds, for a response | - System Config path: **Environment > Database**                 |
-| from the database after opening a connection and       | - ``config.json`` setting: ``".SqlSettings.QueryTimeout: 30",``  |
+| from the database after opening a connection and       | - ``config.json`` setting: ``SqlSettings`` > ``QueryTimeout`` > ``30``  |
 | sending the query.                                     | - Environment variable: ``MM_SQLSETTINGS_QUERYTIMEOUT``          |
 |                                                        |                                                                  |
 | Numerical input in seconds. Default is **30** seconds. |                                                                  |
@@ -844,7 +844,7 @@ Maximum connection lifetime
 
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
 | Maximum lifetime for a connection to the database,     | - System Config path: **Environment > Database**                                    |
-| in milliseconds. Use this setting to configure the     | - ``config.json`` setting: ``".SqlSettings.ConnMaxLifetimeMilliseconds: 3600000",`` |
+| in milliseconds. Use this setting to configure the     | - ``config.json`` setting: ``SqlSettings`` > ``ConnMaxLifetimeMilliseconds`` > ``3600000`` |
 | maximum amount of time a connection to the database    | - Environment variable: ``MM_SQLSETTINGS_CONNMAXLIFETIMEMILLISECONDS``              |
 | may be reused                                          |                                                                                     |
 |                                                        |                                                                                     |
@@ -864,7 +864,7 @@ Maximum connection idle timeout
 
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
 | Maximum time a database connection can remain idle,    | - System Config path: **Environment > Database**                                    |
-| in milliseconds.                                       | - ``config.json`` setting: ``".SqlSettings.ConnMaxIdleTimeMilliseconds: 300000",``  |
+| in milliseconds.                                       | - ``config.json`` setting: ``SqlSettings`` > ``ConnMaxIdleTimeMilliseconds`` > ``300000``  |
 |                                                        | - Environment variable: ``MM_SQLSETTINGS_CONNMAXIDLETIMEMILLISECONDS``              |
 | Numerical input in milliseconds. Default is **300000** |                                                                                     |
 | (5 minutes).                                           |                                                                                     |
@@ -882,7 +882,7 @@ Minimum hashtag length
 
 +----------------------------------------------------------------------+-------------------------------------------------------------------------+
 | Minimum number of characters in a hashtag.                           | - System Config path: **Environment > Database**                        |
-| This value must be greater than or equal to **2**.                   | - ``config.json`` setting: ``".SqlSettings.MinimumHashtagLength: 3",``  |
+| This value must be greater than or equal to **2**.                   | - ``config.json`` setting: ``SqlSettings`` > ``MinimumHashtagLength`` > ``3``  |
 |                                                                      | - Environment variable: ``MM_SQLSETTINGS_MINIMUMHASHTAGLENGTH``         |
 +----------------------------------------------------------------------+-------------------------------------------------------------------------+
 
@@ -904,7 +904,7 @@ SQL statement logging
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Executed SQL statements can be written to the log for         | - System Config path: **Environment > Database**                         |
-| development.                                                  | - ``config.json`` setting: ``".SqlSettings.Trace: false",``              |
+| development.                                                  | - ``config.json`` setting: ``SqlSettings`` > ``Trace`` > ``false``              |
 |                                                               | - Environment variable: ``MM_SQLSETTINGS_TRACE``                         |
 | - **true**: Executing SQL statements are written to the log.  |                                                                          |
 | - **false**: **(Default)** SQL statements aren't written      |                                                                          |
@@ -945,7 +945,7 @@ Disable database search
 
 +------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
 | When `enterprise-scale search </administration-guide/scale/enterprise-search>`,    | - System Config path: **Environment > Database**                             |
-| database search can be disabled from performing searches.                          | - ``config.json`` setting: ``".SqlSettings.DisableDatabaseSearch: false",``  |
+| database search can be disabled from performing searches.                          | - ``config.json`` setting: ``SqlSettings`` > ``DisableDatabaseSearch`` > ``false``  |
 |                                                                                    | - Environment variable: ``MM_SQLSETTINGS_DISABLEDATABASESEARCH``             |
 | - **true**: Disables the use of the database to perform                            |                                                                              |
 |   searches. If another search engine isn't configured,                             |                                                                              |
@@ -1005,7 +1005,7 @@ Read replicas
 
 +--------------------------------------------------------+-----------------------------------------------------------------------+
 | Specifies the connection strings for the read replica  | - System Config path: N/A                                             |
-| databases.                                             | - ``config.json`` setting: ``".SqlSettings.DataSourceReplicas": []``  |
+| databases.                                             | - ``config.json`` setting: ``SqlSettings`` > ``DataSourceReplicas`` > ``[]``  |
 |                                                        | - Environment variable: ``MM_SQLSETTINGS_DATASOURCEREPLICAS``         |
 +--------------------------------------------------------+-----------------------------------------------------------------------+
 
@@ -1036,7 +1036,7 @@ Search replicas
 
 +--------------------------------------------------------+-----------------------------------------------------------------------------+
 | Specifies the connection strings for the search        | - System Config path: N/A                                                   |
-| replica databases. A search replica is similar to a    | - ``config.json`` setting: ``".SqlSettings.DataSourceSearchReplicas": []``  |
+| replica databases. A search replica is similar to a    | - ``config.json`` setting: ``SqlSettings`` > ``DataSourceSearchReplicas`` > ``[]``  |
 | read replica, but is used only for handling search     | - Environment variable: ``MM_SQLSETTINGS_DATASOURCESEARCHREPLICAS``         |
 | queries.                                               |                                                                             |
 +--------------------------------------------------------+-----------------------------------------------------------------------------+
@@ -1065,7 +1065,7 @@ Replica lag settings
 
 +--------------------------------------------------------+----------------------------------------------------------------------------------+
 | String array input specifies a connection string and   | - System Config path: N/A                                                        |
-| user-defined SQL queries on the database to measure    | - ``config.json`` setting: ``".SqlSettings.ReplicaLagSettings": []``             |
+| user-defined SQL queries on the database to measure    | - ``config.json`` setting: ``SqlSettings`` > ``ReplicaLagSettings`` > ``[]``             |
 | replica lag for a single replica instance.             | - Environment variable: ``MM_SQLSETTINGS_REPLICALAGSETTINGS``                    |
 |                                                        |                                                                                  |
 | These settings monitor absolute lag based on binlog    |                                                                                  |
@@ -1205,7 +1205,7 @@ Replica monitor interval (seconds)
 
 +--------------------------------------------------------+---------------------------------------------------------------------------------+
 | Specifies how frequently unhealthy replicas will be    | - System Config path: N/A                                                       |
-| monitored for liveness check. Mattermost will          | - ``config.json`` setting: ``".SqlSettings.ReplicaMonitorIntervalSeconds": 5``  |
+| monitored for liveness check. Mattermost will          | - ``config.json`` setting: ``SqlSettings`` > ``ReplicaMonitorIntervalSeconds`` > ``5``  |
 | dynamically choose a replica if it's alive.            | - Environment variable: ``MM_SQLSETTINGS_REPLICAMONITORINTERVALSECONDS``        |
 |                                                        |                                                                                 |
 | Numerical input. Default is 5 seconds.                 |                                                                                 |
@@ -1240,7 +1240,7 @@ Enable Elasticsearch indexing
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------------+
 | Configure Mattermost to index new posts automatically.        | - System Config path: **Environment > Elasticsearch**                          |
-|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.EnableIndexing: false",`` |
+|                                                               | - ``config.json`` setting: ``ElasticsearchSettings`` > ``EnableIndexing`` > ``false`` |
 | - **true**: Indexing of new messages occurs automatically.    | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_ENABLEINDEXING``            |
 | - **false**: **(Default)** Indexing of new messages is        |                                                                                |
 |   disabled, and new messages aren't indexed.                  |                                                                                |
@@ -1264,7 +1264,7 @@ Both :doc:`Elasticsearch </administration-guide/scale/elasticsearch-setup>` and 
 
 +----------------------------------------------------+-----------------------------------------------------------------------------------+
 | The type of search backend.                        | - System Config path: **Environment > Elasticsearch**                             |
-|                                                    | - ``config.json`` setting: ``".Elasticsearchsettings.Backend: elasticsearch",``   |
+|                                                    | - ``config.json`` setting: ``ElasticsearchSettings`` > ``Backend`` > ``"elasticsearch"``   |
 | - ``elasticsearch`` - (**Default**)                | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_BACKEND``                      |
 | - ``opensearch`` - Required for AWS OpenSearch.    |                                                                                   |
 +----------------------------------------------------+-----------------------------------------------------------------------------------+
@@ -1283,7 +1283,7 @@ Server connection address
 
 +----------------------------------------------------+--------------------------------------------------------------------------+
 | The address of the Elasticsearch or AWS            | - System Config path: **Environment > Elasticsearch**                    |
-| OpenSearch server.                                 | - ``config.json`` setting: ``".Elasticsearchsettings.ConnectionUrl",``   |
+| OpenSearch server.                                 | - ``config.json`` setting: ``ElasticsearchSettings`` > ``ConnectionUrl``   |
 |                                                    | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CONNECTIONURL``       |
 +----------------------------------------------------+--------------------------------------------------------------------------+
 
@@ -1299,7 +1299,7 @@ CA path
 
 +----------------------------------------------------+--------------------------------------------------------------------------+
 | Optional path to the Custom Certificate Authority  | - System Config path: **Environment > Elasticsearch**                    |
-| certificates for the Elasticsearch or AWS          | - ``config.json`` setting: ``".Elasticsearchsettings.CA",``              |
+| certificates for the Elasticsearch or AWS          | - ``config.json`` setting: ``ElasticsearchSettings`` > ``CA``              |
 | OpenSearch server.                                 | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CA``                  |
 +----------------------------------------------------+--------------------------------------------------------------------------+
 
@@ -1322,7 +1322,7 @@ Available from Mattermost v7.8. Can be used in conjunction with basic auth crede
 
 +----------------------------------------------------+--------------------------------------------------------------------------+
 | Optional client certificate for the connection to  | - System Config path: **Environment > Elasticsearch**                    |
-| the Elasticsearch or AWS OpenSearch server in      | - ``config.json`` setting: ``".Elasticsearchsettings.ClientCert",``      |
+| the Elasticsearch or AWS OpenSearch server in      | - ``config.json`` setting: ``ElasticsearchSettings`` > ``ClientCert``      |
 | the PEM format.                                    | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CLIENTCERT``          |
 +----------------------------------------------------+--------------------------------------------------------------------------+
 
@@ -1340,7 +1340,7 @@ Available from Mattermost v7.8. Can be used in conjunction with basic auth crede
 
 +----------------------------------------------------+--------------------------------------------------------------------------+
 | Optional key for the client certificate in the PEM | - System Config path: **Environment > Elasticsearch**                    |
-| format.                                            | - ``config.json`` setting: ``".Elasticsearchsettings.ClientKey",``       |
+| format.                                            | - ``config.json`` setting: ``ElasticsearchSettings`` > ``ClientKey``       |
 |                                                    | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CLIENTKEY``           |
 +----------------------------------------------------+--------------------------------------------------------------------------+
 
@@ -1359,7 +1359,7 @@ Skip TLS verification
 
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | The certificate step for TLS connections can be skipped.      | - System Config path: **Environment > Elasticsearch**                               |
-|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.SkipTLSVerification: false",`` |
+|                                                               | - ``config.json`` setting: ``ElasticsearchSettings`` > ``SkipTLSVerification`` > ``false`` |
 | - **true**: Skips the certificate verification step for       | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_SKIPTLSVERIFICATION``            |
 |   TLS connections.                                            |                                                                                     |
 | - **false**: **(Default)** Mattermost requires                |                                                                                     |
@@ -1378,7 +1378,7 @@ Server username
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | (Optional) The username to authenticate to the                | - System Config path: **Environment > Elasticsearch**                    |
-| Elasticsearch or AWS OpenSearch server.                       | - ``config.json`` setting: ``".Elasticsearchsettings.UserName",``        |
+| Elasticsearch or AWS OpenSearch server.                       | - ``config.json`` setting: ``ElasticsearchSettings`` > ``UserName``        |
 |                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_USERNAME``            |
 | String input.                                                 |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -1395,7 +1395,7 @@ Server password
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | (Optional) The password to authenticate to the                | - System Config path: **Environment > Elasticsearch**                    |
-| Elasticsearch or AWS OpenSearch server.                       | - ``config.json`` setting: ``".Elasticsearchsettings.Password",``        |
+| Elasticsearch or AWS OpenSearch server.                       | - ``config.json`` setting: ``ElasticsearchSettings`` > ``Password``        |
 |                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_PASSWORD``            |
 | String input.                                                 |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -1415,7 +1415,7 @@ Enable cluster sniffing
 
 +----------------------------------------------------------------+--------------------------------------------------------------------------+
 | Configure Mattermost to automatically find and connect to      | - System Config path: **Environment > Elasticsearch**                    |
-| all data nodes in a cluster.                                   | - ``config.json`` setting: ``".Elasticsearchsettings.Sniff: false",``    |
+| all data nodes in a cluster.                                   | - ``config.json`` setting: ``ElasticsearchSettings`` > ``Sniff`` > ``false``    |
 |                                                                | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_SNIFF``               |
 | - **true**: Sniffing finds and connects to all data nodes      |                                                                          |
 |   in your cluster automatically.                               |                                                                          |
@@ -1495,7 +1495,7 @@ Indexes to skip while purging
 
 +---------------------------------------------------------------+---------------------------------------------------------------------------+
 | Specify index names to ignore while purging indexes.          | - System Config path: **Environment > Elasticsearch**                     |
-| Separate multiple index names with commas.                    | - ``config.json`` setting: ``ElasticsearchSettings.IgnoredPurgeIndexes``  |
+| Separate multiple index names with commas.                    | - ``config.json`` setting: ``ElasticsearchSettings`` > ``IgnoredPurgeIndexes``  |
 |                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_IGNOREDPURGEINDEXES``  |
 | Use an asterisk (*) to match a sequence of index name         |                                                                           |
 | characters.                                                   |                                                                           |
@@ -1516,7 +1516,7 @@ Enable Elasticsearch for search queries
 
 +---------------------------------------------------------------+---------------------------------------------------------------------------------+
 | Configure Mattermost to use Elasticsearch or AWS OpenSearch   | - System Config path: **Environment > Elasticsearch**                           |
-| for all search queries using the latest index.                | - ``config.json`` setting: ``".Elasticsearchsettings.EnableSearching: false",`` |
+| for all search queries using the latest index.                | - ``config.json`` setting: ``ElasticsearchSettings`` > ``EnableSearching`` > ``false`` |
 |                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_ENABLESEARCHING``            |
 | - **true**: Elasticsearch or AWS OpenSearch is used for all   |                                                                                 |
 |   search queries using the latest index. Search results may   |                                                                                 |
@@ -1543,7 +1543,7 @@ Enable Elasticsearch for autocomplete queries
 
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
 | Configure Mattermost to use Elasticsearch or AWS OpenSearch   | - System Config path: **Environment > Elasticsearch**                              |
-| for all autocompletion queries on users and channels using    | - ``config.json`` setting: ``".Elasticsearchsettings.EnableAutocomplete: false",`` |
+| for all autocompletion queries on users and channels using    | - ``config.json`` setting: ``ElasticsearchSettings`` > ``EnableAutocomplete`` > ``false`` |
 | the latest index.                                             | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_ENABLEAUTOCOMPLETE``            |
 |                                                               |                                                                                    |
 | - **true**: Elasticsearch or AWS OpenSearch will be used for  |                                                                                    |
@@ -1566,7 +1566,7 @@ Post index replicas
 
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 | The number of replicas to use for each post index.            | - System Config path: N/A                                                     |
-|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.PostIndexReplicas: 1",`` |
+|                                                               | - ``config.json`` setting: ``ElasticsearchSettings`` > ``PostIndexReplicas`` > ``1`` |
 | Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_POSTINDEXREPLICAS``        |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 
@@ -1588,7 +1588,7 @@ Post index shards
 
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 | The number of shards to use for each post index.              | - System Config path: N/A                                                     |
-|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.PostIndexShards: 1",``   |
+|                                                               | - ``config.json`` setting: ``ElasticsearchSettings`` > ``PostIndexShards`` > ``1``   |
 | Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_POSTINDEXSHARDS``          |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 
@@ -1608,7 +1608,7 @@ Channel index replicas
 
 +---------------------------------------------------------------+----------------------------------------------------------------------------------+
 | The number of replicas to use for each channel index.         | - System Config path: N/A                                                        |
-|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.ChannelIndexReplicas: 1",`` |
+|                                                               | - ``config.json`` setting: ``ElasticsearchSettings`` > ``ChannelIndexReplicas`` > ``1`` |
 | Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CHANNELINDEXREPLICAS``        |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------+
 
@@ -1628,7 +1628,7 @@ Channel index shards
 
 +---------------------------------------------------------------+----------------------------------------------------------------------------------+
 | The number of shards to use for each channel index.           | - System Config path: N/A                                                        |
-|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.ChannelIndexShards: 1",``   |
+|                                                               | - ``config.json`` setting: ``ElasticsearchSettings`` > ``ChannelIndexShards`` > ``1``   |
 | Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CHANNELINDEXSHARDS``          |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------+
 
@@ -1644,7 +1644,7 @@ User index replicas
 
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 | The number of replicas to use for each user index.            | - System Config path: N/A                                                     |
-|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.UserIndexReplicas: 1",`` |
+|                                                               | - ``config.json`` setting: ``ElasticsearchSettings`` > ``UserIndexReplicas`` > ``1`` |
 | Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_USERINDEXREPLICAS``        |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 
@@ -1664,7 +1664,7 @@ User index shards
 
 +---------------------------------------------------------------+----------------------------------------------------------------------------------+
 | The number of shards to use for each user index.              | - System Config path: N/A                                                        |
-|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.UserIndexShards: 1",``      |
+|                                                               | - ``config.json`` setting: ``ElasticsearchSettings`` > ``UserIndexShards`` > ``1``      |
 | Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_USERINDEXSHARDS``             |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------+
 
@@ -1680,7 +1680,7 @@ Aggregate search indexes
 
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------+
 | Elasticsearch or AWS OpenSearch indexes older than the age    | - System Config path: N/A                                                              |
-| specified by this setting, in days, will be aggregated during | - ``config.json`` setting: ``".Elasticsearchsettings.AggregatePostsAfterDays: 365",``  |
+| specified by this setting, in days, will be aggregated during | - ``config.json`` setting: ``ElasticsearchSettings`` > ``AggregatePostsAfterDays`` > ``365``  |
 | the daily scheduled job.                                      | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_AGGREGATEPOSTSAFTERDAYS``           |
 |                                                               |                                                                                        |
 | Numerical input. Default is **365** days.                     |                                                                                        |
@@ -1702,7 +1702,7 @@ Post aggregator start time
 
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 | The start time of the daily scheduled aggregator job.         | - System Config path: N/A                                                                   |
-|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.PostsAggregatorJobStartTime: 03:00",`` |
+|                                                               | - ``config.json`` setting: ``ElasticsearchSettings`` > ``PostsAggregatorJobStartTime`` > ``"03:00"`` |
 | Must be a 24-hour time stamp in the form ``HH:MM`` based on   | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_POSTSAGGREGATORJOBSTARTTIME``            |
 | the local time of the server.                                 |                                                                                             |
 |                                                               |                                                                                             |
@@ -1721,7 +1721,7 @@ Index prefix
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The prefix added to the Elasticsearch or AWS OpenSearch       | - System Config path: N/A                                                |
-| index name.                                                   | - ``config.json`` setting: ``".Elasticsearchsettings.IndexPrefix",``     |
+| index name.                                                   | - ``config.json`` setting: ``ElasticsearchSettings`` > ``IndexPrefix``     |
 |                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_INDEXPREFIX``         |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
@@ -1741,7 +1741,7 @@ Global search prefix
 
 +---------------------------------------------------------------+------------------------------------------------------------------------------+
 | Enable global search across multiple Elasticsearch indices    | - System Config path: N/A                                                    |
-| with the same `index prefix <#index-prefix>`__.               | - ``config.json`` setting: ``".Elasticsearchsettings.GlobalSearchPrefix",``  |
+| with the same `index prefix <#index-prefix>`__.               | - ``config.json`` setting: ``ElasticsearchSettings`` > ``GlobalSearchPrefix``  |
 |                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_GLOBALSEARCHPREFIX``      |
 | This is helpful for setups with multiple data centers where   |                                                                              |
 | Elasticsearch instances share data using cross-cluster        |                                                                              |
@@ -1763,7 +1763,7 @@ Live indexing batch size
 
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------+
 | The number of new posts needed before those posts are added   | - System Config path: N/A                                                         |
-| to the Elasticsearch or AWS OpenSearch index. Once added to   | - ``config.json`` setting: ``".Elasticsearchsettings.LiveIndexingBatchSize: 1",`` |
+| to the Elasticsearch or AWS OpenSearch index. Once added to   | - ``config.json`` setting: ``ElasticsearchSettings`` > ``LiveIndexingBatchSize`` > ``1`` |
 | the index, the post becomes searchable.                       | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_LIVEINDEXINGBATCHSIZE``        |
 |                                                               |                                                                                   |
 | On servers with more than 1 post per second, we suggest       |                                                                                   |
@@ -1844,7 +1844,7 @@ Batch size
 
 +-------------------------------------------+---------------------------------------------------------------------------+
 | The number of posts for a single batch    | - System Config path: N/A                                                 |
-| during a bulk indexing job.               | - ``config.json`` setting: ``".Elasticsearchsettings.BatchSize :10000",`` |
+| during a bulk indexing job.               | - ``config.json`` setting: ``ElasticsearchSettings`` > ``BatchSize`` > ``10000`` |
 |                                           | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_BATCHSIZE``            |
 | Numerical input. Default is **10000**.    |                                                                           |
 +-------------------------------------------+---------------------------------------------------------------------------+
@@ -1861,7 +1861,7 @@ Request timeout
 
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
 | The timeout, in seconds, for Elasticsearch or AWS OpenSearch  | - System Config path: N/A                                                          |
-| calls.                                                        | - ``config.json`` setting: ``".Elasticsearchsettings.RequestTimeoutSeconds :30",`` |
+| calls.                                                        | - ``config.json`` setting: ``ElasticsearchSettings`` > ``RequestTimeoutSeconds`` > ``30`` |
 |                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_REQUESTTIMEOUTSECONDS``         |
 | Numerical input in seconds. Default is **30** seconds.        |                                                                                    |
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
@@ -1882,7 +1882,7 @@ Trace
 
 +---------------------------------------------------------------------+--------------------------------------------------------------------------+
 | Options for printing Elasticsearch or AWS OpenSearch trace errors.  | - System Config path: N/A                                                |
-|                                                                     | - ``config.json`` setting: ``".Elasticsearchsettings.Trace",``           |
+|                                                                     | - ``config.json`` setting: ``ElasticsearchSettings`` > ``Trace``           |
 | - **error**: Creates the error trace when initializing              | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_TRACE``               |
 |   the Elasticsearch or AWS OpenSearch client and prints any         |                                                                          |
 |   template creation or search query that returns an error as part   |                                                                          |
@@ -1925,7 +1925,7 @@ File storage system
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The type of file storage system used.                         | - System Config path: **Environment > File Storage**                     |
-| Can be either Local File System or Amazon S3.                 | - ``config.json`` setting: ``".FileSettings.DriverName:  local”,``       |
+| Can be either Local File System or Amazon S3.                 | - ``config.json`` setting: ``FileSettings`` > ``DriverName`` > ``"local"``       |
 |                                                               | - Environment variable: ``MM_FILESETTINGS_DRIVERNAME``                   |
 | - **local**: **(Default)** Files and images are stored in     |                                                                          |
 |   the specified local file directory.                         |                                                                          |
@@ -1947,7 +1947,7 @@ Local storage directory
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The local directory to which files are written when the       | - System Config path: **Environment > File Storage**                     |
-| **File storage system** is set to **local**.                  | - ``config.json`` setting: ``".FileSettings.Directory”,``                |
+| **File storage system** is set to **local**.                  | - ``config.json`` setting: ``FileSettings`` > ``Directory``                |
 | Can be any directory writable by the user Mattermost is       | - Environment variable: ``MM_FILESETTINGS_DIRECTORY``                    |
 | running as, and is relative to the directory where            |                                                                          |
 | Mattermost is installed.                                      |                                                                          |
@@ -1969,7 +1969,7 @@ Maximum file size
 
 +-------------------------------------------------------------------+--------------------------------------------------------------------------+
 | The maximum file size for message attachments and plugin          | - System Config path: **Environment > File Storage**                     |
-| uploads. This value must be specified in mebibytes in the         | - ``config.json`` setting: ``".FileSettings.MaxFileSize: 104857600",``   |
+| uploads. This value must be specified in mebibytes in the         | - ``config.json`` setting: ``FileSettings`` > ``MaxFileSize`` > ``104857600``   |
 | System Console, and in bytes in the ``config.json`` file.         | - Environment variable: ``MM_FILESETTINGS_MAXFILESIZE``                  |
 |                                                                   |                                                                          |
 | The default is ``104857600`` bytes (**100** mebibytes).           |                                                                          |
@@ -1999,7 +1999,7 @@ Enable document search by content
 
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | Enable users to search the contents of documents attached     | - System Config path: **Environment > File Storage**                                |
-| to messages.                                                  | - ``config.json`` setting: ``".FileSettings.ExtractContent: true",``                |
+| to messages.                                                  | - ``config.json`` setting: ``FileSettings`` > ``ExtractContent`` > ``true``                |
 |                                                               | - Environment variable: ``MM_FILESETTINGS_EXTRACTCONTENT``                          |
 | - **true**: **(Default)** Documents are searchable by         |                                                                                     |
 |   their content.                                              |                                                                                     |
@@ -2037,7 +2037,7 @@ Enable searching content of documents within ZIP files
 
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------+
 | Enables users to search the contents of compressed ZIP files  | - System Config path: **Environment > File Storage**                                   |
-| attached to messages.                                         | - ``config.json`` setting: ``".FileSettings.ArchiveRecursion: false",``                |
+| attached to messages.                                         | - ``config.json`` setting: ``FileSettings`` > ``ArchiveRecursion`` > ``false``                |
 |                                                               | - Environment variable: ``MM_FILESETTINGS_ARCHIVERECURSION``                           |
 | - **true**: Contents of documents within ZIP files are        |                                                                                        |
 |   returned in search results. This may have an impact on      |                                                                                        |
@@ -2065,7 +2065,7 @@ Amazon S3 bucket
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The name of the bucket for your S3-compatible object          | - System Config path: **Environment > File Storage**                     |
-| storage instance.                                             | - ``config.json`` setting: ``".FileSettings.AmazonS3Bucket",``           |
+| storage instance.                                             | - ``config.json`` setting: ``FileSettings`` > ``AmazonS3Bucket``           |
 |                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3BUCKET``               |
 | A string with the S3-compatible bucket name.                  |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -2082,7 +2082,7 @@ Amazon S3 path prefix
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The prefix you selected for your **Amazon S3 bucket** in AWS. | - System Config path: N/A                                                |
-|                                                               | - ``config.json`` setting: ``".FileSettings.AmazonS3PathPrefix",``       |
+|                                                               | - ``config.json`` setting: ``FileSettings`` > ``AmazonS3PathPrefix``       |
 | A string containing the path prefix.                          | - Environment variable: ``MM_FILESETTINGS_AMAZONS3PATHPREFIX``           |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
@@ -2120,7 +2120,7 @@ Amazon S3 access key ID
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | A string with the access key for the S3-compatible storage    | - System Config path: **Environment > File Storage**                     |
-| instance. Your EC2 administrator can supply you with the      | - ``config.json`` setting: ``".FileSettings.AmazonS3AccessKeyId",``      |
+| instance. Your EC2 administrator can supply you with the      | - ``config.json`` setting: ``FileSettings`` > ``AmazonS3AccessKeyId``      |
 | Access Key ID.                                                | - Environment variable: ``MM_FILESETTINGS_AMAZONS3ACCESSKEYID``          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
@@ -2140,7 +2140,7 @@ Amazon S3 endpoint
 
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
 | The hostname of your S3-compatible instance.                  | - System Config path: **Environment > File Storage**                               |
-|                                                               | - ``config.json`` setting: ``".FileSettings.AmazonS3Endpoint: s3.amazonaws.com",`` |
+|                                                               | - ``config.json`` setting: ``FileSettings`` > ``AmazonS3Endpoint`` > ``"s3.amazonaws.com"`` |
 | A string with the hostname of the S3-compatible storage       | - Environment variable: ``MM_FILESETTINGS_AMAZONS3ENDPOINT``                       |
 | instance. Defaults to **s3.amazonaws.com**.                   |                                                                                    |
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
@@ -2161,7 +2161,7 @@ Amazon S3 secret access key
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The secret access key associated with your Amazon S3          | - System Config path: **Environment > File Storage**                     |
-| Access Key ID.                                                | - ``config.json`` setting: ``".FileSettings.AmazonS3SecretAccessKey",``  |
+| Access Key ID.                                                | - ``config.json`` setting: ``FileSettings`` > ``AmazonS3SecretAccessKey``  |
 |                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3SECRETACCESSKEY``      |
 | A string with the secret access key for the S3-compatible     |                                                                          |
 | storage instance.                                             |                                                                          |
@@ -2179,7 +2179,7 @@ Enable secure Amazon S3 connections
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Enable or disable secure Amazon S3 connections.               | - System Config path: **Environment > File Storage**                     |
-|                                                               | - ``config.json`` setting: ``".FileSettings.AmazonS3SSL: true",``        |
+|                                                               | - ``config.json`` setting: ``FileSettings`` > ``AmazonS3SSL`` > ``true``        |
 | - **true**: **(Default)** Enables only secure Amazon          | - Environment variable: ``MM_FILESETTINGS_AMAZONS3SSL``                  |
 |   S3 connections.                                             |                                                                          |
 | - **false**: Allows insecure connections to Amazon S3.        |                                                                          |
@@ -2199,7 +2199,7 @@ Amazon S3 signature v2
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | By default, Mattermost uses Signature v4 to sign API calls    | - System Config path: N/A                                                |
-| to AWS, but under some circumstances, v2 is required.         | - ``config.json`` setting: ``".FileSettings.AmazonS3SignV2: false",``    |
+| to AWS, but under some circumstances, v2 is required.         | - ``config.json`` setting: ``FileSettings`` > ``AmazonS3SignV2`` > ``false``    |
 |                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3SIGNV2``               |
 | - **true**: Use Signature v2 signing process.                 |                                                                          |
 | - **false**: **(Default)** Use Signature v4 signing process.  |                                                                          |
@@ -2224,7 +2224,7 @@ Enable server-side encryption for Amazon S3
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Enable server-side encryption for Amazon S3.                  | - System Config path: **Environment > File Storage**                     |
-|                                                               | - ``config.json`` setting: ``".FileSettings.AmazonS3SSE: false",``       |
+|                                                               | - ``config.json`` setting: ``FileSettings`` > ``AmazonS3SSE`` > ``false``       |
 | - **true**: Encrypts files in Amazon S3 using server-side     | - Environment variable: ``MM_FILESETTINGS_AMAZONS3SSE``                  |
 |   encryption with Amazon S3-managed keys.                     |                                                                          |
 | - **false**: **(Default)** Doesn’t encrypt files in           |                                                                          |
@@ -2245,7 +2245,7 @@ Enable Amazon S3 debugging
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Enable or disable Amazon S3 debugging to capture additional   | - System Config path: **Environment > File Storage**                     |
-| debugging information in system logs.                         | - ``config.json`` setting: ``".FileSettings.AmazonS3Trace: false",``     |
+| debugging information in system logs.                         | - ``config.json`` setting: ``FileSettings`` > ``AmazonS3Trace`` > ``false``     |
 |                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3TRACE``                |
 | - **true**: Log additional debugging information is logged    |                                                                          |
 |   to the system logs.                                         |                                                                          |
@@ -2270,7 +2270,7 @@ Some Amazon S3-compatible storage solutions require the storage class parameter 
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The storage class to use for uploads to S3-compatible         | - System Config path: **Environment > File Storage**                     |
-| storage solutions.                                            | - ``config.json`` setting: ``.FileSettings.AmazonS3StorageClass: ""``,   |
+| storage solutions.                                            | - ``config.json`` setting: ``FileSettings`` > ``AmazonS3StorageClass`` > ``""``,   |
 |                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3STORAGECLASS``         |
 | String input. Default is an empty string ``""``.              |                                                                          |
 | Select **Test Connection** to test the configured connection. |                                                                          |
@@ -2292,7 +2292,7 @@ Export Amazon S3 storage class
 
 +---------------------------------------------------------------+---------------------------------------------------------------------------------+
 | The storage class to use for exports to S3-compatible         | - System Config path: N/A                                                       |
-| storage solutions.                                            | - ``config.json`` setting: ``.FileSettings.ExportAmazonS3StorageClass: "",``    |
+| storage solutions.                                            | - ``config.json`` setting: ``FileSettings`` > ``ExportAmazonS3StorageClass`` > ``""``    |
 |                                                               | - Environment variable: ``MM_FILESETTINGS_EXPORTAMAZONS3STORAGECLASS``          |
 | String input. Default is an empty string ``""``.              |                                                                                 | 
 +---------------------------------------------------------------+---------------------------------------------------------------------------------+
@@ -2313,7 +2313,7 @@ Amazon S3 request timeout
 
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | The amount of time, in milliseconds, before requests to       | - System Config path: N/A                                                               |
-| Amazon S3 storage time out.                                   | - ``config.json`` setting: ``".FileSettings.AmazonS3RequestTimeoutMilliseconds: 30000`` |
+| Amazon S3 storage time out.                                   | - ``config.json`` setting: ``FileSettings`` > ``AmazonS3RequestTimeoutMilliseconds`` > ``30000`` |
 |                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3REQUESTTIMEOUTMILLISECONDS``          |
 | Default is 30000 (30 seconds).                                |                                                                                         |
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
@@ -2330,7 +2330,7 @@ Amazon S3 upload part size
 
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------+
 | The size, in bytes, of each part in a multi-part              | - System Config path: N/A                                                             |
-| upload to Amazon S3.                                          | - ``config.json`` setting: ``".FileSettings.AmazonS3UploadPartSizeBytes: 5242880``    |
+| upload to Amazon S3.                                          | - ``config.json`` setting: ``FileSettings`` > ``AmazonS3UploadPartSizeBytes`` > ``5242880``    |
 |                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3UPLOADPARTSIZEBYTES``               |
 | Numeric value. Default is 5242880 (5MB).                      |                                                                                       |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------+
@@ -2351,7 +2351,7 @@ Amazon S3 exported upload part size
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------------------------+
 | The size, in bytes, of each part in a multi-part              | - System Config path: N/A                                                                  |
-| exported to Amazon S3.                                        | - ``config.json`` setting: ``".FileSettings.ExportAmazonS3UploadPartSizeBytes: 104857600`` |
+| exported to Amazon S3.                                        | - ``config.json`` setting: ``FileSettings`` > ``ExportAmazonS3UploadPartSizeBytes`` > ``104857600`` |
 |                                                               | - Environment variable: ``MM_FILESETTINGS_EXPORTAMAZONS3UPLOADPARTSIZEBYTES``              |
 | Numeric value. Default is 104857600 (100MB).                  |                                                                                            |
 +---------------------------------------------------------------+--------------------------------------------------------------------------------------------+
@@ -2372,7 +2372,7 @@ Amazon S3 request timeout
 
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | The amount of time, in milliseconds, before requests to       | - System Config path: N/A                                                               |
-| Amazon S3 storage time out.                                   | - ``config.json`` setting: ``".FileSettings.AmazonS3RequestTimeoutMilliseconds: 30000`` |
+| Amazon S3 storage time out.                                   | - ``config.json`` setting: ``FileSettings`` > ``AmazonS3RequestTimeoutMilliseconds`` > ``30000`` |
 |                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3REQUESTTIMEOUTMILLISECONDS``          |
 | Default is 30000 (30 seconds).                                |                                                                                         |
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
@@ -2389,7 +2389,7 @@ Initial font
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------------+
 | The font used in auto-generated profile pictures with colored | - System Config path: N/A                                                      |
-| backgrounds and username initials.                            | - ``config.json`` setting: ``".FileSettings.InitialFont: nunito-bold.ttf",``   |
+| backgrounds and username initials.                            | - ``config.json`` setting: ``FileSettings`` > ``InitialFont`` > ``"nunito-bold.ttf"``   |
 |                                                               | - Environment variable: ``MM_FILESETTINGS_INITIALFONT``                        |
 | A string with the font file name. Default is                  |                                                                                |
 | **nunito-bold.ttf**.                                          |                                                                                |
@@ -2703,7 +2703,7 @@ Enable high availability mode
 
 +-----------------------------------------------------------------+------------------------------------------------------------+
 | You can enable high availability mode.                          | - System Config path: **Environment > High Availability**  |
-|                                                                 | - ``config.json`` setting: ``".ClusterSettings.Enable",``  |
+|                                                                 | - ``config.json`` setting: ``ClusterSettings`` > ``Enable``  |
 | - **true**: The Mattermost server will attempt inter-node       | - Environment variable: ``MM_CLUSTERSETTINGS_ENABLE``      |
 |   communication with the other servers in the cluster that      |                                                            |
 |   have the same cluster name. This sets the System Console to   |                                                            |
@@ -2725,7 +2725,7 @@ Cluster name
 
 +------------------------------------------------------------------------------+-----------------------------------------------------------------+
 | The cluster to join by name in a high availability cluster-based deployment. | - System Config path: **Environment > High Availability**       |
-|                                                                              | - ``config.json`` setting: ``".ClusterSettings.ClusterName",``  |
+|                                                                              | - ``config.json`` setting: ``ClusterSettings`` > ``ClusterName``  |
 | Only nodes with the same cluster name will join together.                    | - Environment variable: ``MM_CLUSTERSETTINGS_CLUSTERNAME``      |
 | This is to support blue-green deployments or staging pointing                |                                                                 |
 | to the same database.                                                        |                                                                 |
@@ -2743,7 +2743,7 @@ Override hostname
 
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 | You can override the hostname of this server.                   | - System Config path: **Environment > High Availability**              |
-|                                                                 | - ``config.json`` setting: ``".ClusterSettings.OverrideHostname",``    |
+|                                                                 | - ``config.json`` setting: ``ClusterSettings`` > ``OverrideHostname``    |
 | - This property can be set to a specific IP address if needed;  | - Environment variable: ``MM_CLUSTERSETTINGS_OVERRIDEHOSTNAME``        |
 |   however, we don’t recommend overriding the hostname unless    |                                                                        |
 |   it's necessary.                                               |                                                                        |
@@ -2767,7 +2767,7 @@ Use IP address
 
 +------------------------------------------------------------------------------+------------------------------------------------------------------------+
 | You can configure your high availability cluster-based deployment to         | - System Config path: **Environment > High Availability**              |
-| communicate using the hostname instead of the IP address.                    | - ``config.json`` setting: ``".ClusterSettings.UseIPAddress: true",``  |
+| communicate using the hostname instead of the IP address.                    | - ``config.json`` setting: ``ClusterSettings`` > ``UseIPAddress`` > ``true``  |
 |                                                                              | - Environment variable: ``MM_CLUSTERSETTINGS_USEIPADDRESS``            |
 | - **true**: **(Default)** The cluster attempts to communicate                |                                                                        |
 |   using the IP address specified.                                            |                                                                        |
@@ -2789,7 +2789,7 @@ Enable gossip encryption
 
 +-----------------------------------------------------------------+----------------------------------------------------------------------------------+
 | Gossip encryption uses AES-256 by default, and this value isn't | - System Config path: **Environment > High Availability**                        |
-| configurable by design.                                         | - ``config.json`` setting: ``".ClusterSettings.EnableGossipEncryption: true",``  |
+| configurable by design.                                         | - ``config.json`` setting: ``ClusterSettings`` > ``EnableGossipEncryption`` > ``true``  |
 |                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_ENABLEGOSSIPENCRYPTION``            |
 | - **true**: **(Default)** The server attempts to communicate    |                                                                                  |
 |   via the gossip protocol over the gossip port specified.       |                                                                                  |
@@ -2817,7 +2817,7 @@ Enable gossip compression
 
 +-----------------------------------------------------------------+----------------------------------------------------------------------------------+
 | We recommend that you disable this configuration                | - System Config path: **Environment > High Availability**                        |
-| setting for better performance.                                 | - ``config.json`` setting: ``".ClusterSettings.EnableGossipCompression: true”,`` |
+| setting for better performance.                                 | - ``config.json`` setting: ``ClusterSettings`` > ``EnableGossipCompression`` > ``true`` |
 |                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_ENABLEGOSSIPCOMPRESSION``           |
 | - **true**: **(Default for self-hosted deployments)**           |                                                                                  |
 |   All communication through the cluster uses gossip             |                                                                                  |
@@ -2840,7 +2840,7 @@ Gossip port
 
 +-----------------------------------------------------------------+---------------------------------------------------------------------+
 | The port used for the gossip protocol. Both UDP and TCP         | - System Config path: **Environment > High Availability**           |
-| should be allowed on this port.                                 | - ``config.json`` setting: ``".ClusterSettings.GossipPort: 8074”,`` |
+| should be allowed on this port.                                 | - ``config.json`` setting: ``ClusterSettings`` > ``GossipPort`` > ``8074`` |
 |                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_GOSSIPPORT``           |
 | Numerical input. Default is **8074**.                           |                                                                     |
 +-----------------------------------------------------------------+---------------------------------------------------------------------+
@@ -2857,7 +2857,7 @@ Read only config
 
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 | - **true**: **(Default)** Changes made to settings in the       | - System Config path: N/A                                              |
-|   System Console are ignored.                                   | - ``config.json`` setting: ``".ClusterSettings.ReadOnlyConfig: true,`` |
+|   System Console are ignored.                                   | - ``config.json`` setting: ``ClusterSettings`` > ``ReadOnlyConfig`` > ``true`` |
 | - **false**: Changes made to settings in the System Console     | - Environment variable: ``MM_CLUSTERSETTINGS_READONLYCONFIG``          |
 |   are written to ``config.json``.                               |                                                                        |
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
@@ -2874,7 +2874,7 @@ Network interface
 
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 | An IP address used to identify the device that does automatic   | - System Config path: N/A                                              |
-| IP detection in high availability cluster-based deployments.    | - ``config.json`` setting: ``".ClusterSettings.NetworkInterface: "",`` |
+| IP detection in high availability cluster-based deployments.    | - ``config.json`` setting: ``ClusterSettings`` > ``NetworkInterface`` > ``""`` |
 |                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_NETWORKINTERFACE``        |
 | String input.                                                   |                                                                        |
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
@@ -2891,7 +2891,7 @@ Bind address
 
 +-----------------------------------------------------------------+--------------------------------------------------------------------+
 | An IP address used to bind cluster traffic to a specific        | - System Config path: N/A                                          |
-| network device.                                                 | - ``config.json`` setting: ``".ClusterSettings.BindAddress: "",``  |
+| network device.                                                 | - ``config.json`` setting: ``ClusterSettings`` > ``BindAddress`` > ``""``  |
 |                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_BINDADDRESS``         |
 | This setting is used primarily for servers with multiple        |                                                                    |
 | network devices or different Bind Address and Advertise Address |                                                                    |
@@ -2913,7 +2913,7 @@ Advertise address
 
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 | The IP address used to access the server from other nodes.      | - System Config path: N/A                                              |
-| This settings is used primary when cluster nodes are not in     | - ``config.json`` setting: ``".ClusterSettings.AdvertiseAddress: "",`` |
+| This settings is used primary when cluster nodes are not in     | - ``config.json`` setting: ``ClusterSettings`` > ``AdvertiseAddress`` > ``""`` |
 | the same network and involve NAT (Network Address Translation). | - Environment variable: ``MM_CLUSTERSETTINGS_ADVERTISEADDRESS``        |
 |                                                                 |                                                                        |
 | String input.                                                   |                                                                        |
@@ -3726,7 +3726,7 @@ Extend session length with activity
 
 +----------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Improves the user experience by extending sessions and keeping | - System Config path: **Environment > Session Lengths**                                 |
-| users logged in if they are active in their Mattermost apps.   | - ``config.json`` setting: ``".ServiceSettings.ExtendSessionLengthWithActivity: true,`` |
+| users logged in if they are active in their Mattermost apps.   | - ``config.json`` setting: ``ServiceSettings`` > ``ExtendSessionLengthWithActivity`` > ``true`` |
 |                                                                | - Environment variable: ``MM_SERVICESETTINGS_EXTENDSESSIONLENGTHWITHACTIVITY``          |
 | - **true**: **(Default)** Sessions are automatically           |                                                                                         |
 |   extended when users are active in their Mattermost           |                                                                                         |
@@ -3753,7 +3753,7 @@ Terminate sessions on password change
 
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------+
 | Enable or disable session revocation when a user's             | - System Config path: **Environment > Session Lengths**                                   |
-| password changes.                                              | - ``config.json`` setting: ``".ServiceSettings.TerminateSessionsOnPasswordChange: true,`` |
+| password changes.                                              | - ``config.json`` setting: ``ServiceSettings`` > ``TerminateSessionsOnPasswordChange`` > ``true`` |
 |                                                                | - Environment variable: ``MM_SERVICESETTINGS_TERMINATESESSIONSONPASSWORDCHANGE``          |
 | - **true**: **(Default for new deployments)**                  |                                                                                           |
 |   Session revocation is enabled.                               |                                                                                           |
@@ -3782,7 +3782,7 @@ Session length for AD/LDAP and email
 
 +----------------------------------------------------------------+--------------------------------------------------------------------------------+
 | Set the number of hours counted from the last time a user      | - System Config path: **Environment > Session Lengths**                        |
-| entered their credentials into the web app or the desktop      | - ``config.json`` setting: ``".ServiceSettings.SessionLengthWebInHours: 720,`` |
+| entered their credentials into the web app or the desktop      | - ``config.json`` setting: ``ServiceSettings`` > ``SessionLengthWebInHours`` > ``720`` |
 | app to the expiry of the user’s session on email and AD/LDAP   | - Environment variable: ``MM_SERVICESETTINGS_SESSIONLENGTHWEBINHOURS``         |
 | authentication.                                                |                                                                                |
 |                                                                |                                                                                |
@@ -3805,7 +3805,7 @@ Session length for mobile
 
 +----------------------------------------------------------------+-----------------------------------------------------------------------------------+
 | Set the number of hours counted from the last time a user      | - System Config path: **Environment > Session Lengths**                           |
-| entered their credential into the mobile app to the expiry     | - ``config.json`` setting: ``".ServiceSettings.SessionLengthMobileInHours: 720,`` |
+| entered their credential into the mobile app to the expiry     | - ``config.json`` setting: ``ServiceSettings`` > ``SessionLengthMobileInHours`` > ``720`` |
 | of the user’s session.                                         | - Environment variable: ``MM_SERVICESETTINGS_SESSIONLENGTHMOBILEINHOURS``         |
 |                                                                |                                                                                   |
 | Numerical input in hours. Default is **720** hours.            |                                                                                   |
@@ -3827,7 +3827,7 @@ Session length for SSO
 
 +----------------------------------------------------------------+----------------------------------------------------------------------------------+
 | Set the number of hours from the last time a user entered      | - System Config path: **Environment > Session Lengths**                          |
-| their SSO credentials to the expiry of the user’s session.     | - ``config.json`` setting: ``".ServiceSettings.SessionLengthSSOInHours: 720,``   |
+| their SSO credentials to the expiry of the user’s session.     | - ``config.json`` setting: ``ServiceSettings`` > ``SessionLengthSSOInHours`` > ``720``   |
 | This setting defines the session length for SSO                | - Environment variable: ``MM_SERVICESETTINGS_SESSIONLENGTHSSOINHOURS``           |
 | authentication, such as SAML, GitLab, and OAuth 2.0.           |                                                                                  |
 |                                                                |                                                                                  |
@@ -3853,7 +3853,7 @@ Session cache
 
 +----------------------------------------------------------------+-----------------------------------------------------------------------------+
 | Set the number of minutes to cache a session in memory.        | - System Config path: **Environment > Session Lengths**                     |
-|                                                                | - ``config.json`` setting: ``".ServiceSettings.SessionCacheInMinutes: 10,`` |
+|                                                                | - ``config.json`` setting: ``ServiceSettings`` > ``SessionCacheInMinutes`` > ``10`` |
 | Numerical input in minutes. Default is **10** minutes.         | - Environment variable: ``MM_SERVICESETTINGS_SESSIONCACHEINMINUTES``        |
 +----------------------------------------------------------------+-----------------------------------------------------------------------------+
 
@@ -3871,7 +3871,7 @@ Session idle timeout
 
 +----------------------------------------------------------------+--------------------------------------------------------------------------------------+
 | The number of minutes from the last time a user was active     | - System Config path: N/A                                                            |
-| on the system to the expiry of the user’s session.             | - ``config.json`` setting: ``".ServiceSettings.SessionIdleTimeoutInMinutes: 43200,`` |
+| on the system to the expiry of the user’s session.             | - ``config.json`` setting: ``ServiceSettings`` > ``SessionIdleTimeoutInMinutes`` > ``43200`` |
 | Once expired, the user will need to log in to continue.        | - Environment variable: ``MM_SERVICESETTINGS_SESSIONIDLETIMEOUTINMINUTES``           |
 |                                                                |                                                                                      |
 | Numerical input in minutes. Default is **43200** (30 days).    |                                                                                      |
