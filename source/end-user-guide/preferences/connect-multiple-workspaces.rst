@@ -21,7 +21,7 @@ Add a server
 
   .. note::
 
-    If you're using the desktop app prior to release v5.0, individual servers display as separate tabs at the top of the window instead of the top left corner of the window as a list, and servers are managed by going to **… > File > Settings** on Windows and **Mattermost > Preferences** on Mac.
+    If you're using the desktop app prior to release v5.0, individual servers display as separate tabs at the top of the window instead of the top left corner of the window as a list. Servers are managed by going to **… > File > Settings** on Windows or **Mattermost > Settings** on Mac.
   
   1. Select **Add a server**.
 
