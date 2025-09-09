@@ -11,7 +11,7 @@ Before disconnecting from the internet, you must gather all required packages, c
 
 .. tab:: Linux
 
-Recommeded as the simplest installation method for air-gapped environments. You can install the Mattermost Server in a few minutes on any air-gapped 64-bit Linux system using the tarball.
+  Recommeded as the simplest installation method for air-gapped environments. You can install the Mattermost Server in a few minutes on any air-gapped 64-bit Linux system using the tarball.
 
    **Bill of Materials**
 
