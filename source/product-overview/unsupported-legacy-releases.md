@@ -2,8 +2,6 @@
 
 This documentation contains comprehensive changelog details for all legacy Mattermost releases including v9.x, v8.x, and v7.x versions that have reached their end of support lifecycle.
 
-# v9 Changelog
-
 ```{Important}
 ```{include} common-esr-support-upgrade.md
 ```
