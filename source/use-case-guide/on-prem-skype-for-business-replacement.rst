@@ -52,7 +52,6 @@ Collaborating across organizational boundaries must not compromise compliance or
 Get Started
 -----------
 
-`Talk to an Expert <https://mattermost.com/contact-sales/>`_ to learn more about transitioning from Skype for Business to a secure, modern collaboration platform built for mission-critical environments. With Mattermost, your organization gains a self-hosted, scalable, and compliant solution tailored for classified operations, secure external engagement, and operational modernization.
+With Mattermost, your organization gains a self-hosted, scalable, and compliant solution tailored for classified operations, secure external engagement, and operational modernization.
 
-**Azure Local Deployments**: For organizations deploying Mattermost on Azure Local (formerly Azure Stack HCI) for on-premises hybrid cloud scenarios, we recommend engaging **Mattermost Professional Services** for deployment support to ensure optimal configuration and compliance with your security requirements. `Talk to an Expert <https://mattermost.com/contact-sales/>`_ to discuss your Azure Local deployment needs.
-
+`Talk to an Expert <https://mattermost.com/contact-sales/>`_ to learn more about transitioning from Skype for Business to a secure, modern collaboration platform built for mission-critical environments, or to discuss your Azure Local deployment needs. Organizations deploying Mattermost on Azure Local (formerly Azure Stack HCI) for on-premises hybrid cloud scenarios can engage **Mattermost Professional Services** for deployment support to ensure optimal configuration and compliance with your security requirements.
