@@ -59,7 +59,10 @@ We strongly recommend that you:
 
 .. important::
 
-  Support for Mattermost Server v9.11 :doc:`Extended Support Release </product-overview/mattermost-server-releases>` is coming to the end of its life cycle on May 15, 2025. Upgrading to Mattermost Server v10.5 Extended Support Release or later is recommended. Upgrading from a previous Extended Support Release to the latest Extended Support Release is supported. Review the :doc:`important-upgrade-notes` for all intermediate versions in between to ensure you’re aware of the possible migrations that could affect your upgrade.
+  - Support for Mattermost Server v10.5 `Extended Support Release <https://docs.mattermost.com/product-overview/release-policy.html#extended-support-releases>`__ is coming to the end of its life cycle on November 15, 2025. Upgrading to Mattermost Server v10.11 or later is recommended.
+  - Upgrading from ESR-to-ESR (``major`` -> ``major_next``) is fully supported and tested. However, upgrading from ESR-to-ESR (``major`` to ``major+2``) is supported, but not tested. If you plan to upgrade across multiple releases, we strongly recommend upgrading from an ESR to another ESR. For example, if you're upgrading from the v8.1 ESR, upgrade to the `v9.5 ESR <https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-5-extended-support-release>`__ or the `v9.11 ESR <https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-11-extended-support-release>`__.
+  - See the `Important Upgrade Notes <https://docs.mattermost.com/upgrade/important-upgrade-notes.html>`__ documentation for details on upgrading to a newer release.
+  - See the `changelog in progress <https://bit.ly/2nK3cVf>`__ for details about the upcoming release.
 
 v6.0 database schema migrations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
