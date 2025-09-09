@@ -58,7 +58,7 @@ We strongly recommend that you:
 - Upgrade your instance of Mattermost to the latest :doc:`Extended Support Release (ESR) </product-overview/mattermost-server-releases>` first before attempting to run the Mattermost v6.0 upgrade.
 
 ```{Important}
-```{include} common-esr-support-upgrade.md
+```{include} common-esr-support-upgrade.rst
 ```
 
 v6.0 database schema migrations
