@@ -82,3 +82,24 @@ Here's an example partial NGINX configuration that validates the pre-authenticat
   }
 
 Replace ``your-secure-pre-auth-secret-here`` with a strong, unique secret that will be configured in your mobile and desktop applications. Store this secret securely and rotate it regularly as part of your security practices.
+
+Desktop application security considerations
+-------------------------------------------
+
+The Mattermost desktop application stores pre-authentication secrets using Electron's ``safeStorage`` API, which integrates with the operating system's secure credential storage:
+
+- **Windows**: Windows Credential Manager
+- **macOS**: Keychain Access
+- **Linux**: Secret Service API (requires kwallet, gnome-libsecret, or compatible backend)
+
+.. warning::
+
+  On Linux systems where no secure credential storage is available, the pre-authentication secret may be stored in **plain text**. This occurs when:
+  
+  - No secret store backend is available (kwallet, gnome-libsecret, etc.)
+  - The desktop environment is not recognized
+  - The system falls back to Electron's ``basic_text`` storage
+  
+  In these cases, consider the security implications before deploying pre-authentication secrets in your environment.
+
+For more information about Electron's secure storage behavior, see the `Electron safeStorage documentation <https://www.electronjs.org/docs/latest/api/safe-storage>`_.
