@@ -11,7 +11,7 @@
 ## Frequency
 Mattermost releases a new server version on the 16th of each month in [binary form](https://docs.mattermost.com/administration-guide/upgrade/upgrading-mattermost-server.html). 
 - See the [v10 changelog](https://docs.mattermost.com/product-overview/mattermost-v10-changelog.html) for details on what's coming and changing in the next major release. 
-- See the [unsupported Mattermost legacy releases](https://docs.mattermost.com/product-overview/unsupported-legacy-releases.html) documentation for details on v9.x server releases and other legacy releases.
+- See the [unsupported Mattermost legacy releases](https://docs.mattermost.com/product-overview/unsupported-legacy-releases.html) documentation for details on older, unsupported Mattermost releases.
 
 ## Latest releases
 
