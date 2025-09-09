@@ -57,7 +57,12 @@ We strongly recommend that you:
 - Keep a backup of your database to ensure you can load a previous database snapshot if necessary.
 - Upgrade your instance of Mattermost to the latest :doc:`Extended Support Release (ESR) </product-overview/mattermost-server-releases>` first before attempting to run the Mattermost v6.0 upgrade.
 
-.. include:: common-esr-support-upgrade.rst
+```{eval-rst}
+.. important::
+   
+   .. include:: ../../product-overview/common-esr-support-upgrade.md
+      :parser: myst_parser.sphinx_
+```
 
 v6.0 database schema migrations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
