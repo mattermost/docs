@@ -100,6 +100,6 @@ The Mattermost desktop application stores pre-authentication secrets using Elect
   - The desktop environment is not recognized
   - The system falls back to Electron's ``basic_text`` storage
   
-  In these cases, consider the security implications before deploying pre-authentication secrets in your environment.
+  The file is stored with 600 permissions to prevent unauthorized access by other users, though the secret remains unencrypted. Consider the security implications before deploying pre-authentication secrets in your environment.
 
 For more information about Electron's secure storage behavior, see the `Electron safeStorage documentation <https://www.electronjs.org/docs/latest/api/safe-storage>`_.
