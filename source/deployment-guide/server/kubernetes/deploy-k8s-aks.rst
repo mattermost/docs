@@ -30,7 +30,7 @@ Step 1: Deploy Mattermost
 
 1. Deploy Mattermost from the `Azure Marketplace Container Offer <https://azuremarketplace.microsoft.com/en-us/marketplace/apps/mattermost.mattermost-operator>`_ and select **Get it now**.
 
-  - Alternatively, you can go to the ``Extensions + Applications`` section of your AKS cluster and install the Mattermost offering from there. Visit the `Microsoft cluster extensions documentation <https://learn.microsoft.com/en-gb/azure/aks/cluster-extensions?tabs=azure-cli>`_ to learn more.
+  Alternatively, you can go to the ``Extensions + Applications`` section of your AKS cluster and install the Mattermost offering from there. Visit the `Microsoft cluster extensions documentation <https://learn.microsoft.com/en-gb/azure/aks/cluster-extensions?tabs=azure-cli>`_ to learn more.
 
 2. Choose the **Resource Group** and the **Region** of your installed AKS and PostgreSQL database.
 
@@ -55,12 +55,12 @@ Step 1: Deploy Mattermost
 
 6. Configure Mattermost installation hostname and Ingress details. The AGIC add-on is used in the following example to show the ingress annotations required.
 
-  a. You can use any pre-installed Ingress Controller in your cluster as long as it supports Kubernetes Ingress and TLS termination.
+  You can use any pre-installed Ingress Controller in your cluster as long as it supports Kubernetes Ingress and TLS termination.
 
-    .. code-block:: yaml
+  .. code-block:: yaml
 
-      kubernetes.io/ingress.class: azure/application-gateway
-      appgw.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: azure/application-gateway
+    appgw.ingress.kubernetes.io/ssl-redirect: "true"
 
 7. Additionally, we recommend considering:
 
@@ -73,11 +73,11 @@ Step 1: Deploy Mattermost
 
 8. Ensure that everything is running. You should be able to check the installed plugin from the **AKS Extensions + Applications** page under the **Settings** menu.
 
-  a. When the deployment is complete, obtain the hostname or IP address of your Mattermost deployment using the following command:
+  When the deployment is complete, obtain the hostname or IP address of your Mattermost deployment using the following command:
 
-    .. code-block:: sh
+  .. code-block:: sh
 
-      kubectl -n mattermost-operator get ingress
+    kubectl -n mattermost-operator get ingress
 
 9. Use your IP address from the ``ADDRESS`` column, and create a DNS record in your domain registration service.
 
@@ -100,6 +100,13 @@ Step 2: Upgrade Mattermost via your AKS cluster
     :alt: An example of using custom Mattermost version.
 
 4. Select **Save** and wait for the upgrade.
+
+Looking for a sovereign deployment on Azure Local?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For organizations requiring on-premises deployments with data sovereignty, **Azure Local** (formerly Azure Stack HCI) provides a hybrid cloud platform that enables you to run Mattermost on-premises while maintaining integration with Microsoft Teams and M365. 
+
+We recommend engaging **Mattermost Professional Services** for Azure Local deployments to ensure optimal configuration and compliance with your security requirements. `Talk to an Expert <https://mattermost.com/contact-sales/>`_ to discuss your Azure Local deployment needs.
 
 .. important::
 
