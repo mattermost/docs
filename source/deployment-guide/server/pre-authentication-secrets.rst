@@ -1,6 +1,9 @@
 Pre-authentication secrets
 ==========================
 
+.. include:: ../../_static/badges/ent-adv-selfhosted.rst
+  :start-after: :nosearch:
+
 From Mattermost server v10.12 and mobile v2.32, Mattermost deployments can use a reverse proxy to validate pre-authentication secrets before allowing desktop and mobile requests to reach the Mattermost server. This adds an additional security layer by checking for the ``X-Mattermost-Preauth-Secret`` header.
 
 Pre-authentication secrets are only supported for mobile and desktop applications. Web browser clients don't support this feature.
