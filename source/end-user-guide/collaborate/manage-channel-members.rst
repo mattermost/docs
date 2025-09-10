@@ -11,6 +11,10 @@ Add members to a channel
 
 Using Mattermost in a web browser or the desktop app, any member of a channel can add other members to public or private channels, unless your system admin has restricted access to do so.
 
+.. note::
+
+  If a channel has attribute-based access controls enabled, you'll see an information banner showing the required user attributes, and only users who meet those requirements will appear in search results when adding members. See the :doc:`attribute-based access control </administration-guide/manage/admin/attribute-based-access-control>` documentation for more details.
+
 .. tab:: Web/Desktop
 
   1. Select the channel name at the top of the center pane to access the drop-down menu, then select **Add Members**. 
@@ -23,7 +27,7 @@ Using Mattermost in a web browser or the desktop app, any member of a channel ca
   .. tip::
 
     - From Mattermost v7.8, people you've messaged directly are listed first, followed by all users in alphabetical order. 
-    - Alternatively, to add members to a channel, select the channel name, select the **View Info** |channel-info| icon, select **Members** in the right pane, and then select **Add**.
+    - Alternatively, to add members to a channel, select the channel name, select the **View Info** |channel-info| icon, select **Members** in the right pane, and then select **Add**. If the channel has access control restrictions, you'll see an information banner with required attributes at the top of the Members panel.
 
 .. tab:: Mobile
 
