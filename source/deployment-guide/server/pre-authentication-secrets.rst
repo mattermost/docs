@@ -12,7 +12,7 @@ When pre-authentication secret validation fails, the reverse proxy must return t
   We recommend whitelisting certain endpoints where the pre-authentication header may not be available. The specific endpoints depend on your authentication configuration:
 
   - ``/api/v4/notifications/ack`` - Required for proper notification acknowledgement functionality
-  - ``/api/v4/config/client`` - Required for authentication flows that redirect to the browser, such as SAML, OAuth and OpenID.
+  - ``/api/v4/config/client`` and ``/login/desktop`` - Required for authentication flows that redirect to the browser, such as SAML, OAuth and OpenID.
 
   **Additional endpoints based on your authentication setup:**
 
