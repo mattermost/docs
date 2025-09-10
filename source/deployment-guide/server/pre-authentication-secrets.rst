@@ -15,7 +15,7 @@ When pre-authentication secret validation fails, the reverse proxy must return t
   We recommend whitelisting certain endpoints where the pre-authentication header may not be available. The specific endpoints depend on your authentication configuration:
 
   - ``/api/v4/notifications/ack`` - Required for proper notification acknowledgement functionality
-  - ``/api/v4/config/client`` and ``/login/desktop`` - Required for authentication flows that redirect to the browser, such as SAML, OAuth and OpenID.
+  - ``/static/*``, ``/api/v4/config/client`` and ``/login/desktop`` - Required for authentication flows that redirect to the browser, such as SAML, OAuth and OpenID
 
   **Additional endpoints based on your authentication setup:**
 
@@ -43,6 +43,16 @@ Here's an example partial NGINX configuration that validates the pre-authenticat
       }
       
       location = /api/v4/config/client {
+         # Pass through without verifying pre-auth secret validation
+         # ...
+      }
+      
+      location = /login/desktop {
+         # Pass through without verifying pre-auth secret validation
+         # ...
+      }
+      
+      location ^~ /static/ {
          # Pass through without verifying pre-auth secret validation
          # ...
       }
