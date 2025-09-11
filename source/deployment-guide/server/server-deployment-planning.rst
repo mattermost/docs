@@ -131,3 +131,70 @@ When a PostgreSQL version reaches its end of life (EOL), Mattermost will require
 ``*`` Forcasted release version and date.
 
 Customers will have 9 months to plan, test, and upgrade their PostgreSQL version before the new requirement takes effect. This policy aims to provide clarity and transparency so you can align database upgrades with the Mattermost release schedule. Contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_. to discuss your options.
+
+.. _omnibus-migration-guidance:
+
+Omnibus migration guidance
+--------------------------
+
+Mattermost Omnibus (both GitLab Omnibus and standalone Mattermost Omnibus) is deprecated starting with Mattermost v11.0.0. This section provides guidance for organizations using Omnibus deployments.
+
+**Current Status for Existing Customers**
+
+* **v10.x users**: GitLab Omnibus and Mattermost Omnibus deployments continue to function normally
+* **Support timeline**: Full support continues through the Mattermost v10.11 ESR lifecycle (through August 2026)
+* **Last release**: The final mattermost-omnibus release will be v10.12
+* **Documentation access**: All Omnibus-related documentation remains available for v10.x users
+
+**Migration Planning Timeline**
+
+Organizations currently running Omnibus have flexibility in their migration planning:
+
+1. **Immediate (Optional)**: Organizations can migrate now to take advantage of newer deployment features
+2. **v10.11 ESR (Recommended)**: Migrate during the v10.11 ESR period for maximum stability and planning time
+3. **Before v11 Upgrade**: Migration is required before upgrading to Mattermost v11.x
+
+**Recommended Migration Paths**
+
+Choose the deployment method that best fits your infrastructure and operational requirements:
+
+**1. Kubernetes (Recommended for Production)**
+  
+  * Best for: Organizations requiring high availability, scalability, and modern DevOps practices
+  * Benefits: Automated updates, built-in monitoring, horizontal scaling
+  * Migration complexity: Medium to High (requires Kubernetes knowledge)
+  * See: :doc:`Deploy with Kubernetes </deployment-guide/server/deploy-kubernetes>`
+
+**2. Linux Server Installation**
+  
+  * Best for: Organizations wanting direct server control with traditional deployment patterns
+  * Benefits: Full system control, familiar server management patterns
+  * Migration complexity: Low to Medium
+  * See: :doc:`Deploy with Linux </deployment-guide/server/deploy-linux>`
+
+**3. Container-Based Deployment**
+  
+  * Best for: Smaller installations, development environments, or teams familiar with Docker
+  * Benefits: Simplified management, consistent environments
+  * Limitations: Not suitable for high availability
+  * See: :doc:`Deploy with Containers </deployment-guide/server/deploy-containers>`
+
+**Migration Planning Considerations**
+
+Before migrating from Omnibus, consider:
+
+* **Data backup**: Full database and file storage backup before migration
+* **Configuration review**: Document current Mattermost configuration settings
+* **Integration dependencies**: Review integrations with GitLab (if using GitLab Omnibus)
+* **Downtime planning**: Schedule migration during maintenance windows
+* **Testing environment**: Set up test environment to validate migration process
+* **User communication**: Inform users about planned maintenance and any changes
+
+**Support Resources**
+
+* **Community Support**: `Mattermost Community Forums <https://forum.mattermost.com/>`__
+* **Professional Services**: Contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`__ for migration assistance
+* **Documentation**: All deployment guides include migration considerations from Omnibus
+* **ESR Support**: v10.11 ESR provides extended timeline for planning and migration
+
+Organizations should plan their migration strategy based on their technical requirements, available resources, and desired timeline. There is no immediate urgency for v10.x Omnibus users, allowing adequate time for proper planning and execution.

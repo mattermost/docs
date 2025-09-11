@@ -56,6 +56,10 @@ Use the CLI
 
 .. tab:: Via GitLab Omnibus
 
+  .. important::
+  
+    **GitLab Omnibus Status**: GitLab Omnibus deployments on Mattermost v10.x versions continue to function normally and are supported through the v10.11 ESR lifecycle. For customers planning to upgrade to v11+, see the :ref:`Omnibus migration guidance <deployment-guide/server/server-deployment-planning:omnibus migration guidance>`.
+
   On GitLab Omnibus, you must be in the following directory when you run CLI commands: ``/opt/gitlab/embedded/service/mattermost``. Also, you must run the commands as the user *mattermost* and specify the location of the configuration file. The executable is ``/opt/gitlab/embedded/bin/mattermost``.
 
   For example, to get the Mattermost version on GitLab Omnibus:
