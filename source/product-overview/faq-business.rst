@@ -15,7 +15,7 @@ In contrast, Mattermost, as the copyright holder to the collection of the Matter
 How can I create an open source derivative work of Mattermost?
 --------------------------------------------------------------
 
-If you're looking to customize the look and feel of Mattermost, see `documentation on customization <https://docs.mattermost.com/administration-guide/configure/customize-mattermost.html>`_. For advanced customization, the system's user experience is available in different repositories for web, mobile apps, and desktop apps and custom experiences can be developed and integrated via the system APIs and custom plugins.
+If you're looking to customize the look and feel of Mattermost, see the :doc:`customization </administration-guide/configure/customize-mattermost>` documentation. For advanced customization, the system's user experience is available in different repositories for web, mobile apps, and desktop apps and custom experiences can be developed and integrated via the system APIs and custom plugins.
 
 If, instead of using Mattermost Team Edition or Mattermost Enterprise Edition, you choose to compile your own version of the system using the open source code from ``/mattermost``, there are a number of factors to consider:
 
