@@ -1,5 +1,3 @@
-:orphan:
-
 Prepare your Mattermost MySQL database
 ======================================
 
@@ -8,8 +6,18 @@ Prepare your Mattermost MySQL database
 
 .. important::
     
-  - PostgreSQL is our preferred database of choice. See the :ref:`database software <deployment-guide/software-hardware-requirements:database software>` documentation for details on database version support, and see the :doc:`Migrate from MySQL to PostgreSQL </deployment-guide/postgres-migration>` documentation for details on migrating from MySQL to PostgreSQL.
+  **MySQL Support Timeline:**
+  
+  - **Mattermost v10+**: New installations no longer support MySQL. Only PostgreSQL is supported for new deployments.
+  - **Mattermost v11+**: Complete end of MySQL support for all installations (new and existing).
+  - **Current MySQL users**: Plan your migration to PostgreSQL before upgrading to v11. See the :doc:`Migrate from MySQL to PostgreSQL </deployment-guide/postgres-migration>` documentation for migration guidance.
+  
+  **Technical Notes:**
+  
+  - PostgreSQL is our preferred database of choice. See the :ref:`database software <deployment-guide/software-hardware-requirements:database software>` documentation for details on database version support.
   - MySQL 8.0.22 contains an `issue with JSON column types <https://bugs.mysql.com/bug.php?id=101284>`__ changing string values to integers which is preventing Mattermost from working properly. Users are advised to avoid this database version.
+  
+  **This documentation remains available for customers on Mattermost versions prior to v11 who still need MySQL setup and troubleshooting guidance.**
 
 Set up the Mattermost MySQL database
 ------------------------------------
