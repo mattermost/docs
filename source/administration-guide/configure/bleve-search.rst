@@ -4,6 +4,14 @@ Bleve search (experimental)
 .. include:: ../../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
+.. warning::
+   **Bleve search has been deprecated and will be removed in Mattermost v11.0 (October 2025).** 
+   
+   - **For v11.0 and later**: Use Elasticsearch or OpenSearch for enterprise search capabilities
+   - **For pre-v11.0 deployments**: This documentation remains available for existing installations that continue using Bleve
+   
+   See the `deprecation announcement <https://forum.mattermost.com/t/transitioning-from-bleve-search-in-mattermost-v11/22982>`__ for migration guidance.
+
 Bleve is a search engine that uses Lucene-style full-text search and indexing. This style of search and indexing helps overcome limitations of the default database search such as challenges with characters and advanced search capabilities.
 
 The Bleve search engine works as a library integrated into the Mattermost codebase. As it generates indexes in the filesystem of the server that it is running on, it doesn’t require an external server to function. Because of this, Bleve should not be enabled in High Availability deployments.
@@ -12,8 +20,11 @@ The Bleve search engine works as a library integrated into the Mattermost codeba
 
   Bleve search uses the scorch index type on newly-created indexes. This new index type features efficiency improvements and indexes that use significantly less disk space. Go to **System Console > Experimental > Bleve** and select **Purge Index** to run a purge operation. When that's complete, select **Index Now** to reindex. Bleve remains compatible with existing indexes, so currently indexed data will continue to work if a purge and reindex isn't run.
 
-Configuring Bleve in Mattermost
--------------------------------
+Configuring Bleve in Mattermost (pre-v11.0 only)
+---------------------------------------------------
+
+.. note::
+   These configuration steps are only valid for Mattermost versions prior to v11.0. For v11.0 and later, consider using Elasticsearch or OpenSearch instead.
 
 Follow these steps to configure the Mattermost server to use Bleve and generate required indexes. Once the configuration is saved, new posts made to the database will be automatically indexed with Bleve.
 
@@ -31,8 +42,11 @@ Follow these steps to configure the Mattermost server to use Bleve and generate 
 
   Search results for files shared before upgrading to Mattermost Server v5.35 may be incomplete until an extraction command is run using the :ref:`mmctl <administration-guide/manage/mmctl-command-line-tool:mmctl extract>`. After running this command, the search index must be rebuilt. Go to **System Console > Experimental > Bleve > Bulk Indexing**, then select **Index Now** to rebuild the search index to include older file contents.
 
-Using Bleve search
-------------------
+Using Bleve search (pre-v11.0 only)
+--------------------------------------
+
+.. note::
+   This section applies only to Mattermost versions prior to v11.0.
 
 The following conditions are applied when using Bleve search:
 

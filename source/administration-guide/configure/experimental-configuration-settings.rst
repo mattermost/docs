@@ -661,6 +661,9 @@ Experimental Bleve configuration settings
 .. include:: ../../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
+.. warning::
+   **Bleve search has been deprecated and will be removed in Mattermost v11.0 (October 2025).** These configuration settings are only available for Mattermost versions prior to v11.0. For v11.0 and later, use Elasticsearch or OpenSearch for enterprise search capabilities.
+
 Access the following configuration settings in the System Console by going to **Experimental > Bleve**, or by editing the ``config.json`` file as described in the following tables:
 
 .. config:setting:: enable-bleve-indexing
