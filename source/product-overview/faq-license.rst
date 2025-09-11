@@ -1,11 +1,16 @@
 Business & Licensing
 ======================
 
+.. toctree::
+    :maxdepth: 1
+    :hidden:
+
+    Mattermost Source Available License </product-overview/faq-mattermost-source-available-license>
 
 What are Mattermost's policies around licensing, terms of use, and privacy?
 ----------------------------------------------------------------------------
 
-The following outlines the licensing, terms of use and privacy policies across Mattermost software and services.
+The following outlines the licensing, terms of use and privacy policies across Mattermost software and services. See the :doc:`source available license </product-overview/faq-mattermost-source-available-license>` documentation to learn what the Mattermost source available license offers.
 
 Mattermost Software
 ~~~~~~~~~~~~~~~~~~~
