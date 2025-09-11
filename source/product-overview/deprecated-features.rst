@@ -25,9 +25,16 @@ Mattermost Server v11.0.0 (October 2025)
 - Deprecated mmctl commands and flags will be removed.
 - Experimental certificate-based authentication feature will be removed. ``ExperimentalSettings.ClientSideCertEnable`` must be ``false`` to start the server.
 - The bcrypt password hashing method will be deprecated in favor of PBKDF2. Downgrading the server from v11 to a previous version will leave users whose password was migrated unable to log in. Admins will need to manually reset user passwords until the server is upgraded back to v11.
-- Separate notification log file will be deprecated. If admins want to continue using a separate log file for notification logs, they can use the ``AdvancedLoggingJSON`` configuration. An example configuration to use is:
 
-.. code-block:: sh
+Removed features by Mattermost version
+----------------------------------------
+
+Mattermost Server v11.0.0
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- **Separate notification log file**: In Mattermost v11.0+, notification logs are integrated into the main logging system and no longer generate a separate ``notifications.log`` file by default. For customers who want to maintain a separate notification log file, use the ``AdvancedLoggingJSON`` configuration:
+
+.. code-block:: json
 
   {
     "LogSettings": {
@@ -54,6 +61,10 @@ Mattermost Server v11.0.0 (October 2025)
       }
     }
   }
+
+.. note::
+
+   Customers still using Mattermost v10.x and earlier can continue using the ``NotificationLogSettings`` configuration as documented in the :doc:`Environment Configuration Settings </administration-guide/configure/environment-configuration-settings>`. The ``NotificationLogSettings`` configuration is only available in Mattermost v10.x and earlier.
 
 Removed features by Mattermost version
 ----------------------------------------

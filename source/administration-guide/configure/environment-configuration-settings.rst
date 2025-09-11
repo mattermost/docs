@@ -3298,7 +3298,11 @@ Enable Sentry reporting
 Notification logging
 ~~~~~~~~~~~~~~~~~~~~~
 
-Configure logging specifically for Mattermost notifications by editing the ``config.json`` file as described in the following tables. These settings operate independently from the main ``LogSettings`` and allow you to customize logging behavior specifically for the notification subsystem. Changes to these configuration settings require a server restart before taking effect.
+.. important::
+
+   **For Mattermost v11.0 and later**: Notification logs are integrated into the main logging system and no longer use separate ``NotificationLogSettings``. To maintain a separate notification log file in v11+, use the ``AdvancedLoggingJSON`` configuration as documented in :doc:`deprecated features </product-overview/deprecated-features>`.
+
+**For Mattermost v10.x and earlier**: Configure logging specifically for Mattermost notifications by editing the ``config.json`` file as described in the following tables. These settings operate independently from the main ``LogSettings`` and allow you to customize logging behavior specifically for the notification subsystem. Changes to these configuration settings require a server restart before taking effect.
 
 .. config:setting:: output-logs-to-console
   :displayname: Output notification logs to console (Notification Logging)

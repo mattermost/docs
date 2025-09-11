@@ -387,8 +387,10 @@ Since the ``deviceId`` relates to the application, connections through the web b
 
 Where can I find mobile message notification logs?
 -------------------------------------------------------------
-Notification messages are logged to the ``notifications.log`` file.
-System admins must enable notification logs in the ``config.json`` file by setting ``EnableFile`` to ``true``, and specifying an optional file location via ``FileLocation``. When no location is configured, the ``notifications.log`` file is stored in the default Mattermost directory. See the :ref:`logging configuration settings <administration-guide/configure/environment-configuration-settings:logging>` documentation for details.
+
+**For Mattermost v11.0 and later**: Notification logs are integrated into the main server logs. System admins can find notification-related logs in the standard server log files or configure a separate notification log file using the ``AdvancedLoggingJSON`` configuration as documented in :doc:`deprecated features </product-overview/deprecated-features>`.
+
+**For Mattermost v10.x and earlier**: Notification messages are logged to the ``notifications.log`` file. System admins must enable notification logs in the ``config.json`` file by setting ``EnableFile`` to ``true``, and specifying an optional file location via ``FileLocation``. When no location is configured, the ``notifications.log`` file is stored in the default Mattermost directory. See the :ref:`notification logging configuration settings <administration-guide/configure/environment-configuration-settings:notification logging>` documentation for details.
 
 The team members / users can access their notification logs based on their device platform.
 Android users can view the logs using ``logcat``.
