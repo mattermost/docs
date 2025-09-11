@@ -235,3 +235,8 @@ Do guest users work with ABAC channels?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No. Private channels with attribute-based access control cannot have guest users. This ensures strict adherence to access control policies based on organizational attributes.
+
+Can group-sync channels use ABAC?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+No. Channels configured with group synchronization cannot use attribute-based access control. Group-sync and ABAC are mutually exclusive features - you must choose one method of access control per channel.
