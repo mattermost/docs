@@ -44,6 +44,15 @@ Other considerations
 - The Mattermost copyright notices on the user interface should remain.
 - There may be additional legal and regulatory issues to consider and we recommend you employ legal counsel to fully understand what's involved in creating and selling a derivative work.
 
+Can I create a derivative work of the Mattermost /mattermost repository that is not open source?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The Mattermost open source project was created by `a group of developers who had their data paywalled by a proprietary online messaging service <https://mattermost.com/about-us/>`_ and felt it was unfair.
+
+Because of this, the Mattermost /mattermost repository uses an open source license that requires derivative works to use the same open source license. This prevents the creation of derivative works that are not open source, and the situation where end users would not have access to the source code of the systems they use, and hence be at risk of "lock in".
+
+For companies purchasing Enterprise Edition subscriptions for use by internal staff, who need to modify /mattermost, and who also have legal departments that won't allow their staff to work under an open source software license, a special "Advanced Licensing Option" can be purchased to modify /mattermost for internal use under a commercial software license. This option is not available for companies that would offer a modified, non-open source version of Mattermost to external parties.
+
 Will Mattermost complete questionnaires requiring confidential data without an NDA?
 -----------------------------------------------------------------------------------
 
