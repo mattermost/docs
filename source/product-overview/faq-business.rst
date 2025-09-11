@@ -4,7 +4,7 @@ Business
 How do I fork Mattermost?
 -------------------------
 
-If you wish to create a forked version of the Mattermost source code, you must comply with the applicable licenses under which the source code is made available. Historically, this was made clear via this link: https://docs.mattermost.com/about/faq-business.html#copyright-and-licensing-of-mattermost-open-source-code.
+If you wish to create a forked version of the Mattermost source code, you must comply with the applicable licenses under which the source code is made available. 
  
 For example, the Mattermost server source code is and always has been made available under the AGPLv2 license. Therefore, all third-party open source forks of the Mattermost server source code must comply with the AGPLv2 license in both source code and compiled versions. If you encounter a third-party fork of the publicly available source code of Mattermost server that claims to be licensed under an alternate license, it is incorrect.
 
@@ -15,21 +15,21 @@ In contrast, Mattermost, as the copyright holder to the collection of the Matter
 How can I create an open source derivative work of Mattermost?
 --------------------------------------------------------------
 
-If you're looking to customize the look and feel of Mattermost, see `documentation on customization <https://github.com/mattermost/docs/issues/1006>`_. For advanced customization, the system's user experience is available in different repositories for web, mobile apps, and desktop apps and custom experiences can be developed and integrated with either Mattermost Team Edition or Mattermost Enterprise Edition via the system APIs and drivers.
+If you're looking to customize the look and feel of Mattermost, see `documentation on customization <https://docs.mattermost.com/administration-guide/configure/customize-mattermost.html>`_. For advanced customization, the system's user experience is available in different repositories for web, mobile apps, and desktop apps and custom experiences can be developed and integrated via the system APIs and custom plugins.
 
 If, instead of using Mattermost Team Edition or Mattermost Enterprise Edition, you choose to compile your own version of the system using the open source code from ``/mattermost``, there are a number of factors to consider:
 
 Security
 ~~~~~~~~
 
-- If you run a fork of the Mattermost server, we highly recommend you only deploy the system securely behind a firewall and to pay close attention to `Mattermost security updates <https://mattermost.com/security-updates/>`_. Mattermost Team Edition and Mattermost Enterprise Edition release security update patches when reports of new attacks are received and verified. Mattermost waits until 14 days after a security patch is released before publicly detailing its nature so that users and customers can upgrade before the security vulnerability is widely known. A malicious user can potentially make use of Mattermost security disclosures to exploit a fork of Mattermost if the security upgrade is not promptly incorporated into the forked version.
+- If you run a fork of the Mattermost server, we highly recommend you only deploy the system securely behind a firewall and to pay close attention to `Mattermost security updates <https://mattermost.com/security-updates/>`_. Mattermost Team Edition and Mattermost Enterprise Edition release security update patches when reports of new attacks are received and verified. Mattermost waits until 30 days after a security patch is released before publicly detailing its nature so that users and customers can upgrade before the security vulnerability is widely known. A malicious user can potentially make use of Mattermost security disclosures to exploit a fork of Mattermost if the security upgrade is not promptly incorporated into the forked version.
 
 Rebranding
 ~~~~~~~~~~
 
 - When you create a derivative version of Mattermost and share it with others as a product, you need to replace the Mattermost name and logo from the system, among other requirements, per the `Mattermost trademark policy <https://mattermost.com/trademark-standards-of-use/>`_.
 - You can rebrand your system using :doc:`custom branding tools </administration-guide/configure/custom-branding-tools>`.
-- For advanced whitelabelling, and to whitelabel in Team Edition under MIT license without Enterprise Edition branding tools, you can manually update files on the Mattermost server `per product documentation. <https://github.com/mattermost/docs/issues/1006>`_ This can also be done without forking.
+- For advanced whitelabelling, you can manually update files on the Mattermost server `per product documentation. <https://github.com/mattermost/docs/issues/1006>`_ This can also be done without forking.
 
 Copyright and Licensing of ``/mattermost`` open source code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
