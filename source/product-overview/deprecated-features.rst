@@ -11,7 +11,7 @@ Mattermost Server v11.0.0 (October 2025)
 
 - GitLab SSO will be deprecated from Team Edition. Deployments using GitLab SSO can remain on v10.11 ESR (with 12 months of security updates) while transitioning to our new free offering Mattermost Entry, or exploring commercial/nonprofit options. See more details in `this forum post <https://forum.mattermost.com/t/mattermost-v11-changes-in-free-offerings/25126>`__.
 - The ``TeamSettings.ExperimentalViewArchivedChannels`` setting will be deprecated. Archived channels will always be accessible, subject to normal channel membership. The server will fail to start if this setting is set to ``false``; to deny access to archived channels, mark them as private and remove affected channel members. See more details in `this forum post <https://forum.mattermost.com/t/viewing-accessing-archived-channels-v11/22626>`__.
-- Playbooks will stop working for Team Edition. Professional, Enterprise, and Enterprise Advanced plans will automatically be upgraded to Playbooks v2 with no expected downtime.
+- Playbooks will stop working for Team Edition. Entry, Professional, Enterprise, and Enterprise Advanced plans will automatically be upgraded to Playbooks v2 with no expected downtime. See more details in `this forum post <https://forum.mattermost.com/t/clarification-and-update-on-the-playbooks-plugin-v11/25192>`__.
 - Experimental Bleve Search functionality will be retired. See more details in `this forum post <https://forum.mattermost.com/t/transitioning-from-bleve-search-in-mattermost-v11/22982>`__.
 - Support for MySQL will be ended. See more details in `this forum post <https://forum.mattermost.com/t/transition-to-postgresql/19551>`__.
 - The ``ExperimentalStrictCSRFEnforcement`` setting will be renamed to ``StrictCSRFEnforcement`` and the default value will be changed to ``true`` for new installations. See more details in `this forum post <https://forum.mattermost.com/t/default-value-of-the-experimental-strict-csrf-enforcement-setting-to-be-changed-to-true-v11/23139>`__.
@@ -24,6 +24,7 @@ Mattermost Server v11.0.0 (October 2025)
 - Format query parameter requirement in ``/api/v4/config/client`` endpoint will be deprecated.
 - Deprecated mmctl commands and flags will be removed.
 - Experimental certificate-based authentication feature will be removed. ``ExperimentalSettings.ClientSideCertEnable`` must be ``false`` to start the server.
+- The bcrypt password hashing method will be deprecated in favor of PBKDF2. Downgrading the server from v11 to a previous version will leave users whose password was migrated unable to log in. Admins will need to manually reset user passwords until the server is upgraded back to v11.
 - Separate notification log file will be deprecated. If admins want to continue using a separate log file for notification logs, they can use the ``AdvancedLoggingJSON`` configuration. An example configuration to use is:
 
 .. code-block:: sh
