@@ -5,7 +5,7 @@ Business & Licensing
     :maxdepth: 1
     :hidden:
 
-    Mattermost Source Available License </product-overview/faq-mattermost-source-available-license>
+    Source Available License </product-overview/faq-mattermost-source-available-license>
 
 What are Mattermost's policies around licensing, terms of use, and privacy?
 ----------------------------------------------------------------------------
