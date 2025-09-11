@@ -13,7 +13,7 @@ Using Mattermost in a web browser or the desktop app, any member of a channel ca
 
 .. note::
 
-  If a channel has attribute-based access controls enabled, you'll see an information banner showing the required user attributes, and only users who meet those requirements will appear in search results when adding members. See the :doc:`attribute-based access control </administration-guide/manage/admin/attribute-based-access-control>` documentation for more details.
+  If a channel has attribute-based access controls enabled, you'll see details about the required user attributes. Only users who meet the requirements appear in search results when adding members. See the :doc:`attribute-based access control </administration-guide/manage/admin/attribute-based-access-control>` documentation for more details.
 
 .. tab:: Web/Desktop
 
