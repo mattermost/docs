@@ -9,13 +9,10 @@ Frequently Asked Questions
     Enterprise </product-overview/faq-enterprise>
     Federal Procurement </product-overview/faq-federal-procurement>
     Business & Licensing </product-overview/faq-license>
-    Illicit Use </product-overview/faq-illicit-use>
 
 The following pages will answer many of your frequently asked questions about Mattermost:
 
 * :doc:`General </product-overview/faq-general>` - Learn more about Mattermost, its largest deployment, and answers to commonly asked questions.
 * :doc:`Enterprise </product-overview/faq-enterprise>` - Learn about Mattermost Enterprise Edition.
 * :doc:`Federal Procurement </product-overview/faq-federal-procurement>` - Learn about Mattermost in federal government environments.
-* :doc:`License </product-overview/faq-license>` - Learn more about Mattermost licenses.
-* :doc:`Mattermost source available license </product-overview/faq-mattermost-source-available-license>` - Learn what the Mattermost source available license offers.
-* :doc:`Illicit use </product-overview/faq-illicit-use>` - Learn how to report illicit use of Mattermost software.
+* :doc:`Business & Licensing </product-overview/faq-license>` - Learn more about Mattermost licenses.
