@@ -19,7 +19,7 @@ Enable push notifications
 
 +------------------------------------------------------------------+--------------------------------------------------------------------------------+
 | Enable or disable Mattermost push notifications.                 | - System Config path: **Environment > Push Notification Server**               |
-|                                                                  | - ``config.json setting``: ``".EmailSettings.SendPushNotifications": true",``  |
+|                                                                  | - ``config.json`` setting: ``EmailSettings`` > ``SendPushNotifications``       |
 | - **Do not send push notifications**: Mobile push notifications  | - Environment variable: ``MM_EMAILSETTINGS_SENDPUSHNOTIFICATIONS``             |
 |   are disabled.                                                  |                                                                                |
 | - **Use HPNS connection with uptime SLA to send notifications    |                                                                                |
@@ -105,7 +105,7 @@ Push notification server location
 
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------+
 | The physical location of the Mattermost Hosted Push             | - System Config path: **Environment > Push Notification Server**               |
-| Notification Service (HPNS) server.                             | - ``config.json setting``: ``".EmailSettings.PushNotificationServer",``        |
+| Notification Service (HPNS) server.                             | - ``config.json`` setting: ``EmailSettings`` > ``PushNotificationServer``      |
 |                                                                 | - Environment variable: ``MM_EMAILSETTINGS_PUSHNOTIFICATIONSERVER``            |
 | Select from **US** **(Default)** or **Germany** to              |                                                                                |
 | automatically populate the **Push Notification Server**         |                                                                                |
@@ -122,22 +122,22 @@ Push notification server location
 Maximum notifications per channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+--------------------------------------------------------------------------------------+
-| The maximum total number of users in a channel before @all,     | - System Config path: **Environment > Push Notification Server**                     |
-| @here, and @channel no longer send desktop, email, or mobile    | - ``config.json setting``: ``".TeamSettings.MaxNotificationsPerChannel: 1000",``     |
-| push notifications to maximize performance.                     | - Environment variable: ``MM_EMAILSETTINGS_MAXNOTIFICATIONSPERCHANNEL``              |
-|                                                                 |                                                                                      |
-| Numerical input. Default is **1000**.                           |                                                                                      |
-+-----------------------------------------------------------------+--------------------------------------------------------------------------------------+
++-----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| The maximum total number of users in a channel before @all,     | - System Config path: **Environment > Push Notification Server**                            |
+| @here, and @channel no longer send desktop, email, or mobile    | - ``config.json`` setting: ``TeamSettings`` > ``MaxNotificationsPerChannel`` > ``1000``     |
+| push notifications to maximize performance.                     | - Environment variable: ``MM_EMAILSETTINGS_MAXNOTIFICATIONSPERCHANNEL``                     |
+|                                                                 |                                                                                             |
+| Numerical input. Default is **1000**.                           |                                                                                             |
++-----------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 
 .. note::
 
   - We recommend increasing this value a little at a time, monitoring system health by tracking :doc:`performance monitoring metrics </administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring>`, and only increasing this value if large channels have restricted permissions controlling who can post to the channel, such as a :ref:`read-only channel <administration-guide/onboard/advanced-permissions:read-only channels>`.
   - Reducing this configuration setting value to **10** in larger deployments may improve server performance in the following areas:
 
-    - Reduced Load on Notification System: Each notification generates a certain amount of computational and network load. By limiting the number of notifications per channel, the system processes fewer notifications, thereby reducing the load on servers.
-    - Database Efficiency: Notifications are typically stored in a database. Fewer notifications mean less frequent database writes and reads, leading to quicker database operations and reduced latency.
-    - Minimized Client Processing: Users' clients (e.g., desktop and mobile apps) have to fetch and process notifications. With fewer notifications, clients can operate more efficiently, reducing memory and CPU usage on users' devices.
-    - Improved User Experience: An overload of notifications can lead to performance lags and a cluttered experience for users. Limiting the number ensures that users receive only the most important notifications, which can enhance usability and response times.
-    - Network Bandwidth: High numbers of notifications can consume a lot of bandwidth, particularly if they are being sent to many users. Fewer notifications can lead to lower overall network usage and potentially faster delivery of critical messages.
-    - Server Load Balancing: By reducing the number of notifications, the workload can be more evenly distributed across the servers, leading to better load balancing and preventing any single server from becoming a bottleneck.
+    - **Reduced Load on Notification System**: Each notification generates a certain amount of computational and network load. By limiting the number of notifications per channel, the system processes fewer notifications, thereby reducing the load on servers.
+    - **Database Efficiency**: Notifications are typically stored in a database. Fewer notifications mean less frequent database writes and reads, leading to quicker database operations and reduced latency.
+    - **Minimized Client Processing**: Users' clients (e.g., desktop and mobile apps) have to fetch and process notifications. With fewer notifications, clients can operate more efficiently, reducing memory and CPU usage on users' devices.
+    - **Improved User Experience**: An overload of notifications can lead to performance lags and a cluttered experience for users. Limiting the number ensures that users receive only the most important notifications, which can enhance usability and response times.
+    - **Network Bandwidth**: High numbers of notifications can consume a lot of bandwidth, particularly if they are being sent to many users. Fewer notifications can lead to lower overall network usage and potentially faster delivery of critical messages.
+    - **Server Load Balancing**: By reducing the number of notifications, the workload can be more evenly distributed across the servers, leading to better load balancing and preventing any single server from becoming a bottleneck.
