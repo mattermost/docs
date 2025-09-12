@@ -941,14 +941,10 @@ redirects_map = {
         "https://docs.mattermost.com/administration-guide/configure/configuration-settings.html",
 "configure/compliance-configuration-settings.html":
         "https://docs.mattermost.com/administration-guide/configure/compliance-configuration-settings.html",
-"configure/config-proxy-apache2.html":
-        "https://docs.mattermost.com/administration-guide/configure/config-proxy-apache2.html",
 "configure/config-ssl-http2-apache2.html":
 	"https://forum.mattermost.com/t/configuring-apache2-with-ssl-and-http-2/11939",
 "configure/configuration-in-your-database.html":
         "https://docs.mattermost.com/administration-guide/configure/configuration-in-your-database.html",
-"configure/configuring-apache2.html":
-        "https://forum.mattermost.com/t/configuring-apache2-as-a-proxy-for-mattermost-server/11938",
 "configure/custom-branding-tools.html":
         "https://docs.mattermost.com/administration-guide/configure/custom-branding-tools.html",
 "configure/customize-mattermost.html":
@@ -2653,8 +2649,6 @@ redirects_map = {
         "https://docs.mattermost.com/deployment-guide/server/deploy-linux.html",
 "install/enterprise-install-upgrade.html":
         "https://docs.mattermost.com/administration-guide/upgrade/enterprise-install-upgrade.html",
-"install/config-apache2.html":
-        "https://forum.mattermost.com/t/configuring-apache2-as-a-proxy-for-mattermost-server/11938",
 "install/desktop.html":
         "https://docs.mattermost.com/end-user-guide/collaborate/install-desktop-app.html",
 "install/desktop-managed-resources.html":
