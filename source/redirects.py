@@ -3957,6 +3957,8 @@ redirects_map = {
 
 "product-overview/faq-business.html":
         "https://docs.mattermost.com/product-overview/faq-license.html",
+"product-overview/mattermost-v9-changelog.html":
+        "https://docs.mattermost.com/product-overview/unsupported-legacy-releases.html",
 
 # Preferences redirects
 "preferences/connect-multiple-workspaces.html":
