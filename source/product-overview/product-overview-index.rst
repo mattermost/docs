@@ -15,7 +15,6 @@ Overview
    /product-overview/certifications-and-compliance.rst
    /product-overview/accessibility-compliance-policy.rst
    /product-overview/releases-lifecycle.rst
-   /product-overview/client-availability.rst
    /product-overview/frequently-asked-questions.rst
 
 The Intelligent Mission Environment (IME)
@@ -57,7 +56,7 @@ Messaging collaboration
 .. image:: /images/messaging-new-hero.png
    :alt: An image showing Mattermost messaging collaboration, highlighting the ability to create public and private channels, direct messages, and threaded conversations for secure, real-time communication across web, desktop, and mobile.
 
-See the :doc:`Client availability </product-overview/client-availability>` documentation to learn which features are available on different Mattermost clients.
+See the :doc:`Client availability </end-user-guide/collaborate/client-availability>` documentation to learn which features are available on different Mattermost clients.
 
 Workflow automation
 ~~~~~~~~~~~~~~~~~~~

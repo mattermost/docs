@@ -99,10 +99,36 @@ def doctree_read(app: Sphinx, doctree: nodes.document):
                         break
             
             if has_toctree:
-                # SAFE APPROACH: For now, preserve left navigation completely
-                # This means workflow-automation.rst won't get right-pane tab labels
-                # but left navigation will work correctly
-                pass  # Keep original structure unchanged
+                # Merge tab headings into the existing right-pane TOC while preserving
+                # the original toctree (left navigation) structure.
+                try:
+                    # Find the bullet list in the original toc item (holds section entries)
+                    original_bullets = None
+                    for child in getattr(original_toc_item, "children", []) or []:
+                        if isinstance(child, nodes.bullet_list):
+                            original_bullets = child
+                            break
+
+                    # Find the bullet list produced by our updated tab-aware TOC
+                    updated_bullets = None
+                    for child in getattr(updated_tocs, "children", []) or []:
+                        if isinstance(child, nodes.bullet_list):
+                            updated_bullets = child
+                            break
+
+                    # If we have tab headings to merge
+                    if updated_bullets is not None:
+                        if original_bullets is None:
+                            # No existing bullets: attach updated list directly
+                            original_toc_item.append(updated_bullets)
+                        else:
+                            # Append each new tab heading item to existing bullets
+                            for li in list(updated_bullets.children):
+                                original_bullets.append(li)
+                except Exception as e:
+                    logger.warning(
+                        f"{LOG_PREFIX} doctree_read({app.env.docname}): failed merging tab headings into TOC: {e}"
+                    )
             else:
                 # Only apply tab modifications if no toctree nodes are present
                 app.env.tocs[app.env.docname][0][1] = updated_tocs
