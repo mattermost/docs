@@ -96,6 +96,8 @@ Here's an example partial NGINX configuration that validates the pre-authenticat
 
 Replace ``your-secure-pre-auth-secret-here`` with a strong, unique secret that will be configured in your mobile and desktop applications. Store this secret securely and rotate it regularly as part of your security practices.
 
+For Apache2 configuration guidance, see `Configuring Apache2 as a proxy for Mattermost Server <https://support.mattermost.com/hc/en-us/articles/41170740463764-Configuring-Apache2-as-a-proxy-for-Mattermost-Server-Unofficial>`_.
+
 Desktop application security considerations
 -------------------------------------------
 
