@@ -3955,6 +3955,9 @@ redirects_map = {
 "process/working-at-mattermost.html":
 	"https://handbook.mattermost.com/operations/workplace/people/working-at-mattermost/onboarding/engineer-onboarding",
 
+"product-overview/faq-business.html":
+        "https://docs.mattermost.com/product-overview/faq-license.html",
+
 # Preferences redirects
 "preferences/connect-multiple-workspaces.html":
         "https://docs.mattermost.com/end-user-guide/preferences/connect-multiple-workspaces.html",
