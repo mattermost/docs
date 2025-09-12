@@ -81,7 +81,7 @@ redirects_map = {
 "about/faq-notifications.html":
         "https://docs.mattermost.com/end-user-guide/preferences/troubleshoot-notifications#frequently-asked-questions.html",
 "about/faq-product.html":
-        "https://docs.mattermost.com/product-overview/client-availability.html",
+        "https://docs.mattermost.com/end-user-guide/collaborate/client-availability.html",
 "about/faq-use-cases.html":
         "https://docs.mattermost.com/product-overview/faq-use-cases.html",
 "about/faq-video-audio-screensharing.html":
@@ -3954,6 +3954,11 @@ redirects_map = {
         "https://handbook.mattermost.com",
 "process/working-at-mattermost.html":
 	"https://handbook.mattermost.com/operations/workplace/people/working-at-mattermost/onboarding/engineer-onboarding",
+
+"product-overview/faq-business.html":
+        "https://docs.mattermost.com/product-overview/faq-license.html",
+"product-overview/mattermost-v9-changelog.html":
+        "https://docs.mattermost.com/product-overview/unsupported-legacy-releases.html",
 
 # Preferences redirects
 "preferences/connect-multiple-workspaces.html":
