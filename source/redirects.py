@@ -81,7 +81,7 @@ redirects_map = {
 "about/faq-notifications.html":
         "https://docs.mattermost.com/end-user-guide/preferences/troubleshoot-notifications#frequently-asked-questions.html",
 "about/faq-product.html":
-        "https://docs.mattermost.com/product-overview/client-availability.html",
+        "https://docs.mattermost.com/end-user-guide/collaborate/client-availability.html",
 "about/faq-use-cases.html":
         "https://docs.mattermost.com/product-overview/faq-use-cases.html",
 "about/faq-video-audio-screensharing.html":
