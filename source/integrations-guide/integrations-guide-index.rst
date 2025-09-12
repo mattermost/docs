@@ -23,6 +23,8 @@ You can customize Mattermost with the following integration capabilities and fra
 Slash Commands
 ---------------
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+
 A :doc:`slash command </integrations-guide/run-slash-commands>` is similar to an :doc:`outgoing webhook </integrations-guide/outgoing-webhooks/>`, but instead of listening to a channel, it's used as a command tool in a channel. The Mattermost slash command format is compatible with Slack's format, so you can easily port commands from Slack.
 
 Slash commands enable users to trigger custom actions, such as creating Jira tickets or GitHub pull requests within Mattermost channels. See the :doc:`built-in slash commands </integrations-guide/built-in-slash-commands>` available and see the `custom slash command <https://developers.mattermost.com/integrate/slash-commands/custom/>`_ developer documentation to learn more about creating your own custom slash commands.
