@@ -4,7 +4,7 @@ Experimental configuration settings
 .. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Review and manage the following experimental configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Experimental > Features**:
+Review and manage the following :ref:`experimental <administration-guide/manage/feature-labels:experimental>` configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Experimental > Features**:
 
 - `Experimental System Console configuration settings <#experimental-system-console-configuration-settings>`__
 - `Experimental Bleve configuration settings <#experimental-bleve-configuration-settings>`__
