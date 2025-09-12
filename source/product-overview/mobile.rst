@@ -1,6 +1,9 @@
 Mobile
 ======
 
+.. meta::
+	:page_title: Mattermost Mobile App
+
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 

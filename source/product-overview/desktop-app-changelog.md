@@ -12,9 +12,16 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 (release-v5-13)=
 ## Release v5.13 (Extended Support Release)
 
-**Release Day: 2025-08-15**
+- **v5.13.1, released 2025-09-10**
 
-**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/latest)
+  - Mattermost Desktop App v5.13.1 contains low to medium severity level security fixes. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Upgraded to Electron 37.4.0.
+
+- **v5.13.0, released 2025-08-15**
+
+  - Original v5.13.0 release
+
+**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/v5.13.1)
 
 ### Compatibility
 

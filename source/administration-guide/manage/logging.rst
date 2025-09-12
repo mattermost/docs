@@ -185,6 +185,9 @@ Define advanced log output
             "file_1": {
                 "type": "file",
                 "format": "plain",
+                "format_options": {
+                  "disable_level": false
+                },
                 "levels": [
                     { "id": 100, "name": "audit-api" },
                     { "id": 101, "name": "audit-content" },
@@ -272,7 +275,7 @@ System admins can define multiple log targets to:
 Configure format preferences
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-System admins can control log formatting per target.
+System admins can control log formatting per target by configuring the ``format_options`` section.
 
 Plain log format configuration options
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
