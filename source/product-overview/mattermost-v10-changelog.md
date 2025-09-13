@@ -9,6 +9,43 @@
 ```{include} common-esr-support-upgrade.md
 ```
 
+(release-v10.12-feature-release)=
+## Release v10.12 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
+
+**Release day: 2025-09-16**
+
+```{Important}
+If you upgrade from a release earlier than v10.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
+```
+
+### Compatibility
+ - Updated minimum Edge and Chrome versions to 138+.
+
+### Improvements
+
+#### User Interface (UI)
+ - Improved screen reader readouts and accessibility of various autocomplete components.
+
+#### Administration
+ - Added an endpoint to check for upgradability. Also, a correct error message is now shown and the “Upgrade Server and Start trial” button is disabled if an upgrade is not possible.
+
+### Bug Fixes
+ - Fixed an issue where pasting a link when a text was selected didn't format the selected text as a Markdown link when editing the message.
+ - Fixed an issue where emoji picker items were being selected by pressing the space bar.
+ - Fixed a potential crash in ``UpdatePost``.
+ - Fixed 403 errors that occurred when loading custom profile attributes for unauthenticated users.
+ - Fixed an issue where the **Back** button was not showing on the desktop external login redirect page.
+ - Fixed an issue where unread messages from muted channels were shown in the favicon/desktop app.
+ - Fixed an issue where extra content was not accounted for in the focus order.
+ - Fixed an issue where search filters were not readable by screen readers when a search term had not been typed in before reading the number of results.
+ - Fixed an issue where the content of webhook posts did not display.
+
+### Go Version
+ - v10.12 is built with Go ``v1.24.5``.
+
+### Contributors
+ - [abbas-dependable-naqvi](https://github.com/abbas-dependable-naqvi), [adityadav1987](https://github.com/adityadav1987), [agarciamontoro](https://github.com/agarciamontoro), [AhsanSarwar0413](https://github.com/AhsanSarwar0413), [amyblais](https://github.com/amyblais), [andrleite](https://github.com/andrleite), [angeloskyratzakos](https://github.com/angeloskyratzakos), [arush-vashishtha](https://github.com/arush-vashishtha), [asaadmahmood](https://github.com/asaadmahmood), [avasconcelos114](https://github.com/avasconcelos114), [calebroseland](https://github.com/calebroseland), [ctlaltdieliet](https://github.com/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [davidkrauser](https://github.com/davidkrauser), [devinbinnie](https://github.com/devinbinnie), [dgwhited](https://github.com/dgwhited), [DHaussermann](https://github.com/DHaussermann), [DSchalla](https://github.com/DSchalla), [electronicmilk](https://translate.mattermost.com/user/electronicmilk), [enahum](https://github.com/enahum), [enzowritescode](https://github.com/enzowritescode), [esarafianou](https://github.com/esarafianou), [esethna](https://github.com/esethna), [ewwollesen](https://github.com/ewwollesen), [fmartingr](https://github.com/fmartingr), [frankps](https://translate.mattermost.com/user/frankps), [fsilye](https://github.com/fsilye), [gabrieljackson](https://github.com/gabrieljackson), [hanzei](https://github.com/hanzei), [harshilsharma63](https://github.com/harshilsharma63), [henriquevmac](https://github.com/henriquevmac), [hmhealey](https://github.com/hmhealey), [isacikgoz](https://github.com/isacikgoz), [jgheithcock](https://github.com/jgheithcock), [jlandells](https://github.com/jlandells), [johnsonbrothers](https://github.com/johnsonbrothers), [jprusch](https://github.com/jprusch), [JulienTant](https://github.com/JulienTant), [jwilander](https://github.com/jwilander), [kaakaa](https://translate.mattermost.com/user/kaakaa), [Kshitij-Katiyar](https://github.com/Kshitij-Katiyar), [larkox](https://github.com/larkox), [lieut-data](https://github.com/lieut-data), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [majo](https://translate.mattermost.com/user/majo), [mansil](https://github.com/mansil), [master7](https://translate.mattermost.com/user/master7), [matt-w99](https://github.com/matt-w99), [matthew-w](https://translate.mattermost.com/user/matthew-w), [mgdelacroix](https://github.com/mgdelacroix), [Morgansvk](https://github.com/Morgansvk), [neflyte](https://github.com/neflyte), [nickmisasi](https://github.com/nickmisasi), [pvev](https://github.com/pvev), [raghavaggarwal2308](https://github.com/raghavaggarwal2308), [rahimrahman](https://github.com/rahimrahman), [Rajat-Dabade](https://github.com/Rajat-Dabade), [Reinkard](https://translate.mattermost.com/user/Reinkard), [rOt779kVceSgL](https://translate.mattermost.com/user/rOt779kVceSgL), [sadohert](https://github.com/sadohert), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [stafot](https://github.com/stafot), [svelle](https://github.com/svelle), [tnir](https://github.com/tnir), [Victor-Nyagudi](https://github.com/Victor-Nyagudi), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [yasserfaraazkhan](https://github.com/yasserfaraazkhan)
+
 (release-v10.11-extended-support-release)=
 ## Release v10.11 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
