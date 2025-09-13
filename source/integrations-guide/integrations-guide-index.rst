@@ -33,7 +33,7 @@ Learn more about what popular pre-built integrations are available and how to in
 
 
 
-.. image:: ../images/manage-webhooks.png
+.. image:: ../images/prebuilt-integrations.png
   :alt: Pre-built plugins available for no-code integration
   :width: 800
 
@@ -43,15 +43,16 @@ The `Mattermost Marketplace <https://mattermost.com/marketplace/>`_ offers an ex
 
 Custom-built plugins
 ^^^^^^^^^^^^^^^^^^^^
-.. include:: ../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
 
 **Technical complexity: Pro-code**
+
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
 
 
 Custom built plugins are the most comprehensive way to add new features and customization to self-hosted Mattermost deployments. Custom plugins are ideal for customers wanting to change the behavior of the Mattermost server, desktop, and web apps without forking the core codebase to suit their organization’s needs.
 
-Building a custom plugin is a **software development** task, using `Go` for the server-side functionality and optionally `TypeScript/React` for UI components. Developers should be comfortable with Git, modern build tooling, and the Mattermost Plugin API, including lifecycle hooks, KV storage, slash commands, and interactivity. Knowledge of testing, logging, and security best practices is essential for production-ready plugins, along with experience packaging and deploying plugins through the System Console or CLI. For teams without these skills, simpler options like webhooks, slash commands, or no-code workflow tools may be more practical.
+Building a custom plugin is a **software development** task, using ``Go`` for the server-side functionality and optionally ``TypeScript/React`` for UI components. Developers should be comfortable with Git, modern build tooling, and the Mattermost Plugin API, including lifecycle hooks, KV storage, slash commands, and interactivity. Knowledge of testing, logging, and security best practices is essential for production-ready plugins, along with experience packaging and deploying plugins through the System Console or CLI. For teams without these skills, simpler options like webhooks, slash commands, or no-code workflow tools may be more practical.
 
 Plugins can authenticate and interact with Mattermost through `bot accounts <https://developers.mattermost.com/integrate/reference/bot-accounts/>`_, utilizing the `RESTful API <https://developers.mattermost.com/api-documentation/>`_.
 
@@ -216,7 +217,7 @@ When used in comination with outgoing webhooks or custom slash commands, users c
 Choosing the best platform for your team depends on your specific integration requirements, hosting preferences, and technical capabilities. Learn more about the capabilities of each platform below:  
 
 
- .. tab:: n8n
+.. tab:: n8n
   :parse-titles:
 
   
@@ -266,7 +267,7 @@ Choosing the best platform for your team depends on your specific integration re
   - Retrieve members of a channel
 
 
-  Explore building workflows with the `Mattermost n8n integration <https://n8n.io/integrations/mattermost/>_.
+  Explore building workflows with the `Mattermost n8n integration <https://n8n.io/integrations/mattermost/>`_.
 
 
 .. tab:: Make
@@ -306,7 +307,7 @@ Choosing the best platform for your team depends on your specific integration re
   - Get a Team by Name: Retrieve team information by team name.
 
 
-  Explore building workflows with the `Mattermost Make integration <https://www.make.com/en/integrations/mattermost>_.
+  Explore building workflows with the `Mattermost Make integration <https://www.make.com/en/integrations/mattermost>`_.
 
 
 .. tab:: Zapier
@@ -323,7 +324,7 @@ Choosing the best platform for your team depends on your specific integration re
   - Compared with the wide range of triggers and actions supported by n8n or Make, Zapier supports only one action - posting a message. 
 
 
-  Explore building workflows with the `Mattermost Zapier integration <https://n8n.io/integrations/mattermost/>_.
+  Explore building workflows with the `Mattermost Zapier integration <https://n8n.io/integrations/mattermost/>`_.
 
 
 Mattermost Playbooks
@@ -337,14 +338,8 @@ While Playbooks primarily focus on coordinating people and tasks, they also have
 Learn more about using Playbooks `here <https://docs.mattermost.com/end-user-guide/workflow-automation.html>`_.
 
 
-
-
-
-
-
-
 Frequently Asked Questions
----------------------------
+__________________________
 
 What is meant by **no-code**, **low-code**, and **pro-code**?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
