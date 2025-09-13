@@ -348,8 +348,7 @@ What is meant by **no-code**, **low-code**, and **pro-code**?
 
 - **Low-code**: Minimal coding or scripting is needed to implement the integration. Low-code solutions might require writing a few lines of script or simple configuration in code-like logic, but not building a full software application. In Mattermost’s context, something like setting up a webhook with a small custom script, or tweaking an automation template would be considered low-code. It typically assumes some technical knowledge, but far less than full-scale development. Utilizing templates or online AI tooling can likely meet the need for most low-code integration requirements.
 
-
-**Pro-code**: These kinds of integrations require a professional software developer to write code and sometimes build underlying infrastructure. These integrations offer maximum flexibility at the cost of technical complexity, for example building a custom Mattermost plugin or writing a complex bot program using the Mattermost API in a custom application. Pro-code integrations are essentially software projects – you’ll use developer tools, work with source code, and follow software development practices to build and maintain them.
+- **Pro-code**: These kinds of integrations require a professional software developer to write code and sometimes build underlying infrastructure. These integrations offer maximum flexibility at the cost of technical complexity, for example building a custom Mattermost plugin or writing a complex bot program using the Mattermost API in a custom application. Pro-code integrations are essentially software projects – you’ll use developer tools, work with source code, and follow software development practices to build and maintain them.
 
 
 What does Slack-compatible mean?
