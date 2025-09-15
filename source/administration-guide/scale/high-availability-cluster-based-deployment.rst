@@ -314,8 +314,8 @@ Here's an example ``SqlSettings`` block for one master and two read replicas:
         "DataSource": "master_user:master_password@tcp(master.server)/mattermost?charset=utf8mb4,utf8\u0026readTimeout=30s\u0026writeTimeout=30s",
         "DataSourceReplicas": ["slave_user:slave_password@tcp(replica1.server)/mattermost?charset=utf8mb4,utf8\u0026readTimeout=30s\u0026writeTimeout=30s","slave_user:slave_password@tcp(replica2.server)/mattermost?charset=utf8mb4,utf8\u0026readTimeout=30s\u0026writeTimeout=30s"],
         "DataSourceSearchReplicas": [],
-        "MaxIdleConns": 20,
-        "MaxOpenConns": 300,
+        "MaxIdleConns": 50,
+        "MaxOpenConns": 100,
         "Trace": false,
         "AtRestEncryptKey": "",
         "QueryTimeout": 30
@@ -364,6 +364,7 @@ For the Postgres service we recommend the following configuration optimizations 
   # If the instance is lower capacity than r5.xlarge, then set it to a lower number. 
   # Also tune the "MaxOpenConns" setting under the "SqlSettings" of the Mattermost app accordingly. 
   # Note that "MaxOpenConns" on Mattermost is per data source name.
+  # Recommended: MaxOpenConns: 100, MaxIdleConns: 50 (2:1 ratio)
   max_connections = 1024
 
   # Set it to 1.1, unless the DB is using spinning disks.
@@ -408,6 +409,7 @@ Copy all the above settings to the read replica, and modify or add only the belo
   # If the instance is lower capacity than r5.xlarge, then set it to a lower number. 
   # Also tune the "MaxOpenConns" setting under the "SqlSettings" of the Mattermost app accordingly. 
   # Note that "MaxOpenConns" on Mattermost is per data source name.
+  # Recommended: MaxOpenConns: 100, MaxIdleConns: 50 (2:1 ratio)
   max_connections = 1024
 
   # This setting should be 16MB on read nodes, and 32MB on writer nodes

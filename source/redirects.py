@@ -1596,13 +1596,13 @@ redirects_map = {
 "configure/configuration-settings.html#enable-shared-channels":
         "https://docs.mattermost.com/administration-guide/configure/site-configuration-settings.html#enable-connected-workspaces",
 "configure/configuration-settings.html#enable-bleve-indexing":
-        "https://docs.mattermost.com/administration-guide/configure/experimental-configuration-settings.html#enable-bleve-indexing",
+        "https://docs.mattermost.com/administration-guide/configure/deprecated-configuration-settings.html#enable-bleve-indexing",
 "configure/configuration-settings.html#index-directory":
-        "https://docs.mattermost.com/administration-guide/configure/experimental-configuration-settings.html#index-directory",
+        "https://docs.mattermost.com/administration-guide/configure/deprecated-configuration-settings.html#index-directory",
 "configure/configuration-settings.html#enable-bleve-for-search-queries":
-        "https://docs.mattermost.com/administration-guide/configure/experimental-configuration-settings.html#enable-bleve-for-search-queries",
+        "https://docs.mattermost.com/administration-guide/configure/deprecated-configuration-settings.html#enable-bleve-for-search-queries",
 "configure/configuration-settings.html#enable-bleve-for-autocomplete-queries":
-        "https://docs.mattermost.com/administration-guide/configure/experimental-configuration-settings.html#enable-bleve-for-autocomplete-queries",
+        "https://docs.mattermost.com/administration-guide/configure/deprecated-configuration-settings.html#enable-bleve-for-autocomplete-queries",
 "configure/configuration-settings.html#allowed-themes":
         "https://docs.mattermost.com/administration-guide/configure/experimental-configuration-settings.html#allowed-themes",
 "configure/configuration-settings.html#maximum-users-for-statistics":
