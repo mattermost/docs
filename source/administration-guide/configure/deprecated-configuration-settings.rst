@@ -30,7 +30,7 @@ The following Mattermost configuration settings are deprecated and are no longer
 Bleve settings
 --------------
 
-*Bleve search has been deprecated in Mattermost v11.0. We recommend using Elasticsearch or OpenSearch for enterprise search capabilities.*
+*Bleve search has been deprecated from Mattermost v11.0. We recommend using Elasticsearch or OpenSearch for enterprise search capabilities.*
 
 Enable Bleve indexing
 ~~~~~~~~~~~~~~~~~~~~~
@@ -59,6 +59,26 @@ Directory path to use for storing bleve indexes.
 +-----------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IndexDir": ""`` with string input.                           |
 +-----------------------------------------------------------------------------------------------------------+
+
+Bulk index now
+~~~~~~~~~~~~~~
+
+Select **Index Now** to index all users, channels, and posts in the database from oldest to newest. Bleve is available during indexing, but search results may be incomplete until the indexing job is complete.
+
+Purge indexes
+~~~~~~~~~~~~~
+
+Select **Purge Index** to remove the contents of the Bleve index directory. Search results may be incomplete until a bulk index of the existing database is rebuilt.
+
+.. config:setting:: enable-bleve-indexingsearch
+  :displayname: Enable Bleve for search queries (Experimental)
+  :systemconsole: Experimental > Bleve
+  :configjson: EnableSearching
+  :environment: N/A
+
+  - **true**: Search queries will use bleve search.
+  - **false**: **(Default)** Search queries will not use bleve search.
+
 
 Enable Bleve for search queries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

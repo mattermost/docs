@@ -1596,23 +1596,13 @@ redirects_map = {
 "configure/configuration-settings.html#enable-shared-channels":
         "https://docs.mattermost.com/administration-guide/configure/site-configuration-settings.html#enable-connected-workspaces",
 "configure/configuration-settings.html#enable-bleve-indexing":
-<<<<<<< HEAD
-        "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#enable-bleve-indexing",
+        "https://docs.mattermost.com/administration-guide/configure/deprecated-configuration-settings.html#enable-bleve-indexing",
 "configure/configuration-settings.html#index-directory":
-        "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#index-directory",
+        "https://docs.mattermost.com/administration-guide/configure/deprecated-configuration-settings.html#index-directory",
 "configure/configuration-settings.html#enable-bleve-for-search-queries":
-        "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#enable-bleve-for-search-queries",
+        "https://docs.mattermost.com/administration-guide/configure/deprecated-configuration-settings.html#enable-bleve-for-search-queries",
 "configure/configuration-settings.html#enable-bleve-for-autocomplete-queries":
-        "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#enable-bleve-for-autocomplete-queries",
-=======
-        "https://docs.mattermost.com/administration-guide/configure/experimental-configuration-settings.html#enable-bleve-indexing",
-"configure/configuration-settings.html#index-directory":
-        "https://docs.mattermost.com/administration-guide/configure/experimental-configuration-settings.html#index-directory",
-"configure/configuration-settings.html#enable-bleve-for-search-queries":
-        "https://docs.mattermost.com/administration-guide/configure/experimental-configuration-settings.html#enable-bleve-for-search-queries",
-"configure/configuration-settings.html#enable-bleve-for-autocomplete-queries":
-        "https://docs.mattermost.com/administration-guide/configure/experimental-configuration-settings.html#enable-bleve-for-autocomplete-queries",
->>>>>>> master
+        "https://docs.mattermost.com/administration-guide/configure/deprecated-configuration-settings.html#enable-bleve-for-autocomplete-queries",
 "configure/configuration-settings.html#allowed-themes":
         "https://docs.mattermost.com/administration-guide/configure/experimental-configuration-settings.html#allowed-themes",
 "configure/configuration-settings.html#maximum-users-for-statistics":
@@ -1991,19 +1981,7 @@ redirects_map = {
 "deploy/backup-disaster-recovery.html":
         "https://docs.mattermost.com/deployment-guide/backup-disaster-recovery.html",
 "deploy/bleve-search.html":
-<<<<<<< HEAD
-        "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#bleve-settings",
-"deploy/image-proxy.html":
-        "https://docs.mattermost.com/deploy/server/image-proxy.html",
-"deploy/consider-mobile-vpn-options.html":
-        "https://docs.mattermost.com/deploy/mobile/consider-mobile-vpn-options.html",
-"deploy/mobile-appconfig.html":
-        "https://docs.mattermost.com/deploy/mobile/deploy-mobile-apps-using-emm-provider.html",
-"deploy/mobile-faq.html":
-        "https://docs.mattermost.com/deploy/mobile/mobile-faq.html",
-=======
         "https://docs.mattermost.com/administration-guide/configure/bleve-search.html",
->>>>>>> master
 "deploy/build-custom-mobile-apps.html":
         "https://docs.mattermost.com/deployment-guide/mobile/distribute-custom-mobile-apps.html",
 "deploy/client-side-data.html":

@@ -1,7 +1,7 @@
 Environment configuration settings
 ==================================
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
+.. include:: ../../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
 Review and manage the following environmental configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Environment**:
@@ -32,7 +32,7 @@ Review and manage the following environmental configuration options in the Syste
 Web server
 ----------
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
+.. include:: ../../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
 Configure the network environment in which Mattermost is deployed by going to **System Console > Environment > Web Server**, or by updating the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
@@ -957,7 +957,7 @@ Disable database search
 
 Search behavior in Mattermost depends on which search engines are enabled:
 
-- When :doc:`Elasticsearch </scale/elasticsearch-setup>` or :doc:`AWS OpenSearch </scale/opensearch-setup>` is enabled, Mattermost will try to use it first.
+- When :doc:`Elasticsearch </administration-guide/scale/elasticsearch-setup>` or :doc:`AWS OpenSearch </administration-guide/scale/opensearch-setup>` is enabled, Mattermost will try to use it first.
 - If Elasticsearch fails or is disabled, Mattermost will attempt to use Bleve search, if enabled. **Note:** Bleve search has been deprecated in Mattermost v11.0. We recommend using Elasticsearch or OpenSearch for enterprise search capabilities.
 - If these fail or are disabled, Mattermost tries to search the database directly, if this is enabled.
 - If all of the above methods fail or are disabled, the search results will be empty.

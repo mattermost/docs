@@ -1,7 +1,7 @@
 Upgrade Mattermost Server
 =========================
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
+.. include:: ../../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
 In most cases, you can upgrade Mattermost Server in a few minutes. However, the upgrade can take longer depending on several factors, including the size and complexity of your installation, and the version that you're upgrading from.
@@ -15,7 +15,7 @@ Experienced system admins looking for a quick overview of the Mattermost upgrade
 
 1. Ensure you have a complete backup of your system before proceeding, including database and application.
 
-2. **System requirements**: Verify that your server and PostgreSQL version meets :doc:`Mattermost requirements </deploy/software-hardware-requirements>`.
+2. **System requirements**: Verify that your server and PostgreSQL version meets :doc:`Mattermost requirements </deployment-guide/software-hardware-requirements>`.
 
 3. **Preparation steps**
 
@@ -168,7 +168,7 @@ Upgrade Mattermost Server
 
         - You can either move the bleve index directory out from the ``mattermost`` directory before upgrading or, following an upgrade, you can copy the contents of the bleve index directory from the ``backup`` directory. 
         - You can then store that directory or re-index as preferred. 
-        - The bleve indexes can be migrated without reindexing between Mattermost versions. See our :ref:`Configuration Settings <administration-guide/configure/experimental-configuration-settings:experimental bleve configuration settings>` documentation for details on configuring the bleve index directory.
+        - The bleve indexes can be migrated without reindexing between Mattermost versions. See our :ref:`Configuration Settings <administration-guide/configure/deprecated-configuration-settings:bleve settings>` documentation for details on configuring the bleve index directory.
 
      Once you've completed all of the steps above (where applicable), you're ready to execute the full command that includes ``xargs rm -r`` to delete the files. Note that the following example includes ``-o -path mattermost/yourFolderHere``:
 
