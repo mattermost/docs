@@ -12,6 +12,10 @@ Set server connection details
 4. Optional CA and client certificate configuration settings are available for use with basic authentication credentials or to replace them. See the :ref:`Enterprise search configuration settings <administration-guide/configure/environment-configuration-settings:enterprise search>` documentation for details.
 5. Select **Test Connection** and then select **Save**. If the server connection is unsuccessful you won't be able to save the configuration or enable searching with Elasticsearch or AWS OpenSearch.
 
+.. note::
+
+   From Mattermost v11, enterprise search server connections are also tested during :doc:`Support Packet generation </administration-guide/manage/admin/generating-support-packet>`. Any connection errors encountered during Support Packet generation are automatically included in the packet to help diagnose configuration issues.
+
 Build the post index of existing messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

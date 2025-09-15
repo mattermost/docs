@@ -6,6 +6,10 @@ Generate a Support Packet
 
 The Support Packet is used to help customers diagnose and troubleshoot issues. Use the System Console or the :ref:`mmctl system supportpacket <administration-guide/manage/mmctl-command-line-tool:mmctl system supportpacket>` command to generate a zip file that includes configuration information, logs, plugin details, and data on external dependencies across all nodes in a high-availability cluster. Confidential data, such as passwords, are automatically stripped.
 
+.. note::
+
+   From Mattermost v11, Support Packet generation includes connection testing for configured enterprise search engines (Elasticsearch and AWS OpenSearch). Any connection errors encountered during this testing are included in the Support Packet to help diagnose enterprise search configuration issues.
+
 Generate
 ---------
 
@@ -63,7 +67,66 @@ Contents of a Support Packet
 
 The contents of a Mattermost Support Packet can differ by server version. Select the tab that corresponds to your Mattermost version to see the files included in the Support Packet.
 
-.. tab:: v10.11 and later
+.. tab:: v11.0 and later
+
+   .. note::
+
+      From v11.0, Support Packets test the connection to configured enterprise search engines (Elasticsearch and AWS OpenSearch) and include any connection errors in the packet. This helps diagnose enterprise search configuration issues.
+      
+      From v10.11, Support Packets include PostgreSQL database schema dump information that provides comprehensive metadata to help diagnose database configuration issues, performance problems, collation mismatches, and other database-related issues.
+
+   **Cluster-wide files (root directory):**
+
+   - `metadata.yaml <#metadata>`__
+   - ``plugins.json`` (all active and inactive plugins)
+   - ``sanitized_config.json`` (sanitized copy of the Mattermost configuration)
+   - ``stats.yaml`` (Mattermost usage statistics)
+   - ``jobs.yaml`` (last runs of important jobs)
+   - ``diagnostics.yaml`` (core plugin diagnostics data)
+   - ``permissions.yaml`` (role & scheme information)
+   - ``postgres_schema_dump.sql`` (PostgreSQL database schema information including tables, indexes, constraints, and other database metadata to assist with database configuration diagnosis)
+   - ``warning.txt`` (present when issues are encountered during packet generation)
+   - ``tsdb_dump.tar.gz`` (present when the Metrics plugin is installed and the **Performance metrics** option is selected when generating the Support Packet)
+
+   **Enterprise search diagnostics (from v11.0):**
+
+   When enterprise search is configured, the Support Packet includes connection test results and any errors encountered:
+
+   - **Elasticsearch connection test**: Tests server connectivity and reports server version, installed plugins, and any connection errors
+   - **AWS OpenSearch connection test**: Tests server connectivity and reports server version, installed plugins, and any connection errors
+
+   Example Elasticsearch diagnostic output included in the Support Packet:
+
+   .. code-block:: yaml
+
+      elastic:
+          server_version: 8.9.0
+          server_plugins:
+              - analysis-icu
+          error: 'Elasticsearch.checkMaxVersion: Failed to get elasticsearch server version., an error happened during the Info query execution: dial tcp 127.0.0.1:9200: connect: connection refused'
+
+   **Cluster-specific files (in node subdirectories):**
+
+   - ``<node-id>/mattermost.log`` (Mattermost logs for each node)
+   - ``<node-id>/audit.log`` (Mattermost audit logs for each node)
+   - ``<node-id>/ldap.log`` (AD/LDAP logs for each node)
+   - ``<node-id>/notifications.log`` (notifications logs for each node)
+   - ``<node-id>/cpu.prof`` (`Go performance metrics <#go-performance-metrics>`__ for each node)
+   - ``<node-id>/heap.prof`` (`Go performance metrics <#go-performance-metrics>`__ for each node)
+   - ``<node-id>/goroutines`` (`Go performance metrics <#go-performance-metrics>`__ for each node)
+
+   The following additional plugin diagnostic data is included in the generated Support Packet when the plugin is enabled and operational:
+
+   - GitHub: ``/github/diagnostics.yaml``
+   - GitLab: ``/com.github.manland.mattermost-plugin-gitlab/diagnostics.yaml``
+   - Jira: ``/jira/diagnostics.yaml``
+   - Calls: ``/com.mattermost.calls/diagnostics.yaml``
+   - Boards: ``/focalboard/diagnostics.yaml``
+   - Playbooks: ``/playbooks/diagnostics.yaml``
+   - MSCalendar: ``/com.mattermost.mscalendar/diagnostics.yaml``
+   - Google Calendar: ``/com.mattermost.gcal/diagnostics.yaml``
+
+.. tab:: v10.11
 
    .. note::
 
