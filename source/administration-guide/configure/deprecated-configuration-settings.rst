@@ -50,7 +50,7 @@ This setting was available in the System Console by going to **Experimental > Bl
 Index directory
 ~~~~~~~~~~~~~~~
 
-*Deprecated in Mattermost v11.0 release*
+*Deprecated from Mattermost v11.0*
 
 This setting was available in the System Console by going to **Experimental > Bleve**, or by editing the ``config.json`` file.
 
