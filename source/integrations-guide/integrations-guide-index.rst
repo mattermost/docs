@@ -227,6 +227,8 @@ Choosing the best platform for your team depends on your specific integration re
 
   n8n stands out for offering rich AI integration, enabling you to combine automation with AI-powered workflows. Its `native AI Agent node <https://n8n.io/ai/>`_ lets you integrate large language models, vector databases, and other AI services directly into your automations. This means you can build workflows in Mattermost that not only react to events but also analyze context, summarize discussions, or make decisions based on AI output.
 
+  Explore building workflows with the `Mattermost n8n integration <https://n8n.io/integrations/mattermost/>`_.
+
 
   **Supported Triggers**
 
@@ -272,15 +274,14 @@ Choosing the best platform for your team depends on your specific integration re
   - Retrieve members of a channel
 
 
-  Explore building workflows with the `Mattermost n8n integration <https://n8n.io/integrations/mattermost/>`_.
-
-
 .. tab:: Make
   :parse-titles:
 
   Make offers a more visual and flexible approach to automation, allowing you to build complex workflows with advanced logic and data manipulation. Make offers one of the most expansive sets of out-of-the-box triggers and actions for Mattermost. 
 
   Make is hosted in the cloud, and excels at more complex multi-step workflows while still keeping the configuration non-technical.
+
+  Explore building workflows with the `Mattermost Make integration <https://www.make.com/en/integrations/mattermost>`_.
 
 
   **Supported Triggers**
@@ -312,9 +313,6 @@ Choosing the best platform for your team depends on your specific integration re
   - Get a Team by Name: Retrieve team information by team name.
 
 
-  Explore building workflows with the `Mattermost Make integration <https://www.make.com/en/integrations/mattermost>`_.
-
-
 .. tab:: Zapier
   :parse-titles:
 
@@ -322,14 +320,16 @@ Choosing the best platform for your team depends on your specific integration re
 
   Zapier’s strength is the breadth of integrations. Without coding, you can integrate Mattermost with everything from CRMs to social media. This is perfect for non-technical users who want to automate notifications or routine tasks, such as posting daily reports or sending Mattermost channel messages when forms are submitted. Zapier provides a user-friendly wizard and template library to get started quickly.
 
+  Explore building workflows with the `Mattermost Zapier integration <https://n8n.io/integrations/mattermost/>`_.
+
   **Supported Triggers**
+
   - Zapier does not natively support triggers in Mattermost. If you want Mattermost to trigger a Zapier workflow, you can use outgoing webhooks or slash commands in combination with `Zapier’s Webhooks trigger <https://zapier.com/apps/webhook/integrations>`_. For example, you could configure an outgoing webhook in Mattermost to hit Zapier when a certain keyword is posted, which Zapier treats as a trigger to then perform actions in other apps.
 
   **Supported Actions**
+
   - Compared with the wide range of triggers and actions supported by n8n or Make, Zapier supports only one action - posting a message. 
 
-
-  Explore building workflows with the `Mattermost Zapier integration <https://n8n.io/integrations/mattermost/>`_.
 
 
 Mattermost Playbooks
