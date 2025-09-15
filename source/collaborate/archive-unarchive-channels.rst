@@ -11,7 +11,7 @@ Delete :ref:`public channels <collaborate/channel-types:public channels>` and :r
 
 .. tip::
 
-  You can always access archived channels where you are a member, regardless of system admin configuration. Your system admin may control whether you can browse and access archived public channels where you are not a member using the :ref:`BrowseArchivedPublicChannels <configure/site-configuration-settings:allow users to browse archived public channels>` setting.
+  You can continue to access archived channels, unless your system admin has :ref:`disabled <configure/site-configuration-settings:allow users to view archived channels>` your ability to do so.
 
 .. tab:: Web/Desktop
 
@@ -108,50 +108,3 @@ System admins and Team admins can restore archived channels. When a channel is u
 .. tip::
 
   Alternatively, system admins can unarchive channels :ref:`via the mmctl <manage/mmctl-command-line-tool:mmctl channel unarchive>`, and Team admins can unarchive channels `via the API <https://api.mattermost.com/#operation/RestoreChannel>`__.
-
-Leave archived channels
-------------------------
-
-Users can leave archived channels if they no longer want to see them in their channel sidebar. This is useful when you want to remove access to archived channels that are no longer relevant to your work.
-
-.. tab:: Web/Desktop
-
-  To leave an archived channel:
-
-  1. Open the archived channel you want to leave.
-  2. Select the channel name at the top of the center pane to access the drop-down menu.
-  3. Select **Leave Channel**.
-
-.. tab:: Mobile
-
-  To leave an archived channel:
-  
-  1. Tap the archived channel you want to leave.
-  2. Tap the **More** |more-icon-vertical| icon located in the top right corner of the app.
-  3. Tap **View info**.
-  4. Tap **Leave Channel**.
-  5. Tap **Yes** to confirm.
-
-.. note::
-
-  Once you leave an archived channel, you will no longer be able to access it unless:
-  
-  - The channel is unarchived and you rejoin it
-  - A system admin or team admin adds you back to the channel
-  - The channel is a public channel and your system admin allows browsing archived public channels
-
-Administrative controls for archived channel access
----------------------------------------------------
-
-System administrators can control user access to archived channels using the following methods:
-
-**Preventing access to specific archived channels:**
-
-- Remove users from the channel before or after archiving
-- Make the channel private before archiving to prevent non-members from browsing it
-- Use the :ref:`BrowseArchivedPublicChannels <configure/site-configuration-settings:allow users to browse archived public channels>` setting to control whether users can browse archived public channels
-
-**Global archived channel access control:**
-
-- Use the :ref:`BrowseArchivedPublicChannels <configure/site-configuration-settings:allow users to browse archived public channels>` setting to control whether users can browse and access archived public channels where they are not members
-- Note that users can always access archived channels where they are members, regardless of system configuration

@@ -9,14 +9,7 @@ Removed features in upcoming versions
 Mattermost Server v11.0.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Starting in September 2025, Mattermost will deprecate the ``TeamSettings.ExperimentalViewArchivedChannels`` setting in favor of a new setting, ``TeamSettings.BrowseArchivedPublicChannels``. The new setting provides more granular control over archived channel access:
-
-  - Users can always access archived channels where they are members, regardless of the setting value
-  - The new setting specifically controls whether users can browse and access archived *public* channels where they are not members
-  - System administrators should update their configuration to use the new setting for better control over archived channel access
-  - The old setting will be automatically migrated to the new setting, but manual configuration updates are recommended
-
-  See more details in `this forum post <https://forum.mattermost.com/t/viewing-accessing-archived-channels-v11/22626>`__.
+- Starting in Mattermost v11.0, the ``TeamSettings.ExperimentalViewArchivedChannels`` setting is always enabled and no longer configurable. Users can always access archived channels where they are members.
 - Beginning in Mattermost v11 (estimated in September 2025), Playbooks will be unsupported for Free Edition and Professional customers. Professional customers using Playbooks can contact their Customer Success Manager to discuss potential upgrade options with discounting applied as appropriate. Additional details can be found in the `Clarification on Playbooks in Mattermost v10 <https://forum.mattermost.com/t/clarification-on-playbooks-in-mattermost-v10/20563>`__ article on the Mattermost Discussion Forums.
 - Mattermost v11 will retire experimental Bleve Search functionality as it no longer aligns with our vision for streamlined search solutions. See more details in `this forum post <https://forum.mattermost.com/t/transitioning-from-bleve-search-in-mattermost-v11/22982>`__.
 - End of support for MySQL is targeted for Mattermost v11. See more details in `this forum post <https://forum.mattermost.com/t/transition-to-postgresql/19551>`__.
