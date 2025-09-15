@@ -112,6 +112,7 @@ What if my air-gapped environment doesn't have a private container registry or p
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 A private container registry securely stores the Docker images necessary for air-gapped deployments, ensuring compliance with data isolation requirements. Similarly, a private package mirror stores operating system packages necessary for air-gapped deployments in Ubuntu or RHEL/CentOS Linux environments. Setting up a local registry or mirror is a critical step in deploying Mattermost to ensure all images, dependencies and packages are available to you in the air-gapped environment. The steps below outline the process required to setup a local registry or mirror, depending on the deployment method you are using. These steps are a rough guide, and can be supplemented with online resources depending on your specific deployment needs. 
 
+
 .. tab:: Linux
 
    (Ubuntu) Set up a private Debian package mirror
@@ -233,7 +234,7 @@ A private container registry securely stores the Docker images necessary for air
          yum clean all
          yum repolist
 
-  
+
 .. tab:: Kubernetes
 
    Set up a self-hosted private container registry
