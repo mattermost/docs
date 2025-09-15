@@ -14,7 +14,6 @@ Mattermost Server v11.0.0
 - Mattermost v11 will retire experimental Bleve Search functionality as it no longer aligns with our vision for streamlined search solutions. See more details in `this forum post <https://forum.mattermost.com/t/transitioning-from-bleve-search-in-mattermost-v11/22982>`__.
 - End of support for MySQL is targeted for Mattermost v11. See more details in `this forum post <https://forum.mattermost.com/t/transition-to-postgresql/19551>`__.
 - Starting in Mattermost v11, the default value of the ``ExperimentalStrictCSRFEnforcement`` setting will be changed to ``true``. The legacy ``X-Requested-With`` header fallback will still be supported but only when explicitly disabled by setting ``ExperimentalStrictCSRFEnforcement`` to ``false``. See more details in `this forum post <https://forum.mattermost.com/t/default-value-of-the-experimental-strict-csrf-enforcement-setting-to-be-changed-to-true-v11/23139>`__.
-- Starting in Mattermost v11, the ``include_removed_members`` parameter in the ``/api/v4/ldap/sync`` endpoint and the ``--include-removed-members`` flag in the ``mmctl ldap sync`` command are deprecated and will be removed in a future version.
 
 Removed features by Mattermost version
 ----------------------------------------
