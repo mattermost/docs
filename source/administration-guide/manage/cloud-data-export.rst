@@ -45,7 +45,10 @@ Use your administrator credentials to log into your self-hosted Mattermost serve
    
    mmctl export create --attachments
 
-This creates a full export of the server, and includes attached files. If you don’t want to export attached files, leave out ``--attachments``.
+This creates a full export of the server, and includes attached files.
+
+.. deprecated:: 11.0
+   The ``--attachments`` flag is deprecated. Attachments are now included by default in exports.
 
 This process can take some time, so ``mmctl`` will return immediately, and the job will run in the background until the export is fully created. If successful, the command will immediately output a job ID, like this:
 
@@ -296,7 +299,10 @@ Use your administrator credentials to log into your self-hosted Mattermost serve
    
    mmctl export create --attachments
 
-This creates a full export of the server, and includes attached files. If you don’t want to export attached files, leave out ``--attachments``.
+This creates a full export of the server, and includes attached files.
+
+.. deprecated:: 11.0
+   The ``--attachments`` flag is deprecated. Attachments are now included by default in exports.
 
 This process can take some time, so ``mmctl`` will return immediately, and the job will run in the background until the export is fully created. If successful, the command will immediately output a job ID, like this:
 

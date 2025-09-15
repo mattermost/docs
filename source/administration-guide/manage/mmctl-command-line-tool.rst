@@ -1169,6 +1169,8 @@ Rename an existing channel.
 .. code-block:: sh
 
    --display_name string   Channel Display Name
+                           .. deprecated:: 11.0
+                              Use ``--display-name`` instead.
    -h, --help              help for rename
    --name string           Channel Name
 
@@ -3897,6 +3899,8 @@ Upload import files.
 
    -h, --help        help for upload
    --resume          Set to true to resume an incomplete import upload.
+                     .. deprecated:: 11.0
+                        Downloads now resume automatically.
    --upload string   The ID of the import upload to resume.
 
 **Options inherited from parent commands**
@@ -4740,6 +4744,9 @@ Show all the information about a role.
 .. code-block:: sh
 
    mmctl permissions show system_user
+
+.. deprecated:: 11.0
+   Use ``mmctl permissions role show`` instead.
 
 **Options**
 
@@ -6044,6 +6051,8 @@ Rename an existing team.
 .. code-block:: sh
 
    --display_name string   Team Display Name
+                           .. deprecated:: 11.0
+                              Use ``--display-name`` instead. This flag is required for the team rename command.
    -h, --help              help for rename
 
 **Options inherited from parent commands**
@@ -6536,6 +6545,8 @@ Convert user accounts to bots, or convert bots to user accounts.
    --nickname string    The nickname for the converted user account. Required when the "bot" flag is set
    --password string    The password for converted new user account. Required when "user" flag is set
    --system_admin       If supplied, the converted user will be a system admin. Defaults to false. Required when the "bot" flag is set
+                        .. deprecated:: 11.0
+                           Use ``--system-admin`` instead.
    --user               If supplied, convert a bot to a user
    --username string    Username for the converted user account. Required when the "bot" flag is set
 
@@ -6589,6 +6600,8 @@ Create a user.
    --disable-welcome-email   Optional. If supplied, the new user will not receive a welcome email. Defaults to false
    --email string            Required. The email address for the new user account
    --email-verified          Optional. If supplied, the new user will have the email verified. Defaults to false
+   --email_verified          .. deprecated:: 11.0
+                                Use ``--email-verified`` instead.
    --firstname string        Optional. The first name for the new user account
    --guest                   Optional. If supplied, the new user will be a guest. Defaults to false
    -h, --help                help for create
