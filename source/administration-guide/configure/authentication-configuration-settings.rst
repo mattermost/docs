@@ -245,6 +245,10 @@ Password
 
 Access the following configuration settings in the System Console by going to **Authentication > Password**.
 
+.. note::
+
+   **Password Security Enhancement in v11.0+**: Starting from Mattermost v11.0, all password hashing uses PBKDF2 (Password-Based Key Derivation Function 2) for enhanced security. When users log in after upgrading to v11.0+, their passwords will be automatically migrated to use PBKDF2 hashing. This also applies to remote cluster invitation passwords used in Connected Workspaces.
+
 .. config:setting:: minimum-password-length
   :displayname: Minimum password length (Password)
   :systemconsole: Authentication > Password

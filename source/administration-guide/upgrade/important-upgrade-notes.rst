@@ -6,9 +6,19 @@ Important Upgrade Notes
 We recommend reviewing the `additional upgrade notes <#additional-upgrade-notes>`__ at the bottom of this page.
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| If you’re upgrading                                | Then...                                                                                                                                                          |
+| If you're upgrading                                | Then...                                                                                                                                                          |
 | from a version earlier than...                     |                                                                                                                                                                  |
 +====================================================+==================================================================================================================================================================+
+| v11.0                                              | **PBKDF2 Password Hashing Migration**: Mattermost v11.0 introduces PBKDF2 as the new key derivation method for password security, including remote cluster      |
+|                                                    | invitation passwords in Connected Workspaces. During the upgrade process, any existing passwords that are not already using PBKDF2 hashing will be              |
+|                                                    | automatically migrated to use the PBKDF2 hashing method when users log in.                                                                                      |
+|                                                    |                                                                                                                                                                  |
+|                                                    | .. warning::                                                                                                                                                     |
+|                                                    |                                                                                                                                                                  |
+|                                                    |    **Important Downgrade Warning**: Once you deploy Mattermost v11.0+ and users start logging in, their password hashes will be updated in the database       |
+|                                                    |    using PBKDF2. **Downgrading to a version earlier than v11.0 will prevent these users from logging in** until the server is upgraded back to v11.0 or       |
+|                                                    |    later. Plan your upgrade carefully and ensure you have proper backups before proceeding.                                                                     |
++----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v10.10                                             | Added a new column ``DefaultCategoryName`` to the ``Channels`` table. This is nullable and stores a category name to be added/created when new users join a      |
 |                                                    | channel. This is only used if the ``ExperimentalChannelCategorySetting`` is enabled. The migrations are fully backwards-compatible and no table locks or         |
 |                                                    | existing operations on the table are impacted by this upgrade. Zero downtime is expected when upgrading to this release. The SQL queries included are:           |
