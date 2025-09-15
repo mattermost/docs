@@ -81,7 +81,7 @@ redirects_map = {
 "about/faq-notifications.html":
         "https://docs.mattermost.com/end-user-guide/preferences/troubleshoot-notifications#frequently-asked-questions.html",
 "about/faq-product.html":
-        "https://docs.mattermost.com/product-overview/client-availability.html",
+        "https://docs.mattermost.com/end-user-guide/collaborate/client-availability.html",
 "about/faq-use-cases.html":
         "https://docs.mattermost.com/product-overview/faq-use-cases.html",
 "about/faq-video-audio-screensharing.html":
@@ -941,14 +941,10 @@ redirects_map = {
         "https://docs.mattermost.com/administration-guide/configure/configuration-settings.html",
 "configure/compliance-configuration-settings.html":
         "https://docs.mattermost.com/administration-guide/configure/compliance-configuration-settings.html",
-"configure/config-proxy-apache2.html":
-        "https://docs.mattermost.com/administration-guide/configure/config-proxy-apache2.html",
 "configure/config-ssl-http2-apache2.html":
 	"https://forum.mattermost.com/t/configuring-apache2-with-ssl-and-http-2/11939",
 "configure/configuration-in-your-database.html":
         "https://docs.mattermost.com/administration-guide/configure/configuration-in-your-database.html",
-"configure/configuring-apache2.html":
-        "https://forum.mattermost.com/t/configuring-apache2-as-a-proxy-for-mattermost-server/11938",
 "configure/custom-branding-tools.html":
         "https://docs.mattermost.com/administration-guide/configure/custom-branding-tools.html",
 "configure/customize-mattermost.html":
@@ -1600,13 +1596,13 @@ redirects_map = {
 "configure/configuration-settings.html#enable-shared-channels":
         "https://docs.mattermost.com/administration-guide/configure/site-configuration-settings.html#enable-connected-workspaces",
 "configure/configuration-settings.html#enable-bleve-indexing":
-        "https://docs.mattermost.com/administration-guide/configure/experimental-configuration-settings.html#enable-bleve-indexing",
+        "https://docs.mattermost.com/administration-guide/configure/deprecated-configuration-settings.html#enable-bleve-indexing",
 "configure/configuration-settings.html#index-directory":
-        "https://docs.mattermost.com/administration-guide/configure/experimental-configuration-settings.html#index-directory",
+        "https://docs.mattermost.com/administration-guide/configure/deprecated-configuration-settings.html#index-directory",
 "configure/configuration-settings.html#enable-bleve-for-search-queries":
-        "https://docs.mattermost.com/administration-guide/configure/experimental-configuration-settings.html#enable-bleve-for-search-queries",
+        "https://docs.mattermost.com/administration-guide/configure/deprecated-configuration-settings.html#enable-bleve-for-search-queries",
 "configure/configuration-settings.html#enable-bleve-for-autocomplete-queries":
-        "https://docs.mattermost.com/administration-guide/configure/experimental-configuration-settings.html#enable-bleve-for-autocomplete-queries",
+        "https://docs.mattermost.com/administration-guide/configure/deprecated-configuration-settings.html#enable-bleve-for-autocomplete-queries",
 "configure/configuration-settings.html#allowed-themes":
         "https://docs.mattermost.com/administration-guide/configure/experimental-configuration-settings.html#allowed-themes",
 "configure/configuration-settings.html#maximum-users-for-statistics":
@@ -2653,8 +2649,6 @@ redirects_map = {
         "https://docs.mattermost.com/deployment-guide/server/deploy-linux.html",
 "install/enterprise-install-upgrade.html":
         "https://docs.mattermost.com/administration-guide/upgrade/enterprise-install-upgrade.html",
-"install/config-apache2.html":
-        "https://forum.mattermost.com/t/configuring-apache2-as-a-proxy-for-mattermost-server/11938",
 "install/desktop.html":
         "https://docs.mattermost.com/end-user-guide/collaborate/install-desktop-app.html",
 "install/desktop-managed-resources.html":
@@ -3954,6 +3948,11 @@ redirects_map = {
         "https://handbook.mattermost.com",
 "process/working-at-mattermost.html":
 	"https://handbook.mattermost.com/operations/workplace/people/working-at-mattermost/onboarding/engineer-onboarding",
+
+"product-overview/faq-business.html":
+        "https://docs.mattermost.com/product-overview/faq-license.html",
+"product-overview/mattermost-v9-changelog.html":
+        "https://docs.mattermost.com/product-overview/unsupported-legacy-releases.html",
 
 # Preferences redirects
 "preferences/connect-multiple-workspaces.html":

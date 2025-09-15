@@ -6,6 +6,11 @@ This page describes features that are removed from support for Mattermost, or wi
 Removed features in upcoming versions
 -------------------------------------
 
+Mattermost Server v11.1.0 (November 2025)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- The version of React used by the Mattermost web app will be updated from React 17 to React 18. See more details in `this forum post <https://forum.mattermost.com/t/upgrading-the-mattermost-web-app-to-react-18-v11/25000>`__.
+
 Mattermost Server v11.0.0 (October 2025)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -17,7 +22,6 @@ Mattermost Server v11.0.0 (October 2025)
 - The ``ExperimentalStrictCSRFEnforcement`` setting will be renamed to ``StrictCSRFEnforcement`` and the default value will be changed to ``true`` for new installations. See more details in `this forum post <https://forum.mattermost.com/t/default-value-of-the-experimental-strict-csrf-enforcement-setting-to-be-changed-to-true-v11/23139>`__.
 - The ``registerPostDropdownMenuComponent`` hook in the web app’s plugin API will be removed in favour of ``registerPostDropdownMenuAction``. See more details in `this forum post <https://forum.mattermost.com/t/deprecating-a-post-dropdown-menu-component-plugin-api-v11/25001>`__.
 - The web app will no longer expose the `Styled Components <https://styled-components.com/>`__ dependency for use by web app plugins. See more details in `this forum post <https://forum.mattermost.com/t/removing-styled-components-export-for-web-app-plugins-v11/25002>`__.
-- The version of React used by the Mattermost web app will be updated from React 17 to React 18. See more details in `this forum post <https://forum.mattermost.com/t/upgrading-the-mattermost-web-app-to-react-18-v11/25000>`__.
 - Omnibus support will be deprecated. The last ``mattermost-omnibus`` release will be v10.12. See more details in `this forum post <https://forum.mattermost.com/t/mattermost-omnibus-to-reach-end-of-life-v11/25175>`__.
 - Deprecated ``include_removed_members`` option in ``api/v4/ldap/sync`` will be removed. Admins can use the LDAP setting ``ReAddRemovedMembers``.
 - All telemetry support will be removed from Mattermost. The system will no longer collect or send telemetry data to external services.
