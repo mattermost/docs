@@ -6383,6 +6383,10 @@ Manage users.
       -  `mmctl user delete`_ - Delete users
       -  `mmctl user deleteall`_ - Delete all users and all posts (local command only)
       -  `mmctl user demote`_ - Demote users to guests
+      -  `mmctl user edit`_ - Edit user properties
+      -  `mmctl user edit authdata`_ - Edit user authentication data
+      -  `mmctl user edit email`_ - Edit user email address
+      -  `mmctl user edit username`_ - Edit user username
       -  `mmctl user email`_ - Set user email
       -  `mmctl user invite`_ - Invite user
       -  `mmctl user list`_ - List users
@@ -6760,6 +6764,184 @@ Demote a user to a guest.
 .. code-block:: sh
 
   -h, --help   help for demote
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl user edit
+~~~~~~~~~~~~~~~
+
+**Description**
+
+Edit user properties including username, email, and authentication data. This command provides a structured way to modify user properties without direct database access.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl user edit [user] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   mmctl user edit testuser --help
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help       help for edit
+
+**Child Commands**
+
+- `mmctl user edit authdata`_ - Edit user authentication data
+- `mmctl user edit email`_ - Edit user email address  
+- `mmctl user edit username`_ - Edit user username
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl user edit authdata
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Edit user authentication data. This command addresses the common customer pain point where SAML-authenticated users need to change their authentication information when SAML configuration uses email as the ID attribute, eliminating the need for direct database manipulation.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl user edit authdata [user] [authdata] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   # Update SAML authentication data for a user
+   mmctl user edit authdata john.doe newsamlid@example.com
+
+   # Clear authentication data for a user
+   mmctl user edit authdata john.doe ""
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help       help for authdata
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl user edit email
+~~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Edit user email address. This command is particularly useful for SAML-authenticated users who need to change their email addresses when the SAML configuration uses email as the ID attribute. This provides a safer alternative to direct database manipulation.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl user edit email [user] [new email] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   # Change email for a SAML-authenticated user
+   mmctl user edit email john.doe newemail@example.com
+
+   # Update email for a user identified by current email
+   mmctl user edit email oldemail@example.com newemail@example.com
+
+.. note::
+
+   This command is especially important for SAML environments where email is used as the ID attribute. Previously, changing email addresses for SAML users required direct database manipulation, which posed security and operational risks.
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help       help for email
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl user edit username
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Edit user username. This command allows changing usernames in a structured and safe manner without direct database access.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl user edit username [user] [new username] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   # Change username for a user
+   mmctl user edit username john.doe john.smith
+
+   # Change username using email to identify user
+   mmctl user edit username user@example.com newusername
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help       help for username
 
 **Options inherited from parent commands**
 
