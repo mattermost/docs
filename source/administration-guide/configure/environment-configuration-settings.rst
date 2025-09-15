@@ -806,14 +806,13 @@ Mattermost doesn't need to manage this. See the :ref:`high availablility databas
 Maximum open connections
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-<<<<<<< HEAD:source/configure/environment-configuration-settings.rst
-+--------------------------------------------------------+------------------------------------------------------------------+
-| The maximum number of open connections to the          | - System Config path: **Environment > Database**                 |
-| database.                                              | - ``config.json`` setting: ``".SqlSettings.MaxOpenConns": 100,`` |
-|                                                        | - Environment variable: ``MM_SQLSETTINGS_MAXOPENCONNS``          |
-| Numerical input. Default is **100**.                   |                                                                  |
-| A 2:1 ratio with MaxIdleConns is recommended.          |                                                                  |
-+--------------------------------------------------------+------------------------------------------------------------------+
++--------------------------------------------------------+-------------------------------------------------------------------------+
+| The maximum number of open connections to the          | - System Config path: **Environment > Database**                        |
+| database.                                              | - ``config.json`` setting: ``SqlSettings`` > ``MaxOpenConns`` > ``300`` |
+|                                                        | - Environment variable: ``MM_SQLSETTINGS_MAXOPENCONNS``                 |
+| Numerical input. Default is **300** for self-hosted    |                                                                         |
+| deployments, and **100** for Cloud deployments.        |                                                                         |
++--------------------------------------------------------+-------------------------------------------------------------------------+
 
 .. config:setting:: maximum-idle-connections
   :displayname: Maximum idle connections (Database)
@@ -825,22 +824,13 @@ Maximum open connections
 Maximum idle connections
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-+--------------------------------------------------------+------------------------------------------------------------------+
-| The maximum number of idle connections held open to    | - System Config path: **Environment > Database**                 |
-| the database.                                          | - ``config.json`` setting: ``".SqlSettings.MaxIdleConns": 50,``  |
-|                                                        | - Environment variable: ``MM_SQLSETTINGS_MAXIDLECONNS``          |
-| Numerical input. Default is **50**.                    |                                                                  |
-| A 2:1 ratio with MaxOpenConns is recommended.          |                                                                  |
-+--------------------------------------------------------+------------------------------------------------------------------+
-=======
 +--------------------------------------------------------+-------------------------------------------------------------------------+
-| The maximum number of open connections to the          | - System Config path: **Environment > Database**                        |
-| database.                                              | - ``config.json`` setting: ``SqlSettings`` > ``MaxOpenConns`` > ``300`` |
-|                                                        | - Environment variable: ``MM_SQLSETTINGS_MAXOPENCONNS``                 |
-| Numerical input. Default is **300** for self-hosted    |                                                                         |
-| deployments, and **100** for Cloud deployments.        |                                                                         |
+| The maximum number of idle connections held open to    | - System Config path: **Environment > Database**                        |
+| the database.                                          | - ``config.json`` setting: ``SqlSettings`` > ``MaxIdleConns`` > ``50``  |
+|                                                        | - Environment variable: ``MM_SQLSETTINGS_MAXIDLECONNS``                 |
+| Numerical input. Default is **50**.                    |                                                                         |
+| A 2:1 ratio with MaxOpenConns is recommended.          |                                                                         |
 +--------------------------------------------------------+-------------------------------------------------------------------------+
->>>>>>> master:source/administration-guide/configure/environment-configuration-settings.rst
 
 .. config:setting:: query-timeout
   :displayname: Query timeout (Database)
@@ -986,7 +976,7 @@ Disable database search
 Search behavior in Mattermost depends on which search engines are enabled:
 
 - When :doc:`Elasticsearch </administration-guide/scale/elasticsearch-setup>` or :doc:`AWS OpenSearch </administration-guide/scale/opensearch-setup>` is enabled, Mattermost will try to use it first.
-- If Elasticsearch fails or is disabled, Mattermost will attempt to use :doc:`Bleve </administration-guide/configure/bleve-search>`, if enabled. If this occurs, you will see the warning ``Encountered error on SearchPostsInTeamForUser``.
+- If Elasticsearch fails or is disabled, Mattermost will attempt to use Bleve search, if enabled. **Note:** Bleve search has been deprecated in Mattermost v11.0. We recommend using Elasticsearch or OpenSearch for enterprise search capabilities.
 - If these fail or are disabled, Mattermost tries to search the database directly, if this is enabled.
 - If all of the above methods fail or are disabled, the search results will be empty.
 

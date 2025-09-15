@@ -4286,7 +4286,7 @@ Synchronize all LDAP users and groups now.
 .. code-block:: sh
 
    -h, --help                  help for sync
-   --include-removed-members   Include members who left or were removed from a group-synced team/channel. Useful in cases where synchronized groups are unlinked/re-linked for testing purposes, when LDAP users are deactivated and reactivated, or when a user leaves a team in error.
+   --include-removed-members   **Deprecated in v11.0**: Include members who left or were removed from a group-synced team/channel. Useful in cases where synchronized groups are unlinked/re-linked for testing purposes, when LDAP users are deactivated and reactivated, or when a user leaves a team in error. This option is deprecated and will be removed in a future version.
 
 **Options inherited from parent commands**
 
