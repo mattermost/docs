@@ -149,8 +149,7 @@ Enable Ask Community link
   :systemconsole: Site Configuration > Customization
   :configjson: .SupportSettings.HelpLink
   :environment: MM_SUPPORTSETTINGS_HELPLINK
-  :description: This field sets the URL for the Help link on the login and sign-up pages, as well as the **Help Resources** link under the **Help** menu in the channel header.
-  Default value is **https://about.mattermost.com/default-help/**.
+  :description: This field sets the URL for the Help link on the login and sign-up pages, as well as the **Help Resources** link under the **Help** menu in the channel header. Default value is **https://about.mattermost.com/default-help/**.
 
 Help link
 ~~~~~~~~~
@@ -193,8 +192,7 @@ Terms of Use link
   :systemconsole: Site Configuration > Customization
   :configjson: .SupportSettings.PrivacyPolicyLink
   :environment: MM_SUPPORTSETTINGS_PRIVACYPOLICYLINK
-  :description: This field sets the URL for the Privacy Policy of a self-hosted site. A link to the policy appears at the bottom of the sign-up and login pages.
-  Default value is **https://about.mattermost.com/default-privacy-policy/**.
+  :description: This field sets the URL for the Privacy Policy of a self-hosted site. A link to the policy appears at the bottom of the sign-up and login pages. Default value is **https://about.mattermost.com/default-privacy-policy/**.
 
 Privacy Policy link
 ~~~~~~~~~~~~~~~~~~~
@@ -216,8 +214,7 @@ Privacy Policy link
   :systemconsole: Site Configuration > Customization
   :configjson: .SupportSettings.AboutLink
   :environment: MM_SUPPORTSETTINGS_ABOUTLINK
-  :description: This field sets the URL for a page containing general information about a self-hosted site. A link to the About page appears at the bottom of the sign-up and login pages.
-  Default value is **https://about.mattermost.com/default-about/**.
+  :description: This field sets the URL for a page containing general information about a self-hosted site. A link to the About page appears at the bottom of the sign-up and login pages. Default value is **https://about.mattermost.com/default-about/**.
 
 About link
 ~~~~~~~~~~
