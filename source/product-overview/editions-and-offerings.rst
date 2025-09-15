@@ -49,7 +49,7 @@ Mattermost Enterprise Advanced is the :doc:`Intelligent Mission Environment </pr
 
 - :doc:`Classified and Sensitive Information Controls </end-user-guide/collaborate/display-channel-banners>`
 - :doc:`Zero Trust Security </administration-guide/manage/admin/attribute-based-access-control>` with dynamic attribute-based policy controls, environmental atributes, and User Authoritative Source integration
-- :doc:`Mobile security </security-guide/security/mobile-security>` controls
+- :doc:`Mobile security </security-guide/mobile-security>` controls
 - :doc:`Air-gapped deployment workflows </deployment-guide/server/air-gapped-deployment>`
 
 Visit the :doc:`Mattermost Plans </product-overview/plans>` page to learn more about the capabilities and features available in Enterprise Advanced. 
@@ -157,4 +157,6 @@ As the platform matures and new features are added, they're evaluated to be incl
 
 We recognize there aren't any features that are only useful to managers, directors, and executives. Individual practitioners may want certain features; however, we think that other buyers are relatively more likely to care about it. We also recognize that there may be some features that are put into an edition to find later there is much demand for it by individuals or a singular team; we will not hesitate to move that feature. We value feedback from our community and iterate based on that feedback. Simultaneously, we also need to offer commercial products that hold value and do our best to find the right balance. We believe the more of Mattermost that you use, the more likely it is that you benefit from the advanced editions we offer.
 
-You can provide us with feedback via `our idea portal <https://portal.productboard.com/mattermost/33-what-matters-to-you>`_, where ideas and input influences the future of the platform.
+`Book a live demo <https://mattermost.com/request-demo/>`_  or `talk to a Mattermost expert <https://mattermost.com/contact-sales/>`_ to explore tailored solutions for your organization's secure collaboration needs. Or try Mattermost yourself with a `1-hour preview <https://mattermost.com/sign-up/>`_ for instant access to a live sandbox environment.
+
+Provide feedback via `our idea portal <https://portal.productboard.com/mattermost/33-what-matters-to-you>`_, where your ideas and input influences the future of the platform.

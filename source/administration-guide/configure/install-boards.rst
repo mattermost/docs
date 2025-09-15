@@ -17,9 +17,9 @@ Mattermost Cloud Enterprise customers can request the Boards plugins be enabled 
 Install the plugin
 -------------------
 
-A Mattermost system admin must perform the following steps in Mattermost.
+The following steps apply to customers in fully connected environments as well as Denied, Disrupted, Intermittent, and Limited (DDIL) environments. A Mattermost system admin must perform the following steps in Mattermost.
 
-1. Download the latest Mattermost Boards plugin binary file from the `Mattermost Boards Releases <https://github.com/mattermost/mattermost-plugin-end-user-guide/project-management/releases>`_ page.
+1. Download the latest Mattermost Boards plugin binary file from the `Mattermost Boards Releases <https://github.com/mattermost/mattermost-plugin-boards/releases>`_ page.
 2. Log in to your Mattermost System Console as a system admin.
 3. Go to **Plugins > Plugin Management**.
 4. Select **Upload Plugin** to upload the Boards plugin binary file you downloaded from the Mattermost Releases page.

@@ -43,7 +43,7 @@ Edit a playbook
 
 You can change a playbook’s configuration at any time, but changes will only be applied to future incidents. Ongoing or ended incidents previously started from that playbook remain unchanged.
 
-1. Go to **product menu > Playbooks**.
+1. Go to **Product menu > Playbooks**.
 2. Find the playbook you want to edit.
 
    - Only public playbooks and private playbooks that you're a member of are listed. System admins have unrestricted access to all playbooks on the team.
@@ -75,7 +75,7 @@ Make checklists
 
 .. note::
 
-  Tasks in a playbook consists of text rendered in Markdown (when present). You can't run commands directly from a task in a playbook, but you can trigger :doc:`built-in slash commands </end-user-guide/collaborate/built-in-slash-commands>` and `custom slash commands <https://developers.mattermost.com/integrate/slash-commands/custom/>`_, or outgoing webhooks, to run as part of the task action by starting the task with ``/``.
+  Tasks in a playbook consists of text rendered in Markdown (when present). You can't run commands directly from a task in a playbook, but you can trigger :doc:`built-in slash commands </integrations-guide/built-in-slash-commands>` and `custom slash commands <https://developers.mattermost.com/integrate/slash-commands/custom/>`_, or outgoing webhooks, to run as part of the task action by starting the task with ``/``.
 
 Multiple runs in a channel
 --------------------------

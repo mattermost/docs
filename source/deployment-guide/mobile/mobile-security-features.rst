@@ -46,6 +46,13 @@ See the :ref:`prevent screen capture configuration setting <administration-guide
 
   This feature prevents screen recording and screenshot capture on the mobile device where the Mattermost app is running. It cannot control or prevent recording from external devices, such as another phone or camera pointed at the screen. Mattermost provides these protections through mobile OS-level capabilities but cannot guarantee absolute prevention of visual data capture through other means.  
 
+Secure file previews
+---------------------
+
+Preventing file downloads protects sensitive information from being inadvertently or maliciously shared. This control is essential in ensuring that confidential documents and media remain within the secure confines of the app. By enabling in-app previews for supported file types and restricting downloads, Mattermost significantly reduces the risk of data leakage while maintaining essential file-viewing capabilities.
+
+See the :ref:`secure file preview <administration-guide/configure/site-configuration-settings:enable secure file preview on mobile>` and :ref:`managing PDF link navigation <administration-guide/configure/site-configuration-settings:allow pdf link navigation on mobile>` configuration settings documentation for details on enabling these features.
+
 Mobile data isolation
 ------------------------
 

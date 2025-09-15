@@ -19,7 +19,7 @@ Organizations operating in fully disconnected or classified environments require
 - **Ensure secure communication in fully disconnected networks** using Mattermost's support for private on-premise deployments, including FIPS 140-3 validated and DISA STIG-hardened container images. :doc:`Learn more </deployment-guide/application-architecture>` about Mattermost's architecture, components, and backend infrastructure.
 - **Maintain operational continuity** with enterprise-grade :doc:`channel-based collaboration </end-user-guide/messaging-collaboration>`— including :doc:`1:1 audio calls </end-user-guide/collaborate/make-calls>`, :ref:`screen sharing <end-user-guide/collaborate/make-calls:share your screen>`, :doc:`threaded messaging </end-user-guide/collaborate/organize-conversations>`, and :doc:`file sharing </end-user-guide/collaborate/share-files-in-messages>`—entirely within air-gapped systems.
 - **Scale to mission requirements** with a :doc:`high-availability, horizontally scalable architecture </administration-guide/scale/scaling-for-enterprise>` that supports tens of thousands of users in secure on-prem environments.
-- **Preserve data sovereignty and eliminate external dependencies** with a self-hosted :doc:`Kubernetes deployment model </deployment-guide/server/deploy-kubernetes>` that integrates into classified networks or sovereign data centers.
+- **Preserve data sovereignty and eliminate external dependencies** with a self-hosted :doc:`Kubernetes deployment model </deployment-guide/server/deploy-kubernetes>` that integrates into classified networks, sovereign data centers, or **Azure Local** (formerly Azure Stack HCI) for hybrid cloud on-premises scenarios.
 
 Modernize Secure Collaboration Workflows
 ------------------------------------------
@@ -52,5 +52,6 @@ Collaborating across organizational boundaries must not compromise compliance or
 Get Started
 -----------
 
-`Talk to an Expert <https://mattermost.com/contact-sales/>`_ to learn more about transitioning from Skype for Business to a secure, modern collaboration platform built for mission-critical environments. With Mattermost, your organization gains a self-hosted, scalable, and compliant solution tailored for classified operations, secure external engagement, and operational modernization.
+With Mattermost, your organization gains a self-hosted, scalable, and compliant solution tailored for classified operations, secure external engagement, and operational modernization.
 
+`Talk to an Expert <https://mattermost.com/contact-sales/>`_ to learn more about transitioning from Skype for Business to a secure, modern collaboration platform built for mission-critical environments, or to discuss your Azure Local deployment needs. Organizations deploying Mattermost on Azure Local (formerly Azure Stack HCI) for on-premises hybrid cloud scenarios can engage **Mattermost Professional Services** for deployment support to ensure optimal configuration and compliance with your security requirements.

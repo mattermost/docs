@@ -1,6 +1,9 @@
 Desktop
 ========
 
+.. meta::
+	:page_title: Mattermost Desktop App
+
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 

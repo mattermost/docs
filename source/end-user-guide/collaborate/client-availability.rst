@@ -1,10 +1,7 @@
-Product
-========
+Client Availability
+===================
 
-What features are available on different Mattermost clients?
-------------------------------------------------------------
-
-The following chart highlights the end user features of Mattermost and their support across Web, Desktop, and Mobile applications (iOS and Android).
+The following tables highlight the end user features of Mattermost and their support across Web, Desktop, and Mobile applications (iOS and Android).
 
 Messages
 ~~~~~~~~
@@ -131,12 +128,13 @@ Calls
 
 Integrations
 ~~~~~~~~~~~~
+
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 |                                            **Feature**                                                          |   **Web**   | **Desktop** |    **Mobile**   |
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 | :ref:`Slash commands <end-user-guide/workflow-automation/interact-with-playbooks:slash commands>`               | |checkmark| | |checkmark| | Partial Support |
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
-| :doc:`Server-side plugins </integrations-guide/pre-built-integrations>`                                         | |checkmark| | |checkmark| | |checkmark|     |
+| :doc:`Server-side plugins </integrations-guide/popular-integrations>`                                           | |checkmark| | |checkmark| | |checkmark|     |
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 | `Interactive dialogs <https://developers.mattermost.com/integrate/plugins/interactive-dialogs/>`_               | |checkmark| | |checkmark| |                 |
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
