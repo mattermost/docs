@@ -9,7 +9,7 @@
 
 Note
 
-|plans-img-yellow| Available only on `Enterprise <https://mattermost.com/pricing/>`__ plans
+|plans-img-yellow| Available only on `Enterprise and Enterprise Advanced plans <https://mattermost.com/pricing/>`__
 
 .. raw:: html
 

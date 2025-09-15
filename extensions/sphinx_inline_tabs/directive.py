@@ -17,6 +17,9 @@ from .tab_id import TabId
 logger: logging.SphinxLoggerAdapter = logging.getLogger(__name__)
 LOG_PREFIX: Final[str] = "[sphinx_inline_tabs]"
 
+INLINE_TAB_DOCNAMES: Final[str] = "inline_tab_docnames"
+"""The key in the Sphinx environment to store a list of documents with inline tabs"""
+
 
 class TabDirective(SphinxDirective):
     """Tabbed content in Sphinx documentation."""
@@ -75,15 +78,14 @@ class TabDirective(SphinxDirective):
         )
 
         """
-        Record the name of this tab in a list of tabs for this document in the
+        Record the name of this document in a list of documents with tabs in the
         Sphinx environment.
         """
-        # TODO: is this valuable any longer?
-        if not hasattr(self.env, "sphinx_tabs"):
-            self.env.sphinx_tabs = {}
-        if self.env.docname not in self.env.sphinx_tabs:
-            self.env.sphinx_tabs[self.env.docname] = []
-        self.env.sphinx_tabs[self.env.docname].append(self.arguments[0])
+        if not hasattr(self.env, INLINE_TAB_DOCNAMES):
+            setattr(self.env, INLINE_TAB_DOCNAMES, [])
+        tab_docnames: list[str] = getattr(self.env, INLINE_TAB_DOCNAMES)
+        if self.env.docname not in tab_docnames:
+            tab_docnames.append(self.env.docname)
 
         return [container]
 
