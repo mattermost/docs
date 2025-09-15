@@ -27,12 +27,13 @@ Before disconnecting from the internet, you must gather all required packages, c
     **Bill of Materials**
 
     - Mattermost `Helm charts <https://helm.mattermost.com>`_:
+
       -  `Mattermost Operator <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-operator>`_ helm chart and `values <https://github.com/mattermost/mattermost-helm/blob/master/charts/mattermost-operator/values.yaml>`_
-      -  (Optional) :doc:`Mattermost Calls </administration-guide/configure/calls-deployment>` helm charts: `mattermost-calls-offloader <>`_ and `values <https://github.com/mattermost/mattermost-helm/blob/master/charts/mattermost-calls-offloader/values.yaml>`_ (required for recording, transcription and live captions), `mattermost-rtcd <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-rtcd>`_ and `values <https://github.com/mattermost/mattermost-helm/blob/master/charts/mattermost-rtcd/values.yaml>`_ (required for performance and scalability).
+      -  (Optional) :doc:`Mattermost Calls </administration-guide/configure/calls-deployment>` helm charts: `mattermost-calls-offloader <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-calls-offloader>`_ and `values <https://github.com/mattermost/mattermost-helm/blob/master/charts/mattermost-calls-offloader/values.yaml>`_ (required for recording, transcription and live captions), `mattermost-rtcd <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-rtcd>`_ and `values <https://github.com/mattermost/mattermost-helm/blob/master/charts/mattermost-rtcd/values.yaml>`_ (required for performance and scalability).
     - Database: We recommend the `Postgres Operator <https://github.com/CrunchyData/postgres-operator/>`_ from Crunchy Data for air-gapped Kubernetes deployments. 
     - File Storage: We recommend the `MinIO Operator <https://github.com/minio/operator>`_.
     - Load balancer: If you already have a load balancer running in your air-gapped environment you can skip this resource, otherwise we recommend deploying `NGINX <https://docs.mattermost.com/deployment-guide/server/setup-nginx-proxy.html>`_, using this operator (XXXXXX).
-    - Private container registry: Ideally the air-gapped environment already has a private registry available. If not, we recommend following the instructions `here <https://docs.mattermost.com/deployment-guide/server/air-gapped-deployment.html#faq>`_ or referencing `online resources <https://www.docker.com/blog/how-to-use-your-own-registry-2/>`_for this.
+    - Private container registry: Ideally the air-gapped environment already has a private registry available. If not, we recommend following the instructions `here <https://docs.mattermost.com/deployment-guide/server/air-gapped-deployment.html#faq>`_ or referencing `online resources <https://www.docker.com/blog/how-to-use-your-own-registry-2/>`_ for this.
 
 .. tab:: Docker
 
@@ -44,7 +45,7 @@ Before disconnecting from the internet, you must gather all required packages, c
 
       - `Mattermost Enterprise Edition <https://hub.docker.com/r/mattermost/mattermost-enterprise-edition>`_
       - (Optional) :doc:`Mattermost Calls </administration-guide/configure/calls-deployment>` images: `calls-offloader <https://hub.docker.com/r/mattermost/calls-offloader>`_ (required for recording, transcription and live captions), `rtcd <https://hub.docker.com/r/mattermost/rtcd>`_ (required for performance and scalability).
-    - Private container registry: Ideally the air-gapped environment already has a private registry available. If not, we recommend following the instructions `here <https://docs.mattermost.com/deployment-guide/server/air-gapped-deployment.html#faq>`_ or referencing `online resources <https://www.docker.com/blog/how-to-use-your-own-registry-2/>`_for this. 
+    - Private container registry: Ideally the air-gapped environment already has a private registry available. If not, we recommend following the instructions `here <https://docs.mattermost.com/deployment-guide/server/air-gapped-deployment.html#faq>`_ or referencing `online resources <https://www.docker.com/blog/how-to-use-your-own-registry-2/>`_ for this. 
 
 Optional supporting services
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
