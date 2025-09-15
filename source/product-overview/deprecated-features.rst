@@ -27,7 +27,7 @@ Mattermost Server v11.0.0 (October 2025)
 - All telemetry support will be removed from Mattermost. The system will no longer collect or send telemetry data to external services.
 - Format query parameter requirement in ``/api/v4/config/client`` endpoint will be deprecated.
 - Deprecated mmctl commands and flags will be removed.
-- Experimental certificate-based authentication feature will be removed. ``ExperimentalSettings.ClientSideCertEnable`` must be ``false`` to start the server.
+- Experimental certificate-based authentication feature will be removed. ``ExperimentalSettings.ClientSideCertEnable`` must be ``false`` to start the server, and ``ExperimentalSettings.ClientSideCertCheck`` is no longer functional. See :doc:`certificate-based authentication </administration-guide/onboard/certificate-based-authentication>` and :doc:`experimental configuration settings </administration-guide/configure/experimental-configuration-settings>` for details.
 - The bcrypt password hashing method will be deprecated in favor of PBKDF2. Downgrading the server from v11 to a previous version will leave users whose password was migrated unable to log in. Admins will need to manually reset user passwords until the server is upgraded back to v11.
 - Separate notification log file will be deprecated. If admins want to continue using a separate log file for notification logs, they can use the ``AdvancedLoggingJSON`` configuration. An example configuration to use is:
 

@@ -1,10 +1,18 @@
 Certificate-based authentication (Experimental)
 ===============================================
 
+.. important::
+   **Certificate-based authentication has been removed in Mattermost v11.0 and later versions.**
+   
+   This documentation is maintained for reference for users running Mattermost v10.12 and earlier. If you are running Mattermost v11.0+, certificate-based authentication is no longer available and cannot be enabled.
+
 .. include:: ../../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
-Certificate-based authentication (CBA) is available as an experimental feature to identify a user or a device before granting access to Mattermost and provide an additional layer of security to access the system.
+Certificate-based authentication (CBA) was available as an experimental feature in Mattermost v10.12 and earlier to identify a user or a device before granting access to Mattermost and provide an additional layer of security to access the system.
+
+.. note::
+   This feature has been **removed** in Mattermost v11.0 and is no longer supported. The instructions below apply only to Mattermost v10.12 and earlier versions.
 
 Follow these steps to configure user CBA for your browser and Mattermost Desktop Apps. Support for the Mattermost iOS and Android Apps is planned. It is expected that you can manage certificate distribution for each personal device (BYOD) and their life cycle management with a service like `OpenSSL <https://www.openssl.org/>`__.
 
