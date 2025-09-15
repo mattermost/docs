@@ -117,6 +117,7 @@ A private container registry securely stores the Docker images necessary for air
 .. tab:: Linux
 
    **(Ubuntu) Set up a private Debian package mirror**
+
    We will use Aptly to create a local mirror, although you can also use other options such as debmirror.
 
    1. **Install Aptly** (on an internet-connected machine):
@@ -167,6 +168,7 @@ A private container registry securely stores the Docker images necessary for air
 
 
    **(RHEL/CentOS) Set up a private RHEL package mirror**
+
    We will use reprosync for a local mirror.
 
    1. **Install required tools** (on an internet-connected RHEL system):
@@ -274,6 +276,7 @@ A private container registry securely stores the Docker images necessary for air
             registry:2
 
    **Configure Kubernetes to use private image registries**
+
    When using Kubernetes in an air-gapped environment, you need to configure it to use your private registry.
 
    1. **Create a kubernetes secret for registry authentication**:
@@ -353,6 +356,7 @@ A private container registry securely stores the Docker images necessary for air
             registry:2
 
    **Configure Docker to use private image registries**
+
    Configure Docker on all hosts to trust and use your private registry.
 
    1. **Add your registry to Docker's trusted registries**:
