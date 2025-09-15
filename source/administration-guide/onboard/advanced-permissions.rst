@@ -28,6 +28,8 @@ You can set the default permissions granted to system admins, team admins, chann
 - **Channel Administrators:** Permissions apply to all channel admins in all channels, in all teams.
 - **Team Administrators:** Permissions apply to all team admins, in all teams.
 
+From Mattermost v11 onward, the System Scheme includes separate permissions for managing public and private channel settings, providing more granular control over who can rename channels and edit their headers and purposes.
+
 To override the System Scheme default permissions in a specific team, you must set up a Team Override Scheme.
 
 You can access the System Scheme interface by going to **System Console > User Management > Permissions > System Scheme**.
@@ -114,6 +116,28 @@ Example: As the default for the entire system, restrict renaming channels and ed
 3. In the **All Members** panel, uncheck the box for **Manage Public Channels > Manage Channel Settings**.
 
 The **Manage Channel Settings** option is now only available to channel admins, team admins, and system admins.
+
+.. note::
+   From Mattermost v11 onward, you can also control private channel settings management separately using the **Manage Private Channels > Manage Channel Settings** permission. This permission allows users to rename private channels and edit their headers and purposes. By default, this permission is granted to channel admins, team admins, and system admins, but system admins can assign it to other roles as needed.
+
+Restrict who can manage private channel settings
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../../_static/badges/ent-only.rst
+  :start-after: :nosearch:
+
+*Available from Mattermost v11.0*
+
+Example: Restrict the ability to rename private channels and edit their headers and purposes to admins only, while allowing all members to manage public channel settings.
+
+1. Go to **System Console > User Management > Permissions**.
+2. Select **Edit Scheme**.
+3. In the **All Members** panel, ensure **Manage Public Channels > Manage Channel Settings** is checked (to allow public channel management).
+4. In the **All Members** panel, uncheck the box for **Manage Private Channels > Manage Channel Settings**.
+5. Verify that **Channel Administrators**, **Team Administrators**, and **System Administrators** have the **Manage Private Channels > Manage Channel Settings** permission enabled.
+6. Select **Save**.
+
+Private channel settings management is now restricted to channel admins, team admins, and system admins, while all members can still manage public channel settings.
 
 Restrict who can create channels in specific teams
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
