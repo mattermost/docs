@@ -18,6 +18,7 @@ Before disconnecting from the internet, you must gather all required packages, c
     - Database: PostgreSQL `installation packages <https://www.postgresql.org/download/>`_ or container images for your Linux distribution
     - File Storage: 
     - Load balancer: If you already have a load balancer running in your air-gapped environment you can skip this resource, otherwise we recommend deploying `NGINX <https://docs.mattermost.com/deployment-guide/server/setup-nginx-proxy.html>`_, using (XXXXXX).
+    - Private package mirror: Ideally the air-gapped environment already has a private package mirror available. If not, we recommend following the instructions `here <https://docs.mattermost.com/deployment-guide/server/air-gapped-deployment.html#faq>`_ or referencing `online resources <>`_ for this. (XXXXXX)
 
 .. tab:: Kubernetes
 
@@ -31,8 +32,7 @@ Before disconnecting from the internet, you must gather all required packages, c
     - Database: We recommend the `Postgres Operator <https://github.com/CrunchyData/postgres-operator/>`_ from Crunchy Data for air-gapped Kubernetes deployments. 
     - File Storage: We recommend the `MinIO Operator <https://github.com/minio/operator>`_.
     - Load balancer: If you already have a load balancer running in your air-gapped environment you can skip this resource, otherwise we recommend deploying `NGINX <https://docs.mattermost.com/deployment-guide/server/setup-nginx-proxy.html>`_, using this operator (XXXXXX).
-
-    Private container registry: If you don't have a Docker container registry we recommend following the instructions `here <https://www.docker.com/blog/how-to-use-your-own-registry-2/>`_.
+    - Private container registry: Ideally the air-gapped environment already has a private registry available. If not, we recommend following the instructions `here <https://docs.mattermost.com/deployment-guide/server/air-gapped-deployment.html#faq>`_ or referencing `online resources <https://www.docker.com/blog/how-to-use-your-own-registry-2/>`_for this.
 
 .. tab:: Docker
 
@@ -44,7 +44,7 @@ Before disconnecting from the internet, you must gather all required packages, c
 
       - `Mattermost Enterprise Edition <https://hub.docker.com/r/mattermost/mattermost-enterprise-edition>`_
       - (Optional) :doc:`Mattermost Calls </administration-guide/configure/calls-deployment>` images: `calls-offloader <https://hub.docker.com/r/mattermost/calls-offloader>`_ (required for recording, transcription and live captions), `rtcd <https://hub.docker.com/r/mattermost/rtcd>`_ (required for performance and scalability).
-    - Private container registry: If you don't have a Docker container registry we recommend following the instructions `here <https://www.docker.com/blog/how-to-use-your-own-registry-2/>`_. 
+    - Private container registry: Ideally the air-gapped environment already has a private registry available. If not, we recommend following the instructions `here <https://docs.mattermost.com/deployment-guide/server/air-gapped-deployment.html#faq>`_ or referencing `online resources <https://www.docker.com/blog/how-to-use-your-own-registry-2/>`_for this. 
 
 Optional supporting services
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -104,3 +104,291 @@ Telemetry
 ~~~~~~~~~
 
 To avoid log errors we recommend disabling :doc:`Telemetry-related features </administration-guide/manage/telemetry>`, including the security update check, and error and diagnostics reporting features.
+
+FAQ
+___
+
+What if my air-gapped environment doesn't have a private container registry or package mirror?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A private container registry securely stores the Docker images necessary for air-gapped deployments, ensuring compliance with data isolation requirements. Similarly, a private package mirror stores operating system packages necessary for air-gapped deployments in Ubuntu or RHEL/CentOS Linux environments. Setting up a local registry or mirror is a critical step in deploying Mattermost to ensure all images, dependencies and packages are available to you in the air-gapped environment. The steps below outline the process required to setup a local registry or mirror, depending on the deployment method you are using. These steps are a rough guide, and can be supplemented with online resources depending on your specific deployment needs. 
+
+.. tab:: Linux
+
+   (Ubuntu) Set up a private Debian package mirror
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   We will use Aptly to create a local mirror, although you can also use other options such as debmirror.
+
+   1. **Install Aptly** (on an internet-connected machine):
+
+      .. code-block:: bash
+
+         apt-get update
+         apt-get install aptly gnupg
+
+   2. **Create GPG key for signing packages**:
+
+      .. code-block:: bash
+
+         gpg --gen-key
+
+   3. **Create a mirror configuration**:
+
+      .. code-block:: bash
+
+         aptly mirror create -architectures=amd64 debian-bullseye http://deb.debian.org/debian bullseye main contrib non-free
+
+   4. **Update the mirror to download packages**:
+
+      .. code-block:: bash
+
+         aptly mirror update debian-bullseye
+
+   5. **Create and publish a snapshot**:
+
+      .. code-block:: bash
+
+         aptly snapshot create debian-bullseye-$(date +%Y%m%d) from mirror debian-bullseye
+         aptly publish snapshot debian-bullseye-$(date +%Y%m%d)
+
+   6. **Serve the repository**:
+
+      .. code-block:: bash
+
+         aptly serve
+
+   7. **Client configuration:** Configure apt to use your local mirror:
+
+   .. code-block:: bash
+
+      cat > /etc/apt/sources.list << EOF
+      deb http://mirror.example.com/debian bullseye main contrib non-free
+      EOF
+
+
+   (RHEL/CentOS) Set up a private RHEL package mirror
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   We will use reprosync for a local mirror.
+
+   1. **Install required tools** (on an internet-connected RHEL system):
+
+      .. code-block:: bash
+
+         yum install yum-utils createrepo
+
+   2. **Download packages**:
+
+      .. code-block:: bash
+
+         mkdir -p /var/www/html/repos/rhel8
+         reposync -p /var/www/html/repos/rhel8 --download-metadata --repo=rhel-8-for-x86_64-baseos-rpms
+         reposync -p /var/www/html/repos/rhel8 --download-metadata --repo=rhel-8-for-x86_64-appstream-rpms
+
+   3. **Create repository metadata**:
+
+      .. code-block:: bash
+
+         createrepo /var/www/html/repos/rhel8/rhel-8-for-x86_64-baseos-rpms
+         createrepo /var/www/html/repos/rhel8/rhel-8-for-x86_64-appstream-rpms
+
+   4. **Set up a web server**:
+
+      .. code-block:: bash
+
+         yum install httpd
+         systemctl enable httpd
+         systemctl start httpd
+
+   5. **Client configuration:** Disable existing repositories:
+
+      .. code-block:: bash
+
+         cd /etc/yum.repos.d/
+         mkdir backup
+         mv *.repo backup/
+
+   6. **Client configuration:** Create new repository files:
+
+      .. code-block:: bash
+
+         cat > /etc/yum.repos.d/local-baseos.repo << EOF
+         [local-baseos]
+         name=Red Hat Enterprise Linux 8 BaseOS
+         baseurl=http://mirror.example.com/repos/rhel8/rhel-8-for-x86_64-baseos-rpms
+         enabled=1
+         gpgcheck=0
+         EOF
+      
+         cat > /etc/yum.repos.d/local-appstream.repo << EOF
+         [local-appstream]
+         name=Red Hat Enterprise Linux 8 AppStream
+         baseurl=http://mirror.example.com/repos/rhel8/rhel-8-for-x86_64-appstream-rpms
+         enabled=1
+         gpgcheck=0
+         EOF
+
+   7. **Client configuration:** Clear cache and test:
+
+      .. code-block:: bash
+
+         yum clean all
+         yum repolist
+
+  
+.. tab:: Kubernetes
+
+   Set up a self-hosted private container registry
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+   1. **Install Docker Registry**:
+
+      .. code-block:: bash
+
+         docker run -d -p 5000:5000 --restart=always --name registry registry:2
+
+   2. **Configure persistent storage**:
+
+      .. code-block:: bash
+
+         docker run -d -p 5000:5000 --restart=always --name registry \
+         -v /mnt/registry:/var/lib/registry \
+         registry:2
+
+   3. **Add TLS security** (recommended):
+
+      a. Generate self-signed certificates:
+
+         .. code-block:: bash
+
+            mkdir -p certs
+            openssl req -newkey rsa:4096 -nodes -sha256 -keyout certs/domain.key \
+            -x509 -days 365 -out certs/domain.crt
+
+      b. Run the registry with TLS:
+
+        .. code-block:: bash
+
+            docker run -d -p 5000:5000 --restart=always --name registry \
+            -v /mnt/registry:/var/lib/registry \
+            -v $(pwd)/certs:/certs \
+            -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/domain.crt \
+            -e REGISTRY_HTTP_TLS_KEY=/certs/domain.key \
+            registry:2
+
+   Configure Kubernetes to use private image registries
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+   When using Kubernetes in an air-gapped environment, you need to configure it to use your private registry.
+
+   1. **Create a kubernetes secret for registry authentication**:
+
+     .. code-block:: bash
+
+        kubectl create secret docker-registry regcred \
+          --docker-server=registry.example.com:5000 \
+          --docker-username=your_username \
+          --docker-password=your_password \
+          --docker-email=your_email@example.com
+
+   2. **Reference the secret in pod specifications**:
+
+     .. code-block:: yaml
+
+        apiVersion: v1
+        kind: Pod
+        metadata:
+          name: mattermost-pod
+        spec:
+          containers:
+          - name: mattermost
+            image: registry.example.com:5000/mattermost/mattermost-enterprise-edition:latest
+          imagePullSecrets:
+          - name: regcred
+
+   3. **For Helm deployments**, specify the registry in ``values.yaml``:
+
+     .. code-block:: yaml
+
+        image:
+          repository: registry.example.com:5000/mattermost/mattermost-enterprise-edition
+          tag: latest
+          pullPolicy: IfNotPresent
+      
+        imagePullSecrets:
+          - name: regcred
+
+.. tab:: Docker
+
+   Set up a self-hosted private container registry
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+   1. **Install Docker Registry**:
+
+      .. code-block:: bash
+
+         docker run -d -p 5000:5000 --restart=always --name registry registry:2
+
+   2. **Configure persistent storage**:
+
+      .. code-block:: bash
+
+         docker run -d -p 5000:5000 --restart=always --name registry \
+         -v /mnt/registry:/var/lib/registry \
+         registry:2
+
+   3. **Add TLS security** (recommended):
+
+      a. Generate self-signed certificates:
+
+         .. code-block:: bash
+
+            mkdir -p certs
+            openssl req -newkey rsa:4096 -nodes -sha256 -keyout certs/domain.key \
+            -x509 -days 365 -out certs/domain.crt
+
+      b. Run the registry with TLS:
+
+        .. code-block:: bash
+
+            docker run -d -p 5000:5000 --restart=always --name registry \
+            -v /mnt/registry:/var/lib/registry \
+            -v $(pwd)/certs:/certs \
+            -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/domain.crt \
+            -e REGISTRY_HTTP_TLS_KEY=/certs/domain.key \
+            registry:2
+
+   Configure Docker to use private image registries
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+   Configure Docker on all hosts to trust and use your private registry.
+
+   1. **Add your registry to Docker's trusted registries**:
+
+      Edit or create ``/etc/docker/daemon.json``:
+
+      .. code-block:: json
+
+         {
+           "insecure-registries": ["registry.example.com:5000"]
+         }
+
+      For registries using self-signed certificates:
+
+      .. code-block:: bash
+
+         mkdir -p /etc/docker/certs.d/registry.example.com:5000
+         cp domain.crt /etc/docker/certs.d/registry.example.com:5000/ca.crt
+
+   2. **Restart Docker daemon**:
+
+      .. code-block:: bash
+
+         systemctl restart docker
+
+   3. **Test the configuration**:
+
+      .. code-block:: bash
+
+         docker pull registry.example.com:5000/mattermost/mattermost-enterprise-edition:latest
+
+
+
