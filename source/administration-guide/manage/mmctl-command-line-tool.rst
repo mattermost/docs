@@ -6383,6 +6383,7 @@ Manage users.
       -  `mmctl user delete`_ - Delete users
       -  `mmctl user deleteall`_ - Delete all users and all posts (local command only)
       -  `mmctl user demote`_ - Demote users to guests
+      -  `mmctl user edit`_ - Edit user information
       -  `mmctl user email`_ - Set user email
       -  `mmctl user invite`_ - Invite user
       -  `mmctl user list`_ - List users
@@ -6775,8 +6776,46 @@ Demote a user to a guest.
    --strict                       will only run commands if the mmctl version matches the server one
    --suppress-warnings            disables printing warning messages
 
-mmctl user email
-~~~~~~~~~~~~~~~~
+mmctl user edit
+~~~~~~~~~~~~~~~
+
+**Description**
+
+Edit user information such as email address and username.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl user edit [command]
+
+**Child Commands**
+
+-  `mmctl user edit email`_ - Set user email
+-  `mmctl user edit username`_ - Change username of the user
+
+**Options**
+
+.. code-block:: sh
+
+  -h, --help       help for edit
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl user edit email
+~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -6784,7 +6823,93 @@ Change the email address associated with a user.
 
 .. note::
 
-   From Mattermost v10.9, email addresses enclosed in angle brackets (e.g., ``<billy@example.com>``) will be rejected. To avoid issues, ensure all user emails comply with the plain address format (e.g., ``billy@example.com``). In addition, we strongly recommend taking proactive steps to audit and update Mattermost user data to align with this product change, as impacted users may face issues accessing Mattermost or managing their user profile. You can update these user emails manually using this mmctl command: ``mmctl user email "<affecteduser@domain.com>" affecteduser@domain.com``.
+   From Mattermost v10.9, email addresses enclosed in angle brackets (e.g., ``<billy@example.com>``) will be rejected. To avoid issues, ensure all user emails comply with the plain address format (e.g., ``billy@example.com``). In addition, we strongly recommend taking proactive steps to audit and update Mattermost user data to align with this product change, as impacted users may face issues accessing Mattermost or managing their user profile. You can update these user emails manually using this mmctl command: ``mmctl user edit email "<affecteduser@domain.com>" affecteduser@domain.com``.
+
+**Format**
+
+.. code-block:: sh
+
+  mmctl user edit email [user] [new email] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+  mmctl user edit email testuser user@example.com
+
+**Options**
+
+.. code-block:: sh
+
+  -h, --help       help for email
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl user edit username
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Change the username of the user.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl user edit username [user] [new username] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   mmctl user edit username testuser newusername
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help       help for username
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl user email
+~~~~~~~~~~~~~~~~
+
+.. warning::
+
+   This command is deprecated starting from Mattermost v11. Use ``mmctl user edit email`` instead.
+
+**Description**
+
+Change the email address associated with a user.
+
+.. note::
+
+   From Mattermost v10.9, email addresses enclosed in angle brackets (e.g., ``<billy@example.com>``) will be rejected. To avoid issues, ensure all user emails comply with the plain address format (e.g., ``billy@example.com``). In addition, we strongly recommend taking proactive steps to audit and update Mattermost user data to align with this product change, as impacted users may face issues accessing Mattermost or managing their user profile. You can update these user emails manually using this mmctl command: ``mmctl user edit email "<affecteduser@domain.com>" affecteduser@domain.com``.
 
 **Format**
 
@@ -7337,6 +7462,10 @@ Search for users based on username, email, or user ID. The command returns user 
 
 mmctl user username
 ~~~~~~~~~~~~~~~~~~~
+
+.. warning::
+
+   This command is deprecated starting from Mattermost v11. Use ``mmctl user edit username`` instead.
 
 **Description**
 
