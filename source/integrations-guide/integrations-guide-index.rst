@@ -238,24 +238,27 @@ Choosing the best platform for your team depends on your specific integration re
   **Supported Actions**
 
   - Channels
+
     - Add a user to a channel
     - Create a new channel
     - Soft delete a channel
-
     - Restore a soft deleted channel
     - Get statistics for a channel
 
   - Messages
+
     - Post a message into a channel
     - Post an ephemeral message into a channel
     - Soft delete a post
 
-  - Reactionss
+  - Reactions
+
     - Add a reaction to a post
     - Remove a reaction from a post
     - Get all reactions to one or more posts
 
   - Users
+
     - Create a new user
     - Deactivate a user (archive, revoke sessions)
     - Invite user to a team
@@ -320,7 +323,7 @@ Choosing the best platform for your team depends on your specific integration re
   Zapier’s strength is the breadth of integrations. Without coding, you can integrate Mattermost with everything from CRMs to social media. This is perfect for non-technical users who want to automate notifications or routine tasks, such as posting daily reports or sending Mattermost channel messages when forms are submitted. Zapier provides a user-friendly wizard and template library to get started quickly.
 
   **Supported Triggers**
-  - Zapier does not natively support triggers in Mattermost. If you want Mattermost to trigger a Zapier workflow, you can use outgoing webhooks or slash commands in combination with `Zapier’s Webhooks trigger <https://zapier.com/apps/webhook/integrations> _. For example, you could configure an outgoing webhook in Mattermost to hit Zapier when a certain keyword is posted, which Zapier treats as a trigger to then perform actions in other apps.
+  - Zapier does not natively support triggers in Mattermost. If you want Mattermost to trigger a Zapier workflow, you can use outgoing webhooks or slash commands in combination with `Zapier’s Webhooks trigger <https://zapier.com/apps/webhook/integrations>`_. For example, you could configure an outgoing webhook in Mattermost to hit Zapier when a certain keyword is posted, which Zapier treats as a trigger to then perform actions in other apps.
 
   **Supported Actions**
   - Compared with the wide range of triggers and actions supported by n8n or Make, Zapier supports only one action - posting a message. 
