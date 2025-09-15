@@ -11,7 +11,7 @@ from sphinx.environment import BuildEnvironment
 from sphinx.util import logging
 from sphinx.util.nodes import _make_id
 
-from .directive import LOG_PREFIX
+from .directive import LOG_PREFIX, INLINE_TAB_DOCNAMES
 from .nodes import TabContainer
 from .sectiondata import SectionData
 from .tab_id import TabId
@@ -33,9 +33,10 @@ def env_purge_doc(app: Sphinx, _: BuildEnvironment, docname: str) -> None:
     :param _: The Sphinx BuildEnvironment object; unused
     :param docname: The name of the document to purge
     """
-    if hasattr(app.env, "sphinx_tabs"):
-        if docname in app.env.sphinx_tabs:
-            app.env.sphinx_tabs.pop(docname)
+    if hasattr(app.env, INLINE_TAB_DOCNAMES):
+        tab_docnames: list[str] = getattr(app.env, INLINE_TAB_DOCNAMES)
+        if docname in tab_docnames:
+            tab_docnames.remove(docname)
 
 
 def env_merge_info(
@@ -50,73 +51,15 @@ def env_merge_info(
     :param docnames: A list of the document names to merge
     :param other: The Sphinx BuildEnvironment from the reader worker
     """
-    if not hasattr(app.env, "sphinx_tabs"):
-        app.env.sphinx_tabs = {}
-    if hasattr(other, "sphinx_tabs"):
+    if not hasattr(app.env, INLINE_TAB_DOCNAMES):
+        setattr(app.env, INLINE_TAB_DOCNAMES, [])
+    tab_docnames: list[str] = getattr(app.env, INLINE_TAB_DOCNAMES)
+    if hasattr(other, INLINE_TAB_DOCNAMES):
+        other_tab_docnames: list[str] = getattr(other, INLINE_TAB_DOCNAMES)
         for docname in docnames:
-            if docname in other.sphinx_tabs:
-                if docname not in app.env.sphinx_tabs:
-                    app.env.sphinx_tabs[docname] = []
-                if (
-                    len(app.env.sphinx_tabs[docname]) > 0
-                    and len(other.sphinx_tabs[docname]) == 0
-                ):
-                    logger.warning(
-                        f"{LOG_PREFIX} env_merge_info: {docname}; not overwriting app.env with empty list from other"
-                    )
-                    continue
-                app.env.sphinx_tabs[docname] = other.sphinx_tabs[docname].copy()
-
-
-def merge_toctrees(original_toc: nodes.list_item, tab_based_toc: nodes.list_item) -> nodes.list_item:
-    """
-    Merge the original toctree with the tab-based TOC to preserve both child pages and tab content headings.
-    
-    :param original_toc: The original toctree (includes child pages)
-    :param tab_based_toc: The tab-based TOC (includes tab content headings)
-    :return: A merged toctree containing both types of content
-    """
-    # If the tab-based TOC is empty, return the original TOC
-    if not tab_based_toc or not hasattr(tab_based_toc, 'children') or not tab_based_toc.children:
-        return original_toc
-    
-    # If the original TOC is empty, return the tab-based TOC
-    if not original_toc or not hasattr(original_toc, 'children') or not original_toc.children:
-        return tab_based_toc
-    
-    # Create a new list item to hold the merged content
-    merged_toc = nodes.list_item()
-    merged_bullet_list = nodes.bullet_list()
-    
-    # Add the tab-based TOC content first (this includes the tab headings)
-    if hasattr(tab_based_toc, 'children') and tab_based_toc.children:
-        for child in tab_based_toc.children:
-            if isinstance(child, nodes.bullet_list):
-                # Extract items from the tab-based bullet list
-                for item in child.children:
-                    if isinstance(item, nodes.list_item):
-                        merged_bullet_list.append(item)
-            else:
-                # Direct child - add it as a list item
-                merged_bullet_list.append(child)
-    
-    # Add the original TOC content (this includes child pages)
-    if hasattr(original_toc, 'children') and original_toc.children:
-        for child in original_toc.children:
-            if isinstance(child, nodes.bullet_list):
-                # Extract items from the original bullet list
-                for item in child.children:
-                    if isinstance(item, nodes.list_item):
-                        merged_bullet_list.append(item)
-            else:
-                # Direct child - add it as a list item
-                merged_bullet_list.append(child)
-    
-    # Only add the bullet list if it has items
-    if merged_bullet_list.children:
-        merged_toc.append(merged_bullet_list)
-    
-    return merged_toc
+            if docname in other_tab_docnames:
+                if docname not in tab_docnames:
+                    tab_docnames.append(docname)
 
 
 def doctree_read(app: Sphinx, doctree: nodes.document):
@@ -126,34 +69,17 @@ def doctree_read(app: Sphinx, doctree: nodes.document):
     :param app: The Sphinx Application instance
     :param doctree: The parsed document tree; unused
     """
-    if not hasattr(app.env, "sphinx_tabs"):
-        app.env.sphinx_tabs = {}
-    if (
-        app.env.docname in app.env.sphinx_tabs
-        and len(app.env.sphinx_tabs[app.env.docname]) > 0
-    ):
+    if not hasattr(app.env, INLINE_TAB_DOCNAMES):
+        setattr(app.env, INLINE_TAB_DOCNAMES, [])
+    tab_docnames: list[str] = getattr(app.env, INLINE_TAB_DOCNAMES)
+    if app.env.docname in tab_docnames:
         logger.debug(f"{LOG_PREFIX} doctree_read: {app.env.docname} has tabs")
         
-        # Store the original toctree structure before replacing it
-        original_toc = None
-        if (len(app.env.tocs[app.env.docname][0]) > 1 and 
-            app.env.tocs[app.env.docname][0][1] is not None):
-            original_toc = app.env.tocs[app.env.docname][0][1]
-            logger.debug(f"{LOG_PREFIX} doctree_read({app.env.docname}): preserving original toctree")
-        
         # Generate the tab-based TOC (includes headings from within tabs)
-        tab_based_toc: nodes.list_item = sectiondata_to_toc(
+        updated_tocs: nodes.list_item = sectiondata_to_toc(
             app.env.docname,
             collect_sections(app.env, doctree, app.env.docname, doctree),
         )
-        
-        # Merge the original toctree with the tab-based TOC
-        if original_toc is not None:
-            logger.debug(f"{LOG_PREFIX} doctree_read({app.env.docname}): merging original toctree with tab-based TOC")
-            updated_tocs = merge_toctrees(original_toc, tab_based_toc)
-        else:
-            logger.debug(f"{LOG_PREFIX} doctree_read({app.env.docname}): using tab-based TOC only")
-            updated_tocs = tab_based_toc
             
         logger.debug(
             f"{LOG_PREFIX} doctree_read({app.env.docname}): updated_tocs[0][1]={updated_tocs}"
@@ -161,8 +87,51 @@ def doctree_read(app: Sphinx, doctree: nodes.document):
         if len(app.env.tocs[app.env.docname][0]) == 1:
             app.env.tocs[app.env.docname][0].append(updated_tocs)
         else:
-            app.env.tocs[app.env.docname][0][1] = updated_tocs
-        app.env.sphinx_tabs[app.env.docname].clear()
+            # SAFE FIX: Check if the original structure has toctree nodes
+            # If it does, leave it completely unchanged to preserve left navigation
+            original_toc_item = app.env.tocs[app.env.docname][0][1]
+            has_toctree = False
+            
+            if hasattr(original_toc_item, 'children') and original_toc_item.children:
+                for child in original_toc_item.children:
+                    if isinstance(child, addnodes.toctree):
+                        has_toctree = True
+                        break
+            
+            if has_toctree:
+                # Merge tab headings into the existing right-pane TOC while preserving
+                # the original toctree (left navigation) structure.
+                try:
+                    # Find the bullet list in the original toc item (holds section entries)
+                    original_bullets = None
+                    for child in getattr(original_toc_item, "children", []) or []:
+                        if isinstance(child, nodes.bullet_list):
+                            original_bullets = child
+                            break
+
+                    # Find the bullet list produced by our updated tab-aware TOC
+                    updated_bullets = None
+                    for child in getattr(updated_tocs, "children", []) or []:
+                        if isinstance(child, nodes.bullet_list):
+                            updated_bullets = child
+                            break
+
+                    # If we have tab headings to merge
+                    if updated_bullets is not None:
+                        if original_bullets is None:
+                            # No existing bullets: attach updated list directly
+                            original_toc_item.append(updated_bullets)
+                        else:
+                            # Append each new tab heading item to existing bullets
+                            for li in list(updated_bullets.children):
+                                original_bullets.append(li)
+                except Exception as e:
+                    logger.warning(
+                        f"{LOG_PREFIX} doctree_read({app.env.docname}): failed merging tab headings into TOC: {e}"
+                    )
+            else:
+                # Only apply tab modifications if no toctree nodes are present
+                app.env.tocs[app.env.docname][0][1] = updated_tocs
 
 
 def html_page_context(
@@ -182,8 +151,9 @@ def html_page_context(
     :param doctree:
     :return:
     """
-    if hasattr(app.env, "sphinx_tabs"):
-        if pagename in app.env.sphinx_tabs:
+    if hasattr(app.env, INLINE_TAB_DOCNAMES):
+        tab_docnames: list[str] = getattr(app.env, INLINE_TAB_DOCNAMES)
+        if pagename in tab_docnames:
             logger.debug(
                 f"{LOG_PREFIX} html_page_context: {pagename}; context.keys()={context.keys()}"
             )
