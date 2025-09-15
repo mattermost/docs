@@ -225,6 +225,8 @@ Choosing the best platform for your team depends on your specific integration re
 
   Additonally, n8n supports both no-code and low-code approaches, making it flexible for technical and semi-technical users. Being open source means there’s a large community of people sharing their custom workflows and automations that can either be used directly or iterated on to meet your specific requirements.
 
+  n8n stands out for offering rich AI integration, enabling you to combine automation with AI-powered workflows. Its `native AI Agent node <https://n8n.io/ai/>`_ lets you integrate large language models, vector databases, and other AI services directly into your automations. This means you can build workflows in Mattermost that not only react to events but also analyze context, summarize discussions, or make decisions based on AI output.
+
 
   **Supported Triggers**
 
@@ -359,9 +361,7 @@ Slack compatible means that Mattermost accepts integrations that have a payload 
 What if I have a webhook from somewhere other than Slack?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you have an integration that outputs a payload in a different format, you need to write an intermediate application, such as N8N.io, Zapier, or Make, to act as a translation layer to change it to the format Mattermost uses. Since there’s currently no general standard for webhook formatting, this is unavoidable and just a part of how webhooks work.
-
-If there's no translation layer, Mattermost won't understand the data you're sending.
+If you have an integration that outputs a payload in a different format, you need an intermediary service to act as a translation layer to change it to the format Mattermost uses. These intermediary services could be no-code or low-code integrations with n8n, Zapier, or Make, but they could also be pro-code integrations leveraging something like AWS Lambda or other hosted services. There’s currently no general standard for webhook communication between services, so translating your webhooks is necessary otherwise Mattermost won't understand the data you're sending.
 
 What are attachments?
 ~~~~~~~~~~~~~~~~~~~~~
