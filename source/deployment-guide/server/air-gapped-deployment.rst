@@ -160,11 +160,11 @@ A private container registry securely stores the Docker images necessary for air
 
    7. **Client configuration:** Configure apt to use your local mirror:
 
-     .. code-block:: bash
+      .. code-block:: bash
 
-        cat > /etc/apt/sources.list << EOF
-        deb http://mirror.example.com/debian bullseye main contrib non-free
-        EOF
+         cat > /etc/apt/sources.list << EOF
+         deb http://mirror.example.com/debian bullseye main contrib non-free
+         EOF
 
 
    **(RHEL/CentOS) Set up a private RHEL package mirror**
