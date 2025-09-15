@@ -210,7 +210,7 @@ Workflow orchestration platforms
 
 **Technical complexity: No-code**
 
-Platforms like n8n, Zapier, or Make provide powerful visual editors that support wthousands of connected tools, with triggers and actions that integrate Mattermost to external services, enabling teams to build complex workflows without writing code. Admins migrating from tools like Slack Workflow Builder can recreate familiar automations in Mattermost using these platforms.
+Platforms like n8n, Zapier, or Make provide powerful visual editors that support thousands of connected tools, with triggers and actions that integrate Mattermost to external services, enabling teams to build complex workflows without writing code. Admins migrating from tools like Slack Workflow Builder can recreate familiar automations in Mattermost using these platforms.
 
 When used in comination with outgoing webhooks or custom slash commands, users can trigger complex workflows and automations without leaving Mattermost. By pointing a webhook or slash command at the unique URL these automation tools provide, any message or keyword in Mattermost can initiate a workflow. This allows you to capture context from conversations and pass it into external systems — for example, creating tickets, updating records, or starting multi-step automations.
 
