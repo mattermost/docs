@@ -1063,7 +1063,12 @@ Enable client-side certification
 .. include:: ../../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-**True**: Enables client-side certification for your Mattermost server. See :doc:`the documentation </administration-guide/onboard/certificate-based-authentication>` to learn more.
+.. important::
+  **Feature Removed in Mattermost v11.0+**
+  
+  Certificate-based authentication has been **removed** from Mattermost server v11.0 and later versions. This setting **must be set to false** or the server will fail to start in v11.0+. This documentation is maintained for reference for users on Mattermost v10.12 and earlier versions.
+
+**True**: Enables client-side certification for your Mattermost server. See :doc:`the documentation </administration-guide/onboard/certificate-based-authentication>` to learn more. **Warning**: Setting this to ``true`` in v11.0+ will prevent the server from starting.
 
 **False**: Client-side certification is disabled.
 
@@ -1085,6 +1090,11 @@ Client-side certification login method
 
 .. include:: ../../_static/badges/ent-only.rst
   :start-after: :nosearch:
+
+.. important::
+  **Feature Removed in Mattermost v11.0+**
+  
+  Certificate-based authentication has been **removed** from Mattermost server v11.0 and later versions. This setting is no longer functional in v11.0+. This documentation is maintained for reference for users on Mattermost v10.12 and earlier versions.
 
 Used in combination with the ``ClientSideCertEnable`` configuration setting.
 
