@@ -808,10 +808,9 @@ Maximum open connections
 
 +--------------------------------------------------------+-------------------------------------------------------------------------+
 | The maximum number of open connections to the          | - System Config path: **Environment > Database**                        |
-| database.                                              | - ``config.json`` setting: ``SqlSettings`` > ``MaxOpenConns`` > ``300`` |
+| database.                                              | - ``config.json`` setting: ``SqlSettings`` > ``MaxOpenConns`` > ``100`` |
 |                                                        | - Environment variable: ``MM_SQLSETTINGS_MAXOPENCONNS``                 |
-| Numerical input. Default is **300** for self-hosted    |                                                                         |
-| deployments, and **100** for Cloud deployments.        |                                                                         |
+| Numerical input. Default is **100**.                   |                                                                         |
 +--------------------------------------------------------+-------------------------------------------------------------------------+
 
 .. config:setting:: maximum-idle-connections
