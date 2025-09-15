@@ -30,7 +30,7 @@ The following Mattermost configuration settings are deprecated and are no longer
 Bleve settings
 --------------
 
-*Bleve search has been deprecated in Mattermost v11.0. We recommend using Elasticsearch or OpenSearch for enterprise search capabilities.*
+*Bleve search has been deprecated from Mattermost v11.0. We recommend using Elasticsearch or OpenSearch for enterprise search capabilities.*
 
 Enable Bleve indexing
 ~~~~~~~~~~~~~~~~~~~~~
