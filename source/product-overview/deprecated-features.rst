@@ -6,16 +6,6 @@ This page describes features that are removed from support for Mattermost, or wi
 Removed features in upcoming versions
 -------------------------------------
 
-<<<<<<< HEAD:source/about/deprecated-features.rst
-Mattermost Server v11.0.0
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-- Starting in Mattermost v11.0, the ``TeamSettings.ExperimentalViewArchivedChannels`` setting is always enabled and no longer configurable. Users can always access archived channels where they are members.
-- Beginning in Mattermost v11 (estimated in September 2025), Playbooks will be unsupported for Free Edition and Professional customers. Professional customers using Playbooks can contact their Customer Success Manager to discuss potential upgrade options with discounting applied as appropriate. Additional details can be found in the `Clarification on Playbooks in Mattermost v10 <https://forum.mattermost.com/t/clarification-on-playbooks-in-mattermost-v10/20563>`__ article on the Mattermost Discussion Forums.
-- Mattermost v11 will retire experimental Bleve Search functionality as it no longer aligns with our vision for streamlined search solutions. See more details in `this forum post <https://forum.mattermost.com/t/transitioning-from-bleve-search-in-mattermost-v11/22982>`__.
-- End of support for MySQL is targeted for Mattermost v11. See more details in `this forum post <https://forum.mattermost.com/t/transition-to-postgresql/19551>`__.
-- Starting in Mattermost v11, the default value of the ``ExperimentalStrictCSRFEnforcement`` setting will be changed to ``true``. The legacy ``X-Requested-With`` header fallback will still be supported but only when explicitly disabled by setting ``ExperimentalStrictCSRFEnforcement`` to ``false``. See more details in `this forum post <https://forum.mattermost.com/t/default-value-of-the-experimental-strict-csrf-enforcement-setting-to-be-changed-to-true-v11/23139>`__.
-=======
 Mattermost Server v11.1.0 (November 2025)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -68,7 +58,6 @@ Mattermost Server v11.0.0 (October 2025)
       }
     }
   }
->>>>>>> master:source/product-overview/deprecated-features.rst
 
 Removed features by Mattermost version
 ----------------------------------------
