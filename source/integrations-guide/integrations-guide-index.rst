@@ -134,7 +134,7 @@ Pre-built slash commands
 ^^^^^^^^^^^^^^^^^^^^^^^^
 **Technical complexity: No-code**
 
-These out-of-the-box commands enable command line interaction with users, channels, and conversations. Examples include Examples of pre-built slash commands include ``/invite`` to add teammates to a channel, ``/header`` to set a channel description, or ``/call`` to start or join a call in a channel.
+These out-of-the-box commands enable command line interaction with users, channels, and conversations. Examples of pre-built slash commands include ``/invite`` to add teammates to a channel, ``/header`` to set a channel description, or ``/call`` to start or join a call in a channel.
 
 Learn more about pre-built slash commands `here <https://docs.mattermost.com/integrations-guide/built-in-slash-commands.html>`_.
 
