@@ -116,7 +116,7 @@ A private container registry securely stores the Docker images necessary for air
 .. tab:: Linux
 
    (Ubuntu) Set up a private Debian package mirror
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    We will use Aptly to create a local mirror, although you can also use other options such as debmirror.
 
    1. **Install Aptly** (on an internet-connected machine):
@@ -159,15 +159,15 @@ A private container registry securely stores the Docker images necessary for air
 
    7. **Client configuration:** Configure apt to use your local mirror:
 
-   .. code-block:: bash
+     .. code-block:: bash
 
-      cat > /etc/apt/sources.list << EOF
-      deb http://mirror.example.com/debian bullseye main contrib non-free
-      EOF
+        cat > /etc/apt/sources.list << EOF
+        deb http://mirror.example.com/debian bullseye main contrib non-free
+        EOF
 
 
    (RHEL/CentOS) Set up a private RHEL package mirror
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    We will use reprosync for a local mirror.
 
    1. **Install required tools** (on an internet-connected RHEL system):
@@ -238,7 +238,7 @@ A private container registry securely stores the Docker images necessary for air
 .. tab:: Kubernetes
 
    Set up a self-hosted private container registry
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    1. **Install Docker Registry**:
 
@@ -266,7 +266,7 @@ A private container registry securely stores the Docker images necessary for air
 
       b. Run the registry with TLS:
 
-        .. code-block:: bash
+         .. code-block:: bash
 
             docker run -d -p 5000:5000 --restart=always --name registry \
             -v /mnt/registry:/var/lib/registry \
@@ -276,51 +276,51 @@ A private container registry securely stores the Docker images necessary for air
             registry:2
 
    Configure Kubernetes to use private image registries
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    When using Kubernetes in an air-gapped environment, you need to configure it to use your private registry.
 
    1. **Create a kubernetes secret for registry authentication**:
 
-     .. code-block:: bash
+      .. code-block:: bash
 
-        kubectl create secret docker-registry regcred \
-          --docker-server=registry.example.com:5000 \
-          --docker-username=your_username \
-          --docker-password=your_password \
-          --docker-email=your_email@example.com
+         kubectl create secret docker-registry regcred \
+         --docker-server=registry.example.com:5000 \
+         --docker-username=your_username \
+         --docker-password=your_password \
+         --docker-email=your_email@example.com
 
    2. **Reference the secret in pod specifications**:
 
-     .. code-block:: yaml
+      .. code-block:: yaml
 
-        apiVersion: v1
-        kind: Pod
-        metadata:
-          name: mattermost-pod
-        spec:
-          containers:
-          - name: mattermost
-            image: registry.example.com:5000/mattermost/mattermost-enterprise-edition:latest
-          imagePullSecrets:
-          - name: regcred
+         apiVersion: v1
+         kind: Pod
+         metadata:
+           name: mattermost-pod
+         spec:
+           containers:
+           - name: mattermost
+             image: registry.example.com:5000/mattermost/mattermost-enterprise-edition:latest
+           imagePullSecrets:
+           - name: regcred
 
    3. **For Helm deployments**, specify the registry in ``values.yaml``:
 
-     .. code-block:: yaml
+      .. code-block:: yaml
 
-        image:
-          repository: registry.example.com:5000/mattermost/mattermost-enterprise-edition
-          tag: latest
-          pullPolicy: IfNotPresent
+         image:
+           repository: registry.example.com:5000/mattermost/mattermost-enterprise-edition
+           tag: latest
+           pullPolicy: IfNotPresent
       
-        imagePullSecrets:
-          - name: regcred
+         imagePullSecrets:
+           - name: regcred
 
 .. tab:: Docker
 
    Set up a self-hosted private container registry
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    1. **Install Docker Registry**:
 
@@ -348,7 +348,7 @@ A private container registry securely stores the Docker images necessary for air
 
       b. Run the registry with TLS:
 
-        .. code-block:: bash
+         .. code-block:: bash
 
             docker run -d -p 5000:5000 --restart=always --name registry \
             -v /mnt/registry:/var/lib/registry \
@@ -358,7 +358,7 @@ A private container registry securely stores the Docker images necessary for air
             registry:2
 
    Configure Docker to use private image registries
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    Configure Docker on all hosts to trust and use your private registry.
 
