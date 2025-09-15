@@ -17,18 +17,22 @@ Before disconnecting from the internet, you must gather all required packages, c
     - :doc:`Mattermost tarball </product-overview/version-archive>`. We recommend using the latest :ref:`ESR <product-overview/release-policy:extended support releases>` for extended support where server upgrades may be infrequent)
     - Database: PostgreSQL `installation packages <https://www.postgresql.org/download/>`_ or container images for your Linux distribution
     - File Storage: 
-    - Load balancer: If you already have a load balancer you can skip this, otherwise you'll need 
+    - Load balancer: If you already have a load balancer running in your air-gapped environment you can skip this resource, otherwise we recommend deploying `NGINX <https://docs.mattermost.com/deployment-guide/server/setup-nginx-proxy.html>`_, using (XXXXXX).
 
 .. tab:: Kubernetes
 
-   Kubernetes is recommended if your organization already uses Kubernetes.
+   Kubernetes is recommended if your organization already uses Kubernetes. Advantages of this deployment method
 
     **Bill of Materials**
 
-    - Mattermost `Helm charts <https://helm.mattermost.com>`_ and `operator values <https://github.com/mattermost/mattermost-helm/blob/master/charts/mattermost-operator/values.yaml>`_ 
+    - Mattermost `Helm charts <https://helm.mattermost.com>`_:
+      -  `Mattermost Operator <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-operator>`_ helm chart and `values <https://github.com/mattermost/mattermost-helm/blob/master/charts/mattermost-operator/values.yaml>`_
+      -  (Optional) :doc:`Mattermost Calls </administration-guide/configure/calls-deployment>` helm charts: `mattermost-calls-offloader <>`_ and `values <https://github.com/mattermost/mattermost-helm/blob/master/charts/mattermost-calls-offloader/values.yaml>`_ (required for recording, transcription and live captions), `mattermost-rtcd <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-rtcd>`_ and `values <https://github.com/mattermost/mattermost-helm/blob/master/charts/mattermost-rtcd/values.yaml>`_ (required for performance and scalability).
     - Database: We recommend the `Postgres Operator <https://github.com/CrunchyData/postgres-operator/>`_ from Crunchy Data for air-gapped Kubernetes deployments. 
-    - File Storage: 
-    - Private container registry: If you don't have a Docker container registry we recommend following the instructions `here <https://www.digitalocean.com/community/developer-center/how-to-set-up-digitalocean-container-registry>`_.
+    - File Storage: We recommend the `MinIO Operator <https://github.com/minio/operator>`_.
+    - Load balancer: If you already have a load balancer running in your air-gapped environment you can skip this resource, otherwise we recommend deploying `NGINX <https://docs.mattermost.com/deployment-guide/server/setup-nginx-proxy.html>`_, using this operator (XXXXXX).
+
+    Private container registry: If you don't have a Docker container registry we recommend following the instructions `here <https://www.docker.com/blog/how-to-use-your-own-registry-2/>`_.
 
 .. tab:: Docker
 
@@ -36,17 +40,20 @@ Before disconnecting from the internet, you must gather all required packages, c
 
     **Bill of Materials**
 
-    - Private container registry: If you don't have a Docker container registry we recommend following the instructions `here <https://www.digitalocean.com/community/developer-center/how-to-set-up-digitalocean-container-registry>`_. 
+    - Mattermost Docker images:
+
+      - `Mattermost Enterprise Edition <https://hub.docker.com/r/mattermost/mattermost-enterprise-edition>`_
+      - (Optional) :doc:`Mattermost Calls </administration-guide/configure/calls-deployment>` images: `calls-offloader <https://hub.docker.com/r/mattermost/calls-offloader>`_ (required for recording, transcription and live captions), `rtcd <https://hub.docker.com/r/mattermost/rtcd>`_ (required for performance and scalability).
+    - Private container registry: If you don't have a Docker container registry we recommend following the instructions `here <https://www.docker.com/blog/how-to-use-your-own-registry-2/>`_. 
 
 Optional supporting services
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Consider gathering additional resources if you plan to enable these optional components:
 
-- :doc:`Mattermost Calls </administration-guide/configure/calls-deployment>`: For self-hosted audio and screensharing capabilities
 - :doc:`LDAP </administration-guide/onboard/ad-ldap>`/ :doc:`SAML </administration-guide/onboard/sso-saml>`: For authentication and SSO
 - `Elasticsearch <https://www.elastic.co/downloads/elasticsearch>`_: For enhanced search performance at scale
-- `Prometheus <https://prometheus.io/download/>`_: For monitoring and observability
+- `Prometheus <https://prometheus.io/download/>`_ and `Grafana <https://grafana.com/grafana/download>`_: For monitoring and observability
 
 Mattermost plugins
 ~~~~~~~~~~~~~~~~~~
