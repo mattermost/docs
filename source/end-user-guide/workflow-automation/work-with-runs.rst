@@ -25,7 +25,7 @@ Some run actions can be edited while the run is in progress. This increases visi
 
 .. note::
 
-  From Mattermost v10.11 and mobile app v2.31.0, mobile users can view playbook run details in read-only mode. While viewing and monitoring capabilities are available on mobile devices, and :ref:`playbooks slash commands <end-user-guide/workflow-automation/interact-with-playbooks:slash commands>` are supported on mobile, playbook editing and management actions require the desktop or a web browser.
+  From Mattermost server v11.0+ and mobile app v2.23.0, mobile users have enhanced playbook run interaction capabilities including task management (check/uncheck, update assignees, dates, and commands) and run ownership changes. For earlier server versions (v10.11 through v10.x) with mobile app v2.31.0, mobile users can view playbook run details in read-only mode. While viewing and monitoring capabilities are available on mobile devices, and :ref:`playbooks slash commands <end-user-guide/workflow-automation/interact-with-playbooks:slash commands>` are supported on mobile, advanced playbook editing and management actions may require the desktop or a web browser.
 
 Runs and channel behavior
 -------------------------

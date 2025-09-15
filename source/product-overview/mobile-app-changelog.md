@@ -361,6 +361,14 @@ Note: Mattermost Mobile App v2.23.0 contains medium level security fixes. Updati
  - Improved connection behavior when switching network types (cell, wifi, vpn...).
  - Added a new index to the type column in the ``Post`` table. Bumped up server database schema version to 6.
  - Added a new column ``update_at`` to the Drafts table.
+ - **Playbooks**: Enhanced mobile playbook support when connected to Mattermost server v11.0+ with interactive task management capabilities including:
+   
+   - Click on tasks to open detailed bottom sheet views
+   - Skip and unskip tasks within playbook runs
+   - Update task assignee directly from mobile
+   - Modify task due dates on mobile devices  
+   - Edit task commands from the mobile interface
+   - Change run ownership from mobile devices
 
 ### Bug Fixes
  - Fixed an issue with the sort order of channel bookmarks when sorted on a different client.
