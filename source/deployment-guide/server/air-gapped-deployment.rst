@@ -16,13 +16,13 @@ Before disconnecting from the internet, you must gather all required packages, c
 
     - :doc:`Mattermost tarball </product-overview/version-archive>`. We recommend using the latest :ref:`ESR <product-overview/release-policy:extended support releases>` for extended support where server upgrades may be infrequent)
     - Database: PostgreSQL `installation packages <https://www.postgresql.org/download/>`_ or container images for your Linux distribution
-    - File Storage: 
+    - File Storage: We recommend using `MinIO <>`_, but you can optionally consider using NFS for file storage in air-gapped environments. 
     - Load balancer: If you already have a load balancer running in your air-gapped environment you can skip this resource, otherwise we recommend deploying `NGINX <https://docs.mattermost.com/deployment-guide/server/setup-nginx-proxy.html>`_, using (XXXXXX).
     - Private package mirror: Ideally the air-gapped environment already has a private package mirror available. If not, we recommend following the instructions `here <https://docs.mattermost.com/deployment-guide/server/air-gapped-deployment.html#faq>`_ or referencing `online resources <>`_ for this. (XXXXXX)
 
 .. tab:: Kubernetes
 
-   Kubernetes is recommended if your organization already uses Kubernetes. Advantages of this deployment method
+   Kubernetes is recommended for a highly scalable and robust deployment if your organization is already running a Kubernetes cluster in the air-gapped environment.
 
     **Bill of Materials**
 
@@ -37,7 +37,7 @@ Before disconnecting from the internet, you must gather all required packages, c
 
 .. tab:: Docker
 
-   Docker is recommended when you want to use containers but don't have a Kubernetes cluster.
+   Docker can be used if you don't have a running Kubernetes cluster in the air-gapped environment, but want to use containers for simplified installation and dependency management. Docker is not recommended for production environments at high scale, as it doesn’t support clustered deployments or High Availability (HA) configurations out-of-the-box.
 
     **Bill of Materials**
 
