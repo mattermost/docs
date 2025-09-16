@@ -49,6 +49,10 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 (release-v10.11-extended-support-release)=
 ## Release v10.11 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **10.11.3, released 2025-09-16**
+  - Mattermost v10.11.3 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue where unread messages from muted channels were shown in the favicon/desktop app [MM-64883](https://mattermost.atlassian.net/browse/MM-64883).
+  - Mattermost v10.11.3 contains no database or functional changes.
 - **10.11.2, released 2025-08-22**
   - Mattermost v10.11.2 contains high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue where the content of webhook posts did not display [MM-64626](https://mattermost.atlassian.net/browse/MM-64626).
@@ -145,6 +149,9 @@ New setting options were added to ``config.json``. Below is a list of the additi
 (release-v10.10-feature-release)=
 ## Release v10.10 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
+- **10.10.3, released 2025-09-16**
+  - Mattermost v10.10.3 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v10.10.3 contains no database or functional changes.
 - **10.10.2, released 2025-08-14**
   - Mattermost v10.10.2 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Boards plugin [v9.1.5](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.5).
