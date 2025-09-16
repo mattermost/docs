@@ -15,7 +15,7 @@
 **Release day: 2025-10-16**
 
 ```{Important}
-If you upgrade from a release earlier than v10.11, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
+If you upgrade from a release earlier than v10.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
 ```
 
 ### Highlights
@@ -30,7 +30,10 @@ If you upgrade from a release earlier than v10.11, please read the other [Import
  - This is a placeholder for v11.0 administration improvements.
 
 ### Bug Fixes
- - This is a placeholder for v11.0 bug fixes.
+ - Fixed an issue where extra date separators were added in search results, pinned posts and saved messages.
+ - Fixed an issue where MFA warning was thrown in the logs for unauthenticated plugin requests.
+ - Fixed an issue that prevented new users from searching channels right after joining a team when Elasticsearch was enabled.
+ - Fixed some crashes in the threads screen. 
 
 ### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
@@ -51,4 +54,4 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - v11.0 is built with Go ``vTBD``.
 
 ### Contributors
- - This is a placeholder for v11.0 contributors.
+ - 
