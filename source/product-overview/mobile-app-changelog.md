@@ -20,13 +20,14 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - iPhone 6s devices and later with iOS 15.1+ are required.
 
 ### Improvements
- - Coming soon.
+ - Added checklist item options for playbooks.
+ - Added the ability to edit slash commands on playbooks tasks.
+ - Added the ability to update the due date on playbook tasks.
+ - Added the ability to edit the owner and the task assignee on playbooks.
 
 ### Bug Fixes
- - Coming soon.
-
-### Open Source Components
- - Coming soon.
+ - Fixed an issue where the playbooks option was not omitted in Direct/Group Messages.
+ - Fixed a screenshot share problem for iOS 26 devices.
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
