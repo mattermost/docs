@@ -340,7 +340,7 @@ Mattermost Playbooks
 
 While Playbooks primarily focus on coordinating people and tasks, they also have integration points. You can trigger a playbook run via an incoming webhook (allowing an external tool to trigger a playbook run), and within a playbook you can define steps that execute webhooks or call external APIs. Additionally, Playbooks can work in conjunction with plugins, making them a powerful no-code automation tool for orchestrating both human and system actions. It keeps the entire workflow visible in Mattermost, reducing the need to switch between apps during critical processes.
 
-Learn more about using Playbooks `here <https://docs.mattermost.com/end-user-guide/workflow-automation.html>`_.
+Learn more about using :doc:`Playbooks </end-user-guide/workflow-automation>`.
 
 
 Frequently Asked Questions
