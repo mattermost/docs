@@ -21,6 +21,11 @@
  - Removed deprecated ``include_removed_members`` option in ``api/v4/ldap/sync``.
  - ``TeamSettings.ExperimentalViewArchivedChannels`` must now always be ``true``, always allowing archived channels to be viewed.
  - Added logic to migrate the password hashing method from bcrypt to PBKDF2. The migration will happen progressively, migrating the password of a user as soon as they have to enter it; e.g. when logging in or when double-checking their password for any sensitive action. There is an edge case where users might get locked out of their account: if a server upgrades to v11 and user A logs in (i.e., they need to enter their password), and then the server downgrades to v10.12 or previous, user A will no longer be able to log in. In this case, admins will need to manually reset the password of such users, through the system console or through the ``mmctl user reset-password [users]`` command.
+ - Removed all telemetry support from Mattermost. The system will no longer collect or send telemetry data to external services.
+ - Removed Bleve as part of v11 breaking changes.
+ - Deprecated the separate notification log file.
+ - Removed experimental certificate-based authentication feature; ``ExperimentalSettings.ClientSideCertEnable`` must be false to start the server.
+ - ``ServiceSettings.StrictCSRFEnforcement`` has been changed to be ``true`` by default for new installations. For existing installations, the value will remain unchanged. 
 
 ```{Important}
 If you upgrade from a release earlier than v10.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
@@ -82,7 +87,14 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to all plans:
- - 
+ - Removed ``VerboseDiagnostics`` configuration setting as part of removing all telemetry support from Mattermost.
+ - Removed ``BleveSettings`` configuration setting as part of removing Bleve.
+ - Removed ``NotificationLogSettings`` as part of deprecating the separate notification log file.
+ - Removed ``ClientSideCertCheck`` as part of removing the experimental certificate-based authentication feature.
+ - Under ``ServiceSettings`` in ``config.json``:
+     - ``ExperimentalStrictCSRFEnforcement`` has been renamed to ``StrictCSRFEnforcement`` and has been changed to be ``true`` by default for new installations. For existing installations, the value will remain unchanged.
+ - Under ``CloudSettings`` in ``config.json``:
+     - Added ``PreviewModalBucketURL``.
 
 #### Changes to Professional and Enterprise plans: 
  - 
