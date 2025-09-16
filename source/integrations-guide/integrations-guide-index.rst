@@ -10,7 +10,7 @@ Integrations Guide
    run-slash-commands
    webhook-integrations
 
-Mattermost provides a variety of methods to integrate with your favorite tools, automate critical workflows, and extend the capabilities of the platform. This guide provides a high-level overview of integration options and the level of technical skills required (no-code, low-code, or pro-code), and links to detailed documentation for each.
+Mattermost provides a variety of methods to integrate with your favorite tools, automate critical workflows, and extend the capabilities of the platform. This guide provides a high-level overview of integration options and the level of technical skills required `(no-code, low-code, or pro-code) <https://docs.mattermost.com/integrations-guide/integrations-guide-index.html#frequently-asked-questions>`_, and links to detailed documentation for each.
 
 
 Connect your tools
@@ -29,7 +29,7 @@ Pre-built plugins
 
 Mattermost provides a set of pre-built plugins that require no coding to install, configure and use. These plugins are installed and managed entirely through the System Console, where you can enable, configure, and customize settings without any development work, making it simple for teams to extend Mattermost with powerful integrations for project management, incident response, monitoring, and collaboration. With simple configuration steps, you can quickly connect Mattermost to widely used tools such as Jira, GitHub, GitLab, Zoom, ServiceNow and others, enabling powerful integrations that enhance collaboration and streamline workflows out of the box.
 
-Learn more about what popular pre-built integrations are available and how to install them `here <https://developers.mattermost.com/integrate/plugins/>`_.
+Learn more about what popular `pre-built integrations are available and how to install them <https://developers.mattermost.com/integrate/plugins/>`_.
 
 
 
@@ -57,7 +57,7 @@ Building a custom plugin is a **software development** task, using ``Go`` for th
 Plugins can authenticate and interact with Mattermost through `bot accounts <https://developers.mattermost.com/integrate/reference/bot-accounts/>`_, utilizing the `RESTful API <https://developers.mattermost.com/api-documentation/>`_.
 
 
-Learn more about building your own plugin `here <https://developers.mattermost.com/integrate/plugins/>`_.
+Learn more about `building your own plugin <https://developers.mattermost.com/integrate/plugins/>`_.
 
 
 Webhooks
@@ -65,7 +65,7 @@ Webhooks
 
 Webhooks enable Mattermost to send and receive real-time data between your workspace and external applications. Webhooks require minimal coding and are easy to set up with virtually any tool or platform because they use lightweight HTTP POST requests with JSON payloads.
 
-Additionally, Mattermost webhook payloads are `fully compatible <https://docs.mattermost.com/integrations-guide/incoming-webhooks.html#slack-compatibility>`_ with Slack’s webhook format to make migration easier.
+Additionally, Mattermost webhook payloads are :doc:`fully compatible </integrations-guide/incoming-webhooks/page:slack compatibility>` with Slack’s webhook format to make migration easier.
 
 Incoming Webhooks
 ^^^^^^^^^^^^^^^^^
@@ -76,7 +76,7 @@ Incoming webhooks allow external applications to post messages into Mattermost c
 
 Using incoming webhooks in Mattermost requires only basic setup. You generate a webhook URL using the Mattermost interface, then point another service to send data to that address. No coding is required if your external service triggering the events is able to send data via webhooks or HTTP POST requests, which most modern applications and platforms support. Setting this up usually involves pasting the Mattermost webhook URL into the service’s settings and selecting what type of events you want it to send. 
 
-Learn more about incoming webhooks `here <https://docs.mattermost.com/integrations-guide/incoming-webhooks.html>`_.
+Learn more about :doc:`incoming webhooks </integrations-guide/incoming-webhooks>`.
 
 
 **Examples**
@@ -107,7 +107,7 @@ Outgoing webhooks require no coding to configure on in Mattermost, however the e
 Outgoing webhooks can be used to create rich, interactive experiences in Mattermost by letting external services respond with rich message attachments, such as structured fields, buttons, and menus. Additionally, these responses can trigger interactive dialog forms where users provide additional input directly in Mattermost, or interactive messages that update dynamically based on user actions. Together, these capabilities turn simple keyword triggers into powerful in-product workflows that streamline how teams interact with external systems - all with minimal coding required. 
 
 
-Learn more about outgoing webhooks `here <https://docs.mattermost.com/integrations-guide/outgoing-webhooks.html>`_.
+Learn more about :doc:`outgoing webhooks </integrations-guide/outgoing-webhooks>`.
 
 
 **Examples**
@@ -136,7 +136,7 @@ Pre-built slash commands
 
 These out-of-the-box commands enable command line interaction with users, channels, and conversations. Examples of pre-built slash commands include ``/invite`` to add teammates to a channel, ``/header`` to set a channel description, or ``/call`` to start or join a call in a channel.
 
-Learn more about pre-built slash commands `here <https://docs.mattermost.com/integrations-guide/built-in-slash-commands.html>`_.
+Learn more about :doc:`pre-built slash commands </integrations-guide/built-in-slash-commands>`.
 
 
 Custom slash commands
@@ -149,7 +149,7 @@ Slash commands are similar to an outgoing webhooks, but instead of listening for
 Mattermost's slash command format is Slack compatible, so you can easily migrate your commands from Slack.
 
 
-Learn more about building custom slash commands `here <https://developers.mattermost.com/integrate/slash-commands/custom/>`_.
+Learn more about :doc:`building custom slash commands </integrate/slash-commands/custom/>`.
 
 
 **Examples**
@@ -192,7 +192,7 @@ Here are some example use cases for API integration in Mattermost:
    Build a script or integration that posts messages or reminders into specific channels on a schedule, such as daily stand-up prompts, release announcements, or security notifications.
 
 
-Learn more about using the API and available endpoints `here <https://developers.mattermost.com/api-documentation/>`_.
+Learn more about using the `API and available endpoints <https://developers.mattermost.com/api-documentation/>`_.
 
 
 
