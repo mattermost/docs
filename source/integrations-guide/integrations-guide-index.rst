@@ -65,7 +65,7 @@ Webhooks
 
 Webhooks enable Mattermost to send and receive real-time data between your workspace and external applications. Webhooks require minimal coding and are easy to set up with virtually any tool or platform because they use lightweight HTTP POST requests with JSON payloads.
 
-Additionally, Mattermost webhook payloads are :doc:`fully compatible </integrations-guide/incoming-webhooks/page:slack compatibility>` with Slack’s webhook format to make migration easier.
+Additionally, Mattermost webhook payloads are :ref:`fully compatible </integrations-guide/incoming-webhooks/page:slack compatibility>` with Slack’s webhook format to make migration easier.
 
 Incoming Webhooks
 ^^^^^^^^^^^^^^^^^
