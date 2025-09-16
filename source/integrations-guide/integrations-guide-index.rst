@@ -38,7 +38,7 @@ Learn more about what popular pre-built integrations are available and how to in
   :width: 800
 
 .. note::
-The `Mattermost Marketplace <https://mattermost.com/marketplace/>`_ offers an expanded selection of community supported integrations. 
+  The `Mattermost Marketplace <https://mattermost.com/marketplace/>`_ offers an expanded selection of community supported integrations. 
 
 
 Custom-built plugins
