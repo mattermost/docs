@@ -829,6 +829,10 @@ Maximum idle connections
 |                                                        | - Environment variable: ``MM_SQLSETTINGS_MAXIDLECONNS``                 |
 | Numerical input. Default is **50**.                    |                                                                         |
 | A 2:1 ratio with MaxOpenConns is recommended.          |                                                                         |
+| database.                                              | - ``config.json`` setting: ``SqlSettings`` > ``MaxOpenConns`` > ``300`` |
+|                                                        | - Environment variable: ``MM_SQLSETTINGS_MAXOPENCONNS``                 |
+| Numerical input. Default is **300** for self-hosted    |                                                                         |
+| deployments, and **100** for Cloud deployments.        |                                                                         |
 +--------------------------------------------------------+-------------------------------------------------------------------------+
 
 .. config:setting:: query-timeout
