@@ -6,9 +6,20 @@ Important Upgrade Notes
 We recommend reviewing the `additional upgrade notes <#additional-upgrade-notes>`__ at the bottom of this page.
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| If you’re upgrading                                | Then...                                                                                                                                                          |
+| If you're upgrading                                | Then...                                                                                                                                                          |
 | from a version earlier than...                     |                                                                                                                                                                  |
 +====================================================+==================================================================================================================================================================+
+| v11.0                                              | **Major Release Upgrade Notes**:                                                                                                                                |
+|                                                    |                                                                                                                                                                  |
+|                                                    | - GitLab SSO will be deprecated from Team Edition. See `this forum post`_ for migration details.                                                               |
+|                                                    | - MySQL support is being removed - migrate to PostgreSQL before upgrading.                                                                                     |
+|                                                    | - The bcrypt password hashing method will be deprecated in favor of PBKDF2. Downgrading from v11 will leave migrated users unable to log in.                 |
+|                                                    | - Experimental Bleve Search functionality will be retired.                                                                                                      |
+|                                                    | - All telemetry support will be removed from Mattermost.                                                                                                       |
+|                                                    | - Several other changes listed in the `deprecated features`_ documentation.                                                                                     |
+|                                                    |                                                                                                                                                                  |
+|                                                    | **Review the full v11.0 changelog and deprecated features documentation before upgrading.**                                                                     |
++----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v10.10                                             | Added a new column ``DefaultCategoryName`` to the ``Channels`` table. This is nullable and stores a category name to be added/created when new users join a      |
 |                                                    | channel. This is only used if the ``ExperimentalChannelCategorySetting`` is enabled. The migrations are fully backwards-compatible and no table locks or         |
 |                                                    | existing operations on the table are impacted by this upgrade. Zero downtime is expected when upgrading to this release. The SQL queries included are:           |
@@ -1559,6 +1570,8 @@ We recommend reviewing the `additional upgrade notes <#additional-upgrade-notes>
 
 .. _000141_add_remoteid_channelid_to_post_acknowledgements.down.sql: https://github.com/mattermost/mattermost/blob/release-10.10/server/channels/db/migrations/postgres/000141_add_remoteid_channelid_to_post_acknowledgements.down.sql
 .. _000141_add_remoteid_channelid_to_post_acknowledgements.up.sql: https://github.com/mattermost/mattermost/blob/release-10.10/server/channels/db/migrations/postgres/000141_add_remoteid_channelid_to_post_acknowledgements.up.sql
+.. _this forum post: https://forum.mattermost.com/t/mattermost-v11-changes-in-free-offerings/25126
+.. _deprecated features: https://docs.mattermost.com/product-overview/deprecated-features.html
 
 Additional upgrade notes
 ------------------------
