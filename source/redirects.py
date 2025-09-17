@@ -2894,6 +2894,8 @@ redirects_map = {
         "https://developers.mattermost.com/integrate/slash-commands/",
 "integrations-guide/pre-built-integrations.html":
         "https://docs.mattermost.com/integrations-guide/popular-integrations.html",
+"integrations-guide/popular-integrations.html#third-party-integrations":
+        "https://docs.mattermost.com/integrations-guide/popular-integrations.html",
 
 # Manage redirects
 "manage/admin/attribute-based-access-control.html":

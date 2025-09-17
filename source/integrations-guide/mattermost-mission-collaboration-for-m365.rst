@@ -4,7 +4,7 @@ Connect Microsoft 365, Teams, and Outlook with Mattermost
 .. include:: ../_static/badges/ent-adv-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost Mission Collaboration for Microsoft extends Microsoft for mission-critical coordination, command and control, incident response, and DevSecOps workflows in demanding environments, including air-gapped and classified networks. Use data-sovereign tools like secure chat, Playbooks, and Calls directly within M365, Teams, and Outlook.
+Mattermost Mission Collaboration for Microsoft extends Microsoft for mission-critical coordination, command and control, incident response, and DevSecOps workflows in demanding environments, including air-gapped and classified networks by embedding Mattermost inside Teams. Use data-sovereign tools like secure chat, Playbooks, and Calls directly within M365, Teams, and Outlook.
 
 This app is designed to work with Microsoft 365, Teams, and Outlook and is currently in :ref:`Beta <administration-guide/manage/feature-labels:beta>`. From Mattermost v10.9, this integration supports third-party Single Sign-On (SSO). See the :doc:`user provisioning </administration-guide/manage/admin/user-provisioning>` product documentation for details on setting up SSO.
 
@@ -129,6 +129,9 @@ Use
 This plugin supports automatic authentication when logged into Microsoft Teams. Teams authentication automatically logs users into Mattermost if the email addresses in both platforms match exactly. Regular authentication methods (LDAP, SAML, email/password, OpenID) can additionally be used for Mattermost.
 
 In air-gapped environments or during business continuity disruptions, users who can't join Microsoft Teams, can continue to access Mattermost using their Mattermost credentials by opening Mattermost in a separate app (e.g., in a new browser window). Alternatively, a Mattermost admin can pre-distribute the Mattermost desktop app using Windows MSI or the mobile app via EMM.
+
+.. image:: ../images/mattermost-in-msteams.png
+  :alt: Mattermost embedded in a Microsoft Teams tab.
 
 FAQ
 ---
