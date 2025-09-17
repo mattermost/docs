@@ -32,6 +32,7 @@ Mattermost Server v11.0.0 (October 2025)
 - Deprecated mmctl commands and flags have been removed.
 - Experimental certificate-based authentication feature has been removed. ``ExperimentalSettings.ClientSideCertEnable`` must be ``false`` to start the server.
 - The bcrypt password hashing method has been deprecated in favor of PBKDF2. Downgrading the server from v11 to a previous version will leave users whose password was migrated unable to log in. Admins need to manually reset user passwords until the server is upgraded back to v11.
+- ``/api/v4/teams/{team_id}/channels/search_archived`` has been deprecated in favour of ``/api/v4/channels/search`` with the deleted parameter.
 - Separate notification log file has been deprecated. If admins want to continue using a separate log file for notification logs, they can use the ``AdvancedLoggingJSON`` configuration. An example configuration to use is:
 
 .. code-block:: sh
