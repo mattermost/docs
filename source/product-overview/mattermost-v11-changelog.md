@@ -32,9 +32,6 @@
 If you upgrade from a release earlier than v10.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
 ```
 
-### Highlights
- - Introduced support for Mattermost Entry Edition with Message History Limits.
-
 ### Improvements
 
 #### User Interface (UI)
@@ -44,27 +41,28 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
  - Pre-packaged Playbooks plugin [v2.4.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.4.1), allowing Professional licenses to use playbooks v2.
  - Removed Playbooks v1 from pre-packaged plugins.
  - Updated the library used for customizing scrollbars.
+ - Increased page size when retrieving posts in channels with high number of hidden messages.
 
 #### Administration
+ - Introduced support for Mattermost Entry Edition with message history limits.
  - User limits were lowered to final threshold of 250 for Mattermost Team Edition (MIT-Compiled License).
- - Added support for a new ``EmailNotificationWillBeSent`` plugin hook.
  - PBKDF2 is now used as the new key derivation algorithm for remote cluster invitations. We do this in a backward compatible way such that invitations generated from new/old clusters work in all clusters.
  - Updated the default SAML signature algorithm from SHA1 to SHA256 for improved security.
  - Added admin-managed property fields to Custom Profile Attributes.
  - Admin managed Custom Profile Attribute fields can now be used as part of Attribute Based Access Control policies.
  - System Admins can now mark Custom Profile Attribute fields as “admin managed” from the System Console.
  - Added Channel-Level Attribute-Based Access Control (Available only in Enterprise Advanced). Channel Admins can now configure attribute-based access rules directly in Channel Settings through a new Access Control tab when the ``EnableChannelScopeAccessControl`` setting is enabled.
- - Added Elasticsearch test to Support Packet diagnostics.
+ - Channel access control policies now support multiple parent inheritances.
  - Implemented dynamic select for interactive dialogs.
  - Updated interactive dialogs to use the apps form framework.
  - Implemented multi-select for interactive dialogs.
  - ``UserId`` and ``TeamId`` are now passed in interactive dialog submissions.
- - Increased page size when retrieving posts in channels with high number of hidden messages.
- - User ``auth_data`` is now shown in the System Console user details page.
- - Channel access control policies now support multiple parent inheritances.
  - Changed default database connection pool settings: changed ``MaxOpenConns`` from 300 to 100 and ``MaxIdleConns`` from 20 to 50, establishing a healthier 2:1 ratio for better database connection management.
  - Stopped supporting manually installed plugins as per https://forum.mattermost.com/t/deprecation-notice-manual-plugin-deployment/21192.
  - Mattermost profile image is now deleted when LDAP profile picture is deleted.
+ - User ``auth_data`` is now shown in the System Console user details page.
+ - Added Elasticsearch test to Support Packet diagnostics.
+ - Added support for a new ``EmailNotificationWillBeSent`` plugin hook.
 
 #### mmctl
  - Removed deprecated mmctl commands and flags:
@@ -76,33 +74,28 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
     - ``permissions show`` - use ``permissions role show``
  - Added ``mmctl user edit`` command.
  - Updated mmctl shell completion to fully support zsh, powershell, and fish. Check out ``mmctl completion`` for a guide on how to set it up for your shell.
- - Added mmctl commands to manipulate Custom Profile Attribute values.
  - Added a set of mmctl commands to manage Custom Profile Attributes.
 
 ### Bug Fixes
  - Fixed an issue where extra date separators were added in search results, pinned posts and saved messages.
  - Fixed an issue where MFA warning was thrown in the logs for unauthenticated plugin requests.
  - Fixed an issue that prevented new users from searching channels right after joining a team when Elasticsearch was enabled.
- - Fixed some crashes in the threads screen. 
+ - Fixed some crashes in the threads screen.
 
 ### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to all plans:
- - Removed ``VerboseDiagnostics`` configuration setting as part of removing all telemetry support from Mattermost.
- - Removed ``BleveSettings`` configuration setting as part of removing Bleve.
- - Removed ``NotificationLogSettings`` as part of deprecating the separate notification log file.
- - Removed ``ClientSideCertCheck`` as part of removing the experimental certificate-based authentication feature.
  - Under ``ServiceSettings`` in ``config.json``:
      - ``ExperimentalStrictCSRFEnforcement`` has been renamed to ``StrictCSRFEnforcement`` and has been changed to be ``true`` by default for new installations. For existing installations, the value will remain unchanged.
  - Under ``CloudSettings`` in ``config.json``:
      - Added ``PreviewModalBucketURL``.
+ - Removed ``VerboseDiagnostics`` configuration setting as part of removing all telemetry support from Mattermost.
+ - Removed ``BleveSettings`` configuration setting as part of removing Bleve.
+ - Removed ``NotificationLogSettings`` as part of deprecating the separate notification log file.
 
-#### Changes to Professional and Enterprise plans: 
- - 
-
-#### Changes to Enterprise Advanced plan: 
- - 
+#### Changes to Enterprise and Enterprise Advanced plans: 
+ - Removed ``ClientSideCertCheck`` as part of removing the experimental certificate-based authentication feature.
 
 ### API Changes
  - Added a counting plugin API for properties.
@@ -110,10 +103,10 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - Added a new API endpoint ``POST /api/v4/groups/names``.
 
 ### Open Source Components
- - Added ``simplebar-react`` and removed ``go-sql-driver/mysql``, ``blevesearch/bleve`` and ``axios`` from https://github.com/mattermost/mattermost/. 
+ - Added ``simplebar-react``, and removed ``go-sql-driver/mysql``, ``blevesearch/bleve`` and ``axios`` from https://github.com/mattermost/mattermost/. 
 
 ### Go Version
- - v11.0 is built with Go v1.24.5.
+ - v11.0 is built with Go ``v1.24.5``.
 
 ### Contributors
  - 
