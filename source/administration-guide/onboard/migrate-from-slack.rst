@@ -8,6 +8,9 @@ Migrate from Slack
 
   `Slack's data control policies may change at any time <https://x.com/Austen/status/1752064934970896626>`_. Also, Slack may choose to change its export capabilities, and/or charge fees to customers for exporting data stored in Slack. Support for negotiating export of customer IP from Slack Enterprise can be requested by contacting a `Mattermost Expert <https://mattermost.com/contact-sales/>`_.
 
+Overview
+--------
+
 Migrating from Slack to Mattermost involves the following steps:
 
 1. `Prepare your Mattermost server <#prepare-your-mattermost-server>`__
@@ -16,8 +19,10 @@ Migrating from Slack to Mattermost involves the following steps:
 4. `Convert the Slack import to Mattermost's format <#convert-slack-import-to-mattermost-s-bulk-export-format>`__
 5. `Import data into Mattermost <#import-data-into-mattermost>`__
 
+
+
 1. Prepare your Mattermost server
----------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 During the import process, we advise to create a new team for importing the Slack workspace data. If merging multiple Slack workspaces into a single team is the desired end-result, we recommend completing the import to separate teams, validating the results, then using :ref:`mmctl <administration-guide/manage/mmctl-command-line-tool:mmctl channel move>` to move channels between teams.
 
@@ -26,7 +31,7 @@ Also, system administrator roles will be overwritten if the usernames match and 
 Make sure you are running on a supported version of :doc:`Mattermost </product-overview/mattermost-server-releases/>` to benefit from the most up-to-date functionality and fixes.
 
 2. Generate a Slack import
---------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Slack offers two ways to `export your data from their product <https://slack.com/help/articles/201658943-Export-your-workspace-data>`_.
 
@@ -50,7 +55,7 @@ You will receive a zip file containing the following contents:
   - As a proprietary SaaS service, Slack is able to change its export format quickly and without notice. If you encounter issues not mentioned in the following documentation, please let the Mattermost Product Team know by `filing an issue <https://handbook.mattermost.com/contributors/contributors/ways-to-contribute>`__.
 
 3. Download file attachments and email addresses
-------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When you download your Slack export zip file, some data will be missing from the zip file:
 
@@ -96,7 +101,7 @@ It's preferable to fetch e-mails first to avoid copying large attachments around
   Avoid unzipping and rezipping the Slack export. Doing so can modify the directory structure of the archive which could cause issues with the import process.
 
 4. Convert Slack import to Mattermost's bulk export format
-----------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Now that you have a Slack export file with emails and attachments, let's convert this information into Mattermost's bulk import format using the import preparation tool ``mmetl``. 
 
@@ -115,7 +120,7 @@ The tool outputs a `.jsonl <https://jsonlines.org/examples>`__ file containing a
   It doesn't matter what you name the ``.jsonl`` file. You can name it what you want with the `--output` flag as shown above. It just needs to be a ``.jsonl`` file.
 
 5. Import data into Mattermost
-------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can upload the export through Mattermost's API from the server or from another computer using mmctl commands. The server will save the import in its file store before running the import (e.g. AWS S3), so there will be time spent uploading/downloading the file in this case. 
 
