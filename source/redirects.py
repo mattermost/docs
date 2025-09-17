@@ -81,7 +81,7 @@ redirects_map = {
 "about/faq-notifications.html":
         "https://docs.mattermost.com/end-user-guide/preferences/troubleshoot-notifications#frequently-asked-questions.html",
 "about/faq-product.html":
-        "https://docs.mattermost.com/product-overview/client-availability.html",
+        "https://docs.mattermost.com/end-user-guide/collaborate/client-availability.html",
 "about/faq-use-cases.html":
         "https://docs.mattermost.com/product-overview/faq-use-cases.html",
 "about/faq-video-audio-screensharing.html":
@@ -941,14 +941,10 @@ redirects_map = {
         "https://docs.mattermost.com/administration-guide/configure/configuration-settings.html",
 "configure/compliance-configuration-settings.html":
         "https://docs.mattermost.com/administration-guide/configure/compliance-configuration-settings.html",
-"configure/config-proxy-apache2.html":
-        "https://docs.mattermost.com/administration-guide/configure/config-proxy-apache2.html",
 "configure/config-ssl-http2-apache2.html":
 	"https://forum.mattermost.com/t/configuring-apache2-with-ssl-and-http-2/11939",
 "configure/configuration-in-your-database.html":
         "https://docs.mattermost.com/administration-guide/configure/configuration-in-your-database.html",
-"configure/configuring-apache2.html":
-        "https://forum.mattermost.com/t/configuring-apache2-as-a-proxy-for-mattermost-server/11938",
 "configure/custom-branding-tools.html":
         "https://docs.mattermost.com/administration-guide/configure/custom-branding-tools.html",
 "configure/customize-mattermost.html":
@@ -2653,8 +2649,6 @@ redirects_map = {
         "https://docs.mattermost.com/deployment-guide/server/deploy-linux.html",
 "install/enterprise-install-upgrade.html":
         "https://docs.mattermost.com/administration-guide/upgrade/enterprise-install-upgrade.html",
-"install/config-apache2.html":
-        "https://forum.mattermost.com/t/configuring-apache2-as-a-proxy-for-mattermost-server/11938",
 "install/desktop.html":
         "https://docs.mattermost.com/end-user-guide/collaborate/install-desktop-app.html",
 "install/desktop-managed-resources.html":
@@ -2858,6 +2852,12 @@ redirects_map = {
         "https://docs.mattermost.com/integrations-guide/mattermost-mission-collaboration-for-m365.html",
 "integrate/microsoft-calendar.html":
         "https://docs.mattermost.com/integrations-guide/microsoft-calendar.html",
+"integrate/microsoft-calendar-interoperability.html#usage":
+        "https://docs.mattermost.com/integrations-guide/microsoft-calendar.html#use",
+"integrate/microsoft-calendar-interoperability.html#setup":
+        "https://docs.mattermost.com/integrations-guide/microsoft-calendar.html#deploy",
+"integrate/microsoft-calendar-interoperability.html#enable-and-configure-the-microsoft-teams-meetings-integration-in-mattermost":
+        "https://docs.mattermost.com/integrations-guide/microsoft-calendar.html#enable-and-configure-the-microsoft-calendar-integration-in-mattermost",
 "integrate/microsoft-teams-meetings.html":
         "https://docs.mattermost.com/integrations-guide/microsoft-teams-meetings.html",
 "integrate/microsoft-teams-sync.html":
@@ -2893,6 +2893,8 @@ redirects_map = {
 "integrations/cloud-slash-commands.html":
         "https://developers.mattermost.com/integrate/slash-commands/",
 "integrations-guide/pre-built-integrations.html":
+        "https://docs.mattermost.com/integrations-guide/popular-integrations.html",
+"integrations-guide/popular-integrations.html#third-party-integrations":
         "https://docs.mattermost.com/integrations-guide/popular-integrations.html",
 
 # Manage redirects
@@ -3957,6 +3959,8 @@ redirects_map = {
 
 "product-overview/faq-business.html":
         "https://docs.mattermost.com/product-overview/faq-license.html",
+"product-overview/mattermost-v9-changelog.html":
+        "https://docs.mattermost.com/product-overview/unsupported-legacy-releases.html",
 
 # Preferences redirects
 "preferences/connect-multiple-workspaces.html":

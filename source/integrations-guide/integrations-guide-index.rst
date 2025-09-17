@@ -31,8 +31,6 @@ Mattermost provides a set of pre-built plugins that require no coding to install
 
 Learn more about what popular `pre-built integrations are available and how to install them <https://developers.mattermost.com/integrate/plugins/>`_.
 
-
-
 .. image:: ../images/prebuilt-integrations.png
   :alt: Pre-built plugins available for no-code integration
   :width: 800
