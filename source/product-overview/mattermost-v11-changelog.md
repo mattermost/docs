@@ -25,7 +25,8 @@
  - Removed Bleve as part of v11 breaking changes.
  - Deprecated the separate notification log file.
  - Removed experimental certificate-based authentication feature; ``ExperimentalSettings.ClientSideCertEnable`` must be false to start the server.
- - ``ServiceSettings.StrictCSRFEnforcement`` has been changed to be ``true`` by default for new installations. For existing installations, the value will remain unchanged. 
+ - ``ServiceSettings.StrictCSRFEnforcement`` has been changed to be ``true`` by default for new installations. For existing installations, the value will remain unchanged.
+ - ``/api/v4/teams/{team_id}/channels/search_archived`` has been deprecated in favour of ``/api/v4/channels/search`` with the deleted parameter.
 
 ```{Important}
 If you upgrade from a release earlier than v10.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
