@@ -133,11 +133,8 @@ In air-gapped environments or during business continuity disruptions, users who 
 .. image:: ../images/mattermost-in-msteams.png
   :alt: Mattermost embedded in a Microsoft Teams tab.
 
-FAQ
----
-
-Get help
-~~~~~~~~~
+Get Help
+---------
 
 Mattermost commercial customers can open a `Mattermost support case <https://support.mattermost.com/hc/en-us/requests/new>`_. 
 
