@@ -27,7 +27,7 @@ Mattermost Server v11.0.0 (October 2025)
 - The web app is no longer exposing the `Styled Components <https://styled-components.com/>`__ dependency for use by web app plugins. See more details in `this forum post <https://forum.mattermost.com/t/removing-styled-components-export-for-web-app-plugins-v11/25002>`__.
 - Omnibus support has been deprecated. The last ``mattermost-omnibus`` release was v10.12. See more details in `this forum post <https://forum.mattermost.com/t/mattermost-omnibus-to-reach-end-of-life-v11/25175>`__.
 - Deprecated ``include_removed_members`` option in ``api/v4/ldap/sync`` have been removed. Admins can use the LDAP setting ``ReAddRemovedMembers``.
-- All telemetry support have been removed from Mattermost. The system no longer collects or sends telemetry data to external services.
+- All telemetry support have been removed from Mattermost. The system no longer collects or sends telemetry data to external services. Customers that have the NPS plugin enabled can remove it as it no longer sends the feedback over through telemetry.
 - Format query parameter requirement in ``/api/v4/config/client`` endpoint has been deprecated.
 - Deprecated mmctl commands and flags have been removed.
 - Experimental certificate-based authentication feature has been removed. ``ExperimentalSettings.ClientSideCertEnable`` must be ``false`` to start the server.
