@@ -13,12 +13,43 @@ Overview
 
 Migrating from Slack to Mattermost involves the following steps:
 
+1. **Preparations**:
+   - Answer key scoping questions.
+   - Gather environment and export details.
+   - Validate Mattermost server capacity and configuration.
+   - Back up your Mattermost environment before importing.
+
+2. **Export Slack data**:
+   - Generate an export from Slack in the user interface or by contacting Slack directly.
+   - Download file attachments and email addresses using the ``slack_advanced_exporter``
+
+3. **Transform the export for Mattermost**:
+   - Use the ``mmetl`` tool to parse and transform Slack exports.
+
+4. **Import into Mattermost**:
+   - Upload and process transformed archives with ``mmctl``.
+
+5. **Validate and test**:
+   - Confirm channel and user data imported correctly.
+   - Run database queries to fix any unread states.
+   - Re-enable Elasticsearch if disabled.
+
+6. **Go live**:
+   - Communicate the cutover plan to users.
+   
+
+
+Migrating from Slack to Mattermost involves the following steps:
+
 1. `Prepare your Mattermost server <#prepare-your-mattermost-server>`__
 2. `Generate a Slack import <#generate-a-slack-import>`__
 3. `Download file attachments and email addresses <#download-file-attachments-and-email-addresses>`__
 4. `Convert the Slack import to Mattermost's format <#convert-slack-import-to-mattermost-s-bulk-export-format>`__
 5. `Import data into Mattermost <#import-data-into-mattermost>`__
 
+
+Migrations Steps
+----------------
 
 
 1. Prepare your Mattermost server
