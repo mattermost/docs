@@ -1570,8 +1570,6 @@ We recommend reviewing the `additional upgrade notes <#additional-upgrade-notes>
 
 .. _000141_add_remoteid_channelid_to_post_acknowledgements.down.sql: https://github.com/mattermost/mattermost/blob/release-10.10/server/channels/db/migrations/postgres/000141_add_remoteid_channelid_to_post_acknowledgements.down.sql
 .. _000141_add_remoteid_channelid_to_post_acknowledgements.up.sql: https://github.com/mattermost/mattermost/blob/release-10.10/server/channels/db/migrations/postgres/000141_add_remoteid_channelid_to_post_acknowledgements.up.sql
-.. _this forum post: https://forum.mattermost.com/t/mattermost-v11-changes-in-free-offerings/25126
-.. _deprecated features: https://docs.mattermost.com/product-overview/deprecated-features.html
 
 Additional upgrade notes
 ------------------------
