@@ -56,36 +56,36 @@ We recommend reviewing the `additional upgrade notes <#additional-upgrade-notes>
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | ``/api/v4/teams/{team_id}/channels/search_archived`` has been deprecated in favour of ``/api/v4/channels/search`` with the deleted parameter.                    |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                    | Separate notification log file has been deprecated. If admins want to continue using a separate log file for notification logs, they can use the 
-|                                                    | ``AdvancedLoggingJSON`` configuration. An example configuration to use is:
-|                                                    | 
-|                                                    | .. code-block:: sh
-|                                                    | 
-|                                                    |   {
-|                                                    |     "LogSettings": {
-|                                                    |       "AdvancedLoggingJSON": {
-|                                                    |         "notifications_file": {
-|                                                    |           "type": "file",
-|                                                    |           "format": "json",
-|                                                    |           "levels": [
-|                                                    |               {"id": 300, "name": "NotificationError"},
-|                                                    |               {"id": 301, "name": "NotificationWarn"},
-|                                                    |               {"id": 302, "name": "NotificationInfo"},
-|                                                    |               {"id": 303, "name": "NotificationDebug"},
+|                                                    | Separate notification log file has been deprecated. If admins want to continue using a separate log file for notification logs, they can use the                 |
+|                                                    | ``AdvancedLoggingJSON`` configuration. An example configuration to use is:                                                                                       |
+|                                                    |                                                                                                                                                                  |
+|                                                    | .. code-block:: sh                                                                                                                                               |
+|                                                    |                                                                                                                                                                  |
+|                                                    |   {                                                                                                                                                              |
+|                                                    |     "LogSettings": {                                                                                                                                             |
+|                                                    |       "AdvancedLoggingJSON": {                                                                                                                                   |
+|                                                    |         "notifications_file": {                                                                                                                                  |
+|                                                    |           "type": "file",                                                                                                                                        |
+|                                                    |           "format": "json",                                                                                                                                      |
+|                                                    |           "levels": [                                                                                                                                            |
+|                                                    |               {"id": 300, "name": "NotificationError"},                                                                                                          |
+|                                                    |               {"id": 301, "name": "NotificationWarn"},                                                                                                           |
+|                                                    |               {"id": 302, "name": "NotificationInfo"},                                                                                                           |
+|                                                    |               {"id": 303, "name": "NotificationDebug"},                                                                                                          |
 |                                                    |               {"id": 304, "name": "NotificationTrace"}                                                                                                           |
-|                                                    |           ],
-|                                                    |           "options": {
-|                                                    |               "filename": "notifications.log",
-|                                                    |               "max_size": 100,
-|                                                    |               "max_age": 0,
-|                                                    |               "max_backups": 0,
-|                                                    |               "compress": true
-|                                                    |           }, 
-|                                                    |           "maxqueuesize": 1000 
-|                                                    |         }
-|                                                    |       }
-|                                                    |     }
-|                                                    |   }
+|                                                    |           ],                                                                                                                                                     |
+|                                                    |           "options": {                                                                                                                                           |
+|                                                    |               "filename": "notifications.log",                                                                                                                   |
+|                                                    |               "max_size": 100,                                                                                                                                   |
+|                                                    |               "max_age": 0,                                                                                                                                      |
+|                                                    |               "max_backups": 0,                                                                                                                                  |
+|                                                    |               "compress": true                                                                                                                                   |
+|                                                    |           },                                                                                                                                                     |
+|                                                    |           "maxqueuesize": 1000                                                                                                                                   |
+|                                                    |         }                                                                                                                                                        |
+|                                                    |       }                                                                                                                                                          |
+|                                                    |     }                                                                                                                                                            |
+|                                                    |   }                                                                                                                                                              |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v10.10                                             | Added a new column ``DefaultCategoryName`` to the ``Channels`` table. This is nullable and stores a category name to be added/created when new users join a      |
 |                                                    | channel. This is only used if the ``ExperimentalChannelCategorySetting`` is enabled. The migrations are fully backwards-compatible and no table locks or         |
