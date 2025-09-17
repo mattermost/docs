@@ -34,33 +34,33 @@
  - Changed default database connection pool settings: changed ``MaxOpenConns`` from 300 to 100 and ``MaxIdleConns`` from 20 to 50, establishing a healthier 2:1 ratio for better database connection management.
  - Separate notification log file has been deprecated. If admins want to continue using a separate log file for notification logs, they can use the ``AdvancedLoggingJSON`` configuration. An example configuration to use is:
 
-.. code-block:: sh
-
-  {
-    "LogSettings": {
-      "AdvancedLoggingJSON": {
-        "notifications_file": {
-          "type": "file",
-          "format": "json",
-          "levels": [
-              {"id": 300, "name": "NotificationError"},
-              {"id": 301, "name": "NotificationWarn"},
-              {"id": 302, "name": "NotificationInfo"},
-              {"id": 303, "name": "NotificationDebug"},
-              {"id": 304, "name": "NotificationTrace"}
-          ],
-          "options": {
-              "filename": "notifications.log",
-              "max_size": 100,
-              "max_age": 0,
-              "max_backups": 0,
-              "compress": true
-          }, 
-          "maxqueuesize": 1000 
-        }
-      }
-    }
-  }
+ ```
+   {
+     "LogSettings": {
+       "AdvancedLoggingJSON": {
+         "notifications_file": {
+           "type": "file",
+           "format": "json",
+           "levels": [
+               {"id": 300, "name": "NotificationError"},
+               {"id": 301, "name": "NotificationWarn"},
+               {"id": 302, "name": "NotificationInfo"},
+               {"id": 303, "name": "NotificationDebug"},
+               {"id": 304, "name": "NotificationTrace"}
+           ],
+           "options": {
+               "filename": "notifications.log",
+               "max_size": 100,
+               "max_age": 0,
+               "max_backups": 0,
+               "compress": true
+           }, 
+           "maxqueuesize": 1000 
+         }
+       }
+     }
+   }
+ ```
 
 ```{Important}
 If you upgrade from a release earlier than v10.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
