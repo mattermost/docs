@@ -63,6 +63,7 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
  - Channel access control policies now support multiple parent inheritances.
  - Changed default database connection pool settings: changed ``MaxOpenConns`` from 300 to 100 and ``MaxIdleConns`` from 20 to 50, establishing a healthier 2:1 ratio for better database connection management.
  - Stopped supporting manually installed plugins as per https://forum.mattermost.com/t/deprecation-notice-manual-plugin-deployment/21192.
+ - Mattermost profile image is now deleted when LDAP profile picture is deleted.
 
 #### mmctl
  - Removed deprecated mmctl commands and flags:
