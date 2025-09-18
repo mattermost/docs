@@ -24,6 +24,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Added the ability to edit slash commands on playbooks tasks.
  - Added the ability to update the due date on playbook tasks.
  - Added the ability to edit the owner and the task assignee on playbooks.
+ - Added support for permalink previews on mobile.
 
 ### Bug Fixes
  - Fixed an issue where the playbooks option was not omitted in Direct/Group Messages.
