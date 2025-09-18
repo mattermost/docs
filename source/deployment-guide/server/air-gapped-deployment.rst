@@ -31,11 +31,11 @@ Once you have all the necessary resources in your air-gapped environment, you ca
 
 6. **Configure Mattermost for air-gapped operation**
 
-The :ref:`configuration settings </deployment-guide/server/air-gapped-deployment:server configuration>`_ recommended in this document accomodate for the lack of internet access to operate Mattermost in an air-gapped environment.
+The :ref:`configuration settings </deployment-guide/server/air-gapped-deployment:server configuration>` recommended in this document accomodate for the lack of internet access to operate Mattermost in an air-gapped environment.
 
 
 .. note::
-  Consider `talking to a Mattermost expert <https://mattermost.com/contact-sales/>`_ if your organization needs support deploying Mattermost or supporting services in an air-gapped environment.
+  Consider `talking to a Mattermost expert <https://mattermost.com/contact-sales/>`_ if your organization needs support deploying Mattermost and supporting services in an air-gapped environment.
 
 
 Bill of Materials
@@ -89,12 +89,12 @@ On an internet connect machine, you must gather all required packages, container
     - Database: `PostgreSQL <https://hub.docker.com/_/postgres>`_ image.
     - Load balancer: If you already have a load balancer running in your air-gapped environment you can skip this resource, otherwise we recommend deploying `NGINX <https://docs.mattermost.com/deployment-guide/server/setup-nginx-proxy.html>`_ from this `images <https://hub.docker.com/_/nginx>`_.
 
-   **(Optional) Supporting Services**
+    **(Optional) Supporting Services**
     Consider downloading these additional resources if you plan to enable these optional components:
 
-   - :doc:`Mattermost Calls </administration-guide/configure/calls-deployment>` images: `calls-offloader <https://hub.docker.com/r/mattermost/calls-offloader>`_ (required for recording, transcription and live captions) and `rtcd <https://hub.docker.com/r/mattermost/rtcd>`_ (required for performance and scalability).
-   - `Elasticsearch <https://hub.docker.com/_/elasticsearch>`_ image for enhanced search performance at scale.
-   - `Prometheus <https://hub.docker.com/r/prom/prometheus>`_ and `Grafana <https://hub.docker.com/r/grafana/grafana>`_ images for monitoring and observability.
+    - :doc:`Mattermost Calls </administration-guide/configure/calls-deployment>` images: `calls-offloader <https://hub.docker.com/r/mattermost/calls-offloader>`_ (required for recording, transcription and live captions) and `rtcd <https://hub.docker.com/r/mattermost/rtcd>`_ (required for performance and scalability).
+    - `Elasticsearch <https://hub.docker.com/_/elasticsearch>`_ image for enhanced search performance at scale.
+    - `Prometheus <https://hub.docker.com/r/prom/prometheus>`_ and `Grafana <https://hub.docker.com/r/grafana/grafana>`_ images for monitoring and observability.
 
 
 Mattermost Plugins
