@@ -14,7 +14,7 @@ Mattermost leverages built-in checks from the Expo framework to identify jailbro
 - On **Android**, the app looks for the presence of known jailbreak/root binaries, such as the ``su`` binary in ``/system/xbin/su``, which is a common indicator that the device has been rooted to allow unauthorized elevated access. 
 - On **iOS**, the detection process involves checking for unusual apps (e.g., Cydia), modified system paths, and testing whether the app can alter protected system files—all signs that the device may be jailbroken.
 
-See the :ref:`jailbreak/root protection configuration setting <administration-guide/configure/environment-configuration-settings:enable jailbreak/root protection>` documentation for details on enabling this feature.
+See the :ref:`jailbreak/root protection configuration setting <administration-guide/configuration-reference/environment-configuration-settings:enable jailbreak/root protection>` documentation for details on enabling this feature.
 
 .. note::
 
@@ -25,7 +25,7 @@ Biometric authentication
 
 Mattermost integrates with iOS Face ID/Touch ID and Android’s Biometric API. When enabled by the server administrator, biometric checks are required before accessing specific servers, and the Mattermost mobile app mandates that a device PIN or biometric lock is active.
 
-See the :ref:`biometric authentication configuration setting <administration-guide/configure/environment-configuration-settings:enable biometric authentication>` documentation for details on enabling this feature and the user workflows in which users must authenticate.
+See the :ref:`biometric authentication configuration setting <administration-guide/configuration-reference/environment-configuration-settings:enable biometric authentication>` documentation for details on enabling this feature and the user workflows in which users must authenticate.
 
 .. note::
 
@@ -40,7 +40,7 @@ Preventing screenshots and screen recordings protects sensitive information from
 
 - On **Android**, the app utilizes the FLAG_SECURE flag to block screen captures and recordings. 
 
-See the :ref:`prevent screen capture configuration setting <administration-guide/configure/environment-configuration-settings:prevent screen capture>` documentation for details on enabling this feature.
+See the :ref:`prevent screen capture configuration setting <administration-guide/configuration-reference/environment-configuration-settings:prevent screen capture>` documentation for details on enabling this feature.
 
 .. note::
 
@@ -51,7 +51,7 @@ Secure file previews
 
 Preventing file downloads protects sensitive information from being inadvertently or maliciously shared. This control is essential in ensuring that confidential documents and media remain within the secure confines of the app. By enabling in-app previews for supported file types and restricting downloads, Mattermost significantly reduces the risk of data leakage while maintaining essential file-viewing capabilities.
 
-See the :ref:`secure file preview <administration-guide/configure/site-configuration-settings:enable secure file preview on mobile>` and :ref:`managing PDF link navigation <administration-guide/configure/site-configuration-settings:allow pdf link navigation on mobile>` configuration settings documentation for details on enabling these features.
+See the :ref:`secure file preview <administration-guide/configuration-reference/site-configuration-settings:enable secure file preview on mobile>` and :ref:`managing PDF link navigation <administration-guide/configuration-reference/site-configuration-settings:allow pdf link navigation on mobile>` configuration settings documentation for details on enabling these features.
 
 Mobile data isolation
 ------------------------

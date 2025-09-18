@@ -17,7 +17,7 @@ Your channel sidebar includes :doc:`enhanced sidebar features </end-user-guide/p
 Group unread channels separately
 --------------------------------
 
-You can control whether unread channels are grouped together separately in the channel sidebar, unless your system admin has    :ref:`disabled your ability to do so <administration-guide/configure/experimental-configuration-settings:group unread channels>`.
+You can control whether unread channels are grouped together separately in the channel sidebar, unless your system admin has    :ref:`disabled your ability to do so <administration-guide/configuration-reference/experimental-configuration-settings:group unread channels>`.
 
 Select **Sidebar Settings > Group unread channels separately > Edit** to group unread channels at the top of the channel sidebar in an **Unreads** category.
 

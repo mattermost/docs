@@ -40,7 +40,7 @@ Direct message channels
 
 Direct message channels are for conversations between 2 people. Only members of the conversation can see direct messages and channel heading information, including the last active status of the other user.
 
-You can start a direct message with people on other teams :ref:`unless the system admin has disabled your ability to do so <administration-guide/configure/site-configuration-settings:enable users to open direct message channels with>`.  
+You can start a direct message with people on other teams :ref:`unless the system admin has disabled your ability to do so <administration-guide/configuration-reference/site-configuration-settings:enable users to open direct message channels with>`.  
 
 Direct messages update the numbered badge count and trigger a notification unless the direct message is muted, or your notifications are disabled. See the :doc:`notification documentation </end-user-guide/preferences/manage-your-notifications>` for details on customizing notifications based on your preferences.
 
@@ -58,13 +58,13 @@ Want to have a group conversation with more than 7 people? :doc:`Create a privat
 
 .. note::
 
-  - You can start a group message with people on other teams when :ref:`unless the system admin has disabled your ability to do so <administration-guide/configure/site-configuration-settings:enable users to open direct message channels with>`.
+  - You can start a group message with people on other teams when :ref:`unless the system admin has disabled your ability to do so <administration-guide/configuration-reference/site-configuration-settings:enable users to open direct message channels with>`.
   - From Mattermost v9.1, group messages increase the numbered badge count and trigger a notification unless the direct message is muted, or your notifications are disabled. Control how you're notified about group message conversations by going to **Settings > Notifications**. See the :doc:`notification documentation </end-user-guide/preferences/manage-your-notifications>` to learn more.
-  - Any group message history you have with a deactivated user remains available :ref:`unless your system admin disables your ability to do so <administration-guide/configure/site-configuration-settings:allow users to view archived channels>`.
+  - Any group message history you have with a deactivated user remains available :ref:`unless your system admin disables your ability to do so <administration-guide/configuration-reference/site-configuration-settings:allow users to view archived channels>`.
 
 Archived channels
 -----------------
 
 Archived channels are deactivated public, private, direct message, or group message channels that are no longer used. Archived channels are identified with a **File Box** |file-box| icon. 
 
-:ref:`Archiving a channel <end-user-guide/collaborate/archive-unarchive-channels:archive a channel>` marks it read-only to prevent new messages from being sent and preserve channel history. You can continue to access archived channels, unless your system admin has :ref:`disabled <administration-guide/configure/site-configuration-settings:allow users to view archived channels>` your ability to do so.
+:ref:`Archiving a channel <end-user-guide/collaborate/archive-unarchive-channels:archive a channel>` marks it read-only to prevent new messages from being sent and preserve channel history. You can continue to access archived channels, unless your system admin has :ref:`disabled <administration-guide/configuration-reference/site-configuration-settings:allow users to view archived channels>` your ability to do so.

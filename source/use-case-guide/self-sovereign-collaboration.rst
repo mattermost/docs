@@ -19,8 +19,8 @@ Managing global operations means adhering to regional regulations—without comp
 
 - **Meet global compliance mandates** like GDPR and data localization laws by deploying Mattermost in :doc:`public, private, or sovereign cloud environments </product-overview/cloud-subscriptions>` tailored to national regulatory frameworks.
 - **Ensure full data control and transparency** with :ref:`self-hosted deployment options <deployment-guide/server/server-deployment-planning:deployment options>` that eliminate exposure to vendor-controlled infrastructure or telemetry.
-- **Audit and enforce compliance behavior** with :ref:`role-based access controls <administration-guide/manage/team-channel-members:advanced access controls>`, :doc:`custom Terms of Service </administration-guide/comply/custom-terms-of-service>`, and :ref:`audit logging <administration-guide/manage/logging:audit logging>` to align with internal and regulatory standards.
-- **Protect identity and access** using :doc:`SSO integrations </administration-guide/onboard/sso-entraid>`, :doc:`AD/LDAP synchronization </administration-guide/onboard/ad-ldap-groups-synchronization>`, and :doc:`MFA enforcement </administration-guide/onboard/multi-factor-authentication>` for secure authentication across geographies and operational roles.
+- **Audit and enforce compliance behavior** with :ref:`role-based access controls <administration-guide/manage/team-channel-members:advanced access controls>`, :doc:`custom Terms of Service </administration-guide/compliance-security-auditing/custom-terms-of-service>`, and :ref:`audit logging <administration-guide/admin-tools/logging:audit logging>` to align with internal and regulatory standards.
+- **Protect identity and access** using :doc:`SSO integrations </administration-guide/identity-access/authentication-methods/sso/sso-entraid>`, :doc:`AD/LDAP synchronization </administration-guide/identity-access/ad-ldap-groups-synchronization>`, and :doc:`MFA enforcement </administration-guide/identity-access/multi-factor-authentication>` for secure authentication across geographies and operational roles.
 
 Secure, Sovereign Deployment at Any Scale
 -----------------------------------------
@@ -31,7 +31,7 @@ From national critical infrastructure to defense-grade networks, Mattermost offe
 
 - **Deploy in classified, air-gapped, or disconnected environments** using :doc:`Kubernetes-based deployments </deployment-guide/server/deploy-kubernetes>` and STIG-hardened container images to support classified operations and sensitive data workflows.
 - **Eliminate third-party monitoring** with full control over infrastructure, encryption keys, access policies, and system-level logging.
-- **Scale to meet operational growth** with :doc:`horizontal scalability architecture </administration-guide/scale/scaling-for-enterprise>` that supports tens of thousands of users in sovereign environments without degrading performance or control.
+- **Scale to meet operational growth** with :doc:`horizontal scalability architecture </administration-guide/operations-scaling/scaling-for-enterprise>` that supports tens of thousands of users in sovereign environments without degrading performance or control.
 - **Maintain operational continuity under cyber or supply chain disruption** using fully self-managed infrastructure that ensures collaboration continues even during cloud outages or external service failures.
 
 Interoperable Mission-Partner Collaboration
@@ -41,7 +41,7 @@ Cross-agency, multinational, or coalition collaboration requires sovereignty wit
 
 **Benefits**
 
-- **Create secure shared workspaces** with :doc:`Connected Workspaces Channels </administration-guide/onboard/connected-workspaces>` that synchronize discussions, reactions, and file sharing across trusted organizations—without exposing internal systems.
+- **Create secure shared workspaces** with :doc:`Connected Workspaces Channels </administration-guide/getting-started/connected-workspaces>` that synchronize discussions, reactions, and file sharing across trusted organizations—without exposing internal systems.
 - **Control access across organizations** with :doc:`attribute-based permissions </administration-guide/onboard/advanced-permissions>` and scoped identity policies to ensure mission alignment and sensitive information segmentation.
 - **Deploy sovereign AI and workflow automation** in isolated environments using :doc:`air-gapped AI operations </end-user-guide/agents>` and :doc:`Collaborative Playbooks </end-user-guide/workflow-automation>`—enabling intelligence and speed without compromising data control.
 - **Upgrade legacy platforms** like Skype for Business with modern, compliant tools for secure messaging, screen sharing, and team coordination. :doc:`See Skype for Business replacement options </use-case-guide/on-prem-skype-for-business-replacement>`.

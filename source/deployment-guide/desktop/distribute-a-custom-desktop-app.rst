@@ -60,7 +60,7 @@ Managed resources
 
 To configure managed resources, add their path to the ``managedResources`` field in your configuration file. Selecting a managed resource opens it as a pop-up window in the desktop app.
 
-Additionally, you must configure the :ref:Managed Resource Paths <administration-guide/configure/environment-configuration-settings:managed resource paths>` server configuration setting. For example, adding the ``/video`` path:  
+Additionally, you must configure the :ref:Managed Resource Paths <administration-guide/configuration-reference/environment-configuration-settings:managed resource paths>` server configuration setting. For example, adding the ``/video`` path:  
 
 .. code-block:: text
 

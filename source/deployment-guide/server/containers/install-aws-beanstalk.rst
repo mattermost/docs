@@ -26,6 +26,6 @@ The Elastic Beanstalk application creation process below combines Application an
 Enable Email (Recommended)
 -----------------------------
 
-The default Docker instance for Mattermost is designed for product evaluation, and sets ``SendEmailNotifications=false`` so the product can function without enabling email. To see the product's full functionality, we recommend :doc:`enabling SMTP email </administration-guide/configure/smtp-email>`.
+The default Docker instance for Mattermost is designed for product evaluation, and sets ``SendEmailNotifications=false`` so the product can function without enabling email. To see the product's full functionality, we recommend :doc:`enabling SMTP email </administration-guide/configuration-reference/smtp-email>`.
 
-See :doc:`Configuration Settings </administration-guide/configure/configuration-settings>` documentation for more configuration and customization options for your deployment.
+See :doc:`Configuration Settings </administration-guide/configuration-reference/configuration-settings>` documentation for more configuration and customization options for your deployment.

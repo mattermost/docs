@@ -8,5 +8,5 @@
 - :doc:`GitLab </integrations-guide/gitlab>` 
 - :doc:`Jira </integrations-guide/jira>` 
 - :doc:`ServiceNow </integrations-guide/servicenow>` 
-- :doc:`User Survey </administration-guide/configure/manage-user-surveys>`
+- :doc:`User Survey </administration-guide/configuration-reference/manage-user-surveys>`
 - :doc:`Zoom </integrations-guide/zoom>`

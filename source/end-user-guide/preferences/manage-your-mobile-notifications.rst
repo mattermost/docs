@@ -66,7 +66,7 @@ You can manage your mobile notifications in both the desktop app and the mobile 
 Incoming Call notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Want to hear a sound on your mobile device when a Mattermost call starts? If your Mattermost admin :ref:`enables this Beta feature <administration-guide/configure/plugins-configuration-settings:enable call ringing>`, select **Call Notifications** to choose the sound that plays when a call is started within a direct or group message you're participating in.
+Want to hear a sound on your mobile device when a Mattermost call starts? If your Mattermost admin :ref:`enables this Beta feature <administration-guide/configuration-reference/plugins-configuration-settings:enable call ringing>`, select **Call Notifications** to choose the sound that plays when a call is started within a direct or group message you're participating in.
 
 .. tip::
 

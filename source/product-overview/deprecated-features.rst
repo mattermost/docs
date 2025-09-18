@@ -132,7 +132,7 @@ Mattermost Server v8.0.0
 
 - Removed ``ExperimentalSettings.PatchPluginsReactDOM``. If this setting was previously enabled, confirm that:
   - All Mattermost-supported plugins are updated to the latest versions.
-  - Any other plugins have been updated to support React 17. See the :doc:`Important Upgrade Notes </administration-guide/upgrade/important-upgrade-notes>` for v7.7 for more information.
+  - Any other plugins have been updated to support React 17. See the :doc:`Important Upgrade Notes </administration-guide/operations-scaling/important-upgrade-notes>` for v7.7 for more information.
 - Deprecated Insights for all new instances and for existing servers that upgrade to Mattermost v8.0.
 - Removed deprecated ``PermissionUseSlashCommands``.
 - Removed deprecated ``model.CommandArgs.Session``.
@@ -142,24 +142,24 @@ Mattermost Server v8.0.0
 Mattermost Server v6.0.0
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-- :doc:`Legacy Command Line Tools </administration-guide/manage/command-line-tools>`. Most commands have been replaced by :doc:`mmctl </administration-guide/manage/mmctl-command-line-tool>` and new commands have been added over the last few months, making this tool a full and robust replacement.
+- :doc:`Legacy Command Line Tools </administration-guide/admin-tools/command-line-tools>`. Most commands have been replaced by :doc:`mmctl </administration-guide/admin-tools/mmctl-command-line-tool>` and new commands have been added over the last few months, making this tool a full and robust replacement.
 - Slack Import via the web app. The Slack import tool accessible via the Team Setting menu is being replaced by the mmetl tool that is much more comprehensive for the types of data it can assist in uploading.
 - MySQL versions below 5.7.12. Minimum support will now be for 5.7.12. This version introduced a native JSON data type that lets us improve performance and scalability of several database fields (most notably Users and Posts props). Additionally, version 5.6 (our current minimum version) reached `EOL in February 2021 <https://www.mysql.com/support/eol-notice.html>`_.
 - Elasticsearch 5 and 6. `Versions 5.x reached EOL in March of 2019, and versions 6.x reached EOL in November 2020 <https://www.elastic.co/support/eol>`_. Our minimal supported version with Mattermost v6.0 will be Elasticsearch version 7.0.
 - Windows 7 reached `EOL in January 2020 <https://support.microsoft.com/en-us/windows/what-does-it-mean-if-windows-isn-t-supported-08f3b92d-7539-671e-1452-2e71cdad18b5>`_. We will no longer provide support for the desktop app issues on Windows 7.
-- :ref:`DisableLegacyMFAEndpoint <administration-guide/configure/deprecated-configuration-settings:disable legacy mfa api endpoint>` configuration setting.
-- :ref:`Experimental Timezone <administration-guide/configure/deprecated-configuration-settings:timezone>` configuration setting.
+- :ref:`DisableLegacyMFAEndpoint <administration-guide/configuration-reference/deprecated-configuration-settings:disable legacy mfa api endpoint>` configuration setting.
+- :ref:`Experimental Timezone <administration-guide/configuration-reference/deprecated-configuration-settings:timezone>` configuration setting.
 - All legacy channel sidebar experimental configuration settings. We encourage customers using these settings to upgrade to v5.32 or later to access custom, collapsible channel categories among many other channel organization features. The settings being deprecated include:
   
-  - :ref:`EnableLegacySidebar <administration-guide/configure/deprecated-configuration-settings:enable legacy sidebar>`
-  - :ref:`ExperimentalTownSquareIsReadOnly <administration-guide/configure/deprecated-configuration-settings:town square is read-only>`
-  - :ref:`ExperimentalHideTownSquareinLHS <administration-guide/configure/deprecated-configuration-settings:town square is hidden in left hand sidebar>`
-  - :ref:`EnableXToLeaveChannelsFromLHS <administration-guide/configure/deprecated-configuration-settings:enable x to leave channels from left hand sidebar>`
-  - :ref:`CloseUnusedDirectMessages <administration-guide/configure/deprecated-configuration-settings:autoclose direct messages in sidebar>`
-  - :ref:`ExperimentalChannelOrganization <administration-guide/configure/deprecated-configuration-settings:sidebar organization>`
-  - :ref:`ExperimentalChannelSidebarOrganization <administration-guide/configure/deprecated-configuration-settings:experimental sidebar features>`
+  - :ref:`EnableLegacySidebar <administration-guide/configuration-reference/deprecated-configuration-settings:enable legacy sidebar>`
+  - :ref:`ExperimentalTownSquareIsReadOnly <administration-guide/configuration-reference/deprecated-configuration-settings:town square is read-only>`
+  - :ref:`ExperimentalHideTownSquareinLHS <administration-guide/configuration-reference/deprecated-configuration-settings:town square is hidden in left hand sidebar>`
+  - :ref:`EnableXToLeaveChannelsFromLHS <administration-guide/configuration-reference/deprecated-configuration-settings:enable x to leave channels from left hand sidebar>`
+  - :ref:`CloseUnusedDirectMessages <administration-guide/configuration-reference/deprecated-configuration-settings:autoclose direct messages in sidebar>`
+  - :ref:`ExperimentalChannelOrganization <administration-guide/configuration-reference/deprecated-configuration-settings:sidebar organization>`
+  - :ref:`ExperimentalChannelSidebarOrganization <administration-guide/configuration-reference/deprecated-configuration-settings:experimental sidebar features>`
 
-- :ref:`All configuration settings previously marked as “Deprecated” <administration-guide/configure/configuration-settings:deprecated configuration settings>`.
+- :ref:`All configuration settings previously marked as “Deprecated” <administration-guide/configuration-reference/configuration-settings:deprecated configuration settings>`.
 - Changes to mattermost-server/model for naming consistency.
 
 Mattermost Server v5.38.0
@@ -229,7 +229,7 @@ Mattermost Server v4.0.0
 Mattermost Server v3.8.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Old CLI tool (replaced by :doc:`an upgraded CLI tool </administration-guide/manage/command-line-tools>`)
+- Old CLI tool (replaced by :doc:`an upgraded CLI tool </administration-guide/admin-tools/command-line-tools>`)
 - APIv3 endpoints:
   
   - “GET at /channels/more” (replaced by “/channels/more/{offset}/{limit}”)

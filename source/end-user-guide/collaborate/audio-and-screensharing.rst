@@ -1,7 +1,7 @@
 Audio and Screensharing
 =======================
 
-Mattermost Calls offers native real-time chat, self-hosted audio calls, and screen sharing within your own network, enabling secure, effective team communication and collaboration. Learn more about :doc:`deploying Mattermost Calls </administration-guide/configure/calls-deployment>` in a self-hosted environment and :doc:`making calls </end-user-guide/collaborate/make-calls>` with Mattermost.
+Mattermost Calls offers native real-time chat, self-hosted audio calls, and screen sharing within your own network, enabling secure, effective team communication and collaboration. Learn more about :doc:`deploying Mattermost Calls </administration-guide/platform-features/calls-deployment>` in a self-hosted environment and :doc:`making calls </end-user-guide/collaborate/make-calls>` with Mattermost.
 
 With calls and screen sharing, Mattermost ensures that communications remain uninterrupted, even during maintenance or outages, and scales effortlessly to meet your team’s growing needs, safeguarding the integrity of mission-critical operations.
 

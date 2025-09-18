@@ -20,9 +20,9 @@ Mission teams require trusted mobile access to secure collaboration, ensuring op
 **Benefits**
 
 - **Deploy securely with enterprise mobility management (EMM)** using :ref:`AppConfig integrations <deployment-guide/mobile/deploy-mobile-apps-using-emm-provider:manage app configuration using appconfig>` to manage application policies, access controls, and encrypted communication channels.
-- **Maintain control over mission-critical data**: Enable safe delivery of notifications via :ref:`ID-only push notifications <administration-guide/configure/environment-configuration-settings:id-only push notifications>` that prevent exposure of sensitive content to third-party systems like Apple or Google.
+- **Maintain control over mission-critical data**: Enable safe delivery of notifications via :ref:`ID-only push notifications <administration-guide/configuration-reference/environment-configuration-settings:id-only push notifications>` that prevent exposure of sensitive content to third-party systems like Apple or Google.
 - **Mitigate data compromise risk in personnel transitions**: Protect data with :doc:`remote wipe and deactivation </deployment-guide/mobile/deploy-mobile-apps-using-emm-provider>` capabilities in the event of device loss, theft, or personnel separation.
-- **Enforce strong identity assurance** through :ref:`native biometric authentication <deployment-guide/mobile/mobile-security-features:biometric authentication>` and :doc:`multi-factor authentication (MFA) </administration-guide/onboard/multi-factor-authentication>` tied to :doc:`SSO </administration-guide/onboard/sso-entraid>` or :doc:`AD/LDAP </administration-guide/onboard/ad-ldap>` provisioning .
+- **Enforce strong identity assurance** through :ref:`native biometric authentication <deployment-guide/mobile/mobile-security-features:biometric authentication>` and :doc:`multi-factor authentication (MFA) </administration-guide/identity-access/multi-factor-authentication>` tied to :doc:`SSO </administration-guide/identity-access/authentication-methods/sso/sso-entraid>` or :doc:`AD/LDAP </administration-guide/identity-access/ad-ldap>` provisioning .
 - **Comply with classified mobility mandates** by using :ref:`secure data storage <deployment-guide/mobile/mobile-security-features:mobile data isolation>`, :ref:`sandboxing <deployment-guide/mobile/mobile-security-features:security measures>`, and FIPS 140-3-validated TLS in transit* to meet defense-grade standards.
 
 Secure Government Communications on Personal Devices
@@ -35,8 +35,8 @@ When personal devices are the only available channel—whether in partner nation
 - **Enable trusted communications on BYOD** using lightweight AppConfig policies with :doc:`EMM optionality </deployment-guide/mobile/deploy-mobile-apps-using-emm-provider>` that avoids intrusive control while ensuring essential security baselines.
 - **Prevent unauthorized data sharing**: Mitigate leakage with :ref:`screenshot and screen recording prevention <deployment-guide/mobile/mobile-security-features:screenshot and screen recording prevention>` and :ref:`jailbreak/root detection <deployment-guide/mobile/mobile-security-features:jailbreak and root detection>` that block high-risk mobile behaviors.
 - **Secure access without cloud dependency** via :ref:`self-hosted deployments <deployment-guide/server/server-deployment-planning:deployment options>` or :doc:`air-gapped infrastructures </deployment-guide/server/air-gapped-deployment>` that prevent sensitive data from touching public networks.
-- **Deliver rapid alerts with low bandwidth impact** using :ref:`ID-only push notifications <administration-guide/configure/environment-configuration-settings:id-only push notifications>`, ideal for DDIL (disconnected, intermittent, low-bandwidth) conditions.
-- **Support interagency or coalition workflows** in mission-partner environments through :doc:`Connected Workspaces </administration-guide/onboard/connected-workspaces>` with :doc:`role-based </administration-guide/onboard/delegated-granular-administration>` and :doc:`attribute-based access controls (ABAC) </administration-guide/manage/admin/attribute-based-access-control>`.
+- **Deliver rapid alerts with low bandwidth impact** using :ref:`ID-only push notifications <administration-guide/configuration-reference/environment-configuration-settings:id-only push notifications>`, ideal for DDIL (disconnected, intermittent, low-bandwidth) conditions.
+- **Support interagency or coalition workflows** in mission-partner environments through :doc:`Connected Workspaces </administration-guide/getting-started/connected-workspaces>` with :doc:`role-based </administration-guide/onboard/delegated-granular-administration>` and :doc:`attribute-based access controls (ABAC) </administration-guide/admin-tools/attribute-based-access-control>`.
 
 Built for Field-Forward Security
 ---------------------------------
@@ -45,10 +45,10 @@ Mattermost on mobile is hardened to operate under mission-grade security expecta
 
 **Features**
 
-- **Zero Trust security architecture** with channel- and file-level :doc:`attribute-based access control (ABAC) </administration-guide/manage/admin/attribute-based-access-control>`.
+- **Zero Trust security architecture** with channel- and file-level :doc:`attribute-based access control (ABAC) </administration-guide/admin-tools/attribute-based-access-control>`.
 - **TLS with post-quantum readiness** and end-to-end* :doc:`encryption options </security-guide/security-guide-index>` for high-assurance deployments.
 - **Burn-on-read messaging**: Use secure file viewers*, burn on read messaging*, and advanced data spillage controls* to protect sensitive information and minimize persistent data exposure.
-- **DoD STIG container support** with FIPS 140-3 validation*, and :ref:`audit logging <administration-guide/manage/logging:audit logging>` to ensure deployment compliance in regulated missions.
+- **DoD STIG container support** with FIPS 140-3 validation*, and :ref:`audit logging <administration-guide/admin-tools/logging:audit logging>` to ensure deployment compliance in regulated missions.
 - **Isolated mobile sessions** from host operating systems by partnering with platforms like Hypori in high-assurance BYOD scenarios.
 
 Features marked with an asterisk above ``*`` will be available in a future 2025 release.

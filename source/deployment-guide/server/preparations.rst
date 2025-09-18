@@ -10,7 +10,7 @@ This guide outlines the key preparation steps required before installing the Mat
 
     Review software and hardware requirements </deployment-guide/software-hardware-requirements>
     Set up an NGINX proxy </deployment-guide/server/setup-nginx-proxy>
-    Configure Mattermost Calls </administration-guide/configure/calls-deployment>
+    Configure Mattermost Calls </administration-guide/platform-features/calls-deployment>
     Set up TLS </deployment-guide/server/setup-tls>
     Use an image proxy </deployment-guide/server/image-proxy>
 
@@ -18,7 +18,7 @@ Before installing Mattermost Server, review the following preparation requiremen
 
 * :doc:`Review software and hardware requirements </deployment-guide/software-hardware-requirements>` - Ensure your system meets the minimum requirements for Mattermost deployment.
 * :doc:`Set up an NGINX proxy </deployment-guide/server/setup-nginx-proxy>` - Configure NGINX as a reverse proxy for enhanced security and performance.
-* :doc:`Configure Mattermost Calls </administration-guide/configure/calls-deployment>` - Set up real-time communication capabilities for voice and video calls.
+* :doc:`Configure Mattermost Calls </administration-guide/platform-features/calls-deployment>` - Set up real-time communication capabilities for voice and video calls.
 * :doc:`Set up TLS </deployment-guide/server/setup-tls>` - Enable secure communication with SSL/TLS encryption.
 * :doc:`Use an image proxy </deployment-guide/server/image-proxy>` - Configure image proxy for enhanced privacy and security.
 

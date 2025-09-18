@@ -55,7 +55,7 @@ To set your availability, select your profile picture, then specify your availab
 |                  |                                                                                                                                      |
 |                  | - Set automatically for you when you've been inactive for more than 5 minutes. System admins can change this                         | 
 |                  |   value using an experimental configuation setting called                                                                            |
-|                  |   :ref:`user status away timeout <administration-guide/configure/experimental-configuration-settings:user status away timeout>`.     |
+|                  |   :ref:`user status away timeout <administration-guide/configuration-reference/experimental-configuration-settings:user status away timeout>`.     |
 |                  |                                                                                                                                      |
 |                  | - You're inactive in Mattermost when you're not: typing in or navigating between channels, switching to                              |
 |                  |   another browser tab, or when you've minimized or moved the browser window to the background.                                       |

@@ -37,7 +37,7 @@ Biometric authentication
 
 Native biometric authentication ensures only the authorized device owner can access the Mattermost application. By utilizing hardware-level security, biometrics significantly enhance data protection, especially in cases of lost or stolen devices. This advanced security measure is far more robust and user-friendly compared to traditional passwords, adding a resilient layer of protection against unauthorized access.
 
-Administrators can mandate biometric authentication each time users attempt to open the Mattermost application, further safeguarding customer data and mitigating risks. Learn more about Mattermost :ref:`mobile biometric authentication <deployment-guide/mobile/mobile-security-features:biometric authentication>`, and the :ref:`user workflows in which users must authenticate <administration-guide/configure/environment-configuration-settings:enable biometric authentication>`, when biometric authentication is enabled.
+Administrators can mandate biometric authentication each time users attempt to open the Mattermost application, further safeguarding customer data and mitigating risks. Learn more about Mattermost :ref:`mobile biometric authentication <deployment-guide/mobile/mobile-security-features:biometric authentication>`, and the :ref:`user workflows in which users must authenticate <administration-guide/configuration-reference/environment-configuration-settings:enable biometric authentication>`, when biometric authentication is enabled.
 
 Screenshot and screen recording prevention
 -------------------------------------------
@@ -54,7 +54,7 @@ Learn more about how Mattermost leverages robust sandboxing mechanisms on both i
 Push notification message visibility
 ------------------------------------
 
-Push notifications are a convenient way to stay updated, but they can also pose security risks if sensitive information is displayed. Mattermost provides options to :ref:`control the visibility of message content in push notifications <administration-guide/configure/environment-configuration-settings:id-only push notifications>`, ensuring that sensitive information is not inadvertently exposed through locked mobile screens and via relay servers from Apple and Google when sending notifications to iOS or Android mobile apps.
+Push notifications are a convenient way to stay updated, but they can also pose security risks if sensitive information is displayed. Mattermost provides options to :ref:`control the visibility of message content in push notifications <administration-guide/configuration-reference/environment-configuration-settings:id-only push notifications>`, ensuring that sensitive information is not inadvertently exposed through locked mobile screens and via relay servers from Apple and Google when sending notifications to iOS or Android mobile apps.
 
 Disable downloads
 -----------------
@@ -63,7 +63,7 @@ Environments with strict data loss prevention (DLP) policies or where sensitive 
 
 Disabling file uploads adds an additional layer of security by reducing the risk of malware or malicious files being introduced into the system, ensuring tighter control over sensitive corporate data, and preventing accidental leaks from unsecure mobile networks. 
 
-Similarly, by disabling downloads, Mattermost ensures that files cannot be saved locally on the device, reducing the risk of unauthorized access or data leakage. Learn more about :ref:`disabling mobile uploads <administration-guide/configure/site-configuration-settings:allow file downloads on mobile>` and :ref:`disabling mobile downloads <administration-guide/configure/site-configuration-settings:allow file uploads on mobile>` in the Mattermost mobile app.
+Similarly, by disabling downloads, Mattermost ensures that files cannot be saved locally on the device, reducing the risk of unauthorized access or data leakage. Learn more about :ref:`disabling mobile uploads <administration-guide/configuration-reference/site-configuration-settings:allow file downloads on mobile>` and :ref:`disabling mobile downloads <administration-guide/configuration-reference/site-configuration-settings:allow file uploads on mobile>` in the Mattermost mobile app.
 
 Secure file preview
 -------------------
@@ -74,6 +74,6 @@ When secure file preview is enabled, files are stored temporarily in the app's c
 
 Additionally, administrators can control link navigation within PDF files when secure file preview mode is active, allowing links to open in the device browser or supported applications as needed.
 
-Learn more about :ref:`enabling secure file preview on mobile <administration-guide/configure/site-configuration-settings:enable secure file preview on mobile>` and :ref:`allow PDF link navigation on mobile <administration-guide/configure/site-configuration-settings:allow pdf link navigation on mobile>` in the Mattermost mobile app.
+Learn more about :ref:`enabling secure file preview on mobile <administration-guide/configuration-reference/site-configuration-settings:enable secure file preview on mobile>` and :ref:`allow PDF link navigation on mobile <administration-guide/configuration-reference/site-configuration-settings:allow pdf link navigation on mobile>` in the Mattermost mobile app.
 
 `Book a live demo <https://mattermost.com/request-demo/>`_  or `talk to a Mattermost expert <https://mattermost.com/contact-sales/>`_ to explore tailored solutions for your organization's secure collaboration needs. Or try Mattermost yourself with a `1-hour preview <https://mattermost.com/sign-up/>`_ for instant access to a live sandbox environment.

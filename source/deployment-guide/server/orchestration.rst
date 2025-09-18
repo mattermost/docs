@@ -65,7 +65,7 @@ Documentation
     Following automated deployment, the following steps are required to make your system production-ready:
 
     - [Configure SSL for Mattermost](https://docs.mattermost.com/deployment-guide/server/setup-nginx-proxy.html#configure-nginx-with-ssl-and-http-2)
-    - [Configure SMTP email for Mattermost](https://docs.mattermost.com/administration-guide/configure/smtp-email.html)
+    - [Configure SMTP email for Mattermost](https://docs.mattermost.com/administration-guide/configuration-reference/smtp-email.html)
 
 2. **Unofficial deployment options should be documented**. Unofficial deployment configurations, such as use of Linux operating systems that are not officially supported, should be documented in the README.
 

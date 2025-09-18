@@ -74,8 +74,8 @@ A Mattermost system admin must perform the following steps in Mattermost.
 
 1. Confirm whether your Mattermost deployment has a ``github`` user account. If it exists, that account posts GitHub messages in channels by default, and the messages won't include a BOT tag. You can change this account behavior to include a BOT tag by using one of the following methods:
 
- - Convert the user account to a bot using :ref:`mmctl user convert <administration-guide/manage/mmctl-command-line-tool:mmctl user convert>`.
- - Change the existing ``github`` username to something else. A new bot account called ``github`` is created the Mattermost server is restarted when the :ref:`enable bot account creation <administration-guide/configure/integrations-configuration-settings:enable bot account creation>` configuration setting is enabled.
+ - Convert the user account to a bot using :ref:`mmctl user convert <administration-guide/admin-tools/mmctl-command-line-tool:mmctl user convert>`.
+ - Change the existing ``github`` username to something else. A new bot account called ``github`` is created the Mattermost server is restarted when the :ref:`enable bot account creation <administration-guide/configuration-reference/integrations-configuration-settings:enable bot account creation>` configuration setting is enabled.
 
 2. Install the GitHub integration from the in-product App Marketplace:
 

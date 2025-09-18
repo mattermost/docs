@@ -21,7 +21,7 @@ SOCs are the front lines of real-time monitoring, triage, and escalation. Coordi
 
 - **Accelerate triage and response workflows** with :doc:`Collaborative Playbooks </end-user-guide/workflow-automation>` that automate escalations, task assignment, and ticket updates for consistent response execution.
 - **Integrate detection pipelines and observability tools** using the :doc:`Mattermost integrations platform </integrations-guide/integrations-guide-index>` to surface alerts from SIEM, SOAR, and log analysis systems into dedicated response channels.
-- **Maintain operational security and compliance** through :doc:`role-based permissions </administration-guide/onboard/advanced-permissions>` and :ref:`audit logging <administration-guide/manage/logging:audit logging>` to safeguard sensitive incident data.
+- **Maintain operational security and compliance** through :doc:`role-based permissions </administration-guide/onboard/advanced-permissions>` and :ref:`audit logging <administration-guide/admin-tools/logging:audit logging>` to safeguard sensitive incident data.
 - **Operate in secure, classified, or hybrid environments** using Kubernetes or Linux on the infrastructure of your choice: Public cloud, organization data center, or fully air-gapped. :ref:`Explore deployment options <deployment-guide/server/server-deployment-planning:deployment options>`.
 - **Meet regulatory compliance requirements** with a solution that adapts to your organization's security posture and regulatory requirements, incl. GDPR, FedRAMP, ISO 27001, and more.
 
@@ -35,7 +35,7 @@ CERTs serve as rapid-response teams during high-risk events, requiring tight coo
 - **Orchestrate high-stakes incident response** through :doc:`Collaborative Playbooks </end-user-guide/workflow-automation>` tailored for malware outbreaks, data exfiltration events, and zero-day exploits.
 - **Centralize and structure communication** with :doc:`channel-based collaboration </end-user-guide/messaging-collaboration>`, including :doc:`file sharing </end-user-guide/collaborate/share-files-in-messages>`, :doc:`threaded updates </end-user-guide/collaborate/organize-conversations>`, and task-tracking across affected teams.
 - **Enable coordination across geographies** using :doc:`multi-device access </deployment-guide/deployment-guide-index>` and :doc:`mobile EMM support </deployment-guide/mobile/deploy-mobile-apps-using-emm-provider>` for secure participation across locations and devices.
-- **Preserve evidentiary and compliance data** through :ref:`audit logs <administration-guide/manage/logging:audit logging>` and configurable :doc:`exports </administration-guide/manage/bulk-export-tool>` for legal review or forensic handoff.
+- **Preserve evidentiary and compliance data** through :ref:`audit logs <administration-guide/admin-tools/logging:audit logging>` and configurable :doc:`exports </administration-guide/manage/bulk-export-tool>` for legal review or forensic handoff.
 - **Ensure data sovereignty** with flexible hosting options including EU-resident infrastructure, on-premises deployments, and air-gapped environments that maintain full control over sensitive communications.
 
 Federated Threat Intelligence & Information Sharing
@@ -45,11 +45,11 @@ Cross-organizational threat intelligence teams,spanning sectors, regions, and pu
 
 **Benefits**
 
-- **Collaborate securely across agencies or organizations** using :doc:`Connected Workspaces </administration-guide/onboard/connected-workspaces>` to synchronize alerts, discussions, and file sharing with trusted external partners.
-- **Support multinational and sectoral collaboration** with :doc:`custom terms of service enforcement </administration-guide/comply/custom-terms-of-service>` and :ref:`localized UI settings <end-user-guide/preferences/manage-your-display-options:language>` for global partner access.
+- **Collaborate securely across agencies or organizations** using :doc:`Connected Workspaces </administration-guide/getting-started/connected-workspaces>` to synchronize alerts, discussions, and file sharing with trusted external partners.
+- **Support multinational and sectoral collaboration** with :doc:`custom terms of service enforcement </administration-guide/compliance-security-auditing/custom-terms-of-service>` and :ref:`localized UI settings <end-user-guide/preferences/manage-your-display-options:language>` for global partner access.
 - **Preserve operational trust and compliance** through :doc:`role-based access controls </administration-guide/onboard/advanced-permissions>` and :ref:`channel-specific permissions <administration-guide/manage/team-channel-members:advanced access controls>` that enforce jurisdictional and information-sharing agreements.
 - **Operationalize shared threat intelligence** by integrating IOCs, threat actor profiles, and shared playbooks into your Mattermost instance via the :doc:`integrations platform </integrations-guide/integrations-guide-index>`.
-- **Scale communication globally** with Mattermost's :doc:`high availability and horizontal scalability architecture </administration-guide/scale/scaling-for-enterprise>`,supporting tens of thousands of users across enterprise, field, government, or classified environments.
+- **Scale communication globally** with Mattermost's :doc:`high availability and horizontal scalability architecture </administration-guide/operations-scaling/scaling-for-enterprise>`,supporting tens of thousands of users across enterprise, field, government, or classified environments.
 
 Get Started
 -----------

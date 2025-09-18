@@ -71,7 +71,7 @@ A guest is a role with restricted permissions. Guests enable organizations to co
 Deactivated
 -----------
 
-A system admin can deactivate user accounts via **System Console > Users**. A list of all users on the server can be searched and filtered to make finding users easier. Select the user's role and in the menu that opens, then select **Deactivate**. See the :ref:`deactivate user accounts admin <administration-guide/configure/user-management-configuration-settings:deactivate users>` documentation for details.
+A system admin can deactivate user accounts via **System Console > Users**. A list of all users on the server can be searched and filtered to make finding users easier. Select the user's role and in the menu that opens, then select **Deactivate**. See the :ref:`deactivate user accounts admin <administration-guide/configuration-reference/user-management-configuration-settings:deactivate users>` documentation for details.
 
 When **Deactivate** is selected, the user is logged out of the system, and receives an error message if they try to log back in. The user no longer appears in channel member lists, and they are removed from the team members list. A deactivated account can also be reactivated from the System Console, in which case the user rejoins channels and teams that they previously belonged to.
 

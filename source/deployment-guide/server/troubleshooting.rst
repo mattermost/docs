@@ -45,7 +45,7 @@ The resulting server log file is called ``mattermost.log`` and can be opened wit
 
 If filesystem access is not possible, navigate to **System Console > Reporting > Server Logs** to locate the current system logs which can be copied to a file.
 
-You can find more on logging settings :ref:`here <administration-guide/configure/environment-configuration-settings:logging>`.
+You can find more on logging settings :ref:`here <administration-guide/configuration-reference/environment-configuration-settings:logging>`.
 
 Mattermost Desktop App logs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -214,7 +214,7 @@ How to access logs
 
 **Mattermost**
 
-Make sure :ref:`debug logging is enabled <administration-guide/manage/logging:how do i enable debug logging?>` so that we can get the most information from the logs. To do this, go to **System Console > Environment > Logging**, then set both **Console File Level** and **File Log Level** to **DEBUG**. Remember to save your changes.
+Make sure :ref:`debug logging is enabled <administration-guide/admin-tools/logging:how do i enable debug logging?>` so that we can get the most information from the logs. To do this, go to **System Console > Environment > Logging**, then set both **Console File Level** and **File Log Level** to **DEBUG**. Remember to save your changes.
 
 If the behavior started at a known time or date, use ``journalctl`` to get the logs like this:
 

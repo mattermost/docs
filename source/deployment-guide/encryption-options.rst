@@ -13,7 +13,7 @@ Encryption-in-transit
 
 Mattermost supports TLS encryption including AES-256 with 2048-bit RSA on all data transmissions between Mattermost client applications and the Mattermost server. You may either set up TLS on the Mattermost Server or install a proxy such as NGINX and set up TLS on the proxy. Refer to our :doc:`configuration guide for more details </deployment-guide/server/setup-tls>`.
 
-Connections to Active Directory/LDAP can :ref:`optionally be secured with TLS or stunnel <administration-guide/configure/authentication-configuration-settings:ad/ldap port>`.
+Connections to Active Directory/LDAP can :ref:`optionally be secured with TLS or stunnel <administration-guide/configuration-reference/authentication-configuration-settings:ad/ldap port>`.
 
 Connections to calls are secured with a combination of:
 
@@ -26,7 +26,7 @@ Gossip encryption
 
 In a High Availability mode, Mattermost supports encryption of cluster data in-transit when using the gossip protocol, which is based on principles outlined in the `SWIM protocol developed by researchers at Cornell University <https://www.cs.cornell.edu/projects/Quicksilver/public_pdfs/SWIM.pdf>`_. The gossip protocol is a communication mechanism in distributed systems where nodes randomly exchange information to ensure data consistency across the network. It is decentralized, scalable, and fault-tolerant, making it ideal for systems with numerous nodes. Information is spread in a manner similar to social gossip, with nodes periodically "gossiping" updates to random peers until the network converges to a consistent state. Widely used in distributed databases, blockchain networks, and peer-to-peer systems, the protocol is simple to implement and resilient to node failures. However, it can suffer from redundancy and propagation delays in large networks.
 
-From Mattermost v10.11, :ref:`gossip encryption <administration-guide/configure/environment-configuration-settings:enable gossip encryption>` is enabled by default for new deployments while existing deployments maintain their current configuration.
+From Mattermost v10.11, :ref:`gossip encryption <administration-guide/configuration-reference/environment-configuration-settings:enable gossip encryption>` is enabled by default for new deployments while existing deployments maintain their current configuration.
 
 The encryption uses AES-256 by default, and it is not configurable. However, it is possible to manually set the value in the ``Systems`` table for the ``ClusterEncryptionKey`` row. A key is a byte array converted to base64. It can be set to a length of 16, 24, or 32 bytes to select AES-128, AES-192, or AES-256 respectively.
 
@@ -49,7 +49,7 @@ File storage
 
 For local storage or storage via Minio, encryption-at-rest is available for files stored via hardware and software disk encryption solutions applied to the server.
 
-For Amazon’s proprietary S3 system, encryption-at-rest is available via :ref:`server-side encryption with Amazon S3-managed keys <administration-guide/configure/environment-configuration-settings:enable server-side encryption for amazon s3>` in Mattermost enterprise-badge.
+For Amazon’s proprietary S3 system, encryption-at-rest is available via :ref:`server-side encryption with Amazon S3-managed keys <administration-guide/configuration-reference/environment-configuration-settings:enable server-side encryption for amazon s3>` in Mattermost enterprise-badge.
 
 SAML encryption support
 -----------------------

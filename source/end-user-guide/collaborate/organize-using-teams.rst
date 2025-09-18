@@ -12,7 +12,7 @@ Organize using teams
    Team settings </end-user-guide/collaborate/team-settings>
    Team keyboard shortcuts </end-user-guide/collaborate/team-keyboard-shortcuts>
 
-A team is a digital :doc:`workspace </end-user-guide/end-user-guide-index>` where you and your teammates can collaborate in Mattermost. Depending on how Mattermost is :ref:`set up <administration-guide/configure/experimental-configuration-settings:primary team>` in your organization, you can belong to one team or multiple teams, and :ref:`access to the team <end-user-guide/collaborate/team-settings:access settings>` can be open or restricted.
+A team is a digital :doc:`workspace </end-user-guide/end-user-guide-index>` where you and your teammates can collaborate in Mattermost. Depending on how Mattermost is :ref:`set up <administration-guide/configuration-reference/experimental-configuration-settings:primary team>` in your organization, you can belong to one team or multiple teams, and :ref:`access to the team <end-user-guide/collaborate/team-settings:access settings>` can be open or restricted.
 
 Users with the **Create Teams** permission can `create new teams <#create-a-team>`__ and :doc:`manage team settings </end-user-guide/collaborate/team-settings>` for existing teams. System admins can grant the **Create Team** permission to roles via the :ref:`System scheme <administration-guide/onboard/advanced-permissions:system scheme>` or the :ref:`Team override scheme <administration-guide/onboard/advanced-permissions:team override scheme>`.
 

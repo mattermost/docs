@@ -11,7 +11,7 @@ The Mattermost desktop app supports managed resources. A managed resource can be
 
 Add the path of a managed resource to your configuration file. When selected, it opens as a pop-up window in the Mattermost desktop app.
 
-In addition to customizing the Mattermost Desktop App, the :ref:`Managed Resource Paths <administration-guide/configure/environment-configuration-settings:managed resource paths>` setting on the Mattermost server must be configured.
+In addition to customizing the Mattermost Desktop App, the :ref:`Managed Resource Paths <administration-guide/configuration-reference/environment-configuration-settings:managed resource paths>` setting on the Mattermost server must be configured.
 
 In the below example we add the managed resource ``/video``.
 

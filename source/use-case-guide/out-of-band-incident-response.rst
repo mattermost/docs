@@ -23,7 +23,7 @@ Out-of-band collaboration provides a persistent, independent channel for coordin
 - **Meet regulatory compliance requirements** with a solution that adapts to your organization's security posture and regulatory requirements, incl. GDPR, FedRAMP, ISO 27001, and more.
 - **Ensure data sovereignty** with flexible hosting options including EU-resident infrastructure, on-premises deployments, and air-gapped environments that maintain full control over sensitive communications.
 - **Maintain continuity across platforms** with :doc:`multi-device access </deployment-guide/deployment-guide-index>`, including web, desktop, and mobile experiences, even when primary tools are offline.
-- **Enforce strict access controls** using :doc:`role-based permissions </administration-guide/onboard/advanced-permissions>` and :ref:`audit logging <administration-guide/manage/logging:audit logging>` to limit risk exposure during high-stakes operations.
+- **Enforce strict access controls** using :doc:`role-based permissions </administration-guide/onboard/advanced-permissions>` and :ref:`audit logging <administration-guide/admin-tools/logging:audit logging>` to limit risk exposure during high-stakes operations.
 
 Business Continuity at Scale
 ----------------------------
@@ -32,7 +32,7 @@ Outages and downtime threaten both productivity and revenue. In large enterprise
 
 **Benefits**
 
-- **Scale communication globally** with Mattermost's :doc:`high availability and horizontal scalability architecture </administration-guide/scale/scaling-for-enterprise>`, supporting tens of thousands of users across enterprise, field, government, or classified environments.
+- **Scale communication globally** with Mattermost's :doc:`high availability and horizontal scalability architecture </administration-guide/operations-scaling/scaling-for-enterprise>`, supporting tens of thousands of users across enterprise, field, government, or classified environments.
 - **Accelerate outage recovery** using :doc:`Collaborative Playbooks </end-user-guide/workflow-automation>` that automate response steps and ensure team accountability during time-critical events, reducing mean time to recovery (MTTR) by up to 50%.
 - **Demonstrate ROI through measurable outcomes** with built-in metrics tracking incident response times, team coordination efficiency, and compliance audit trails.
 

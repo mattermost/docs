@@ -66,7 +66,7 @@ Select the **Skin tone** icon in the top right corner of the emoji picker to spe
 Upload custom emojis
 --------------------
 
-Using Mattermost in a web browser or the desktop app, you can upload new emojis that everyone in your Mattermost :doc:`workspace </end-user-guide/end-user-guide-index>` can access to react to messages, unless your system admin has :ref:`disabled your ability to do so <administration-guide/configure/site-configuration-settings:enable custom emoji>`.
+Using Mattermost in a web browser or the desktop app, you can upload new emojis that everyone in your Mattermost :doc:`workspace </end-user-guide/end-user-guide-index>` can access to react to messages, unless your system admin has :ref:`disabled your ability to do so <administration-guide/configuration-reference/site-configuration-settings:enable custom emoji>`.
 
 1. From the emoji picker, select **Custom Emoji**. 
 

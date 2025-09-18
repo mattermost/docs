@@ -38,7 +38,7 @@ The certificate is retrieved the first time that a client tries to connect to th
 
 .. note::
 
-  - If Let's Encrypt is enabled, forward port 80 through a firewall, with :ref:`Forward80To443 <administration-guide/configure/environment-configuration-settings:forward port 80 to 443>` ``config.json`` setting set to ``true`` to complete the Let's Encrypt certification.
+  - If Let's Encrypt is enabled, forward port 80 through a firewall, with :ref:`Forward80To443 <administration-guide/configuration-reference/environment-configuration-settings:forward port 80 to 443>` ``config.json`` setting set to ``true`` to complete the Let's Encrypt certification.
   - Your Mattermost server must be accessible from the Let's Encrypt CA in order to verify your domain name and issue the certificate. Be sure to open your firewall and configure any reverse proxies to forward traffic to ports 80 and 443. More information can be found `at Let's Encrypt <https://letsencrypt.org/how-it-works/>`_.
 
 Use your own certificate

@@ -101,7 +101,7 @@ Enable and configure the Microsoft Calendar Integration in Mattermost
 
 4. In Mattermost, enter the following values in the fields provided. Select **Save** to apply the configuration:
 
-  - **Admin User IDs** - A comma-separated list of :ref:`user IDs <administration-guide/configure/user-management-configuration-settings:identify a user's id>` for authorized users who can manage this integration.
+  - **Admin User IDs** - A comma-separated list of :ref:`user IDs <administration-guide/configuration-reference/user-management-configuration-settings:identify a user's id>` for authorized users who can manage this integration.
   - **Copy plugin logs to admins, as bot messages** - Select the log level for logs.
   - **Display full context for each admin log message** - Show or hide full context for all log entries.
   - **Azure - Directory (tenant) ID** - Paste the **Directory (tenant) ID** from the Azure portal.

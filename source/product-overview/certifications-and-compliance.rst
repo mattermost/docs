@@ -54,15 +54,15 @@ Mattermost supports features that ensure data management and data portability.
 Data management
 ^^^^^^^^^^^^^^^^
 
-- **Data Retention:** Use :doc:`data retention </administration-guide/comply/data-retention-policy>` to automatically erase data after a set period of time, a feature that meets the Right to Erasure principle. In Team Edition, you can use database scripts to achieve the same result.
-- **Profile Deletion:** Delete a user’s personal information via :ref:`mmctl user delete <administration-guide/manage/mmctl-command-line-tool:mmctl user delete>`. This permanently deletes all user information including messages created by the user.
+- **Data Retention:** Use :doc:`data retention </administration-guide/compliance-security-auditing/data-retention-policy>` to automatically erase data after a set period of time, a feature that meets the Right to Erasure principle. In Team Edition, you can use database scripts to achieve the same result.
+- **Profile Deletion:** Delete a user’s personal information via :ref:`mmctl user delete <administration-guide/admin-tools/mmctl-command-line-tool:mmctl user delete>`. This permanently deletes all user information including messages created by the user.
 - **Self-Hosted Push Notification Service:** Self-host your own push notification service, or deploy mobile apps with any EMM provider that supports `AppConfig <https://www.appconfig.org/>`_ to meet security and compliance policies. See :doc:`our Mobile App deployment documentation </deployment-guide/mobile/mobile-app-deployment>` to learn more.
 
 Data portability
 ^^^^^^^^^^^^^^^^^
 
-- **Data Import:** Use the :doc:`bulk loading tool </administration-guide/onboard/bulk-loading-data>` to migrate data from an existing messaging system, or for pre-populating a new installation with data. :ref:`Review this guide <administration-guide/onboard/migrating-to-mattermost:migrate from slack>` which summarizes the different approaches and meets the `Right to Data Portability <https://gdpr-info.eu/art-20-gdpr/>`_ principle.
-- **Data Export:** Use :doc:`compliance exports </administration-guide/comply/compliance-export>` to export conversations from public, private and direct message channels in XML or EML format. Those in Team Edition can export conversations directly from the database, both in PostgreSQL and in MySQL.
+- **Data Import:** Use the :doc:`bulk loading tool </administration-guide/getting-started/bulk-loading-data>` to migrate data from an existing messaging system, or for pre-populating a new installation with data. :ref:`Review this guide <administration-guide/getting-started/migrating-to-mattermost:migrate from slack>` which summarizes the different approaches and meets the `Right to Data Portability <https://gdpr-info.eu/art-20-gdpr/>`_ principle.
+- **Data Export:** Use :doc:`compliance exports </administration-guide/compliance-security-auditing/compliance-export>` to export conversations from public, private and direct message channels in XML or EML format. Those in Team Edition can export conversations directly from the database, both in PostgreSQL and in MySQL.
 
 Accessibility compliance
 -------------------------
@@ -190,8 +190,8 @@ To be compliant with GDPR, do I need to remove message contents of email notific
 Based on our interpretation of GDPR, it is not required to hide message contents in email notifications to remain compliant for the following reasons:
 
 1. Every user has the ability to disable email notifications in **Settings**. Therefore, every user has the ultimate control over whether or not they want information sent via email. This option aligns with most other products, but we will follow updates on interpretations of GDPR closely to see if we need to make changes in this area.
-2. Mattermost offers :ref:`TLS encryption <administration-guide/configure/environment-configuration-settings:web server connection security>` to protect communication between the Mattermost server and the SMTP email server.
-3. If you're uncertain whether the first two points cover GDPR compliance, you can :ref:`disable notifications completely <administration-guide/configure/site-configuration-settings:enable email notifications>` on your Mattermost server. To use Mattermost in production with no email notifications, you also need to :ref:`disable a "preview mode" notice banner <administration-guide/configure/site-configuration-settings:enable preview mode banner>`.
+2. Mattermost offers :ref:`TLS encryption <administration-guide/configuration-reference/environment-configuration-settings:web server connection security>` to protect communication between the Mattermost server and the SMTP email server.
+3. If you're uncertain whether the first two points cover GDPR compliance, you can :ref:`disable notifications completely <administration-guide/configuration-reference/site-configuration-settings:enable email notifications>` on your Mattermost server. To use Mattermost in production with no email notifications, you also need to :ref:`disable a "preview mode" notice banner <administration-guide/configuration-reference/site-configuration-settings:enable preview mode banner>`.
 
 What information is shared when I select **Contact us** on a Mattermost Admin Advisor notification?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -199,7 +199,7 @@ What information is shared when I select **Contact us** on a Mattermost Admin Ad
 Selecting **Contact us** in the Mattermost Admin Advisor will send some information to us. This may include the email address and name associated with your Mattermost account as well as the number of registered users on your system, the site URL, and a Mattermost diagnostic server ID number. This information is used to contact you as requested and to help us better understand your needs.
 
 .. note::
-    :doc:`Mattermost Admin Advisor notices are disabled </administration-guide/manage/in-product-notices>` in v5.35 and later.
+    :doc:`Mattermost Admin Advisor notices are disabled </administration-guide/admin-tools/in-product-notices>` in v5.35 and later.
 
 Are the server access logs containing IP addresses a GDPR compliance issue?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -231,7 +231,7 @@ Are you IPv6 compliant?
 
 Yes, the Mattermost platform is compliant with IPv6 when Audio & Screen Sharing is disabled, both for our :doc:`self-hosted and Cloud offerings </product-overview/editions-and-offerings>`.
 
-We plan to add IPv6 compliance for :doc:`Audio & Screen Sharing </administration-guide/configure/calls-deployment>` in future.
+We plan to add IPv6 compliance for :doc:`Audio & Screen Sharing </administration-guide/platform-features/calls-deployment>` in future.
 
 Are you 508 compliant?
 ~~~~~~~~~~~~~~~~~~~~~~

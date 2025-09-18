@@ -11,7 +11,7 @@ Delete :ref:`public channels <end-user-guide/collaborate/channel-types:public ch
 
 .. tip::
 
-  You can continue to access archived channels, unless your system admin has :ref:`disabled <administration-guide/configure/site-configuration-settings:allow users to view archived channels>` your ability to do so.
+  You can continue to access archived channels, unless your system admin has :ref:`disabled <administration-guide/configuration-reference/site-configuration-settings:allow users to view archived channels>` your ability to do so.
 
 .. tab:: Web/Desktop
 
@@ -62,7 +62,7 @@ Delete :ref:`public channels <end-user-guide/collaborate/channel-types:public ch
 Unarchive a channel
 -------------------
 
-System admins and Team admins can restore archived channels. When a channel is unarchived, channel membership and all its content is restored, unless messages and files have been deleted based on a :ref:`data retention policy <administration-guide/configure/compliance-configuration-settings:data retention policies>`.
+System admins and Team admins can restore archived channels. When a channel is unarchived, channel membership and all its content is restored, unless messages and files have been deleted based on a :ref:`data retention policy <administration-guide/configuration-reference/compliance-configuration-settings:data retention policies>`.
 
 .. tab:: Web/Desktop
 
@@ -107,4 +107,4 @@ System admins and Team admins can restore archived channels. When a channel is u
 
 .. tip::
 
-  Alternatively, system admins can unarchive channels :ref:`via the mmctl <administration-guide/manage/mmctl-command-line-tool:mmctl channel unarchive>`, and Team admins can unarchive channels `via the API <https://api.mattermost.com/#operation/RestoreChannel>`__.
+  Alternatively, system admins can unarchive channels :ref:`via the mmctl <administration-guide/admin-tools/mmctl-command-line-tool:mmctl channel unarchive>`, and Team admins can unarchive channels `via the API <https://api.mattermost.com/#operation/RestoreChannel>`__.

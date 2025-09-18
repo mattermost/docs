@@ -237,7 +237,7 @@ The final step, depending on your requirements, is to run sudo ``systemctl enabl
 Step 6: Update the server
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Updating your Mattermost Server installation when using the tarball requires several manual steps. See the :doc:`upgrade Mattermost Server </administration-guide/upgrade/upgrading-mattermost-server>` documentation for details.
+Updating your Mattermost Server installation when using the tarball requires several manual steps. See the :doc:`upgrade Mattermost Server </administration-guide/operations-scaling/upgrading-mattermost-server>` documentation for details.
 
 Remove Mattermost
 -----------------

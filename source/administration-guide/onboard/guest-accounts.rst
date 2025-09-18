@@ -10,7 +10,7 @@ Guest accounts in Mattermost are a way to collaborate with individuals, such as 
 
 .. important::
   
-  - A system admin must :ref:`enable guest access <administration-guide/configure/authentication-configuration-settings:guest access>` before guests can be invited.
+  - A system admin must :ref:`enable guest access <administration-guide/configuration-reference/authentication-configuration-settings:guest access>` before guests can be invited.
   - Mattermost Enterprise and Professional customers can :doc:`control who can invite guests </administration-guide/onboard/advanced-permissions>` in their organization. By default, only system admins can invite guests.
   - Guest accounts count as a paid user in your Mattermost :doc:`workspace </end-user-guide/end-user-guide-index>`. However, guests aren't automatically added to the default **Town-square** channel when they log in. You must :doc:`invite guests </end-user-guide/collaborate/invite-people>` to individual teams and channels manually. Deactivating a guest account reduces your licensed seat count.
   - You'll identify guest users in Mattermost based on their **GUEST** badge next to their name and profile picture. Channels that contain guests also display the message ***This channel has guests** in the channel header.
@@ -40,7 +40,7 @@ Guest authentication
 
 Guests can access the Mattermost server via email invitation, and be authenticated using AD/LDAP or SAML 2.0.
 
-Before you proceed, ensure that the authentication method you wish to use is correctly configured on your server and enabled in Mattermost. For configuration steps and technical documentation, see :doc:`Active Directory/LDAP setup </administration-guide/onboard/ad-ldap>` and :doc:`SAML Single-Sign-On </administration-guide/onboard/sso-saml>`.
+Before you proceed, ensure that the authentication method you wish to use is correctly configured on your server and enabled in Mattermost. For configuration steps and technical documentation, see :doc:`Active Directory/LDAP setup </administration-guide/identity-access/ad-ldap>` and :doc:`SAML Single-Sign-On </administration-guide/identity-access/authentication-methods/saml-based-sso/sso-saml>`.
 
 Converting a member user to a guest won't change the channels they are in. However, they will be restricted from discovering additional channels and are unable to direct message/group message users outside of the channels they are in. They can be added to channels by system admins and other roles that have the correct permissions to invite guests.
 

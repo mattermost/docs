@@ -21,7 +21,7 @@ Anyone can create public channels, private channels, direct messages, and group 
   2. Enter a channel name.
   3. Choose whether this is a public or private channel. See the :doc:`channel types </end-user-guide/collaborate/channel-types>` documentation to learn more about public and private channels.
   4. (Optional) Describe the channel's focus or purpose. This text is visible to all channel members in the channel header.
-  5. (Optional) Assign the channel to a category. If your system admin has enabled :ref:`channel category sorting <administration-guide/configure/experimental-configuration-settings:enable channel category sorting>`, you can assign the new channel to a new or existing channel category. If this option isn't available, you can `customize your channel sidebar </end-user-guide/preferences/customize-your-channel-sidebar>`.
+  5. (Optional) Assign the channel to a category. If your system admin has enabled :ref:`channel category sorting <administration-guide/configuration-reference/experimental-configuration-settings:enable channel category sorting>`, you can assign the new channel to a new or existing channel category. If this option isn't available, you can `customize your channel sidebar </end-user-guide/preferences/customize-your-channel-sidebar>`.
 
   Start a direct or group message
   --------------------------------
@@ -31,7 +31,7 @@ Anyone can create public channels, private channels, direct messages, and group 
     .. image:: ../../images/write-dm.png
       :alt: Access recent direct messages and group messages.
 
-  2. Select up to seven users by searching or browsing. If your organization uses :doc:`connected workspaces </administration-guide/onboard/connected-workspaces>`, you can also select remote users from shared channels for direct and group messages.
+  2. Select up to seven users by searching or browsing. If your organization uses :doc:`connected workspaces </administration-guide/getting-started/connected-workspaces>`, you can also select remote users from shared channels for direct and group messages.
 
   .. tip::
 
@@ -60,7 +60,7 @@ Anyone can create public channels, private channels, direct messages, and group 
   Start a direct or group message
   --------------------------------
 
-  Tap |plus| in the top right corner of the app, then select **Open a Direct Message**. You can select one person for a direct message or up to seven people for a group message. If your organization uses :doc:`connected workspaces </administration-guide/onboard/connected-workspaces>`, remote users from shared channels are also available to select. Tap **Start** to start the conversation.
+  Tap |plus| in the top right corner of the app, then select **Open a Direct Message**. You can select one person for a direct message or up to seven people for a group message. If your organization uses :doc:`connected workspaces </administration-guide/getting-started/connected-workspaces>`, remote users from shared channels are also available to select. Tap **Start** to start the conversation.
 
     .. image:: ../../images/create-channel-or-open-direct-message-on-mobile.jpg
       :alt: You can start a direct or group message by tapping the plus in the top right corner.
@@ -81,4 +81,4 @@ Automatic actions include:
 - Automatically adding the channel to a :doc:`category in the user's channel sidebar </end-user-guide/preferences/customize-your-channel-sidebar>`.
 - Prompting to run a playbook based on the contents of a message.
 
-The :ref:`collaborative playbooks must be enabled <administration-guide/configure/plugins-configuration-settings:collaborative playbooks>` for channel admins to use channel actions.
+The :ref:`collaborative playbooks must be enabled <administration-guide/configuration-reference/plugins-configuration-settings:collaborative playbooks>` for channel admins to use channel actions.

@@ -11,9 +11,9 @@ Popular Pre-Built Integrations
     Jira </integrations-guide/jira>
     ServiceNow </integrations-guide/servicenow>
     Zoom </integrations-guide/zoom>
-    Mattermost Channel Export </administration-guide/comply/export-mattermost-channel-data>
-    Mattermost Metrics </administration-guide/scale/collect-performance-metrics>
-    Mattermost User Survey </administration-guide/configure/manage-user-surveys>
+    Mattermost Channel Export </administration-guide/compliance-security-auditing/export-mattermost-channel-data>
+    Mattermost Metrics </administration-guide/operations-scaling/collect-performance-metrics>
+    Mattermost User Survey </administration-guide/configuration-reference/manage-user-surveys>
     Mattermost Embedded for M365, Teams, and Outlook </integrations-guide/mattermost-mission-collaboration-for-m365>
     Microsoft Calendar </integrations-guide/microsoft-calendar>
     Microsoft Teams Sync </integrations-guide/microsoft-teams-sync>
@@ -30,21 +30,21 @@ Designed for teams that need reliability, auditability, and ownership of their c
 +------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 | **Mattermost Integration**                                                                     | **How to Get It**                                                 | **What It Does**                                                                                           |
 +================================================================================================+===================================================================+============================================================================================================+
-| :doc:`Mattermost Agents </administration-guide/configure/agents-admin-guide>`                  | **System Console > Plugins > Plugin Management**                  | Runs small automated tasks inside Mattermost, like summarizing converations, or answering questions.       |
+| :doc:`Mattermost Agents </administration-guide/configuration-reference/agents-admin-guide>`                  | **System Console > Plugins > Plugin Management**                  | Runs small automated tasks inside Mattermost, like summarizing converations, or answering questions.       |
 +------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 | :doc:`Mattermost Boards </end-user-guide/project-task-management>`                             | `Mattermost Marketplace <https://mattermost.com/marketplace/>`_   | Helps teams plan and track project tasks with cards and boards.                                            |
 +------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :doc:`Mattermost Calls </administration-guide/configure/calls-deployment>`                     | **System Console > Plugins > Plugin Management**                  | Lets people collaborate by voice or video inside Mattermost.                                               |
+| :doc:`Mattermost Calls </administration-guide/platform-features/calls-deployment>`                     | **System Console > Plugins > Plugin Management**                  | Lets people collaborate by voice or video inside Mattermost.                                               |
 +------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :doc:`Mattermost Channel Export </administration-guide/comply/export-mattermost-channel-data>` | |product-list| > **App Marketplace**                              | Exports channel history and data for compliance purposes.                                                  |
+| :doc:`Mattermost Channel Export </administration-guide/compliance-security-auditing/export-mattermost-channel-data>` | |product-list| > **App Marketplace**                              | Exports channel history and data for compliance purposes.                                                  |
 +------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :doc:`Mattermost Legal Hold </administration-guide/comply/legal-hold>`                         | `Mattermost Marketplace <https://mattermost.com/marketplace/>`_   | Keeps a copy of messages and files so they cannot be deleted for legal or compliance needs.                |
+| :doc:`Mattermost Legal Hold </administration-guide/compliance-security-auditing/legal-hold>`                         | `Mattermost Marketplace <https://mattermost.com/marketplace/>`_   | Keeps a copy of messages and files so they cannot be deleted for legal or compliance needs.                |
 +------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :doc:`Mattermost Metrics </administration-guide/scale/collect-performance-metrics>`            | |product-list| > **App Marketplace**                              | Shows numbers about system performance when people use Mattermost.                                         |
+| :doc:`Mattermost Metrics </administration-guide/operations-scaling/collect-performance-metrics>`            | |product-list| > **App Marketplace**                              | Shows numbers about system performance when people use Mattermost.                                         |
 +------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 | :doc:`Mattermost Playbooks </end-user-guide/workflow-automation>`                              | **System Console > Plugins > Plugin Management**                  | Guides teams through repeatable steps for important work, like incident response.                          |
 +------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :doc:`Mattermost User Survey </administration-guide/configure/manage-user-surveys>`            | |product-list| > **App Marketplace**                              | Collects feedback by asking questions directly in Mattermost channels.                                     |
+| :doc:`Mattermost User Survey </administration-guide/configuration-reference/manage-user-surveys>`            | |product-list| > **App Marketplace**                              | Collects feedback by asking questions directly in Mattermost channels.                                     |
 +------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 
 

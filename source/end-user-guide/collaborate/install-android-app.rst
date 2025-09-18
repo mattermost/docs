@@ -12,7 +12,7 @@ Take Mattermost wherever you go by `installing the Mattermost mobile app <https:
 
 .. tip::
 
-  You can set up multi-factor authentication for Mattermost if your system admin has :ref:`enabled your ability to do so <administration-guide/configure/authentication-configuration-settings:enable multi-factor authentication>`. See the :doc:`manage security preferences </end-user-guide/preferences/manage-your-security-preferences>` documentation for details.
+  You can set up multi-factor authentication for Mattermost if your system admin has :ref:`enabled your ability to do so <administration-guide/configuration-reference/authentication-configuration-settings:enable multi-factor authentication>`. See the :doc:`manage security preferences </end-user-guide/preferences/manage-your-security-preferences>` documentation for details.
 
 Mattermost on Chromebooks
 --------------------------

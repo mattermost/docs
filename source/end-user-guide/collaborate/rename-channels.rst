@@ -13,7 +13,7 @@ Anyone can rename the channels they belong to, unless the system admin has :doc:
   - **Channel name:** The channel name that displays in the Mattermost user interface for all users. Enter a different channel name if needed or preferred.
   - **Channel URL:** The web URL used to access the channel in a web browser. Select **Edit** to change the URL, and select **Done** to save your changes.
 
-  If your system admin has enabled :ref:`channel category sorting <administration-guide/configure/experimental-configuration-settings:enable channel category sorting>`, you can assign the renamed channel to a new or existing channel category. 
+  If your system admin has enabled :ref:`channel category sorting <administration-guide/configuration-reference/experimental-configuration-settings:enable channel category sorting>`, you can assign the renamed channel to a new or existing channel category. 
 
   For example, a channel could be named ``UX Design`` and have a URL of ``https://community.mattermost.com/core/channels/ux-design``.
 

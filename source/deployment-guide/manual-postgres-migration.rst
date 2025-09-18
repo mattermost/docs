@@ -281,7 +281,7 @@ An error has been identified in the 96th migration that was previously released.
 Configuration in database
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you were previously utilizing a database for handling the :doc:`Mattermost configuration </administration-guide/configure/configuration-in-your-database>`, those tables will not be migrated from your MySQL database with the migration `script <#migrate-the-data>`__. 
+If you were previously utilizing a database for handling the :doc:`Mattermost configuration </administration-guide/configuration-reference/configuration-in-your-database>`, those tables will not be migrated from your MySQL database with the migration `script <#migrate-the-data>`__. 
 
 Two migrations are necessary:
 
@@ -291,7 +291,7 @@ Two migrations are necessary:
 Migrate database configuration to the file system
 :::::::::::::::::::::::::::::::::::::::::::::::::
 
-Use the ``mmctl config migrate`` command to :ref:`migrate your config <administration-guide/manage/mmctl-command-line-tool:mmctl config migrate>` to the file system, as follows:
+Use the ``mmctl config migrate`` command to :ref:`migrate your config <administration-guide/admin-tools/mmctl-command-line-tool:mmctl config migrate>` to the file system, as follows:
 
 .. code-block:: sh
 

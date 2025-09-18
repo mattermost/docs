@@ -57,7 +57,7 @@ Due to potential security concerns with sharing private channel history, only sy
 
 .. note::
 
-  - The ability to convert private channels to public channels using the `API <https://api.mattermost.com/#tag/channels/operation/UpdateChannelPrivacy>`_ or :ref:`mmctl channel modify command <administration-guide/manage/mmctl-command-line-tool:mmctl channel modify>` is limited to system admins, team admins, and users with specific granular admin roles. Team admins have this permission by default, but system admins can restrict it or assign it to other roles. 
+  - The ability to convert private channels to public channels using the `API <https://api.mattermost.com/#tag/channels/operation/UpdateChannelPrivacy>`_ or :ref:`mmctl channel modify command <administration-guide/admin-tools/mmctl-command-line-tool:mmctl channel modify>` is limited to system admins, team admins, and users with specific granular admin roles. Team admins have this permission by default, but system admins can restrict it or assign it to other roles. 
   - Granular roles require permissions for managing User Management Channels and Groups, including ``sysconsole_write_user_management_channels`` and ``sysconsole_write_user_management_groups``. Manage permissions through the :ref:`permission scheme <administration-guide/onboard/advanced-permissions:permissions structure>`.
   - If :ref:`Sync Group channel management <administration-guide/manage/team-channel-members:channel management>` is enabled, private channels can't be converted to public channels.
 

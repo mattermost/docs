@@ -15,7 +15,7 @@
 **Release day: 2025-09-16**
 
 ```{Important}
-If you upgrade from a release earlier than v10.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
+If you upgrade from a release earlier than v10.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/operations-scaling/important-upgrade-notes.html).
 ```
 
 ### Compatibility
@@ -65,7 +65,7 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
   - Original 10.11.0 release.
 
 ```{Important}
-If you upgrade from a release earlier than v10.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
+If you upgrade from a release earlier than v10.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/operations-scaling/important-upgrade-notes.html).
 ```
 
 ### Highlights

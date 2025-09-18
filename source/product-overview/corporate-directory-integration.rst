@@ -18,7 +18,7 @@ Security features for authentication
 
 A core set of features is available with all authentication options to help increase security:
 
-- Ability to :ref:`set session length <administration-guide/configure/environment-configuration-settings:session lengths>` to define how long a user can use Mattermost before needing to re-enter credentials.
+- Ability to :ref:`set session length <administration-guide/configuration-reference/environment-configuration-settings:session lengths>` to define how long a user can use Mattermost before needing to re-enter credentials.
 - Ability for users to remotely sign out of devices.
 - Ability for IT admin to force sign out of a user from devices.
 - Ability to set rate limits on authentication API calls to deter password-guessing attacks.
@@ -28,7 +28,7 @@ A core set of features is available with all authentication options to help incr
 AD/LDAP authentication
 ------------------------
 
-:doc:`AD/LDAP </administration-guide/onboard/ad-ldap>` is the most popular corporate directory integration option for deploying Mattermost behind a corporate firewall. Features include:
+:doc:`AD/LDAP </administration-guide/identity-access/ad-ldap>` is the most popular corporate directory integration option for deploying Mattermost behind a corporate firewall. Features include:
 
 - Account creation using AD/LDAP credentials.
 - AD/LDAP user filters to define which users get access to Mattermost in the form of a query.
@@ -38,8 +38,8 @@ AD/LDAP authentication
 - Synchronization with AD/LDAP to disable, enable, and update Mattermost users based on AD/LDAP.
 
 .. note:: 
-   - New user accounts are created when new users log in with their AD/LDAP credentials. You can optionally pre-create user accounts using the :doc:`bulk loading </administration-guide/onboard/bulk-loading-data>` tool.
-   - If you're using email or username and password authentication :ref:`users can switch to AD/LDAP manually <administration-guide/onboard/ad-ldap:getting started>`, and the conversion to AD/LDAP can also be done using the :ref:`mmctl user migrate auth <administration-guide/manage/mmctl-command-line-tool:mmctl user migrate-auth>` command by an IT admin.
+   - New user accounts are created when new users log in with their AD/LDAP credentials. You can optionally pre-create user accounts using the :doc:`bulk loading </administration-guide/getting-started/bulk-loading-data>` tool.
+   - If you're using email or username and password authentication :ref:`users can switch to AD/LDAP manually <administration-guide/identity-access/ad-ldap:getting started>`, and the conversion to AD/LDAP can also be done using the :ref:`mmctl user migrate auth <administration-guide/admin-tools/mmctl-command-line-tool:mmctl user migrate-auth>` command by an IT admin.
 
 For very large AD/LDAP instances you can also configure max page size to divide a Mattermost AD/LDAP query into several pieces to not overtax the authentication server when synchronizing.
 
@@ -48,13 +48,13 @@ Authentication options outside of a private network
 
 When deploying Mattermost to a DMZ location outside the security of a private network, additional authentication options include:
 
-- :doc:`Okta integration via SAML </administration-guide/onboard/sso-saml-okta>`
-- :doc:`OneLogin integration via SAML </administration-guide/onboard/sso-saml-onelogin>`
-- :doc:`Active Directory Federation Services via SAML </administration-guide/onboard/sso-saml-adfs>`
-- :doc:`SAML 2.0 authentication </administration-guide/onboard/sso-saml>`
-- :doc:`Google Apps </administration-guide/onboard/sso-google>`
-- :doc:`Entra ID </administration-guide/onboard/sso-entraid>`
-- :doc:`OpenID Connect </administration-guide/onboard/sso-openidconnect>`
+- :doc:`Okta integration via SAML </administration-guide/identity-access/authentication-methods/saml-based-sso/sso-saml-okta>`
+- :doc:`OneLogin integration via SAML </administration-guide/identity-access/authentication-methods/saml-based-sso/sso-saml-onelogin>`
+- :doc:`Active Directory Federation Services via SAML </administration-guide/identity-access/authentication-methods/saml-based-sso/sso-saml-adfs>`
+- :doc:`SAML 2.0 authentication </administration-guide/identity-access/authentication-methods/saml-based-sso/sso-saml>`
+- :doc:`Google Apps </administration-guide/identity-access/authentication-methods/sso/sso-google>`
+- :doc:`Entra ID </administration-guide/identity-access/authentication-methods/sso/sso-entraid>`
+- :doc:`OpenID Connect </administration-guide/identity-access/authentication-methods/sso/sso-openidconnect>`
 
 Generic OAuth is not currently supported.
 

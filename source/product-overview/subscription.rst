@@ -89,7 +89,7 @@ How is a user defined for subscriptions?
 
 For the purpose of billing, a “user” is any account created in Mattermost that does not show as **Deactivated** in **System Console > User Management > Users**. Guests are also defined as users.
 
-Bots, deactivated users, and synthetic users in :doc:`Microsoft Teams integrations </end-user-guide/collaborate/collaborate-within-connected-microsoft-teams>` and :doc:`connected workspace </administration-guide/onboard/connected-workspaces>` users aren't counted towards the total number of activated users.
+Bots, deactivated users, and synthetic users in :doc:`Microsoft Teams integrations </end-user-guide/collaborate/collaborate-within-connected-microsoft-teams>` and :doc:`connected workspace </administration-guide/getting-started/connected-workspaces>` users aren't counted towards the total number of activated users.
 
 You can review your user count, for billing purposes, by going to **System Console > Site Statistics**, under **Total Activated Users**.
 
@@ -116,7 +116,7 @@ The affected features include, but are not limited to, the following:
     
     Mentions for AD/LDAP groups are not shown in the autocomplete menu.
     
-    Group mentions are no longer highlighted in text and do not trigger new notifications.", "Use :ref:`mmctl <administration-guide/manage/mmctl-command-line-tool:mmctl group>` to modify group sync settings for the team/channel."
+    Group mentions are no longer highlighted in text and do not trigger new notifications.", "Use :ref:`mmctl <administration-guide/admin-tools/mmctl-command-line-tool:mmctl group>` to modify group sync settings for the team/channel."
     "High availability", "High availability is disabled. If all nodes in a cluster continue running, the nodes will stop communicating and caches will get out of sync. This is likely to cause delays in messages, notifications, etc.", "None needed."
     "Performance monitoring", "Monitoring is disabled and Grafana will no longer update with new data.", "None needed."
     "Compliance exports", "Jobs are no longer scheduled in the job server. Data is not exported.", "None needed."
@@ -124,7 +124,7 @@ The affected features include, but are not limited to, the following:
     "Custom terms", "Custom terms no longer displayed to end users on login. Data is retained in the Terms of Service database table.", "None needed."
     "Custom announcement banners", "No longer visible and is replaced by the default announcement banner.", "None needed."
     "Multi-factor authentication (MFA)", "MFA is no longer enforced/required for new accounts but remains enabled for those who configured it.", "None needed."
-    "Permissions", "Permissions are retained in the database in a frozen state and cannot be modified in the System Console.", "Use :ref:`mmctl <administration-guide/manage/mmctl-command-line-tool:mmctl permissions>` to reset permissions to default."
+    "Permissions", "Permissions are retained in the database in a frozen state and cannot be modified in the System Console.", "Use :ref:`mmctl <administration-guide/admin-tools/mmctl-command-line-tool:mmctl permissions>` to reset permissions to default."
     "Guest accounts", "Guests that are not actively logged in are prevented from logging in. Guests who are actively logged in are able to use Mattermost until their session expires or they log out.", "None needed."
     
 Is there a maximum number of users per subscription?

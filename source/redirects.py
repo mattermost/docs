@@ -302,6 +302,229 @@ redirects_map = {
 # Administration redirects
 "administration/announcement-banner.html":
         "https://docs.mattermost.com/administration-guide/manage/system-wide-notifications.html",
+
+# Administration guide restructuring (2025-09)
+# Comply → Compliance, Security & Auditing
+"administration-guide/comply/compliance-export.html":
+        "https://docs.mattermost.com/administration-guide/compliance-security-auditing/compliance-export.html",
+"administration-guide/comply/compliance-monitoring.html":
+        "https://docs.mattermost.com/administration-guide/compliance-security-auditing/compliance-monitoring.html",
+"administration-guide/comply/custom-terms-of-service.html":
+        "https://docs.mattermost.com/administration-guide/compliance-security-auditing/custom-terms-of-service.html",
+"administration-guide/comply/data-retention-policy.html":
+        "https://docs.mattermost.com/administration-guide/compliance-security-auditing/data-retention-policy.html",
+"administration-guide/comply/electronic-discovery.html":
+        "https://docs.mattermost.com/administration-guide/compliance-security-auditing/electronic-discovery.html",
+"administration-guide/comply/embedded-json-audit-log-schema.html":
+        "https://docs.mattermost.com/administration-guide/compliance-security-auditing/embedded-json-audit-log-schema.html",
+"administration-guide/comply/export-mattermost-channel-data.html":
+        "https://docs.mattermost.com/administration-guide/compliance-security-auditing/export-mattermost-channel-data.html",
+"administration-guide/comply/legal-hold.html":
+        "https://docs.mattermost.com/administration-guide/compliance-security-auditing/legal-hold.html",
+"administration-guide/compliance-with-mattermost.html":
+        "https://docs.mattermost.com/administration-guide/compliance-security-auditing/compliance-with-mattermost.html",
+
+# Onboard → Identity & Access / Getting Started
+"administration-guide/onboard/ad-ldap.html":
+        "https://docs.mattermost.com/administration-guide/identity-access/ad-ldap.html",
+"administration-guide/onboard/ad-ldap-groups-synchronization.html":
+        "https://docs.mattermost.com/administration-guide/identity-access/ad-ldap-groups-synchronization.html",
+"administration-guide/onboard/managing-team-channel-membership-using-ad-ldap-sync-groups.html":
+        "https://docs.mattermost.com/administration-guide/identity-access/managing-team-channel-membership-using-ad-ldap-sync-groups.html",
+"administration-guide/onboard/multi-factor-authentication.html":
+        "https://docs.mattermost.com/administration-guide/identity-access/multi-factor-authentication.html",
+"administration-guide/onboard/certificate-based-authentication.html":
+        "https://docs.mattermost.com/administration-guide/identity-access/certificate-based-authentication.html",
+"administration-guide/onboard/ssl-client-certificate.html":
+        "https://docs.mattermost.com/administration-guide/identity-access/ssl-client-certificate.html",
+"administration-guide/onboard/sso-gitlab.html":
+        "https://docs.mattermost.com/administration-guide/identity-access/authentication-methods/sso/sso-gitlab.html",
+"administration-guide/onboard/sso-openidconnect.html":
+        "https://docs.mattermost.com/administration-guide/identity-access/authentication-methods/sso/sso-openidconnect.html",
+"administration-guide/onboard/sso-google.html":
+        "https://docs.mattermost.com/administration-guide/identity-access/authentication-methods/sso/sso-google.html",
+"administration-guide/onboard/sso-entraid.html":
+        "https://docs.mattermost.com/administration-guide/identity-access/authentication-methods/sso/sso-entraid.html",
+"administration-guide/onboard/convert-oauth20-service-providers-to-openidconnect.html":
+        "https://docs.mattermost.com/administration-guide/identity-access/authentication-methods/sso/convert-oauth20-service-providers-to-openidconnect.html",
+"administration-guide/onboard/sso-saml.html":
+        "https://docs.mattermost.com/administration-guide/identity-access/authentication-methods/saml-based-sso/sso-saml.html",
+"administration-guide/onboard/sso-saml-adfs.html":
+        "https://docs.mattermost.com/administration-guide/identity-access/authentication-methods/saml-based-sso/sso-saml-adfs.html",
+"administration-guide/onboard/sso-saml-adfs-msws2016.html":
+        "https://docs.mattermost.com/administration-guide/identity-access/authentication-methods/saml-based-sso/sso-saml-adfs-msws2016.html",
+"administration-guide/onboard/sso-saml-okta.html":
+        "https://docs.mattermost.com/administration-guide/identity-access/authentication-methods/saml-based-sso/sso-saml-okta.html",
+"administration-guide/onboard/sso-saml-onelogin.html":
+        "https://docs.mattermost.com/administration-guide/identity-access/authentication-methods/saml-based-sso/sso-saml-onelogin.html",
+"administration-guide/onboard/sso-saml-keycloak.html":
+        "https://docs.mattermost.com/administration-guide/identity-access/authentication-methods/saml-based-sso/sso-saml-keycloak.html",
+"administration-guide/onboard/sso-saml-ldapsync.html":
+        "https://docs.mattermost.com/administration-guide/identity-access/authentication-methods/saml-based-sso/sso-saml-ldapsync.html",
+"administration-guide/onboard/sso-saml-technical.html":
+        "https://docs.mattermost.com/administration-guide/identity-access/authentication-methods/saml-based-sso/sso-saml-technical.html",
+"administration-guide/onboard/sso-saml-faq.html":
+        "https://docs.mattermost.com/administration-guide/identity-access/authentication-methods/saml-based-sso/sso-saml-faq.html",
+"administration-guide/onboard/migrating-to-mattermost.html":
+        "https://docs.mattermost.com/administration-guide/getting-started/migrating-to-mattermost.html",
+"administration-guide/onboard/migrate-from-slack.html":
+        "https://docs.mattermost.com/administration-guide/getting-started/migrate-from-slack.html",
+"administration-guide/onboard/migrating-from-hipchat-to-mattermost.html":
+        "https://docs.mattermost.com/administration-guide/getting-started/migrating-from-hipchat-to-mattermost.html",
+"administration-guide/onboard/connected-workspaces.html":
+        "https://docs.mattermost.com/administration-guide/getting-started/connected-workspaces.html",
+"administration-guide/onboard/bulk-loading-data.html":
+        "https://docs.mattermost.com/administration-guide/getting-started/bulk-loading-data.html",
+
+# Upgrade/Scale → Operations & Scaling or Getting Started
+"administration-guide/upgrade/upgrading-mattermost-server.html":
+        "https://docs.mattermost.com/administration-guide/operations-scaling/upgrading-mattermost-server.html",
+"administration-guide/upgrade/prepare-to-upgrade-mattermost.html":
+        "https://docs.mattermost.com/administration-guide/operations-scaling/prepare-to-upgrade-mattermost.html",
+"administration-guide/upgrade/important-upgrade-notes.html":
+        "https://docs.mattermost.com/administration-guide/operations-scaling/important-upgrade-notes.html",
+"administration-guide/upgrade/upgrade-mattermost-kubernetes-ha.html":
+        "https://docs.mattermost.com/administration-guide/operations-scaling/upgrade-mattermost-kubernetes-ha.html",
+"administration-guide/upgrade/downgrading-mattermost-server.html":
+        "https://docs.mattermost.com/administration-guide/operations-scaling/downgrading-mattermost-server.html",
+"administration-guide/upgrade/enterprise-roll-out-checklist.html":
+        "https://docs.mattermost.com/administration-guide/getting-started/enterprise-roll-out-checklist.html",
+"administration-guide/upgrade/admin-onboarding-tasks.html":
+        "https://docs.mattermost.com/administration-guide/getting-started/admin-onboarding-tasks.html",
+"administration-guide/upgrade-mattermost.html":
+        "https://docs.mattermost.com/administration-guide/operations-scaling/upgrade-mattermost.html",
+
+# Scale → Operations & Scaling
+"administration-guide/scale/high-availability-cluster-based-deployment.html":
+        "https://docs.mattermost.com/administration-guide/operations-scaling/high-availability-cluster-based-deployment.html",
+"administration-guide/scale/scaling-for-enterprise.html":
+        "https://docs.mattermost.com/administration-guide/operations-scaling/scaling-for-enterprise.html",
+"administration-guide/scale/redis.html":
+        "https://docs.mattermost.com/administration-guide/operations-scaling/redis.html",
+"administration-guide/scale/elasticsearch-setup.html":
+        "https://docs.mattermost.com/administration-guide/operations-scaling/elasticsearch-setup.html",
+"administration-guide/scale/opensearch-setup.html":
+        "https://docs.mattermost.com/administration-guide/operations-scaling/opensearch-setup.html",
+"administration-guide/scale/ensuring-releases-perform-at-scale.html":
+        "https://docs.mattermost.com/administration-guide/operations-scaling/ensuring-releases-perform-at-scale.html",
+"administration-guide/scale/collect-performance-metrics.html":
+        "https://docs.mattermost.com/administration-guide/operations-scaling/collect-performance-metrics.html",
+"administration-guide/scale/estimated-storage-per-user-per-month.html":
+        "https://docs.mattermost.com/administration-guide/operations-scaling/estimated-storage-per-user-per-month.html",
+"administration-guide/scale/lifetime-storage.html":
+        "https://docs.mattermost.com/administration-guide/operations-scaling/lifetime-storage.html",
+"administration-guide/scale/performance-alerting.html":
+        "https://docs.mattermost.com/administration-guide/operations-scaling/performance-alerting.html",
+"administration-guide/scale/performance-monitoring-metrics.html":
+        "https://docs.mattermost.com/administration-guide/operations-scaling/performance-monitoring-metrics.html",
+"administration-guide/scale/additional-ha-considerations.html":
+        "https://docs.mattermost.com/administration-guide/operations-scaling/additional-ha-considerations.html",
+"administration-guide/scale/backing-storage-benchmarks.html":
+        "https://docs.mattermost.com/administration-guide/operations-scaling/backing-storage-benchmarks.html",
+"administration-guide/scale/common-configure-mattermost-for-enterprise-search.html":
+        "https://docs.mattermost.com/administration-guide/operations-scaling/common-configure-mattermost-for-enterprise-search.html",
+"administration-guide/scale/push-notification-health-targets.html":
+        "https://docs.mattermost.com/administration-guide/operations-scaling/push-notification-health-targets.html",
+"administration-guide/scale/scale-to-200000-users.html":
+        "https://docs.mattermost.com/administration-guide/operations-scaling/scale-to-200000-users.html",
+"administration-guide/scale/scale-to-100000-users.html":
+        "https://docs.mattermost.com/administration-guide/operations-scaling/scale-to-100000-users.html",
+"administration-guide/scale/scale-to-15000-users.html":
+        "https://docs.mattermost.com/administration-guide/operations-scaling/scale-to-15000-users.html",
+"administration-guide/scale/scale-to-200-users.html":
+        "https://docs.mattermost.com/administration-guide/operations-scaling/scale-to-200-users.html",
+"administration-guide/scale/scale-to-2000-users.html":
+        "https://docs.mattermost.com/administration-guide/operations-scaling/scale-to-2000-users.html",
+"administration-guide/scale/scale-to-30000-users.html":
+        "https://docs.mattermost.com/administration-guide/operations-scaling/scale-to-30000-users.html",
+"administration-guide/scale/scale-to-50000-users.html":
+        "https://docs.mattermost.com/administration-guide/operations-scaling/scale-to-50000-users.html",
+"administration-guide/scale/scale-to-80000-users.html":
+        "https://docs.mattermost.com/administration-guide/operations-scaling/scale-to-80000-users.html",
+"administration-guide/scale/scale-to-90000-users.html":
+        "https://docs.mattermost.com/administration-guide/operations-scaling/scale-to-90000-users.html",
+
+# Manage → Admin Tools & Utilities (selected)
+"administration-guide/manage/command-line-tools.html":
+        "https://docs.mattermost.com/administration-guide/admin-tools/command-line-tools.html",
+"administration-guide/manage/mmctl-command-line-tool.html":
+        "https://docs.mattermost.com/administration-guide/admin-tools/mmctl-command-line-tool.html",
+"administration-guide/manage/logging.html":
+        "https://docs.mattermost.com/administration-guide/admin-tools/logging.html",
+"administration-guide/manage/in-product-notices.html":
+        "https://docs.mattermost.com/administration-guide/admin-tools/in-product-notices.html",
+"administration-guide/manage/system-wide-notifications.html":
+        "https://docs.mattermost.com/administration-guide/admin-tools/system-wide-notifications.html",
+"administration-guide/manage/feature-labels.html":
+        "https://docs.mattermost.com/administration-guide/admin-tools/feature-labels.html",
+"administration-guide/manage/statistics.html":
+        "https://docs.mattermost.com/administration-guide/admin-tools/statistics.html",
+"administration-guide/manage/request-server-health-check.html":
+        "https://docs.mattermost.com/administration-guide/admin-tools/request-server-health-check.html",
+"administration-guide/manage/telemetry.html":
+        "https://docs.mattermost.com/administration-guide/admin-tools/telemetry.html",
+"administration-guide/manage/bulk-export-tool.html":
+        "https://docs.mattermost.com/administration-guide/admin-tools/bulk-export-tool.html",
+"administration-guide/manage/cloud-byok.html":
+        "https://docs.mattermost.com/administration-guide/admin-tools/cloud-byok.html",
+"administration-guide/manage/cloud-data-residency.html":
+        "https://docs.mattermost.com/administration-guide/admin-tools/cloud-data-residency.html",
+"administration-guide/manage/cloud-ip-filtering.html":
+        "https://docs.mattermost.com/administration-guide/admin-tools/cloud-ip-filtering.html",
+"administration-guide/manage/cloud-data-export.html":
+        "https://docs.mattermost.com/administration-guide/admin-tools/cloud-data-export.html",
+
+# Cloud workspace & licensing
+"administration-guide/cloud-workspace-management.html":
+        "https://docs.mattermost.com/administration-guide/licensing/cloud-workspace-management.html",
+"administration-guide/manage/admin/self-hosted-billing.html":
+        "https://docs.mattermost.com/administration-guide/licensing/self-hosted-billing.html",
+"administration-guide/manage/admin/installing-license-key.html":
+        "https://docs.mattermost.com/administration-guide/admin-tools/installing-license-key.html",
+
+# Configure → Configuration Settings (Reference)
+"administration-guide/configure/configuration-settings.html":
+        "https://docs.mattermost.com/administration-guide/configuration-reference/configuration-settings.html",
+"administration-guide/configure/system-attributes.html":
+        "https://docs.mattermost.com/administration-guide/configuration-reference/system-attributes.html",
+"administration-guide/configure/environment-variables.html":
+        "https://docs.mattermost.com/administration-guide/configuration-reference/environment-variables.html",
+"administration-guide/configure/authentication-configuration-settings.html":
+        "https://docs.mattermost.com/administration-guide/configuration-reference/authentication-configuration-settings.html",
+"administration-guide/configure/site-configuration-settings.html":
+        "https://docs.mattermost.com/administration-guide/configuration-reference/site-configuration-settings.html",
+"administration-guide/configure/user-management-configuration-settings.html":
+        "https://docs.mattermost.com/administration-guide/configuration-reference/user-management-configuration-settings.html",
+"administration-guide/configure/integrations-configuration-settings.html":
+        "https://docs.mattermost.com/administration-guide/configuration-reference/integrations-configuration-settings.html",
+"administration-guide/configure/plugins-configuration-settings.html":
+        "https://docs.mattermost.com/administration-guide/configuration-reference/plugins-configuration-settings.html",
+"administration-guide/configure/reporting-configuration-settings.html":
+        "https://docs.mattermost.com/administration-guide/configuration-reference/reporting-configuration-settings.html",
+"administration-guide/configure/compliance-configuration-settings.html":
+        "https://docs.mattermost.com/administration-guide/configuration-reference/compliance-configuration-settings.html",
+"administration-guide/configure/experimental-configuration-settings.html":
+        "https://docs.mattermost.com/administration-guide/configuration-reference/experimental-configuration-settings.html",
+"administration-guide/configure/deprecated-configuration-settings.html":
+        "https://docs.mattermost.com/administration-guide/configuration-reference/deprecated-configuration-settings.html",
+"administration-guide/configure/rate-limiting-configuration-settings.html":
+        "https://docs.mattermost.com/administration-guide/configuration-reference/rate-limiting-configuration-settings.html",
+"administration-guide/configure/push-notification-server-configuration-settings.html":
+        "https://docs.mattermost.com/administration-guide/configuration-reference/push-notification-server-configuration-settings.html",
+"administration-guide/configure/configuration-in-your-database.html":
+        "https://docs.mattermost.com/administration-guide/configuration-reference/configuration-in-your-database.html",
+"administration-guide/configure/bleve-search.html":
+        "https://docs.mattermost.com/administration-guide/configuration-reference/bleve-search.html",
+"administration-guide/configure/enabling-chinese-japanese-korean-search.html":
+        "https://docs.mattermost.com/administration-guide/configuration-reference/enabling-chinese-japanese-korean-search.html",
+"administration-guide/configure/install-boards.html":
+        "https://docs.mattermost.com/administration-guide/configuration-reference/install-boards.html",
+"administration-guide/configure/manage-user-surveys.html":
+        "https://docs.mattermost.com/administration-guide/configuration-reference/manage-user-surveys.html",
+"administration-guide/configure/customize-mattermost.html":
+        "https://docs.mattermost.com/administration-guide/configuration-reference/customize-mattermost.html",
+"administration-guide/configure/custom-branding-tools.html":
+        "https://docs.mattermost.com/administration-guide/configuration-reference/custom-branding-tools.html",
 "administration/audit-log.html":
         "https://docs.mattermost.com/administration-guide/comply/audit-log.html",
 "administration/backup.html":

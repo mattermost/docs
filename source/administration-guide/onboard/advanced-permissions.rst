@@ -79,7 +79,7 @@ Ensure users only see each other when in the same team or channel
 
 Example: A classified organization wants to use Mattermost teams for classified projects. In each project, team members can't know about members outside of their project, and :doc:`@mentions </end-user-guide/collaborate/mention-people>` can't disclose the names of people outside of a classified project.
 
-Use the :ref:`mmctl permissions remove <administration-guide/manage/mmctl-command-line-tool:mmctl permissions remove>` command to revoke the ``view_member`` permission from the ``system_user`` role: ``mmctl permissions remove system_user view_member``.
+Use the :ref:`mmctl permissions remove <administration-guide/admin-tools/mmctl-command-line-tool:mmctl permissions remove>` command to revoke the ``view_member`` permission from the ``system_user`` role: ``mmctl permissions remove system_user view_member``.
 
 Only allow admins, in a specific team, to add members
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -215,9 +215,9 @@ Administration tools
 
 There are a number of API and mmctl tools available for admins to help in configuring and troubleshooting the permissions system:
 
-1. Reset all permissions to the default on new installations using the :ref:`mmctl permissions reset <administration-guide/manage/mmctl-command-line-tool:mmctl permissions reset>` command.
+1. Reset all permissions to the default on new installations using the :ref:`mmctl permissions reset <administration-guide/admin-tools/mmctl-command-line-tool:mmctl permissions reset>` command.
 2. Use the `GetAllRoles <https://api.mattermost.com/#tag/roles/operation/GetAllRoles>`__ API endpoint to get a list of all roles.
-3. Add permissions to a role using the :ref:`mmctl permissions add <administration-guide/manage/mmctl-command-line-tool:mmctl permissions add>` command.
+3. Add permissions to a role using the :ref:`mmctl permissions add <administration-guide/admin-tools/mmctl-command-line-tool:mmctl permissions add>` command.
 
 Backend infrastructure
 ----------------------

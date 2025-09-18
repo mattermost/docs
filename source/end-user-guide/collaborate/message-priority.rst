@@ -37,7 +37,7 @@ To enable persistent notifications for a message:
 .. note:: 
 
   - @channel, @all and @here mentions don't send persistent notifications.
-  - System admins can customize the maximum number of @mentions permitted, how frequently and how many persistent notifications are sent, as well as disable persistent notifications for all users, if preferred. By default, users are notified every 5 minutes for a total of 30 minutes. See the :ref:`configuration <administration-guide/configure/site-configuration-settings:persistent notifications>` documentation for details.
+  - System admins can customize the maximum number of @mentions permitted, how frequently and how many persistent notifications are sent, as well as disable persistent notifications for all users, if preferred. By default, users are notified every 5 minutes for a total of 30 minutes. See the :ref:`configuration <administration-guide/configuration-reference/site-configuration-settings:persistent notifications>` documentation for details.
 
 Receive persistent notifications
 --------------------------------

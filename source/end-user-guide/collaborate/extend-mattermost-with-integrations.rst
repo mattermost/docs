@@ -12,9 +12,9 @@ Mattermost features
 ~~~~~~~~~~~~~~~~~~~~
 
 - :ref:`AI Agents <end-user-guide/agents:access ai features>`
-- :ref:`Export Mattermost channel data <administration-guide/comply/export-mattermost-channel-data:usage>`
-- :ref:`Monitor performance metrics <administration-guide/scale/collect-performance-metrics:usage>`
-- :doc:`Perform legal holds </administration-guide/comply/legal-hold>`
+- :ref:`Export Mattermost channel data <administration-guide/compliance-security-auditing/export-mattermost-channel-data:usage>`
+- :ref:`Monitor performance metrics <administration-guide/operations-scaling/collect-performance-metrics:usage>`
+- :doc:`Perform legal holds </administration-guide/compliance-security-auditing/legal-hold>`
 
 Mattermost interoperability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

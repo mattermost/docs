@@ -47,7 +47,7 @@ Messaging collaboration
 :doc:`Mattermost Channels </end-user-guide/messaging-collaboration>` enables secure, real-time and asynchronous communication across web, desktop, and mobile—powering mission-critical collaboration and Chat Operations (ChatOps) workflows across connected, hybrid, and air-gapped environments. Channels feature the following capabilities: 
 
 - :ref:`Public <end-user-guide/collaborate/channel-types:public channels>` and :ref:`private <end-user-guide/collaborate/channel-types:private channels>` channels, :ref:`direct messages <end-user-guide/collaborate/channel-types:direct message channels>`, and :doc:`threaded conversations </end-user-guide/collaborate/organize-conversations>` for structured operational coordination.
-- :doc:`Role-based access controls </end-user-guide/collaborate/learn-about-roles>` and :ref:`audit logs <administration-guide/manage/logging:audit logging>` to support need-to-know enforcement.
+- :doc:`Role-based access controls </end-user-guide/collaborate/learn-about-roles>` and :ref:`audit logs <administration-guide/admin-tools/logging:audit logging>` to support need-to-know enforcement.
 - Configurable :doc:`notifications </end-user-guide/preferences/manage-your-notifications>` (e.g., :ref:`alerts <end-user-guide/preferences/manage-your-notifications:default notifications>`, :doc:`keyword triggers </end-user-guide/preferences/manage-your-mentions-keywords-notifications>`, :doc:`muting </end-user-guide/preferences/manage-your-channel-specific-notifications>`) to surface high-priority activity.
 - Integrated ChatOps capabilities via :doc:`slash commands </integrations-guide/run-slash-commands>`, `bots <https://developers.mattermost.com/integrate/reference/bot-accounts/>`_, and :doc:`webhooks </integrations-guide/webhook-integrations>` for real-time automation and system alerts.
 - :ref:`Pinning <end-user-guide/collaborate/save-pin-messages:pin messages>`, :doc:`bookmarking </end-user-guide/collaborate/manage-channel-bookmarks>`, and :doc:`advanced search </end-user-guide/collaborate/search-for-messages>` to maintain continuity and context in high-volume environments.
@@ -79,7 +79,7 @@ Audio and screenshare
 
 - Enables :ref:`1:1 and group audio calls <end-user-guide/collaborate/make-calls:join a call>` directly within channels and direct messages, maintaining contextual awareness and access control based on channel membership.
 - Supports secure :ref:`screen sharing <end-user-guide/collaborate/make-calls:share your screen>` for visual coordination and analysis.
-- Operates in :doc:`sovereign, air-gapped, or sensitive network </administration-guide/configure/calls-deployment>` environments.
+- Operates in :doc:`sovereign, air-gapped, or sensitive network </administration-guide/platform-features/calls-deployment>` environments.
 - Offers optional :ref:`AI-based transcription <end-user-guide/collaborate/make-calls:transcribe recorded calls>` and :ref:`summarization <end-user-guide/agents:analyze threads and channels>` for meeting capture and follow ups.
 - Works across web, desktop, and mobile for flexible, secure access.
 
@@ -108,7 +108,7 @@ AI Agents and open APIs
 - Provides configurable AI assistants that :ref:`summarize threads <end-user-guide/agents:summarize discussion threads>`, :ref:`extract action items and answer questions <end-user-guide/agents:chat with agents>` with contextual insight and operational awareness.
 - Supports :ref:`direct interactions with AI agents <end-user-guide/agents:chat with agents>` in dedicated threads or channels.
 - Enables :ref:`semantic search <end-user-guide/agents:search with ai>` using natural language to surface relevant content across Mattermost data.
-- Supports Retrieval-Augmented Generation (RAG), :ref:`custom instructions <administration-guide/configure/agents-admin-guide:custom instructions>`, and responsible :ref:`AI guardrails <administration-guide/configure/agents-admin-guide:permission configuration>` for secure automation.
+- Supports Retrieval-Augmented Generation (RAG), :ref:`custom instructions <administration-guide/configuration-reference/agents-admin-guide:custom instructions>`, and responsible :ref:`AI guardrails <administration-guide/configuration-reference/agents-admin-guide:permission configuration>` for secure automation.
 - Integrates with :doc:`local models </agents/docs/providers>` (e.g., Ollama, vLLM) and cloud LLMs via OpenAI-compatible APIs for flexible deployment.
 
 .. image:: /images/agents-meeting-summary.png
@@ -142,10 +142,10 @@ Multi-Agent, Multi-LLM integration
 A secure, extensible foundation for integrating multiple large language models (LLMs) and autonomous agents within a sovereign control plane enables organizations to operationalize AI within sovereign infrastructure—fusing data across systems, accelerating decisions, and maintaining full control over AI model access and performance. Organizations can leverage the following capabilities to operationalize AI:
 
 - :doc:`Sovereign AI </agents/docs/sovereign_ai>` model support: Integrate with :doc:`OpenAI, Anthropic, Meta Llama, and other LLMs </agents/docs/providers>` via secure APIs.
-- :ref:`Custom instructions <administration-guide/configure/agents-admin-guide:custom instructions>` and Retrieval-Augmented Generation (RAG): Adapt agent behavior to domain-specific tasks using internal data and policies.
+- :ref:`Custom instructions <administration-guide/configuration-reference/agents-admin-guide:custom instructions>` and Retrieval-Augmented Generation (RAG): Adapt agent behavior to domain-specific tasks using internal data and policies.
 - :ref:`Semantic search <end-user-guide/agents:search with ai>` and natural language interaction: Provide operational teams with intuitive ways to retrieve and act on information.
 - :ref:`Responsible AI control plane <agents/docs/sovereign_ai:security and compliance features>`: Define model access policies, enforce guardrails, and monitor agent activity with feedback loops.
-- Multi-agent orchestration: Use the :ref:`Mission Control Plane (MCP) <administration-guide/configure/agents-admin-guide:model context protocol (mcp) integration>` and agent-to-agent protocols to coordinate actions across multiple autonomous agents. *
+- Multi-agent orchestration: Use the :ref:`Mission Control Plane (MCP) <administration-guide/configuration-reference/agents-admin-guide:model context protocol (mcp) integration>` and agent-to-agent protocols to coordinate actions across multiple autonomous agents. *
 
 Sovereign & cyber-resilient deployment flexibility
 --------------------------------------------------
@@ -168,8 +168,8 @@ Private Cloud & sovereign datacenter
 For high-security environments requiring full infrastructure control, IME supports scalable, highly available deployment within sovereign datacenters.
 
 - :doc:`Kubernetes-native architecture </deployment-guide/server/deploy-kubernetes>` enables containerized services, self-healing workloads, and zero-downtime updates.
-- :doc:`High availability </administration-guide/scale/high-availability-cluster-based-deployment>` through clustering across application, database, and proxy layers.
-- :doc:`Horizontal scalability </administration-guide/scale/scaling-for-enterprise>` to tens of thousands of users per instance.
+- :doc:`High availability </administration-guide/operations-scaling/high-availability-cluster-based-deployment>` through clustering across application, database, and proxy layers.
+- :doc:`Horizontal scalability </administration-guide/operations-scaling/scaling-for-enterprise>` to tens of thousands of users per instance.
 - Complies with Security Technical Implementation Guide (STIG), Federal Information Processing Standard 140-3 (FIPS 140-3), and Federal Risk and Authorization Management Program (FedRAMP)-aligned security standards.
 
 Hyperscaler & sovereign Cloud support

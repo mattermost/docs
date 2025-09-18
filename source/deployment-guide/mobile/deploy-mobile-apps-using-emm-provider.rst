@@ -147,7 +147,7 @@ The following table shows all the configuration options that can be sent from th
        </tr>
        <tr>
          <td><strong><code>inAppSessionAuth</code></strong><br><em>String</em></td>
-         <td>Use the app's internal browser for SSO instead of an external browser. From Mattermost v10.2 and mobile v2.2.1, deprecated in favor of the <a href="../../administration-guide/configure/site-configuration-settings.html#mobile-external-browser">mobile external browser</a> server configuration setting.</td>
+         <td>Use the app's internal browser for SSO instead of an external browser. From Mattermost v10.2 and mobile v2.2.1, deprecated in favor of the <a href="../../administration-guide/configuration-reference/site-configuration-settings.html#mobile-external-browser">mobile external browser</a> server configuration setting.</td>
          <td>Default: <code>false</code><br>Valid: <code>true | false</code></td>
          <td><img src="../../_static/images/check-circle-green.svg"></td>
          <td><img src="../../_static/images/check-circle-green.svg"></td>
