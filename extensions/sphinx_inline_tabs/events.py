@@ -87,51 +87,7 @@ def doctree_read(app: Sphinx, doctree: nodes.document):
         if len(app.env.tocs[app.env.docname][0]) == 1:
             app.env.tocs[app.env.docname][0].append(updated_tocs)
         else:
-            # SAFE FIX: Check if the original structure has toctree nodes
-            # If it does, leave it completely unchanged to preserve left navigation
-            original_toc_item = app.env.tocs[app.env.docname][0][1]
-            has_toctree = False
-            
-            if hasattr(original_toc_item, 'children') and original_toc_item.children:
-                for child in original_toc_item.children:
-                    if isinstance(child, addnodes.toctree):
-                        has_toctree = True
-                        break
-            
-            if has_toctree:
-                # Merge tab headings into the existing right-pane TOC while preserving
-                # the original toctree (left navigation) structure.
-                try:
-                    # Find the bullet list in the original toc item (holds section entries)
-                    original_bullets = None
-                    for child in getattr(original_toc_item, "children", []) or []:
-                        if isinstance(child, nodes.bullet_list):
-                            original_bullets = child
-                            break
-
-                    # Find the bullet list produced by our updated tab-aware TOC
-                    updated_bullets = None
-                    for child in getattr(updated_tocs, "children", []) or []:
-                        if isinstance(child, nodes.bullet_list):
-                            updated_bullets = child
-                            break
-
-                    # If we have tab headings to merge
-                    if updated_bullets is not None:
-                        if original_bullets is None:
-                            # No existing bullets: attach updated list directly
-                            original_toc_item.append(updated_bullets)
-                        else:
-                            # Append each new tab heading item to existing bullets
-                            for li in list(updated_bullets.children):
-                                original_bullets.append(li)
-                except Exception as e:
-                    logger.warning(
-                        f"{LOG_PREFIX} doctree_read({app.env.docname}): failed merging tab headings into TOC: {e}"
-                    )
-            else:
-                # Only apply tab modifications if no toctree nodes are present
-                app.env.tocs[app.env.docname][0][1] = updated_tocs
+            app.env.tocs[app.env.docname][0][1] = updated_tocs
 
 
 def html_page_context(

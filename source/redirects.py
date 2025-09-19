@@ -2852,6 +2852,12 @@ redirects_map = {
         "https://docs.mattermost.com/integrations-guide/mattermost-mission-collaboration-for-m365.html",
 "integrate/microsoft-calendar.html":
         "https://docs.mattermost.com/integrations-guide/microsoft-calendar.html",
+"integrate/microsoft-calendar-interoperability.html#usage":
+        "https://docs.mattermost.com/integrations-guide/microsoft-calendar.html#use",
+"integrate/microsoft-calendar-interoperability.html#setup":
+        "https://docs.mattermost.com/integrations-guide/microsoft-calendar.html#deploy",
+"integrate/microsoft-calendar-interoperability.html#enable-and-configure-the-microsoft-teams-meetings-integration-in-mattermost":
+        "https://docs.mattermost.com/integrations-guide/microsoft-calendar.html#enable-and-configure-the-microsoft-calendar-integration-in-mattermost",
 "integrate/microsoft-teams-meetings.html":
         "https://docs.mattermost.com/integrations-guide/microsoft-teams-meetings.html",
 "integrate/microsoft-teams-sync.html":
@@ -2887,6 +2893,8 @@ redirects_map = {
 "integrations/cloud-slash-commands.html":
         "https://developers.mattermost.com/integrate/slash-commands/",
 "integrations-guide/pre-built-integrations.html":
+        "https://docs.mattermost.com/integrations-guide/popular-integrations.html",
+"integrations-guide/popular-integrations.html#third-party-integrations":
         "https://docs.mattermost.com/integrations-guide/popular-integrations.html",
 
 # Manage redirects
