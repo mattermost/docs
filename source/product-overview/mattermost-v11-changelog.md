@@ -22,7 +22,7 @@
  - Support for MySQL has ended. See more details in [this forum post](https://forum.mattermost.com/t/transition-to-postgresql/19551).
  - The ``ExperimentalStrictCSRFEnforcement`` setting has been renamed to ``StrictCSRFEnforcement`` and the default value has been changed to ``true`` for new installations. See more details in [this forum post](https://forum.mattermost.com/t/default-value-of-the-experimental-strict-csrf-enforcement-setting-to-be-changed-to-true-v11/23139).
  - The ``registerPostDropdownMenuComponent`` hook in the web app’s plugin API has been removed in favour of ``registerPostDropdownMenuAction``. See more details in [this forum post](https://forum.mattermost.com/t/deprecating-a-post-dropdown-menu-component-plugin-api-v11/25001).
- - The web app is no longer exposing the `Styled Components <https://styled-components.com/>`__ dependency for use by web app plugins. See more details in [this forum post](https://forum.mattermost.com/t/removing-styled-components-export-for-web-app-plugins-v11/25002).
+ - The web app is no longer exposing the [Styled Components](https://styled-components.com/) dependency for use by web app plugins. See more details in [this forum post](https://forum.mattermost.com/t/removing-styled-components-export-for-web-app-plugins-v11/25002).
  - Omnibus support has been deprecated. The last ``mattermost-omnibus`` release was v10.12. See more details in [this forum post](https://forum.mattermost.com/t/mattermost-omnibus-to-reach-end-of-life-v11/25175).
  - Deprecated ``include_removed_members`` option in ``api/v4/ldap/sync`` have been removed. Admins can use the LDAP setting ``ReAddRemovedMembers``.
  - All telemetry support have been removed from Mattermost. The system no longer collects or sends telemetry data to external services. Customers that have the NPS plugin enabled can remove it as it no longer sends the feedback over through telemetry.
@@ -72,7 +72,7 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
  - Pre-packaged Agents plugin [v1.3.1](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.3.1).
  - Pre-packaged Boards plugin [v9.1.6](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.6).
  - Pre-packaged MS Teams plugin [v2.2.2](https://github.com/mattermost/mattermost-plugin-msteams/releases/tag/v2.2.2).
- - Pre-packaged Playbooks plugin [v2.4.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.4.1), allowing Professional licenses to use playbooks v2.
+ - Pre-packaged Playbooks plugin [v2.4.2](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.4.2), allowing Professional licenses to use playbooks v2.
  - Removed Playbooks v1 from pre-packaged plugins.
  - Updated the library used for customizing scrollbars.
  - Increased page size when retrieving posts in channels with high number of hidden messages.
@@ -96,6 +96,7 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
  - User ``auth_data`` is now shown in the System Console user details page.
  - Added Elasticsearch test to Support Packet diagnostics.
  - Added support for a new ``EmailNotificationWillBeSent`` plugin hook.
+ - Added a console warning when a plugin uses the now-deprecated ``registerPostDropdownMenuComponent`` API.
 
 #### mmctl
  - Removed deprecated mmctl commands and flags:
