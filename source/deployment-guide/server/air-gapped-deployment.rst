@@ -3,7 +3,6 @@ Deploy Mattermost in Air-Gapped Environments
 
 An air-gapped environment is one that is isolated from the public internet, requiring all necessary components to be available locally. This guide outlines what you'll need to deploy Mattermost in a self-hosted air-gapped environment, focusing on appropriate preparation, deployment guidance and configurations required for a successful deployment.
 
-
 Overview
 --------
 
@@ -15,9 +14,9 @@ This step is often dictated by the infrastruture already running in your air-gap
 
 2. **Setup a private container registry or package mirror:** 
 
-Ideally the air-gapped environment already has a private container registry or package mirror available. If not, we recommend following `these instructions <https://docs.mattermost.com/deployment-guide/server/air-gapped-deployment.html#faq>`_ or referencing online resources specific to your environment.
+Ideally the air-gapped environment already has a private container registry or package mirror available. If not, we recommend following :ref:`our frequently asked questions <deployment-guide/server/air-gapped-deployment:frequently asked questions>` or referencing online resources specific to your environment.
 
-3. **Prepare your Bill of Materails:**
+3. **Prepare your Bill of Materials:**
 
 Depending on your deployment method method, you'll need to download, tag, and push required materials into your private registry or mirror.  
 
@@ -31,12 +30,11 @@ Once you have all the necessary resources in your air-gapped environment, you ca
 
 6. **Configure Mattermost for air-gapped operation**
 
-The :ref:`configuration settings </deployment-guide/server/air-gapped-deployment:server configuration>` recommended in this document accomodate for the lack of internet access to operate Mattermost in an air-gapped environment.
+The :ref:`configuration settings <deployment-guide/server/air-gapped-deployment:server configuration>` recommended in this document accomodate for the lack of internet access to operate Mattermost in an air-gapped environment.
 
 
 .. note::
-  Consider `talking to a Mattermost expert <https://mattermost.com/contact-sales/>`_ if your organization needs support deploying Mattermost and supporting services in an air-gapped environment.
-
+  Consider `talking to a Mattermost expert <https://mattermost.com/contact-sales/>`__ if your organization needs support deploying Mattermost and supporting services in an air-gapped environment.
 
 Bill of Materials
 -----------------
@@ -57,9 +55,9 @@ On an internet connect machine, you must gather all required packages, container
     **(Optional) Supporting Services**
     Consider downloading these additional resources if you plan to enable these optional components:
 
-    - :doc:`Mattermost Calls </administration-guide/configure/calls-deployment>`: `mattermost-calls-offloader <https://github.com/mattermost/calls-offloader/releases>`_ (required for recording, transcription and live captions) and `mattermost-rtcd <https://github.com/mattermost/rtcd/releases>`_ (required for performance and scalability).
-    - `Elasticsearch <https://www.elastic.co/downloads/elasticsearch>`_ can be `deployed <https://www.elastic.co/docs/deploy-manage/deploy/self-managed/installing-elasticsearch>`_ for enhanced search performance at scale.
-    - `Prometheus <https://prometheus.io/download/>`_ and `Grafana <https://grafana.com/grafana/download>`_ for monitoring and observability
+    - :doc:`Mattermost Calls </administration-guide/configure/calls-deployment>`: `mattermost-calls-offloader <https://github.com/mattermost/calls-offloader/releases>`__ (required for recording, transcription and live captions) and `mattermost-rtcd <https://github.com/mattermost/rtcd/releases>`__ (required for performance and scalability).
+    - `Elasticsearch <https://www.elastic.co/downloads/elasticsearch>`__ can be `deployed <https://www.elastic.co/docs/deploy-manage/deploy/self-managed/installing-elasticsearch>`__ for enhanced search performance at scale.
+    - `Prometheus <https://prometheus.io/download/>`_ and `Grafana <https://grafana.com/grafana/download>`__ for monitoring and observability
 
 .. tab:: Kubernetes
 
@@ -67,17 +65,17 @@ On an internet connect machine, you must gather all required packages, container
 
     **Prerequisites**
 
-    -  `Mattermost Operator <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-operator>`_ and `values <https://github.com/mattermost/mattermost-helm/blob/master/charts/mattermost-operator/values.yaml>`_
-    - Database: We recommend options such as the `Postgres Operator <https://access.crunchydata.com/documentation/postgres-operator/latest/quickstart>`_ from Crunchy Data, `CloudNativePG <https://cloudnative-pg.io/documentation/1.27/installation_upgrade/>`_ or `pgEdge <https://github.com/pgEdge/pgedge-helm>`_.
-    - File Storage: We recommend the `MinIO Operator <https://github.com/minio/operator>`_.
-    - Load balancer: If you already have a load balancer running in your air-gapped environment you can skip this resource, otherwise we recommend deploying `NGINX <https://docs.mattermost.com/deployment-guide/server/setup-nginx-proxy.html>`_, using the `NGINX Ingress Controller operator <https://docs.nginx.com/nginx-ingress-controller/installation/installing-nic/installation-with-operator/>`_.
+    -  `Mattermost Operator <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-operator>`_ and `values <https://github.com/mattermost/mattermost-helm/blob/master/charts/mattermost-operator/values.yaml>`__
+    - Database: We recommend options such as the `Postgres Operator <https://access.crunchydata.com/documentation/postgres-operator/latest/quickstart>`_ from Crunchy Data, `CloudNativePG <https://cloudnative-pg.io/documentation/1.27/installation_upgrade/>`__ or `pgEdge <https://github.com/pgEdge/pgedge-helm>`__.
+    - File Storage: We recommend the `MinIO Operator <https://github.com/minio/operator>`__.
+    - Load balancer: If you already have a load balancer running in your air-gapped environment you can skip this resource, otherwise we recommend deploying :doc:`NGINX </deployment-guide/server/setup-nginx-proxy>`, using the `NGINX Ingress Controller operator <https://docs.nginx.com/nginx-ingress-controller/installation/installing-nic/installation-with-operator/>`__.
 
     **(Optional) Supporting Services**
     Consider downloading these additional resources if you plan to enable these optional components:
 
-    - :doc:`Mattermost Calls </administration-guide/configure/calls-deployment>` helm charts: `mattermost-calls-offloader <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-calls-offloader>`_ and `values <https://github.com/mattermost/mattermost-helm/blob/master/charts/mattermost-calls-offloader/values.yaml>`_ (required for recording, transcription and live captions), `mattermost-rtcd <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-rtcd>`_ and `values <https://github.com/mattermost/mattermost-helm/blob/master/charts/mattermost-rtcd/values.yaml>`_ (required for performance and scalability).
-    - `Elasticsearch <https://www.elastic.co/docs/deploy-manage/deploy/cloud-on-k8s>`_ can be `deployed in air-gapped k8 environments <https://www.elastic.co/guide/en/cloud-on-k8s/2.8/k8s-air-gapped.html>`_ for enhanced search performance at scale.
-    - `Prometheus <https://github.com/prometheus-operator/prometheus-operator>`_ and `Grafana <https://github.com/grafana/grafana-operator>`_ operators for monitoring and observability
+    - :doc:`Mattermost Calls </administration-guide/configure/calls-deployment>` helm charts: `mattermost-calls-offloader <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-calls-offloader>`__ and `values <https://github.com/mattermost/mattermost-helm/blob/master/charts/mattermost-calls-offloader/values.yaml>`__ (required for recording, transcription and live captions), `mattermost-rtcd <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-rtcd>`__ and `values <https://github.com/mattermost/mattermost-helm/blob/master/charts/mattermost-rtcd/values.yaml>`__ (required for performance and scalability).
+    - `Elasticsearch <https://www.elastic.co/docs/deploy-manage/deploy/cloud-on-k8s>`__ can be `deployed in air-gapped k8 environments <https://www.elastic.co/guide/en/cloud-on-k8s/2.8/k8s-air-gapped.html>`__ for enhanced search performance at scale.
+    - `Prometheus <https://github.com/prometheus-operator/prometheus-operator>`__ and `Grafana <https://github.com/grafana/grafana-operator>`__ operators for monitoring and observability
 
 .. tab:: Docker
 
@@ -85,17 +83,16 @@ On an internet connect machine, you must gather all required packages, container
 
     **Prerequisites**
 
-    - `Mattermost Enterprise Edition <https://hub.docker.com/r/mattermost/mattermost-enterprise-edition>`_ image.
-    - Database: `PostgreSQL <https://hub.docker.com/_/postgres>`_ image.
-    - Load balancer: If you already have a load balancer running in your air-gapped environment you can skip this resource, otherwise we recommend deploying `NGINX <https://docs.mattermost.com/deployment-guide/server/setup-nginx-proxy.html>`_ from this `images <https://hub.docker.com/_/nginx>`_.
+    - `Mattermost Enterprise Edition <https://hub.docker.com/r/mattermost/mattermost-enterprise-edition>`__ image.
+    - Database: `PostgreSQL <https://hub.docker.com/_/postgres>`__ image.
+    - Load balancer: If you already have a load balancer running in your air-gapped environment you can skip this resource, otherwise we recommend deploying :doc:`NGINX </deployment-guide/server/setup-nginx-proxy>` from this `images <https://hub.docker.com/_/nginx>`__.
 
     **(Optional) Supporting Services**
     Consider downloading these additional resources if you plan to enable these optional components:
 
-    - :doc:`Mattermost Calls </administration-guide/configure/calls-deployment>` images: `calls-offloader <https://hub.docker.com/r/mattermost/calls-offloader>`_ (required for recording, transcription and live captions) and `rtcd <https://hub.docker.com/r/mattermost/rtcd>`_ (required for performance and scalability).
-    - `Elasticsearch <https://hub.docker.com/_/elasticsearch>`_ image for enhanced search performance at scale.
-    - `Prometheus <https://hub.docker.com/r/prom/prometheus>`_ and `Grafana <https://hub.docker.com/r/grafana/grafana>`_ images for monitoring and observability.
-
+    - :doc:`Mattermost Calls </administration-guide/configure/calls-deployment>` images: `calls-offloader <https://hub.docker.com/r/mattermost/calls-offloader>`__ (required for recording, transcription and live captions) and `rtcd <https://hub.docker.com/r/mattermost/rtcd>`__ (required for performance and scalability).
+    - `Elasticsearch <https://hub.docker.com/_/elasticsearch>`__ image for enhanced search performance at scale.
+    - `Prometheus <https://hub.docker.com/r/prom/prometheus>`__ and `Grafana <https://hub.docker.com/r/grafana/grafana>`__ images for monitoring and observability.
 
 Mattermost Plugins
 ~~~~~~~~~~~~~~~~~~
@@ -107,20 +104,18 @@ SSL/TLS Certificates and Keys
 
 If your deployment requires SSL, ensure you have the necessary certificates. This includes certificates and keys for enabling HTTPS with Mattermost, as well as any CA files or certificates needed to access internal services such as LDAP or SAML.
 
-
 Local Documentation
 ~~~~~~~~~~~~~~~~~~~
 
-Mattermost documenation can be `built locally <https://github.com/mattermost/docs?tab=readme-ov-file#build-locally>`_ so you'll have access to installation and configuration documentation in the air-gapped environment. Otherwise, you can download the necessary deployment and configuration documents directly from the `GitHub docs repository <https://github.com/mattermost/docs>`_. 
+Mattermost documenation can be `built locally <https://github.com/mattermost/docs?tab=readme-ov-file#build-locally>`__ so you'll have access to installation and configuration documentation in the air-gapped environment. Otherwise, you can download the necessary deployment and configuration documents directly from the `GitHub docs repository <https://github.com/mattermost/docs>`__.
 
 **Prerequisites**
 The following software is required to build the documentation locally:
 
-- Git `[download] <https://git-scm.com/downloads>`_
-- Python 3.11 or later `[download] <https://www.python.org/downloads>`_
-- Pipenv `[download] <https://pipenv.pypa.io>`_
-- GNU Make 3.82 or later `[download] <https://ftp.gnu.org/gnu/make/>`_
-
+- Git `[download] <https://git-scm.com/downloads>`__
+- Python 3.11 or later `[download] <https://www.python.org/downloads>`__
+- Pipenv `[download] <https://pipenv.pypa.io>`__
+- GNU Make 3.82 or later `[download] <https://ftp.gnu.org/gnu/make/>`__
 
 Server configuration
 --------------------
@@ -157,8 +152,8 @@ Telemetry
 
 To avoid log errors we recommend disabling :doc:`Telemetry-related features </administration-guide/manage/telemetry>`, including the security update check, and error and diagnostics reporting features.
 
-FAQ
----
+Frequently Asked Questions
+--------------------------
 
 What if my air-gapped environment doesn't have a private container registry or package mirror?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
