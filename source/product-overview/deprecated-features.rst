@@ -14,7 +14,7 @@ Mattermost Server v11.1.0 (November 2025)
 Removed features by Mattermost version
 ----------------------------------------
 
-Mattermost Server v11.0.0 (October 2025)
+Mattermost Server v11.0.1 (October 2025)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - GitLab SSO has been deprecated from Team Edition. Deployments using GitLab SSO can remain on v10.11 ESR (with 12 months of security updates) while transitioning to our new free offering Mattermost Entry, or exploring commercial/nonprofit options. See more details in `this forum post <https://forum.mattermost.com/t/mattermost-v11-changes-in-free-offerings/25126>`__.
