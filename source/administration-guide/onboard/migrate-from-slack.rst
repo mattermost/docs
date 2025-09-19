@@ -37,7 +37,6 @@ Additionally, please consider that `Slack's data control policies may change at 
 
    - Confirm channel and user data imported correctly.
    - Run database queries to fix any unread states.
-   - Re-enable Elasticsearch if disabled.
 
 6. **Go live**:
 
@@ -299,8 +298,6 @@ Debug imports
 
 You can use the ``mmctl import job show`` command to view any relevant errors that may have occurred.
 
-.. important::
-    Note that if you are part of the user group being imported from Slack, your Mattermost profile must have a matching username and email to the corresponding ``user`` line of the ``jsonl`` file. You can manually edit the file to ensure it matches your Mattermost user.
 
 Fixing unread channels and threads
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -440,37 +437,37 @@ Mapping Shared Channels to Mattermost teams
 
 2. To determine where each shared channel belongs in Mattermost, looks for a ``team`` attribute on the first post in each shared channel. These ``team`` values map the channel back to its originating workspace in Slack. This is where each shared channel will live in Mattermost once imported.
 
-.. code-block:: json
+  .. code-block:: json
 
-  {
-    "client_msg_id": "",
-    "type": "",
-    "text": "",
-    "user": "U1",
-    "ts": "1695219722.430309",
-    "blocks": [  ],
-    "team": "team1",
-    "user_team": "team1",
-    "source_team": "team1",
-    "user_profile": { }
-  },
+    {
+      "client_msg_id": "",
+      "type": "",
+      "text": "",
+      "user": "U1",
+      "ts": "1695219722.430309",
+      "blocks": [  ],
+      "team": "team1",
+      "user_team": "team1",
+      "source_team": "team1",
+      "user_profile": { }
+    },
 
  
 3. Create a ``teams.json`` file that maps Slack team IDs to each ``team`` attribute you found above. For example:  
 
-   .. code-block:: json
+  .. code-block:: json
 
-      {
+    {
         "T0001" : "team1",
         "T0002" : "team2"
-      }
+    }
  
 
-3. Run the ``mmetl grid-transform`` command to split the Enterprise Grid export into per-team files:  
+4. Run the ``mmetl grid-transform`` command to split the Enterprise Grid export into per-team files:  
 
-   .. code-block:: bash
+  .. code-block:: bash
 
-      ./mmetl grid-transform -f slackexport.zip -t teams.json
+    ./mmetl grid-transform -f slackexport.zip -t teams.json
 
 This process outputs a new archive for each team defined in ``teams.json``. Once split, you can continue the standard Mattermost import process on each file.
 
@@ -488,6 +485,3 @@ The Slack import process focuses on preserving core collaboration data such as m
 - **Channel memberships for deactivated users**: Deactivated or deleted Slack users are not migrated to Mattermost.  
 
 Because of these limitations, some manual reconfiguration is typically required after the import, especially for workflows and integrations.
-
-
-
