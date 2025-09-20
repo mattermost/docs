@@ -34,11 +34,11 @@ Disconnected environments demand resilient tools that work without cloud access,
 **Benefits**
 
 - **Operate in air-gapped and disconnected networks** using :doc:`self-hosted Kubernetes deployments </deployment-guide/server/deploy-kubernetes>` and STIG-hardened container images for secure offline operations.
-- **Ensure secure mobile access on managed or BYOD devices** with :doc:`mobile security features </deployment-guide/mobile/mobile-security-features>`, Zero Trust enforcement, and :ref:`ID-only push notifications <administration-guide/configure/environment-configuration-settings:id-only push notifications>` for sensitive alerts.
+- **Ensure secure mobile access on managed or BYOD devices** with :doc:`mobile security features </deployment-guide/mobile/mobile-security-features>`, Zero Trust enforcement, and :ref:`ID-only push notifications <administration-guide/configuration-reference/environment-configuration-settings:id-only push notifications>` for sensitive alerts.
 - **Integrate with legacy and mission-specific systems** to maintain decision advantage in disconnected environments through :doc:`custom-built, self-hosted integrations </integrations-guide/integrations-guide-index>` tailored to your operational infrastructure.
-- **Maintain command resilience** using :doc:`high availability cluster-based deployment </administration-guide/scale/scaling-for-enterprise>` and :doc:`horizontal scalability </administration-guide/scale/scaling-for-enterprise>` to support operational continuity at scale.
+- **Maintain command resilience** using :doc:`high availability cluster-based deployment </administration-guide/operations-scaling/scaling-for-enterprise>` and :doc:`horizontal scalability </administration-guide/operations-scaling/scaling-for-enterprise>` to support operational continuity at scale.
 - **Automate field workflows** with :doc:`Collaborative Playbooks </end-user-guide/workflow-automation>` that track tasks, manage field updates, and orchestrate responses under DDIL constraints.
-- **Enable secure real-time collaboration with headquarters** using :doc:`Connected Workspaces </administration-guide/onboard/connected-workspaces>` to synchronize discussions, files, and reactions if connectivity is restored.
+- **Enable secure real-time collaboration with headquarters** using :doc:`Connected Workspaces </administration-guide/getting-started/connected-workspaces>` to synchronize discussions, files, and reactions if connectivity is restored.
 
 Bring Your Own Device (BYOD) with Sensitive Information Protections
 --------------------------------------------------------------------
@@ -51,7 +51,7 @@ Mattermost provides enterprise-grade mobile protections to enable secure BYOD ac
 
 - **Mitigate unauthorized access** with :ref:`biometric authentication <deployment-guide/mobile/mobile-security-features:biometric authentication>` and :ref:`jailbreak/root detection <deployment-guide/mobile/mobile-security-features:jailbreak and root detection>`, ensuring only secure and uncompromised devices can access mission data.
 - **Control information sharing** with :ref:`screenshot and screen recording prevention <deployment-guide/mobile/mobile-security-features:screenshot and screen recording prevention>`, blocking unauthorized capture of sensitive content during classified or time-sensitive discussions.
-- **Protect data at rest and in motion** using encrypted mobile storage, :ref:`secure sandboxing <deployment-guide/mobile/mobile-security-features:mobile data isolation>`, and :ref:`ID-only push notifications <administration-guide/configure/environment-configuration-settings:id-only push notifications>` that never expose message content to third-party cloud services.
+- **Protect data at rest and in motion** using encrypted mobile storage, :ref:`secure sandboxing <deployment-guide/mobile/mobile-security-features:mobile data isolation>`, and :ref:`ID-only push notifications <administration-guide/configuration-reference/environment-configuration-settings:id-only push notifications>` that never expose message content to third-party cloud services.
 - **Segment mission access by role or project** with :ref:`attribute-based access controls (ABAC) <administration-guide/manage/team-channel-members:advanced access controls>` and scoped channel access, ensuring users only see data aligned with their permissions and operational role.
 - **Ensure continuous mobile compliance** with secure SDLC practices and proactive vulnerability management baked into the Mattermost mobile application lifecycle.
 
@@ -66,7 +66,7 @@ Coordinating across departments, agencies, and external stakeholders—especiall
 - **Unify mission stakeholders on a common-use platform** that supports :ref:`hybrid deployments <deployment-guide/server/server-deployment-planning:deployment options>` across private cloud, edge environments, and :doc:`air-gapped infrastructure </deployment-guide/server/air-gapped-deployment>`.
 - **Maintain data sovereignty and mission alignment** with deployments that avoid consumer infrastructure and retain control over all communications and file transfers—even in classified operations.
 - **Apply role-based separation of access** through :doc:`advanced permissions </administration-guide/onboard/advanced-permissions>` and :ref:`channel-level controls <administration-guide/manage/team-channel-members:advanced access controls>` to protect mission integrity across organizational boundaries.
-- **Enable secure real-time collaboration across entities** using :doc:`Connected Workspaces </administration-guide/onboard/connected-workspaces>` to synchronize discussions, files, and reactions between teams without compromising internal governance.
+- **Enable secure real-time collaboration across entities** using :doc:`Connected Workspaces </administration-guide/getting-started/connected-workspaces>` to synchronize discussions, files, and reactions between teams without compromising internal governance.
 - **Reduce personal device risk** by offering secure enterprise communication options that eliminate the need for unauthorized messaging apps.
 
 Get Started

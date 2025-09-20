@@ -133,8 +133,8 @@ Mattermost is intended to be installed within a private network which can offer 
 
 If Mattermost is accessible from the open internet, the following is recommended:
 
-1. An IT admin should be assigned to set up appropriate network security, subscribe to `the Mattermost security bulletin <https://mattermost.com/security-updates/#sign-up>`__, and :doc:`apply new security updates </administration-guide/upgrade/upgrading-mattermost-server>`.
-2. The organization enables :doc:`SAML Single Sign-on </administration-guide/onboard/sso-saml>` or enable :doc:`MFA </administration-guide/onboard/multi-factor-authentication>`.
+1. An IT admin should be assigned to set up appropriate network security, subscribe to `the Mattermost security bulletin <https://mattermost.com/security-updates/#sign-up>`__, and :doc:`apply new security updates </administration-guide/operations-scaling/upgrading-mattermost-server>`.
+2. The organization enables :doc:`SAML Single Sign-on </administration-guide/identity-access/authentication-methods/saml-based-sso/sso-saml>` or enable :doc:`MFA </administration-guide/identity-access/multi-factor-authentication>`.
 
 If Mattermost is accessible from the open internet with no VPN or MFA set up, we recommended using it only for non-confidential, unimportant conversations where impact of a compromised system is not essential.
 

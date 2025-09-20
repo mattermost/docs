@@ -72,7 +72,7 @@ When enabled, only users that have an email domain from the approved domain list
 
 .. important::
 
-  Mattermost deployments using :ref:`email authentication <administration-guide/configure/authentication-configuration-settings:enable sign-in with email>` must also enable the :ref:`require email verification configuration setting <administration-guide/configure/authentication-configuration-settings:require email verification>` for domain restrictions to be effective.
+  Mattermost deployments using :ref:`email authentication <administration-guide/configuration-reference/authentication-configuration-settings:enable sign-in with email>` must also enable the :ref:`require email verification configuration setting <administration-guide/configuration-reference/authentication-configuration-settings:require email verification>` for domain restrictions to be effective.
 
 Users on this server
 ~~~~~~~~~~~~~~~~~~~~~

@@ -104,7 +104,7 @@ Using the mobile app, long-press on a bookmark and select **Share**.
 Copy bookmark links
 ^^^^^^^^^^^^^^^^^^^^
 
-You can copy bookmark links when your system admin has :ref:`enabled your ability to do so <administration-guide/configure/site-configuration-settings:enable public file links>`.
+You can copy bookmark links when your system admin has :ref:`enabled your ability to do so <administration-guide/configuration-reference/site-configuration-settings:enable public file links>`.
 
 .. tab:: Web/Desktop
 

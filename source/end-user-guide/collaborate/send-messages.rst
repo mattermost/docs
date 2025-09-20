@@ -36,7 +36,7 @@ Mattermost may notify you when a recipient's availability is set to :ref:`Do Not
 Draft messages
 --------------
 
-From Mattermost v7.7, when composing new messages, it's easy to return to a message in progress later, unless your system admin has :ref:`disabled global drafts <administration-guide/configure/site-configuration-settings:enable server syncing of message drafts>` in the System Console.
+From Mattermost v7.7, when composing new messages, it's easy to return to a message in progress later, unless your system admin has :ref:`disabled global drafts <administration-guide/configuration-reference/site-configuration-settings:enable server syncing of message drafts>` in the System Console.
 
 By default, message drafts are synchronized on the Mattermost server and are accessible everywhere you access Mattermost, including a web browser or the desktop app. Limit drafts to your current Mattermost client only by going to **Settings > Advanced > Allow message drafts to sync with the server** to disable draft synchronization.
 

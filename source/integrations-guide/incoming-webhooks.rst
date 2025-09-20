@@ -94,13 +94,13 @@ The JSON payload can contain the following parameters:
      - Overrides the default channel. Use the channel's name (e.g., ``town-square``), not the display name. Use ``@<username>`` to send a Direct Message. The webhook can post to any public channel, and any private channel the creator is a member of.
    * - ``username``
      - No
-     - Overrides the default username. The :ref:`Enable integrations to override usernames <administration-guide/configure/integrations-configuration-settings:enable integrations to override usernames>` setting must be enabled.
+     - Overrides the default username. The :ref:`Enable integrations to override usernames <administration-guide/configuration-reference/integrations-configuration-settings:enable integrations to override usernames>` setting must be enabled.
    * - ``icon_url``
      - No
-     - Overrides the default profile picture URL. The :ref:`Enable integrations to override profile picture icons <administration-guide/configure/integrations-configuration-settings:enable integrations to override profile picture icons>` setting must be enabled.
+     - Overrides the default profile picture URL. The :ref:`Enable integrations to override profile picture icons <administration-guide/configuration-reference/integrations-configuration-settings:enable integrations to override profile picture icons>` setting must be enabled.
    * - ``icon_emoji``
      - No
-     - Overrides the ``icon_url`` with an emoji. Use the emoji name (e.g., ``:tada:``). The :ref:`Enable integrations to override profile picture icons <administration-guide/configure/integrations-configuration-settings:enable integrations to override profile picture icons>` setting must be enabled.
+     - Overrides the ``icon_url`` with an emoji. Use the emoji name (e.g., ``:tada:``). The :ref:`Enable integrations to override profile picture icons <administration-guide/configuration-reference/integrations-configuration-settings:enable integrations to override profile picture icons>` setting must be enabled.
    * - ``attachments``
      - Yes (if ``text`` is not set)
      - An array of `message attachment <https://developers.mattermost.com/integrate/reference/message-attachments/>`_ objects for richer formatting.

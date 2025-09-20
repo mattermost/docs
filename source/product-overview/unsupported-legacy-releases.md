@@ -2544,7 +2544,7 @@ If you upgrade from a release earlier than v7.4, please read the other [Importan
 #### Boards
  - Added additional standard [board templates](https://docs.mattermost.com/end-user-guide/project-management/work-with-boards.html#choose-a-board-template) to help users kick-off their next projects.
  - Filters now support all [text properties](https://docs.mattermost.com/end-user-guide/project-management/work-with-cards.html#work-with-property-types).
- - Added two new tiles for System Console [Boards metrics](https://docs.mattermost.com/administration-guide/configure/reporting-configuration-settings.html#site-statistics) under **System Console > Site Statistics**.
+ - Added two new tiles for System Console [Boards metrics](https://docs.mattermost.com/administration-guide/configuration-reference/reporting-configuration-settings.html#site-statistics) under **System Console > Site Statistics**.
  
 #### Last active status
  - Added a [“Last active” status](https://docs.mattermost.com/end-user-guide/preferences/manage-your-display-options.html#share-last-active-time) to the profile popover and to the **Direct Message** channel header that indicates when a user was last online. This status only displays for users who are Away, Offline, or in do-not-disturb (DND). This can be disabled via **Settings > Display > Share last active time**.
@@ -2686,7 +2686,7 @@ Mattermost v7.4.0 contains a medium severity level security fix. [Upgrading](htt
 
 ### Bug Fixes
  - Fixed an issue with a nil point exception error during imports.
- - Fixed an issue where users were unable to download a [Support Packet](https://docs.mattermost.com/administration-guide/manage/admin/generating-support-packet.html) using the Desktop App.
+ - Fixed an issue where users were unable to download a [Support Packet](https://docs.mattermost.com/administration-guide/admin-tools/generating-support-packet.html) using the Desktop App.
  - Fixed an issue with the **Message forward** modal where the auto-complete in the comment box moved with the text cursor.
  - Fixed an issue where muted channels with an at-mention were displayed under the **Unreads** section of the channel switcher.
  - Fixed an issue where the Collapsed Reply Threads setting was displayed in the **System Console > Experimental Features** section.
@@ -14233,7 +14233,7 @@ Release date: 2016-04-16
 
 #### TPNS and EAS options
 
-- [Enterprise App Store](https://docs.mattermost.com/administration-guide/configure/environment-configuration-settings.html#push-notification-server-location) (EAS) and [Test Push Notification Service](https://docs.mattermost.com/administration-guide/configure/environment-configuration-settings.html#test-push-notifications-service-tpns) (TPNS) option are now included in **System Console** > **Email Settings** > **Push Notification Settings** as built-in options.
+- [Enterprise App Store](https://docs.mattermost.com/administration-guide/configuration-reference/environment-configuration-settings.html#push-notification-server-location) (EAS) and [Test Push Notification Service](https://docs.mattermost.com/administration-guide/configuration-reference/environment-configuration-settings.html#test-push-notifications-service-tpns) (TPNS) option are now included in **System Console** > **Email Settings** > **Push Notification Settings** as built-in options.
 
 ### Languages
 

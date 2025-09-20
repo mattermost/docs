@@ -31,7 +31,7 @@ With Boards you can:
 Install Boards
 ---------------
 
-Your system admin may need to install and enable Mattermost Boards before you can use it. See the :doc:`install Mattermost Boards </administration-guide/configure/install-boards>` documentation to learn how to install and configure the Boards plugin for your Mattermost instance.
+Your system admin may need to install and enable Mattermost Boards before you can use it. See the :doc:`install Mattermost Boards </administration-guide/configuration-reference/install-boards>` documentation to learn how to install and configure the Boards plugin for your Mattermost instance.
 
 What's a board?
 ---------------

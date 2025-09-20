@@ -29,7 +29,7 @@ URL schema limitations
 
 If you are building your own version of Mattermost's mobile client, you need to be aware of the following limitations:
 
-- To allow users to simultaneously run the App Store versions of Mattermost, in addition to the custom company version, you will need to adapt the URL schemes used for the app in the build, as well as configure those schemes on the server using :ref:`App Custom URL Schemes <administration-guide/configure/site-configuration-settings:app custom url schemes>`
+- To allow users to simultaneously run the App Store versions of Mattermost, in addition to the custom company version, you will need to adapt the URL schemes used for the app in the build, as well as configure those schemes on the server using :ref:`App Custom URL Schemes <administration-guide/configuration-reference/site-configuration-settings:app custom url schemes>`
 - Be aware that the ``bundleid`` for the application should not include ``rnbeta``.
 - The same change would be required in a custom build of the Mattermost desktop app.
 - The mobile and desktop custom clients would no longer be able to log into other Mattermost servers (unless they had the same custom app schema configuration change applied).

@@ -6,7 +6,7 @@ Manage your Mattermost profile
 
 Select your profile picture and select **Profile** to manage the details of your Mattermost profile, including your name, username, nickname, email, and profile picture. 
 
-Your Mattermost system admin may :doc:`define custom user profile fields </administration-guide/manage/admin/user-attributes>` that you can personalize. Additionally, some of your profile information may be pulled from another source, which means you won't be able to modify it in Mattermost. Contact your Mattermost system admin for assistance.
+Your Mattermost system admin may :doc:`define custom user profile fields </administration-guide/admin-tools/user-attributes>` that you can personalize. Additionally, some of your profile information may be pulled from another source, which means you won't be able to modify it in Mattermost. Contact your Mattermost system admin for assistance.
 
 +---------------------+----------------------------------------------------------------------------------------------------------------+
 | **Profile setting** | **Description**                                                                                                |

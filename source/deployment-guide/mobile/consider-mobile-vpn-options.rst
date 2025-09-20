@@ -5,7 +5,7 @@ To connect to your private network Mattermost instance, you need to set up a way
 
 Depending on your security policies, we recommend deploying Mattermost behind a VPN and using a `per-app VPN <#id3>`_ with your EMM provider, or a mobile VPN client.
 
-Also consider deploying a mobile VPN client with multi-factor authentication (MFA) to your preferred login method, such as GitLab SSO with MFA, or run Mattermost Enterprise Edition with :doc:`multi-factor authentication (MFA) </administration-guide/onboard/multi-factor-authentication>` enabled.
+Also consider deploying a mobile VPN client with multi-factor authentication (MFA) to your preferred login method, such as GitLab SSO with MFA, or run Mattermost Enterprise Edition with :doc:`multi-factor authentication (MFA) </administration-guide/identity-access/multi-factor-authentication>` enabled.
 
 Mobile VPN options
 ------------------

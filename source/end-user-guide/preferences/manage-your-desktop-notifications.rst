@@ -66,7 +66,7 @@ You can change or disable notification sounds by going to **Desktop notification
 Incoming Call notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Want to hear a sound when a Mattermost call starts? If your Mattermost admin :ref:`enables this Beta feature <administration-guide/configure/plugins-configuration-settings:enable call ringing>`, you can choose the sound that plays when a call is started within a direct or group message by going to **Desktop notification sounds > Incoming call sound**.
+Want to hear a sound when a Mattermost call starts? If your Mattermost admin :ref:`enables this Beta feature <administration-guide/configuration-reference/plugins-configuration-settings:enable call ringing>`, you can choose the sound that plays when a call is started within a direct or group message by going to **Desktop notification sounds > Incoming call sound**.
 
 Disable all desktop notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

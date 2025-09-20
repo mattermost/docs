@@ -105,4 +105,4 @@ Export channel data
 .. include:: ../../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-See the :doc:`export channel data </administration-guide/comply/export-mattermost-channel-data>` documentation for details on working with channel export functionality.
+See the :doc:`export channel data </administration-guide/compliance-security-auditing/export-mattermost-channel-data>` documentation for details on working with channel export functionality.

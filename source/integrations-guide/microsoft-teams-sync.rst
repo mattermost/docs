@@ -100,7 +100,7 @@ Install and configure the Microsoft Teams integration in Mattermost
 4. Once installed, select **Configure**. You're taken to the System Console.
 5. Configure the **Tenant ID**, **Client ID**, and **Client Secret** with the values obtained from setting up the OAuth App in Azure above.
 
-See the :ref:`Microsoft Teams plugin configuration settings <administration-guide/configure/plugins-configuration-settings:ms teams>` documentation for additional configuration options.
+See the :ref:`Microsoft Teams plugin configuration settings <administration-guide/configuration-reference/plugins-configuration-settings:ms teams>` documentation for additional configuration options.
 
 .. note::
 
@@ -110,7 +110,7 @@ See the :ref:`Microsoft Teams plugin configuration settings <administration-guid
 Monitor performance
 --------------------
 
-You can set up :doc:`performance monitoring </administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring>` and :doc:`performance alerting </administration-guide/scale/performance-alerting>` for this plugin using Prometheus and Grafana.
+You can set up :doc:`performance monitoring </administration-guide/operations-scaling/deploy-prometheus-grafana-for-performance-monitoring>` and :doc:`performance alerting </administration-guide/operations-scaling/performance-alerting>` for this plugin using Prometheus and Grafana.
 
 - Monitoring enables you to proactively review the overall health of the plugin, including database calls, HTTP requests, and API latency.
 - Alerting enables you to detect and take action as issues come up, such as the integration being offline.
