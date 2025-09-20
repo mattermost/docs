@@ -50,6 +50,26 @@ Install the GitLab integration from the in-product App Marketplace:
  - Generate a **Webhook Secret** and **At Rest Encryption Key** by selecting **Generate**.
  - (Optional) **GitLab Group**: Lock the integration to a single GitLab group.
  - (Optional) **Enable Private Repositories**: Enable the ability to work with private repositories. Affected users are notified once private repositories are enabled, and must reconnect their GitLab accounts to gain access to private repositories.
+ - (Optional) **Enable Child Pipeline Notifications**: When enabled, allows notifications for child pipeline events in addition to parent pipeline events. When disabled, only parent pipeline notifications are sent. This setting helps reduce notification noise in environments with complex CI/CD pipeline structures that use child pipelines extensively.
+ - (Optional) **Enable Code Previews**: Control automatic expansion of GitLab file permalinks with code previews. Options include:
+
+   - **Enable for public projects** (Default): Shows previews only for public GitLab repositories.
+   - **Enable for public and private projects**: Shows previews for both public and private repositories. 
+
+     .. warning::
+        This setting has the potential to leak confidential code into public channels in cases where users with access to private GitLab repositories post permalinks in public Mattermost channels. The plugin automatically generates previews using the poster's GitLab permissions, allowing other channel members without access to view the confidential code.
+
+   - **Disable**: Completely disables code preview functionality.
+
+   **Supported Permalink Types:**
+
+   - Single line permalinks: Shows target line plus 3 lines of context
+   - File permalinks: Shows file information (no code preview)
+   - Line range permalinks: Shows file information (no code preview)
+
+   **Preview Limits:**
+
+   - Maximum 10 lines displayed per preview (single line permalinks may show fewer preview lines due to context limits)
 
 Enable
 ------
@@ -99,7 +119,7 @@ The following features are supported for channel subscriptions:
 - ``issue_comments`` - Get notified when comments are made on issues
 - ``merge_request_comments`` - Get notified when comments are made on merge requests
 - ``tag`` - Get notified when tags are created
-- ``pipeline`` - Get notified about pipeline events
+- ``pipeline`` - Get notified about pipeline events (includes child pipeline events if enabled in plugin configuration)
 - ``wiki`` - Get notified about wiki page events
 - ``releases`` - Get notified when releases are created
 - ``deployments`` - Get notified about deployment events

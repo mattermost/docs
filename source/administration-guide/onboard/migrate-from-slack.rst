@@ -200,3 +200,5 @@ Account activation
 
 * Once logged in, Mattermost users will have access to previous Slack messages in the public channels imported from Slack.
 * Instructions on how to migrate user authenticatation to LDAP or SAML can be found :ref:`here <administration-guide/manage/mmctl-command-line-tool:mmctl user migrate-auth>`.
+
+`Book a live demo <https://mattermost.com/request-demo/>`_  or `talk to a Mattermost expert <https://mattermost.com/contact-sales/>`_ to explore tailored solutions for your organization's secure collaboration needs. Or try Mattermost yourself with a `1-hour preview <https://mattermost.com/sign-up/>`_ for instant access to a live sandbox environment.

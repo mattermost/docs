@@ -7,6 +7,18 @@ Mattermost complements Microsoft solutions with tailored capabilities designed t
 
 The following mission-ready collaboration capabilities are available:
 
+Sovereign Communication in Microsoft Teams
+-------------------------------------------
+
+Agencies and critical infrastructure organizations must often comply with strict data sovereignty rules that restrict cloud usage for sensitive collaboration.
+
+**Benefits**
+
+- **Deploy Mattermost on-premise or in sovereign clouds**, fully integrated with Microsoft Teams and Outlook (See :doc:`Mattermost for M365, Teams, and Outlook </integrations-guide/mattermost-mission-collaboration-for-m365>`) to maintain workflow continuity and secure data storage.
+- **Store messages, recordings, and transcriptions in compliance-approved systems**, with :ref:`data-at-rest encryption <security-guide/security-guide-index:data-at-rest encryption>` ensuring no leakage of sensitive data to third-party platforms.
+- **Enable secure Microsoft Teams interactions via embedded Mattermost collaboration**, supporting operations within familiar interfaces while enforcing regulatory compliance. See :doc:`Mattermost for M365, Teams, and Outlook </integrations-guide/mattermost-mission-collaboration-for-m365>`.
+- **Enforce agency-specific policies** with :doc:`legal hold </administration-guide/comply/legal-hold>`, :doc:`retention policies </administration-guide/comply/data-retention-policy>`, and :doc:`user access controls </administration-guide/onboard/advanced-permissions>` that align with national or sectoral mandates.
+
 On-Premises Skype for Business Replacement
 -------------------------------------------
 
@@ -17,7 +29,7 @@ As Skype for Business reaches end-of-life, secure organizations require an alter
 
 - **Preserve mission-critical communication workflows** with a self-hosted Mattermost deployment that supports :doc:`1:1 calls </end-user-guide/collaborate/make-calls>`, :ref:`screen sharing <end-user-guide/collaborate/make-calls:share your screen>`, and :doc:`threaded messaging </end-user-guide/collaborate/organize-conversations>` within secure environments.
 - **Integrate Mattermost with Microsoft tools** such as Outlook, Teams, and :doc:`Entra ID Single Sign-On </administration-guide/onboard/sso-entraid>` to retain user workflows while centralizing identity and access control. See :doc:`Mattermost for M365, Teams, and Outlook </integrations-guide/mattermost-mission-collaboration-for-m365>`.
-- **Deploy in sovereign, air-gapped, or private cloud environments** such as `Azure Deployment <https://azuremarketplace.microsoft.com/en-us/marketplace/apps/mattermost.mattermost-operator?tab=overview>`_ while maintaining compliance with STIG, FedRAMP, and NIST 800-53 standards.
+- **Deploy in sovereign, air-gapped, or private cloud environments** such as `Azure Deployment <https://azuremarketplace.microsoft.com/en-us/marketplace/apps/mattermost.mattermost-operator?tab=overview>`_ or **Azure Local** (formerly Azure Stack HCI) for on-premises hybrid cloud scenarios while maintaining compliance with STIG, FedRAMP, and NIST 800-53 standards. For Azure Local deployments, we recommend engaging **Mattermost Professional Services** for deployment support. `Talk to an Expert <https://mattermost.com/contact-sales/>`_ to learn more.
 
 :doc:`Learn more </use-case-guide/on-prem-skype-for-business-replacement>` about replacing Skype for Business with Mattermost.
 
@@ -50,8 +62,7 @@ Operational teams need to extend Microsoft capabilities to mission environments 
 - **Fuse data and decision-making across platforms** with support for :doc:`toolchain integration </integrations-guide/integrations-guide-index>`, :doc:`audio/screen share </end-user-guide/collaborate/make-calls>`, and :doc:`workflow automation </end-user-guide/workflow-automation>` embedded into a dedicated Mission Operations Platform.
 - **Maintain coalition and partner alignment** through :doc:`interoperable Connected Workspaces </administration-guide/onboard/connected-workspaces>` supporting collaboration across mission partner networks.
 - **Accelerate action with mission-tuned AI** using secure Azure AI and :doc:`Mattermost Copilot </end-user-guide/agents>` to summarize context, guide decisions, and automate operational tasks.
-- **Secure every communication path** with built-in :doc:`Zero Trust controls </security-guide/security/zero-trust>` and deploy on Azure or sovereign environments for maximum flexibility and compliance.
-
+- **Secure every communication path** with built-in :doc:`Zero Trust controls </security-guide/zero-trust>` and deploy on Azure or sovereign environments for maximum flexibility and compliance.
 
 External Collaboration with Full Control
 ------------------------------------------
@@ -68,18 +79,6 @@ Managing external collaboration within Microsoft Teams can be complex, often req
 - **Apply granular policy enforcement for external users**, including :ref:`granular user permissions <administration-guide/manage/team-channel-members:advanced access controls>`, :doc:`legal hold </administration-guide/comply/legal-hold>`, :doc:`retention policies </administration-guide/comply/data-retention-policy>`, and :doc:`custom Terms of Service </administration-guide/comply/custom-terms-of-service>`.
 - **Synchronize user identity** using :doc:`Entra ID </administration-guide/onboard/sso-entraid>` to maintain scalable, centralized access control across both internal and external collaborators.
 
-Sovereign Communication in Microsoft Teams
--------------------------------------------
-
-Agencies and critical infrastructure organizations must often comply with strict data sovereignty rules that restrict cloud usage for sensitive collaboration.
-
-**Benefits**
-
-- **Deploy Mattermost on-premise or in sovereign clouds**, fully integrated with Microsoft Teams and Outlook (See :doc:`Mattermost for M365, Teams, and Outlook </integrations-guide/mattermost-mission-collaboration-for-m365>`) to maintain workflow continuity and secure data storage.
-- **Store messages, recordings, and transcriptions in compliance-approved systems**, with :ref:`data-at-rest encryption <security-guide/security-guide-index:data-at-rest encryption>` ensuring no leakage of sensitive data to third-party platforms.
-- **Enable secure Microsoft Teams interactions via embedded Mattermost collaboration**, supporting operations within familiar interfaces while enforcing regulatory compliance. See :doc:`Mattermost for M365, Teams, and Outlook </integrations-guide/mattermost-mission-collaboration-for-m365>`.
-- **Enforce agency-specific policies** with :doc:`legal hold </administration-guide/comply/legal-hold>`, :doc:`retention policies </administration-guide/comply/data-retention-policy>`, and :doc:`user access controls </administration-guide/onboard/advanced-permissions>` that align with national or sectoral mandates.
-
 Cross-Instance Collaboration Hub
 ---------------------------------
 
@@ -95,4 +94,4 @@ Multi-agency, multi-tenant Microsoft 365 environments often hinder seamless coll
 Get Started
 -----------
 
-`Talk to an Expert <https://mattermost.com/contact-sales/>`_ to discover how your organization can enhance Microsoft-based workflows with secure, extensible collaboration tailored for operational and compliance-sensitive environments. Maximize your Microsoft investment while extending its capabilities into the most demanding mission contexts.
+We can help you maximize your Microsoft investment while extending its capabilities into the most demanding mission contexts. `Book a live demo <https://mattermost.com/request-demo/>`_  or `talk to a Mattermost expert <https://mattermost.com/contact-sales/>`_ to discover how your organization can enhance Microsoft-based workflows with secure, extensible collaboration tailored for operational and compliance-sensitive environments. Or try Mattermost yourself with a `1-hour preview <https://mattermost.com/sign-up/>`_ for instant access to a live sandbox environment. 

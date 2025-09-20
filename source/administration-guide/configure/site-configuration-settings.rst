@@ -1363,7 +1363,7 @@ Threaded discussions
 
 .. important::
 
-  Customers upgrading from a legacy Mattermost release prior to v7.0 must review the `administrator's guide to enabling threaded discussions <https://support.mattermost.com/hc/en-us/articles/6880701948564-Administrator-s-guide-to-enabling-Collapsed-Reply-Threads>`_ (formally known as Collapsed Reply Threads) prior to enabling this functionality.
+  Customers upgrading from a legacy Mattermost release prior to v7.0 must review the `administrator's guide to enabling threaded discussions <https://support.mattermost.com/hc/en-us/articles/6880701948564-Administrator-s-guide-to-enabling-Collapsed-Reply-Threads>`_ (formerly known as Collapsed Reply Threads) prior to enabling this functionality.
 
 +---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 | - **Always On**: **(Default)** Enables :doc:`threaded discussions                                             | - System Config path: **Site Configuration > Posts**                      |
@@ -1807,6 +1807,59 @@ Allow file downloads on mobile
 | - **false**: Disables file downloads on mobile apps. Users can still download files from a mobile web browser. | - ``config.json`` setting: ``FileSettings`` > ``EnableMobileDownload`` > ``true``   |
 |                                                                                                                | - Environment variable: ``MM_FILESETTINGS_ENABLEMOBILEDOWNLOAD``                    |
 +----------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+
+.. config:setting:: mobile-enable-secure-file-preview
+  :displayname: Enable secure file preview on mobile (File sharing)
+  :systemconsole: Site Configuration > File sharing and downloads
+  :configjson: .FileSettings.MobileEnableSecureFilePreview
+  :environment: MM_FILESETTINGS_MOBILEENABLESECUREFILEPREVIEW
+
+  - **true**: Prevents file downloads, previews, and sharing for most file types. Allows in-app previews for PDFs, videos, and images only. Files are stored temporarily in the app's cache and cannot be exported or shared.
+  - **false**: **(Default)** Secure file preview mode is disabled.
+
+Enable secure file preview on mobile
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../../_static/badges/ent-adv-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
+This setting improves an organization's mobile security posture by restricting file access while still allowing essential file viewing capabilities. 
+
++---------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
+| - **true**: Prevents file downloads, previews, and sharing for most file types,                                                       | - System Config path: **Site Configuration > File sharing and downloads**                         |
+|   even when the                                                                                                                       | - ``config.json`` setting: ``FileSettings`` > ``MobileEnableSecureFilePreview`` > ``false``       |
+|   :ref:`Allow file downloads on mobile <administration-guide/configure/site-configuration-settings:allow file downloads on mobile>`   | - Environment variable: ``MM_FILESETTINGS_MOBILEENABLESECUREFILEPREVIEW``                         |
+|   configuration setting is enabled. Allows in-app previews for PDFs,                                                                  |                                                                                                   |
+|   videos, and images only. Files are stored temporarily in the app's cache and cannot be exported or shared.                          |                                                                                                   |
+| - **false**: **(Default)** Secure file preview mode is disabled.                                                                      |                                                                                                   |
++---------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
+
+.. config:setting:: mobile-allow-pdf-link-navigation
+  :displayname: Allow PDF link navigation on mobile (File sharing)
+  :systemconsole: Site Configuration > File sharing and downloads
+  :configjson: .FileSettings.MobileAllowPdfLinkNavigation
+  :environment: MM_FILESETTINGS_MOBILEALLOWPDFLINKNAVIGATION
+
+  - **true**: **(Default)** Enables tapping links inside PDFs when Secure File Preview Mode is active. Links will open in the device browser or supported app.
+  - **false**: Disables link navigation in PDFs when Secure File Preview Mode is active.
+
+Allow PDF link navigation on mobile
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../../_static/badges/ent-adv-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+| - **true**: **(Default)** Enables tapping links inside PDFs               | - System Config path: **Site Configuration > File sharing and downloads**                     |
+|   when Secure File Preview Mode is active. Links will open                | - ``config.json`` setting: ``FileSettings`` > ``MobileAllowPdfLinkNavigation`` > ``true``     |
+|   in the device browser or supported app.                                 | - Environment variable: ``MM_FILESETTINGS_MOBILEALLOWPDFLINKNAVIGATION``                      |
+| - **false**: Disables link navigation in PDFs                             |                                                                                               |
+|   when Secure File Preview Mode is active.                                |                                                                                               |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+
+.. note::
+
+  This setting has no effect when the :ref:`Secure file preview on mobile <administration-guide/configure/site-configuration-settings:enable secure file preview on mobile>` configuration setting is disabled.
 
 ----
 

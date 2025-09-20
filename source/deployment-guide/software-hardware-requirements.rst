@@ -33,7 +33,7 @@ Though not officially supported, the Linux desktop app also runs on RHEL/CentOS 
 
     - `*` Integrated Windows Authentication is not supported by Mattermost desktop apps. If you use ADFS we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
 
-    - The minimum content size is 769 x 600 pixels. When the width is 768 pixels or less, the desktop app switches to mobile view. When the height is below 600 pixels, screen elements may become misplaced.
+    - The minimum content size is 800 x 600 pixels.
 
 PC web
 ^^^^^^
@@ -41,10 +41,10 @@ PC web
 .. csv-table::
     :header: "Browser", "Self-Hosted Technical Requirement", "Cloud Technical Requirement"
 
-    "Chrome", "v134+", "v134+"
+    "Chrome", "v138+", "v138+"
     "Firefox", "v128+", "v128+"
     "Safari", "v17.4+", "v17.4+"
-    "Edge", "v134+", "v134+"
+    "Edge", "v138+", "v138+"
 
 `*` Internet Explorer (IE11) is no longer supported. We recommend using the `Mattermost desktop app <https://mattermost.com/apps/>`_ or another supported browser. See `this forum post <https://forum.mattermost.com/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`__ to learn more.
 
@@ -61,6 +61,7 @@ Mobile apps
 
     - `*` Integrated Windows Authentication is not supported by Mattermost mobile apps. If you use ADFS we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
     - The minimum and target content size is 320 x 460 pixels, matching the available space when the mobile app is opened in Safari on the minimum supported iOS device.
+    - The Mattermost mobile app for Android isn't supported on Chromebooks. Access Mattermost using the Chrome web browser, or install the web app as a Progressive Web App (PWA) directly from the browser for an app-like experience with a desktop icon and windowed view.
 
 Mobile web
 ^^^^^^^^^^
@@ -68,8 +69,8 @@ Mobile web
 .. csv-table::
     :header: "Browser", "Technical Requirement"
 
-    "iOS", "iOS 15.1+ with Safari 17.4+ or Chrome 134+"
-    "Android", "Android 7+ with Chrome 134+"
+    "iOS", "iOS 15.1+ with Safari 17.4+ or Chrome 138+"
+    "Android", "Android 7+ with Chrome 138+"
 
 Email client
 ^^^^^^^^^^^^
@@ -114,19 +115,19 @@ This policy change takes effect from Mattermost v10.6, where the minimum Postgre
 
 When a PostgreSQL version reaches its end of life (EOL), Mattermost will require a newer version starting with the next scheduled ESR release. This means the following future PostgreSQL minimum version increases as follows:
 
-+-----------------------------------------------------------+------------------+--------------------------------+
-| **Mattermost Version**                                    | **Release Date** | **Minimum PostgreSQL Version** |
-+===========================================================+==================+================================+
-| :ref:`v9.11 ESR <release-v9-11-extended-support-release>` | 2024-8-15        | 11.x                           |
-+-----------------------------------------------------------+------------------+--------------------------------+
-| :ref:`v10.5 ESR <release-v10.5-extended-support-release>` | 2025-2-15        | 11.x                           |
-+-----------------------------------------------------------+------------------+--------------------------------+
-| :ref:`v10.6 <release-v10.6-feature-release>`              | 2025-3-15        | 13.x                           |
-+-----------------------------------------------------------+------------------+--------------------------------+
-| v10.11 ESR                                                | 2025-8-15        | 13.x                           |
-+-----------------------------------------------------------+------------------+--------------------------------+
-| v11.5 ESR ``*``                                           | 2026-2-15        | 14.x (EOL 2026-11-12)          |
-+-----------------------------------------------------------+------------------+--------------------------------+
++------------------------------------------------------------+------------------+--------------------------------+
+| **Mattermost Version**                                     | **Release Date** | **Minimum PostgreSQL Version** |
++============================================================+==================+================================+
+| :ref:`v9.11 ESR <release-v9-11-extended-support-release>`  | 2024-8-15        | 11.x                           |
++------------------------------------------------------------+------------------+--------------------------------+
+| :ref:`v10.5 ESR <release-v10.5-extended-support-release>`  | 2025-2-15        | 11.x                           |
++------------------------------------------------------------+------------------+--------------------------------+
+| :ref:`v10.6 <release-v10.6-feature-release>`               | 2025-3-15        | 13.x                           |
++------------------------------------------------------------+------------------+--------------------------------+
+| :ref:`v10.11 ESR <release-v10.11-extended-support-release>`| 2025-8-15        | 13.x                           |
++------------------------------------------------------------+------------------+--------------------------------+
+| v11.4 ESR ``*``                                            | 2026-2-15        | 14.x (EOL 2026-11-12)          |
++------------------------------------------------------------+------------------+--------------------------------+
 
 ``*`` Forcasted release version and date.
 

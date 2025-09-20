@@ -1,7 +1,3 @@
-.. meta::
-   :name: robots
-   :content: noindex
-
 :orphan:
 :nosearch:
 
@@ -25,15 +21,15 @@ Configure rate limiting settings by going to **System Console > Environment > Ra
 Enable rate limiting
 ~~~~~~~~~~~~~~~~~~~~
 
-+----------------------------------------------------------------+--------------------------------------------------------------------------+
-| Enable or disable rate limiting to throttle APIs to a          | - System Config path: **Environment > Rate Limiting**                    |
-| specified number of requests per second.                       | - ``config.json`` setting: ``".RateLimitSettings.Enable: false”,``       |
-|                                                                | - Environment variable: ``MM_RATELIMITSETTINGS_ENABLE``                  |
-| - **true**: APIs are throttled at the rate specified by the    |                                                                          |
-|   `Maximum queries per second <#maximum-queries-per-second>`__ |                                                                          |
-|   configuration setting.                                       |                                                                          |
-| - **false**: **(Default)** API access isn’t throttled.         |                                                                          |
-+----------------------------------------------------------------+--------------------------------------------------------------------------+
++----------------------------------------------------------------+----------------------------------------------------------------------------+
+| Enable or disable rate limiting to throttle APIs to a          | - System Config path: **Environment > Rate Limiting**                      |
+| specified number of requests per second.                       | - ``config.json`` setting: ``RateLimitSettings`` > ``Enable`` > ``false``  |
+|                                                                | - Environment variable: ``MM_RATELIMITSETTINGS_ENABLE``                    |
+| - **true**: APIs are throttled at the rate specified by the    |                                                                            |
+|   `Maximum queries per second <#maximum-queries-per-second>`__ |                                                                            |
+|   configuration setting.                                       |                                                                            |
+| - **false**: **(Default)** API access isn’t throttled.         |                                                                            |
++----------------------------------------------------------------+----------------------------------------------------------------------------+
 
 .. config:setting:: maximum-queries-per-second
   :displayname: Maximum queries per second (Rate Limiting)
@@ -47,13 +43,12 @@ Maximum queries per second
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Throttle the API at this number of requests per second when   | - System Config path: **Environment > Rate Limiting**                    |
-| `rate limiting <#enable-rate-limiting>`__ is enabled.         | - ``config.json`` setting: ``".RateLimitSettings.PerSec: 10,``           |
+| `rate limiting <#enable-rate-limiting>`__ is enabled.         | - ``config.json`` setting: ``RateLimitSettings`` > ``PerSec`` > ``10``   |
 |                                                               | - Environment variable: ``MM_RATELIMITSETTINGS_PERSEC``                  |
 | Numerical input. Default is **10**.                           |                                                                          |
 |                                                               |                                                                          |
 | Increase this value to accept more requests each second, and  |                                                                          |
 | decrease this value to allow fewer requests.                  |                                                                          |
-|                                                               |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: maximum-burst-size
@@ -67,16 +62,16 @@ Maximum queries per second
 Maximum burst size
 ~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+--------------------------------------------------------------------------+
-| The maximum number of requests allowed beyond the per second    | - System Config path: **Environment > Rate Limiting**                    |
-| query limit when `rate limiting <#enable-rate-limiting>`__      | - ``config.json`` setting: ``".RateLimitSettings.MaxBurst: 100,``        |
-| is enabled.                                                     | - Environment variable: ``MM_RATELIMITSETTINGS_MAXBURST``                |
-|                                                                 |                                                                          |
-| Numerical input. Default is **100**.                            |                                                                          |
-|                                                                 |                                                                          |
-| Increase this value to allow for more concurrent requests to be |                                                                          |
-| handled, and decrease this value to limit this capacity.        |                                                                          |
-+-----------------------------------------------------------------+--------------------------------------------------------------------------+
++-----------------------------------------------------------------+-----------------------------------------------------------------------------+
+| The maximum number of requests allowed beyond the per second    | - System Config path: **Environment > Rate Limiting**                       |
+| query limit when `rate limiting <#enable-rate-limiting>`__      | - ``config.json`` setting: ``RateLimitSettings`` > ``MaxBurst`` > ``100``   |
+| is enabled.                                                     | - Environment variable: ``MM_RATELIMITSETTINGS_MAXBURST``                   |
+|                                                                 |                                                                             |
+| Numerical input. Default is **100**.                            |                                                                             |
+|                                                                 |                                                                             |
+| Increase this value to allow for more concurrent requests to be |                                                                             |
+| handled, and decrease this value to limit this capacity.        |                                                                             |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 .. config:setting:: memory-store-size
   :displayname: Memory store size (Rate Limiting)
@@ -88,19 +83,19 @@ Maximum burst size
 Memory store size
 ~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+----------------------------------------------------------------------------+
-| The maximum number of user sessions connected to the system as  | - System Config path: **Environment > Rate Limiting**                      |
-| determined by vary rate limit settings when                     | - ``config.json`` setting: ``".RateLimitSettings.MemoryStoreSize: 10000,`` |
-| `rate limiting <#enable-rate-limiting>`__ is enabled.           | - Environment variable: ``MM_RATELIMITSETTINGS_MEMORYSTORESIZE``           |
-|                                                                 |                                                                            |
-| Numerical input. Default is **10000**. Typically set to the     |                                                                            |
-| number of users in the system.                                  |                                                                            |
-|                                                                 |                                                                            |
-| We recommend setting this value to the expected number of       |                                                                            |
-| users. A higher value may result in underutilized resources,    |                                                                            |
-| and a lower value may result in user sessions/tokens expiring   |                                                                            |
-| too frequently.                                                 |                                                                            |
-+-----------------------------------------------------------------+----------------------------------------------------------------------------+
++-----------------------------------------------------------------+------------------------------------------------------------------------------------+
+| The maximum number of user sessions connected to the system as  | - System Config path: **Environment > Rate Limiting**                              |
+| determined by vary rate limit settings when                     | - ``config.json`` setting: ``RateLimitSettings`` > ``MemoryStoreSize`` > ``10000`` |
+| `rate limiting <#enable-rate-limiting>`__ is enabled.           | - Environment variable: ``MM_RATELIMITSETTINGS_MEMORYSTORESIZE``                   |
+|                                                                 |                                                                                    |
+| Numerical input. Default is **10000**. Typically set to the     |                                                                                    |
+| number of users in the system.                                  |                                                                                    |
+|                                                                 |                                                                                    |
+| We recommend setting this value to the expected number of       |                                                                                    |
+| users. A higher value may result in underutilized resources,    |                                                                                    |
+| and a lower value may result in user sessions/tokens expiring   |                                                                                    |
+| too frequently.                                                 |                                                                                    |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------+
 
 .. config:setting:: vary-rate-limit-by-remote-address
   :displayname: Vary rate limit by remote address (Rate Limiting)
@@ -115,14 +110,14 @@ Memory store size
 Vary rate limit by remote address
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+----------------------------------------------------------------------------+
-| Configure Mattermost to rate limit API access by IP address     | - System Config path: **Environment > Rate Limiting**                      |
-| when `rate limiting <#enable-rate-limiting>`__ is enabled.      | - ``config.json`` setting: ``".RateLimitSettings.VaryByRemoteAddr: true,`` |
-|                                                                 | - Environment variable: ``MM_RATELIMITSETTINGS_VARYBYREMOTEADDR``          |
-| - **true**: **(Default)** Rate limit API access by IP address.  |                                                                            |
-|   Recommended when using a proxy.                               |                                                                            |
-| - **false**: Rate limiting does not vary by IP address.         |                                                                            |
-+-----------------------------------------------------------------+----------------------------------------------------------------------------+
++-----------------------------------------------------------------+------------------------------------------------------------------------------------+
+| Configure Mattermost to rate limit API access by IP address     | - System Config path: **Environment > Rate Limiting**                              |
+| when `rate limiting <#enable-rate-limiting>`__ is enabled.      | - ``config.json`` setting: ``RateLimitSettings`` > ``VaryByRemoteAddr`` > ``true`` |
+|                                                                 | - Environment variable: ``MM_RATELIMITSETTINGS_VARYBYREMOTEADDR``                  |
+| - **true**: **(Default)** Rate limit API access by IP address.  |                                                                                    |
+|   Recommended when using a proxy.                               |                                                                                    |
+| - **false**: Rate limiting does not vary by IP address.         |                                                                                    |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------+
 
 .. config:setting:: vary-rate-limit-by-user
   :displayname: Vary rate limit by user (Rate Limiting)
@@ -136,16 +131,16 @@ Vary rate limit by remote address
 Vary rate limit by user
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+----------------------------------------------------------------------------+
-| Configure Mattermost to rate limit API access by authentication | - System Config path: **Environment > Rate Limiting**                      |
-| token or not when `rate limiting <#enable-rate-limiting>`__     | - ``config.json`` setting: ``".RateLimitSettings.VaryByUser: false,``      |
-| is enabled.                                                     | - Environment variable: ``MM_RATELIMITSETTINGS_VARYBYUSER``                |
-|                                                                 |                                                                            |
-| - **true**: Rate limit API access by user authentication token. |                                                                            |
-|   Recommended when using a proxy.                               |                                                                            |
-| - **false**: **(Default)** Rate limiting does not vary by user  |                                                                            |
-|   authentication token.                                         |                                                                            |
-+-----------------------------------------------------------------+----------------------------------------------------------------------------+
++-----------------------------------------------------------------+-------------------------------------------------------------------------------+
+| Configure Mattermost to rate limit API access by authentication | - System Config path: **Environment > Rate Limiting**                         |
+| token or not when `rate limiting <#enable-rate-limiting>`__     | - ``config.json`` setting: ``RateLimitSettings`` > ``VaryByUser`` > ``false`` |
+| is enabled.                                                     | - Environment variable: ``MM_RATELIMITSETTINGS_VARYBYUSER``                   |
+|                                                                 |                                                                               |
+| - **true**: Rate limit API access by user authentication token. |                                                                               |
+|   Recommended when using a proxy.                               |                                                                               |
+| - **false**: **(Default)** Rate limiting does not vary by user  |                                                                               |
+|   authentication token.                                         |                                                                               |
++-----------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 .. config:setting:: vary-rate-limit-by-http-header
   :displayname: Vary rate limit by HTTP header (Rate Limiting)
@@ -157,11 +152,11 @@ Vary rate limit by user
 Vary rate limit by HTTP header
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+----------------------------------------------------------------------------+
-| Configure Mattermost to vary rate limiting API access           | - System Config path: **Environment > Rate Limiting**                      |
-| by the HTTP header field specified. Recommended when you’re     | - ``config.json`` setting: ``".RateLimitSettings.VaryByHeader: "",``       |
-| using a proxy.                                                  | - Environment variable: ``MM_RATELIMITSETTINGS_VARYBYHEADER``              |
-|                                                                 |                                                                            |
-| - When configuring NGINX, set this to **X-Real-IP**.            |                                                                            |
-| - When configuring AmazonELB, set this to **X-Forwarded-For**.  |                                                                            |
-+-----------------------------------------------------------------+----------------------------------------------------------------------------+
++-----------------------------------------------------------------+-------------------------------------------------------------------------------+
+| Configure Mattermost to vary rate limiting API access           | - System Config path: **Environment > Rate Limiting**                         |
+| by the HTTP header field specified. Recommended when you’re     | - ``config.json`` setting: ``RateLimitSettings`` > ``VaryByHeader`` > ``""``  |
+| using a proxy.                                                  | - Environment variable: ``MM_RATELIMITSETTINGS_VARYBYHEADER``                 |
+|                                                                 |                                                                               |
+| - When configuring NGINX, set this to **X-Real-IP**.            |                                                                               |
+| - When configuring AmazonELB, set this to **X-Forwarded-For**.  |                                                                               |
++-----------------------------------------------------------------+-------------------------------------------------------------------------------+

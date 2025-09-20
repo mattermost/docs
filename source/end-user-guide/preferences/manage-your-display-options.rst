@@ -104,6 +104,8 @@ You can customize the timezone used for timestamps in Mattermost and in email no
 
     Select **Timezone > Edit** to select your timezone.
 
+    From Mattermost v10.10, you can also select **Automatic** to set your timezone automatically based on your computer's timezone settings. This option is enabled by default.
+
 .. tab:: Mobile
 
     Tap **Timezone** to set your timezone automatically based on your mobile device preference.
@@ -135,7 +137,7 @@ When messages in Mattermost include images, you can control whether an image pre
     Select **Default Appearance of Image Previews > Edit** to expand or collapse all image links and image attachments.
 
     .. tip::
-        This setting can also be controlled using the :doc:`slash commands </end-user-guide/collaborate/run-slash-commands>` ``/expand`` and ``/collapse``.
+        This setting can also be controlled using the :doc:`slash commands </integrations-guide/run-slash-commands>` ``/expand`` and ``/collapse``.
 
 .. tab:: Mobile
 
