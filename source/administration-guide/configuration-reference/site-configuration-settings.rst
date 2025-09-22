@@ -1808,6 +1808,7 @@ Allow file downloads on mobile
 |                                                                                                                | - Environment variable: ``MM_FILESETTINGS_ENABLEMOBILEDOWNLOAD``                    |
 +----------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
+<<<<<<< HEAD:source/administration-guide/configuration-reference/site-configuration-settings.rst
 .. config:setting:: mobile-enable-secure-file-preview
   :displayname: Enable secure file preview on mobile (File sharing)
   :systemconsole: Site Configuration > File sharing and downloads
@@ -1861,6 +1862,8 @@ Allow PDF link navigation on mobile
 
   This setting has no effect when the :ref:`Secure file preview on mobile <administration-guide/configuration-reference/site-configuration-settings:enable secure file preview on mobile>` configuration setting is disabled.
 
+=======
+>>>>>>> master:source/administration-guide/configure/site-configuration-settings.rst
 ----
 
 Public Links
