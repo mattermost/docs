@@ -27,7 +27,7 @@
  - Deprecated ``include_removed_members`` option in ``api/v4/ldap/sync`` have been removed. Admins can use the LDAP setting ``ReAddRemovedMembers``.
  - Customers that have the NPS plugin enabled can remove it as it no longer sends the feedback over through telemetry.
  - Format query parameter requirement in ``/api/v4/config/client`` endpoint has been deprecated.
- -  - Removed deprecated mmctl commands and flags:
+ - Removed deprecated mmctl commands and flags:
     - ``channel add`` - use ``channel users add``
     - ``channel remove`` - use ``channel users remove``
     - ``channel restore`` - use ``channel unarchive``
