@@ -17,7 +17,7 @@
 ### Important Upgrade Notes
  - GitLab SSO has been deprecated from Team Edition. Deployments using GitLab SSO can remain on v10.11 ESR (with 12 months of security updates) while transitioning to our new free offering Mattermost Entry, or exploring commercial/nonprofit options. See more details in [this forum post](https://forum.mattermost.com/t/mattermost-v11-changes-in-free-offerings/25126).
  - The ``TeamSettings.ExperimentalViewArchivedChannels`` setting has been deprecated. Archived channels will always be accessible, subject to normal channel membership. The server will fail to start if this setting is set to ``false``; to deny access to archived channels, mark them as private and remove affected channel members. See more details in [this forum post](https://forum.mattermost.com/t/viewing-accessing-archived-channels-v11/22626).
- - Playbooks has stopped working for Team Edition. Entry, Professional, Enterprise, and Enterprise Advanced plans are automatically be upgraded to Playbooks v2 with no expected downtime. See more details in [this forum post](https://forum.mattermost.com/t/clarification-and-update-on-the-playbooks-plugin-v11/25192).
+ - Playbooks has stopped working for Team Edition. Entry, Professional, Enterprise, and Enterprise Advanced plans are automatically upgraded to Playbooks v2 with no expected downtime. See more details in [this forum post](https://forum.mattermost.com/t/clarification-and-update-on-the-playbooks-plugin-v11/25192).
  - Experimental Bleve Search functionality has been retired. If Bleve is enabled, search will not work until ``DisableDatabaseSearch`` is set to ``false``. See more details in [this forum post](https://forum.mattermost.com/t/transitioning-from-bleve-search-in-mattermost-v11/22982).
  - Support for MySQL has ended. See more details in [this forum post](https://forum.mattermost.com/t/transition-to-postgresql/19551).
  - The ``ExperimentalStrictCSRFEnforcement`` setting has been renamed to ``StrictCSRFEnforcement`` and the default value has been changed to ``true`` for new installations. See more details in [this forum post](https://forum.mattermost.com/t/default-value-of-the-experimental-strict-csrf-enforcement-setting-to-be-changed-to-true-v11/23139).
@@ -25,11 +25,17 @@
  - The web app is no longer exposing the [Styled Components](https://styled-components.com/) dependency for use by web app plugins. See more details in [this forum post](https://forum.mattermost.com/t/removing-styled-components-export-for-web-app-plugins-v11/25002).
  - Omnibus support has been deprecated. The last ``mattermost-omnibus`` release was v10.12. See more details in [this forum post](https://forum.mattermost.com/t/mattermost-omnibus-to-reach-end-of-life-v11/25175).
  - Deprecated ``include_removed_members`` option in ``api/v4/ldap/sync`` have been removed. Admins can use the LDAP setting ``ReAddRemovedMembers``.
- - All telemetry support have been removed from Mattermost. The system no longer collects or sends telemetry data to external services. Customers that have the NPS plugin enabled can remove it as it no longer sends the feedback over through telemetry.
+ - Customers that have the NPS plugin enabled can remove it as it no longer sends the feedback over through telemetry.
  - Format query parameter requirement in ``/api/v4/config/client`` endpoint has been deprecated.
- - Deprecated mmctl commands and flags have been removed.
+ -  - Removed deprecated mmctl commands and flags:
+    - ``channel add`` - use ``channel users add``
+    - ``channel remove`` - use ``channel users remove``
+    - ``channel restore`` - use ``channel unarchive``
+    - ``channel make-private`` - use ``channel modify --private``
+    - ``command delete`` - use ``command archive``
+    - ``permissions show`` - use ``permissions role show``
  - Experimental certificate-based authentication feature has been removed. ``ExperimentalSettings.ClientSideCertEnable`` must be ``false`` to start the server.
- - Added logic to migrate the password hashing method from bcrypt to PBKDF2. The migration will happen progressively, migrating the password of a user as soon as they enter it; e.g. when logging in or when double-checking their password for any sensitive action. There is an edge case where users might get locked out of their account: if a server upgrades to v11 and user A logs in (i.e., they need to enter their password), and then the server downgrades to v10.12 or previous, user A will no longer be able to log in. In this case, admins will need to manually reset the password of such users, through the system console or through the ``mmctl user reset-password [users]`` command.
+ - Added logic to migrate the password hashing method from bcrypt to PBKDF2. The migration will happen progressively, migrating the password of a user as soon as they enter it; e.g. when logging in or when double-checking their password for any sensitive action. There is an edge case where users might get locked out of their account: if a server upgrades to v11 and user A logs in (i.e., they need to enter their password), and then the server downgrades to v10.12 or previous, user A will no longer be able to log in. In this case, admins will need to manually reset the password of such users, through the system console or through the [mmctl user reset-password [users]](https://docs.mattermost.com/administration-guide/manage/mmctl-command-line-tool.html#mmctl-user-reset-password) command.
  - ``/api/v4/teams/{team_id}/channels/search_archived`` has been deprecated in favour of ``/api/v4/channels/search`` with the deleted parameter.
  - Changed default database connection pool settings: changed ``MaxOpenConns`` from 300 to 100 and ``MaxIdleConns`` from 20 to 50, establishing a healthier 2:1 ratio for better database connection management.
  - Separate notification log file has been deprecated. If admins want to continue using a separate log file for notification logs, they can use the ``AdvancedLoggingJSON`` configuration. An example configuration to use is:
@@ -80,6 +86,7 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 #### Administration
  - Introduced support for Mattermost Entry Edition with message history limits.
  - User limits were lowered to final threshold of 250 for Mattermost Team Edition (MIT-Compiled License).
+ - Added support for a FIPS-compliant Mattermost image.
  - PBKDF2 is now used as the new key derivation algorithm for remote cluster invitations. We do this in a backward compatible way such that invitations generated from new/old clusters work in all clusters.
  - Updated the default SAML signature algorithm from SHA1 to SHA256 for improved security.
  - Added admin-managed property fields to Custom Profile Attributes.
@@ -87,10 +94,7 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
  - System Admins can now mark Custom Profile Attribute fields as “admin managed” from the System Console.
  - Added Channel-Level Attribute-Based Access Control (Available only in Enterprise Advanced). Channel Admins can now configure attribute-based access rules directly in Channel Settings through a new Access Control tab when the ``EnableChannelScopeAccessControl`` setting is enabled.
  - Channel access control policies now support multiple parent inheritances.
- - Implemented dynamic select for interactive dialogs.
- - Updated interactive dialogs to use the apps form framework.
- - Implemented multi-select for interactive dialogs.
- - ``UserId`` and ``TeamId`` are now passed in interactive dialog submissions.
+ - Updated interactive dialogs to use the apps form framework. Implemented dynamic select and multi-select for interactive dialogs. Also, ``UserId`` and ``TeamId`` are now passed in interactive dialog submissions.
  - Stopped supporting manually installed plugins as per https://forum.mattermost.com/t/deprecation-notice-manual-plugin-deployment/21192.
  - Mattermost profile image is now deleted when LDAP profile picture is deleted.
  - User ``auth_data`` is now shown in the System Console user details page.
@@ -99,13 +103,6 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
  - Added a console warning when a plugin uses the now-deprecated ``registerPostDropdownMenuComponent`` API.
 
 #### mmctl
- - Removed deprecated mmctl commands and flags:
-    - ``channel add`` - use ``channel users add``
-    - ``channel remove`` - use ``channel users remove``
-    - ``channel restore`` - use ``channel unarchive``
-    - ``channel make-private`` - use ``channel modify --private``
-    - ``command delete`` - use ``command archive``
-    - ``permissions show`` - use ``permissions role show``
  - Added ``mmctl user edit`` command.
  - Updated mmctl shell completion to fully support zsh, powershell, and fish. Check out ``mmctl completion`` for a guide on how to set it up for your shell.
  - Added a set of mmctl commands to manage Custom Profile Attributes.
