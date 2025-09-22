@@ -551,6 +551,10 @@ redirects_map = {
         "https://docs.mattermost.com/end-user-guide/upgrade-mattermost.html",
 "administration/release-lifecycle.html":
         "https://docs.mattermost.com/product-overview/releases-lifecycle.html",
+"administration-guide/configure/site-configuration-settings.html#enable-secure-file-preview-on-mobile":
+        "https://docs.mattermost.com/administration-guide/configure/environment-configuration-settings.html#enable-secure-file-preview-on-mobile",
+"administration-guide/configure/site-configuration-settings.html#allow-pdf-link-navigation-on-mobile":
+        "https://docs.mattermost.com/administration-guide/configure/environment-configuration-settings.html#allow-pdf-link-navigation-on-mobile",
 
 # Channels redirects
 "channels/find-channels.html":
