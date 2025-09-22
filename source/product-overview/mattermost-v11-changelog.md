@@ -105,7 +105,7 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 #### mmctl
  - Added ``mmctl user edit`` command.
  - Updated mmctl shell completion to fully support zsh, powershell, and fish. Check out ``mmctl completion`` for a guide on how to set it up for your shell.
- - Added a set of mmctl commands to manage Custom Profile Attributes.
+ - Added the ``mmctl cpa`` set of commands to manage Custom Profile Attributes.
 
 ### Bug Fixes
  - Fixed an issue where extra date separators were added in search results, pinned posts and saved messages.
