@@ -1,7 +1,6 @@
 """
 Sphinx event handler implementation.
 """
-
 from typing import Any, Final, Optional, Iterator, cast
 
 from docutils import nodes
@@ -74,6 +73,9 @@ def doctree_read(app: Sphinx, doctree: nodes.document):
     tab_docnames: list[str] = getattr(app.env, INLINE_TAB_DOCNAMES)
     if app.env.docname in tab_docnames:
         logger.debug(f"{LOG_PREFIX} doctree_read: {app.env.docname} has tabs")
+        logger.debug(
+            f"{LOG_PREFIX} doctree_read({app.env.docname}): app.env.tocs[app.env.docname]={app.env.tocs[app.env.docname]}"
+        )
       
         # check if this toc has a toctree node. if so, get a reference to it
         toctree_nodes: Iterator[addnodes.toctree] = app.env.tocs[app.env.docname].findall(addnodes.toctree)
@@ -81,6 +83,7 @@ def doctree_read(app: Sphinx, doctree: nodes.document):
         for node in toctree_nodes:
             if node is not None and toctree_node is None:
                 toctree_node = node
+                logger.debug(f"{LOG_PREFIX} doctree_read: {app.env.docname} has a toctree node: {node}")
                 break
         
         # Generate the tab-based TOC (includes headings from within tabs)
@@ -346,11 +349,12 @@ def sectiondata_to_toc(docname: str, secdata: SectionData) -> nodes.list_item:
     # Add a reference for this section (including tabs and regular sections)
     # Only skip adding reference if this is a section root with no meaningful name
     if secdata.name and not (secdata.is_section_root and secdata.name == secdata.id):
+        section_id: str = "" if secdata.level == 1 and secdata.tab_counter == 0 else secdata.id
         logger.debug(
             f"{LOG_PREFIX} sectiondata_to_toc(): "
-            f"({docname}): [{secdata.level}/{secdata.tab_counter}] add reference for {secdata.name}<{secdata.id}>"
+            f"({docname}): [{secdata.level}/{secdata.tab_counter}] add reference for {secdata.name}<{secdata.id}>: {section_id}"
         )
-        list_item.append(make_compact_reference(secdata.id, secdata.name, docname))
+        list_item.append(make_compact_reference(section_id, secdata.name, docname))
 
     if len(secdata.children) > 0:
         logger.debug(
@@ -387,7 +391,7 @@ def make_compact_reference(
             "",
             section_name,
             refuri=docname,
-            anchorname=f"#{section_id}",
+            anchorname=f"#{section_id}" if section_id else "",
             internal=True,
         )
     )
