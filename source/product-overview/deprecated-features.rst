@@ -19,7 +19,7 @@ Mattermost Server v11.0.1 (October 2025)
 
 - GitLab SSO has been deprecated from Team Edition. Deployments using GitLab SSO can remain on v10.11 ESR (with 12 months of security updates) while transitioning to our new free offering Mattermost Entry, or exploring commercial/nonprofit options. See more details in `this forum post <https://forum.mattermost.com/t/mattermost-v11-changes-in-free-offerings/25126>`__.
 - The ``TeamSettings.ExperimentalViewArchivedChannels`` setting has been deprecated. Archived channels will always be accessible, subject to normal channel membership. The server will fail to start if this setting is set to ``false``; to deny access to archived channels, mark them as private and remove affected channel members. See more details in `this forum post <https://forum.mattermost.com/t/viewing-accessing-archived-channels-v11/22626>`__.
-- Playbooks has stopped working for Team Edition. Entry, Professional, Enterprise, and Enterprise Advanced plans are automatically be upgraded to Playbooks v2 with no expected downtime. See more details in `this forum post <https://forum.mattermost.com/t/clarification-and-update-on-the-playbooks-plugin-v11/25192>`__.
+- Playbooks has stopped working for Team Edition. Entry, Professional, Enterprise, and Enterprise Advanced plans are automatically upgraded to Playbooks v2 with no expected downtime. See more details in `this forum post <https://forum.mattermost.com/t/clarification-and-update-on-the-playbooks-plugin-v11/25192>`__.
 - Experimental Bleve Search functionality has been retired. If Bleve is enabled, search will not work until ``DisableDatabaseSearch`` is set to ``false``. See more details in `this forum post <https://forum.mattermost.com/t/transitioning-from-bleve-search-in-mattermost-v11/22982>`__.
 - Support for MySQL has ended. See more details in `this forum post <https://forum.mattermost.com/t/transition-to-postgresql/19551>`__.
 - The ``ExperimentalStrictCSRFEnforcement`` setting has been renamed to ``StrictCSRFEnforcement`` and the default value has been changed to ``true`` for new installations. See more details in `this forum post <https://forum.mattermost.com/t/default-value-of-the-experimental-strict-csrf-enforcement-setting-to-be-changed-to-true-v11/23139>`__.
@@ -27,11 +27,17 @@ Mattermost Server v11.0.1 (October 2025)
 - The web app is no longer exposing the `Styled Components <https://styled-components.com/>`__ dependency for use by web app plugins. See more details in `this forum post <https://forum.mattermost.com/t/removing-styled-components-export-for-web-app-plugins-v11/25002>`__.
 - Omnibus support has been deprecated. The last ``mattermost-omnibus`` release was v10.12. See more details in `this forum post <https://forum.mattermost.com/t/mattermost-omnibus-to-reach-end-of-life-v11/25175>`__.
 - Deprecated ``include_removed_members`` option in ``api/v4/ldap/sync`` have been removed. Admins can use the LDAP setting ``ReAddRemovedMembers``.
-- All telemetry support have been removed from Mattermost. The system no longer collects or sends telemetry data to external services. Customers that have the NPS plugin enabled can remove it as it no longer sends the feedback over through telemetry.
+- Customers that have the NPS plugin enabled can remove it as it no longer sends the feedback over through telemetry.
 - Format query parameter requirement in ``/api/v4/config/client`` endpoint has been deprecated.
-- Deprecated mmctl commands and flags have been removed.
+-  - Removed deprecated mmctl commands and flags:
+    - ``channel add`` - use ``channel users add``
+    - ``channel remove`` - use ``channel users remove``
+    - ``channel restore`` - use ``channel unarchive``
+    - ``channel make-private`` - use ``channel modify --private``
+    - ``command delete`` - use ``command archive``
+    - ``permissions show`` - use ``permissions role show``
 - Experimental certificate-based authentication feature has been removed. ``ExperimentalSettings.ClientSideCertEnable`` must be ``false`` to start the server.
-- Added logic to migrate the password hashing method from bcrypt to PBKDF2. The migration will happen progressively, migrating the password of a user as soon as they enter it; e.g. when logging in or when double-checking their password for any sensitive action. There is an edge case where users might get locked out of their account: if a server upgrades to v11 and user A logs in (i.e., they need to enter their password), and then the server downgrades to v10.12 or previous, user A will no longer be able to log in. In this case, admins will need to manually reset the password of such users, through the system console or through the ``mmctl user reset-password [users]`` command.
+- Added logic to migrate the password hashing method from bcrypt to PBKDF2. The migration will happen progressively, migrating the password of a user as soon as they enter it; e.g. when logging in or when double-checking their password for any sensitive action. There is an edge case where users might get locked out of their account: if a server upgrades to v11 and user A logs in (i.e., they need to enter their password), and then the server downgrades to v10.12 or previous, user A will no longer be able to log in. In this case, admins will need to manually reset the password of such users, through the system console or through the `mmctl user reset-password [users] <https://docs.mattermost.com/administration-guide/manage/mmctl-command-line-tool.html#mmctl-user-reset-password>`__ command.
 - ``/api/v4/teams/{team_id}/channels/search_archived`` has been deprecated in favour of ``/api/v4/channels/search`` with the deleted parameter.
 - Separate notification log file has been deprecated. If admins want to continue using a separate log file for notification logs, they can use the ``AdvancedLoggingJSON`` configuration. An example configuration to use is:
 
