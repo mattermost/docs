@@ -133,3 +133,61 @@ When a PostgreSQL version reaches its end of life (EOL), Mattermost will require
 ``*`` Forcasted release version and date.
 
 Customers will have 9 months to plan, test, and upgrade their PostgreSQL version before the new requirement takes effect. This policy aims to provide clarity and transparency so you can align database upgrades with the Mattermost release schedule. Contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_. to discuss your options.
+
+Omnibus Migration Guide
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. important::
+
+  **Omnibus Deprecation Notice**: Both GitLab Omnibus and standalone Mattermost Omnibus deployments are deprecated starting from Mattermost v11.0.0. The last ``mattermost-omnibus`` release will be v10.12.
+
+**Support Timeline**
+
+* **Current v10.x deployments**: Continue to function normally with full support through the v10.11 ESR lifecycle (through August 2026)
+* **Documentation access**: All Omnibus documentation remains available for existing users
+* **Migration flexibility**: You can migrate immediately, during the v10.11 ESR period, or before upgrading to v11
+
+**Migration Options**
+
+We recommend migrating to one of these supported deployment methods:
+
+1. **Kubernetes Deployment (Recommended)** - :doc:`Deploy with Kubernetes </deployment-guide/server/deploy-kubernetes>`
+
+   * **Complexity**: Moderate to High
+   * **Benefits**: High availability, scalability, automated updates
+   * **Best for**: Production environments, teams familiar with Kubernetes
+   * **Migration approach**: Export data, deploy Kubernetes cluster, import data
+
+2. **Linux Server Installation** - :doc:`Deploy with Linux </deployment-guide/server/deploy-linux>`
+
+   * **Complexity**: Low to Moderate  
+   * **Benefits**: Simple setup, full control, familiar environment
+   * **Best for**: Single-server deployments, teams preferring traditional installs
+   * **Migration approach**: Install Mattermost on new server, migrate database and files
+
+3. **Container-Based Deployment** - :doc:`Deploy with Containers </deployment-guide/server/deploy-containers>`
+
+   * **Complexity**: Low
+   * **Benefits**: Consistent environment, easy updates
+   * **Best for**: Smaller installations, development environments
+   * **Migration approach**: Export data, deploy containers, import data
+
+**Migration Planning Considerations**
+
+Before migrating from Omnibus, consider:
+
+* **Data backup**: Export your database, files, and configuration before migration
+* **Downtime planning**: Plan for maintenance windows during migration
+* **Testing environment**: Set up a test environment to validate the new deployment
+* **User communication**: Inform users about the migration timeline and any expected downtime
+* **Configuration transfer**: Review and transfer custom configurations to the new deployment
+* **Integration updates**: Update any integrations or webhooks that depend on URLs or certificates
+* **Monitoring setup**: Establish monitoring and logging for the new deployment
+
+**Support Resources**
+
+* `Mattermost Community Forums <https://forum.mattermost.com/c/trouble-shoot/16>`__ - Get help from the community
+* `Mattermost Support <https://mattermost.com/support/>`__ - Commercial support options
+* **Documentation**: All deployment guides remain available throughout the transition period
+
+Contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`__ if you need assistance planning your migration.

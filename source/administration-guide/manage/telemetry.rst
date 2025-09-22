@@ -80,9 +80,9 @@ Deployment type
 
 - Manual install (includes ``wget`` installs)
 - Docker
-- Mattermost Omnibus
+- Mattermost Omnibus (deprecated from v11.0.0)
 - Kubernetes operator
-- GitLab Omnibus
+- GitLab Omnibus (deprecated from v11.0.0)
 
 Server Configuration Settings
   Non-personally identifiable data from configuration settings file (``config.json``) in the form of ``type`` ("enumerated integer" or "enumerated boolean") values, ``true/false`` ("boolean"), and ``count`` ("integer"). Specifically these include:

@@ -56,6 +56,10 @@ Use the CLI
 
 .. tab:: Via GitLab Omnibus
 
+  .. important::
+
+    **Deprecated**: GitLab Omnibus support for Mattermost is deprecated starting from v11.0.0. Existing deployments continue to work with full support through August 2026. Consider migrating to Kubernetes, Linux, or container deployments. See the :ref:`Omnibus Migration Guide <deployment-guide/server/server-deployment-planning:omnibus migration guide>`.
+
   On GitLab Omnibus, you must be in the following directory when you run CLI commands: ``/opt/gitlab/embedded/service/mattermost``. Also, you must run the commands as the user *mattermost* and specify the location of the configuration file. The executable is ``/opt/gitlab/embedded/bin/mattermost``.
 
   For example, to get the Mattermost version on GitLab Omnibus:

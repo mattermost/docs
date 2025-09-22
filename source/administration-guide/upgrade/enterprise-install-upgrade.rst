@@ -38,6 +38,10 @@ We recommend backing up Mattermost prior to upgrading. The :doc:`migration guide
 Upgrade to Enterprise Edition in GitLab Omnibus
 -------------------------------------------------
 
+.. important::
+
+  **GitLab Omnibus Deprecated**: GitLab Omnibus support for Mattermost is deprecated starting from Mattermost v11.0.0. While existing v10.x deployments continue to function with full support through August 2026, new installations should use Kubernetes, Linux, or container deployments. See the :ref:`Omnibus Migration Guide <deployment-guide/server/server-deployment-planning:omnibus migration guide>` for migration options.
+
 GitLab Omnibus runs the open source Mattermost Team Edition. To upgrade to Mattermost Enterprise Edition, follow these steps:
 
 1. Disable the built-in Mattermost instance on GitLab Omnibus by going to ``/etc/gitlab/gitlab.rb`` and setting the following line to ``false``:
