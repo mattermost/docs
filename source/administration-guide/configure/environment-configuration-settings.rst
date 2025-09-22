@@ -4122,6 +4122,9 @@ Some examples of when you may want to modify this setting include:
 Mobile security
 ---------------
 
+.. include:: ../../_static/badges/ent-adv-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 From Mattermost v10.7 and mobile app v2.27, you can configure biometric authentication, prevent Mattermost use on jailbroken or rooted devices, and can block screen captures without relying on an EMM Provider. Configure these options by going to **System Console > Environment > Mobile Security**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
 .. config:setting:: enable-biometric-authentication
@@ -4136,9 +4139,6 @@ From Mattermost v10.7 and mobile app v2.27, you can configure biometric authenti
 
 Enable biometric authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-adv-only.rst
-  :start-after: :nosearch:
 
 +-----------------------------------------------+-------------------------------------------------------------------------------------------+
 | Enforce biometric authentication, with        | - System Config path: **Environment > Mobile Security**                                   |
@@ -4174,9 +4174,6 @@ Enable biometric authentication
 Enable jailbreak/root protection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-adv-only.rst
-  :start-after: :nosearch:
-
 +-----------------------------------------------+----------------------------------------------------------------------------------------------+
 | Prevent access to the app on devices          | - System Config path: **Environment > Mobile Security**                                      |
 | detected as jailbroken or rooted. If a        | - ``config.json`` setting: ``NativeAppSettings`` > ``MobileJailbreakProtection`` > ``false`` |
@@ -4207,9 +4204,6 @@ Enable jailbreak/root protection
 Prevent screen capture
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-adv-only.rst
-  :start-after: :nosearch:
-
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------+
 | Block screenshots and screen recordings when  | - System Config path: **Environment > Mobile Security**                                       |
 | using the mobile app. Screenshots will        | - ``config.json`` setting: ``NativeAppSettings`` > ``MobilePreventScreenCapture`` > ``false`` |
@@ -4222,6 +4216,55 @@ Prevent screen capture
 | - **false**: **(Default)** Screen capture     |                                                                                               |
 |   blocking is disabled.                       |                                                                                               |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------+
+
+.. config:setting:: mobile-enable-secure-file-preview
+  :displayname: Enable secure file preview on mobile (File sharing)
+  :systemconsole: Site Configuration > File sharing and downloads
+  :configjson: .FileSettings.MobileEnableSecureFilePreview
+  :environment: MM_FILESETTINGS_MOBILEENABLESECUREFILEPREVIEW
+
+  - **true**: Prevents file downloads, previews, and sharing for most file types. Allows in-app previews for PDFs, videos, and images only. Files are stored temporarily in the app's cache and cannot be exported or shared.
+  - **false**: **(Default)** Secure file preview mode is disabled.
+
+Enable secure file preview on mobile
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This setting improves an organization's mobile security posture by restricting file access while still allowing essential file viewing capabilities. 
+
++---------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
+| - **true**: Prevents file downloads, previews, and sharing for most file types,                                                       | - System Config path: **Site Configuration > File sharing and downloads**                         |
+|   even when the                                                                                                                       | - ``config.json`` setting: ``FileSettings`` > ``MobileEnableSecureFilePreview`` > ``false``       |
+|   :ref:`Allow file downloads on mobile <administration-guide/configure/site-configuration-settings:allow file downloads on mobile>`   | - Environment variable: ``MM_FILESETTINGS_MOBILEENABLESECUREFILEPREVIEW``                         |
+|   configuration setting is enabled. Allows in-app previews for PDFs,                                                                  |                                                                                                   |
+|   videos, and images only. Files are stored temporarily in the app's cache and cannot be exported or shared.                          |                                                                                                   |
+| - **false**: **(Default)** Secure file preview mode is disabled.                                                                      |                                                                                                   |
++---------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
+
+.. config:setting:: mobile-allow-pdf-link-navigation
+  :displayname: Allow PDF link navigation on mobile (File sharing)
+  :systemconsole: Site Configuration > File sharing and downloads
+  :configjson: .FileSettings.MobileAllowPdfLinkNavigation
+  :environment: MM_FILESETTINGS_MOBILEALLOWPDFLINKNAVIGATION
+
+  - **true**: **(Default)** Enables tapping links inside PDFs on mobile when Secure File Preview Mode is active. Links will open in the device browser or supported app.
+  - **false**: Disables link navigation in PDFs when Secure File Preview Mode is active.
+
+Allow PDF link navigation on mobile
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+| - **true**: **(Default)** Enables tapping links inside PDFs               | - System Config path: **Site Configuration > File sharing and downloads**                     |
+|   on mobile when Secure File Preview Mode is active. Links will open      | - ``config.json`` setting: ``FileSettings`` > ``MobileAllowPdfLinkNavigation`` > ``true``     |
+|   in the device browser or supported app.                                 | - Environment variable: ``MM_FILESETTINGS_MOBILEALLOWPDFLINKNAVIGATION``                      |
+| - **false**: Disables link navigation in PDFs                             |                                                                                               |
+|   when Secure File Preview Mode is active.                                |                                                                                               |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+
+.. note::
+
+  This setting has no effect when the `Secure file preview on mobile <#enable-secure-file-preview-on-mobile>`__ configuration setting is disabled.
+
+----
 
 config.json-only settings
 -------------------------
