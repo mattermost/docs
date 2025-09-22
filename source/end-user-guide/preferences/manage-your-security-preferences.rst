@@ -16,6 +16,14 @@ Select your profile picture, select **Profile**, and then select **Security** to
 |                      |                                                                                                            |
 |                      |   If you sign in to Mattermost using a single sign-on service, you must update your password through       |
 |                      |   your SSO service account.                                                                                |
+|                      |                                                                                                            |
+|                      | .. important::                                                                                             |
+|                      |                                                                                                            |
+|                      |   **Mattermost v11.0+ Password Security Enhancement**: Starting in v11.0, Mattermost uses PBKDF2         |
+|                      |   password hashing for improved security. When you log in after your server upgrades to v11.0+,          |
+|                      |   your password will be automatically migrated to the more secure format. If your server is later         |
+|                      |   downgraded to a version prior to v11.0, you may be unable to log in and will need to contact your      |
+|                      |   system administrator for a password reset.                                                               |
 +----------------------+------------------------------------------------------------------------------------------------------------+
 | Multi-factor         | If your system admin has enabled :ref:`multi-factor authentication                                         |
 | authentication (MFA) | <administration-guide/configure/authentication-configuration-settings:enable multi-factor authentication>` |
