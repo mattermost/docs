@@ -1,9 +1,29 @@
 Outgoing Webhooks
 =================
 
-Outgoing webhooks let Mattermost send data out when users post messages that match certain triggers. You can configure a trigger word or phrase in a specific channel, along with a destination URL. When someone posts a matching message, Mattermost sends the post content to the external URL via HTTP POST. The receiving system can then process the data and optionally respond with a message back to Mattermost. Response posts are created under the outgoing webhook’s creator. Username/icon can be overridden in the response.
+**Technical complexity: Low-code**
 
-For example, a user types ``/weather Boston`` as a message, and your webhook calls a weather API, which sends the current forecast back into the channel. When a message in a specified channel matches one of the trigger words, an HTTP POST request is sent to the designated URL, allowing the external application to respond.
+Outgoing webhooks allow Mattermost to send messages and trigger actions in external applications when specific keywords are typed in channels. They are a straightforward way to connect Mattermost conversations to other services and automate responses.
+
+Outgoing webhooks require no coding to configure on in Mattermost, however the external service that receives the HTTP POST request needs to process the data, and then format and send a respond with a message back to Mattermost. This usually requires light coding to parse the request and format a JSON response payload, though many :ref:`automation platforms <integrations-guide/integrations-guide-index:build and automate workflows>` handle this without writing custom code.
+
+Outgoing webhooks can be used to create rich, interactive experiences in Mattermost by letting external services respond with rich message attachments, such as structured fields, buttons, and menus. Additionally, these responses can trigger interactive dialog forms where users provide additional input directly in Mattermost, or interactive messages that update dynamically based on user actions. Together, these capabilities turn simple keyword triggers into powerful in-product workflows that streamline how teams interact with external systems - all with minimal coding required. 
+
+Learn more about :doc:`outgoing webhooks </integrations-guide/outgoing-webhooks>`.
+
+Example Use Cases
+------------------
+
+Here are some example use cases for outgoing webhooks in Mattermost:
+
+- **Issue tracking integration**  
+   When a user types ``bug`` in a channel, an outgoing webhook sends the message to an external service that parses the details and responds with an interactive dialog in Mattermost. The user can enter fields like priority, description, and assignee, and submitting the dialog automatically creates a ticket in your ticketing software.
+
+- **Knowledge base lookup**  
+   A keyword like ``docs`` triggers an outgoing webhook that queries a documentation service and returns a rich interactive message with a list of suggested articles, each with clickable buttons or menus. Users can refine their search or open links without leaving Mattermost.
+
+- **Security incident enrichment**  
+   Typing a keyword like ``ioc`` (indicator of compromise) in a security channel can trigger an outgoing webhook that queries a threat intelligence platform. The response can return a formatted message attachment with reputation scores, related incidents, and quick-action buttons for escalating, investigating, or dismissing the alert.
 
 Create
 -------
