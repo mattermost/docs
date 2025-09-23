@@ -34,6 +34,8 @@
     - ``channel make-private`` - use ``channel modify --private``
     - ``command delete`` - use ``command archive``
     - ``permissions show`` - use ``permissions role show``
+    - ``mmctl user email`` - use ``mmctl user edit email`` 
+    - ``mmctl user username`` - use ``mmctl user edit username``
  - Experimental certificate-based authentication feature has been removed. ``ExperimentalSettings.ClientSideCertEnable`` must be ``false`` to start the server.
  - Added logic to migrate the password hashing method from bcrypt to PBKDF2. The migration will happen progressively, migrating the password of a user as soon as they enter it; e.g. when logging in or when double-checking their password for any sensitive action. There is an edge case where users might get locked out of their account: if a server upgrades to v11 and user A logs in (i.e., they need to enter their password), and then the server downgrades to v10.12 or previous, user A will no longer be able to log in. In this case, admins will need to manually reset the password of such users, through the system console or through the [mmctl user reset-password [users]](https://docs.mattermost.com/administration-guide/manage/mmctl-command-line-tool.html#mmctl-user-reset-password) command.
  - ``/api/v4/teams/{team_id}/channels/search_archived`` has been deprecated in favour of ``/api/v4/channels/search`` with the deleted parameter.
@@ -68,6 +70,8 @@
    }
  ```
 
+ - Stopped supporting manually installed plugins as per https://forum.mattermost.com/t/deprecation-notice-manual-plugin-deployment/21192.
+
 ```{Important}
 If you upgrade from a release earlier than v10.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
 ```
@@ -95,7 +99,6 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
  - Added Channel-Level Attribute-Based Access Control (Available only in Enterprise Advanced). Channel Admins can now configure attribute-based access rules directly in Channel Settings through a new Access Control tab when the ``EnableChannelScopeAccessControl`` setting is enabled.
  - Channel access control policies now support multiple parent inheritances.
  - Updated interactive dialogs to use the apps form framework. Implemented dynamic select and multi-select for interactive dialogs. Also, ``UserId`` and ``TeamId`` are now passed in interactive dialog submissions.
- - Stopped supporting manually installed plugins as per https://forum.mattermost.com/t/deprecation-notice-manual-plugin-deployment/21192.
  - Mattermost profile image is now deleted when LDAP profile picture is deleted.
  - User ``auth_data`` is now shown in the System Console user details page.
  - Added Elasticsearch test to Support Packet diagnostics.
