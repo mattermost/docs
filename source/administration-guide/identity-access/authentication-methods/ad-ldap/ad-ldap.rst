@@ -4,6 +4,13 @@ AD/LDAP setup
 .. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    /identity-access/ad-ldap-groups-synchronization
+    /identity-access/managing-team-channel-membership-using-ad-ldap-sync-groups
+
 Overview
 --------
 
@@ -18,7 +25,8 @@ Benefits of integrating AD/LDAP with Mattermost include:
 - **Single sign-on.** Users can log in to Mattermost with their AD/LDAP credentials.
 - **Centralized identity management.** Mattermost accounts can display user information from AD/LDAP, such as first and last name, email, and username.
 - **Automatic account provisioning.** A Mattermost user account is automatically created the first time a user signs in with their AD/LDAP credentials.
-- **Sync groups to predefined roles in Mattermost.** Assign team and channel roles to groups via AD/LDAP Group Sync.
+- **Sync groups to predefined roles in Mattermost.** Create groups by synchronizing with AD/LDAP system groups and syncing those groups to pre-defined roles in Mattermost.
+- **Manage team and channel membership** Manage the membership of private teams and private channels where users are added and removed based on their membership to the synchronized AD/LDAP group.
 - **Compliance alignment with administrator management.** Manage Administrator access to Mattermost in the System Console using AD/LDAP filters.
 
 Pre-installation notes
