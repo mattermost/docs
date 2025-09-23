@@ -32,7 +32,7 @@ Choose your path
      - :doc:`Webhooks </integrations-guide/webhook-integrations>`, :ref:`custom slash commands <integrations-guide/slash-commands:custom slash commands>`
      - Send alerts from monitoring tools, trigger actions with keywords, fetch docs with ``/search``.
    * - **Pro-code**
-     - :doc:`REST API </integrations-guide/restful-api>`, :doc:`custom plugins </integrations-guide/plugins>`
+     - :doc:`REST API </integrations-guide/restful-api>`, :doc:`custom plugins <integrations-guide/plugins:custom built plugins>`
      - Build custom apps, automate provisioning, extend Mattermost core.
 
 Integration options
