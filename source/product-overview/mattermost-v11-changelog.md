@@ -15,8 +15,8 @@
 **Release day: 2025-10-16**
 
 ### Important Upgrade Notes
- - GitLab SSO has been deprecated from Team Edition. Deployments using GitLab SSO can remain on v10.11 ESR (with 12 months of security updates) while transitioning to our new free offering Mattermost Entry, or exploring commercial/nonprofit options. See more details in [this forum post](https://forum.mattermost.com/t/mattermost-v11-changes-in-free-offerings/25126).
- - The ``TeamSettings.ExperimentalViewArchivedChannels`` setting has been deprecated. Archived channels will always be accessible, subject to normal channel membership. The server will fail to start if this setting is set to ``false``; to deny access to archived channels, mark them as private and remove affected channel members. See more details in [this forum post](https://forum.mattermost.com/t/viewing-accessing-archived-channels-v11/22626).
+ - GitLab SSO has been deprecated from Team Edition. Deployments using GitLab SSO can remain on v10.11 ESR (with 12 months of security updates) while transitioning to our new free offering Mattermost Entry, or can explore commercial/nonprofit options. See more details in [this forum post](https://forum.mattermost.com/t/mattermost-v11-changes-in-free-offerings/25126).
+ - The ``TeamSettings.ExperimentalViewArchivedChannels`` setting has been deprecated. Archived channels will always be accessible, subject to normal channel membership. The server will fail to start if this setting is set to ``false``. To deny access to archived channels, mark them as private and remove affected channel members. See more details in [this forum post](https://forum.mattermost.com/t/viewing-accessing-archived-channels-v11/22626).
  - Playbooks has stopped working for Team Edition. Entry, Professional, Enterprise, and Enterprise Advanced plans are automatically upgraded to Playbooks v2 with no expected downtime. See more details in [this forum post](https://forum.mattermost.com/t/clarification-and-update-on-the-playbooks-plugin-v11/25192).
  - Experimental Bleve Search functionality has been retired. If Bleve is enabled, search will not work until ``DisableDatabaseSearch`` is set to ``false``. See more details in [this forum post](https://forum.mattermost.com/t/transitioning-from-bleve-search-in-mattermost-v11/22982).
  - Support for MySQL has ended. See more details in [this forum post](https://forum.mattermost.com/t/transition-to-postgresql/19551).
@@ -24,9 +24,9 @@
  - The ``registerPostDropdownMenuComponent`` hook in the web app’s plugin API has been removed in favour of ``registerPostDropdownMenuAction``. See more details in [this forum post](https://forum.mattermost.com/t/deprecating-a-post-dropdown-menu-component-plugin-api-v11/25001).
  - The web app is no longer exposing the [Styled Components](https://styled-components.com/) dependency for use by web app plugins. See more details in [this forum post](https://forum.mattermost.com/t/removing-styled-components-export-for-web-app-plugins-v11/25002).
  - Omnibus support has been deprecated. The last ``mattermost-omnibus`` release was v10.12. See more details in [this forum post](https://forum.mattermost.com/t/mattermost-omnibus-to-reach-end-of-life-v11/25175).
- - Deprecated ``include_removed_members`` option in ``api/v4/ldap/sync`` have been removed. Admins can use the LDAP setting ``ReAddRemovedMembers``.
+ - Deprecated ``include_removed_members`` option in ``api/v4/ldap/sync`` has been removed. Admins can use the LDAP setting ``ReAddRemovedMembers``.
  - Customers that have the NPS plugin enabled can remove it as it no longer sends the feedback over through telemetry.
- - Format query parameter requirement in ``/api/v4/config/client`` endpoint has been deprecated.
+ - Format query parameter requirement in the ``/api/v4/config/client`` endpoint has been deprecated.
  - Removed deprecated mmctl commands and flags:
     - ``channel add`` - use ``channel users add``
     - ``channel remove`` - use ``channel users remove``
@@ -86,7 +86,7 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 #### Administration
  - Introduced support for Mattermost Entry Edition with message history limits.
  - User limits were lowered to final threshold of 250 for Mattermost Team Edition (MIT-Compiled License).
- - Added support for a FIPS-compliant Mattermost image.
+ - Added support for a [FIPS-compliant Mattermost image](https://docs.mattermost.com/deployment-guide/server/containers/fips-stig.html).
  - PBKDF2 is now used as the new key derivation algorithm for remote cluster invitations. We do this in a backward compatible way such that invitations generated from new/old clusters work in all clusters.
  - Updated the default SAML signature algorithm from SHA1 to SHA256 for improved security.
  - Added admin-managed property fields to Custom Profile Attributes.
