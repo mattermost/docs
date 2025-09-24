@@ -4,7 +4,10 @@ Mattermost logging
 .. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost provides 3 independent logging systems that can be configured separately with separate log files and rotation policies to meet different operational and compliance needs:
+.. important::
+   **Mattermost v11.0+ Logging Changes**: Starting with Mattermost v11.0, all logs including notification-related logs are consolidated into the standard ``mattermost.log`` file. The separate NotificationLogSettings configuration has been removed. Administrators can no longer disable notification logging without using advanced logging settings, as the main log level setting now controls both server and notification logs.
+
+Mattermost provides independent logging systems that can be configured separately with separate log files and rotation policies to meet different operational and compliance needs:
 
 .. csv-table::
    :header: "Logging Type & Capture", "Production Recommendation", "Configuration Priority"
@@ -12,27 +15,30 @@ Mattermost provides 3 independent logging systems that can be configured separat
 
    "**Log Settings**
 
-   All general Mattermost server operations, errors, startup/initialization, API calls, and system events.", "Always enabled. Console: INFO, File: INFO", "**High** - Essential for operations"
+   All general Mattermost server operations, errors, startup/initialization, API calls, and system events. **In v11.0+, also includes notification subsystem events.**", "Always enabled. Console: INFO, File: INFO", "**High** - Essential for operations"
    "**Audit Log Settings**
 
    Security and compliance events, user actions, API access, authentication events, and administrative changes.", "Enable if compliance is required", "**Medium** - Based on regulatory needs"
-   "**Notification Log Settings**
+   "**Notification Log Settings** *(v10.x and earlier)*
 
    Notification subsystem events, push notifications, email delivery, mobile notification processing.", "Enable for notification troubleshooting", "**Low** - Enable when debugging issues"
 
-By default, all Mattermost plans write logs to both the console and to the ``mattermost.log`` file in a machine-readable JSON format for log aggregation tools. Mattermost Enterprise and Professional customers can additionally log directly to syslog and TCP socket destination targets. Audit and notification logging are designed to be asynchronous to minimize performance impact.
+By default, all Mattermost plans write logs to both the console and to the ``mattermost.log`` file in a machine-readable JSON format for log aggregation tools. Mattermost Enterprise and Professional customers can additionally log directly to syslog and TCP socket destination targets. Audit logging is designed to be asynchronous to minimize performance impact.
+
+.. tip::
+   **v11.0+ Troubleshooting**: Since notification logs are now included in the main log file, administrators may want to filter out notification-related messages during troubleshooting to reduce noise. The new discrete notification log levels (``NotificationError``, ``NotificationWarn``, ``NotificationInfo``, ``NotificationDebug``, ``NotificationTrace``) make filtering easier.
 
 System admins can customize the following logging options based on your business practices and needs by going to **System Console > Environment > Logging** or by editing the ``config.json`` file directly.
 
 Console logs
 ------------
 
-Console logs feature verbose debug level log messages for general and notification activities that are written to the console using the standard output stream (stdout). You can customize console logs for general and notification activities. See the :ref:`Logging configuration settings <administration-guide/configure/environment-configuration-settings:logging>` for details.
+Console logs feature verbose debug level log messages for general activities (and notification activities in v11.0+) that are written to the console using the standard output stream (stdout). You can customize console logs for general activities. In v11.0+, notification logs are automatically included in the main console logs. See the :ref:`Logging configuration settings <administration-guide/configure/environment-configuration-settings:logging>` for details.
 
 File logs
 ---------
 
-File logs feature info level log messages for general and notification activities, including errors and information around startup, and initialization and webhook debug messages. The file is stored in ``./logs/mattermost.log``, rotated at 100 MB, and archived to a separate file in the same directory. You can customize file logs for general and notification activities. See the :ref:`Logging configuration settings <administration-guide/configure/environment-configuration-settings:logging>` for details.
+File logs feature info level log messages for general activities (and notification activities in v11.0+), including errors and information around startup, and initialization and webhook debug messages. The file is stored in ``./logs/mattermost.log``, rotated at 100 MB, and archived to a separate file in the same directory. You can customize file logs for general activities. In v11.0+, notification logs are automatically included in the main mattermost.log file. See the :ref:`Logging configuration settings <administration-guide/configure/environment-configuration-settings:logging>` for details.
 
 .. tip::
 
@@ -43,7 +49,12 @@ You can optionally output log records to any combination of `console <#console-t
 Define logging output
 ---------------------
 
-Define logging output for general and notification activities in JSON format in the System Console by going to **Environment > Logging > Advanced Logging** or by editing the ``config.json`` file directly. You can use the sample JSON below as a starting point.
+Define logging output for general activities in JSON format in the System Console by going to **Environment > Logging > Advanced Logging** or by editing the ``config.json`` file directly. 
+
+.. note::
+   **v11.0+ Notification Log Levels**: In Mattermost v11.0+, five new discrete notification log levels are available for use with advanced logging configurations to separate notification logs: ``NotificationError``, ``NotificationWarn``, ``NotificationInfo``, ``NotificationDebug``, and ``NotificationTrace``.
+
+You can use the sample JSON below as a starting point.
 
 .. code-block:: JSON
 
@@ -126,7 +137,7 @@ You can enable and customize advanced audit logging in Mattermost to record acti
 
     Go to **System Console > Compliance > Audit Logging** to customize audit logging. You can use the sample JSON below as a starting point. 
     
-    You can customize console logs for :ref:`general <administration-guide/configure/environment-configuration-settings:log settings>` and :ref:`notification <administration-guide/configure/environment-configuration-settings:notification logging>` activities. 
+    You can customize console logs for :ref:`general <administration-guide/configure/environment-configuration-settings:log settings>` activities. In v11.0+, :ref:`notification <administration-guide/configure/environment-configuration-settings:notification logging>` logs are automatically included unless advanced logging is configured. 
     
     Additionally, you can also output audit log records to any combination of `console <#console-target-configuration-options>`__, `local file <#file-target-configuration-options>`__, `syslog <#syslog-target-configuration-options>`__, and `TCP socket <#tcp-target-configuration-options>`__ targets, each featuring additional customization. See `Advanced Logging <#advanced-logging>`__ below for details.
 
@@ -156,7 +167,7 @@ Advanced logging
 .. include:: ../../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-System admins can output log and audit records general, audit, and notification activities to any combination of `console <#console-target-configuration-options>`__, `local file <#file-target-configuration-options>`__, `syslog <#syslog-target-configuration-options>`__, and `TCP socket <#tcp-target-configuration-options>`__ targets. Each output target features additional configuration options you can customize for your Mattermost deployment.
+System admins can output log and audit records for general and audit activities to any combination of `console <#console-target-configuration-options>`__, `local file <#file-target-configuration-options>`__, `syslog <#syslog-target-configuration-options>`__, and `TCP socket <#tcp-target-configuration-options>`__ targets. In v11.0+, notification activities are included in general logs by default, but can be separated using the new discrete notification log levels. Each output target features additional configuration options you can customize for your Mattermost deployment.
 
 .. tip::
 
@@ -260,6 +271,60 @@ Define advanced log output
                 "maxqueuesize": 1000
             }
         }
+
+v11.0+ Notification Log Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. versionadded:: 11.0
+
+Starting with Mattermost v11.0, administrators can use advanced logging to separate notification logs into dedicated files using the new discrete notification log levels. This example configuration routes notification logs to a separate file while keeping general logs in the main mattermost.log file:
+
+.. code-block:: JSON
+
+    "AdvancedLoggingJSON": {
+        "main_logs": {
+            "type": "file",
+            "format": "json",
+            "levels": [
+                {"id": 5, "name": "debug", "stacktrace": false},
+                {"id": 4, "name": "info", "stacktrace": false},
+                {"id": 3, "name": "warn", "stacktrace": false},
+                {"id": 2, "name": "error", "stacktrace": true},
+                {"id": 1, "name": "fatal", "stacktrace": true},
+                {"id": 0, "name": "panic", "stacktrace": true}
+            ],
+            "options": {
+                "filename": "./logs/mattermost.log",
+                "max_size": 100,
+                "max_age": 1,
+                "max_backups": 10,
+                "compress": true
+            },
+            "maxqueuesize": 1000
+        },
+        "notification_logs": {
+            "type": "file", 
+            "format": "json",
+            "levels": [
+                {"id": 200, "name": "NotificationError"},
+                {"id": 201, "name": "NotificationWarn"},
+                {"id": 202, "name": "NotificationInfo"},
+                {"id": 203, "name": "NotificationDebug"},
+                {"id": 204, "name": "NotificationTrace"}
+            ],
+            "options": {
+                "filename": "./logs/notifications.log",
+                "max_size": 50,
+                "max_age": 1,
+                "max_backups": 5,
+                "compress": true
+            },
+            "maxqueuesize": 1000
+        }
+    }
+
+.. note::
+   Without advanced logging configuration in v11.0+, all notification logs are automatically included in the standard mattermost.log file. Administrators cannot disable notification logging without using advanced logging settings.
 
 Specify destination targets
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
