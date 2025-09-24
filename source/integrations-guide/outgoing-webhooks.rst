@@ -3,7 +3,7 @@ Outgoing Webhooks
 
 **Technical complexity:** :ref:`Low-code <low-code>`
 
-Outgoing webhooks allow Mattermost to send messages and trigger actions in external applications when specific keywords are typed in channels. They are a straightforward way to connect Mattermost conversations to other services and automate responses.
+Outgoing webhooks can be used to create rich, interactive experiences in Mattermost by letting external services respond with rich message attachments, such as structured fields, buttons, and menus. Additionally, these responses can trigger interactive dialog forms where users provide additional input directly in Mattermost, or interactive messages that update dynamically based on user actions. Together, these capabilities turn simple keyword triggers into powerful in-product workflows that streamline how teams interact with external systems, all with minimal coding required.
 
 Outgoing webhooks require no coding to configure on in Mattermost, however the external service that receives the HTTP POST request needs to process the data, and then format and send a respond with a message back to Mattermost. This usually requires light coding to parse the request and format a JSON response payload, though many :ref:`automation platforms <integrations-guide/integrations-guide-index:build and automate workflows>` handle this without writing custom code.
 

@@ -14,7 +14,7 @@ Choosing the best platform for your team depends on your specific integration re
 
   `n8n <https://n8n.io/>`_ is ideal for organizations prioritizing data residency and security, since it is self-hosted and can be supported in air-gapped environments where cloud solutions like Zapier and Make might not be feasible. 
 
-  Additonally, n8n supports both no-code and low-code approaches, making it flexible for technical and semi-technical users. Being open source means there’s a large community of people sharing their custom workflows and automations that can either be used directly or iterated on to meet your specific requirements.
+  Additonally, n8n supports both :ref:`no-code <no-code>` and :ref:`low-code <low-code>` approaches, making it flexible for technical and semi-technical users. Being open source means there’s a large community of people sharing their custom workflows and automations that can either be used directly or iterated on to meet your specific requirements.
 
   n8n stands out for offering rich AI integration, enabling you to combine automation with AI-powered workflows. Its `native AI Agent node <https://n8n.io/ai/>`_ lets you integrate large language models, vector databases, and other AI services directly into your automations. This means you can build workflows in Mattermost that not only react to events but also analyze context, summarize discussions, or make decisions based on AI output.
 

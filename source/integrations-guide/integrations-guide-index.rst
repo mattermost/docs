@@ -20,20 +20,33 @@ Choose Your Path
 
 .. list-table::
    :header-rows: 1
-   :widths: 20 40 40
+   :widths: 15 40 45
 
-   * - **Skill Level**
-     - **Best Options**
-     - **Examples**
+   * - Skill Level
+     - Best Options
+     - Examples
+
    * - :ref:`No-code <no-code>`
-     - :doc:`Pre-built plugins </integrations-guide/popular-integrations>`, :doc:`No-code automation </integrations-guide/no-code-automation>`
-     - Connect Jira, GitHub, Zoom. Run incident playbooks. Automate with Zapier.
+     - - `Pre-built plugins <#pre-built-plugins>`__
+       - `Built-in slash commands <#built-in-slash-commands>`__
+       - `No-code automation <#no-code-automation-platforms>`__
+       - `Playbooks <#mattermost-playbooks>`__
+     - - Connect Jira, GitHub, Zoom
+       - Command line interactions
+       - Automate with n8n, Zapier
+       - Run incident playbooks
+
    * - :ref:`Low-code <low-code>`
-     - :doc:`Webhooks </integrations-guide/webhook-integrations>`, :ref:`custom slash commands <integrations-guide/slash-commands:custom slash commands>`
-     - Send alerts from monitoring tools, trigger actions with keywords, fetch docs with ``/search``.
+     - - `Webhooks <#webhooks>`__
+       - `Custom slash commands <#custom-slash-commands>`__
+     - - Send monitoring alerts
+       - Trigger actions with keywords
+
    * - :ref:`Pro-code <pro-code>`
-     - :doc:`REST API </integrations-guide/restful-api>`, :ref:`custom plugins <integrations-guide/plugins:custom-built plugins>`
-     - Build custom apps, automate provisioning, extend Mattermost core.
+     - - `REST API <#restful-api>`__
+       - `Custom plugins <#custom-built-plugins>`__
+     - - Build custom apps
+       - Extend Mattermost core
 
 Integration Options
 --------------------
@@ -48,7 +61,7 @@ Pre-Built Plugins
 
 **Technical complexity:** :ref:`No-code <no-code>`
 
-Mattermost provides a set of pre-built plugins that require no coding to install, configure, and use. These plugins are installed and managed entirely through the System Console, where you can enable, configure, and customize settings without any development work.
+Mattermost provides a set of :doc:`pre-built plugins </integrations-guide/popular-integrations>` that require no coding to install, configure, and use. These plugins are installed and managed entirely through the System Console, where you can enable, configure, and customize settings without any development work.
 
 .. image:: ../images/prebuilt-integrations.png
   :alt: Pre-built plugins available for no-code integration
@@ -59,7 +72,7 @@ Custom-Built Plugins
 
 **Technical complexity:** :ref:`Pro-code <pro-code>`
 
-Custom built plugins are the most comprehensive way to add new features and customization to self-hosted Mattermost deployments. Custom plugins are ideal for customers wanting to change the behavior of the Mattermost server, desktop, and web apps without forking the core codebase to suit their organization’s needs.
+:ref:`Building custom plugins <integrations-guide/plugins:custom-built plugins>` are the most comprehensive way to add new features and customization to self-hosted Mattermost deployments. Custom plugins are ideal for customers wanting to change the behavior of the Mattermost server, desktop, and web apps without forking the core codebase to suit their organization’s needs.
 
 Building a custom plugin is a **software development** task, using ``Go`` for the server-side functionality and optionally ``TypeScript/React`` for UI components. 
 
@@ -75,16 +88,14 @@ Incoming Webhooks
 
 :doc:`Incoming webhooks </integrations-guide/incoming-webhooks>` allow external applications to post messages into Mattermost channels and direct messages. They are a simple way to receive notifications and data from other services in real-time and require only basic setup.
 
+Additionally, Mattermost webhook payloads are :ref:`fully compatible <integrations-guide/incoming-webhooks:slack compatibility>` with Slack’s webhook format to make migration easier.
+
 Outgoing Webhooks
 ^^^^^^^^^^^^^^^^^^
 
 **Technical complexity:** :ref:`Low-code <low-code>`
 
 :doc:`Outgoing webhooks </integrations-guide/outgoing-webhooks>` allow Mattermost to send messages and trigger actions in external applications when specific keywords are typed in channels. They are a straightforward way to connect Mattermost conversations to other services and automate responses. Outgoing webhooks require no coding to configure in Mattermost. Some light coding is required to parse the request from the external service and format a JSON response payload.
-
-Outgoing webhooks can be used to create rich, interactive experiences in Mattermost by letting external services respond with rich message attachments, such as structured fields, buttons, and menus. Additionally, these responses can trigger interactive dialog forms where users provide additional input directly in Mattermost, or interactive messages that update dynamically based on user actions. Together, these capabilities turn simple keyword triggers into powerful in-product workflows that streamline how teams interact with external systems, all with minimal coding required. 
-
-Additionally, Mattermost webhook payloads are :ref:`fully compatible <integrations-guide/incoming-webhooks:slack compatibility>` with Slack’s webhook format to make migration easier.
 
 Slash Commands
 ~~~~~~~~~~~~~~
@@ -96,19 +107,23 @@ Built-In Slash Commands
 
 **Technical complexity:** :ref:`No-code <no-code>`
 
-Out-of-the-box commands enable command line interaction with users, channels, and conversations.
+Out-of-the-box :doc:`built-in slash commands </integrations-guide/built-in-slash-commands>` enable command line interaction with users, channels, and conversations.
 
 Custom Slash Commands
 ^^^^^^^^^^^^^^^^^^^^^^
 
 **Technical complexity:** :ref:`Low-code <low-code>`
 
-You can create custom slash commands that run preconfigured commands that can return a response, such as plain text, rich message content, interactive buttons or forms, directly into a channel.
+You can create :ref:`custom slash commands <integrations-guide/slash-commands:custom slash commands>` that run preconfigured commands that can return a response, such as plain text, rich message content, interactive buttons or forms, directly into a channel.
+
+Mattermost's slash command format is Slack compatible, so you can easily migrate your commands from Slack.
 
 RESTful API
 ~~~~~~~~~~~
 
-Full developer control for automation, bots, and integrations. Learn more about the :doc:`Mattermost RESTful API </integrations-guide/restful-api>`.
+**Technical complexity:** :ref:`Pro-code <pro-code>`
+
+With :doc:`Mattermost's RESTful API </integrations-guide/restful-api>`, you have full developer control for automation, bots, and integrations.
 
 Build and Automate Workflows
 -----------------------------
@@ -117,14 +132,19 @@ Build and Automate Workflows
 
 In addition to direct tool integrations, Mattermost can be part of larger automated workflows across your integrated services. Automate multi-step processes across Mattermost and other systems, often with no coding required.
 
+No-code Automation Platforms
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Platforms like n8n, Zapier, and Make provide powerful visual editors that support thousands of connected tools, with triggers and actions that integrate Mattermost to external services, enabling teams to build complex workflows without writing code. Admins migrating from tools like Slack Workflow Builder can recreate familiar automations in Mattermost using these platforms.
+
+Learn more about additional :doc:`no-code automation options </integrations-guide/no-code-automation>` available in Mattermost.
+
 Mattermost Playbooks
 ~~~~~~~~~~~~~~~~~~~~
 
-:doc:`Mattermost Playbooks </end-user-guide/workflow-automation>` lets you define and execute repeatable processes without any coding. Playbooks are often used for incident response, onboarding checklists, or any workflow that involves multiple steps, owners, and notifications. With Playbooks, you can automate certain actions in the process. For instance, a playbook can be configured to automatically open a dedicated channel for an incident, send template messages or task checklists to that channel, update subscribers on status changes, and so on, all through configuration.
+:doc:`Mattermost Playbooks </end-user-guide/workflow-automation>` lets you define and execute repeatable processes without any coding. Playbooks are often used for incident response, onboarding checklists, or any workflow that involves multiple steps, owners, and notifications. Playbooks have integration points you can use to trigger actions, and they can work in conjunction with plugins, making them a powerful no-code automation tool for orchestrating both human and system actions.
 
-While Playbooks primarily focus on coordinating people and tasks, they also have integration points. You can trigger a playbook run via an incoming webhook (allowing an external tool to trigger a playbook run), and within a playbook you can define steps that execute webhooks or call external APIs. Additionally, Playbooks can work in conjunction with plugins, making them a powerful no-code automation tool for orchestrating both human and system actions. It keeps the entire workflow visible in Mattermost, reducing the need to switch between apps during critical processes. Learn more about using :doc:`Playbooks </end-user-guide/workflow-automation>`.
-
-Learn more about additional :doc:`no-code automation options </integrations-guide/no-code-automation>` available in Mattermost.
+Learn more about using :doc:`Playbooks </end-user-guide/workflow-automation>`.
 
 Frequently Asked Questions
 --------------------------
