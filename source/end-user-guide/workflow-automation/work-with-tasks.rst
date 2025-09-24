@@ -44,3 +44,23 @@ You can:
 - You can change the due date of tasks to manage priorities and urgency.
 
 To view your task inbox, access the **Playbooks** tab in Mattermost. In the header, next to your profile image, select the tasks list icon. A list of every task assigned to you from every run that's in progress is displayed.
+
+Mobile task management
+----------------------
+
+From Mattermost server v11.0+ and mobile app v2.23.0, mobile users can perform comprehensive task management operations on playbook runs:
+
+**Interactive Task Management**
+
+- **Task interaction**: Tap on any task to open a detailed bottom sheet view with task options and information.
+- **Check/Uncheck tasks**: Complete or reopen tasks directly from the mobile interface.
+- **Skip/Unskip tasks**: Mark tasks as skipped or return them to active status as workflow requirements change.
+
+**Task Updates**
+
+- **Update assignee**: Change who is responsible for completing a task directly from mobile.
+- **Modify due dates**: Adjust task deadlines to accommodate changing priorities and schedules.
+- **Edit task commands**: Update slash commands or instructions associated with tasks from mobile devices.
+- **Change run ownership**: Transfer run ownership between team members using the mobile interface.
+
+These mobile capabilities provide full task management functionality for teams working with playbooks while on mobile devices, complementing the existing desktop and web browser experiences.
