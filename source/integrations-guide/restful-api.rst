@@ -1,7 +1,7 @@
 RESTful API
 ============
 
-**Technical complexity: Pro-code**
+**Technical complexity:** :ref:`Pro-code <pro-code>`
 
 Full developer control for automation, bots, and integrations.
 

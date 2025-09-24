@@ -14,7 +14,7 @@ Execute actions with simple commands inside Mattermost. Learn how to :doc:`run M
 Built-in slash commands
 ------------------------
 
-**Technical complexity: No-code**
+**Technical complexity:** :ref:`No-code <no-code>`
 
 These out-of-the-box commands enable command line interaction with users, channels, and conversations. Examples of pre-built slash commands include ``/invite`` to add teammates to a channel, ``/header`` to set a channel description, or ``/call`` to start or join a call in a channel.
 
@@ -25,7 +25,7 @@ Learn more about :doc:`built-in slash commands </integrations-guide/built-in-sla
 Custom slash commands
 ----------------------
 
-**Technical complexity: Low-code**
+**Technical complexity:** :ref:`Low-code <low-code>`
 
 Slash commands are similar to an outgoing webhooks, but instead of listening for keywords in a channel they are triggered by users explicitly typing a preconfigured command. Using slash commands is similar to using a command line within a channel. This means if you type in a slash command it will execute without posting a message, whereas an outgoing webhook is only triggered by posted messages. The external service then processes the request and can return a response, such as plain text, rich message content, interactive buttons or forms, directly into the channel.
 
@@ -38,11 +38,14 @@ Example Use Cases
 
 Here are some example use cases for slash commands in Mattermost:
 
-- **Project management**  
-   Typing ``/jira create`` opens an interactive dialog where you can file a new Jira issue directly from Mattermost, including fields like summary, description, and priority.
+**Project management**  
 
-- **Incident response**  
-   Using ``/pagerduty trigger`` can open a form to start a new incident, notify on-call responders, and post details back into the channel so the team can coordinate.
+Typing ``/jira create`` opens an interactive dialog where you can file a new Jira issue directly from Mattermost, including fields like summary, description, and priority.
 
-- **Knowledge retrieval**  
-   A command like ``/docs search authentication`` queries your documentation system and returns a list of relevant articles as interactive message attachments with links.
+**Incident response**  
+
+Using ``/pagerduty trigger`` can open a form to start a new incident, notify on-call responders, and post details back into the channel so the team can coordinate.
+
+**Knowledge retrieval**  
+
+A command like ``/docs search authentication`` queries your documentation system and returns a list of relevant articles as interactive message attachments with links.

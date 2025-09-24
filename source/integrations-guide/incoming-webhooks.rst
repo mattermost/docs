@@ -1,9 +1,9 @@
 Incoming Webhooks
 =================
 
-**Technical complexity: no-code**
+**Technical complexity:** :ref:`No-code <no-code>`
 
-Incoming webhooks allow external applications to post messages into Mattermost channels and direct messages. They are a simple way to receive notifications and data from other services in real-time.
+Send or receive real-time data from external tools. Webhooks require minimal coding and are easy to set up with virtually any tool or platform because they use lightweight HTTP POST requests with JSON payloads.
 
 Using incoming webhooks in Mattermost requires only basic setup. You generate a webhook URL using the Mattermost interface, then point another service to send data to that address. No coding is required if your external service triggering the events is able to send data via webhooks or HTTP POST requests, which most modern applications and platforms support. Setting this up usually involves pasting the Mattermost webhook URL into the service’s settings and selecting what type of events you want it to send. 
 
@@ -12,14 +12,17 @@ Example Use Cases
 
 Here are some example use cases for incoming webhooks in Mattermost:
 
-- **Monitoring alerts**  
-   Send real-time alerts from monitoring systems (such as Prometheus or Datadog) into a dedicated Mattermost channel so your team is immediately notified about system issues or downtime.
+**Monitoring alerts**
 
-- **Build and deployment notifications**  
-   Post automated updates from CI/CD pipelines (such as Jenkins or GitLab CI) to a channel, keeping developers informed of build status, test results, and deployment progress.
+Send real-time alerts from monitoring systems (such as Prometheus or Datadog) into a dedicated Mattermost channel so your team is immediately notified about system issues or downtime.
 
-- **Customer support updates**  
-   Forward new support ticket notifications from systems like Zendesk or ServiceNow into a support channel, ensuring the team can respond quickly to incoming requests.
+**Build and deployment notifications**
+
+Post automated updates from CI/CD pipelines (such as Jenkins or GitLab CI) to a channel, keeping developers informed of build status, test results, and deployment progress.
+
+**Customer support updates**
+
+Forward new support ticket notifications from systems like Zendesk or ServiceNow into a support channel, ensuring the team can respond quickly to incoming requests.
 
 Create
 ------

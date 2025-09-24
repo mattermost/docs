@@ -1,8 +1,10 @@
-Frequently Asked Auestions
+Frequently Asked Questions
 ===========================
 
 What is meant by no-code, low-code, and pro-code?
 -------------------------------------------------
+
+.. _no-code:
 
 No-code
 ~~~~~~~~
@@ -11,12 +13,16 @@ Integration or automation can be achieved without writing any code. All configur
 
 For example, installing a plugin from the marketplace or using a drag-and-drop automation tool would be considered no-code. The heavy lifting is pre-built and you just need to configure it.
 
+.. _low-code:
+
 Low-code
 ~~~~~~~~
 
 Minimal coding or scripting is needed to implement the integration. Low-code solutions might require writing a few lines of script or simple configuration in code-like logic, but not building a full software application. 
 
 In Mattermost’s context, something like setting up a webhook with a small custom script, or tweaking an automation template would be considered low-code. It typically assumes some technical knowledge, but far less than full-scale development. Utilizing templates or online AI tooling can likely meet the need for most low-code integration requirements.
+
+.. _pro-code:
 
 Pro-code
 ~~~~~~~~
