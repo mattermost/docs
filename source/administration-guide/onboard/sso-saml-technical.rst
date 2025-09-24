@@ -42,6 +42,9 @@ When Mattermost initiates an SP-initiated SAML request flow, it generates a **HT
 
 AuthNRequests can also be signed by Mattermost, in which case the XML payload is similar to:
 
+.. note::
+  Starting from Mattermost v11, the default signature algorithm has been updated from SHA-1 to SHA-256 for improved security. The example below reflects the new default SHA-256 algorithm.
+
 .. code-block:: XML
 
   <samlp:AuthnRequest xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:samlsig="https://www.w3.org/2000/09/xmldsig#" ID="_u5mpjadp1fdozfih4cj8ap4brh" Version="2.0" ProtocolBinding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" AssertionConsumerServiceURL="http://localhost:8065/login/sso/saml" IssueInstant="2019-06-08T16:00:31Z">
@@ -49,12 +52,12 @@ AuthNRequests can also be signed by Mattermost, in which case the XML payload is
       <samlsig:Signature Id="Signature1">
           <samlsig:SignedInfo>
               <samlsig:CanonicalizationMethod Algorithm="https://www.w3.org/2001/10/xml-exc-c14n#"></samlsig:CanonicalizationMethod>
-              <samlsig:SignatureMethod Algorithm="https://www.w3.org/2000/09/xmldsig#rsa-sha1"></samlsig:SignatureMethod>
+              <samlsig:SignatureMethod Algorithm="https://www.w3.org/2000/09/xmldsig#rsa-sha256"></samlsig:SignatureMethod>
               <samlsig:Reference URI="#_u5mpjadp1fdozfih4cj8ap4brh">
                   <samlsig:Transforms>
                       <samlsig:Transform Algorithm="https://www.w3.org/2000/09/xmldsig#enveloped-signature"></samlsig:Transform>
                   </samlsig:Transforms>
-                  <samlsig:DigestMethod Algorithm="https://www.w3.org/2000/09/xmldsig#sha1"></samlsig:DigestMethod>
+                  <samlsig:DigestMethod Algorithm="https://www.w3.org/2000/09/xmldsig#sha256"></samlsig:DigestMethod>
                   <samlsig:DigestValue></samlsig:DigestValue>
               </samlsig:Reference>
           </samlsig:SignedInfo>
