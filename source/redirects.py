@@ -1978,6 +1978,8 @@ redirects_map = {
         "https://docs.mattermost.com/deployment-guide/server/server-deployment-planning.html",
 "configure/using-outbound-proxy.html":
         "https://docs.mattermost.com/deployment-guide/server/server-deployment-planning.html",
+"configure/environment-configuration-settings.html#dev-allowuntrustedinternalconnections":
+        "https://docs.mattermost.com/administration-guide/configure/environment-configuration-settings.html#allow-untrusted-internal-connections",
 
 # Deploy redirects
 "deploy/application-architecture.html":
