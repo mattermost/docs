@@ -1,13 +1,8 @@
-Use built-in slash commands
+Built-In Slash Commands
 ============================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
-
-You can interact with Mattermost users, channels, conversations, and more using `built-in slash commands <#slash-commands>`_, or interact with the data model programmatically using `API endpoints <https://api.mattermost.com/>`__. Responses are posted as the user who invoked the command, with possible username/icon overrides.
-
-Slash commands
---------------
 
 The following built-in slash comamnds are available in your Mattermost :doc:`workspace </end-user-guide/end-user-guide-index>`. 
 
