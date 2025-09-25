@@ -48,7 +48,7 @@ Mattermost Enterprise Advanced
 Mattermost Enterprise Advanced is the :doc:`Intelligent Mission Environment </product-overview/product-overview-index>` for Cyber Defense and Mission Operations that features:
 
 - :doc:`Classified and Sensitive Information Controls </end-user-guide/collaborate/display-channel-banners>`
-- :doc:`Zero Trust Security </administration-guide/manage/admin/attribute-based-access-control>` with dynamic attribute-based policy controls, environmental atributes, and User Authoritative Source integration
+- :doc:`Zero Trust Security </administration-guide/admin-tools/attribute-based-access-control>` with dynamic attribute-based policy controls, environmental atributes, and User Authoritative Source integration
 - :doc:`Mobile security </security-guide/mobile-security>` controls
 - :doc:`Air-gapped deployment workflows </deployment-guide/server/air-gapped-deployment>`
 
@@ -69,26 +69,26 @@ Mattermost Enterprise is an enterprise-grade collaboration system that supports 
 
 This offering includes all the features of `Mattermost Professional <#mattermost-professional>`__, plus: 
 
-- :doc:`Enterprise-scale search with dedicated indexing and usage resourcing via cluster support </administration-guide/scale/enterprise-search>`.
-- :doc:`Sychronization of access controls, channels, and teams with AD/LDAP Groups </administration-guide/onboard/ad-ldap-groups-synchronization>`.
-- :doc:`eDiscovery and compliance export automation </administration-guide/comply/compliance-export>`.
+- :doc:`Enterprise-scale search with dedicated indexing and usage resourcing via cluster support </administration-guide/operations-scaling/enterprise-search>`.
+- :doc:`Sychronization of access controls, channels, and teams with AD/LDAP Groups </administration-guide/identity-access/ad-ldap-groups-synchronization>`.
+- :doc:`eDiscovery and compliance export automation </administration-guide/compliance-security-auditing/compliance-export>`.
 - :doc:`Enterprise mobile device management with custom EMM support via AppConfig </deployment-guide/mobile/deploy-mobile-apps-using-emm-provider>`.
-- :doc:`Advanced legal controls with customizable end-user terms of service and re-acceptance duration </administration-guide/comply/custom-terms-of-service>`.
-- :ref:`Private mobility with ID-only push notifications <administration-guide/configure/site-configuration-settings:push notification contents>`.
-- :doc:`Enhanced compliance with global and custom retention policies for messages and files </administration-guide/comply/data-retention-policy>`.
+- :doc:`Advanced legal controls with customizable end-user terms of service and re-acceptance duration </administration-guide/compliance-security-auditing/custom-terms-of-service>`.
+- :ref:`Private mobility with ID-only push notifications <administration-guide/configuration-reference/site-configuration-settings:push notification contents>`.
+- :doc:`Enhanced compliance with global and custom retention policies for messages and files </administration-guide/compliance-security-auditing/data-retention-policy>`.
 - :doc:`Collaborative playbooks with ad hoc add/remove tasks, automated triggers, and stakeholders dashboard </end-user-guide/workflow-automation/learn-about-playbooks>`.
 - :doc:`Deleted granular administrative control </administration-guide/onboard/delegated-granular-administration>`.
 - :doc:`Advanced configuration of playbook permissions, and analytics dashboards </end-user-guide/workflow-automation/share-and-collaborate>`
-- :doc:`Channel export </administration-guide/comply/export-mattermost-channel-data>`
-- :ref:`Enhanced compliance controls and granular audit logs with data export <administration-guide/manage/logging:audit logging>`.
-- :doc:`Advanced collaboration with connected workspaces across Mattermost instances </administration-guide/onboard/connected-workspaces>`.
-- :doc:`High availability support with multi-node database deployment </administration-guide/scale/high-availability-cluster-based-deployment>`.
-- :doc:`Horizontal scaling through cluster-based deployment </administration-guide/scale/scaling-for-enterprise>`.
-- :doc:`Advanced performance monitoring </administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring>`.
-- :doc:`Server health checks </administration-guide/manage/request-server-health-check>`.
+- :doc:`Channel export </administration-guide/compliance-security-auditing/export-mattermost-channel-data>`
+- :ref:`Enhanced compliance controls and granular audit logs with data export <administration-guide/admin-tools/logging:audit logging>`.
+- :doc:`Advanced collaboration with connected workspaces across Mattermost instances </administration-guide/getting-started/connected-workspaces>`.
+- :doc:`High availability support with multi-node database deployment </administration-guide/operations-scaling/high-availability-cluster-based-deployment>`.
+- :doc:`Horizontal scaling through cluster-based deployment </administration-guide/operations-scaling/scaling-for-enterprise>`.
+- :doc:`Advanced performance monitoring </administration-guide/operations-scaling/deploy-prometheus-grafana-for-performance-monitoring>`.
+- :doc:`Server health checks </administration-guide/admin-tools/request-server-health-check>`.
 - `Eligibility for Premier Support add-on <https://mattermost.com/support/>`__.
 - Contextual AI-based :ref:`summarization <end-user-guide/agents:record calls to summarize meetings>`, real-time :ref:`channel briefing <end-user-guide/agents:analyze threads and channels>`, and :ref:`composition <end-user-guide/agents:access ai features>`
-- Private, air-gapped & DDIL :doc:`AI operations </administration-guide/configure/agents-admin-guide>`
+- Private, air-gapped & DDIL :doc:`AI operations </administration-guide/configuration-reference/agents-admin-guide>`
 - PQ&A with :doc:`access-controlled backend systems </security-guide/security-guide-index>`
 - 99.99% uptime SLA guarantee (Cloud only, via dedicated virtual secure Cloud add-on option).
 
@@ -105,16 +105,16 @@ Mattermost Professional is the set of collaboration features that enables you to
 This offering includes all the features of `Mattermost Free <#mattermost-free>`__, plus: 
 
 - :doc:`Guest access </administration-guide/onboard/guest-accounts>` and :doc:`custom user groups </end-user-guide/collaborate/organize-using-custom-user-groups>`.
-- :doc:`Active Directory/LDAP Single Sign-on and user synchronization </administration-guide/onboard/ad-ldap>`.
-- Single Sign-on with :doc:`GitLab </administration-guide/onboard/sso-gitlab>` using the OpenID Connect standard, :doc:`Google </administration-guide/onboard/sso-google>`, :doc:`OpenID Connect </administration-guide/onboard/sso-openidconnect>`, :doc:`SAML </administration-guide/onboard/sso-saml>` or :doc:`Entra ID </administration-guide/onboard/sso-entraid>`.
+- :doc:`Active Directory/LDAP Single Sign-on and user synchronization </administration-guide/identity-access/ad-ldap>`.
+- Single Sign-on with :doc:`GitLab </administration-guide/identity-access/authentication-methods/sso/sso-gitlab>` using the OpenID Connect standard, :doc:`Google </administration-guide/identity-access/authentication-methods/sso/sso-google>`, :doc:`OpenID Connect </administration-guide/identity-access/authentication-methods/sso/sso-openidconnect>`, :doc:`SAML </administration-guide/identity-access/authentication-methods/saml-based-sso/sso-saml>` or :doc:`Entra ID </administration-guide/identity-access/authentication-methods/sso/sso-entraid>`.
 - :ref:`MFA enforcement <administration-guide/onboard/multi-factor-authentication:enforcing mfa>`.
 - :ref:`Advanced team permissions <administration-guide/onboard/advanced-permissions:team override scheme>`.
 - :ref:`Read-only announcement channels <administration-guide/manage/team-channel-members:advanced access controls>`.
-- :doc:`System-wide announcement banners </administration-guide/manage/system-wide-notifications>`.
+- :doc:`System-wide announcement banners </administration-guide/admin-tools/system-wide-notifications>`.
 - O365 integration with `Microsoft Teams Meetings <https://mattermost.com/marketplace/microsoft-teams-meetings/>`_ and `Jira multi-server <https://mattermost.com/marketplace/jira-plugin/>`_.
 - `Next business day support via online ticketing system <https://mattermost.com/support/>`_.
 - :ref:`Interactive AI bot support <end-user-guide/agents:access ai features>`
-- Flexible :doc:`bring-your-own-LLM integration </administration-guide/configure/agents-admin-guide>`
+- Flexible :doc:`bring-your-own-LLM integration </administration-guide/configuration-reference/agents-admin-guide>`
 
 See a `complete list of Mattermost features <https://mattermost.com/pricing>`_.
 
@@ -141,11 +141,11 @@ Features include:
 - Teams and channels for one-to-one and group messaging, file sharing, and unlimited search history with threaded messaging, emoji, and custom emoji.
 - Native apps for iOS, Android, Windows, macOS, and Linux.
 - Pre-packaged integrations with most common developer tools, including Jira, GitHub, GitLab, Zoom, and more.
-- Tools for :doc:`custom branding </administration-guide/configure/custom-branding-tools>` and :doc:`themes </end-user-guide/preferences/customize-your-theme>`.
-- :doc:`Multi-factor authentication </administration-guide/onboard/multi-factor-authentication>`.
-- Single Sign-on with :doc:`GitLab </administration-guide/onboard/sso-gitlab>` using the OAuth 2.0 standard.
+- Tools for :doc:`custom branding </administration-guide/configuration-reference/custom-branding-tools>` and :doc:`themes </end-user-guide/preferences/customize-your-theme>`.
+- :doc:`Multi-factor authentication </administration-guide/identity-access/multi-factor-authentication>`.
+- Single Sign-on with :doc:`GitLab </administration-guide/identity-access/authentication-methods/sso/sso-gitlab>` using the OAuth 2.0 standard.
 - :doc:`Granular system permissions </administration-guide/onboard/advanced-permissions>`.
-- Highly customizable `third-party bots, integrations <https://mattermost.com/marketplace/#publicApps>`_, and :doc:`command line tools </administration-guide/manage/mmctl-command-line-tool>`.
+- Highly customizable `third-party bots, integrations <https://mattermost.com/marketplace/#publicApps>`_, and :doc:`command line tools </administration-guide/admin-tools/mmctl-command-line-tool>`.
 - Extensive integration support via `webhooks, APIs, drivers <https://developers.mattermost.com/integrate/other-integrations/>`_, and `third-party extensions <https://mattermost.com/marketplace/>`_.
 - Multiple languages including English (Australian, US), Bulgarian, Chinese (Simplified and Traditional), Dutch, French, German, Hungarian, Italian, Japanese, Korean, Persian, Polish, Portuguese (Brazil), Romanian, Russian, Spanish, Swedish, Turkish, Ukrainian, and Vietnamese.
 - `Community support <https://mattermost.com/support/>`_.

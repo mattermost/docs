@@ -35,7 +35,7 @@ If your organization doesn't use threaded discussions, or you have :ref:`opted o
 Send automatic replies to direct messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Want to automatically reply to direct messages when you're out of office? When your system admin :ref:`enables the ability for you to do so <administration-guide/configure/experimental-configuration-settings:enable automatic replies>`, you can configure Mattermost to send custom replies to direct messages by going to **Settings > Notifications > Automatic Direct Message Replies**, selecting **Enable**, and composing your automatic reply message. 
+Want to automatically reply to direct messages when you're out of office? When your system admin :ref:`enables the ability for you to do so <administration-guide/configuration-reference/experimental-configuration-settings:enable automatic replies>`, you can configure Mattermost to send custom replies to direct messages by going to **Settings > Notifications > Automatic Direct Message Replies**, selecting **Enable**, and composing your automatic reply message. 
 
 Frequently asked questions
 --------------------------

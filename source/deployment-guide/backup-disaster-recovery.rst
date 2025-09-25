@@ -55,7 +55,7 @@ This section details the steps needed to set up Mattermost in a disaster recover
 
 .. tip::
 
-  To learn how to safely upgrade your deployment in Kubernetes for High Availability and Active/Active support, see the :doc:`Upgrading Mattermost in Kubernetes and High Availability Environments </administration-guide/upgrade/upgrade-mattermost-kubernetes-ha>` documenation.
+  To learn how to safely upgrade your deployment in Kubernetes for High Availability and Active/Active support, see the :doc:`Upgrading Mattermost in Kubernetes and High Availability Environments </administration-guide/operations-scaling/upgrade-mattermost-kubernetes-ha>` documenation.
 
 Set up in one data center
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -170,7 +170,7 @@ To recap:
 
 .. warning::
 
-  After creating the master user, IP based access to the OS might not work from Mattermost application nodes. You may need to update the ``ElasticSearchSettings`` section in ``config.json`` to update the server :ref:`username <administration-guide/configure/environment-configuration-settings:server username>` and :ref:`password <administration-guide/configure/environment-configuration-settings:server password>`.
+  After creating the master user, IP based access to the OS might not work from Mattermost application nodes. You may need to update the ``ElasticSearchSettings`` section in ``config.json`` to update the server :ref:`username <administration-guide/configuration-reference/environment-configuration-settings:server username>` and :ref:`password <administration-guide/configuration-reference/environment-configuration-settings:server password>`.
 
 3. Create a new OS cluster in the secondary region. Follow the same steps again for this cluster.
 

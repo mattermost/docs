@@ -53,7 +53,7 @@ Assign admin roles
 There are two ways to assign roles:
 
 1. In the System Console under **User Management > Delegated Granular Administration**.
-2. Using the :doc:`mmctl tool </administration-guide/manage/mmctl-command-line-tool>`. This can be done either locally or remotely.
+2. Using the :doc:`mmctl tool </administration-guide/admin-tools/mmctl-command-line-tool>`. This can be done either locally or remotely.
 
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | **You want to**                                   | **Using the System Console**                                                                                                       | **Using mmctl**                                                                     |
@@ -94,7 +94,7 @@ System admins can grant read/write access to other areas of the System Console, 
 There are two ways to assign roles:
 
 1. In the System Console under **User Management > Delegated Granular Administration**.
-2. Using the :doc:`mmctl tool </administration-guide/manage/mmctl-command-line-tool>`. This can be done either locally or remotely.
+2. Using the :doc:`mmctl tool </administration-guide/admin-tools/mmctl-command-line-tool>`. This can be done either locally or remotely.
 
 +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | **You want to**                                  | **Using the System Console**                                                                                                       | **Using mmctl**                                                                     |

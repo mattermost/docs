@@ -104,7 +104,7 @@ In contrast, Mattermost, as the copyright holder to the collection of the Matter
 How can I create an open source derivative work of Mattermost?
 --------------------------------------------------------------
 
-If you're looking to customize the look and feel of Mattermost, see the :doc:`customization </administration-guide/configure/customize-mattermost>` documentation. For advanced customization, the system's user experience is available in different repositories for web, mobile apps, and desktop apps and custom experiences can be developed and integrated via the system APIs and custom plugins.
+If you're looking to customize the look and feel of Mattermost, see the :doc:`customization </administration-guide/configuration-reference/customize-mattermost>` documentation. For advanced customization, the system's user experience is available in different repositories for web, mobile apps, and desktop apps and custom experiences can be developed and integrated via the system APIs and custom plugins.
 
 If, instead of using Mattermost Team Edition or Mattermost Enterprise Edition, you choose to compile your own version of the system using the open source code from ``/mattermost``, there are a number of factors to consider:
 
@@ -117,7 +117,7 @@ Rebranding
 ~~~~~~~~~~
 
 - When you create a derivative version of Mattermost and share it with others as a product, you need to replace the Mattermost name and logo from the system, among other requirements, per the `Mattermost trademark policy <https://mattermost.com/trademark-standards-of-use/>`_.
-- You can rebrand your system using :doc:`custom branding tools </administration-guide/configure/custom-branding-tools>`.
+- You can rebrand your system using :doc:`custom branding tools </administration-guide/configuration-reference/custom-branding-tools>`.
 - For advanced whitelabelling, you can manually update files on the Mattermost server `per product documentation. <https://github.com/mattermost/docs/issues/1006>`_ This can also be done without forking.
 
 Copyright and Licensing of ``/mattermost`` open source code
@@ -128,7 +128,7 @@ Copyright and Licensing of ``/mattermost`` open source code
 Other considerations
 ~~~~~~~~~~~~~~~~~~~~
 
-- Mattermost has a default :ref:`Terms of Use <administration-guide/configure/site-configuration-settings:terms of use link>` agreement for the Terms of Use link at the bottom of login screen that should be incorporated into any additional Terms of Use you may add.
+- Mattermost has a default :ref:`Terms of Use <administration-guide/configuration-reference/site-configuration-settings:terms of use link>` agreement for the Terms of Use link at the bottom of login screen that should be incorporated into any additional Terms of Use you may add.
 
 - The Mattermost copyright notices on the user interface should remain.
 - There may be additional legal and regulatory issues to consider and we recommend you employ legal counsel to fully understand what's involved in creating and selling a derivative work.

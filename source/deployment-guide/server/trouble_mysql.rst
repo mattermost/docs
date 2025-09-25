@@ -5,8 +5,8 @@ Before you can run the Mattermost server, you must first install and configure a
 
 .. note::
 
-  - Additional database tuning guidance is available for specific Mattermost releases. See the :doc:`important upgrade notes </administration-guide/upgrade/important-upgrade-notes>` documentation for more details.
-  - See the :ref:`database configuration settings <administration-guide/configure/environment-configuration-settings:database>` documentation for details on configuration options specific to MySQL databases.
+  - Additional database tuning guidance is available for specific Mattermost releases. See the :doc:`important upgrade notes </administration-guide/operations-scaling/important-upgrade-notes>` documentation for more details.
+  - See the :ref:`database configuration settings <administration-guide/configuration-reference/environment-configuration-settings:database>` documentation for details on configuration options specific to MySQL databases.
 
 How you install MySQL varies depending upon which Linux distribution you use. However, once MySQL is installed, the configuration instructions are the
 same. For all distributions you must create a ``mattermost`` database and a ``mattermost`` database user. Failure to create these database

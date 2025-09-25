@@ -39,7 +39,7 @@ Yes. Mattermost can be deployed on-premises, in private clouds, or air-gapped ne
 Is CAC/SAML/LDAP integration available?
 ---------------------------------------
 
-Yes. Mattermost supports :ref:`SAML 2.0 <administration-guide/onboard/sso-saml:saml single sign-on>` (compatible with Okta, ADFS, OneLogin, Azure AD, PingFederate, etc.), CAC via SAML integration (configuration details may vary), and :doc:`AD/LDAP integration </administration-guide/onboard/ad-ldap>` for centralized identity, user provisioning, and group sync in Enterprise editions.
+Yes. Mattermost supports :ref:`SAML 2.0 <administration-guide/identity-access/authentication-methods/saml-based-sso/sso-saml:saml single sign-on>` (compatible with Okta, ADFS, OneLogin, Azure AD, PingFederate, etc.), CAC via SAML integration (configuration details may vary), and :doc:`AD/LDAP integration </administration-guide/identity-access/ad-ldap>` for centralized identity, user provisioning, and group sync in Enterprise editions.
 
 Can it be used securely on BYOD mobile?
 ---------------------------------------

@@ -17,7 +17,7 @@ This section provides comprehensive guidance on deploying and managing your Matt
     Pre-authentication secrets </deployment-guide/server/pre-authentication-secrets>
     Reference Architecture </deployment-guide/server/server-architecture>
     Deployment Solution Programs </deployment-guide/server/orchestration>
-    Scale for Enterprise </administration-guide/scale/scaling-for-enterprise>
+    Scale for Enterprise </administration-guide/operations-scaling/scaling-for-enterprise>
 
 * :doc:`Preparations </deployment-guide/server/preparations>` - Software and hardware requirements, proxy setup, TLS configuration, and other pre-deployment tasks.
 * :doc:`Deploy with Kubernetes </deployment-guide/server/deploy-kubernetes>` - Scalable deployment on various Kubernetes platforms with high availability support.
@@ -28,7 +28,7 @@ This section provides comprehensive guidance on deploying and managing your Matt
 * :doc:`Pre-authentication secrets </deployment-guide/server/pre-authentication-secrets>` - Configure reverse proxy validation for mobile and desktop applications using pre-authentication headers.
 * :doc:`Reference Architecture </deployment-guide/server/server-architecture>` - Recommended architecture patterns and infrastructure design.
 * :doc:`Deployment Solution Programs </deployment-guide/server/orchestration>` - Automated deployment tools and orchestration solutions.
-* :doc:`Scale for Enterprise </administration-guide/scale/scaling-for-enterprise>` - High availability, clustering, and enterprise-scale deployment guidance.
+* :doc:`Scale for Enterprise </administration-guide/operations-scaling/scaling-for-enterprise>` - High availability, clustering, and enterprise-scale deployment guidance.
 
 
 Core technology stack

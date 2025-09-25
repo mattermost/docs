@@ -18,7 +18,7 @@ Select your profile picture, select **Profile**, and then select **Security** to
 |                      |   your SSO service account.                                                                                |
 +----------------------+------------------------------------------------------------------------------------------------------------+
 | Multi-factor         | If your system admin has enabled :ref:`multi-factor authentication                                         |
-| authentication (MFA) | <administration-guide/configure/authentication-configuration-settings:enable multi-factor authentication>` |
+| authentication (MFA) | <administration-guide/configuration-reference/authentication-configuration-settings:enable multi-factor authentication>` |
 |                      | (MFA), you can require a passcode in addition to your password to log-in to your Mattermost account.       |
 |                      |                                                                                                            |
 |                      | You'll need to download a MFA passcode generation app, such as Google Authenticator or a similar app,      |

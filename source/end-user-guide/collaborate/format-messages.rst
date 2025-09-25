@@ -659,7 +659,7 @@ Math Formulas
 
   .. note::
 
-    This feature is :ref:`disabled by default <administration-guide/configure/site-configuration-settings:enable inline latex rendering>`. Contact your system admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
+    This feature is :ref:`disabled by default <administration-guide/configuration-reference/site-configuration-settings:enable inline latex rendering>`. Contact your system admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
 
   .. code-block:: text
 
@@ -676,7 +676,7 @@ Math Formulas
 
   .. note::
 
-    This feature is :ref:`disabled by default <administration-guide/configure/site-configuration-settings:enable latex code block rendering>`. Contact your system admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
+    This feature is :ref:`disabled by default <administration-guide/configuration-reference/site-configuration-settings:enable latex code block rendering>`. Contact your system admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
 
   .. code-block:: text
 

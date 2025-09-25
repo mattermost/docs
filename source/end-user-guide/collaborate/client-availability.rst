@@ -32,7 +32,7 @@ Messages
 | :ref:`Preview image links <end-user-guide/collaborate/share-files-in-messages:preview file attachments>`    | |checkmark| | |checkmark| | |checkmark|     |
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 | :ref:`Preview websites                                                                                      |             |             |                 |
-| <administration-guide/configure/site-configuration-settings:enable website link previews>`                  | |checkmark| | |checkmark| | |checkmark|     |
+| <administration-guide/configuration-reference/site-configuration-settings:enable website link previews>`                  | |checkmark| | |checkmark| | |checkmark|     |
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 | :doc:`Notifications </end-user-guide/preferences/manage-your-notifications>`                                | |checkmark| | |checkmark| | |checkmark|     |
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
@@ -63,7 +63,7 @@ Channels
 | :doc:`Rename channels </end-user-guide/collaborate/rename-channels>`                                     | |checkmark| | |checkmark| | |checkmark| |
 +----------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
 | :ref:`Deactivate members                                                                                 |             |             |             |
-| <administration-guide/configure/user-management-configuration-settings:deactivate users>`                | |checkmark| | |checkmark| |             |
+| <administration-guide/configuration-reference/user-management-configuration-settings:deactivate users>`                | |checkmark| | |checkmark| |             |
 +----------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
 
 Teams
@@ -164,15 +164,15 @@ Authentication
 | :ref:`Email password login                                                                |             |             |             |
 | <end-user-guide/collaborate/access-your-workspace:email address or username>`             | |checkmark| | |checkmark| | |checkmark| |
 +-------------------------------------------------------------------------------------------+-------------+-------------+-------------+
-| :doc:`AD/LDAP </administration-guide/onboard/ad-ldap>`                                    | |checkmark| | |checkmark| | |checkmark| |
+| :doc:`AD/LDAP </administration-guide/identity-access/ad-ldap>`                                    | |checkmark| | |checkmark| | |checkmark| |
 +-------------------------------------------------------------------------------------------+-------------+-------------+-------------+
-| :doc:`SAML SSO </administration-guide/onboard/sso-saml>`                                  | |checkmark| | |checkmark| | |checkmark| |
+| :doc:`SAML SSO </administration-guide/identity-access/authentication-methods/saml-based-sso/sso-saml>`                                  | |checkmark| | |checkmark| | |checkmark| |
 +-------------------------------------------------------------------------------------------+-------------+-------------+-------------+
-| :doc:`GitLab SSO </administration-guide/onboard/sso-gitlab>`                              | |checkmark| | |checkmark| | |checkmark| |
+| :doc:`GitLab SSO </administration-guide/identity-access/authentication-methods/sso/sso-gitlab>`                              | |checkmark| | |checkmark| | |checkmark| |
 +-------------------------------------------------------------------------------------------+-------------+-------------+-------------+
-| :doc:`Entra ID SSO </administration-guide/onboard/sso-entraid>`                           | |checkmark| | |checkmark| | |checkmark| |
+| :doc:`Entra ID SSO </administration-guide/identity-access/authentication-methods/sso/sso-entraid>`                           | |checkmark| | |checkmark| | |checkmark| |
 +-------------------------------------------------------------------------------------------+-------------+-------------+-------------+
-| :doc:`Google SSO </administration-guide/onboard/sso-google>`                              | |checkmark| | |checkmark| | |checkmark| |
+| :doc:`Google SSO </administration-guide/identity-access/authentication-methods/sso/sso-google>`                              | |checkmark| | |checkmark| | |checkmark| |
 +-------------------------------------------------------------------------------------------+-------------+-------------+-------------+
 
 Other
@@ -199,6 +199,6 @@ What feature quality levels does Mattermost have?
 
 We strive to release viable features. This means that we put in a significant amount of effort to ensure we solve a use case with a high bar for quality. A feature that's viable and meets our criteria for our production quality levels will be released to production.
 
-However, when working on large and complex features or new products, we may need to test them with a high volume of customers and users. For these scenarios, we'll release them as :ref:`Experimental <administration-guide/manage/feature-labels:experimental>` or :ref:`Beta <administration-guide/manage/feature-labels:beta>`, and implement feature flags and/or A/B testing to validate the effectiveness of features prior to production-level release. Additionally, we `dogfood our features <https://en.wikipedia.org/wiki/Eating_your_own_dog_food>`_ on our community server, and provide many configuration options that ensure customers can opt-in when trying experimental or beta features.
+However, when working on large and complex features or new products, we may need to test them with a high volume of customers and users. For these scenarios, we'll release them as :ref:`Experimental <administration-guide/admin-tools/feature-labels:experimental>` or :ref:`Beta <administration-guide/admin-tools/feature-labels:beta>`, and implement feature flags and/or A/B testing to validate the effectiveness of features prior to production-level release. Additionally, we `dogfood our features <https://en.wikipedia.org/wiki/Eating_your_own_dog_food>`_ on our community server, and provide many configuration options that ensure customers can opt-in when trying experimental or beta features.
 
-See the :doc:`Mattermost feature labels </administration-guide/manage/feature-labels>` documentation for details on the status, maturity, and support level of each feature, and what you can expect at each level.
+See the :doc:`Mattermost feature labels </administration-guide/admin-tools/feature-labels>` documentation for details on the status, maturity, and support level of each feature, and what you can expect at each level.

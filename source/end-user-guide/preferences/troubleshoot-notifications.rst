@@ -207,6 +207,6 @@ TPNS, hosted at `https://push-test.mattermost.com <https://push-test.mattermost.
 
 If you need production-level SLAs for push notifications, you can either compile your own push-proxy service, with your own key, or you can use a paid option and become a Mattermost Professional subscriber `agreeing to our Conditions of Use <https://mattermost.com/terms-of-use/>`_, which enables you to use a production-level Hosted Push Notification Service (HPNS) at ``https://push.mattermost.com``.
 
-Learn more about :ref:`our push notification service <administration-guide/configure/environment-configuration-settings:enable push notifications>`.
+Learn more about :ref:`our push notification service <administration-guide/configuration-reference/environment-configuration-settings:enable push notifications>`.
 
 `Book a live demo <https://mattermost.com/request-demo/>`_  or `talk to a Mattermost expert <https://mattermost.com/contact-sales/>`_ to explore tailored solutions for your organization's secure collaboration needs. Or try Mattermost yourself with a `1-hour preview <https://mattermost.com/sign-up/>`_ for instant access to a live sandbox environment.

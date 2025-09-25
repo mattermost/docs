@@ -8,11 +8,11 @@ Threads are a key part of the messaging experience in Mattermost. They're used t
 
 Threaded discussions offers an enhanced experience for users communicating in threads and replying to messages that includes a unified threads inbox to read all conversations in one view. Threads improve the ability to process channel content, find, follow, and resume conversations more easily, and keep threaded conversations focused.
 
-From Mattermost v7.0, threaded discussions are enabled by default for all new Mattermost deployments. All Mattermost users can create new threads, unless the system admin has :ref:`disabled the ability to do so <administration-guide/configure/site-configuration-settings:threaded discussions>`.
+From Mattermost v7.0, threaded discussions are enabled by default for all new Mattermost deployments. All Mattermost users can create new threads, unless the system admin has :ref:`disabled the ability to do so <administration-guide/configuration-reference/site-configuration-settings:threaded discussions>`.
 
 .. note::
 
-  System admins can :ref:`configure default availability and user opt-in <administration-guide/configure/site-configuration-settings:threaded discussions>` of threaded discussions.
+  System admins can :ref:`configure default availability and user opt-in <administration-guide/configuration-reference/site-configuration-settings:threaded discussions>` of threaded discussions.
 
 .. image:: ../../images/collapsed-reply-threads.gif
   :alt: Organize conversations using threaded discussions.
@@ -117,4 +117,4 @@ Tutorial video
 Known issues
 ------------
 
-Threaded discussions were released as generally available in Mattermost v7.0, including significant server performance improvements and more flexible configuration options for system admins to enable the feature by default. We highly recommended :doc:`upgrading Mattermost </administration-guide/upgrade/upgrading-mattermost-server>` to take advantage of configuration and performance enhancements.
+Threaded discussions were released as generally available in Mattermost v7.0, including significant server performance improvements and more flexible configuration options for system admins to enable the feature by default. We highly recommended :doc:`upgrading Mattermost </administration-guide/operations-scaling/upgrading-mattermost-server>` to take advantage of configuration and performance enhancements.

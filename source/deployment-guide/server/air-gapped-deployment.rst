@@ -377,12 +377,12 @@ When deploying Mattermost in an air-gapped environment, there are configuration 
 Mobile push notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost can use mobile push notifications to notify users of new messages and activity. These notifications require a server component to be deployed to send the notifications to the mobile devices. By default, Mattermost will use the public push notification service which is not available in an air-gapped environment. We recommend :ref:`disabling push notifications <administration-guide/configure/environment-configuration-settings:enable push notifications>` in **System Console > Environment > Push Notification Server**.
+Mattermost can use mobile push notifications to notify users of new messages and activity. These notifications require a server component to be deployed to send the notifications to the mobile devices. By default, Mattermost will use the public push notification service which is not available in an air-gapped environment. We recommend :ref:`disabling push notifications <administration-guide/configuration-reference/environment-configuration-settings:enable push notifications>` in **System Console > Environment > Push Notification Server**.
 
 Website link previews
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Website link previews require a connection to the internet to fetch the content of the links. We recommend :ref:`disabling website link previews <administration-guide/configure/site-configuration-settings:enable website link previews>` in **System Console > Site Configuration > Posts**.
+Website link previews require a connection to the internet to fetch the content of the links. We recommend :ref:`disabling website link previews <administration-guide/configuration-reference/site-configuration-settings:enable website link previews>` in **System Console > Site Configuration > Posts**.
 
 Additional considerations
 ---------------------------

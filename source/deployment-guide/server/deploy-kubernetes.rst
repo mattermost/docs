@@ -8,7 +8,7 @@ Mattermost server can be deployed on various Kubernetes platforms, providing a s
 
 .. tip::
 
-  To learn how to safely upgrade your deployment in Kubernetes for High Availability with Active/Active support, see the :doc:`Upgrading Mattermost in Kubernetes and High Availability Environments </administration-guide/upgrade/upgrade-mattermost-kubernetes-ha>` documenation.
+  To learn how to safely upgrade your deployment in Kubernetes for High Availability with Active/Active support, see the :doc:`Upgrading Mattermost in Kubernetes and High Availability Environments </administration-guide/operations-scaling/upgrade-mattermost-kubernetes-ha>` documenation.
 
 Platform
 --------

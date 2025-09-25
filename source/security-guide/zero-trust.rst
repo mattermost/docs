@@ -16,23 +16,23 @@ Mattermost integrates seamlessly with enterprise identity providers (IdPs), enab
 
 By using one of the secure identity mechanisms listed below and enforcing least-privilege access via roles and groups, Mattermost ensures that only verified individuals gain access to the platform and its resources:
 
-- `SAML <https://docs.mattermost.com/administration-guide/onboard/sso-saml.html>`_: Enables seamless Single Sign-On, ensuring centralized authentication to continuously enforce user verification.
-- `LDAP <https://docs.mattermost.com/administration-guide/onboard/ad-ldap.html>`_: Facilitates integration with enterprise directories to tightly control user access, adhering to granular identity verification.
-- `OpenID Connect <https://docs.mattermost.com/administration-guide/configure/authentication-configuration-settings.html#openid-connect>`_: Provides secure, standards-based user authentication to verify identities and enforce secure access.
-- `Session Management <https://docs.mattermost.com/administration-guide/configure/environment-configuration-settings.html#session-lengths>`_: Strengthens continuous authentication by controlling session lengths and automatically revoking sessions based on inactivity or policy violations, ensuring constant identity verification. By limiting session lifetimes and enforcing strict session policies, Mattermost mitigates the risk of stolen session tokens or extended unauthorized access.
+- `SAML <https://docs.mattermost.com/administration-guide/identity-access/authentication-methods/saml-based-sso/sso-saml.html>`_: Enables seamless Single Sign-On, ensuring centralized authentication to continuously enforce user verification.
+- `LDAP <https://docs.mattermost.com/administration-guide/identity-access/ad-ldap.html>`_: Facilitates integration with enterprise directories to tightly control user access, adhering to granular identity verification.
+- `OpenID Connect <https://docs.mattermost.com/administration-guide/configuration-reference/authentication-configuration-settings.html#openid-connect>`_: Provides secure, standards-based user authentication to verify identities and enforce secure access.
+- `Session Management <https://docs.mattermost.com/administration-guide/configuration-reference/environment-configuration-settings.html#session-lengths>`_: Strengthens continuous authentication by controlling session lengths and automatically revoking sessions based on inactivity or policy violations, ensuring constant identity verification. By limiting session lifetimes and enforcing strict session policies, Mattermost mitigates the risk of stolen session tokens or extended unauthorized access.
 
 Authorized users can seamlessly be added and removed from channels utilizing the native AD/LDAP integration based on group memberships:  
 
-- `LDAP Synchronized User Groups <https://docs.mattermost.com/administration-guide/onboard/ad-ldap-groups-synchronization.html>`_: Automates user management and access control by dynamically syncing with organizational directories to minimize risks and enforce policies.
+- `LDAP Synchronized User Groups <https://docs.mattermost.com/administration-guide/identity-access/ad-ldap-groups-synchronization.html>`_: Automates user management and access control by dynamically syncing with organizational directories to minimize risks and enforce policies.
 
 Continuous monitoring
 ----------------------
 
 Mattermost offers tools for monitoring activity, identifying suspicious behavior, session management, and real-time incident response. Audit trails and performance monitoring ensure the proactive detection of potential issues or breaches, delivering visibility into the activity across the platform. 
 
-- `Audit Logging <https://docs.mattermost.com/administration-guide/manage/logging.html>`_: Tracks detailed activity logs for monitoring and identifying real-time anomaly-detection use cases, such as detecting anomalous behavior from compromised accounts or insider threats, or responding to unusual file-sharing activity within sensitive channels.
+- `Audit Logging <https://docs.mattermost.com/administration-guide/admin-tools/logging.html>`_: Tracks detailed activity logs for monitoring and identifying real-time anomaly-detection use cases, such as detecting anomalous behavior from compromised accounts or insider threats, or responding to unusual file-sharing activity within sensitive channels.
 - `SIEM Integrations <https://developers.mattermost.com/integrate/webhooks/>`_: Streamlines monitoring within existing security systems to detect and respond to lateral movement threats or policy violations consistently.
-- `Performance Monitoring <https://docs.mattermost.com/administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring.html>`_: Protects against potential threats by analyzing system and user behaviors via proactive monitoring.
+- `Performance Monitoring <https://docs.mattermost.com/administration-guide/operations-scaling/deploy-prometheus-grafana-for-performance-monitoring.html>`_: Protects against potential threats by analyzing system and user behaviors via proactive monitoring.
 
 Deployment and host control
 ---------------------------
@@ -42,7 +42,7 @@ Flexibility and control to host Mattermost securely to minimize the risk of vuln
 Mattermost's self-hosting enables tailored configurations for on-premises systems with specialized security needs, while cloud IP filtering ensures scalable control for remote or hybrid teams operating across distributed environments:
 
 - :doc:`Self-hosting Mattermost </deployment-guide/deployment-guide-index>`: Enforces stricter data sovereignty requirements, and complete control over deployment environments, enabling organizations to implement custom Zero Trust security measures.
-- :ref:`Cloud IP Filtering <administration-guide/manage/cloud-ip-filtering:cloud ip filtering>`: Prevents untrusted entities from gaining initial access, restricting platform access to trusted network ranges, enforcing an evaluation of every connection.
+- :ref:`Cloud IP Filtering <administration-guide/admin-tools/cloud-ip-filtering:cloud ip filtering>`: Prevents untrusted entities from gaining initial access, restricting platform access to trusted network ranges, enforcing an evaluation of every connection.
 
 Encryption
 ----------
@@ -84,9 +84,9 @@ Administrative controls
 Enforce logical segmentation through team-level and group-level management, enhancing productivity and security by aligning user access with their specific roles:
 
 - `Delegated Granular Administration <https://docs.mattermost.com/administration-guide/onboard/delegated-granular-administration.html>`_: Ensures operational security by enabling controlled management access based on responsibilities.
-- `Custom Terms of Service <https://docs.mattermost.com/administration-guide/comply/custom-terms-of-service.html>`_: Requires users to acknowledge organization-specific Terms of Service before access ensures alignment with security policies and strengthens compliance, particularly in regulated industries where custom terms may reflect specific mandates.
+- `Custom Terms of Service <https://docs.mattermost.com/administration-guide/compliance-security-auditing/custom-terms-of-service.html>`_: Requires users to acknowledge organization-specific Terms of Service before access ensures alignment with security policies and strengthens compliance, particularly in regulated industries where custom terms may reflect specific mandates.
 - `Granular Permissions <https://docs.mattermost.com/administration-guide/onboard/delegated-granular-administration.html>`_: Facilitates precise control over user and system permissions, adhering to the principle of least privilege.
-- `Read-Only Permissions for Files <https://docs.mattermost.com/administration-guide/configure/site-configuration-settings.html#file-sharing-and-downloads>`_: Limits file-sharing capabilities to safeguard sensitive information from unauthorized alterations.
+- `Read-Only Permissions for Files <https://docs.mattermost.com/administration-guide/configuration-reference/site-configuration-settings.html#file-sharing-and-downloads>`_: Limits file-sharing capabilities to safeguard sensitive information from unauthorized alterations.
 
 Security policies and tokens
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -100,7 +100,7 @@ Multi-factor authentication (MFA)
 
 Mattermost supports MFA to strengthen authentication practices by adding an extra layer of protection for high-risk workflows beyond passwords:
 
-- `MFA <https://docs.mattermost.com/administration-guide/onboard/multi-factor-authentication.html>`_: Enhances user identity verification by requiring multiple factors for authentication. MFA ensures that unauthorized users are denied access even if passwords are compromised, reducing the risk of account breaches.  
+- `MFA <https://docs.mattermost.com/administration-guide/identity-access/multi-factor-authentication.html>`_: Enhances user identity verification by requiring multiple factors for authentication. MFA ensures that unauthorized users are denied access even if passwords are compromised, reducing the risk of account breaches.  
 
 Alternatively, often enforced through the identity provider (IDP).
 
@@ -111,10 +111,10 @@ Data management directly addresses how sensitive information is managed, control
 
 By retaining data only for the duration that it is needed and then securely disposing of it, the exposure to malicious activity or unauthorized access is significantly reduced. Even if attackers gain access, their exposure is minimized. The less data stored, the smaller the "footprint" for potential exploitation:
 
-- `Data Retention Policies <https://docs.mattermost.com/administration-guide/comply/data-retention-policy.html>`_: Enforces strict retention controls to reduce data exposure and help comply with governance standards.
-- `Compliance Export <https://docs.mattermost.com/administration-guide/comply/compliance-export.html>`_: Ensures data portability for audit and compliance purposes in a secure and controlled manner.
-- `Compliance Monitoring <https://docs.mattermost.com/administration-guide/comply/compliance-monitoring.html>`_: Offers visibility into adherence to security and compliance policies, supporting compliance mandates.
-- `E-Discovery <https://docs.mattermost.com/administration-guide/comply/electronic-discovery.html>`_: Boosts organizational oversight by ensuring discoverability of stored data for legal and compliance audits under secure protocols. E-Discovery capabilities help organizations meet compliance expectations for legal audits under frameworks like GDPR or HIPAA without sacrificing secure collaboration workflows.
+- `Data Retention Policies <https://docs.mattermost.com/administration-guide/compliance-security-auditing/data-retention-policy.html>`_: Enforces strict retention controls to reduce data exposure and help comply with governance standards.
+- `Compliance Export <https://docs.mattermost.com/administration-guide/compliance-security-auditing/compliance-export.html>`_: Ensures data portability for audit and compliance purposes in a secure and controlled manner.
+- `Compliance Monitoring <https://docs.mattermost.com/administration-guide/compliance-security-auditing/compliance-monitoring.html>`_: Offers visibility into adherence to security and compliance policies, supporting compliance mandates.
+- `E-Discovery <https://docs.mattermost.com/administration-guide/compliance-security-auditing/electronic-discovery.html>`_: Boosts organizational oversight by ensuring discoverability of stored data for legal and compliance audits under secure protocols. E-Discovery capabilities help organizations meet compliance expectations for legal audits under frameworks like GDPR or HIPAA without sacrificing secure collaboration workflows.
 - `Archiving Inactive Teams or Channels <https://docs.mattermost.com/administration-guide/manage/team-channel-members.html#archive-a-team>`_ & `Unarchive Channels <https://docs.mattermost.com/end-user-guide/collaborate/archive-unarchive-channels.html>`_: Reduces the potential attack surface by securely deactivating and storing inactive resources, minimizing both live data exposure and the likelihood of exploitation. This approach ensures adherence to security best practices while maintaining the ability to securely restore resources if needed.
 
 Incident response

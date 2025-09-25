@@ -123,9 +123,9 @@ The JSON response can contain the following parameters:
    * - ``response_type``
      - Set to ``comment`` to reply to the message that triggered the webhook. Defaults to ``post``, which creates a new message.
    * - ``username``
-     - Overrides the default username. Requires :ref:`Enable integrations to override usernames <administration-guide/configure/integrations-configuration-settings:enable integrations to override usernames>` to be enabled.
+     - Overrides the default username. Requires :ref:`Enable integrations to override usernames <administration-guide/configuration-reference/integrations-configuration-settings:enable integrations to override usernames>` to be enabled.
    * - ``icon_url``
-     - Overrides the default profile picture. Requires :ref:`Enable integrations to override profile picture icons <administration-guide/configure/integrations-configuration-settings:enable integrations to override profile picture icons>` to be enabled.
+     - Overrides the default profile picture. Requires :ref:`Enable integrations to override profile picture icons <administration-guide/configuration-reference/integrations-configuration-settings:enable integrations to override profile picture icons>` to be enabled.
    * - ``attachments``
      - (Required if ``text`` is not set) An array of `message attachment <https://developers.mattermost.com/integrate/reference/message-attachments/>`_ objects.
    * - ``type``

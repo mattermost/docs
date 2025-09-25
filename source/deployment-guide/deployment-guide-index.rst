@@ -38,6 +38,6 @@ If you are new to Mattermost, we recommend starting with the Application Archite
 
     - Non-commercial customers: Reference the `Mattermost community forums <https://forum.mattermost.com/>`_
     - Commercial customers: See the `Mattermost Support Knowledge Base <https://support.mattermost.com/hc/en-us>`_, or `contact Mattermost Support <https://support.mattermost.com/hc/en-us/requests/new>`_ for assistance. 
-    - For advanced customization or integrations, refer to the :doc:`Open source components </administration-guide/upgrade/open-source-components>` documentation for details about extending Mattermost functionality.
+    - For advanced customization or integrations, refer to the :doc:`Open source components </administration-guide/operations-scaling/open-source-components>` documentation for details about extending Mattermost functionality.
 
 Enjoy deploying Mattermost with confidence!

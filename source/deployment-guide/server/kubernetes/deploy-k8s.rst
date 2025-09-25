@@ -11,7 +11,7 @@ Before you begin, ensure you have the following:
 * A functioning Kubernetes cluster (see the `Kubernetes setup guide <https://kubernetes.io/docs/setup/>`__). Your cluster should be running a `supported Kubernetes version <https://kubernetes.io/releases/>`__.
 * The `kubectl` command-line tool installed on your local machine (see the `kubectl installation guide <https://kubernetes.io/docs/reference/kubectl/>`__).
 * A fundamental understanding of Kubernetes concepts, such as deployments, pods, and applying manifests.
-* Sufficient Kubernetes resources allocated based on your expected user load. Consult the :ref:`scaling for Enterprise <administration-guide/scale/scaling-for-enterprise:available reference architectures>` documentation for resource requirements at different scales.
+* Sufficient Kubernetes resources allocated based on your expected user load. Consult the :ref:`scaling for Enterprise <administration-guide/operations-scaling/scaling-for-enterprise:available reference architectures>` documentation for resource requirements at different scales.
 
 Installation steps
 ~~~~~~~~~~~~~~~~~~
@@ -68,7 +68,7 @@ Step 3: Deploy Mattermost
 .. note::
 
   - A Mattermost Enterprise license is required for multi-server deployments.
-  - For single-server deployments without an Enterprise license, add ``Replicas: 1`` to the ``spec`` section in step 2 below. See the :doc:`high availability documentation </administration-guide/scale/high-availability-cluster-based-deployment>` for more on highly-available deployments.
+  - For single-server deployments without an Enterprise license, add ``Replicas: 1`` to the ``spec`` section in step 2 below. See the :doc:`high availability documentation </administration-guide/operations-scaling/high-availability-cluster-based-deployment>` for more on highly-available deployments.
 
 1. **(Mattermost Enterprise only)** Create a Mattermost license secret. Create a file named ``mattermost-license-secret.yaml`` with the following content, replacing ``[LICENSE_FILE_CONTENTS]`` with your actual license:
 
@@ -249,7 +249,7 @@ This command can be used to review the Mattermost Operator or Mattermost server 
   - If you're new to Kubernetes or prefer a managed solution, consider using a service like `Amazon EKS <https://aws.amazon.com/eks/>`_, `Azure Kubernetes Service <https://azure.microsoft.com/en-ca/products/kubernetes-service/>`_, `Google Kubernetes Engine <https://cloud.google.com/kubernetes-engine/>`_, or `DigitalOcean Kubernetes <https://www.digitalocean.com/products/kubernetes/>`_.- While this guidance focuses on using external, managed services for your database and file storage, the Mattermost Operator *does* offer the flexibility to use other solutions. For example, you could choose to deploy a PostgreSQL database within your Kubernetes cluster using the CloudNative PG operator (or externally however you wish), or use a self-hosted MinIO instance for object storage.
   - While using managed cloud services is generally simpler to maintain and our recommended approach for production deployments, using self-managed services like MinIO for storage and CloudNative PG for PostgreSQL are also valid options if you have the expertise to manage them.
   - If you choose to use self-managed components, you'll need to adapt the instructions accordingly, pointing to your internal services instead.
-  - To customize your production deployment, refer to the :doc:`configuration settings documentation </administration-guide/configure/configuration-settings>`.
+  - To customize your production deployment, refer to the :doc:`configuration settings documentation </administration-guide/configuration-reference/configuration-settings>`.
   - If you encounter issues during deployment, consult the :doc:`deployment troubleshooting guide </deployment-guide/deployment-troubleshooting>`.
 
 Frequently Asked Questions

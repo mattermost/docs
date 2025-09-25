@@ -225,7 +225,7 @@ Why isn't the Jira integration posting messages to Mattermost?
 
 Try the following troubleshooting steps:
 
-1. Confirm that your :ref:`Mattermost Site URL <administration-guide/configure/environment-configuration-settings:site url>` is configured, and that the webhook created in Jira is pointing to this URL. To ensure the URL is correct, run the ``/jira webhook`` slash command, then copy the output and paste it into Jira's webhook setup page.
+1. Confirm that your :ref:`Mattermost Site URL <administration-guide/configuration-reference/environment-configuration-settings:site url>` is configured, and that the webhook created in Jira is pointing to this URL. To ensure the URL is correct, run the ``/jira webhook`` slash command, then copy the output and paste it into Jira's webhook setup page.
 
 2. If you specified a JQL query in your Jira webhook setup, paste the JQL to Jira issue search and make sure it returns results. If it doesn't, the query may be incorrect. Refer to the `Atlassian documentation <https://support.atlassian.com/jira-software-cloud/docs/what-is-advanced-search-in-jira-cloud/>`__ for help. A JQL query isn't required when setting up the webhook.
 
@@ -263,7 +263,7 @@ Users will need to temporarily enable third-party cookies in their browser durin
 What does the error message ``'/(name)' not found`` mean?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you see the error ``'/(name)' not found`` in Mattermost, disable the Jira integration, check the log file looking for messages that refer to plugins and health check fail, such as ``ExecuteCommand``, etc. And consider :ref:`enabling debug logging <administration-guide/manage/logging:how do i enable debug logging?>` to log more verbose error events in the Mattermost system log. Then try re-enabling Jira interoperability and review the log file for clues.
+If you see the error ``'/(name)' not found`` in Mattermost, disable the Jira integration, check the log file looking for messages that refer to plugins and health check fail, such as ``ExecuteCommand``, etc. And consider :ref:`enabling debug logging <administration-guide/admin-tools/logging:how do i enable debug logging?>` to log more verbose error events in the Mattermost system log. Then try re-enabling Jira interoperability and review the log file for clues.
 
 Debug logging can cause log files to expand substantially, and may adversely impact the server performance. Keep an eye on your server logs, or only enable it temporarily or in development environments, and not production enviornments.
 

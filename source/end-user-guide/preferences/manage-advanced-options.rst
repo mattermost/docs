@@ -56,7 +56,7 @@ By default, Mattermost shows you system messages when users join or leave channe
 Deactivate account
 ------------------
 
-You can deactivate your account if you access Mattermost using an email address and password, and when your system admin has :ref:`enabled your ability to do so <administration-guide/configure/experimental-configuration-settings:enable account deactivation>`. Deactivating your account removes your ability to access Mattermost, and disables all email and mobile notifications.
+You can deactivate your account if you access Mattermost using an email address and password, and when your system admin has :ref:`enabled your ability to do so <administration-guide/configuration-reference/experimental-configuration-settings:enable account deactivation>`. Deactivating your account removes your ability to access Mattermost, and disables all email and mobile notifications.
 
 .. important::
 
@@ -74,7 +74,7 @@ You can deactivate your account if you access Mattermost using an email address 
 Delete account
 --------------
 
-From Mattermost v10.11, you can permanently delete your account if you access Mattermost using an email address and password, and when your system admin has :ref:`enabled your ability to do so <administration-guide/configure/user-management-configuration-settings:delete users>`. Deleting your account permanently removes your user account and profile information from Mattermost. This action cannot be undone.
+From Mattermost v10.11, you can permanently delete your account if you access Mattermost using an email address and password, and when your system admin has :ref:`enabled your ability to do so <administration-guide/configuration-reference/user-management-configuration-settings:delete users>`. Deleting your account permanently removes your user account and profile information from Mattermost. This action cannot be undone.
 
 .. important::
 
@@ -94,7 +94,7 @@ From Mattermost v10.11, you can permanently delete your account if you access Ma
 Performance debugging
 ---------------------
 
-You can disable key Mattermost features temporarily to help isolate issues while debugging Mattermost, if your system admin :ref:`enables your ability to do so <administration-guide/configure/environment-configuration-settings:enable client debugging>`. We don't recommend leaving these settings enabled for an extended period of time as they can negatively impact your user experience.
+You can disable key Mattermost features temporarily to help isolate issues while debugging Mattermost, if your system admin :ref:`enables your ability to do so <administration-guide/configuration-reference/environment-configuration-settings:enable client debugging>`. We don't recommend leaving these settings enabled for an extended period of time as they can negatively impact your user experience.
 
 .. tab:: Web/Desktop
 

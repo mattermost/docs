@@ -57,7 +57,7 @@ If you've forgotten your password, you can reset it on the login screen by selec
 Email address or username
 --------------------------
 
-When :ref:`account creation with email <administration-guide/configure/authentication-configuration-settings:enable account creation with email>` is enabled by your system admin, you can log in with the username or email address used to create a Mattermost account.
+When :ref:`account creation with email <administration-guide/configuration-reference/authentication-configuration-settings:enable account creation with email>` is enabled by your system admin, you can log in with the username or email address used to create a Mattermost account.
 
 .. image:: ../../images/login-email-username.png
   :alt: Log in to Mattermost with your username or email address, or reset your password.
@@ -100,7 +100,7 @@ When enabled by your system admin, you may log in using your GitLab, Google, Ent
 
   When enabled by your system admin, you can log in with your SAML credentials. This lets you use the same username and password for Mattermost that you use for various other company services. 
   
-  Mattermost officially supports :doc:`Okta </administration-guide/onboard/sso-saml-okta>`, :doc:`OneLogin </administration-guide/onboard/sso-saml-onelogin>`, and Microsoft ADFS as an identity provider (IDP) for SAML, but you may use other SAML IDPs as well. See our :doc:`SAML Single Sign-On documentation </administration-guide/onboard/sso-saml>` to learn more about configuring SAML for Mattermost.
+  Mattermost officially supports :doc:`Okta </administration-guide/identity-access/authentication-methods/saml-based-sso/sso-saml-okta>`, :doc:`OneLogin </administration-guide/identity-access/authentication-methods/saml-based-sso/sso-saml-onelogin>`, and Microsoft ADFS as an identity provider (IDP) for SAML, but you may use other SAML IDPs as well. See our :doc:`SAML Single Sign-On documentation </administration-guide/identity-access/authentication-methods/saml-based-sso/sso-saml>` to learn more about configuring SAML for Mattermost.
 
   .. image:: ../../images/login-onelogin.png
     :alt: Log in to Mattermost with SAML credentials, such as OneLogin.

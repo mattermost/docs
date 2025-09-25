@@ -77,7 +77,7 @@ This means if you use the Mattermost apps from the `Apple App Store <https://www
 
 .. note:: 
 
-  The use of push notifications with iOS and Android applications will require a moment where the contents of push notifications are visible and unencrypted by a server controlled by either Apple or Google. This is standard for any iOS or Android app. For this reason, there is an option available in Mattermost Enterprise to omit the contents of Mattermost messages from push notifications, or to configure message contents to be fetched from the server when notifications reach the device. See our :ref:`Configuration Settings <administration-guide/configure/site-configuration-settings:push notification contents>` documentation for details.
+  The use of push notifications with iOS and Android applications will require a moment where the contents of push notifications are visible and unencrypted by a server controlled by either Apple or Google. This is standard for any iOS or Android app. For this reason, there is an option available in Mattermost Enterprise to omit the contents of Mattermost messages from push notifications, or to configure message contents to be fetched from the server when notifications reach the device. See our :ref:`Configuration Settings <administration-guide/configuration-reference/site-configuration-settings:push notification contents>` documentation for details.
 
 Is TLS v1.3 supported?
 ----------------------
@@ -99,7 +99,7 @@ The following post metadata is sent in all push notifications:
 - ``Category`` (iOS only, determines if the notifications can be replied to)
 - ``Badge number`` (what the notification badge on the app icon should be set to when the notification is received)
 
-Additional metadata may be sent depending on the System Console setting for :ref:`Push Notification Contents <administration-guide/configure/site-configuration-settings:push notification contents>`:
+Additional metadata may be sent depending on the System Console setting for :ref:`Push Notification Contents <administration-guide/configuration-reference/site-configuration-settings:push notification contents>`:
 
 - **Generic description with sender and channel names**: ``Channel name`` metadata will be included.
 - **Full message content sent in the notification payload**: ``Post content`` and ``Channel name`` metadata will be included.
@@ -112,7 +112,7 @@ When it comes to mobile data privacy, many organizations prioritize secure handl
 
 This poses a potential risk for organizations that operate under strict compliance requirements and cannot expose message data to external entities. To solve this, we offer an option for greater protection for Mattermost push notification message data by only sending a unique message ID in the notification payload rather than the full message data (available in Mattermost Enterprise). Once the device receives the ID, it then fetches the message content directly from the server and displays the notification per usual. 
 
-External entities, such as APNS and FCM, handle only the ID and are unable to read any part of the message itself. If your organization has strict privacy or compliance needs, the :ref:`ID-Only Push Notification <administration-guide/configure/site-configuration-settings:push notification contents>` setting offers a high level of privacy while still allowing your team members to benefit from mobile push notifications.  
+External entities, such as APNS and FCM, handle only the ID and are unable to read any part of the message itself. If your organization has strict privacy or compliance needs, the :ref:`ID-Only Push Notification <administration-guide/configuration-reference/site-configuration-settings:push notification contents>` setting offers a high level of privacy while still allowing your team members to benefit from mobile push notifications.  
 
 The following payload shows an example of the json that is transmitted to the push notification service when using the ID-Only setting:
 
@@ -163,7 +163,7 @@ The following options are available for securing your push notification service:
 
 1.  Protecting notification contents
 
-  - You can :ref:`choose what type of information to include in push notifications <administration-guide/configure/site-configuration-settings:push notification contents>`, such as excluding the message contents if your compliance policies require it. Default server settings have message contents turned off.
+  - You can :ref:`choose what type of information to include in push notifications <administration-guide/configuration-reference/site-configuration-settings:push notification contents>`, such as excluding the message contents if your compliance policies require it. Default server settings have message contents turned off.
 
 2. Disabling push notifications
 
@@ -179,7 +179,7 @@ The following options are available for securing your push notification service:
 
 4. Securing apps installed through the Apple App Store and Google Play:
 
-  - When using Mattermost mobile apps from the App Store and Google Play, purchase an annual subscription to Mattermost Enterprise or Professional to use Mattermost's :ref:`Hosted Push Notification Service (HPNS) <administration-guide/configure/environment-configuration-settings:enable push notifications>`.
+  - When using Mattermost mobile apps from the App Store and Google Play, purchase an annual subscription to Mattermost Enterprise or Professional to use Mattermost's :ref:`Hosted Push Notification Service (HPNS) <administration-guide/configuration-reference/environment-configuration-settings:enable push notifications>`.
 
 .. note:: 
 
@@ -209,7 +209,7 @@ Mattermost enables customers with high privacy and custom security requirements 
 How do I host the Mattermost push notification service?
 -------------------------------------------------------
 
-First, you can use the :ref:`Mattermost Hosted Push Notification Service (HPNS) <administration-guide/configure/environment-configuration-settings:enable push notifications>`. Organizations can also :doc:`host their own push proxy server </deployment-guide/mobile/host-your-own-push-proxy-service>` instead. This is applicable when you want to:
+First, you can use the :ref:`Mattermost Hosted Push Notification Service (HPNS) <administration-guide/configuration-reference/environment-configuration-settings:enable push notifications>`. Organizations can also :doc:`host their own push proxy server </deployment-guide/mobile/host-your-own-push-proxy-service>` instead. This is applicable when you want to:
 
 1. Customize the Mattermost mobile apps;
 2. Deploy your own push notification service, or
@@ -299,7 +299,7 @@ How do I connect users across internal and external networks?
 By setting up global network traffic management, you can send a user to an internal or external network when connecting with a mobile app. Moreover, you can have two separate layers of restrictions on internal and external traffic, such as:
 
  - In the internal network, deploy on a private network via per device VPN.
- - In the external network, deploy with :doc:`TLS mutual auth </administration-guide/onboard/ssl-client-certificate>` with an NGINX proxy, and :doc:`client-side certificates </administration-guide/onboard/certificate-based-authentication>` for desktop and iOS.
+ - In the external network, deploy with :doc:`TLS mutual auth </administration-guide/identity-access/ssl-client-certificate>` with an NGINX proxy, and :doc:`client-side certificates </administration-guide/identity-access/certificate-based-authentication>` for desktop and iOS.
  
 Many services such as Microsoft Azure provide options for `managing network traffic <https://learn.microsoft.com/en-us/azure/traffic-manager/traffic-manager-overview>`_, or you can engage a services partner to assist.
 
@@ -353,7 +353,7 @@ You will need to `whitelist one subdomain and one port from Apple <https://devel
 Run App Store versions of the Mattermost mobile apps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can use the mobile applications hosted by Mattermost in the `Apple App Store <https://apps.apple.com/ca/app/mattermost/id1257222717>`__ or `Google Play Store <https://play.google.com/store/apps/details?id=com.mattermost.rn>`__ and connect with the :ref:`Mattermost Hosted Push Notification Service (HPNS) <administration-guide/configure/environment-configuration-settings:hosted push notifications service (hpns)>` through your corporate proxy.
+You can use the mobile applications hosted by Mattermost in the `Apple App Store <https://apps.apple.com/ca/app/mattermost/id1257222717>`__ or `Google Play Store <https://play.google.com/store/apps/details?id=com.mattermost.rn>`__ and connect with the :ref:`Mattermost Hosted Push Notification Service (HPNS) <administration-guide/configuration-reference/environment-configuration-settings:hosted push notifications service (hpns)>` through your corporate proxy.
 
 .. note::
   
@@ -388,7 +388,7 @@ Since the ``deviceId`` relates to the application, connections through the web b
 Where can I find mobile message notification logs?
 -------------------------------------------------------------
 Notification messages are logged to the ``notifications.log`` file.
-System admins must enable notification logs in the ``config.json`` file by setting ``EnableFile`` to ``true``, and specifying an optional file location via ``FileLocation``. When no location is configured, the ``notifications.log`` file is stored in the default Mattermost directory. See the :ref:`logging configuration settings <administration-guide/configure/environment-configuration-settings:logging>` documentation for details.
+System admins must enable notification logs in the ``config.json`` file by setting ``EnableFile`` to ``true``, and specifying an optional file location via ``FileLocation``. When no location is configured, the ``notifications.log`` file is stored in the default Mattermost directory. See the :ref:`logging configuration settings <administration-guide/configuration-reference/environment-configuration-settings:logging>` documentation for details.
 
 The team members / users can access their notification logs based on their device platform.
 Android users can view the logs using ``logcat``.
