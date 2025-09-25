@@ -551,6 +551,10 @@ redirects_map = {
         "https://docs.mattermost.com/end-user-guide/upgrade-mattermost.html",
 "administration/release-lifecycle.html":
         "https://docs.mattermost.com/product-overview/releases-lifecycle.html",
+"administration-guide/configure/site-configuration-settings.html#enable-secure-file-preview-on-mobile":
+        "https://docs.mattermost.com/administration-guide/configure/environment-configuration-settings.html#enable-secure-file-preview-on-mobile",
+"administration-guide/configure/site-configuration-settings.html#allow-pdf-link-navigation-on-mobile":
+        "https://docs.mattermost.com/administration-guide/configure/environment-configuration-settings.html#allow-pdf-link-navigation-on-mobile",
 
 # Channels redirects
 "channels/find-channels.html":
@@ -1974,6 +1978,8 @@ redirects_map = {
         "https://docs.mattermost.com/deployment-guide/server/server-deployment-planning.html",
 "configure/using-outbound-proxy.html":
         "https://docs.mattermost.com/deployment-guide/server/server-deployment-planning.html",
+"configure/environment-configuration-settings.html#dev-allowuntrustedinternalconnections":
+        "https://docs.mattermost.com/administration-guide/configure/environment-configuration-settings.html#allow-untrusted-internal-connections",
 
 # Deploy redirects
 "deploy/application-architecture.html":
@@ -2851,6 +2857,8 @@ redirects_map = {
 "integrate/mattermost-mission-collaboration-for-m365.html":
         "https://docs.mattermost.com/integrations-guide/mattermost-mission-collaboration-for-m365.html",
 "integrate/microsoft-calendar.html":
+        "https://docs.mattermost.com/integrations-guide/microsoft-calendar.html",
+"integrate/microsoft-calendar-interoperability.html":
         "https://docs.mattermost.com/integrations-guide/microsoft-calendar.html",
 "integrate/microsoft-calendar-interoperability.html#usage":
         "https://docs.mattermost.com/integrations-guide/microsoft-calendar.html#use",
