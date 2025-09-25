@@ -9,6 +9,8 @@ From Mattermost v11, each release provides two variants: a FIPS-compliant build 
 
 Mattermost FIPS-compliant Docker images are built using Chainguard’s FIPS-certified base containers. These images help organizations meet stringent security requirements by ensuring compliance with the Federal Information Processing Standards (FIPS).
 
+On top of this foundation, Mattermost product code itself is aligned with FIPS requirements, using only FIPS-approved cryptographic algorithms. This ensures that both the underlying container base and the application layer meet compliance expectations.
+
 In addition, the Chainguard base images are STIG-hardened and rigorously scanned against the DISA General Purpose Operating System SRG, providing a robust and secure operational posture.
 
 Mattermost FIPS Overview
