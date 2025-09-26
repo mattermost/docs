@@ -177,7 +177,7 @@ Enable integrations to override usernames
   :configjson: .ServiceSettings.EnablePostIconOverride
   :environment: MM_SERVICESETTINGS_ENABLEPOSTICONOVERRIDE
 
-  - **true**: Webhooks, slash commands, and other integrations, such as `Zapier <https://docs.mattermost.com/integrations/zapier.html>`_, will be allowed to change the profile picture they post with.
+  - **true**: Webhooks, slash commands, and other integrations, such as :doc:`Zapier </integrations-guide/zapier>`, will be allowed to change the profile picture they post with.
   - **false**: **(Default)** Webhooks, slash commands, and OAuth 2.0 apps can only post with the profile picture of the account they were set up with.
 
 Enable integrations to override profile picture icons

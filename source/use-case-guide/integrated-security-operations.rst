@@ -35,7 +35,7 @@ CERTs serve as rapid-response teams during high-risk events, requiring tight coo
 - **Orchestrate high-stakes incident response** through :doc:`Collaborative Playbooks </end-user-guide/workflow-automation>` tailored for malware outbreaks, data exfiltration events, and zero-day exploits.
 - **Centralize and structure communication** with :doc:`channel-based collaboration </end-user-guide/messaging-collaboration>`, including :doc:`file sharing </end-user-guide/collaborate/share-files-in-messages>`, :doc:`threaded updates </end-user-guide/collaborate/organize-conversations>`, and task-tracking across affected teams.
 - **Enable coordination across geographies** using :doc:`multi-device access </deployment-guide/deployment-guide-index>` and :doc:`mobile EMM support </deployment-guide/mobile/deploy-mobile-apps-using-emm-provider>` for secure participation across locations and devices.
-- **Preserve evidentiary and compliance data** through :ref:`audit logs <administration-guide/admin-tools/logging:audit logging>` and configurable :doc:`exports </administration-guide/manage/bulk-export-tool>` for legal review or forensic handoff.
+- **Preserve evidentiary and compliance data** through :ref:`audit logs <administration-guide/admin-tools/logging:audit logging>` and configurable :doc:`exports </administration-guide/upgrade/bulk-export-tool>` for legal review or forensic handoff.
 - **Ensure data sovereignty** with flexible hosting options including EU-resident infrastructure, on-premises deployments, and air-gapped environments that maintain full control over sensitive communications.
 
 Federated Threat Intelligence & Information Sharing

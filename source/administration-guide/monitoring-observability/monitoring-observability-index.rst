@@ -15,3 +15,12 @@ Gain visibility into system health and performance. Configure logging, telemetry
     /administration-guide/operations-scaling/deploy-prometheus-grafana-for-performance-monitoring
     /administration-guide/operations-scaling/performance-alerting
     /administration-guide/admin-tools/request-server-health-check
+
+
+Gain visibility into system health, define alerts, and proactively prevent incidents.
+
+- `Configure logging, telemetry, and system statistics <monitoring-observability/monitoring-observability-index>`_
+- `Set health probes <monitoring-observability/monitoring-observability-index>`_
+- `Deploy Prometheus and Grafana <monitoring-observability/monitoring-observability-index>`_
+- `Define alerting rules <monitoring-observability/monitoring-observability-index>`_
+- `Request health checks <monitoring-observability/monitoring-observability-index>`_

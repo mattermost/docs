@@ -493,7 +493,7 @@ Permission policy settings
 
 .. note::
 
-   From Mattermost v5.0, these settings are found in the :doc:`Advanced Permissions </administration-guide/onboard/advanced-permissions>` page instead of configuration settings.
+   From Mattermost v5.0, these settings are found in the :doc:`Advanced Permissions </administration-guide/identity-access/permissions-and-roles/advanced-permissions>` page instead of configuration settings.
 
 Enable sending team invites from
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -502,7 +502,7 @@ Enable sending team invites from
 
 .. note::
 
-   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the :doc:`Advanced Permissions documentation </administration-guide/onboard/advanced-permissions>` for more details.
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the :doc:`Advanced Permissions documentation </administration-guide/identity-access/permissions-and-roles/advanced-permissions>` for more details.
 
 Set policy on who can invite others to a team using the **Send Email Invite**, **Get Team Invite Link**, and **Add Members to Team** options on the product menu. If **Get Team Invite Link** is used to share a link, you can expire the invite code from **Team Settings > Invite Code** after the desired users have joined the team. Options include:
 
@@ -590,7 +590,7 @@ Enable private channel creation for
 
 .. note::
 
-   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the :doc:`Advanced Permissions documentation </administration-guide/onboard/advanced-permissions>` for more details.
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the :doc:`Advanced Permissions documentation </administration-guide/identity-access/permissions-and-roles/advanced-permissions>` for more details.
 
 Restrict the permission level required to create private channels.
 
@@ -611,7 +611,7 @@ Enable private channel renaming for
 
 .. note::
 
-   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the :doc:`Advanced Permissions documentation </administration-guide/onboard/advanced-permissions>` for more details.
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the :doc:`Advanced Permissions documentation </administration-guide/identity-access/permissions-and-roles/advanced-permissions>` for more details.
 
 Restrict the permission level required to rename and set the header or purpose for Private channels.
 
@@ -634,7 +634,7 @@ Enable managing of private channel members for
 
 .. note::
 
-   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the :doc:`Advanced Permissions documentation </administration-guide/onboard/advanced-permissions>` for more details.
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the :doc:`Advanced Permissions documentation </administration-guide/identity-access/permissions-and-roles/advanced-permissions>` for more details.
 
 Set policy on who can add and remove members from Private channels.
 
@@ -680,7 +680,7 @@ Allow which users to delete messages
 
 .. note::
 
-   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the :doc:`Advanced Permissions documentation </administration-guide/onboard/advanced-permissions>` for more details.
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the :doc:`Advanced Permissions documentation </administration-guide/identity-access/permissions-and-roles/advanced-permissions>` for more details.
 
 Restrict the permission level required to delete messages. Team admins, channel admins, and system admins can delete messages only in channels where they are members. Messages can be deleted any time.
 
@@ -701,7 +701,7 @@ Allow users to edit their messages
 
 .. note::
 
-   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the :doc:`Advanced Permissions documentation </administration-guide/onboard/advanced-permissions>` for more details.
+   From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the :doc:`Advanced Permissions documentation </administration-guide/identity-access/permissions-and-roles/advanced-permissions>` for more details.
 
 Set the time limit that users have to edit their messages after posting.
 

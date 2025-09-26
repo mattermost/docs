@@ -388,7 +388,7 @@ redirects_map = {
 "administration-guide/upgrade/downgrading-mattermost-server.html":
         "https://docs.mattermost.com/administration-guide/operations-scaling/downgrading-mattermost-server.html",
 "administration-guide/upgrade/enterprise-roll-out-checklist.html":
-        "https://docs.mattermost.com/administration-guide/getting-started/enterprise-roll-out-checklist.html",
+        "https://docs.mattermost.com/administration-guide/getting-started/roll-out-checklist.html",
 "administration-guide/upgrade/admin-onboarding-tasks.html":
         "https://docs.mattermost.com/administration-guide/getting-started/admin-onboarding-tasks.html",
 "administration-guide/upgrade-mattermost.html":
@@ -2615,7 +2615,7 @@ redirects_map = {
 "getting-started/admin-onboarding-tasks.html":
         "https://docs.mattermost.com/administration-guide/upgrade/admin-onboarding-tasks.html",
 "getting-started/enterprise-roll-out-checklist.html":
-        "https://docs.mattermost.com/administration-guide/upgrade/enterprise-roll-out-checklist.html",
+        "https://docs.mattermost.com/administration-guide/getting-started/roll-out-checklist.html",
 "getting-started/welcome-email-to-end-users.html":
         "https://docs.mattermost.com/administration-guide/upgrade/welcome-email-to-end-users.html",
 "getting-started/architecture-overview.html":
@@ -4393,7 +4393,7 @@ redirects_map = {
 "upgrade/enterprise-install-upgrade.html":
         "https://docs.mattermost.com/administration-guide/upgrade/enterprise-install-upgrade.html",
 "upgrade/enterprise-roll-out-checklist.html":
-        "https://docs.mattermost.com/administration-guide/upgrade/enterprise-roll-out-checklist.html",
+        "https://docs.mattermost.com/administration-guide/getting-started/roll-out-checklist.html",
 "upgrade/important-upgrade-notes.html":
         "https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html",
 "upgrade/notify-admin.html":
@@ -4612,7 +4612,7 @@ redirects_map = {
 
 # End User Guide redirects
 "guides/use-mattermost.html":
-        "https://docs.mattermost.com/end-user-guide/end-user-guide-index.html",
+        "https://docs.mattermost.com/end-user-guide/end-user-guide-index.html"
 
 # End of redirects. The last redirect above should NOT end in a comma.
 

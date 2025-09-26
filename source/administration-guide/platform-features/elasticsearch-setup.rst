@@ -83,5 +83,5 @@ Follow these steps to configure Mattermost to use your Elasticsearch server and 
 2. Set **Enable Elasticsearch Indexing** to ``true`` to enable the other the settings on the page. Once the configuration is saved, new posts made to the database are automatically indexed on the Elasticsearch server.
 3. Ensure **Backend type** is set to ``elasticsearch``.
 
-.. include:: /administration-guide/operations-scaling/common-configure-mattermost-for-enterprise-search.rst
+.. include:: /administration-guide/platform-features/common-configure-mattermost-for-enterprise-search.rst
    :start-after: :nosearch:

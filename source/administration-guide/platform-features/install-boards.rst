@@ -1,4 +1,4 @@
-Install Mattermost Boards
+Deploy Mattermost Boards
 ==========================
 
 .. include:: ../../_static/badges/ent-cloud-selfhosted.rst

@@ -1,7 +1,7 @@
 Advanced permissions
 ====================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Mattermost system admins using Mattermost Cloud or Mattermost Server can use Advanced Permissions to customize which users can perform specific actions, such as creating teams, managing channels, and configuring webhooks. The Mattermost permission system is based on a modified RBAC (role-based access control) architecture, using roles to determine which users have the ability to perform various actions.
@@ -11,7 +11,7 @@ Two permission schemes are provided in Mattermost:
 * **System Scheme**: Applies permissions universally across all teams and channels.
 * **Team Override Schemes**: Allow admins to customize permissions for each team.
 
-This document describes the types of permissions that can be given to users of Mattermost using schemes as well as channel settings and roles. The :doc:`permissions backend documentation </administration-guide/onboard/advanced-permissions-backend-infrastructure>` provides additional technical details around permissions.
+This document describes the types of permissions that can be given to users of Mattermost using schemes as well as channel settings and roles. The :doc:`permissions backend documentation </administration-guide/identity-access/permissions-and-roles/advanced-permissions-backend-infrastructure>` provides additional technical details around permissions.
   
 Permissions structure
 ----------------------
@@ -32,12 +32,12 @@ To override the System Scheme default permissions in a specific team, you must s
 
 You can access the System Scheme interface by going to **System Console > User Management > Permissions > System Scheme**.
 
-.. image:: ../../images/system-scheme.png
+.. image:: ../../../../images/system-scheme.png
 
 Team override scheme
 ~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-only.rst
+.. include:: ../../../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
 On systems with multiple :ref:`Mattermost teams <end-user-guide/collaborate/organize-using-teams:single team versus multiple teams>`, each team may operate and collaborate in a unique way. Team Override Schemes give Admins the flexibility to tailor permissions to the needs of each team.
@@ -50,7 +50,7 @@ When you use this permission scheme:
 
 You can access the Team Override Scheme interface by going to **System Console > User Management > Permissions > Team Override Schemes**.
 
-.. image:: ../../images/team-scheme.png
+.. image:: ../../../../images/team-scheme.png
 
 Channel permissions 
 --------------------
@@ -60,10 +60,10 @@ The channel permissions interface is accessed in **System Console > User Managem
 Advanced access controls
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
+.. include:: ../../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-See the :ref:`team and channel management <administration-guide/manage/team-channel-members:advanced access controls>` documentation for details on available channel access controls. 
+See the :ref:`team and channel management <administration-guide/identity-access/team-channel-members:advanced access controls>` documentation for details on available channel access controls. 
 
 Recipes
 -------
@@ -148,7 +148,7 @@ This permission is applied to all other roles (excluding the Guest role). When t
 Read-only channels
 ~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-only.rst
+.. include:: ../../../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
 Members can participate but guests can only read and react
@@ -221,7 +221,7 @@ There are a number of API and mmctl tools available for admins to help in config
 Backend infrastructure
 ----------------------
 
-Technical admins or developers looking for a deeper understanding of the permissions backend can refer to our :doc:`permissions backend documentation </administration-guide/onboard/advanced-permissions-backend-infrastructure>`.
+Technical admins or developers looking for a deeper understanding of the permissions backend can refer to our :doc:`permissions backend documentation </administration-guide/identity-access/permissions-and-roles/advanced-permissions-backend-infrastructure>`.
 
 Glossary
 --------

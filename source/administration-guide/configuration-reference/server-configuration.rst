@@ -22,7 +22,7 @@ Whether you’re setting up email notifications, optimizing search capabilities,
     Email templates </administration-guide/configuration-reference/email-templates>
     Chinese, Japanese, and Korean search </administration-guide/configuration-reference/enabling-chinese-japanese-korean-search>
     SSL client certificate setup </administration-guide/identity-access/ssl-client-certificate>
-    Connected workspaces </administration-guide/getting-started/connected-workspaces>
+    Connected workspaces </administration-guide/platform-features/connected-workspaces>
     Telemetry </administration-guide/admin-tools/telemetry>
 
 * :doc:`Store configuration in your database </administration-guide/configuration-reference/configuration-in-your-database>` - Learn how to store configuration information in your Mattermost database rather than as a JSON file.
@@ -37,5 +37,5 @@ Whether you’re setting up email notifications, optimizing search capabilities,
 * :doc:`Email templates </administration-guide/configuration-reference/email-templates>` - Learn about customizing email templates for Mattermost.
 * :doc:`Chinese, Japanese, and Korean search </administration-guide/configuration-reference/enabling-chinese-japanese-korean-search>` - Learn about enabling Chinese, Japanese, and Korean search for Mattermost.
 * :doc:`SSL client certificate setup </administration-guide/identity-access/ssl-client-certificate>` - Learn how to set up SSL client certificates for Mattermost.
-* :doc:`Connected workspaces </administration-guide/getting-started/connected-workspaces>` - Learn how to connect Mattermost workspaces.
+* :doc:`Connected workspaces </administration-guide/platform-features/connected-workspaces>` - Learn how to connect Mattermost workspaces.
 * :doc:`Telemetry </administration-guide/admin-tools/telemetry>` - Learn about Mattermost telemetry and data collection.

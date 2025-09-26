@@ -38,7 +38,7 @@ Disconnected environments demand resilient tools that work without cloud access,
 - **Integrate with legacy and mission-specific systems** to maintain decision advantage in disconnected environments through :doc:`custom-built, self-hosted integrations </integrations-guide/integrations-guide-index>` tailored to your operational infrastructure.
 - **Maintain command resilience** using :doc:`high availability cluster-based deployment </administration-guide/operations-scaling/scaling-for-enterprise>` and :doc:`horizontal scalability </administration-guide/operations-scaling/scaling-for-enterprise>` to support operational continuity at scale.
 - **Automate field workflows** with :doc:`Collaborative Playbooks </end-user-guide/workflow-automation>` that track tasks, manage field updates, and orchestrate responses under DDIL constraints.
-- **Enable secure real-time collaboration with headquarters** using :doc:`Connected Workspaces </administration-guide/getting-started/connected-workspaces>` to synchronize discussions, files, and reactions if connectivity is restored.
+- **Enable secure real-time collaboration with headquarters** using :doc:`Connected Workspaces </administration-guide/platform-features/connected-workspaces>` to synchronize discussions, files, and reactions if connectivity is restored.
 
 Bring Your Own Device (BYOD) with Sensitive Information Protections
 --------------------------------------------------------------------
@@ -66,7 +66,7 @@ Coordinating across departments, agencies, and external stakeholders—especiall
 - **Unify mission stakeholders on a common-use platform** that supports :ref:`hybrid deployments <deployment-guide/server/server-deployment-planning:deployment options>` across private cloud, edge environments, and :doc:`air-gapped infrastructure </deployment-guide/server/air-gapped-deployment>`.
 - **Maintain data sovereignty and mission alignment** with deployments that avoid consumer infrastructure and retain control over all communications and file transfers—even in classified operations.
 - **Apply role-based separation of access** through :doc:`advanced permissions </administration-guide/onboard/advanced-permissions>` and :ref:`channel-level controls <administration-guide/manage/team-channel-members:advanced access controls>` to protect mission integrity across organizational boundaries.
-- **Enable secure real-time collaboration across entities** using :doc:`Connected Workspaces </administration-guide/getting-started/connected-workspaces>` to synchronize discussions, files, and reactions between teams without compromising internal governance.
+- **Enable secure real-time collaboration across entities** using :doc:`Connected Workspaces </administration-guide/platform-features/connected-workspaces>` to synchronize discussions, files, and reactions between teams without compromising internal governance.
 - **Reduce personal device risk** by offering secure enterprise communication options that eliminate the need for unauthorized messaging apps.
 
 Get Started

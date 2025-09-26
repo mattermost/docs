@@ -23,14 +23,14 @@ Elasticsearch
 
 Elasticsearch is a well-established and widely used search engine with a large ecosystem and community support that provides enterprise-scale deployments with optimized search performance, dedicated indexing, and usage resourcing via cluster support for fast, predicable search results. 
 
-Mattermost's implementation uses `Elasticsearch <https://www.elastic.co>`_ as a distributed, RESTful search engine supporting highly efficient database searches in a :doc:`cluster environment </administration-guide/operations-scaling/high-availability-cluster-based-deployment>`. Learn more about :doc:`setting up and configuring Mattermost for an Elasticsearch server </administration-guide/operations-scaling/elasticsearch-setup>`.
+Mattermost's implementation uses `Elasticsearch <https://www.elastic.co>`_ as a distributed, RESTful search engine supporting highly efficient database searches in a :doc:`cluster environment </administration-guide/operations-scaling/high-availability-cluster-based-deployment>`. Learn more about :doc:`setting up and configuring Mattermost for an Elasticsearch server </administration-guide/platform-features/elasticsearch-setup>`.
 
 AWS OpenSearch Service
 -----------------------
 
 AWS OpenSearch Service is the official path forward from Elasticsearch v7.10.x for AWS customers. It's a fully managed service that makes it easy to deploy, operate, and scale OpenSearch clusters in the AWS Cloud to provide a simple and cost-effective way to search, analyze, and visualize data in real time. 
 
-The AWS OpenSearch Service is built on the open-source OpenSearch project, which is a community-driven fork of Elasticsearch. Learn more about :doc:`setting up and configuring Mattermost for an OpenSearch server </administration-guide/operations-scaling/opensearch-setup>`.
+The AWS OpenSearch Service is built on the open-source OpenSearch project, which is a community-driven fork of Elasticsearch. Learn more about :doc:`setting up and configuring Mattermost for an OpenSearch server </administration-guide/platform-features/opensearch-setup>`.
 
 Supported paths
 ----------------
@@ -39,13 +39,13 @@ Review the following support paths for enterprise search based on the version yo
 
 .. tab:: Elasticsearch v8
 
-    `Elasticsearch v8 <https://www.elastic.co/guide/en/elasticsearch/reference/current/elasticsearch-intro.html>`__ is supported from Mattermost v9.11. While Mattermost supports Elasticsearch v7.17+, we recommend upgrading your Elasticsearch v7 instance to v8.x. See the `Elasticsearch upgrade <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ documentation for upgrade details, and see the :doc:`Elasticsearch setup </administration-guide/operations-scaling/elasticsearch-setup>` documentation for details on configuring your Mattermost deployment to use Elasticsearch.
+    `Elasticsearch v8 <https://www.elastic.co/guide/en/elasticsearch/reference/current/elasticsearch-intro.html>`__ is supported from Mattermost v9.11. While Mattermost supports Elasticsearch v7.17+, we recommend upgrading your Elasticsearch v7 instance to v8.x. See the `Elasticsearch upgrade <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ documentation for upgrade details, and see the :doc:`Elasticsearch setup </administration-guide/platform-features/elasticsearch-setup>` documentation for details on configuring your Mattermost deployment to use Elasticsearch.
 
 .. tab:: AWS OpenSearch Service
 
     AWS OpenSearch Service is the official path forward from Elasticsearch v7.10.x for AWS customers to provide a simple and cost-effective way to search, analyze, and visual data in real time. It's essentially a continuation of Elasticsearch v7.10.x but maintained as open source by AWS. It provides long-term support, active development, and compatibility with AWS clients, libraries, and managed services. 
     
-    See the **AWS Elasticsearch v7.10.x** tab on this page for details on upgrading to AWS OpenSearch, and see the :doc:`AWS OpenSearch setup </administration-guide/operations-scaling/opensearch-setup>` documentation for details on configuring your Mattermost deployment to use AWS OpenSearch.
+    See the **AWS Elasticsearch v7.10.x** tab on this page for details on upgrading to AWS OpenSearch, and see the :doc:`AWS OpenSearch setup </administration-guide/platform-features/opensearch-setup>` documentation for details on configuring your Mattermost deployment to use AWS OpenSearch.
 
 .. tab:: AWS Elasticsearch v7.10.x
 

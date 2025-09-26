@@ -8,8 +8,8 @@ AD/LDAP setup
     :maxdepth: 1
     :titlesonly:
 
-    /identity-access/ad-ldap-groups-synchronization
-    /identity-access/managing-team-channel-membership-using-ad-ldap-sync-groups
+    /identity-access/authentication-methods/active-directory/ad-ldap-groups-synchronization
+    /identity-access/authentication-methods/active-directory/managing-team-channel-membership-using-ad-ldap-sync-groups
 
 Overview
 --------
@@ -170,7 +170,7 @@ If this filter is removed/changed, active guests will not be promoted to a membe
 
 When a guest logs in for the first time they are presented with a default landing page until they are added to channels.
 
-See the :doc:`Guest Accounts documentation </administration-guide/onboard/guest-accounts>` for more information about this feature.
+See the :doc:`Guest Accounts documentation </administration-guide/identity-access/permissions-and-roles/guest-accounts>` for more information about this feature.
 
 Admin filter
 ~~~~~~~~~~~~

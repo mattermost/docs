@@ -20,3 +20,12 @@ Operate Mattermost reliably and scale capacity as your organization grows. Use t
     ensuring-releases-perform-at-scale
     collect-performance-metrics
     /administration-guide/admin-tools/product-limits
+
+Keep your deployment reliable and performant, scale as needed, and upgrade safely with minimal downtime.
+
+- `Plan and perform upgrades or downgrades <operations-scaling/operations-scaling-index>`_
+- `Deploy high availability (HA) clusters <operations-scaling/operations-scaling-index>`_
+- `Scale horizontally with Redis <operations-scaling/operations-scaling-index>`_
+- `Configure Elasticsearch or OpenSearch <operations-scaling/operations-scaling-index>`_
+- `Tune system performance and plan storage capacity <operations-scaling/operations-scaling-index>`_
+- `Monitor push notification health <operations-scaling/operations-scaling-index>`_

@@ -1927,7 +1927,7 @@ Access the following configuration settings in the System Console by going to **
   :configjson: .AnnouncementSettings.AdminNoticesEnabled
   :environment: MM_ANNOUNCEMENTSETTINGS_ADMINNOTICESENABLED
 
-  - **true**: **(Default)** System admins will receive `in-product notices <https://docs.mattermost.com/administration-guide/admin-tools/in-product-notices.html>`__ about server upgrades and administration features.
+  - **true**: **(Default)** System admins will receive :doc:`in-product notices </administration-guide/user-experience/in-product-notices>` about server upgrades and administration features.
   - **false**: System admins will not receive specific notices. Admins will still receive notices for all users (see **Enable end user notices**).
 
 Enable admin notices
@@ -1945,7 +1945,7 @@ Enable admin notices
   :configjson: .AnnouncementSettings.UserNoticesEnabled
   :environment: MM_ANNOUNCEMENTSETTINGS_USERNOTICESENABLED
 
-  - **true**: **(Default)** All users receive `in-product notices <https://docs.mattermost.com/administration-guide/admin-tools/in-product-notices.html>`__ about client upgrades and end user features.
+  - **true**: **(Default)** All users receive :doc:`in-product notices </administration-guide/user-experience/in-product-notices>` about client upgrades and end user features.
   - **false**: Users will not receive in-product notices.
 
 Enable end user notices

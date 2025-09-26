@@ -8,7 +8,7 @@ Communicate across organizations, as well as external partners and vendors using
 
 Connected workspaces in Mattermost behave like regular public and private channels and offer the same user experience and functionality. All members using secure connections, including local members and remote members, can :doc:`send and receive channel messages </end-user-guide/collaborate/send-messages>`, :doc:`use emojis </end-user-guide/collaborate/react-with-emojis-gifs>` to react to messages, :doc:`share files </end-user-guide/collaborate/share-files-in-messages>`, and :doc:`search message history </end-user-guide/collaborate/search-for-messages>`.  Content is synchronized across all participating Mattermost instances.
 
-A channel's permissions and access continues to be governed by each server separately. :ref:`Advanced access control <administration-guide/manage/team-channel-members:advanced access controls>` permissions can be applied to a shared channel, and be in effect on the local Mattermost server while not being in effect on a remote Mattermost server.
+A channel's permissions and access continues to be governed by each server separately. :ref:`Advanced access control <administration-guide/identity-access/team-channel-members:advanced access controls>` permissions can be applied to a shared channel, and be in effect on the local Mattermost server while not being in effect on a remote Mattermost server.
 
 Set up connected workspaces
 ---------------------------

@@ -261,5 +261,5 @@ Follow these steps to configure Mattermost to use your AWS OpenSearch server and
 4. Set the **Server Connection Address** to your Elasticsearch or OpenSearch cluster endpoint.
 5. Monitor cluster health: ``curl https://mattermost-os-xxxxx.us-east-1.es.amazonaws.com/_cluster/health``
 
-.. include:: /administration-guide/operations-scaling/common-configure-mattermost-for-enterprise-search.rst
+.. include:: /administration-guide/platform-features/common-configure-mattermost-for-enterprise-search.rst
    :start-after: :nosearch:

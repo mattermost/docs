@@ -60,7 +60,7 @@ Operational teams need to extend Microsoft capabilities to mission environments 
 
 - **Enable mission-critical coordination at the edge** by :ref:`deploying Mattermost in secure, on-prem or air-gapped environments <deployment-guide/server/server-deployment-planning:deployment options>` :doc:`integrated with Microsoft Teams and Outlook </integrations-guide/mattermost-mission-collaboration-for-m365>`.
 - **Fuse data and decision-making across platforms** with support for :doc:`toolchain integration </integrations-guide/integrations-guide-index>`, :doc:`audio/screen share </end-user-guide/collaborate/make-calls>`, and :doc:`workflow automation </end-user-guide/workflow-automation>` embedded into a dedicated Mission Operations Platform.
-- **Maintain coalition and partner alignment** through :doc:`interoperable Connected Workspaces </administration-guide/getting-started/connected-workspaces>` supporting collaboration across mission partner networks.
+- **Maintain coalition and partner alignment** through :doc:`interoperable Connected Workspaces </administration-guide/platform-features/connected-workspaces>` supporting collaboration across mission partner networks.
 - **Accelerate action with mission-tuned AI** using secure Azure AI and :doc:`Mattermost Copilot </end-user-guide/agents>` to summarize context, guide decisions, and automate operational tasks.
 - **Secure every communication path** with built-in :doc:`Zero Trust controls </security-guide/zero-trust>` and deploy on Azure or sovereign environments for maximum flexibility and compliance.
 
@@ -75,7 +75,7 @@ Managing external collaboration within Microsoft Teams can be complex, often req
 **Benefits**
 
 - **Integrate Mattermost with Microsoft Teams and Outlook** to enable secure external collaboration with encryption, audit trails, and role-based permissions—without compromising compliance. (See :doc:`Mattermost for M365, Teams, and Outlook </integrations-guide/mattermost-mission-collaboration-for-m365>`).
-- **Eliminate shadow IT** by providing :doc:`Connected Workspaces </administration-guide/getting-started/connected-workspaces>` for sanctioned, policy-enforced engagement with external partners—reducing reliance on consumer-grade tools.
+- **Eliminate shadow IT** by providing :doc:`Connected Workspaces </administration-guide/platform-features/connected-workspaces>` for sanctioned, policy-enforced engagement with external partners—reducing reliance on consumer-grade tools.
 - **Apply granular policy enforcement for external users**, including :ref:`granular user permissions <administration-guide/manage/team-channel-members:advanced access controls>`, :doc:`legal hold </administration-guide/compliance-security-auditing/legal-hold>`, :doc:`retention policies </administration-guide/compliance-security-auditing/data-retention-policy>`, and :doc:`custom Terms of Service </administration-guide/compliance-security-auditing/custom-terms-of-service>`.
 - **Synchronize user identity** using :doc:`Entra ID </administration-guide/identity-access/authentication-methods/sso/sso-entraid>` to maintain scalable, centralized access control across both internal and external collaborators.
 
@@ -87,7 +87,7 @@ Multi-agency, multi-tenant Microsoft 365 environments often hinder seamless coll
 **Benefits**
 
 - **Centralize communication across M365 instances** using Mattermost as a neutral, embedded hub for messaging, file sharing, and playbook coordination (See :doc:`Mattermost for M365, Teams, and Outlook </integrations-guide/mattermost-mission-collaboration-for-m365>`).
-- **Bridge segmented Teams deployments** with :doc:`Connected Workspaces </administration-guide/getting-started/connected-workspaces>` and Microsoft presence integration to ensure continuity without duplicative configuration.
+- **Bridge segmented Teams deployments** with :doc:`Connected Workspaces </administration-guide/platform-features/connected-workspaces>` and Microsoft presence integration to ensure continuity without duplicative configuration.
 - **Deploy flexibly across hybrid, private, or air-gapped environments** such as :doc:`Mattermost for M365, Teams, and Outlook </integrations-guide/mattermost-mission-collaboration-for-m365>` to ensure operational consistency no matter the deployment complexity.
 - **Secure external communications and maintain control** with segmentation, data governance, and compliance automation across Teams ecosystems.
 
