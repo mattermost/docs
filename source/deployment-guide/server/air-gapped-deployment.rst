@@ -39,17 +39,17 @@ The :ref:`configuration settings <deployment-guide/server/air-gapped-deployment:
 Bill of Materials
 -----------------
 
-On an internet connect machine, you must gather all required packages, container images, and dependencies needed for the installation process. The resources you'll need will depend on your deployment method, specifically:
+On an internet connected machine, you must gather all required packages, container images, and dependencies needed for the installation process. The resources you'll need will depend on your deployment method, specifically:
 
 .. tab:: Linux
 
-  Linux is recommeded as the simplest installation method for air-gapped environments. You can install the Mattermost Server in a few minutes on any air-gapped 64-bit Linux system using the tarball.
+  Using our provided tarball is recommeded as the simplest installation method for air-gapped environments. You can install the Mattermost Server in a few minutes on any air-gapped 64-bit Linux system.
 
     **Prerequisites**
 
     - :doc:`Mattermost tarball </product-overview/version-archive>`. We recommend using the latest :ref:`ESR <product-overview/release-policy:extended support releases>` for extended support where server upgrades may be infrequent.
     - Database: PostgreSQL `installation packages <https://www.postgresql.org/download/>`_ or container images for your Linux distribution
-    - File Storage: Local filesystem storage is sufficient for deployments under 2,000 users. For larger deployments requiring high availability, we recommend using an S3-compatible object storage solution such as `MinIO <https://min.io/download>`_, `Ceph Object Gateway <https://docs.ceph.com/en/latest/radosgw/>`_, or `OpenStack Swift <https://docs.openstack.org/swift/latest/>`_. NFS can also be considered as an alternative for shared storage needs.
+    - File Storage: Local filesystem storage is sufficient for deployments under 2,000 users. For larger deployments requiring high availability, we recommend using an S3-compatible object storage solution, such as `MinIO <https://min.io/download>`_. NFS can also be considered as an alternative for shared storage needs.
     - Load balancer: If you already have a load balancer running in your air-gapped environment you can skip this resource, otherwise we recommend deploying `NGINX <https://docs.mattermost.com/deployment-guide/server/setup-nginx-proxy.html>`_ from these `Linux packages <https://nginx.org/en/linux_packages.html>`_.
 
     **(Optional) Supporting Services**
