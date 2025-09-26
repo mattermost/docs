@@ -7,7 +7,6 @@ Experimental configuration settings
 Review and manage the following :ref:`experimental <administration-guide/manage/feature-labels:experimental>` configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Experimental > Features**:
 
 - `Experimental System Console configuration settings <#experimental-system-console-configuration-settings>`__
-- `Experimental Bleve configuration settings <#experimental-bleve-configuration-settings>`__
 - `Experimental audit logging configuration settings <#experimental-audit-logging-configuration-settings>`__
 - `Experimental job configuration settings <#experimental-job-configuration-settings>`__
 - `Experimental configuration settings for self-hosted deployments only <#experimental-configuration-settings-for-self-hosted-deployments-only>`__
@@ -641,7 +640,7 @@ This setting controls whether or not the channel link autocomplete triggers imme
 +-------------------------------------------------------------------------------------------------------------------------------------------+
 
 YouTube referrer policy
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 This setting resolves issues where YouTube video previews display as unavailable.
 
@@ -652,106 +651,6 @@ This setting resolves issues where YouTube video previews display as unavailable
 +-------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalSettings.YoutubeReferrerPolicy": false`` with options ``true`` and ``false``.    |
 +-------------------------------------------------------------------------------------------------------------------------------------------+
-
-----
-
-Experimental Bleve configuration settings
------------------------------------------
-
-.. include:: ../../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
-Access the following configuration settings in the System Console by going to **Experimental > Bleve**, or by editing the ``config.json`` file as described in the following tables:
-
-.. config:setting:: enable-bleve-indexing
-  :displayname: Enable Bleve indexing (Experimental)
-  :systemconsole: Experimental > Bleve
-  :configjson: EnableIndexing
-  :environment: N/A
-
-  - **true**: The indexing of new posts occurs automatically.
-  - **false**: **(Default)** The indexing of new posts does not occur automatically.
-
-Enable Bleve indexing
-~~~~~~~~~~~~~~~~~~~~~
-
-**True**: The indexing of new posts occurs automatically. Search queries will not use bleve search until :ref:`Enable Bleve for search queries <administration-guide/configure/experimental-configuration-settings:enable bleve for search queries>` is enabled.
-
-**False**: The indexing of new posts does not occur automatically.
-
-+------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableIndexing": false`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: index-directory
-  :displayname: Index directory (Experimental)
-  :systemconsole: Experimental > Bleve
-  :configjson: IndexDir
-  :environment: N/A
-  :description: Directory path to use for storing bleve indexes.
-
-Index directory
-~~~~~~~~~~~~~~~
-
-Directory path to use for storing bleve indexes.
-
-.. tip::
-
-   The bleve index directory path isn't required to exist within the ``mattermost`` directory. When it exists outside of the ``mattermost`` directory, no  additional steps are needed to preserve or reindex these files as part of a Mattermost upgrade. See our :doc:`Upgrading Mattermost Server </administration-guide/upgrade/upgrading-mattermost-server>` documentation for details.
-
-+-----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"IndexDir": ""`` with string input.                           |
-+-----------------------------------------------------------------------------------------------------------+
-
-Bulk index now
-~~~~~~~~~~~~~~
-
-Select **Index Now** to index all users, channels, and posts in the database from oldest to newest. Bleve is available during indexing, but search results may be incomplete until the indexing job is complete.
-
-Purge indexes
-~~~~~~~~~~~~~
-
-Select **Purge Index** to remove the contents of the Bleve index directory. Search results may be incomplete until a bulk index of the existing database is rebuilt.
-
-.. config:setting:: enable-bleve-indexingsearch
-  :displayname: Enable Bleve for search queries (Experimental)
-  :systemconsole: Experimental > Bleve
-  :configjson: EnableSearching
-  :environment: N/A
-
-  - **true**: Search queries will use bleve search.
-  - **false**: **(Default)** Search queries will not use bleve search.
-
-Enable Bleve for search queries
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-**True**: Search queries will use bleve search.
-
-**False**: Search queries will not use bleve search.
-
-+--------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableSearching": false`` with options ``true`` and ``false``.  |
-+--------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: enable-bleve-indexingautocomplete
-  :displayname: Enable Bleve for autocomplete queries (Experimental)
-  :systemconsole: Experimental > Bleve
-  :configjson: EnableAutocomplete
-  :environment: N/A
-
-  - **true**: Autocomplete queries will use bleve search.
-  - **false**: **(Default)** Autocomplete queries will not use bleve search.
-
-Enable Bleve for autocomplete queries
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-**True**: Autocomplete queries will use bleve search.
-
-**False**: Autocomplete queries will not use bleve search.
-
-+-----------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableAutocomplete": false`` with options ``true`` and ``false``.  |
-+-----------------------------------------------------------------------------------------------------------------+
 
 ----
 
@@ -1596,21 +1495,21 @@ From Mattermost v10.10, when this :ref:`experimental <administration-guide/manag
   :configjson: ExperimentalStrictCSRFEnforcement
   :environment: N/A
 
-  - **true**: Enables CSRF protection tokens for additional hardening compared to the currently used custom header.
-  - **false**: **(Default)** Disables CSRF protection tokens.
+  - **true**: **(Default for new deployments from Mattermost Server v11 onward)** Enables CSRF protection tokens for additional hardening compared to the currently used custom header.
+  - **false**: **(Default for deployments prior to v11)** Disables CSRF protection tokens and enables legacy X-Requested-With header fallback.
 
 Strict CSRF token enforcement
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-**True**: Enables CSRF protection tokens for additional hardening compared to the currently used custom header. When the user logs in, an additional cookie is created with the CSRF token contained.
+**True**: Enables CSRF protection tokens for additional hardening compared to the currently used custom header. When the user logs in, an additional cookie is created with the CSRF token contained. This is the default behavior for new deployments from Mattermost Server v11 onward.
 
-**False**: Disables CSRF protection tokens.
+**False**: Disables CSRF protection tokens and enables legacy X-Requested-With header fallback for backward compatibility. This setting maintains the previous CSRF protection method used prior to v11. Existing deployments upgrading to v11 will retain their current configuration.
 
-+-------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalStrictCSRFEnforcement": false`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalStrictCSRFEnforcement": true`` with options ``true`` and ``false``. |
++------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: developer-flags
   :displayname: Developer flags (Experimental)
