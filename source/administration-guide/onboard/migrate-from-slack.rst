@@ -10,7 +10,7 @@ Overview
 
 Migrating from Slack to Mattermost is a multi-step process that can be complex, particularly for larger organizations or those with multiple Slack workspaces. The process generally involves preparing your environment, exporting data from Slack, converting that data into a compatible format, and then importing it into Mattermost.
 
-Additionally, please consider that `Slack's data control policies may change at any time <https://x.com/Austen/status/1752064934970896626>`_, Slack may choose to change its export capabilities, and/or charge fees to customers for exporting data stored in Slack. Support for negotiating export of customer IP from Slack Enterprise can be requested by contacting a `Mattermost Expert <https://mattermost.com/contact-sales/>`_.
+Additionally, please consider that Slack's data control policies or export capabilities may change at any time, or they may charge fees to customers for exporting data stored in Slack. Support for negotiating export of customer IP from Slack Enterprise can be requested by contacting a `Mattermost Expert <https://mattermost.com/contact-sales/>`_.
 
 
 1. `**Preparations** <#1.-preparations>`_:
@@ -85,7 +85,7 @@ Infrastructure considerations
 The environment where you run the import can significantly affect performance:
 
 - **Test environment**: Always run the migration in a development or staging environment first. Most migrations require multiple iterations before a production import is successful.  
-- **Operating system**: The `mmetl` and `slack_advanced_exporter` tools are supported on Linux and macOS. Windows is not supported directly, but can be used with `Windows Subsystem for Linux (WSL) <https://learn.microsoft.com/en-us/windows/wsl/install>`_.  
+- **Operating system**: The `mmetl` and `slack_advanced_exporter` tools are supported on Linux and macOS. Windows is not supported, and we do not recommend using Windows Subsystem for Linux (WSL) since the file system is not performant enought for the heavier processes involved in migration.
 - **Storage requirements**: Ensure your server can store both the Slack export archive and the fully unpacked data. As a best practice, plan for at least three times the size of your Slack export in available server storage.  
 - **File Storage**: Imports into S3 file storage typically complete faster than imports into MinIO. If using MinIO, you may want to consider increasing the number of volumes per server. 
 
@@ -371,13 +371,12 @@ The email verification process during Slack import depends on who performs the i
 Account activation
 ~~~~~~~~~~~~~~~~~~
 
-* Slack users activate their new Mattermost accounts by using Mattermost's **Password Reset** screen with their email addresses from Slack to set new passwords for their Mattermost accounts.
+* Slack users activate their new Mattermost accounts by using Mattermost's **Password Reset** screen with their email addresses from Slack to set new passwords for their Mattermost accounts. Instructions on how to migrate user authenticatation to LDAP or SAML can be found :ref:`here <administration-guide/manage/mmctl-command-line-tool:mmctl user migrate-auth>`.
 
   * For imports performed by System Admins: Users can immediately use the **Password Reset** feature (no email verification is required).
   * For imports performed by non-administrators: Users must first verify their email addresses, then use the **Password Reset** feature.
 
 * Once logged in, Mattermost users will have access to previous Slack messages in the public channels imported from Slack.
-* Instructions on how to migrate user authenticatation to LDAP or SAML can be found :ref:`here <administration-guide/manage/mmctl-command-line-tool:mmctl user migrate-auth>`.
 
 FAQ
 ---
