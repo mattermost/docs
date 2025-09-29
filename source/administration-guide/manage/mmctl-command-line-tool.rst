@@ -30,6 +30,7 @@ mmctl commands
 - `mmctl bot`_ - Bot Management
 - `mmctl channel`_ - Channel Management
 - `mmctl command`_ - Command Management
+- `mmctl cpa`_ - Custom Profile Attribute Management
 - `mmctl completion`_ - Generate autocompletion scripts for bash, fish, powershell, and zsh
 - `mmctl compliance-export`_ - Compliance Export Management
 - `mmctl config`_ - Configuration Management
@@ -1990,6 +1991,211 @@ To configure your ``zsh`` shell to load completions for each session, add the ab
 
    -h, --help          help for zsh
    --no-descriptions   disable completion descriptions
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl cpa
+---------
+
+.. include:: ../../_static/badges/ent-adv-only.rst
+  :start-after: :nosearch:
+
+Manage Custom Profile Attributes (CPA) for extended user profile information.
+
+   Child Commands
+      - `mmctl cpa field`_ - Manage CPA fields
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for cpa
+
+mmctl cpa field
+~~~~~~~~~~~~~~~
+
+**Description**
+
+Manage Custom Profile Attribute fields.
+
+   Child Commands
+      - `mmctl cpa field create`_ - Create a new CPA field
+      - `mmctl cpa field delete`_ - Delete a CPA field
+      - `mmctl cpa field edit`_ - Edit a CPA field
+      - `mmctl cpa field list`_ - List CPA fields
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for field
+
+mmctl cpa field create
+~~~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Create a new Custom Profile Attribute field.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl cpa field create [field-name] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   mmctl cpa field create "Department" --type text
+   mmctl cpa field create "Location" --type select --options "New York,London,Tokyo"
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help          help for create
+   --type string       field type (text, select, number, date)
+   --options string    comma-separated list of options for select fields
+   --required          mark field as required
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl cpa field delete
+~~~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Delete an existing Custom Profile Attribute field.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl cpa field delete [field-id] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   mmctl cpa field delete department-field-001
+   mmctl cpa field delete location-field-002 --force
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help    help for delete
+   --force       skip confirmation prompt
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl cpa field edit
+~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Edit an existing Custom Profile Attribute field.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl cpa field edit [field-id] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   mmctl cpa field edit department-field-001 --name "Department/Division"
+   mmctl cpa field edit location-field-002 --options "New York,London,Tokyo,Sydney"
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help          help for edit
+   --name string       update field name
+   --type string       update field type (text, select, number, date)
+   --options string    update comma-separated list of options for select fields
+   --required          mark field as required
+   --not-required      mark field as not required
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl cpa field list
+~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+List all Custom Profile Attribute fields.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl cpa field list [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   mmctl cpa field list
+   mmctl cpa field list --json
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for list
 
 **Options inherited from parent commands**
 
