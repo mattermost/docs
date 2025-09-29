@@ -37,6 +37,9 @@ You can access the System Scheme interface by going to **System Console > User M
 Team override scheme
 ~~~~~~~~~~~~~~~~~~~~
 
+.. include:: ../../_static/badges/ent-only.rst
+  :start-after: :nosearch:
+
 On systems with multiple :ref:`Mattermost teams <end-user-guide/collaborate/organize-using-teams:single team versus multiple teams>`, each team may operate and collaborate in a unique way. Team Override Schemes give Admins the flexibility to tailor permissions to the needs of each team.
 
 When you use this permission scheme:
@@ -57,14 +60,10 @@ The channel permissions interface is accessed in **System Console > User Managem
 Advanced access controls
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See the :ref:`team and channel management <administration-guide/manage/team-channel-members:advanced access controls>` documentation for details.
+.. include:: ../../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
-Supplementary roles
-~~~~~~~~~~~~~~~~~~~~
-
-*Being considered for a future release of Mattermost Enterprise*
-
-Allows admins to grant additional permissions to specific users or to a group of users based on AD/LDAP group membership. Permissions can be granted within the scope of channels, teams, or system level.
+See the :ref:`team and channel management <administration-guide/manage/team-channel-members:advanced access controls>` documentation for details on available channel access controls. 
 
 Recipes
 -------
