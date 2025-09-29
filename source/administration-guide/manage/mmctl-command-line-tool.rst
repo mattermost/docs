@@ -1968,10 +1968,10 @@ Create a new Custom Profile Attribute field.
 
 .. code-block:: sh
 
-   -h, --help              help for create
-       --type string       field type (text, select, number, date)
-       --options string    comma-separated list of options for select fields
-       --required          mark field as required
+   -h, --help          help for create
+   --type string       field type (text, select, number, date)
+   --options string    comma-separated list of options for select fields
+   --required          mark field as required
 
 **Options inherited from parent commands**
 
@@ -2012,7 +2012,7 @@ Delete an existing Custom Profile Attribute field.
 .. code-block:: sh
 
    -h, --help    help for delete
-       --force   skip confirmation prompt
+   --force       skip confirmation prompt
 
 **Options inherited from parent commands**
 
@@ -2052,12 +2052,12 @@ Edit an existing Custom Profile Attribute field.
 
 .. code-block:: sh
 
-   -h, --help              help for edit
-       --name string       update field name
-       --type string       update field type (text, select, number, date)
-       --options string    update comma-separated list of options for select fields
-       --required          mark field as required
-       --not-required      mark field as not required
+   -h, --help          help for edit
+   --name string       update field name
+   --type string       update field type (text, select, number, date)
+   --options string    update comma-separated list of options for select fields
+   --required          mark field as required
+   --not-required      mark field as not required
 
 **Options inherited from parent commands**
 
