@@ -1,11 +1,28 @@
 Incoming Webhooks
 =================
 
-Incoming webhooks allow external applications to post messages into Mattermost channels and direct messages. They are a simple way to receive notifications and data from other services in real-time.
+**Technical complexity:** :ref:`No-code <no-code>`
 
-You can create an incoming webhook in Mattermost, which generates a unique URL. External systems send HTTP POST requests to that URL with a JSON payload containing the message text and optional formatting (attachments, images, links, etc.). Messages are created under the webhook’s configured user (typically the creator). Username/icon can be overridden in the payload.
+Send or receive real-time data from external tools. Webhooks require minimal coding and are easy to set up with virtually any tool or platform because they use lightweight HTTP POST requests with JSON payloads.
 
-For example, your monitoring tool detects high CPU usage and sends an alert message directly into your **#devops-alerts** channel. All webhook posts will display a ``BOT`` indicator next to the username in Mattermost clients to help prevent against phishing attacks.
+Using incoming webhooks in Mattermost requires only basic setup. You generate a webhook URL using the Mattermost interface, then point another service to send data to that address. No coding is required if your external service triggering the events is able to send data via webhooks or HTTP POST requests, which most modern applications and platforms support. Setting this up usually involves pasting the Mattermost webhook URL into the service’s settings and selecting what type of events you want it to send. 
+
+Example Use Cases
+-----------------
+
+Here are some example use cases for incoming webhooks in Mattermost:
+
+**Monitoring alerts**
+
+Send real-time alerts from monitoring systems (such as Prometheus or Datadog) into a dedicated Mattermost channel so your team is immediately notified about system issues or downtime.
+
+**Build and deployment notifications**
+
+Post automated updates from CI/CD pipelines (such as Jenkins or GitLab CI) to a channel, keeping developers informed of build status, test results, and deployment progress.
+
+**Customer support updates**
+
+Forward new support ticket notifications from systems like Zendesk or ServiceNow into a support channel, ensuring the team can respond quickly to incoming requests.
 
 Create
 ------
@@ -49,8 +66,8 @@ A successful request will receive an HTTP 200 response with `ok` in the response
 
 For compatibility with Slack incoming webhooks, if no ``Content-Type`` header is set, the request body must be prefixed with ``payload=``.
 
-Post examples
---------------
+Post Examples
+~~~~~~~~~~~~~
 
 Here are some examples of simple messages posted using incoming webhooks:
 
