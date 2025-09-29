@@ -1499,7 +1499,7 @@ Sign request
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.SignatureAlgorithm
   :environment: MM_SAMLSETTINGS_SIGNATUREALGORITHM
-  :description: This setting determines the signature algorithm used to sign the SAML request. Options are: ``RSAwithSHA1``, ``RSAwithSHA256``, ``RSAwithSHA512``. Default is ``RSAwithSHA256`` starting from v11 (previously ``RSAwithSHA1``).
+  :description: This setting determines the signature algorithm used to sign the SAML request. Options are: ``RSAwithSHA1``, ``RSAwithSHA256``, ``RSAwithSHA512``. From v11, default is ``RSAwithSHA256``. Previously ``RSAwithSHA1``.
 
 Signature algorithm
 ~~~~~~~~~~~~~~~~~~~
@@ -1514,7 +1514,7 @@ Signature algorithm
 |                                                                                                                                                    |                                                                          |
 | .. note::                                                                                                                                          |                                                                          |
 |                                                                                                                                                    |                                                                          |
-|   Starting from Mattermost v11, the default signature algorithm has been updated from ``RSAwithSHA1`` to ``RSAwithSHA256`` for improved security.|                                                                          |
+|   From Mattermost v11, the default signature algorithm has been updated from ``RSAwithSHA1`` to ``RSAwithSHA256`` for improved security.           |                                                                          |
 |   Existing configurations will continue to work, but new installations will default to ``RSAwithSHA256``.                                          |                                                                          |
 +----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
