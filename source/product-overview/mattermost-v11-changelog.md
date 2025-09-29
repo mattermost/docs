@@ -88,7 +88,7 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
  - Increased page size when retrieving posts in channels with high number of hidden messages.
 
 #### Administration
- - Introduced support for Mattermost Entry Edition with message history limits.
+ - Introduced support for new default free edition Mattermost Entry with usage limits. See more details in [this forum post](https://forum.mattermost.com/t/mattermost-v11-changes-in-free-offerings/25126).
  - User limits were lowered to final threshold of 250 for Mattermost Team Edition (MIT-Compiled License).
  - Added support for a [FIPS-compliant Mattermost image](https://docs.mattermost.com/deployment-guide/server/containers/fips-stig.html).
  - PBKDF2 is now used as the new key derivation algorithm for remote cluster invitations. We do this in a backward compatible way such that invitations generated from new/old clusters work in all clusters.
