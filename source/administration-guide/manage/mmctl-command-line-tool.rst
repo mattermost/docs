@@ -7045,7 +7045,7 @@ Permanently delete all users and all related information including posts. This c
    --suppress-warnings            disables printing warning messages
 
 mmctl user demote
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -7672,7 +7672,7 @@ Delete a specific user preference.
    --suppress-warnings            disables printing warning messages
 
 mmctl user promote
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
