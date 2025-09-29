@@ -321,6 +321,7 @@ A private container registry securely stores the Docker images necessary for air
             -e REGISTRY_HTTP_TLS_KEY=/certs/domain.key \
             registry:2
 
+
    **Configure Kubernetes to use private image registries**
 
    When using Kubernetes in an air-gapped environment, you need to configure it to use your private registry.
@@ -400,6 +401,12 @@ A private container registry securely stores the Docker images necessary for air
             -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/domain.crt \
             -e REGISTRY_HTTP_TLS_KEY=/certs/domain.key \
             registry:2
+
+
+   **Populate your private registry**
+
+   Ensure the required images from the :ref:`Bill of Materials <deployment-guide/server/air-gapped-deployment:bill of materials>` are downloaded and pushed to the private registry.
+
 
    **Configure Docker to use private image registries**
 
