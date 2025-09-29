@@ -832,6 +832,7 @@ mmctl channel
 Manage channels.
 
    Child Commands
+      -  `mmctl channel add`_ - (Deprecated) Add a user to a channel
       -  `mmctl channel archive`_ - Archive a channel
       -  `mmctl channel create`_ - Create a channel
       -  `mmctl channel delete`_ - Delete a channel
@@ -839,6 +840,7 @@ Manage channels.
       -  `mmctl channel make-private`_ - (Deprecated) Set a channel's type to "private" 
       -  `mmctl channel modify`_ - Modify a channel's type (private/public)
       -  `mmctl channel move`_ - Move channels to the specified team
+      -  `mmctl channel remove`_ - (Deprecated) Remove a user from a channel
       -  `mmctl channel rename`_ - Rename a channel
       -  `mmctl channel restore`_ - (Deprecated) Restore a channel from the archive
       -  `mmctl channel search`_ - Search a channel by name
@@ -877,6 +879,47 @@ Archive channels along with all related information including posts from the dat
 .. code-block:: sh
 
    -h, --help   help for archive
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl channel add
+~~~~~~~~~~~~~~~~~
+
+This command is deprecated in favor of :ref:`mmctl channel users add <administration-guide/manage/mmctl-command-line-tool:mmctl channel users add>`.
+
+**Description**
+
+Add a user to a channel.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl channel add [channel] [users] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   mmctl channel add myteam:mychannel user@example.com username
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for add
 
 **Options inherited from parent commands**
 
@@ -1160,17 +1203,58 @@ Rename an existing channel.
 
 .. code-block:: sh
 
-   mmctl channel rename myteam:oldchannel --name 'new-channel' --display_name 'New Display Name'
+   mmctl channel rename myteam:oldchannel --name 'new-channel' --display-name 'New Display Name'
    mmctl channel rename myteam:oldchannel --name 'new-channel'
-   mmctl channel rename myteam:oldchannel --display_name 'New Display Name'
+   mmctl channel rename myteam:oldchannel --display-name 'New Display Name'
 
 **Options**
 
 .. code-block:: sh
 
-   --display_name string   Channel Display Name
+   --display-name string   Channel Display Name
    -h, --help              help for rename
    --name string           Channel Name
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl channel remove
+~~~~~~~~~~~~~~~~~~~~
+
+This command is deprecated in favor of :ref:`mmctl channel users remove <administration-guide/manage/mmctl-command-line-tool:mmctl channel users remove>`.
+
+**Description**
+
+Remove a user from a channel.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl channel remove [channel] [users] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   mmctl channel remove myteam:mychannel user@example.com username
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for remove
 
 **Options inherited from parent commands**
 
@@ -4739,7 +4823,7 @@ Show all the information about a role.
 
 .. code-block:: sh
 
-   mmctl permissions show system_user
+   mmctl permissions role show system_user
 
 **Options**
 
@@ -5870,14 +5954,14 @@ Create a team.
 
 .. code-block:: sh
 
-   mmctl team create --name mynewteam --display_name "My New Team"
-   mmctl team create --name private --display_name "My New Private Team" --private
+   mmctl team create --name mynewteam --display-name "My New Team"
+   mmctl team create --name private --display-name "My New Private Team" --private
 
 **Options**
 
 .. code-block:: sh
 
-   --display_name string   Team Display Name
+   --display-name string   Team Display Name
    --email string          Administrator Email (anyone with this email is automatically a team admin)
    -h, --help              help for create
    --name string           Team Name
@@ -6037,13 +6121,13 @@ Rename an existing team.
 
 .. code-block:: sh
 
-   mmctl team rename old-team --display_name 'New Display Name'
+   mmctl team rename old-team --display-name 'New Display Name'
 
 **Options**
 
 .. code-block:: sh
 
-   --display_name string   Team Display Name
+   --display-name string   Team Display Name
    -h, --help              help for rename
 
 **Options inherited from parent commands**
@@ -6535,7 +6619,7 @@ Convert user accounts to bots, or convert bots to user accounts.
    --locale string      The locale (e.g., EN, FR) for the converted new user account. Required when the "bot" flag is set
    --nickname string    The nickname for the converted user account. Required when the "bot" flag is set
    --password string    The password for converted new user account. Required when "user" flag is set
-   --system_admin       If supplied, the converted user will be a system admin. Defaults to false. Required when the "bot" flag is set
+   --system-admin       If supplied, the converted user will be a system admin. Defaults to false. Required when the "bot" flag is set
    --user               If supplied, convert a bot to a user
    --username string    Username for the converted user account. Required when the "bot" flag is set
 
