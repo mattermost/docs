@@ -1,16 +1,18 @@
-Bleve search (experimental)
-===========================
+Bleve search
+=============
 
 .. include:: ../../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-Bleve is a search engine that uses Lucene-style full-text search and indexing. This style of search and indexing helps overcome limitations of the default database search such as challenges with characters and advanced search capabilities.
+.. important::
 
-The Bleve search engine works as a library integrated into the Mattermost codebase. As it generates indexes in the filesystem of the server that it is running on, it doesn’t require an external server to function. Because of this, Bleve should not be enabled in High Availability deployments.
+  Experimental Bleve search is deprecated from Mattermost v11.0, and Bleve configuration settings have been moved to the :ref:`Deprecated configuration settings <administration-guide/configure/deprecated-configuration-settings:bleve settings>` documentation. We recommend using :doc:`Elasticsearch </administration-guide/scale/elasticsearch-setup>` or :doc:`AWS OpenSearch </administration-guide/scale/opensearch-setup>` for enterprise search capabilities.
+
+Bleve is a search engine that uses Lucene-style full-text search and indexing. This style of search and indexing helps overcome limitations of the default database search such as challenges with characters and advanced search capabilities. The Bleve search engine works as a library integrated into the Mattermost codebase. As it generates indexes in the filesystem of the server that it is running on, it doesn’t require an external server to function. Because of this, Bleve should not be enabled in High Availability deployments.
 
 .. note::
 
-  Bleve search uses the scorch index type on newly-created indexes. This new index type features efficiency improvements and indexes that use significantly less disk space. Go to **System Console > Experimental > Bleve** and select **Purge Index** to run a purge operation. When that's complete, select **Index Now** to reindex. Bleve remains compatible with existing indexes, so currently indexed data will continue to work if a purge and reindex isn't run.
+  Experimental Bleve search uses the scorch index type on newly-created indexes. This new index type features efficiency improvements and indexes that use significantly less disk space. Go to **System Console > Experimental > Bleve** and select **Purge Index** to run a purge operation. When that's complete, select **Index Now** to reindex. Bleve remains compatible with existing indexes, so currently indexed data will continue to work if a purge and reindex isn't run.
 
 Configuring Bleve in Mattermost
 -------------------------------
@@ -21,7 +23,7 @@ Follow these steps to configure the Mattermost server to use Bleve and generate 
 
 1. Open **System Console > Experimental > Bleve**.
 2. Set **Enable Bleve Indexing** to **true** to enable the other settings on the page.
-3. Set the directory path to use for storing Bleve indexes (e.g.: ``/var/opt/mattermost/bleveindexes``). The user running Mattermost should have permissions to access the directory. See our :ref:`configuration settings <administration-guide/configure/experimental-configuration-settings:experimental bleve configuration settings>`  documentation for details.
+3. Set the directory path to use for storing Bleve indexes (e.g.: ``/var/opt/mattermost/bleveindexes``). The user running Mattermost should have permissions to access the directory. See our :ref:`configuration settings <administration-guide/configure/deprecated-configuration-settings:bleve settings>`  documentation for details.
 4. Save the configuration.
 5. Select **Index Now**. All users, channels, and posts in the database will be indexed oldest to newest.
 6. Set **Enable Bleve for search queries** to **true**.
@@ -42,4 +44,4 @@ The following conditions are applied when using Bleve search:
 How does search work with Bleve disabled?
 -------------------------------------------
 
-Mattermost performs full text searches against the database unless you have an :ref:`Enterprise license <product-overview/editions-and-offerings:mattermost enterprise edition>` and :doc:`enterprise search </administration-guide/scale/enterprise-search>` configured.
+Mattermost performs full text searches against the database unless you have an :ref:`Enterprise license <product-overview/editions-and-offerings:mattermost enterprise>` and :doc:`enterprise search </administration-guide/scale/enterprise-search>` configured.
