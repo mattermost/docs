@@ -6387,7 +6387,7 @@ Manage users.
       -  `mmctl user edit authdata`_ - Edit user authentication data
       -  `mmctl user edit email`_ - Edit user email address
       -  `mmctl user edit username`_ - Edit user username
-      -  `mmctl user email`_ - Set user email
+      -  `mmctl user email`_ - (Deprecated) Set user email
       -  `mmctl user invite`_ - Invite user
       -  `mmctl user list`_ - List users
       -  `mmctl user migrate-auth`_ - Bulk migrate user accounts authentication type
@@ -6396,7 +6396,7 @@ Manage users.
       -  `mmctl user reset-password`_ - Reset user password
       -  `mmctl user resetmfa`_ - Reset a user's MFA token
       -  `mmctl user search`_ - Search for a user
-      -  `mmctl user username`_ - Change username of the user
+      -  `mmctl user username`_ - (Deprecated) Change username of the user
       -  `mmctl user verify`_ - Mark user's email as verified
 
 **Options**
