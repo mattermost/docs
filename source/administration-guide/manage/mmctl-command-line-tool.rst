@@ -1203,15 +1203,15 @@ Rename an existing channel.
 
 .. code-block:: sh
 
-   mmctl channel rename myteam:oldchannel --name 'new-channel' --display_name 'New Display Name'
+   mmctl channel rename myteam:oldchannel --name 'new-channel' --display-name 'New Display Name'
    mmctl channel rename myteam:oldchannel --name 'new-channel'
-   mmctl channel rename myteam:oldchannel --display_name 'New Display Name'
+   mmctl channel rename myteam:oldchannel --display-name 'New Display Name'
 
 **Options**
 
 .. code-block:: sh
 
-   --display_name string   Channel Display Name
+   --display-name string   Channel Display Name
    -h, --help              help for rename
    --name string           Channel Name
 
@@ -5954,14 +5954,14 @@ Create a team.
 
 .. code-block:: sh
 
-   mmctl team create --name mynewteam --display_name "My New Team"
-   mmctl team create --name private --display_name "My New Private Team" --private
+   mmctl team create --name mynewteam --display-name "My New Team"
+   mmctl team create --name private --display-name "My New Private Team" --private
 
 **Options**
 
 .. code-block:: sh
 
-   --display_name string   Team Display Name
+   --display-name string   Team Display Name
    --email string          Administrator Email (anyone with this email is automatically a team admin)
    -h, --help              help for create
    --name string           Team Name
@@ -6121,13 +6121,13 @@ Rename an existing team.
 
 .. code-block:: sh
 
-   mmctl team rename old-team --display_name 'New Display Name'
+   mmctl team rename old-team --display-name 'New Display Name'
 
 **Options**
 
 .. code-block:: sh
 
-   --display_name string   Team Display Name
+   --display-name string   Team Display Name
    -h, --help              help for rename
 
 **Options inherited from parent commands**
@@ -6619,7 +6619,7 @@ Convert user accounts to bots, or convert bots to user accounts.
    --locale string      The locale (e.g., EN, FR) for the converted new user account. Required when the "bot" flag is set
    --nickname string    The nickname for the converted user account. Required when the "bot" flag is set
    --password string    The password for converted new user account. Required when "user" flag is set
-   --system_admin       If supplied, the converted user will be a system admin. Defaults to false. Required when the "bot" flag is set
+   --system-admin       If supplied, the converted user will be a system admin. Defaults to false. Required when the "bot" flag is set
    --user               If supplied, convert a bot to a user
    --username string    Username for the converted user account. Required when the "bot" flag is set
 
