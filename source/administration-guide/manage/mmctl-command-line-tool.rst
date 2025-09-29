@@ -30,7 +30,7 @@ mmctl commands
 - `mmctl bot`_ - Bot Management
 - `mmctl channel`_ - Channel Management
 - `mmctl command`_ - Command Management
-- `mmctl completion`_ - Generate autocompletion scripts for bash and zsh
+- `mmctl completion`_ - Generate autocompletion scripts for bash, fish, powershell, and zsh
 - `mmctl compliance-export`_ - Compliance Export Management
 - `mmctl config`_ - Configuration Management
 - `mmctl docs`_ - Generate mmctl documentation
@@ -471,17 +471,31 @@ And now we can run commands normally:
 Installing shell completions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To install the shell completions for bash, add the following line to your ``~/.bashrc`` or ``~/.profile`` file:
+mmctl supports shell completions for bash, fish, powershell, and zsh from Mattermost v11.
+
+To install the shell completions for **bash**, add the following line to your ``~/.bashrc`` or ``~/.profile`` file:
 
 .. code-block:: sh
 
    source <(mmctl completion bash)
 
-For zsh, add the following line to your ``~/.zshrc`` file:
+For **zsh**, add the following line to your ``~/.zshrc`` file:
 
 .. code-block:: sh
 
    source <(mmctl completion zsh)
+
+For **fish**, add the following line to your fish configuration:
+
+.. code-block:: sh
+
+   mmctl completion fish | source
+
+For **powershell**, add the following line to your PowerShell profile:
+
+.. code-block:: powershell
+
+   mmctl completion powershell | Out-String | Invoke-Expression
 
 mmctl auth renew
 ~~~~~~~~~~~~~~~~
@@ -1848,7 +1862,7 @@ To load completion, run:
 
 .. code-block:: sh
 
-   -h, --help   help for bash
+   -h, --help          help for bash
    --no-descriptions   disable completion descriptions
 
 **Options inherited from parent commands**
@@ -1876,9 +1890,9 @@ To load completion, run:
 
 .. code-block:: sh
 
-   . <(mmctl completion fish)
+   mmctl completion fish | source
 
-To configure your ``fish`` shell to load completions for each session, add the above line to your ``~/.zshrc``.
+To configure your ``fish`` shell to load completions for each session, add the above line to your fish configuration.
 
 **Format**
 
@@ -1890,7 +1904,7 @@ To configure your ``fish`` shell to load completions for each session, add the a
 
 .. code-block:: sh
 
-   -h, --help   help for fish
+   -h, --help          help for fish
    --no-descriptions   disable completion descriptions
 
 **Options inherited from parent commands**
@@ -1916,15 +1930,15 @@ Generate the ``powershell`` autocompletion scripts.
 
 To load completion, run:
 
-.. code-block:: sh
+.. code-block:: powershell
 
-   . <(mmctl completion powershell)
+   mmctl completion powershell | Out-String | Invoke-Expression
 
-To configure your ``powershell`` shell to load completions for each session, add the above line to your ``~/.zshrc``.
+To configure your ``powershell`` shell to load completions for each session, add the above line to your PowerShell profile.
 
 **Format**
 
-.. code-block:: sh
+.. code-block:: powershell
 
    mmctl completion powershell [flags]
 
@@ -1932,7 +1946,7 @@ To configure your ``powershell`` shell to load completions for each session, add
 
 .. code-block:: sh
 
-   -h, --help   help for powershell
+   -h, --help          help for powershell
    --no-descriptions   disable completion descriptions
 
 **Options inherited from parent commands**
@@ -1974,7 +1988,7 @@ To configure your ``zsh`` shell to load completions for each session, add the ab
 
 .. code-block:: sh
 
-   -h, --help   help for zsh
+   -h, --help          help for zsh
    --no-descriptions   disable completion descriptions
 
 **Options inherited from parent commands**
