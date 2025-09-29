@@ -6384,7 +6384,9 @@ Manage users.
       -  `mmctl user deleteall`_ - Delete all users and all posts (local command only)
       -  `mmctl user demote`_ - Demote users to guests
       -  `mmctl user edit`_ - Edit user information
-      -  `mmctl user email`_ - Set user email
+      -  `mmctl user edit email`_ - Set user email
+      -  `mmctl user edit username`_ - Change username of the user
+      -  `mmctl user email`_ - (Deprecated) Set user email
       -  `mmctl user invite`_ - Invite user
       -  `mmctl user list`_ - List users
       -  `mmctl user migrate-auth`_ - Bulk migrate user accounts authentication type
@@ -6393,7 +6395,7 @@ Manage users.
       -  `mmctl user reset-password`_ - Reset user password
       -  `mmctl user resetmfa`_ - Reset a user's MFA token
       -  `mmctl user search`_ - Search for a user
-      -  `mmctl user username`_ - Change username of the user
+      -  `mmctl user username`_ - (Deprecated) Change username of the user
       -  `mmctl user verify`_ - Mark user's email as verified
 
 **Options**
@@ -6899,9 +6901,7 @@ Change the username of the user.
 mmctl user email
 ~~~~~~~~~~~~~~~~
 
-.. warning::
-
-   This command is deprecated starting from Mattermost v11. Use ``mmctl user edit email`` instead.
+This command is deprecated in favor of :ref:`mmctl user edit email <administration-guide/manage/mmctl-command-line-tool:mmctl user edit email>`.
 
 **Description**
 
@@ -7463,9 +7463,7 @@ Search for users based on username, email, or user ID. The command returns user 
 mmctl user username
 ~~~~~~~~~~~~~~~~~~~
 
-.. warning::
-
-   This command is deprecated starting from Mattermost v11. Use ``mmctl user edit username`` instead.
+This command is deprecated in favor of :ref:`mmctl user edit username <administration-guide/manage/mmctl-command-line-tool:mmctl user edit username>` instead.
 
 **Description**
 
