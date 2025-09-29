@@ -471,10 +471,7 @@ And now we can run commands normally:
 Installing shell completions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. note::
-   Shell completion commands are available from Mattermost Server v11.0 onwards.
-
-mmctl supports shell completions for bash, fish, powershell, and zsh.
+mmctl supports shell completions for bash, fish, powershell, and zsh from Mattermost v11.
 
 To install the shell completions for **bash**, add the following line to your ``~/.bashrc`` or ``~/.profile`` file:
 
@@ -1742,8 +1739,6 @@ Show a custom slash command. Commands can be specified by command ID. Returns co
 mmctl completion
 ----------------
 
-.. versionadded:: 11.0
-
 Generate autocompletion scripts for ``bash``, ``fish``, ``powershell``, and ``zsh``.
 
    Child Commands
@@ -1783,7 +1778,7 @@ To load completion, run:
 
 .. code-block:: sh
 
-   -h, --help   help for bash
+   -h, --help          help for bash
    --no-descriptions   disable completion descriptions
 
 **Options inherited from parent commands**
@@ -1825,7 +1820,7 @@ To configure your ``fish`` shell to load completions for each session, add the a
 
 .. code-block:: sh
 
-   -h, --help   help for fish
+   -h, --help          help for fish
    --no-descriptions   disable completion descriptions
 
 **Options inherited from parent commands**
@@ -1867,7 +1862,7 @@ To configure your ``powershell`` shell to load completions for each session, add
 
 .. code-block:: sh
 
-   -h, --help   help for powershell
+   -h, --help          help for powershell
    --no-descriptions   disable completion descriptions
 
 **Options inherited from parent commands**
@@ -1909,7 +1904,7 @@ To configure your ``zsh`` shell to load completions for each session, add the ab
 
 .. code-block:: sh
 
-   -h, --help   help for zsh
+   -h, --help          help for zsh
    --no-descriptions   disable completion descriptions
 
 **Options inherited from parent commands**
