@@ -43,7 +43,7 @@ When Mattermost initiates an SP-initiated SAML request flow, it generates a **HT
 AuthNRequests can also be signed by Mattermost, in which case the XML payload is similar to:
 
 .. note::
-  Starting from Mattermost v11, the default signature algorithm has been updated from SHA-1 to SHA-256 for improved security. The example below reflects the new default SHA-256 algorithm.
+  From Mattermost v11, the default signature algorithm has been updated from SHA-1 to SHA-256 for improved security. The example below reflects the new default SHA-256 algorithm.
 
 .. code-block:: XML
 
