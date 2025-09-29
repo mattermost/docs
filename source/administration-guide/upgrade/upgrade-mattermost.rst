@@ -6,17 +6,16 @@ Upgrade Mattermost
    :hidden:
    :titlesonly:
 
-    Important upgrade notes </administration-guide/operations-scaling/important-upgrade-notes>
-    Prepare to upgrade Mattermost </administration-guide/operations-scaling/prepare-to-upgrade-mattermost>
-    Communicate scheduled maintenance best practices </administration-guide/operations-scaling/communicate-scheduled-maintenance>
-    Upgrade Mattermost Server </administration-guide/operations-scaling/upgrading-mattermost-server>
-    Upgrade Mattermost in Kubernetes and High Availability environments </administration-guide/operations-scaling/upgrade-mattermost-kubernetes-ha>
-    Upgrade Team Edition to Enterprise Edition </administration-guide/operations-scaling/enterprise-install-upgrade>
+    Important upgrade notes </product-overview/common-esr-support-upgrade>
+    Prepare to upgrade Mattermost </administration-guide/upgrade/prepare-to-upgrade-mattermost>
+    Communicate scheduled maintenance best practices </administration-guide/user-experience/communicate-scheduled-maintenance>
+    Upgrade Mattermost Server </administration-guide/upgrade/upgrading-mattermost-server>
+    Upgrade Mattermost in Kubernetes and High Availability environments </administration-guide/upgrade/upgrade-mattermost-kubernetes-ha>
+    Upgrade Team Edition to Enterprise Edition </administration-guide/upgrade/enterprise-install-upgrade>
     Administrator onboarding tasks </administration-guide/getting-started/admin-onboarding-tasks>
-    Enterprise roll-out-checklist </administration-guide/getting-started/enterprise-roll-out-checklist>
-    Welcome email to end users </administration-guide/operations-scaling/welcome-email-to-end-users>
-    Downgrade Mattermost Server </administration-guide/operations-scaling/downgrading-mattermost-server>
-    Open source components </administration-guide/operations-scaling/open-source-components>
+    Roll-out checklist </administration-guide/getting-started/roll-out-checklist>
+    Downgrade Mattermost Server </administration-guide/upgrade/downgrading-mattermost-server>
+    Open source components </administration-guide/upgrade/open-source-components>
 
 Stay up to date with the latest features and improvements.
 

@@ -19,7 +19,7 @@ Enterprise search
 
 We highly recommend a dedicated server for large enterprise deployments to run highly efficient database searches in a cluster environment. 
 
-For deployments with over 5 million posts, :doc:`Enterprise search </administration-guide/operations-scaling/enterprise-search>` using :ref:`Elasticsearch <administration-guide/operations-scaling/enterprise-search:elasticsearch>` or :ref:`AWS OpenSearch Service <administration-guide/operations-scaling/enterprise-search:aws opensearch service>` is required for optimized search performance, dedicated indexing and usage resourcing via cluster support without performance degradation and timeouts, resulting in faster, more predicable search results. 
+For deployments with over 5 million posts, :doc:`Enterprise search </administration-guide/platform-features/enterprise-search>` using :ref:`Elasticsearch <administration-guide/platform-features/enterprise-search:elasticsearch>` or :ref:`AWS OpenSearch Service <administration-guide/platform-features/enterprise-search:aws opensearch service>` is required for optimized search performance, dedicated indexing and usage resourcing via cluster support without performance degradation and timeouts, resulting in faster, more predicable search results. 
 
 High availability
 -----------------
@@ -40,7 +40,7 @@ Available reference architectures
     :titlesonly:
 
     Backing storage benchmarks </administration-guide/operations-scaling/backing-storage-benchmarks>
-    Enterprise search </administration-guide/operations-scaling/enterprise-search>
+    Enterprise search </administration-guide/platform-features/enterprise-search>
     High availability </administration-guide/operations-scaling/high-availability-cluster-based-deployment> 
     Redis </administration-guide/operations-scaling/redis>
     Scale up to 200 users </administration-guide/operations-scaling/scale-to-200-users>
@@ -96,7 +96,7 @@ Visit the `Mattermost Load Test Tool <https://github.com/mattermost/mattermost-l
 .. important::
 
     - The Mattermost Load Test Tool was designed by and is used by our performance engineers to compare and benchmark the performance of the service from month to month to prepare for new releases. It's also used extensively in developing our recommended hardware sizing. 
-    - We recommend deploying :doc:`Prometheus and Grafana </administration-guide/operations-scaling/deploy-prometheus-grafana-for-performance-monitoring>` with our :ref:`dashboards <administration-guide/operations-scaling/deploy-prometheus-grafana-for-performance-monitoring:getting started>` for ongoing monitoring and scale guidance.
-    - If you encounter performance concerns, we recommend :doc:`collecting performance metrics </administration-guide/operations-scaling/collect-performance-metrics>` and sharing them with us as a first troubleshooting step.
+    - We recommend deploying :doc:`Prometheus and Grafana </administration-guide/monitoring-observability/deploy-prometheus-grafana-for-performance-monitoring>` with our :ref:`dashboards <administration-guide/monitoring-observability/deploy-prometheus-grafana-for-performance-monitoring:getting started>` for ongoing monitoring and scale guidance.
+    - If you encounter performance concerns, we recommend :doc:`collecting performance metrics </administration-guide/monitoring-observability/collect-performance-metrics>` and sharing them with us as a first troubleshooting step.
 
 `Book a live demo <https://mattermost.com/request-demo/>`_  or `talk to a Mattermost expert <https://mattermost.com/contact-sales/>`_ to explore tailored solutions for your organization's secure collaboration needs. Or try Mattermost yourself with a `1-hour preview <https://mattermost.com/sign-up/>`_ for instant access to a live sandbox environment.

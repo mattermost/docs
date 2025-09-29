@@ -999,7 +999,7 @@ File Location
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Set the file location of the compliance exports. By default, they are written to the ``exports`` subdirectory of the configured :ref:`Local Storage directory <administration-guide/configuration-reference/environment-configuration-settings:local storage directory>`.
+Set the file location of the compliance exports. By default, they are written to the ``exports`` subdirectory of the configured :ref:`Local Storage directory <administration-guide/getting-started/environment-configuration-settings:local storage directory>`.
 
 +-------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileLocation": "export"`` with string input. |
@@ -1631,7 +1631,7 @@ The following values are currently supported:
 - ``unsafe-eval``: Adds the ``unsafe-eval`` CSP directive to the root webapp, allowing increased debugging in developer environments.
 - ``unsafe-inline``: Adds the ``unsafe-inline`` CSP directive to the root webapp, allowing increased debugging in developer environments.
 
-This configuration setting is disabled by default and requires :ref:`developer mode <administration-guide/configuration-reference/environment-configuration-settings:enable developer mode>` to be enabled.
+This configuration setting is disabled by default and requires :ref:`developer mode <administration-guide/getting-started/environment-configuration-settings:enable developer mode>` to be enabled.
 
 +----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DeveloperFlags": ""`` with string input.  |
@@ -1680,7 +1680,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 .. important::
 
-  This experimental configuration setting enables users to search documents attached to messages by filename. To enable users to search documents by their content, you must also enable the ``ExtractContent`` configuration setting. See our :ref:`Enable Document Search by Content <administration-guide/configuration-reference/environment-configuration-settings:enable document search by content>` documentation for details. Document content search is available in Mattermost Server from v5.35, with mobile support coming soon.
+  This experimental configuration setting enables users to search documents attached to messages by filename. To enable users to search documents by their content, you must also enable the ``ExtractContent`` configuration setting. See our :ref:`Enable Document Search by Content <administration-guide/getting-started/environment-configuration-settings:enable document search by content>` documentation for details. Document content search is available in Mattermost Server from v5.35, with mobile support coming soon.
 
 **True**: Supported document types are searchable by their filename.
 
@@ -1736,7 +1736,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 +------------------------------------------------------------------------------------------------+
 
 .. note::
-   This is a client only override that doesn't affect the listening port of the server process which is controlled by the :ref:`Web server listen address <administration-guide/configuration-reference/environment-configuration-settings:web server listen address>` setting.
+   This is a client only override that doesn't affect the listening port of the server process which is controlled by the :ref:`Web server listen address <administration-guide/getting-started/environment-configuration-settings:web server listen address>` setting.
 
 .. config:setting:: websocket-port
   :displayname: Websocket port (Experimental)
@@ -1757,7 +1757,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 +----------------------------------------------------------------------------------------+
 
 .. note::
-   This is a client only override that doesn't affect the listening port of the server process which is controlled by the :ref:`Web server listen address <administration-guide/configuration-reference/environment-configuration-settings:web server listen address>` setting.
+   This is a client only override that doesn't affect the listening port of the server process which is controlled by the :ref:`Web server listen address <administration-guide/getting-started/environment-configuration-settings:web server listen address>` setting.
 
 
 .. config:setting:: enable-local-mode-for-mmctl

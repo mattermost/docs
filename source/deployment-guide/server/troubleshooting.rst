@@ -45,7 +45,7 @@ The resulting server log file is called ``mattermost.log`` and can be opened wit
 
 If filesystem access is not possible, navigate to **System Console > Reporting > Server Logs** to locate the current system logs which can be copied to a file.
 
-You can find more on logging settings :ref:`here <administration-guide/configuration-reference/environment-configuration-settings:logging>`.
+You can find more on logging settings :ref:`here <administration-guide/getting-started/environment-configuration-settings:logging>`.
 
 Mattermost Desktop App logs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

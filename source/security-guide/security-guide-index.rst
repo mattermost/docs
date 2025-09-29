@@ -27,7 +27,7 @@ Data-at-Rest Encryption
 
 Encryption-at-rest ensures that messages, files, and other data stored in the Mattermost database and file storage are protected from unauthorized access by safeguarding data on physical storage media (e.g., disks) by encrypting it, making it inaccessible without the appropriate encryption keys. Learn more about Mattermost :ref:`data-at-rest encryption <deployment-guide/encryption-options:encryption-at-rest>`.
 
-Encryption-at-rest also available for files stored in Amazon's proprietary S3 system using server-side encryption with :ref:`Amazon S3-managed keys <administration-guide/configuration-reference/environment-configuration-settings:enable server-side encryption for amazon s3>` (Mattermost Enterprise) when users choose not to use open source options.
+Encryption-at-rest also available for files stored in Amazon's proprietary S3 system using server-side encryption with :ref:`Amazon S3-managed keys <administration-guide/getting-started/environment-configuration-settings:enable server-side encryption for amazon s3>` (Mattermost Enterprise) when users choose not to use open source options.
 
 We strongly recommend regularly rotating and securely storing encryption keys using tools, enabling logging and monitoring for access to encrypted data, and ensuring that backup data is encrypted.
 
@@ -57,12 +57,12 @@ System administrators can configure user password settings to help safeguard the
 Session Management
 ~~~~~~~~~~~~~~~~~~
 
-System administrators can configure session management settings, including session length, session cache, and idle timeout to ensure user sessions are managed effectively and securely. Session fixation attacks are mitigated as Mattermost sets a new session cookie with each login. Learn more about :ref:`session management configuration settings <administration-guide/configuration-reference/environment-configuration-settings:session lengths>`.
+System administrators can configure session management settings, including session length, session cache, and idle timeout to ensure user sessions are managed effectively and securely. Session fixation attacks are mitigated as Mattermost sets a new session cookie with each login. Learn more about :ref:`session management configuration settings <administration-guide/getting-started/environment-configuration-settings:session lengths>`.
 
 Protection Against Brute Force Attacks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-System administrators can :doc:`rate limit Mattermost APIs </administration-guide/configuration-reference/environment-configuration-settings>` based on query frequency, memory store size, remote address, and headers.
+System administrators can :doc:`rate limit Mattermost APIs </administration-guide/getting-started/environment-configuration-settings>` based on query frequency, memory store size, remote address, and headers.
 
 Remote Session Revocation & Password Reset
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -70,7 +70,7 @@ Remote Session Revocation & Password Reset
 System administrators can remotely :doc:`revoke user sessions </end-user-guide/preferences/manage-your-security-preferences>` across web, mobile devices, and desktop apps.
 User passwords can be remotely :ref:`reset <administration-guide/configuration-reference/user-management-configuration-settings:reset user's password>` to enhance security.
 
-Admins can also enforce re-login after a specified period of time by defining :ref:`session lengths <administration-guide/configuration-reference/environment-configuration-settings:session lengths>` and by :ref:`revoking user sessions <administration-guide/configuration-reference/user-management-configuration-settings:revoke a user's session>` to force users to log back into the system immediately.
+Admins can also enforce re-login after a specified period of time by defining :ref:`session lengths <administration-guide/getting-started/environment-configuration-settings:session lengths>` and by :ref:`revoking user sessions <administration-guide/configuration-reference/user-management-configuration-settings:revoke a user's session>` to force users to log back into the system immediately.
 
 Role-Based Access Control (ABAC)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -205,7 +205,7 @@ When using username-password authentication, especially with AD/LDAP, there's th
 
 We believe this design increases productivity, speeds up user adoption, and reduces help desk tickets and support costs - and that these benefits outweigh the trade-offs.
 
-The trade-off with this design is that if physical security is not in effect, network security is not in effect (i.e., no VPN or a malicious user within the private network), and username-password authentication is used, an attacker may be able to enumerate email addresses or usernames by sending HTTP requests to the system, up to the maximum number of requests per second defined in Mattermost's :doc:`API rate limiting settings </administration-guide/configuration-reference/environment-configuration-settings>`.
+The trade-off with this design is that if physical security is not in effect, network security is not in effect (i.e., no VPN or a malicious user within the private network), and username-password authentication is used, an attacker may be able to enumerate email addresses or usernames by sending HTTP requests to the system, up to the maximum number of requests per second defined in Mattermost's :doc:`API rate limiting settings </administration-guide/getting-started/environment-configuration-settings>`.
 
 For organizations who choose to deploy in such a configuration, please consider the following mitigations:
 

@@ -16,7 +16,7 @@ Benefits to using this option:
 
    The Mattermost configuration database and Mattermost application database are 2 different entities. It's possible to store Mattermost configuration in one database and Mattermost data in another database. 
 
-   To do so, you must update the :ref:`Datasource <administration-guide/configuration-reference/environment-configuration-settings:data source>` configuration setting to a new data source name, which can be done while the application is running. Explicitly setting the ``MM_SQLSETTINGS_DATASOURCE`` environment variable to override what has been defined in the configuration, whether it's in a database, or in a file, allows the correct data source name to be passed to the Mattermost application.
+   To do so, you must update the :ref:`Datasource <administration-guide/getting-started/environment-configuration-settings:data source>` configuration setting to a new data source name, which can be done while the application is running. Explicitly setting the ``MM_SQLSETTINGS_DATASOURCE`` environment variable to override what has been defined in the configuration, whether it's in a database, or in a file, allows the correct data source name to be passed to the Mattermost application.
 
 How to migrate configuration to the database
 --------------------------------------------

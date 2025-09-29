@@ -979,10 +979,10 @@ Enable email batching
 .. note::
 
   - Cloud admins can't modify this configuration setting.
-  - The :ref:`Site Url <administration-guide/configuration-reference/environment-configuration-settings:site url>` and :ref:`SMTP Email Server <administration-guide/configuration-reference/environment-configuration-settings:smtp server>` must be configured to allow email batching.
+  - The :ref:`Site Url <administration-guide/getting-started/environment-configuration-settings:site url>` and :ref:`SMTP Email Server <administration-guide/getting-started/environment-configuration-settings:smtp server>` must be configured to allow email batching.
   - Regardless of how this setting is configured, users can :ref:`disable email-based notifications altogether <end-user-guide/preferences/manage-your-notifications:email notifications>`.
   - When email batching is enabled, users can :ref:`customize how often to receive batched notifications <end-user-guide/preferences/manage-your-notifications:email notifications>`. The default frequency is 15 minutes.
-  - Email batching in :ref:`High Availability Mode <administration-guide/configuration-reference/environment-configuration-settings:enable high availability mode>` is planned, but not yet supported.
+  - Email batching in :ref:`High Availability Mode <administration-guide/getting-started/environment-configuration-settings:enable high availability mode>` is planned, but not yet supported.
 
 .. config:setting:: email-notification-contents
   :displayname: Email notification contents (Notifications)
@@ -1927,7 +1927,7 @@ Access the following configuration settings in the System Console by going to **
   :configjson: .AnnouncementSettings.AdminNoticesEnabled
   :environment: MM_ANNOUNCEMENTSETTINGS_ADMINNOTICESENABLED
 
-  - **true**: **(Default)** System admins will receive :doc:`in-product notices </administration-guide/user-experience/in-product-notices>` about server upgrades and administration features.
+  - **true**: **(Default)** System admins will receive `in-product notices <https://docs.mattermost.com/administration-guide/admin-tools/in-product-notices.html>`__ about server upgrades and administration features.
   - **false**: System admins will not receive specific notices. Admins will still receive notices for all users (see **Enable end user notices**).
 
 Enable admin notices
@@ -1945,7 +1945,7 @@ Enable admin notices
   :configjson: .AnnouncementSettings.UserNoticesEnabled
   :environment: MM_ANNOUNCEMENTSETTINGS_USERNOTICESENABLED
 
-  - **true**: **(Default)** All users receive :doc:`in-product notices </administration-guide/user-experience/in-product-notices>` about client upgrades and end user features.
+  - **true**: **(Default)** All users receive `in-product notices <https://docs.mattermost.com/administration-guide/admin-tools/in-product-notices.html>`__ about client upgrades and end user features.
   - **false**: Users will not receive in-product notices.
 
 Enable end user notices

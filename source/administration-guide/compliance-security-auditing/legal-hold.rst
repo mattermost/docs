@@ -59,7 +59,7 @@ Configure the plugin
 
 When the Legal Hold integration is enabled, you can configure when it runs using the format ``HH:MM ±HHMM`` and ``+0000`` for UTC. 
 
-You can configure a custom Amazon S3 bucket for Legal Holds by specifying Amazon S3 configuration settings. If no S3 configuration is specified, the  Mattermost server file store used. Learn more about file storage configuration options in our :ref:`product documentation <administration-guide/configuration-reference/environment-configuration-settings:file storage>`.
+You can configure a custom Amazon S3 bucket for Legal Holds by specifying Amazon S3 configuration settings. If no S3 configuration is specified, the  Mattermost server file store used. Learn more about file storage configuration options in our :ref:`product documentation <administration-guide/getting-started/environment-configuration-settings:file storage>`.
 
 (Optional) Configure a data retention policy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

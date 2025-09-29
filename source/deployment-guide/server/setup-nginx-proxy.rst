@@ -225,7 +225,7 @@ You can use any certificate that you want, but these instructions show you how t
 
 .. note::
 
-  If Let’s Encrypt is enabled, forward port 80 through a firewall, with :ref:`Forward80To443 <administration-guide/configuration-reference/environment-configuration-settings:forward port 80 to 443>` ``config.json`` setting set to ``true`` to complete the Let’s Encrypt certification. See the `Let's Encrypt/Certbot documentation <https://certbot.eff.org>`_ for additional assistance.
+  If Let’s Encrypt is enabled, forward port 80 through a firewall, with :ref:`Forward80To443 <administration-guide/getting-started/environment-configuration-settings:forward port 80 to 443>` ``config.json`` setting set to ``true`` to complete the Let’s Encrypt certification. See the `Let's Encrypt/Certbot documentation <https://certbot.eff.org>`_ for additional assistance.
 
 1. Log in to the server that hosts NGINX and open a terminal window.
 

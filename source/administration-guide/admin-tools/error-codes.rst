@@ -1,7 +1,7 @@
 Mattermost error codes
 ======================
 
-.. include:: ../../../_static/badges/allplans-selfhosted.rst
+.. include:: ../../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
 Mattermost is designed to deploy in private networks which may be disconnected or “air-gapped” from the internet. In these deployments, links to Mattermost’s online documentation may be unavailable. 

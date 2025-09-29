@@ -1,15 +1,15 @@
 AD/LDAP setup
 =============
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../../../../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 .. toctree::
     :maxdepth: 1
     :titlesonly:
 
-    /identity-access/authentication-methods/active-directory/ad-ldap-groups-synchronization
-    /identity-access/authentication-methods/active-directory/managing-team-channel-membership-using-ad-ldap-sync-groups
+    /administration-guide/identity-access/authentication-methods/active-directory/ad-ldap-groups-synchronization
+    /administration-guide/identity-access/authentication-methods/active-directory/managing-team-channel-membership-using-ad-ldap-sync-groups
 
 Overview
 --------

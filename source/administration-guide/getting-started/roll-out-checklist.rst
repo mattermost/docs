@@ -159,7 +159,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 
  - Set up Elasticsearch (highly recommended if your organization anticipates over two million posts)
 
-  - Resource: https://docs.mattermost.com/administration-guide/operations-scaling/elasticsearch-setup.html
+  - Resource: https://docs.mattermost.com/administration-guide/platform-features/elasticsearch-setup.html
 
 - Document network configuration
 
@@ -230,7 +230,7 @@ Now that you have an environment in place, we recommend working through the foll
 
 - (Optional) Migrate messages and channels from legacy systems
 
- - Resource: :doc:`Migrating to Mattermost </administration-guide/getting-started/migrating-to-mattermost>`
+ - Resource: https://docs.mattermost.com/administration-guide/getting-started/migrating-to-mattermost.html
 
 2. Enable key integrations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -295,7 +295,7 @@ Now that you have an environment in place, we recommend working through the foll
 
 - (Optional) Bulk Load users
 
- - Resource: :doc:`Bulk loading data </administration-guide/getting-started/bulk-loading-data>` 
+ - Resource: https://docs.mattermost.com/administration-guide/getting-started/bulk-loading-data.html 
 
 - Onboard users to teams and channels
 
@@ -326,8 +326,8 @@ Now that you have an environment in place, we recommend working through the foll
 
 - Understand management tools available to support users
 
- - mmctl Command Line Tool Resource: :doc:`mmctl </administration-guide/admin-tools/mmctl-command-line-tool>`
- - Command Line Tools Resource: :doc:`CLI </administration-guide/admin-tools/command-line-tools>`
+ - mmctl Command Line Tool Resource: https://docs.mattermost.com/administration-guide/admin-tools/mmctl-command-line-tool.html
+ - Command Line Tools Resource: https://docs.mattermost.com/administration-guide/admin-tools/command-line-tools.html
 
 Review the roll out 
 ~~~~~~~~~~~~~~~~~~~
@@ -352,7 +352,7 @@ We recommend that you review your rollout on a cadence that matches your iterati
 
 - Monitor site and team statistics
 
- - Resource: :doc:`Statistics </administration-guide/monitoring-observability/statistics>` 
+ - Resource: https://docs.mattermost.com/administration-guide/admin-tools/statistics.html 
  - Review: Total posts, total teams, total channels, total group chats, total direct chats, top channels, top teams
 
 - Analyze usage by lines of business and peak usage times

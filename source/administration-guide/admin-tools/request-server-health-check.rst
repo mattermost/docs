@@ -10,7 +10,7 @@ This evaluation provides you with insights based on your system’s configuratio
 
 .. tip::
 
-  Want to configure your own server health check probes for your self-hosted Mattermost deployment? See the :doc:`configure server health check probes </administration-guide/admin-tools/configure-health-check-probes>` documentation for details.
+  Want to configure your own server health check probes for your self-hosted Mattermost deployment? See the :doc:`configure server health check probes </administration-guide/manage/configure-health-check-probes>` documentation for details.
 
 Why request a Mattermost Health Check?
 --------------------------------------

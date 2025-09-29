@@ -39,7 +39,7 @@ To ensure your instance and configuration are compatible with a high availabilit
   Back up your Mattermost database and file storage locations before configuring high availability. For more information about backing up, see :doc:`/deployment-guide/backup-disaster-recovery`.
 
 1. Set up a new Mattermost server by following one of our **Install Guides**. This server must use an identical copy of the configuration file, ``config.json``. Verify the servers are functioning by hitting each independent server through its private IP address.
-2. Modify the ``config.json`` files on both servers to add ``ClusterSettings``. See the :ref:`high availability cluster-based deployment configuration settings <administration-guide/configuration-reference/environment-configuration-settings:high availability>` documentation for details.
+2. Modify the ``config.json`` files on both servers to add ``ClusterSettings``. See the :ref:`high availability cluster-based deployment configuration settings <administration-guide/getting-started/environment-configuration-settings:high availability>` documentation for details.
 3. Verify the configuration files are identical on both servers then restart each machine in the cluster.
 4. Modify your NGINX setup so that it proxies to both servers. For more information about this, see `proxy server configuration`_.
 5. Open **System Console > Environment > High Availability** to verify that each machine in the cluster is communicating as expected with green status indicators. If not, investigate the log files for any extra information.
@@ -83,7 +83,7 @@ Configuration settings
             "GossipPort": 8074
     }
 
-  For more details on these settings, see the :ref:`high availability configuration settings <administration-guide/configuration-reference/environment-configuration-settings:high availability>` documentation.
+  For more details on these settings, see the :ref:`high availability configuration settings <administration-guide/getting-started/environment-configuration-settings:high availability>` documentation.
 
 2. Change the process limit to 8192 and the maximum number of open files to 65536.
 
@@ -149,7 +149,7 @@ You can do the same for the proxy server.
 Cluster discovery
 ^^^^^^^^^^^^^^^^^
 
-If you have non-standard (i.e. complex) network configurations, then you may need to use the :ref:`Override Hostname <administration-guide/configuration-reference/environment-configuration-settings:override hostname>` setting to help the cluster nodes discover each other. The cluster settings in the config are removed from the config file hash for this reason, meaning you can have ``config.json`` files that are slightly different in high availability mode. The Override Hostname is intended to be different for each clustered node in ``config.json`` if you need to force discovery.
+If you have non-standard (i.e. complex) network configurations, then you may need to use the :ref:`Override Hostname <administration-guide/getting-started/environment-configuration-settings:override hostname>` setting to help the cluster nodes discover each other. The cluster settings in the config are removed from the config file hash for this reason, meaning you can have ``config.json`` files that are slightly different in high availability mode. The Override Hostname is intended to be different for each clustered node in ``config.json`` if you need to force discovery.
 
 If ``UseIpAddress`` is set to ``true``, it attempts to obtain the IP address by searching for the first non-local IP address (non-loop-back, non-localunicast, non-localmulticast network interface). It enumerates the network interfaces using the built-in go function `net.InterfaceAddrs() <https://pkg.go.dev/net#InterfaceAddrs>`_. Otherwise it tries to get the hostname using the `os.Hostname() <https://pkg.go.dev/os#Hostname>`_ built-in go function.
 
@@ -270,15 +270,15 @@ Database configuration
 
   Specifying configuration setting values using Mattermost environment variables ensure that they always take precedent over any other configuration settings.
 
-For an AWS High Availability RDS cluster deployment, point the :ref:`datasource <administration-guide/configuration-reference/environment-configuration-settings:data source>` configuration setting to the write/read endpoint at the **cluster** level to benefit from the AWS failover handling. AWS takes care of promoting different database nodes to be the writer node. Mattermost doesn't need to manage this. 
+For an AWS High Availability RDS cluster deployment, point the :ref:`datasource <administration-guide/getting-started/environment-configuration-settings:data source>` configuration setting to the write/read endpoint at the **cluster** level to benefit from the AWS failover handling. AWS takes care of promoting different database nodes to be the writer node. Mattermost doesn't need to manage this. 
 
-Use the :ref:`read replica <administration-guide/configuration-reference/environment-configuration-settings:read replicas>` feature to scale the database. The Mattermost server can be set up to use one master database and one or more read replica databases. 
+Use the :ref:`read replica <administration-guide/getting-started/environment-configuration-settings:read replicas>` feature to scale the database. The Mattermost server can be set up to use one master database and one or more read replica databases. 
 
 .. note::
   
   For an AWS High Availability RDS cluster deployment, don't hard-code the IP addresses. Point this configuration setting to the write/read endpoint at the **cluster** level. This will benefit from the AWS failover handling where AWS takes care of promoting different database nodes to be the writer node. Mattermost doesn't need to manage this. 
 
-On large deployments, also consider using the :ref:`search replicas <administration-guide/configuration-reference/environment-configuration-settings:search replicas>` feature to isolate search queries onto one or more search replicas. A search replica is similar to a read replica, but is used only for handling search queries.
+On large deployments, also consider using the :ref:`search replicas <administration-guide/getting-started/environment-configuration-settings:search replicas>` feature to isolate search queries onto one or more search replicas. A search replica is similar to a read replica, but is used only for handling search queries.
 
 .. note::
 

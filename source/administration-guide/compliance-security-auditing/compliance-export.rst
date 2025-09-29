@@ -27,8 +27,8 @@ Use the following guides to configure exports for `CSV <#csv>`__, `Actiance XML 
 
 .. note::
 
-   - For self-hosted deployments, compliance exports are written to the ``exports`` subdirectory of the configured filestore in the chosen format. This will either be in the :ref:`Local Storage directory <administration-guide/configuration-reference/environment-configuration-settings:file storage>` or the Mattermost S3 bucket if S3 storage is configured.
-   - Alternatively, you can specify an alternate filestore target and generate an S3 presigned URL for compliance exports. See the :ref:`dedicated export filestore target <administration-guide/configuration-reference/environment-configuration-settings:enable dedicated export filestore target>` configuration settings documentation for details.
+   - For self-hosted deployments, compliance exports are written to the ``exports`` subdirectory of the configured filestore in the chosen format. This will either be in the :ref:`Local Storage directory <administration-guide/getting-started/environment-configuration-settings:file storage>` or the Mattermost S3 bucket if S3 storage is configured.
+   - Alternatively, you can specify an alternate filestore target and generate an S3 presigned URL for compliance exports. See the :ref:`dedicated export filestore target <administration-guide/getting-started/environment-configuration-settings:enable dedicated export filestore target>` configuration settings documentation for details.
    - Compliance exports don't contain posts sent before the feature was enabled. For self-hosted deployments, you can export past history via the ``export`` :doc:`command line tool <../manage/command-line-tools>`. 
 
 CSV
@@ -201,7 +201,7 @@ If the compliance export job is run automatically, manually via the System Conso
 
 If the ``--exportFrom`` option is specified with the CLI command, all posts that have been made since the supplied timestamp will be exported.
 
-When run manually via the System Console, ``.csv`` and Actiance XML files are written to the ``exports`` subdirectory of the configured :ref:`Local Storage Directory <administration-guide/configuration-reference/environment-configuration-settings:local storage directory>`.  Files will be written to a folder with names based on an epoch time range. Global Relay EML export format files will be mailed to the configured email address when run manually.
+When run manually via the System Console, ``.csv`` and Actiance XML files are written to the ``exports`` subdirectory of the configured :ref:`Local Storage Directory <administration-guide/getting-started/environment-configuration-settings:local storage directory>`.  Files will be written to a folder with names based on an epoch time range. Global Relay EML export format files will be mailed to the configured email address when run manually.
 
 Is there a maximum row limit for CSV files?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

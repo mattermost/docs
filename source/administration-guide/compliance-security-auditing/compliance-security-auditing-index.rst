@@ -14,7 +14,6 @@ Meet organizational and regulatory requirements with policies, retention, legal 
     export-mattermost-channel-data
     compliance-export
     compliance-monitoring
-    embedded-json-audit-log-schema
     custom-terms-of-service
 
 Align with compliance requirements, enforce retention and holds, and ensure complete auditability.

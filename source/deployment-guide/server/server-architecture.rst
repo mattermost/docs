@@ -19,7 +19,7 @@ Mattermost is designed to be able to handle a large number of concurrent users, 
 - Each generalized diagram represents a full High Availability deployment across all critical components. The proxy, database, file storage, and Elasticsearch layers can be replaced by cloud services. 
 - Each AWS diagram represents a full High Availability deployment on Amazon Web Services making full use of the available services.
 - Each Azure diagram represents a full High Availability deployment on Microsoft Azure making full use of the available services.
-- Push proxy can be replaced by the Mattermost :ref:`hosted push notification service <administration-guide/configuration-reference/environment-configuration-settings:hosted push notifications service (hpns)>`.
+- Push proxy can be replaced by the Mattermost :ref:`hosted push notification service <administration-guide/getting-started/environment-configuration-settings:hosted push notifications service (hpns)>`.
 
 .. tab:: AWS
 

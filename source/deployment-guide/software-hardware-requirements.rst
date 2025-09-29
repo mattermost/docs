@@ -188,7 +188,7 @@ Hardware requirements
 
 Usage of CPU, RAM, and storage space can vary significantly based on user behavior. These hardware recommendations are based on traditional deployments and may grow or shrink depending on how active your users are.
 
-Moreover, memory requirements can be driven by peak file sharing activity. Recommendation is based on default 50 MB maximum file size, which can be :ref:`adjusted from the System Console <administration-guide/configuration-reference/environment-configuration-settings:maximum file size>`. Changing this number may change memory requirements.
+Moreover, memory requirements can be driven by peak file sharing activity. Recommendation is based on default 50 MB maximum file size, which can be :ref:`adjusted from the System Console <administration-guide/getting-started/environment-configuration-settings:maximum file size>`. Changing this number may change memory requirements.
 
 For deployments larger than 2,000 users, it is recommended to use the Mattermost open source load testing framework to simulate usage of your system at full scale: `https://github.com/mattermost/mattermost-load-test-ng <https://github.com/mattermost/mattermost-load-test-ng>`__.
 
@@ -224,4 +224,4 @@ For Enterprise Edition deployments with a multi-server setup, we highly recommen
 - Prometheus to track system health of your Mattermost deployment, through :doc:`performance monitoring feature </administration-guide/operations-scaling/deploy-prometheus-grafana-for-performance-monitoring>` available in Mattermost Enterprise.
 - Grafana to visualize the system health metrics collected by Prometheus with the :doc:`performance monitoring feature </administration-guide/operations-scaling/deploy-prometheus-grafana-for-performance-monitoring>`. Grafana 5.0.0 and later is recommended.
 - Elasticsearch to support highly efficient database searches in a cluster environment. Elasticsearch v7.17+ is supported, and Elasticsearch v8.x or AWS OpenSearch is recommended from Mattermost v9.11. :doc:`Learn more </administration-guide/operations-scaling/enterprise-search>`.
-- MinIO or AWS S3. Mattermost is compatible with object storage systems which implement the S3 API. Other S3-compatible systems may work, but are not officially supported. Learn more about file storage configuration options :ref:`in our documentation <administration-guide/configuration-reference/environment-configuration-settings:file storage>`.
+- MinIO or AWS S3. Mattermost is compatible with object storage systems which implement the S3 API. Other S3-compatible systems may work, but are not officially supported. Learn more about file storage configuration options :ref:`in our documentation <administration-guide/getting-started/environment-configuration-settings:file storage>`.

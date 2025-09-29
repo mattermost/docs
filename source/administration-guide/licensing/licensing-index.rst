@@ -8,13 +8,13 @@ Manage editions, licenses, billing, and workspace-wide policies for Cloud and se
     :titlesonly:
 
     self-hosted-billing
-    /administration-guide/admin-tools/installing-license-key
+    /administration-guide/platform-features/installing-license-key
     cloud-workspace-management
-    /administration-guide/configuration-reference/self-hosted-account-settings
-    /administration-guide/configuration-reference/cloud-billing-account-settings
-    /administration-guide/admin-tools/cloud-byok
-    /administration-guide/admin-tools/cloud-data-residency
-    /administration-guide/admin-tools/cloud-ip-filtering
+    /administration-guide/licensing/self-hosted-account-settings
+    /administration-guide/licensing/cloud-billing-account-settings
+    /administration-guide/licensing/cloud-byok
+    /administration-guide/licensing/cloud-data-residency
+    /administration-guide/licensing/cloud-ip-filtering
 
 
 Govern your workspace, control data residency and billing, and enable licensed features.

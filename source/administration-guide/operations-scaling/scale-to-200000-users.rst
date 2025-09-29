@@ -11,7 +11,7 @@ This page describes the Mattermost reference architecture designed for the load 
 
 .. note::
   - Usage of CPU, RAM, and storage space can vary significantly based on user behavior. These hardware recommendations are based on traditional deployments and may grow or shrink depending on how active your users are.
-  - From Mattermost v10.4, Mattermost Enterprise customers can configure `Redis <https://redis.io/>`_ (Remote Dictionary Server) as an alternative cache backend. Using Redis can help ensure that Mattermost remains performant and efficient, even under heavy usage. See the :ref:`Redis cache backend <administration-guide/configuration-reference/environment-configuration-settings:redis cache backend>` configuration settings documentation for details.
+  - From Mattermost v10.4, Mattermost Enterprise customers can configure `Redis <https://redis.io/>`_ (Remote Dictionary Server) as an alternative cache backend. Using Redis can help ensure that Mattermost remains performant and efficient, even under heavy usage. See the :ref:`Redis cache backend <administration-guide/getting-started/environment-configuration-settings:redis cache backend>` configuration settings documentation for details.
   - While the following Elasticsearch specifications may be more than sufficient for some use cases, we have not extensively tested configurations with lower resource allocations for this user scale. If cost optimization is a priority, admins may choose to experiment with smaller configurations, but we recommend starting with the tested specifications to ensure system stability and performance. Keep in mind that under-provisioning can lead to degraded user experience and additional troubleshooting effort.
 
 User login scalability

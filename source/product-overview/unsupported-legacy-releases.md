@@ -14233,7 +14233,7 @@ Release date: 2016-04-16
 
 #### TPNS and EAS options
 
-- [Enterprise App Store](https://docs.mattermost.com/administration-guide/configuration-reference/environment-configuration-settings.html#push-notification-server-location) (EAS) and [Test Push Notification Service](https://docs.mattermost.com/administration-guide/configuration-reference/environment-configuration-settings.html#test-push-notifications-service-tpns) (TPNS) option are now included in **System Console** > **Email Settings** > **Push Notification Settings** as built-in options.
+- [Enterprise App Store](https://docs.mattermost.com/administration-guide/getting-started/environment-configuration-settings.html#push-notification-server-location) (EAS) and [Test Push Notification Service](https://docs.mattermost.com/administration-guide/getting-started/environment-configuration-settings.html#test-push-notifications-service-tpns) (TPNS) option are now included in **System Console** > **Email Settings** > **Push Notification Settings** as built-in options.
 
 ### Languages
 

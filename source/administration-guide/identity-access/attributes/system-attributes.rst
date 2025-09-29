@@ -1,7 +1,7 @@
 System Attributes
 =================
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 System attributes configuration settings provide system admins with centralized control over key user account properties.

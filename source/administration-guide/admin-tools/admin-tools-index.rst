@@ -10,15 +10,13 @@ Use administrative tools and utilities to automate tasks, export data, and troub
     mmctl-command-line-tool
     command-line-tools
     generating-support-packet
-    bulk-export-tool
-    system-wide-notifications
-    in-product-notices
+    ../user-experience/system-wide-notifications
+    ../user-experience/in-product-notices
     feature-labels
-    logging
-    statistics
+    ../monitoring-observability/monitoring-and-performance
+    ../monitoring-observability/statistics
     request-server-health-check
     telemetry
-    team-channel-members
 
 Streamline administration with automation tools, simplify troubleshooting, and maintain operational hygiene.
 

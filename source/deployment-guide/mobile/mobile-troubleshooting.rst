@@ -75,7 +75,7 @@ For example:
       [...]
     }
 
-See our :ref:`Configuration Settings <administration-guide/configuration-reference/environment-configuration-settings:data source>` documentation for details on configuring the connection string to the master database.
+See our :ref:`Configuration Settings <administration-guide/getting-started/environment-configuration-settings:data source>` documentation for details on configuring the connection string to the master database.
 
 Testing mobile push notifications
 ----------------------------------

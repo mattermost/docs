@@ -70,7 +70,7 @@ Connections to calls are secured with a combination of:
 Cloud native exports
 ~~~~~~~~~~~~~~~~~~~~
 
-Mattermost supports optional :ref:`filestore configuration settings <administration-guide/configuration-reference/environment-configuration-settings:enable dedicated export filestore target>` to direct compliance and bulk export data to a separate S3 bucket from standard files. This separate bucket can be configured to allow for secure access by Mattermost Cloud teams as well as admins who manage a given Mattermost deployment. The exports can also be accessed by generating unique download links as needed.
+Mattermost supports optional :ref:`filestore configuration settings <administration-guide/getting-started/environment-configuration-settings:enable dedicated export filestore target>` to direct compliance and bulk export data to a separate S3 bucket from standard files. This separate bucket can be configured to allow for secure access by Mattermost Cloud teams as well as admins who manage a given Mattermost deployment. The exports can also be accessed by generating unique download links as needed.
 
 The following diagram provides a high-level view of how this functionality works:
 

@@ -177,7 +177,7 @@ Enable integrations to override usernames
   :configjson: .ServiceSettings.EnablePostIconOverride
   :environment: MM_SERVICESETTINGS_ENABLEPOSTICONOVERRIDE
 
-  - **true**: Webhooks, slash commands, and other integrations, such as :doc:`Zapier </integrations-guide/zapier>`, will be allowed to change the profile picture they post with.
+  - **true**: Webhooks, slash commands, and other integrations, such as Zapier, will be allowed to change the profile picture they post with.
   - **false**: **(Default)** Webhooks, slash commands, and OAuth 2.0 apps can only post with the profile picture of the account they were set up with.
 
 Enable integrations to override profile picture icons
@@ -294,7 +294,8 @@ Enable GIF picker
 +------------------------------------------------------------------------------------------------------------+
 
 .. important::
-   :ref:`Link previews <administration-guide/configuration-reference/site-configuration-settings:enable message link previews>` must be enabled in order to display GIF link previews. Mattermost deployments restricted to access behind a firewall must open port 443 (for all request types) for this feature to work.
+
+  :ref:`Link previews <administration-guide/getting-started/site-configuration-settings:enable message link previews>` must be enabled in order to display GIF link previews. Mattermost deployments restricted to access behind a firewall must open port 443 (for all request types) for this feature to work.
 
 ----
 
@@ -325,7 +326,7 @@ Enable HTTP cross-origin requests from specific domains.
 
 .. note::
 
-  Ensure you've entered your :ref:`Site URL <administration-guide/configuration-reference/environment-configuration-settings:site url>` before enabling this setting to prevent losing access to the System Console after saving. If you lose access to the System Console after changing this setting, you can set your Site URL through the ``config.json`` file.
+  Ensure you've entered your :ref:`Site URL <administration-guide/getting-started/environment-configuration-settings:site url>` before enabling this setting to prevent losing access to the System Console after saving. If you lose access to the System Console after changing this setting, you can set your Site URL through the ``config.json`` file.
 
 +--------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AllowCorsFrom": ""`` with string input. |

@@ -1,7 +1,7 @@
 Configure SAML with Keycloak
 ============================
 
-.. include:: ../../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../../../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 The following process provides steps to configure SAML with Keycloak for Mattermost.
@@ -88,7 +88,7 @@ Set up a connection app for Mattermost SSO
 
     Once done your Mappers should look like this:
 .. image:: /images/keycloak_4_create_username_attribute_finished.png
-            :alt: Example of protocol mapper configuration. 
+        :alt: Example of protocol mapper configuration.
 
 
 9. Get the metadata URL from Keycloak:

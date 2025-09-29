@@ -402,7 +402,7 @@ redirects_map = {
 "administration-guide/scale/redis.html":
         "https://docs.mattermost.com/administration-guide/operations-scaling/redis.html",
 "administration-guide/scale/elasticsearch-setup.html":
-        "https://docs.mattermost.com/administration-guide/operations-scaling/elasticsearch-setup.html",
+        "https://docs.mattermost.com/administration-guide/platform-features/elasticsearch-setup.html",
 "administration-guide/scale/opensearch-setup.html":
         "https://docs.mattermost.com/administration-guide/operations-scaling/opensearch-setup.html",
 "administration-guide/scale/ensuring-releases-perform-at-scale.html":

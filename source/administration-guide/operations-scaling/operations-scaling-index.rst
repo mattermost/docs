@@ -7,19 +7,19 @@ Operate Mattermost reliably and scale capacity as your organization grows. Use t
     :maxdepth: 1
     :titlesonly:
 
-    prepare-to-upgrade-mattermost
-    important-upgrade-notes
-    upgrading-mattermost-server
-    upgrade-mattermost-kubernetes-ha
-    downgrading-mattermost-server
+    /administration-guide/upgrade/prepare-to-upgrade-mattermost
+    /administration-guide/upgrade/important-upgrade-notes
+    /administration-guide/upgrade/upgrading-mattermost-server
+    /administration-guide/upgrade/upgrade-mattermost-kubernetes-ha
+    /administration-guide/upgrade/downgrading-mattermost-server
     high-availability-cluster-based-deployment
     scaling-for-enterprise
     redis
-    elasticsearch-setup
-    opensearch-setup
+    /administration-guide/platform-features/elasticsearch-setup
+    /administration-guide/platform-features/opensearch-setup
     ensuring-releases-perform-at-scale
-    collect-performance-metrics
-    /administration-guide/admin-tools/product-limits
+    /administration-guide/monitoring-observability/collect-performance-metrics
+    /administration-guide/operations-scaling/product-limits
 
 Keep your deployment reliable and performant, scale as needed, and upgrade safely with minimal downtime.
 

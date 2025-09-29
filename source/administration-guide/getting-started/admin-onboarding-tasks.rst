@@ -105,11 +105,11 @@ To enable integrations such as webhooks, slash commands, OAuth2.0, and bots, to 
 
 **3. Enable automatically extended sessions**
 
-Keep your desktop and mobile users logged in and `extend user sessions automatically <https://mattermost.com/blog/session-expiry-experience/>`__ by setting **System Console > Sessions > Extend session length with activity** to **true**. See the :ref:`Extend session length with activity <administration-guide/configuration-reference/environment-configuration-settings:extend session length with activity>` configuration settings documentation for details.
+Keep your desktop and mobile users logged in and `extend user sessions automatically <https://mattermost.com/blog/session-expiry-experience/>`__ by setting **System Console > Sessions > Extend session length with activity** to **true**. See the :ref:`Extend session length with activity <administration-guide/getting-started/environment-configuration-settings:extend session length with activity>` configuration settings documentation for details.
 
 **4. Enable full content push notifications**
 
-Enable push notifications on mobile devices to deliver messages in real time by setting **System Console > Push Notification Server > Enable Push Notifications** to **Use TPNS**. See the :ref:`Push notification server <administration-guide/configuration-reference/environment-configuration-settings:push notification server>` configuration settings documentation for details.
+Enable push notifications on mobile devices to deliver messages in real time by setting **System Console > Push Notification Server > Enable Push Notifications** to **Use TPNS**. See the :ref:`Push notification server <administration-guide/getting-started/environment-configuration-settings:push notification server>` configuration settings documentation for details.
 
 Enable full content push notifications, including the sender’s name, the channel name, and the message text, by setting **System Console > Notifications > Push Notification Contents** to **Full message contents**. See the :ref:`Push notification contents <administration-guide/configuration-reference/site-configuration-settings:push notification contents>` configuration settings documentation for details.
 
@@ -137,7 +137,7 @@ Link previews provide a visual glimpse of relevant content for links shared in m
 
 Email notifications can be batched together so users don’t get overwhelmed with too many emails.
 
-Enable email notifications first by setting **System Console > Notifications > Enable Email Notifications** to **true**. See the :ref:`Enable email notifications <administration-guide/configuration-reference/site-configuration-settings:enable email notifications>` configuration settings documentation for details. Note that email notifications require an :ref:`SMTP email server <administration-guide/configuration-reference/environment-configuration-settings:smtp server>` to be configured.
+Enable email notifications first by setting **System Console > Notifications > Enable Email Notifications** to **true**. See the :ref:`Enable email notifications <administration-guide/configuration-reference/site-configuration-settings:enable email notifications>` configuration settings documentation for details. Note that email notifications require an :ref:`SMTP email server <administration-guide/getting-started/environment-configuration-settings:smtp server>` to be configured.
 
 Then, enable batched email notifications by setting **System Console > Notifications > Enable Email Batching** to **true**. See the :ref:`Enable email batching <administration-guide/configuration-reference/site-configuration-settings:enable email batching>` configuration settings documentation for details. Note that email batching is not available if you are running your deployment in :doc:`High Availability </administration-guide/operations-scaling/high-availability-cluster-based-deployment>`.
 
@@ -145,4 +145,4 @@ Then, enable batched email notifications by setting **System Console > Notificat
 
 Mattermost Enterprise customers can enable :doc:`enterprise search </administration-guide/operations-scaling/enterprise-search>` for optimized search performance at enterprise-scale. Both Elasticsearch and AWS OpenSearch solve many known issues with full text database search, such as dots, dashes, and email addresses returning unexpected results.
 
-Enable Elasticsearch by setting **System Console > Elasticsearch > Enable Indexing** to **true**. See the :ref:`Elasticsearch <administration-guide/configuration-reference/environment-configuration-settings:enterprise search>` configuration settings documentation for details. Enabling Elasticsearch requires :ref:`setting up an Elasticsearch server <administration-guide/operations-scaling/elasticsearch-setup:set up elasticsearch>`.
+Enable Elasticsearch by setting **System Console > Elasticsearch > Enable Indexing** to **true**. See the :ref:`Elasticsearch <administration-guide/getting-started/environment-configuration-settings:enterprise search>` configuration settings documentation for details. Enabling Elasticsearch requires :ref:`setting up an Elasticsearch server <administration-guide/operations-scaling/elasticsearch-setup:set up elasticsearch>`.

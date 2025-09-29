@@ -34,7 +34,7 @@ Create a OneLogin connection app for Mattermost SSO
 
     - **RelayState**: leave blank
     - **Audience**: leave blank
-    - **Recipient**: ``https://<your-mattermost-url>/login/sso/saml`` where ``https://<your-mattermost-url>`` should typically match the :ref:`Mattermost Site URL <administration-guide/configuration-reference/environment-configuration-settings:site url>`.
+    - **Recipient**: ``https://<your-mattermost-url>/login/sso/saml`` where ``https://<your-mattermost-url>`` should typically match the :ref:`Mattermost Site URL <administration-guide/getting-started/environment-configuration-settings:site url>`.
     - **ACS (Consumer) URL Validator**: ``https:\/\/<your-mattermost-url>\/login\/sso\/saml``
     - **ACS (Consumer) URL**: ``https://<your-mattermost-url>/login/sso/saml``
 

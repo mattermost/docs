@@ -10,24 +10,24 @@ Whether you’re installing a license key, performing backups, upgrading the ser
     :hidden:
     :titlesonly:
 
-    Install a license key </administration-guide/admin-tools/installing-license-key>
+    Install a license key </administration-guide/platform-features/installing-license-key>
     Generate a support packet </administration-guide/admin-tools/generating-support-packet>
     Backup and disaster recovery </deployment-guide/backup-disaster-recovery>
-    Upgrade Mattermost server </administration-guide/operations-scaling/upgrade-mattermost>
+    Upgrade Mattermost server </administration-guide/upgrade/upgrade-mattermost>
     Secure Mattermost </security-guide/secure-mattermost>
     Mattermost error codes </administration-guide/admin-tools/error-codes>
-    Logging </administration-guide/admin-tools/logging>
+    Logging </administration-guide/monitoring-observability/monitoring-and-performance>
     mmctl </administration-guide/admin-tools/mmctl-command-line-tool>
     CLI </administration-guide/admin-tools/command-line-tools>
     Feature labels </administration-guide/admin-tools/feature-labels>
 
-* :doc:`Install a license key </administration-guide/admin-tools/installing-license-key>` - Learn how to install a license key for Mattermost.
+* :doc:`Install a license key </administration-guide/platform-features/installing-license-key>` - Learn how to install a license key for Mattermost.
 * :doc:`Generate a support packet </administration-guide/admin-tools/generating-support-packet>` - Learn how to generate a support packet for Mattermost.
 * :doc:`Backup and disaster recovery </deployment-guide/backup-disaster-recovery>` - Learn about backup and disaster recovery for Mattermost.
-* :doc:`Upgrade Mattermost server </administration-guide/operations-scaling/upgrade-mattermost>` - Learn how to upgrading Mattermost server.
+* :doc:`Upgrade Mattermost server </administration-guide/upgrade/upgrade-mattermost>` - Learn how to upgrading Mattermost server.
 * :doc:`Secure Mattermost </security-guide/secure-mattermost>` - Learn about securing Mattermost server.
 * :doc:`Mattermost error codes </administration-guide/admin-tools/error-codes>` - Learn about Mattermost error codes and troubleshooting.
-* :doc:`Logging </administration-guide/admin-tools/logging>` - Learn how to customize logging options based on business practices and needs.
+* :doc:`Logging </administration-guide/monitoring-observability/monitoring-and-performance>` - Learn how to customize logging options based on business practices and needs.
 * :doc:`mmctl </administration-guide/admin-tools/mmctl-command-line-tool>` - Learn about the mmctl command line tool for Mattermost.
 * :doc:`CLI </administration-guide/admin-tools/command-line-tools>` - Learn about command line tools for Mattermost.
 * :doc:`Feature labels </administration-guide/admin-tools/feature-labels>` - Learn about Mattermost feature labels and their meanings.

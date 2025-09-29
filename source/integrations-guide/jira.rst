@@ -225,7 +225,7 @@ Why isn't the Jira integration posting messages to Mattermost?
 
 Try the following troubleshooting steps:
 
-1. Confirm that your :ref:`Mattermost Site URL <administration-guide/configuration-reference/environment-configuration-settings:site url>` is configured, and that the webhook created in Jira is pointing to this URL. To ensure the URL is correct, run the ``/jira webhook`` slash command, then copy the output and paste it into Jira's webhook setup page.
+1. Confirm that your :ref:`Mattermost Site URL <administration-guide/getting-started/environment-configuration-settings:site url>` is configured, and that the webhook created in Jira is pointing to this URL. To ensure the URL is correct, run the ``/jira webhook`` slash command, then copy the output and paste it into Jira's webhook setup page.
 
 2. If you specified a JQL query in your Jira webhook setup, paste the JQL to Jira issue search and make sure it returns results. If it doesn't, the query may be incorrect. Refer to the `Atlassian documentation <https://support.atlassian.com/jira-software-cloud/docs/what-is-advanced-search-in-jira-cloud/>`__ for help. A JQL query isn't required when setting up the webhook.
 

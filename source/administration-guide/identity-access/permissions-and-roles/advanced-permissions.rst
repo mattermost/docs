@@ -32,7 +32,7 @@ To override the System Scheme default permissions in a specific team, you must s
 
 You can access the System Scheme interface by going to **System Console > User Management > Permissions > System Scheme**.
 
-.. image:: ../../../../images/system-scheme.png
+.. image:: /images/system-scheme.png
 
 Team override scheme
 ~~~~~~~~~~~~~~~~~~~~
@@ -50,7 +50,7 @@ When you use this permission scheme:
 
 You can access the Team Override Scheme interface by going to **System Console > User Management > Permissions > Team Override Schemes**.
 
-.. image:: ../../../../images/team-scheme.png
+.. image:: /images/team-scheme.png
 
 Channel permissions 
 --------------------

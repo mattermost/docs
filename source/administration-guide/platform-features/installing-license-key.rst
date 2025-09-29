@@ -1,7 +1,7 @@
 Install a license key
 =====================
 
-.. include:: ../../../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 You can use the System Console or the mmctl tools to add or change a Mattermost license key.
@@ -23,7 +23,7 @@ You can use the System Console or the mmctl tools to add or change a Mattermost 
 
 .. note::
 
-    - From Mattermost v10.11, the option to add a license is disabled when the license is set using an :ref:`environment variable <administration-guide/configuration-reference/environment-configuration-settings:license file location>`.
+    - From Mattermost v10.11, the option to add a license is disabled when the license is set using an :ref:`environment variable <administration-guide/getting-started/environment-configuration-settings:license file location>`.
     - Enterprise customers with the Premier Support add-on can request a staging license for testing.
     - Removing a Mattermost Enterprise or Professional license key won't remove the configuration for Enterprise settings; however, these features won't function until an Enterprise or Professional license key is applied.
     - When you're using :doc:`High Availability </administration-guide/operations-scaling/high-availability-cluster-based-deployment>`, it's critical to ensure that all servers in the cluster have same Enterprise license properly installed to prevent multi-node clusters from failing. An Enterprise license is required for High Availability to work.

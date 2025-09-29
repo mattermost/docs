@@ -1,7 +1,7 @@
 Google Single Sign-On
 =====================
 
-.. include:: ../../../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../../../../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Configuring Google Apps as a Single Sign-On (SSO) service
@@ -68,7 +68,7 @@ Step 3: Configure Mattermost for Google Apps SSO
 Configure Mattermost ``config.json`` for Google Apps SSO
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../../_static/badges/selfhosted-only.rst
+.. include:: ../../../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 Instead of using the System Console, you can add the Google settings directly to the ``config.json`` file directly on your Mattermost server.

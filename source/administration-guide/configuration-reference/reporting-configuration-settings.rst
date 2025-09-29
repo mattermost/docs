@@ -60,7 +60,7 @@ Server logs
 
 .. tip::
 
-  From Mattermost v10.9, you can toggle between JSON and plain text server logs in the System Console when console log output is configured as :ref:`JSON <administration-guide/configuration-reference/environment-configuration-settings:output console logs as json>` by specifying the log format as **JSON** or **Plain text**. This option is located in the top right corner of the page **Server logs** page.
+  From Mattermost v10.9, you can toggle between JSON and plain text server logs in the System Console when console log output is configured as :ref:`JSON <administration-guide/getting-started/environment-configuration-settings:output console logs as json>` by specifying the log format as **JSON** or **Plain text**. This option is located in the top right corner of the page **Server logs** page.
 
 ----
 

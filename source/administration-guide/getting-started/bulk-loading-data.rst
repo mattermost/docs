@@ -1600,7 +1600,7 @@ Common issues
 
 Run the bulk import command as the *mattermost* user. Running it as *root* or any other user will cause issues with file permissions on imported attachments.
 
-Ensure that :ref:`file attachments are enabled <administration-guide/configuration-reference/site-configuration-settings:allow file sharing>`, that you have enough free space in your :ref:`file storage system <administration-guide/configuration-reference/environment-configuration-settings:file storage system>` to support the incoming attachments, and that your :ref:`maximum file size <administration-guide/configuration-reference/environment-configuration-settings:maximum file size>` is appropriate.
+Ensure that :ref:`file attachments are enabled <administration-guide/configuration-reference/site-configuration-settings:allow file sharing>`, that you have enough free space in your :ref:`file storage system <administration-guide/getting-started/environment-configuration-settings:file storage system>` to support the incoming attachments, and that your :ref:`maximum file size <administration-guide/getting-started/environment-configuration-settings:maximum file size>` is appropriate.
 
 Make sure you have enough free space for logs on the Mattermost server as well as free space on the database server for both the database itself and transaction logs.
 

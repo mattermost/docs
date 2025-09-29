@@ -1,7 +1,7 @@
 Generate a Support Packet
 ==========================
 
-.. include:: ../../../_static/badges/ent-pro-selfhosted.rst
+.. include:: ../../_static/badges/ent-pro-selfhosted.rst
   :start-after: :nosearch:
 
 The Support Packet is used to help customers diagnose and troubleshoot issues. Use the System Console or the :ref:`mmctl system supportpacket <administration-guide/admin-tools/mmctl-command-line-tool:mmctl system supportpacket>` command to generate a zip file that includes configuration information, logs, plugin details, and data on external dependencies across all nodes in a high-availability cluster. Confidential data, such as passwords, are automatically stripped.
@@ -17,7 +17,7 @@ Generate
 
    1. Go to the System Console, and select **Commercial Support** from the System Console menu. 
 
-      .. image:: ../../../images/system-console-commercial-support.png
+      .. image:: ../../images/system-console-commercial-support.png
          :alt: Example of available System Console menu options.
 
    2. Select **Download Support Packet**. A zip file is downloaded to the local machine. You'll be notified if any packet files are unavailable during packet generation. See the ``warning.txt`` file for details.

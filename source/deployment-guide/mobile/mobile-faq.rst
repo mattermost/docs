@@ -179,7 +179,7 @@ The following options are available for securing your push notification service:
 
 4. Securing apps installed through the Apple App Store and Google Play:
 
-  - When using Mattermost mobile apps from the App Store and Google Play, purchase an annual subscription to Mattermost Enterprise or Professional to use Mattermost's :ref:`Hosted Push Notification Service (HPNS) <administration-guide/configuration-reference/environment-configuration-settings:enable push notifications>`.
+  - When using Mattermost mobile apps from the App Store and Google Play, purchase an annual subscription to Mattermost Enterprise or Professional to use Mattermost's :ref:`Hosted Push Notification Service (HPNS) <administration-guide/getting-started/environment-configuration-settings:enable push notifications>`.
 
 .. note:: 
 
@@ -209,7 +209,7 @@ Mattermost enables customers with high privacy and custom security requirements 
 How do I host the Mattermost push notification service?
 -------------------------------------------------------
 
-First, you can use the :ref:`Mattermost Hosted Push Notification Service (HPNS) <administration-guide/configuration-reference/environment-configuration-settings:enable push notifications>`. Organizations can also :doc:`host their own push proxy server </deployment-guide/mobile/host-your-own-push-proxy-service>` instead. This is applicable when you want to:
+First, you can use the :ref:`Mattermost Hosted Push Notification Service (HPNS) <administration-guide/getting-started/environment-configuration-settings:enable push notifications>`. Organizations can also :doc:`host their own push proxy server </deployment-guide/mobile/host-your-own-push-proxy-service>` instead. This is applicable when you want to:
 
 1. Customize the Mattermost mobile apps;
 2. Deploy your own push notification service, or
@@ -353,7 +353,7 @@ You will need to `whitelist one subdomain and one port from Apple <https://devel
 Run App Store versions of the Mattermost mobile apps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can use the mobile applications hosted by Mattermost in the `Apple App Store <https://apps.apple.com/ca/app/mattermost/id1257222717>`__ or `Google Play Store <https://play.google.com/store/apps/details?id=com.mattermost.rn>`__ and connect with the :ref:`Mattermost Hosted Push Notification Service (HPNS) <administration-guide/configuration-reference/environment-configuration-settings:hosted push notifications service (hpns)>` through your corporate proxy.
+You can use the mobile applications hosted by Mattermost in the `Apple App Store <https://apps.apple.com/ca/app/mattermost/id1257222717>`__ or `Google Play Store <https://play.google.com/store/apps/details?id=com.mattermost.rn>`__ and connect with the :ref:`Mattermost Hosted Push Notification Service (HPNS) <administration-guide/getting-started/environment-configuration-settings:hosted push notifications service (hpns)>` through your corporate proxy.
 
 .. note::
   
@@ -388,7 +388,7 @@ Since the ``deviceId`` relates to the application, connections through the web b
 Where can I find mobile message notification logs?
 -------------------------------------------------------------
 Notification messages are logged to the ``notifications.log`` file.
-System admins must enable notification logs in the ``config.json`` file by setting ``EnableFile`` to ``true``, and specifying an optional file location via ``FileLocation``. When no location is configured, the ``notifications.log`` file is stored in the default Mattermost directory. See the :ref:`logging configuration settings <administration-guide/configuration-reference/environment-configuration-settings:logging>` documentation for details.
+System admins must enable notification logs in the ``config.json`` file by setting ``EnableFile`` to ``true``, and specifying an optional file location via ``FileLocation``. When no location is configured, the ``notifications.log`` file is stored in the default Mattermost directory. See the :ref:`logging configuration settings <administration-guide/getting-started/environment-configuration-settings:logging>` documentation for details.
 
 The team members / users can access their notification logs based on their device platform.
 Android users can view the logs using ``logcat``.

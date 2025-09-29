@@ -16,20 +16,11 @@ System admins for both self-hosted and Cloud Mattermost deployments can manage M
     :hidden:
     :titlesonly:
 
-    Self-hosted workspace edition and license settings </administration-guide/configuration-reference/self-hosted-account-settings>
-    Cloud workspace subscription, billing, and account settings </administration-guide/configuration-reference/cloud-billing-account-settings>
     Reporting configuration settings </administration-guide/configuration-reference/reporting-configuration-settings>
-    User management configuration settings </administration-guide/configuration-reference/user-management-configuration-settings>
-    System attributes </administration-guide/configuration-reference/system-attributes>
-    Environment configuration settings </administration-guide/configuration-reference/environment-configuration-settings>
-    Site configuration settings </administration-guide/configuration-reference/site-configuration-settings>
-    Authentication configuration settings </administration-guide/configuration-reference/authentication-configuration-settings>
     Plugins configuration settings </administration-guide/configuration-reference/plugins-configuration-settings>
     Integrations configuration settings </administration-guide/configuration-reference/integrations-configuration-settings>
-    Compliance configuration settings </administration-guide/configuration-reference/compliance-configuration-settings>
     Experimental configuration settings </administration-guide/configuration-reference/experimental-configuration-settings>
     Deprecated configuration settings </administration-guide/configuration-reference/deprecated-configuration-settings>
-    Bleve search </administration-guide/configuration-reference/bleve-search>
 
 Mattermost configuration settings are organized into the following categories within the System Console:
 
@@ -38,7 +29,7 @@ Mattermost configuration settings are organized into the following categories wi
 - :doc:`Reporting configuration settings </administration-guide/configuration-reference/reporting-configuration-settings>`
 - :doc:`User management configuration settings </administration-guide/configuration-reference/user-management-configuration-settings>`
 - :doc:`System attributes </administration-guide/configuration-reference/system-attributes>`
-- :doc:`Environment configuration settings </administration-guide/configuration-reference/environment-configuration-settings>`
+- :doc:`Environment configuration settings </administration-guide/getting-started/environment-configuration-settings>`
 - :doc:`Site configuration settings </administration-guide/configuration-reference/site-configuration-settings>`
 - :doc:`Authentication configuration settings </administration-guide/configuration-reference/authentication-configuration-settings>`
 - :doc:`Plugins configuration settings </administration-guide/configuration-reference/plugins-configuration-settings>`

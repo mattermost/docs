@@ -137,7 +137,7 @@ Upload Plugin
 
 .. note::
   - When plugin uploads are enabled, the error ``Received invlaid response from the server`` when uploading a plugin file typically indicates that the
-    :ref:`MaxFileSize <administration-guide/configuration-reference/environment-configuration-settings:maximum file size>` configuration setting isn't large enough to support the plugin file upload. Additional proxy setting updateds
+    :ref:`MaxFileSize <administration-guide/getting-started/environment-configuration-settings:maximum file size>` configuration setting isn't large enough to support the plugin file upload. Additional proxy setting updateds
     may also be required.
   - The ability to upload plugin files is disabled when the `Require plugin signature <#require-plugin-signature>`__ configuration setting is enabled.
 

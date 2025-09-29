@@ -7,13 +7,13 @@ Gain visibility into system health and performance. Configure logging, telemetry
     :maxdepth: 1
     :titlesonly:
 
-    /administration-guide/admin-tools/logging
+    /administration-guide/compliance-security-auditing/logging
     /administration-guide/admin-tools/telemetry
-    /administration-guide/admin-tools/statistics
+    /administration-guide/monitoring-observability/statistics
     /administration-guide/admin-tools/configure-health-check-probes
-    /administration-guide/operations-scaling/performance-monitoring-metrics
-    /administration-guide/operations-scaling/deploy-prometheus-grafana-for-performance-monitoring
-    /administration-guide/operations-scaling/performance-alerting
+    /administration-guide/monitoring-observability/performance-monitoring-metrics
+    /administration-guide/monitoring-observability/deploy-prometheus-grafana-for-performance-monitoring
+    /administration-guide/monitoring-observability/performance-alerting
     /administration-guide/admin-tools/request-server-health-check
 
 

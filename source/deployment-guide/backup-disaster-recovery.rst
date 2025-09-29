@@ -170,7 +170,7 @@ To recap:
 
 .. warning::
 
-  After creating the master user, IP based access to the OS might not work from Mattermost application nodes. You may need to update the ``ElasticSearchSettings`` section in ``config.json`` to update the server :ref:`username <administration-guide/configuration-reference/environment-configuration-settings:server username>` and :ref:`password <administration-guide/configuration-reference/environment-configuration-settings:server password>`.
+  After creating the master user, IP based access to the OS might not work from Mattermost application nodes. You may need to update the ``ElasticSearchSettings`` section in ``config.json`` to update the server :ref:`username <administration-guide/getting-started/environment-configuration-settings:server username>` and :ref:`password <administration-guide/getting-started/environment-configuration-settings:server password>`.
 
 3. Create a new OS cluster in the secondary region. Follow the same steps again for this cluster.
 

@@ -94,7 +94,7 @@ From Mattermost v10.11, you can permanently delete your account if you access Ma
 Performance debugging
 ---------------------
 
-You can disable key Mattermost features temporarily to help isolate issues while debugging Mattermost, if your system admin :ref:`enables your ability to do so <administration-guide/configuration-reference/environment-configuration-settings:enable client debugging>`. We don't recommend leaving these settings enabled for an extended period of time as they can negatively impact your user experience.
+You can disable key Mattermost features temporarily to help isolate issues while debugging Mattermost, if your system admin :ref:`enables your ability to do so <administration-guide/getting-started/environment-configuration-settings:enable client debugging>`. We don't recommend leaving these settings enabled for an extended period of time as they can negatively impact your user experience.
 
 .. tab:: Web/Desktop
 

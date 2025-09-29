@@ -48,7 +48,7 @@ You can also run the deletion job manually at any time by selecting **Run Deleti
 
 .. note::
   
-  If using data retention with :doc:`ElasticSearch </administration-guide/operations-scaling/elasticsearch-setup>`, ensure the :ref:`ElasticSearch aggregate search indexes <administration-guide/configuration-reference/environment-configuration-settings:aggregate search indexes>` setting is set to a value that is greater than your data retention policy in days.
+  If using data retention with :doc:`ElasticSearch </administration-guide/platform-features/elasticsearch-setup>`, ensure the :ref:`ElasticSearch aggregate search indexes <administration-guide/getting-started/environment-configuration-settings:aggregate search indexes>` setting is set to a value that is greater than your data retention policy in days.
 
 Frequently Asked Questions (FAQs)
 ---------------------------------

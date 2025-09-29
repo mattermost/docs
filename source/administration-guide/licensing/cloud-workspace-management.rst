@@ -13,13 +13,13 @@ This section of the guide is for system admins of Mattermost Cloud deployments.
     :titlesonly:
 
     Workspace migration </administration-guide/admin-tools/cloud-data-export>
-    Cloud data residency </administration-guide/admin-tools/cloud-data-residency>
-    Cloud IP Filtering </administration-guide/admin-tools/cloud-ip-filtering>
-    Cloud Bring Your Own Key (BYOK) </administration-guide/admin-tools/cloud-byok>
+    Cloud data residency </administration-guide/licensing/cloud-data-residency>
+    Cloud IP Filtering </administration-guide/licensing/cloud-ip-filtering>
+    Cloud Bring Your Own Key (BYOK) </administration-guide/licensing/cloud-byok>
 
 * :doc:`Workspace migration </administration-guide/admin-tools/cloud-data-export>` - Migrate your workspace using the mmctl tool.
-* :doc:`Cloud data residency </administration-guide/admin-tools/cloud-data-residency>` - Find information about your data in the Cloud.
-* :doc:`Cloud IP Filtering </administration-guide/admin-tools/cloud-ip-filtering>` - Restrict access to your Mattermost Cloud workspace to a specific IP address range.
-* :doc:`Cloud Bring Your Own Key (BYOK) </administration-guide/admin-tools/cloud-byok>` - Learn how to manage data encryption processes within a Mattermost Cloud Enterprise Dedicated deployment.
+* :doc:`Cloud data residency </administration-guide/licensing/cloud-data-residency>` - Find information about your data in the Cloud.
+* :doc:`Cloud IP Filtering </administration-guide/licensing/cloud-ip-filtering>` - Restrict access to your Mattermost Cloud workspace to a specific IP address range.
+* :doc:`Cloud Bring Your Own Key (BYOK) </administration-guide/licensing/cloud-byok>` - Learn how to manage data encryption processes within a Mattermost Cloud Enterprise Dedicated deployment.
 
 `Book a live demo <https://mattermost.com/request-demo/>`_  or `talk to a Mattermost expert <https://mattermost.com/contact-sales/>`_ to explore tailored solutions for your organization's secure collaboration needs. Or try Mattermost yourself with a `1-hour preview <https://mattermost.com/sign-up/>`_ for instant access to a live sandbox environment.

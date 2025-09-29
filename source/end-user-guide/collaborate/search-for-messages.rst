@@ -92,8 +92,8 @@ File contents that match on file name, or contain matching text content within s
   System admins can extend file content search support for self-hosted deployments to include:
 
   - :ref:`files shared before upgrading to Mattermost Server v5.35 <administration-guide/admin-tools/mmctl-command-line-tool:mmctl extract>`.
-  - :ref:`DOC and RTF file formats <administration-guide/configuration-reference/environment-configuration-settings:enable document search by content>`.
-  - :ref:`documents within ZIP files <administration-guide/configuration-reference/environment-configuration-settings:enable searching content of documents within zip files>`.
+  - :ref:`DOC and RTF file formats <administration-guide/getting-started/environment-configuration-settings:enable document search by content>`.
+  - :ref:`documents within ZIP files <administration-guide/getting-started/environment-configuration-settings:enable searching content of documents within zip files>`.
 
 Filter results by file type
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

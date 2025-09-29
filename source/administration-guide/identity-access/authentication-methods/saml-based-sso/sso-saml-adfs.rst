@@ -45,7 +45,7 @@ However, if you would like to set up encryption for your SAML connection, select
 
 .. image:: /images/adfs_7_configure_certificate_encryption.png
 
-7. On the **Configure URL** screen, select **Enable Support for the SAML 2.0 WebSSO protocol**, then enter the **SAML 2.0 SSO service URL**, similar to ``https://<your-mattermost-url>/login/sso/saml`` where ``<your-mattermost-url>`` should typically match the :ref:`Mattermost Site URL <administration-guide/configuration-reference/environment-configuration-settings:site url>`.
+7. On the **Configure URL** screen, select **Enable Support for the SAML 2.0 WebSSO protocol**, then enter the **SAML 2.0 SSO service URL**, similar to ``https://<your-mattermost-url>/login/sso/saml`` where ``<your-mattermost-url>`` should typically match the :ref:`Mattermost Site URL <administration-guide/getting-started/environment-configuration-settings:site url>`.
 
 .. image:: /images/adfs_8_configure_url.png
 
@@ -67,7 +67,7 @@ However, if you would like to set up encryption for your SAML connection, select
 
 12. On the **Finish** screen, select **Open the Edit Claim Rules dialog for this relying party trust when the wizard closes**, then select **Close**. You exit the configuration wizard, and a **Claim Rules** editor opens.
 
-	.. image:: ../../images/adfs_13_finish_trust.png
+	.. image:: /images/adfs_13_finish_trust.png
 
 Create claim rules
 ------------------

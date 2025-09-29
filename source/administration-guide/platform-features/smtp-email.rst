@@ -30,7 +30,7 @@ Configure SMTP settings
 
 1. In Mattermost go to **System Console > Authentication > Email**, and set **Allow Sign Up With Email**  to **true**.
       
-2. In the System Console, go to **Notifications > Email** and configure Mattermost for your SMTP service. See the :ref:`SMTP configuration <administration-guide/configuration-reference/environment-configuration-settings:smtp>` documentation for details.
+2. In the System Console, go to **Notifications > Email** and configure Mattermost for your SMTP service. See the :ref:`SMTP configuration <administration-guide/getting-started/environment-configuration-settings:smtp>` documentation for details.
 
   - Set **Send Email Notifications** to **true**.
   - Set the **Notification Display Name** for the account sending notifications.

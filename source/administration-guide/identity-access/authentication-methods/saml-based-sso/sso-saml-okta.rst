@@ -29,7 +29,7 @@ Set Up a connection app for Mattermost Single Sign-On
 
 6. Enter **SAML Settings**, including:
 
- - **Single sign on URL:** ``https://<your-mattermost-url>/login/sso/saml`` where ``https://<your-mattermost-url>`` should typically match the :ref:`Mattermost Site URL <administration-guide/configuration-reference/environment-configuration-settings:site url>`.
+ - **Single sign on URL:** ``https://<your-mattermost-url>/login/sso/saml`` where ``https://<your-mattermost-url>`` should typically match the :ref:`Mattermost Site URL <administration-guide/getting-started/environment-configuration-settings:site url>`.
  - **Audience URI:** For instance, ``mattermost``
  - **Name ID format:** ``unspecified``
  - **Application username:** ``Email``

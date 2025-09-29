@@ -3,7 +3,7 @@
 Using AD/LDAP synchronized groups to manage team or private channel membership
 ------------------------------------------------------------------------------
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../../../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Mattermost groups created with :doc:`synchronized AD/LDAP groups </administration-guide/identity-access/ad-ldap-groups-synchronization>` can be used to manage the membership of private teams and private channels. When a team or private channel is managed by synchronized groups, users will be added and removed based on their membership to the synchronized AD/LDAP group.

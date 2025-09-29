@@ -11,9 +11,9 @@ Mattermost ships with several security features that can help organizations safe
     Encryption options </deployment-guide/encryption-options>
     Transport encryption </deployment-guide/transport-encryption>
     Multi-factor authentication </administration-guide/identity-access/multi-factor-authentication>
-    Delegated granular administration </administration-guide/onboard/delegated-granular-administration>
+    Delegated granular administration </administration-guide/identity-access/permissions-and-roles/delegated-granular-administration>
     Custom terms of service </administration-guide/compliance-security-auditing/custom-terms-of-service>
-    User and group provisioning via AD/LDAP </administration-guide/identity-access/ad-ldap-groups-synchronization>
+    User and group provisioning via AD/LDAP </administration-guide/identity-access/authentication-methods/active-directory/ad-ldap-groups-synchronization>
     SAML-based SSO </administration-guide/identity-access/authentication-methods/saml-based-sso/sso-saml>
     SAML SSO techical documentation </administration-guide/identity-access/authentication-methods/saml-based-sso/sso-saml-technical>
     Certificate-based authentication </administration-guide/identity-access/certificate-based-authentication>
@@ -21,12 +21,12 @@ Mattermost ships with several security features that can help organizations safe
 * :doc:`Encryption options </deployment-guide/encryption-options>` - Setup encryption for data in transit and at rest.
 * :doc:`Transport encryption </deployment-guide/transport-encryption>` - Secure data in transit between Mattermost and other services.
 * :doc:`Multi-factor authentication </administration-guide/identity-access/multi-factor-authentication>` - Require users to provide a secure one-time code in addition to their username and password to log in to Mattermost.
-* :ref:`ID-only push notifications <administration-guide/configuration-reference/environment-configuration-settings:id-only push notifications>` - Enable fully private mobile notifications to protect against iOS and Android notification infrastructure breaches.
+* :ref:`ID-only push notifications <administration-guide/getting-started/environment-configuration-settings:id-only push notifications>` - Enable fully private mobile notifications to protect against iOS and Android notification infrastructure breaches.
 * :doc:`Enterprise mobility management </deployment-guide/mobile/deploy-mobile-apps-using-emm-provider>` - Secure mobile endpoints with management application configuration.
-* :doc:`Delegated granular administration </administration-guide/onboard/delegated-granular-administration>` - Grant user access to specific areas of the Mattermost System Console.
+* :doc:`Delegated granular administration </administration-guide/identity-access/permissions-and-roles/delegated-granular-administration>` - Grant user access to specific areas of the Mattermost System Console.
 * :doc:`Custom terms of service </administration-guide/compliance-security-auditing/custom-terms-of-service>` - Increase clarity on legal Mattermost expectations for internal employees and guests.
-* :ref:`Manage session length <administration-guide/configuration-reference/environment-configuration-settings:session lengths>` - Control how long user sessions remain active.
-* :doc:`User and group provisioning via AD/LDAP </administration-guide/identity-access/ad-ldap-groups-synchronization>` - Provision and synchronize users and groups to pre-defined roles.
+* :ref:`Manage session length <administration-guide/getting-started/environment-configuration-settings:session lengths>` - Control how long user sessions remain active.
+* :doc:`User and group provisioning via AD/LDAP </administration-guide/identity-access/authentication-methods/active-directory/ad-ldap-groups-synchronization>` - Provision and synchronize users and groups to pre-defined roles.
 * :doc:`SAML-based single sign-on (SSO) </administration-guide/identity-access/authentication-methods/saml-based-sso/sso-saml>` - Enable login using a single user ID and password managed through a SAML 2.0 Service Provider.
 * :doc:`SAML SSO technical documentation </administration-guide/identity-access/authentication-methods/saml-based-sso/sso-saml-technical>` - Technical details on SAML SSO.
 * :doc:`Certificate-based authentication </administration-guide/identity-access/certificate-based-authentication>` - Identify a user or a device before granting access to Mattermost.

@@ -27,12 +27,12 @@ System admins can customize the following logging options based on your business
 Console logs
 ------------
 
-Console logs feature verbose debug level log messages for general and notification activities that are written to the console using the standard output stream (stdout). You can customize console logs for general and notification activities. See the :ref:`Logging configuration settings <administration-guide/configuration-reference/environment-configuration-settings:logging>` for details.
+Console logs feature verbose debug level log messages for general and notification activities that are written to the console using the standard output stream (stdout). You can customize console logs for general and notification activities. See the :ref:`Logging configuration settings <administration-guide/getting-started/environment-configuration-settings:logging>` for details.
 
 File logs
 ---------
 
-File logs feature info level log messages for general and notification activities, including errors and information around startup, and initialization and webhook debug messages. The file is stored in ``./logs/mattermost.log``, rotated at 100 MB, and archived to a separate file in the same directory. You can customize file logs for general and notification activities. See the :ref:`Logging configuration settings <administration-guide/configuration-reference/environment-configuration-settings:logging>` for details.
+File logs feature info level log messages for general and notification activities, including errors and information around startup, and initialization and webhook debug messages. The file is stored in ``./logs/mattermost.log``, rotated at 100 MB, and archived to a separate file in the same directory. You can customize file logs for general and notification activities. See the :ref:`Logging configuration settings <administration-guide/getting-started/environment-configuration-settings:logging>` for details.
 
 .. tip::
 
@@ -126,7 +126,7 @@ You can enable and customize advanced audit logging in Mattermost to record acti
 
     Go to **System Console > Compliance > Audit Logging** to customize audit logging. You can use the sample JSON below as a starting point. 
     
-    You can customize console logs for :ref:`general <administration-guide/configuration-reference/environment-configuration-settings:log settings>` and :ref:`notification <administration-guide/configuration-reference/environment-configuration-settings:notification logging>` activities. 
+    You can customize console logs for :ref:`general <administration-guide/getting-started/environment-configuration-settings:log settings>` and :ref:`notification <administration-guide/getting-started/environment-configuration-settings:notification logging>` activities. 
     
     Additionally, you can also output audit log records to any combination of `console <#console-target-configuration-options>`__, `local file <#file-target-configuration-options>`__, `syslog <#syslog-target-configuration-options>`__, and `TCP socket <#tcp-target-configuration-options>`__ targets, each featuring additional customization. See `Advanced Logging <#advanced-logging>`__ below for details.
 
@@ -519,12 +519,12 @@ Yes. When updating the audit log configuration via REST API, mmctl, or System Co
 How do I omit incoming webhook details from the logs?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See :ref:`enable-webhook-debugging <administration-guide/configuration-reference/environment-configuration-settings:enable webhook debugging>`
+See :ref:`enable-webhook-debugging <administration-guide/getting-started/environment-configuration-settings:enable webhook debugging>`
 
 How do I adjust the maximum log field size?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See :ref:`maximum-field-size <administration-guide/configuration-reference/environment-configuration-settings:maximum field size>`
+See :ref:`maximum-field-size <administration-guide/getting-started/environment-configuration-settings:maximum field size>`
 
 How can I configure Advanced logging via environment variables?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

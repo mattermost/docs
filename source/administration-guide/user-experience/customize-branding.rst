@@ -8,9 +8,8 @@ Whether you’re customizing the appearance of your workspace, utilizing brandin
     :hidden:
     :titlesonly:
 
-    Customize Mattermost </administration-guide/configuration-reference/customize-mattermost>
-    Custom branding tools </administration-guide/configuration-reference/custom-branding-tools>
-    Code signing custom builds </administration-guide/admin-tools/code-signing-custom-builds>
+    Customize Mattermost </administration-guide/user-experience/customize-mattermost>
+    Custom branding tools </administration-guide/user-experience/custom-branding-tools>
 
 * :doc:`Customize Mattermost </administration-guide/configuration-reference/customize-mattermost>` - Learn how to customize the Mattermost server.
 * :doc:`Custom branding tools </administration-guide/configuration-reference/custom-branding-tools>` - Learn about custom branding tools for Mattermost.

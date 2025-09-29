@@ -944,20 +944,20 @@ Recycle database connections
 Disable database search
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-+------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | When `enterprise-scale search </administration-guide/operations-scaling/enterprise-search>`,    | - System Config path: **Environment > Database**                                    |
-| database search can be disabled from performing searches.                          | - ``config.json`` setting: ``SqlSettings`` > ``DisableDatabaseSearch`` > ``false``  |
-|                                                                                    | - Environment variable: ``MM_SQLSETTINGS_DISABLEDATABASESEARCH``                    |
-| - **true**: Disables the use of the database to perform                            |                                                                                     |
-|   searches. If another search engine isn't configured,                             |                                                                                     |
-|   setting this value to ``true`` will result in empty search                       |                                                                                     |
-|   results.                                                                         |                                                                                     |
-| - **false**: **(Default)** Database search isn't disabled.                         |                                                                                     |
-+------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| database search can be disabled from performing searches.                                       | - ``config.json`` setting: ``SqlSettings`` > ``DisableDatabaseSearch`` > ``false``  |
+|                                                                                                 | - Environment variable: ``MM_SQLSETTINGS_DISABLEDATABASESEARCH``                    |
+| - **true**: Disables the use of the database to perform                                         |                                                                                     |
+|   searches. If another search engine isn't configured,                                          |                                                                                     |
+|   setting this value to ``true`` will result in empty search                                    |                                                                                     |
+|   results.                                                                                      |                                                                                     |
+| - **false**: **(Default)** Database search isn't disabled.                                      |                                                                                     |
++-------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
 Search behavior in Mattermost depends on which search engines are enabled:
 
-- When :doc:`Elasticsearch </administration-guide/operations-scaling/elasticsearch-setup>` or :doc:`AWS OpenSearch </administration-guide/operations-scaling/opensearch-setup>` is enabled, Mattermost will try to use it first.
+- When :doc:`Elasticsearch </administration-guide/platform-features/elasticsearch-setup>` or :doc:`AWS OpenSearch </administration-guide/operations-scaling/opensearch-setup>` is enabled, Mattermost will try to use it first.
 - If Elasticsearch fails or is disabled, Mattermost will attempt to use :doc:`Bleve </administration-guide/configuration-reference/bleve-search>`, if enabled. If this occurs, you will see the warning ``Encountered error on SearchPostsInTeamForUser``.
 - If these fail or are disabled, Mattermost tries to search the database directly, if this is enabled.
 - If all of the above methods fail or are disabled, the search results will be empty.
@@ -1261,7 +1261,7 @@ Enable Elasticsearch indexing
 Backend type
 ~~~~~~~~~~~~~
 
-Both :doc:`Elasticsearch </administration-guide/operations-scaling/elasticsearch-setup>` and :doc:`AWS OpenSearch </administration-guide/operations-scaling/opensearch-setup>` provide enterprise-scale deployments with optimized search performance and prevents performance degradation and timeouts. Learn more about :doc:`enterprise search </administration-guide/operations-scaling/enterprise-search>` in our product documentation.
+Both :doc:`Elasticsearch </administration-guide/platform-features/elasticsearch-setup>` and :doc:`AWS OpenSearch </administration-guide/operations-scaling/opensearch-setup>` provide enterprise-scale deployments with optimized search performance and prevents performance degradation and timeouts. Learn more about :doc:`enterprise search </administration-guide/operations-scaling/enterprise-search>` in our product documentation.
 
 +----------------------------------------------------+--------------------------------------------------------------------------------------------+
 | The type of search backend.                        | - System Config path: **Environment > Elasticsearch**                                      |
@@ -2675,7 +2675,7 @@ Push notification server
 .. include:: ../../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-.. include:: push-notification-server-configuration-settings.rst
+.. include:: ../configuration-reference/push-notification-server-configuration-settings.rst
     :start-after: :nosearch:
 
 ----
@@ -2928,7 +2928,7 @@ Rate limiting
 .. include:: ../../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-.. include:: rate-limiting-configuration-settings.rst
+.. include:: ../configuration-reference/rate-limiting-configuration-settings.rst
     :start-after: :nosearch:
 
 ----
@@ -4576,37 +4576,37 @@ Enable webhub channel iteration
 Enable dedicated export filestore target
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+--------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| Enables the ability to specify an alternate filestore                                | - System Config path: **N/A**                                           |
-| target for Mattermost                                                                | - ``config.json`` setting: ``FileSettings`` > ``DedicatedExportStore``  |
-| :doc:`bulk exports </administration-guide/manage/bulk-export-tool>` and              | - Environment variable: ``MM_FILESETTINGS_DEDICATEDEXPORTSTORE``        |
-| :doc:`compliance exports </administration-guide/compliance-security-auditing/compliance-export>`.          |                                                                         |
-|                                                                                      |                                                                         |
-| - **True**: A new ``ExportFileBackend()`` is generated                               |                                                                         |
-|   under ``FileSettings`` using new configuration values                              |                                                                         |
-|   for the following configuration settings:                                          |                                                                         |
-|                                                                                      |                                                                         |
-|  - ``ExportDriverName``                                                              |                                                                         |
-|  - ``ExportDirectory``                                                               |                                                                         |
-|  - ``ExportAmazonS3AccessKeyId``                                                     |                                                                         |
-|  - ``ExportAmazonS3SecretAccessKey``                                                 |                                                                         |
-|  - ``ExportAmazonS3Bucket``                                                          |                                                                         |
-|  - ``ExportAmazonS3PathPrefix``                                                      |                                                                         |
-|  - ``ExportAmazonS3Region``                                                          |                                                                         |
-|  - ``ExportAmazonS3Endpoint``                                                        |                                                                         |
-|  - ``ExportAmazonS3SSL``                                                             |                                                                         |
-|  - ``ExportAmazonS3SignV2``                                                          |                                                                         |
-|  - ``ExportAmazonS3SSE``                                                             |                                                                         |
-|  - ``ExportAmazonS3Trace``                                                           |                                                                         |
-|  - ``ExportAmazonS3RequestTimeoutMilliseconds``                                      |                                                                         |
-|  - ``ExportAmazonS3PresignExpiresSeconds``                                           |                                                                         |
-|                                                                                      |                                                                         |
-| - **False**: (**Default**) Standard                                                  |                                                                         |
-|   :ref:`file storage                                                                 |                                                                         |
-|   <administration-guide/configuration-reference/environment-configuration-settings:file storage>`  |                                                                         |
-|   is used. Standard file storage will also be used when the configuration setting    |                                                                         |
-|   or value is omitted.                                                               |                                                                         |
-+--------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| Enables the ability to specify an alternate filestore                                                | - System Config path: **N/A**                                           |
+| target for Mattermost                                                                                | - ``config.json`` setting: ``FileSettings`` > ``DedicatedExportStore``  |
+| :doc:`bulk exports </administration-guide/manage/bulk-export-tool>` and                              | - Environment variable: ``MM_FILESETTINGS_DEDICATEDEXPORTSTORE``        |
+| :doc:`compliance exports </administration-guide/compliance-security-auditing/compliance-export>`.    |                                                                         |
+|                                                                                                      |                                                                         |
+| - **True**: A new ``ExportFileBackend()`` is generated                                               |                                                                         |
+|   under ``FileSettings`` using new configuration values                                              |                                                                         |
+|   for the following configuration settings:                                                          |                                                                         |
+|                                                                                                      |                                                                         |
+|  - ``ExportDriverName``                                                                              |                                                                         |
+|  - ``ExportDirectory``                                                                               |                                                                         |
+|  - ``ExportAmazonS3AccessKeyId``                                                                     |                                                                         |
+|  - ``ExportAmazonS3SecretAccessKey``                                                                 |                                                                         |
+|  - ``ExportAmazonS3Bucket``                                                                          |                                                                         |
+|  - ``ExportAmazonS3PathPrefix``                                                                      |                                                                         |
+|  - ``ExportAmazonS3Region``                                                                          |                                                                         |
+|  - ``ExportAmazonS3Endpoint``                                                                        |                                                                         |
+|  - ``ExportAmazonS3SSL``                                                                             |                                                                         |
+|  - ``ExportAmazonS3SignV2``                                                                          |                                                                         |
+|  - ``ExportAmazonS3SSE``                                                                             |                                                                         |
+|  - ``ExportAmazonS3Trace``                                                                           |                                                                         |
+|  - ``ExportAmazonS3RequestTimeoutMilliseconds``                                                      |                                                                         |
+|  - ``ExportAmazonS3PresignExpiresSeconds``                                                           |                                                                         |
+|                                                                                                      |                                                                         |
+| - **False**: (**Default**) Standard                                                                  |                                                                         |
+|   :ref:`file storage                                                                                 |                                                                         |
+|   <administration-guide/getting-started/environment-configuration-settings:file storage>`            |                                                                         |
+|   is used. Standard file storage will also be used when the configuration setting                    |                                                                         |
+|   or value is omitted.                                                                               |                                                                         |
++------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
 .. note::
 

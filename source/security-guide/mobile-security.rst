@@ -37,7 +37,7 @@ Biometric authentication
 
 Native biometric authentication ensures only the authorized device owner can access the Mattermost application. By utilizing hardware-level security, biometrics significantly enhance data protection, especially in cases of lost or stolen devices. This advanced security measure is far more robust and user-friendly compared to traditional passwords, adding a resilient layer of protection against unauthorized access.
 
-Administrators can mandate biometric authentication each time users attempt to open the Mattermost application, further safeguarding customer data and mitigating risks. Learn more about Mattermost :ref:`mobile biometric authentication <deployment-guide/mobile/mobile-security-features:biometric authentication>`, and the :ref:`user workflows in which users must authenticate <administration-guide/configuration-reference/environment-configuration-settings:enable biometric authentication>`, when biometric authentication is enabled.
+Administrators can mandate biometric authentication each time users attempt to open the Mattermost application, further safeguarding customer data and mitigating risks. Learn more about Mattermost :ref:`mobile biometric authentication <deployment-guide/mobile/mobile-security-features:biometric authentication>`, and the :ref:`user workflows in which users must authenticate <administration-guide/getting-started/environment-configuration-settings:enable biometric authentication>`, when biometric authentication is enabled.
 
 Screenshot and screen recording prevention
 -------------------------------------------
@@ -54,7 +54,7 @@ Learn more about how Mattermost leverages robust sandboxing mechanisms on both i
 Push notification message visibility
 ------------------------------------
 
-Push notifications are a convenient way to stay updated, but they can also pose security risks if sensitive information is displayed. Mattermost provides options to :ref:`control the visibility of message content in push notifications <administration-guide/configuration-reference/environment-configuration-settings:id-only push notifications>`, ensuring that sensitive information is not inadvertently exposed through locked mobile screens and via relay servers from Apple and Google when sending notifications to iOS or Android mobile apps.
+Push notifications are a convenient way to stay updated, but they can also pose security risks if sensitive information is displayed. Mattermost provides options to :ref:`control the visibility of message content in push notifications <administration-guide/getting-started/environment-configuration-settings:id-only push notifications>`, ensuring that sensitive information is not inadvertently exposed through locked mobile screens and via relay servers from Apple and Google when sending notifications to iOS or Android mobile apps.
 
 Disable downloads
 -----------------

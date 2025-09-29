@@ -9,7 +9,7 @@ Set server connection details
 1. (Optional) Enter **Server Username** used to access the enterprise search server.
 2. (Optional) Enter **Server Password** associated with the username.
 3. Set **Enable Cluster Sniffing** (Optional). Sniffing finds and connects to all data nodes in your cluster automatically.
-4. Optional CA and client certificate configuration settings are available for use with basic authentication credentials or to replace them. See the :ref:`Enterprise search configuration settings <administration-guide/configuration-reference/environment-configuration-settings:enterprise search>` documentation for details.
+4. Optional CA and client certificate configuration settings are available for use with basic authentication credentials or to replace them. See the :ref:`Enterprise search configuration settings <administration-guide/getting-started/environment-configuration-settings:enterprise search>` documentation for details.
 5. Select **Test Connection** and then select **Save**. If the server connection is unsuccessful you won't be able to save the configuration or enable searching with Elasticsearch or AWS OpenSearch.
 
 Build the post index of existing messages
@@ -26,7 +26,7 @@ Set **Enable Elasticsearch for search queries** to ``true``, and setting **Enabl
 
 .. note::
 
-  For high post volume deployments, we strongly encourage you to read and properly configure the Mattermost :ref:`LiveIndexingBatchSize <administration-guide/configuration-reference/environment-configuration-settings:live indexing batch size>` configuration setting.
+  For high post volume deployments, we strongly encourage you to read and properly configure the Mattermost :ref:`LiveIndexingBatchSize <administration-guide/getting-started/environment-configuration-settings:live indexing batch size>` configuration setting.
 
 
 .. warning::

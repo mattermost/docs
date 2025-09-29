@@ -15,8 +15,8 @@ Mattermost database search starts to show performance degradation at around 2 mi
     :hidden:
     :titlesonly:
 
-    Elasticsearch setup </administration-guide/operations-scaling/elasticsearch-setup>
-    AWS OpenSearch setup </administration-guide/operations-scaling/opensearch-setup>
+    Elasticsearch setup </administration-guide/platform-features/elasticsearch-setup>
+    AWS OpenSearch setup </administration-guide/platform-features/opensearch-setup>
 
 Elasticsearch
 -------------
@@ -55,7 +55,7 @@ Review the following support paths for enterprise search based on the version yo
 
     1. Disable "compatibility mode" in OpenSearch.
     2. Upgrade Mattermost server.
-    3. Update the Mattermost ``ElasticsearchSettings.Backend`` configuration setting value from ``elasticsearch`` to ```opensearch``` manually or using :ref:`mmctl <administration-guide/admin-tools/mmctl-command-line-tool:mmctl config set>`. This value cannot be changed using the System Console. See the Mattermost search :ref:`backend type <administration-guide/configuration-reference/environment-configuration-settings:backend type>` configuration setting documentation for additional details.
+    3. Update the Mattermost ``ElasticsearchSettings.Backend`` configuration setting value from ``elasticsearch`` to ```opensearch``` manually or using :ref:`mmctl <administration-guide/admin-tools/mmctl-command-line-tool:mmctl config set>`. This value cannot be changed using the System Console. See the Mattermost search :ref:`backend type <administration-guide/getting-started/environment-configuration-settings:backend type>` configuration setting documentation for additional details.
     4. Restart the Mattermost server.
 
 Frequently asked questions (FAQ)
@@ -84,7 +84,7 @@ Yes. From Mattermost v6.7, the search indexing job is resumable. Stopping a serv
 Can an index rollover policy be defined?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The :ref:`AggregatePostsAfterDays <administration-guide/configuration-reference/environment-configuration-settings:aggregate search indexes>` configuration setting defines a cutoff value. All posts preceding this value are reindexed and aggregated into new and bigger indexes. The default setting is 365 days.
+The :ref:`AggregatePostsAfterDays <administration-guide/getting-started/environment-configuration-settings:aggregate search indexes>` configuration setting defines a cutoff value. All posts preceding this value are reindexed and aggregated into new and bigger indexes. The default setting is 365 days.
 
 Are there any new search features offered with Elasticsearch?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
