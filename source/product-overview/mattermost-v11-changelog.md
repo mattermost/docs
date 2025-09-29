@@ -137,7 +137,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - Added a new API endpoint ``POST /api/v4/groups/names``.
 
 ### Go Version
- - v11.0 is built with Go ``v1.24.5``.
+ - v11.0 is built with Go ``v1.24.6``.
 
 ### Open Source Components
  - Added ``simplebar-react``, and removed ``go-sql-driver/mysql``, ``blevesearch/bleve`` and ``axios`` from https://github.com/mattermost/mattermost/. 
