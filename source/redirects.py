@@ -2858,6 +2858,8 @@ redirects_map = {
         "https://docs.mattermost.com/integrations-guide/mattermost-mission-collaboration-for-m365.html",
 "integrate/microsoft-calendar.html":
         "https://docs.mattermost.com/integrations-guide/microsoft-calendar.html",
+"integrate/microsoft-calendar-interoperability.html":
+        "https://docs.mattermost.com/integrations-guide/microsoft-calendar.html",
 "integrate/microsoft-calendar-interoperability.html#usage":
         "https://docs.mattermost.com/integrations-guide/microsoft-calendar.html#use",
 "integrate/microsoft-calendar-interoperability.html#setup":
