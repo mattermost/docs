@@ -31,7 +31,7 @@ mmctl commands
 - `mmctl channel`_ - Channel Management
 - `mmctl command`_ - Command Management
 - `mmctl cpa`_ - Custom Profile Attribute Management
-- `mmctl completion`_ - Generate autocompletion scripts for bash and zsh
+- `mmctl completion`_ - Generate autocompletion scripts for bash, fish, powershell, and zsh
 - `mmctl compliance-export`_ - Compliance Export Management
 - `mmctl config`_ - Configuration Management
 - `mmctl docs`_ - Generate mmctl documentation
@@ -472,17 +472,31 @@ And now we can run commands normally:
 Installing shell completions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To install the shell completions for bash, add the following line to your ``~/.bashrc`` or ``~/.profile`` file:
+mmctl supports shell completions for bash, fish, powershell, and zsh from Mattermost v11.
+
+To install the shell completions for **bash**, add the following line to your ``~/.bashrc`` or ``~/.profile`` file:
 
 .. code-block:: sh
 
    source <(mmctl completion bash)
 
-For zsh, add the following line to your ``~/.zshrc`` file:
+For **zsh**, add the following line to your ``~/.zshrc`` file:
 
 .. code-block:: sh
 
    source <(mmctl completion zsh)
+
+For **fish**, add the following line to your fish configuration:
+
+.. code-block:: sh
+
+   mmctl completion fish | source
+
+For **powershell**, add the following line to your PowerShell profile:
+
+.. code-block:: powershell
+
+   mmctl completion powershell | Out-String | Invoke-Expression
 
 mmctl auth renew
 ~~~~~~~~~~~~~~~~
@@ -833,6 +847,7 @@ mmctl channel
 Manage channels.
 
    Child Commands
+      -  `mmctl channel add`_ - (Deprecated) Add a user to a channel
       -  `mmctl channel archive`_ - Archive a channel
       -  `mmctl channel create`_ - Create a channel
       -  `mmctl channel delete`_ - Delete a channel
@@ -840,6 +855,7 @@ Manage channels.
       -  `mmctl channel make-private`_ - (Deprecated) Set a channel's type to "private" 
       -  `mmctl channel modify`_ - Modify a channel's type (private/public)
       -  `mmctl channel move`_ - Move channels to the specified team
+      -  `mmctl channel remove`_ - (Deprecated) Remove a user from a channel
       -  `mmctl channel rename`_ - Rename a channel
       -  `mmctl channel restore`_ - (Deprecated) Restore a channel from the archive
       -  `mmctl channel search`_ - Search a channel by name
@@ -878,6 +894,47 @@ Archive channels along with all related information including posts from the dat
 .. code-block:: sh
 
    -h, --help   help for archive
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl channel add
+~~~~~~~~~~~~~~~~~
+
+This command is deprecated in favor of :ref:`mmctl channel users add <administration-guide/manage/mmctl-command-line-tool:mmctl channel users add>`.
+
+**Description**
+
+Add a user to a channel.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl channel add [channel] [users] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   mmctl channel add myteam:mychannel user@example.com username
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for add
 
 **Options inherited from parent commands**
 
@@ -1161,17 +1218,58 @@ Rename an existing channel.
 
 .. code-block:: sh
 
-   mmctl channel rename myteam:oldchannel --name 'new-channel' --display_name 'New Display Name'
+   mmctl channel rename myteam:oldchannel --name 'new-channel' --display-name 'New Display Name'
    mmctl channel rename myteam:oldchannel --name 'new-channel'
-   mmctl channel rename myteam:oldchannel --display_name 'New Display Name'
+   mmctl channel rename myteam:oldchannel --display-name 'New Display Name'
 
 **Options**
 
 .. code-block:: sh
 
-   --display_name string   Channel Display Name
+   --display-name string   Channel Display Name
    -h, --help              help for rename
    --name string           Channel Name
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl channel remove
+~~~~~~~~~~~~~~~~~~~~
+
+This command is deprecated in favor of :ref:`mmctl channel users remove <administration-guide/manage/mmctl-command-line-tool:mmctl channel users remove>`.
+
+**Description**
+
+Remove a user from a channel.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl channel remove [channel] [users] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   mmctl channel remove myteam:mychannel user@example.com username
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for remove
 
 **Options inherited from parent commands**
 
@@ -1765,7 +1863,7 @@ To load completion, run:
 
 .. code-block:: sh
 
-   -h, --help   help for bash
+   -h, --help          help for bash
    --no-descriptions   disable completion descriptions
 
 **Options inherited from parent commands**
@@ -1793,9 +1891,9 @@ To load completion, run:
 
 .. code-block:: sh
 
-   . <(mmctl completion fish)
+   mmctl completion fish | source
 
-To configure your ``fish`` shell to load completions for each session, add the above line to your ``~/.zshrc``.
+To configure your ``fish`` shell to load completions for each session, add the above line to your fish configuration.
 
 **Format**
 
@@ -1807,7 +1905,7 @@ To configure your ``fish`` shell to load completions for each session, add the a
 
 .. code-block:: sh
 
-   -h, --help   help for fish
+   -h, --help          help for fish
    --no-descriptions   disable completion descriptions
 
 **Options inherited from parent commands**
@@ -1833,15 +1931,15 @@ Generate the ``powershell`` autocompletion scripts.
 
 To load completion, run:
 
-.. code-block:: sh
+.. code-block:: powershell
 
-   . <(mmctl completion powershell)
+   mmctl completion powershell | Out-String | Invoke-Expression
 
-To configure your ``powershell`` shell to load completions for each session, add the above line to your ``~/.zshrc``.
+To configure your ``powershell`` shell to load completions for each session, add the above line to your PowerShell profile.
 
 **Format**
 
-.. code-block:: sh
+.. code-block:: powershell
 
    mmctl completion powershell [flags]
 
@@ -1849,7 +1947,7 @@ To configure your ``powershell`` shell to load completions for each session, add
 
 .. code-block:: sh
 
-   -h, --help   help for powershell
+   -h, --help          help for powershell
    --no-descriptions   disable completion descriptions
 
 **Options inherited from parent commands**
@@ -1891,7 +1989,7 @@ To configure your ``zsh`` shell to load completions for each session, add the ab
 
 .. code-block:: sh
 
-   -h, --help   help for zsh
+   -h, --help          help for zsh
    --no-descriptions   disable completion descriptions
 
 **Options inherited from parent commands**
@@ -4492,7 +4590,7 @@ Synchronize all LDAP users and groups now.
 .. code-block:: sh
 
    -h, --help                  help for sync
-   --include-removed-members   Include members who left or were removed from a group-synced team/channel. Useful in cases where synchronized groups are unlinked/re-linked for testing purposes, when LDAP users are deactivated and reactivated, or when a user leaves a team in error.
+   --include-removed-members   **Deprecated in v11.0**: Include members who left or were removed from a group-synced team/channel. Useful in cases where synchronized groups are unlinked/re-linked for testing purposes, when LDAP users are deactivated and reactivated, or when a user leaves a team in error. This option is deprecated and will be removed in a future version.
 
 **Options inherited from parent commands**
 
@@ -4945,7 +5043,7 @@ Show all the information about a role.
 
 .. code-block:: sh
 
-   mmctl permissions show system_user
+   mmctl permissions role show system_user
 
 **Options**
 
@@ -6076,14 +6174,14 @@ Create a team.
 
 .. code-block:: sh
 
-   mmctl team create --name mynewteam --display_name "My New Team"
-   mmctl team create --name private --display_name "My New Private Team" --private
+   mmctl team create --name mynewteam --display-name "My New Team"
+   mmctl team create --name private --display-name "My New Private Team" --private
 
 **Options**
 
 .. code-block:: sh
 
-   --display_name string   Team Display Name
+   --display-name string   Team Display Name
    --email string          Administrator Email (anyone with this email is automatically a team admin)
    -h, --help              help for create
    --name string           Team Name
@@ -6243,13 +6341,13 @@ Rename an existing team.
 
 .. code-block:: sh
 
-   mmctl team rename old-team --display_name 'New Display Name'
+   mmctl team rename old-team --display-name 'New Display Name'
 
 **Options**
 
 .. code-block:: sh
 
-   --display_name string   Team Display Name
+   --display-name string   Team Display Name
    -h, --help              help for rename
 
 **Options inherited from parent commands**
@@ -6589,7 +6687,10 @@ Manage users.
       -  `mmctl user delete`_ - Delete users
       -  `mmctl user deleteall`_ - Delete all users and all posts (local command only)
       -  `mmctl user demote`_ - Demote users to guests
-      -  `mmctl user email`_ - Set user email
+      -  `mmctl user edit`_ - Edit user information
+      -  `mmctl user edit email`_ - Set user email
+      -  `mmctl user edit username`_ - Change username of the user
+      -  `mmctl user email`_ - (Deprecated) Set user email
       -  `mmctl user invite`_ - Invite user
       -  `mmctl user list`_ - List users
       -  `mmctl user migrate-auth`_ - Bulk migrate user accounts authentication type
@@ -6598,7 +6699,7 @@ Manage users.
       -  `mmctl user reset-password`_ - Reset user password
       -  `mmctl user resetmfa`_ - Reset a user's MFA token
       -  `mmctl user search`_ - Search for a user
-      -  `mmctl user username`_ - Change username of the user
+      -  `mmctl user username`_ - (Deprecated) Change username of the user
       -  `mmctl user verify`_ - Mark user's email as verified
 
 **Options**
@@ -6741,7 +6842,7 @@ Convert user accounts to bots, or convert bots to user accounts.
    --locale string      The locale (e.g., EN, FR) for the converted new user account. Required when the "bot" flag is set
    --nickname string    The nickname for the converted user account. Required when the "bot" flag is set
    --password string    The password for converted new user account. Required when "user" flag is set
-   --system_admin       If supplied, the converted user will be a system admin. Defaults to false. Required when the "bot" flag is set
+   --system-admin       If supplied, the converted user will be a system admin. Defaults to false. Required when the "bot" flag is set
    --user               If supplied, convert a bot to a user
    --username string    Username for the converted user account. Required when the "bot" flag is set
 
@@ -6981,8 +7082,46 @@ Demote a user to a guest.
    --strict                       will only run commands if the mmctl version matches the server one
    --suppress-warnings            disables printing warning messages
 
-mmctl user email
-~~~~~~~~~~~~~~~~
+mmctl user edit
+~~~~~~~~~~~~~~~
+
+**Description**
+
+Edit user information such as email address and username.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl user edit [command]
+
+**Child Commands**
+
+-  `mmctl user edit email`_ - Set user email
+-  `mmctl user edit username`_ - Change username of the user
+
+**Options**
+
+.. code-block:: sh
+
+  -h, --help       help for edit
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl user edit email
+~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
 
@@ -6990,7 +7129,91 @@ Change the email address associated with a user.
 
 .. note::
 
-   From Mattermost v10.9, email addresses enclosed in angle brackets (e.g., ``<billy@example.com>``) will be rejected. To avoid issues, ensure all user emails comply with the plain address format (e.g., ``billy@example.com``). In addition, we strongly recommend taking proactive steps to audit and update Mattermost user data to align with this product change, as impacted users may face issues accessing Mattermost or managing their user profile. You can update these user emails manually using this mmctl command: ``mmctl user email "<affecteduser@domain.com>" affecteduser@domain.com``.
+   From Mattermost v10.9, email addresses enclosed in angle brackets (e.g., ``<billy@example.com>``) will be rejected. To avoid issues, ensure all user emails comply with the plain address format (e.g., ``billy@example.com``). In addition, we strongly recommend taking proactive steps to audit and update Mattermost user data to align with this product change, as impacted users may face issues accessing Mattermost or managing their user profile. You can update these user emails manually using this mmctl command: ``mmctl user edit email "<affecteduser@domain.com>" affecteduser@domain.com``.
+
+**Format**
+
+.. code-block:: sh
+
+  mmctl user edit email [user] [new email] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+  mmctl user edit email testuser user@example.com
+
+**Options**
+
+.. code-block:: sh
+
+  -h, --help       help for email
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl user edit username
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Change the username of the user.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl user edit username [user] [new username] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   mmctl user edit username testuser newusername
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help       help for username
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl user email
+~~~~~~~~~~~~~~~~
+
+This command is deprecated in favor of :ref:`mmctl user edit email <administration-guide/manage/mmctl-command-line-tool:mmctl user edit email>`.
+
+**Description**
+
+Change the email address associated with a user.
+
+.. note::
+
+   From Mattermost v10.9, email addresses enclosed in angle brackets (e.g., ``<billy@example.com>``) will be rejected. To avoid issues, ensure all user emails comply with the plain address format (e.g., ``billy@example.com``). In addition, we strongly recommend taking proactive steps to audit and update Mattermost user data to align with this product change, as impacted users may face issues accessing Mattermost or managing their user profile. You can update these user emails manually using this mmctl command: ``mmctl user edit email "<affecteduser@domain.com>" affecteduser@domain.com``.
 
 **Format**
 
@@ -7543,6 +7766,8 @@ Search for users based on username, email, or user ID. The command returns user 
 
 mmctl user username
 ~~~~~~~~~~~~~~~~~~~
+
+This command is deprecated in favor of :ref:`mmctl user edit username <administration-guide/manage/mmctl-command-line-tool:mmctl user edit username>` instead.
 
 **Description**
 

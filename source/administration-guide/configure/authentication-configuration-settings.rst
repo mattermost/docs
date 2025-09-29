@@ -1499,7 +1499,7 @@ Sign request
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.SignatureAlgorithm
   :environment: MM_SAMLSETTINGS_SIGNATUREALGORITHM
-  :description: This setting determines the signature algorithm used to sign the SAML request. Options are: ``RSAwithSHA1``, ``RSAwithSHA256``, ``RSAwithSHA512``.
+  :description: This setting determines the signature algorithm used to sign the SAML request. Options are: ``RSAwithSHA1``, ``RSAwithSHA256``, ``RSAwithSHA512``. From v11, default is ``RSAwithSHA256``. Previously ``RSAwithSHA1``.
 
 Signature algorithm
 ~~~~~~~~~~~~~~~~~~~
@@ -1511,6 +1511,11 @@ Signature algorithm
 | This setting determines the signature algorithm used to sign the SAML request. Options are: ``RSAwithSHA1``, ``RSAwithSHA256``, ``RSAwithSHA512``. | - System Config path: **Authentication > SAML 2.0**                      |
 |                                                                                                                                                    | - ``config.json`` setting: ``SamlSettings`` > ``SignatureAlgorithm``     |
 | String input.                                                                                                                                      | - Environment variable: ``MM_SAMLSETTINGS_SIGNATUREALGORITHM``           |
+|                                                                                                                                                    |                                                                          |
+| .. note::                                                                                                                                          |                                                                          |
+|                                                                                                                                                    |                                                                          |
+|   From Mattermost v11, the default signature algorithm has been updated from ``RSAwithSHA1`` to ``RSAwithSHA256`` for improved security.           |                                                                          |
+|   Existing configurations will continue to work, but new installations will default to ``RSAwithSHA256``.                                          |                                                                          |
 +----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: canonical-algorithm

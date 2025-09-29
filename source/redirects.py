@@ -551,6 +551,10 @@ redirects_map = {
         "https://docs.mattermost.com/end-user-guide/upgrade-mattermost.html",
 "administration/release-lifecycle.html":
         "https://docs.mattermost.com/product-overview/releases-lifecycle.html",
+"administration-guide/configure/site-configuration-settings.html#enable-secure-file-preview-on-mobile":
+        "https://docs.mattermost.com/administration-guide/configure/environment-configuration-settings.html#enable-secure-file-preview-on-mobile",
+"administration-guide/configure/site-configuration-settings.html#allow-pdf-link-navigation-on-mobile":
+        "https://docs.mattermost.com/administration-guide/configure/environment-configuration-settings.html#allow-pdf-link-navigation-on-mobile",
 
 # Channels redirects
 "channels/find-channels.html":
@@ -1596,13 +1600,13 @@ redirects_map = {
 "configure/configuration-settings.html#enable-shared-channels":
         "https://docs.mattermost.com/administration-guide/configure/site-configuration-settings.html#enable-connected-workspaces",
 "configure/configuration-settings.html#enable-bleve-indexing":
-        "https://docs.mattermost.com/administration-guide/configure/experimental-configuration-settings.html#enable-bleve-indexing",
+        "https://docs.mattermost.com/administration-guide/configure/deprecated-configuration-settings.html#enable-bleve-indexing",
 "configure/configuration-settings.html#index-directory":
-        "https://docs.mattermost.com/administration-guide/configure/experimental-configuration-settings.html#index-directory",
+        "https://docs.mattermost.com/administration-guide/configure/deprecated-configuration-settings.html#index-directory",
 "configure/configuration-settings.html#enable-bleve-for-search-queries":
-        "https://docs.mattermost.com/administration-guide/configure/experimental-configuration-settings.html#enable-bleve-for-search-queries",
+        "https://docs.mattermost.com/administration-guide/configure/deprecated-configuration-settings.html#enable-bleve-for-search-queries",
 "configure/configuration-settings.html#enable-bleve-for-autocomplete-queries":
-        "https://docs.mattermost.com/administration-guide/configure/experimental-configuration-settings.html#enable-bleve-for-autocomplete-queries",
+        "https://docs.mattermost.com/administration-guide/configure/deprecated-configuration-settings.html#enable-bleve-for-autocomplete-queries",
 "configure/configuration-settings.html#allowed-themes":
         "https://docs.mattermost.com/administration-guide/configure/experimental-configuration-settings.html#allowed-themes",
 "configure/configuration-settings.html#maximum-users-for-statistics":
@@ -1974,6 +1978,8 @@ redirects_map = {
         "https://docs.mattermost.com/deployment-guide/server/server-deployment-planning.html",
 "configure/using-outbound-proxy.html":
         "https://docs.mattermost.com/deployment-guide/server/server-deployment-planning.html",
+"configure/environment-configuration-settings.html#dev-allowuntrustedinternalconnections":
+        "https://docs.mattermost.com/administration-guide/configure/environment-configuration-settings.html#allow-untrusted-internal-connections",
 
 # Deploy redirects
 "deploy/application-architecture.html":
@@ -2852,6 +2858,14 @@ redirects_map = {
         "https://docs.mattermost.com/integrations-guide/mattermost-mission-collaboration-for-m365.html",
 "integrate/microsoft-calendar.html":
         "https://docs.mattermost.com/integrations-guide/microsoft-calendar.html",
+"integrate/microsoft-calendar-interoperability.html":
+        "https://docs.mattermost.com/integrations-guide/microsoft-calendar.html",
+"integrate/microsoft-calendar-interoperability.html#usage":
+        "https://docs.mattermost.com/integrations-guide/microsoft-calendar.html#use",
+"integrate/microsoft-calendar-interoperability.html#setup":
+        "https://docs.mattermost.com/integrations-guide/microsoft-calendar.html#deploy",
+"integrate/microsoft-calendar-interoperability.html#enable-and-configure-the-microsoft-teams-meetings-integration-in-mattermost":
+        "https://docs.mattermost.com/integrations-guide/microsoft-calendar.html#enable-and-configure-the-microsoft-calendar-integration-in-mattermost",
 "integrate/microsoft-teams-meetings.html":
         "https://docs.mattermost.com/integrations-guide/microsoft-teams-meetings.html",
 "integrate/microsoft-teams-sync.html":
@@ -2887,6 +2901,8 @@ redirects_map = {
 "integrations/cloud-slash-commands.html":
         "https://developers.mattermost.com/integrate/slash-commands/",
 "integrations-guide/pre-built-integrations.html":
+        "https://docs.mattermost.com/integrations-guide/popular-integrations.html",
+"integrations-guide/popular-integrations.html#third-party-integrations":
         "https://docs.mattermost.com/integrations-guide/popular-integrations.html",
 
 # Manage redirects
