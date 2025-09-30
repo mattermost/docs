@@ -7,7 +7,9 @@ Migrate from Slack
 Overview
 --------
 
-Migrating from Slack to Mattermost is a multi-step process that can be complex, particularly for larger organizations or those with multiple Slack workspaces. The process generally involves preparing your environment, exporting data from Slack, converting that data into a compatible format, and then importing it into Mattermost.
+Mattermost provides a reliable migration path from Slack, enabling you to bring your organization’s collaboration history into a secure, self-hosted Mattermost environment. The migration process supports full workspaces, including users, channels and message history, direct messages, and threads so your teams can continue working without losing valuable context.
+
+This process generally involves preparing your environment, exporting data from Slack, converting that data into a compatible format, and then importing it into Mattermost. Migrating from Slack is a multi-step process that can be complex, particularly for larger organizations or those with multiple Slack workspaces. 
 
 Additionally, please consider that Slack's data control policies or export capabilities may change at any time, or they may charge fees to customers for exporting data stored in Slack. Support for negotiating export of customer IP from Slack Enterprise can be requested by contacting a `Mattermost Expert <https://mattermost.com/contact-sales/>`_.
 
