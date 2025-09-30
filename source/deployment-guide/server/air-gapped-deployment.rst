@@ -1,200 +1,170 @@
 Deploy Mattermost in Air-Gapped Environments
 ==============================================
 
-This guide outlines how to deploy Mattermost in a self-hosted air-gapped environment, focusing on setting up the supporting infrastructure required for a successful deployment. An air-gapped environment is one that is isolated from the public internet, requiring all necessary components to be available locally.
+An air-gapped environment is one that is isolated from the public internet, requiring all necessary components to be available locally. This guide outlines what you'll need to deploy Mattermost in a self-hosted air-gapped environment, focusing on appropriate preparation, deployment guidance and configurations required for a successful deployment.
 
-Deploying Mattermost in an air-gapped environment involves detailed preparation to ensure uninterrupted availability of critical components within the network. These efforts mitigate risks associated with the lack of internet connectivity by ensuring access to secure, localized resources. Key considerations include:
+Overview
+--------
 
-- Container images required when deploying in Kubernetes or Docker.
-- Mattermost server packages and dependencies required when deploying directly on Linux servers.
-- Access to a PostgreSQL database.
-- Object storage or a shared filesystem service for reliability accessing files from multiple Mattermost servers.
-- Other optional supporting services such as:
+At a high level, deploying Mattermost in an air-gapped environment requires preparing all necessary software, container images, and configuration resources in advance, since the target system has no direct internet access; transferring these artifacts to the isolated network using secure media; and then installing, configuring, and validating the deployment within the air-gapped environment. This is a summary of the steps involved:
 
-   - SMTP for email functionality.
-   - LDAP or SAML for authentication.
-   - Elasticsearch for performant post searching.
-   - Prometheus or other metric scraping services for enhanced observability.
+1. **Select your preferred Mattermost deployment option:**
 
-Refer to Mattermost deployment documentation for setting up Mattermost as needed. This guide focuses on the supporting infrastructure needed for an air-gapped deployment which is required before deploying Mattermost in these environments.
+This step is often dictated by the infrastruture already running in your air-gapped environment. If you're deploying from scratch, we recommend reviewing our :ref:`server deployment documentation <deployment-guide/server/server-deployment-planning:deployment options>` to select the optimal option given your organizations needs.    
 
-Set up a self-hosted private container registry
---------------------------------------------------
+2. **Setup a private container registry or package mirror:** 
 
-A private container registry securely stores Docker images for air-gapped deployments, ensuring compliance with data isolation requirements. Use it to enable local deployments in Kubernetes or Docker.
+Ideally the air-gapped environment already has a private container registry or package mirror available. If not, we recommend following :ref:`our frequently asked questions <deployment-guide/server/air-gapped-deployment:frequently asked questions>` or referencing online resources specific to your environment.
 
-The process for uploading images to the registry will need to be tailored to the security policies of the air-gapped network. For example, perhaps the registry is allowed to pull images from the public internet. If not, images will have to be uploaded to the registry from a machine that has access to the public internet.
+3. **Prepare your Bill of Materials:**
 
-Ideally the air-gapped network already has a private registry available. If not, you can set up a private registry using Docker Registry or Harbor.
+Depending on your deployment method method, you'll need to download, tag, and push required materials into your private registry or mirror.  
 
-.. tab:: Docker registry
+4. **Transfer materials into the air-gapped environment:**   
 
-   1. **Install Docker Registry**:
+If the private registry cannot access the public internet, you can prepare an archive of the registry data on your internet connected machine and securely transfer it using approved data transfer methods - for example, burning to a disk.
 
-      .. code-block:: bash
+5. **Install Mattermost**
 
-         docker run -d -p 5000:5000 --restart=always --name registry registry:2
+Once you have all the necessary resources in your air-gapped environment, you can move forward with deployment following the instructions for :doc:`Linux </deployment-guide/server/deploy-linux>`, :doc:`Kubernetes </deployment-guide/server/deploy-kubernetes>`, or :doc:`Docker </deployment-guide/server/deploy-containers>`.
 
-   2. **Configure persistent storage**:
+6. **Configure Mattermost for air-gapped operation**
 
-      .. code-block:: bash
+The :ref:`configuration settings <deployment-guide/server/air-gapped-deployment:server configuration>` recommended in this document accomodate for the lack of internet access to operate Mattermost in an air-gapped environment.
 
-         docker run -d -p 5000:5000 --restart=always --name registry \
-         -v /mnt/registry:/var/lib/registry \
-         registry:2
 
-   3. **Add TLS security** (recommended):
+.. note::
+  Consider `talking to a Mattermost expert <https://mattermost.com/contact-sales/>`__ if your organization needs support deploying Mattermost and supporting services in an air-gapped environment.
 
-      a. Generate self-signed certificates:
+Bill of Materials
+-----------------
 
-         .. code-block:: bash
+On an internet connected machine, you must gather all required packages, container images, and dependencies needed for the installation process. The resources you'll need will depend on your deployment method, specifically:
 
-            mkdir -p certs
-            openssl req -newkey rsa:4096 -nodes -sha256 -keyout certs/domain.key \
-            -x509 -days 365 -out certs/domain.crt
+.. tab:: Linux
 
-      b. Run the registry with TLS:
+  Using our provided tarball is recommeded as the simplest installation method for air-gapped environments. You can install the Mattermost Server in a few minutes on any air-gapped 64-bit Linux system.
 
-         .. code-block:: bash
+    **Prerequisites**
 
-            docker run -d -p 5000:5000 --restart=always --name registry \
-            -v /mnt/registry:/var/lib/registry \
-            -v $(pwd)/certs:/certs \
-            -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/domain.crt \
-            -e REGISTRY_HTTP_TLS_KEY=/certs/domain.key \
-            registry:2
+    - :doc:`Mattermost tarball </product-overview/version-archive>`. We recommend using the latest :ref:`ESR <product-overview/release-policy:extended support releases>` for extended support where server upgrades may be infrequent.
+    - Database: PostgreSQL `installation packages <https://www.postgresql.org/download/>`_ or container images for your Linux distribution
+    - File Storage: Local filesystem storage is sufficient for deployments under 2,000 users. For larger deployments requiring high availability, we recommend using an S3-compatible object storage solution, such as `MinIO <https://min.io/download>`_. NFS can also be considered as an alternative for shared storage needs.
+    - Load balancer: If you already have a load balancer running in your air-gapped environment you can skip this resource, otherwise we recommend deploying `NGINX <https://docs.mattermost.com/deployment-guide/server/setup-nginx-proxy.html>`_ from these `Linux packages <https://nginx.org/en/linux_packages.html>`_.
 
-.. tab:: Harbor registry
+    **(Optional) Supporting Services**
+    Consider downloading these additional resources if you plan to enable these optional components:
 
-   For more advanced features, consider using `Harbor <https://github.com/goharbor/harbor>`_.
+    - :doc:`Mattermost Calls </administration-guide/configure/calls-deployment>`: `mattermost-calls-offloader <https://github.com/mattermost/calls-offloader/releases>`__ (required for recording, transcription and live captions) and `mattermost-rtcd <https://github.com/mattermost/rtcd/releases>`__ (required for performance and scalability).
+    - `Elasticsearch <https://www.elastic.co/downloads/elasticsearch>`__ can be `deployed <https://www.elastic.co/docs/deploy-manage/deploy/self-managed/installing-elasticsearch>`__ for enhanced search performance at scale.
+    - `Prometheus <https://prometheus.io/download/>`_ and `Grafana <https://grafana.com/grafana/download>`__ for monitoring and observability
 
-   1. **Download Harbor offline installer** before going air-gapped:
-      
-      Download from https://github.com/goharbor/harbor/releases
+.. tab:: Kubernetes
 
-   2. **Extract and configure**:
+   Kubernetes is recommended for a highly scalable and robust deployment if your organization is already running a Kubernetes cluster in the air-gapped environment.
 
-      .. code-block:: bash
+    **Prerequisites**
 
-         tar xzvf harbor-offline-installer-v2.x.x.tgz
-         cd harbor
-         cp harbor.yml.tmpl harbor.yml
-         # Edit harbor.yml to configure settings
+    -  `Mattermost Operator <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-operator>`_ and `values <https://github.com/mattermost/mattermost-helm/blob/master/charts/mattermost-operator/values.yaml>`__
+    - Database: We recommend options such as the `Postgres Operator <https://access.crunchydata.com/documentation/postgres-operator/latest/quickstart>`_ from Crunchy Data, `CloudNativePG <https://cloudnative-pg.io/documentation/1.27/installation_upgrade/>`__ or `pgEdge <https://github.com/pgEdge/pgedge-helm>`__.
+    - File Storage: We recommend the `MinIO Operator <https://github.com/minio/operator>`__.
+    - Load balancer: If you already have a load balancer running in your air-gapped environment you can skip this resource, otherwise we recommend deploying :doc:`NGINX </deployment-guide/server/setup-nginx-proxy>`, using the `NGINX Ingress Controller operator <https://docs.nginx.com/nginx-ingress-controller/installation/installing-nic/installation-with-operator/>`__.
 
-   3. **Install Harbor**:
+    **(Optional) Supporting Services**
+    Consider downloading these additional resources if you plan to enable these optional components:
 
-      .. code-block:: bash
+    - :doc:`Mattermost Calls </administration-guide/configure/calls-deployment>` helm charts: `mattermost-calls-offloader <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-calls-offloader>`__ and `values <https://github.com/mattermost/mattermost-helm/blob/master/charts/mattermost-calls-offloader/values.yaml>`__ (required for recording, transcription and live captions), `mattermost-rtcd <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-rtcd>`__ and `values <https://github.com/mattermost/mattermost-helm/blob/master/charts/mattermost-rtcd/values.yaml>`__ (required for performance and scalability).
+    - `Elasticsearch <https://www.elastic.co/docs/deploy-manage/deploy/cloud-on-k8s>`__ can be `deployed in air-gapped k8 environments <https://www.elastic.co/guide/en/cloud-on-k8s/2.8/k8s-air-gapped.html>`__ for enhanced search performance at scale.
+    - `Prometheus <https://github.com/prometheus-operator/prometheus-operator>`__ and `Grafana <https://github.com/grafana/grafana-operator>`__ operators for monitoring and observability
 
-         ./install.sh --with-trivy
+.. tab:: Docker
 
-   4. **Access Harbor** at ``https://harbor-hostname`` (based on your configuration)
+   Docker can be used if you don't have a running Kubernetes cluster in the air-gapped environment, but want to use containers for simplified installation and dependency management. Docker is not recommended for production environments at high scale, as it doesn’t support clustered deployments or High Availability (HA) configurations out-of-the-box.
 
-Populate your private registry
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    **Prerequisites**
 
-If the private registry cannot access the public internet, retrieve images on an external machine and securely transfer them using approved data transfer methods.
+    - `Mattermost Enterprise Edition <https://hub.docker.com/r/mattermost/mattermost-enterprise-edition>`__ image.
+    - Database: `PostgreSQL <https://hub.docker.com/_/postgres>`__ image.
+    - Load balancer: If you already have a load balancer running in your air-gapped environment you can skip this resource, otherwise we recommend deploying :doc:`NGINX </deployment-guide/server/setup-nginx-proxy>` from this `images <https://hub.docker.com/_/nginx>`__.
 
-.. code-block:: bash
+    **(Optional) Supporting Services**
+    Consider downloading these additional resources if you plan to enable these optional components:
 
-   # Pull the required Mattermost images
-   docker pull mattermost/mattermost-enterprise-edition:latest
-   
-   # Tag the images for your private registry
-   docker tag mattermost/mattermost-enterprise-edition:latest registry.example.com:5000/mattermost/mattermost-enterprise-edition:latest
-   
-   # Push to your private registry
-   docker push registry.example.com:5000/mattermost/mattermost-enterprise-edition:latest
+    - :doc:`Mattermost Calls </administration-guide/configure/calls-deployment>` images: `calls-offloader <https://hub.docker.com/r/mattermost/calls-offloader>`__ (required for recording, transcription and live captions) and `rtcd <https://hub.docker.com/r/mattermost/rtcd>`__ (required for performance and scalability).
+    - `Elasticsearch <https://hub.docker.com/_/elasticsearch>`__ image for enhanced search performance at scale.
+    - `Prometheus <https://hub.docker.com/r/prom/prometheus>`__ and `Grafana <https://hub.docker.com/r/grafana/grafana>`__ images for monitoring and observability.
 
-Configure Kubernetes to use private image registries
------------------------------------------------------
+Mattermost Plugins
+~~~~~~~~~~~~~~~~~~
 
-When using Kubernetes in an air-gapped environment, you need to configure it to use your private registry.
+Mattermost includes a number of :doc:`pre-built integrations </integrations-guide/popular-integrations>` for mission-critical tools. If you'd like to use any plugins beyond those that are pre-built in the Mattermost package you'll need to download the plugin binaries from the `Mattermost Marketplace <https://mattermost.com/marketplace/>`_. Once you have Mattermost deployed, these plugin binaries can be uploaded directly in the System Console. 
 
-Create registry credentials
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SSL/TLS Certificates and Keys
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. **Create a kubernetes secret for registry authentication**:
+If your deployment requires SSL, ensure you have the necessary certificates. This includes certificates and keys for enabling HTTPS with Mattermost, as well as any CA files or certificates needed to access internal services such as LDAP or SAML.
 
-   .. code-block:: bash
+Local Documentation
+~~~~~~~~~~~~~~~~~~~
 
-      kubectl create secret docker-registry regcred \
-        --docker-server=registry.example.com:5000 \
-        --docker-username=your_username \
-        --docker-password=your_password \
-        --docker-email=your_email@example.com
+Mattermost documenation can be `built locally <https://github.com/mattermost/docs?tab=readme-ov-file#build-locally>`__ so you'll have access to installation and configuration documentation in the air-gapped environment. Otherwise, you can download the necessary deployment and configuration documents directly from the `GitHub docs repository <https://github.com/mattermost/docs>`__.
 
-2. **Reference the secret in pod specifications**:
+**Prerequisites**
+The following software is required to build the documentation locally:
 
-   .. code-block:: yaml
+- Git `[download] <https://git-scm.com/downloads>`__
+- Python 3.11 or later `[download] <https://www.python.org/downloads>`__
+- Pipenv `[download] <https://pipenv.pypa.io>`__
+- GNU Make 3.82 or later `[download] <https://ftp.gnu.org/gnu/make/>`__
 
-      apiVersion: v1
-      kind: Pod
-      metadata:
-        name: mattermost-pod
-      spec:
-        containers:
-        - name: mattermost
-          image: registry.example.com:5000/mattermost/mattermost-enterprise-edition:latest
-        imagePullSecrets:
-        - name: regcred
+Server configuration
+--------------------
 
-3. **For Helm deployments**, specify the registry in ``values.yaml``:
+After successful deployment, you'll need to configure Mattermost for air-gapped operation. The following sections describe these configuration options and offers recommendations for settings. 
 
-   .. code-block:: yaml
+Mobile push notifications
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-      image:
-        repository: registry.example.com:5000/mattermost/mattermost-enterprise-edition
-        tag: latest
-        pullPolicy: IfNotPresent
-      
-      imagePullSecrets:
-        - name: regcred
+Mattermost can use mobile push notifications to notify users of new messages and activity. These notifications require a server component to be deployed to send the notifications to the mobile devices. By default, Mattermost will use the public push notification service which is not available in an air-gapped environment. We recommend :ref:`disabling push notifications <administration-guide/configure/environment-configuration-settings:enable push notifications>` in **System Console > Environment > Push Notification Server**.
 
-Configure Docker to use private image registries
--------------------------------------------------
+Email
+~~~~~
 
-Configure Docker on all hosts to trust and use your private registry.
+Unless you have setup an internal air-gapped email service, we recommend disabling email invitations and email verification from **System Console > Authentication > Signup**.
 
-Docker daemon configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Website link previews
+~~~~~~~~~~~~~~~~~~~~~~~
 
-1. **Add your registry to Docker's trusted registries**:
+Website link previews require a connection to the internet to fetch the content of the links. We recommend :ref:`disabling website link previews <administration-guide/configure/site-configuration-settings:enable website link previews>` in **System Console > Site Configuration > Posts**.
 
-   Edit or create ``/etc/docker/daemon.json``:
+GIF picker
+~~~~~~~~~~
 
-   .. code-block:: json
+The GIF picker relies on a third-party service which has a dependency on external internet access. You can disable it in **System Console > Integrations > GIF**.
 
-      {
-        "insecure-registries": ["registry.example.com:5000"]
-      }
+Notices
+~~~~~~~
 
-   For registries using self-signed certificates:
+:doc:`In-product notices </administration-guide/manage/in-product-notices>` require internet access to periodcally inform administrators and end users of new product improvements, features, and releases. You can disable notices in **System Console > Site Configuration > Notices**.
 
-   .. code-block:: bash
+Telemetry
+~~~~~~~~~
 
-      mkdir -p /etc/docker/certs.d/registry.example.com:5000
-      cp domain.crt /etc/docker/certs.d/registry.example.com:5000/ca.crt
+To avoid log errors we recommend disabling :doc:`Telemetry-related features </administration-guide/manage/telemetry>`, including the security update check, and error and diagnostics reporting features.
 
-2. **Restart Docker daemon**:
+Frequently Asked Questions
+--------------------------
 
-   .. code-block:: bash
+What if my air-gapped environment doesn't have a private container registry or package mirror?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A private container registry securely stores the Docker images necessary for air-gapped deployments, ensuring compliance with data isolation requirements. Similarly, a private package mirror stores operating system packages necessary for air-gapped deployments in Ubuntu or RHEL/CentOS Linux environments. Setting up a local registry or mirror is a critical step in deploying Mattermost to ensure all images, dependencies and packages are available to you in the air-gapped environment. The steps below outline the process required to setup a local registry or mirror, depending on the deployment method you are using. These steps are a rough guide, and can be supplemented with online resources depending on your specific deployment needs. 
 
-      systemctl restart docker
 
-3. **Test the configuration**:
+.. tab:: Linux
 
-   .. code-block:: bash
+   **(Ubuntu) Set up a private Debian package mirror**
 
-      docker pull registry.example.com:5000/mattermost/mattermost-enterprise-edition:latest
-
-Set up a private Debian package mirror
------------------------------------------
-
-A local Debian mirror allows you to maintain packages for system updates and dependencies. In this case, the mirror will be used to provide packages for Mattermost server to debian-based hosts.
-
-Ideally the air-gapped network already has a local mirror available. If not, you can set up a local mirror such as Aptly or debmirror.
-
-.. tab:: Use Aptly
+   We will use Aptly to create a local mirror, although you can also use other options such as debmirror.
 
    1. **Install Aptly** (on an internet-connected machine):
 
@@ -234,195 +204,239 @@ Ideally the air-gapped network already has a local mirror available. If not, you
 
          aptly serve
 
-.. tab:: Use debmirror
-
-   For a simpler approach:
-
-   1. **Install debmirror**:
+   7. **Client configuration:** Configure apt to use your local mirror:
 
       .. code-block:: bash
 
-         apt-get install debmirror
-
-   2. **Create a mirror script**:
-
-      .. code-block:: bash
-
-         #!/bin/bash
-         debmirror --host=deb.debian.org \
-                  --root=/debian \
-                  --method=http \
-                  --dist=bullseye \
-                  --section=main,contrib,non-free \
-                  --arch=amd64 \
-                  --nosource \
-                  --progress \
-                  --ignore-release-gpg \
-                  /path/to/mirror/debian
-
-   3. **Set up a web server** (like nginx) to serve the mirror:
-
-      .. code-block:: bash
-
-         apt-get install nginx
-         
-         # Create nginx configuration
-         cat > /etc/nginx/sites-available/debian-mirror << EOF
-         server {
-            listen 80;
-            server_name mirror.example.com;
-            root /path/to/mirror;
-            autoindex on;
-         }
+         cat > /etc/apt/sources.list << EOF
+         deb http://mirror.example.com/debian bullseye main contrib non-free
          EOF
-         
-         ln -s /etc/nginx/sites-available/debian-mirror /etc/nginx/sites-enabled/
-         systemctl restart nginx
 
-Client configuration
-~~~~~~~~~~~~~~~~~~~~~
 
-On air-gapped systems, configure apt to use your local mirror:
+   **(RHEL/CentOS) Set up a private RHEL package mirror**
 
-.. code-block:: bash
+   We will use reprosync for a local mirror.
 
-   cat > /etc/apt/sources.list << EOF
-   deb http://mirror.example.com/debian bullseye main contrib non-free
-   EOF
+   1. **Install required tools** (on an internet-connected RHEL system):
 
-Set up a private RHEL package mirror
----------------------------------------
+      .. code-block:: bash
 
-For Red Hat Enterprise Linux environments, you'll need a local repository mirror.
+         yum install yum-utils createrepo
 
-Ideally the air-gapped network already has a local mirror available. If not, you can set up a local mirror such as reposync.
+   2. **Download packages**:
 
-Use reposync
-~~~~~~~~~~~~~
+      .. code-block:: bash
 
-1. **Install required tools** (on an internet-connected RHEL system):
+         mkdir -p /var/www/html/repos/rhel8
+         reposync -p /var/www/html/repos/rhel8 --download-metadata --repo=rhel-8-for-x86_64-baseos-rpms
+         reposync -p /var/www/html/repos/rhel8 --download-metadata --repo=rhel-8-for-x86_64-appstream-rpms
 
-   .. code-block:: bash
+   3. **Create repository metadata**:
 
-      yum install yum-utils createrepo
+      .. code-block:: bash
 
-2. **Download packages**:
+         createrepo /var/www/html/repos/rhel8/rhel-8-for-x86_64-baseos-rpms
+         createrepo /var/www/html/repos/rhel8/rhel-8-for-x86_64-appstream-rpms
 
-   .. code-block:: bash
+   4. **Set up a web server**:
 
-      mkdir -p /var/www/html/repos/rhel8
-      reposync -p /var/www/html/repos/rhel8 --download-metadata --repo=rhel-8-for-x86_64-baseos-rpms
-      reposync -p /var/www/html/repos/rhel8 --download-metadata --repo=rhel-8-for-x86_64-appstream-rpms
+      .. code-block:: bash
 
-3. **Create repository metadata**:
+         yum install httpd
+         systemctl enable httpd
+         systemctl start httpd
 
-   .. code-block:: bash
+   5. **Client configuration:** Disable existing repositories:
 
-      createrepo /var/www/html/repos/rhel8/rhel-8-for-x86_64-baseos-rpms
-      createrepo /var/www/html/repos/rhel8/rhel-8-for-x86_64-appstream-rpms
+      .. code-block:: bash
 
-4. **Set up a web server**:
+         cd /etc/yum.repos.d/
+         mkdir backup
+         mv *.repo backup/
 
-   .. code-block:: bash
+   6. **Client configuration:** Create new repository files:
 
-      yum install httpd
-      systemctl enable httpd
-      systemctl start httpd
+      .. code-block:: bash
 
-Client configuration
-~~~~~~~~~~~~~~~~~~~~~~
-
-On air-gapped RHEL systems:
-
-1. **Disable existing repositories**:
-
-   .. code-block:: bash
-
-      cd /etc/yum.repos.d/
-      mkdir backup
-      mv *.repo backup/
-
-2. **Create new repository files**:
-
-   .. code-block:: bash
-
-      cat > /etc/yum.repos.d/local-baseos.repo << EOF
-      [local-baseos]
-      name=Red Hat Enterprise Linux 8 BaseOS
-      baseurl=http://mirror.example.com/repos/rhel8/rhel-8-for-x86_64-baseos-rpms
-      enabled=1
-      gpgcheck=0
-      EOF
+         cat > /etc/yum.repos.d/local-baseos.repo << EOF
+         [local-baseos]
+         name=Red Hat Enterprise Linux 8 BaseOS
+         baseurl=http://mirror.example.com/repos/rhel8/rhel-8-for-x86_64-baseos-rpms
+         enabled=1
+         gpgcheck=0
+         EOF
       
-      cat > /etc/yum.repos.d/local-appstream.repo << EOF
-      [local-appstream]
-      name=Red Hat Enterprise Linux 8 AppStream
-      baseurl=http://mirror.example.com/repos/rhel8/rhel-8-for-x86_64-appstream-rpms
-      enabled=1
-      gpgcheck=0
-      EOF
+         cat > /etc/yum.repos.d/local-appstream.repo << EOF
+         [local-appstream]
+         name=Red Hat Enterprise Linux 8 AppStream
+         baseurl=http://mirror.example.com/repos/rhel8/rhel-8-for-x86_64-appstream-rpms
+         enabled=1
+         gpgcheck=0
+         EOF
 
-3. **Clear cache and test**:
+   7. **Client configuration:** Clear cache and test:
 
-   .. code-block:: bash
+      .. code-block:: bash
 
-      yum clean all
-      yum repolist
+         yum clean all
+         yum repolist
 
-Mattermost server configuration for air-gapped deployments
------------------------------------------------------------
 
-When deploying Mattermost in an air-gapped environment, there are configuration options available to accommodate the lack of internet access. The following covers these configuration options and offers recommendations for settings.
+.. tab:: Kubernetes
 
-Mobile push notifications
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+   **Set up a self-hosted private container registry**
 
-Mattermost can use mobile push notifications to notify users of new messages and activity. These notifications require a server component to be deployed to send the notifications to the mobile devices. By default, Mattermost will use the public push notification service which is not available in an air-gapped environment. We recommend :ref:`disabling push notifications <administration-guide/configure/environment-configuration-settings:enable push notifications>` in **System Console > Environment > Push Notification Server**.
+   1. **Install Docker Registry**:
 
-Website link previews
-~~~~~~~~~~~~~~~~~~~~~~~
+      .. code-block:: bash
 
-Website link previews require a connection to the internet to fetch the content of the links. We recommend :ref:`disabling website link previews <administration-guide/configure/site-configuration-settings:enable website link previews>` in **System Console > Site Configuration > Posts**.
+         docker run -d -p 5000:5000 --restart=always --name registry registry:2
 
-Additional considerations
----------------------------
+   2. **Configure persistent storage**:
 
-Mattermost server plugins may require external connectivity to function. These will need to be reviewed on a case-by-case basis to determine if they provide useful functionality with no external dependencies.
+      .. code-block:: bash
 
-Remember that air-gapped environments require ongoing maintenance to stay secure and up-to-date. Regular updates to the Mattermost server and other components are required to ensure the environment remains secure and up-to-date.
+         docker run -d -p 5000:5000 --restart=always --name registry \
+         -v /mnt/registry:/var/lib/registry \
+         registry:2
 
-Network security
-~~~~~~~~~~~~~~~~~
+   3. **Add TLS security** (recommended):
 
-In air-gapped environments, network security is critical:
+      a. Generate self-signed certificates:
 
-1. **Implement strict firewall rules** to control traffic between network segments.
-2. **Use network segmentation** to isolate critical infrastructure components.
-3. **Regularly audit network access** to ensure the environment remains properly isolated.
+         .. code-block:: bash
 
-Transfer data to air-gapped networks
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            mkdir -p certs
+            openssl req -newkey rsa:4096 -nodes -sha256 -keyout certs/domain.key \
+            -x509 -days 365 -out certs/domain.crt
 
-For initial setup and updates:
+      b. Run the registry with TLS:
 
-1. **Use approved data diodes** or one-way transfer devices.
-2. **Implement strict media control** for any physical media entering the air-gapped environment.
-3. **Scan all incoming data** for malware before allowing it into the environment.
+         .. code-block:: bash
 
-Keep systems updated
-~~~~~~~~~~~~~~~~~~~~~~
+            docker run -d -p 5000:5000 --restart=always --name registry \
+            -v /mnt/registry:/var/lib/registry \
+            -v $(pwd)/certs:/certs \
+            -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/domain.crt \
+            -e REGISTRY_HTTP_TLS_KEY=/certs/domain.key \
+            registry:2
 
-Develop a process for regular updates:
 
-1. **Schedule periodic updates** to your local mirrors.
-2. **Maintain a consistent testing process** for all updates before deployment.
-3. **Keep comprehensive documentation** of all packages and versions in use.
+   **Configure Kubernetes to use private image registries**
 
-Monitoring and logging
-~~~~~~~~~~~~~~~~~~~~~~~
+   When using Kubernetes in an air-gapped environment, you need to configure it to use your private registry.
 
-Ensure robust monitoring within the air-gapped environment:
+   1. **Create a kubernetes secret for registry authentication**:
 
-1. **Deploy local monitoring solutions** that don't require internet access.
-2. **Establish baselines** for normal system behavior.
-3. **Implement centralized logging** for security analysis and troubleshooting.
+      .. code-block:: bash
+
+         kubectl create secret docker-registry regcred \
+         --docker-server=registry.example.com:5000 \
+         --docker-username=your_username \
+         --docker-password=your_password \
+         --docker-email=your_email@example.com
+
+   2. **Reference the secret in pod specifications**:
+
+      .. code-block:: yaml
+
+         apiVersion: v1
+         kind: Pod
+         metadata:
+           name: mattermost-pod
+         spec:
+           containers:
+           - name: mattermost
+             image: registry.example.com:5000/mattermost/mattermost-enterprise-edition:latest
+           imagePullSecrets:
+           - name: regcred
+
+   3. **For Helm deployments**, specify the registry in ``values.yaml``:
+
+      .. code-block:: yaml
+
+         image:
+           repository: registry.example.com:5000/mattermost/mattermost-enterprise-edition
+           tag: latest
+           pullPolicy: IfNotPresent
+      
+         imagePullSecrets:
+           - name: regcred
+
+.. tab:: Docker
+
+   **Set up a self-hosted private container registry**
+
+   1. **Install Docker Registry**:
+
+      .. code-block:: bash
+
+         docker run -d -p 5000:5000 --restart=always --name registry registry:2
+
+   2. **Configure persistent storage**:
+
+      .. code-block:: bash
+
+         docker run -d -p 5000:5000 --restart=always --name registry \
+         -v /mnt/registry:/var/lib/registry \
+         registry:2
+
+   3. **Add TLS security** (recommended):
+
+      a. Generate self-signed certificates:
+
+         .. code-block:: bash
+
+            mkdir -p certs
+            openssl req -newkey rsa:4096 -nodes -sha256 -keyout certs/domain.key \
+            -x509 -days 365 -out certs/domain.crt
+
+      b. Run the registry with TLS:
+
+         .. code-block:: bash
+
+            docker run -d -p 5000:5000 --restart=always --name registry \
+            -v /mnt/registry:/var/lib/registry \
+            -v $(pwd)/certs:/certs \
+            -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/domain.crt \
+            -e REGISTRY_HTTP_TLS_KEY=/certs/domain.key \
+            registry:2
+
+
+   **Populate your private registry**
+
+   Ensure the required images from the :ref:`Bill of Materials <deployment-guide/server/air-gapped-deployment:bill of materials>` are downloaded and pushed to the private registry.
+
+
+   **Configure Docker to use private image registries**
+
+   Configure Docker on all hosts to trust and use your private registry.
+
+   1. **Add your registry to Docker's trusted registries**:
+
+      Edit or create ``/etc/docker/daemon.json``:
+
+      .. code-block:: json
+
+         {
+           "insecure-registries": ["registry.example.com:5000"]
+         }
+
+      For registries using self-signed certificates:
+
+      .. code-block:: bash
+
+         mkdir -p /etc/docker/certs.d/registry.example.com:5000
+         cp domain.crt /etc/docker/certs.d/registry.example.com:5000/ca.crt
+
+   2. **Restart Docker daemon**:
+
+      .. code-block:: bash
+
+         systemctl restart docker
+
+   3. **Test the configuration**:
+
+      .. code-block:: bash
+
+         docker pull registry.example.com:5000/mattermost/mattermost-enterprise-edition:latest
