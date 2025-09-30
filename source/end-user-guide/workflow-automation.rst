@@ -37,6 +37,8 @@ Access
 
 Access playbooks using a web browser or the desktop app by selecting the product menu located in the top-left corner of the Mattermost interface and then selecting **Playbooks**.
 
+From Mattermost v11 and mobile app v2.23.0, you can access playbooks from the mobile app. You can :ref:`interact with playbook tasks <end-user-guide/workflow-automation/work-with-tasks:interact with playbook tasks>` and :ref:`update tasks <end-user-guide/workflow-automation/work-with-tasks:update tasks>`.
+
 From Mattermost v10.11 and mobile app v2.31.0, you can access playbooks from the mobile app in read-only mode. :ref:`Playbooks slash commands <end-user-guide/workflow-automation/interact-with-playbooks:slash commands>` are supported in the mobile app, but actions like starting runs or updating checklists aren't available through the mobile interface.
 
 Usage

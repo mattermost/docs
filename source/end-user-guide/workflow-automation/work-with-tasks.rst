@@ -45,22 +45,26 @@ You can:
 
 To view your task inbox, access the **Playbooks** tab in Mattermost. In the header, next to your profile image, select the tasks list icon. A list of every task assigned to you from every run that's in progress is displayed.
 
+From Mattermost v11.0 and mobile app v2.23.0, mobile users can perform the following task management operations on playbook runs:
+
 Mobile task management
 ----------------------
 
-From Mattermost server v11.0+ and mobile app v2.23.0, mobile users can perform comprehensive task management operations on playbook runs:
+From Mattermost v11.0 and mobile app v2.23.0, mobile users can perform the following task management operations on playbook runs:
 
-**Interactive Task Management**
+Interact with playbook tasks
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - **Task interaction**: Tap on any task to open a detailed bottom sheet view with task options and information.
-- **Check/Uncheck tasks**: Complete or reopen tasks directly from the mobile interface.
+- **Check/Uncheck tasks**: Complete or reopen tasks directly from the Mattermost mobile app.
 - **Skip/Unskip tasks**: Mark tasks as skipped or return them to active status as workflow requirements change.
 
-**Task Updates**
+Update tasks
+~~~~~~~~~~~~~
 
-- **Update assignee**: Change who is responsible for completing a task directly from mobile.
+- **Update assignee**: Change who is responsible for completing a task directly from the mobile app.
 - **Modify due dates**: Adjust task deadlines to accommodate changing priorities and schedules.
-- **Edit task commands**: Update slash commands or instructions associated with tasks from mobile devices.
-- **Change run ownership**: Transfer run ownership between team members using the mobile interface.
+- **Edit task commands**: Update slash commands or instructions associated with tasks.
+- **Change run ownership**: Transfer run ownership between team members.
 
-These mobile capabilities provide full task management functionality for teams working with playbooks while on mobile devices, complementing the existing desktop and web browser experiences.
+These mobile capabilities provide full task management functionality for teams working with playbooks while on mobile devices, complementing your existing desktop and web browser experiences.
