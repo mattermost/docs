@@ -247,7 +247,7 @@ Access the following configuration settings in the System Console by going to **
 
 .. note::
 
-  **Password Security Enhancement (v11.0+)**: Starting in Mattermost v11.0, password hashing uses PBKDF2 for enhanced security. User passwords are automatically migrated when they log in after upgrading to v11.0+. This migration is progressive and happens transparently when users authenticate.
+  From Mattermost v11.0, password hashing uses PBKDF2 for enhanced security. User passwords are automatically migrated when they log in after upgrading to v11.0 or later. This migration is progressive and happens transparently when users authenticate.
 
 .. config:setting:: minimum-password-length
   :displayname: Minimum password length (Password)
