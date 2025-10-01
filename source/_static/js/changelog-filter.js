@@ -65,8 +65,9 @@ $(document).ready(function () {
     const filterHTML = `
         <div class="changelog-filters">
             <h3>Filter Changelog</h3>
-            <p>Select source and target versions to see only relevant changelog entries</p>
-            <div>
+            <p>Select source and target versions to see only relevant changelog entries, or filter by audience type</p>
+            
+            <div class="version-filters">
                 <label for="changelog-source-version">From version:</label>
                 <select id="changelog-source-version">
                     <option value="all">All versions</option>
@@ -81,6 +82,19 @@ $(document).ready(function () {
 
                 <button id="changelog-apply-filter">Apply Filter</button>
                 <button id="changelog-reset-filter">Reset</button>
+            </div>
+
+            <div class="audience-filters">
+                <h4>Filter by Audience:</h4>
+                <div class="audience-buttons">
+                    <button class="audience-filter-btn" data-audience="all">Show All</button>
+                    <button class="audience-filter-btn" data-audience="Admin">Admin</button>
+                    <button class="audience-filter-btn" data-audience="End-user">End-user</button>
+                    <button class="audience-filter-btn" data-audience="Developer">Developer / API / Integrator</button>
+                    <button class="audience-filter-btn" data-audience="Security">Security</button>
+                    <button class="audience-filter-btn" data-audience="Platform">Platform</button>
+                </div>
+                <p class="audience-help-text">Click audience buttons to show only relevant items. Multiple audiences can be selected.</p>
             </div>
         </div>
     `;
@@ -184,5 +198,102 @@ $(document).ready(function () {
         tocItems.forEach(item => {
             item.item.removeClass('filtered-toc');
         });
+        // Reset audience filters
+        $('.audience-filter-btn').removeClass('active');
+        $('.audience-filter-btn[data-audience="all"]').addClass('active');
+        $('li[data-audience-tags]').removeClass('audience-filtered');
     });
+
+    // Audience filtering functionality
+    let activeAudiences = new Set(['all']); // Track active audience filters
+
+    // Add data attributes to list items based on their audience tags
+    function addAudienceDataAttributes() {
+        // Find all list items with bold audience tags
+        $('li').each(function() {
+            const listItem = $(this);
+            const html = listItem.html();
+            const audiences = [];
+            
+            // Check for audience tags in the format <strong>[AudienceType]</strong>
+            const audienceMatches = html.match(/<strong>\[([^\]]+)\]<\/strong>/g);
+            if (audienceMatches) {
+                audienceMatches.forEach(match => {
+                    const audience = match.replace(/<strong>\[([^\]]+)\]<\/strong>/, '$1');
+                    audiences.push(audience);
+                });
+                
+                // Store audiences as a data attribute
+                listItem.attr('data-audience-tags', audiences.join(','));
+            }
+        });
+    }
+
+    // Apply audience data attributes
+    addAudienceDataAttributes();
+
+    // Audience filter button click handler
+    $('.audience-filter-btn').on('click', function() {
+        const selectedAudience = $(this).data('audience');
+        
+        if (selectedAudience === 'all') {
+            // Clear all other selections and show all
+            activeAudiences.clear();
+            activeAudiences.add('all');
+            $('.audience-filter-btn').removeClass('active');
+            $(this).addClass('active');
+        } else {
+            // Toggle the selected audience
+            if (activeAudiences.has(selectedAudience)) {
+                activeAudiences.delete(selectedAudience);
+                $(this).removeClass('active');
+            } else {
+                activeAudiences.add(selectedAudience);
+                $(this).addClass('active');
+                // Remove "all" if other audiences are selected
+                if (activeAudiences.has('all')) {
+                    activeAudiences.delete('all');
+                    $('.audience-filter-btn[data-audience="all"]').removeClass('active');
+                }
+            }
+            
+            // If no audiences selected, default to "all"
+            if (activeAudiences.size === 0) {
+                activeAudiences.add('all');
+                $('.audience-filter-btn[data-audience="all"]').addClass('active');
+            }
+        }
+        
+        // Apply the audience filter
+        applyAudienceFilter();
+    });
+
+    // Function to apply audience filtering
+    function applyAudienceFilter() {
+        if (activeAudiences.has('all')) {
+            // Show all items
+            $('li[data-audience-tags]').removeClass('audience-filtered');
+        } else {
+            // Filter items based on selected audiences
+            $('li[data-audience-tags]').each(function() {
+                const listItem = $(this);
+                const itemAudiences = listItem.attr('data-audience-tags').split(',');
+                
+                // Check if any of the item's audiences match active filters
+                const hasMatchingAudience = itemAudiences.some(audience => 
+                    activeAudiences.has(audience) || 
+                    (audience === 'Developer / API / Integrator' && activeAudiences.has('Developer'))
+                );
+                
+                if (hasMatchingAudience) {
+                    listItem.removeClass('audience-filtered');
+                } else {
+                    listItem.addClass('audience-filtered');
+                }
+            });
+        }
+    }
+
+    // Set initial state - show all
+    $('.audience-filter-btn[data-audience="all"]').addClass('active');
 });
