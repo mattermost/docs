@@ -72,6 +72,7 @@ Mattermost Server v11.0.1 (October 2025)
   }
 
 - Stopped supporting manually installed plugins as per https://forum.mattermost.com/t/deprecation-notice-manual-plugin-deployment/21192.
+- Support for PostgreSQL v13 has been removed. The new minimum PostgreSQL version is v14+. See the :ref:`minimum supported PostgreSQL version policy <deployment-guide/software-hardware-requirements:minimum postgresql database support policy>` documentation for details.
 
 Mattermost Server v10.8.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
