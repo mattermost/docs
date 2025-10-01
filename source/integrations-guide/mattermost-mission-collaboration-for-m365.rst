@@ -8,6 +8,10 @@ Mattermost Mission Collaboration for Microsoft extends Microsoft for mission-cri
 
 This app is designed to work with Microsoft 365, Teams, and Outlook and is currently in :ref:`Beta <administration-guide/manage/feature-labels:beta>`. From Mattermost v10.9, this integration supports third-party Single Sign-On (SSO). See the :doc:`user provisioning </administration-guide/manage/admin/user-provisioning>` product documentation for details on setting up SSO.
 
+.. image:: ../images/mattermost-in-msteams-2.png
+  :alt: Mattermost embedded as a Microsoft Teams app.
+
+
 Deploy
 -------
 
