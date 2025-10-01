@@ -1,7 +1,7 @@
 Entra ID Single Sign-On
 =========================
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Configuring EntraID as a Single Sign-On (SSO) service
@@ -81,7 +81,6 @@ If you don't register Mattermost in the Microsoft Azure AD tenant your organizat
 Configure Mattermost ``config.json`` for Entra ID SSO
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Instead of using the System Console, you can add the Entra ID settings directly to the ``config.json`` file on your Mattermost server.

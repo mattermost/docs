@@ -1,7 +1,7 @@
 Manage your @mention and keyword notifications
 ==============================================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 You're :doc:`notified </end-user-guide/preferences/manage-your-notifications>` in a :doc:`web browser </end-user-guide/preferences/manage-your-web-notifications>`, the :doc:`desktop app </end-user-guide/preferences/manage-your-desktop-notifications>`, and on your :doc:`mobile device </end-user-guide/preferences/manage-your-mobile-notifications>`, when you're @mentioned by your username or first name, @mentioned as part of a user group, and for matches to keywords you're following.
@@ -27,7 +27,6 @@ For example, you can receive notifications for all messages and threads related 
 Passively track keywords (no notification)
 ------------------------------------------
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
         
 From Mattermost v9.3, Mattermost Enterprise and Professional customers interested calling attention to specific topics of interest across channels can do so without sending notifications to a Mattermost client.

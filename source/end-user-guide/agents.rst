@@ -1,7 +1,7 @@
 AI Agents
 ===========
 
-.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 .. note::

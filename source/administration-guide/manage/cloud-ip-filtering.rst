@@ -1,7 +1,7 @@
 Cloud IP Filtering
 ========================
 
-.. include:: ../../_static/badges/ent-cloud-only.rst
+.. include:: ../../_static/badges/all-commercial.rst
    :start-after: :nosearch:
 
 IP filtering is a powerful security feature that allows system admins to control access to their workspace by defining approved IP ranges. Only users within these specified IP ranges can access the workspace, ensuring enhanced security for your workspace. IP filtering requires a subscription to Mattermost Cloud Enterprise.

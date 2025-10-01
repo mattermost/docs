@@ -1,7 +1,7 @@
 Browse channels
 ================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 .. tab:: Web/Desktop

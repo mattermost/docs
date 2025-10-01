@@ -1,12 +1,11 @@
 Search for messages
 ===================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Use Mattermost search to find messages, replies, and the contents of files. You can also search by `hashtags <#hashtags>`__ and perform more advanced searches using `search modifiers <#search-modifiers>`__.
 
-.. include:: ../../_static/badges/academy-search.rst
   :start-after: :nosearch:
 
 Search for message

@@ -1,7 +1,7 @@
 Environment configuration settings
 ==================================
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 Review and manage the following environmental configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Environment**:
@@ -32,7 +32,6 @@ Review and manage the following environmental configuration options in the Syste
 Web server
 ----------
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
 Configure the network environment in which Mattermost is deployed by going to **System Console > Environment > Web Server**, or by updating the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
@@ -376,7 +375,6 @@ Managed resource paths
 Reload configuration from disk
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
 +----------------------------------------------------------+---------------------------------------------------------------+
@@ -437,7 +435,6 @@ Websocket URL
 License file location
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------+------------------------------------------------------------------------------------+
@@ -617,7 +614,6 @@ Allow cookies for subdomains
 Cluster log timeout
 ~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------+------------------------------------------------------------------------------------------------+
@@ -656,12 +652,10 @@ Maximum payload size
 Database
 --------
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
 Configure the database environment in which Mattermost is deployed by going to **System Console > Environment > Database**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
-.. include:: ../../_static/badges/academy-mattermost-database.rst
   :start-after: :nosearch:
 
 .. config:setting:: driver-name
@@ -936,7 +930,6 @@ SQL statement logging
 Recycle database connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------+------------------------------------------------------------------+
@@ -1022,7 +1015,6 @@ Read-only display of the currently active backend used for search. Values can in
 Read replicas
 ~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------+-------------------------------------------------------------------------------+
@@ -1053,7 +1045,6 @@ For an AWS High Availability RDS cluster deployment, point this configuration se
 Search replicas
 ~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
@@ -1082,7 +1073,6 @@ For an AWS High Availability RDS cluster deployment, point this configuration se
 Replica lag settings
 ~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------+----------------------------------------------------------------------------------+
@@ -1222,7 +1212,6 @@ Replica lag settings
 Replica monitor interval (seconds)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
@@ -1238,7 +1227,6 @@ Replica monitor interval (seconds)
 Enterprise search
 -----------------
 
-.. include:: ../../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
 Core database search happens in a relational database and is intended for deployments under about 2–3 million posts and file entries. Beyond that scale, enabling enterprise search with Elasticsearch or AWS OpenSearch is highly recommended for optimum search performance before reaching 3 million posts.
@@ -1920,12 +1908,10 @@ Trace
 File storage
 ------------
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
 Configure file storage settings by going to **System Console > Environment > File Storage**, or by editing the ``config.json`` file as described in the following tables.
 
-.. include:: ../../_static/badges/academy-file-storage.rst
   :start-after: :nosearch:
 
 .. note::
@@ -2241,7 +2227,6 @@ See the `AWS <https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.ht
 Enable server-side encryption for Amazon S3
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
 +---------------------------------------------------------------+-----------------------------------------------------------------------------+
@@ -2422,7 +2407,6 @@ Initial font
 Image proxy
 -----------
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
 An image proxy is used by Mattermost apps to prevent them from connecting directly to remote self-hosted servers. Configure an image proxy by going to **System Console > Environment > Image Proxy**, or by editing the ``config.json`` file as described in the following tables.
@@ -2512,7 +2496,6 @@ See the :doc:`image proxy </deployment-guide/server/image-proxy>` documentation 
 SMTP
 ----
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
 Configure SMTP email server settings by going to **System Console > Environment > SMTP**, or by editing the ``config.json`` file as described in the following tables.
@@ -2693,7 +2676,6 @@ SMTP server timeout
 Push notification server
 ------------------------
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
 .. include:: push-notification-server-configuration-settings.rst
@@ -2704,7 +2686,6 @@ Push notification server
 High availability
 -----------------
 
-.. include:: ../../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
 You can configure Mattermost as a :doc:`high availability cluster-based deployment </administration-guide/scale/high-availability-cluster-based-deployment>` by going to **System Console > Environment > High Availability**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
@@ -2946,7 +2927,6 @@ Advertise address
 Rate limiting
 -------------
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
 .. include:: rate-limiting-configuration-settings.rst
@@ -2957,7 +2937,6 @@ Rate limiting
 Logging
 --------
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
 Mattermost provides 3 independent logging systems that can be configured separately with separate log files and rotation policies to meet different operational and compliance needs:
@@ -3738,7 +3717,6 @@ Output audit logs to multiple targets
 Session lengths
 ---------------
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
 User sessions are cleared when a user tries to log in, and sessions are cleared every 24 hours from the sessions database table. Configure session lengths by going to **System Console > Environment > Session Lengths**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
@@ -3921,7 +3899,6 @@ Session idle timeout
 Performance monitoring
 ----------------------
 
-.. include:: ../../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
 Configure performance monitoring by going to **System Console > Environment > Performance Monitoring**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
@@ -4017,7 +3994,6 @@ Listen address
 Developer
 ---------
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
 Configure developer mode by going to **System Console > Environment > Developer**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
@@ -4143,7 +4119,6 @@ Some examples of when you may want to modify this setting include:
 Mobile security
 ---------------
 
-.. include:: ../../_static/badges/ent-adv-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 From Mattermost v10.7 and mobile app v2.27, you can configure biometric authentication, prevent Mattermost use on jailbroken or rooted devices, and can block screen captures without relying on an EMM Provider. Configure these options by going to **System Console > Environment > Mobile Security**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
@@ -4290,7 +4265,6 @@ Allow PDF link navigation on mobile
 config.json-only settings
 -------------------------
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
 .. config:setting:: disable-customer-portal-requests
@@ -4436,7 +4410,6 @@ This setting isn't available in the System Console and can only be enabled in ``
 Redis cache backend
 ~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-adv-selfhosted.rst
   :start-after: :nosearch:
 
 From Mattermost v10.4, Mattermost Enterprise customers can configure `Redis <https://redis.io/>`_ (Remote Dictionary Server) as an alternative cache backend. Redis is an open-source, in-memory data structure store that can be used as a database, cache, and message broker. It supports various data structures and is a top choice for its performance because its able to store data in memory and provide very quick data access.

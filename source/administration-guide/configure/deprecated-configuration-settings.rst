@@ -939,7 +939,7 @@ Enable the ability to establish secure connections between Mattermost instances,
 User satisfaction surveys plugin settings
 -----------------------------------------
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 .. important::

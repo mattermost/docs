@@ -1,7 +1,7 @@
 Manage your notifications
 =========================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 .. |dot-badge| image:: ../../images/dot-badge.png
@@ -26,7 +26,6 @@ Manage your notifications
 
 Mattermost notifies you of new activity you're directly involved in. How you're notified depends on what Mattermost client you're using, the type of Mattermost activity you're being notified about, and how you prefer to be notified.
 
-.. include:: ../../_static/badges/academy-notifications.rst
   :start-after: :nosearch:
 
 .. tip::

@@ -1,7 +1,7 @@
 Archive and unarchive channels
 ==============================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 Archive a channel

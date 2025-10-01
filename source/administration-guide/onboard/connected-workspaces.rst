@@ -1,7 +1,7 @@
 Connected workspaces
 ====================
 
-.. include:: ../../_static/badges/ent-adv-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-adv.rst
   :start-after: :nosearch:
 
 Communicate across organizations, as well as external partners and vendors using Mattermost by synchronizing messages, emoji reactions, and file sharing in real-time through secured, connected Mattermost workspaces.

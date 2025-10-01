@@ -1,7 +1,7 @@
 Work with saved views
 =====================
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 You can change board views to adjust how your cards are represented. To add a new view to a board, from the board header, select the menu next to the current view name. Scroll down and select **+ Add view**, then select the new visualization you’d like to use.

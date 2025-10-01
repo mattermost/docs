@@ -1,7 +1,7 @@
 Reporting configuration settings
 ================================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 View the following statistics for your overall deployment and specific teams, as well as access server logs, in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Reporting**:
@@ -48,7 +48,6 @@ Team statistics
 Server logs
 -----------
 
-.. include:: ../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 +---------------------------------------------------------------+---------------------------------------------------------------+
@@ -67,7 +66,6 @@ Server logs
 Statistics configuration settings
 ---------------------------------
 
-.. include:: ../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 The following configuration setting controls statistics collection behavior. This setting is not available in the System Console and can only be set in the ``config.json`` file.
@@ -82,7 +80,6 @@ The following configuration setting controls statistics collection behavior. Thi
 Maximum users for statistics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 This setting is used to maximize performance for large Enterprise deployments and isn't available in the System Console and can only be set in ``config.json``.

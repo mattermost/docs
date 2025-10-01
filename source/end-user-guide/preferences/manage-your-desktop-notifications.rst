@@ -1,7 +1,7 @@
 Manage your desktop notifications
 =================================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 .. |dot-badge| image:: ../../images/dot-badge.png

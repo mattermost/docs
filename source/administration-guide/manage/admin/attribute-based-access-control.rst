@@ -1,7 +1,7 @@
 Attribute-Based Access Control
 ================================
 
-.. include:: ../../../_static/badges/ent-adv-cloud-selfhosted.rst
+.. include:: ../../../_static/badges/ent-adv.rst
   :start-after: :nosearch:
 
 .. toctree::

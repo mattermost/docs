@@ -1,7 +1,7 @@
 Work with calculations
 ======================
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 When you view a board in table or board view, you can use calculations to answer basic metric questions without needing to create complex reports. Hover over the bottom of a column to display the **Calculate** feature, then select the arrow to open the menu options.

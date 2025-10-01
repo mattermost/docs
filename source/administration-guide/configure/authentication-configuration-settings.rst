@@ -1,7 +1,7 @@
 Authentication configuration settings
 =====================================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 Mattermost supports up to 4 distinct, concurrent methods of user authentication:
@@ -35,7 +35,6 @@ Review and manage the following authentication configuration options in the Syst
 Signup
 ------
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Authentication > Signup**.
@@ -141,7 +140,6 @@ Invalidate pending email invites
 Email
 -----
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Authentication > Email**.
@@ -240,7 +238,6 @@ Enable sign-in with username
 Password
 --------
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Authentication > Password**.
@@ -353,7 +350,6 @@ Enable forgot password link
 MFA
 ---
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Authentication > MFA**.
@@ -391,7 +387,6 @@ Enable multi-factor authentication
 Enforce multi-factor authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +-------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
@@ -412,7 +407,6 @@ Enforce multi-factor authentication
 AD/LDAP
 --------
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Authentication > AD/LDAP**. This opens the AD/LDAP setup wizard with step-by-step sections and testing to help configure each setting.
@@ -735,7 +729,6 @@ User filter
 Group filter
 ^^^^^^^^^^^^
 
-.. include:: ../../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
@@ -1005,7 +998,6 @@ Configure group mapping for AD/LDAP group synchronization. Use the **Test Group 
 Group display name attribute
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: ../../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1027,7 +1019,6 @@ Group display name attribute
 Group ID attribute
 ^^^^^^^^^^^^^^^^^^^
 
-.. include:: ../../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
@@ -1168,7 +1159,6 @@ Re-add removed members on sync
 SAML 2.0
 --------
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Authentication > SAML 2.0**.
@@ -1191,7 +1181,6 @@ See the encryption options documentation for details on what :ref:`encryption me
 Enable login with SAML
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +---------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
@@ -1212,7 +1201,6 @@ Enable login with SAML
 Enable synchronizing SAML accounts with AD/LDAP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
@@ -1237,7 +1225,6 @@ See :doc:`AD/LDAP Setup </administration-guide/onboard/ad-ldap>` to learn more.
 Ignore guest users when synchronizing with AD/LDAP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +-----------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
@@ -1263,7 +1250,6 @@ For more information, see :doc:`AD/LDAP Setup </administration-guide/onboard/ad-
 Override SAML bind data with AD/LDAP information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +---------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
@@ -1289,7 +1275,6 @@ Override SAML bind data with AD/LDAP information
 Identity provider metadata URL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
@@ -1308,7 +1293,6 @@ Identity provider metadata URL
 SAML SSO URL
 ~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------------------------------------------+----------------------------------------------------------+
@@ -1327,7 +1311,6 @@ SAML SSO URL
 Identity provider issuer URL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +-----------------------------------------------------------------------------+------------------------------------------------------------------------+
@@ -1346,7 +1329,6 @@ Identity provider issuer URL
 Identity provider public certificate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +-------------------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -1367,7 +1349,6 @@ Identity provider public certificate
 Verify signature
 ~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +---------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
@@ -1388,7 +1369,6 @@ Verify signature
 Service provider login URL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+
@@ -1409,7 +1389,6 @@ Service provider login URL
 Service provider identifier
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
@@ -1430,7 +1409,6 @@ Service provider identifier
 Enable encryption
 ~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +---------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
@@ -1449,7 +1427,6 @@ Enable encryption
 Service provider private key
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +-------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
@@ -1468,7 +1445,6 @@ Service provider private key
 Service provider public certificate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
@@ -1489,7 +1465,6 @@ Service provider public certificate
 Sign request
 ~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------------------------------------+-----------------------------------------------------------------+
@@ -1508,7 +1483,6 @@ Sign request
 Signature algorithm
 ~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -1535,7 +1509,6 @@ Signature algorithm
 Canonical algorithm
 ~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
@@ -1557,7 +1530,6 @@ Canonical algorithm
 Email attribute
 ~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
@@ -1578,7 +1550,6 @@ Email attribute
 Username attribute
 ~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
@@ -1599,7 +1570,6 @@ Username attribute
 Id attribute
 ~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
@@ -1618,7 +1588,6 @@ Id attribute
 Guest attribute
 ~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
@@ -1641,7 +1610,6 @@ Guest attribute
 Enable admin attribute
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +-----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
@@ -1660,7 +1628,6 @@ Enable admin attribute
 Admin attribute
 ~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +-------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
@@ -1683,7 +1650,6 @@ Admin attribute
 First name attribute
 ~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -1703,7 +1669,6 @@ First name attribute
 Last name attribute
 ~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +----------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
@@ -1723,7 +1688,6 @@ Last name attribute
 Nickname attribute
 ~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
@@ -1743,7 +1707,6 @@ Nickname attribute
 Position attribute
 ~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
@@ -1763,7 +1726,6 @@ Position attribute
 Preferred language attribute
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
@@ -1783,7 +1745,6 @@ Preferred language attribute
 Login button text
 ~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +---------------------------------------------------------------------------+-------------------------------------------------------------------+
@@ -1797,7 +1758,6 @@ Login button text
 OAuth 2.0
 ---------
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Authentication > OAuth 2.0**. Settings for GitLab OAuth authentication can also be accessed under **Authentication > GitLab** in self-hosted deployments.
@@ -1826,7 +1786,6 @@ Select OAuth 2.0 service provider
 GitLab OAuth 2.0 settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 .. note::
@@ -1965,7 +1924,6 @@ GitLab OAuth 2.0 Token endpoint
 Google OAuth 2.0 settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 .. config:setting:: oauth-googleenable
@@ -2072,7 +2030,6 @@ Google OAuth 2.0 Token endpoint
 Entra ID OAuth 2.0 settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 .. note::
@@ -2209,7 +2166,6 @@ Entra ID OAuth 2.0 Token endpoint
 OpenID Connect
 ---------------
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Authentication > OpenID Connect**.
@@ -2240,7 +2196,6 @@ Select OpenID Connect service provider
 GitLab OpenID settings
 ^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 .. config:setting:: guest-access
@@ -2347,7 +2302,6 @@ GitLab OpenID Client secret
 Google OpenID settings
 ^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 
@@ -2427,7 +2381,6 @@ Google OpenID Client secret
 Entra ID OpenID settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 .. note::
@@ -2527,7 +2480,6 @@ Entra ID Client secret
 OpenID Connect (other) settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 .. config:setting:: oidc-enable
@@ -2542,7 +2494,6 @@ OpenID Connect (other) settings
 Enable OpenID Connect authentication with other service providers
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 +---------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
@@ -2651,7 +2602,6 @@ OpenID Connect (other) Client secret
 Guest access
 ------------
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Authentication > Guest Access**.

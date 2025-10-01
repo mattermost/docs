@@ -1,7 +1,7 @@
 Forward messages
 ================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 From Mattermost v7.2, using a web browser or the desktop app, you can forward messages in public channels to other public channels. From Mattermost v7.5, you can also forward messages from bots and webhooks. 

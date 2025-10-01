@@ -1,7 +1,7 @@
 Site configuration settings
 ===========================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 Review and manage the following site configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Site Configuration**:
@@ -30,7 +30,6 @@ Review and manage the following site configuration options in the System Console
 Customization
 -------------
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Customization**.
@@ -173,7 +172,6 @@ Help link
 Terms of Use link
 ~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
@@ -197,7 +195,6 @@ Terms of Use link
 Privacy Policy link
 ~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
@@ -219,7 +216,6 @@ Privacy Policy link
 About link
 ~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
@@ -258,7 +254,6 @@ Forgot Password custom link
 Report a Problem
 ~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 Specify how the **Report a Problem** option behaves in the Mattermost app via the **Help** menu:
@@ -278,7 +273,6 @@ Specify how the **Report a Problem** option behaves in the Mattermost app via th
 Report a Problem link
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 +---------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
@@ -298,7 +292,6 @@ Report a Problem link
 Report a Problem email address
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 +---------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
@@ -318,7 +311,6 @@ Report a Problem email address
 Allow mobile app log downloads
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------------------------+-------------------------------------------------------------------------+
@@ -340,7 +332,6 @@ Allow mobile app log downloads
 Mattermost apps download page link
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 +-------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
@@ -361,7 +352,6 @@ Mattermost apps download page link
 Android app download link
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
@@ -382,7 +372,6 @@ Android app download link
 iOS app download link
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -450,7 +439,6 @@ When configured, after OAuth or SAML user authentication is complete, custom URL
 Mobile external browser
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
@@ -470,7 +458,6 @@ Enable this configuration setting when there are issues with the mobile app SSO 
 Localization
 ------------
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Localization**. Changes to configuration settings in this section require a server restart before taking effect.
@@ -585,7 +572,6 @@ Enable work in progress languages in Mattermost to review translations and ident
 Users and teams
 ---------------
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Users and Teams**.
@@ -725,7 +711,6 @@ Teammate name display
 Lock teammate name display for all users
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
 +---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+
@@ -846,7 +831,6 @@ Enable last active time
 Enable custom user groups
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +---------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
@@ -878,7 +862,6 @@ User statistics update time
 Notifications
 -------------
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Notifications**.
@@ -1000,7 +983,6 @@ Enable email batching
 Email notification contents
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
@@ -1173,7 +1155,6 @@ Enable notification monitoring
 System-wide notifications
 -------------------------
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Site Configuration > System-wide notifications**.
@@ -1271,7 +1252,6 @@ Allow banner dismissal
 Emoji
 -----
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Emoji**.
@@ -1323,7 +1303,6 @@ Enable custom emoji
 Posts
 -----
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Posts**.
@@ -1341,7 +1320,6 @@ Access the following configuration settings in the System Console by going to **
 Automatically follow threads
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 +-------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
@@ -1435,7 +1413,6 @@ Message priority
 Persistent notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
@@ -1454,7 +1431,6 @@ Persistent notifications
 Maximum number of recipients for persistent notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
@@ -1474,7 +1450,6 @@ Maximum number of recipients for persistent notifications
 Frequency of persistent notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
@@ -1494,7 +1469,6 @@ Frequency of persistent notifications
 Total number of persistent notifications per post
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 +-------------------------------------------------------------+----------------------------------------------------------------------------------------------+
@@ -1699,7 +1673,6 @@ Maximum Markdown nodes
 Google API key
 ~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
@@ -1771,7 +1744,6 @@ Unique emoji reaction limit
 File sharing and downloads
 --------------------------
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Site Configuration > File Sharing and Downloads**.
@@ -1846,7 +1818,6 @@ Allow file downloads on mobile
 Enable secure file preview on mobile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-adv-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 This setting improves an organization's mobile security posture by restricting file access while still allowing essential file viewing capabilities. 
@@ -1873,7 +1844,6 @@ This setting improves an organization's mobile security posture by restricting f
 Allow PDF link navigation on mobile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-adv-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 +---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
@@ -1893,7 +1863,6 @@ Allow PDF link navigation on mobile
 Public Links
 ------------
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Public Links**.
@@ -1941,7 +1910,6 @@ Public link salt
 Notices
 -------
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Notices**.
@@ -1987,7 +1955,6 @@ Enable end user notices
 Connected workspaces
 ----------------------
 
-.. include:: ../../_static/badges/ent-adv-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 The following settings aren't available in the System Console and can only be set in ``config.json``. 
@@ -2134,7 +2101,6 @@ Member sync batch size
 config.json-only settings
 -------------------------
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
 .. config:setting:: enable-cross-team-search

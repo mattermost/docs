@@ -6,7 +6,7 @@ Using Mattermost in a web browser or the desktop app, you can customize Mattermo
 Microsoft Teams plugin preferences
 ----------------------------------
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 Select **MS Teams** to connect your Mattermost and Microsoft Teams accounts, and manage notification preferences for Microsoft Teams chats and group chats. See the :ref:`connect your account <end-user-guide/collaborate/collaborate-within-connected-microsoft-teams:connect your mattermost account to your microsoft teams account>`.
@@ -18,7 +18,6 @@ Select **MS Teams** to connect your Mattermost and Microsoft Teams accounts, and
 Calls plugin preferences
 ------------------------
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Select **Calls** to specify the audio devices, including micrphone and speaker, used for Mattermost calls.

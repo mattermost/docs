@@ -1,7 +1,7 @@
 Statistics
 ==========
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 Statistics on users, posts, and channels are tracked for each system and team. Enterprise Editions have access to advanced system statistics.
@@ -47,7 +47,6 @@ Active Users with Posts (graph)
 Advanced system statistics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
 Mattermost Enterprise includes additional system statistics.
@@ -125,7 +124,6 @@ If the statistics page is loading endlessly and you get an error message saying 
 Can team admins review their own team's statistics?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
 Yes. In Mattermost Enterprise, you can enable team admins to see their team's statistics by modifying available delegated granular administration system roles. See the :doc:`delegated granular administration </administration-guide/onboard/delegated-granular-administration>` documentation to learn more about these admin roles, including how to manage privileges and assign roles.

@@ -1,7 +1,7 @@
 Mark channels as favorites
 ==========================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 You can mark public and private channels, as well as direct and group messages as favorites so they're easy to access later. Favorite channels display in the **Favorites** category in the channel sidebar.

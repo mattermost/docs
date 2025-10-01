@@ -37,7 +37,7 @@ Enable push notifications
 Hosted Push Notifications Service (HPNS)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 Mattermost Enterprise, Professional, and Cloud customers can use Mattermost's Hosted Push Notification Service (HPNS). The HPNS offers:
@@ -79,7 +79,6 @@ Non-commercial and self-hosted customers can use Mattermost's free, basic Test P
 ID-only push notifications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Admins can enable mobile notifications to be fully private to protect a Mattermost customer against breaches in iOS and Android notification infrastructure by limiting the data sent to Apple and Google through a Mattermost configuration setting.

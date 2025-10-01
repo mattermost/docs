@@ -1,7 +1,7 @@
 Cloud
 ======
 
-.. include:: ../_static/badges/ent-cloud-only.rst
+.. include:: ../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 .. toctree::

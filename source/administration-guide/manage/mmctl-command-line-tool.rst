@@ -1,7 +1,7 @@
 mmctl command line tool
 =======================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 The mmctl is a CLI tool for the Mattermost server which is installed locally and uses the Mattermost API, but may also be used remotely. Authentication is done with either login credentials or an authentication token. This mmctl tool is included and replaces the :doc:`CLI </administration-guide/manage/command-line-tools>`. The mmctl can currently be used alongside the Mattermost CLI tool. The Mattermost CLI tool will be deprecated in a future release.
@@ -134,7 +134,6 @@ After checking out the `mattermost repository <https://github.com/mattermost/mat
 Local mode
 ----------
 
-.. include:: ../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 Local mode allows platform administrators with access to the Mattermost server to run mmctl commands against the API without needing to have a user registered. To ensure secure usage of this API, the server exposes a local socket that only a user with access to the server's file system can access. The requests coming from the socket are treated as authorized, so they can reach the handlers without requiring a user session.
@@ -162,7 +161,6 @@ To use a socket file other than the default, you need to set the environment var
 Running mmctl tests
 -------------------
 
-.. include:: ../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 mmctl has two types of tests: unit tests and end to end tests.
@@ -2009,7 +2007,6 @@ To configure your ``zsh`` shell to load completions for each session, add the ab
 mmctl cpa
 ---------
 
-.. include:: ../../_static/badges/ent-adv-only.rst
   :start-after: :nosearch:
 
 Manage Custom Profile Attributes (CPA) for extended user profile information.
@@ -2214,7 +2211,6 @@ List all Custom Profile Attribute fields.
 mmctl compliance-export
 -----------------------
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Manage compliance export jobs for archiving channel data to third-party compliance systems.
@@ -4851,7 +4847,6 @@ Manage permissions and roles.
 mmctl permissions add
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
 **Description**
@@ -4894,7 +4889,6 @@ Add one or more permissions to an existing role.
 mmctl permissions remove
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
 **Description**
@@ -4938,7 +4932,6 @@ Remove one or more permissions from an existing role. For classified projects, t
 mmctl permissions reset
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
 **Description**
@@ -4981,7 +4974,6 @@ Reset the given role's permissions to the default settings and overwrite custom 
 mmctl permissions role assign
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
 **Description**

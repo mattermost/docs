@@ -1,7 +1,7 @@
 Plugins configuration settings
 ==============================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 Review and manage the following plugin configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Plugins**:
@@ -78,7 +78,6 @@ Enable plugins
 Require plugin signature
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
@@ -126,7 +125,6 @@ Automatic prepackaged plugins
 Upload Plugin
 ~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 +------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
@@ -239,7 +237,6 @@ Plugin settings
 Calls
 -----
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Plugins > Calls**.
@@ -272,7 +269,6 @@ Enable plugin
 RTC server address (UDP)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
@@ -295,7 +291,6 @@ RTC server address (UDP)
 RTC server address (TCP)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
@@ -318,7 +313,6 @@ RTC server address (TCP)
 RTC server port (UDP)
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 +-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
@@ -343,7 +337,6 @@ RTC server port (UDP)
 RTC server port (TCP)
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 +-------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
@@ -370,7 +363,6 @@ Enable on specific channels
 
 *Admins can't configure this setting from Mattermost v7.7; it's hidden and always enabled*
 
-.. include:: ../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 +----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
@@ -391,7 +383,6 @@ Test mode
 
 *This setting was called Enable on all channels until Mattermost v7.7. It was renamed to defaultenabled in code and Test Mode in-product.*
 
-.. include:: ../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 +-----------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
@@ -413,7 +404,6 @@ Test mode
 ICE host override
 ~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
@@ -445,7 +435,6 @@ ICE host override
 ICE host port override
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
@@ -470,7 +459,6 @@ ICE host port override
 RTCD service URL
 ~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
 +---------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -502,7 +490,6 @@ RTCD service URL
 Max call participants
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
@@ -528,7 +515,6 @@ Max call participants
 ICE servers configurations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
@@ -587,7 +573,6 @@ ICE servers configurations
 TURN static auth secret
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 +----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
@@ -607,7 +592,6 @@ TURN static auth secret
 TURN credentials expiration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -630,7 +614,6 @@ TURN credentials expiration
 Server side TURN
 ~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 +------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
@@ -653,7 +636,6 @@ Server side TURN
 Allow screen sharing
 ~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
@@ -675,7 +657,6 @@ Allow screen sharing
 Enable simulcast for screen sharing (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 +------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
@@ -701,7 +682,6 @@ Enable simulcast for screen sharing (Experimental)
 Enable call recordings
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
@@ -723,7 +703,6 @@ Enable call recordings
 Job service URL
 ~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
 +------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
@@ -749,7 +728,6 @@ Job service URL
 Maximum call recording duration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
 +-----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+
@@ -769,7 +747,6 @@ Maximum call recording duration
 Call recording quality
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
 +-----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -794,7 +771,6 @@ Call recording quality
 Enable call transcriptions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
@@ -819,7 +795,6 @@ Enable call transcriptions
 Transcriber model size
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
@@ -842,7 +817,6 @@ Transcriber model size
 Call transcriber threads
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -868,7 +842,6 @@ Call transcriber threads
 Enable live captions
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+
@@ -895,7 +868,6 @@ Enable live captions
 Live captions: Model size
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
@@ -918,7 +890,6 @@ Live captions: Model size
 Live captions: Number of transcribers used per call
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
@@ -941,7 +912,6 @@ Live captions: Number of transcribers used per call
 Live captions: Number of threads per transcriber
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
@@ -964,7 +934,6 @@ Live captions: Number of threads per transcriber
 Live captions language
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
 +---------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+
@@ -986,7 +955,6 @@ Live captions language
 (Experimental) Enable IPv6
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 +----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
@@ -1075,7 +1043,6 @@ Enable DC signaling (Experimental)
 AI Agents
 ----------
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 .. note::
@@ -1529,7 +1496,6 @@ Enable LLM trace
 Enable embedding search
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 +-----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
@@ -1731,7 +1697,6 @@ Reindex all posts
 GitLab
 ------
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 See the :doc:`Connect GitLab to Mattermost </integrations-guide/gitlab>` product documentation for available :ref:`Mattermost configuration options <integrations-guide/gitlab:mattermost configuration>`.
@@ -1748,7 +1713,6 @@ See the :doc:`Connect GitLab to Mattermost </integrations-guide/gitlab>` product
 GitHub
 ------
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 See the :doc:`Connect GitHub to Mattermost </integrations-guide/github>` product documentation for available :ref:`Mattermost configuration options <integrations-guide/github:mattermost configuration>`.
@@ -1765,7 +1729,6 @@ See the :doc:`Connect GitHub to Mattermost </integrations-guide/github>` product
 Jira
 ----
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 See the :doc:`Connect Jira to Mattermost </integrations-guide/jira>` product documentation for available :ref:`Mattermost configuration options <integrations-guide/jira:mattermost configuration>`.
@@ -1782,7 +1745,6 @@ See the :doc:`Connect Jira to Mattermost </integrations-guide/jira>` product doc
 Legal hold
 ----------
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 See the :doc:`Legal holds </administration-guide/comply/legal-hold>` product documentation for details.
@@ -1799,7 +1761,6 @@ See the :doc:`Legal holds </administration-guide/comply/legal-hold>` product doc
 Microsoft Calendar Integration
 -------------------------------
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 See the :doc:`Connect Microsoft Calendar Integration to Mattermost </integrations-guide/microsoft-calendar>` product documentation for available :ref:`Mattermost configuration options <integrations-guide/microsoft-calendar:enable and configure the microsoft calendar integration in mattermost>`.
@@ -1816,7 +1777,6 @@ See the :doc:`Connect Microsoft Calendar Integration to Mattermost </integration
 Microsoft Teams Meetings
 ------------------------
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 See the :doc:`Connect Microsoft Teams Meetings to Mattermost </integrations-guide/microsoft-teams-meetings>` product documentation for available :ref:`Mattermost configuration options <integrations-guide/microsoft-teams-meetings:enable and configure the microsoft teams meetings integration in mattermost>`.
@@ -1828,7 +1788,6 @@ See the :doc:`Connect Microsoft Teams Meetings to Mattermost </integrations-guid
 MS Teams
 ---------
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Mattermost for Microsoft Teams enables you to break through siloes in a mixed Mattermost and Teams environment by forwarding real-time chat notifications from Teams to Mattermost.
@@ -1839,7 +1798,6 @@ Mattermost for Microsoft Teams enables you to break through siloes in a mixed Ma
 
 Access the following configuration settings in the System Console by going to **Plugins > MS Teams**.
 
-.. include:: ../../_static/badges/academy-msteams.rst
   :start-after: :nosearch:
 
 .. config:setting:: enable-plugin
@@ -2036,7 +1994,6 @@ Buffer size for streaming files
 Performance metrics
 -------------------
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 See the :doc:`Monitor performance metrics </administration-guide/scale/collect-performance-metrics>` product documentation for available :ref:`Mattermost configuration options <administration-guide/scale/collect-performance-metrics:mattermost configuration>`.
@@ -2046,7 +2003,6 @@ See the :doc:`Monitor performance metrics </administration-guide/scale/collect-p
 Collaborative playbooks
 ------------------------
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Use collaborative playbooks in Mattermost to provide structure, monitoring and automation for repeatable, team-based processes integrated with the Mattermost platform.
@@ -2117,7 +2073,6 @@ Enable experimental features
 ServiceNow
 ----------
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 See the :doc:`Connect ServiceNow to Mattermost </integrations-guide/servicenow>` product documentation for available :ref:`Mattermost configuration options <integrations-guide/servicenow:mattermost configuration>`.
@@ -2135,7 +2090,6 @@ See the :doc:`Connect ServiceNow to Mattermost </integrations-guide/servicenow>`
 Zoom
 ----
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 See the :doc:`Connect Zoom to Mattermost </integrations-guide/zoom>` product documentation for available :ref:`Mattermost configuration options <integrations-guide/zoom:mattermost configuration>`.
@@ -2145,7 +2099,6 @@ See the :doc:`Connect Zoom to Mattermost </integrations-guide/zoom>` product doc
 config.json-only settings
 --------------------------
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
 .. config:setting:: signature-public-key-files

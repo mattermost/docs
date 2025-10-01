@@ -1,7 +1,7 @@
 Enterprise search
 ==================
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 Mattermost database search starts to show performance degradation at around 2 million posts, on a server with 32 GB RAM and 4 CPUs. If you anticipate your Mattermost server reaching more than 2.5 million posts, we recommend enabling `Elasticsearch <#elasticsearch>`__ or `AWS OpenSearch Service <#aws-opensearch-service>`__ for optimum search performance **before** reaching 3 million posts. Both tools are highly capable and can handle enterprise-scale workloads. The choice between them depends on the following factors:

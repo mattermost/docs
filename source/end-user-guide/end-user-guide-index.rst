@@ -1,7 +1,7 @@
 End User Guide
 ================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 If you're using Mattermost to connect and collaborate, build repeatable, automated processes, and making Mattermost match your work preferences, this Mattermost end user product documentation is for you.
@@ -27,7 +27,6 @@ In this documentation, you'll learn about using Mattermost. Your Mattermost syst
 * :doc:`AI Agents </end-user-guide/agents>` - Learn how to use AI agents to help you make decisions, find information, and automate repetative tasks.
 * :doc:`Customize Your Preferences </end-user-guide/preferences>` - Learn how to make Mattermost match the way you prefer to work.
 
-.. include:: ../_static/badges/academy-platform-overview.rst
   :start-after: :nosearch:
 
 .. image:: ../images/Channels_Hero.png

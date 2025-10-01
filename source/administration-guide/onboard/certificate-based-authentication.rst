@@ -1,7 +1,7 @@
 Certificate-based authentication (Experimental)
 ===============================================
 
-.. include:: ../../_static/badges/ent-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 Certificate-based authentication (CBA) is available as an experimental feature to identify a user or a device before granting access to Mattermost and provide an additional layer of security to access the system.

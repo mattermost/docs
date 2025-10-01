@@ -1,7 +1,7 @@
 Manage your thread reply notifications
 ======================================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 You're :doc:`notified </end-user-guide/preferences/manage-your-notifications>` in a :doc:`web browser </end-user-guide/preferences/manage-your-web-notifications>`, the :doc:`desktop app </end-user-guide/preferences/manage-your-desktop-notifications>`, and on your :doc:`mobile device </end-user-guide/preferences/manage-your-mobile-notifications>`, for threads you're following when you're @mentioned or the messages contain a keyword you're tracking.

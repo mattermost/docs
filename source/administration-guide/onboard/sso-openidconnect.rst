@@ -1,7 +1,7 @@
 OpenID Connect Single Sign-On
 ==============================
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 Mattermost provides OpenID Connect support for :doc:`GitLab </administration-guide/onboard/sso-gitlab>`, :doc:`Google Apps </administration-guide/onboard/sso-google>`, and :doc:`Entra ID </administration-guide/onboard/sso-entraid>`. With OpenID Connect, users can also use their login to Keycloak, Atlassian Crowd, Apple, Microsoft, Salesforce, Auth0, Ory.sh, Facebook, Okta, OneLogin, and Azure AD, as well as others, as a Single Sign-on (SSO) service for team creation, account creation, and user login.

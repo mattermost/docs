@@ -1,7 +1,7 @@
 Mattermost Cloud data residency
 ===============================
 
-.. include:: ../../_static/badges/allplans-cloud.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Mattermost Cloud resides in the ``aws-us-east-1`` region, located in Virginia, United States. The following customer data will be stored at rest in this data center when using Mattermost Cloud:

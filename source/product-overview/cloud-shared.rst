@@ -1,7 +1,7 @@
 Cloud Shared
 =============
 
-.. include:: ../_static/badges/ent-cloud-only.rst
+.. include:: ../_static/badges/ent-cloud-dedicated.rst
   :start-after: :nosearch:
 
 Mattermost Cloud Shared is designed as a cost-effective solution for companies who don't have strict security and compliance requirements that need a straightforward, managed communication platform without the necessity for extensive customization or dedicated resources.

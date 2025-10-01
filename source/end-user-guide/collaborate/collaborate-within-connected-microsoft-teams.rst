@@ -1,7 +1,7 @@
 Collaborate within Microsoft Teams
 ===================================
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 The Mattermost for Microsoft Teams integration enables you to break through siloes in a mixed Mattermost and Teams environment by forwarding real-time chat notifications from Teams to Mattermost.

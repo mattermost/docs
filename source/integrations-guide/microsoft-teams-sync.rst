@@ -1,12 +1,11 @@
 Connect Microsoft Teams to Mattermost
 =====================================
 
-.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 Break through siloes in a mixed Mattermost and Microsoft Teams environment by forwarding real-time chat notifications from Microsoft Teams to Mattermost.
 
-.. include:: ../_static/badges/academy-msteams.rst
   :start-after: :nosearch:
 
 Deploy

@@ -1,7 +1,7 @@
 Secure file storage
 ====================
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 This document outlines the security measures governing file storage in the Mattermost mobile app for iOS and Android. It describes how files are stored, accessed, and protected within the application container, addressing concerns related to sensitive data on mobile devices. The objective is to ensure that only authorized personnel can view, access, or share such data while preventing exposure to unauthorized parties and ensuring isolation from third-party applications.

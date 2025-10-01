@@ -1,7 +1,7 @@
 Store configuration in your database
 ====================================
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 You can use your database as the single source of truth for the active configuration of your Mattermost installation. This changes the Mattermost binary from reading the default ``config.json`` file to reading the configuration settings stored within a configuration table in the database. Mattermost has been running our `community server <https://community.mattermost.com>`__ on this option since the feature was released, and recommends its use for those on :doc:`High Availability deployments </administration-guide/scale/high-availability-cluster-based-deployment>`.

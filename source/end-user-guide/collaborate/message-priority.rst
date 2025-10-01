@@ -1,7 +1,7 @@
 Set message priority
 ====================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 From Mattermost v7.7 and mobile v2.4, you can add a message priority label to root messages to make important messages requiring timely action or response more visible and less likely to be overlooked.
@@ -21,7 +21,6 @@ When you send a priority message, the priority label displays next to your name 
 Send persistent notifications
 -----------------------------
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 From Mattermost v8.0, when you add an urgent priority label, and your message @mentions at least one other user, `Mattermost Enterprise or Professional <https://mattermost.com/pricing>`__ customers can enable persistent notifications which notify recipients at regular intervals and for a set amount of time until the recipient acknowledges, reacts, or replies to the message.
@@ -54,7 +53,6 @@ To stop receiving persistent notifications, you can reply to the thread, select 
 Request acknowledgements
 ------------------------
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 `Mattermost Enterprise or Professional <https://mattermost.com/pricing>`__ customers can additionally request that recipients actively acknowledge the message to track that messages have been seen and actioned. By default, marking a message as Urgent priority automatically requests an acknowledgement. 

@@ -8,7 +8,7 @@ Mattermost keyboard shortcuts
 
   Keyboard accessibility </end-user-guide/collaborate/keyboard-accessibility>
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 Mattermost keyboard shortcuts help you make a more efficient use of your keyboard when using Mattermost in a web browser or the desktop app.

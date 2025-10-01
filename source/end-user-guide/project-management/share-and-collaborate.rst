@@ -1,7 +1,7 @@
 Share and collaborate
 =====================
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 Board permissions

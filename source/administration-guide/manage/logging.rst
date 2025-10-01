@@ -1,7 +1,7 @@
 Mattermost logging
 ===================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 Mattermost provides 3 independent logging systems that can be configured separately with separate log files and rotation policies to meet different operational and compliance needs:
@@ -109,7 +109,6 @@ Define logging output for general and notification activities in JSON format in 
 Audit logging
 ---------------
 
-.. include:: ../../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
 By default, Mattermost doesn’t write audit logs locally to a file on the server, and the ability to enable audit logging in Mattermost is currently in :ref:`Beta <administration-guide/manage/feature-labels:beta>`.
@@ -153,7 +152,6 @@ You can enable and customize advanced audit logging in Mattermost to record acti
 Advanced logging
 -----------------
 
-.. include:: ../../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
 System admins can output log and audit records general, audit, and notification activities to any combination of `console <#console-target-configuration-options>`__, `local file <#file-target-configuration-options>`__, `syslog <#syslog-target-configuration-options>`__, and `TCP socket <#tcp-target-configuration-options>`__ targets. Each output target features additional configuration options you can customize for your Mattermost deployment.
@@ -436,7 +434,6 @@ File targets support rotation and compression triggered by size and/or duration.
 Syslog target configuration options
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: ../../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
 Syslog targets support local and remote syslog servers, with or without TLS transport. Syslog target support requires Mattermost Enterprise.
@@ -461,7 +458,6 @@ Syslog targets support local and remote syslog servers, with or without TLS tran
 TCP target configuration options
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: ../../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
 The TCP socket targets can be configured with an IP address or domain name, port, and optional TLS certificate. TCP socket target support requires Mattermost Enterprise. You can :download:`download a sample JSON file </samples/sample-logger-config.json>` of the configuration to use as a starting point.

@@ -3,7 +3,7 @@
 Customize your Mattermost theme
 ===============================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 The colors of the Mattermost user interface are customizable. You can choose from `five standard themes <#standard-themes>`__ designed by Mattermost, or design your own custom theme. Your theme changes apply to all teams you're a member of, and are visible across all Mattermost clients. Mattermost Enterprise customers can configure a different theme for every team they're a member of.

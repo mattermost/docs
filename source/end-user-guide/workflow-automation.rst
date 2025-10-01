@@ -1,7 +1,7 @@
 Workflow Automation
 =====================
 
-.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 Mattermost Playbooks provides structure, monitoring and automation for repeatable, team-based processes integrated with the Mattermost platform. Playbooks are :doc:`configurable checklists </end-user-guide/workflow-automation/work-with-tasks>` for teams to achieve :doc:`specific and predictable outcomes </end-user-guide/workflow-automation/metrics-and-goals>`, such as incident response, software release management, and logistical operations.
@@ -50,7 +50,6 @@ Usage
 
 Use collaborative playbooks to orchestrate prescribed workflows and define, streamline, and document complex, recurring operations, and help your organization stay in command with integrated communication, collaboration, and status dashboards managing your workflow life cycles.
 
-.. include:: ../_static/badges/academy-playbooks.rst
   :start-after: :nosearch:
 
 Try it yourself!

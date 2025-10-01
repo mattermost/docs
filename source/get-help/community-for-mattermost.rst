@@ -1,7 +1,7 @@
 Community for Mattermost
 ========================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 Join the `Mattermost Community server <https://community.mattermost.com/>`_ directly from your Microsoft 365, Microsoft Outlook, or Microsoft Teams instance!

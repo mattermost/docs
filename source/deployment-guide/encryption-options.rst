@@ -1,7 +1,7 @@
 Encryption options
 ==================
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
+.. include:: ../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 Mattermost provides encryption-in-transit and encryption-at-rest capabilities. This page guides you through setting up appropriate encryption security.

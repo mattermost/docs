@@ -1,7 +1,7 @@
 Automated PostgreSQL migration
 ===============================
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
+.. include:: ../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 Migrating databases can be a daunting task, and it can be easy to overlook or misinterpret some of the required steps if you haven't performed a migration before. Our ``migration-assist`` tool provides an efficient, error-free migration experience that automates the :doc:`tasks to be executed </deployment-guide/manual-postgres-migration>`, even in air-gapped deployment environments.

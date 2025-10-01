@@ -17,7 +17,7 @@ Once you’ve installed Mattermost Enterprise Edition in your preferred environm
 Mattermost Entry
 ~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/selfhosted-only.rst
+.. include:: ../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 Mattermost Entry gives small, forward-leaning teams a **free, production-ready Intelligent Mission Environment** to get started on improving their mission-critical secure collaborative workflows. This offering includes: 
@@ -63,7 +63,6 @@ The following sections outline our paid offerings which provide commercial suppo
 Mattermost Enterprise Advanced
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Built for **multi-domain secure operations**, Enterprise Advanced builds on all Enterprise-level secure collaborative workflow capabilities with specialized features for environments requiring the strictest security, compliance, and operational integrity, including: 
@@ -76,7 +75,6 @@ Built for **multi-domain secure operations**, Enterprise Advanced builds on all 
 Mattermost Enterprise 
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Mattermost Enterprise supports large-scale, mission-critical **secure collaborative workflows** with robust security, compliance, and productivity tooling. It builds on core ChatOps capabilities from the Professional offering, plus:
@@ -107,7 +105,6 @@ Mattermost Enterprise supports large-scale, mission-critical **secure collaborat
 Mattermost Professional 
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 Professional best serves technical and operational teams of up to 500 users looking to run **Sovereign ChatOps workflows**, with advanced collaboration and security controls. This offering provides robust collaboration and administration tools including:  

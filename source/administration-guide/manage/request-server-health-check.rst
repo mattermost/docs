@@ -1,7 +1,7 @@
 Request a server Health Check
 ==============================
 
-.. include:: ../../_static/badges/ent-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 The Mattermost Health Check is a comprehensive evaluation of your system's current operational health available to Mattermost Enterprise customers. 

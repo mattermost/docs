@@ -1,7 +1,7 @@
 Work with cards
 ===============
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 A card consists of:

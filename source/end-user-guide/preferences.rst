@@ -1,12 +1,11 @@
 Customize your preferences
 ==========================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 You can customize many aspects of your Mattermost experience based on your preferences, including notifications for Mattermost activity, how unread channels are organized, the number of direct messages displayed, your Mattermost look and feel, and more! 
 
-.. include:: ../_static/badges/academy-customize-ui.rst
   :start-after: :nosearch:
 
 .. tip::

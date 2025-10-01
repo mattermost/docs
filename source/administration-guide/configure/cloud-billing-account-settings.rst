@@ -1,7 +1,7 @@
 Cloud workspace subscription, billing, and account settings
 ===========================================================
 
-.. include:: ../../_static/badges/allplans-cloud.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Review and manage the following aspects of your Mattermost cloud-based deployment by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Billing and Account**:

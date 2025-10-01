@@ -1,7 +1,7 @@
 AD/LDAP setup
 =============
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 Overview

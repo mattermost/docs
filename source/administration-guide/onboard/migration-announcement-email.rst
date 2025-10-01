@@ -1,7 +1,7 @@
 Migration announcement email
 ============================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 To notify your end users of your migration to Mattermost, we created a sample email template that you can use.

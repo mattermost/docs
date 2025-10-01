@@ -1,7 +1,7 @@
 User management configuration settings
 ======================================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 Review and manage the following in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **User Management**:
@@ -221,7 +221,6 @@ Add or remove users from teams using the System Console.
 Manage user's settings
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
 From Mattermost v9.11, system admins can help end users customize their Mattermost notifications by editing the user's :doc:`notification settings </end-user-guide/preferences/manage-your-notifications>` on the user's behalf within the System Console. Users can view, modify, and override their own settings at any time.
@@ -632,7 +631,6 @@ Archive a channel
 Permissions
 -----------
 
-.. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +---------------------------------------------------------------------+-------------------------------------------------------------+
