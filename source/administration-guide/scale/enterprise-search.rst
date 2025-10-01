@@ -122,6 +122,13 @@ Mattermost provides the status of each Elasticsearch or OpenSearch indexing job 
 
 Failures are returned in the server logs. The error log begins with the string ``Failed job`` and includes a job_id key/value pair. Search job failures are identified with worker name ``EnterpriseElasticsearchAggregator`` and ``EnterpriseElasticsearchIndexer``. You can optionally create a script that programmatically queries for such failures and notifies the appropriate system.
 
+How do I diagnose enterprise search connection issues?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+From Mattermost v11, :doc:`Support Packet generation </administration-guide/manage/admin/generating-support-packet>` automatically tests the connection to your configured Elasticsearch or AWS OpenSearch server and includes any connection errors in the Support Packet. This provides valuable diagnostic information including server version, installed plugins, and specific error details if the connection fails.
+
+The enterprise search connection test results appear in the Support Packet and can help identify configuration issues such as network connectivity problems, authentication failures, or server availability issues. If connection errors are present, they will be clearly documented with specific error messages to aid in troubleshooting.
+
 My search indexes won't complete, what should I do?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
