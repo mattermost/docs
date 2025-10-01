@@ -29,6 +29,8 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 ### Bug Fixes
  - Fixed an issue where the playbooks option was not omitted in Direct/Group Messages.
  - Fixed a screenshot share problem for iOS 26 devices.
+ - Fixed an issue with the **Edited** message line height.
+ - Fixed an issue with the file upload function when CSRF protection was enabled.
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
