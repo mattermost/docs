@@ -3,18 +3,16 @@ Editions and Offerings
 
 Mattermost is an open core, self-hosted platform for delivering sovereign collaborative workflow to defense, intelligence, security and critical infrastructure enterprises. Our on-prem and private cloud offerings enable mission-critical workflows including cyber defense, DevSecOps and mission operations.  
  
-**Try it Now — 1-Hour Preview** -  Experience features of Mattermost Enterprise Advanced in a live environment with our `1-hour preview <https://mattermost.com/sign-up/>`_. See how it can support your secure, mission-critical collaboration — from Security Operations and DevSecOps pipelines to sensitive joint operations. 
+**Try it Now with a 1-Hour Preview**: Experience features of Mattermost Enterprise Advanced in a live environment with our `1-hour preview <https://mattermost.com/sign-up/>`_. See how it can support your secure, mission-critical collaboration, from Security Operations and DevSecOps pipelines to sensitive joint operations. 
 
- 
 As an open core platform, we maintain and secure the `Mattermost open-source project <https://github.com/mattermost/mattermost>`_ to enable customers and community to vet and verify our software supply chain. Our code base regularly passes through automated security scanning, customer review and crowd-sourced security review through `Bugcrowd <https://bugcrowd.com/engagements/mattermost-mbb-public>`_ under our `responsible disclosure policy <https://mattermost.com/security-vulnerability-report/>`_.  The Mattermost open source project is used to produce Mattermost’s commercial Enterprise Edition that provides proprietary capabilities through paid subscriptions.
-
 
 Mattermost Enterprise Edition 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Our commercial self-hosted software, Mattermost Enterprise Edition, is distributed as a compiled Linux binary that includes advanced and subscription-based features. It is offered under a commercial license (https://mattermost.com/enterprise-edition-license/) that prohibits reverse engineering or tampering with the license key mechanism used to unlock paid functionality, supporting a fair and compliant business model.
+Our commercial self-hosted software, Mattermost Enterprise Edition, is distributed as a compiled Linux binary that includes advanced and subscription-based features. It is offered under a `commercial license <https://mattermost.com/enterprise-edition-license/>`_ that prohibits reverse engineering or tampering with the license key mechanism used to unlock paid functionality, supporting a fair and compliant business model.
 
-Once you’ve installed Mattermost Enterprise Edition in your preferred environment, you can run it as-is in a free mode — known as Entry — or activate a trial or subscription to unlock additional features. 
+Once you’ve installed Mattermost Enterprise Edition in your preferred environment, you can run it as-is in a free mode, known as Entry, or activate a trial or subscription to unlock additional features. 
 
 Mattermost Entry
 ~~~~~~~~~~~~~~~~
@@ -25,17 +23,17 @@ Mattermost Entry
 Mattermost Entry gives small, forward-leaning teams a **free, production-ready Intelligent Mission Environment** to get started on improving their mission-critical secure collaborative workflows. This offering includes: 
 
 - Teams and channels for one-to-one and group messaging, file sharing, and unlimited search history with threaded messaging, emoji, and custom emoji with 10,000 messages history and 10,000 monthly push notifications.
-- - :doc:`Collaborative playbooks with ad hoc add/remove tasks, automated triggers, and stakeholders dashboard up to 5 runs each month </end-user-guide/workflow-automation/learn-about-playbooks>`.
-- Kanban-style work management with Boards up to 1,000 cards   
-- Audio and screenshare with Calls up to 40 minutes 
-- Interactive AI agents with bring-your-own LLM integration with 250 queries each month 
-- Native apps for iOS, Android, Windows, macOS, and Linux.
-- Pre-packaged integrations with most common developer tools, including Jira, GitHub, GitLab, Zoom, and more.
+- :doc:`Collaborative playbooks </end-user-guide/workflow-automation/learn-about-playbooks>` with ad hoc add/remove tasks, automated triggers, and stakeholders dashboard up to 5 runs each month.
+- Kanban-style work management with :doc:`Boards </end-user-guide/project-task-management>` up to 1,000 cards.
+- Audio and screenshare with :doc:`Calls </end-user-guide/collaborate/audio-and-screensharing>` up to 40 minutes.
+- Interactive :doc:`AI agents </end-user-guide/agents>` with bring-your-own LLM integration with 250 queries each month.
+- Native apps for :doc:`iOS </end-user-guide/collaborate/install-ios-app>`, :doc:`Android </end-user-guide/collaborate/install-android-app>`, :doc:`Windows, macOS, and Linux </end-user-guide/collaborate/install-desktop-app>`.
+- :doc:`Pre-packaged integrations </integrations-guide/popular-integrations>` with most common developer tools, including Jira, GitHub, GitLab, Zoom, and more.
 - Tools for :doc:`custom branding </administration-guide/configure/custom-branding-tools>` and :doc:`themes </end-user-guide/preferences/customize-your-theme>`.
 - :doc:`Multi-factor authentication </administration-guide/onboard/multi-factor-authentication>`.
 - :doc:`Granular system permissions </administration-guide/onboard/advanced-permissions>`.
 - Highly customizable `third-party bots, integrations <https://mattermost.com/marketplace/#publicApps>`_, and :doc:`command line tools </administration-guide/manage/mmctl-command-line-tool>`.
-- Extensive integration support via `webhooks, APIs, drivers <https://developers.mattermost.com/integrate/other-integrations/>`_, and `third-party extensions <https://mattermost.com/marketplace/>`_.
+- `Extensive integration support <https://developers.mattermost.com/integrate/getting-started/>`_ via webhooks, APIs, drivers , and `third-party extensions <https://mattermost.com/marketplace/>`_.
 - Multiple languages including English (Australian, US), Bulgarian, Chinese (Simplified and Traditional), Dutch, French, German, Hungarian, Italian, Japanese, Korean, Persian, Polish, Portuguese (Brazil), Romanian, Russian, Spanish, Swedish, Turkish, Ukrainian, and Vietnamese.
 - :doc:`Guest access </administration-guide/onboard/guest-accounts>` and :doc:`custom user groups </end-user-guide/collaborate/organize-using-custom-user-groups>`.
 - :doc:`Active Directory/LDAP Single Sign-on and user synchronization </administration-guide/onboard/ad-ldap>`.
@@ -122,7 +120,7 @@ Professional best serves technical and operational teams of up to 500 users look
 - Single Sign-on with :doc:`GitLab </administration-guide/onboard/sso-gitlab>` using the OAuth 2.0 standard.
 - :doc:`Granular system permissions </administration-guide/onboard/advanced-permissions>`.
 - Highly customizable `third-party bots, integrations <https://mattermost.com/marketplace/#publicApps>`_, and :doc:`command line tools </administration-guide/manage/mmctl-command-line-tool>`.
-- Extensive integration support via `webhooks, APIs, drivers <https://developers.mattermost.com/integrate/other-integrations/>`_, and `third-party extensions <https://mattermost.com/marketplace/>`_.
+- Extensive integration support via `webhooks, APIs, drivers <https://developers.mattermost.com/integrate/getting-started/>`_, and `third-party extensions <https://mattermost.com/marketplace/>`_.
 - Multiple languages including English (Australian, US), Bulgarian, Chinese (Simplified and Traditional), Dutch, French, German, Hungarian, Italian, Japanese, Korean, Persian, Polish, Portuguese (Brazil), Romanian, Russian, Spanish, Swedish, Turkish, Ukrainian, and Vietnamese.
 - :doc:`Guest access </administration-guide/onboard/guest-accounts>` and :doc:`custom user groups </end-user-guide/collaborate/organize-using-custom-user-groups>`.
 - :doc:`Active Directory/LDAP Single Sign-on and user synchronization </administration-guide/onboard/ad-ldap>`.
