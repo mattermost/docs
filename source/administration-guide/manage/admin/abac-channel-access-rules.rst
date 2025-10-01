@@ -4,9 +4,9 @@ Channel-specific access rules
 .. include:: ../../../_static/badges/ent-adv-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Channel Admins can self-manage access controls for their private channels directly through the Channel Settings modal, without requiring System Admin intervention. For organization-wide policies created by System Admins, see :doc:`System-wide attribute-based access policies </administration-guide/manage/admin/abac-system-wide-policies>`.
+Channel and Team Admins can self-manage access controls for their private channels directly through the Channel Settings modal, without requiring System Admin intervention. For organization-wide policies created by System Admins, see :doc:`System-wide attribute-based access policies </administration-guide/manage/admin/abac-system-wide-policies>`.
 
-With channel access rules, Channel Admins can:
+With channel access rules, Channel and Team Admins can:
 
 - Create channel-specific access rules using a simple interface.
 - Rules are **additive** to any system policies (both must be satisfied).
@@ -63,8 +63,8 @@ The **Auto-add members based on access rules** toggle controls automatic members
 
 .. important::
 
-  - If a system policy has auto-sync enabled, Channel Admins cannot disable it at the channel level.
-  - If a system policy has auto-sync disabled, Channel Admins can choose to enable it for their channel.
+  - If a system policy has auto-sync enabled, Channel and Team Admins cannot disable it at the channel level.
+  - If a system policy has auto-sync disabled, Channel and Team Admins can choose to enable it for their channel.
   - When no rules are configured, this toggle is automatically disabled.
 
 Validation and safety
@@ -165,13 +165,13 @@ The **Access Control** tab is only visible when all of these conditions are met:
 - You have Channel Admin role or higher for the channel
 - The channel is a private channel (not public, group message, or direct message)
 - ABAC is enabled system-wide by a System Admin
-- The Channel Admin ABAC is enabled via the configuration setting AccessControlSettings - EnableUserManagedAttributes
+- The Channel Admin ABAC is enabled via the configuration setting ``AccessControlSettings.EnableUserManagedAttributes``
 - Your user role includes the ``manage_channel_access_rules`` permission
 
-Can Channel Admins override system policies?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Can Channel and Team Admins override system policies?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-No. Channel rules are always **additive** to system policies. Users must satisfy both system policies AND channel rules to access the channel. Channel Admins cannot weaken or override restrictions set by System Admins.
+No. Channel rules are always **additive** to system policies. Users must satisfy both system policies AND channel rules to access the channel. Channel and Team Admins cannot weaken or override restrictions set by System Admins.
 
 What happens if I create rules that would exclude myself?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -197,7 +197,7 @@ Why is the auto-sync toggle disabled?
 The auto-sync toggle is automatically disabled when:
 
 - No access rules are configured
-- A system policy with auto-sync enabled is applied (Channel Admins cannot disable it)
+- A system policy with auto-sync enabled is applied (Channel and Team Admins cannot disable it)
 - There are validation errors in the current rules
 
 Synchronization and membership 
