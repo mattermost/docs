@@ -371,7 +371,7 @@ redirects_map = {
 "administration/health-check.html":
         "https://docs.mattermost.com/administration-guide/manage/health-checks.html",
 "administration/hipchat-migration-guidelines.html":
-        "https://docs.mattermost.com/administration-guide/onboard/migrating-from-hipchat-to-mattermost.html",
+        "https://docs.mattermost.com/administration-guide/onboard/migrating-to-mattermost.html",
 "administration/image-proxy.html":
         "https://docs.mattermost.com/deployment-guide/server/image-proxy.html",
 "administration/important-upgrade-notes.html":
@@ -555,6 +555,18 @@ redirects_map = {
         "https://docs.mattermost.com/administration-guide/configure/environment-configuration-settings.html#enable-secure-file-preview-on-mobile",
 "administration-guide/configure/site-configuration-settings.html#allow-pdf-link-navigation-on-mobile":
         "https://docs.mattermost.com/administration-guide/configure/environment-configuration-settings.html#allow-pdf-link-navigation-on-mobile",
+"administration-guide/onboard/migrating-to-mattermost.html#migrate-from-slack":
+        "https://docs.mattermost.com/administration-guide/onboard/migrating-to-mattermost.html#move-from-slack",
+"administration-guide/onboard/migrating-to-mattermost.html#migrate-from-jabber":
+        "https://docs.mattermost.com/administration-guide/onboard/migrating-to-mattermost.html#move-from-jabber",
+"administration-guide/onboard/migrating-to-mattermost.html#migrate-from-pidgin":
+        "https://docs.mattermost.com/administration-guide/onboard/migrating-to-mattermost.html#move-from-pidgin",
+"administration-guide/onboard/migrating-to-mattermost.html#migrate-from-bitnami":
+        "https://docs.mattermost.com/administration-guide/onboard/migrating-to-mattermost.html#move-from-bitnami",
+"administration-guide/onboard/migrating-to-mattermost.html#migrate-from-bespoke-messaging-solutions":
+        "https://docs.mattermost.com/administration-guide/onboard/migrating-to-mattermost.html#move-from-bespoke-messaging-solutions",
+"administration-guide/onboard/migrating-to-mattermost.html#migrate-mattermost-from-one-server-to-another":
+        "https://docs.mattermost.com/administration-guide/onboard/migrating-to-mattermost.html#move-mattermost-to-a-new-server",
 
 # Channels redirects
 "channels/find-channels.html":
@@ -3651,7 +3663,7 @@ redirects_map = {
 "onboard/user-provisioning-workflows.html":
         "https://docs.mattermost.com/administration-guide/onboard/user-provisioning-workflows.html",
 "onboard/migrating-from-hipchat-to-mattermost.html":
-        "https://docs.mattermost.com/administration-guide/onboard/migrating-to-mattermost.html#migrating-from-slack",
+        "https://docs.mattermost.com/administration-guide/onboard/migrating-to-mattermost.html",
 "onboard/ad-ldap-groups-synchronization.html#enabling-ad-ldap-group-synchronization":
         "https://docs.mattermost.com/administration-guide/onboard/migrating-to-mattermost.html",
 "onboard/ad-ldap-groups-synchronization.html#enable-ad-ldap-group-synchronization":
@@ -3722,6 +3734,7 @@ redirects_map = {
         "https://docs.mattermost.com/administration-guide/onboard/connected-workspaces.html#share-channels-with-secure-connections",
 "onboard/shared-channels.html#frequently-asked-questions":
         "https://docs.mattermost.com/administration-guide/onboard/connected-workspaces.html#frequently-asked-questions",
+
 
 # Overview redirects
 "overview/architecture.html":
