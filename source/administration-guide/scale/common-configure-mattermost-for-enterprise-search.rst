@@ -14,7 +14,7 @@ Set server connection details
 
 .. note::
 
-   From Mattermost v11, enterprise search server connections are also tested during :doc:`Support Packet generation </administration-guide/manage/admin/generating-support-packet>`. Any connection errors encountered during Support Packet generation are automatically included in the packet to help diagnose configuration issues.
+   From Mattermost v11, enterprise search server connections are tested during :doc:`Support Packet generation </administration-guide/manage/admin/generating-support-packet>`. Any connection errors encountered during Support Packet generation are automatically included in the packet to help diagnose configuration issues.
 
 Build the post index of existing messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
