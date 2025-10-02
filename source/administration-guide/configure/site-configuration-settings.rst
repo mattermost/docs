@@ -1930,7 +1930,7 @@ Enable end user notices
 Connected workspaces
 ----------------------
 
-.. include:: ../../_static/badges/ent-adv.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 The following settings aren't available in the System Console and can only be set in ``config.json``. 
