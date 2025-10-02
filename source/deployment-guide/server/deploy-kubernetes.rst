@@ -1,7 +1,7 @@
 Deploy Mattermost on Kubernetes
 ===============================
 
-.. include:: ../../_static/badges/entry-plus.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 Mattermost server can be deployed on various Kubernetes platforms, providing a scalable and robust infrastructure for your team communication needs. This guide covers deployment options for major cloud providers and general Kubernetes installations.
