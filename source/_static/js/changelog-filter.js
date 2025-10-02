@@ -1,6 +1,6 @@
 $(document).ready(function () {
     // Only run on the changelog pages.
-    if (!window.location.pathname.includes('/about/mattermost-v10-changelog') && !window.location.pathname.includes('/about/mattermost-v9-changelog')) {
+    if (!window.location.pathname.includes('/about/mattermost-v11-changelog') && !window.location.pathname.includes('/about/mattermost-v10-changelog') && !window.location.pathname.includes('/about/mattermost-v9-changelog')) {
         return;
     }
 
@@ -61,26 +61,64 @@ $(document).ready(function () {
     // Sort versions in descending order (newest first)
     sortVersions(versions);
 
+    // Extract audience tags from content
+    const audienceTypes = new Set();
+    const listItems = [];
+    
+    // Find all list items with audience tags
+    $('li').each(function() {
+        const text = $(this).text();
+        const audienceMatch = text.match(/\*\*\[(Admin|End-user|Developer \/ API \/ Integrator|Security|Platform)\]\*\*/);
+        if (audienceMatch) {
+            const audience = audienceMatch[1];
+            audienceTypes.add(audience);
+            listItems.push({
+                item: $(this),
+                audience: audience,
+                text: text
+            });
+        }
+    });
+    
+    // Convert Set to sorted Array
+    const sortedAudienceTypes = Array.from(audienceTypes).sort();
+
     // Create filter controls
     const filterHTML = `
         <div class="changelog-filters">
             <h3>Filter Changelog</h3>
-            <p>Select source and target versions to see only relevant changelog entries</p>
-            <div>
-                <label for="changelog-source-version">From version:</label>
-                <select id="changelog-source-version">
-                    <option value="all">All versions</option>
-                    ${versions.map(v => `<option value="${v}">v${v}</option>`).join('')}
-                </select>
+            <p>Filter by version range or audience type to find relevant changelog entries</p>
+            
+            <!-- Version Filtering -->
+            <div class="filter-section">
+                <h4>Filter by Version</h4>
+                <div class="version-filters">
+                    <label for="changelog-source-version">From version:</label>
+                    <select id="changelog-source-version">
+                        <option value="all">All versions</option>
+                        ${versions.map(v => `<option value="${v}">v${v}</option>`).join('')}
+                    </select>
 
-                <label for="changelog-target-version">To version:</label>
-                <select id="changelog-target-version">
-                    <option value="all">All versions</option>
-                    ${versions.map(v => `<option value="${v}">v${v}</option>`).join('')}
-                </select>
-
-                <button id="changelog-apply-filter">Apply Filter</button>
-                <button id="changelog-reset-filter">Reset</button>
+                    <label for="changelog-target-version">To version:</label>
+                    <select id="changelog-target-version">
+                        <option value="all">All versions</option>
+                        ${versions.map(v => `<option value="${v}">v${v}</option>`).join('')}
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Audience Filtering -->
+            <div class="filter-section">
+                <h4>Filter by Audience</h4>
+                <div class="audience-filters">
+                    <button class="audience-filter-btn active" data-audience="all">Show All</button>
+                    ${sortedAudienceTypes.map(audience => `<button class="audience-filter-btn" data-audience="${audience}">${audience}</button>`).join('')}
+                </div>
+            </div>
+            
+            <div class="filter-actions">
+                <button id="changelog-apply-filter">Apply Version Filter</button>
+                <button id="changelog-reset-filter">Reset All Filters</button>
             </div>
         </div>
     `;
@@ -91,6 +129,11 @@ $(document).ready(function () {
     // Add data attributes to sections for easier filtering
     sections.forEach(item => {
         item.section.attr('data-version', item.version);
+    });
+    
+    // Add data attributes to list items for audience filtering
+    listItems.forEach(item => {
+        item.item.attr('data-audience', item.audience);
     });
 
     // Apply filter function
@@ -184,5 +227,36 @@ $(document).ready(function () {
         tocItems.forEach(item => {
             item.item.removeClass('filtered-toc');
         });
+        // Reset audience filters
+        $('.audience-filter-btn').removeClass('active');
+        $('.audience-filter-btn[data-audience="all"]').addClass('active');
+        listItems.forEach(item => {
+            item.item.removeClass('audience-filtered');
+        });
+    });
+    
+    // Audience filtering functionality
+    $('.audience-filter-btn').on('click', function() {
+        const selectedAudience = $(this).data('audience');
+        
+        // Update active state
+        $('.audience-filter-btn').removeClass('active');
+        $(this).addClass('active');
+        
+        if (selectedAudience === 'all') {
+            // Show all items
+            listItems.forEach(item => {
+                item.item.removeClass('audience-filtered');
+            });
+        } else {
+            // Filter by selected audience
+            listItems.forEach(item => {
+                if (item.audience === selectedAudience) {
+                    item.item.removeClass('audience-filtered');
+                } else {
+                    item.item.addClass('audience-filtered');
+                }
+            });
+        }
     });
 });
