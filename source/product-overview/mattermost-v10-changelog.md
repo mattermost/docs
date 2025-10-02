@@ -5,7 +5,7 @@
   :page_title: Mattermost Server v10 Release Notes
 ```
 
-```{Important}
+```{attention}
 ```{include} common-esr-support-upgrade.md
 ```
 
@@ -14,7 +14,7 @@
 
 **Release day: 2025-09-16**
 
-```{Important}
+```{attention}
 If you upgrade from a release earlier than v10.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
 ```
 
@@ -64,7 +64,7 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 - **10.11.0, released 2025-08-15**
   - Original 10.11.0 release.
 
-```{Important}
+```{attention}
 If you upgrade from a release earlier than v10.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
 ```
 
@@ -170,7 +170,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - Added a new column ``LastMembersSyncAt`` to the ``SharedChannelRemotes`` table and added ``LastMembershipSyncAt`` to ``SharedChannelUsers``. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
  - Added a new column ``LastGlobalUserSyncAt`` to the ``RemoteClusters`` table. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
 
-```{Important}
+```{attention}
 If you upgrade from a release earlier than v10.9, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 ```
 
@@ -292,7 +292,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - A new index to the ``CategoryId`` column in ``SidebarChannels`` table was added to improve query performance. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
  - Schema changes in the form of a new materialized view (``AttributeView``) was added that aggregates user attributes into a separate table. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
 
-```{Important}
+```{attention}
 If you upgrade from a release earlier than v10.8, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 ```
 
@@ -414,7 +414,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - New tables ``AccessControlPolicies`` and ``AccessControlPolicyHistory`` will be created. The migration is fully backwards-compatible, non-locking, and zero downtime is expected.
  - Support for legacy SKUs E10 and E20 licenses was removed. If you need assistance, [talk to a Mattermost expert](https://mattermost.com/contact-sales/).
 
-```{Important}
+```{attention}
 If you upgrade from a release earlier than v10.7, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 ```
 
@@ -516,7 +516,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - Added a new column ``BannerInfo`` in the ``Channels`` table for storing metadata for an upcoming licensed feature. 
  - Added support for cursor-based pagination on the property architecture tables, including SQL migration to create indices. 
 
-```{Important}
+```{attention}
 If you upgrade from a release earlier than v10.6, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 ```
 
@@ -627,7 +627,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - Support for PostgreSQL v11 and v12 have been removed. The new minimum PostgreSQL version is v13+. See the [minimum supported PostgreSQL version policy](https://docs.mattermost.com/deploy/software-hardware-requirements.html#minimum-postgresql-database-support-policy) documentation for details.
  - Migration times: On a system with 12M posts, and 1M fileinfo entries, the migration takes 15s. This migration is non-locking. Note that there is no migration for MySQL deployments because this optimization is only applicable for PostgreSQL.
 
-```{Important}
+```{attention}
 If you upgrade from a release earlier than v10.5, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 ```
 
@@ -767,7 +767,7 @@ If you have already upgraded to v10.5.0 or v10.5.1, we recommend updating the Ji
 ### Breaking Changes
 - The internal workings of the `PluginLinkComponent` in the web app have been changed to unmount link tooltips from the DOM by default, significantly improving performance. Plugins that register link tooltips using `registerLinkTooltipComponent` will experience changes in how tooltip components are managed—they are now only mounted when a link is hovered over or focused. As a result, plugins may need to update their components to properly handle mounting and unmounting scenarios. For example, changes were made in [mattermost-plugin-jira](https://github.com/mattermost/mattermost-plugin-jira/pull/1145), where componentDidUpdate lifecycle hook was replaced with componentDidMount. If your plugin’s tooltip component is a functional React component, there is a high chance that this behavior will be handled automatically, as it would be managed by useEffect with an empty dependency array.
 
-```{Important}
+```{attention}
 If you upgrade from a release earlier than v10.3, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 ```
 
@@ -864,7 +864,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
 - **10.4.0, released 2025-01-16**
   - Original 10.4.0 release.
 
-```{Important}
+```{attention}
 If you upgrade from a release earlier than v10.3, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 ```
 
@@ -970,7 +970,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
 
  - Updated minimum Edge and Chrome versions to 130+.
 
-```{Important}
+```{attention}
 If you upgrade from a release earlier than v10.2, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 ```
 
@@ -1061,7 +1061,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
 
  - Docker Content Trust (DCT) for signing Docker image artifacts has been replaced by Sigstore Cosign in v10.2 (November, 2024). If you rely on artifact verification using DCT, please [transition to using Cosign](https://edu.chainguard.dev/open-source/sigstore/cosign/how-to-install-cosign/). See the [DCT deprecation Mattermost forum post](https://forum.mattermost.com/t/upcoming-dct-deprecation/19275) for more details. 
 
-```{Important}
+```{attention}
 If you upgrade from a release earlier than v10.0, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 ```
 
@@ -1166,7 +1166,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
 - **10.1.0, released 2024-10-16**
   - Original 10.1.0 release.
 
-```{Important}
+```{attention}
 If you upgrade from a release earlier than v10.0, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 ```
 
@@ -1271,7 +1271,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - Removed deprecated ``pageSize`` query parameter from most API endpoints.
  - Deprecated the experimental Strict CSRF token enforcement. This feature will be fully removed in Mattermost v11.
 
-```{Important}
+```{attention}
 If you upgrade from a release earlier than v9.11, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 ```
 
