@@ -1,7 +1,7 @@
 Make calls 
 ============
 
-.. include:: ../../_static/badges/ent-plus.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Using a web browser, the desktop app, or the mobile app, you can `join a call <#join-a-call>`__ or `start a call <#start-a-call>`__, `share your screen <#share-screen>`__, raise your hand, `react using emojis <#react-using-emojis>`__ during a call, `chat in a thread <#chat-in-a-call>`__, and continue working in Mattermost during a call.
@@ -12,8 +12,6 @@ Using a web browser, the desktop app, or the mobile app, you can `join a call <#
   - For group calls up to 50 concurrent users, Mattermost Enterprise, Professional, or Mattermost Cloud is required.
   - Enterprise customers can also `record calls <#record-a-call>`__, enable :ref:`live text captions <end-user-guide/collaborate/make-calls:live captions during calls>` during calls, and `transcribe recorded calls <#transcribe-recorded-calls>`__. We recommend that Enterprise self-hosted customers looking for group calls beyond 50 concurrent users consider using the :ref:`dedicated rtcd service <administration-guide/configure/calls-deployment:rtcd>`.
   - Mattermost Cloud users can start calling right out of the box. For Mattermost self-hosted deployments, System admins need to enable and configure the plugin :ref:`using the System Console <administration-guide/configure/plugins-configuration-settings:calls>`.
-
-  :start-after: :nosearch:
 
 Join a call
 -----------
@@ -57,8 +55,6 @@ Start a call
 
 Host controls
 -------------
-
-  :start-after: :nosearch:
 
 From Mattermost v9.9, and Mattermost mobile v2.17, call host controls are available and include the ability to `transfer host duties <#transfer-host-duties>`__, `remove call participants <#remove-call-participants>`__, `stop a screen share <#stop-a-screen-share>`__, `mute or unmute participants <#mute-or-nmute-participants>`__, `lower raised hands <#lower-raised-hands>`__, and `end the call for everyone <#end-the-call-for-everyone>`__.
 
@@ -167,6 +163,7 @@ A chat thread is created automatically for every new call.
 Record a call
 -------------
 
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 From Mattermost v7.7, if you're the host of a meeting, you can record the call, unless your system admin has :ref:`disabled the host's ability to do so <administration-guide/configure/plugins-configuration-settings:enable call recordings>`.
@@ -211,6 +208,7 @@ To record a call:
 Live captions during calls
 ---------------------------------
 
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 From Mattermost v9.7, and Mattermost mobile app v.2.16, all call participants can display real-time text captions by selecting the **More** |more-icon| icon and **Show live captions** when the call is being recorded, and when :ref:`live captions are enabled <administration-guide/configure/plugins-configuration-settings:enable live captions>`. Live captions can be helpful in cases where noise is preventing you from hearing the audio of participants clearly.
@@ -225,6 +223,7 @@ By default, live captions display in English. Your Mattermost system admin can :
 Transcribe recorded calls
 --------------------------------
 
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 From Mattermost v9.4, and Mattermost mobile app v.2.13, call recordings can include text captions, and a transcription text file can be generated, unless your system admin has :ref:`disabled the ability to transcribe call recordings <administration-guide/configure/plugins-configuration-settings:enable call transcriptions>`.

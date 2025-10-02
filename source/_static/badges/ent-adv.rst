@@ -5,7 +5,7 @@
 
   <div class="mm-badge mm-badge--note">
 
-|plans-img-yellow| Available only on `Enterprise Advanced <https://mattermost.com/pricing/>`__ plans
+|plans-img-yellow| Available on `Enterprise Advanced <https://mattermost.com/pricing/>`__ plans
 
 .. raw:: html
 

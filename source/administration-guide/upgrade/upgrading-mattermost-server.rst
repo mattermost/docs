@@ -1,7 +1,7 @@
 Upgrade Mattermost Server
 =========================
 
-.. include:: ../../_static/badges/entry-ent.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 In most cases, you can upgrade Mattermost Server in a few minutes. However, the upgrade can take longer depending on several factors, including the size and complexity of your installation, and the version that you're upgrading from.
@@ -231,5 +231,3 @@ Upload a license key
 ---------------------
 
 When Enterprise Edition is running, open **System Console > About > Editions and License** and upload your license key.
-
-  :start-after: :nosearch:

@@ -1,7 +1,7 @@
 Backup and disaster recovery 
 =============================
 
-.. include:: ../_static/badges/entry-ent.rst
+.. include:: ../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Options to protect your Mattermost server from different types of failures range from simple backups to sophisticated disaster recovery deployments and automation.

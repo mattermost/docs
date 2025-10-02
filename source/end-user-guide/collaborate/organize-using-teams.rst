@@ -16,8 +16,6 @@ A team is a digital :doc:`workspace </end-user-guide/end-user-guide-index>` wher
 
 Users with the **Create Teams** permission can `create new teams <#create-a-team>`__ and :doc:`manage team settings </end-user-guide/collaborate/team-settings>` for existing teams. System admins can grant the **Create Team** permission to roles via the :ref:`System scheme <administration-guide/onboard/advanced-permissions:system scheme>` or the :ref:`Team override scheme <administration-guide/onboard/advanced-permissions:team override scheme>`.
 
-  :start-after: :nosearch:
-
 Single team versus multiple teams
 ----------------------------------
 

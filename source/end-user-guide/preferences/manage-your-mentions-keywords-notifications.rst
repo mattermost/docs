@@ -27,8 +27,6 @@ For example, you can receive notifications for all messages and threads related 
 Passively track keywords (no notification)
 ------------------------------------------
 
-  :start-after: :nosearch:
-        
 From Mattermost v9.3, Mattermost Enterprise and Professional customers interested calling attention to specific topics of interest across channels can do so without sending notifications to a Mattermost client.
         
 Using a web browser or the desktop app, you can passively track key terms by specifying single or multiple words to be highlighted in all channels you're a member of. Keywords and phrases are automatically highlighted using a color based on your :doc:`Mattermost theme </end-user-guide/preferences/customize-your-theme>`.

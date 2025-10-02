@@ -1,7 +1,7 @@
 Migrate from Slack
 ==================
 
-.. include:: ../../_static/badges/entry-ent.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Overview

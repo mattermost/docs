@@ -939,9 +939,6 @@ Enable the ability to establish secure connections between Mattermost instances,
 User satisfaction surveys plugin settings
 -----------------------------------------
 
-.. include:: ../../_static/badges/entry-ent.rst
-  :start-after: :nosearch:
-
 .. important::
 
    This plugin is deprecated from Mattermost v10.11, and is no longer included as a pre-packaged plugin for new Mattermost deployments. For new installations, we strongly recommend using the :doc:`Mattermost User Survey integration </administration-guide/configure/manage-user-surveys>` instead.

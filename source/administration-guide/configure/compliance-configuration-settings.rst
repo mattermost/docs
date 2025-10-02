@@ -23,8 +23,6 @@ Review and manage the following compliance configuration options in the System C
 Data retention policies
 -----------------------
 
-  :start-after: :nosearch:
-
 Changes to properties in this section require a server restart before taking effect.
 
 .. warning::
@@ -146,8 +144,6 @@ Start a Data Retention deletion job immediately. You can monitor the status of t
 
 Compliance export
 -----------------
-
-  :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Compliance > Compliance Export**.
 
@@ -311,8 +307,6 @@ The SMTP server port that will receive your Global Relay EML file when a `custom
 Message export batch size
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  :start-after: :nosearch:
-
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
 Determines how many new posts are batched together to a compliance export file.
@@ -330,8 +324,6 @@ This button initiates a compliance export job immediately. You can monitor the s
 
 Compliance monitoring
 ----------------------
-
-  :start-after: :nosearch:
 
 Settings used to enable and configure Mattermost compliance reports.
 
@@ -413,8 +405,6 @@ Set the size of the batches in which posts will be read from the database to gen
 
 Custom terms of service
 -----------------------
-
-  :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Compliance > Custom Terms of Service**.
 

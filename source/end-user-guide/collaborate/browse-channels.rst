@@ -1,7 +1,7 @@
 Browse channels
 ================
 
-.. include:: ../../_static/badges/entry-ent.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 .. tab:: Web/Desktop
@@ -49,9 +49,7 @@ Browse channels
 
     You can filter the list of channels by public, archived, or shared channels.
 
-.. tip:: 
-  
-  Want to see all of the channels you're already a member of, or can't find a specific private channel? Using a browser or the desktop app, select **Find Channel** in the channel sidebar to see all of the channels you're currently a member of across all of your teams, including public and private channels, direct and group messages, channels with unread messages, and threads. Channels you have muted aren't included in results.
+Want to see all of the channels you're already a member of, or can't find a specific private channel? Using a browser or the desktop app, select **Find Channel** in the channel sidebar to see all of the channels you're currently a member of across all of your teams, including public and private channels, direct and group messages, channels with unread messages, and threads. Channels you have muted aren't included in results.
 
 Revisit recent channels
 -----------------------

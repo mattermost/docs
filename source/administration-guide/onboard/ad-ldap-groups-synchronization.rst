@@ -3,7 +3,7 @@
 AD/LDAP groups
 ==============
 
-.. include:: ../../_static/badges/ent-plus.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 Overview

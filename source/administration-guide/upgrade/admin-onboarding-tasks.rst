@@ -1,7 +1,7 @@
 Administrator onboarding tasks
 ==============================
 
-.. include:: ../../_static/badges/entry-ent.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 This document provides instructions for common administrator tasks, including some recommendations on tasks to prepare your Mattermost deployment to onboard users.

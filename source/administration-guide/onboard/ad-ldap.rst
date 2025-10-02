@@ -1,7 +1,7 @@
 AD/LDAP setup
 =============
 
-.. include:: ../../_static/badges/entry-ent.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Overview
@@ -100,6 +100,9 @@ Configure AD/LDAP login
 
 Configure AD/LDAP synchronization
 ----------------------------------
+
+.. include:: ../../_static/badges/entry-ent.rst
+  :start-after: :nosearch:
 
 In addition to configuring AD/LDAP sign-in, you can also configure AD/LDAP synchronization. When synchronizing, Mattermost queries AD/LDAP for relevant account information and updates Mattermost accounts based on changes to attributes (first name, last name, and nickname). When accounts are disabled in AD/LDAP users are deactivated in Mattermost, and their active sessions are revoked once Mattermost synchronizes the updated attributes.
 

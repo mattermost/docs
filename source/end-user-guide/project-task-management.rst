@@ -1,7 +1,7 @@
 Project and Task Management
 ============================
 
-.. include:: ../_static/badges/ent-plus.rst
+.. include:: ../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 Mattermost Boards provides tight integration between project management and Mattermost to align, define, organize, track, and manage work across teams.

@@ -6,8 +6,8 @@ Mark channels as favorites
 
 You can mark public and private channels, as well as direct and group messages as favorites so they're easy to access later. Favorite channels display in the **Favorites** category in the channel sidebar.
 
-    .. image:: ../../images/favorites-list-sidebar.png
-      :alt: Favorite channels display in the channel sidebar.
+.. image:: ../../images/favorites-list-sidebar.png
+  :alt: Favorite channels display in the channel sidebar.
 
 To mark a channel as a **Favorite**:
 
@@ -23,9 +23,7 @@ To mark a channel as a **Favorite**:
 
   To remove a channel from your **Favorites** list, select the |favorite-icon| icon again.
 
-  .. tip::
-
-    - Alternatively to mark channels as favorites, select the channel name, select the **View Info** |channel-info| icon, then select **Favorite** in the right pane. Select **Favorited** to remove the channel from your list of favorites.
+  Alternatively to mark channels as favorites, select the channel name, select the **View Info** |channel-info| icon, then select **Favorite** in the right pane. Select **Favorited** to remove the channel from your list of favorites.
 
 .. tab:: Mobile
 
@@ -46,8 +44,6 @@ To mark a channel as a **Favorite**:
   .. image:: ../../images/mobile-select-view-info-for-a-channel.jpg
       :alt: Tap on Favorite to mark the channel as one of the favorites.
       :scale: 30
-
-.. tip::
 
   Alternatively, you can mark a favorite channel as follows:
 

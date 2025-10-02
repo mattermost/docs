@@ -1,7 +1,7 @@
 Share and collaborate
 =====================
 
-.. include:: ../../_static/badges/ent-plus.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 Board permissions

@@ -1,7 +1,7 @@
 Deploy Prometheus and Grafana for performance monitoring
 ========================================================
 
-.. include:: ../../_static/badges/ent-plus.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 Performance monitoring support enables admins to track system health for large Enterprise deployments through integrations with `Prometheus <https://prometheus.io/>`_ and `Grafana <https://grafana.com/>`__. These integrations support data collection from several Mattermost servers, which is particularly useful if you're running Mattermost :doc:`in high availability mode </administration-guide/scale/high-availability-cluster-based-deployment>`. Once you're tracking system health, you can :doc:`set up performance alerts </administration-guide/scale/performance-alerting>` on your Grafana dashboard.

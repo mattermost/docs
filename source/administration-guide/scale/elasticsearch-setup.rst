@@ -84,4 +84,4 @@ Follow these steps to configure Mattermost to use your Elasticsearch server and 
 3. Ensure **Backend type** is set to ``elasticsearch``.
 
 .. include:: /administration-guide/scale/common-configure-mattermost-for-enterprise-search.rst
-   :start-after: :nosearch:
+  :start-after: :nosearch:

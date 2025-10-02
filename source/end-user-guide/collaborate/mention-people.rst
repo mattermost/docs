@@ -1,7 +1,7 @@
 Mention people in messages
 ==========================
 
-.. include:: ../../_static/badges/entry-ent.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 When you want to get the attention of specific Mattermost users, you can use @mentions. Mattermost supports the following types of @mentions:
@@ -66,6 +66,7 @@ You can ignore channel-wide mentions in specific channels by enabling the **Chan
 @groupname
 ----------
 
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 This feature enables system admins to configure custom mentions for :doc:`LDAP synced groups </administration-guide/onboard/ad-ldap-groups-synchronization>` via the Group Configuration page. This functionality is also supported on the mobile app (from v1.34) if the AD/LDAP groups feature is enabled. The mobile app supports auto-suggesting groups, highlights group member mentions, and also provides a warning dialog when a mention will notify more than five users.
@@ -87,8 +88,6 @@ As with ``@username`` mentions, use *@* to bring up a list of groups that can be
 
 @customusergroupname
 --------------------
-
-  :start-after: :nosearch:
 
 You can add groups of users to a channel or team by :doc:`creating a custom group </end-user-guide/collaborate/organize-using-custom-user-groups>` and @mentioning that custom group in a channel.
 

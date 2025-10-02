@@ -329,7 +329,7 @@
   </tbody>
 </table>
 
-See a [complete list of features](https://mattermost.com/pricing) on the Mattermost website. Features with an asterick next to the checkmark indicate rate usage limitation. Please see more information [here](https://docs.mattermost.com/product-overview/editions-and-offerings.html).
+See a [complete list of features](https://mattermost.com/pricing) on the Mattermost website. Features with an asterisk (``*``) next to the check mark indicate rate usage limitation. Please see more information [here](https://docs.mattermost.com/product-overview/editions-and-offerings.html).
 
 ```{note}
 Mattermost Enterprise Advanced requires a Mattermost Server running v10.9 or later and a <a href="https://docs.mattermost.com/deploy/server/preparations.html#database-preparation">PostgreSQL database</a>. Enterprise plugins must be updated to support the new license (most of which are pre-packaged from v10.9).

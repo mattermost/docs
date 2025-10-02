@@ -23,8 +23,6 @@ Review and manage the following integration configuration options in the System 
 Integrations management
 -----------------------
 
-  :start-after: :nosearch:
-
 Access the following configuration settings in the System Console by going to **Integrations > Integration Management**.
 
 .. config:setting:: enable-incoming-webhooks
@@ -217,8 +215,6 @@ To manage who can create personal access tokens or to search users by token ID, 
 Bot accounts
 ------------
 
-  :start-after: :nosearch:
-
 Access the following configuration settings in the System Console by going to **Integrations > Bot Accounts**.
 
 .. config:setting:: enable-bot-account-creation
@@ -266,8 +262,6 @@ Disable bot accounts when owner is deactivated
 GIF
 ----
 
-  :start-after: :nosearch:
-
 Access the following configuration settings in the System Console by going to **Integrations > GIF**.
 
 .. config:setting:: enable-gif-picker
@@ -298,9 +292,7 @@ Enable GIF picker
 CORS
 ----
 
-  :start-after: :nosearch:
-
-Access the following configuration settings in the System Console by going to **Integrations > CORS**.
+The following configuration settings are applicable only to self-hosted deployments. Access the following configuration settings in the System Console by going to **Integrations > CORS**.
 
 .. config:setting:: enable-cross-origin-requests-from
   :displayname: Enable cross-origin requests from (Integrations)
@@ -388,9 +380,7 @@ CORS debug
 Embedding
 ---------
 
-  :start-after: :nosearch:
-
-Access the following configuration settings in the System Console by going to **Integrations > Embedding**.
+The following configuration settings are applicable only to self-hosted deployments. Access the following configuration settings in the System Console by going to **Integrations > Embedding**.
 
 .. config:setting:: frame-ancestors
   :displayname: Frame ancestors (Integrations)

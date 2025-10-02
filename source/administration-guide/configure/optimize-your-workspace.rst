@@ -1,7 +1,7 @@
 Optimize your Mattermost workspace
 ==================================
 
-.. include:: ../../_static/badges/ent-plus.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 With workspace optimizations, system admins can review their workspace health and growth scores, then take advantage of recommended actions for ensuring their workspace is running smoothly and teams are maximizing productivity.

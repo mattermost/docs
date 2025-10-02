@@ -1,7 +1,7 @@
 Product limits
 ===============
 
-.. include:: ../../_static/badges/entry-ent.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 This page describes some of the product limits that apply to Mattermost, including hard and recommended limits.

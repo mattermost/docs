@@ -136,7 +136,7 @@ One Dark Theme
 .. image:: ../../images/OneDark.png
   :alt: One Dark Theme
 
-`Visit the one-dark-mattermost GitHub repository online: <https://github.com/georgewitteman/one-dark-mattermost>`__.
+`Visit the one-dark-mattermost GitHub repository online: <https://github.com/georgewitteman/one-dark-mattermost>`__
 
 Want this theme? Copy and paste the following code into Mattermost:
 
@@ -150,14 +150,13 @@ Discord Dark Theme (New)
 .. image:: ../../images/DiscordNewDarkTheme.png
   :alt: Discord New Dark Theme
 
-`Visit the mattermost-discord-dark GitHub repository online: <https://github.com/melroy89/mattermost-discord-dark>`__.
+`Visit the mattermost-discord-dark GitHub repository online: <https://github.com/melroy89/mattermost-discord-dark>`__
 
 Want this theme? Copy and paste the following code into Mattermost:
 
 .. code-block:: json
 
   {"sidebarBg": "#121214", "sidebarText": "#ffffff", "sidebarUnreadText": "#ffffff", "sidebarTextHoverBg": "#1d1d1e", "sidebarTextActiveBorder": "#ffffff", "sidebarTextActiveColor": "#ffffff", "sidebarHeaderBg": "#121214", "sidebarHeaderTextColor": "#ffffff", "sidebarTeamBarBg": "#121214", "onlineIndicator": "#43a25a", "awayIndicator": "#ca9654", "dndIndicator": "#d83a42", "mentionBg": "#6e84d2", "mentionBj": "#6e84d2", "mentionColor": "#ffffff", "centerChannelBg": "#1a1a1e", "centerChannelColor": "#efeff0", "newMessageSeparator": "#ff4d4d", "linkColor": "#2095e8", "buttonBg": "#5865f2", "buttonColor": "#ffffff", "errorTextColor": "#ff6461", "mentionHighlightBg": "#a4850f", "mentionHighlightLink": "#a4850f", "codeTheme": "monokai"}
-
 
 Discord Dark Theme (Old)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^

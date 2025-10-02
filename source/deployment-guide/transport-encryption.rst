@@ -16,8 +16,6 @@ The components of the Mattermost setup are shown in the following diagram, inclu
 Configuring proxy to Mattermost transport encryption
 -----------------------------------------------------
 
-  :start-after: :nosearch:
-
 Mattermost is able to encrypt the traffic between the proxy and the application server using TLS.
 
 Prerequisites
@@ -129,8 +127,6 @@ Finally, on the **NGINX server**, reload the configuration to ensure that reques
 Configuring database transport encryption
 ------------------------------------------
 
-  :start-after: :nosearch:
-
 Mattermost is able to encrypt the traffic between the database and the application using TLS. This guide describes the setup steps for a single, separate MySQL server.
 
 Prerequisites
@@ -172,7 +168,7 @@ Any connection to the MySQL server must now be made with secure transport enable
 
 Last but not least, restart the server and confirm it is up and running:
 
-  .. code-block:: sh
+.. code-block:: sh
 
   systemctl restart mysql
   systemctl status mysql
@@ -249,8 +245,6 @@ Once complete, restart the Mattermost server and ensure the system is operationa
 
 Configuring cluster transport encryption
 -----------------------------------------
-
-  :start-after: :nosearch:
 
 Mattermost is able to encrypt the messages sent within the cluster of a deployment using SSH tunneling. The guide walks through the deployment of this solution on Ubuntu 20.04, but it can be adapted for any Linux operating system.
 

@@ -1,7 +1,7 @@
 Install Mattermost Boards
 ==========================
 
-.. include:: ../../_static/badges/ent-plus.rst
+.. include:: ../../_static/badges/entry-ent.rst
    :start-after: :nosearch:
 
 Mattermost Boards is not enabled by default for new Mattermost Enterprise instances. If the Mattermost Boards plugin isn't enabled for your Mattermost workspace, self-hosted Enterprise customers can install this plugin by manually uploading the binary release file into the System Console and enabling it.

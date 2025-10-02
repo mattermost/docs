@@ -81,8 +81,6 @@ If you don't register Mattermost in the Microsoft Azure AD tenant your organizat
 Configure Mattermost ``config.json`` for Entra ID SSO
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  :start-after: :nosearch:
-
 Instead of using the System Console, you can add the Entra ID settings directly to the ``config.json`` file on your Mattermost server.
 
 1. Open ``config.json`` as *root* in a text editor. It’s usually in ``/opt/mattermost/config`` but it might be elsewhere on your system.

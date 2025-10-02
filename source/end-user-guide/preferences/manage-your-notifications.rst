@@ -26,8 +26,6 @@ Manage your notifications
 
 Mattermost notifies you of new activity you're directly involved in. How you're notified depends on what Mattermost client you're using, the type of Mattermost activity you're being notified about, and how you prefer to be notified.
 
-  :start-after: :nosearch:
-
 .. tip::
 
   **Missing notifications?**

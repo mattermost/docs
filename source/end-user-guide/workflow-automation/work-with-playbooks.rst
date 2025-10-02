@@ -1,7 +1,7 @@
 Work with collaborative playbooks
 ==================================
 
-.. include:: ../../_static/badges/ent-plus.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 A collaborative playbook is a checklist of the tasks that make up your processes. Collaborative playbooks allow you to take codified knowledge and processes and make them accessible and editable by your organization and team. When you're setting up your playbook, you'll be able to break tasks down, and assign actions to them - such as using a slash command to start a Zoom call. You can also decide whether to use the same channel every time your playbook is run, or a new one.

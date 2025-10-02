@@ -1,7 +1,7 @@
 Prepare to upgrade Mattermost
 =============================
 
-.. include:: ../../_static/badges/ent-plus.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 In most cases, you can :doc:`upgrade Mattermost Server </administration-guide/upgrade/upgrading-mattermost-server>` in a few minutes. However, the upgrade can take longer depending on several factors, including the size and complexity of your installation, and the version that you're upgrading from. When planning an upgrade, it's worth confirming that your current database and operating system version are still supported. Details can be found on our :ref:`software and hardware requirements <deployment-guide/software-hardware-requirements:server software>` page.

@@ -6,8 +6,6 @@ Search for messages
 
 Use Mattermost search to find messages, replies, and the contents of files. You can also search by `hashtags <#hashtags>`__ and perform more advanced searches using `search modifiers <#search-modifiers>`__.
 
-  :start-after: :nosearch:
-
 Search for message
 -------------------
 

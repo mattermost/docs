@@ -1,7 +1,7 @@
 Work with groups, filter, and sort
 ==================================
 
-.. include:: ../../_static/badges/ent-plus.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 Your board can be grouped, filtered, and sorted into different views using a range of properties. This gives you a powerful way to track work from various perspectives. When used in conjunction with :ref:`saved views <end-user-guide/project-management/work-with-views:work with saved views>`, you can create multiple views with different groupings and filters for quick access without having to reapply the groupings and filters every time.

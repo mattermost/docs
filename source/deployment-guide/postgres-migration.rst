@@ -1,7 +1,7 @@
 Migration guidelines from MySQL to PostgreSQL
 =============================================
 
-.. include:: ../_static/badges/entry-ent.rst
+.. include:: ../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 From Mattermost v8.0, :ref:`PostgreSQL <deployment-guide/software-hardware-requirements:database software>` is our database of choice for Mattermost to enhance the platform’s performance and capabilities. Recognizing the importance of supporting the community members who are interested in migrating from a MySQL database, we have taken proactive measures to provide guidance and best practices.

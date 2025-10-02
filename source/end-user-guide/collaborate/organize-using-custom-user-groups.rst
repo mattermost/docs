@@ -1,7 +1,7 @@
 Manage custom groups
 ====================
 
-.. include:: ../../_static/badges/ent-plus.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Custom groups reduce noise and improve focus by notifying the right people in a channel at the right time, while maintaining transparency for all members in that channel. Custom user groups let you notify up to 256 users at a time rather than notifying users individually.

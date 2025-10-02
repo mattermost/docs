@@ -1,7 +1,7 @@
 Work with tasks
 ===============
 
-.. include:: ../../_static/badges/ent-plus.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Tasks and due dates

@@ -1,7 +1,7 @@
 Command line tools
 ==================
 
-.. include:: ../../_static/badges/ent-plus.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 In self-managed deployments, a ``mattermost`` command is available for configuring the system from the directory where the Mattermost server is installed. For an overview of the Mattermost command line interface (CLI), `read this article <https://medium.com/@santosjs/plugging-in-to-the-mattermost-cli-8cdcef2bd1f6>`_ from Santos.
@@ -237,6 +237,7 @@ Format
 mattermost export
 -----------------
 
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 Description

@@ -35,6 +35,7 @@ MFA can be disabled for user accounts using the API. See the `Mattermost API Ref
 Enforcing MFA
 --------------
 
+.. include:: ../../_static/badges/pro-plus.rst
   :start-after: :nosearch:
 
 Admins can fulfill Multi-Factor Authentication (MFA) compliance requirements by enforcing an MFA requirement for login with email and LDAP accounts. Go to **System Console > Authentication > MFA**, then set **Enforce Multi-factor Authentication** to **true**.

@@ -1,6 +1,6 @@
 # Calls self-hosted deployment
 
-```{include} ../../_static/badges/entry-ent.md
+```{include} ../../_static/badges/all-commercial.md
 ```
 
 Mattermost Calls is an excellent option for organizations demanding enhanced security and control over their communication infrastructure. Calls is designed to operate securely in self-hosted deployments, including [air-gapped environments](https://docs.mattermost.com/configure/calls-deployment.html#air-gapped-deployments), ensuring private communication without reliance on public internet connectivity with flexible configuration options for complex network requirements.
@@ -738,8 +738,6 @@ The plugin can function in different modes. By default calls are handled complet
 When possible, it's recommended to keep communication between the Mattermost cluster and the dedicated `rtcd` service under the same private network as this can greatly simplify deployment and security. There's no requirement to expose `rtcd`'s HTTP API to the public internet.
 
 ### Can Calls be rolled out on a per-channel basis?
-
-```
 
 Yes. Mattermost system admins running self-hosted deployments can enable or disable call functionality per channel. Once [test mode](https://docs.mattermost.com/configure/plugins-configuration-settings.html#test-mode) is enabled for Mattermost Calls:
 

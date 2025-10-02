@@ -68,8 +68,6 @@ Step 3: Configure Mattermost for Google Apps SSO
 Configure Mattermost ``config.json`` for Google Apps SSO
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  :start-after: :nosearch:
-
 Instead of using the System Console, you can add the Google settings directly to the ``config.json`` file directly on your Mattermost server.
 
 1. Open ``config.json`` as *root* in a text editor. It’s usually in ``/opt/mattermost/config``, but it might be elsewhere on your system.

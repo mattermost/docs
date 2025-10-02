@@ -1,7 +1,7 @@
 Collect performance metrics
 ============================
 
-.. include:: ../../_static/badges/ent-plus.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 System admins can collect and store the :doc:`same performance monitoring metrics </administration-guide/scale/performance-monitoring-metrics>` as Prometheus, without having to deploy these third-party tools. Data is collected every minute and is stored in a path you configure. The data is synchronized to either a cloud-based or local file store every hour, and retained for 15 days. 

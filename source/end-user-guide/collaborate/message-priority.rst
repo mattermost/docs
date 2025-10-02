@@ -21,8 +21,6 @@ When you send a priority message, the priority label displays next to your name 
 Send persistent notifications
 -----------------------------
 
-  :start-after: :nosearch:
-
 From Mattermost v8.0, when you add an urgent priority label, and your message @mentions at least one other user, `Mattermost Enterprise or Professional <https://mattermost.com/pricing>`__ customers can enable persistent notifications which notify recipients at regular intervals and for a set amount of time until the recipient acknowledges, reacts, or replies to the message.
 
 To enable persistent notifications for a message:
@@ -52,8 +50,6 @@ To stop receiving persistent notifications, you can reply to the thread, select 
 
 Request acknowledgements
 ------------------------
-
-  :start-after: :nosearch:
 
 `Mattermost Enterprise or Professional <https://mattermost.com/pricing>`__ customers can additionally request that recipients actively acknowledge the message to track that messages have been seen and actioned. By default, marking a message as Urgent priority automatically requests an acknowledgement. 
 

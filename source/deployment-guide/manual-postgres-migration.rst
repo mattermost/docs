@@ -1,7 +1,7 @@
 Manually migrate from MySQL to PostgreSQL
 =========================================
 
-.. include:: ../_static/badges/entry-ent.rst
+.. include:: ../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Migrating a MySQL database to PostgreSQL manually involves the following steps:
