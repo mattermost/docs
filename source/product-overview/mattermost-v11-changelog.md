@@ -135,7 +135,6 @@ New setting options were added to ``config.json``. Below is a list of the additi
 ### API Changes
  - Added a counting plugin API for properties.
  - Added a new API endpoint to update Custom Profile Attribute values for a given user.
- - Added a new API endpoint ``POST /api/v4/groups/names``.
 
 ### Go Version
  - v11.0 is built with Go ``v1.24.6``.
