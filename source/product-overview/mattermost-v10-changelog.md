@@ -15,7 +15,8 @@
 **Release day: 2025-09-16**
 
 .. attention::
-If you upgrade from a release earlier than v10.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
+
+   If you upgrade from a release earlier than v10.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
 
 ### Compatibility
  - Updated minimum Edge and Chrome versions to 138+.
