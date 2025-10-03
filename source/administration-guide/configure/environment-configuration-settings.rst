@@ -2977,6 +2977,10 @@ Output logs to console
 |   written to the console.                     |                                                                           |
 +-----------------------------------------------+---------------------------------------------------------------------------+
 
+.. note::
+
+  From Mattermost v11.0, notification logs are automatically included in the main console logs.
+
 .. config:setting:: console-log-level
   :displayname: Console general log level (General Logging)
   :systemconsole: Environment > Logging
@@ -3082,7 +3086,8 @@ Output logs to file
 
 .. note::
 
-  Typically set to **true** in a production environment. When enabled, you can download the ``mattermost.log`` file locally by going to **System Console > Reporting > Server Logs**, and selecting **Download Logs**. 
+  - From Mattermost v11.0, notification logs are automatically included in the main file logs.
+  - This setting is typically set to **true** in a production environment. When enabled, you can download the ``mattermost.log`` file locally by going to **System Console > Reporting > Server Logs**, and selecting **Download Logs**.
 
 .. config:setting:: file-log-directory
   :displayname: General file log directory (General Logging)
@@ -3306,12 +3311,14 @@ Notification logging
 ~~~~~~~~~~~~~~~~~~~~~
 
 .. important::
-   **Mattermost v11.0+ Notice**: NotificationLogSettings have been removed in Mattermost v11.0 and later. All notification logs are now consolidated into the standard ``mattermost.log`` file. To split notification logs into separate files in v11.0+, use the ``AdvancedLoggingJSON`` configuration with discrete notification log levels: ``NotificationError``, ``NotificationWarn``, ``NotificationInfo``, ``NotificationDebug``, and ``NotificationTrace``. See :ref:`Advanced Logging <administration-guide/manage/logging:advanced-logging>` for details.
 
-.. note::
-   The following configuration settings apply only to Mattermost server versions prior to v11.0.
+  **From Mattermost v11, notification log settings have been consolidated into the standard console logs and mattermost.log file**. You can no longer disable notification logging without using advanced logging settings, as the main log level setting now controls both server and notification logs.
 
-Configure logging specifically for Mattermost notifications by editing the ``config.json`` file as described in the following tables. These settings operate independently from the main ``LogSettings`` and allow you to customize logging behavior specifically for the notification subsystem. Changes to these configuration settings require a server restart before taking effect.
+  You can use the ``AdvancedLoggingJSON`` configuration with discrete notification log levels: ``NotificationError``, ``NotificationWarn``, ``NotificationInfo``, ``NotificationDebug``, and ``NotificationTrace`` to split notification logs into separate files and reduce troubleshooting noise. See :ref:`Advanced Logging <administration-guide/manage/logging:advanced logging>` for details.
+
+The following configuration settings apply only to Mattermost server versions prior to v11.0.
+
+You can configure logging specifically for Mattermost notifications by editing the ``config.json`` file as described in the following tables. These settings operate independently from the main ``LogSettings`` and allow you to customize logging behavior specifically for the notification subsystem. Changes to these configuration settings require a server restart before taking effect.
 
 .. config:setting:: output-logs-to-console
   :displayname: Output notification logs to console (Notification Logging)

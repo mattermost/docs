@@ -5,7 +5,10 @@ Mattermost logging
   :start-after: :nosearch:
 
 .. important::
-   **Mattermost v11.0+ Logging Changes**: Starting with Mattermost v11.0, all logs including notification-related logs are consolidated into the standard ``mattermost.log`` file. The separate NotificationLogSettings configuration has been removed. Administrators can no longer disable notification logging without using advanced logging settings, as the main log level setting now controls both server and notification logs.
+
+    **From Mattermost v11, notification log settings have been consolidated into the standard console logs and mattermost.log file**. You can no longer disable notification logging without using advanced logging settings, as the main log level setting now controls both server and notification logs.
+
+    You can use the ``AdvancedLoggingJSON`` configuration with discrete notification log levels: ``NotificationError``, ``NotificationWarn``, ``NotificationInfo``, ``NotificationDebug``, and ``NotificationTrace`` to split notification logs into separate files and reduce troubleshooting noise. See the section below on `advanced logging <#advanced-logging>`__ for details.
 
 Mattermost provides independent logging systems that can be configured separately with separate log files and rotation policies to meet different operational and compliance needs:
 
@@ -15,34 +18,35 @@ Mattermost provides independent logging systems that can be configured separatel
 
    "**Log Settings**
 
-   All general Mattermost server operations, errors, startup/initialization, API calls, and system events. **In v11.0+, also includes notification subsystem events.**", "Always enabled. Console: INFO, File: INFO", "**High** - Essential for operations"
+   All general Mattermost server operations, errors, startup/initialization, API calls, and system events. From v11.0, also includes notification subsystem events.", "Always enabled. Console: INFO, File: INFO", "**High** - Essential for operations"
    "**Audit Log Settings**
 
    Security and compliance events, user actions, API access, authentication events, and administrative changes.", "Enable if compliance is required", "**Medium** - Based on regulatory needs"
-   "**Notification Log Settings** *(v10.x and earlier)*
+   "**Notification Log Settings** *(applicable to v10.12 and earlier releases only)*
 
    Notification subsystem events, push notifications, email delivery, mobile notification processing.", "Enable for notification troubleshooting", "**Low** - Enable when debugging issues"
 
 By default, all Mattermost plans write logs to both the console and to the ``mattermost.log`` file in a machine-readable JSON format for log aggregation tools. Mattermost Enterprise and Professional customers can additionally log directly to syslog and TCP socket destination targets. Audit logging is designed to be asynchronous to minimize performance impact.
-
-.. tip::
-   **v11.0+ Troubleshooting**: Since notification logs are now included in the main log file, administrators may want to filter out notification-related messages during troubleshooting to reduce noise. The new discrete notification log levels (``NotificationError``, ``NotificationWarn``, ``NotificationInfo``, ``NotificationDebug``, ``NotificationTrace``) make filtering easier.
 
 System admins can customize the following logging options based on your business practices and needs by going to **System Console > Environment > Logging** or by editing the ``config.json`` file directly.
 
 Console logs
 ------------
 
-Console logs feature verbose debug level log messages for general activities (and notification activities in v11.0+) that are written to the console using the standard output stream (stdout). You can customize console logs for general activities. In v11.0+, notification logs are automatically included in the main console logs. See the :ref:`Logging configuration settings <administration-guide/configure/environment-configuration-settings:logging>` for details.
+Console logs feature verbose debug level log messages for general activities that are written to the console using the standard output stream (stdout). You can customize console logs for general activities. 
+
+From Mattermost v11.0, notification logs are automatically included in the main console logs. See the :ref:`Logging configuration settings <administration-guide/configure/environment-configuration-settings:output logs to console>` for details.
 
 File logs
 ---------
 
-File logs feature info level log messages for general activities (and notification activities in v11.0+), including errors and information around startup, and initialization and webhook debug messages. The file is stored in ``./logs/mattermost.log``, rotated at 100 MB, and archived to a separate file in the same directory. You can customize file logs for general activities. In v11.0+, notification logs are automatically included in the main mattermost.log file. See the :ref:`Logging configuration settings <administration-guide/configure/environment-configuration-settings:logging>` for details.
+File logs feature info level log messages for general activities including errors and information around startup, and initialization and webhook debug messages. The file is stored in ``./logs/mattermost.log``, rotated at 100 MB, and archived to a separate file in the same directory. You can customize file logs for general activities. 
+
+From Mattermost v11.0, notification logs are automatically included in the main ``mattermost.log`` file. See the :ref:`Logging configuration settings <administration-guide/configure/environment-configuration-settings:output logs to file>` for details.
 
 .. tip::
 
-    You can download the ``mattermost.log`` file locally by going to **System Console > Reporting > Server Logs**, and selecting **Download Logs**.
+    Download the ``mattermost.log`` file locally by going to **System Console > Reporting > Server Logs**, and selecting **Download Logs**.
 
 You can optionally output log records to any combination of `console <#console-target-configuration-options>`__, `local file <#file-target-configuration-options>`__, `syslog <#syslog-target-configuration-options>`__, and `TCP socket <#tcp-target-configuration-options>`__ targets, each featuring additional customization. See `Advanced Logging <#advanced-logging>`__ for details.
 
@@ -51,69 +55,144 @@ Define logging output
 
 Define logging output for general activities in JSON format in the System Console by going to **Environment > Logging > Advanced Logging** or by editing the ``config.json`` file directly. 
 
-.. note::
-   **v11.0+ Notification Log Levels**: In Mattermost v11.0+, five new discrete notification log levels are available for use with advanced logging configurations to separate notification logs: ``NotificationError``, ``NotificationWarn``, ``NotificationInfo``, ``NotificationDebug``, and ``NotificationTrace``.
-
 You can use the sample JSON below as a starting point.
 
-.. code-block:: JSON
+.. tab:: v11 or later
 
-    {
-        "console1": {
-            "type": "console",
-            "format": "json",
-            "levels": [
-                {"id": 5, "name": "debug", "stacktrace": false},
-                {"id": 4, "name": "info", "stacktrace": false, "color": 36},
-                {"id": 3, "name": "warn", "stacktrace": false},
-                {"id": 2, "name": "error", "stacktrace": true, "color": 31},
-                {"id": 1, "name": "fatal", "stacktrace": true, "color": 31},
-                {"id": 0, "name": "panic", "stacktrace": true, "color": 31},
-                {"id": 10, "name": "stdlog", "stacktrace": false}
-            ],
-            "options": {
-                "out": "stdout"
+    .. code-block:: JSON
+
+        {
+            "console1": {
+                "type": "console",
+                "format": "json",
+                "levels": [
+                    {"id": 5, "name": "debug", "stacktrace": false},
+                    {"id": 4, "name": "info", "stacktrace": false, "color": 36},
+                    {"id": 3, "name": "warn", "stacktrace": false},
+                    {"id": 2, "name": "error", "stacktrace": true, "color": 31},
+                    {"id": 1, "name": "fatal", "stacktrace": true, "color": 31},
+                    {"id": 0, "name": "panic", "stacktrace": true, "color": 31},
+                    {"id": 10, "name": "stdlog", "stacktrace": false},
+
+                    {"id": 300, "name": "NotificationError", "stacktrace": true, "color": 31},
+                    {"id": 301, "name": "NotificationWarn", "stacktrace": false},
+                    {"id": 302, "name": "NotificationInfo", "stacktrace": false, "color": 36},
+                    {"id": 303, "name": "NotificationDebug", "stacktrace": false},
+                    {"id": 304, "name": "NotificationTrace", "stacktrace": false}
+                ],
+                "options": {
+                    "out": "stdout"
+                },
+                "maxqueuesize": 1000
             },
-            "maxqueuesize": 1000
-        },
-        "file1": {
-            "type": "file",
-            "format": "json",
-            "levels": [
-                {"id": 5, "name": "debug", "stacktrace": false},
-                {"id": 4, "name": "info", "stacktrace": false},
-                {"id": 3, "name": "warn", "stacktrace": false},
-                {"id": 2, "name": "error", "stacktrace": true},
-                {"id": 1, "name": "fatal", "stacktrace": true},
-                {"id": 0, "name": "panic", "stacktrace": true}
-            ],
-            "options": {
-                "filename": "mattermost_logging.log",
-                "max_size": 100,
-                "max_age": 1,
-                "max_backups": 10,
-                "compress": true
+            "file1": {
+                "type": "file",
+                "format": "json",
+                "levels": [
+                    {"id": 5, "name": "debug", "stacktrace": false},
+                    {"id": 4, "name": "info", "stacktrace": false},
+                    {"id": 3, "name": "warn", "stacktrace": false},
+                    {"id": 2, "name": "error", "stacktrace": true},
+                    {"id": 1, "name": "fatal", "stacktrace": true},
+                    {"id": 0, "name": "panic", "stacktrace": true},
+
+                    {"id": 300, "name": "NotificationError", "stacktrace": true},
+                    {"id": 301, "name": "NotificationWarn", "stacktrace": false},
+                    {"id": 302, "name": "NotificationInfo", "stacktrace": false},
+                    {"id": 303, "name": "NotificationDebug", "stacktrace": false},
+                    {"id": 304, "name": "NotificationTrace", "stacktrace": false}
+                ],
+                "options": {
+                    "filename": "mattermost_logging.log",
+                    "max_size": 100,
+                    "max_age": 1,
+                    "max_backups": 10,
+                    "compress": true
+                },
+                "maxqueuesize": 1000
             },
-            "maxqueuesize": 1000
-        },
-        "file2": {
-            "type": "file",
-            "format": "json",
-            "levels": [
-                {"id": 2, "name": "error", "stacktrace": true},
-                {"id": 1, "name": "fatal", "stacktrace": true},
-                {"id": 0, "name": "panic", "stacktrace": true}
-            ],
-            "options": {
-                "filename": "mattermost_logging_errors.log", 
-                "max_size": 100,
-                "max_age": 30,
-                "max_backups": 10,
-                "compress": true
-            },
-            "maxqueuesize": 1000
+            "file2": {
+                "type": "file",
+                "format": "json",
+                "levels": [
+                    {"id": 2, "name": "error", "stacktrace": true},
+                    {"id": 1, "name": "fatal", "stacktrace": true},
+                    {"id": 0, "name": "panic", "stacktrace": true},
+
+                    {"id": 300, "name": "NotificationError", "stacktrace": true},
+                    {"id": 301, "name": "NotificationWarn", "stacktrace": false}
+                ],
+                "options": {
+                    "filename": "mattermost_logging_errors.log", 
+                    "max_size": 100,
+                    "max_age": 30,
+                    "max_backups": 10,
+                    "compress": true
+                },
+                "maxqueuesize": 1000
+            }
         }
-    }
+
+.. tab:: v10.12 or earlier
+
+    .. code-block:: JSON
+
+        {
+            "console1": {
+                "type": "console",
+                "format": "json",
+                "levels": [
+                    {"id": 5, "name": "debug", "stacktrace": false},
+                    {"id": 4, "name": "info", "stacktrace": false, "color": 36},
+                    {"id": 3, "name": "warn", "stacktrace": false},
+                    {"id": 2, "name": "error", "stacktrace": true, "color": 31},
+                    {"id": 1, "name": "fatal", "stacktrace": true, "color": 31},
+                    {"id": 0, "name": "panic", "stacktrace": true, "color": 31},
+                    {"id": 10, "name": "stdlog", "stacktrace": false}
+                ],
+                "options": {
+                    "out": "stdout"
+                },
+                "maxqueuesize": 1000
+            },
+            "file1": {
+                "type": "file",
+                "format": "json",
+                "levels": [
+                    {"id": 5, "name": "debug", "stacktrace": false},
+                    {"id": 4, "name": "info", "stacktrace": false},
+                    {"id": 3, "name": "warn", "stacktrace": false},
+                    {"id": 2, "name": "error", "stacktrace": true},
+                    {"id": 1, "name": "fatal", "stacktrace": true},
+                    {"id": 0, "name": "panic", "stacktrace": true}
+                ],
+                "options": {
+                    "filename": "mattermost_logging.log",
+                    "max_size": 100,
+                    "max_age": 1,
+                    "max_backups": 10,
+                    "compress": true
+                },
+                "maxqueuesize": 1000
+            },
+            "file2": {
+                "type": "file",
+                "format": "json",
+                "levels": [
+                    {"id": 2, "name": "error", "stacktrace": true},
+                    {"id": 1, "name": "fatal", "stacktrace": true},
+                    {"id": 0, "name": "panic", "stacktrace": true}
+                ],
+                "options": {
+                    "filename": "mattermost_logging_errors.log", 
+                    "max_size": 100,
+                    "max_age": 30,
+                    "max_backups": 10,
+                    "compress": true
+                },
+                "maxqueuesize": 1000
+            }
+        }
 
 ----
 
@@ -137,7 +216,7 @@ You can enable and customize advanced audit logging in Mattermost to record acti
 
     Go to **System Console > Compliance > Audit Logging** to customize audit logging. You can use the sample JSON below as a starting point. 
     
-    You can customize console logs for :ref:`general <administration-guide/configure/environment-configuration-settings:log settings>` activities. In v11.0+, :ref:`notification <administration-guide/configure/environment-configuration-settings:notification logging>` logs are automatically included unless advanced logging is configured. 
+    You can customize console logs for :ref:`general <administration-guide/configure/environment-configuration-settings:log settings>` activities. From v11.0, :ref:`notification <administration-guide/configure/environment-configuration-settings:notification logging>` logs are automatically included unless advanced logging is configured. 
     
     Additionally, you can also output audit log records to any combination of `console <#console-target-configuration-options>`__, `local file <#file-target-configuration-options>`__, `syslog <#syslog-target-configuration-options>`__, and `TCP socket <#tcp-target-configuration-options>`__ targets, each featuring additional customization. See `Advanced Logging <#advanced-logging>`__ below for details.
 
@@ -167,10 +246,11 @@ Advanced logging
 .. include:: ../../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-System admins can output log and audit records for general and audit activities to any combination of `console <#console-target-configuration-options>`__, `local file <#file-target-configuration-options>`__, `syslog <#syslog-target-configuration-options>`__, and `TCP socket <#tcp-target-configuration-options>`__ targets. In v11.0+, notification activities are included in general logs by default, but can be separated using the new discrete notification log levels. Each output target features additional configuration options you can customize for your Mattermost deployment.
+System admins can output log and audit records for general and audit activities to any combination of `console <#console-target-configuration-options>`__, `local file <#file-target-configuration-options>`__, `syslog <#syslog-target-configuration-options>`__, and `TCP socket <#tcp-target-configuration-options>`__ targets.
 
 .. tip::
 
+  - From Mattermost v11.0, notification activities are included in general logs by default, but can be separated using the new discrete notification log levels. Each output target features additional configuration options you can customize for your Mattermost deployment.
   - From Mattermost v9.11, system admins can configure advanced logging JSON options using the ``mmctl config set`` command. See the :ref:`mmctl config set <administration-guide/manage/mmctl-command-line-tool:mmctl config set>` documentation for an example slash command.
   - From Mattermost v9.3, system admins can configure advanced logging options in the System Console using multi-line JSON by going to **Environment > Logging**.
   - Alternatively, admins can configure advanced logging within the ``AdvancedLoggingJSON`` section of the ``config.json`` file using multi-line JSON or escaped JSON as a string.
@@ -187,8 +267,60 @@ Define advanced log output
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tab:: Multi-line JSON
+    :parse-titles:
 
     In the example below, file output is written to ``./logs/audit.log`` in plain text and includes all audit log levels & events. Older logs are kept for 1 day, and up to a total of 10 backup log files are kept at a time. Logs are rotated using gzip when the maximum size of the log file reaches 500 MB. A maximum of 1000 audit records can be queued/buffered while writing to the file.
+
+    v11 or later
+    ^^^^^^^^^^^^^
+
+    .. code-block:: JSON
+
+        "AdvancedLoggingJSON": {
+            "file_1": {
+                "type": "file",
+                "format": "plain",
+                "format_options": {
+                    "disable_level": false
+                },
+                "levels": [
+                    { "id": 100, "name": "audit-api" },
+                    { "id": 101, "name": "audit-content" },
+                    { "id": 102, "name": "audit-permissions" },
+                    { "id": 103, "name": "audit-cli" }
+                ],
+                "options": {
+                    "compress": true,
+                    "filename": "./logs/audit.log",
+                    "max_age": 1,
+                    "max_backups": 10,
+                    "max_size": 500
+                },
+                "maxqueuesize": 1000
+            },
+            "file_notifications": {
+                "type": "file",
+                "format": "json",
+                "levels": [
+                    { "id": 300, "name": "NotificationError" },
+                    { "id": 301, "name": "NotificationWarn" },
+                    { "id": 302, "name": "NotificationInfo" },
+                    { "id": 303, "name": "NotificationDebug" },
+                    { "id": 304, "name": "NotificationTrace" }
+                ],
+                "options": {
+                    "compress": true,
+                    "filename": "./logs/notifications.log",
+                    "max_age": 7,
+                    "max_backups": 5,
+                    "max_size": 200
+                },
+                "maxqueuesize": 1000
+            }
+        }
+
+    v10.12 or earlier
+    ^^^^^^^^^^^^^^^^^^
 
     .. code-block:: JSON
 
@@ -217,6 +349,7 @@ Define advanced log output
         }
 
 .. tab:: Filespec
+    :parse-titles:
 
     Advanced logging configuration can be pointed to a filespec to another configuration file, rather than multi-line JSON, to keep the config.json file tidy:
 
@@ -231,6 +364,72 @@ Define advanced log output
     A second output is written to ``./logs/audit.log`` in plain text in a machine-readable JSON format and includes all audit log levels, events, and command outputs. Older logs are kept for 1 day, and up to a total of 10 backup log files are kept at a time. Logs are rotated using GZIP when the maximum size of the log file reaches 500 MB. A maximum of 1000 audit records can be queued/buffered while writing to the file.
 
     Contents of ``audit_log_config.json`` file:
+
+    v11 or later
+    ^^^^^^^^^^^^^
+
+    .. code-block:: JSON
+
+        {
+            "sample-console": {
+                "type": "console",
+                "format": "plain",
+                "format_options": {
+                    "delim": " | "
+                },
+                "levels": [
+                    {"id": 100, "name": "audit-api"},
+                    {"id": 101, "name": "audit-content"},
+                    {"id": 102, "name": "audit-permissions"},
+                    {"id": 103, "name": "audit-cli"}
+                ],
+                "options": {
+                    "out": "stdout"
+                },
+                "maxqueuesize": 1000
+            },
+            "sample-file": {
+                "type": "file",
+                "format": "json",
+                "levels": [
+                    {"id": 100, "name": "audit-api"},
+                    {"id": 101, "name": "audit-content"},
+                    {"id": 102, "name": "audit-permissions"},
+                    {"id": 103, "name": "audit-cli"}
+                ],
+                "options": {
+                    "filename": "./logs/audit.log",
+                    "max_size": 500,
+                    "max_age": 1,
+                    "max_backups": 10,
+                    "compress": true
+                },
+                "maxqueuesize": 1000
+            },
+            "notifications-file": {
+                "type": "file",
+                "format": "json",
+                "levels": [
+                    {"id": 300, "name": "NotificationError"},
+                    {"id": 301, "name": "NotificationWarn"},
+                    {"id": 302, "name": "NotificationInfo"},
+                    {"id": 303, "name": "NotificationDebug"},
+                    {"id": 304, "name": "NotificationTrace"}
+                ],
+                "options": {
+                    "filename": "./logs/notifications.log",
+                    "max_size": 200,
+                    "max_age": 7,
+                    "max_backups": 5,
+                    "compress": true
+                },
+                "maxqueuesize": 1000
+            }
+        }
+
+
+    v10.12 or earlier
+    ^^^^^^^^^^^^^^^^^^
 
     .. code-block:: JSON
 
@@ -271,60 +470,6 @@ Define advanced log output
                 "maxqueuesize": 1000
             }
         }
-
-v11.0+ Notification Log Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. versionadded:: 11.0
-
-Starting with Mattermost v11.0, administrators can use advanced logging to separate notification logs into dedicated files using the new discrete notification log levels. This example configuration routes notification logs to a separate file while keeping general logs in the main mattermost.log file:
-
-.. code-block:: JSON
-
-    "AdvancedLoggingJSON": {
-        "main_logs": {
-            "type": "file",
-            "format": "json",
-            "levels": [
-                {"id": 5, "name": "debug", "stacktrace": false},
-                {"id": 4, "name": "info", "stacktrace": false},
-                {"id": 3, "name": "warn", "stacktrace": false},
-                {"id": 2, "name": "error", "stacktrace": true},
-                {"id": 1, "name": "fatal", "stacktrace": true},
-                {"id": 0, "name": "panic", "stacktrace": true}
-            ],
-            "options": {
-                "filename": "./logs/mattermost.log",
-                "max_size": 100,
-                "max_age": 1,
-                "max_backups": 10,
-                "compress": true
-            },
-            "maxqueuesize": 1000
-        },
-        "notification_logs": {
-            "type": "file", 
-            "format": "json",
-            "levels": [
-                {"id": 200, "name": "NotificationError"},
-                {"id": 201, "name": "NotificationWarn"},
-                {"id": 202, "name": "NotificationInfo"},
-                {"id": 203, "name": "NotificationDebug"},
-                {"id": 204, "name": "NotificationTrace"}
-            ],
-            "options": {
-                "filename": "./logs/notifications.log",
-                "max_size": 50,
-                "max_age": 1,
-                "max_backups": 5,
-                "compress": true
-            },
-            "maxqueuesize": 1000
-        }
-    }
-
-.. note::
-   Without advanced logging configuration in v11.0+, all notification logs are automatically included in the standard mattermost.log file. Administrators cannot disable notification logging without using advanced logging settings.
 
 Specify destination targets
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
