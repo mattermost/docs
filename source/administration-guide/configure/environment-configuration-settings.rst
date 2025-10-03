@@ -4146,7 +4146,7 @@ Mobile security
 .. include:: ../../_static/badges/ent-adv-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-From Mattermost v10.7 and mobile app v2.27, you can configure biometric authentication, prevent Mattermost use on jailbroken or rooted devices, and can block screen captures without relying on an EMM Provider. Configure these options by going to **System Console > Environment > Mobile Security**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
+From Mattermost v10.7 and mobile app v2.27, you can configure biometric authentication, prevent Mattermost use on jailbroken or rooted devices, and can block screen captures without relying on an EMM Provider. Configure these options by going to **System Console > Environment > Mobile Security**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart and require users to restart their mobile app or log out and back in before taking effect.
 
 .. config:setting:: enable-biometric-authentication
   :displayname: Enable Biometric Authentication
@@ -4175,12 +4175,13 @@ Enable biometric authentication
 
 .. note::
 
-  Users must authenticate in the following situations:
+  - Changing this configuration setting takes effect when mobile users restart their Mattermost mobile app or log out and log back in.
+  - Users must authenticate in the following situations:
 
-  - Adding a new server: When a new server is added to the mobile app and biometric authentication is enabled.
-  - Opening the mobile app: At app launch when the active server requires authentication.
-  - Returning after background use: After the app has been in the background for 5 minutes or more and the active server requires authentication.
-  - Using multiple servers: When accessing a server for the first time, after 5 minutes of inactivity on a server, and when the last authentication attempt fails.
+    - Adding a new server: When a new server is added to the mobile app and biometric authentication is enabled.
+    - Opening the mobile app: At app launch when the active server requires authentication.
+    - Returning after background use: After the app has been in the background for 5 minutes or more and the active server requires authentication.
+    - Using multiple servers: When accessing a server for the first time, after 5 minutes of inactivity on a server, and when the last authentication attempt fails.
 
 .. config:setting:: mobile-security-enabled
   :displayname: Enable Jailbreak/Root Protection
@@ -4210,7 +4211,8 @@ Enable jailbreak/root protection
 
 .. note::
 
-  See the `Expo SDK documentation <https://docs.expo.dev/versions/latest/sdk/device/#deviceisrootedexperimentalasync>`_ to learn more about how checks are performed for this functionality.
+  - Changing this configuration setting takes effect when mobile users restart their Mattermost mobile app or log out and log back in.
+  - See the `Expo SDK documentation <https://docs.expo.dev/versions/latest/sdk/device/#deviceisrootedexperimentalasync>`_ to learn more about how checks are performed for this functionality.
 
 .. config:setting:: mobile-security-enabled
   :displayname: Prevent Screen Capture
@@ -4238,6 +4240,10 @@ Prevent screen capture
 |   blocking is disabled.                       |                                                                                               |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------+
 
+.. note::
+
+  Changing this configuration setting takes effect when mobile users restart their Mattermost mobile app or log out and log back in.
+
 .. config:setting:: mobile-enable-secure-file-preview
   :displayname: Enable secure file preview on mobile (File sharing)
   :systemconsole: Site Configuration > File sharing and downloads
@@ -4261,6 +4267,9 @@ This setting improves an organization's mobile security posture by restricting f
 | - **false**: **(Default)** Secure file preview mode is disabled.                                                                      |                                                                                                   |
 +---------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
 
+.. note::
+  Changing this configuration setting takes effect when mobile users restart their Mattermost mobile app or log out and log back in.
+
 .. config:setting:: mobile-allow-pdf-link-navigation
   :displayname: Allow PDF link navigation on mobile (File sharing)
   :systemconsole: Site Configuration > File sharing and downloads
@@ -4283,7 +4292,8 @@ Allow PDF link navigation on mobile
 
 .. note::
 
-  This setting has no effect when the `Secure file preview on mobile <#enable-secure-file-preview-on-mobile>`__ configuration setting is disabled.
+  - Changing this configuration setting takes effect when mobile users restart their Mattermost mobile app or log out and log back in.
+  - This setting has no effect when the `Secure file preview on mobile <#enable-secure-file-preview-on-mobile>`__ configuration setting is disabled.
 
 ----
 
