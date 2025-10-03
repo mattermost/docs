@@ -1,6 +1,6 @@
 $(document).ready(function () {
     // Only run on the changelog pages.
-    if (!window.location.pathname.includes('/about/mattermost-v10-changelog') && !window.location.pathname.includes('/about/mattermost-v9-changelog')) {
+    if (!window.location.pathname.includes('/about/mattermost-v10-changelog') && !window.location.pathname.includes('/about/mattermost-v9-changelog') && !window.location.pathname.includes('/product-overview/mattermost-v10-changelog')) {
         return;
     }
 
@@ -65,8 +65,10 @@ $(document).ready(function () {
     const filterHTML = `
         <div class="changelog-filters">
             <h3>Filter Changelog</h3>
-            <p>Select source and target versions to see only relevant changelog entries</p>
-            <div>
+            <p>Select source and target versions to see only relevant changelog entries, or filter by audience type.</p>
+            
+            <div class="version-filters">
+                <h4>Version Range Filter</h4>
                 <label for="changelog-source-version">From version:</label>
                 <select id="changelog-source-version">
                     <option value="all">All versions</option>
@@ -79,8 +81,21 @@ $(document).ready(function () {
                     ${versions.map(v => `<option value="${v}">v${v}</option>`).join('')}
                 </select>
 
-                <button id="changelog-apply-filter">Apply Filter</button>
-                <button id="changelog-reset-filter">Reset</button>
+                <button id="changelog-apply-filter">Apply Version Filter</button>
+                <button id="changelog-reset-filter">Reset All</button>
+            </div>
+
+            <div class="audience-filters">
+                <h4>Audience Filter</h4>
+                <p>Click audience tags to show/hide relevant items:</p>
+                <div class="audience-buttons">
+                    <button class="audience-filter-btn" data-audience="admin">Admin</button>
+                    <button class="audience-filter-btn" data-audience="end-user">End-user</button>
+                    <button class="audience-filter-btn" data-audience="developer">Developer / API / Integrator</button>
+                    <button class="audience-filter-btn" data-audience="security">Security</button>
+                    <button class="audience-filter-btn" data-audience="platform">Platform</button>
+                    <button id="audience-show-all">Show All</button>
+                </div>
             </div>
         </div>
     `;
@@ -184,5 +199,84 @@ $(document).ready(function () {
         tocItems.forEach(item => {
             item.item.removeClass('filtered-toc');
         });
+        // Reset audience filters
+        $('.audience-filter-btn').removeClass('active');
+        $('li').removeClass('audience-filtered');
+        $('.changelog-filter-error').remove();
+    });
+
+    // Audience filtering functionality
+    let activeAudiences = new Set();
+
+    function applyAudienceFilter() {
+        if (activeAudiences.size === 0) {
+            // Show all items if no audience filter is active
+            $('li').removeClass('audience-filtered');
+            return;
+        }
+
+        // Find all list items in changelog content
+        $('.content li').each(function() {
+            const $item = $(this);
+            const itemText = $item.text();
+            let hasMatchingAudience = false;
+
+            // Check if the item contains any of the active audience tags
+            activeAudiences.forEach(audience => {
+                let audiencePattern = '';
+                switch (audience) {
+                    case 'admin':
+                        audiencePattern = '[Admin]';
+                        break;
+                    case 'end-user':
+                        audiencePattern = '[End-user]';
+                        break;
+                    case 'developer':
+                        audiencePattern = '[Developer / API / Integrator]';
+                        break;
+                    case 'security':
+                        audiencePattern = '[Security]';
+                        break;
+                    case 'platform':
+                        audiencePattern = '[Platform]';
+                        break;
+                }
+                if (itemText.includes(audiencePattern)) {
+                    hasMatchingAudience = true;
+                }
+            });
+
+            // Show or hide the item based on audience match
+            if (hasMatchingAudience) {
+                $item.removeClass('audience-filtered');
+            } else {
+                $item.addClass('audience-filtered');
+            }
+        });
+    }
+
+    // Audience filter button click handlers
+    $('.audience-filter-btn').on('click', function() {
+        const audience = $(this).data('audience');
+        const $btn = $(this);
+
+        if ($btn.hasClass('active')) {
+            // Deactivate this audience filter
+            $btn.removeClass('active');
+            activeAudiences.delete(audience);
+        } else {
+            // Activate this audience filter
+            $btn.addClass('active');
+            activeAudiences.add(audience);
+        }
+
+        applyAudienceFilter();
+    });
+
+    // Show all audience items
+    $('#audience-show-all').on('click', function() {
+        $('.audience-filter-btn').removeClass('active');
+        activeAudiences.clear();
+        applyAudienceFilter();
     });
 });

@@ -5,6 +5,23 @@
     border: 1px solid #dee2e6;
 }
 
+.version-filters, .audience-filters {
+    margin-bottom: 15px;
+}
+
+.version-filters h4, .audience-filters h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #495057;
+}
+
+.audience-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
 .changelog-filters select {
     padding: 8px;
     margin-right: 10px;
@@ -25,11 +42,51 @@
     background-color: #145cc5;
 }
 
+.audience-filter-btn {
+    padding: 6px 12px !important;
+    background-color: #f8f9fa !important;
+    color: #495057 !important;
+    border: 1px solid #dee2e6 !important;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+}
+
+.audience-filter-btn:hover {
+    background-color: #e9ecef !important;
+    border-color: #adb5bd !important;
+}
+
+.audience-filter-btn.active {
+    background-color: #166de0 !important;
+    color: white !important;
+    border-color: #166de0 !important;
+}
+
+.audience-filter-btn.active:hover {
+    background-color: #145cc5 !important;
+}
+
+#audience-show-all {
+    background-color: #6c757d !important;
+    color: white !important;
+    border: 1px solid #6c757d !important;
+    padding: 6px 12px !important;
+    font-size: 0.875rem;
+}
+
+#audience-show-all:hover {
+    background-color: #5a6268 !important;
+}
+
 section.filtered {
     display: none;
 }
 
 li.filtered-toc {
+    display: none;
+}
+
+li.audience-filtered {
     display: none;
 }
 
@@ -40,4 +97,18 @@ li.filtered-toc {
     background-color: #fadbd8;
     border-radius: 4px;
     border-left: 4px solid #e74c3c;
+}
+
+/* Responsive design for audience filters */
+@media (max-width: 768px) {
+    .audience-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .audience-filter-btn, #audience-show-all {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 5px;
+    }
 }
