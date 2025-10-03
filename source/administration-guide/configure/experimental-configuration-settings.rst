@@ -962,9 +962,13 @@ Enable client-side certification
 .. include:: ../../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
+.. important::
+
+  **Certificate-based authentication has been deprecated from Mattermost v11.0.** This setting must be set to ``false`` to start the server from v11. Setting this to ``true`` will prevent the server from starting.
+
 **True**: Enables client-side certification for your Mattermost server. See :doc:`the documentation </administration-guide/onboard/certificate-based-authentication>` to learn more.
 
-**False**: Client-side certification is disabled.
+**False**: **(Default)** Client-side certification is disabled.
 
 +------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ClientSideCertEnable": false`` with options ``true`` and ``false``. |
@@ -985,11 +989,15 @@ Client-side certification login method
 .. include:: ../../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-Used in combination with the ``ClientSideCertEnable`` configuration setting.
+.. important::
+
+  **Certificate-based authentication has been deprecated from Mattermost v11.0.** This setting is no longer functional from Mattermost v11.0 and should be left at the default value.
+
+This configuration setting is used in combination with the ``ClientSideCertEnable`` configuration setting and has the following possible values:
 
 **Primary**: After the client side certificate is verified, user's email is retrieved from the certificate and is used to log in without a password.
 
-**Secondary**: After the client side certificate is verified, user's email is retrieved from the certificate and matched against the one supplied by the user. If they match, the user logs in with regular email/password credentials.
+**Secondary**: **(Default)** After the client side certificate is verified, user's email is retrieved from the certificate and matched against the one supplied by the user. If they match, the user logs in with regular email/password credentials.
 
 +----------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ClientSideCertCheck": "secondary"`` with options ``"primary"`` and ``"secondary"``. |
