@@ -61,7 +61,7 @@ Data management
 Data portability
 ^^^^^^^^^^^^^^^^^
 
-- **Data Import:** Use the :doc:`bulk loading tool </administration-guide/onboard/bulk-loading-data>` to migrate data from an existing messaging system, or for pre-populating a new installation with data. :ref:`Review this guide <administration-guide/onboard/migrating-to-mattermost:migrate from slack>` which summarizes the different approaches and meets the `Right to Data Portability <https://gdpr-info.eu/art-20-gdpr/>`_ principle.
+- **Data Import:** Use the :doc:`bulk loading tool </administration-guide/onboard/bulk-loading-data>` to migrate data from an existing messaging system, or for pre-populating a new installation with data. :doc:`Review our migrate from Slack guidance </administration-guide/onboard/migrate-from-slack>` which summarizes the different approaches and meets the `Right to Data Portability <https://gdpr-info.eu/art-20-gdpr/>`_ principle.
 - **Data Export:** Use :doc:`compliance exports </administration-guide/comply/compliance-export>` to export conversations from public, private and direct message channels in XML or EML format. Those in Team Edition can export conversations directly from the database, both in PostgreSQL and in MySQL.
 
 Accessibility compliance

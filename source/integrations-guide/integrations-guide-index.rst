@@ -6,136 +6,147 @@ Integrations Guide
    :hidden:
    :titlesonly:
 
-   popular-integrations
-   run-slash-commands
+   plugins
    webhook-integrations
+   slash-commands
+   restful-api
+   no-code-automation
+   faq
 
-Mattermost provides a variety of methods to add functionality and customize the end-user experience to suit your organization's needs, whether you want to add new user capabilities with slash commands, build an advanced chatbot, or completely change the functionality of your server.
+Mattermost provides a variety of methods to integrate with your favorite tools, automate critical workflows, and extend the capabilities of the platform. This guide provides a high-level overview of integration options and the level of technical skills required :ref:`(no-code, low-code, or pro-code) <integrations-guide/faq:what is meant by no-code, low-code, and pro-code?>`, and links to detailed documentation for each.
 
-Learn about the :doc:`popluar pre-built integrations </integrations-guide/popular-integrations>` that come with your Mattermost deployment, :ref:`integrations specific to the Microsoft ecosystem <integrations-guide/popular-integrations:microsoft integrations>`, and :doc:`webhook integrations </integrations-guide/webhook-integrations>`.
+Choose Your Path
+-----------------
 
-In addition, a wide array of open source integrations are available and ready to use from Mattermost and our community. To see a list of open source integrations available, please see the `Mattermost Marketplace <https://mattermost.com/marketplace/>`__.
+.. list-table::
+   :header-rows: 1
+   :widths: 15 40 45
 
-For self-hosted deployments in small setups, you might host integrations on the same server on which Mattermost is installed. For larger deployments, you can set up a separate server for integrations, or add them to the server on which the external application is hosted. For example, if you're self-hosting a Jira server, you could deploy a Jira integration on the Jira server itself. When self-hosting restrictions are less strict, AWS, Heroku, and other public cloud options can also be used.
+   * - Skill Level
+     - Best Options
+     - Examples
 
-You can customize Mattermost with the following integration capabilities and frameworks.
+   * - :ref:`No-code <no-code>`
+     - - `Pre-built plugins <#pre-built-plugins>`__
+       - `Built-in slash commands <#built-in-slash-commands>`__
+       - `No-code automation <#no-code-automation-platforms>`__
+       - `Playbooks <#mattermost-playbooks>`__
+     - - Connect Jira, GitHub, Zoom
+       - Command line interactions
+       - Automate with n8n, Zapier
+       - Run incident playbooks
 
-Slash Commands
----------------
+   * - :ref:`Low-code <low-code>`
+     - - `Webhooks <#webhooks>`__
+       - `Custom slash commands <#custom-slash-commands>`__
+     - - Send monitoring alerts
+       - Trigger actions with keywords
 
-A :doc:`slash command </integrations-guide/run-slash-commands>` is similar to an :doc:`outgoing webhooks </integrations-guide/outgoing-webhooks/>`, but instead of listening to a channel, it's used as a command tool in a channel. The Mattermost slash command format is compatible with Slack's format, so you can easily port commands from Slack.
+   * - :ref:`Pro-code <pro-code>`
+     - - `REST API <#restful-api>`__
+       - `Custom plugins <#custom-built-plugins>`__
+     - - Build custom apps
+       - Extend Mattermost core
 
-Slash commands enable users to trigger custom actions, such as creating Jira tickets or GitHub pull requests within Mattermost channels. See the :doc:`built-in slash commands </integrations-guide/built-in-slash-commands>` available and see the `custom slash command <https://developers.mattermost.com/integrate/slash-commands/custom/>`_ developer documentation to learn more about creating your own custom slash commands.
+Integration Options
+--------------------
+
+Plugins
+~~~~~~~~
+
+Learn more about :doc:`Mattermost plugins </integrations-guide/plugins>`.
+
+Pre-Built Plugins
+^^^^^^^^^^^^^^^^^
+
+**Technical complexity:** :ref:`No-code <no-code>`
+
+Mattermost provides a set of :doc:`pre-built plugins </integrations-guide/popular-integrations>` that require no coding to install, configure, and use. These plugins are installed and managed entirely through the System Console, where you can enable, configure, and customize settings without any development work.
+
+.. image:: ../images/prebuilt-integrations.png
+  :alt: Pre-built plugins available for no-code integration
+  :width: 800
+
+Custom-Built Plugins
+^^^^^^^^^^^^^^^^^^^^
+
+**Technical complexity:** :ref:`Pro-code <pro-code>`
+
+:ref:`Building custom plugins <integrations-guide/plugins:custom-built plugins>` are the most comprehensive way to add new features and customization to self-hosted Mattermost deployments. Custom plugins are ideal for customers wanting to change the behavior of the Mattermost server, desktop, and web apps without forking the core codebase to suit their organization’s needs.
+
+Building a custom plugin is a **software development** task, using ``Go`` for the server-side functionality and optionally ``TypeScript/React`` for UI components. 
 
 Webhooks
---------
+~~~~~~~~
 
-Webhooks are a powerful way to integrate Mattermost with other applications and services. They allow you to send real-time data from Mattermost to external systems or receive data from those systems into Mattermost. Webhooks can be used for a variety of purposes, such as sending notifications, triggering workflows, or updating external systems based on events in Mattermost. See the :doc:`webhook integrations </integrations-guide/webhook-integrations>` documentation for details on working with :doc:`incoming </integrations-guide/incoming-webhooks>` and :doc:`outgoing webhooks </integrations-guide/outgoing-webhooks>`.
+Learn more about :doc:`Mattermost webhooks </integrations-guide/webhook-integrations>`.
 
-Bots
------
+Incoming Webhooks
+^^^^^^^^^^^^^^^^^^
 
-You can deploy interactive bots to help users with processes and tasks with Mattermost by  issuing messages to users they can respond to using buttons and dropdown menus. Bots can be used together with apps and plugins. The Hubot open source project, created by GitHub, Inc., is among the most popular of the bot options.
+**Technical complexity:** :ref:`No-code <no-code>`
 
-Pre-built bots are available on the `Mattermost Marketplace <https://mattermost.com/marketplace/>`__, or you can `configure your own bots <https://developers.mattermost.com/integrate/reference/bot-accounts/>`_.
+:doc:`Incoming webhooks </integrations-guide/incoming-webhooks>` allow external applications to post messages into Mattermost channels and direct messages. They are a simple way to receive notifications and data from other services in real-time and require only basic setup.
 
-Learn about `Mattermost Hubot integration (hubot-matteruser on npm) <https://www.npmjs.com/package/hubot-matteruser>`_ and `other open source community bots available <https://mattermost.com/marketplace/>`__ or you can `build your own <https://developers.mattermost.com/integrate/reference/bot-accounts/>`_.
+Additionally, Mattermost webhook payloads are :ref:`fully compatible <integrations-guide/incoming-webhooks:slack compatibility>` with Slack’s webhook format to make migration easier.
 
-API 
-----
+Outgoing Webhooks
+^^^^^^^^^^^^^^^^^^
 
-Mattermost provides complete access to `server APIs via the Mattermost API Reference <https://api.mattermost.com/>`_, along with language-specific drivers to integrate into your own applications.  Interact with users, channels, and everything else that happens on your Mattermost server via a REST API that meets the OpenAPI specification. The API is for developers who want to build bots and other interactions that don't rely on customizing the Mattermost user experience.
+**Technical complexity:** :ref:`Low-code <low-code>`
 
-Plugins 
--------
+:doc:`Outgoing webhooks </integrations-guide/outgoing-webhooks>` allow Mattermost to send messages and trigger actions in external applications when specific keywords are typed in channels. They are a straightforward way to connect Mattermost conversations to other services and automate responses. Outgoing webhooks require no coding to configure in Mattermost. Some light coding is required to parse the request from the external service and format a JSON response payload.
 
-Plugins are the most comprehensive way to add new features and customization to self-hosted Mattermost deployments. These powerful integrations are written in Go and React and they're ideal for customers wanting to change the behavior of the Mattermost server, desktop, and web apps without forking the core codebase to suit their organization's needs.
+Slash Commands
+~~~~~~~~~~~~~~
 
-Pre-built plugins are available on the `Mattermost Marketplace <https://mattermost.com/marketplace/>`__, or you can `build your own plugin <https://developers.mattermost.com/integrate/plugins/>`_.
+Learn more about :doc:`Mattermost slash commands </integrations-guide/slash-commands>`.
 
-.. note::
+Built-In Slash Commands
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-  - :doc:`Mattermost Cloud Dedicated </product-overview/cloud-dedicated>` customers supports custom Mattermost plugin uploads.
-  - Custom Mattermost plugins aren't available in :doc:`Mattermost Cloud Shared </product-overview/cloud-shared>` deployments. You're limited to the plugins available in the Cloud Marketplace, including:
+**Technical complexity:** :ref:`No-code <no-code>`
 
-    .. include:: /product-overview/cloud-supported-integrations.rst
-       :start-after: :nosearch:
+Out-of-the-box :doc:`built-in slash commands </integrations-guide/built-in-slash-commands>` enable command line interaction with users, channels, and conversations.
+
+Custom Slash Commands
+^^^^^^^^^^^^^^^^^^^^^^
+
+**Technical complexity:** :ref:`Low-code <low-code>`
+
+You can create :ref:`custom slash commands <integrations-guide/slash-commands:custom slash commands>` that run preconfigured commands that can return a response, such as plain text, rich message content, interactive buttons or forms, directly into a channel.
+
+Mattermost's slash command format is Slack compatible, so you can easily migrate your commands from Slack.
+
+RESTful API
+~~~~~~~~~~~
+
+**Technical complexity:** :ref:`Pro-code <pro-code>`
+
+With :doc:`Mattermost's RESTful API </integrations-guide/restful-api>`, you have full developer control for automation, bots, and integrations.
+
+Build and Automate Workflows
+-----------------------------
+
+**Technical complexity:** :ref:`No-code <no-code>`
+
+In addition to direct tool integrations, Mattermost can be part of larger automated workflows across your integrated services. Automate multi-step processes across Mattermost and other systems, often with no coding required.
+
+No-code Automation Platforms
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Platforms like n8n, Zapier, and Make provide powerful visual editors that support thousands of connected tools, with triggers and actions that integrate Mattermost to external services, enabling teams to build complex workflows without writing code. Admins migrating from tools like Slack Workflow Builder can recreate familiar automations in Mattermost using these platforms.
+
+Learn more about additional :doc:`no-code automation options </integrations-guide/no-code-automation>` available in Mattermost.
+
+Mattermost Playbooks
+~~~~~~~~~~~~~~~~~~~~
+
+:doc:`Mattermost Playbooks </end-user-guide/workflow-automation>` lets you define and execute repeatable processes without any coding. Playbooks are often used for incident response, onboarding checklists, or any workflow that involves multiple steps, owners, and notifications. Playbooks have integration points you can use to trigger actions, and they can work in conjunction with plugins, making them a powerful no-code automation tool for orchestrating both human and system actions.
+
+Learn more about using :doc:`Playbooks </end-user-guide/workflow-automation>`.
 
 Frequently Asked Questions
----------------------------
-
-What integrations come pre-packaged with Mattermost Server?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-See the :doc:`integrations guide </integrations-guide/integrations-guide-index>` documentation for details on pre-packaged integrations available with Mattermost Server.
-
-Can I use Mattermost to add messaging functionality to my proprietary SaaS service?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Mattermost is an open source, self-hosted alternative to proprietary SaaS services that lock in the data of users and customers.
-
-While you're welcome to use the Mattermost source code under its open source license, Mattermost, Inc. does not offer support or technical advice for proprietary SaaS projects that result in customers potentially being paywalled from their data should they stop paying SaaS fees.
-
-To learn more about why we strongly believe that users and customers should always have access to their data, please read `why we created Mattermost <https://mattermost.com/about-us/>`_.
-
-What's the difference between incoming and outgoing webhooks?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-A webhook is a way for one app to send real-time data to another app.
-
-In Mattermost, incoming webhooks receive data from external applications and make a post in a specified channel. They're great for setting up notifications that are sent into a Mattermost channel when something happens in an external application.
-
-Outgoing webhooks are triggered based on a rule in Mattermost and takes data (the message, and some contextual info) from Mattermost and send it to an external application. The receiving server of the outgoing webhook can then post a response back in Mattermost. They're great for listening for a specific word, and then notifying external applications when a trigger word is used.
-
-What's a slash command?
-~~~~~~~~~~~~~~~~~~~~~~~
-
-A slash command is similar to an outgoing webhook, but instead of listening to a channel it is used as a command tool. This means if you type in a slash command it will not be posted to a channel, whereas an outgoing webhook is only triggered by posted messages.
-
-What does Slack-compatible mean?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Slack compatible means that Mattermost accepts integrations that have a payload in the same format as Slack's legacy "Message Attachment" payload. If you have a Slack integration, you should be able to set it up in Mattermost without changing the format of the message being sent over.   
-
-What if I have a webhook from somewhere other than Slack?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you have an integration that outputs a payload in a different format, you need to write an intermediate application, such as N8N.io, Zapier, or Integromat, to act as a translation layer to change it to the format Mattermost uses. Since there’s currently no general standard for webhook formatting, this is unavoidable and just a part of how webhooks work.
-
-If there's no translation layer, Mattermost won't understand the data you're sending.
-
-What are attachments?
-~~~~~~~~~~~~~~~~~~~~~
-
-When "attachments" are mentioned in Mattermost integrations documentation, it refers to Slack's message attachments functionality. These "attachments" can be optionally added as an array in the data sent by an integration, and are used to customize the formatting of the message.
-
-Mattermost doesn't currently support the ability to attach files to a post made via webhook. You can use the API to attach files to a message if needed. 
-
-Where can I find existing integrations?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Visit the `Mattermost Marketplace <https://mattermost.com/marketplace>`__ to access open source integrations to common tools like Jira, Jenkins, and GitLab, along with interactive bot applications, and other communication tools that are freely available for use and customization. 
-
-Alternatively, within Mattermost, when logged in as an Administrator, you can click on the "Marketplace" option in the main menu and easily install plugins or apps from there. 
-
-Where should I install my integrations?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-For self-hosted deployments in small setups, you might host integrations on the same server on which Mattermost is installed. For larger deployments, you can set up a separate server for integrations, or add them to the server on which the external application is hosted. For example, if you're self-hosting a Jira server you could deploy a Jira integration on the Jira server itself. When self-hosting restrictions are less strict, AWS, Heroku, and other public cloud options could also be used.
-
-Where can I get more information about integrations?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Join our `Developers channel <https://community.mattermost.com/core/channels/developers>`_ for technical discussions, and visit our `Integrations channel <https://community.mattermost.com/core/channels/integrations>`_ for all integrations and plugins discussions.
-
-Can I use webhooks to be notified when new integrations are available on the Mattermost Marketplace?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Yes! A `bash script <https://gist.github.com/mickmister/543a49584146af18ba5e5f82dd86ea93>`_ is available that checks for new integrations in the Mattermost Marketplace, and triggers a post through a Mattermost `incoming webhook <https://developers.mattermost.com/integrate/webhooks/incoming/>`_ request. The script downloads the latest listing, compares it with a locally stored version of the listing, and, if a new plugin is identified, a notification is pushed to a Mattermost channel.
-
-Source Code Customizations
 --------------------------
 
-As an open source project, we support your ability to modify the source code for the server or web app to make changes and customizations to meet your specific needs. 
-
-Learn about `forking our open source repositories <https://developers.mattermost.com/integrate/other-integrations/customization/>`_ and `customizing the Mattermost source code <https://developers.mattermost.com/integrate/customization/customization/>`__ for your specific operational needs.
+Have questions about coding levels, Slack compatibility, or setup options? Visit the :doc:`Integrations FAQ </integrations-guide/faq>`.

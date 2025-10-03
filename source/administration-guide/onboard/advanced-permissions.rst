@@ -37,6 +37,9 @@ You can access the System Scheme interface by going to **System Console > User M
 Team override scheme
 ~~~~~~~~~~~~~~~~~~~~
 
+.. include:: ../../_static/badges/ent-only.rst
+  :start-after: :nosearch:
+
 On systems with multiple :ref:`Mattermost teams <end-user-guide/collaborate/organize-using-teams:single team versus multiple teams>`, each team may operate and collaborate in a unique way. Team Override Schemes give Admins the flexibility to tailor permissions to the needs of each team.
 
 When you use this permission scheme:
