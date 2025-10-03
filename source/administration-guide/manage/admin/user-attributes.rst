@@ -101,10 +101,7 @@ You can define and manage up to 20 system attributes using the System Console. E
   - **Hide when empty**: The attribute is only visible in user profiles when it has a value.
   - **Always hide**: The attribute is never visible in user profiles.
 
-4. Configure user editing permissions (Mattermost v11 or later):
-
-  - **Admin-managed** (default): Only system administrators can modify this attribute. Recommended for security-sensitive or policy-affecting attributes.
-  - **User-editable**: Allow users to edit this attribute in their profiles. Select this for non-sensitive attributes that users should be able to manage themselves.
+4. Configure user editing permissions (Mattermost v11 or later) by enabling or disabling the **Editable by users** option.
 
 5. Save your changes.
 
