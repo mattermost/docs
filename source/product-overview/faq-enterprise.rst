@@ -45,7 +45,7 @@ You can see the full list of capabilities by visiting the `Mattermost Pricing pa
 Does Mattermost have a Software-as-a-Service offering?
 ------------------------------------------------------
 
-Yes, Enterprises can inquire about `Mattermost Cloud Enterprise <https://mattermost.com/enterprise/cloud/>`_, as a single-tenant cloud-managed service for Mattermost Enterprise hosted by Mattermost, Inc. The system is offered on the same Kubernetes-based platform as the :ref:`self-hosted edition <product-overview/editions-and-offerings:self-hosted editions>`, and managed by Mattermost, Inc. 
+Yes, Enterprises can inquire about `Mattermost Cloud Enterprise <https://mattermost.com/enterprise/cloud/>`_, as a single-tenant cloud-managed service for Mattermost Enterprise hosted by Mattermost, Inc. The system is offered on the same Kubernetes-based platform as the self-hosted edition, and managed by Mattermost, Inc.
 
 For more information, contact the Mattermost Sales organization at https://mattermost.com/contact-sales/
 

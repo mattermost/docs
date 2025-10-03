@@ -238,6 +238,8 @@ Permissions in Mattermost are a property of the server code base and are not cre
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | manage_channel_banner                        | channel | Manage channel banners.                                                                                                                                                                               |
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| manage_channel_access_rules                  | channel | Manage attribute-based access control rules for channels.                                                                                                                                             |
++----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ``Roles`` field
 ~~~~~~~~~~~~~~~
@@ -287,6 +289,7 @@ The following built-in roles with default permissions are available:
 - delete_bookmark_private_channel
 - order_bookmark_private_channel
 - manage_channel_banner
+- manage_channel_access_rules
 
 *channel_guest*
 
@@ -460,6 +463,7 @@ The following built-in roles with default permissions are available:
 - delete_bookmark_private_channel
 - order_bookmark_private_channel
 - manage_channel_banner
+- manage_channel_access_rules
 
 *system_custom_group_admin*
 
@@ -641,6 +645,7 @@ The following built-in roles with default permissions are available:
 - delete_bookmark_private_channel
 - order_bookmark_private_channel
 - manage_channel_banner
+- manage_channel_access_rules
 
 *team_guest*
 

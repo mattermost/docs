@@ -801,17 +801,34 @@ Mattermost doesn't need to manage this. See the :ref:`high availablility databas
   :systemconsole: Environment > Database
   :configjson: .SqlSettings.MaxOpenConns
   :environment: MM_SQLSETTINGS_MAXOPENCONNS
-  :description: The maximum number of idle connections held open to the database. Default is **300**.
+  :description: The maximum number of open connections to the database. Default is **100**.
 
 Maximum open connections
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------------------------------------------------+-------------------------------------------------------------------------+
 | The maximum number of open connections to the          | - System Config path: **Environment > Database**                        |
-| database.                                              | - ``config.json`` setting: ``SqlSettings`` > ``MaxOpenConns`` > ``300`` |
+| database.                                              | - ``config.json`` setting: ``SqlSettings`` > ``MaxOpenConns`` > ``100`` |
 |                                                        | - Environment variable: ``MM_SQLSETTINGS_MAXOPENCONNS``                 |
-| Numerical input. Default is **300** for self-hosted    |                                                                         |
-| deployments, and **100** for Cloud deployments.        |                                                                         |
+| Numerical input. Default is **100**.                   |                                                                         |
++--------------------------------------------------------+-------------------------------------------------------------------------+
+
+.. config:setting:: maximum-idle-connections
+  :displayname: Maximum idle connections (Database)
+  :systemconsole: Environment > Database
+  :configjson: .SqlSettings.MaxIdleConns
+  :environment: MM_SQLSETTINGS_MAXIDLECONNS
+  :description: The maximum number of idle connections held open to the database. Default is **50**.
+
+Maximum idle connections
+~~~~~~~~~~~~~~~~~~~~~~~~
+
++--------------------------------------------------------+-------------------------------------------------------------------------+
+| The maximum number of idle connections held open to    | - System Config path: **Environment > Database**                        |
+| the database.                                          | - ``config.json`` setting: ``SqlSettings`` > ``MaxIdleConns`` > ``50``  |
+|                                                        | - Environment variable: ``MM_SQLSETTINGS_MAXIDLECONNS``                 |
+| Numerical input. Default is **50**.                    |                                                                         |
+| A 2:1 ratio with MaxOpenConns is recommended.          |                                                                         |
 +--------------------------------------------------------+-------------------------------------------------------------------------+
 
 .. config:setting:: query-timeout
@@ -958,7 +975,7 @@ Disable database search
 Search behavior in Mattermost depends on which search engines are enabled:
 
 - When :doc:`Elasticsearch </administration-guide/scale/elasticsearch-setup>` or :doc:`AWS OpenSearch </administration-guide/scale/opensearch-setup>` is enabled, Mattermost will try to use it first.
-- If Elasticsearch fails or is disabled, Mattermost will attempt to use :doc:`Bleve </administration-guide/configure/bleve-search>`, if enabled. If this occurs, you will see the warning ``Encountered error on SearchPostsInTeamForUser``.
+- If Elasticsearch fails or is disabled, Mattermost will attempt to use Bleve search, if enabled. Bleve search has been deprecated in Mattermost v11.0. We recommend using Elasticsearch or OpenSearch for enterprise search capabilities.
 - If these fail or are disabled, Mattermost tries to search the database directly, if this is enabled.
 - If all of the above methods fail or are disabled, the search results will be empty.
 
@@ -2977,6 +2994,10 @@ Output logs to console
 |   written to the console.                     |                                                                           |
 +-----------------------------------------------+---------------------------------------------------------------------------+
 
+.. note::
+
+  From Mattermost v11.0, notification logs are automatically included in the main console logs.
+
 .. config:setting:: console-log-level
   :displayname: Console general log level (General Logging)
   :systemconsole: Environment > Logging
@@ -3082,7 +3103,8 @@ Output logs to file
 
 .. note::
 
-  Typically set to **true** in a production environment. When enabled, you can download the ``mattermost.log`` file locally by going to **System Console > Reporting > Server Logs**, and selecting **Download Logs**. 
+  - From Mattermost v11.0, notification logs are automatically included in the main file logs.
+  - This setting is typically set to **true** in a production environment. When enabled, you can download the ``mattermost.log`` file locally by going to **System Console > Reporting > Server Logs**, and selecting **Download Logs**.
 
 .. config:setting:: file-log-directory
   :displayname: General file log directory (General Logging)
@@ -3305,7 +3327,15 @@ Enable Sentry reporting
 Notification logging
 ~~~~~~~~~~~~~~~~~~~~~
 
-Configure logging specifically for Mattermost notifications by editing the ``config.json`` file as described in the following tables. These settings operate independently from the main ``LogSettings`` and allow you to customize logging behavior specifically for the notification subsystem. Changes to these configuration settings require a server restart before taking effect.
+.. important::
+
+  **From Mattermost v11, notification log settings have been consolidated into the standard console logs and mattermost.log file**. You can no longer disable notification logging without using advanced logging settings, as the main log level setting now controls both server and notification logs.
+
+  You can use the ``AdvancedLoggingJSON`` configuration with discrete notification log levels: ``NotificationError``, ``NotificationWarn``, ``NotificationInfo``, ``NotificationDebug``, and ``NotificationTrace`` to split notification logs into separate files and reduce troubleshooting noise. See :ref:`Advanced Logging <administration-guide/manage/logging:advanced logging>` for details.
+
+The following configuration settings apply only to Mattermost server versions prior to v11.0.
+
+You can configure logging specifically for Mattermost notifications by editing the ``config.json`` file as described in the following tables. These settings operate independently from the main ``LogSettings`` and allow you to customize logging behavior specifically for the notification subsystem. Changes to these configuration settings require a server restart before taking effect.
 
 .. config:setting:: output-logs-to-console
   :displayname: Output notification logs to console (Notification Logging)
@@ -4125,7 +4155,7 @@ Mobile security
 .. include:: ../../_static/badges/ent-adv-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-From Mattermost v10.7 and mobile app v2.27, you can configure biometric authentication, prevent Mattermost use on jailbroken or rooted devices, and can block screen captures without relying on an EMM Provider. Configure these options by going to **System Console > Environment > Mobile Security**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
+From Mattermost v10.7 and mobile app v2.27, you can configure biometric authentication, prevent Mattermost use on jailbroken or rooted devices, and can block screen captures without relying on an EMM Provider. Configure these options by going to **System Console > Environment > Mobile Security**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart and require users to restart their mobile app or log out and back in before taking effect.
 
 .. config:setting:: enable-biometric-authentication
   :displayname: Enable Biometric Authentication
@@ -4154,12 +4184,13 @@ Enable biometric authentication
 
 .. note::
 
-  Users must authenticate in the following situations:
+  - Changing this configuration setting takes effect when mobile users restart their Mattermost mobile app or log out and log back in.
+  - Users must authenticate in the following situations:
 
-  - Adding a new server: When a new server is added to the mobile app and biometric authentication is enabled.
-  - Opening the mobile app: At app launch when the active server requires authentication.
-  - Returning after background use: After the app has been in the background for 5 minutes or more and the active server requires authentication.
-  - Using multiple servers: When accessing a server for the first time, after 5 minutes of inactivity on a server, and when the last authentication attempt fails.
+    - Adding a new server: When a new server is added to the mobile app and biometric authentication is enabled.
+    - Opening the mobile app: At app launch when the active server requires authentication.
+    - Returning after background use: After the app has been in the background for 5 minutes or more and the active server requires authentication.
+    - Using multiple servers: When accessing a server for the first time, after 5 minutes of inactivity on a server, and when the last authentication attempt fails.
 
 .. config:setting:: mobile-security-enabled
   :displayname: Enable Jailbreak/Root Protection
@@ -4189,7 +4220,8 @@ Enable jailbreak/root protection
 
 .. note::
 
-  See the `Expo SDK documentation <https://docs.expo.dev/versions/latest/sdk/device/#deviceisrootedexperimentalasync>`_ to learn more about how checks are performed for this functionality.
+  - Changing this configuration setting takes effect when mobile users restart their Mattermost mobile app or log out and log back in.
+  - See the `Expo SDK documentation <https://docs.expo.dev/versions/latest/sdk/device/#deviceisrootedexperimentalasync>`_ to learn more about how checks are performed for this functionality.
 
 .. config:setting:: mobile-security-enabled
   :displayname: Prevent Screen Capture
@@ -4217,6 +4249,10 @@ Prevent screen capture
 |   blocking is disabled.                       |                                                                                               |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------+
 
+.. note::
+
+  Changing this configuration setting takes effect when mobile users restart their Mattermost mobile app or log out and log back in.
+
 .. config:setting:: mobile-enable-secure-file-preview
   :displayname: Enable secure file preview on mobile (File sharing)
   :systemconsole: Site Configuration > File sharing and downloads
@@ -4240,6 +4276,9 @@ This setting improves an organization's mobile security posture by restricting f
 | - **false**: **(Default)** Secure file preview mode is disabled.                                                                      |                                                                                                   |
 +---------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
 
+.. note::
+  Changing this configuration setting takes effect when mobile users restart their Mattermost mobile app or log out and log back in.
+
 .. config:setting:: mobile-allow-pdf-link-navigation
   :displayname: Allow PDF link navigation on mobile (File sharing)
   :systemconsole: Site Configuration > File sharing and downloads
@@ -4262,7 +4301,8 @@ Allow PDF link navigation on mobile
 
 .. note::
 
-  This setting has no effect when the `Secure file preview on mobile <#enable-secure-file-preview-on-mobile>`__ configuration setting is disabled.
+  - Changing this configuration setting takes effect when mobile users restart their Mattermost mobile app or log out and log back in.
+  - This setting has no effect when the `Secure file preview on mobile <#enable-secure-file-preview-on-mobile>`__ configuration setting is disabled.
 
 ----
 

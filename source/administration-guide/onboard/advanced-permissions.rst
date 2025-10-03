@@ -60,10 +60,7 @@ The channel permissions interface is accessed in **System Console > User Managem
 Advanced access controls
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
-See the :ref:`team and channel management <administration-guide/manage/team-channel-members:advanced access controls>` documentation for details on available channel access controls. 
+See the :ref:`team and channel management <administration-guide/manage/team-channel-members:advanced access controls>` documentation for details.
 
 Recipes
 -------
