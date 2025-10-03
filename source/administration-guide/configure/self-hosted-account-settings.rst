@@ -1,7 +1,7 @@
 Self-hosted workspace edition and license settings
 ==================================================
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Start a trial or manage your self-hosted deployment by selecting  the **Product** |product-list| menu, selecting **System Console**, and then selecting **About > Edition and License**.

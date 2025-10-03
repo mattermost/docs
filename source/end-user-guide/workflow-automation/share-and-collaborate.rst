@@ -1,9 +1,8 @@
 Share and collaborate
 =====================
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
-
 
 There are different ways for teams to access and interact with collaborative playbooks. This is managed in the System Console using permissions. Permissions can be granted in a variety of ways, to allow for different combinations of access and visibility.
 
@@ -102,7 +101,7 @@ To import a playbook, go to the Playbooks screen, and select **Import**. Choose 
 Export channel data
 --------------------
 
-.. include:: ../../_static/badges/ent-only.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 See the :doc:`export channel data </administration-guide/comply/export-mattermost-channel-data>` documentation for details on working with channel export functionality.

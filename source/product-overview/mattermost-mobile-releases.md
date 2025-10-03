@@ -1,8 +1,5 @@
 # Mobile Releases
 
-```{include} ../_static/badges/allplans-cloud-selfhosted.md
-```
-
 ```{Important}
 ```{include} common-esr-support.md
 ```

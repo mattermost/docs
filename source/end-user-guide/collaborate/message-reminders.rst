@@ -1,7 +1,7 @@
 Set a reminder
 ==============
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 From Mattermost v7.10, using Mattermost in a web browser or the desktop app, you can set 1 timed reminder on a post made in a channel, direct message, and group message. The ability to set up recurring reminders isn't supported.

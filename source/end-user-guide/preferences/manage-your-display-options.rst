@@ -1,7 +1,7 @@
 Manage your display options
 ===========================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 You can customize Mattermost display options based on your preferences.

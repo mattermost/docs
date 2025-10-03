@@ -1,9 +1,6 @@
 Cloud Shared
 =============
 
-.. include:: ../_static/badges/ent-cloud-only.rst
-  :start-after: :nosearch:
-
 Mattermost Cloud Shared is designed as a cost-effective solution for companies who don't have strict security and compliance requirements that need a straightforward, managed communication platform without the necessity for extensive customization or dedicated resources.
 
 Your Mattermost deployment is isolated, is fully hosted and managed by Mattermost, and runs :doc:`Mattermost Enterprise </product-overview/editions-and-offerings>` on shared infrastructure where resources are shared among multiple Mattermost customers, which might affect performance during peak times. 

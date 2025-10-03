@@ -1,6 +1,9 @@
 Webhooks
 ========
 
+.. include:: ../_static/badges/all-commercial.rst
+  :start-after: :nosearch:
+
 .. toctree::
   :maxdepth: 1
   :hidden:

@@ -1,6 +1,9 @@
 Install the Mattermost iOS mobile app
 =====================================
 
+.. include:: ../../_static/badges/all-commercial.rst
+  :start-after: :nosearch:
+
 Take Mattermost wherever you go by `installing the Mattermost mobile app <https://apps.apple.com/us/app/mattermost/id1257222717>`_ on your iOS mobile device running iOS 12.1 or later.
 
 1. On your device, visit the App Store. 

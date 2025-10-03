@@ -1,7 +1,7 @@
 Mark messages as unread
 =======================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 If you read messages in a channel, but don't have time to address them right away, you can mark that channel as unread. Hover over the channel name in the channel sidebar, select the **More** |more-icon-vertical| option, then select **Mark as Unread**.

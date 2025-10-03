@@ -1,7 +1,7 @@
 Plugins configuration settings
 ==============================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Review and manage the following plugin configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Plugins**:
@@ -78,9 +78,6 @@ Enable plugins
 Require plugin signature
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
 | - **true**: **(Default)** Enables plugin signature validation for managed and unmanaged plugins.                                                                                      | - System Config path: **Plugins > Plugin Management**                                  |
 | - **false**: Disables plugin signature validation for managed and unmanaged plugins.                                                                                                  | -  ``config.json`` setting: ``PluginSettings`` > ``RequirePluginSignature`` > ``true`` |
@@ -88,7 +85,8 @@ Require plugin signature
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
 .. note::
-  From Mattermost server v10.11, pre-packaged plugins require signature validation on startup. Distributions that bundle custom pre-packaged plugins must configure custom public keys via ``PluginSettings.SignaturePublicKeyFiles`` to validate their signatures.
+  - This setting is applicable to self-hosted deployments only.
+  - From Mattermost server v10.11, pre-packaged plugins require signature validation on startup. Distributions that bundle custom pre-packaged plugins must configure custom public keys via ``PluginSettings.SignaturePublicKeyFiles`` to validate their signatures.
   - **Mattermost server v10.10 and earlier**: Pre-packaged plugins are not subject to signature validation.
   - Plugins installed through the Marketplace are always subject to signature validation at the time of download.
   - Enabling this configuration will result in `plugin file uploads <#upload-plugin>`__ being disabled in the System Console.
@@ -126,9 +124,6 @@ Automatic prepackaged plugins
 Upload Plugin
 ~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
 +------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 | - **true**:  Enables you to upload plugins from the local computer to the Mattermost server.                                       | - System Config path: **Plugins > Plugin Management**                            |
 | - **false**: **(Default)** Disables uploading of plugins from the local computer to the Mattermost server.                         | - ``config.json`` setting: ``PluginSettings`` > ``EnableUploads`` > ``false``    |
@@ -136,6 +131,7 @@ Upload Plugin
 +------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 .. note::
+  - This setting is applicable to self-hosted deployments only.
   - When plugin uploads are enabled, the error ``Received invlaid response from the server`` when uploading a plugin file typically indicates that the
     :ref:`MaxFileSize <administration-guide/configure/environment-configuration-settings:maximum file size>` configuration setting isn't large enough to support the plugin file upload. Additional proxy setting updateds
     may also be required.
@@ -239,9 +235,6 @@ Plugin settings
 Calls
 -----
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 Access the following configuration settings in the System Console by going to **Plugins > Calls**.
 
 .. config:setting:: enable-plugin
@@ -272,9 +265,6 @@ Enable plugin
 RTC server address (UDP)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
 +--------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 | This setting controls the IP address the RTC server listens for UDP connections. All calls UDP traffic will be served through this IP.     | - System Config path: **Plugins > Calls**                                                                                 |
 |                                                                                                                                            | - ``config.json`` setting: ``PluginSettings`` ``Plugins`` > ``com.mattermost.calls`` > ``udpserveraddress``               |
@@ -283,7 +273,7 @@ RTC server address (UDP)
 +--------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  This setting is only applicable when not running calls through the standalone ``rtcd`` service.
+  This setting is applicable to self-hosted deployments only, and only when not running calls through the standalone ``rtcd`` service.
 
 .. config:setting:: rtc-server-address-tcp
   :displayname: RTC server port (TCP) (Plugins - Calls)
@@ -295,9 +285,6 @@ RTC server address (UDP)
 RTC server address (TCP)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
 +--------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | This setting controls the IP address the RTC server listens for TCP connections. All calls TCP traffic will be served through this IP.     | - System Config path: **Plugins > Calls**                                                                                   |
 |                                                                                                                                            | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``tcpserveraddress``               |
@@ -306,7 +293,7 @@ RTC server address (TCP)
 +--------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  This setting is available starting in plugin version 0.17, and is only applicable when not running calls through the standalone ``rtcd`` service.
+  This setting is available starting in plugin version 0.17, and is only applicable for self-hosted deployments when not running calls through the standalone ``rtcd`` service.
 
 .. config:setting:: rtc-server-port-udp
   :displayname: RTC server port (UDP) (Plugins - Calls)
@@ -318,9 +305,6 @@ RTC server address (TCP)
 RTC server port (UDP)
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
 +-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | This setting controls the UDP port listened on by the RTC server. All calls UDP traffic will be served through this port.     | - System Config path: **Plugins > Calls**                                                                                |
 |                                                                                                                               | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``udpserverport``               |
@@ -331,7 +315,7 @@ RTC server port (UDP)
 +-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  This setting is only applicable when not running calls through the standalone ``rtcd`` service.
+  This setting is only applicable for self-hosted deployments when not running calls through the standalone ``rtcd`` service.
 
 .. config:setting:: rtc-server-port-tcp
   :displayname: RTC server port (TCP) (Plugins - Calls)
@@ -343,9 +327,6 @@ RTC server port (UDP)
 RTC server port (TCP)
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
 +-------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
 | This setting controls the TCP port listened on by the RTC server. All calls TCP traffic will be served through this port.     | - System Config path: **Plugins > Calls**                                                                   |
 |                                                                                                                               | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``tcpserverport``  |
@@ -356,7 +337,7 @@ RTC server port (TCP)
 +-------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  This setting is available starting in plugin version 0.17, and is only applicable when not running calls through the standalone ``rtcd`` service.
+  This setting is available starting in plugin version 0.17, and is only applicable for self-hosted deplyoments when not running calls through the standalone ``rtcd`` service.
 
 .. config:setting:: enable-pluginsonspecificchannels
   :displayname: Enable on specific channels (Plugins - Calls)
@@ -368,10 +349,7 @@ RTC server port (TCP)
 Enable on specific channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Admins can't configure this setting from Mattermost v7.7; it's hidden and always enabled*
-
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
+*Admins can't configure this setting from Mattermost v7.7; it's hidden and always enabled for self-hosted deployments*
 
 +----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | - **true**: Channel admins can enable or disable calls on specific channels. Participants in DMs/GMs can also enable or disable calls. | - System Config path: **Plugins > Calls**                                                                       |
@@ -389,10 +367,7 @@ Enable on specific channels
 Test mode
 ~~~~~~~~~
 
-*This setting was called Enable on all channels until Mattermost v7.7. It was renamed to defaultenabled in code and Test Mode in-product.*
-
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
+*This setting was called Enable on all channels until Mattermost v7.7. It was renamed to defaultenabled in code and Test Mode in-product and is only applicable to self-hosted deployments.*
 
 +-----------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
 | - **false**: Test mode is enabled and only system admins can start calls in channels.                           | - System Config path: **Plugins > Calls**                                                                     |
@@ -413,9 +388,6 @@ Test mode
 ICE host override
 ~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 | This setting can be used to override the host addresses that get advertised to clients when connecting to calls. The accepted formats are the following:         | - System Config path: **Plugins > Calls**                                                                      |
 |                                                                                                                                                                  | - ``config.json`` setting:  ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``icehostoverride``  |
@@ -429,7 +401,7 @@ ICE host override
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  - This setting is only applicable when not running calls through the standalone ``rtcd`` service.
+  - This setting is only applicable for self-hosted deployments when not running calls through the standalone ``rtcd`` service.
   - Depending on the network infrastructure (e.g. instance behind a NAT device) it may be necessary to set this field to the client facing external IP for clients to connect. When empty or unset, the RTC service will attempt to find the instance's public IP through STUN.
   - A hostname (e.g. domain name) can be specified in this setting, but an IP address will be passed to clients. This means that a DNS resolution happens on the Mattermost instance which could result in a different IP address from the one the clients would see, causing connectivity to fail. When in doubt, we recommend using an IP address directly or confirming that the resolution on the host side reflects the one on the client.
 
@@ -445,9 +417,6 @@ ICE host override
 ICE host port override
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | This setting can be used to override the port used in the ICE host candidates that get advertised to clients when connecting to calls.                              | - System Config path: **Plugins > Calls**                                                                                |
 |                                                                                                                                                                     | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``icehostportoverride``         |
@@ -458,7 +427,8 @@ ICE host port override
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  This value will apply to both UDP and TCP host candidates.
+  - This setting is applicable only to self-hosted deployments.
+  - This value will apply to both UDP and TCP host candidates.
 
 .. config:setting:: rtcd-service-url
   :displayname: RTCD service URL (Plugins - Calls)
@@ -470,7 +440,7 @@ ICE host port override
 RTCD service URL
 ~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted-only.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 +---------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -484,11 +454,10 @@ RTCD service URL
 +---------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
+  - This setting is applicable only to self-hosted deployments.
   - The environment variable ``MM_CALLS_RTCD_URL`` is deprecated in favor of ``MM_CALLS_RTCD_SERVICE_URL``.
   - The client will self-register the first time it connects to the service and store the authentication key in the database. If no client ID is explicitly provided, the diagnostic ID of the Mattermost installation will be used.
   - The service URL supports credentials in the form ``http://clientID:authKey@hostname``. Alternatively these can be passed through environment overrides to the Mattermost server, namely ``MM_CALLS_RTCD_CLIENT_ID`` and ``MM_CALLS_RTCD_AUTH_KEY``
-
-.. note::
   - The client will self-register the first time it connects to the service and store the authentication key in the database. If no client ID is explicitly provided, the diagnostic ID of the Mattermost installation will be used.
   - The service URL supports credentials in the form ``http://clientID:authKey@hostname``. Alternatively these can be passed through environment overrides to the Mattermost server, namely ``MM_CALLS_RTCD_CLIENT_ID`` and ``MM_CALLS_RTCD_AUTH_KEY``
 
@@ -502,9 +471,6 @@ RTCD service URL
 Max call participants
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
 +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | This setting limits the number of participants that can join a single call. | - System Config path: **Plugins > Calls**                                                                       |
 |                                                                             | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``maxcallparticipants``|
@@ -514,6 +480,7 @@ Max call participants
 +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
 
 .. note::
+  - This setting is applicable only to self-hosted deployments.
   - The environment variable ``MM_CALLS_MAX_PARTICIPANTS`` is deprecated in favor of ``MM_CALLS_MAX_CALL_PARTICIPANTS``.
   - This setting is optional, but the recommended maximum number of participants is **50**. Call participant limits greatly depends on instance resources. See the :doc:`Calls self-hosted deployment </administration-guide/configure/calls-deployment>` documentation for details.
 
@@ -528,9 +495,6 @@ Max call participants
 ICE servers configurations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 | This setting stores a list of ICE servers (STUN/TURN) in JSON format to be used by the service.                                                                                                                           | - System Config path: **Plugins > Calls**                                                                          |
 |                                                                                                                                                                                                                           | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``iceserversconfigs``     |
@@ -542,6 +506,7 @@ ICE servers configurations
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 
 .. note::
+  - This setting is applicable only to self-hosted deployments.
   - The configurations above, containing STUN and TURN servers, are sent to the clients and used to generate local candidates.
   - If hosting calls through the plugin (i.e. not using the |rtcd_service|) any configured STUN server may also be used to find the instance's public IP when none is provided through the |ice_host_override_link| option.
 
@@ -587,15 +552,16 @@ ICE servers configurations
 TURN static auth secret
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
 +----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | A static secret used to generate short-lived credentials for TURN servers. | - System Config path: **Plugins > Calls**                                                                                        |
 |                                                                            | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``turnstaticauthsecret``                |
 |                                                                            | - Environment variable: ``MM_CALLS_TURN_STATIC_AUTH_SECRET``                                                                     |
 | This is an optional field.                                                 |                                                                                                                                  |
 +----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  This setting is applicable only to self-hosted deployments.
 
 .. config:setting:: turn-credentials-expiration
   :displayname: TURN credentials expiration (Plugins - Calls)
@@ -607,9 +573,6 @@ TURN static auth secret
 TURN credentials expiration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
 +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | The expiration, in minutes, of the short-lived credentials generated for TURN servers. | - System Config path: **Plugins > Calls**                                                                                                    |
 |                                                                                        | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``turncredentialsexpirationminutes``                |
@@ -617,6 +580,10 @@ TURN credentials expiration
 |                                                                                        |                                                                                                                                              |
 | Default is **1440** (one day).                                                         |                                                                                                                                              |
 +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  This setting is applicable only to self-hosted deployments.
 
 .. config:setting:: server-side-turn
   :displayname: Server side TURN (Plugins - Calls)
@@ -630,9 +597,6 @@ TURN credentials expiration
 Server side TURN
 ~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
 +------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | - **true**: The RTC server will use the configured TURN candidates for server-initiated connections. | - System Config path: **Plugins > Calls**                                                                                  |
 | - **false**: TURN will be used only on the client-side.                                              | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``serversideturn``                |
@@ -640,6 +604,10 @@ Server side TURN
 |                                                                                                      |                                                                                                                            |
 | Changing this setting requires a plugin restart to take effect.                                      |                                                                                                                            |
 +------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  This setting is applicable only to self-hosted deployments.
 
 .. config:setting:: allow-screen-sharing
   :displayname: Allow screen sharing (Plugins - Calls)
@@ -653,15 +621,16 @@ Server side TURN
 Allow screen sharing
 ~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | - **true**: Call participants will be allowed to share their screen.   | - System Config path: **Plugins > Calls**                                                                                      |
 | - **false**: Call participants won't be allowed to share their screen. | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``allowscreensharing``                |
 |                                                                        | - Environment variable: ``MM_CALLS_ALLOW_SCREEN_SHARING``                                                                      |
 | Changing this setting requires a plugin restart to take effect.        |                                                                                                                                |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  This setting is applicable only to self-hosted deployments.
 
 .. config:setting:: enable-pluginsimulcast
   :displayname: (Experimental) Enable simulcast for screen sharing (Plugins - Calls)
@@ -675,9 +644,6 @@ Allow screen sharing
 Enable simulcast for screen sharing (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
 +------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | - **true**: Enables simulcast for screen sharing. This can help to improve screen sharing quality.                     | - System Config path: **Plugins > Calls**                                                                                  |
 | - **false**: Disables simulcast for screen sharing.                                                                    | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``enablesimulcast``               |
@@ -686,6 +652,7 @@ Enable simulcast for screen sharing (Experimental)
 
 .. note::
 
+  - This experimental setting is applicable only to self-hosted deployments.
   - This functionality requires Calls plugin version >= v0.16.0 and ``rtcd`` version >= v0.10.0 (when in use).
   - Avoid enabling both this experimental configuration setting and the `Enable AV1 <#enable-av1-experimental>`__ experimental configuration setting at the same time. 
 
@@ -701,7 +668,7 @@ Enable simulcast for screen sharing (Experimental)
 Enable call recordings
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted-only.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
@@ -713,6 +680,10 @@ Enable call recordings
 | Changing this setting requires a plugin restart to take effect.                                                                                       |                                                                                                                              |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
 
+.. note::
+
+  This setting is applicable only to self-hosted deployments.
+
 .. config:setting:: job-service-url
   :displayname: Job service URL (Plugins - Calls)
   :systemconsole: Plugins > Calls
@@ -723,7 +694,7 @@ Enable call recordings
 Job service URL
 ~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted-only.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 +------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
@@ -733,6 +704,8 @@ Job service URL
 +------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
+
+  - This setting is applicable only to self-hosted deployments.
   - The client will self-register the first time it connects to the service and store the authentication key in the database. If no client ID is explicitly provided, the diagnostic ID of the Mattermost installation will be used.
   - The service URL supports credentials in the form ``http://clientID:authKey@hostname``. Alternatively these can be passed through environment overrides to the Mattermost server, namely ``MM_CALLS_JOB_SERVICE_CLIENT_ID``
     and ``MM_CALLS_JOB_SERVICE_AUTH_KEY``.
@@ -749,7 +722,7 @@ Job service URL
 Maximum call recording duration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted-only.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 +-----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+
@@ -758,6 +731,10 @@ Maximum call recording duration
 |                                                                                                                             | - Environment variable: ``MM_CALLS_MAX_RECORDING_DURATION``                                                      |
 | The default is **60**. The maximum is **180**. This is a required value.                                                    |                                                                                                                  |
 +-----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  This setting is applicable only to self-hosted deployments.
 
 .. config:setting:: call-recording-quality
   :displayname: Call recording quality (Plugins - Calls)
@@ -769,7 +746,7 @@ Maximum call recording duration
 Call recording quality
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted-only.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 +-----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -780,7 +757,8 @@ Call recording quality
 +-----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  The quality setting will affect the performance of the job service and the file size of recordings. Refer to the :ref:`deployment section <administration-guide/configure/calls-deployment:configure recording, transcriptions, and live captions>` for more information.
+  - This setting is applicable only to self-hosted deployments.
+  - The quality setting will affect the performance of the job service and the file size of recordings. Refer to the :ref:`deployment section <administration-guide/configure/calls-deployment:configure recording, transcriptions, and live captions>` for more information.
 
 .. config:setting:: enable-pluginscalltranscriptions
   :displayname: Enable call transcriptions (Plugins - Calls)
@@ -794,7 +772,7 @@ Call recording quality
 Enable call transcriptions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted-only.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
@@ -805,6 +783,7 @@ Enable call transcriptions
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
+  - This setting is applicable only to self-hosted deployments.
   - The ability to enable call transcriptions in Mattermost calls is currently in :ref:`Beta <administration-guide/manage/feature-labels:beta>`. 
   - This server-side configuration setting is available from plugin version 0.22. 
   - Call transcriptions require :ref:`call recordings <administration-guide/configure/plugins-configuration-settings:enable call recordings>` to be enabled. 
@@ -819,7 +798,7 @@ Enable call transcriptions
 Transcriber model size
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted-only.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
@@ -830,7 +809,8 @@ Transcriber model size
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  This setting is available starting in plugin version 0.22. The model size setting will affect the performance of the job service. Refer to the :ref:`configure call recordings, transcriptions, and live captions <administration-guide/configure/calls-deployment:configure recording, transcriptions, and live captions>` documentation for more information.
+  - This setting is applicable only to self-hosted deployments.
+  - This setting is available starting in plugin version 0.22. The model size setting will affect the performance of the job service. Refer to the :ref:`configure call recordings, transcriptions, and live captions <administration-guide/configure/calls-deployment:configure recording, transcriptions, and live captions>` documentation for more information.
 
 .. config:setting:: call-transcriber-threads
   :displayname: Call transcriber threads (Plugins - Calls)
@@ -842,7 +822,7 @@ Transcriber model size
 Call transcriber threads
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted-only.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -853,7 +833,8 @@ Call transcriber threads
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  The call transcriber threads setting will affect the performance of the job service. Refer to the :ref:`configure call recordings, transcriptions, and live captions <administration-guide/configure/calls-deployment:configure recording, transcriptions, and live captions>` documentation for more information. This setting is available starting in plugin version 0.26.2.
+  - This setting is applicable only to self-hosted deployments.
+  - The call transcriber threads setting will affect the performance of the job service. Refer to the :ref:`configure call recordings, transcriptions, and live captions <administration-guide/configure/calls-deployment:configure recording, transcriptions, and live captions>` documentation for more information. This setting is available starting in plugin version 0.26.2.
 
 .. config:setting:: enable-pluginslivecaptions
   :displayname: (Experimental) Enable live captions (Plugins - Calls)
@@ -868,7 +849,7 @@ Call transcriber threads
 Enable live captions
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted-only.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+
@@ -895,7 +876,7 @@ Enable live captions
 Live captions: Model size
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted-only.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
@@ -906,7 +887,8 @@ Live captions: Model size
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  This setting is available starting in plugin version 0.26.2. The model size setting will affect the performance of the job service. Refer to the `performance and scalability recommendations <https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md>`_ documentation for more information.
+  - This setting is applicable only to self-hosted deployments.
+  - This setting is available starting in plugin version 0.26.2. The model size setting will affect the performance of the job service. Refer to the `performance and scalability recommendations <https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md>`_ documentation for more information.
 
 .. config:setting:: live-captions-number-of-transcribers-used-per-call
   :displayname: Live captions: Number of transcribers used per call (Plugins - Calls)
@@ -918,7 +900,7 @@ Live captions: Model size
 Live captions: Number of transcribers used per call
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted-only.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
@@ -929,7 +911,8 @@ Live captions: Number of transcribers used per call
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  This setting is available starting in plugin version 0.26.2. The live captions number of transcribers setting will affect the performance of the job service. Refer to the `performance and scalability recommendations <https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md>`_ documentation for more information.
+  - This setting is applicable only to self-hosted deployments.
+  - This setting is available starting in plugin version 0.26.2. The live captions number of transcribers setting will affect the performance of the job service. Refer to the `performance and scalability recommendations <https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md>`_ documentation for more information.
 
 .. config:setting:: live-captions-number-of-threads-per-transcriber
   :displayname: Live captions: Number of threads per transcriber (Plugins - Calls)
@@ -941,7 +924,7 @@ Live captions: Number of transcribers used per call
 Live captions: Number of threads per transcriber
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted-only.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
@@ -952,7 +935,8 @@ Live captions: Number of threads per transcriber
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  This setting is available starting in plugin version 0.26.2. The live captions number of threads per transcriber setting will affect the performance of the job service. Refer to the `performance and scalability recommendations <https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md>`_ documentation for more information
+  - This setting is applicable only to self-hosted deployments.
+  - This setting is available starting in plugin version 0.26.2. The live captions number of threads per transcriber setting will affect the performance of the job service. Refer to the `performance and scalability recommendations <https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md>`_ documentation for more information
 
 .. config:setting:: live-captions-language
   :displayname: Live captions language (Plugins - Calls)
@@ -964,7 +948,7 @@ Live captions: Number of threads per transcriber
 Live captions language
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted-only.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 +---------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+
@@ -973,6 +957,9 @@ Live captions language
 |                                                                                                                     | - Environment variable: ``MM_CALLS_LIVE_CAPTIONS_LANGUAGE``                                                      |
 | If blank, the lange will be set to 'en' (English) as default.                                                       |                                                                                                                  |
 +---------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+  This setting is applicable only to self-hosted deployments.
 
 .. config:setting:: enable-pluginipv6
   :displayname: (Experimental) Enable IPv6 (Plugins - Calls)
@@ -986,9 +973,6 @@ Live captions language
 (Experimental) Enable IPv6
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
 +----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
 | - **true**: The RTC service will work in dual-stack mode, listening for IPv6 connections and generating candidates in addition to IPv4 ones. | - System Config path: **Plugins > Calls**                                                                |
 | - **false**: **(Default)** The RTC service will only listen for IPv4 connections.                                                            | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``enableipv6``  |
@@ -997,7 +981,8 @@ Live captions language
 +----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
 
 .. note::
-  This setting is available starting in plugin version 0.17, and is only applicable when not running calls through the standalone ``rtcd`` service.
+  - This setting is applicable only to self-hosted deployments.
+  - This setting is available starting in plugin version 0.17, and is only applicable when not running calls through the standalone ``rtcd`` service.
 
 .. config:setting:: enable-pluginscallringing
   :displayname: Enable call ringing (Plugins - Calls)
@@ -1010,6 +995,7 @@ Live captions language
 
 Enable call ringing
 ~~~~~~~~~~~~~~~~~~~
+
 +--------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
 | - **true**: Ringing functionality is enabled. Direct and group message   | - System Config path: **Plugins > Calls**                                                                    |
 |   participants receive a desktop app alert and a ringing notification    | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``enableringing``   |
@@ -1074,9 +1060,6 @@ Enable DC signaling (Experimental)
 
 AI Agents
 ----------
-
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 .. note::
 
@@ -1529,7 +1512,7 @@ Enable LLM trace
 Enable embedding search
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 +-----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
@@ -1731,9 +1714,6 @@ Reindex all posts
 GitLab
 ------
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 See the :doc:`Connect GitLab to Mattermost </integrations-guide/gitlab>` product documentation for available :ref:`Mattermost configuration options <integrations-guide/gitlab:mattermost configuration>`.
 
 ----
@@ -1747,9 +1727,6 @@ See the :doc:`Connect GitLab to Mattermost </integrations-guide/gitlab>` product
 
 GitHub
 ------
-
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 See the :doc:`Connect GitHub to Mattermost </integrations-guide/github>` product documentation for available :ref:`Mattermost configuration options <integrations-guide/github:mattermost configuration>`.
 
@@ -1765,9 +1742,6 @@ See the :doc:`Connect GitHub to Mattermost </integrations-guide/github>` product
 Jira
 ----
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 See the :doc:`Connect Jira to Mattermost </integrations-guide/jira>` product documentation for available :ref:`Mattermost configuration options <integrations-guide/jira:mattermost configuration>`.
 
 ----
@@ -1782,7 +1756,7 @@ See the :doc:`Connect Jira to Mattermost </integrations-guide/jira>` product doc
 Legal hold
 ----------
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 See the :doc:`Legal holds </administration-guide/comply/legal-hold>` product documentation for details.
@@ -1799,9 +1773,6 @@ See the :doc:`Legal holds </administration-guide/comply/legal-hold>` product doc
 Microsoft Calendar Integration
 -------------------------------
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 See the :doc:`Connect Microsoft Calendar Integration to Mattermost </integrations-guide/microsoft-calendar>` product documentation for available :ref:`Mattermost configuration options <integrations-guide/microsoft-calendar:enable and configure the microsoft calendar integration in mattermost>`.
 
 ----
@@ -1816,9 +1787,6 @@ See the :doc:`Connect Microsoft Calendar Integration to Mattermost </integration
 Microsoft Teams Meetings
 ------------------------
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 See the :doc:`Connect Microsoft Teams Meetings to Mattermost </integrations-guide/microsoft-teams-meetings>` product documentation for available :ref:`Mattermost configuration options <integrations-guide/microsoft-teams-meetings:enable and configure the microsoft teams meetings integration in mattermost>`.
 
 
@@ -1828,9 +1796,6 @@ See the :doc:`Connect Microsoft Teams Meetings to Mattermost </integrations-guid
 MS Teams
 ---------
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 Mattermost for Microsoft Teams enables you to break through siloes in a mixed Mattermost and Teams environment by forwarding real-time chat notifications from Teams to Mattermost.
 
 .. tip::
@@ -1838,9 +1803,6 @@ Mattermost for Microsoft Teams enables you to break through siloes in a mixed Ma
   Download our `Mattermost for Microsoft Teams datasheet <https://mattermost.com/mattermost-for-microsoft-teams-datasheet/>`_ to learn how Mattermost helps your organization get more from your Microsoft tools.
 
 Access the following configuration settings in the System Console by going to **Plugins > MS Teams**.
-
-.. include:: ../../_static/badges/academy-msteams.rst
-  :start-after: :nosearch:
 
 .. config:setting:: enable-plugin
   :displayname: Enable plugin (Plugins - MS Teams)
@@ -2036,7 +1998,7 @@ Buffer size for streaming files
 Performance metrics
 -------------------
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 See the :doc:`Monitor performance metrics </administration-guide/scale/collect-performance-metrics>` product documentation for available :ref:`Mattermost configuration options <administration-guide/scale/collect-performance-metrics:mattermost configuration>`.
@@ -2045,9 +2007,6 @@ See the :doc:`Monitor performance metrics </administration-guide/scale/collect-p
 
 Collaborative playbooks
 ------------------------
-
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 Use collaborative playbooks in Mattermost to provide structure, monitoring and automation for repeatable, team-based processes integrated with the Mattermost platform.
 
@@ -2117,9 +2076,6 @@ Enable experimental features
 ServiceNow
 ----------
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 See the :doc:`Connect ServiceNow to Mattermost </integrations-guide/servicenow>` product documentation for available :ref:`Mattermost configuration options <integrations-guide/servicenow:mattermost configuration>`.
 
 
@@ -2135,9 +2091,6 @@ See the :doc:`Connect ServiceNow to Mattermost </integrations-guide/servicenow>`
 Zoom
 ----
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 See the :doc:`Connect Zoom to Mattermost </integrations-guide/zoom>` product documentation for available :ref:`Mattermost configuration options <integrations-guide/zoom:mattermost configuration>`.
 
 ----
@@ -2145,8 +2098,7 @@ See the :doc:`Connect Zoom to Mattermost </integrations-guide/zoom>` product doc
 config.json-only settings
 --------------------------
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
+The following self-hosted deployment settings are only configurable in the ``config.json`` file and are not available in the System Console.
 
 .. config:setting:: signature-public-key-files
   :displayname: Signature public key file (Plugins)

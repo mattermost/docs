@@ -1,7 +1,7 @@
 Communicate scheduled maintenance best practices
 ================================================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Performing scheduled maintenance on a Mattermost server with 1,000 or more users requires advanced planning and a clear communication strategy to ensure minimal disruption and maximum transparency. 

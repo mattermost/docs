@@ -1,7 +1,7 @@
 Manage advanced options
 =======================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Using Mattermost in a web browser or the desktop app, you can customize advanced Mattermost options based on your preferences. Select the gear icon |gear| next to your profile picture, then select **Advanced**.

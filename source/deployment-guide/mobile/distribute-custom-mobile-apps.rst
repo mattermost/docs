@@ -1,6 +1,9 @@
 Distribute a custom mobile app
 ================================
 
+.. include:: ../../_static/badges/all-commercial.rst
+  :start-after: :nosearch:
+
 To control the look and feel of the Mattermost mobile app requires building your own mobile apps, :doc:`hosting your own push proxy service </deployment-guide/mobile/host-your-own-push-proxy-service>`, and managing your own app distribution.
 
 .. note::

@@ -1,9 +1,6 @@
 Cloud
 ======
 
-.. include:: ../_static/badges/ent-cloud-only.rst
-  :start-after: :nosearch:
-
 .. toctree::
    :maxdepth: 1
    :hidden:

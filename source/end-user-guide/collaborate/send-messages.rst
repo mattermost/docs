@@ -1,7 +1,7 @@
 Send messages
 =============
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 You can send messages in public and private channels as well as to other users in Mattermost. Depending on when you compose a message, you can send it immediately, :doc:`schedule it for later </end-user-guide/collaborate/schedule-messages>`, or :doc:`set its priority </end-user-guide/collaborate/message-priority>`. 

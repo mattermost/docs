@@ -6,9 +6,6 @@
     :page_title: Mattermost Server Releases
 ```
 
-```{include} ../_static/badges/allplans-selfhosted.md
-```
-
 ```{Important}
 ```{include} common-esr-support-upgrade.md
 ```

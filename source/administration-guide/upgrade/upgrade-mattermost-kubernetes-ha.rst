@@ -1,7 +1,7 @@
 Upgrade Mattermost in Kubernetes and High Availability environments
 ===================================================================
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 This guide provides a resilient and comprehensive strategy for upgrading Mattermost deployments managed via Kubernetes and the Mattermost Operator, including High Availability (HA) and optional Active/Active failover configurations. It outlines best practices to ensure zero downtime, minimize service risk, and provide robust fallback mechanisms.

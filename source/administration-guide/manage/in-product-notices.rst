@@ -1,7 +1,7 @@
 In-product notices
 ==================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Mattermost in-product notices keep users and administrators informed of the newest product improvements, features, and releases.

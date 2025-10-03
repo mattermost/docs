@@ -1,7 +1,7 @@
 Save and pin messages
 =====================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 You have two ways to mark a post to make it easy to find later: 

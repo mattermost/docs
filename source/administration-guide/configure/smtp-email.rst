@@ -1,7 +1,7 @@
 SMTP email setup
 ================
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 In a production environment, Mattermost requires SMTP email enabled for email notifications and password resets when using :ref:`email-based authentication <administration-guide/configure/authentication-configuration-settings:enable sign-in with email>`.

@@ -1,12 +1,9 @@
 Cloud Dedicated Bring Your Own Key
 ===================================
 
-.. include:: ../../_static/badges/ent-cloud-dedicated.rst
-   :start-after: :nosearch:
-
 Bring Your Own Key (BYOK) provides Enterprise Cloud customers with autonomy over their encryption key life cycle. BYOK supports encryption at rest with custom KMS keys that the enterprise provides and maintains.
 
-BYOK requires a subscription to Mattermost Cloud Enterprise Dedicated, which offers enhanced data security and compliance by ensuring that enterprises have full control over their data encryption processes.
+**BYOK requires a subscription to Mattermost Cloud Enterprise Dedicated**, which offers enhanced data security and compliance by ensuring that enterprises have full control over their data encryption processes.
 
 In Mattermost Cloud Enterprise Dedicated, you can use KMS keys in 2 ways:
 

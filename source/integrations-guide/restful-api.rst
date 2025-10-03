@@ -1,6 +1,9 @@
 RESTful API
 ============
 
+.. include:: ../_static/badges/all-commercial.rst
+  :start-after: :nosearch:
+
 **Technical complexity:** :ref:`Pro-code <pro-code>`
 
 Full developer control for automation, bots, and integrations.

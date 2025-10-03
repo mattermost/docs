@@ -1,7 +1,7 @@
 Configure SAML with Keycloak
 ============================
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 The following process provides steps to configure SAML with Keycloak for Mattermost.

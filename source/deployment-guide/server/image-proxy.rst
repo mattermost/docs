@@ -1,7 +1,7 @@
 (Optional) Use an Image proxy
 ==============================
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 When enabled, the image proxy needs to be publicly accessible to both the Mattermost client and server.

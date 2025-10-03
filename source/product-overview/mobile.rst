@@ -4,9 +4,6 @@ Mobile
 .. meta::
 	:page_title: Mattermost Mobile App
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 Mattermost users can take Mattermost wherever they go by installing the Mattermost mobile app on their iOS or Android mobile device.
 
 

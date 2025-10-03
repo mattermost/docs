@@ -3,7 +3,7 @@
 Custom terms of service
 =======================
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 Increase clarity on legal Mattermost expectations for internal employees and guests with the ability to set custom Terms of Service (“ToS”) agreements and re-acceptable periods.

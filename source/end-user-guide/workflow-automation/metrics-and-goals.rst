@@ -1,7 +1,7 @@
 Metrics and goals
 =================
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Workflow dashboards unlock insights about the performance of workflows across organizations. They compare the output metrics from different runs of collaborative playbooks, against targets and historical performance. Each time a collaborative playbook is run, you can update the workflow dashboard for the team and stakeholders to review, where dashboard components are customized per playbook.
@@ -54,7 +54,7 @@ The lower half of the page shows a list of finished runs with metrics values. Yo
 Export channel data
 ~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-only.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 See the :doc:`export channel data </administration-guide/comply/export-mattermost-channel-data>` documentation for details on working with channel export functionality.

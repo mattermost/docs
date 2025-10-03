@@ -1,7 +1,7 @@
 Run Slash Commands
 ==================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Using a slash command is as easy as composing a message. Instead of message text, you start slash commands with a slash character: ``/``. 

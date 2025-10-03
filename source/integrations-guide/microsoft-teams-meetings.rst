@@ -1,7 +1,7 @@
 Connect Microsoft Teams Meetings to Mattermost
 ==============================================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Start and join voice calls, video calls, and use screen sharing with your team members in Microsoft Teams without leaving Mattermost.

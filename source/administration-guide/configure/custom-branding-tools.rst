@@ -1,7 +1,7 @@
 Custom branding tools
 =====================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Use custom branding tools to present a Mattermost experience that's tailored to the branding of your organization.
