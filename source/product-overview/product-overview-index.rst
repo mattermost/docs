@@ -15,7 +15,6 @@ Overview
    /product-overview/certifications-and-compliance.rst
    /product-overview/accessibility-compliance-policy.rst
    /product-overview/releases-lifecycle.rst
-   /product-overview/client-availability.rst
    /product-overview/frequently-asked-questions.rst
 
 The Intelligent Mission Environment (IME)
@@ -50,14 +49,14 @@ Messaging collaboration
 - :ref:`Public <end-user-guide/collaborate/channel-types:public channels>` and :ref:`private <end-user-guide/collaborate/channel-types:private channels>` channels, :ref:`direct messages <end-user-guide/collaborate/channel-types:direct message channels>`, and :doc:`threaded conversations </end-user-guide/collaborate/organize-conversations>` for structured operational coordination.
 - :doc:`Role-based access controls </end-user-guide/collaborate/learn-about-roles>` and :ref:`audit logs <administration-guide/manage/logging:audit logging>` to support need-to-know enforcement.
 - Configurable :doc:`notifications </end-user-guide/preferences/manage-your-notifications>` (e.g., :ref:`alerts <end-user-guide/preferences/manage-your-notifications:default notifications>`, :doc:`keyword triggers </end-user-guide/preferences/manage-your-mentions-keywords-notifications>`, :doc:`muting </end-user-guide/preferences/manage-your-channel-specific-notifications>`) to surface high-priority activity.
-- Integrated ChatOps capabilities via :doc:`slash commands </integrations-guide/run-slash-commands>`, :ref:`bots <integrations-guide/integrations-guide-index:bots>`, and :doc:`webhooks </integrations-guide/webhook-integrations>` for real-time automation and system alerts.
+- Integrated ChatOps capabilities via :doc:`slash commands </integrations-guide/run-slash-commands>`, `bots <https://developers.mattermost.com/integrate/reference/bot-accounts/>`_, and :doc:`webhooks </integrations-guide/webhook-integrations>` for real-time automation and system alerts.
 - :ref:`Pinning <end-user-guide/collaborate/save-pin-messages:pin messages>`, :doc:`bookmarking </end-user-guide/collaborate/manage-channel-bookmarks>`, and :doc:`advanced search </end-user-guide/collaborate/search-for-messages>` to maintain continuity and context in high-volume environments.
 - Cross-platform support on web, desktop, and mobile clients for flexible field to command and control access.
 
 .. image:: /images/messaging-new-hero.png
    :alt: An image showing Mattermost messaging collaboration, highlighting the ability to create public and private channels, direct messages, and threaded conversations for secure, real-time communication across web, desktop, and mobile.
 
-See the :doc:`Client availability </product-overview/client-availability>` documentation to learn which features are available on different Mattermost clients.
+See the :doc:`Client availability </end-user-guide/collaborate/client-availability>` documentation to learn which features are available on different Mattermost clients.
 
 Workflow automation
 ~~~~~~~~~~~~~~~~~~~

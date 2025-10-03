@@ -115,7 +115,28 @@ Use
 
 Users who want to use Microsoft Calendar interconnectivity must connect a Microsoft Office account to Mattermost. 
 
-Once connected, you'll receive direct messages from the Microsoft Calendar bot in Mattermost for Microsoft Calendar activity.
+.. image:: ../images/connect-via-mscalendar-connect.png
+  :alt: Example of the Connect Account prompt in Mattermost.
+
+Once connected, you'll receive direct messages from the Microsoft Calendar bot in Mattermost for Microsoft Calendar activity. 
+
+.. image:: ../images/ms-calendar-intro.png
+  :alt: Example of the first direct message from the Microsoft Calendar bot in Mattermost.
+
+See your upcoming events for the current day by typing ``/mscalendar today`` in the message input box.
+
+.. image:: ../images/Microsoft-Calendar-viewcal.png
+  :alt: Example of a direct message from the Microsoft Calendar bot in Mattermost.
+
+A list of all supported slash commands are available by typing ``/mscalendar help`` in the message input box.
+
+.. image:: ../images/microsoft-calendar-slash-commands.png
+   :alt: Example of supported slash commands for Microsoft Calendar in Mattermost.
+
+You can customize your notification preferences by typing ``/mscalendar settings`` in the message input box.
+
+.. image:: ../images/microsoft-calendar-settings.png
+   :alt: Example of the Microsoft Calendar settings in Mattermost.
 
 Upgrade
 -------

@@ -49,7 +49,7 @@ Site URL
 
 +---------------------------------------------------------------+---------------------------------------------------------------+
 | The URL that users use to access Mattermost.                  | - System Config path: **Environment > Web Server**            |
-| The port number is required if it’s not a standard port,      | - ``config.json`` setting: ``.ServiceSettings.SiteURL",``     |
+| The port number is required if it’s not a standard port,      | - ``config.json`` setting: ``ServiceSettings`` > ``SiteURL``  |
 | such as 80 or 443. This field is required.                    | - Environment variable: ``MM_SERVICESETTINGS_SITEURL``        |
 |                                                               |                                                               |
 | Select the **Test Live URL** button in the System Console     |                                                               |
@@ -76,13 +76,13 @@ Site URL
 Maximum URL length
 ~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
-| The longest URL, in characters, including query parameters,   | - System Config path: N/A                                                |
-| accepted by the Mattermost server. Longer URLs are rejected,  | - ``config.json`` setting: ``.ServiceSettings.MaximumURLLength: 2048",`` |
-| and API calls fail with an error.                             | - Environment variable: ``MM_SERVICESETTINGS_MAXIMUMURLLENGTH``          |
-|                                                               |                                                                          |
-| Numeric value. Default is **2048** characters.                |                                                                          |
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
++---------------------------------------------------------------+----------------------------------------------------------------------------------+
+| The longest URL, in characters, including query parameters,   | - System Config path: N/A                                                        |
+| accepted by the Mattermost server. Longer URLs are rejected,  | - ``config.json`` setting: ``ServiceSettings`` > ``MaximumURLLength`` > ``2048`` |
+| and API calls fail with an error.                             | - Environment variable: ``MM_SERVICESETTINGS_MAXIMUMURLLENGTH``                  |
+|                                                               |                                                                                  |
+| Numeric value. Default is **2048** characters.                |                                                                                  |
++---------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 .. config:setting:: web-server-listen-address
   :displayname: Web server listen address (Web Server)
@@ -96,16 +96,16 @@ Maximum URL length
 Web server listen address
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+------------------------------------------------------------------+
-| The address and port to which to bind and listen.             | - System Config path: **Environment > Web Server**               |
-| Specifying ``:8065`` will bind to all network interfaces.     | - ``config.json`` setting: ``".ServiceSettings.ListenAddress",`` |
-| Specifying ``127.0.0.1:8065`` will only bind to the network   | - Environment variable: ``MM_SERVICESETTINGS_LISTENADDRESS``     |
-| interface having that IP address.                             |                                                                  |
-|                                                               |                                                                  |
-| If you choose a port of a lower level (called “system ports”  |                                                                  |
-| or “well-known ports”, in the range of 0-1023), you must have |                                                                  |
-| permissions to bind to that port.                             |                                                                  |
-+---------------------------------------------------------------+------------------------------------------------------------------+
++---------------------------------------------------------------+--------------------------------------------------------------------+
+| The address and port to which to bind and listen.             | - System Config path: **Environment > Web Server**                 |
+| Specifying ``:8065`` will bind to all network interfaces.     | - ``config.json`` setting: ``ServiceSettings`` > ``ListenAddress`` |
+| Specifying ``127.0.0.1:8065`` will only bind to the network   | - Environment variable: ``MM_SERVICESETTINGS_LISTENADDRESS``       |
+| interface having that IP address.                             |                                                                    |
+|                                                               |                                                                    |
+| If you choose a port of a lower level (called “system ports”  |                                                                    |
+| or “well-known ports”, in the range of 0-1023), you must have |                                                                    |
+| permissions to bind to that port.                             |                                                                    |
++---------------------------------------------------------------+--------------------------------------------------------------------+
 
 .. config:setting:: forward-port-80-to-443
   :displayname: Forward port 80 to 443 (Web Server)
@@ -119,15 +119,15 @@ Web server listen address
 Forward port 80 to 443
 ~~~~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
-| Forward insecure traffic from port 80 to port 443.            | - System Config path: **Environment > Web Server**                       |
-|                                                               | - ``config.json`` setting: ``".ServiceSettings.Forward80To443: false",`` |
-| - **true**: Forwards all insecure traffic from port 80 to     | - Environment variable: ``MM_SERVICESETTINGS_FORWARD80TO443``            |
-|   secure port 443.                                            |                                                                          |
-| - **false**: **(Default)** When using a proxy such as NGINX   |                                                                          |
-|   in front of Mattermost this setting is unnecessary          |                                                                          |
-|   and should be set to false.                                 |                                                                          |
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
++---------------------------------------------------------------+---------------------------------------------------------------------------------+
+| Forward insecure traffic from port 80 to port 443.            | - System Config path: **Environment > Web Server**                              |
+|                                                               | - ``config.json`` setting: ``ServiceSettings`` > ``Forward80To443`` > ``false`` |
+| - **true**: Forwards all insecure traffic from port 80 to     | - Environment variable: ``MM_SERVICESETTINGS_FORWARD80TO443``                   |
+|   secure port 443.                                            |                                                                                 |
+| - **false**: **(Default)** When using a proxy such as NGINX   |                                                                                 |
+|   in front of Mattermost this setting is unnecessary          |                                                                                 |
+|   and should be set to false.                                 |                                                                                 |
++---------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 .. config:setting:: web-server-connection-security
   :displayname: Web server connection security (Web Server)
@@ -142,14 +142,14 @@ Forward port 80 to 443
 Web server connection security
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------+
-| Connection security between Mattermost clients and the server.        | - System Config path: **Environment > Web Server**                    |
-|                                                                       | - ``config.json`` setting: ``".ServiceSettings.ConnectionSecurity",`` |
-| - **Not specified**: Mattermost will connect over an unsecure         | - Environment variable: ``MM_SERVICESETTINGS_CONNECTIONSECURITY``     |
-|   connection.                                                         |                                                                       |
-| - **TLS**: Encrypts the communication between Mattermost              |                                                                       |
-|   clients and your server.                                            |                                                                       |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------+
++-----------------------------------------------------------------------+-------------------------------------------------------------------------+
+| Connection security between Mattermost clients and the server.        | - System Config path: **Environment > Web Server**                      |
+|                                                                       | - ``config.json`` setting: ``ServiceSettings`` > ``ConnectionSecurity`` |
+| - **Not specified**: Mattermost will connect over an unsecure         | - Environment variable: ``MM_SERVICESETTINGS_CONNECTIONSECURITY``       |
+|   connection.                                                         |                                                                         |
+| - **TLS**: Encrypts the communication between Mattermost              |                                                                         |
+|   clients and your server.                                            |                                                                         |
++-----------------------------------------------------------------------+-------------------------------------------------------------------------+
 
 See the :doc:`setting up TLS for Mattermost </deployment-guide/server/setup-tls>` for details.
 
@@ -163,12 +163,12 @@ See the :doc:`setting up TLS for Mattermost </deployment-guide/server/setup-tls>
 TLS certificate file
 ~~~~~~~~~~~~~~~~~~~~
 
-+--------------------------------------------------------+------------------------------------------------------------------+
-| The path to the certificate file to use for TLS        | - System Config path: **Environment > Web Server**               |
-| connection security.                                   | - ``config.json`` setting: ``".ServiceSettings.TLSCertFile",``   |
-|                                                        | - Environment variable: ``MM_SERVICESETTINGS_TLSCERTFILE``       |
-| String input.                                          |                                                                  |
-+--------------------------------------------------------+------------------------------------------------------------------+
++--------------------------------------------------------+--------------------------------------------------------------------+
+| The path to the certificate file to use for TLS        | - System Config path: **Environment > Web Server**                 |
+| connection security.                                   | - ``config.json`` setting: ``ServiceSettings`` > ``TLSCertFile``   |
+|                                                        | - Environment variable: ``MM_SERVICESETTINGS_TLSCERTFILE``         |
+| String input.                                          |                                                                    |
++--------------------------------------------------------+--------------------------------------------------------------------+
 
 .. config:setting:: tls-key-file
   :displayname: TLS key file (Web Server)
@@ -180,12 +180,12 @@ TLS certificate file
 TLS key file
 ~~~~~~~~~~~~
 
-+--------------------------------------------------------+---------------------------------------------------------------+
-| The path to the TLS key file to use for TLS            | - System Config path: **Environment > Web Server**            |
-| connection security.                                   | - ``config.json`` setting: ``".ServiceSettings.TLSKeyFile",`` |
-|                                                        | - Environment variable: ``MM_SERVICESETTINGS_TLSKEYFILE``     |
-| String input.                                          |                                                               |
-+--------------------------------------------------------+---------------------------------------------------------------+
++--------------------------------------------------------+-----------------------------------------------------------------+
+| The path to the TLS key file to use for TLS            | - System Config path: **Environment > Web Server**              |
+| connection security.                                   | - ``config.json`` setting: ``ServiceSettings`` > ``TLSKeyFile`` |
+|                                                        | - Environment variable: ``MM_SERVICESETTINGS_TLSKEYFILE``       |
+| String input.                                          |                                                                 |
++--------------------------------------------------------+-----------------------------------------------------------------+
 
 .. config:setting:: use-lets-encrypt
   :displayname: Use Let's Encrypt (Web Server)
@@ -200,17 +200,17 @@ TLS key file
 Use Let's Encrypt
 ~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
-| Enable the automatic retrieval of certificates from Let’s Encrypt.                            | - System Config path: **Environment > Web Server**                       |
-|                                                                                               | - ``config.json`` setting: ``".ServiceSettings.UseLetsEncrypt: false",`` |
-|                                                                                               | - Environment variable: ``MM_SERVICESETTINGS_USELETSENCRYPT``            |
-| - **true**: The certificate will be retrieved when a client                                   |                                                                          |
-|   attempts to connect from a new domain. This will work with                                  |                                                                          |
-|   multiple domains.                                                                           |                                                                          |
-| - **false**: **(Default)** Manual certificate specification                                   |                                                                          |
-|   based on the TLS Certificate File and TLS Key File specified                                |                                                                          |
-|   above.                                                                                      |                                                                          |
-+-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
++-----------------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| Enable the automatic retrieval of certificates from Let’s Encrypt.          | - System Config path: **Environment > Web Server**                              |
+|                                                                             | - ``config.json`` setting: ``ServiceSettings`` > ``UseLetsEncrypt`` > ``false`` |
+|                                                                             | - Environment variable: ``MM_SERVICESETTINGS_USELETSENCRYPT``                   |
+| - **true**: The certificate will be retrieved when a client                 |                                                                                 |
+|   attempts to connect from a new domain. This will work with                |                                                                                 |
+|   multiple domains.                                                         |                                                                                 |
+| - **false**: **(Default)** Manual certificate specification                 |                                                                                 |
+|   based on the TLS Certificate File and TLS Key File specified              |                                                                                 |
+|   above.                                                                    |                                                                                 |
++-----------------------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 See the :doc:`setting up TLS for Mattermost </deployment-guide/server/setup-tls>` for details on setting up Let's Encrypt.
 
@@ -224,12 +224,12 @@ See the :doc:`setting up TLS for Mattermost </deployment-guide/server/setup-tls>
 Let's Encrypt certificate cache file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+--------------------------------------------------------+------------------------------------------------------------------------------------+
-| The path to the file where certificates and other data | - System Config path: **Environment > Web Server**                                 |
-| about the Let’s Encrypt service will be stored.        | - ``config.json`` setting: ``".ServiceSettings.LetsEncryptCertificateCacheFile",`` |
-|                                                        | - Environment variable: ``MM_SERVICESETTINGS_LETSENCRYPTCERTIFICATECACHEFILE``     |
-| File path input.                                       |                                                                                    |
-+--------------------------------------------------------+------------------------------------------------------------------------------------+
++--------------------------------------------------------+--------------------------------------------------------------------------------------+
+| The path to the file where certificates and other data | - System Config path: **Environment > Web Server**                                   |
+| about the Let’s Encrypt service will be stored.        | - ``config.json`` setting: ``ServiceSettings`` > ``LetsEncryptCertificateCacheFile`` |
+|                                                        | - Environment variable: ``MM_SERVICESETTINGS_LETSENCRYPTCERTIFICATECACHEFILE``       |
+| File path input.                                       |                                                                                      |
++--------------------------------------------------------+--------------------------------------------------------------------------------------+
 
 .. config:setting:: read-timeout
   :displayname: Read timeout (Web Server)
@@ -241,12 +241,12 @@ Let's Encrypt certificate cache file
 Read timeout
 ~~~~~~~~~~~~
 
-+---------------------------------------------------------+---------------------------------------------------------------------+
-| Maximum time allowed from when the connection is        | - System Config path: **Environment > Web Server**                  |
-| accepted to when the request body is fully read.        | - ``config.json`` setting: ``".ServiceSettings.ReadTimeout: 300",`` |
-|                                                         | - Environment variable: ``MM_SERVICESETTINGS_READTIMEOUT``          |
-| Numerical input in seconds. Default is **300** seconds. |                                                                     |
-+---------------------------------------------------------+---------------------------------------------------------------------+
++---------------------------------------------------------+----------------------------------------------------------------------------+
+| Maximum time allowed from when the connection is        | - System Config path: **Environment > Web Server**                         |
+| accepted to when the request body is fully read.        | - ``config.json`` setting: ``ServiceSettings`` > ``ReadTimeout`` > ``300`` |
+|                                                         | - Environment variable: ``MM_SERVICESETTINGS_READTIMEOUT``                 |
+| Numerical input in seconds. Default is **300** seconds. |                                                                            |
++---------------------------------------------------------+----------------------------------------------------------------------------+
 
 .. config:setting:: write-timeout
   :displayname: Write timeout (Web Server)
@@ -263,7 +263,7 @@ Write timeout
 
 +----------------------------------------------------------+-----------------------------------------------------------------------------+
 | - If using HTTP (insecure), this is the maximum time     | - System Config path: **Environment > Web Server**                          |
-|   allowed from the end of reading the request headers    | - ``config.json`` setting: ``".ServiceSettings.WriteTimeout: 300",``        |
+|   allowed from the end of reading the request headers    | - ``config.json`` setting: ``ServiceSettings`` > ``WriteTimeout`` > ``300`` |
 |   until the response is written.                         | - Environment variable: ``MM_SERVICESETTINGS_WRITETIMEOUT``                 |
 | - If using HTTPS, it's the total time from when the      |                                                                             |
 |   connection is accepted until the response is written.  |                                                                             |
@@ -281,13 +281,13 @@ Write timeout
 Idle timeout
 ~~~~~~~~~~~~
 
-+---------------------------------------------------------+---------------------------------------------------------------------+
-| Set an explicit idle timeout in the HTTP server.        | - System Config path: **Environment > Web Server**                  |
-| This is the maximum time allowed before an idle         | - ``config.json`` setting: ``".ServiceSettings.IdleTimeout: 300",`` |
-| connection is disconnected.                             | - Environment variable: ``MM_SERVICESETTINGS_IDLETIMEOUT``          |
-|                                                         |                                                                     |
-| Numerical input in seconds. Default is **300** seconds. |                                                                     |
-+---------------------------------------------------------+---------------------------------------------------------------------+
++---------------------------------------------------------+----------------------------------------------------------------------------+
+| Set an explicit idle timeout in the HTTP server.        | - System Config path: **Environment > Web Server**                         |
+| This is the maximum time allowed before an idle         | - ``config.json`` setting: ``ServiceSettings`` > ``IdleTimeout`` > ``300`` |
+| connection is disconnected.                             | - Environment variable: ``MM_SERVICESETTINGS_IDLETIMEOUT``                 |
+|                                                         |                                                                            |
+| Numerical input in seconds. Default is **300** seconds. |                                                                            |
++---------------------------------------------------------+----------------------------------------------------------------------------+
 
 .. config:setting:: webserver-mode
   :displayname: Webserver mode (Web Server)
@@ -302,19 +302,19 @@ Idle timeout
 Webserver mode
 ~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------------+------------------------------------------------------------------------+
-| We recommend gzip to improve performance unless your                | - System Config path: **Environment > Web Server**                     |
-| environment has specific restrictions, such as a web proxy that     | - ``config.json`` setting: ``".ServiceSettings.WebserverMode: gzip",`` |
-| distributes gzip files poorly.                                      | - Environment variable: ``MM_SERVICESETTINGS_WEBSERVERMODE``           |
-|                                                                     |                                                                        |
-| - **gzip**: **(Default)** The Mattermost server will serve static   |                                                                        |
-|   files compressed with gzip to improve performance.                |                                                                        |
-|   gzip compression applies to the HTML, CSS, Javascript, and other  |                                                                        |
-|   static content files that make up the Mattermost web client.      |                                                                        |
-| - **Uncompressed**: The Mattermost server will serve static         |                                                                        |
-|   files uncompressed.                                               |                                                                        |
-| - **Disabled**: The Mattermost server will not serve static files.  |                                                                        |
-+---------------------------------------------------------------------+------------------------------------------------------------------------+
++---------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| We recommend gzip to improve performance unless your                | - System Config path: **Environment > Web Server**                              |
+| environment has specific restrictions, such as a web proxy that     | - ``config.json`` setting: ``ServiceSettings`` > ``WebserverMode`` > ``"gzip"`` |
+| distributes gzip files poorly.                                      | - Environment variable: ``MM_SERVICESETTINGS_WEBSERVERMODE``                    |
+|                                                                     |                                                                                 |
+| - **gzip**: **(Default)** The Mattermost server will serve static   |                                                                                 |
+|   files compressed with gzip to improve performance.                |                                                                                 |
+|   gzip compression applies to the HTML, CSS, Javascript, and other  |                                                                                 |
+|   static content files that make up the Mattermost web client.      |                                                                                 |
+| - **Uncompressed**: The Mattermost server will serve static         |                                                                                 |
+|   files uncompressed.                                               |                                                                                 |
+| - **Disabled**: The Mattermost server will not serve static files.  |                                                                                 |
++---------------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 .. config:setting:: enable-insecure-outgoing-connections
   :displayname: Enable insecure outgoing connections (Web Server)
@@ -328,17 +328,17 @@ Webserver mode
 Enable insecure outgoing connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
-| Configure Mattermost to allow insecure outgoing connections.  | - System Config path: **Environment > Web Server**                                          |
-|                                                               | - ``config.json`` setting: ``".ServiceSettings.EnableInsecureOutgoingConnections: false",`` |
-| - **true**: Outgoing HTTPS requests, including S3 clients,    | - Environment variable: ``MM_SERVICESETTINGS_ENABLEINSECUREOUTGOINGCONNECTIONS``            |
-|   can accept unverified, self-signed certificates.            |                                                                                             |
-|   For example, outgoing webhooks to a server with a           |                                                                                             |
-|   self-signed TLS certificate, using any domain, will be      |                                                                                             |
-|   allowed, and will skip TLS verification.                    |                                                                                             |
-| - **false**: **(Default)** Only secure HTTPS requests are     |                                                                                             |
-|   allowed.                                                    |                                                                                             |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
++---------------------------------------------------------------+----------------------------------------------------------------------------------------------------+
+| Configure Mattermost to allow insecure outgoing connections.  | - System Config path: **Environment > Web Server**                                                 |
+|                                                               | - ``config.json`` setting: ``ServiceSettings`` > ``EnableInsecureOutgoingConnections`` > ``false`` |
+| - **true**: Outgoing HTTPS requests, including S3 clients,    | - Environment variable: ``MM_SERVICESETTINGS_ENABLEINSECUREOUTGOINGCONNECTIONS``                   |
+|   can accept unverified, self-signed certificates.            |                                                                                                    |
+|   For example, outgoing webhooks to a server with a           |                                                                                                    |
+|   self-signed TLS certificate, using any domain, will be      |                                                                                                    |
+|   allowed, and will skip TLS verification.                    |                                                                                                    |
+| - **false**: **(Default)** Only secure HTTPS requests are     |                                                                                                    |
+|   allowed.                                                    |                                                                                                    |
++---------------------------------------------------------------+----------------------------------------------------------------------------------------------------+
 
 .. warning::
 
@@ -354,20 +354,20 @@ Enable insecure outgoing connections
 Managed resource paths
 ~~~~~~~~~~~~~~~~~~~~~~
 
-+--------------------------------------------------------+-------------------------------------------------------------------------+
-| A comma-separated list of paths within the Mattermost  | - System Config path: **Environment > Web Server**                      |
-| domain that are managed by a third party service       | - ``config.json`` setting: ``".ServiceSettings.ManagedResourcePaths",`` |
-| instead of Mattermost itself.                          | - Environment variable: ``MM_SERVICESETTINGS_MANAGEDRESOURCEPATHS``     |
-|                                                        |                                                                         |
-| Links to these paths will be opened in a new           |                                                                         |
-| tab/window by Mattermost apps.                         |                                                                         |
-|                                                        |                                                                         |
-| For example, if Mattermost is running on               |                                                                         |
-| ``https://mymattermost.com``, setting this to          |                                                                         |
-| conference will cause links such as                    |                                                                         |
-| ``https://mymattermost.com/conference`` to open in a   |                                                                         |
-| new window.                                            |                                                                         |
-+--------------------------------------------------------+-------------------------------------------------------------------------+
++--------------------------------------------------------+---------------------------------------------------------------------------+
+| A comma-separated list of paths within the Mattermost  | - System Config path: **Environment > Web Server**                        |
+| domain that are managed by a third party service       | - ``config.json`` setting: ``ServiceSettings`` > ``ManagedResourcePaths`` |
+| instead of Mattermost itself.                          | - Environment variable: ``MM_SERVICESETTINGS_MANAGEDRESOURCEPATHS``       |
+|                                                        |                                                                           |
+| Links to these paths will be opened in a new           |                                                                           |
+| tab/window by Mattermost apps.                         |                                                                           |
+|                                                        |                                                                           |
+| For example, if Mattermost is running on               |                                                                           |
+| ``https://mymattermost.com``, setting this to          |                                                                           |
+| conference will cause links such as                    |                                                                           |
+| ``https://mymattermost.com/conference`` to open in a   |                                                                           |
+| new window.                                            |                                                                           |
++--------------------------------------------------------+---------------------------------------------------------------------------+
 
 .. note::
 
@@ -416,12 +416,12 @@ Purge all caches
 Websocket URL
 ~~~~~~~~~~~~~
 
-+--------------------------------------------------------+---------------------------------------------------------------------+
-| You can configure the server to instruct clients       | - System Config path: N/A                                           |
-| on where they should try to connect websockets to.     | - ``config.json`` setting: ``".ServiceSettings.WebsocketURL: "",``  |
-|                                                        | - Environment variable: ``MM_SERVICESETTINGS_WEBSOCKETURL``         |
-| String input.                                          |                                                                     |
-+--------------------------------------------------------+---------------------------------------------------------------------+
++--------------------------------------------------------+-----------------------------------------------------------------------------+
+| You can configure the server to instruct clients       | - System Config path: N/A                                                   |
+| on where they should try to connect websockets to.     | - ``config.json`` setting: ``ServiceSettings`` > ``WebsocketURL`` > ``""``  |
+|                                                        | - Environment variable: ``MM_SERVICESETTINGS_WEBSOCKETURL``                 |
+| String input.                                          |                                                                             |
++--------------------------------------------------------+-----------------------------------------------------------------------------+
 
 .. note::
 
@@ -440,15 +440,15 @@ License file location
 .. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-+--------------------------------------------------------+----------------------------------------------------------------------------+
-| The path and filename of the license file on disk.     | - System Config path: N/A                                                  |
-| On startup, if Mattermost can't find a valid license   | - ``config.json`` setting: ``".ServiceSettings.LicenseFileLocation: "",``  |
-| in the database from a previous upload, it looks in    | - Environment variable: ``MM_SERVICESETTINGS_LICENSEFILELOCATION``         |
-| this path for the license file.                        |                                                                            |
-|                                                        |                                                                            |
-| String input. Can be an absolute path or a path        |                                                                            |
-| relative to the ``mattermost`` directory.              |                                                                            |
-+--------------------------------------------------------+----------------------------------------------------------------------------+
++--------------------------------------------------------+------------------------------------------------------------------------------------+
+| The path and filename of the license file on disk.     | - System Config path: N/A                                                          |
+| On startup, if Mattermost can't find a valid license   | - ``config.json`` setting: ``ServiceSettings`` > ``LicenseFileLocation`` > ``""``  |
+| in the database from a previous upload, it looks in    | - Environment variable: ``MM_SERVICESETTINGS_LICENSEFILELOCATION``                 |
+| this path for the license file.                        |                                                                                    |
+|                                                        |                                                                                    |
+| String input. Can be an absolute path or a path        |                                                                                    |
+| relative to the ``mattermost`` directory.              |                                                                                    |
++--------------------------------------------------------+------------------------------------------------------------------------------------+
 
 .. config:setting:: tls-minimum-version
   :displayname: TLS minimum version (Web Server)
@@ -460,11 +460,11 @@ License file location
 TLS minimum version
 ~~~~~~~~~~~~~~~~~~~
 
-+--------------------------------------------------------+---------------------------------------------------------------------+
-| The minimum TLS version used by the Mattermost server. | - System Config path: N/A                                           |
-|                                                        | - ``config.json`` setting: ``".ServiceSettings.TLSMinVer: 1.2",``   |
-| String input. Default is **1.2**.                      | - Environment variable: ``MM_SERVICESETTINGS_TLSMINVER``            |
-+--------------------------------------------------------+---------------------------------------------------------------------+
++--------------------------------------------------------+----------------------------------------------------------------------------+
+| The minimum TLS version used by the Mattermost server. | - System Config path: N/A                                                  |
+|                                                        | - ``config.json`` setting: ``ServiceSettings`` > ``TLSMinVer`` > ``1.2``   |
+| String input. Default is **1.2**.                      | - Environment variable: ``MM_SERVICESETTINGS_TLSMINVER``                   |
++--------------------------------------------------------+----------------------------------------------------------------------------+
 
 .. note::
 
@@ -480,14 +480,14 @@ TLS minimum version
 Trusted proxy IP header
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-+--------------------------------------------------------+------------------------------------------------------------------------------+
-| Specified headers that will be checked, one by one,    | - System Config path: N/A                                                    |
-| for IP addresses (order is important).                 | - ``config.json`` setting: ``".ServiceSettings.TrustedProxyIPHeader: []",``  |
-| All other headers are ignored.                         | - Environment variable: ``MM_SERVICESETTINGS_TRUSTEDPROXYIPHEADER``          |
-|                                                        |                                                                              |
-| String array input consisting of header names,         |                                                                              |
-| such as ``["X-Forwarded-For", "X-Real-Ip"]``.          |                                                                              |
-+--------------------------------------------------------+------------------------------------------------------------------------------+
++--------------------------------------------------------+-------------------------------------------------------------------------------------+
+| Specified headers that will be checked, one by one,    | - System Config path: N/A                                                           |
+| for IP addresses (order is important).                 | - ``config.json`` setting: ``ServiceSettings`` > ``TrustedProxyIPHeader`` > ``[]``  |
+| All other headers are ignored.                         | - Environment variable: ``MM_SERVICESETTINGS_TRUSTEDPROXYIPHEADER``                 |
+|                                                        |                                                                                     |
+| String array input consisting of header names,         |                                                                                     |
+| such as ``["X-Forwarded-For", "X-Real-Ip"]``.          |                                                                                     |
++--------------------------------------------------------+-------------------------------------------------------------------------------------+
 
 .. note::
 
@@ -507,14 +507,14 @@ Trusted proxy IP header
 Enable Strict Transport Security (HSTS)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+--------------------------------------------------------+-------------------------------------------------------------------------------+
-| - **true**: Adds the Strict Transport Security (HSTS)  | - System Config path: N/A                                                     |
-|   header to all responses, forcing the browser to      | - ``config.json`` setting: ``".ServiceSettings.TLSStrictTransport: false",``  |
-|   request all resources via HTTPS.                     | - Environment variable: ``MM_SERVICESETTINGS_TLSSTRICTTRANSPORT``             |
-| - **false**: **(Default)** No restrictions on TLS      |                                                                               |
-|   transport. Strict Transport Security (HSTS) header   |                                                                               |
-|   isn't added to responses.                            |                                                                               |
-+--------------------------------------------------------+-------------------------------------------------------------------------------+
++--------------------------------------------------------+--------------------------------------------------------------------------------------+
+| - **true**: Adds the Strict Transport Security (HSTS)  | - System Config path: N/A                                                            |
+|   header to all responses, forcing the browser to      | - ``config.json`` setting: ``ServiceSettings`` > ``TLSStrictTransport`` > ``false``  |
+|   request all resources via HTTPS.                     | - Environment variable: ``MM_SERVICESETTINGS_TLSSTRICTTRANSPORT``                    |
+| - **false**: **(Default)** No restrictions on TLS      |                                                                                      |
+|   transport. Strict Transport Security (HSTS) header   |                                                                                      |
+|   isn't added to responses.                            |                                                                                      |
++--------------------------------------------------------+--------------------------------------------------------------------------------------+
 
 See the `Strict-Transport-Security <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security>`__ documentation for details.
 
@@ -528,14 +528,14 @@ See the `Strict-Transport-Security <https://developer.mozilla.org/en-US/docs/Web
 Secure TLS transport expiry
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+--------------------------------------------------------+----------------------------------------------------------------------------------------+
-| The time, in seconds, that the browser remembers a     | - System Config path: N/A                                                              |
-| site is only to be accessed using HTTPS. After this    | - ``config.json`` setting: ``".ServiceSettings.TLSStrictTransportMaxAge: 63072000",``  |
-| period, a site can't be accessed using HTTP unless     | - Environment variable: ``MM_SERVICESETTINGS_TLSSTRICTTRANSPORTMAXAGE``                |
-| ``TLSStrictTransport`` is set to ``true``.             |                                                                                        |
-|                                                        |                                                                                        |
-| Numerical input. Default is **63072000** (2 years).    |                                                                                        |
-+--------------------------------------------------------+----------------------------------------------------------------------------------------+
++--------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+| The time, in seconds, that the browser remembers a     | - System Config path: N/A                                                                     |
+| site is only to be accessed using HTTPS. After this    | - ``config.json`` setting: ``ServiceSettings`` > ``TLSStrictTransportMaxAge`` > ``63072000``  |
+| period, a site can't be accessed using HTTP unless     | - Environment variable: ``MM_SERVICESETTINGS_TLSSTRICTTRANSPORTMAXAGE``                       |
+| ``TLSStrictTransport`` is set to ``true``.             |                                                                                               |
+|                                                        |                                                                                               |
+| Numerical input. Default is **63072000** (2 years).    |                                                                                               |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------------+
 
 See the `Strict-Transport-Security <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security>`__ documentation for details.
 
@@ -549,17 +549,17 @@ See the `Strict-Transport-Security <https://developer.mozilla.org/en-US/docs/Web
 TLS cipher overwrites
 ~~~~~~~~~~~~~~~~~~~~~
 
-+--------------------------------------------------------+-----------------------------------------------------------------------------+
-| Set TLS ciphers overwrites to meet requirements from   | - System Config path: N/A                                                   |
-| legacy clients which don't support modern ciphers,     | - ``config.json`` setting: ``".ServiceSettings.TLSOverwriteCiphers: []",``  |
-| or to limit the types of accepted ciphers.             | - Environment variable: ``MM_SERVICESETTINGS_TLSOVERWRITECIPHERS``          |
-|                                                        |                                                                             |
-| If none specified, the Mattermost server assumes a     |                                                                             |
-| set of currently considered secure ciphers, and allows |                                                                             |
-| overwrites in the edge case.                           |                                                                             |
-|                                                        |                                                                             |
-| String array input.                                    |                                                                             |
-+--------------------------------------------------------+-----------------------------------------------------------------------------+
++--------------------------------------------------------+------------------------------------------------------------------------------------+
+| Set TLS ciphers overwrites to meet requirements from   | - System Config path: N/A                                                          |
+| legacy clients which don't support modern ciphers,     | - ``config.json`` setting: ``ServiceSettings`` > ``TLSOverwriteCiphers`` > ``[]``  |
+| or to limit the types of accepted ciphers.             | - Environment variable: ``MM_SERVICESETTINGS_TLSOVERWRITECIPHERS``                 |
+|                                                        |                                                                                    |
+| If none specified, the Mattermost server assumes a     |                                                                                    |
+| set of currently considered secure ciphers, and allows |                                                                                    |
+| overwrites in the edge case.                           |                                                                                    |
+|                                                        |                                                                                    |
+| String array input.                                    |                                                                                    |
++--------------------------------------------------------+------------------------------------------------------------------------------------+
 
 .. note::
 
@@ -576,17 +576,17 @@ TLS cipher overwrites
 Goroutine health threshold
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+--------------------------------------------------------+----------------------------------------------------------------------------------+
-| Set a threshold on the number of goroutines when the   | - System Config path: N/A                                                        |
-| Mattermost system is considered to be in a healthy     | - ``config.json`` setting: ``".ServiceSettings.GoroutineHealthThreshold: -1",``  |
-| state.                                                 | - Environment variable: ``MM_SERVICESETTINGS_GOROUTINEHEALTHTHRESHOLD``          |
-|                                                        |                                                                                  |
-| When goroutines exceed this limit, a warning is        |                                                                                  |
-| returned in the server logs.                           |                                                                                  |
-|                                                        |                                                                                  |
-| Numeric input. Default is **-1** which turns off       |                                                                                  |
-| checking for the threshold.                            |                                                                                  |
-+--------------------------------------------------------+----------------------------------------------------------------------------------+
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| Set a threshold on the number of goroutines when the   | - System Config path: N/A                                                               |
+| Mattermost system is considered to be in a healthy     | - ``config.json`` setting: ``ServiceSettings`` > ``GoroutineHealthThreshold`` > ``-1``  |
+| state.                                                 | - Environment variable: ``MM_SERVICESETTINGS_GOROUTINEHEALTHTHRESHOLD``                 |
+|                                                        |                                                                                         |
+| When goroutines exceed this limit, a warning is        |                                                                                         |
+| returned in the server logs.                           |                                                                                         |
+|                                                        |                                                                                         |
+| Numeric input. Default is **-1** which turns off       |                                                                                         |
+| checking for the threshold.                            |                                                                                         |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
 
 .. config:setting:: allow-cookies-for-subdomains
   :displayname: Allow cookies for subdomains (Web Server)
@@ -600,12 +600,12 @@ Goroutine health threshold
 Allow cookies for subdomains
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+--------------------------------------------------------+-------------------------------------------------------------------------------------+
-| - **true**: **(Default)** Allows cookies for           | - System Config path: N/A                                                           |
-|   subdomains by setting the domain parameter on        | - ``config.json`` setting: ``".ServiceSettings.AllowCookiesForSubdomains: true",``  |
-|   Mattermost cookies.                                  | - Environment variable: ``MM_SERVICESETTINGS_ALLOWCOOKIESFORSUBDOMAINS``            |
-| - **false**: Cookies not allowed for subdomains.       |                                                                                     |
-+--------------------------------------------------------+-------------------------------------------------------------------------------------+
++--------------------------------------------------------+--------------------------------------------------------------------------------------------+
+| - **true**: **(Default)** Allows cookies for           | - System Config path: N/A                                                                  |
+|   subdomains by setting the domain parameter on        | - ``config.json`` setting: ``ServiceSettings`` > ``AllowCookiesForSubdomains`` > ``true``  |
+|   Mattermost cookies.                                  | - Environment variable: ``MM_SERVICESETTINGS_ALLOWCOOKIESFORSUBDOMAINS``                   |
+| - **false**: Cookies aren't allowed for subdomains.    |                                                                                            |
++--------------------------------------------------------+--------------------------------------------------------------------------------------------+
 
 .. config:setting:: cluster-log-timeout
   :displayname: Cluster log timeout (Web Server)
@@ -620,14 +620,14 @@ Cluster log timeout
 .. include:: ../../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-+--------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| Define the frequency, in milliseconds, of cluster      | - System Config path: N/A                                                               |
-| request time logging for performance monitoring.       | - ``config.json`` setting: ``".ServiceSettings.ClusterLogTimeoutMilliseconds: 2000",``  |
-|                                                        | - Environment variable: ``MM_SERVICESETTINGS_CLUSTERLOGTIMEOUTMILLISECONDS``            |
-|                                                        |                                                                                         |
-| Numerical input. Default is **2000** milliseconds      |                                                                                         |
-| (2 seconds).                                           |                                                                                         |
-+--------------------------------------------------------+-----------------------------------------------------------------------------------------+
++--------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| Define the frequency, in milliseconds, of cluster      | - System Config path: N/A                                                                      |
+| request time logging for performance monitoring.       | - ``config.json`` setting: ``ServiceSettings`` > ``ClusterLogTimeoutMilliseconds`` > ``2000``  |
+|                                                        | - Environment variable: ``MM_SERVICESETTINGS_CLUSTERLOGTIMEOUTMILLISECONDS``                   |
+|                                                        |                                                                                                |
+| Numerical input. Default is **2000** milliseconds      |                                                                                                |
+| (2 seconds).                                           |                                                                                                |
++--------------------------------------------------------+------------------------------------------------------------------------------------------------+
 
 See the :doc:`performance monitoring </administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring>` documentation for details.
 
@@ -641,15 +641,15 @@ See the :doc:`performance monitoring </administration-guide/scale/deploy-prometh
 Maximum payload size
 ~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------+-------------------------------------------------------------------------------------+
-| The maximum payload size in bytes for all APIs except     | - System Config path: N/A                                                           |
-| APIs that receive a file as an input.                     | - ``config.json`` setting: ``".ServiceSettings.MaximumPayloadSizeBytes: 300000",``  |
-|                                                           | - Environment variable: ``MM_SERVICESETTINGS_MAXIMUMPAYLOADSIZEBYTES``              |
-| For example, the upload attachment API or the API to      |                                                                                     |
-| upload a custom emoji.                                    |                                                                                     |
-|                                                           |                                                                                     |
-| Numerical value. Default is **300000** (300 kB).          |                                                                                     |
-+-----------------------------------------------------------+-------------------------------------------------------------------------------------+
++-----------------------------------------------------------+--------------------------------------------------------------------------------------------+
+| The maximum payload size in bytes for all APIs except     | - System Config path: N/A                                                                  |
+| APIs that receive a file as an input.                     | - ``config.json`` setting: ``ServiceSettings`` > ``MaximumPayloadSizeBytes`` > ``300000``  |
+|                                                           | - Environment variable: ``MM_SERVICESETTINGS_MAXIMUMPAYLOADSIZEBYTES``                     |
+| For example, the upload attachment API or the API to      |                                                                                            |
+| upload a custom emoji.                                    |                                                                                            |
+|                                                           |                                                                                            |
+| Numerical value. Default is **300000** (300 kB).          |                                                                                            |
++-----------------------------------------------------------+--------------------------------------------------------------------------------------------+
 
 ----
 
@@ -676,7 +676,7 @@ Driver name
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The type of database. Can be either:                          | - System Config path: N/A                                                |
-|                                                               | - ``config.json`` setting: ``".SqlSettings.DriverName",``                |
+|                                                               | - ``config.json`` setting: ``SqlSettings`` > ``DriverName``              |
 | - **mysql**: **(Default)** Enables driver to MySQL database.  | - Environment variable: ``MM_SQLSETTINGS_DRIVERNAME``                    |
 | - **postgres**: Enables driver to PostgreSQL database.        |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -693,7 +693,7 @@ Data source
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The connection string to the master database.                 | - System Config path: N/A                                                |
-|                                                               | - ``config.json`` setting: ``".SqlSettings.DataSource",``                |
+|                                                               | - ``config.json`` setting: ``SqlSettings`` > ``DataSource``              |
 | String input.                                                 | - Environment variable: ``MM_SQLSETTINGS_DATASOURCE``                    |
 |                                                               |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -770,24 +770,24 @@ See `Connection-Encryption Option Summary <https://dev.mysql.com/doc/refman/8.0/
 
 Your database admin must configure the functionality according to supported values described below.
 
-+----------------------------------------+-----------------+---------------------------------------------------------------------------+
-| Short description of the ``tls``       | Value           | Example of a data source name                                             |
-| parameter                              |                 |                                                                           |
-+========================================+=================+===========================================================================+
-| Don't use TLS / SSL encryption against | ``false``       | ``"<mmuser:password>@tcp(hostname or IP:3306)/mattermost_test             |
-| MySQL server.                          |                 | ?charset=utf8mb4,utf8&writeTimeout=30s&tls=false"``                       |
-+----------------------------------------+-----------------+---------------------------------------------------------------------------+
-| Use TLS / SSL encryption against       | ``true``        | ``"<mmuser:password>@tcp(hostname or IP:3306)/mattermost_test             |
-| MySQL server.                          |                 | ?charset=utf8mb4,utf8&writeTimeout=30s&tls=true"``                        |
-+----------------------------------------+-----------------+---------------------------------------------------------------------------+
-| Use TLS / SSL encryption with a self-  | ``skip-verify`` | ``"<mmuser:password>@tcp(hostname or IP:3306)/mattermost_test             |
-| signed certificate against             |                 | ?charset=utf8mb4,utf8&writeTimeout=30s&tls=skip-verify"``                 |
-| MySQL server.                          |                 |                                                                           |
-+----------------------------------------+-----------------+---------------------------------------------------------------------------+
-| Use TLS / SSL encryption if server     | ``preferred``   | ``"<mmuser:password>@tcp(hostname or IP:3306)/mattermost_test             |
-| advertises a possible fallback;        |                 | ?charset=utf8mb4,utf8&writeTimeout=30s&tls=preferred"``                   |
-| unencrypted if it's not advertised.    |                 |                                                                           |
-+----------------------------------------+-----------------+---------------------------------------------------------------------------+ 
++----------------------------------------+-----------------+-----------------------------------------------------------------+
+| Short description of the ``tls``       | Value           | Example of a data source name                                   |
+| parameter                              |                 |                                                                 |
++========================================+=================+=================================================================+
+| Don't use TLS / SSL encryption against | ``false``       | ``"<mmuser:password>@tcp(hostname or IP:3306)/mattermost_test   |
+| MySQL server.                          |                 | ?charset=utf8mb4,utf8&writeTimeout=30s&tls=false"``             |
++----------------------------------------+-----------------+-----------------------------------------------------------------+
+| Use TLS / SSL encryption against       | ``true``        | ``"<mmuser:password>@tcp(hostname or IP:3306)/mattermost_test   |
+| MySQL server.                          |                 | ?charset=utf8mb4,utf8&writeTimeout=30s&tls=true"``              |
++----------------------------------------+-----------------+-----------------------------------------------------------------+
+| Use TLS / SSL encryption with a self-  | ``skip-verify`` | ``"<mmuser:password>@tcp(hostname or IP:3306)/mattermost_test   |
+| signed certificate against             |                 | ?charset=utf8mb4,utf8&writeTimeout=30s&tls=skip-verify"``       |
+| MySQL server.                          |                 |                                                                 |
++----------------------------------------+-----------------+-----------------------------------------------------------------+
+| Use TLS / SSL encryption if server     | ``preferred``   | ``"<mmuser:password>@tcp(hostname or IP:3306)/mattermost_test   |
+| advertises a possible fallback;        |                 | ?charset=utf8mb4,utf8&writeTimeout=30s&tls=preferred"``         |
+| unencrypted if it's not advertised.    |                 |                                                                 |
++----------------------------------------+-----------------+-----------------------------------------------------------------+
 
 AWS High Availablity RDS cluster deployments
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -801,18 +801,35 @@ Mattermost doesn't need to manage this. See the :ref:`high availablility databas
   :systemconsole: Environment > Database
   :configjson: .SqlSettings.MaxOpenConns
   :environment: MM_SQLSETTINGS_MAXOPENCONNS
-  :description: The maximum number of idle connections held open to the database. Default is **300**.
+  :description: The maximum number of open connections to the database. Default is **100**.
 
 Maximum open connections
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-+--------------------------------------------------------+------------------------------------------------------------------+
-| The maximum number of open connections to the          | - System Config path: **Environment > Database**                 |
-| database.                                              | - ``config.json`` setting: ``".SqlSettings.MaxOpenConns": 300,`` |
-|                                                        | - Environment variable: ``MM_SQLSETTINGS_MAXOPENCONNS``          |
-| Numerical input. Default is **300** for self-hosted    |                                                                  |
-| deployments, and **100** for Cloud deployments.        |                                                                  |
-+--------------------------------------------------------+------------------------------------------------------------------+
++--------------------------------------------------------+-------------------------------------------------------------------------+
+| The maximum number of open connections to the          | - System Config path: **Environment > Database**                        |
+| database.                                              | - ``config.json`` setting: ``SqlSettings`` > ``MaxOpenConns`` > ``100`` |
+|                                                        | - Environment variable: ``MM_SQLSETTINGS_MAXOPENCONNS``                 |
+| Numerical input. Default is **100**.                   |                                                                         |
++--------------------------------------------------------+-------------------------------------------------------------------------+
+
+.. config:setting:: maximum-idle-connections
+  :displayname: Maximum idle connections (Database)
+  :systemconsole: Environment > Database
+  :configjson: .SqlSettings.MaxIdleConns
+  :environment: MM_SQLSETTINGS_MAXIDLECONNS
+  :description: The maximum number of idle connections held open to the database. Default is **50**.
+
+Maximum idle connections
+~~~~~~~~~~~~~~~~~~~~~~~~
+
++--------------------------------------------------------+-------------------------------------------------------------------------+
+| The maximum number of idle connections held open to    | - System Config path: **Environment > Database**                        |
+| the database.                                          | - ``config.json`` setting: ``SqlSettings`` > ``MaxIdleConns`` > ``50``  |
+|                                                        | - Environment variable: ``MM_SQLSETTINGS_MAXIDLECONNS``                 |
+| Numerical input. Default is **50**.                    |                                                                         |
+| A 2:1 ratio with MaxOpenConns is recommended.          |                                                                         |
++--------------------------------------------------------+-------------------------------------------------------------------------+
 
 .. config:setting:: query-timeout
   :displayname: Query timeout (Database)
@@ -824,13 +841,13 @@ Maximum open connections
 Query timeout
 ~~~~~~~~~~~~~
 
-+--------------------------------------------------------+------------------------------------------------------------------+
-| The amount of time to wait, in seconds, for a response | - System Config path: **Environment > Database**                 |
-| from the database after opening a connection and       | - ``config.json`` setting: ``".SqlSettings.QueryTimeout: 30",``  |
-| sending the query.                                     | - Environment variable: ``MM_SQLSETTINGS_QUERYTIMEOUT``          |
-|                                                        |                                                                  |
-| Numerical input in seconds. Default is **30** seconds. |                                                                  |
-+--------------------------------------------------------+------------------------------------------------------------------+
++--------------------------------------------------------+-------------------------------------------------------------------------+
+| The amount of time to wait, in seconds, for a response | - System Config path: **Environment > Database**                        |
+| from the database after opening a connection and       | - ``config.json`` setting: ``SqlSettings`` > ``QueryTimeout`` > ``30``  |
+| sending the query.                                     | - Environment variable: ``MM_SQLSETTINGS_QUERYTIMEOUT``                 |
+|                                                        |                                                                         |
+| Numerical input in seconds. Default is **30** seconds. |                                                                         |
++--------------------------------------------------------+-------------------------------------------------------------------------+
 
 .. config:setting:: maximum-connection-lifetime
   :displayname: Maximum connection lifetime (Database)
@@ -842,15 +859,15 @@ Query timeout
 Maximum connection lifetime
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+--------------------------------------------------------+-------------------------------------------------------------------------------------+
-| Maximum lifetime for a connection to the database,     | - System Config path: **Environment > Database**                                    |
-| in milliseconds. Use this setting to configure the     | - ``config.json`` setting: ``".SqlSettings.ConnMaxLifetimeMilliseconds: 3600000",`` |
-| maximum amount of time a connection to the database    | - Environment variable: ``MM_SQLSETTINGS_CONNMAXLIFETIMEMILLISECONDS``              |
-| may be reused                                          |                                                                                     |
-|                                                        |                                                                                     |
-| Numerical input in milliseconds. Default is            |                                                                                     |
-| **3600000** milliseconds (1 hour).                     |                                                                                     |
-+--------------------------------------------------------+-------------------------------------------------------------------------------------+
++--------------------------------------------------------+--------------------------------------------------------------------------------------------+
+| Maximum lifetime for a connection to the database,     | - System Config path: **Environment > Database**                                           |
+| in milliseconds. Use this setting to configure the     | - ``config.json`` setting: ``SqlSettings`` > ``ConnMaxLifetimeMilliseconds`` > ``3600000`` |
+| maximum amount of time a connection to the database    | - Environment variable: ``MM_SQLSETTINGS_CONNMAXLIFETIMEMILLISECONDS``                     |
+| may be reused                                          |                                                                                            |
+|                                                        |                                                                                            |
+| Numerical input in milliseconds. Default is            |                                                                                            |
+| **3600000** milliseconds (1 hour).                     |                                                                                            |
++--------------------------------------------------------+--------------------------------------------------------------------------------------------+
 
 .. config:setting:: maximum-connection-idle-timeout
   :displayname: Maximum connection idle timeout (Database)
@@ -862,13 +879,13 @@ Maximum connection lifetime
 Maximum connection idle timeout
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+--------------------------------------------------------+-------------------------------------------------------------------------------------+
-| Maximum time a database connection can remain idle,    | - System Config path: **Environment > Database**                                    |
-| in milliseconds.                                       | - ``config.json`` setting: ``".SqlSettings.ConnMaxIdleTimeMilliseconds: 300000",``  |
-|                                                        | - Environment variable: ``MM_SQLSETTINGS_CONNMAXIDLETIMEMILLISECONDS``              |
-| Numerical input in milliseconds. Default is **300000** |                                                                                     |
-| (5 minutes).                                           |                                                                                     |
-+--------------------------------------------------------+-------------------------------------------------------------------------------------+
++--------------------------------------------------------+--------------------------------------------------------------------------------------------+
+| Maximum time a database connection can remain idle,    | - System Config path: **Environment > Database**                                           |
+| in milliseconds.                                       | - ``config.json`` setting: ``SqlSettings`` > ``ConnMaxIdleTimeMilliseconds`` > ``300000``  |
+|                                                        | - Environment variable: ``MM_SQLSETTINGS_CONNMAXIDLETIMEMILLISECONDS``                     |
+| Numerical input in milliseconds. Default is **300000** |                                                                                            |
+| (5 minutes).                                           |                                                                                            |
++--------------------------------------------------------+--------------------------------------------------------------------------------------------+
 
 .. config:setting:: minimum-hashtag-length
   :displayname: Minimum hashtag length (Database)
@@ -880,11 +897,11 @@ Maximum connection idle timeout
 Minimum hashtag length
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-+----------------------------------------------------------------------+-------------------------------------------------------------------------+
-| Minimum number of characters in a hashtag.                           | - System Config path: **Environment > Database**                        |
-| This value must be greater than or equal to **2**.                   | - ``config.json`` setting: ``".SqlSettings.MinimumHashtagLength: 3",``  |
-|                                                                      | - Environment variable: ``MM_SQLSETTINGS_MINIMUMHASHTAGLENGTH``         |
-+----------------------------------------------------------------------+-------------------------------------------------------------------------+
++----------------------------------------------------------------------+--------------------------------------------------------------------------------+
+| Minimum number of characters in a hashtag.                           | - System Config path: **Environment > Database**                               |
+| This value must be greater than or equal to **2**.                   | - ``config.json`` setting: ``SqlSettings`` > ``MinimumHashtagLength`` > ``3``  |
+|                                                                      | - Environment variable: ``MM_SQLSETTINGS_MINIMUMHASHTAGLENGTH``                |
++----------------------------------------------------------------------+--------------------------------------------------------------------------------+
 
 .. note::
 
@@ -895,6 +912,7 @@ Minimum hashtag length
   :systemconsole: Environment > Database
   :configjson: .SqlSettings.Trace
   :environment: MM_SQLSETTINGS_TRACE
+  :description: Log executed SQL statements for development purposes. Default is **false**.
 
   - **true**: Executing SQL statements are written to the log.
   - **false**: **(Default)** SQL statements aren't written to the log.
@@ -904,7 +922,7 @@ SQL statement logging
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Executed SQL statements can be written to the log for         | - System Config path: **Environment > Database**                         |
-| development.                                                  | - ``config.json`` setting: ``".SqlSettings.Trace: false",``              |
+| development.                                                  | - ``config.json`` setting: ``SqlSettings`` > ``Trace`` > ``false``       |
 |                                                               | - Environment variable: ``MM_SQLSETTINGS_TRACE``                         |
 | - **true**: Executing SQL statements are written to the log.  |                                                                          |
 | - **false**: **(Default)** SQL statements aren't written      |                                                                          |
@@ -943,21 +961,21 @@ Recycle database connections
 Disable database search
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-+------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-| When `enterprise-scale search </administration-guide/scale/enterprise-search>`,    | - System Config path: **Environment > Database**                             |
-| database search can be disabled from performing searches.                          | - ``config.json`` setting: ``".SqlSettings.DisableDatabaseSearch: false",``  |
-|                                                                                    | - Environment variable: ``MM_SQLSETTINGS_DISABLEDATABASESEARCH``             |
-| - **true**: Disables the use of the database to perform                            |                                                                              |
-|   searches. If another search engine isn't configured,                             |                                                                              |
-|   setting this value to ``true`` will result in empty search                       |                                                                              |
-|   results.                                                                         |                                                                              |
-| - **false**: **(Default)** Database search isn't disabled.                         |                                                                              |
-+------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| When `enterprise-scale search </administration-guide/scale/enterprise-search>`,    | - System Config path: **Environment > Database**                                    |
+| database search can be disabled from performing searches.                          | - ``config.json`` setting: ``SqlSettings`` > ``DisableDatabaseSearch`` > ``false``  |
+|                                                                                    | - Environment variable: ``MM_SQLSETTINGS_DISABLEDATABASESEARCH``                    |
+| - **true**: Disables the use of the database to perform                            |                                                                                     |
+|   searches. If another search engine isn't configured,                             |                                                                                     |
+|   setting this value to ``true`` will result in empty search                       |                                                                                     |
+|   results.                                                                         |                                                                                     |
+| - **false**: **(Default)** Database search isn't disabled.                         |                                                                                     |
++------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
 Search behavior in Mattermost depends on which search engines are enabled:
 
 - When :doc:`Elasticsearch </administration-guide/scale/elasticsearch-setup>` or :doc:`AWS OpenSearch </administration-guide/scale/opensearch-setup>` is enabled, Mattermost will try to use it first.
-- If Elasticsearch fails or is disabled, Mattermost will attempt to use :doc:`Bleve </administration-guide/configure/bleve-search>`, if enabled. If this occurs, you will see the warning ``Encountered error on SearchPostsInTeamForUser``.
+- If Elasticsearch fails or is disabled, Mattermost will attempt to use Bleve search, if enabled. Bleve search has been deprecated in Mattermost v11.0. We recommend using Elasticsearch or OpenSearch for enterprise search capabilities.
 - If these fail or are disabled, Mattermost tries to search the database directly, if this is enabled.
 - If all of the above methods fail or are disabled, the search results will be empty.
 
@@ -970,13 +988,13 @@ Search behavior in Mattermost depends on which search engines are enabled:
   - **Offloading Search to Indexing Services**: Disabling database search often means that searches are offloaded to specialized indexing services like Elasticsearch, which are optimized for search operations. These services can provide faster and more efficient search capabilities compared to traditional database searches.
   - **Lower Resource Consumption**: Running search queries directly against the database can be resource-intensive (using CPU and memory). With database search disabled, these resources can be allocated to other critical functions, improving overall system performance.
   - **Enhanced Scalability**: As the number of users and data volume grow, database search can become less efficient. Specialized search services are designed to scale more effectively, enhancing overall system scalability and performance.
-  - However, the ability to perform database searches in Mattermost is a critical feature for many users, particularly when other search engines aren't enabled. Disabling this feature will result in users seeing an error if they attempt to use the Mattermost Search box. It’s important to balance performance improvements with the needs of your organization and users.
+
+  However, the ability to perform database searches in Mattermost is a critical feature for many users, particularly when other search engines aren't enabled. Disabling this feature will result in users seeing an error if they attempt to use the Mattermost Search box. It’s important to balance performance improvements with the needs of your organization and users.
 
 Applied schema migrations
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A list of all migrations that have been applied to the data store based on the version information available in the ``db_migrations`` table. Select **About Mattermost** from the product menu to review the current database schema version applied to your deployment.
-
+A list of all migrations that have been applied to the data store based on the version information available in the ``db_migrations`` table. Select **About Mattermost** from the Product |product-list| menu to review the current database schema version applied to your deployment.
 
 .. config:setting:: active-search-backend
   :displayname: Active search backend (Database)
@@ -985,7 +1003,7 @@ A list of all migrations that have been applied to the data store based on the v
   :environment: N/A
   :description: Read-only display of the currently active backend used for search.
 
-Active Search Backend
+Active search backend
 ~~~~~~~~~~~~~~~~~~~~~
 
 Read-only display of the currently active backend used for search. Values can include ``none``, ``database``, ``elasticsearch``, or ``bleve``.
@@ -1003,11 +1021,11 @@ Read replicas
 .. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-+--------------------------------------------------------+-----------------------------------------------------------------------+
-| Specifies the connection strings for the read replica  | - System Config path: N/A                                             |
-| databases.                                             | - ``config.json`` setting: ``".SqlSettings.DataSourceReplicas": []``  |
-|                                                        | - Environment variable: ``MM_SQLSETTINGS_DATASOURCEREPLICAS``         |
-+--------------------------------------------------------+-----------------------------------------------------------------------+
++--------------------------------------------------------+-------------------------------------------------------------------------------+
+| Specifies the connection strings for the read replica  | - System Config path: N/A                                                     |
+| databases.                                             | - ``config.json`` setting: ``SqlSettings`` > ``DataSourceReplicas`` > ``[]``  |
+|                                                        | - Environment variable: ``MM_SQLSETTINGS_DATASOURCEREPLICAS``                 |
++--------------------------------------------------------+-------------------------------------------------------------------------------+
 
 .. note::
 
@@ -1034,12 +1052,12 @@ Search replicas
 .. include:: ../../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-+--------------------------------------------------------+-----------------------------------------------------------------------------+
-| Specifies the connection strings for the search        | - System Config path: N/A                                                   |
-| replica databases. A search replica is similar to a    | - ``config.json`` setting: ``".SqlSettings.DataSourceSearchReplicas": []``  |
-| read replica, but is used only for handling search     | - Environment variable: ``MM_SQLSETTINGS_DATASOURCESEARCHREPLICAS``         |
-| queries.                                               |                                                                             |
-+--------------------------------------------------------+-----------------------------------------------------------------------------+
++--------------------------------------------------------+-------------------------------------------------------------------------------------+
+| Specifies the connection strings for the search        | - System Config path: N/A                                                           |
+| replica databases. A search replica is similar to a    | - ``config.json`` setting: ``SqlSettings`` > ``DataSourceSearchReplicas`` > ``[]``  |
+| read replica, but is used only for handling search     | - Environment variable: ``MM_SQLSETTINGS_DATASOURCESEARCHREPLICAS``                 |
+| queries.                                               |                                                                                     |
++--------------------------------------------------------+-------------------------------------------------------------------------------------+
 
 .. note::
 
@@ -1065,7 +1083,7 @@ Replica lag settings
 
 +--------------------------------------------------------+----------------------------------------------------------------------------------+
 | String array input specifies a connection string and   | - System Config path: N/A                                                        |
-| user-defined SQL queries on the database to measure    | - ``config.json`` setting: ``".SqlSettings.ReplicaLagSettings": []``             |
+| user-defined SQL queries on the database to measure    | - ``config.json`` setting: ``SqlSettings`` > ``ReplicaLagSettings`` > ``[]``     |
 | replica lag for a single replica instance.             | - Environment variable: ``MM_SQLSETTINGS_REPLICALAGSETTINGS``                    |
 |                                                        |                                                                                  |
 | These settings monitor absolute lag based on binlog    |                                                                                  |
@@ -1203,13 +1221,13 @@ Replica monitor interval (seconds)
 .. include:: ../../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-+--------------------------------------------------------+---------------------------------------------------------------------------------+
-| Specifies how frequently unhealthy replicas will be    | - System Config path: N/A                                                       |
-| monitored for liveness check. Mattermost will          | - ``config.json`` setting: ``".SqlSettings.ReplicaMonitorIntervalSeconds": 5``  |
-| dynamically choose a replica if it's alive.            | - Environment variable: ``MM_SQLSETTINGS_REPLICAMONITORINTERVALSECONDS``        |
-|                                                        |                                                                                 |
-| Numerical input. Default is 5 seconds.                 |                                                                                 |
-+--------------------------------------------------------+---------------------------------------------------------------------------------+
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| Specifies how frequently unhealthy replicas will be    | - System Config path: N/A                                                               |
+| monitored for liveness check. Mattermost will          | - ``config.json`` setting: ``SqlSettings`` > ``ReplicaMonitorIntervalSeconds`` > ``5``  |
+| dynamically choose a replica if it's alive.            | - Environment variable: ``MM_SQLSETTINGS_REPLICAMONITORINTERVALSECONDS``                |
+|                                                        |                                                                                         |
+| Numerical input. Default is 5 seconds.                 |                                                                                         |
++--------------------------------------------------------+-----------------------------------------------------------------------------------------+
 
 ----
 
@@ -1238,13 +1256,13 @@ You can configure Mattermost enterprise search by going to **System Console > En
 Enable Elasticsearch indexing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+--------------------------------------------------------------------------------+
-| Configure Mattermost to index new posts automatically.        | - System Config path: **Environment > Elasticsearch**                          |
-|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.EnableIndexing: false",`` |
-| - **true**: Indexing of new messages occurs automatically.    | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_ENABLEINDEXING``            |
-| - **false**: **(Default)** Indexing of new messages is        |                                                                                |
-|   disabled, and new messages aren't indexed.                  |                                                                                |
-+---------------------------------------------------------------+--------------------------------------------------------------------------------+
++---------------------------------------------------------------+---------------------------------------------------------------------------------------+
+| Configure Mattermost to index new posts automatically.        | - System Config path: **Environment > Elasticsearch**                                 |
+|                                                               | - ``config.json`` setting: ``ElasticsearchSettings`` > ``EnableIndexing`` > ``false`` |
+| - **true**: Indexing of new messages occurs automatically.    | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_ENABLEINDEXING``                   |
+| - **false**: **(Default)** Indexing of new messages is        |                                                                                       |
+|   disabled, and new messages aren't indexed.                  |                                                                                       |
++---------------------------------------------------------------+---------------------------------------------------------------------------------------+
 
 .. note::
 
@@ -1262,12 +1280,12 @@ Backend type
 
 Both :doc:`Elasticsearch </administration-guide/scale/elasticsearch-setup>` and :doc:`AWS OpenSearch </administration-guide/scale/opensearch-setup>` provide enterprise-scale deployments with optimized search performance and prevents performance degradation and timeouts. Learn more about :doc:`enterprise search </administration-guide/scale/enterprise-search>` in our product documentation.
 
-+----------------------------------------------------+-----------------------------------------------------------------------------------+
-| The type of search backend.                        | - System Config path: **Environment > Elasticsearch**                             |
-|                                                    | - ``config.json`` setting: ``".Elasticsearchsettings.Backend: elasticsearch",``   |
-| - ``elasticsearch`` - (**Default**)                | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_BACKEND``                      |
-| - ``opensearch`` - Required for AWS OpenSearch.    |                                                                                   |
-+----------------------------------------------------+-----------------------------------------------------------------------------------+
++----------------------------------------------------+--------------------------------------------------------------------------------------------+
+| The type of search backend.                        | - System Config path: **Environment > Elasticsearch**                                      |
+|                                                    | - ``config.json`` setting: ``ElasticsearchSettings`` > ``Backend`` > ``"elasticsearch"``   |
+| - ``elasticsearch`` - (**Default**)                | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_BACKEND``                               |
+| - ``opensearch`` - Required for AWS OpenSearch.    |                                                                                            |
++----------------------------------------------------+--------------------------------------------------------------------------------------------+
 
 Learn more about :ref:`enterprise search version support <administration-guide/scale/enterprise-search:supported paths>`.
 
@@ -1283,7 +1301,7 @@ Server connection address
 
 +----------------------------------------------------+--------------------------------------------------------------------------+
 | The address of the Elasticsearch or AWS            | - System Config path: **Environment > Elasticsearch**                    |
-| OpenSearch server.                                 | - ``config.json`` setting: ``".Elasticsearchsettings.ConnectionUrl",``   |
+| OpenSearch server.                                 | - ``config.json`` setting: ``ElasticsearchSettings`` > ``ConnectionUrl`` |
 |                                                    | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CONNECTIONURL``       |
 +----------------------------------------------------+--------------------------------------------------------------------------+
 
@@ -1299,7 +1317,7 @@ CA path
 
 +----------------------------------------------------+--------------------------------------------------------------------------+
 | Optional path to the Custom Certificate Authority  | - System Config path: **Environment > Elasticsearch**                    |
-| certificates for the Elasticsearch or AWS          | - ``config.json`` setting: ``".Elasticsearchsettings.CA",``              |
+| certificates for the Elasticsearch or AWS          | - ``config.json`` setting: ``ElasticsearchSettings`` > ``CA``            |
 | OpenSearch server.                                 | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CA``                  |
 +----------------------------------------------------+--------------------------------------------------------------------------+
 
@@ -1322,7 +1340,7 @@ Available from Mattermost v7.8. Can be used in conjunction with basic auth crede
 
 +----------------------------------------------------+--------------------------------------------------------------------------+
 | Optional client certificate for the connection to  | - System Config path: **Environment > Elasticsearch**                    |
-| the Elasticsearch or AWS OpenSearch server in      | - ``config.json`` setting: ``".Elasticsearchsettings.ClientCert",``      |
+| the Elasticsearch or AWS OpenSearch server in      | - ``config.json`` setting: ``ElasticsearchSettings`` > ``ClientCert``    |
 | the PEM format.                                    | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CLIENTCERT``          |
 +----------------------------------------------------+--------------------------------------------------------------------------+
 
@@ -1340,7 +1358,7 @@ Available from Mattermost v7.8. Can be used in conjunction with basic auth crede
 
 +----------------------------------------------------+--------------------------------------------------------------------------+
 | Optional key for the client certificate in the PEM | - System Config path: **Environment > Elasticsearch**                    |
-| format.                                            | - ``config.json`` setting: ``".Elasticsearchsettings.ClientKey",``       |
+| format.                                            | - ``config.json`` setting: ``ElasticsearchSettings`` > ``ClientKey``     |
 |                                                    | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CLIENTKEY``           |
 +----------------------------------------------------+--------------------------------------------------------------------------+
 
@@ -1357,14 +1375,14 @@ Available from Mattermost v7.8. Can be used in conjunction with basic auth crede
 Skip TLS verification
 ~~~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| The certificate step for TLS connections can be skipped.      | - System Config path: **Environment > Elasticsearch**                               |
-|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.SkipTLSVerification: false",`` |
-| - **true**: Skips the certificate verification step for       | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_SKIPTLSVERIFICATION``            |
-|   TLS connections.                                            |                                                                                     |
-| - **false**: **(Default)** Mattermost requires                |                                                                                     |
-|   certificate verification.                                   |                                                                                     |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------------+
++---------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+| The certificate step for TLS connections can be skipped.      | - System Config path: **Environment > Elasticsearch**                                      |
+|                                                               | - ``config.json`` setting: ``ElasticsearchSettings`` > ``SkipTLSVerification`` > ``false`` |
+| - **true**: Skips the certificate verification step for       | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_SKIPTLSVERIFICATION``                   |
+|   TLS connections.                                            |                                                                                            |
+| - **false**: **(Default)** Mattermost requires                |                                                                                            |
+|   certificate verification.                                   |                                                                                            |
++---------------------------------------------------------------+--------------------------------------------------------------------------------------------+
 
 .. config:setting:: server-username
   :displayname: Server username (Elasticsearch)
@@ -1378,7 +1396,7 @@ Server username
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | (Optional) The username to authenticate to the                | - System Config path: **Environment > Elasticsearch**                    |
-| Elasticsearch or AWS OpenSearch server.                       | - ``config.json`` setting: ``".Elasticsearchsettings.UserName",``        |
+| Elasticsearch or AWS OpenSearch server.                       | - ``config.json`` setting: ``ElasticsearchSettings`` > ``UserName``      |
 |                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_USERNAME``            |
 | String input.                                                 |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -1395,7 +1413,7 @@ Server password
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | (Optional) The password to authenticate to the                | - System Config path: **Environment > Elasticsearch**                    |
-| Elasticsearch or AWS OpenSearch server.                       | - ``config.json`` setting: ``".Elasticsearchsettings.Password",``        |
+| Elasticsearch or AWS OpenSearch server.                       | - ``config.json`` setting: ``ElasticsearchSettings`` > ``Password``      |
 |                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_PASSWORD``            |
 | String input.                                                 |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -1413,14 +1431,14 @@ Server password
 Enable cluster sniffing
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-+----------------------------------------------------------------+--------------------------------------------------------------------------+
-| Configure Mattermost to automatically find and connect to      | - System Config path: **Environment > Elasticsearch**                    |
-| all data nodes in a cluster.                                   | - ``config.json`` setting: ``".Elasticsearchsettings.Sniff: false",``    |
-|                                                                | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_SNIFF``               |
-| - **true**: Sniffing finds and connects to all data nodes      |                                                                          |
-|   in your cluster automatically.                               |                                                                          |
-| - **false**: **(Default)** Cluster sniffing is disabled.       |                                                                          |
-+----------------------------------------------------------------+--------------------------------------------------------------------------+
++----------------------------------------------------------------+---------------------------------------------------------------------------------+
+| Configure Mattermost to automatically find and connect to      | - System Config path: **Environment > Elasticsearch**                           |
+| all data nodes in a cluster.                                   | - ``config.json`` setting: ``ElasticsearchSettings`` > ``Sniff`` > ``false``    |
+|                                                                | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_SNIFF``                      |
+| - **true**: Sniffing finds and connects to all data nodes      |                                                                                 |
+|   in your cluster automatically.                               |                                                                                 |
+| - **false**: **(Default)** Cluster sniffing is disabled.       |                                                                                 |
++----------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 Select the **Test Connection** button in the System Console to validate the connection between Mattermost and the Elasticsearch or AWS OpenSearch server.
 
@@ -1493,13 +1511,13 @@ Select the **Purge Indexes** button in the System Console to purge the index. Af
 Indexes to skip while purging
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+---------------------------------------------------------------------------+
-| Specify index names to ignore while purging indexes.          | - System Config path: **Environment > Elasticsearch**                     |
-| Separate multiple index names with commas.                    | - ``config.json`` setting: ``ElasticsearchSettings.IgnoredPurgeIndexes``  |
-|                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_IGNOREDPURGEINDEXES``  |
-| Use an asterisk (*) to match a sequence of index name         |                                                                           |
-| characters.                                                   |                                                                           |
-+---------------------------------------------------------------+---------------------------------------------------------------------------+
++---------------------------------------------------------------+---------------------------------------------------------------------------------+
+| Specify index names to ignore while purging indexes.          | - System Config path: **Environment > Elasticsearch**                           |
+| Separate multiple index names with commas.                    | - ``config.json`` setting: ``ElasticsearchSettings`` > ``IgnoredPurgeIndexes``  |
+|                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_IGNOREDPURGEINDEXES``        |
+| Use an asterisk (*) to match a sequence of index name         |                                                                                 |
+| characters.                                                   |                                                                                 |
++---------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 .. config:setting:: enable-elasticsearch-for-search-queries
   :displayname: Enable Elasticsearch for search queries (Elasticsearch)
@@ -1514,17 +1532,17 @@ Indexes to skip while purging
 Enable Elasticsearch for search queries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+---------------------------------------------------------------------------------+
-| Configure Mattermost to use Elasticsearch or AWS OpenSearch   | - System Config path: **Environment > Elasticsearch**                           |
-| for all search queries using the latest index.                | - ``config.json`` setting: ``".Elasticsearchsettings.EnableSearching: false",`` |
-|                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_ENABLESEARCHING``            |
-| - **true**: Elasticsearch or AWS OpenSearch is used for all   |                                                                                 |
-|   search queries using the latest index. Search results may   |                                                                                 |
-|   be incomplete until a bulk index of the existing message    |                                                                                 |
-|   database is completed.                                      |                                                                                 |
-| - **false**: **(Default)** Database search is used for        |                                                                                 |
-|   search queries.                                             |                                                                                 |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------+
++---------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| Configure Mattermost to use Elasticsearch or AWS OpenSearch   | - System Config path: **Environment > Elasticsearch**                                  |
+| for all search queries using the latest index.                | - ``config.json`` setting: ``ElasticsearchSettings`` > ``EnableSearching`` > ``false`` |
+|                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_ENABLESEARCHING``                   |
+| - **true**: Elasticsearch or AWS OpenSearch is used for all   |                                                                                        |
+|   search queries using the latest index. Search results may   |                                                                                        |
+|   be incomplete until a bulk index of the existing message    |                                                                                        |
+|   database is completed.                                      |                                                                                        |
+| - **false**: **(Default)** Database search is used for        |                                                                                        |
+|   search queries.                                             |                                                                                        |
++---------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
 If indexing is disabled and then re-enabled after an index is created, purge and rebuild the index to ensure complete search results.
 
@@ -1541,16 +1559,16 @@ If indexing is disabled and then re-enabled after an index is created, purge and
 Enable Elasticsearch for autocomplete queries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+------------------------------------------------------------------------------------+
-| Configure Mattermost to use Elasticsearch or AWS OpenSearch   | - System Config path: **Environment > Elasticsearch**                              |
-| for all autocompletion queries on users and channels using    | - ``config.json`` setting: ``".Elasticsearchsettings.EnableAutocomplete: false",`` |
-| the latest index.                                             | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_ENABLEAUTOCOMPLETE``            |
-|                                                               |                                                                                    |
-| - **true**: Elasticsearch or AWS OpenSearch will be used for  |                                                                                    |
-|   all autocompletion queries on users and channels using the  |                                                                                    |
-|   latest index.                                               |                                                                                    |
-| - **false**: **(Default)** Database autocomplete is used.     |                                                                                    |
-+---------------------------------------------------------------+------------------------------------------------------------------------------------+
++---------------------------------------------------------------+-------------------------------------------------------------------------------------------+
+| Configure Mattermost to use Elasticsearch or AWS OpenSearch   | - System Config path: **Environment > Elasticsearch**                                     |
+| for all autocompletion queries on users and channels using    | - ``config.json`` setting: ``ElasticsearchSettings`` > ``EnableAutocomplete`` > ``false`` |
+| the latest index.                                             | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_ENABLEAUTOCOMPLETE``                   |
+|                                                               |                                                                                           |
+| - **true**: Elasticsearch or AWS OpenSearch will be used for  |                                                                                           |
+|   all autocompletion queries on users and channels using the  |                                                                                           |
+|   latest index.                                               |                                                                                           |
+| - **false**: **(Default)** Database autocomplete is used.     |                                                                                           |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------------+
 
 Autocompletion results may be incomplete until a bulk index of the existing users and channels database is finished.
 
@@ -1564,11 +1582,11 @@ Autocompletion results may be incomplete until a bulk index of the existing user
 Post index replicas
 ~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+-------------------------------------------------------------------------------+
-| The number of replicas to use for each post index.            | - System Config path: N/A                                                     |
-|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.PostIndexReplicas: 1",`` |
-| Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_POSTINDEXREPLICAS``        |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------+
++---------------------------------------------------------------+--------------------------------------------------------------------------------------+
+| The number of replicas to use for each post index.            | - System Config path: N/A                                                            |
+|                                                               | - ``config.json`` setting: ``ElasticsearchSettings`` > ``PostIndexReplicas`` > ``1`` |
+| Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_POSTINDEXREPLICAS``               |
++---------------------------------------------------------------+--------------------------------------------------------------------------------------+
 
 .. note::
 
@@ -1586,11 +1604,11 @@ Post index replicas
 Post index shards
 ~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+-------------------------------------------------------------------------------+
-| The number of shards to use for each post index.              | - System Config path: N/A                                                     |
-|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.PostIndexShards: 1",``   |
-| Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_POSTINDEXSHARDS``          |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------+
++---------------------------------------------------------------+--------------------------------------------------------------------------------------+
+| The number of shards to use for each post index.              | - System Config path: N/A                                                            |
+|                                                               | - ``config.json`` setting: ``ElasticsearchSettings`` > ``PostIndexShards`` > ``1``   |
+| Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_POSTINDEXSHARDS``                 |
++---------------------------------------------------------------+--------------------------------------------------------------------------------------+
 
 .. note::
 
@@ -1606,11 +1624,11 @@ Post index shards
 Channel index replicas
 ~~~~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+----------------------------------------------------------------------------------+
-| The number of replicas to use for each channel index.         | - System Config path: N/A                                                        |
-|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.ChannelIndexReplicas: 1",`` |
-| Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CHANNELINDEXREPLICAS``        |
-+---------------------------------------------------------------+----------------------------------------------------------------------------------+
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| The number of replicas to use for each channel index.         | - System Config path: N/A                                                               |
+|                                                               | - ``config.json`` setting: ``ElasticsearchSettings`` > ``ChannelIndexReplicas`` > ``1`` |
+| Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CHANNELINDEXREPLICAS``               |
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 
 .. note::
 
@@ -1626,11 +1644,11 @@ Channel index replicas
 Channel index shards
 ~~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+----------------------------------------------------------------------------------+
-| The number of shards to use for each channel index.           | - System Config path: N/A                                                        |
-|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.ChannelIndexShards: 1",``   |
-| Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CHANNELINDEXSHARDS``          |
-+---------------------------------------------------------------+----------------------------------------------------------------------------------+
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| The number of shards to use for each channel index.           | - System Config path: N/A                                                               |
+|                                                               | - ``config.json`` setting: ``ElasticsearchSettings`` > ``ChannelIndexShards`` > ``1``   |
+| Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CHANNELINDEXSHARDS``                 |
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 
 .. config:setting:: user-index-replicas
   :displayname: User index replicas (Elasticsearch)
@@ -1642,11 +1660,11 @@ Channel index shards
 User index replicas
 ~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+-------------------------------------------------------------------------------+
-| The number of replicas to use for each user index.            | - System Config path: N/A                                                     |
-|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.UserIndexReplicas: 1",`` |
-| Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_USERINDEXREPLICAS``        |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------+
++---------------------------------------------------------------+--------------------------------------------------------------------------------------+
+| The number of replicas to use for each user index.            | - System Config path: N/A                                                            |
+|                                                               | - ``config.json`` setting: ``ElasticsearchSettings`` > ``UserIndexReplicas`` > ``1`` |
+| Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_USERINDEXREPLICAS``               |
++---------------------------------------------------------------+--------------------------------------------------------------------------------------+
 
 .. note::
 
@@ -1662,11 +1680,11 @@ User index replicas
 User index shards
 ~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+----------------------------------------------------------------------------------+
-| The number of shards to use for each user index.              | - System Config path: N/A                                                        |
-|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.UserIndexShards: 1",``      |
-| Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_USERINDEXSHARDS``             |
-+---------------------------------------------------------------+----------------------------------------------------------------------------------+
++---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| The number of shards to use for each user index.              | - System Config path: N/A                                                           |
+|                                                               | - ``config.json`` setting: ``ElasticsearchSettings`` > ``UserIndexShards`` > ``1``  |
+| Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_USERINDEXSHARDS``                |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
 .. config:setting:: aggregate-search-indexes
   :displayname: Aggregate search indexes (Elasticsearch)
@@ -1678,13 +1696,13 @@ User index shards
 Aggregate search indexes
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| Elasticsearch or AWS OpenSearch indexes older than the age    | - System Config path: N/A                                                              |
-| specified by this setting, in days, will be aggregated during | - ``config.json`` setting: ``".Elasticsearchsettings.AggregatePostsAfterDays: 365",``  |
-| the daily scheduled job.                                      | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_AGGREGATEPOSTSAFTERDAYS``           |
-|                                                               |                                                                                        |
-| Numerical input. Default is **365** days.                     |                                                                                        |
-+---------------------------------------------------------------+----------------------------------------------------------------------------------------+
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+| Elasticsearch or AWS OpenSearch indexes older than the age    | - System Config path: N/A                                                                     |
+| specified by this setting, in days, will be aggregated during | - ``config.json`` setting: ``ElasticsearchSettings`` > ``AggregatePostsAfterDays`` > ``365``  |
+| the daily scheduled job.                                      | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_AGGREGATEPOSTSAFTERDAYS``                  |
+|                                                               |                                                                                               |
+| Numerical input. Default is **365** days.                     |                                                                                               |
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
 
 .. note::
 
@@ -1700,14 +1718,14 @@ Aggregate search indexes
 Post aggregator start time
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
-| The start time of the daily scheduled aggregator job.         | - System Config path: N/A                                                                   |
-|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.PostsAggregatorJobStartTime: 03:00",`` |
-| Must be a 24-hour time stamp in the form ``HH:MM`` based on   | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_POSTSAGGREGATORJOBSTARTTIME``            |
-| the local time of the server.                                 |                                                                                             |
-|                                                               |                                                                                             |
-| Default is **03:00** (3 AM)                                   |                                                                                             |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
++---------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
+| The start time of the daily scheduled aggregator job.         | - System Config path: N/A                                                                            |
+|                                                               | - ``config.json`` setting: ``ElasticsearchSettings`` > ``PostsAggregatorJobStartTime`` > ``"03:00"`` |
+| Must be a 24-hour time stamp in the form ``HH:MM`` based on   | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_POSTSAGGREGATORJOBSTARTTIME``                     |
+| the local time of the server.                                 |                                                                                                      |
+|                                                               |                                                                                                      |
+| Default is **03:00** (3 AM)                                   |                                                                                                      |
++---------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: index-prefix
   :displayname: Index prefix (Elasticsearch)
@@ -1721,7 +1739,7 @@ Index prefix
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The prefix added to the Elasticsearch or AWS OpenSearch       | - System Config path: N/A                                                |
-| index name.                                                   | - ``config.json`` setting: ``".Elasticsearchsettings.IndexPrefix",``     |
+| index name.                                                   | - ``config.json`` setting: ``ElasticsearchSettings`` > ``IndexPrefix``   |
 |                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_INDEXPREFIX``         |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
@@ -1739,17 +1757,17 @@ Index prefix
 Global search prefix
 ~~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+------------------------------------------------------------------------------+
-| Enable global search across multiple Elasticsearch indices    | - System Config path: N/A                                                    |
-| with the same `index prefix <#index-prefix>`__.               | - ``config.json`` setting: ``".Elasticsearchsettings.GlobalSearchPrefix",``  |
-|                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_GLOBALSEARCHPREFIX``      |
-| This is helpful for setups with multiple data centers where   |                                                                              |
-| Elasticsearch instances share data using cross-cluster        |                                                                              |
-| replication. It allows for easier and unified searching       |                                                                              |
-| across distributed indices.                                   |                                                                              |
-|                                                               |                                                                              |
-| Value must be a prefix of ``IndexPrefix``.                    |                                                                              |
-+---------------------------------------------------------------+------------------------------------------------------------------------------+
++---------------------------------------------------------------+-------------------------------------------------------------------------------+
+| Enable global search across multiple Elasticsearch indices    | - System Config path: N/A                                                     |
+| with the same `index prefix <#index-prefix>`__.               | - ``config.json`` setting: ``ElasticsearchSettings`` > ``GlobalSearchPrefix`` |
+|                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_GLOBALSEARCHPREFIX``       |
+| This is helpful for setups with multiple data centers where   |                                                                               |
+| Elasticsearch instances share data using cross-cluster        |                                                                               |
+| replication. It allows for easier and unified searching       |                                                                               |
+| across distributed indices.                                   |                                                                               |
+|                                                               |                                                                               |
+| Value must be a prefix of ``IndexPrefix``.                    |                                                                               |
++---------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 .. config:setting:: live-indexing-batch-size
   :displayname: Live indexing batch size (Elasticsearch)
@@ -1761,18 +1779,18 @@ Global search prefix
 Live indexing batch size
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+-----------------------------------------------------------------------------------+
-| The number of new posts needed before those posts are added   | - System Config path: N/A                                                         |
-| to the Elasticsearch or AWS OpenSearch index. Once added to   | - ``config.json`` setting: ``".Elasticsearchsettings.LiveIndexingBatchSize: 1",`` |
-| the index, the post becomes searchable.                       | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_LIVEINDEXINGBATCHSIZE``        |
-|                                                               |                                                                                   |
-| On servers with more than 1 post per second, we suggest       |                                                                                   |
-| setting this value to the average number of  posts over a     |                                                                                   |
-| 20 second period of time.                                     |                                                                                   |
-|                                                               |                                                                                   |
-| Numerical input. Default is **1**. Every post is indexed      |                                                                                   |
-| synchronously as they are created.                            |                                                                                   |
-+---------------------------------------------------------------+-----------------------------------------------------------------------------------+
++---------------------------------------------------------------+------------------------------------------------------------------------------------------+
+| The number of new posts needed before those posts are added   | - System Config path: N/A                                                                |
+| to the Elasticsearch or AWS OpenSearch index. Once added to   | - ``config.json`` setting: ``ElasticsearchSettings`` > ``LiveIndexingBatchSize`` > ``1`` |
+| the index, the post becomes searchable.                       | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_LIVEINDEXINGBATCHSIZE``               |
+|                                                               |                                                                                          |
+| On servers with more than 1 post per second, we suggest       |                                                                                          |
+| setting this value to the average number of  posts over a     |                                                                                          |
+| 20 second period of time.                                     |                                                                                          |
+|                                                               |                                                                                          |
+| Numerical input. Default is **1**. Every post is indexed      |                                                                                          |
+| synchronously as they are created.                            |                                                                                          |
++---------------------------------------------------------------+------------------------------------------------------------------------------------------+
 
 .. note::
 
@@ -1842,12 +1860,12 @@ During busy periods, this delay will be faster as more traffic is occurring, cau
 Batch size
 ~~~~~~~~~~~
 
-+-------------------------------------------+---------------------------------------------------------------------------+
-| The number of posts for a single batch    | - System Config path: N/A                                                 |
-| during a bulk indexing job.               | - ``config.json`` setting: ``".Elasticsearchsettings.BatchSize :10000",`` |
-|                                           | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_BATCHSIZE``            |
-| Numerical input. Default is **10000**.    |                                                                           |
-+-------------------------------------------+---------------------------------------------------------------------------+
++-------------------------------------------+----------------------------------------------------------------------------------+
+| The number of posts for a single batch    | - System Config path: N/A                                                        |
+| during a bulk indexing job.               | - ``config.json`` setting: ``ElasticsearchSettings`` > ``BatchSize`` > ``10000`` |
+|                                           | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_BATCHSIZE``                   |
+| Numerical input. Default is **10000**.    |                                                                                  |
++-------------------------------------------+----------------------------------------------------------------------------------+
 
 .. config:setting:: request-timeout
   :displayname: Request timeout (Elasticsearch)
@@ -1859,12 +1877,12 @@ Batch size
 Request timeout
 ~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+------------------------------------------------------------------------------------+
-| The timeout, in seconds, for Elasticsearch or AWS OpenSearch  | - System Config path: N/A                                                          |
-| calls.                                                        | - ``config.json`` setting: ``".Elasticsearchsettings.RequestTimeoutSeconds :30",`` |
-|                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_REQUESTTIMEOUTSECONDS``         |
-| Numerical input in seconds. Default is **30** seconds.        |                                                                                    |
-+---------------------------------------------------------------+------------------------------------------------------------------------------------+
++---------------------------------------------------------------+-------------------------------------------------------------------------------------------+
+| The timeout, in seconds, for Elasticsearch or AWS OpenSearch  | - System Config path: N/A                                                                 |
+| calls.                                                        | - ``config.json`` setting: ``ElasticsearchSettings`` > ``RequestTimeoutSeconds`` > ``30`` |
+|                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_REQUESTTIMEOUTSECONDS``                |
+| Numerical input in seconds. Default is **30** seconds.        |                                                                                           |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------------+
 
 .. config:setting:: trace
   :displayname: Trace (Elasticsearch)
@@ -1882,7 +1900,7 @@ Trace
 
 +---------------------------------------------------------------------+--------------------------------------------------------------------------+
 | Options for printing Elasticsearch or AWS OpenSearch trace errors.  | - System Config path: N/A                                                |
-|                                                                     | - ``config.json`` setting: ``".Elasticsearchsettings.Trace",``           |
+|                                                                     | - ``config.json`` setting: ``ElasticsearchSettings`` > ``Trace``         |
 | - **error**: Creates the error trace when initializing              | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_TRACE``               |
 |   the Elasticsearch or AWS OpenSearch client and prints any         |                                                                          |
 |   template creation or search query that returns an error as part   |                                                                          |
@@ -1923,17 +1941,17 @@ Configure file storage settings by going to **System Console > Environment > Fil
 File storage system
 ~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
-| The type of file storage system used.                         | - System Config path: **Environment > File Storage**                     |
-| Can be either Local File System or Amazon S3.                 | - ``config.json`` setting: ``".FileSettings.DriverName:  local”,``       |
-|                                                               | - Environment variable: ``MM_FILESETTINGS_DRIVERNAME``                   |
-| - **local**: **(Default)** Files and images are stored in     |                                                                          |
-|   the specified local file directory.                         |                                                                          |
-| - **amazons3**: Files and images are stored on Amazon S3      |                                                                          |
-|   based on the access key, bucket, and region fields          |                                                                          |
-|   provided. The driver is compatible with MinIO (Beta)        |                                                                          |
-|   and Digital Ocean Spaces.                                   |                                                                          |
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
++---------------------------------------------------------------+-----------------------------------------------------------------------------+
+| The type of file storage system used.                         | - System Config path: **Environment > File Storage**                        |
+| Can be either Local File System or Amazon S3.                 | - ``config.json`` setting: ``FileSettings`` > ``DriverName`` > ``"local"``  |
+|                                                               | - Environment variable: ``MM_FILESETTINGS_DRIVERNAME``                      |
+| - **local**: **(Default)** Files and images are stored in     |                                                                             |
+|   the specified local file directory.                         |                                                                             |
+| - **amazons3**: Files and images are stored on Amazon S3      |                                                                             |
+|   based on the access key, bucket, and region fields          |                                                                             |
+|   provided. The driver is compatible with MinIO (Beta)        |                                                                             |
+|   and Digital Ocean Spaces.                                   |                                                                             |
++---------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 .. config:setting:: local-storage-directory
   :displayname: Local storage directory (File Storage)
@@ -1947,7 +1965,7 @@ Local storage directory
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The local directory to which files are written when the       | - System Config path: **Environment > File Storage**                     |
-| **File storage system** is set to **local**.                  | - ``config.json`` setting: ``".FileSettings.Directory”,``                |
+| **File storage system** is set to **local**.                  | - ``config.json`` setting: ``FileSettings`` > ``Directory``              |
 | Can be any directory writable by the user Mattermost is       | - Environment variable: ``MM_FILESETTINGS_DIRECTORY``                    |
 | running as, and is relative to the directory where            |                                                                          |
 | Mattermost is installed.                                      |                                                                          |
@@ -1967,13 +1985,13 @@ When **File storage system** is set to **amazons3**, this setting has no effect.
 Maximum file size
 ~~~~~~~~~~~~~~~~~
 
-+-------------------------------------------------------------------+--------------------------------------------------------------------------+
-| The maximum file size for message attachments and plugin          | - System Config path: **Environment > File Storage**                     |
-| uploads. This value must be specified in mebibytes in the         | - ``config.json`` setting: ``".FileSettings.MaxFileSize: 104857600",``   |
-| System Console, and in bytes in the ``config.json`` file.         | - Environment variable: ``MM_FILESETTINGS_MAXFILESIZE``                  |
-|                                                                   |                                                                          |
-| The default is ``104857600`` bytes (**100** mebibytes).           |                                                                          |
-+-------------------------------------------------------------------+--------------------------------------------------------------------------+
++-------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| The maximum file size for message attachments and plugin          | - System Config path: **Environment > File Storage**                            |
+| uploads. This value must be specified in mebibytes in the         | - ``config.json`` setting: ``FileSettings`` > ``MaxFileSize`` > ``104857600``   |
+| System Console, and in bytes in the ``config.json`` file.         | - Environment variable: ``MM_FILESETTINGS_MAXFILESIZE``                         |
+|                                                                   |                                                                                 |
+| The default is ``104857600`` bytes (**100** mebibytes).           |                                                                                 |
++-------------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 .. note::
 
@@ -1999,7 +2017,7 @@ Enable document search by content
 
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | Enable users to search the contents of documents attached     | - System Config path: **Environment > File Storage**                                |
-| to messages.                                                  | - ``config.json`` setting: ``".FileSettings.ExtractContent: true",``                |
+| to messages.                                                  | - ``config.json`` setting: ``FileSettings`` > ``ExtractContent`` > ``true``         |
 |                                                               | - Environment variable: ``MM_FILESETTINGS_EXTRACTCONTENT``                          |
 | - **true**: **(Default)** Documents are searchable by         |                                                                                     |
 |   their content.                                              |                                                                                     |
@@ -2037,7 +2055,7 @@ Enable searching content of documents within ZIP files
 
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------+
 | Enables users to search the contents of compressed ZIP files  | - System Config path: **Environment > File Storage**                                   |
-| attached to messages.                                         | - ``config.json`` setting: ``".FileSettings.ArchiveRecursion: false",``                |
+| attached to messages.                                         | - ``config.json`` setting: ``FileSettings`` > ``ArchiveRecursion`` > ``false``         |
 |                                                               | - Environment variable: ``MM_FILESETTINGS_ARCHIVERECURSION``                           |
 | - **true**: Contents of documents within ZIP files are        |                                                                                        |
 |   returned in search results. This may have an impact on      |                                                                                        |
@@ -2065,7 +2083,7 @@ Amazon S3 bucket
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The name of the bucket for your S3-compatible object          | - System Config path: **Environment > File Storage**                     |
-| storage instance.                                             | - ``config.json`` setting: ``".FileSettings.AmazonS3Bucket",``           |
+| storage instance.                                             | - ``config.json`` setting: ``FileSettings`` > ``AmazonS3Bucket``         |
 |                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3BUCKET``               |
 | A string with the S3-compatible bucket name.                  |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -2082,7 +2100,7 @@ Amazon S3 path prefix
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The prefix you selected for your **Amazon S3 bucket** in AWS. | - System Config path: N/A                                                |
-|                                                               | - ``config.json`` setting: ``".FileSettings.AmazonS3PathPrefix",``       |
+|                                                               | - ``config.json`` setting: ``FileSettings`` > ``AmazonS3PathPrefix``     |
 | A string containing the path prefix.                          | - Environment variable: ``MM_FILESETTINGS_AMAZONS3PATHPREFIX``           |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
@@ -2120,7 +2138,7 @@ Amazon S3 access key ID
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | A string with the access key for the S3-compatible storage    | - System Config path: **Environment > File Storage**                     |
-| instance. Your EC2 administrator can supply you with the      | - ``config.json`` setting: ``".FileSettings.AmazonS3AccessKeyId",``      |
+| instance. Your EC2 administrator can supply you with the      | - ``config.json`` setting: ``FileSettings`` > ``AmazonS3AccessKeyId``    |
 | Access Key ID.                                                | - Environment variable: ``MM_FILESETTINGS_AMAZONS3ACCESSKEYID``          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
@@ -2138,12 +2156,12 @@ Amazon S3 access key ID
 Amazon S3 endpoint
 ~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+------------------------------------------------------------------------------------+
-| The hostname of your S3-compatible instance.                  | - System Config path: **Environment > File Storage**                               |
-|                                                               | - ``config.json`` setting: ``".FileSettings.AmazonS3Endpoint: s3.amazonaws.com",`` |
-| A string with the hostname of the S3-compatible storage       | - Environment variable: ``MM_FILESETTINGS_AMAZONS3ENDPOINT``                       |
-| instance. Defaults to **s3.amazonaws.com**.                   |                                                                                    |
-+---------------------------------------------------------------+------------------------------------------------------------------------------------+
++---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| The hostname of your S3-compatible instance.                  | - System Config path: **Environment > File Storage**                                        |
+|                                                               | - ``config.json`` setting: ``FileSettings`` > ``AmazonS3Endpoint`` > ``"s3.amazonaws.com"`` |
+| A string with the hostname of the S3-compatible storage       | - Environment variable: ``MM_FILESETTINGS_AMAZONS3ENDPOINT``                                |
+| instance. Defaults to **s3.amazonaws.com**.                   |                                                                                             |
++---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 
 .. note::
 
@@ -2159,13 +2177,13 @@ Amazon S3 endpoint
 Amazon S3 secret access key
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
-| The secret access key associated with your Amazon S3          | - System Config path: **Environment > File Storage**                     |
-| Access Key ID.                                                | - ``config.json`` setting: ``".FileSettings.AmazonS3SecretAccessKey",``  |
-|                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3SECRETACCESSKEY``      |
-| A string with the secret access key for the S3-compatible     |                                                                          |
-| storage instance.                                             |                                                                          |
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
++---------------------------------------------------------------+----------------------------------------------------------------------------+
+| The secret access key associated with your Amazon S3          | - System Config path: **Environment > File Storage**                       |
+| Access Key ID.                                                | - ``config.json`` setting: ``FileSettings`` > ``AmazonS3SecretAccessKey``  |
+|                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3SECRETACCESSKEY``        |
+| A string with the secret access key for the S3-compatible     |                                                                            |
+| storage instance.                                             |                                                                            |
++---------------------------------------------------------------+----------------------------------------------------------------------------+
 
 .. config:setting:: enable-secure-amazon-s3-connections
   :displayname: Enable secure Amazon S3 connections (File Storage)
@@ -2179,7 +2197,7 @@ Enable secure Amazon S3 connections
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Enable or disable secure Amazon S3 connections.               | - System Config path: **Environment > File Storage**                     |
-|                                                               | - ``config.json`` setting: ``".FileSettings.AmazonS3SSL: true",``        |
+|                                                               | - ``config.json`` setting: ``FileSettings`` > ``AmazonS3SSL`` > ``true`` |
 | - **true**: **(Default)** Enables only secure Amazon          | - Environment variable: ``MM_FILESETTINGS_AMAZONS3SSL``                  |
 |   S3 connections.                                             |                                                                          |
 | - **false**: Allows insecure connections to Amazon S3.        |                                                                          |
@@ -2197,13 +2215,13 @@ Enable secure Amazon S3 connections
 Amazon S3 signature v2
 ~~~~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
-| By default, Mattermost uses Signature v4 to sign API calls    | - System Config path: N/A                                                |
-| to AWS, but under some circumstances, v2 is required.         | - ``config.json`` setting: ``".FileSettings.AmazonS3SignV2: false",``    |
-|                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3SIGNV2``               |
-| - **true**: Use Signature v2 signing process.                 |                                                                          |
-| - **false**: **(Default)** Use Signature v4 signing process.  |                                                                          |
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
++---------------------------------------------------------------+------------------------------------------------------------------------------+
+| By default, Mattermost uses Signature v4 to sign API calls    | - System Config path: N/A                                                    |
+| to AWS, but under some circumstances, v2 is required.         | - ``config.json`` setting: ``FileSettings`` > ``AmazonS3SignV2`` > ``false`` |
+|                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3SIGNV2``                   |
+| - **true**: Use Signature v2 signing process.                 |                                                                              |
+| - **false**: **(Default)** Use Signature v4 signing process.  |                                                                              |
++---------------------------------------------------------------+------------------------------------------------------------------------------+
 
 See the `AWS <https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html>`_ documentation for information about when to use the Signature v2 signing process.
 
@@ -2222,14 +2240,14 @@ Enable server-side encryption for Amazon S3
 .. include:: ../../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
-| Enable server-side encryption for Amazon S3.                  | - System Config path: **Environment > File Storage**                     |
-|                                                               | - ``config.json`` setting: ``".FileSettings.AmazonS3SSE: false",``       |
-| - **true**: Encrypts files in Amazon S3 using server-side     | - Environment variable: ``MM_FILESETTINGS_AMAZONS3SSE``                  |
-|   encryption with Amazon S3-managed keys.                     |                                                                          |
-| - **false**: **(Default)** Doesn’t encrypt files in           |                                                                          |
-|   Amazon S3.                                                  |                                                                          |
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
++---------------------------------------------------------------+-----------------------------------------------------------------------------+
+| Enable server-side encryption for Amazon S3.                  | - System Config path: **Environment > File Storage**                        |
+|                                                               | - ``config.json`` setting: ``FileSettings`` > ``AmazonS3SSE`` > ``false``   |
+| - **true**: Encrypts files in Amazon S3 using server-side     | - Environment variable: ``MM_FILESETTINGS_AMAZONS3SSE``                     |
+|   encryption with Amazon S3-managed keys.                     |                                                                             |
+| - **false**: **(Default)** Doesn’t encrypt files in           |                                                                             |
+|   Amazon S3.                                                  |                                                                             |
++---------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 .. config:setting:: enable-amazon-s3-debugging
   :displayname: Enable Amazon S3 debugging (File Storage)
@@ -2243,16 +2261,16 @@ Enable server-side encryption for Amazon S3
 Enable Amazon S3 debugging
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
-| Enable or disable Amazon S3 debugging to capture additional   | - System Config path: **Environment > File Storage**                     |
-| debugging information in system logs.                         | - ``config.json`` setting: ``".FileSettings.AmazonS3Trace: false",``     |
-|                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3TRACE``                |
-| - **true**: Log additional debugging information is logged    |                                                                          |
-|   to the system logs.                                         |                                                                          |
-| - **false**: **(Default)** No Amazon S3 debugging information |                                                                          |
-|   is included in the system logs. Typically set to **false**  |                                                                          |
-|   in production.                                              |                                                                          |
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
++---------------------------------------------------------------+-----------------------------------------------------------------------------+
+| Enable or disable Amazon S3 debugging to capture additional   | - System Config path: **Environment > File Storage**                        |
+| debugging information in system logs.                         | - ``config.json`` setting: ``FileSettings`` > ``AmazonS3Trace`` > ``false`` |
+|                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3TRACE``                   |
+| - **true**: Log additional debugging information is logged    |                                                                             |
+|   to the system logs.                                         |                                                                             |
+| - **false**: **(Default)** No Amazon S3 debugging information |                                                                             |
+|   is included in the system logs. Typically set to **false**  |                                                                             |
+|   in production.                                              |                                                                             |
++---------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 Select the **Test Connection** button in the System Console to validate the settings and ensure the user can access the server.
 
@@ -2268,13 +2286,13 @@ Amazon S3 storage class
 
 Some Amazon S3-compatible storage solutions require the storage class parameter to be present in upload requests, otherwise they will be rejected. Configure this storage class as the storage class required by your S3-compatible solution.
 
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
-| The storage class to use for uploads to S3-compatible         | - System Config path: **Environment > File Storage**                     |
-| storage solutions.                                            | - ``config.json`` setting: ``.FileSettings.AmazonS3StorageClass: ""``,   |
-|                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3STORAGECLASS``         |
-| String input. Default is an empty string ``""``.              |                                                                          |
-| Select **Test Connection** to test the configured connection. |                                                                          |
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+| The storage class to use for uploads to S3-compatible         | - System Config path: **Environment > File Storage**                               |
+| storage solutions.                                            | - ``config.json`` setting: ``FileSettings`` > ``AmazonS3StorageClass`` > ``""``,   |
+|                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3STORAGECLASS``                   |
+| String input. Default is an empty string ``""``.              |                                                                                    |
+| Select **Test Connection** to test the configured connection. |                                                                                    |
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
 
 .. note::
 
@@ -2290,12 +2308,12 @@ Some Amazon S3-compatible storage solutions require the storage class parameter 
 Export Amazon S3 storage class
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+---------------------------------------------------------------------------------+
-| The storage class to use for exports to S3-compatible         | - System Config path: N/A                                                       |
-| storage solutions.                                            | - ``config.json`` setting: ``.FileSettings.ExportAmazonS3StorageClass: "",``    |
-|                                                               | - Environment variable: ``MM_FILESETTINGS_EXPORTAMAZONS3STORAGECLASS``          |
-| String input. Default is an empty string ``""``.              |                                                                                 | 
-+---------------------------------------------------------------+---------------------------------------------------------------------------------+
++---------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| The storage class to use for exports to S3-compatible         | - System Config path: N/A                                                              |
+| storage solutions.                                            | - ``config.json`` setting: ``FileSettings`` > ``ExportAmazonS3StorageClass`` > ``""``  |
+|                                                               | - Environment variable: ``MM_FILESETTINGS_EXPORTAMAZONS3STORAGECLASS``                 |
+| String input. Default is an empty string ``""``.              |                                                                                        |
++---------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
 .. note::
 
@@ -2311,12 +2329,12 @@ Export Amazon S3 storage class
 Amazon S3 request timeout 
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| The amount of time, in milliseconds, before requests to       | - System Config path: N/A                                                               |
-| Amazon S3 storage time out.                                   | - ``config.json`` setting: ``".FileSettings.AmazonS3RequestTimeoutMilliseconds: 30000`` |
-|                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3REQUESTTIMEOUTMILLISECONDS``          |
-| Default is 30000 (30 seconds).                                |                                                                                         |
-+---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
++---------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| The amount of time, in milliseconds, before requests to       | - System Config path: N/A                                                                        |
+| Amazon S3 storage time out.                                   | - ``config.json`` setting: ``FileSettings`` > ``AmazonS3RequestTimeoutMilliseconds`` > ``30000`` |
+|                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3REQUESTTIMEOUTMILLISECONDS``                   |
+| Default is 30000 (30 seconds).                                |                                                                                                  |
++---------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 
 .. config:setting:: amazon-s3-upload-part-size
   :displayname: Amazon S3 upload part size (File Storage)
@@ -2328,12 +2346,12 @@ Amazon S3 request timeout
 Amazon S3 upload part size
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+---------------------------------------------------------------------------------------+
-| The size, in bytes, of each part in a multi-part              | - System Config path: N/A                                                             |
-| upload to Amazon S3.                                          | - ``config.json`` setting: ``".FileSettings.AmazonS3UploadPartSizeBytes: 5242880``    |
-|                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3UPLOADPARTSIZEBYTES``               |
-| Numeric value. Default is 5242880 (5MB).                      |                                                                                       |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------------+
++---------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| The size, in bytes, of each part in a multi-part              | - System Config path: N/A                                                                      |
+| upload to Amazon S3.                                          | - ``config.json`` setting: ``FileSettings`` > ``AmazonS3UploadPartSizeBytes`` > ``5242880``    |
+|                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3UPLOADPARTSIZEBYTES``                        |
+| Numeric value. Default is 5242880 (5MB).                      |                                                                                                |
++---------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 
 .. note::
 
@@ -2349,12 +2367,12 @@ Amazon S3 upload part size
 Amazon S3 exported upload part size
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+--------------------------------------------------------------------------------------------+
-| The size, in bytes, of each part in a multi-part              | - System Config path: N/A                                                                  |
-| exported to Amazon S3.                                        | - ``config.json`` setting: ``".FileSettings.ExportAmazonS3UploadPartSizeBytes: 104857600`` |
-|                                                               | - Environment variable: ``MM_FILESETTINGS_EXPORTAMAZONS3UPLOADPARTSIZEBYTES``              |
-| Numeric value. Default is 104857600 (100MB).                  |                                                                                            |
-+---------------------------------------------------------------+--------------------------------------------------------------------------------------------+
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
+| The size, in bytes, of each part in a multi-part              | - System Config path: N/A                                                                           |
+| exported to Amazon S3.                                        | - ``config.json`` setting: ``FileSettings`` > ``ExportAmazonS3UploadPartSizeBytes`` > ``104857600`` |
+|                                                               | - Environment variable: ``MM_FILESETTINGS_EXPORTAMAZONS3UPLOADPARTSIZEBYTES``                       |
+| Numeric value. Default is 104857600 (100MB).                  |                                                                                                     |
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
 
 .. note::
 
@@ -2370,12 +2388,12 @@ Amazon S3 exported upload part size
 Amazon S3 request timeout 
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| The amount of time, in milliseconds, before requests to       | - System Config path: N/A                                                               |
-| Amazon S3 storage time out.                                   | - ``config.json`` setting: ``".FileSettings.AmazonS3RequestTimeoutMilliseconds: 30000`` |
-|                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3REQUESTTIMEOUTMILLISECONDS``          |
-| Default is 30000 (30 seconds).                                |                                                                                         |
-+---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
++---------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| The amount of time, in milliseconds, before requests to       | - System Config path: N/A                                                                        |
+| Amazon S3 storage time out.                                   | - ``config.json`` setting: ``FileSettings`` > ``AmazonS3RequestTimeoutMilliseconds`` > ``30000`` |
+|                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3REQUESTTIMEOUTMILLISECONDS``                   |
+| Default is 30000 (30 seconds).                                |                                                                                                  |
++---------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 
 .. config:setting:: initial-font
   :displayname: Initial font (File Storage)
@@ -2387,13 +2405,13 @@ Amazon S3 request timeout
 Initial font
 ~~~~~~~~~~~~
 
-+---------------------------------------------------------------+--------------------------------------------------------------------------------+
-| The font used in auto-generated profile pictures with colored | - System Config path: N/A                                                      |
-| backgrounds and username initials.                            | - ``config.json`` setting: ``".FileSettings.InitialFont: nunito-bold.ttf",``   |
-|                                                               | - Environment variable: ``MM_FILESETTINGS_INITIALFONT``                        |
-| A string with the font file name. Default is                  |                                                                                |
-| **nunito-bold.ttf**.                                          |                                                                                |
-+---------------------------------------------------------------+--------------------------------------------------------------------------------+
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| The font used in auto-generated profile pictures with colored | - System Config path: N/A                                                               |
+| backgrounds and username initials.                            | - ``config.json`` setting: ``FileSettings`` > ``InitialFont`` > ``"nunito-bold.ttf"``   |
+|                                                               | - Environment variable: ``MM_FILESETTINGS_INITIALFONT``                                 |
+| A string with the font file name. Default is                  |                                                                                         |
+| **nunito-bold.ttf**.                                          |                                                                                         |
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 
 ----
 
@@ -2417,14 +2435,14 @@ An image proxy is used by Mattermost apps to prevent them from connecting direct
 Enable image proxy
 ~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+---------------------------------------------------------------------+
-| An image proxy anonymizes Mattermost app connections and      | - System Config path: **Environment > Image Proxy**                 |
-| prevents them from accessing insecure content.                | - ``config.json setting``: ``".ImageProxySettings.Enable": true",`` |
-|                                                               | - Environment variable: ``MM_IMAGEPROXYSETTINGS_ENABLE``            |
-| - **true**: Enables an image proxy for loading                |                                                                     |
-|   external images.                                            |                                                                     |
-| - **false**: **(Default)** Disables the image proxy.          |                                                                     |
-+---------------------------------------------------------------+---------------------------------------------------------------------+
++---------------------------------------------------------------+---------------------------------------------------------------------------+
+| An image proxy anonymizes Mattermost app connections and      | - System Config path: **Environment > Image Proxy**                       |
+| prevents them from accessing insecure content.                | - ``config.json`` setting: ``ImageProxySettings`` > ``Enable`` > ``true`` |
+|                                                               | - Environment variable: ``MM_IMAGEPROXYSETTINGS_ENABLE``                  |
+| - **true**: Enables an image proxy for loading                |                                                                           |
+|   external images.                                            |                                                                           |
+| - **false**: **(Default)** Disables the image proxy.          |                                                                           |
++---------------------------------------------------------------+---------------------------------------------------------------------------+
 
 See the :doc:`image proxy </deployment-guide/server/image-proxy>` documentation to learn more.
 
@@ -2441,13 +2459,13 @@ See the :doc:`image proxy </deployment-guide/server/image-proxy>` documentation 
 Image proxy type
 ~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+-------------------------------------------------------------------------------+
-| The type of image proxy used by Mattermost.                   | - System Config path: **Environment > Image Proxy**                           |
-|                                                               | - ``config.json setting``: ``".ImageProxySettings.ImageProxyType": "local",`` |
-| - **local**: **(Default)** The Mattermost server itself acts  | - Environment variable: ``MM_IMAGEPROXYSETTINGS_IMAGEPROXYTYPE``              |
-|   as the image proxy.                                         |                                                                               |
-| - **atmos/camo**: An external atmos/camo image proxy is used. |                                                                               |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------+
++---------------------------------------------------------------+--------------------------------------------------------------------------------------+
+| The type of image proxy used by Mattermost.                   | - System Config path: **Environment > Image Proxy**                                  |
+|                                                               | - ``config.json`` setting: ``ImageProxySettings`` > ``ImageProxyType`` > ``"local"`` |
+| - **local**: **(Default)** The Mattermost server itself acts  | - Environment variable: ``MM_IMAGEPROXYSETTINGS_IMAGEPROXYTYPE``                     |
+|   as the image proxy.                                         |                                                                                      |
+| - **atmos/camo**: An external atmos/camo image proxy is used. |                                                                                      |
++---------------------------------------------------------------+--------------------------------------------------------------------------------------+
 
 See the :doc:`image proxy </deployment-guide/server/image-proxy>` documentation to learn more.
 
@@ -2461,11 +2479,11 @@ See the :doc:`image proxy </deployment-guide/server/image-proxy>` documentation 
 Remote image proxy URL
 ~~~~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+---------------------------------------------------------------------------+
-| The URL of the atmos/camo proxy. This setting isn't needed    | - System Config path: **Environment > Image Proxy**                       |
-| when using the **local** image proxy.                         | - ``config.json setting``: ``".ImageProxySettings.RemoteImageProxyURL",`` |
-|                                                               | - Environment variable: ``MM_IMAGEPROXYSETTINGS_REMOTEIMAGEPROXYURL``     |
-+---------------------------------------------------------------+---------------------------------------------------------------------------+
++---------------------------------------------------------------+-----------------------------------------------------------------------------+
+| The URL of the atmos/camo proxy. This setting isn't needed    | - System Config path: **Environment > Image Proxy**                         |
+| when using the **local** image proxy.                         | - ``config.json`` setting: ``ImageProxySettings`` > ``RemoteImageProxyURL`` |
+|                                                               | - Environment variable: ``MM_IMAGEPROXYSETTINGS_REMOTEIMAGEPROXYURL``       |
++---------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 .. config:setting:: remote-image-proxy-options
   :displayname: Remote image proxy options (Image Proxy)
@@ -2477,11 +2495,11 @@ Remote image proxy URL
 Remote image proxy options
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+-------------------------------------------------------------------------------+
-| The URL signing key passed to an atmos/camo image proxy.      | - System Config path: **Environment > Image Proxy**                           |
-| This setting isn't needed when using the **local** image      | - ``config.json setting``: ``".ImageProxySettings.RemoteImageProxyOptions",`` |
-| proxy type.                                                   | - Environment variable: ``MM_IMAGEPROXYSETTINGS_REMOTEIMAGEPROXYOPTIONS``     |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------+
++---------------------------------------------------------------+---------------------------------------------------------------------------------+
+| The URL signing key passed to an atmos/camo image proxy.      | - System Config path: **Environment > Image Proxy**                             |
+| This setting isn't needed when using the **local** image      | - ``config.json`` setting: ``ImageProxySettings`` > ``RemoteImageProxyOptions`` |
+| proxy type.                                                   | - Environment variable: ``MM_IMAGEPROXYSETTINGS_REMOTEIMAGEPROXYOPTIONS``       |
++---------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 See the :doc:`image proxy </deployment-guide/server/image-proxy>` documentation to learn more.
 
@@ -2505,11 +2523,11 @@ Configure SMTP email server settings by going to **System Console > Environment 
 SMTP server
 ~~~~~~~~~~~
 
-+-----------------------------------------------------------------+---------------------------------------------------------------+
-| The location of the SMTP email server used for email            | - System Config path: **Environment > SMTP**                  |
-| notifications.                                                  | - ``config.json setting``: ``".EmailSettings.SMTPServer",``   |
-|                                                                 | - Environment variable: ``MM_EMAILSETTINGS_SMTPSERVER``       |
-+-----------------------------------------------------------------+---------------------------------------------------------------+
++-----------------------------------------------------------------+-----------------------------------------------------------------+
+| The location of the SMTP email server used for email            | - System Config path: **Environment > SMTP**                    |
+| notifications.                                                  | - ``config.json`` setting: ``EmailSettings`` > ``SMTPServer``   |
+|                                                                 | - Environment variable: ``MM_EMAILSETTINGS_SMTPSERVER``         |
++-----------------------------------------------------------------+-----------------------------------------------------------------+
 
 .. config:setting:: smtp-server-port
   :displayname: SMTP server port (SMTP)
@@ -2523,7 +2541,7 @@ SMTP server port
 
 +-----------------------------------------------------------------+---------------------------------------------------------------+
 | The port of SMTP email server.                                  | - System Config path: **Environment > SMTP**                  |
-|                                                                 | - ``config.json setting``: ``".EmailSettings.SMTPPort",``     |
+|                                                                 | - ``config.json`` setting: ``EmailSettings`` > ``SMTPPort``   |
 | Numerical input.                                                | - Environment variable: ``MM_EMAILSETTINGS_SMTPPORT``         |
 +-----------------------------------------------------------------+---------------------------------------------------------------+
 
@@ -2539,14 +2557,14 @@ SMTP server port
 Enable SMTP authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+---------------------------------------------------------------------------+
-| Enable or disable SMTP authentication.                          | - System Config path: **Environment > SMTP**                              |
-|                                                                 | - ``config.json setting``: ``".EmailSettings.EnableSMTPAuth": false",``   |
-| - **true**: SMTP username and password are used for             | - Environment variable: ``MM_EMAILSETTINGS_ENABLESMTPAUTH``               |
-|   authenticating to the SMTP server.                            |                                                                           |
-| - **false**: **(Default)** Mattermost doesn’t attempt to        |                                                                           |
-|   authenticate to the SMTP server.                              |                                                                           |
-+-----------------------------------------------------------------+---------------------------------------------------------------------------+
++-----------------------------------------------------------------+---------------------------------------------------------------------------------+
+| Enable or disable SMTP authentication.                          | - System Config path: **Environment > SMTP**                                    |
+|                                                                 | - ``config.json`` setting: ``EmailSettings`` > ``EnableSMTPAuth`` > ``false``   |
+| - **true**: SMTP username and password are used for             | - Environment variable: ``MM_EMAILSETTINGS_ENABLESMTPAUTH``                     |
+|   authenticating to the SMTP server.                            |                                                                                 |
+| - **false**: **(Default)** Mattermost doesn’t attempt to        |                                                                                 |
+|   authenticate to the SMTP server.                              |                                                                                 |
++-----------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 .. config:setting:: smtp-server-username
   :displayname: SMTP server username (SMTP)
@@ -2558,11 +2576,11 @@ Enable SMTP authentication
 SMTP server username
 ~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+---------------------------------------------------------------+
-| The username for authenticating to the SMTP server.             | - System Config path: **Environment > SMTP**                  |
-|                                                                 | - ``config.json setting``: ``".EmailSettings.SMTPUsername",`` |
-| String input.                                                   | - Environment variable: ``MM_EMAILSETTINGS_SMTPUSERNAME``     |
-+-----------------------------------------------------------------+---------------------------------------------------------------+
++-----------------------------------------------------------------+-----------------------------------------------------------------+
+| The username for authenticating to the SMTP server.             | - System Config path: **Environment > SMTP**                    |
+|                                                                 | - ``config.json`` setting: ``EmailSettings`` > ``SMTPUsername`` |
+| String input.                                                   | - Environment variable: ``MM_EMAILSETTINGS_SMTPUSERNAME``       |
++-----------------------------------------------------------------+-----------------------------------------------------------------+
 
 .. config:setting:: smtp-server-password
   :displayname: SMTP server password (SMTP)
@@ -2574,11 +2592,11 @@ SMTP server username
 SMTP server password
 ~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+---------------------------------------------------------------+
-| The password associated with the SMTP username.                 | - System Config path: **Environment > SMTP**                  |
-|                                                                 | - ``config.json setting``: ``".EmailSettings.SMTPPassword",`` |
-| String input.                                                   | - Environment variable: ``MM_EMAILSETTINGS_SMTPPASSWORD``     |
-+-----------------------------------------------------------------+---------------------------------------------------------------+
++-----------------------------------------------------------------+-----------------------------------------------------------------+
+| The password associated with the SMTP username.                 | - System Config path: **Environment > SMTP**                    |
+|                                                                 | - ``config.json`` setting: ``EmailSettings`` > ``SMTPPassword`` |
+| String input.                                                   | - Environment variable: ``MM_EMAILSETTINGS_SMTPPASSWORD``       |
++-----------------------------------------------------------------+-----------------------------------------------------------------+
 
 .. config:setting:: smtp-connection-security
   :displayname: SMTP connection security (SMTP)
@@ -2595,7 +2613,7 @@ SMTP connection security
 
 +-----------------------------------------------------------------+-----------------------------------------------------------------------+
 | Specify connection security for emails sent using SMTP.         | - System Config path: **Environment > SMTP**                          |
-|                                                                 | - ``config.json setting``: ``".EmailSettings.ConnectionSecurity",``   |
+|                                                                 | - ``config.json`` setting: ``EmailSettings`` > ``ConnectionSecurity`` |
 | - **Not specified**: **(Default)** Send email over an           | - Environment variable: ``MM_EMAILSETTINGS_CONNECTIONSECURITY``       |
 |   unsecure connection.                                          |                                                                       |
 | - **TLS**: Communication between Mattermost and your email      |                                                                       |
@@ -2616,14 +2634,14 @@ SMTP connection security
 Skip server certificate verification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-| Configure Mattermost to skip the verification of the email server     | - System Config path: **Environment > SMTP**                                                 |
-| certificate.                                                          | - ``config.json setting``: ``".EmailSettings.SkipServerCertificateVerification": false",``   |
-|                                                                       | - Environment variable: ``MM_EMAILSETTINGS_SKIPSERVERCERTIFICATEVERIFICATION``               |
-| - **true**: Mattermost won't verify the email server certificate.     |                                                                                              |
-| - **false**: **(Default)** Mattermost verifies the email              |                                                                                              |
-|   server certificate.                                                 |                                                                                              |
-+-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+
+| Configure Mattermost to skip the verification of the email server     | - System Config path: **Environment > SMTP**                                                       |
+| certificate.                                                          | - ``config.json`` setting: ``EmailSettings`` > ``SkipServerCertificateVerification`` > ``false``   |
+|                                                                       | - Environment variable: ``MM_EMAILSETTINGS_SKIPSERVERCERTIFICATEVERIFICATION``                     |
+| - **true**: Mattermost won't verify the email server certificate.     |                                                                                                    |
+| - **false**: **(Default)** Mattermost verifies the email              |                                                                                                    |
+|   server certificate.                                                 |                                                                                                    |
++-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+
 
 .. config:setting:: enable-security-alerts
   :displayname: Enable security alerts (SMTP)
@@ -2637,14 +2655,14 @@ Skip server certificate verification
 Enable security alerts
 ~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------+
-| Enable or disable security alerts.                              | - System Config path: **Environment > SMTP**                                       |
-|                                                                 | - ``config.json setting``: ``".ServiceSettings.EnableSecurityFixAlert": true",``   |
-| - **true**: **(Default)** System admins are notified by email   | - Environment variable: ``MM_SERVICESETTINGS_ENABLESECURITYFIXALERT``              |
-|   if a relevant security fix alert is announced. Requires email |                                                                                    |
-|   to be enabled.                                                |                                                                                    |
-| - **false**: Security alerts are disabled.                      |                                                                                    |
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------+
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------+
+| Enable or disable security alerts.                              | - System Config path: **Environment > SMTP**                                             |
+|                                                                 | - ``config.json`` setting: ``ServiceSettings`` > ``EnableSecurityFixAlert`` > ``true``   |
+| - **true**: **(Default)** System admins are notified by email   | - Environment variable: ``MM_SERVICESETTINGS_ENABLESECURITYFIXALERT``                    |
+|   if a relevant security fix alert is announced. Requires email |                                                                                          |
+|   to be enabled.                                                |                                                                                          |
+| - **false**: Security alerts are disabled.                      |                                                                                          |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------+
 
 See the :ref:`Telemetry <administration-guide/manage/telemetry:security update check feature>` documentation to learn more.
 
@@ -2660,7 +2678,7 @@ SMTP server timeout
 
 +-----------------------------------------------------------------+----------------------------------------------------------------------+
 | The maximum amount of time, in seconds, allowed for             | - System Config path: **Environment > SMTP**                         |
-| establishing a TCP connection between Mattermost and the SMTP   | - ``config.json setting``: ``".EmailSettings.SMTPServerTimeout",``   |
+| establishing a TCP connection between Mattermost and the SMTP   | - ``config.json`` setting: ``EmailSettings`` > ``SMTPServerTimeout`` |
 | server.                                                         | - Environment variable: ``MM_EMAILSETTINGS_SMTPSERVERTIMEOUT``       |
 |                                                                 |                                                                      |
 | Numerical value in seconds.                                     |                                                                      |
@@ -2701,17 +2719,17 @@ In a Mattermost high availability cluster-based deployment, the System Console i
 Enable high availability mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+------------------------------------------------------------+
-| You can enable high availability mode.                          | - System Config path: **Environment > High Availability**  |
-|                                                                 | - ``config.json`` setting: ``".ClusterSettings.Enable",``  |
-| - **true**: The Mattermost server will attempt inter-node       | - Environment variable: ``MM_CLUSTERSETTINGS_ENABLE``      |
-|   communication with the other servers in the cluster that      |                                                            |
-|   have the same cluster name. This sets the System Console to   |                                                            |
-|   read-only mode to keep the servers' ``config.json`` files     |                                                            |
-|   in sync.                                                      |                                                            |
-| - **false**: **(Default)** Mattermost high availability mode    |                                                            |
-|   is disabled.                                                  |                                                            |
-+-----------------------------------------------------------------+------------------------------------------------------------+
++-----------------------------------------------------------------+---------------------------------------------------------------------------+
+| You can enable high availability mode.                          | - System Config path: **Environment > High Availability**                 |
+|                                                                 | - ``config.json`` setting: ``ClusterSettings`` > ``Enable`` > ``false``   |
+| - **true**: The Mattermost server will attempt inter-node       | - Environment variable: ``MM_CLUSTERSETTINGS_ENABLE``                     |
+|   communication with the other servers in the cluster that      |                                                                           |
+|   have the same cluster name. This sets the System Console to   |                                                                           |
+|   read-only mode to keep the servers' ``config.json`` files     |                                                                           |
+|   in sync.                                                      |                                                                           |
+| - **false**: **(Default)** Mattermost high availability mode    |                                                                           |
+|   is disabled.                                                  |                                                                           |
++-----------------------------------------------------------------+---------------------------------------------------------------------------+
 
 .. config:setting:: cluster-name
   :displayname: Cluster name (High Availability)
@@ -2723,13 +2741,13 @@ Enable high availability mode
 Cluster name
 ~~~~~~~~~~~~
 
-+------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| The cluster to join by name in a high availability cluster-based deployment. | - System Config path: **Environment > High Availability**       |
-|                                                                              | - ``config.json`` setting: ``".ClusterSettings.ClusterName",``  |
-| Only nodes with the same cluster name will join together.                    | - Environment variable: ``MM_CLUSTERSETTINGS_CLUSTERNAME``      |
-| This is to support blue-green deployments or staging pointing                |                                                                 |
-| to the same database.                                                        |                                                                 |
-+------------------------------------------------------------------------------+-----------------------------------------------------------------+
++------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| The cluster to join by name in a high availability cluster-based deployment. | - System Config path: **Environment > High Availability**                |
+|                                                                              | - ``config.json`` setting: ``ClusterSettings`` > ``ClusterName``         |
+| Only nodes with the same cluster name will join together.                    | - Environment variable: ``MM_CLUSTERSETTINGS_CLUSTERNAME``               |
+| This is to support blue-green deployments or staging pointing                |                                                                          |
+| to the same database.                                                        |                                                                          |
++------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: override-hostname
   :displayname: Override hostname (High Availability)
@@ -2741,15 +2759,15 @@ Cluster name
 Override hostname
 ~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+------------------------------------------------------------------------+
-| You can override the hostname of this server.                   | - System Config path: **Environment > High Availability**              |
-|                                                                 | - ``config.json`` setting: ``".ClusterSettings.OverrideHostname",``    |
-| - This property can be set to a specific IP address if needed;  | - Environment variable: ``MM_CLUSTERSETTINGS_OVERRIDEHOSTNAME``        |
-|   however, we don’t recommend overriding the hostname unless    |                                                                        |
-|   it's necessary.                                               |                                                                        |
-| - If left blank, Mattermost attempts to get the hostname from   |                                                                        |
-|   the operating system or uses the IP address.                  |                                                                        |
-+-----------------------------------------------------------------+------------------------------------------------------------------------+
++-----------------------------------------------------------------+---------------------------------------------------------------------------------+
+| You can override the hostname of this server.                   | - System Config path: **Environment > High Availability**                       |
+|                                                                 | - ``config.json`` setting: ``ClusterSettings`` > ``OverrideHostname``           |
+| - This property can be set to a specific IP address if needed;  | - Environment variable: ``MM_CLUSTERSETTINGS_OVERRIDEHOSTNAME``                 |
+|   however, we don’t recommend overriding the hostname unless    |                                                                                 |
+|   it's necessary.                                               |                                                                                 |
+| - If left blank, Mattermost attempts to get the hostname from   |                                                                                 |
+|   the operating system or uses the IP address.                  |                                                                                 |
++-----------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 See the :doc:`high availability cluster-based deployment </administration-guide/scale/high-availability-cluster-based-deployment>` documentation for details.
 
@@ -2765,15 +2783,15 @@ See the :doc:`high availability cluster-based deployment </administration-guide/
 Use IP address
 ~~~~~~~~~~~~~~
 
-+------------------------------------------------------------------------------+------------------------------------------------------------------------+
-| You can configure your high availability cluster-based deployment to         | - System Config path: **Environment > High Availability**              |
-| communicate using the hostname instead of the IP address.                    | - ``config.json`` setting: ``".ClusterSettings.UseIPAddress: true",``  |
-|                                                                              | - Environment variable: ``MM_CLUSTERSETTINGS_USEIPADDRESS``            |
-| - **true**: **(Default)** The cluster attempts to communicate                |                                                                        |
-|   using the IP address specified.                                            |                                                                        |
-| - **false**: The cluster attempts to communicate using the                   |                                                                        |
-|   hostname.                                                                  |                                                                        |
-+------------------------------------------------------------------------------+------------------------------------------------------------------------+
++------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+| You can configure your high availability cluster-based deployment to         | - System Config path: **Environment > High Availability**                     |
+| communicate using the hostname instead of the IP address.                    | - ``config.json`` setting: ``ClusterSettings`` > ``UseIPAddress`` > ``true``  |
+|                                                                              | - Environment variable: ``MM_CLUSTERSETTINGS_USEIPADDRESS``                   |
+| - **true**: **(Default)** The cluster attempts to communicate                |                                                                               |
+|   using the IP address specified.                                            |                                                                               |
+| - **false**: The cluster attempts to communicate using the                   |                                                                               |
+|   hostname.                                                                  |                                                                               |
++------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 .. config:setting:: enable-gossip-encryption
   :displayname: Enable gossip encryption (High Availability)
@@ -2787,15 +2805,15 @@ Use IP address
 Enable gossip encryption
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+----------------------------------------------------------------------------------+
-| Gossip encryption uses AES-256 by default, and this value isn't | - System Config path: **Environment > High Availability**                        |
-| configurable by design.                                         | - ``config.json`` setting: ``".ClusterSettings.EnableGossipEncryption: true",``  |
-|                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_ENABLEGOSSIPENCRYPTION``            |
-| - **true**: **(Default)** The server attempts to communicate    |                                                                                  |
-|   via the gossip protocol over the gossip port specified.       |                                                                                  |
-| - **false**: The server attempts to communicate over the        |                                                                                  |
-|   streaming port.                                               |                                                                                  |
-+-----------------------------------------------------------------+----------------------------------------------------------------------------------+
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| Gossip encryption uses AES-256 by default, and this value isn't | - System Config path: **Environment > High Availability**                               |
+| configurable by design.                                         | - ``config.json`` setting: ``ClusterSettings`` > ``EnableGossipEncryption`` > ``true``  |
+|                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_ENABLEGOSSIPENCRYPTION``                   |
+| - **true**: **(Default)** The server attempts to communicate    |                                                                                         |
+|   via the gossip protocol over the gossip port specified.       |                                                                                         |
+| - **false**: The server attempts to communicate over the        |                                                                                         |
+|   streaming port.                                               |                                                                                         |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 
 .. note::
 
@@ -2815,18 +2833,18 @@ Enable gossip encryption
 Enable gossip compression
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+----------------------------------------------------------------------------------+
-| We recommend that you disable this configuration                | - System Config path: **Environment > High Availability**                        |
-| setting for better performance.                                 | - ``config.json`` setting: ``".ClusterSettings.EnableGossipCompression: true”,`` |
-|                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_ENABLEGOSSIPCOMPRESSION``           |
-| - **true**: **(Default for self-hosted deployments)**           |                                                                                  |
-|   All communication through the cluster uses gossip             |                                                                                  |
-|   compression. This setting is enabled by default to maintain   |                                                                                  |
-|   compatibility with older servers.                             |                                                                                  |
-| - **false**: **(Default for Cloud deployments)**                |                                                                                  |
-|   All communication using the gossip protocol remains           |                                                                                  |
-|   uncompressed.                                                 |                                                                                  |
-+-----------------------------------------------------------------+----------------------------------------------------------------------------------+
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| We recommend that you disable this configuration                | - System Config path: **Environment > High Availability**                               |
+| setting for better performance.                                 | - ``config.json`` setting: ``ClusterSettings`` > ``EnableGossipCompression`` > ``true`` |
+|                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_ENABLEGOSSIPCOMPRESSION``                  |
+| - **true**: **(Default for self-hosted deployments)**           |                                                                                         |
+|   All communication through the cluster uses gossip             |                                                                                         |
+|   compression. This setting is enabled by default to maintain   |                                                                                         |
+|   compatibility with older servers.                             |                                                                                         |
+| - **false**: **(Default for Cloud deployments)**                |                                                                                         |
+|   All communication using the gossip protocol remains           |                                                                                         |
+|   uncompressed.                                                 |                                                                                         |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 
 .. config:setting:: gossip-port
   :displayname: Gossip port (High Availability)
@@ -2838,12 +2856,12 @@ Enable gossip compression
 Gossip port
 ~~~~~~~~~~~
 
-+-----------------------------------------------------------------+---------------------------------------------------------------------+
-| The port used for the gossip protocol. Both UDP and TCP         | - System Config path: **Environment > High Availability**           |
-| should be allowed on this port.                                 | - ``config.json`` setting: ``".ClusterSettings.GossipPort: 8074”,`` |
-|                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_GOSSIPPORT``           |
-| Numerical input. Default is **8074**.                           |                                                                     |
-+-----------------------------------------------------------------+---------------------------------------------------------------------+
++-----------------------------------------------------------------+----------------------------------------------------------------------------+
+| The port used for the gossip protocol. Both UDP and TCP         | - System Config path: **Environment > High Availability**                  |
+| should be allowed on this port.                                 | - ``config.json`` setting: ``ClusterSettings`` > ``GossipPort`` > ``8074`` |
+|                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_GOSSIPPORT``                  |
+| Numerical input. Default is **8074**.                           |                                                                            |
++-----------------------------------------------------------------+----------------------------------------------------------------------------+
 
 .. config:setting:: read-only-config
   :displayname: Read only config (High Availability)
@@ -2855,12 +2873,12 @@ Gossip port
 Read only config
 ~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+------------------------------------------------------------------------+
-| - **true**: **(Default)** Changes made to settings in the       | - System Config path: N/A                                              |
-|   System Console are ignored.                                   | - ``config.json`` setting: ``".ClusterSettings.ReadOnlyConfig: true,`` |
-| - **false**: Changes made to settings in the System Console     | - Environment variable: ``MM_CLUSTERSETTINGS_READONLYCONFIG``          |
-|   are written to ``config.json``.                               |                                                                        |
-+-----------------------------------------------------------------+------------------------------------------------------------------------+
++-----------------------------------------------------------------+--------------------------------------------------------------------------------+
+| - **true**: **(Default)** Changes made to settings in the       | - System Config path: N/A                                                      |
+|   System Console are ignored.                                   | - ``config.json`` setting: ``ClusterSettings`` > ``ReadOnlyConfig`` > ``true`` |
+| - **false**: Changes made to settings in the System Console     | - Environment variable: ``MM_CLUSTERSETTINGS_READONLYCONFIG``                  |
+|   are written to ``config.json``.                               |                                                                                |
++-----------------------------------------------------------------+--------------------------------------------------------------------------------+
 
 .. config:setting:: network-interface
   :displayname: Network interface (High Availability)
@@ -2872,12 +2890,12 @@ Read only config
 Network interface
 ~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+------------------------------------------------------------------------+
-| An IP address used to identify the device that does automatic   | - System Config path: N/A                                              |
-| IP detection in high availability cluster-based deployments.    | - ``config.json`` setting: ``".ClusterSettings.NetworkInterface: "",`` |
-|                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_NETWORKINTERFACE``        |
-| String input.                                                   |                                                                        |
-+-----------------------------------------------------------------+------------------------------------------------------------------------+
++-----------------------------------------------------------------+--------------------------------------------------------------------------------+
+| An IP address used to identify the device that does automatic   | - System Config path: N/A                                                      |
+| IP detection in high availability cluster-based deployments.    | - ``config.json`` setting: ``ClusterSettings`` > ``NetworkInterface`` > ``""`` |
+|                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_NETWORKINTERFACE``                |
+| String input.                                                   |                                                                                |
++-----------------------------------------------------------------+--------------------------------------------------------------------------------+
 
 .. config:setting:: bind-address
   :displayname: Bind address (High Availability)
@@ -2889,17 +2907,17 @@ Network interface
 Bind address
 ~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+--------------------------------------------------------------------+
-| An IP address used to bind cluster traffic to a specific        | - System Config path: N/A                                          |
-| network device.                                                 | - ``config.json`` setting: ``".ClusterSettings.BindAddress: "",``  |
-|                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_BINDADDRESS``         |
-| This setting is used primarily for servers with multiple        |                                                                    |
-| network devices or different Bind Address and Advertise Address |                                                                    |
-| like in deployments that involve NAT (Network Address           |                                                                    |
-| Translation).                                                   |                                                                    |
-|                                                                 |                                                                    |
-| String input.                                                   |                                                                    |
-+-----------------------------------------------------------------+--------------------------------------------------------------------+
++-----------------------------------------------------------------+----------------------------------------------------------------------------+
+| An IP address used to bind cluster traffic to a specific        | - System Config path: N/A                                                  |
+| network device.                                                 | - ``config.json`` setting: ``ClusterSettings`` > ``BindAddress`` > ``""``  |
+|                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_BINDADDRESS``                 |
+| This setting is used primarily for servers with multiple        |                                                                            |
+| network devices or different Bind Address and Advertise Address |                                                                            |
+| like in deployments that involve NAT (Network Address           |                                                                            |
+| Translation).                                                   |                                                                            |
+|                                                                 |                                                                            |
+| String input.                                                   |                                                                            |
++-----------------------------------------------------------------+----------------------------------------------------------------------------+
 
 .. config:setting:: advertise-address
   :displayname: Advertise address (High Availability)
@@ -2911,13 +2929,13 @@ Bind address
 Advertise address
 ~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+------------------------------------------------------------------------+
-| The IP address used to access the server from other nodes.      | - System Config path: N/A                                              |
-| This settings is used primary when cluster nodes are not in     | - ``config.json`` setting: ``".ClusterSettings.AdvertiseAddress: "",`` |
-| the same network and involve NAT (Network Address Translation). | - Environment variable: ``MM_CLUSTERSETTINGS_ADVERTISEADDRESS``        |
-|                                                                 |                                                                        |
-| String input.                                                   |                                                                        |
-+-----------------------------------------------------------------+------------------------------------------------------------------------+
++-----------------------------------------------------------------+--------------------------------------------------------------------------------+
+| The IP address used to access the server from other nodes.      | - System Config path: N/A                                                      |
+| This settings is used primary when cluster nodes are not in     | - ``config.json`` setting: ``ClusterSettings`` > ``AdvertiseAddress`` > ``""`` |
+| the same network and involve NAT (Network Address Translation). | - Environment variable: ``MM_CLUSTERSETTINGS_ADVERTISEADDRESS``                |
+|                                                                 |                                                                                |
+| String input.                                                   |                                                                                |
++-----------------------------------------------------------------+--------------------------------------------------------------------------------+
 
 ----
 
@@ -2963,18 +2981,22 @@ Configure general logging by going to **System Console > Environment > Logging**
 Output logs to console
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-+-----------------------------------------------+---------------------------------------------------------------------+
-| Configure Mattermost to output general logs   | - System Config path: **Environment > Logging**                     |
-| to the console.                               | - ``config.json setting``: ``".LogSettings.EnableConsole": true",`` |
-|                                               | - Environment variable: ``MM_LOGSETTINGS_ENABLECONSOLE``            |
-| - **true**: **(Default)** Output log messages |                                                                     |
-|   are written to the console based on the     |                                                                     |
-|   `console log level <#console-log-level>`__  |                                                                     |
-|   configuration. The server writes messages   |                                                                     |
-|   to the standard output stream (stdout).     |                                                                     |
-| - **false**: Output log messages aren’t       |                                                                     |
-|   written to the console.                     |                                                                     |
-+-----------------------------------------------+---------------------------------------------------------------------+
++-----------------------------------------------+---------------------------------------------------------------------------+
+| Configure Mattermost to output general logs   | - System Config path: **Environment > Logging**                           |
+| to the console.                               | - ``config.json`` setting: ``LogSettings`` > ``EnableConsole`` > ``true`` |
+|                                               | - Environment variable: ``MM_LOGSETTINGS_ENABLECONSOLE``                  |
+| - **true**: **(Default)** Output log messages |                                                                           |
+|   are written to the console based on the     |                                                                           |
+|   `console log level <#console-log-level>`__  |                                                                           |
+|   configuration. The server writes messages   |                                                                           |
+|   to the standard output stream (stdout).     |                                                                           |
+| - **false**: Output log messages aren’t       |                                                                           |
+|   written to the console.                     |                                                                           |
++-----------------------------------------------+---------------------------------------------------------------------------+
+
+.. note::
+
+  From Mattermost v11.0, notification logs are automatically included in the main console logs.
 
 .. config:setting:: console-log-level
   :displayname: Console general log level (General Logging)
@@ -2990,18 +3012,18 @@ Output logs to console
 Console log level
 ^^^^^^^^^^^^^^^^^^
 
-+-----------------------------------------------+---------------------------------------------------------------------+
-| The level of detail in general log events     | - System Config path: **Environment > Logging**                     |
-| written when Mattermost outputs log messages  | - ``config.json setting``: ``".LogSettings.ConsoleLevel": DEBUG",`` |
-| to the console.                               | - Environment variable: ``MM_LOGSETTINGS_CONSOLELEVEL``             |
-|                                               |                                                                     |
-| - **DEBUG**: **(Default)** Outputs verbose    |                                                                     |
-|   detail for developers debugging issues.     |                                                                     |
-| - **ERROR**: Outputs only error messages.     |                                                                     |
-| - **INFO**: Outputs error messages and        |                                                                     |
-|   information around startup and              |                                                                     |
-|   initialization.                             |                                                                     |
-+-----------------------------------------------+---------------------------------------------------------------------+
++-----------------------------------------------+-----------------------------------------------------------------------------+
+| The level of detail in general log events     | - System Config path: **Environment > Logging**                             |
+| written when Mattermost outputs log messages  | - ``config.json`` setting: ``LogSettings`` > ``ConsoleLevel`` > ``"DEBUG"`` |
+| to the console.                               | - Environment variable: ``MM_LOGSETTINGS_CONSOLELEVEL``                     |
+|                                               |                                                                             |
+| - **DEBUG**: **(Default)** Outputs verbose    |                                                                             |
+|   detail for developers debugging issues.     |                                                                             |
+| - **ERROR**: Outputs only error messages.     |                                                                             |
+| - **INFO**: Outputs error messages and        |                                                                             |
+|   information around startup and              |                                                                             |
+|   initialization.                             |                                                                             |
++-----------------------------------------------+-----------------------------------------------------------------------------+
 
 .. config:setting:: output-console-logs-as-json
   :displayname: Output general console logs as JSON (General Logging)
@@ -3016,15 +3038,15 @@ Console log level
 Output console logs as JSON
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+-----------------------------------------------+---------------------------------------------------------------------+
-| Configure Mattermost to output general        | - System Config path: **Environment > Logging**                     |
-| console logs as JSON.                         | - ``config.json setting``: ``".LogSettings.ConsoleJson": true",``   |
-|                                               | - Environment variable: ``MM_LOGSETTINGS_CONSOLEJSON``              |
-| - **true**: **(Default)** Logged events are   |                                                                     |
-|   written in a machine-readable JSON format.  |                                                                     |
-| - **false**: Logged events are written in     |                                                                     |
-|   plain text.                                 |                                                                     |
-+-----------------------------------------------+---------------------------------------------------------------------+
++-----------------------------------------------+---------------------------------------------------------------------------+
+| Configure Mattermost to output general        | - System Config path: **Environment > Logging**                           |
+| console logs as JSON.                         | - ``config.json`` setting: ``LogSettings`` > ``ConsoleJson`` > ``true``   |
+|                                               | - Environment variable: ``MM_LOGSETTINGS_CONSOLEJSON``                    |
+| - **true**: **(Default)** Logged events are   |                                                                           |
+|   written in a machine-readable JSON format.  |                                                                           |
+| - **false**: Logged events are written in     |                                                                           |
+|   plain text.                                 |                                                                           |
++-----------------------------------------------+---------------------------------------------------------------------------+
 
 Typically set to **true** in a production environment.
 
@@ -3041,16 +3063,16 @@ Typically set to **true** in a production environment.
 Colorize plain text console logs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+-----------------------------------------------+----------------------------------------------------------------------+
-| Enables system admins to display plain text   | - System Config path: N/A                                            |
-| general log level details in color.           | - ``config.json setting``: ``".LogSettings.EnableColor": false",``   |
-|                                               | - Environment variable: ``MM_LOGSETTINGS_ENABLECOLOR``               |
-| - **true**: When logged events are output to  |                                                                      |
-|   the console as plain text, colorize log     |                                                                      |
-|   levels details.                             |                                                                      |
-| - **false**: **(Default)** Plain text log     |                                                                      |
-|   details aren't colorized in the console.    |                                                                      |
-+-----------------------------------------------+----------------------------------------------------------------------+
++-----------------------------------------------+----------------------------------------------------------------------------+
+| Enables system admins to display plain text   | - System Config path: N/A                                                  |
+| general log level details in color.           | - ``config.json`` setting: ``LogSettings`` > ``EnableColor`` > ``false``   |
+|                                               | - Environment variable: ``MM_LOGSETTINGS_ENABLECOLOR``                     |
+| - **true**: When logged events are output to  |                                                                            |
+|   the console as plain text, colorize log     |                                                                            |
+|   levels details.                             |                                                                            |
+| - **false**: **(Default)** Plain text log     |                                                                            |
+|   details aren't colorized in the console.    |                                                                            |
++-----------------------------------------------+----------------------------------------------------------------------------+
 
 .. config:setting:: output-logs-to-file
   :displayname: Output general logs to file (General Logging)
@@ -3065,23 +3087,24 @@ Colorize plain text console logs
 Output logs to file
 ^^^^^^^^^^^^^^^^^^^^
 
-+-----------------------------------------------+---------------------------------------------------------------------+
-| Configure Mattermost to output general        | - System Config path: **Environment > Logging**                     |
-| console logs to a file.                       | - ``config.json setting``: ``".LogSettings.EnableFile": true",``    |
-|                                               | - Environment variable: ``MM_LOGSETTINGS_ENABLEFILE``               |
-| - **true**: **(Default)** Logged events are   |                                                                     |
-|   written based on the                        |                                                                     |
-|   `file log level <#file-log-level>`__        |                                                                     |
-|   configuration to a ``mattermost.log`` file  |                                                                     |
-|   located in the directory configured via     |                                                                     |
-|   ``file location``.                          |                                                                     |
-| - **false**: Logged events aren’t written to  |                                                                     |
-|   a file.                                     |                                                                     |
-+-----------------------------------------------+---------------------------------------------------------------------+
++-----------------------------------------------+---------------------------------------------------------------------------+
+| Configure Mattermost to output general        | - System Config path: **Environment > Logging**                           |
+| console logs to a file.                       | - ``config.json`` setting: ``LogSettings`` > ``EnableFile`` > ``true``    |
+|                                               | - Environment variable: ``MM_LOGSETTINGS_ENABLEFILE``                     |
+| - **true**: **(Default)** Logged events are   |                                                                           |
+|   written based on the                        |                                                                           |
+|   `file log level <#file-log-level>`__        |                                                                           |
+|   configuration to a ``mattermost.log`` file  |                                                                           |
+|   located in the directory configured via     |                                                                           |
+|   ``file location``.                          |                                                                           |
+| - **false**: Logged events aren’t written to  |                                                                           |
+|   a file.                                     |                                                                           |
++-----------------------------------------------+---------------------------------------------------------------------------+
 
 .. note::
 
-  Typically set to **true** in a production environment. When enabled, you can download the ``mattermost.log`` file locally by going to **System Console > Reporting > Server Logs**, and selecting **Download Logs**. 
+  - From Mattermost v11.0, notification logs are automatically included in the main file logs.
+  - This setting is typically set to **true** in a production environment. When enabled, you can download the ``mattermost.log`` file locally by going to **System Console > Reporting > Server Logs**, and selecting **Download Logs**.
 
 .. config:setting:: file-log-directory
   :displayname: General file log directory (General Logging)
@@ -3093,12 +3116,12 @@ Output logs to file
 File log directory
 ^^^^^^^^^^^^^^^^^^
 
-+-----------------------------------------------+---------------------------------------------------------------------+
-| The location of the general log files.        | - System Config path: **Environment > Logging**                     |
-|                                               | - ``config.json setting``: ``".LogSettings.FileLocation": "",``     |
-| String input. If left blank, log files are    | - Environment variable: ``MM_LOGSETTINGS_FILELOCATION``             |
-| stored in the ``./logs`` directory.           |                                                                     |
-+-----------------------------------------------+---------------------------------------------------------------------+
++-----------------------------------------------+----------------------------------------------------------------------------+
+| The location of the general log files.        | - System Config path: **Environment > Logging**                            |
+|                                               | - ``config.json`` setting: ``LogSettings`` > ``FileLocation`` > ``""``     |
+| String input. If left blank, log files are    | - Environment variable: ``MM_LOGSETTINGS_FILELOCATION``                    |
+| stored in the ``./logs`` directory.           |                                                                            |
++-----------------------------------------------+----------------------------------------------------------------------------+
 
 .. note::
 
@@ -3118,17 +3141,17 @@ File log directory
 File log level
 ^^^^^^^^^^^^^^
 
-+-------------------------------------------------+---------------------------------------------------------------------+
-| The level of detail in general log events when  | - System Config path: **Environment > Logging**                     |
-| when Mattermost outputs log messages to a file. | - ``config.json setting``: ``".LogSettings.FileLevel": INFO",``     |
-|                                                 | - Environment variable: ``MM_LOGSETTINGS_FILELEVEL``                |
-| - **DEBUG**: Outputs verbose detail for         |                                                                     |
-|   developers debugging issues.                  |                                                                     |
-| - **ERROR**: Outputs only error messages.       |                                                                     |
-| - **INFO**: **(Default)** Outputs error         |                                                                     |
-|   messages and information around startup       |                                                                     |
-|   and initialization.                           |                                                                     |
-+-------------------------------------------------+---------------------------------------------------------------------+
++-------------------------------------------------+-------------------------------------------------------------------------+
+| The level of detail in general log events when  | - System Config path: **Environment > Logging**                         |
+| when Mattermost outputs log messages to a file. | - ``config.json`` setting: ``LogSettings`` > ``FileLevel`` > ``"INFO"`` |
+|                                                 | - Environment variable: ``MM_LOGSETTINGS_FILELEVEL``                    |
+| - **DEBUG**: Outputs verbose detail for         |                                                                         |
+|   developers debugging issues.                  |                                                                         |
+| - **ERROR**: Outputs only error messages.       |                                                                         |
+| - **INFO**: **(Default)** Outputs error         |                                                                         |
+|   messages and information around startup       |                                                                         |
+|   and initialization.                           |                                                                         |
++-------------------------------------------------+-------------------------------------------------------------------------+
 
 .. config:setting:: output-file-logs-as-json
   :displayname: Output general file logs as JSON (General Logging)
@@ -3143,15 +3166,15 @@ File log level
 Output file logs as JSON
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-+-----------------------------------------------+---------------------------------------------------------------------+
-| Configure Mattermost to output general file   | - System Config path: **Environment > Logging**                     |
-| logs as JSON.                                 | - ``config.json setting``: ``".LogSettings.FileJson": true",``      |
-|                                               | - Environment variable: ``MM_LOGSETTINGS_FILEJSON``                 |
-| - **true**: **(Default)** Logged events are   |                                                                     |
-|   written in a machine-readable JSON format.  |                                                                     |
-| - **false**: Logged events are written in     |                                                                     |
-|   plain text.                                 |                                                                     |
-+-----------------------------------------------+---------------------------------------------------------------------+
++-----------------------------------------------+------------------------------------------------------------------------+
+| Configure Mattermost to output general file   | - System Config path: **Environment > Logging**                        |
+| logs as JSON.                                 | - ``config.json`` setting: ``LogSettings`` > ``FileJson`` > ``true``   |
+|                                               | - Environment variable: ``MM_LOGSETTINGS_FILEJSON``                    |
+| - **true**: **(Default)** Logged events are   |                                                                        |
+|   written in a machine-readable JSON format.  |                                                                        |
+| - **false**: Logged events are written in     |                                                                        |
+|   plain text.                                 |                                                                        |
++-----------------------------------------------+------------------------------------------------------------------------+
 
 Typically set to **true** in a production environment.
 
@@ -3168,17 +3191,17 @@ Typically set to **true** in a production environment.
 Enable webhook debugging
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-+-----------------------------------------------+------------------------------------------------------------------------------+
-| Configure Mattermost to capture the contents  | - System Config path: **Environment > Logging**                              |
-| of general incoming webhooks to console       | - ``config.json setting``: ``".LogSettings.EnableWebhookDebugging": true",`` |
-| and/or file logs for debugging.               | - Environment variable: ``MM_LOGSETTINGS_ENABLEWEBHOOKDEBUGGING``            |
-|                                               |                                                                              |
-| - **true**: **(Default)** The contents of     |                                                                              |
-|   incoming webhooks are printed to log files  |                                                                              |
-|   for debugging.                              |                                                                              |
-| - **false**: The contents of incoming         |                                                                              |
-|   webhooks aren’t printed to log files.       |                                                                              |
-+-----------------------------------------------+------------------------------------------------------------------------------+
++-----------------------------------------------+------------------------------------------------------------------------------------+
+| Configure Mattermost to capture the contents  | - System Config path: **Environment > Logging**                                    |
+| of general incoming webhooks to console       | - ``config.json`` setting: ``LogSettings`` > ``EnableWebhookDebugging`` > ``true`` |
+| and/or file logs for debugging.               | - Environment variable: ``MM_LOGSETTINGS_ENABLEWEBHOOKDEBUGGING``                  |
+|                                               |                                                                                    |
+| - **true**: **(Default)** The contents of     |                                                                                    |
+|   incoming webhooks are printed to log files  |                                                                                    |
+|   for debugging.                              |                                                                                    |
+| - **false**: The contents of incoming         |                                                                                    |
+|   webhooks aren’t printed to log files.       |                                                                                    |
++-----------------------------------------------+------------------------------------------------------------------------------------+
 
 .. note::
 
@@ -3194,16 +3217,16 @@ Enable webhook debugging
 Output logs to multiple targets
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+-----------------------------------------------+---------------------------------------------------------------------------+
-| Configure Mattermost to allow any combination | - System Config path: **Environment > Logging**                           |
-| of console, local file, syslog, and TCP       | - ``config.json setting``: ``".LogSettings.AdvancedLoggingJSON":: "",``   |
-| socket targets, and send general log records  | - Environment variable: ``MM_LOGSETTINGS_ADVANCEDLOGGINGJSON``            |
-| to multiple targets.                          |                                                                           |
-|                                               |                                                                           |
-| String input can contain a filespec to        |                                                                           |
-| another configuration file, a database DSN,   |                                                                           |
-| or JSON.                                      |                                                                           |
-+-----------------------------------------------+---------------------------------------------------------------------------+
++-----------------------------------------------+------------------------------------------------------------------------------------+
+| Configure Mattermost to allow any combination | - System Config path: **Environment > Logging**                                    |
+| of console, local file, syslog, and TCP       | - ``config.json`` setting: ``LogSettings`` > ``AdvancedLoggingJSON`` > ``": ""``   |
+| socket targets, and send general log records  | - Environment variable: ``MM_LOGSETTINGS_ADVANCEDLOGGINGJSON``                     |
+| to multiple targets.                          |                                                                                    |
+|                                               |                                                                                    |
+| String input can contain a filespec to        |                                                                                    |
+| another configuration file, a database DSN,   |                                                                                    |
+| or JSON.                                      |                                                                                    |
++-----------------------------------------------+------------------------------------------------------------------------------------+
 
 .. note::
 
@@ -3221,12 +3244,12 @@ Output logs to multiple targets
 Maximum field size
 ^^^^^^^^^^^^^^^^^^
 
-+-----------------------------------------------+----------------------------------------------------------------------+
-| Enables system admins to limit the size of    | - System Config path: N/A                                            |
-| general log fields during logging.            | - ``config.json setting``: ``".LogSettings.MaxFieldSize": 2048",``   |
-|                                               | - Environment variable: ``MM_LOGSETTINGS_MAXFIELDSIZE``              |
-| Numerical value. Default is **2048**.         |                                                                      |
-+-----------------------------------------------+----------------------------------------------------------------------+
++-----------------------------------------------+----------------------------------------------------------------------------+
+| Enables system admins to limit the size of    | - System Config path: N/A                                                  |
+| general log fields during logging.            | - ``config.json`` setting: ``LogSettings`` > ``MaxFieldSize`` > ``2048``   |
+|                                               | - Environment variable: ``MM_LOGSETTINGS_MAXFIELDSIZE``                    |
+| Numerical value. Default is **2048**.         |                                                                            |
++-----------------------------------------------+----------------------------------------------------------------------------+
 
 .. config:setting:: enable-diagnostics-and-error-reporting
   :displayname: Enable general diagnostics and error reporting (General Logging)
@@ -3238,15 +3261,15 @@ Maximum field size
 Enable diagnostics and error reporting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+----------------------------------------------+-------------------------------------------------------------------------+
-| Whether or not general diagnostics and error | - System Config path: **Environment > Logging**                         |
-| reports are sent to Mattermost, Inc.         | - ``config.json setting``: ``".LogSettings.EnableDiagnostics": "",``    |
-|                                              | - Environment variable: ``MM_LOGSETTINGS_ENABLEDIAGNOSTICS``            |
-| - **true**: **(Default)** Send diagnostics   |                                                                         |
-|   and error reports.                         |                                                                         |
-| - **false**: Diagnostics and error reports   |                                                                         |
-|   aren't sent.                               |                                                                         |
-+----------------------------------------------+-------------------------------------------------------------------------+
++----------------------------------------------+--------------------------------------------------------------------------------+
+| Whether or not general diagnostics and error | - System Config path: **Environment > Logging**                                |
+| reports are sent to Mattermost, Inc.         | - ``config.json`` setting: ``LogSettings`` > ``EnableDiagnostics`` > ``""``    |
+|                                              | - Environment variable: ``MM_LOGSETTINGS_ENABLEDIAGNOSTICS``                   |
+| - **true**: **(Default)** Send diagnostics   |                                                                                |
+|   and error reports.                         |                                                                                |
+| - **false**: Diagnostics and error reports   |                                                                                |
+|   aren't sent.                               |                                                                                |
++----------------------------------------------+--------------------------------------------------------------------------------+
 
 .. note::
 
@@ -3259,18 +3282,21 @@ Enable diagnostics and error reporting
   :environment: MM_LOGSETTINGS_VERBOSEDIAGNOSTICS
   :description: Configure whether to send verbose general diagnostics information.
 
+  - **true**: Send verbose diagnostics information.
+  - **false**: **(Default)** Verbose diagnostics information isn't sent.
+
 Enable verbose diagnostics
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+----------------------------------------------+-------------------------------------------------------------------------+
-| Whether or not verbose general diagnostics   | - System Config path: N/A                                               |
-| information is sent.                         | - ``config.json setting``: ``".LogSettings.VerboseDiagnostics": false,``|
-|                                              | - Environment variable: ``MM_LOGSETTINGS_VERBOSEDIAGNOSTICS``           |
-| - **true**: Send verbose diagnostics         |                                                                         |
-|   information.                               |                                                                         |
-| - **false**: **(Default)** Verbose           |                                                                         |
-|   diagnostics information is not sent.       |                                                                         |
-+----------------------------------------------+-------------------------------------------------------------------------+
++----------------------------------------------+---------------------------------------------------------------------------------+
+| Whether or not verbose general diagnostics   | - System Config path: N/A                                                       |
+| information is sent.                         | - ``config.json`` setting: ``LogSettings`` > ``VerboseDiagnostics`` > ``false`` |
+|                                              | - Environment variable: ``MM_LOGSETTINGS_VERBOSEDIAGNOSTICS``                   |
+| - **true**: Send verbose diagnostics         |                                                                                 |
+|   information.                               |                                                                                 |
+| - **false**: **(Default)** Verbose           |                                                                                 |
+|   diagnostics information isn't sent.        |                                                                                 |
++----------------------------------------------+---------------------------------------------------------------------------------+
 
 .. config:setting:: enable-sentry
   :displayname: Enable general Sentry reporting (General Logging)
@@ -3279,26 +3305,37 @@ Enable verbose diagnostics
   :environment: MM_LOGSETTINGS_ENABLESENTRY
   :description: Configure whether to send general error reports to Sentry.
 
+  - **true**: **(Default)** Send error reports to Sentry. Default matches the EnableDiagnostics setting.
+  - **false**: Error reports are not sent to Sentry.
+
 Enable Sentry reporting
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-+----------------------------------------------+-------------------------------------------------------------------------+
-| Whether or not general error reports are     | - System Config path: N/A                                               |
-| sent to Sentry.                              | - ``config.json setting``: ``".LogSettings.EnableSentry": true,``       |
-|                                              | - Environment variable: ``MM_LOGSETTINGS_ENABLESENTRY``                 |
-| - **true**: **(Default)** Send error reports |                                                                         |
-|   to Sentry. Default matches the             |                                                                         |
-|   EnableDiagnostics setting.                 |                                                                         |
-| - **false**: Error reports are not sent      |                                                                         |
-|   to Sentry.                                 |                                                                         |
-+----------------------------------------------+-------------------------------------------------------------------------+
++----------------------------------------------+--------------------------------------------------------------------------------+
+| Whether or not general error reports are     | - System Config path: N/A                                                      |
+| sent to Sentry.                              | - ``config.json`` setting: ``LogSettings`` > ``EnableSentry`` > ``true``       |
+|                                              | - Environment variable: ``MM_LOGSETTINGS_ENABLESENTRY``                        |
+| - **true**: **(Default)** Send error reports |                                                                                |
+|   to Sentry. Default matches the             |                                                                                |
+|   EnableDiagnostics setting.                 |                                                                                |
+| - **false**: Error reports are not sent      |                                                                                |
+|   to Sentry.                                 |                                                                                |
++----------------------------------------------+--------------------------------------------------------------------------------+
 
 ----
 
 Notification logging
 ~~~~~~~~~~~~~~~~~~~~~
 
-Configure logging specifically for Mattermost notifications by editing the ``config.json`` file as described in the following tables. These settings operate independently from the main ``LogSettings`` and allow you to customize logging behavior specifically for the notification subsystem. Changes to these configuration settings require a server restart before taking effect.
+.. important::
+
+  **From Mattermost v11, notification log settings have been consolidated into the standard console logs and mattermost.log file**. You can no longer disable notification logging without using advanced logging settings, as the main log level setting now controls both server and notification logs.
+
+  You can use the ``AdvancedLoggingJSON`` configuration with discrete notification log levels: ``NotificationError``, ``NotificationWarn``, ``NotificationInfo``, ``NotificationDebug``, and ``NotificationTrace`` to split notification logs into separate files and reduce troubleshooting noise. See :ref:`Advanced Logging <administration-guide/manage/logging:advanced logging>` for details.
+
+The following configuration settings apply only to Mattermost server versions prior to v11.0.
+
+You can configure logging specifically for Mattermost notifications by editing the ``config.json`` file as described in the following tables. These settings operate independently from the main ``LogSettings`` and allow you to customize logging behavior specifically for the notification subsystem. Changes to these configuration settings require a server restart before taking effect.
 
 .. config:setting:: output-logs-to-console
   :displayname: Output notification logs to console (Notification Logging)
@@ -3312,18 +3349,18 @@ Configure logging specifically for Mattermost notifications by editing the ``con
 Output logs to console
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-+-----------------------------------------------+---------------------------------------------------------------------------------+
-| Configure Mattermost to output notification   | - System Config path: N/A                                                       |
-| logs to the console.                          | - ``config.json setting``: ``".NotificationLogSettings.EnableConsole": true",`` |
-|                                               | - Environment variable: ``MM_NOTIFICATIONLOGSETTINGS_ENABLECONSOLE``            |
-| - **true**: **(Default)** Output log messages |                                                                                 |
-|   are written to the console based on the     |                                                                                 |
-|   `console log level <#console-log-level>`__  |                                                                                 |
-|   configuration. The server writes messages   |                                                                                 |
-|   to the standard output stream (stdout).     |                                                                                 |
-| - **false**: Output log messages aren't       |                                                                                 |
-|   written to the console.                     |                                                                                 |
-+-----------------------------------------------+---------------------------------------------------------------------------------+
++-----------------------------------------------+---------------------------------------------------------------------------------------+
+| Configure Mattermost to output notification   | - System Config path: N/A                                                             |
+| logs to the console.                          | - ``config.json`` setting: ``NotificationLogSettings`` > ``EnableConsole`` > ``true`` |
+|                                               | - Environment variable: ``MM_NOTIFICATIONLOGSETTINGS_ENABLECONSOLE``                  |
+| - **true**: **(Default)** Output log messages |                                                                                       |
+|   are written to the console based on the     |                                                                                       |
+|   `console log level <#console-log-level>`__  |                                                                                       |
+|   configuration. The server writes messages   |                                                                                       |
+|   to the standard output stream (stdout).     |                                                                                       |
+| - **false**: Output log messages aren't       |                                                                                       |
+|   written to the console.                     |                                                                                       |
++-----------------------------------------------+---------------------------------------------------------------------------------------+
 
 .. config:setting:: console-log-level
   :displayname: Console notification log level (Notification Logging)
@@ -3339,18 +3376,18 @@ Output logs to console
 Console log level
 ^^^^^^^^^^^^^^^^^^
 
-+-----------------------------------------------+---------------------------------------------------------------------------------+
-| The level of detail in notification log       | - System Config path: N/A                                                       |
-| events written when Mattermost outputs log    | - ``config.json setting``: ``".NotificationLogSettings.ConsoleLevel": DEBUG",`` |
-| messages to the console.                      | - Environment variable: ``MM_NOTIFICATIONLOGSETTINGS_CONSOLELEVEL``             |
-|                                               |                                                                                 |
-| - **DEBUG**: **(Default)** Outputs verbose    |                                                                                 |
-|   detail for developers debugging issues.     |                                                                                 |
-| - **ERROR**: Outputs only error messages.     |                                                                                 |
-| - **INFO**: Outputs error messages and        |                                                                                 |
-|   information around startup and              |                                                                                 |
-|   initialization.                             |                                                                                 |
-+-----------------------------------------------+---------------------------------------------------------------------------------+
++-----------------------------------------------+-----------------------------------------------------------------------------------------+
+| The level of detail in notification log       | - System Config path: N/A                                                               |
+| events written when Mattermost outputs log    | - ``config.json`` setting: ``NotificationLogSettings`` > ``ConsoleLevel`` > ``"DEBUG"`` |
+| messages to the console.                      | - Environment variable: ``MM_NOTIFICATIONLOGSETTINGS_CONSOLELEVEL``                     |
+|                                               |                                                                                         |
+| - **DEBUG**: **(Default)** Outputs verbose    |                                                                                         |
+|   detail for developers debugging issues.     |                                                                                         |
+| - **ERROR**: Outputs only error messages.     |                                                                                         |
+| - **INFO**: Outputs error messages and        |                                                                                         |
+|   information around startup and              |                                                                                         |
+|   initialization.                             |                                                                                         |
++-----------------------------------------------+-----------------------------------------------------------------------------------------+
 
 .. config:setting:: output-console-logs-as-json
   :displayname: Output notification console logs as JSON (Notification Logging)
@@ -3365,15 +3402,15 @@ Console log level
 Output console logs as JSON
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+-----------------------------------------------+---------------------------------------------------------------------------------+
-| Configure Mattermost to output notification   | - System Config path: N/A                                                       |
-| console logs as JSON.                         | - ``config.json setting``: ``".NotificationLogSettings.ConsoleJson": true",``   |
-|                                               | - Environment variable: ``MM_NOTIFICATIONLOGSETTINGS_CONSOLEJSON``              |
-| - **true**: **(Default)** Logged events are   |                                                                                 |
-|   written in a machine-readable JSON format.  |                                                                                 |
-| - **false**: Logged events are written in     |                                                                                 |
-|   plain text.                                 |                                                                                 |
-+-----------------------------------------------+---------------------------------------------------------------------------------+
++-----------------------------------------------+---------------------------------------------------------------------------------------+
+| Configure Mattermost to output notification   | - System Config path: N/A                                                             |
+| console logs as JSON.                         | - ``config.json`` setting: ``NotificationLogSettings`` > ``ConsoleJson`` > ``true``   |
+|                                               | - Environment variable: ``MM_NOTIFICATIONLOGSETTINGS_CONSOLEJSON``                    |
+| - **true**: **(Default)** Logged events are   |                                                                                       |
+|   written in a machine-readable JSON format.  |                                                                                       |
+| - **false**: Logged events are written in     |                                                                                       |
+|   plain text.                                 |                                                                                       |
++-----------------------------------------------+---------------------------------------------------------------------------------------+
 
 Typically set to **true** in a production environment.
 
@@ -3390,16 +3427,16 @@ Typically set to **true** in a production environment.
 Colorize plain text console logs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+-----------------------------------------------+----------------------------------------------------------------------------------+
-| Enables system admins to display plain text   | - System Config path: N/A                                                        |
-| notification log level details in color.      | - ``config.json setting``: ``".NotificationLogSettings.EnableColor": false",``   |
-|                                               | - Environment variable: ``MM_NOTIFICATIONLOGSETTINGS_ENABLECOLOR``               |
-| - **true**: When logged events are output to  |                                                                                  |
-|   the console as plain text, colorize log     |                                                                                  |
-|   levels details.                             |                                                                                  |
-| - **false**: **(Default)** Plain text log     |                                                                                  |
-|   details aren't colorized in the console.    |                                                                                  |
-+-----------------------------------------------+----------------------------------------------------------------------------------+
++-----------------------------------------------+----------------------------------------------------------------------------------------+
+| Enables system admins to display plain text   | - System Config path: N/A                                                              |
+| notification log level details in color.      | - ``config.json`` setting: ``NotificationLogSettings`` > ``EnableColor`` > ``false``   |
+|                                               | - Environment variable: ``MM_NOTIFICATIONLOGSETTINGS_ENABLECOLOR``                     |
+| - **true**: When logged events are output to  |                                                                                        |
+|   the console as plain text, colorize log     |                                                                                        |
+|   levels details.                             |                                                                                        |
+| - **false**: **(Default)** Plain text log     |                                                                                        |
+|   details aren't colorized in the console.    |                                                                                        |
++-----------------------------------------------+----------------------------------------------------------------------------------------+
 
 .. config:setting:: output-logs-to-file
   :displayname: Output notification logs to file (Notification Logging)
@@ -3414,19 +3451,19 @@ Colorize plain text console logs
 Output logs to file
 ^^^^^^^^^^^^^^^^^^^^
 
-+-----------------------------------------------+---------------------------------------------------------------------------------+
-| Configure Mattermost to output notification   | - System Config path: N/A                                                       |
-| console logs to a file.                       | - ``config.json setting``: ``".NotificationLogSettings.EnableFile": true",``    |
-|                                               | - Environment variable: ``MM_NOTIFICATIONLOGSETTINGS_ENABLEFILE``               |
-| - **true**: **(Default)** Logged events are   |                                                                                 |
-|   written based on the                        |                                                                                 |
-|   `file log level <#file-log-level>`__        |                                                                                 |
-|   configuration to a ``notifications.log``    |                                                                                 |
-|   file located in the directory configured    |                                                                                 |
-|   via ``file location``.                      |                                                                                 |
-| - **false**: Logged events aren't written to  |                                                                                 |
-|   a file.                                     |                                                                                 |
-+-----------------------------------------------+---------------------------------------------------------------------------------+
++-----------------------------------------------+---------------------------------------------------------------------------------------+
+| Configure Mattermost to output notification   | - System Config path: N/A                                                             |
+| console logs to a file.                       | - ``config.json`` setting: ``NotificationLogSettings`` > ``EnableFile`` > ``true``    |
+|                                               | - Environment variable: ``MM_NOTIFICATIONLOGSETTINGS_ENABLEFILE``                     |
+| - **true**: **(Default)** Logged events are   |                                                                                       |
+|   written based on the                        |                                                                                       |
+|   `file log level <#file-log-level>`__        |                                                                                       |
+|   configuration to a ``notifications.log``    |                                                                                       |
+|   file located in the directory configured    |                                                                                       |
+|   via ``file location``.                      |                                                                                       |
+| - **false**: Logged events aren't written to  |                                                                                       |
+|   a file.                                     |                                                                                       |
++-----------------------------------------------+---------------------------------------------------------------------------------------+
 
 .. config:setting:: file-log-directory
   :displayname: Notification file log directory (Notification Logging)
@@ -3438,12 +3475,12 @@ Output logs to file
 File log directory
 ^^^^^^^^^^^^^^^^^^
 
-+-----------------------------------------------+---------------------------------------------------------------------------------+
-| The location of the notification log files.   | - System Config path: N/A                                                       |
-|                                               | - ``config.json setting``: ``".NotificationLogSettings.FileLocation": "",``     |
-| String input. If left blank, log files are    | - Environment variable: ``MM_NOTIFICATIONLOGSETTINGS_FILELOCATION``             |
-| stored in the ``./logs`` directory.           |                                                                                 |
-+-----------------------------------------------+---------------------------------------------------------------------------------+
++-----------------------------------------------+-------------------------------------------------------------------------------------+
+| The location of the notification log files.   | - System Config path: N/A                                                           |
+|                                               | - ``config.json`` setting: ``NotificationLogSettings`` > ``FileLocation`` > ``""``  |
+| String input. If left blank, log files are    | - Environment variable: ``MM_NOTIFICATIONLOGSETTINGS_FILELOCATION``                 |
+| stored in the ``./logs`` directory.           |                                                                                     |
++-----------------------------------------------+-------------------------------------------------------------------------------------+
 
 .. note::
 
@@ -3463,17 +3500,17 @@ File log directory
 File log level
 ^^^^^^^^^^^^^^
 
-+-------------------------------------------------+---------------------------------------------------------------------------------+
-| The level of detail in notification log events  | - System Config path: N/A                                                       |
-| when Mattermost outputs log messages to a file. | - ``config.json setting``: ``".NotificationLogSettings.FileLevel": INFO",``     |
-|                                                 | - Environment variable: ``MM_NOTIFICATIONLOGSETTINGS_FILELEVEL``                |
-| - **DEBUG**: Outputs verbose detail for         |                                                                                 |
-|   developers debugging issues.                  |                                                                                 |
-| - **ERROR**: Outputs only error messages.       |                                                                                 |
-| - **INFO**: **(Default)** Outputs error         |                                                                                 |
-|   messages and information around startup       |                                                                                 |
-|   and initialization.                           |                                                                                 |
-+-------------------------------------------------+---------------------------------------------------------------------------------+
++-------------------------------------------------+--------------------------------------------------------------------------------------+
+| The level of detail in notification log events  | - System Config path: N/A                                                            |
+| when Mattermost outputs log messages to a file. | - ``config.json`` setting: ``NotificationLogSettings`` > ``FileLevel`` > ``"INFO"``  |
+|                                                 | - Environment variable: ``MM_NOTIFICATIONLOGSETTINGS_FILELEVEL``                     |
+| - **DEBUG**: Outputs verbose detail for         |                                                                                      |
+|   developers debugging issues.                  |                                                                                      |
+| - **ERROR**: Outputs only error messages.       |                                                                                      |
+| - **INFO**: **(Default)** Outputs error         |                                                                                      |
+|   messages and information around startup       |                                                                                      |
+|   and initialization.                           |                                                                                      |
++-------------------------------------------------+--------------------------------------------------------------------------------------+
 
 .. config:setting:: output-file-logs-as-json
   :displayname: Output notification file logs as JSON (Notification Logging)
@@ -3488,15 +3525,15 @@ File log level
 Output file logs as JSON
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-+-----------------------------------------------+------------------------------------------------------------------------------+
-| Configure Mattermost to output notification   | - System Config path: N/A                                                    |
-| file logs as JSON.                            | - ``config.json setting``: ``".NotificationLogSettings.FileJson": true",``   |
-|                                               | - Environment variable: ``MM_NOTIFICATIONLOGSETTINGS_FILEJSON``              |
-| - **true**: **(Default)** Logged events are   |                                                                              |
-|   written in a machine-readable JSON format.  |                                                                              |
-| - **false**: Logged events are written in     |                                                                              |
-|   plain text.                                 |                                                                              |
-+-----------------------------------------------+------------------------------------------------------------------------------+
++-----------------------------------------------+------------------------------------------------------------------------------------+
+| Configure Mattermost to output notification   | - System Config path: N/A                                                          |
+| file logs as JSON.                            | - ``config.json`` setting: ``NotificationLogSettings`` > ``FileJson`` > ``true``   |
+|                                               | - Environment variable: ``MM_NOTIFICATIONLOGSETTINGS_FILEJSON``                    |
+| - **true**: **(Default)** Logged events are   |                                                                                    |
+|   written in a machine-readable JSON format.  |                                                                                    |
+| - **false**: Logged events are written in     |                                                                                    |
+|   plain text.                                 |                                                                                    |
++-----------------------------------------------+------------------------------------------------------------------------------------+
 
 .. config:setting:: output-logs-to-multiple-targets
   :displayname: Output notification logs to multiple targets (Notification Logging)
@@ -3508,16 +3545,16 @@ Output file logs as JSON
 Output logs to multiple targets
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+-----------------------------------------------+---------------------------------------------------------------------------------------+
-| Configure Mattermost to allow any combination | - System Config path: N/A                                                             |
-| of console, local file, syslog, and TCP       | - ``config.json setting``: ``".NotificationLogSettings.AdvancedLoggingJSON":: "",``   |
-| socket targets, and send notification log     | - Environment variable: ``MM_NOTIFICATIONLOGSETTINGS_ADVANCEDLOGGINGJSON``            |
-| records to multiple targets.                  |                                                                                       |
-|                                               |                                                                                       |
-| String input can contain a filespec to        |                                                                                       |
-| another configuration file, a database DSN,   |                                                                                       |
-| or JSON.                                      |                                                                                       |
-+-----------------------------------------------+---------------------------------------------------------------------------------------+
++-----------------------------------------------+-----------------------------------------------------------------------------------------------+
+| Configure Mattermost to allow any combination | - System Config path: N/A                                                                     |
+| of console, local file, syslog, and TCP       | - ``config.json`` setting: ``NotificationLogSettings`` > ``AdvancedLoggingJSON`` > ``": ""``  |
+| socket targets, and send notification log     | - Environment variable: ``MM_NOTIFICATIONLOGSETTINGS_ADVANCEDLOGGINGJSON``                    |
+| records to multiple targets.                  |                                                                                               |
+|                                               |                                                                                               |
+| String input can contain a filespec to        |                                                                                               |
+| another configuration file, a database DSN,   |                                                                                               |
+| or JSON.                                      |                                                                                               |
++-----------------------------------------------+-----------------------------------------------------------------------------------------------+
 
 ----
 
@@ -3541,7 +3578,7 @@ Output audit logs to file
 
 +--------------------------------------------------+----------------------------------------------------------------------------------------+
 | Whether to write audit log files to disk.        | - System Config path: **Compliance > Audit Logging**                                   |
-|                                                  | - ``config.json setting``: ``".ExperimentalAuditSettings.FileEnabled": false,``        |
+|                                                  | - ``config.json`` setting: ``ExperimentalAuditSettings`` > ``FileEnabled`` > ``false`` |
 | - **true**: Logged events are written to the     | - Environment variable: ``MM_EXPERIMENTALAUDITSETTINGS_FILEENABLED``                   |
 |   file specified by the audit file name          |                                                                                        |
 |   configuration setting.                         |                                                                                        |
@@ -3563,15 +3600,15 @@ Output audit logs to file
 Audit file name
 ^^^^^^^^^^^^^^^
 
-+--------------------------------------------------+----------------------------------------------------------------------------+
-| The name of the audit log files.                 | - System Config path: **Compliance > Audit Logging**                       |
-|                                                  | - ``config.json setting``: ``".ExperimentalAuditSettings.FileName": "",``  |
-| The path that you set to the audit file must     | - Environment variable: ``MM_EXPERIMENTALAUDITSETTINGS_FILENAME``          |
-| exist and Mattermost must have write             |                                                                            |
-| permissions in it.                               |                                                                            |
-|                                                  |                                                                            |
-| **Example:** ``/var/log/mattermost_audit.log``   |                                                                            |
-+--------------------------------------------------+----------------------------------------------------------------------------+
++--------------------------------------------------+-----------------------------------------------------------------------------------+
+| The name of the audit log files.                 | - System Config path: **Compliance > Audit Logging**                              |
+|                                                  | - ``config.json`` setting: ``ExperimentalAuditSettings`` > ``FileName`` > ``""``  |
+| The path that you set to the audit file must     | - Environment variable: ``MM_EXPERIMENTALAUDITSETTINGS_FILENAME``                 |
+| exist and Mattermost must have write             |                                                                                   |
+| permissions in it.                               |                                                                                   |
+|                                                  |                                                                                   |
+| **Example:** ``/var/log/mattermost_audit.log``   |                                                                                   |
++--------------------------------------------------+-----------------------------------------------------------------------------------+
 
 .. note::
 
@@ -3582,16 +3619,16 @@ Audit file name
   :systemconsole: Compliance > Audit Logging
   :configjson: .ExperimentalAuditSettings.FileMaxSizeMB
   :environment: MM_EXPERIMENTALAUDITSETTINGS_FILEMAXSIZEMB
-  :description: The maximum size in megabytes for audit log files before they are rotated.
+  :description: The maximum size in megabytes for audit log files before they are rotated. Default is 100 MB.
 
 Maximum file size
 ^^^^^^^^^^^^^^^^^
 
 +--------------------------------------------------+----------------------------------------------------------------------------------------+
 | The maximum size in megabytes for audit log      | - System Config path: **Compliance > Audit Logging**                                   |
-| files before they are rotated.                   | - ``config.json setting``: ``".ExperimentalAuditSettings.FileMaxSizeMB": 100,``        |
+| files before they are rotated.                   | - ``config.json`` setting: ``ExperimentalAuditSettings`` > ``FileMaxSizeMB`` > ``100`` |
 |                                                  | - Environment variable: ``MM_EXPERIMENTALAUDITSETTINGS_FILEMAXSIZEMB``                 |
-| Numerical input. Default is **100**.             |                                                                                        |
+| Numerical input. Default is **100** MB.          |                                                                                        |
 +--------------------------------------------------+----------------------------------------------------------------------------------------+
 
 .. config:setting:: auditlog-filemaxagedays
@@ -3599,14 +3636,14 @@ Maximum file size
   :systemconsole: Compliance > Audit Logging
   :configjson: .ExperimentalAuditSettings.FileMaxAgeDays
   :environment: MM_EXPERIMENTALAUDITSETTINGS_FILEMAXAGEDAYS
-  :description: The maximum age in days for audit log files before they are deleted.
+  :description: The maximum age in days for audit log files before they are deleted. Default is 0 (no limit).
 
 Maximum file age
 ^^^^^^^^^^^^^^^^
 
 +--------------------------------------------------+----------------------------------------------------------------------------------------+
 | The maximum age in days for audit log files      | - System Config path: **Compliance > Audit Logging**                                   |
-| before they are deleted.                         | - ``config.json setting``: ``".ExperimentalAuditSettings.FileMaxAgeDays": 0,``         |
+| before they are deleted.                         | - ``config.json`` setting: ``ExperimentalAuditSettings`` > ``FileMaxAgeDays`` > ``0``  |
 |                                                  | - Environment variable: ``MM_EXPERIMENTALAUDITSETTINGS_FILEMAXAGEDAYS``                |
 | Numerical input. Default is **0** (no limit).    |                                                                                        |
 +--------------------------------------------------+----------------------------------------------------------------------------------------+
@@ -3616,14 +3653,14 @@ Maximum file age
   :systemconsole: Compliance > Audit Logging
   :configjson: .ExperimentalAuditSettings.FileMaxBackups
   :environment: MM_EXPERIMENTALAUDITSETTINGS_FILEMAXBACKUPS
-  :description: The maximum number of audit log file backups to retain.
+  :description: The maximum number of audit log file backups to retain. Default is 0 (no limit).
 
 Maximum file backups
 ^^^^^^^^^^^^^^^^^^^^
 
 +--------------------------------------------------+----------------------------------------------------------------------------------------+
 | The maximum number of audit log file backups     | - System Config path: **Compliance > Audit Logging**                                   |
-| to retain.                                       | - ``config.json setting``: ``".ExperimentalAuditSettings.FileMaxBackups": 0,``         |
+| to retain.                                       | - ``config.json`` setting: ``ExperimentalAuditSettings`` > ``FileMaxBackups`` > ``0``  |
 |                                                  | - Environment variable: ``MM_EXPERIMENTALAUDITSETTINGS_FILEMAXBACKUPS``                |
 | Numerical input. Default is **0** (no limit).    |                                                                                        |
 +--------------------------------------------------+----------------------------------------------------------------------------------------+
@@ -3635,50 +3672,53 @@ Maximum file backups
   :environment: MM_EXPERIMENTALAUDITSETTINGS_FILECOMPRESS
   :description: Whether to compress rotated audit log files.
 
+  - **true**: Rotated audit log files are compressed.
+  - **false**: **(Default)** Rotated audit log files aren't compressed.
+
 Compress audit log files
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-+--------------------------------------------------+----------------------------------------------------------------------------------------+
-| Whether to compress rotated audit log files.     | - System Config path: **Compliance > Audit Logging**                                   |
-|                                                  | - ``config.json setting``: ``".ExperimentalAuditSettings.FileCompress": false,``       |
-| - **true**: Rotated audit log files are          | - Environment variable: ``MM_EXPERIMENTALAUDITSETTINGS_FILECOMPRESS``                  |
-|   compressed.                                    |                                                                                        |
-| - **false**: **(Default)** Rotated audit log     |                                                                                        |
-|   files are not compressed.                      |                                                                                        |
-+--------------------------------------------------+----------------------------------------------------------------------------------------+
++--------------------------------------------------+-------------------------------------------------------------------------------------------+
+| Whether to compress rotated audit log files.     | - System Config path: **Compliance > Audit Logging**                                      |
+|                                                  | - ``config.json`` setting: ``ExperimentalAuditSettings`` > ``FileCompress`` > ``false``   |
+| - **true**: Rotated audit log files are          | - Environment variable: ``MM_EXPERIMENTALAUDITSETTINGS_FILECOMPRESS``                     |
+|   compressed.                                    |                                                                                           |
+| - **false**: **(Default)** Rotated audit log     |                                                                                           |
+|   files aren't compressed.                       |                                                                                           |
++--------------------------------------------------+-------------------------------------------------------------------------------------------+
 
 .. config:setting:: auditlog-filemaxqueuesize
   :displayname: Audit log queue size (Audit Logging)
   :systemconsole: Compliance > Audit Logging
   :configjson: .ExperimentalAuditSettings.FileMaxQueueSize
   :environment: MM_EXPERIMENTALAUDITSETTINGS_FILEMAXQUEUESIZE
-  :description: The maximum number of audit log entries that can be queued.
+  :description: The maximum number of audit log entries that can be queued. Default is 1000.
 
 Audit log queue size
 ^^^^^^^^^^^^^^^^^^^^
 
-+--------------------------------------------------+----------------------------------------------------------------------------------------+
-| The maximum number of audit log entries that     | - System Config path: **Compliance > Audit Logging**                                   |
-| can be queued.                                   | - ``config.json setting``: ``".ExperimentalAuditSettings.FileMaxQueueSize": 1000,``    |
-|                                                  | - Environment variable: ``MM_EXPERIMENTALAUDITSETTINGS_FILEMAXQUEUESIZE``              |
-| Numerical input. Default is **1000**.            |                                                                                        |
-+--------------------------------------------------+----------------------------------------------------------------------------------------+
++--------------------------------------------------+--------------------------------------------------------------------------------------------+
+| The maximum number of audit log entries that     | - System Config path: **Compliance > Audit Logging**                                       |
+| can be queued.                                   | - ``config.json`` setting: ``ExperimentalAuditSettings`` > ``FileMaxQueueSize`` > ``1000`` |
+|                                                  | - Environment variable: ``MM_EXPERIMENTALAUDITSETTINGS_FILEMAXQUEUESIZE``                  |
+| Numerical input. Default is **1000**.            |                                                                                            |
++--------------------------------------------------+--------------------------------------------------------------------------------------------+
 
 .. config:setting:: auditlog-certificate
   :displayname: Audit log certificate (Audit Logging)
   :systemconsole: N/A
   :configjson: .ExperimentalAuditSettings.Certificate
   :environment: MM_EXPERIMENTALAUDITSETTINGS_CERTIFICATE
-  :description: Certificate configuration for audit logging.
+  :description: Certificate configuration for audit logging. Default is blank.
 
 Audit log certificate
 ^^^^^^^^^^^^^^^^^^^^^
 
-+--------------------------------------------------+------------------------------------------------------------------------------------+
-| Certificate configuration for audit logging.     | - System Config path: N/A                                                          |
-|                                                  | - ``config.json setting``: ``".ExperimentalAuditSettings.Certificate": "",``       |
-| String input. Default is blank.                  | - Environment variable: ``MM_EXPERIMENTALAUDITSETTINGS_CERTIFICATE``               |
-+--------------------------------------------------+------------------------------------------------------------------------------------+
++--------------------------------------------------+-------------------------------------------------------------------------------------------+
+| Certificate configuration for audit logging.     | - System Config path: N/A                                                                 |
+|                                                  | - ``config.json`` setting: ``ExperimentalAuditSettings`` > ``Certificate`` > ``""``       |
+| String input. Default is blank.                  | - Environment variable: ``MM_EXPERIMENTALAUDITSETTINGS_CERTIFICATE``                      |
++--------------------------------------------------+-------------------------------------------------------------------------------------------+
 
 .. config:setting:: auditlog-advancedloggingjson
   :displayname: Output audit logs to multiple targets (Audit Logging)
@@ -3690,11 +3730,11 @@ Audit log certificate
 Output audit logs to multiple targets
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+--------------------------------------------------+----------------------------------------------------------------------------------------+
-| Configures Mattermost to output audit log        | - System Config path: **Compliance > Audit Logging**                                   |
-| records to multiple targets.                     | - ``config.json setting``: ``".ExperimentalAuditSettings.AdvancedLoggingJSON": {},``   |
-|                                                  | - Environment variable: ``MM_EXPERIMENTALAUDITSETTINGS_ADVANCEDLOGGINGJSON``           |
-+--------------------------------------------------+----------------------------------------------------------------------------------------+
++--------------------------------------------------+---------------------------------------------------------------------------------------------+
+| Configures Mattermost to output audit log        | - System Config path: **Compliance > Audit Logging**                                        |
+| records to multiple targets.                     | - ``config.json`` setting: ``ExperimentalAuditSettings`` > ``AdvancedLoggingJSON`` > ``{}`` |
+|                                                  | - Environment variable: ``MM_EXPERIMENTALAUDITSETTINGS_ADVANCEDLOGGINGJSON``                |
++--------------------------------------------------+---------------------------------------------------------------------------------------------+
 
 .. note::
 
@@ -3724,20 +3764,20 @@ User sessions are cleared when a user tries to log in, and sessions are cleared 
 Extend session length with activity
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+----------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| Improves the user experience by extending sessions and keeping | - System Config path: **Environment > Session Lengths**                                 |
-| users logged in if they are active in their Mattermost apps.   | - ``config.json`` setting: ``".ServiceSettings.ExtendSessionLengthWithActivity: true,`` |
-|                                                                | - Environment variable: ``MM_SERVICESETTINGS_EXTENDSESSIONLENGTHWITHACTIVITY``          |
-| - **true**: **(Default)** Sessions are automatically           |                                                                                         |
-|   extended when users are active in their Mattermost           |                                                                                         |
-|   client. User sessions only expire when users aren’t active   |                                                                                         |
-|   in their Mattermost client for the entire duration of the    |                                                                                         |
-|   session lengths defined.                                     |                                                                                         |
-| - **false**: Sessions won't extend with activity in            |                                                                                         |
-|   Mattermost. User sessions immediately expire at the          |                                                                                         |
-|   end of the session length or based on the                    |                                                                                         |
-|   `session idle timeout <#session-idle-timeout>`__ configured. |                                                                                         |
-+----------------------------------------------------------------+-----------------------------------------------------------------------------------------+
++----------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| Improves the user experience by extending sessions and keeping | - System Config path: **Environment > Session Lengths**                                         |
+| users logged in if they are active in their Mattermost apps.   | - ``config.json`` setting: ``ServiceSettings`` > ``ExtendSessionLengthWithActivity`` > ``true`` |
+|                                                                | - Environment variable: ``MM_SERVICESETTINGS_EXTENDSESSIONLENGTHWITHACTIVITY``                  |
+| - **true**: **(Default)** Sessions are automatically           |                                                                                                 |
+|   extended when users are active in their Mattermost           |                                                                                                 |
+|   client. User sessions only expire when users aren’t active   |                                                                                                 |
+|   in their Mattermost client for the entire duration of the    |                                                                                                 |
+|   session lengths defined.                                     |                                                                                                 |
+| - **false**: Sessions won't extend with activity in            |                                                                                                 |
+|   Mattermost. User sessions immediately expire at the          |                                                                                                 |
+|   end of the session length or based on the                    |                                                                                                 |
+|   `session idle timeout <#session-idle-timeout>`__ configured. |                                                                                                 |
++----------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 
 .. config:setting:: terminate-sessions-on-password-change
   :displayname: Terminate sessions on password change (Session Lengths)
@@ -3751,22 +3791,22 @@ Extend session length with activity
 Terminate sessions on password change
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+----------------------------------------------------------------+-------------------------------------------------------------------------------------------+
-| Enable or disable session revocation when a user's             | - System Config path: **Environment > Session Lengths**                                   |
-| password changes.                                              | - ``config.json`` setting: ``".ServiceSettings.TerminateSessionsOnPasswordChange: true,`` |
-|                                                                | - Environment variable: ``MM_SERVICESETTINGS_TERMINATESESSIONSONPASSWORDCHANGE``          |
-| - **true**: **(Default for new deployments)**                  |                                                                                           |
-|   Session revocation is enabled.                               |                                                                                           |
-|   All sessions of a user expire if their password is changed   |                                                                                           |
-|   (by themselves or by a system admin). If the password change |                                                                                           |
-|   is initiated by the user, their current session isn't        |                                                                                           |
-|   terminated.                                                  |                                                                                           |
-| - **false**: **(Default for existing deployments)**            |                                                                                           |
-|   Session revocation is disabled.                              |                                                                                           |
-|   When users change their password, only the user's current    |                                                                                           |
-|   session is revoked. When a system admin changes the user's   |                                                                                           |
-|   password, none of the user's sessions are revoked.           |                                                                                           |
-+----------------------------------------------------------------+-------------------------------------------------------------------------------------------+
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
+| Enable or disable session revocation when a user's             | - System Config path: **Environment > Session Lengths**                                           |
+| password changes.                                              | - ``config.json`` setting: ``ServiceSettings`` > ``TerminateSessionsOnPasswordChange`` > ``true`` |
+|                                                                | - Environment variable: ``MM_SERVICESETTINGS_TERMINATESESSIONSONPASSWORDCHANGE``                  |
+| - **true**: **(Default for new deployments)**                  |                                                                                                   |
+|   Session revocation is enabled.                               |                                                                                                   |
+|   All sessions of a user expire if their password is changed   |                                                                                                   |
+|   (by themselves or by a system admin). If the password change |                                                                                                   |
+|   is initiated by the user, their current session isn't        |                                                                                                   |
+|   terminated.                                                  |                                                                                                   |
+| - **false**: **(Default for existing deployments)**            |                                                                                                   |
+|   Session revocation is disabled.                              |                                                                                                   |
+|   When users change their password, only the user's current    |                                                                                                   |
+|   session is revoked. When a system admin changes the user's   |                                                                                                   |
+|   password, none of the user's sessions are revoked.           |                                                                                                   |
++----------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
 
 .. config:setting:: session-length-for-adldap-and-email
   :displayname: Session length for AD/LDAP and email (Session Lengths)
@@ -3780,14 +3820,14 @@ Terminate sessions on password change
 Session length for AD/LDAP and email
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+----------------------------------------------------------------+--------------------------------------------------------------------------------+
-| Set the number of hours counted from the last time a user      | - System Config path: **Environment > Session Lengths**                        |
-| entered their credentials into the web app or the desktop      | - ``config.json`` setting: ``".ServiceSettings.SessionLengthWebInHours: 720,`` |
-| app to the expiry of the user’s session on email and AD/LDAP   | - Environment variable: ``MM_SERVICESETTINGS_SESSIONLENGTHWEBINHOURS``         |
-| authentication.                                                |                                                                                |
-|                                                                |                                                                                |
-| Numerical input in hours. Default is **720** hours.            |                                                                                |
-+----------------------------------------------------------------+--------------------------------------------------------------------------------+
++----------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| Set the number of hours counted from the last time a user      | - System Config path: **Environment > Session Lengths**                                |
+| entered their credentials into the web app or the desktop      | - ``config.json`` setting: ``ServiceSettings`` > ``SessionLengthWebInHours`` > ``720`` |
+| app to the expiry of the user’s session on email and AD/LDAP   | - Environment variable: ``MM_SERVICESETTINGS_SESSIONLENGTHWEBINHOURS``                 |
+| authentication.                                                |                                                                                        |
+|                                                                |                                                                                        |
+| Numerical input in hours. Default is **720** hours.            |                                                                                        |
++----------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
 .. note::
 
@@ -3803,13 +3843,13 @@ Session length for AD/LDAP and email
 Session length for mobile
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+----------------------------------------------------------------+-----------------------------------------------------------------------------------+
-| Set the number of hours counted from the last time a user      | - System Config path: **Environment > Session Lengths**                           |
-| entered their credential into the mobile app to the expiry     | - ``config.json`` setting: ``".ServiceSettings.SessionLengthMobileInHours: 720,`` |
-| of the user’s session.                                         | - Environment variable: ``MM_SERVICESETTINGS_SESSIONLENGTHMOBILEINHOURS``         |
-|                                                                |                                                                                   |
-| Numerical input in hours. Default is **720** hours.            |                                                                                   |
-+----------------------------------------------------------------+-----------------------------------------------------------------------------------+
++----------------------------------------------------------------+-------------------------------------------------------------------------------------------+
+| Set the number of hours counted from the last time a user      | - System Config path: **Environment > Session Lengths**                                   |
+| entered their credential into the mobile app to the expiry     | - ``config.json`` setting: ``ServiceSettings`` > ``SessionLengthMobileInHours`` > ``720`` |
+| of the user’s session.                                         | - Environment variable: ``MM_SERVICESETTINGS_SESSIONLENGTHMOBILEINHOURS``                 |
+|                                                                |                                                                                           |
+| Numerical input in hours. Default is **720** hours.            |                                                                                           |
++----------------------------------------------------------------+-------------------------------------------------------------------------------------------+
 
 .. note::
 
@@ -3825,16 +3865,16 @@ Session length for mobile
 Session length for SSO
 ~~~~~~~~~~~~~~~~~~~~~~
 
-+----------------------------------------------------------------+----------------------------------------------------------------------------------+
-| Set the number of hours from the last time a user entered      | - System Config path: **Environment > Session Lengths**                          |
-| their SSO credentials to the expiry of the user’s session.     | - ``config.json`` setting: ``".ServiceSettings.SessionLengthSSOInHours: 720,``   |
-| This setting defines the session length for SSO                | - Environment variable: ``MM_SERVICESETTINGS_SESSIONLENGTHSSOINHOURS``           |
-| authentication, such as SAML, GitLab, and OAuth 2.0.           |                                                                                  |
-|                                                                |                                                                                  |
-| Numerical input in hours. Default is **720** hours.            |                                                                                  |
-| Numbers as decimals are also valid values for this             |                                                                                  |
-| configuration setting.                                         |                                                                                  |
-+----------------------------------------------------------------+----------------------------------------------------------------------------------+
++----------------------------------------------------------------+------------------------------------------------------------------------------------------+
+| Set the number of hours from the last time a user entered      | - System Config path: **Environment > Session Lengths**                                  |
+| their SSO credentials to the expiry of the user’s session.     | - ``config.json`` setting: ``ServiceSettings`` > ``SessionLengthSSOInHours`` > ``720``   |
+| This setting defines the session length for SSO                | - Environment variable: ``MM_SERVICESETTINGS_SESSIONLENGTHSSOINHOURS``                   |
+| authentication, such as SAML, GitLab, and OAuth 2.0.           |                                                                                          |
+|                                                                |                                                                                          |
+| Numerical input in hours. Default is **720** hours.            |                                                                                          |
+| Numbers as decimals are also valid values for this             |                                                                                          |
+| configuration setting.                                         |                                                                                          |
++----------------------------------------------------------------+------------------------------------------------------------------------------------------+
 
 .. note::
 
@@ -3851,11 +3891,11 @@ Session length for SSO
 Session cache
 ~~~~~~~~~~~~~
 
-+----------------------------------------------------------------+-----------------------------------------------------------------------------+
-| Set the number of minutes to cache a session in memory.        | - System Config path: **Environment > Session Lengths**                     |
-|                                                                | - ``config.json`` setting: ``".ServiceSettings.SessionCacheInMinutes: 10,`` |
-| Numerical input in minutes. Default is **10** minutes.         | - Environment variable: ``MM_SERVICESETTINGS_SESSIONCACHEINMINUTES``        |
-+----------------------------------------------------------------+-----------------------------------------------------------------------------+
++----------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| Set the number of minutes to cache a session in memory.        | - System Config path: **Environment > Session Lengths**                             |
+|                                                                | - ``config.json`` setting: ``ServiceSettings`` > ``SessionCacheInMinutes`` > ``10`` |
+| Numerical input in minutes. Default is **10** minutes.         | - Environment variable: ``MM_SERVICESETTINGS_SESSIONCACHEINMINUTES``                |
++----------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
 .. config:setting:: session-idle-timeout
   :displayname: Session idle timeout (Session Lengths)
@@ -3869,15 +3909,15 @@ Session cache
 Session idle timeout
 ~~~~~~~~~~~~~~~~~~~~
 
-+----------------------------------------------------------------+--------------------------------------------------------------------------------------+
-| The number of minutes from the last time a user was active     | - System Config path: N/A                                                            |
-| on the system to the expiry of the user’s session.             | - ``config.json`` setting: ``".ServiceSettings.SessionIdleTimeoutInMinutes: 43200,`` |
-| Once expired, the user will need to log in to continue.        | - Environment variable: ``MM_SERVICESETTINGS_SESSIONIDLETIMEOUTINMINUTES``           |
-|                                                                |                                                                                      |
-| Numerical input in minutes. Default is **43200** (30 days).    |                                                                                      |
-| Minimum value is **5** minutes, and a value of **0** sets      |                                                                                      |
-| the time as unlimited.                                         |                                                                                      |
-+----------------------------------------------------------------+--------------------------------------------------------------------------------------+
++----------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| The number of minutes from the last time a user was active     | - System Config path: N/A                                                                    |
+| on the system to the expiry of the user’s session.             | - ``config.json`` setting: ``ServiceSettings`` > ``SessionIdleTimeoutInMinutes`` > ``43200`` |
+| Once expired, the user will need to log in to continue.        | - Environment variable: ``MM_SERVICESETTINGS_SESSIONIDLETIMEOUTINMINUTES``                   |
+|                                                                |                                                                                              |
+| Numerical input in minutes. Default is **43200** (30 days).    |                                                                                              |
+| Minimum value is **5** minutes, and a value of **0** sets      |                                                                                              |
+| the time as unlimited.                                         |                                                                                              |
++----------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 
 .. note::
 
@@ -3910,14 +3950,14 @@ See the :doc:`performance monitoring </administration-guide/scale/deploy-prometh
 Enable performance monitoring
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------+---------------------------------------------------------------------+
-| Enable or disable performance monitoring.     | - System Config path: **Environment > Performance Monitoring**      |
-|                                               | - ``config.json setting``: ``".MetricsSettings.Enable": false",``   |
-| - **true**: Performance monitoring data       | - Environment variable: ``MM_METRICSSETTINGS_ENABLE``               |
-|   collection and profiling is enabled.        |                                                                     |
-| - **false**: **(Default)** Mattermost         |                                                                     |
-|   performance monitoring is disabled.         |                                                                     |
-+-----------------------------------------------+---------------------------------------------------------------------+
++-----------------------------------------------+---------------------------------------------------------------------------+
+| Enable or disable performance monitoring.     | - System Config path: **Environment > Performance Monitoring**            |
+|                                               | - ``config.json`` setting: ``MetricsSettings`` > ``Enable`` > ``false``   |
+| - **true**: Performance monitoring data       | - Environment variable: ``MM_METRICSSETTINGS_ENABLE``                     |
+|   collection and profiling is enabled.        |                                                                           |
+| - **false**: **(Default)** Mattermost         |                                                                           |
+|   performance monitoring is disabled.         |                                                                           |
++-----------------------------------------------+---------------------------------------------------------------------------+
 
 See the :doc:`performance monitoring </administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring>` documentation to learn more.
 
@@ -3934,14 +3974,14 @@ See the :doc:`performance monitoring </administration-guide/scale/deploy-prometh
 Enable client performance monitoring
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+------------------------------------------------------+----------------------------------------------------------------------------------+
-| Enable or disable client performance monitoring.     | - System Config path: **Environment > Performance Monitoring**                   |
-|                                                      | - ``config.json setting``: ``".MetricsSettings.EnableClientMetrics": false",``   |
-| - **true**: Client performance monitoring data       | - Environment variable: ``MM_METRICSSETTINGS_ENABLE``                            |
-|   collection and profiling is enabled.               |                                                                                  |
-| - **false**: **(Default)** Mattermost                |                                                                                  |
-|   client performance monitoring is disabled.         |                                                                                  |
-+------------------------------------------------------+----------------------------------------------------------------------------------+
++------------------------------------------------------+----------------------------------------------------------------------------------------+
+| Enable or disable client performance monitoring.     | - System Config path: **Environment > Performance Monitoring**                         |
+|                                                      | - ``config.json`` setting: ``MetricsSettings`` > ``EnableClientMetrics`` > ``false``   |
+| - **true**: Client performance monitoring data       | - Environment variable: ``MM_METRICSSETTINGS_ENABLE``                                  |
+|   collection and profiling is enabled.               |                                                                                        |
+| - **false**: **(Default)** Mattermost                |                                                                                        |
+|   client performance monitoring is disabled.         |                                                                                        |
++------------------------------------------------------+----------------------------------------------------------------------------------------+
 
 .. config:setting:: client-side-user-ids
   :displayname: Client side user ids (Performance Monitoring)
@@ -3955,7 +3995,7 @@ Client side user ids
 
 +---------------------------------------------------------------+-------------------------------------------------------------------------+
 | A list of comma-separated user IDs you want to track for      | - System Config path: **Environment > Performance Monitoring**          |
-| client-side webapp metrics.                                   | - ``config.json setting``: ``".MetricsSettings.ClientSideUserIds"``     |
+| client-side webapp metrics.                                   | - ``config.json`` setting: ``MetricsSettings`` > ``ClientSideUserIds``  |
 |                                                               | - Environment variable: ``MM_METRICSSETTINGS_LISTENADDRESS``            |
 | Limited to 5 user IDs. Blank by default.                      |                                                                         |
 +---------------------------------------------------------------+-------------------------------------------------------------------------+
@@ -3974,12 +4014,12 @@ Client side user ids
 Listen address
 ~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+-------------------------------------------------------------------------+
-| The port the Mattermost server will listen on to expose       | - System Config path: **Environment > Performance Monitoring**          |
-| performance metrics, when enabled.                            | - ``config.json setting``: ``".MetricsSettings.ListenAddress": 8067",`` |
-|                                                               | - Environment variable: ``MM_METRICSSETTINGS_LISTENADDRESS``            |
-| Numerical input. Default is **8067**.                         |                                                                         |
-+---------------------------------------------------------------+-------------------------------------------------------------------------+
++---------------------------------------------------------------+-------------------------------------------------------------------------------+
+| The port the Mattermost server will listen on to expose       | - System Config path: **Environment > Performance Monitoring**                |
+| performance metrics, when enabled.                            | - ``config.json`` setting: ``MetricsSettings`` > ``ListenAddress`` > ``8067`` |
+|                                                               | - Environment variable: ``MM_METRICSSETTINGS_LISTENADDRESS``                  |
+| Numerical input. Default is **8067**.                         |                                                                               |
++---------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 ----
 
@@ -4004,15 +4044,15 @@ Configure developer mode by going to **System Console > Environment > Developer*
 Enable testing commands
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------+--------------------------------------------------------------------------+
-| Enable or disable the ``/test`` slash command.    | - System Config path: **Environment > Developer**                        |
-|                                                   | - ``config.json setting``: ``".ServiceSettings.EnableTesting": true",``  |
-| - **true**: **(Default)** The ``/test`` slash     | - Environment variable: ``MM_SERVICESETTINGS_ENABLETESTING``             |
-|   command is enabled to load test accounts        |                                                                          |
-|   and test data.                                  |                                                                          |
-| - **false**:  The ``/test`` slash command is      |                                                                          |
-|   disabled.                                       |                                                                          |
-+---------------------------------------------------+--------------------------------------------------------------------------+
++---------------------------------------------------+--------------------------------------------------------------------------------+
+| Enable or disable the ``/test`` slash command.    | - System Config path: **Environment > Developer**                              |
+|                                                   | - ``config.json`` setting: ``ServiceSettings`` > ``EnableTesting`` > ``true``  |
+| - **true**: **(Default)** The ``/test`` slash     | - Environment variable: ``MM_SERVICESETTINGS_ENABLETESTING``                   |
+|   command is enabled to load test accounts        |                                                                                |
+|   and test data.                                  |                                                                                |
+| - **false**:  The ``/test`` slash command is      |                                                                                |
+|   disabled.                                       |                                                                                |
++---------------------------------------------------+--------------------------------------------------------------------------------+
 
 .. config:setting:: enable-developer-mode
   :displayname: Enable developer mode (Developer)
@@ -4027,16 +4067,16 @@ Enable testing commands
 Enable developer mode
 ~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------+---------------------------------------------------------------------------+
-| Enable or disable developer mode.             | - System Config path: **Environment > Developer**                         |
-|                                               | - ``config.json setting``: ``".ServiceSettings.EnableDeveloper": true",`` |
-| - **true**: **(Default)** Javascript errors   | - Environment variable: ``MM_SERVICESETTINGS_ENABLEDEVELOPER``            |
-|   are shown in a banner at the top of         |                                                                           |
-|   Mattermost the user interface.              |                                                                           |
-|   Not recommended for use in production.      |                                                                           |
-| - **false**: Users are not alerted to         |                                                                           |
-|   Javascript errors.                          |                                                                           |
-+-----------------------------------------------+---------------------------------------------------------------------------+
++-----------------------------------------------+---------------------------------------------------------------------------------+
+| Enable or disable developer mode.             | - System Config path: **Environment > Developer**                               |
+|                                               | - ``config.json`` setting: ``ServiceSettings`` > ``EnableDeveloper`` > ``true`` |
+| - **true**: **(Default)** Javascript errors   | - Environment variable: ``MM_SERVICESETTINGS_ENABLEDEVELOPER``                  |
+|   are shown in a banner at the top of         |                                                                                 |
+|   Mattermost the user interface.              |                                                                                 |
+|   Not recommended for use in production.      |                                                                                 |
+| - **false**: Users are not alerted to         |                                                                                 |
+|   Javascript errors.                          |                                                                                 |
++-----------------------------------------------+---------------------------------------------------------------------------------+
 
 .. config:setting:: enable-client-debugging
   :displayname: Enable client debugging (Developer)
@@ -4051,16 +4091,16 @@ Enable developer mode
 Enable client debugging
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------+---------------------------------------------------------------------------------------------+
-| Enable or disable client-side debugging settings  | - System Config path: **Environment > Developer**                                           |
-| found in **Settings > Advanced > Debugging**      | - ``config.json setting``: ``".ServiceSettings.EnableClientPerformanceDebugging": false",`` |
-| for individual users.                             | - Environment variable: ``MM_SERVICESETTINGS_ENABLECLIENTPERFORMANCEDEBUGGING``             |
-|                                                   |                                                                                             |
-| - **true**: Those settings are visible and can    |                                                                                             |
-|   be enabled by users.                            |                                                                                             |
-| - **false**: **(Default)** Those settings are     |                                                                                             |
-|   hidden and disabled.                            |                                                                                             |
-+---------------------------------------------------+---------------------------------------------------------------------------------------------+
++---------------------------------------------------+---------------------------------------------------------------------------------------------------+
+| Enable or disable client-side debugging settings  | - System Config path: **Environment > Developer**                                                 |
+| found in **Settings > Advanced > Debugging**      | - ``config.json`` setting: ``ServiceSettings`` > ``EnableClientPerformanceDebugging`` > ``false`` |
+| for individual users.                             | - Environment variable: ``MM_SERVICESETTINGS_ENABLECLIENTPERFORMANCEDEBUGGING``                   |
+|                                                   |                                                                                                   |
+| - **true**: Those settings are visible and can    |                                                                                                   |
+|   be enabled by users.                            |                                                                                                   |
+| - **false**: **(Default)** Those settings are     |                                                                                                   |
+|   hidden and disabled.                            |                                                                                                   |
++---------------------------------------------------+---------------------------------------------------------------------------------------------------+
 
 See the :ref:`client debugging <end-user-guide/preferences/manage-advanced-options:performance debugging>` documentation to learn more.
 
@@ -4078,25 +4118,22 @@ Allow untrusted internal connections
 
   This setting is intended to prevent users located outside your local network from using the Mattermost server to request confidential data from inside your network. Care should be used when configuring this setting to prevent unintended access to your local network.
 
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------+
-| Limit the ability for the Mattermost server   | - System Config path: **Environment > Developer**                                             |
-| to make untrusted requests within its local   | - ``config.json setting``: ``".ServiceSettings.AllowedUntrustedInternalConnections": "",``    |
-| network. A request is considered “untrusted”  | - Environment variable: ``MM_SERVICESETTINGS_ALLOWEDUNTRUSTEDINTERNALCONNECTIONS``            |
-| when it’s made on behalf of a client.         |                                                                                               |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------+
-| This setting is a whitelist of local network addresses that can be requested by the Mattermost server. It’s configured as a                   |
-| whitespace-separated list of hostnames, IP addresses, and CIDR ranges that can be accessed.                                                   |
-|                                                                                                                                               |
-| Requests that can only be configured by system admins are considered trusted and won't be affected by this setting. Trusted URLs include      |
-| ones used for OAuth login or for sending push notifications.                                                                                  |
-|                                                                                                                                               |
-| The following features make untrusted requests and are affected by this setting:                                                              |
-|                                                                                                                                               |
-| - Integrations using webhooks, slash commands, or message actions. This prevents them from requesting endpoints within the local network.     |
-| - Link previews. When a link to a local network address is posted in a chat message, this prevents a link preview from being displayed.       |
-| - The local :doc:`image proxy </deployment-guide/server/image-proxy>`. If the local image proxy is enabled, images located on                 |
-|   the local network cannot be used by integrations or posted in chat messages.                                                                |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------+
++-----------------------------------------------+----------------------------------------------------------------------------------------------------+
+| Limit the ability for the Mattermost server   | - System Config path: **Environment > Developer**                                                  |
+| to make untrusted requests within its local   | - ``config.json`` setting: ``ServiceSettings`` > ``AllowedUntrustedInternalConnections`` > ``""``  |
+| network. A request is considered “untrusted”  | - Environment variable: ``MM_SERVICESETTINGS_ALLOWEDUNTRUSTEDINTERNALCONNECTIONS``                 |
+| when it’s made on behalf of a client.         |                                                                                                    |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------+
+
+This setting is a whitelist of local network addresses that can be requested by the Mattermost server. It’s configured as a whitespace-separated list of hostnames, IP addresses, and CIDR ranges that can be accessed.
+
+Requests that can only be configured by system admins are considered trusted and won't be affected by this setting. Trusted URLs include ones used for OAuth login or for sending push notifications.
+
+The following features make untrusted requests and are affected by this setting:
+
+- Integrations using webhooks, slash commands, or message actions. This prevents them from requesting endpoints within the local network.
+- Link previews. When a link to a local network address is posted in a chat message, this prevents a link preview from being displayed.
+- The local :doc:`image proxy </deployment-guide/server/image-proxy>`. If the local image proxy is enabled, images located on the local network cannot be used by integrations or posted in chat messages.
 
 Some examples of when you may want to modify this setting include:
 
@@ -4115,7 +4152,10 @@ Some examples of when you may want to modify this setting include:
 Mobile security
 ---------------
 
-From Mattermost v10.7 and mobile app v2.27, you can configure biometric authentication, prevent Mattermost use on jailbroken or rooted devices, and can block screen captures without relying on an EMM Provider. Configure these options by going to **System Console > Environment > Mobile Security**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
+.. include:: ../../_static/badges/ent-adv-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
+From Mattermost v10.7 and mobile app v2.27, you can configure biometric authentication, prevent Mattermost use on jailbroken or rooted devices, and can block screen captures without relying on an EMM Provider. Configure these options by going to **System Console > Environment > Mobile Security**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart and require users to restart their mobile app or log out and back in before taking effect.
 
 .. config:setting:: enable-biometric-authentication
   :displayname: Enable Biometric Authentication
@@ -4130,29 +4170,27 @@ From Mattermost v10.7 and mobile app v2.27, you can configure biometric authenti
 Enable biometric authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-adv-only.rst
-  :start-after: :nosearch:
-
-+-----------------------------------------------+-------------------------------------------------------------------------------------+
-| Enforce biometric authentication, with        | - System Config path: **Environment > Mobile Security**                             |
-| PIN/passcode fallback, before accessing       | - ``config.json setting``: ``".NativeAppSettings.MobileEnableBiometrics": false",`` |
-| the app. Users will be prompted based on      | - Environment variable: ``MM_NATIVEAPPSETTINGS_MOBILEENABLEBIOMETRICS``             |
-| session activity and server switching rules.  |                                                                                     |
-|                                               |                                                                                     |
-| - **true**: Biometric authentication is       |                                                                                     |
-|   enabled.                                    |                                                                                     |
-| - **false**: **(Default)** Biometric          |                                                                                     |
-|   authentication is disabled.                 |                                                                                     |
-+-----------------------------------------------+-------------------------------------------------------------------------------------+
++-----------------------------------------------+-------------------------------------------------------------------------------------------+
+| Enforce biometric authentication, with        | - System Config path: **Environment > Mobile Security**                                   |
+| PIN/passcode fallback, before accessing       | - ``config.json`` setting: ``NativeAppSettings`` > ``MobileEnableBiometrics`` > ``false`` |
+| the app. Users will be prompted based on      | - Environment variable: ``MM_NATIVEAPPSETTINGS_MOBILEENABLEBIOMETRICS``                   |
+| session activity and server switching rules.  |                                                                                           |
+|                                               |                                                                                           |
+| - **true**: Biometric authentication is       |                                                                                           |
+|   enabled.                                    |                                                                                           |
+| - **false**: **(Default)** Biometric          |                                                                                           |
+|   authentication is disabled.                 |                                                                                           |
++-----------------------------------------------+-------------------------------------------------------------------------------------------+
 
 .. note::
 
-  Users must authenticate in the following situations:
+  - Changing this configuration setting takes effect when mobile users restart their Mattermost mobile app or log out and log back in.
+  - Users must authenticate in the following situations:
 
-  - Adding a new server: When a new server is added to the mobile app and biometric authentication is enabled.
-  - Opening the mobile app: At app launch when the active server requires authentication.
-  - Returning after background use: After the app has been in the background for 5 minutes or more and the active server requires authentication.
-  - Using multiple servers: When accessing a server for the first time, after 5 minutes of inactivity on a server, and when the last authentication attempt fails.
+    - Adding a new server: When a new server is added to the mobile app and biometric authentication is enabled.
+    - Opening the mobile app: At app launch when the active server requires authentication.
+    - Returning after background use: After the app has been in the background for 5 minutes or more and the active server requires authentication.
+    - Using multiple servers: When accessing a server for the first time, after 5 minutes of inactivity on a server, and when the last authentication attempt fails.
 
 .. config:setting:: mobile-security-enabled
   :displayname: Enable Jailbreak/Root Protection
@@ -4167,25 +4205,23 @@ Enable biometric authentication
 Enable jailbreak/root protection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-adv-only.rst
-  :start-after: :nosearch:
-
-+-----------------------------------------------+----------------------------------------------------------------------------------------+
-| Prevent access to the app on devices          | - System Config path: **Environment > Mobile Security**                                |
-| detected as jailbroken or rooted. If a        | - ``config.json setting``: ``".NativeAppSettings.MobileJailbreakProtection": false",`` |
-| device fails the security check, users will   | - Environment variable: ``MM_NATIVEAPPSETTINGS_MOBILEJAILBREAKPROTECTION``             |
-| be denied access or prompted to switch to a   |                                                                                        |
-| compliant server.                             |                                                                                        |
-|                                               |                                                                                        |
-| - **true**: Jailbreak/Root protection is      |                                                                                        |
-|   enabled.                                    |                                                                                        |
-| - **false**: **(Default)** Jailbreak/Root     |                                                                                        |
-|   protection is disabled.                     |                                                                                        |
-+-----------------------------------------------+----------------------------------------------------------------------------------------+
++-----------------------------------------------+----------------------------------------------------------------------------------------------+
+| Prevent access to the app on devices          | - System Config path: **Environment > Mobile Security**                                      |
+| detected as jailbroken or rooted. If a        | - ``config.json`` setting: ``NativeAppSettings`` > ``MobileJailbreakProtection`` > ``false`` |
+| device fails the security check, users will   | - Environment variable: ``MM_NATIVEAPPSETTINGS_MOBILEJAILBREAKPROTECTION``                   |
+| be denied access or prompted to switch to a   |                                                                                              |
+| compliant server.                             |                                                                                              |
+|                                               |                                                                                              |
+| - **true**: Jailbreak/Root protection is      |                                                                                              |
+|   enabled.                                    |                                                                                              |
+| - **false**: **(Default)** Jailbreak/Root     |                                                                                              |
+|   protection is disabled.                     |                                                                                              |
++-----------------------------------------------+----------------------------------------------------------------------------------------------+
 
 .. note::
 
-  See the `Expo SDK documentation <https://docs.expo.dev/versions/latest/sdk/device/#deviceisrootedexperimentalasync>`_ to learn more about how checks are performed for this functionality.
+  - Changing this configuration setting takes effect when mobile users restart their Mattermost mobile app or log out and log back in.
+  - See the `Expo SDK documentation <https://docs.expo.dev/versions/latest/sdk/device/#deviceisrootedexperimentalasync>`_ to learn more about how checks are performed for this functionality.
 
 .. config:setting:: mobile-security-enabled
   :displayname: Prevent Screen Capture
@@ -4200,21 +4236,75 @@ Enable jailbreak/root protection
 Prevent screen capture
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-adv-only.rst
-  :start-after: :nosearch:
++-----------------------------------------------+-----------------------------------------------------------------------------------------------+
+| Block screenshots and screen recordings when  | - System Config path: **Environment > Mobile Security**                                       |
+| using the mobile app. Screenshots will        | - ``config.json`` setting: ``NativeAppSettings`` > ``MobilePreventScreenCapture`` > ``false`` |
+| appear blank, and screen recordings will      | - Environment variable: ``MM_NATIVEAPPSETTINGS_MOBILEPREVENTSCREENCAPTURE``                   |
+| blur (iOS) or show a black screen (Android).  |                                                                                               |
+| Also applies when switching apps.             |                                                                                               |
+|                                               |                                                                                               |
+| - **true**: Screen capture blocking is        |                                                                                               |
+|   enabled.                                    |                                                                                               |
+| - **false**: **(Default)** Screen capture     |                                                                                               |
+|   blocking is disabled.                       |                                                                                               |
++-----------------------------------------------+-----------------------------------------------------------------------------------------------+
 
-+-----------------------------------------------+-----------------------------------------------------------------------------------------+
-| Block screenshots and screen recordings when  | - System Config path: **Environment > Mobile Security**                                 |
-| using the mobile app. Screenshots will        | - ``config.json setting``: ``".NativeAppSettings.MobilePreventScreenCapture": false",`` |
-| appear blank, and screen recordings will      | - Environment variable: ``MM_NATIVEAPPSETTINGS_MOBILEPREVENTSCREENCAPTURE``             |
-| blur (iOS) or show a black screen (Android).  |                                                                                         |
-| Also applies when switching apps.             |                                                                                         |
-|                                               |                                                                                         |
-| - **true**: Screen capture blocking is        |                                                                                         |
-|   enabled.                                    |                                                                                         |
-| - **false**: **(Default)** Screen capture     |                                                                                         |
-|   blocking is disabled.                       |                                                                                         |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------+
+.. note::
+
+  Changing this configuration setting takes effect when mobile users restart their Mattermost mobile app or log out and log back in.
+
+.. config:setting:: mobile-enable-secure-file-preview
+  :displayname: Enable secure file preview on mobile (File sharing)
+  :systemconsole: Site Configuration > File sharing and downloads
+  :configjson: .FileSettings.MobileEnableSecureFilePreview
+  :environment: MM_FILESETTINGS_MOBILEENABLESECUREFILEPREVIEW
+
+  - **true**: Prevents file downloads, previews, and sharing for most file types. Allows in-app previews for PDFs, videos, and images only. Files are stored temporarily in the app's cache and cannot be exported or shared.
+  - **false**: **(Default)** Secure file preview mode is disabled.
+
+Enable secure file preview on mobile
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This setting improves an organization's mobile security posture by restricting file access while still allowing essential file viewing capabilities. 
+
++---------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
+| - **true**: Prevents file downloads, previews, and sharing for most file types,                                                       | - System Config path: **Site Configuration > File sharing and downloads**                         |
+|   even when the                                                                                                                       | - ``config.json`` setting: ``FileSettings`` > ``MobileEnableSecureFilePreview`` > ``false``       |
+|   :ref:`Allow file downloads on mobile <administration-guide/configure/site-configuration-settings:allow file downloads on mobile>`   | - Environment variable: ``MM_FILESETTINGS_MOBILEENABLESECUREFILEPREVIEW``                         |
+|   configuration setting is enabled. Allows in-app previews for PDFs,                                                                  |                                                                                                   |
+|   videos, and images only. Files are stored temporarily in the app's cache and cannot be exported or shared.                          |                                                                                                   |
+| - **false**: **(Default)** Secure file preview mode is disabled.                                                                      |                                                                                                   |
++---------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
+
+.. note::
+  Changing this configuration setting takes effect when mobile users restart their Mattermost mobile app or log out and log back in.
+
+.. config:setting:: mobile-allow-pdf-link-navigation
+  :displayname: Allow PDF link navigation on mobile (File sharing)
+  :systemconsole: Site Configuration > File sharing and downloads
+  :configjson: .FileSettings.MobileAllowPdfLinkNavigation
+  :environment: MM_FILESETTINGS_MOBILEALLOWPDFLINKNAVIGATION
+
+  - **true**: **(Default)** Enables tapping links inside PDFs on mobile when Secure File Preview Mode is active. Links will open in the device browser or supported app.
+  - **false**: Disables link navigation in PDFs when Secure File Preview Mode is active.
+
+Allow PDF link navigation on mobile
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+| - **true**: **(Default)** Enables tapping links inside PDFs               | - System Config path: **Site Configuration > File sharing and downloads**                     |
+|   on mobile when Secure File Preview Mode is active. Links will open      | - ``config.json`` setting: ``FileSettings`` > ``MobileAllowPdfLinkNavigation`` > ``true``     |
+|   in the device browser or supported app.                                 | - Environment variable: ``MM_FILESETTINGS_MOBILEALLOWPDFLINKNAVIGATION``                      |
+| - **false**: Disables link navigation in PDFs                             |                                                                                               |
+|   when Secure File Preview Mode is active.                                |                                                                                               |
++---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+
+.. note::
+
+  - Changing this configuration setting takes effect when mobile users restart their Mattermost mobile app or log out and log back in.
+  - This setting has no effect when the `Secure file preview on mobile <#enable-secure-file-preview-on-mobile>`__ configuration setting is disabled.
+
+----
 
 config.json-only settings
 -------------------------
@@ -4237,7 +4327,7 @@ Disable Customer Portal requests
 
 +-----------------------------------------------+---------------------------------------------------------------------------+
 | Enable or disable customer portal requests.   | - System Config path: **N/A**                                             |
-|                                               | - ``config.json setting``: ``CloudSettings`` > ``Disable`` > ``false,``   |
+|                                               | - ``config.json`` setting: ``CloudSettings`` > ``Disable`` > ``true,``    |
 |                                               | - Environment variable: ``MM_CLOUDSETTINGS_DISABLE``                      |
 | - **true**: **(Default)** Server-side         |                                                                           |
 |   requests made to the customer portal are    |                                                                           |
@@ -4249,13 +4339,15 @@ Disable Customer Portal requests
 +-----------------------------------------------+---------------------------------------------------------------------------+
 
 .. note::
+
   Cloud admins can’t modify this configuration setting. 
 
 .. config:setting:: enable-api-team-deletion
   :displayname: Enable API team deletion (ServiceSettings)
   :systemconsole: N/A
-  :configjson: EnableAPITeamDeletion
+  :configjson: .ServiceSettings.EnableAPITeamDeletion
   :environment: N/A
+  :description: Allow permanent team deletion via API.
 
   - **true**: The ``api/v4/teams/{teamid}?permanent=true`` API endpoint can be called by team admins and system admins (or users with appropriate permissions), or by running the mmctl team delete command, to permanently delete a team.
   - **false**: **(Default)** The API endpoint cannot be called, but ``api/v4/teams/{teamid}`` can still be used to soft delete a team.
@@ -4263,21 +4355,26 @@ Disable Customer Portal requests
 Enable API team deletion
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-This setting isn't available in the System Console and can only be set in ``config.json``.
++-----------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| Allow permanent team deletion via API.                          | - System Config path: N/A                                                              |
+|                                                                 | - ``config.json`` setting: ``ServiceSettings`` > ``EnableAPITeamDeletion`` > ``false`` |
+| - **true**: Team and system admins (or users with appropriate   | - Environment variable: N/A                                                            |
+|   permissions) can call ``api/v4/teams/{teamid}?permanent=true``|                                                                                        |
+|   or use ``mmctl team delete`` to permanently delete a team.    |                                                                                        |
+| - **false**: **(Default)** Endpoint not available;              |                                                                                        |
+|   ``api/v4/teams/{teamid}`` still soft deletes a team.          |                                                                                        |
++-----------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
-**True**: The ``api/v4/teams/{teamid}?permanent=true`` API endpoint can be called by team admins and system admins (or users with appropriate permissions), or by running the :ref:`mmctl team delete <administration-guide/manage/mmctl-command-line-tool:mmctl team delete>` command to permanently delete a team.
+.. note::
 
-**False**: The API endpoint cannot be called. Note that ``api/v4/teams/{teamid}`` can still be used to soft delete a team.
-
-+-------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableAPITeamDeletion": false`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------------+
+  This setting isn’t available in the System Console and can only be set in ``config.json``.
 
 .. config:setting:: enable-api-user-deletion
   :displayname: Enable API user deletion (ServiceSettings)
   :systemconsole: N/A
-  :configjson: EnableAPIUserDeletion
+  :configjson: .ServiceSettings.EnableAPIUserDeletion
   :environment: N/A
+  :description: Allow permanent user deletion via API.
 
   - **true**: The ``api/v4/users/{userid}?permanent=true`` API endpoint can be called by system admins (or users with appropriate permissions), or by running the mmctl user delete command, to permanently delete a user.
   - **false**: **(Default)** The API endpoint cannot be called, but ``api/v4/users/{userid}`` can still be used to soft delete a user.
@@ -4285,21 +4382,26 @@ This setting isn't available in the System Console and can only be set in ``conf
 Enable API user deletion
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-This setting isn't available in the System Console and can only be set in ``config.json``.
++-----------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| Allow permanent user deletion via API.                          | - System Config path: N/A                                                              |
+|                                                                 | - ``config.json`` setting: ``ServiceSettings`` > ``EnableAPIUserDeletion`` > ``false`` |
+| - **true**: System admins (or users with appropriate            | - Environment variable: N/A                                                            |
+|   permissions) can call ``api/v4/users/{userid}?permanent=true``|                                                                                        |
+|   or use ``mmctl user delete`` to permanently delete a user.    |                                                                                        |
+| - **false**: **(Default)** Endpoint not available;              |                                                                                        |
+|   ``api/v4/users/{userid}`` still soft deletes a user.          |                                                                                        |
++-----------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
-**True**: The ``api/v4/users/{userid}?permanent=true`` API endpoint can be called by system admins (or users with appropriate permissions), or by running the :ref:`mmctl user delete <administration-guide/manage/mmctl-command-line-tool:mmctl user delete>` command, to permanently delete a user.
+.. note::
 
-**False**: The API endpoint cannot be called. Note that ``api/v4/users/{userid}`` can still be used to soft delete a user.
-
-+-------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableAPIUserDeletion": false`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------------+
+  This setting isn’t available in the System Console and can only be set in ``config.json``.
 
 .. config:setting:: enable-api-channel-deletion
   :displayname: Enable API channel deletion (ServiceSettings)
   :systemconsole: N/A
-  :configjson: EnableAPIChannelDeletion
+  :configjson: .ServiceSettings.EnableAPIChannelDeletion
   :environment: N/A
+  :description: Allow permanent channel deletion via API.
 
   - **true**: The ``api/v4/channels/{channelid}?permanent=true`` API endpoint can be called by system admins (or users with appropriate permissions), or by running the mmctl channel delete command, to permanently delete a channel.
   - **false**: **(Default)** The API endpoint cannot be called, but ``api/v4/channels/{channelid}`` can still be used to soft delete a channel.
@@ -4307,31 +4409,48 @@ This setting isn't available in the System Console and can only be set in ``conf
 Enable API channel deletion
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This setting isn't available in the System Console and can only be set in ``config.json``.
++-----------------------------------------------------------------+-------------------------------------------------------------------------------------------+
+| Allow permanent channel deletion via API.                       | - System Config path: N/A                                                                 |
+|                                                                 | - ``config.json`` setting: ``ServiceSettings`` > ``EnableAPIChannelDeletion`` > ``false`` |
+| - **true**: System admins (or users with appropriate            | - Environment variable: N/A                                                               |
+|   permissions) can call                                         |                                                                                           |
+|   ``api/v4/channels/{channelid}?permanent=true`` or use         |                                                                                           |
+|   ``mmctl channel delete`` to permanently delete a channel.     |                                                                                           |
+| - **false**: **(Default)** Endpoint not available;              |                                                                                           |
+|   ``api/v4/channels/{channelid}`` still soft deletes a channel. |                                                                                           |
++-----------------------------------------------------------------+-------------------------------------------------------------------------------------------+
 
-**True**: The ``api/v4/channels/{channelid}?permanent=true`` API endpoint can be called by system admins (or users with appropriate permissions), or by running the :ref:`mmctl channel delete <administration-guide/manage/mmctl-command-line-tool:mmctl channel delete>` command, to permanently delete a channel.
+.. note::
 
-**False**: The API endpoint cannot be called. Note that ``api/v4/channels/{channelid}`` can still be used to soft delete a channel.
+  This setting isn’t available in the System Console and can only be set in ``config.json``.
 
-+----------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableAPIChannelDeletion": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------------------------+
+.. config:setting:: enable-desktop-app-developer-mode
+  :displayname: Enable desktop app developer mode (ServiceSettings)
+  :systemconsole: N/A
+  :configjson: N/A
+  :environment: N/A
+  :description: Enable developer debugging options in the Mattermost desktop app. Disabled by default.
+
+  - **true**: Developer debugging options are available in the Mattermost desktop app by going to the **View > Developer Tools** menu
+  - **false**: **(Default)** Developer debugging options are unavailable in the Mattermost desktop app.
 
 Enable desktop app developer mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-From Desktop App v5.10, this setting enables developer debugging options available by going to the **View > Developer Tools** menu in the Mattermost desktop app. 
+From Desktop App v5.10, this setting enables developer debugging options available by going to the **View > Developer Tools** menu in the Mattermost desktop app.
 
 This setting isn't available in the System Console and can only be enabled in ``config.json`` by setting the environment variable ``MM_DESKTOP_DEVELOPER_MODE`` to ``true``. This setting is disabled by default.
 
-**True**: Unlocks the following options in the Desktop App for the purposes of troubleshooting and debugging. You should only enable this setting if instructed to by a Mattermost developer:
+- **True**: Unlocks the following options in the Desktop App for the purposes of troubleshooting and debugging. You should only enable this setting if instructed to by a Mattermost developer:
 
-  * **Browser Mode Only**: Completely disables the preload script and stops web app components from knowing they're in the desktop app. This option should be the best indicator of whether a web app component is causing performance and/or memory retention issues. This option disables notifications, cross-tab navigation, unread/mentions badges, the calls widget, and breaks resizing on macOS.
-  * **Disable Notification Storage**: Turns off maps that hold references to unread notifications until they've been selected & read. This option is good for debugging in cases where Mattermost is holding onto too many references to unused notifications.
-  * **Disable User Activity Monitor**: Turns off the interval that checks whether the user is away or not. This option is good for debugging whether a user's availability status is causing unexpected desktop app behavior.
-  * **Disable Context Menu**: Turns off the context menu attached to the BrowserViews. This option is good as a library santity check.
-  * **Force Legacy Messaging API**: Forces the app to revert back to the old messaging API instead of the newer contextBridge API. This option is a good santity check to confirm whether the new API is responsible for holding onto memory.
-  * **Force New Messaging API**: Forces the app to use the contextBridge API and completely disables the legacy one. This option forces off listeners for the legacy API.
+  - **Browser Mode Only**: Completely disables the preload script and stops web app components from knowing they're in the desktop app. This option should be the best indicator of whether a web app component is causing performance and/or memory retention issues. This option disables notifications, cross-tab navigation, unread/mentions badges, the calls widget, and breaks resizing on macOS.
+  - **Disable Notification Storage**: Turns off maps that hold references to unread notifications until they've been selected & read. This option is good for debugging in cases where Mattermost is holding onto too many references to unused notifications.
+  - **Disable User Activity Monitor**: Turns off the interval that checks whether the user is away or not. This option is good for debugging whether a user's availability status is causing unexpected desktop app behavior.
+  - **Disable Context Menu**: Turns off the context menu attached to the BrowserViews. This option is good as a library santity check.
+  - **Force Legacy Messaging API**: Forces the app to revert back to the old messaging API instead of the newer contextBridge API. This option is a good santity check to confirm whether the new API is responsible for holding onto memory.
+  - **Force New Messaging API**: Forces the app to use the contextBridge API and completely disables the legacy one. This option forces off listeners for the legacy API.
+
+- **False**: **(Default)** Developer debugging options are locked and unavailable in the Desktop App.
 
 Redis cache backend
 ~~~~~~~~~~~~~~~~~~~
@@ -4359,7 +4478,7 @@ Cache type
 
 +-----------------------------------------------+---------------------------------------------------------------------------+
 | Define the cache type.                        | - System Config path: **N/A**                                             |
-|                                               | - ``config.json setting``: ``CacheSettings`` > ``CacheType,`` > ``lru``   |
+|                                               | - ``config.json`` setting: ``CacheSettings`` > ``CacheType,`` > ``lru``   |
 | - **lru**: **(Default)** Mattermost uses the  | - Environment variable: ``MM_CACHESETTINGS_CACHETYPE``                    |
 |   in-memory cache store.                      |                                                                           |
 | - **redis**: Mattermost uses the configured   |                                                                           |
@@ -4378,7 +4497,7 @@ Redis address
 
 +-----------------------------------------------+---------------------------------------------------------------------------+
 | The hostname of the Redis host.               | - System Config path: **N/A**                                             |
-|                                               | - ``config.json setting``: ``CacheSettings`` > ``RedisAddress,``          |
+|                                               | - ``config.json`` setting: ``CacheSettings`` > ``RedisAddress,``          |
 | String input.                                 | - Environment variable: ``MM_CACHESETTINGS_REDISADDRESS``                 |
 +-----------------------------------------------+---------------------------------------------------------------------------+
 
@@ -4394,7 +4513,7 @@ Redis password
 
 +-----------------------------------------------+---------------------------------------------------------------------------+
 | The password of the Redis host.               | - System Config path: **N/A**                                             |
-|                                               | - ``config.json setting``: ``CacheSettings`` > ``RedisPassword,``         |
+|                                               | - ``config.json`` setting: ``CacheSettings`` > ``RedisPassword,``         |
 | String input. Leave blank if there is no      | - Environment variable: ``MM_CACHESETTINGS_REDISPASSWORD``                |
 | password.                                     |                                                                           |
 +-----------------------------------------------+---------------------------------------------------------------------------+
@@ -4411,7 +4530,7 @@ Redis database
 
 +-----------------------------------------------+---------------------------------------------------------------------------+
 | The database of the Redis host.               | - System Config path: **N/A**                                             |
-|                                               | - ``config.json setting``: ``CacheSettings`` > ``RedisDB,``               |
+|                                               | - ``config.json`` setting: ``CacheSettings`` > ``RedisDB,``               |
 | Zero-indexed number up to 15. Typically set   | - Environment variable: ``MM_CACHESETTINGS_REDISDB``                      |
 | to ``0``. Redis allows a maximum of 16        |                                                                           |
 | databases.                                    |                                                                           |
@@ -4431,7 +4550,7 @@ Disable client cache
 
 +-----------------------------------------------+--------------------------------------------------------------------------------------+
 | Disables the client-side cache of Redis.      | - System Config path: **N/A**                                                        |
-|                                               | - ``config.json setting``: ``CacheSettings`` > ``DisableClientCache,`` > ``false``   |
+|                                               | - ``config.json`` setting: ``CacheSettings`` > ``DisableClientCache,`` > ``false``   |
 | - **true**: Client-side cache of Redis is     | - Environment variable: ``MM_CACHESETTINGS_REDISDB``                                 |
 |   disabled. Typically used as a test option,  |                                                                                      |
 |   and not in production environments.         |                                                                                      |
@@ -4451,7 +4570,7 @@ Redis cache prefix
 
 +-----------------------------------------------+--------------------------------------------------------------------------------------+
 | Adds a prefix to all Redis cache keys.        | - System Config path: **N/A**                                                        |
-|                                               | - ``config.json setting``: ``CacheSettings`` > ``RedisCachePrefix``                  |
+|                                               | - ``config.json`` setting: ``CacheSettings`` > ``RedisCachePrefix``                  |
 |                                               | - Environment variable: ``MM_CACHESETTINGS_REDISCACHEPREFIX``                        |
 +-----------------------------------------------+--------------------------------------------------------------------------------------+
 
@@ -4473,7 +4592,7 @@ Enable webhub channel iteration
 
 +------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | Control the performance of websocket broadcasting in | - System Config path: **N/A**                                                                    |
-| channels.                                            | - ``config.json setting``: ``ServiceSettings`` > ``EnableWebHubChannelIteration,`` > ``false``   |
+| channels.                                            | - ``config.json`` setting: ``ServiceSettings`` > ``EnableWebHubChannelIteration,`` > ``false``   |
 |                                                      | - Environment variable: ``MM_SERVICESETTINGS_ENABLEWEBHUBCHANNELITERATION``                      |
 | When enabled, improves websocket broadcasting        |                                                                                                  |
 | performance; however, performance may decrease       |                                                                                                  |
@@ -4499,7 +4618,7 @@ Enable dedicated export filestore target
 
 +--------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 | Enables the ability to specify an alternate filestore                                | - System Config path: **N/A**                                           |
-| target for Mattermost                                                                | - ``config.json setting``: ``FileSettings`` > ``DedicatedExportStore``  |
+| target for Mattermost                                                                | - ``config.json`` setting: ``FileSettings`` > ``DedicatedExportStore``  |
 | :doc:`bulk exports </administration-guide/manage/bulk-export-tool>` and              | - Environment variable: ``MM_FILESETTINGS_DEDICATEDEXPORTSTORE``        |
 | :doc:`compliance exports </administration-guide/comply/compliance-export>`.          |                                                                         |
 |                                                                                      |                                                                         |

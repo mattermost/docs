@@ -72,6 +72,7 @@ Site description
   :systemconsole: Site Configuration > Customization
   :configjson: .TeamSettings.EnableCustomBrand
   :environment: MM_TEAMSETTINGS_ENABLECUSTOMBRAND
+  :description: Enables the display of a custom image and text on the login page. Default value is **false**.
 
   - **true**: Enables the display of a custom image and text on the login page
   - **false**: **(Default)** Custom branding is disabled
@@ -128,6 +129,7 @@ Custom brand text
   :systemconsole: Site Configuration > Customization
   :configjson: .SupportSettings.EnableAskCommunityLink
   :environment: MM_SUPPORTSETTINGS_ENABLEASKCOMMUNITYLINK
+  :description: This setting controls whether a link to the Mattermost Community appears under the **Help** menu in the channel header. Default is **true**.
 
   - **true**: **(Default)** A link to the `Mattermost Community <https://mattermost.com/community/>`__ appears as **Ask the community** under the **Help** menu in the channel header.
   - **false**: The link does not appear.
@@ -147,9 +149,7 @@ Enable Ask Community link
   :systemconsole: Site Configuration > Customization
   :configjson: .SupportSettings.HelpLink
   :environment: MM_SUPPORTSETTINGS_HELPLINK
-
-  This field sets the URL for the Help link on the login and sign-up pages, as well as the **Help Resources** link under the **Help** menu in the channel header.
-  Default value is **https://about.mattermost.com/default-help/**.
+  :description: This field sets the URL for the Help link on the login and sign-up pages, as well as the **Help Resources** link under the **Help** menu in the channel header. Default value is **https://about.mattermost.com/default-help/**.
 
 Help link
 ~~~~~~~~~
@@ -168,9 +168,7 @@ Help link
   :systemconsole: Site Configuration > Customization
   :configjson: .SupportSettings.TermsOfServiceLink
   :environment: MM_SUPPORTSETTINGS_TERMSOFSERVICELINK
-
-  This field sets the URL for the Terms of Use of a self-hosted site. A link to the terms appears at the bottom of the sign-up and login pages.
-  Default value is **https://about.mattermost.com/default-terms/**.
+  :description: This field sets the URL for the Terms of Use of a self-hosted site. A link to the terms appears at the bottom of the sign-up and login pages.
 
 Terms of Use link
 ~~~~~~~~~~~~~~~~~
@@ -194,9 +192,7 @@ Terms of Use link
   :systemconsole: Site Configuration > Customization
   :configjson: .SupportSettings.PrivacyPolicyLink
   :environment: MM_SUPPORTSETTINGS_PRIVACYPOLICYLINK
-
-  This field sets the URL for the Privacy Policy of a self-hosted site. A link to the policy appears at the bottom of the sign-up and login pages.
-  Default value is **https://about.mattermost.com/default-privacy-policy/**.
+  :description: This field sets the URL for the Privacy Policy of a self-hosted site. A link to the policy appears at the bottom of the sign-up and login pages. Default value is **https://about.mattermost.com/default-privacy-policy/**.
 
 Privacy Policy link
 ~~~~~~~~~~~~~~~~~~~
@@ -218,9 +214,7 @@ Privacy Policy link
   :systemconsole: Site Configuration > Customization
   :configjson: .SupportSettings.AboutLink
   :environment: MM_SUPPORTSETTINGS_ABOUTLINK
-
-  This field sets the URL for a page containing general information about a self-hosted site. A link to the About page appears at the bottom of the sign-up and login pages.
-  Default value is **https://about.mattermost.com/default-about/**.
+  :description: This field sets the URL for a page containing general information about a self-hosted site. A link to the About page appears at the bottom of the sign-up and login pages. Default value is **https://about.mattermost.com/default-about/**.
 
 About link
 ~~~~~~~~~~
@@ -561,7 +555,7 @@ Available languages
   :systemconsole: Site Configuration > Localization
   :configjson: EnableExperimentalLocales
   :environment: MM_LOCALIZATIONETTINGS_ENABLEEXPERIMENTALLOCALES
-  :description: nable work in progress languages in Mattermost to review translations and identify translation gaps.
+  :description: nable work in progress languages in Mattermost to review translations and identify translation gaps. Default is **false**.
 
   - **true**: Work in progress languages are available in Mattermost in addition to officially supported languages.
   - **false**: **(Default)** Only officially supported languages are available in Mattermost.
@@ -646,7 +640,7 @@ Max channels per team
   :systemconsole: Site Configuration > Users and Teams
   :configjson: .TeamSettings.EnableJoinLeaveMessageByDefault
   :environment: MM_TEAMSETTINGS_ENABLEJOINLEAVEMESSAGEBYDEFAULT
-  :description: Specify the default configuration of system messages displayed when users join or leave channels.
+  :description: Specify the default configuration of system messages displayed when users join or leave channels. Default is **true**.
 
   - **true**: **(Default)** Join/Leave messages are displayed.
   - **false**: Join/Leave messages are hidden.
@@ -670,7 +664,7 @@ Enable join/leave messages by default
   :systemconsole: Site Configuration > Users and Teams
   :configjson: .TeamSettings.RestrictDirectMessage
   :environment: MM_TEAMSETTINGS_RESTRICTDIRECTMESSAGE
-  :description: This setting determines whether a user can open a direct message channel with anyone on the Mattermost server or only to members of the same team.
+  :description: This setting determines whether a user can open a direct message channel with anyone on the Mattermost server or only to members of the same team. Default is **Any user on the Mattermost server**.
 
   - **Any user on the Mattermost server**: **(Default)** Users can send a direct message to any user through the **Direct Messages > More** menu. ``config.json`` setting: ``"any"``
   - **Any member of the team**: The **Direct Messages > More** menu only allows direct messages to users on the same team. ``config.json`` setting: ``"team"``
@@ -691,7 +685,7 @@ Enable users to open direct message channels with
   :systemconsole: Site Configuration > Users and Teams
   :configjson: .TeamSettings.TeammateNameDisplay
   :environment: MM_TEAMSETTINGS_TEAMMATENAMEDISPLAY
-  :description: This setting determines how names appear in posts and under the **Direct Messages** list.
+  :description: This setting determines how names appear in posts and under the **Direct Messages** list. Default is **Show username** for self-hosted deployments and **Show first and last name** for Cloud deployments.
 
   - **Show username**: **(Default)** Displays usernames. ``config.json`` option: ``"username"``.
   - **Show nickname if one exists...**: Displays the user's nickname. ``config.json`` option: ``"nickname_full_name"``.
@@ -723,7 +717,7 @@ Teammate name display
   :systemconsole: Site Configuration > Users and Teams
   :configjson: .TeamSettings.LockTeammateNameDisplay
   :environment: MM_TEAMSETTINGS_LOCKTEAMMATENAMEDISPLAY
-  :description: This setting controls whether users can change settings under **Settings > Display > Teammate Name Display**.
+  :description: This setting controls whether users can change settings under **Settings > Display > Teammate Name Display**. Default is **false**.
 
   - **true**: Users **cannot** change the Teammate Name Display.
   - **false**: **(Default)** Users can change the Teammate Name Display setting.
@@ -746,9 +740,10 @@ Lock teammate name display for all users
   :systemconsole: Site Configuration > Users and Teams
   :configjson: .TeamSettings.ExperimentalViewArchivedChannels
   :environment: MM_TEAMSETTINGS_EXPERIMENTALVIEWARCHIVEDCHANNELS
+  :description: This setting controls whether users can view archived channels.
 
-  - **true**: **(Default)** Allows users to access the content of archived channels of which they were a member.
-  - **false**: Users are unable to access content in archived channels.
+    - **true**: **(Default)** Allows users to access the content of archived channels of which they were a member.
+    - **false**: Users are unable to access content in archived channels.
 
 Allow users to view archived channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -760,13 +755,15 @@ Allow users to view archived channels
 +----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
 
 .. note::
-  Cloud admins can't modify this configuration setting.
+  - From Mattermost v11, this configuration setting is always enabled and no longer configurable. Users can always access archived channels where they are members.
+  - Cloud admins can't modify this configuration setting.
 
 .. config:setting:: show-email-address
   :displayname: Show email address (Users and Teams)
   :systemconsole: Site Configuration > Users and Teams
   :configjson: .PrivacySettings.ShowEmailAddress
   :environment: MM_PRIVACYSETTINGS_SHOWEMAILADDRESS
+  :description: This setting controls whether users can see the email addresses of other users in the client user interface. Default is **true**.
 
   - **true**: **(Default)** All users can see the email addresses of every other user.
   - **false**: Hides email addresses in the client user interface, except for system admins and the System Roles with read/write access to Compliance, Billing, or User Management (users/teams/channels/groups etc).
@@ -786,6 +783,7 @@ Show email address
   :systemconsole: Site Configuration > Users and Teams
   :configjson: .PrivacySettings.ShowFullName
   :environment: MM_PRIVACYSETTINGS_SHOWFULLNAME
+  :description: This setting controls whether users can see the full names of other users in the client user interface. Default is 
 
   - **true**: **(Default)** Full names are visible to all users in the client user interface.
   - **false**: Hides full names from all users, except system admins.
@@ -804,6 +802,7 @@ Show full name
   :systemconsole: Site Configuration > Users and Teams
   :configjson: .TeamSettings.EnableCustomUserStatuses
   :environment: MM_TEAMSETTINGS_ENABLECUSTOMUSERSTATUSES
+  :description: This setting controls whether users can set custom status messages and emojis that are visible to all users. Default is **true**.
 
   - **true**: **(Default)** Users can set status messages and emojis that are visible to all users.
   - **false**: Users cannot set custom statuses.
@@ -822,6 +821,7 @@ Enable custom user statuses
   :systemconsole: Site Configuration > Users and Teams
   :configjson: .TeamSettings.EnableLastActiveTime
   :environment: MM_TEAMSETTINGS_ENABLELASTACTIVETIME
+  :description: This setting controls whether users can see when deactivated users were last active on a user's profile and in direct message channel headers. Default is **true**.
 
   - **true**: **(Default)** Users can see when deactivated users were last active on a user's profile and in direct message channel headers.
   - **false**: Users can't see when deactivated users were last online.
@@ -840,6 +840,7 @@ Enable last active time
   :systemconsole: Site Configuration > Users and Teams
   :configjson: ServiceSettings.EnableCustomGroups
   :environment: MM_SERVICESETTINGS.ENABLECUSTOMGROUPS
+  :description: This setting controls whether users with appropriate permissions can create custom user groups, and whether users can @mention custom user groups in Mattermost conversations. Default is **true**.
 
   - **true**: **(Default)** Users with appropriate permissions can create custom user groups, and users can @mention custom user groups in Mattermost conversations.
   - **false**: Custom user groups cannot be created.
@@ -889,6 +890,7 @@ Access the following configuration settings in the System Console by going to **
   :systemconsole: Site Configuration > Notifications
   :configjson: .TeamSettings.EnableConfirmNotificationsToChannel
   :environment: MM_TEAMSETTINGS_ENABLECONFIRMNOTIFICATIONSTOCHANNEL
+  :description: This setting controls whether users are prompted to confirm when posting @channel, @all, @here, or group mentions in channels with more than 5 members. Default is **true**.
 
   - **true**: **(Default)** Requires users to confirm when posting @channel, @all, @here, or group mentions in channels with more than 5 members.
   - **false**: No confirmation is required.
@@ -907,6 +909,7 @@ Show @channel, @all, or @here confirmation dialog
   :systemconsole: Site Configuration > Notifications
   :configjson: .EmailSettings.SendEmailNotifications
   :environment: MM_EMAILSETTINGS_SENDEMAILNOTIFICATIONS
+  :description: This setting controls whether Mattermost sends email notifications for posts. Default is **true**.
 
   - **true**: **(Default)** Enables automatic email notifications for posts.
   - **false**: Disables notifications.
@@ -938,6 +941,7 @@ Enable email notifications
   :systemconsole: Site Configuration > Notifications
   :configjson: .EmailSettings.EnablePreviewModeBanner
   :environment: MM_EMAILSETTINGS_ENABLEPREVIEWMODEBANNER
+  :description: This setting controls whether users see a banner in the Mattermost client when email notifications are disabled. Default is **true**.
 
   - **true**: **(Default)** When **Send email notifications** is **false**, users see the Preview Mode banner.
   - **false**: Preview Mode banner does not appear.
@@ -961,6 +965,7 @@ Enable preview mode banner
   :systemconsole: Site Configuration > Notifications
   :configjson: .EmailSettings.EnableEmailBatching
   :environment: MM_EMAILSETTINGS_ENABLEEMAILBATCHING
+  :description: This setting controls whether email notifications for mentions and direct messages are batched into a single email over a given time period. Default is **false**.
 
   - **true**: Multiple email notifications for mentions and direct messages over a given time period are batched into a single email. Users can customize how often to receive batched notifications.
   - **false**: **(Default)** Emails will be sent for each mention or direct message.
@@ -989,6 +994,7 @@ Enable email batching
   :systemconsole: Site Configuration > Notifications
   :configjson: .EmailSettings.EmailNotificationContentsType
   :environment: MM_EMAILSETTINGS_EMAILNOTIFICATIONCONTENTSTYPE
+  :description: This setting controls the contents of email notifications sent by the Mattermost system. Default is **Send full message contents**.
 
   - **Send full message contents**: **(Default)** Email notifications include the full message contents, along with the name of the sender and the channel. ``config.json`` setting: ``"full"``
   - **Send generic description with only sender name**: Only the name of the sender and team name are included in email notifications. ``config.json`` setting: ``"generic"``
@@ -1010,7 +1016,7 @@ Email notification contents
   :systemconsole: Site Configuration > Notifications
   :configjson: .EmailSettings.FeedbackName
   :environment: MM_EMAILSETTINGS_FEEDBACKNAME
-  :description: Display name for email notifications sent from the Mattermost system.
+  :description: Display name for email notifications sent from the Mattermost system. No default setting.
 
 Notification display name
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1045,7 +1051,7 @@ Notification from address
   :systemconsole: Site Configuration > Notifications
   :configjson: .SupportSettings.SupportEmail
   :environment: MM_SUPPORTSETTINGS_SUPPORTEMAIL
-  :description: Sets a user support (or feedback) email address that is displayed on email notifications and during the Getting Started tutorial.
+  :description: Sets a user support (or feedback) email address that is displayed on email notifications and during the Getting Started tutorial. Default is feedback@mattermost.com
 
 Support email address
 ~~~~~~~~~~~~~~~~~~~~~
@@ -1093,6 +1099,7 @@ Notification footer mailing address
   :systemconsole: Site Configuration > Notifications
   :configjson: .EmailSettings.PushNotificationContents
   :environment: MM_EMAILSETTINGS_PUSHNOTIFICATIONCONTENTS
+  :description: This setting controls the contents of push notifications sent by the Mattermost system. Default is **Generic description with sender and channel names**.
 
   - **Generic description with only sender name**: Push notifications include the sender's name, but not the channel name or message contents. ``config.json`` setting: ``"generic_no_channel"``
   - **Generic description with sender and channel names**: **(Default)** Push notifications include the name of the sender and channel, but not the message contents. ``config.json`` setting: ``"generic"``
@@ -1140,6 +1147,7 @@ Push notification contents
   :systemconsole: Site Configuration > Notifications
   :configjson: .MetricsSettings.EnableNotificationMetrics
   :environment: MM_METRICSSETTINGS_ENABLENOTIFICATIONMETRICS
+  :description: This setting controls whether Mattermost collects notification metrics data for client-side web and desktop app users. Default is **true**.
 
   - **true**: **(Default)** Mattermost notification data collection is enabled for client-side web and desktop app users.
   - **false**: Mattermost notification data collection is disabled.
@@ -1176,7 +1184,8 @@ Access the following configuration settings in the System Console by going to **
   :displayname: System-wide notifications
   :systemconsole: Site Configuration > System-wide notifications
   :configjson: .AnnouncementSettings.SystemWideNotifications
-  :environment: MM_ANNOUNCEMENTSETTINGS_SYSTEMWIDENOTIFICATIONS 
+  :environment: MM_ANNOUNCEMENTSETTINGS_SYSTEMWIDENOTIFICATIONS
+  :description: This setting controls whether system-wide notifications are enabled. Default is **false**.
 
   - **true**: Enable system-wide notifications that display at the top of the Mattermost interface for all users across all teams.
   - **false**: **(Default)** Disable system-wide notifications.
@@ -1243,6 +1252,7 @@ Banner text color
   :systemconsole: Site Configuration > System-wide notifications
   :configjson: .AnnouncementSettings.AllowBannerDismissal
   :environment: MM_ANNOUNCEMENTSETTINGS_ALLOWBANNERDISMISSAL
+  :description: This setting controls whether users can dismiss the system-wide notification. Default is **true**.
 
   - **true**: **(Default)** Users can dismiss the system-wide notification. It will re-appear the next time the user logs in, or when the text is updated by an admin.
   - **false**: Users cannot dismiss the system-wide notification.
@@ -1273,6 +1283,7 @@ Access the following configuration settings in the System Console by going to **
   :systemconsole: Site Configuration > Emoji
   :configjson: .ServiceSettings.EnableEmojiPicker
   :environment: MM_SERVICESETTINGS_ENABLEEMOJIPICKER
+  :description: This setting controls whether the emoji picker is enabled when composing messages and for message reactions. Default is **true**.
 
   - **true**: **(Default)** Enables an emoji picker when composing messages and for message reactions.
   - **false**: Disables the emoji picker in message composition and reactions.
@@ -1291,6 +1302,7 @@ Enable emoji picker
   :systemconsole: Site Configuration > Emoji
   :configjson: .ServiceSettings.EnableCustomEmoji
   :environment: MM_SERVICESETTINGS_ENABLECUSTOMEMOJI
+  :description: This setting controls whether users can add custom emojis to the server. Default is **true**.
 
   - **true**: Allows users to add up to 6000 emojis through a **Custom Emoji** option in the emoji picker.
   - **false**: **(Default)** Disables custom emojis.
@@ -1323,6 +1335,7 @@ Access the following configuration settings in the System Console by going to **
   :systemconsole: Site Configuration > Posts
   :configjson: .ServiceSettings.ThreadAutoFollow
   :environment: MM_SERVICESETTINGS_THREADAUTOFOLLOW
+  :description: 
 
   - **true**: **(Default)** Enables automatic following for all threads that a user starts, or in which the user participates or is mentioned.
   - **false**: Disables automatic following of threads.
@@ -1352,6 +1365,7 @@ Automatically follow threads
   :systemconsole: Site Configuration > Posts
   :configjson: .ServiceSettings.CollapsedThreads
   :environment: MM_SERVICESETTINGS_COLLAPSEDTHREADS
+  :description: Controls the availability of `threaded discussions on the server and for users. Default is **Always On**.
 
   - **Always On**: **(Default)** Enables `threaded discussions <https://docs.mattermost.com/end-user-guide/collaborate/organize-conversations.html>`__ on the server and for all users. ``config.json`` setting: ``"always_on"``
   - **Default On**: Enables threaded discussions on the server and for all users. ``config.json`` setting: ``"default_on"``
@@ -1381,6 +1395,7 @@ Threaded discussions
   :systemconsole: Site Configuration > Posts
   :configjson: .ServiceSettings.PostPriority
   :environment: MM_SERVICESETTINGS_POSTPRIORITY
+  :description: This setting enables users to set a visual indicator for important or urgent root messages. Default is **true**.
 
   - **true**: **(Default)** Enables message priority for all users.
   - **false**: Disables the ability to set message priority and request acknowlegements.
@@ -1414,6 +1429,7 @@ Message priority
   :systemconsole: Site Configuration > Posts
   :configjson: .ServiceSettings.AllowPersistentNotifications
   :environment: MM_SERVICESETTINGS_ALLOWPERSISTENTNOTIFICATIONS
+  :description: This setting controls whether users can send repeating notifications to mentioned recipients of urgent messages. Default is **true**.
 
   - **true**: **(Default)** Users can trigger repeating notifications to mentioned recipients of urgent messages.
   - **false**: Disables the ability to send repeating notifications.
@@ -1495,6 +1511,7 @@ Total number of persistent notifications per post
   :systemconsole: Site Configuration > Posts
   :configjson: .ServiceSettings.EnableLinkPreviews
   :environment: MM_SERVICESETTINGS_ENABLELINKPREVIEWS
+  :description: This setting controls whether the server generates previews for website, image, and YouTube links. Default is **false**.
 
   - **true**: The server generates a preview of the first website, image, or YouTube video linked in a message.
   - **false**: **(Default)** All previews are disabled and the server does not request metadata for any links contained in messages.
@@ -1544,6 +1561,7 @@ Disable link previews for specific domains
   :systemconsole: Site Configuration > Posts
   :configjson: .ServiceSettings.EnablePermalinkPreviews
   :environment: MM_SERVICESETTINGS_ENABLEPERMALINKPREVIEWS
+  :description: This setting controls whether message link previews are enabled. Default is **true**.
 
   - **true**: **(Default)** `Share links to Mattermost messages <https://docs.mattermost.com/end-user-guide/collaborate/share-links.html>`__ will generate a preview for any users that have access to the original message.
   - **false**: Share links do not generate a preview.
@@ -1573,6 +1591,7 @@ Enable message link previews
   :systemconsole: Site Configuration > Posts
   :configjson: .ServiceSettings.EnableSVGs
   :environment: MM_SERVICESETTINGS_ENABLESVGS
+  :description: This setting controls whether previews of SVG files attached to messages are enabled. Default is **false**.
 
   - **true**: Enables previews of SVG files attached to messages.
   - **false**: **(Default)** Disables previews of SVG files.
@@ -1594,6 +1613,7 @@ Enable SVGs
   :systemconsole: Site Configuration > Posts
   :configjson: .ServiceSettings.EnableLatex
   :environment: MM_SERVICESETTINGS_ENABLELATEX
+  :description: This setting controls whether LaTeX code blocks are rendered as images. Default is **false**.
 
   - **true**: Enables rendering of `LaTeX in code blocks <https://docs.mattermost.com/end-user-guide/collaborate/format-messages.html#math-formulas>`__.
   - **false**: **(Default)** Disables rendering in blocks. Instead, LaTeX code is highlighted.
@@ -1615,6 +1635,7 @@ Enable LaTeX code block rendering
   :systemconsole: Site Configuration > Posts
   :configjson: .ServiceSettings.EnableInlineLatex
   :environment: MM_SERVICESETTINGS_ENABLEINLINELATEX
+  :description: This setting controls whether inline LaTeX in message text is rendered. Default is **false**.
 
   - **true**: Enables rendering of `LaTeX in message text <https://docs.mattermost.com/end-user-guide/collaborate/format-messages.html#math-formulas>`__.
   - **false**: **(Default)** Disables inline rendering of LaTeX. Instead, LaTeX in message text is highlighted.
@@ -1697,7 +1718,10 @@ Google API key
   :systemconsole: Site Configuration > Posts
   :configjson: .ServiceSettings.AllowSyncedDrafts
   :environment: MM_SERVICESETTINGS_ALLOWSYNCEDDRAFTS
-  :description: Enable or disable the ability to synchronize draft messages across all supported Mattermost clients.
+  :description: Enable or disable the ability to synchronize draft messages across all supported Mattermost clients. Default is **true**.
+
+  - **true**: **(Default)** Message drafts are saved on the server and may be accessed from different clients. Users may still disable server synchronization of draft messages by going to **Settings > Advanced Settings**.
+  - **false**:   Draft messages are stored locally on each device.
 
 Enable server syncing of message drafts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1759,6 +1783,7 @@ Access the following configuration settings in the System Console by going to **
   :systemconsole: Site Configuration > File Sharing and Downloads
   :configjson: .FileSettings.EnableFileAttachments
   :environment: MM_FILESETTINGS_ENABLEFILEATTACHMENTS
+  :description: This setting controls whether users can attach files to messages. Default is **true**.
 
   - **true**: **(Default)** Allows users to attach files to messages.
   - **false**: Prevents users from attaching files (including images) to a message.
@@ -1777,6 +1802,7 @@ Allow file sharing
   :systemconsole: Site Configuration > File Sharing and Downloads
   :configjson: .FileSettings.EnableMobileUpload
   :environment: MM_FILESETTINGS_ENABLEMOBILEUPLOAD
+  :description: This setting controls whether users can attach files to messages from mobile apps. Default is **true**.
 
   - **true**: **(Default)** Allows users to attach files to messages from mobile apps.
   - **false**: Prevents users from attaching files (including images) to messages from mobile apps.
@@ -1795,6 +1821,7 @@ Allow file uploads on mobile
   :systemconsole: Site Configuration > File sharing and downloads
   :configjson: .FileSettings.EnableMobileDownload
   :environment: MM_FILESETTINGS_ENABLEMOBILEDOWNLOAD
+  :description: This setting controls whether users can download files from mobile apps. Default is **true**.
 
   - **true**: **(Default)** Enables file downloads on mobile apps.
   - **false**: Disables file downloads on mobile apps. Users can still download files from a mobile web browser.
@@ -1813,6 +1840,7 @@ Allow file downloads on mobile
   :systemconsole: Site Configuration > File sharing and downloads
   :configjson: .FileSettings.MobileEnableSecureFilePreview
   :environment: MM_FILESETTINGS_MOBILEENABLESECUREFILEPREVIEW
+  :description: 
 
   - **true**: Prevents file downloads, previews, and sharing for most file types. Allows in-app previews for PDFs, videos, and images only. Files are stored temporarily in the app's cache and cannot be exported or shared.
   - **false**: **(Default)** Secure file preview mode is disabled.
@@ -1839,6 +1867,7 @@ This setting improves an organization's mobile security posture by restricting f
   :systemconsole: Site Configuration > File sharing and downloads
   :configjson: .FileSettings.MobileAllowPdfLinkNavigation
   :environment: MM_FILESETTINGS_MOBILEALLOWPDFLINKNAVIGATION
+  :description: This setting controls whether users can tap links inside PDFs when Secure File Preview Mode is active. Default is **true**.
 
   - **true**: **(Default)** Enables tapping links inside PDFs when Secure File Preview Mode is active. Links will open in the device browser or supported app.
   - **false**: Disables link navigation in PDFs when Secure File Preview Mode is active.
@@ -1876,6 +1905,7 @@ Access the following configuration settings in the System Console by going to **
   :systemconsole: Site Configuration > Public Links
   :configjson: .FileSettings.EnablePublicLink
   :environment: MM_FILESETTINGS_ENABLEPUBLICLINK
+  :description: This setting controls whether users can create public links to files attached to Mattermost messages. Default is **false**.
 
   - **true**: Allows users to create `public links <https://docs.mattermost.com/end-user-guide/collaborate/share-files-in-messages.html#share-public-links>`__ to files attached to Mattermost messages.
   - **false**: **(Default)** Prevents users from creating public links to files and disables all previously created links.
@@ -1923,6 +1953,7 @@ Access the following configuration settings in the System Console by going to **
   :systemconsole: Site Configuration > Notices
   :configjson: .AnnouncementSettings.AdminNoticesEnabled
   :environment: MM_ANNOUNCEMENTSETTINGS_ADMINNOTICESENABLED
+  :description: This setting controls whether system admins receive in-product notices about server upgrades and administration features. Default is **true**.
 
   - **true**: **(Default)** System admins will receive `in-product notices <https://docs.mattermost.com/administration-guide/manage/in-product-notices.html>`__ about server upgrades and administration features.
   - **false**: System admins will not receive specific notices. Admins will still receive notices for all users (see **Enable end user notices**).
@@ -1941,6 +1972,7 @@ Enable admin notices
   :systemconsole: Site Configuration > Notices
   :configjson: .AnnouncementSettings.UserNoticesEnabled
   :environment: MM_ANNOUNCEMENTSETTINGS_USERNOTICESENABLED
+  :description: This setting controls whether all users receive in-product notices about client upgrades and end user features. Default is **true**.
 
   - **true**: **(Default)** All users receive `in-product notices <https://docs.mattermost.com/administration-guide/manage/in-product-notices.html>`__ about client upgrades and end user features.
   - **false**: Users will not receive in-product notices.
@@ -1955,7 +1987,7 @@ Enable end user notices
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 
 Connected workspaces
----------------------------
+----------------------
 
 .. include:: ../../_static/badges/ent-adv-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -1969,10 +2001,10 @@ When connected workspaces are enabled, system admins can :doc:`create and manage
   :systemconsole: Site Configuration > Connected Workspaces
   :configjson: ConnectedWorkspacesSettings.EnableSharedChannels, ConnectedWorkspacesSettings.EnableRemoteClusterService 
   :environment: N/A
-  :description: Establish secure connections between Mattermost instances, and invite secured connections to shared channels
+  :description: Establish secure connections between Mattermost instances, and invite secured connections to shared channels. 
 
 Enable connected workspaces
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Enable the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where users can participate as they would in any public and private channel.
 
@@ -1996,6 +2028,7 @@ This feature's two ``config.json`` settings include:
   :systemconsole: N/A
   :configjson: ConnectedWorkspacesSettings.DisableSharedChannelsStatusSync
   :environment: N/A
+  :description: Disable member status and availability synchronization between connected workspaces. Default is false.
 
   - **true**: Channel as well as member status and availability isn't synchronized.
   - **false**: **(Default)** Channel as well as channel member status and availability is synchronized at regular intervals.
@@ -2036,7 +2069,7 @@ Default maximum posts per sync
   :systemconsole: N/A
   :configjson: ConnectedWorkspacesSettings.SyncUsersOnConnectionOpen
   :environment: N/A
-  :description: Automatically synchronize users when a new connection between workspaces is established. Default is true.
+  :description: Automatically synchronize users when a new connection between workspaces is established. Default is **true**.
 
   - **true**: **(Default)** Users are automatically synchronized when a new connection is established.
   - **false**: Users are not automatically synchronized when a new connection is established.

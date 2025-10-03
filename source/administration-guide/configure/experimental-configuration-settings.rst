@@ -4,10 +4,9 @@ Experimental configuration settings
 .. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Review and manage the following experimental configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Experimental > Features**:
+Review and manage the following :ref:`experimental <administration-guide/manage/feature-labels:experimental>` configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Experimental > Features**:
 
 - `Experimental System Console configuration settings <#experimental-system-console-configuration-settings>`__
-- `Experimental Bleve configuration settings <#experimental-bleve-configuration-settings>`__
 - `Experimental audit logging configuration settings <#experimental-audit-logging-configuration-settings>`__
 - `Experimental job configuration settings <#experimental-job-configuration-settings>`__
 - `Experimental configuration settings for self-hosted deployments only <#experimental-configuration-settings-for-self-hosted-deployments-only>`__
@@ -641,7 +640,7 @@ This setting controls whether or not the channel link autocomplete triggers imme
 +-------------------------------------------------------------------------------------------------------------------------------------------+
 
 YouTube referrer policy
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 This setting resolves issues where YouTube video previews display as unavailable.
 
@@ -1066,9 +1065,13 @@ Enable client-side certification
 .. include:: ../../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
+.. important::
+
+  **Certificate-based authentication has been deprecated from Mattermost v11.0.** This setting must be set to ``false`` to start the server from v11. Setting this to ``true`` will prevent the server from starting.
+
 **True**: Enables client-side certification for your Mattermost server. See :doc:`the documentation </administration-guide/onboard/certificate-based-authentication>` to learn more.
 
-**False**: Client-side certification is disabled.
+**False**: **(Default)** Client-side certification is disabled.
 
 +------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ClientSideCertEnable": false`` with options ``true`` and ``false``. |
@@ -1089,11 +1092,15 @@ Client-side certification login method
 .. include:: ../../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-Used in combination with the ``ClientSideCertEnable`` configuration setting.
+.. important::
+
+  **Certificate-based authentication has been deprecated from Mattermost v11.0.** This setting is no longer functional from Mattermost v11.0 and should be left at the default value.
+
+This configuration setting is used in combination with the ``ClientSideCertEnable`` configuration setting and has the following possible values:
 
 **Primary**: After the client side certificate is verified, user's email is retrieved from the certificate and is used to log in without a password.
 
-**Secondary**: After the client side certificate is verified, user's email is retrieved from the certificate and matched against the one supplied by the user. If they match, the user logs in with regular email/password credentials.
+**Secondary**: **(Default)** After the client side certificate is verified, user's email is retrieved from the certificate and matched against the one supplied by the user. If they match, the user logs in with regular email/password credentials.
 
 +----------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ClientSideCertCheck": "secondary"`` with options ``"primary"`` and ``"secondary"``. |
@@ -1599,21 +1606,21 @@ From Mattermost v10.10, when this :ref:`experimental <administration-guide/manag
   :configjson: ExperimentalStrictCSRFEnforcement
   :environment: N/A
 
-  - **true**: Enables CSRF protection tokens for additional hardening compared to the currently used custom header.
-  - **false**: **(Default)** Disables CSRF protection tokens.
+  - **true**: **(Default for new deployments from Mattermost Server v11 onward)** Enables CSRF protection tokens for additional hardening compared to the currently used custom header.
+  - **false**: **(Default for deployments prior to v11)** Disables CSRF protection tokens and enables legacy X-Requested-With header fallback.
 
 Strict CSRF token enforcement
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-**True**: Enables CSRF protection tokens for additional hardening compared to the currently used custom header. When the user logs in, an additional cookie is created with the CSRF token contained.
+**True**: Enables CSRF protection tokens for additional hardening compared to the currently used custom header. When the user logs in, an additional cookie is created with the CSRF token contained. This is the default behavior for new deployments from Mattermost Server v11 onward.
 
-**False**: Disables CSRF protection tokens.
+**False**: Disables CSRF protection tokens and enables legacy X-Requested-With header fallback for backward compatibility. This setting maintains the previous CSRF protection method used prior to v11. Existing deployments upgrading to v11 will retain their current configuration.
 
-+-------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalStrictCSRFEnforcement": false`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalStrictCSRFEnforcement": true`` with options ``true`` and ``false``. |
++------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: developer-flags
   :displayname: Developer flags (Experimental)
