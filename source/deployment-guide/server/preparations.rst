@@ -25,7 +25,7 @@ Before installing Mattermost Server, review the following preparation requiremen
 Database preparation
 --------------------
 
-PostgreSQL v13+ is required for Mattermost server installations. :doc:`MySQL database support </deployment-guide/server/prepare-mattermost-mysql-database>` is being deprecated starting with Mattermost v11. See the :doc:`PostgreSQL migration </deployment-guide/postgres-migration>` documentation for guidance on migrating from MySQL to PostgreSQL.
+PostgreSQL v14+ is required for Mattermost server installations. :doc:`MySQL database support </deployment-guide/server/prepare-mattermost-mysql-database>` is being deprecated starting with Mattermost v11. See the :doc:`PostgreSQL migration </deployment-guide/postgres-migration>` documentation for guidance on migrating from MySQL to PostgreSQL.
 
 1. Create an PostgreSQL server instance. See the `PostgreSQL documentation <https://www.postgresql.org/download/>`_ for details. When the installation is complete, the PostgreSQL server is running, and a Linux user account called postgres has been created.
 
@@ -274,7 +274,7 @@ Ensure your system meets these minimum requirements:
 - Operating System: 64-bit Linux distribution
 - Hardware: 1 vCPU/core with 2GB RAM (supports up to 1,000 users)
 - Storage: Minimum 10GB available space
-- Database: PostgreSQL v13+
+- Database: PostgreSQL v14+
 - Network: Reliable internet connection with sufficient bandwidth
 
 See the :doc:`software and hardware requirements </deployment-guide/software-hardware-requirements>` documentation for additional requirements.

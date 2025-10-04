@@ -9,7 +9,7 @@
       <ul>
         <li>Operating System: 20.04 LTS, 22.04 LTS, 24.04 LTS</li>
         <li>Hardware: 1 vCPU/core with 2GB RAM (support for up to 1,000 users)</li>
-        <li>Database: <a href="https://docs.mattermost.com/deployment-guide/postgres-migration.html">PostgreSQL v13+</a></li>
+        <li>Database: <a href="https://docs.mattermost.com/deployment-guide/postgres-migration.html">PostgreSQL v14+</a></li>
         <li>Network:
           <ul>
             <li>Application 80/443, TLS, TCP Inbound</li>
