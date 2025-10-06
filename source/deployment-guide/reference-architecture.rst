@@ -11,12 +11,14 @@ Whether you're deploying for sovereign collaboration, mission-critical operation
     :titlesonly:
 
     Application Architecture </deployment-guide/reference-architecture/application-architecture>
+    Deploy with High Availability </deployment-guide/reference-architecture/server-architecture>
     Deploy for Out-of-Band Use </deployment-guide/reference-architecture/deploy-oob>
     Deploy for Mission Partner Collaboration </deployment-guide/reference-architecture/deploy-mission-partner>
     Deploy for Enterprise to Edge DDIL Operations </deployment-guide/reference-architecture/deploy-ddil-operations>
     Deploy for Sovereign Collaboration in Microsoft Teams </deployment-guide/reference-architecture/deploy-sovereign-collaboration>
 
 * :doc:`Application Architecture </deployment-guide/reference-architecture/application-architecture>` - An overview of Mattermost's architecture and components.
+* :doc:`Deploy with High Availability </deployment-guide/reference-architecture/server-architecture>` - Detailed architecture configurations of high availability Mattermost deployments at different scales.
 * :doc:`Deploy for Out-of-Band Use </deployment-guide/reference-architecture/deploy-oob>` - Deploy Mattermost as an isolated, pre-provisioned communication system for incident response and business continuity.
 * :doc:`Deploy for Mission Partner Collaboration </deployment-guide/reference-architecture/deploy-mission-partner>` - Multi-organizational collaboration architecture with secure information sharing between allied networks and coalition partners.
 * :doc:`Deploy for Enterprise to Edge DDIL Operations </deployment-guide/reference-architecture/deploy-ddil-operations>` - Deployment patterns for Denied, Degraded, Intermittent, and Limited (DDIL) communication environments with offline capabilities.
