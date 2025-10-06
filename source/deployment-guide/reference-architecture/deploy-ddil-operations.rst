@@ -8,9 +8,9 @@ Disconnected, Denied, Intermittent, and Limited (DDIL) network conditions presen
 
 Mattermost enables resilient collaboration by remaining fully operational in DDIL environments. Mission users continue to access self-hosted messaging collaboration, workflow automation, and mission planning within their mobile tactical network. No internet connectivity is required for enhanced collaboration functions, including mission tuned AI agents powered by self-hosted LLMs, and audio and screen sharing services.
 
-When connectivity is restored, mission users regain access to M365 enterprise systems in addition to collaboration continuity with enterprise users through the embedded Mattermost experience inside their Microsoft Teams and Outlook applications. All mission activity during the period of disconnection becomes available across enterprise and tactical environments when connectivity returns. 
+When connectivity is restored, mission users regain access to M365 enterprise systems in addition to collaboration continuity with enterprise users through the :doc:`embedded Mattermost experience </integration-guide/mattermost-mission-collaboration-for-m365>` inside their Microsoft Teams and Outlook applications. All mission activity during the period of disconnection becomes available across enterprise and tactical environments when connectivity returns. 
 
-Traditional cloud-only solutions fail in these scenarios, while fully disconnected systems don't integrate with enterprise tools during normal operations. This deployment architecture extends sovereign collaboration with Microsoft Teams and Outlook to the tactical edge, providing a hybrid solution that enables enterprise integration and fully disconnected tactical collaboration.
+Traditional cloud-only solutions fail in these scenarios, while fully disconnected systems don't integrate with enterprise tools during normal operations. This deployment architecture extends :doc:`sovereign collaboration with Microsoft Teams and Outlook </deployment-guide/reference-architecture/deploy-sovereign-collaboration>` to the tactical edge, providing a hybrid solution that enables enterprise integration and fully disconnected tactical collaboration.
 
 .. image:: /images/architecture-ms-teams-ddil.png
    :alt: Mattermost diagram displays the deployment components and relationships outlined in detail in this document.
@@ -30,43 +30,43 @@ This hybrid deployment architecture provides optimal collaboration in both conne
 
 - **Identity Providers:**
 
-  - **Microsoft Entra ID:** Enterprise users authenticate to M365 applications and Mattermost using single sign-on Entra ID via OpenID Connect (OIDC) or SAML. This provider only works with functioning internet access.
+  - **Microsoft Entra ID:** Enterprise users authenticate to M365 applications and Mattermost using :doc: `single sign-on Entra ID </administration-guide/onboard/sso-entraid>` via OpenID Connect (OIDC) or SAML. This provider only works with functioning internet access.
 
   - **Alternative Local Identity Provider:** Deployed within the tactical network to provide authentication services for mission users during disconnected periods when M365 is unreachable. The local IdP serves as the primary authentication source for Mattermost and maintains an independent user directory that operates without internet connectivity. 
 
 - **Client Applications:**
 
-  - **Microsoft 365 Desktop Apps:** Teams and Outlook with embedded Mattermost application.
+  - **Microsoft 365 Desktop Apps:** Teams and Outlook with :doc:`embedded Mattermost application </integration-guide/mattermost-mission-collaboration-for-m365>`.
 
     - When internet connected: Enables seamless enterprise-to-edge collaboration within a familiar interface.
 
     - When internet disconnected: Microsoft services are unreachable, but embedded Mattermost application remains fully operational for tactical teams.
 
-  - **Mattermost Desktop Apps:** Access Mattermost via desktop or web apps in addition to the embedded views from Teams and Outlook. *(Optional - not shown)*
+  - **Mattermost Desktop Apps:** Access Mattermost via :doc: `desktop </deployment-guide/desktop/desktop-app-deployment>` or web apps in addition to the embedded views from Teams and Outlook. *(Optional - not shown)*
 
-  - **Mattermost Mobile Apps:** Access Mattermost via iPhone and Android apps, with support for ID-only push notifications to ensure compliance with data sovereignty requirements. *(Optional when connectivity permits - not shown)*
+  - **Mattermost Mobile Apps:** Access Mattermost via :doc: `iPhone and Android apps </deployment-guide/mobile/mobile-app-deployment>`, with support for :doc: `ID-only push notifications </deployment-guide/mobile/host-your-own-push-proxy-service>` to ensure compliance with data sovereignty requirements. *(Optional when connectivity permits - not shown)*
 
-- **Mattermost Deployment:** Mattermost deployed for sovereign tactical collaboration on local infrastructure, such as Azure Local, supporting data residency regulations and disconnected operations. See reference architecture documentation for Mattermost deployment configurations based on expected scale.
+- **Mattermost Deployment:** Mattermost deployed for sovereign tactical collaboration on local infrastructure, such as `Azure Local <https://learn.microsoft.com/en-us/azure/azure-local/manage/disconnected-operations-overview>`_, supporting data residency regulations and :doc: `disconnected operations </deployment-guide/server/air-gapped-deployment>`. See :doc: `reference architecture </deployment-guide/server/server-architecture>` documentation for Mattermost deployment configurations based on expected scale.
 
 - **Mattermost Server:** Core application server handling tactical collaboration workloads, including:
 
-  - **Messaging Collaboration:** DDIL-ready 1:1, group messaging, and structured channel collaboration with rich integration capabilities and enterprise-grade search.
+  - :doc: `Messaging Collaboration </end-user-guide/messaging-collaboration>`: DDIL-ready 1:1, group messaging, and structured channel collaboration with rich integration capabilities and enterprise-grade search.
 
-  - **Workflow Automation (Optional):** Playbooks provide structure, monitoring and automation for repeatable processes built-in to your local Mattermost deployment.
+  - :doc: `Workflow Automation </end-user-guide/workflow-automation>`: Playbooks provide structure, monitoring and automation for repeatable processes built-in to your local Mattermost deployment.
 
-  - **Project Tracking (Optional):** Boards enables project management capabilities built-in to your local Mattermost deployment.
+  - :doc: `Project Tracking </end-user-guide/project-task-management>`:** Boards enables project management capabilities built-in to your local Mattermost deployment.
 
-  - **AI Agents (Optional):** AI Agents run against a local LLM hosted within your tactical network. 
+  - :doc: `AI Agents </administration-guide/configure/agents-admin-guide>`: AI Agents run against a local LLM hosted within your tactical network. 
 
-  - **Audio & Screenshare (Optional):** Calls offers native real-time self-hosted audio calls and screen sharing within your tactical network.
+  - :doc: `Audio & Screenshare </administration-guide/configure/calls-deployment>`: Calls offers native real-time self-hosted audio calls and screen sharing within your tactical network.
 
-- **Proxy Server:** The proxy server handles HTTP(S) routing within the cluster, directing traffic between the server and clients accessing Mattermost services. NGINX is recommended for load balancing with support for WebSocket connections, health check endpoints, and sticky sessions. The proxy layer provides SSL termination and distributes client traffic across application servers.
+- **Proxy Server:** The :doc: `proxy server </deployment-guide/server/setup-nginx-proxy>` handles HTTP(S) routing within the cluster, directing traffic between the server and clients accessing Mattermost services. NGINX is recommended for load balancing with support for WebSocket connections, health check endpoints, and sticky sessions. The proxy layer provides SSL termination and distributes client traffic across application servers.
 
-- **PostgreSQL Database:** Stores persistent application data on a PostgreSQL v13+ database hosted locally within your tactical network.
+- **PostgreSQL Database:** Stores persistent application data on a :doc: `PostgreSQL v13+ database </deployment-guide/server/preparations>` hosted locally within your tactical network.
 
-- **Object Storage:** File uploads, images, and attachments are stored outside the application node on an S3-compatible store, such as MinIO, hosted locally within your tactical network.
+- **Object Storage:** File uploads, images, and attachments are stored outside the application node on an :doc: `S3-compatible store </deployment-guide/server/preparations>`, such as MinIO, hosted locally within your tactical network.
 
-- **Recording Instance:** ``calls-offloader`` job service to offload heavy processing tasks from Mattermost Calls to self-hosted infrastructure within your tactical network, such as recordings, transcriptions, and live captioning. *(Optional)*
+- **Recording Instance:** ``calls-offloader`` :ref:`job service </administration-guide/configure/calls-deployment:configure recording, transcriptions, and live captions>` to offload heavy processing tasks from Mattermost Calls to self-hosted infrastructure within your tactical network, such as recordings, transcriptions, and live captioning. *(Optional)*
 
 - **Self-hosted integrations:** Custom apps, plugins, and webhooks can be deployed within your tactical network. *(Optional - not shown)*
 
