@@ -51,25 +51,25 @@ This hybrid deployment architecture provides optimal collaboration in both conne
 
 - **Mattermost Deployment:** Mattermost deployed for sovereign tactical collaboration on local infrastructure, such as `Azure Local <https://learn.microsoft.com/en-us/azure/azure-local/manage/disconnected-operations-overview>`_, supporting data residency regulations and :doc:`disconnected operations </deployment-guide/server/air-gapped-deployment>`. See :doc:`reference architecture </deployment-guide/server/server-architecture>` documentation for Mattermost deployment configurations based on expected scale.
 
-- **Mattermost Server:** Core application server handling tactical collaboration workloads, including:
+  - **Mattermost Server:** Core application server handling tactical collaboration workloads, including:
 
-  - :doc:`Messaging Collaboration </end-user-guide/messaging-collaboration>`: DDIL-ready 1:1, group messaging, and structured channel collaboration with :doc:`rich integration capabilities </integrations-guide/integrations-guide-index>` and :ref:`enterprise-grade search <administration-guide/scale/scaling-for-enterprise:enterprise search>`.
+    - :doc:`Messaging Collaboration </end-user-guide/messaging-collaboration>`: DDIL-ready 1:1, group messaging, and structured channel collaboration with :doc:`rich integration capabilities </integrations-guide/integrations-guide-index>` and :ref:`enterprise-grade search <administration-guide/scale/scaling-for-enterprise:enterprise search>`.
 
-  - :doc:`Workflow Automation </end-user-guide/workflow-automation>`: Playbooks provide structure, monitoring and automation for repeatable processes built-in to your local Mattermost deployment.
+    - :doc:`Workflow Automation </end-user-guide/workflow-automation>`: Playbooks provide structure, monitoring and automation for repeatable processes built-in to your local Mattermost deployment.
 
-  - :doc:`Project Tracking </end-user-guide/project-task-management>`: Boards enables project management capabilities built-in to your local Mattermost deployment.
+    - :doc:`Project Tracking </end-user-guide/project-task-management>`: Boards enables project management capabilities built-in to your local Mattermost deployment.
 
-  - :doc:`AI Agents </administration-guide/configure/agents-admin-guide>`: AI Agents run against a local LLM hosted within your tactical network. 
+    - :doc:`AI Agents </administration-guide/configure/agents-admin-guide>`: AI Agents run against a local LLM hosted within your tactical network. 
 
-  - :doc:`Audio & Screenshare </administration-guide/configure/calls-deployment>`: Calls offers native real-time self-hosted audio calls and screen sharing within your tactical network.
+    - :doc:`Audio & Screenshare </administration-guide/configure/calls-deployment>`: Calls offers native real-time self-hosted audio calls and screen sharing within your tactical network.
 
-- **Proxy Server:** The :doc:`proxy server </deployment-guide/server/setup-nginx-proxy>` handles HTTP(S) routing within the cluster, directing traffic between the server and clients accessing Mattermost services. NGINX is recommended for load balancing with support for WebSocket connections, health check endpoints, and sticky sessions. The proxy layer provides SSL termination and distributes client traffic across application servers.
+  - **Proxy Server:** The :doc:`proxy server </deployment-guide/server/setup-nginx-proxy>` handles HTTP(S) routing within the cluster, directing traffic between the server and clients accessing Mattermost services. NGINX is recommended for load balancing with support for WebSocket connections, health check endpoints, and sticky sessions. The proxy layer provides SSL termination and distributes client traffic across application servers.
 
-- **PostgreSQL Database:** Stores persistent application data on a :doc:`PostgreSQL v13+ database </deployment-guide/server/preparations>` hosted locally within your tactical network.
+  - **PostgreSQL Database:** Stores persistent application data on a :doc:`PostgreSQL v13+ database </deployment-guide/server/preparations>` hosted locally within your tactical network.
 
-- **Object Storage:** File uploads, images, and attachments are stored outside the application node on an :doc:`S3-compatible store </deployment-guide/server/preparations>`, such as MinIO, hosted locally within your tactical network.
+  - **Object Storage:** File uploads, images, and attachments are stored outside the application node on an :doc:`S3-compatible store </deployment-guide/server/preparations>`, such as MinIO, hosted locally within your tactical network.
 
-- **Recording Instance:** ``calls-offloader`` :ref:`job service <administration-guide/configure/calls-deployment:configure recording, transcriptions, and live captions>` to offload heavy processing tasks from Mattermost Calls to self-hosted infrastructure within your tactical network, such as recordings, transcriptions, and live captioning. *(Optional)*
+  - **Recording Instance:** ``calls-offloader`` :ref:`job service <administration-guide/configure/calls-deployment:configure recording, transcriptions, and live captions>` to offload heavy processing tasks from Mattermost Calls to self-hosted infrastructure within your tactical network, such as recordings, transcriptions, and live captioning. *(Optional)*
 
 - **Self-hosted integrations:** :doc:`Custom apps, plugins, and webhooks </integrations-guide/integrations-guide-index>` can be deployed within your tactical network. *(Optional - not shown)*
 
