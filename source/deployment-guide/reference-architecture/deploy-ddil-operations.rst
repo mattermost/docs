@@ -89,7 +89,7 @@ DDIL environments require authentication infrastructure that remains fully opera
 
 - **Enterprise Users:** Access Teams and Outlook by authenticating to Microsoft 365 via Entra ID, and their M365 session also provides access to the embedded Mattermost experience when the tactical network is internet connected.
 
-- **Mission users:** Authenticate to Mattermost using a local IdP, such as Keycloak (open-source IdP with OIDC/SAML support), Active Directory with ADFS, or OpenLDAP with an OIDC bridge. When internet connected, the local IdP can optionally federate with Microsoft Entra ID to synchronize user accounts, credentials, and group memberships to enable access to Microsoft applications.
+- **Mission users:** Authenticate to Mattermost using a local IdP, such as :doc:`Keycloak </administration-guide/onboard/sso-saml-keycloak>` (open-source IdP with OIDC/SAML support), Active Directory with ADFS, or OpenLDAP with an OIDC bridge. When internet connected, the local IdP can optionally federate with Microsoft Entra ID to synchronize user accounts, credentials, and group memberships to enable access to Microsoft applications.
 
 User accounts must be provisioned in the local IdP before disconnection occurs to ensure authentication services remain available throughout DDIL conditions. 
 
