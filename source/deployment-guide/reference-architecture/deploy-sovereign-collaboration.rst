@@ -45,7 +45,7 @@ The deployment architecture includes the following components:
 
     - :doc:`Workflow Automation </end-user-guide/workflow-automation>`: Playbooks provide structure, monitoring and automation for repeatable processes built-in to your sovereign Mattermost deployment.
 
-   - :doc:`Project Tracking </end-user-guide/project-task-management>`: Boards enables project management capabilities built-in to your sovereign Mattermost deployment.
+    - :doc:`Project Tracking </end-user-guide/project-task-management>`: Boards enables project management capabilities built-in to your sovereign Mattermost deployment.
 
     - :doc:`AI Agents </administration-guide/configure/agents-admin-guide>`: AI Agents run against Azure OpenAI endpoints or a self-hosted LLM that is OpenAI-compatible. 
 
@@ -65,7 +65,7 @@ The deployment architecture includes the following components:
 
 **Microsoft Global Network:** `World-wide network <https://learn.microsoft.com/en-us/azure/networking/microsoft-global-network>`_ of Microsoft data centers, delivering public cloud services including M365 and Azure OpenAI. 
 
-**Azure OpenAI Service:** :doc:`LLM service </agents/docs/providers>`_ used for summarization, ai-enhanced search, and agent-assisted workflows, hosted within the Microsoft Global Network. *(Optional)*
+**Azure OpenAI Service:** :doc:`LLM service </agents/docs/providers>` used for summarization, ai-enhanced search, and agent-assisted workflows, hosted within the Microsoft Global Network. *(Optional)*
 
 Operational Best Practices
 --------------------------
