@@ -1,5 +1,5 @@
 Deploy for Sovereign Collaboration in Microsoft Teams
-===============================================
+=====================================================
 
 Overview
 --------
@@ -13,6 +13,9 @@ Mattermost can be hosted on-premises or in sovereign clouds, such as Azure GovCl
 Unified authentication with Microsoft Entra-ID extends your Microsoft enterprise IT investments while delivering the compliance, control, and resilience required for mission-critical operations or out-of-band scenarios.
 
 This document outlines architectural guidance for enabling sovereign collaboration within your Microsoft ecosystem.
+
+.. image:: ../images/architecture-ms-teams-collab.png
+   :alt: Mattermost diagram displays the deployment components and relationships outlined in detail in this document.
 
 Architecture components
 -----------------------
