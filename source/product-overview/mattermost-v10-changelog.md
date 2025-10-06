@@ -24,7 +24,7 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 ### Improvements
 
 #### User Interface (UI)
- - **[End-user]** Improved screen reader readouts and accessibility of various autocomplete components.
+ - **[End-user]** **[Accessibility]** Improved screen reader readouts and accessibility of various autocomplete components.
 
 #### Administration
  - **[Admin]** Added an endpoint to check for upgradability. Also, a correct error message is now shown and the "Upgrade Server and Start trial" button is disabled if an upgrade is not possible.
@@ -77,9 +77,9 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
  - **[Admin]** Pre-packaged Calls plugin [v1.10.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.10.0).
  - **[Admin]** Pre-packaged Boards plugin [v9.1.5](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.5).
  - **[Admin]** Pre-packaged Playbooks plugin [v2.3.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.3.0). 
- - **[End-user]** Improved the date and time picker usability across **Custom Status**, **Scheduled Messages**, **Do Not Disturb**, and **Reminder** modals. The entire input area is now clickable, keyboard navigation works properly in time selection menus, and consistent relative date formatting is used throughout. 
- - **[End-user]** Improved the **Permissions** table expand/collapse animation and prevented text from overflowing. 
- - **[End-user]** Added an aria-label to the file preview back/forward buttons. 
+ - **[End-user]** **[Accessibility]** Improved the date and time picker usability across **Custom Status**, **Scheduled Messages**, **Do Not Disturb**, and **Reminder** modals. The entire input area is now clickable, keyboard navigation works properly in time selection menus, and consistent relative date formatting is used throughout. 
+ - **[End-user]** **[Accessibility]** Improved the **Permissions** table expand/collapse animation and prevented text from overflowing. 
+ - **[End-user]** **[Accessibility]** Added an aria-label to the file preview back/forward buttons. 
  - **[End-user]** Modified the input to have the minimum/maximum length validation work the same as the validation around ``required``, and replaced **Create Team** input with an **Input** component. 
  - **[End-user]** Improved the YouTube video preview user interface. 
  - **[End-user]** Removed the minimum-width for the right-hand side when the window size is <400px. 
@@ -184,11 +184,11 @@ If you upgrade from a release earlier than v10.9, please read the other [Importa
  - **[Admin]** Pre-packaged Agents plugin [v1.2.4](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.2.4).
  - **[End-user]** Resolved inconsistent styling issues in new integration pages.
  - **[End-user]** Improved the visual styling of blockquotes and comment threads for better readability and a modern appearance.
- - **[End-user]** Improved screen reader support for autocompletes and channel switcher.
- - **[End-user]** Added an aria-live region for improved accessibility of file preview modal carousel position updates.
+ - **[End-user]** **[Accessibility]** Improved screen reader support for autocompletes and channel switcher.
+ - **[End-user]** **[Accessibility]** Added an aria-live region for improved accessibility of file preview modal carousel position updates.
  - **[End-user]** Add focusability to react-select remove button in notifications settings.
  - **[End-user]** Updated **Profile** settings client-side validation to use more modern/accessible paradigms.
- - **[End-user]** Enhanced the accessibility of login and password reset functionality.
+ - **[End-user]** **[Accessibility]** Enhanced the accessibility of login and password reset functionality.
  - **[End-user]** Stopped the Threads textbox from automatically taking focus when it contained a draft.
  - **[End-user]** Added a display setting for users to toggle rendering of emoticons (e.g., :D) as emojis (e.g., 😄).
  - **[End-user]** Added support for the ``from:`` search filter in cross-team searches.
