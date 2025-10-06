@@ -14,7 +14,7 @@ Unified authentication with Microsoft Entra-ID extends your Microsoft enterprise
 
 This document outlines architectural guidance for enabling sovereign collaboration within your Microsoft ecosystem.
 
-.. image:: ../images/architecture-ms-teams-collab.png
+.. image:: /images/architecture-ms-teams-collab.png
    :alt: Mattermost diagram displays the deployment components and relationships outlined in detail in this document.
 
 Architecture components
