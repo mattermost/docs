@@ -11,7 +11,7 @@ Whether you're deploying for sovereign collaboration, mission-critical operation
     :titlesonly:
 
     Application Architecture </deployment-guide/application-architecture>
-    Deploy for Out-of-Band Use </deployment-guide/server/deploy-oob>
+    Deploy for Out-of-Band Use </deployment-guide/reference-architecture/deploy-oob>
     Deploy for Mission Partner Collaboration </deployment-guide/reference-architecture/deploy-mission-partner>
     Deploy for Enterprise to Edge DDIL Operations </deployment-guide/reference-architecture/deploy-ddil-operations>
     Deploy for Sovereign Collaboration in Microsoft Teams </deployment-guide/reference-architecture/deploy-sovereign-collaboration>
