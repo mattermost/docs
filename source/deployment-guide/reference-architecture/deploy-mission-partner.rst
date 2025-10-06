@@ -1,8 +1,5 @@
-.. _deploy-mission-partner-collaboration:
-
-==================================
 Deploy for Mission Partner Collaboration
-==================================
+========================================
 
 Overview
 --------
@@ -36,7 +33,7 @@ Traditional solutions require everyone to adopt the same platform or use insecur
 
 - **Automatic Language Translation:** AI-powered automatic translation enables seamless communication across language barriers in channels with distributed teams.
 
-.. image:: ../images/architecture-mpe.png
+.. image:: /images/architecture-mpe.png
    :alt: Mattermost diagram displays the deployment components and relationships outlined in detail in this document.
 
 Architecture components
