@@ -11,7 +11,7 @@ Whether you're deploying the server application, desktop application, or mobile 
     :titlesonly:
 
     Quick Start Evaluation </deployment-guide/quick-start-evaluation>
-    Application Architecture </deployment-guide/application-architecture>
+    Reference Architecture </deployment-guide/reference-architecture>
     Server Deployment </deployment-guide/server/server-deployment-planning>
     Desktop App Deployment </deployment-guide/desktop/desktop-app-deployment>
     Mobile App Deployment </deployment-guide/mobile/mobile-app-deployment>
@@ -19,7 +19,7 @@ Whether you're deploying the server application, desktop application, or mobile 
 
 
 * :doc:`Quick Start Evaluation </deployment-guide/quick-start-evaluation>` - A quick start guide to help you get started with Mattermost.
-* :doc:`Application architecture </deployment-guide/application-architecture>` - An overview of Mattermost's architecture and components.
+* :doc:`Reference Architecture </deployment-guide/reference-architecture>` - Architectural guidance including application architecture and specialized deployment scenarios.
 * :doc:`Server deployment </deployment-guide/server/server-deployment-planning>` - Pre-deployment checks, security considerations, hardware recommendations, software prerequisites, and step-by-step guidance to deploying Mattermost server.
 * :doc:`Desktop deployment </deployment-guide/desktop/desktop-app-deployment>` - Installation procedures for Mattermost's desktop applications across Windows, macOS, and Linux, and large-scale, enterprise-wide deployments.
 * :doc:`Mobile deployment </deployment-guide/mobile/mobile-app-deployment>` - How to set up push notifications using Mattermost's notification service and troubleshooting tips.
@@ -30,7 +30,7 @@ How to use this guide
 
 Navigate through the sections using the headings above to find the deployment instructions and troubleshooting steps pertinent to your needs. Each section is designed to provide clear, actionable information to ensure a successful deployment and operation of Mattermost.
 
-If you are new to Mattermost, we recommend starting with the Application Architecture section to understand the prerequisites and get started, or alternatively use the Try Mattermost section to explore Mattermost before planning your production deployment.
+If you are new to Mattermost, we recommend starting with the Reference Architecture section to understand the prerequisites and get started, or alternatively use the Try Mattermost section to explore Mattermost before planning your production deployment.
 
 .. note::
 
