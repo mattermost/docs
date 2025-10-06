@@ -64,7 +64,7 @@ This hybrid deployment architecture provides optimal collaboration in both conne
 
 - **PostgreSQL Database:** Stores persistent application data on a :doc:`PostgreSQL v13+ database </deployment-guide/server/preparations>` hosted locally within your tactical network.
 
-- **Object Storage:** File uploads, images, and attachments are stored outside the application node on an :doc: `S3-compatible store </deployment-guide/server/preparations>`, such as MinIO, hosted locally within your tactical network.
+- **Object Storage:** File uploads, images, and attachments are stored outside the application node on an :doc:`S3-compatible store </deployment-guide/server/preparations>`, such as MinIO, hosted locally within your tactical network.
 
 - **Recording Instance:** ``calls-offloader`` :ref:`job service </administration-guide/configure/calls-deployment:configure recording, transcriptions, and live captions>` to offload heavy processing tasks from Mattermost Calls to self-hosted infrastructure within your tactical network, such as recordings, transcriptions, and live captioning. *(Optional)*
 
