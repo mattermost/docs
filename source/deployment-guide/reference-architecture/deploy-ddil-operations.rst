@@ -8,9 +8,9 @@ Disconnected, Denied, Intermittent, and Limited (DDIL) network conditions presen
 
 Mattermost enables resilient collaboration by remaining fully operational in DDIL environments. Mission users continue to access self-hosted messaging collaboration, workflow automation, and mission planning within their mobile tactical network. No internet connectivity is required for enhanced collaboration functions, including mission tuned AI agents powered by self-hosted LLMs, and audio and screen sharing services.
 
-When connectivity is restored, mission users regain access to M365 enterprise systems in addition to collaboration continuity with enterprise users through the :doc:`embedded Mattermost experience </integration-guide/mattermost-mission-collaboration-for-m365>` inside their Microsoft Teams and Outlook applications. All mission activity during the period of disconnection becomes available across enterprise and tactical environments when connectivity returns. 
+When connectivity is restored, mission users regain access to M365 enterprise systems in addition to collaboration continuity with enterprise users through the :doc:`embedded Mattermost experience </integrations-guide/mattermost-mission-collaboration-for-m365>` inside their Microsoft Teams and Outlook applications. All mission activity during the period of disconnection becomes available across enterprise and tactical environments when connectivity returns. 
 
-Traditional cloud-only solutions fail in these scenarios, while fully disconnected systems don't integrate with enterprise tools during normal operations. This deployment architecture extends :doc:`sovereign collaboration with Microsoft Teams and Outlook </deployment-guide/reference-architecture/deploy-sovereign-collaboration>` to the tactical edge, providing a hybrid solution that enables enterprise integration and fully disconnected tactical collaboration.
+Traditional cloud-only solutions fail in these scenarios, while fully disconnected systems don't integrate with enterprise tools during normal operations. This deployment architecture :doc:`extends sovereign collaboration with Microsoft Teams and Outlook </deployment-guide/reference-architecture/deploy-sovereign-collaboration>` to the tactical edge, providing a hybrid solution that enables enterprise integration and fully disconnected tactical collaboration.
 
 .. image:: /images/architecture-ms-teams-ddil.png
    :alt: Mattermost diagram displays the deployment components and relationships outlined in detail in this document.
@@ -36,7 +36,7 @@ This hybrid deployment architecture provides optimal collaboration in both conne
 
 - **Client Applications:**
 
-  - **Microsoft 365 Desktop Apps:** Teams and Outlook with :doc:`embedded Mattermost application </integration-guide/mattermost-mission-collaboration-for-m365>`.
+  - **Microsoft 365 Desktop Apps:** Teams and Outlook with :doc:`embedded Mattermost application. </integrations-guide/mattermost-mission-collaboration-for-m365>`
 
     - When internet connected: Enables seamless enterprise-to-edge collaboration within a familiar interface.
 
@@ -66,13 +66,13 @@ This hybrid deployment architecture provides optimal collaboration in both conne
 
 - **Object Storage:** File uploads, images, and attachments are stored outside the application node on an :doc:`S3-compatible store </deployment-guide/server/preparations>`, such as MinIO, hosted locally within your tactical network.
 
-- **Recording Instance:** ``calls-offloader`` :ref:`job service </administration-guide/configure/calls-deployment:configure recording, transcriptions, and live captions>` to offload heavy processing tasks from Mattermost Calls to self-hosted infrastructure within your tactical network, such as recordings, transcriptions, and live captioning. *(Optional)*
+- **Recording Instance:** ``calls-offloader`` :ref:`job service </administration-guide/configure/calls-deployment:configure recording transcriptions and live captions>` to offload heavy processing tasks from Mattermost Calls to self-hosted infrastructure within your tactical network, such as recordings, transcriptions, and live captioning. *(Optional)*
 
-- **Self-hosted integrations:** Custom apps, plugins, and webhooks can be deployed within your tactical network. *(Optional - not shown)*
+- **Self-hosted integrations:** :doc:`Custom apps, plugins, and webhooks </integrations-guide/integrations-guide-index>` can be deployed within your tactical network. *(Optional - not shown)*
 
-- **Self-hosted LLM:** Locally hosted OpenAI compatible LLM for agentic powered collaboration within your tactical network. *(Optional)*
+- **Self-hosted LLM:** Locally hosted :doc:`OpenAI compatible LLM </agents/docs/providers>` for agentic powered collaboration within your tactical network. *(Optional)*
 
-- **Microsoft Global Network:** World-wide network of Microsoft data centers, delivering public cloud services when internet connectivity permits. 
+- **Microsoft Global Network:** `World-wide network <https://learn.microsoft.com/en-us/azure/networking/microsoft-global-network>`_ of Microsoft data centers, delivering public cloud services when internet connectivity permits. 
 
 Operational Best Practices
 --------------------------
