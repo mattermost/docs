@@ -12,7 +12,7 @@ When connectivity is restored, mission users regain access to M365 enterprise sy
 
 Traditional cloud-only solutions fail in these scenarios, while fully disconnected systems don't integrate with enterprise tools during normal operations. This deployment architecture extends sovereign collaboration with Microsoft Teams and Outlook to the tactical edge, providing a hybrid solution that enables enterprise integration and fully disconnected tactical collaboration.
 
-.. image:: ../images/architecture-ms-teams-ddil.png
+.. image:: /images/architecture-ms-teams-ddil.png
    :alt: Mattermost diagram displays the deployment components and relationships outlined in detail in this document.
 
 Architecture components
