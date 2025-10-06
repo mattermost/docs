@@ -15,9 +15,7 @@ This section provides comprehensive guidance on deploying and managing your Matt
     Deploy for Out-of-Band Use </deployment-guide/server/deploy-oob>
     Deploy in Air-Gapped Environments </deployment-guide/server/air-gapped-deployment>
     Pre-authentication secrets </deployment-guide/server/pre-authentication-secrets>
-    Reference Architecture </deployment-guide/server/server-architecture>
     Deployment Solution Programs </deployment-guide/server/orchestration>
-    Scale for Enterprise </administration-guide/scale/scaling-for-enterprise>
 
 * :doc:`Preparations </deployment-guide/server/preparations>` - Software and hardware requirements, proxy setup, TLS configuration, and other pre-deployment tasks.
 * :doc:`Deploy with Kubernetes </deployment-guide/server/deploy-kubernetes>` - Scalable deployment on various Kubernetes platforms with high availability support.
@@ -26,9 +24,7 @@ This section provides comprehensive guidance on deploying and managing your Matt
 * :doc:`Deploy for Out-of-Band Use </deployment-guide/server/deploy-oob>` - Secure deployment for mission-critical, air-gapped environments.
 * :doc:`Deploy in Air-Gapped Environments </deployment-guide/server/air-gapped-deployment>` - Complete isolation deployment for maximum security.
 * :doc:`Pre-authentication secrets </deployment-guide/server/pre-authentication-secrets>` - Configure reverse proxy validation for mobile and desktop applications using pre-authentication headers.
-* :doc:`Reference Architecture </deployment-guide/server/server-architecture>` - Recommended architecture patterns and infrastructure design.
 * :doc:`Deployment Solution Programs </deployment-guide/server/orchestration>` - Automated deployment tools and orchestration solutions.
-* :doc:`Scale for Enterprise </administration-guide/scale/scaling-for-enterprise>` - High availability, clustering, and enterprise-scale deployment guidance.
 
 
 Core technology stack
