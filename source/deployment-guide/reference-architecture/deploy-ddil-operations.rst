@@ -53,11 +53,11 @@ This hybrid deployment architecture provides optimal collaboration in both conne
 
 - **Mattermost Server:** Core application server handling tactical collaboration workloads, including:
 
-  - :doc:`Messaging Collaboration </end-user-guide/messaging-collaboration>`: DDIL-ready 1:1, group messaging, and structured channel collaboration with rich integration capabilities and enterprise-grade search.
+  - :doc:`Messaging Collaboration </end-user-guide/messaging-collaboration>`: DDIL-ready 1:1, group messaging, and structured channel collaboration with :doc:`rich integration capabilities </integrations-guide/integrations-guide-index>` and :ref:`enterprise-grade search <administration-guide/scale/scaling-for-enterprise:enterprise search>`.
 
   - :doc:`Workflow Automation </end-user-guide/workflow-automation>`: Playbooks provide structure, monitoring and automation for repeatable processes built-in to your local Mattermost deployment.
 
-  - :doc:`Project Tracking </end-user-guide/project-task-management>`:** Boards enables project management capabilities built-in to your local Mattermost deployment.
+  - :doc:`Project Tracking </end-user-guide/project-task-management>`: Boards enables project management capabilities built-in to your local Mattermost deployment.
 
   - :doc:`AI Agents </administration-guide/configure/agents-admin-guide>`: AI Agents run against a local LLM hosted within your tactical network. 
 
@@ -101,15 +101,15 @@ Deploy an :doc:`OpenAI compatible LLM </administration-guide/configure/agents-ad
 Self-hosted audio & screensharing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Effective collaboration at the tactical edge requires all voice and screen sharing capabilities remain operational without reliance on the internet or third-party services. Deploy doc:`Mattermost Calls</administration-guide/configure/calls-deployment>` in a self-hosted configuration, including:
+Effective collaboration at the tactical edge requires all voice and screen sharing capabilities remain operational without reliance on the internet or third-party services. Deploy :doc:`Mattermost Calls </administration-guide/configure/calls-deployment>` in a self-hosted configuration, including:
 
 - The :ref:`rtcd service <administration-guide/configure/calls-deployment:the rtcd service>` for scalable, low-latency media routing hosted on-premises. Run multiple ``rtcd`` nodes for redundancy.
-- The :ref:`calls offloader <administration-guide/configure/calls-deployment:configure recording transcriptions and live captions>` service offloads heavy processing tasks like recording, transcription and live captioning to a locally hosted compliance-approved job server.
+- The :ref:`calls offloader <administration-guide/configure/calls-deployment:configure recording, transcriptions, and live captions>` service offloads heavy processing tasks like recording, transcription and live captioning to a locally hosted compliance-approved job server.
 
 High availability and fault tolerance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Deploy Mattermost in a cluster-based architecture to ensure continued availability during outages or hardware failures. High availability requires redundant infrastructure across each critical component:
+Deploy Mattermost in a :ref:`cluster-based architecture <administration-guide/scale/high-availability-cluster-based-deployment:high availability cluster based deployment>` to ensure continued availability during outages or hardware failures. High availability requires redundant infrastructure across each critical component:
 
 - Application servers: Scale horizontally across multiple nodes with a load balancer distributing client traffic.
 - Search service: :ref:`Elasticsearch or AWS OpenSearch Service <administration-guide/scale/scaling-for-enterprise:enterprise search>` provides optimized search performance with dedicated indexing for large-scale deployments.
