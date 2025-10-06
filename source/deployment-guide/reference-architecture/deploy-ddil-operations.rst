@@ -69,7 +69,7 @@ This hybrid deployment architecture provides optimal collaboration in both conne
 
 - **Object Storage:** File uploads, images, and attachments are stored outside the application node on an :doc:`S3-compatible store </deployment-guide/server/preparations>`, such as MinIO, hosted locally within your tactical network.
 
-- **Recording Instance:** ``calls-offloader`` :ref:`job service </administration-guide/configure/calls-deployment:configure recording transcriptions and live captions>` to offload heavy processing tasks from Mattermost Calls to self-hosted infrastructure within your tactical network, such as recordings, transcriptions, and live captioning. *(Optional)*
+- **Recording Instance:** ``calls-offloader`` :ref:`job service <administration-guide/configure/calls-deployment:configure recording, transcriptions, and live captions>` to offload heavy processing tasks from Mattermost Calls to self-hosted infrastructure within your tactical network, such as recordings, transcriptions, and live captioning. *(Optional)*
 
 - **Self-hosted integrations:** :doc:`Custom apps, plugins, and webhooks </integrations-guide/integrations-guide-index>` can be deployed within your tactical network. *(Optional - not shown)*
 
@@ -96,15 +96,15 @@ User accounts must be provisioned in the local IdP before disconnection occurs t
 Sovereign AI
 ~~~~~~~~~~~~
 
-Deploy an :doc:`OpenAI compatible LLM </administration-guide/configure/agents-admin-guide>` on tactical infrastructure to ensure AI capabilities remain fully sovereign and operational in disconnected scenarios. A self-hosted LLM can power :ref:`message and call summarization, semantic search </end-user-guide/agents:analyze threads and channels>`, and :ref:`mission-tuned AI agents </administration-guide/configure/agents-admin-guide:agent configuration>` without relying on public cloud AI services. This guarantees compliance with strict data handling mandates and enables AI-enhanced workflows to function locally, even during extended disconnections.
+Deploy an :doc:`OpenAI compatible LLM </administration-guide/configure/agents-admin-guide>` on tactical infrastructure to ensure AI capabilities remain fully sovereign and operational in disconnected scenarios. A self-hosted LLM can power :ref:`message and call summarization, semantic search <end-user-guide/agents:analyze threads and channels>`, and :ref:`mission-tuned AI agents <administration-guide/configure/agents-admin-guide:agent configuration>` without relying on public cloud AI services. This guarantees compliance with strict data handling mandates and enables AI-enhanced workflows to function locally, even during extended disconnections.
 
 Self-hosted audio & screensharing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Effective collaboration at the tactical edge requires all voice and screen sharing capabilities remain operational without reliance on the internet or third-party services. Deploy doc:`Mattermost Calls</administration-guide/configure/calls-deployment>` in a self-hosted configuration, including:
 
-- The :ref:`rtcd service </administration-guide/configure/calls-deployment:the rtcd service>` for scalable, low-latency media routing hosted on-premises. Run multiple ``rtcd`` nodes for redundancy.
-- The :ref:`calls offloader </administration-guide/configure/calls-deployment:configure recording transcriptions and live captions>` service offloads heavy processing tasks like recording, transcription and live captioning to a locally hosted compliance-approved job server.
+- The :ref:`rtcd service <administration-guide/configure/calls-deployment:the rtcd service>` for scalable, low-latency media routing hosted on-premises. Run multiple ``rtcd`` nodes for redundancy.
+- The :ref:`calls offloader <administration-guide/configure/calls-deployment:configure recording transcriptions and live captions>` service offloads heavy processing tasks like recording, transcription and live captioning to a locally hosted compliance-approved job server.
 
 High availability and fault tolerance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -112,7 +112,7 @@ High availability and fault tolerance
 Deploy Mattermost in a cluster-based architecture to ensure continued availability during outages or hardware failures. High availability requires redundant infrastructure across each critical component:
 
 - Application servers: Scale horizontally across multiple nodes with a load balancer distributing client traffic.
-- Search service: :ref:`Elasticsearch or AWS OpenSearch Service </administration-guide/scale/scaling-for-enterprise:enterprise search>` provides optimized search performance with dedicated indexing for large-scale deployments.
+- Search service: :ref:`Elasticsearch or AWS OpenSearch Service <administration-guide/scale/scaling-for-enterprise:enterprise search>` provides optimized search performance with dedicated indexing for large-scale deployments.
 - Object storage: Configure S3-compatible backends with erasure coding or replication for durability. All application servers must access shared file storage (NAS or S3) to ensure consistent data availability.
 - Calls services: Run multiple ``rtcd`` and offloader nodes for resilience.
 
@@ -121,7 +121,7 @@ Compliance and retention
 
 Sovereign environments often require strict enforcement of retention policies, legal hold, and export controls. Configure Mattermost's built-in compliance features to meet organizational mandates.
 
-- Enable :doc:`compliance export </administration-guide/comply/compliance-export>` and doc:`monitoring </administration-guide/comply/compliance-monitoring>` to produce auditable exports of message data and user activity logs.
+- Enable :doc:`compliance export </administration-guide/comply/compliance-export>` and :doc:`monitoring </administration-guide/comply/compliance-monitoring>` to produce auditable exports of message data and user activity logs.
 - Configure :doc:`message retention </administration-guide/comply/data-retention-policy>` and :doc:`legal hold </administration-guide/comply/legal-hold>` policies to align with applicable regulations.
 - Integrate with your organization's :doc:`eDiscovery </administration-guide/comply/electronic-discovery>` and archiving systems as required.
 
