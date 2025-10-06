@@ -109,7 +109,7 @@ Effective collaboration at the tactical edge requires all voice and screen shari
 High availability and fault tolerance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Deploy Mattermost in a :ref:`cluster-based architecture <administration-guide/scale/high-availability-cluster-based-deployment:high availability cluster based deployment>` to ensure continued availability during outages or hardware failures. High availability requires redundant infrastructure across each critical component:
+Deploy Mattermost in a :doc:`cluster-based architecture </administration-guide/scale/high-availability-cluster-based-deployment>` to ensure continued availability during outages or hardware failures. High availability requires redundant infrastructure across each critical component:
 
 - Application servers: Scale horizontally across multiple nodes with a load balancer distributing client traffic.
 - Search service: :ref:`Elasticsearch or AWS OpenSearch Service <administration-guide/scale/scaling-for-enterprise:enterprise search>` provides optimized search performance with dedicated indexing for large-scale deployments.
