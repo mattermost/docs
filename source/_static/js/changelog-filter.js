@@ -94,6 +94,7 @@ $(document).ready(function () {
                     <button class="audience-filter-btn" data-audience="developer">Developer / API / Integrator</button>
                     <button class="audience-filter-btn" data-audience="security">Security</button>
                     <button class="audience-filter-btn" data-audience="platform">Platform</button>
+                    <button class="audience-filter-btn" data-audience="accessibility">Acessibility</button>
                     <button id="audience-show-all">Show All</button>
                 </div>
             </div>
@@ -239,6 +240,9 @@ $(document).ready(function () {
                         break;
                     case 'platform':
                         audiencePattern = '[Platform]';
+                        break;
+                    case 'accessibility':
+                        audiencePattern = '[Accessibility]';
                         break;
                 }
                 if (itemText.includes(audiencePattern)) {
