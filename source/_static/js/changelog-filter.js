@@ -1,6 +1,6 @@
 $(document).ready(function () {
     // Only run on the changelog pages.
-    if (!window.location.pathname.includes('/about/mattermost-v10-changelog') && !window.location.pathname.includes('/about/mattermost-v9-changelog')) {
+    if (!window.location.pathname.includes('/about/mattermost-v10-changelog') && !window.location.pathname.includes('/about/mattermost-v9-changelog') && !window.location.pathname.includes('/product-overview/mattermost-v10-changelog')) {
         return;
     }
 
@@ -66,7 +66,7 @@ $(document).ready(function () {
         <div class="changelog-filters">
             <h3>Filter Changelog</h3>
             <p>Select source and target versions to see only relevant changelog entries</p>
-            <div>
+            <div class="version-filters">
                 <label for="changelog-source-version">From version:</label>
                 <select id="changelog-source-version">
                     <option value="all">All versions</option>
@@ -81,6 +81,19 @@ $(document).ready(function () {
 
                 <button id="changelog-apply-filter">Apply Filter</button>
                 <button id="changelog-reset-filter">Reset</button>
+            </div>
+            
+            <div class="audience-filters">
+                <h4>Filter by Audience</h4>
+                <p>Click audience tags to show/hide relevant items</p>
+                <div class="audience-buttons">
+                    <button class="audience-btn" data-audience="admin">Admin</button>
+                    <button class="audience-btn" data-audience="end-user">End-user</button>
+                    <button class="audience-btn" data-audience="developer">Developer / API / Integrator</button>
+                    <button class="audience-btn" data-audience="security">Security</button>
+                    <button class="audience-btn" data-audience="platform">Platform</button>
+                    <button id="audience-show-all" class="audience-btn show-all">Show All</button>
+                </div>
             </div>
         </div>
     `;
@@ -185,4 +198,100 @@ $(document).ready(function () {
             item.item.removeClass('filtered-toc');
         });
     });
+
+    // Audience filtering functionality
+    let selectedAudiences = new Set();
+
+    function findAllListItems() {
+        return $('section[id^="release-v"] li, section[id^="release-v"] ul ul li');
+    }
+
+    function preserveImportantNotices() {
+        // Find and mark Important notices to always be visible
+        $('div.admonition.important, .admonition-important, [class*="important"]').addClass('always-visible');
+        $('div:contains("Important")').filter(function() {
+            return $(this).text().match(/^Important/);
+        }).addClass('always-visible');
+        
+        // Also preserve MyST Important directive content
+        $('div[class*="admonition"], div[class*="note"]').each(function() {
+            if ($(this).find('.admonition-title:contains("Important")').length > 0 ||
+                $(this).text().toLowerCase().includes('important upgrade') ||
+                $(this).text().toLowerCase().includes('important notice')) {
+                $(this).addClass('always-visible');
+            }
+        });
+    }
+
+    function applyAudienceFilter() {
+        const allItems = findAllListItems();
+        
+        // First preserve important notices
+        preserveImportantNotices();
+        
+        if (selectedAudiences.size === 0) {
+            // Show all items
+            allItems.removeClass('audience-filtered');
+            return;
+        }
+
+        allItems.each(function() {
+            const $item = $(this);
+            const text = $item.text();
+            
+            // Skip if this is marked as always visible (Important notices)
+            if ($item.hasClass('always-visible') || $item.closest('.always-visible').length > 0) {
+                $item.removeClass('audience-filtered');
+                return;
+            }
+            
+            let hasMatchingAudience = false;
+            
+            // Check if item contains any of the selected audience tags
+            selectedAudiences.forEach(audience => {
+                const patterns = {
+                    'admin': /\*\*\[Admin\]\*\*/i,
+                    'end-user': /\*\*\[End-user\]\*\*/i,
+                    'developer': /\*\*\[Developer \/ API \/ Integrator\]\*\*/i,
+                    'security': /\*\*\[Security\]\*\*/i,
+                    'platform': /\*\*\[Platform\]\*\*/i
+                };
+                
+                if (patterns[audience] && patterns[audience].test(text)) {
+                    hasMatchingAudience = true;
+                }
+            });
+            
+            if (hasMatchingAudience) {
+                $item.removeClass('audience-filtered');
+            } else {
+                $item.addClass('audience-filtered');
+            }
+        });
+    }
+
+    // Audience button click handlers
+    $('.audience-btn:not(#audience-show-all)').on('click', function() {
+        const audience = $(this).data('audience');
+        
+        if (selectedAudiences.has(audience)) {
+            selectedAudiences.delete(audience);
+            $(this).removeClass('active');
+        } else {
+            selectedAudiences.add(audience);
+            $(this).addClass('active');
+        }
+        
+        applyAudienceFilter();
+    });
+
+    // Show all button handler
+    $('#audience-show-all').on('click', function() {
+        selectedAudiences.clear();
+        $('.audience-btn').removeClass('active');
+        applyAudienceFilter();
+    });
+
+    // Initial setup
+    preserveImportantNotices();
 });

@@ -41,3 +41,94 @@ li.filtered-toc {
     border-radius: 4px;
     border-left: 4px solid #e74c3c;
 }
+
+/* Audience filtering styles */
+.audience-filters {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #dee2e6;
+}
+
+.audience-filters h4 {
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 1.1em;
+}
+
+.audience-filters p {
+    margin-bottom: 12px;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.audience-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.audience-btn {
+    padding: 8px 12px;
+    background-color: #f8f9fa;
+    color: #495057;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: all 0.2s ease;
+}
+
+.audience-btn:hover {
+    background-color: #e9ecef;
+    border-color: #adb5bd;
+}
+
+.audience-btn.active {
+    background-color: #166de0;
+    color: white;
+    border-color: #166de0;
+}
+
+.audience-btn.active:hover {
+    background-color: #145cc5;
+    border-color: #145cc5;
+}
+
+.audience-btn.show-all {
+    background-color: #28a745;
+    color: white;
+    border-color: #28a745;
+}
+
+.audience-btn.show-all:hover {
+    background-color: #218838;
+    border-color: #218838;
+}
+
+/* Hide filtered items */
+li.audience-filtered {
+    display: none !important;
+}
+
+/* Always show important notices */
+.always-visible,
+.always-visible li {
+    display: block !important;
+}
+
+/* Version filters styling */
+.version-filters {
+    margin-bottom: 15px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .audience-buttons {
+        flex-direction: column;
+    }
+    
+    .audience-btn {
+        text-align: center;
+        width: 100%;
+    }
+}
