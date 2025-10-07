@@ -14,9 +14,11 @@ Whether you’re implementing out-of-band communications, mission partner collab
     Mission Partner Collaboration </deployment-guide/reference-architecture/deployment-scenarios/deploy-mission-partner>
     Enterprise to Edge DDIL Operations </deployment-guide/reference-architecture/deployment-scenarios/deploy-ddil-operations>
     Sovereign Collaboration in Microsoft </deployment-guide/reference-architecture/deployment-scenarios/deploy-sovereign-collaboration>
+    Air-gapped environments </deployment-guide/reference-architecture/deployment-scenarios/air-gapped-deployment>
 
 * :doc:`Out-of-Band Communications </deployment-guide/reference-architecture/deployment-scenarios/deploy-oob>` - Deploy Mattermost as an isolated, pre-provisioned communication system for incident response and business continuity.
 * :doc:`Mission Partner Collaboration </deployment-guide/reference-architecture/deployment-scenarios/deploy-mission-partner>` - Multi-organizational collaboration architecture with secure information sharing between allied networks and coalition partners.
 * :doc:`Enterprise to Edge DDIL Operations </deployment-guide/reference-architecture/deployment-scenarios/deploy-ddil-operations>` - Deployment patterns for Denied, Degraded, Intermittent, and Limited (DDIL) communication environments with offline capabilities.
 * :doc:`Sovereign Collaboration in Microsoft </deployment-guide/reference-architecture/deployment-scenarios/deploy-sovereign-collaboration>` - Integration architecture for sovereign cloud environments with Microsoft Teams, Outlook and other M365 services.
+* :doc:`Air-gapped deployment </deployment-guide/reference-architecture/deployment-scenarios/air-gapped-deployment>` - Guidance and best practices when deploying Mattermost in air-gapped environments. 
 
