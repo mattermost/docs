@@ -19,7 +19,7 @@ Whether you're deploying the server application, desktop application, or mobile 
 
 
 * :doc:`Quick Start Evaluation </deployment-guide/quick-start-evaluation>` - A quick start guide to help you get started with Mattermost.
-* :doc:`Reference Architecture </deployment-guide/reference-architecture/reference-architecture>` - Reference architectures and specialized deployment scenarios for sovereign collaboration, mission partner operations, and tactical edge environments.
+* :doc:`Reference Architecture </deployment-guide/reference-architecture/reference-architecture-index>` - Reference architectures and specialized deployment scenarios for sovereign collaboration, mission partner operations, and tactical edge environments.
 * :doc:`Server deployment </deployment-guide/server/server-deployment-planning>` - Pre-deployment checks, security considerations, hardware recommendations, software prerequisites, and step-by-step guidance to deploying Mattermost server.
 * :doc:`Desktop deployment </deployment-guide/desktop/desktop-app-deployment>` - Installation procedures for Mattermost's desktop applications across Windows, macOS, and Linux, and large-scale, enterprise-wide deployments.
 * :doc:`Mobile deployment </deployment-guide/mobile/mobile-app-deployment>` - How to set up push notifications using Mattermost's notification service and troubleshooting tips.
