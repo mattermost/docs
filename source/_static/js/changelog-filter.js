@@ -1,6 +1,6 @@
 $(document).ready(function () {
     // Only run on the changelog pages.
-    if (!window.location.pathname.includes('/about/mattermost-v10-changelog') && !window.location.pathname.includes('/about/mattermost-v9-changelog') && !window.location.pathname.includes('/product-overview/mattermost-v10-changelog')) {
+    if (!window.location.pathname.includes('/about/mattermost-v10-changelog') && !window.location.pathname.includes('/about/mattermost-v9-changelog')) {
         return;
     }
 
@@ -66,7 +66,7 @@ $(document).ready(function () {
         <div class="changelog-filters">
             <h3>Filter Changelog</h3>
             <p>Select source and target versions to see only relevant changelog entries</p>
-            <div class="version-filters">
+            <div>
                 <label for="changelog-source-version">From version:</label>
                 <select id="changelog-source-version">
                     <option value="all">All versions</option>
@@ -85,7 +85,7 @@ $(document).ready(function () {
             
             <div class="audience-filters">
                 <h4>Filter by Audience</h4>
-                <p>Click audience tags to show/hide relevant items</p>
+                <p>Select relevant audience types to show items that apply to you:</p>
                 <div class="audience-buttons">
                     <button class="audience-btn" data-audience="admin">Admin</button>
                     <button class="audience-btn" data-audience="end-user">End-user</button>
@@ -93,7 +93,7 @@ $(document).ready(function () {
                     <button class="audience-btn" data-audience="security">Security</button>
                     <button class="audience-btn" data-audience="platform">Platform</button>
                     <button class="audience-btn" data-audience="accessibility">Accessibility</button>
-                    <button id="audience-show-all" class="audience-btn show-all">Show All</button>
+                    <button class="audience-btn show-all" data-audience="all">Show All</button>
                 </div>
             </div>
         </div>
@@ -198,102 +198,103 @@ $(document).ready(function () {
         tocItems.forEach(item => {
             item.item.removeClass('filtered-toc');
         });
+        
+        // Reset audience filters
+        $('.audience-btn').removeClass('active');
+        $('.show-all').addClass('active');
+        $('li[data-audience-filtered]').removeAttr('data-audience-filtered').show();
     });
 
-    // Audience filtering functionality
-    let selectedAudiences = new Set();
-
-    function findAllListItems() {
-        return $('section[id^="release-v"] li, section[id^="release-v"] ul ul li');
-    }
-
-    function preserveImportantNotices() {
-        // Find and mark Important notices to always be visible
-        $('div.admonition.important, .admonition-important, [class*="important"]').addClass('always-visible');
-        $('div:contains("Important")').filter(function() {
-            return $(this).text().match(/^Important/);
-        }).addClass('always-visible');
+    // Audience filtering logic
+    let activeAudiences = new Set();
+    
+    // Initialize with "Show All" active
+    $('.show-all').addClass('active');
+    
+    $('.audience-btn').on('click', function() {
+        const audienceType = $(this).data('audience');
         
-        // Also preserve MyST Important directive content
-        $('div[class*="admonition"], div[class*="note"]').each(function() {
-            if ($(this).find('.admonition-title:contains("Important")').length > 0 ||
-                $(this).text().toLowerCase().includes('important upgrade') ||
-                $(this).text().toLowerCase().includes('important notice')) {
-                $(this).addClass('always-visible');
+        if (audienceType === 'all') {
+            // Show All button
+            activeAudiences.clear();
+            $('.audience-btn').removeClass('active');
+            $(this).addClass('active');
+            applyAudienceFilter();
+        } else {
+            // Toggle audience filter
+            $('.show-all').removeClass('active');
+            
+            if (activeAudiences.has(audienceType)) {
+                activeAudiences.delete(audienceType);
+                $(this).removeClass('active');
+            } else {
+                activeAudiences.add(audienceType);
+                $(this).addClass('active');
             }
-        });
-    }
-
+            
+            // If no audiences selected, activate "Show All"
+            if (activeAudiences.size === 0) {
+                $('.show-all').addClass('active');
+            }
+            
+            applyAudienceFilter();
+        }
+    });
+    
     function applyAudienceFilter() {
-        const allItems = findAllListItems();
-        
-        // First preserve important notices
-        preserveImportantNotices();
-        
-        if (selectedAudiences.size === 0) {
+        if (activeAudiences.size === 0) {
             // Show all items
-            allItems.removeClass('audience-filtered');
+            $('li[data-audience-filtered]').removeAttr('data-audience-filtered').show();
             return;
         }
-
-        allItems.each(function() {
+        
+        // Find all list items with audience tags
+        $('li').each(function() {
             const $item = $(this);
             const text = $item.text();
             
-            // Skip if this is marked as always visible (Important notices)
-            if ($item.hasClass('always-visible') || $item.closest('.always-visible').length > 0) {
-                $item.removeClass('audience-filtered');
-                return;
-            }
+            // Check if this item has audience tags
+            const hasAudienceTag = /\*\*(.*?)\*\*/.test(text) && /\[(Admin|End-user|Developer.*?|Security|Platform)\]/.test(text);
             
-            let hasMatchingAudience = false;
-            
-            // Check if item contains any of the selected audience tags
-            selectedAudiences.forEach(audience => {
-                const patterns = {
-                    'admin': /\*\*\[Admin\]\*\*/i,
-                    'end-user': /\*\*\[End-user\]\*\*/i,
-                    'developer': /\*\*\[Developer \/ API \/ Integrator\]\*\*/i,
-                    'security': /\*\*\[Security\]\*\*/i,
-                    'platform': /\*\*\[Platform\]\*\*/i
-                    'accessibility': /\*\*\[Accessibility\]\*\*/i
-                };
+            if (hasAudienceTag) {
+                let shouldShow = false;
                 
-                if (patterns[audience] && patterns[audience].test(text)) {
-                    hasMatchingAudience = true;
+                // Check if any active audience matches this item
+                for (const audience of activeAudiences) {
+                    let audiencePattern;
+                    switch(audience) {
+                        case 'admin':
+                            audiencePattern = /\[Admin\]/i;
+                            break;
+                        case 'end-user':
+                            audiencePattern = /\[End-user\]/i;
+                            break;
+                        case 'developer':
+                            audiencePattern = /\[Developer.*?\]/i;
+                            break;
+                        case 'security':
+                            audiencePattern = /\[Security\]/i;
+                            break;
+                        case 'platform':
+                            audiencePattern = /\[Platform\]/i;
+                            break;
+                        case 'accessibility':
+                            audiencePattern = /\[Accessibility\]/i;
+                            break;   
+                    }
+                    
+                    if (audiencePattern && audiencePattern.test(text)) {
+                        shouldShow = true;
+                        break;
+                    }
                 }
-            });
-            
-            if (hasMatchingAudience) {
-                $item.removeClass('audience-filtered');
-            } else {
-                $item.addClass('audience-filtered');
+                
+                if (shouldShow) {
+                    $item.removeAttr('data-audience-filtered').show();
+                } else {
+                    $item.attr('data-audience-filtered', 'true').hide();
+                }
             }
         });
     }
-
-    // Audience button click handlers
-    $('.audience-btn:not(#audience-show-all)').on('click', function() {
-        const audience = $(this).data('audience');
-        
-        if (selectedAudiences.has(audience)) {
-            selectedAudiences.delete(audience);
-            $(this).removeClass('active');
-        } else {
-            selectedAudiences.add(audience);
-            $(this).addClass('active');
-        }
-        
-        applyAudienceFilter();
-    });
-
-    // Show all button handler
-    $('#audience-show-all').on('click', function() {
-        selectedAudiences.clear();
-        $('.audience-btn').removeClass('active');
-        applyAudienceFilter();
-    });
-
-    // Initial setup
-    preserveImportantNotices();
 });
