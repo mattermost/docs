@@ -1,5 +1,5 @@
-Deploy for Sovereign Collaboration in Microsoft Teams
-=====================================================
+Deploy for Sovereign Collaboration in Microsoft
+===============================================
 
 Overview
 --------
