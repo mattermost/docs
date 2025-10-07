@@ -1,32 +1,66 @@
 .changelog-filters {
     margin-bottom: 20px;
-    padding: 15px;
-    border-radius: 5px;
+    padding: 20px;
+    border-radius: 8px;
     border: 1px solid #dee2e6;
+    background-color: #f8f9fa;
 }
 
-.version-filters, .audience-filters {
-    margin-bottom: 15px;
-}
-
-.version-filters h4, .audience-filters h4 {
+.changelog-filters h3 {
     margin-top: 0;
     margin-bottom: 10px;
+    color: #333;
+}
+
+.changelog-filters > p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.filter-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    background-color: white;
+}
+
+.filter-section:last-child {
+    margin-bottom: 0;
+}
+
+.filter-section h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #495057;
+    font-size: 16px;
+}
+
+.filter-description {
+    margin-bottom: 15px;
+    color: #6c757d;
+    font-size: 14px;
+}
+
+/* Version filtering styles */
+.version-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.version-filters label {
+    font-weight: 500;
     color: #495057;
 }
 
-.audience-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 10px;
-}
-
 .changelog-filters select {
-    padding: 8px;
-    margin-right: 10px;
+    padding: 8px 12px;
     border-radius: 4px;
     border: 1px solid #ced4da;
+    background-color: white;
+    font-size: 14px;
 }
 
 .changelog-filters button {
@@ -36,48 +70,51 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
 }
 
 .changelog-filters button:hover {
     background-color: #145cc5;
 }
 
+/* Audience filtering styles */
+.audience-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
 .audience-filter-btn {
-    padding: 6px 12px !important;
-    background-color: #f8f9fa !important;
-    color: #495057 !important;
-    border: 1px solid #dee2e6 !important;
-    font-size: 0.875rem;
+    padding: 10px 16px;
+    background-color: #e9ecef;
+    color: #495057;
+    border: 2px solid #dee2e6;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
     transition: all 0.2s ease;
 }
 
 .audience-filter-btn:hover {
-    background-color: #e9ecef !important;
-    border-color: #adb5bd !important;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+    color: #0c5460;
 }
 
 .audience-filter-btn.active {
-    background-color: #166de0 !important;
-    color: white !important;
-    border-color: #166de0 !important;
+    background-color: #166de0;
+    border-color: #166de0;
+    color: white;
 }
 
 .audience-filter-btn.active:hover {
-    background-color: #145cc5 !important;
+    background-color: #145cc5;
+    border-color: #145cc5;
 }
 
-#audience-show-all {
-    background-color: #6c757d !important;
-    color: white !important;
-    border: 1px solid #6c757d !important;
-    padding: 6px 12px !important;
-    font-size: 0.875rem;
-}
-
-#audience-show-all:hover {
-    background-color: #5a6268 !important;
-}
-
+/* Filtering states */
 section.filtered {
     display: none;
 }
@@ -90,25 +127,66 @@ li.audience-filtered {
     display: none;
 }
 
+/* Important notices are never filtered */
+li.always-visible {
+    display: list-item !important;
+}
+
+/* Error messages */
 .changelog-filter-error {
     color: #e74c3c;
-    margin-top: 10px;
-    padding: 8px;
+    margin-top: 15px;
+    padding: 12px;
     background-color: #fadbd8;
     border-radius: 4px;
     border-left: 4px solid #e74c3c;
+    font-weight: 500;
 }
 
-/* Responsive design for audience filters */
+/* Responsive design */
 @media (max-width: 768px) {
-    .audience-buttons {
+    .version-filters {
         flex-direction: column;
         align-items: stretch;
     }
     
-    .audience-filter-btn, #audience-show-all {
+    .version-filters label {
+        margin-top: 10px;
+    }
+    
+    .version-filters label:first-child {
+        margin-top: 0;
+    }
+    
+    .audience-filters {
+        flex-direction: column;
+    }
+    
+    .audience-filter-btn {
         text-align: center;
+    }
+    
+    .changelog-filters {
+        padding: 15px;
+    }
+    
+    .filter-section {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .changelog-filters {
+        padding: 12px;
+    }
+    
+    .filter-section {
+        padding: 10px;
+    }
+    
+    .changelog-filters select,
+    .changelog-filters button {
         width: 100%;
-        margin-bottom: 5px;
+        margin-bottom: 8px;
     }
 }
