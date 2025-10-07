@@ -1,7 +1,7 @@
 Deployment Scenarios
 ====================
 
-This section outlines reference architectures tailored for specialized Mattermost deployment scenarios, enabling organizations to build secure, compliant, and resilient collaboration environments across diverse operational contexts.
+This section outlines reference architectures and guidance tailored for specialized Mattermost deployment scenarios, enabling organizations to build secure, compliant, and resilient collaboration environments across diverse operational contexts.
 
 Whether you’re implementing out-of-band communications, mission partner collaboration, sovereign collaboration within Microsoft ecosystems, or mission-critical operations at the edge, these architectures offer comprehensive guidance, design patterns, and best practices to ensure robust and reliable deployments.
 
