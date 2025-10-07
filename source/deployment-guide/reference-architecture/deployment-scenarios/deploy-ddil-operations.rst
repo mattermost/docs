@@ -10,7 +10,7 @@ Mattermost enables resilient collaboration by remaining fully operational in DDI
 
 When connectivity is restored, mission users regain access to M365 enterprise systems in addition to collaboration continuity with enterprise users through the :doc:`embedded Mattermost experience </integrations-guide/mattermost-mission-collaboration-for-m365>` inside their Microsoft Teams and Outlook applications. All mission activity during the period of disconnection becomes available across enterprise and tactical environments when connectivity returns. 
 
-Traditional cloud-only solutions fail in these scenarios, while fully disconnected systems don't integrate with enterprise tools during normal operations. This deployment architecture :doc:`extends sovereign collaboration with Microsoft Teams and Outlook </deployment-guide/reference-architecture/deploy-sovereign-collaboration>` to the tactical edge, providing a hybrid solution that enables enterprise integration and fully disconnected tactical collaboration.
+Traditional cloud-only solutions fail in these scenarios, while fully disconnected systems don't integrate with enterprise tools during normal operations. This deployment architecture :doc:`extends sovereign collaboration with Microsoft Teams and Outlook </deployment-guide/reference-architecture/deployment-scenarios/deploy-sovereign-collaboration>` to the tactical edge, providing a hybrid solution that enables enterprise integration and fully disconnected tactical collaboration.
 
 .. image:: /images/architecture-ms-teams-ddil.png
    :alt: Mattermost diagram displays the deployment components and relationships outlined in detail in this document.
@@ -49,7 +49,7 @@ This hybrid deployment architecture provides optimal collaboration in both conne
 
   - **Mattermost Mobile Apps:** Access Mattermost via :doc:`iPhone and Android apps </deployment-guide/mobile/mobile-app-deployment>`, with support for :doc:`ID-only push notifications </deployment-guide/mobile/host-your-own-push-proxy-service>` to ensure compliance with data sovereignty requirements. *(Optional when connectivity permits - not shown)*
 
-- **Mattermost Deployment:** Mattermost deployed for sovereign tactical collaboration on local infrastructure, such as `Azure Local <https://learn.microsoft.com/en-us/azure/azure-local/manage/disconnected-operations-overview>`_, supporting data residency regulations and :doc:`disconnected operations </deployment-guide/server/air-gapped-deployment>`. See :doc:`reference architecture </deployment-guide/server/server-architecture>` documentation for Mattermost deployment configurations based on expected scale.
+- **Mattermost Deployment:** Mattermost deployed for sovereign tactical collaboration on local infrastructure, such as `Azure Local <https://learn.microsoft.com/en-us/azure/azure-local/manage/disconnected-operations-overview>`_, supporting data residency regulations and :doc:`disconnected operations </deployment-guide/reference-architecture/deployment-scenarios/air-gapped-deployment>`. See :doc:`reference architecture </administration-guide/scale/server-architecture>` documentation for Mattermost deployment configurations based on expected scale.
 
   - **Mattermost Server:** Core application server handling tactical collaboration workloads, including:
 
