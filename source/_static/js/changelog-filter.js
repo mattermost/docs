@@ -82,6 +82,19 @@ $(document).ready(function () {
                 <button id="changelog-apply-filter">Apply Filter</button>
                 <button id="changelog-reset-filter">Reset</button>
             </div>
+            
+            <div class="audience-filters">
+                <h4>Filter by Audience</h4>
+                <p>Click audience tags to show only relevant items</p>
+                <div class="audience-buttons">
+                    <button class="audience-btn" data-audience="admin">Admin</button>
+                    <button class="audience-btn" data-audience="end-user">End-user</button>
+                    <button class="audience-btn" data-audience="developer">Developer / API / Integrator</button>
+                    <button class="audience-btn" data-audience="security">Security</button>
+                    <button class="audience-btn" data-audience="platform">Platform</button>
+                    <button class="audience-btn show-all-audience">Show All</button>
+                </div>
+            </div>
         </div>
     `;
 
@@ -185,4 +198,75 @@ $(document).ready(function () {
             item.item.removeClass('filtered-toc');
         });
     });
+
+    // Audience filtering functionality
+    let activeAudiences = new Set();
+
+    // Function to apply audience filtering
+    function applyAudienceFilter() {
+        if (activeAudiences.size === 0) {
+            // Show all items when no audiences are selected
+            $('ul li, ol li').removeClass('audience-filtered');
+            $('.always-visible').removeClass('audience-filtered');
+            return;
+        }
+
+        // Hide all list items first
+        $('ul li, ol li').addClass('audience-filtered');
+        
+        // Show items that match any of the selected audiences
+        activeAudiences.forEach(audience => {
+            const audienceSelector = audience.replace(/ /g, '\\\ ').replace(/\//g, '\\/');
+            $(`ul li:contains("**[${audienceSelector}]**"), ol li:contains("**[${audienceSelector}]**")`).removeClass('audience-filtered');
+        });
+
+        // Always show Important notices and other important content
+        $('.always-visible, [class*="important"], .admonition-important').removeClass('audience-filtered');
+        
+        // Detect and preserve Important directives 
+        $('div.admonition, div[class*="important"], .rst-content .important').removeClass('audience-filtered');
+    }
+
+    // Audience button click handlers
+    $('.audience-btn').on('click', function() {
+        const $btn = $(this);
+        const audience = $btn.data('audience');
+        
+        if ($btn.hasClass('show-all-audience')) {
+            // Show all - clear active audiences
+            activeAudiences.clear();
+            $('.audience-btn').removeClass('active');
+            $btn.addClass('active');
+        } else {
+            // Toggle audience selection
+            $('.show-all-audience').removeClass('active');
+            
+            if ($btn.hasClass('active')) {
+                // Remove from active audiences
+                activeAudiences.delete(getAudienceTag(audience));
+                $btn.removeClass('active');
+            } else {
+                // Add to active audiences
+                activeAudiences.add(getAudienceTag(audience));
+                $btn.addClass('active');
+            }
+        }
+        
+        applyAudienceFilter();
+    });
+
+    // Helper function to get proper audience tag format
+    function getAudienceTag(audience) {
+        const tagMap = {
+            'admin': 'Admin',
+            'end-user': 'End-user',
+            'developer': 'Developer / API / Integrator',
+            'security': 'Security',
+            'platform': 'Platform'
+        };
+        return tagMap[audience] || audience;
+    }
+
+    // Initialize show-all as active
+    $('.show-all-audience').addClass('active');
 });

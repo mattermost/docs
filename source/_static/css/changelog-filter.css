@@ -41,3 +41,89 @@ li.filtered-toc {
     border-radius: 4px;
     border-left: 4px solid #e74c3c;
 }
+
+/* Audience filtering styles */
+.audience-filters {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #dee2e6;
+}
+
+.audience-filters h4 {
+    margin: 0 0 10px 0;
+    color: #333;
+    font-size: 16px;
+}
+
+.audience-filters p {
+    margin: 0 0 15px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.audience-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.audience-btn {
+    padding: 6px 12px;
+    background-color: #f8f9fa;
+    color: #495057;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.audience-btn:hover {
+    background-color: #e9ecef;
+    border-color: #adb5bd;
+}
+
+.audience-btn.active {
+    background-color: #166de0;
+    color: white;
+    border-color: #166de0;
+}
+
+.audience-btn.show-all-audience {
+    background-color: #28a745;
+    color: white;
+    border-color: #28a745;
+}
+
+.audience-btn.show-all-audience:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+.audience-btn.show-all-audience.active {
+    background-color: #155724;
+    border-color: #155724;
+}
+
+/* Hide filtered items */
+li.audience-filtered {
+    display: none !important;
+}
+
+/* Always show important notices */
+.always-visible {
+    display: block !important;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .audience-buttons {
+        flex-direction: column;
+    }
+    
+    .audience-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
