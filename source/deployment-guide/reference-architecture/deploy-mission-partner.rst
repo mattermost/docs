@@ -6,7 +6,7 @@ Overview
 
 Mission partner collaboration extends :doc:`sovereign collaboration </deployment-guide/reference-architecture/deploy-sovereign-collaboration>` and :doc:`edge deployment </deployment-guide/reference-architecture/deploy-ddil-operations>` models to enable joint and allied operations across organizations using Mattermost, Microsoft 365 and legacy platforms. The solution architecture outlined in this document delivers a secure, sovereign, and intelligent mission environment that is federated across enterprise and coalition partner networks, enabling interoperability while maintaining compliance and control.
 
-Joint mission collaboration is achieved through federation using :doc:`connected workspaces </administration-guide/onboard/connected-workspaces>`, `Matrix connectors <https://mattermost.com/marketplace/mattermost-matrix-connector/>`_, :doc:`guest accounts </administration-guide/onboard/guest-accounts>`, and `auto-translation <https://forum.mattermost.com/t/design-preview-auto-translation-for-channels/24683>`_ for fast, accurate comprehension across globally distributed teams. Additionally, integrating external data feeds, workflow automation, and sovereign AI enables allied and partner users to collaborate at mission speed while enforcing zero-trust policies and maintaining data sovereignty.
+Joint mission collaboration is achieved through federation using :doc:`connected workspaces </administration-guide/onboard/connected-workspaces>`, `Matrix connectors <https://mattermost.com/marketplace/mattermost-matrix-connector/>`_, :doc:`guest accounts </administration-guide/onboard/guest-accounts>`, and `auto-translation <https://github.com/mattermost/mattermost-plugin-channel-translations>`_ for fast, accurate comprehension across globally distributed teams. Additionally, integrating external data feeds, workflow automation, and sovereign AI enables allied and partner users to collaborate at mission speed while enforcing zero-trust policies and maintaining data sovereignty.
 
 Mattermost deployments may be hosted on-premises or in sovereign clouds, enabling allies and partners to retain control over sensitive data while extending interoperability to coalition partner enterprise networks.
 
@@ -111,7 +111,7 @@ Resilient federation for joint operations
 :doc:`Connected workspaces </administration-guide/onboard/connected-workspaces>` allow federated collaboration across multiple organizations and networks while maintaining local data control of each Mattermost deployment. Messages, threads, and files are securely synchronized between environments, ensuring mission continuity for multinational operations without requiring partners to join a single centralized deployment.
 
 - Enforce :ref:`zero-trust access <administration-guide/onboard/connected-workspaces:create a secure connection>` and ensure that only authorized mission partners can view or contribute to shared collaboration channels.
-- Configure `auto-translation <https://forum.mattermost.com/t/design-preview-auto-translation-for-channels/24683>`_ in shared channels for seamless multilingual cross-domain collaboration.
+- Configure `auto-translation <https://github.com/mattermost/mattermost-plugin-channel-translations>`_ in shared channels for seamless multilingual cross-domain collaboration.
 - Mattermost instances can operate independently during outages or intermittent connectivity and sync conversations once connectivity returns.
 
 Many mission partners continue to operate on legacy systems such as Matrix and XMPP. To enable joint operations without forcing migration, Mattermost supports `secure interoperability <https://github.com/mattermost/mattermost-plugin-matrix-bridge>`_ with these environments for continuity of coalition communications while allowing modernized workflows to extend across federated networks.
@@ -142,7 +142,7 @@ AI capabilities enhance mission collaboration with summarization, translation, s
 
 - Deploy :doc:`OpenAI compatible language models </administration-guide/configure/agents-admin-guide>` on local or private cloud infrastructure to maintain data sovereignty and ensure offline availability.
 - Configure :ref:`custom agents <administration-guide/configure/agents-admin-guide:agent configuration>` for summarization, workflow automation, and decision support while enforcing organizational compliance policies.
-- Enable multilingual collaboration in shared channels using sovereign AI services to provide `real-time translations <https://forum.mattermost.com/t/design-preview-auto-translation-for-channels/24683>`_ across partner organizations.
+- Enable multilingual collaboration in shared channels using sovereign AI services to provide `real-time translations <https://github.com/mattermost/mattermost-plugin-channel-translations>`_ across partner organizations.
 - Embed AI into operational playbooks for automated task execution, situational summaries, and proactive recommendations.
 - Allow authorized users from partner organizations to securely access locally hosted LLMs through shared channels in :doc:`connected workspaces </administration-guide/onboard/connected-workspaces>`.
 
