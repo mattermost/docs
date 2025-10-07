@@ -11,7 +11,7 @@ Whether you're deploying the server application, desktop application, or mobile 
     :titlesonly:
 
     Quick Start Evaluation </deployment-guide/quick-start-evaluation>
-    Reference Architecture </deployment-guide/reference-architecture/reference-architecture>
+    Reference Architecture </deployment-guide/reference-architecture/reference-architecture-index>
     Server Deployment </deployment-guide/server/server-deployment-planning>
     Desktop App Deployment </deployment-guide/desktop/desktop-app-deployment>
     Mobile App Deployment </deployment-guide/mobile/mobile-app-deployment>
