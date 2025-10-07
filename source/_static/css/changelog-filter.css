@@ -42,7 +42,7 @@ li.filtered-toc {
     border-left: 4px solid #e74c3c;
 }
 
-/* Audience filtering styles */
+/* Audience Filter Styles */
 .audience-filters {
     margin-top: 20px;
     padding-top: 15px;
@@ -50,13 +50,14 @@ li.filtered-toc {
 }
 
 .audience-filters h4 {
+    margin-top: 0;
     margin-bottom: 8px;
     color: #333;
     font-size: 1.1em;
 }
 
 .audience-filters p {
-    margin-bottom: 12px;
+    margin-bottom: 15px;
     color: #666;
     font-size: 0.9em;
 }
@@ -68,11 +69,11 @@ li.filtered-toc {
 }
 
 .audience-btn {
-    padding: 8px 12px;
+    padding: 8px 16px;
     background-color: #f8f9fa;
     color: #495057;
     border: 1px solid #ced4da;
-    border-radius: 4px;
+    border-radius: 20px;
     cursor: pointer;
     font-size: 0.9em;
     transition: all 0.2s ease;
@@ -89,11 +90,6 @@ li.filtered-toc {
     border-color: #166de0;
 }
 
-.audience-btn.active:hover {
-    background-color: #145cc5;
-    border-color: #145cc5;
-}
-
 .audience-btn.show-all {
     background-color: #28a745;
     color: white;
@@ -102,33 +98,22 @@ li.filtered-toc {
 
 .audience-btn.show-all:hover {
     background-color: #218838;
-    border-color: #218838;
+    border-color: #1e7e34;
 }
 
-/* Hide filtered items */
-li.audience-filtered {
-    display: none !important;
+.audience-btn.show-all.active {
+    background-color: #155724;
+    border-color: #155724;
 }
 
-/* Always show important notices */
-.always-visible,
-.always-visible li {
-    display: block !important;
-}
-
-/* Version filters styling */
-.version-filters {
-    margin-bottom: 15px;
-}
-
-/* Responsive design */
+/* Responsive design for mobile */
 @media (max-width: 768px) {
     .audience-buttons {
         flex-direction: column;
     }
     
     .audience-btn {
-        text-align: center;
         width: 100%;
+        text-align: center;
     }
 }
