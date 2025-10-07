@@ -1,9 +1,7 @@
 Reference Architecture
 =====================
 
-This section provides reference architectures and specialized deployment scenarios for Mattermost, designed to help organizations implement secure, compliant, and resilient communication systems across various operational environments.
-
-Whether you're deploying for sovereign collaboration, mission-critical operations, or edge environments, these reference architectures provide comprehensive guidance for specialized deployment scenarios.
+Mattermost reference architectures describe recommended deployment patterns and system designs that ensure secure, scalable, and resilient collaboration. These frameworks serve as a guide for implementing Mattermost at scale across a range of operational scenarios.
 
 .. toctree::
     :maxdepth: 2
