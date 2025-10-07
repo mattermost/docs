@@ -1,6 +1,6 @@
 $(document).ready(function () {
     // Only run on the changelog pages.
-    if (!window.location.pathname.includes('/about/mattermost-v10-changelog') && !window.location.pathname.includes('/about/mattermost-v9-changelog')) {
+    if (!window.location.pathname.includes('/product-overview/mattermost-v10-changelog') && !window.location.pathname.includes('/about/mattermost-v10-changelog') && !window.location.pathname.includes('/about/mattermost-v9-changelog')) {
         return;
     }
 
@@ -184,5 +184,138 @@ $(document).ready(function () {
         tocItems.forEach(item => {
             item.item.removeClass('filtered-toc');
         });
+        // Reset audience filters
+        $('.audience-filter-btn').removeClass('active');
+        $('.audience-filtered').removeClass('audience-filtered');
+        activeAudiences.clear();
     });
+
+    // Audience filtering functionality
+    const audiences = ['Admin', 'End-user', 'Developer / API / Integrator', 'Security', 'Platform'];
+    const activeAudiences = new Set();
+
+    // Create audience filter interface
+    const audienceFilterHTML = `
+        <div class="audience-filters" style="margin-top: 15px;">
+            <h4>Filter by Audience</h4>
+            <p>Select one or more audience types to see only relevant items:</p>
+            <div class="audience-buttons">
+                ${audiences.map(audience => `
+                    <button class="audience-filter-btn" data-audience="${audience}">${audience}</button>
+                `).join('')}
+                <button class="audience-filter-btn show-all-btn" data-audience="all">Show All</button>
+            </div>
+        </div>
+    `;
+
+    // Insert audience filters after version filters
+    $('.changelog-filters').append(audienceFilterHTML);
+    
+    // Set "Show All" as active by default
+    $('.show-all-btn').addClass('active');
+
+    // Find all items with audience tags and mark them
+    $('li').each(function() {
+        const $item = $(this);
+        const text = $item.html();
+        
+        // Check for audience tags in the format **[Audience]**
+        audiences.forEach(audience => {
+            if (text && text.includes(`**[${audience}]**`)) {
+                $item.addClass(`audience-${audience.toLowerCase().replace(/\s+/g, '-').replace(/\//g, '-')}`);
+                $item.attr('data-audiences', ($item.attr('data-audiences') || '') + audience + ',');
+            }
+        });
+
+        // Mark Important notices to always be visible
+        const $parent = $item.parent();
+        const parentText = $parent.text();
+        
+        if (text && (
+            text.includes('{Important}') || 
+            text.includes('```{Important}') ||
+            $item.closest('.admonition').hasClass('important') ||
+            $item.closest('section').find('.admonition.important').length > 0 ||
+            parentText.includes('Important Upgrade Notes')
+        )) {
+            $item.addClass('always-visible');
+        }
+        
+        // Also mark entire Important sections
+        if ($item.is('h3, h4') && text.includes('Important')) {
+            $item.addClass('always-visible');
+            // Mark all following siblings until next heading
+            $item.nextUntil('h1, h2, h3, h4').addClass('always-visible');
+        }
+    });
+
+    // Handle audience filter clicks
+    $('.audience-filter-btn').on('click', function() {
+        const $btn = $(this);
+        const audience = $btn.data('audience');
+
+        if (audience === 'all') {
+            // Show all - reset audience filtering
+            $('.audience-filter-btn').removeClass('active');
+            $btn.addClass('active');
+            $('.audience-filtered').removeClass('audience-filtered');
+            activeAudiences.clear();
+            return;
+        }
+
+        // Toggle audience filter
+        if ($btn.hasClass('active')) {
+            $btn.removeClass('active');
+            activeAudiences.delete(audience);
+        } else {
+            $btn.addClass('active');
+            activeAudiences.add(audience);
+            // Remove "Show All" active state
+            $('.show-all-btn').removeClass('active');
+        }
+
+        // Apply audience filtering
+        applyAudienceFilter();
+    });
+
+    function applyAudienceFilter() {
+        if (activeAudiences.size === 0) {
+            // No filters active, show all
+            $('.audience-filtered').removeClass('audience-filtered');
+            return;
+        }
+
+        // Hide all items first
+        $('li').each(function() {
+            const $item = $(this);
+            
+            // Always keep Important notices visible
+            if ($item.hasClass('always-visible')) {
+                $item.removeClass('audience-filtered');
+                return;
+            }
+
+            const itemAudiences = $item.attr('data-audiences');
+            if (!itemAudiences) {
+                // No audience tags, hide during filtering
+                $item.addClass('audience-filtered');
+                return;
+            }
+
+            // Check if item has any of the active audiences
+            let hasActiveAudience = false;
+            for (const audience of activeAudiences) {
+                if (itemAudiences.includes(audience)) {
+                    hasActiveAudience = true;
+                    break;
+                }
+            }
+
+            if (hasActiveAudience) {
+                $item.removeClass('audience-filtered');
+            } else {
+                $item.addClass('audience-filtered');
+            }
+        });
+    }
 });
