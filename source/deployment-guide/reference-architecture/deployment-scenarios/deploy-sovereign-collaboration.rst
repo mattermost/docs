@@ -37,7 +37,7 @@ The deployment architecture includes the following components:
 
   - **Mattermost Mobile Apps:** Access Mattermost via :doc:`iPhone and Android apps </deployment-guide/mobile/mobile-app-deployment>`, with support for :doc:`ID-only push notifications </deployment-guide/mobile/host-your-own-push-proxy-service>` to ensure compliance with data sovereignty requirements. *(Optional - not shown)*
 
-- **Mattermost Deployment:** Mattermost deployed for sovereign collaboration on enterprise-controlled infrastructure or private cloud, such as :doc:`Azure </deployment-guide/server/deploy-kubernetes>` or `Azure Local <https://learn.microsoft.com/en-us/azure/azure-local/manage/disconnected-operations-overview>`_, to maintain compliance with STIG, FedRAMP, and NIST 800-53 standards. See :doc:`reference architecture </deployment-guide/server/server-architecture>` documentation for Mattermost deployment configurations based on expected scale.
+- **Mattermost Deployment:** Mattermost deployed for sovereign collaboration on enterprise-controlled infrastructure or private cloud, such as :doc:`Azure </deployment-guide/server/deploy-kubernetes>` or `Azure Local <https://learn.microsoft.com/en-us/azure/azure-local/manage/disconnected-operations-overview>`_, to maintain compliance with STIG, FedRAMP, and NIST 800-53 standards. See :doc:`reference architecture </administration-guide/scale/server-architecture>` documentation for Mattermost deployment configurations based on expected scale.
 
   - **Mattermost Server:** Core application server handling collaboration workloads, including:
 
