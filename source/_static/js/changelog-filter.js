@@ -82,6 +82,19 @@ $(document).ready(function () {
                 <button id="changelog-apply-filter">Apply Filter</button>
                 <button id="changelog-reset-filter">Reset</button>
             </div>
+            
+            <div class="audience-filters">
+                <h4>Filter by Audience</h4>
+                <p>Select relevant audience types to show items that apply to you:</p>
+                <div class="audience-buttons">
+                    <button class="audience-btn" data-audience="admin">Admin</button>
+                    <button class="audience-btn" data-audience="end-user">End-user</button>
+                    <button class="audience-btn" data-audience="developer">Developer / API / Integrator</button>
+                    <button class="audience-btn" data-audience="security">Security</button>
+                    <button class="audience-btn" data-audience="platform">Platform</button>
+                    <button class="audience-btn show-all" data-audience="all">Show All</button>
+                </div>
+            </div>
         </div>
     `;
 
@@ -184,5 +197,100 @@ $(document).ready(function () {
         tocItems.forEach(item => {
             item.item.removeClass('filtered-toc');
         });
+        
+        // Reset audience filters
+        $('.audience-btn').removeClass('active');
+        $('.show-all').addClass('active');
+        $('li[data-audience-filtered]').removeAttr('data-audience-filtered').show();
     });
+
+    // Audience filtering logic
+    let activeAudiences = new Set();
+    
+    // Initialize with "Show All" active
+    $('.show-all').addClass('active');
+    
+    $('.audience-btn').on('click', function() {
+        const audienceType = $(this).data('audience');
+        
+        if (audienceType === 'all') {
+            // Show All button
+            activeAudiences.clear();
+            $('.audience-btn').removeClass('active');
+            $(this).addClass('active');
+            applyAudienceFilter();
+        } else {
+            // Toggle audience filter
+            $('.show-all').removeClass('active');
+            
+            if (activeAudiences.has(audienceType)) {
+                activeAudiences.delete(audienceType);
+                $(this).removeClass('active');
+            } else {
+                activeAudiences.add(audienceType);
+                $(this).addClass('active');
+            }
+            
+            // If no audiences selected, activate "Show All"
+            if (activeAudiences.size === 0) {
+                $('.show-all').addClass('active');
+            }
+            
+            applyAudienceFilter();
+        }
+    });
+    
+    function applyAudienceFilter() {
+        if (activeAudiences.size === 0) {
+            // Show all items
+            $('li[data-audience-filtered]').removeAttr('data-audience-filtered').show();
+            return;
+        }
+        
+        // Find all list items with audience tags
+        $('li').each(function() {
+            const $item = $(this);
+            const text = $item.text();
+            
+            // Check if this item has audience tags
+            const hasAudienceTag = /\*\*(.*?)\*\*/.test(text) && /\[(Admin|End-user|Developer.*?|Security|Platform)\]/.test(text);
+            
+            if (hasAudienceTag) {
+                let shouldShow = false;
+                
+                // Check if any active audience matches this item
+                for (const audience of activeAudiences) {
+                    let audiencePattern;
+                    switch(audience) {
+                        case 'admin':
+                            audiencePattern = /\[Admin\]/i;
+                            break;
+                        case 'end-user':
+                            audiencePattern = /\[End-user\]/i;
+                            break;
+                        case 'developer':
+                            audiencePattern = /\[Developer.*?\]/i;
+                            break;
+                        case 'security':
+                            audiencePattern = /\[Security\]/i;
+                            break;
+                        case 'platform':
+                            audiencePattern = /\[Platform\]/i;
+                            break;
+                    }
+                    
+                    if (audiencePattern && audiencePattern.test(text)) {
+                        shouldShow = true;
+                        break;
+                    }
+                }
+                
+                if (shouldShow) {
+                    $item.removeAttr('data-audience-filtered').show();
+                } else {
+                    $item.attr('data-audience-filtered', 'true').hide();
+                }
+            }
+        });
+    }
 });
