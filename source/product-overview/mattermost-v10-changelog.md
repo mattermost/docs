@@ -150,25 +150,25 @@ New setting options were added to ``config.json``. Below is a list of the additi
 ## Release v10.10 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
 - **10.10.3, released 2025-09-16**
-  - Mattermost v10.10.3 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - **[Security][Admin]** Mattermost v10.10.3 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v10.10.3 contains no database or functional changes.
 - **10.10.2, released 2025-08-14**
-  - Mattermost v10.10.2 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Pre-packaged Boards plugin [v9.1.5](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.5).
-  - Fixed an issue with the onboarding checklist being cut off when on multiple teams [MM-64919](https://mattermost.atlassian.net/browse/MM-64919).
-  - Upgraded to go1.24.5, and reverted to bullseye to maintain glibc <2.34 compatibility for older deployment environments [MM-64865](https://mattermost.atlassian.net/browse/MM-64865).
+  - **[Security][Admin]** Mattermost v10.10.2 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - **[Admin]** Pre-packaged Boards plugin [v9.1.5](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.5).
+  - **[End-user]** Fixed an issue with the onboarding checklist being cut off when on multiple teams [MM-64919](https://mattermost.atlassian.net/browse/MM-64919).
+  - **[Platform]** Upgraded to go1.24.5, and reverted to bullseye to maintain glibc <2.34 compatibility for older deployment environments [MM-64865](https://mattermost.atlassian.net/browse/MM-64865).
   - Mattermost v10.10.2 contains no database or functional changes.
 - **10.10.1, released 2025-07-16**
-  - Mattermost v10.10.1 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - **[Security][Admin]** Mattermost v10.10.1 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v10.10.1 contains no database or functional changes.
 - **10.10.0, released 2025-07-16**
   - Original 10.10.0 release.
 
 ### Important Upgrade Notes
- - Added a new column ``DefaultCategoryName`` to the ``Channels`` table. This is nullable and stores a category name to be added/created when new users join a channel. This is only used if the ``ExperimentalChannelCategorySetting`` is enabled. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
- - Added new columns ``RemoteId`` and ``ChannelId`` to the ``PostAcknowledgements`` table. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
- - Added a new column ``LastMembersSyncAt`` to the ``SharedChannelRemotes`` table and added ``LastMembershipSyncAt`` to ``SharedChannelUsers``. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
- - Added a new column ``LastGlobalUserSyncAt`` to the ``RemoteClusters`` table. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
+ - **[Admin]** Added a new column ``DefaultCategoryName`` to the ``Channels`` table. This is nullable and stores a category name to be added/created when new users join a channel. This is only used if the ``ExperimentalChannelCategorySetting`` is enabled. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
+ - **[Admin]** Added new columns ``RemoteId`` and ``ChannelId`` to the ``PostAcknowledgements`` table. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
+ - **[Admin]** Added a new column ``LastMembersSyncAt`` to the ``SharedChannelRemotes`` table and added ``LastMembershipSyncAt`` to ``SharedChannelUsers``. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
+ - **[Admin]** Added a new column ``LastGlobalUserSyncAt`` to the ``RemoteClusters`` table. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
 
 ```{Important}
 If you upgrade from a release earlier than v10.9, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
@@ -177,33 +177,33 @@ If you upgrade from a release earlier than v10.9, please read the other [Importa
 ### Improvements
 
 #### User Interface (UI)
- - Pre-packaged Calls plugin [v1.9.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.9.1).
- - Pre-packaged GitLab plugin [v1.10.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.10.0).
- - Pre-packaged GitHub plugin [v2.4.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.4.0).
- - Pre-packaged Boards plugin [v9.1.4](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.4).
- - Pre-packaged Agents plugin [v1.2.4](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.2.4).
- - Resolved inconsistent styling issues in new integration pages.
- - Improved the visual styling of blockquotes and comment threads for better readability and a modern appearance.
- - Improved screen reader support for autocompletes and channel switcher.
- - Added an aria-live region for improved accessibility of file preview modal carousel position updates.
- - Add focusability to react-select remove button in notifications settings.
- - Updated **Profile** settings client-side validation to use more modern/accessible paradigms.
- - Enhanced the accessibility of login and password reset functionality.
- - Stopped the Threads textbox from automatically taking focus when it contained a draft.
- - Added a display setting for users to toggle rendering of emoticons (e.g., :D) as emojis (e.g., 😄).
- - Added support for the ``from:`` search filter in cross-team searches.
- - Standardized button styling by consolidating color variables and removing redundant theme definitions.
- - Ignored email domain in user searches on the client side.
- - Automatically detected and updated timezone changes without requiring a client refresh.
+ - **[Admin]** Pre-packaged Calls plugin [v1.9.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.9.1).
+ - **[Admin]** Pre-packaged GitLab plugin [v1.10.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.10.0).
+ - **[Admin]** Pre-packaged GitHub plugin [v2.4.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.4.0).
+ - **[Admin]** Pre-packaged Boards plugin [v9.1.4](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.4).
+ - **[Admin]** Pre-packaged Agents plugin [v1.2.4](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.2.4).
+ - **[End-user]** Resolved inconsistent styling issues in new integration pages.
+ - **[End-user]** Improved the visual styling of blockquotes and comment threads for better readability and a modern appearance.
+ - **[End-user]** Improved screen reader support for autocompletes and channel switcher.
+ - **[End-user]** Added an aria-live region for improved accessibility of file preview modal carousel position updates.
+ - **[End-user]** Add focusability to react-select remove button in notifications settings.
+ - **[End-user]** Updated **Profile** settings client-side validation to use more modern/accessible paradigms.
+ - **[End-user]** Enhanced the accessibility of login and password reset functionality.
+ - **[End-user]** Stopped the Threads textbox from automatically taking focus when it contained a draft.
+ - **[End-user]** Added a display setting for users to toggle rendering of emoticons (e.g., :D) as emojis (e.g., 😄).
+ - **[End-user]** Added support for the ``from:`` search filter in cross-team searches.
+ - **[End-user]** Standardized button styling by consolidating color variables and removing redundant theme definitions.
+ - **[End-user]** Ignored email domain in user searches on the client side.
+ - **[End-user]** Automatically detected and updated timezone changes without requiring a client refresh.
 
 #### Administration
- - Added support for group messages in Shared Channels.
- - Added new feature flags (default off) ``EnableSharedChannelsMemberSync`` and ``EnableSyncAllUsersForRemoteCluster`` for Connected Workspaces.
- - Hid plugin components in Shared Channels and introduced ``EnableSharedChannelsPlugins`` to re-enable them if needed.
- - Added an LDAP Wizard with various enhancements, including a **Test Group Attributes** button for feedback on matching group attributes, a **Test Connection** button with improved error reporting, a **Test Attributes** button showing attribute success and matching user count, a **Test Filters** button with failure feedback, an expandable **User Filters** section with "More info" hover texts, and a help text explaining the possible delay when running tests on large LDAP servers.
- - Added support for licenses that enforce seat counts with a configurable ``ExtraUsers`` field for exact control over allowed overages.
- - Organized cluster files into directories for the Support Packet.
- - Partially sanitized database datasources for the Support Packet.
+ - **[Admin]** Added support for group messages in Shared Channels.
+ - **[Admin]** Added new feature flags (default off) ``EnableSharedChannelsMemberSync`` and ``EnableSyncAllUsersForRemoteCluster`` for Connected Workspaces.
+ - **[Admin]** Hid plugin components in Shared Channels and introduced ``EnableSharedChannelsPlugins`` to re-enable them if needed.
+ - **[Admin]** Added an LDAP Wizard with various enhancements, including a **Test Group Attributes** button for feedback on matching group attributes, a **Test Connection** button with improved error reporting, a **Test Attributes** button showing attribute success and matching user count, a **Test Filters** button with failure feedback, an expandable **User Filters** section with "More info" hover texts, and a help text explaining the possible delay when running tests on large LDAP servers.
+ - **[Admin]** Added support for licenses that enforce seat counts with a configurable ``ExtraUsers`` field for exact control over allowed overages.
+ - **[Admin]** Organized cluster files into directories for the Support Packet.
+ - **[Admin]** Partially sanitized database datasources for the Support Packet.
  - Added deactivation status to the mmctl user search output.
 
 #### Performance
