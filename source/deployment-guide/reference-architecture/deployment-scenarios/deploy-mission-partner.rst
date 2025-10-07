@@ -4,7 +4,7 @@ Deploy for Mission Partner Collaboration
 Overview
 --------
 
-Mission partner collaboration extends :doc:`sovereign collaboration </deployment-guide/reference-architecture/deploy-sovereign-collaboration>` and :doc:`edge deployment </deployment-guide/reference-architecture/deploy-ddil-operations>` models to enable joint and allied operations across organizations using Mattermost, Microsoft 365 and legacy platforms. The solution architecture outlined in this document delivers a secure, sovereign, and intelligent mission environment that is federated across enterprise and coalition partner networks, enabling interoperability while maintaining compliance and control.
+Mission partner collaboration extends :doc:`sovereign collaboration </deployment-guide/reference-architecture/deployment-scenarios/deploy-sovereign-collaboration>` and :doc:`edge deployment </deployment-guide/reference-architecture/deployment-scenarios/deploy-ddil-operations>` models to enable joint and allied operations across organizations using Mattermost, Microsoft 365 and legacy platforms. The solution architecture outlined in this document delivers a secure, sovereign, and intelligent mission environment that is federated across enterprise and coalition partner networks, enabling interoperability while maintaining compliance and control.
 
 Joint mission collaboration is achieved through federation using :doc:`connected workspaces </administration-guide/onboard/connected-workspaces>`, `Matrix connectors <https://mattermost.com/marketplace/mattermost-matrix-connector/>`_, :doc:`guest accounts </administration-guide/onboard/guest-accounts>`, and `auto-translation <https://github.com/mattermost/mattermost-plugin-channel-translations>`_ for fast, accurate comprehension across globally distributed teams. Additionally, integrating external data feeds, workflow automation, and sovereign AI enables allied and partner users to collaborate at mission speed while enforcing zero-trust policies and maintaining data sovereignty.
 
@@ -15,7 +15,7 @@ Collaboration challenges
 
 Multi-agency collaborations face complex communication challenges:
 
-- **Platform diversity:** Organizations often use different platforms, including Microsoft 365, Mattermost, and Matrix - with some using Teams for enterprise productivity :doc:`supplemented with Mattermost </deployment-guide/reference-architecture/deploy-sovereign-collaboration>` for sovereign collaboration, data residency, and offline resilience. 
+- **Platform diversity:** Organizations often use different platforms, including Microsoft 365, Mattermost, and Matrix - with some using Teams for enterprise productivity :doc:`supplemented with Mattermost </deployment-guide/reference-architecture/deployment-scenarios/deploy-sovereign-collaboration>` for sovereign collaboration, data residency, and offline resilience. 
 - **External access:** External partners need controlled access without full organizational membership.
 - **Language barriers:** Organizations may speak different languages.
 - **Compliance:** Data residency and compliance requirements vary across organizations.
@@ -66,7 +66,7 @@ The deployment architecture includes the following components:
   - **Mattermost Mobile Apps:** Access Mattermost via :doc:`iPhone and Android apps </deployment-guide/mobile/mobile-app-deployment>`, with support for :doc:`ID-only push notifications </deployment-guide/mobile/host-your-own-push-proxy-service>` to ensure compliance with data sovereignty requirements. *(Optional - not shown)*
   - **Microsoft 365 Desktop Apps:** For partnered organizations using Microsoft 365 services, Teams and Outlook can be deployed with the :doc:`embedded Mattermost application </integrations-guide/mattermost-mission-collaboration-for-m365>` for cross-domain partner collaboration within a familiar interface. *(Optional)* 
 
-- **Mattermost Deployments:** Mattermost deployed for sovereign collaboration on private cloud or local infrastructure, such as :doc:`Azure </deployment-guide/server/deploy-kubernetes>` or `Azure Local <https://learn.microsoft.com/en-us/azure/azure-local/manage/disconnected-operations-overview>`_, to maintain compliance with STIG, FedRAMP, and NIST 800-53 standards. See :doc:`reference architecture </deployment-guide/server/server-architecture>` documentation for Mattermost deployment configurations based on expected scale.
+- **Mattermost Deployments:** Mattermost deployed for sovereign collaboration on private cloud or local infrastructure, such as :doc:`Azure </deployment-guide/server/deploy-kubernetes>` or `Azure Local <https://learn.microsoft.com/en-us/azure/azure-local/manage/disconnected-operations-overview>`_, to maintain compliance with STIG, FedRAMP, and NIST 800-53 standards. See :doc:`reference architecture </administration-guide/scale/server-architecture>` documentation for Mattermost deployment configurations based on expected scale.
 
   - **Mattermost Server:** Core application server handling collaboration workloads, including:
 
