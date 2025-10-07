@@ -11,7 +11,7 @@ Whether you're deploying for sovereign collaboration, mission-critical operation
     :titlesonly:
 
     Application Architecture </deployment-guide/reference-architecture/application-architecture>
-    Scale for Enterprise </administration-guide/scale/scaling-for-enterprise>
+    Scaling Architecture </administration-guide/scale/scaling-for-enterprise>
     Deploy for Out-of-Band Use </deployment-guide/reference-architecture/deploy-oob>
     Deploy for Mission Partner Collaboration </deployment-guide/reference-architecture/deploy-mission-partner>
     Deploy for Enterprise to Edge DDIL Operations </deployment-guide/reference-architecture/deploy-ddil-operations>
