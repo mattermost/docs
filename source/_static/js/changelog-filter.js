@@ -3,6 +3,10 @@ $(document).ready(function () {
     if (!window.location.pathname.includes('/about/mattermost-v10-changelog') && !window.location.pathname.includes('/about/mattermost-v9-changelog')) {
         return;
     }
+    
+    // Audience filtering data
+    const audienceTypes = ['Admin', 'End-user', 'Developer / API / Integrator', 'Security', 'Platform'];
+    let selectedAudiences = new Set();
 
     // Extract versions from section IDs
     const versions = [];
@@ -66,7 +70,7 @@ $(document).ready(function () {
         <div class="changelog-filters">
             <h3>Filter Changelog</h3>
             <p>Select source and target versions to see only relevant changelog entries</p>
-            <div>
+            <div class="version-filters-row">
                 <label for="changelog-source-version">From version:</label>
                 <select id="changelog-source-version">
                     <option value="all">All versions</option>
@@ -81,6 +85,14 @@ $(document).ready(function () {
 
                 <button id="changelog-apply-filter">Apply Filter</button>
                 <button id="changelog-reset-filter">Reset</button>
+            </div>
+            
+            <div class="audience-filters">
+                <h4>Filter by Audience</h4>
+                <div class="audience-buttons">
+                    <button class="audience-btn" data-audience="all">Show All</button>
+                    ${audienceTypes.map(type => `<button class="audience-btn" data-audience="${type}">${type}</button>`).join('')}
+                </div>
             </div>
         </div>
     `;
@@ -184,5 +196,86 @@ $(document).ready(function () {
         tocItems.forEach(item => {
             item.item.removeClass('filtered-toc');
         });
+        // Also reset audience filters
+        selectedAudiences.clear();
+        $('.audience-btn').removeClass('active');
+        $('.audience-btn[data-audience="all"]').addClass('active');
+        applyAudienceFiltering();
     });
+    
+    // Audience filtering functionality
+    function applyAudienceFiltering() {
+        if (selectedAudiences.size === 0) {
+            // Show all items when no audience is selected
+            $('.content li, .content section').removeClass('audience-filtered');
+            return;
+        }
+        
+        // Find all list items that contain audience tags
+        $('.content li').each(function() {
+            const $item = $(this);
+            const text = $item.text();
+            
+            // Check if this item has any audience tags
+            let hasAudienceTag = false;
+            let matchesSelectedAudience = false;
+            
+            for (const audience of audienceTypes) {
+                if (text.includes(`[${audience}]`)) {
+                    hasAudienceTag = true;
+                    if (selectedAudiences.has(audience)) {
+                        matchesSelectedAudience = true;
+                        break;
+                    }
+                }
+            }
+            
+            // Show/hide item based on audience filtering
+            if (hasAudienceTag) {
+                if (matchesSelectedAudience) {
+                    $item.removeClass('audience-filtered');
+                } else {
+                    $item.addClass('audience-filtered');
+                }
+            } else {
+                // Items without audience tags are always visible
+                $item.removeClass('audience-filtered');
+            }
+        });
+    }
+    
+    // Audience button click handler
+    $('.audience-buttons').on('click', '.audience-btn', function() {
+        const $btn = $(this);
+        const audience = $btn.data('audience');
+        
+        if (audience === 'all') {
+            // Show all - clear selections
+            selectedAudiences.clear();
+            $('.audience-btn').removeClass('active');
+            $btn.addClass('active');
+        } else {
+            // Remove "Show All" if it was active
+            $('.audience-btn[data-audience="all"]').removeClass('active');
+            
+            // Toggle this audience
+            if (selectedAudiences.has(audience)) {
+                selectedAudiences.delete(audience);
+                $btn.removeClass('active');
+            } else {
+                selectedAudiences.add(audience);
+                $btn.addClass('active');
+            }
+            
+            // If no audiences are selected, activate "Show All"
+            if (selectedAudiences.size === 0) {
+                $('.audience-btn[data-audience="all"]').addClass('active');
+            }
+        }
+        
+        applyAudienceFiltering();
+    });
+    
+    // Initialize with "Show All" active
+    $('.audience-btn[data-audience="all"]').addClass('active');
 });
