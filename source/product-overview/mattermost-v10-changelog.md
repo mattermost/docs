@@ -12,7 +12,13 @@
 (release-v10.12-feature-release)=
 ## Release v10.12 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
-**Release day: 2025-09-16**
+- **10.12.1, released **
+  - Mattermost v10.12.1 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged MS Teams plugin [v2.2.2](https://github.com/mattermost/mattermost-plugin-msteams/releases/tag/v2.2.2).
+  - Upgraded to go version 1.24.6.
+  - Mattermost v10.12.1 contains no database or functional changes.
+- **10.12.0, released 2025-09-16**
+  - Original 10.12.0 release.
 
 ```{Important}
 If you upgrade from a release earlier than v10.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
@@ -41,22 +47,19 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
  - Fixed an issue where the content of webhook posts did not display.
 
 ### Go Version
- - v10.12 is built with Go ``v1.24.5``.
+ - v10.12 is built with Go ``v1.24.6``.
 
 ### Contributors
-- **10.12.1, released 2025-10-08**
-  - Mattermost v10.12.1 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Mattermost v10.12.1 contains no database or functional changes.
-- **10.12.0, released 2025-09-16**
-  - Original 10.12.0 release.
-
  - [abbas-dependable-naqvi](https://github.com/abbas-dependable-naqvi), [adityadav1987](https://github.com/adityadav1987), [agarciamontoro](https://github.com/agarciamontoro), [AhsanSarwar0413](https://github.com/AhsanSarwar0413), [amyblais](https://github.com/amyblais), [andrleite](https://github.com/andrleite), [angeloskyratzakos](https://github.com/angeloskyratzakos), [arush-vashishtha](https://github.com/arush-vashishtha), [asaadmahmood](https://github.com/asaadmahmood), [avasconcelos114](https://github.com/avasconcelos114), [calebroseland](https://github.com/calebroseland), [ctlaltdieliet](https://github.com/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [davidkrauser](https://github.com/davidkrauser), [devinbinnie](https://github.com/devinbinnie), [dgwhited](https://github.com/dgwhited), [DHaussermann](https://github.com/DHaussermann), [DSchalla](https://github.com/DSchalla), [electronicmilk](https://translate.mattermost.com/user/electronicmilk), [enahum](https://github.com/enahum), [enzowritescode](https://github.com/enzowritescode), [esarafianou](https://github.com/esarafianou), [esethna](https://github.com/esethna), [ewwollesen](https://github.com/ewwollesen), [fmartingr](https://github.com/fmartingr), [frankps](https://translate.mattermost.com/user/frankps), [fsilye](https://github.com/fsilye), [gabrieljackson](https://github.com/gabrieljackson), [hanzei](https://github.com/hanzei), [harshilsharma63](https://github.com/harshilsharma63), [henriquevmac](https://github.com/henriquevmac), [hmhealey](https://github.com/hmhealey), [isacikgoz](https://github.com/isacikgoz), [jgheithcock](https://github.com/jgheithcock), [jlandells](https://github.com/jlandells), [johnsonbrothers](https://github.com/johnsonbrothers), [jprusch](https://github.com/jprusch), [JulienTant](https://github.com/JulienTant), [jwilander](https://github.com/jwilander), [kaakaa](https://translate.mattermost.com/user/kaakaa), [Kshitij-Katiyar](https://github.com/Kshitij-Katiyar), [larkox](https://github.com/larkox), [lieut-data](https://github.com/lieut-data), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [majo](https://translate.mattermost.com/user/majo), [mansil](https://github.com/mansil), [master7](https://translate.mattermost.com/user/master7), [matt-w99](https://github.com/matt-w99), [matthew-w](https://translate.mattermost.com/user/matthew-w), [mgdelacroix](https://github.com/mgdelacroix), [Morgansvk](https://github.com/Morgansvk), [neflyte](https://github.com/neflyte), [nickmisasi](https://github.com/nickmisasi), [pvev](https://github.com/pvev), [raghavaggarwal2308](https://github.com/raghavaggarwal2308), [rahimrahman](https://github.com/rahimrahman), [Rajat-Dabade](https://github.com/Rajat-Dabade), [Reinkard](https://translate.mattermost.com/user/Reinkard), [rOt779kVceSgL](https://translate.mattermost.com/user/rOt779kVceSgL), [sadohert](https://github.com/sadohert), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [stafot](https://github.com/stafot), [svelle](https://github.com/svelle), [tnir](https://github.com/tnir), [Victor-Nyagudi](https://github.com/Victor-Nyagudi), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [yasserfaraazkhan](https://github.com/yasserfaraazkhan)
 
 (release-v10.11-extended-support-release)=
 ## Release v10.11 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
-- **10.11.4, released 2025-10-08**
-  - Mattermost v10.11.4 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+- **10.11.4, released **
+  - Mattermost v10.11.4 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged MS Teams plugin [v2.2.2](https://github.com/mattermost/mattermost-plugin-msteams/releases/tag/v2.2.2).
+  - Upgraded to go version 1.24.6.
+  - Fixed an issue with the mmctl system status to return non-zero exit codes when health checks fail, ensuring proper integration with container orchestration health check systems [MM-65830](https://mattermost.atlassian.net/browse/MM-65830).
   - Mattermost v10.11.4 contains no database or functional changes.
 - **10.11.3, released 2025-09-16**
   - Mattermost v10.11.3 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
@@ -150,7 +153,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - Updated the patch channel API doc to include channel banners. 
 
 ### Go Version
- - v10.11 is built with Go ``v1.24.5``.
+ - v10.11 is built with Go ``v1.24.6``.
 
 ### Contributors
  - [abbas-dependable-naqvi](https://github.com/abbas-dependable-naqvi), [agarciamontoro](https://github.com/agarciamontoro), [agnivade](https://github.com/agnivade), [akeiss](https://translate.mattermost.com/user/akeiss), [alexis](https://translate.mattermost.com/user/alexis), [alirezaalavi87](https://github.com/alirezaalavi87), [amyblais](https://github.com/amyblais), [andrleite](https://github.com/andrleite), [angeloskyratzakos](https://github.com/angeloskyratzakos), [Arusekk](https://github.com/Arusekk), [asaadmahmood](https://github.com/asaadmahmood), [BenCookie95](https://github.com/BenCookie95), [calebroseland](https://github.com/calebroseland), [catalintomai](https://github.com/catalintomai), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [cyrusjc](https://github.com/cyrusjc), [danielsischy](https://github.com/danielsischy), [danilvalov](https://github.com/danilvalov), [davidkrauser](https://github.com/davidkrauser), [devinbinnie](https://github.com/devinbinnie), [DHaussermann](https://github.com/DHaussermann), [DSchalla](https://github.com/DSchalla), [enahum](https://github.com/enahum), [enzowritescode](https://github.com/enzowritescode), [esarafianou](https://github.com/esarafianou), [fmartingr](https://github.com/fmartingr), [frankps](https://translate.mattermost.com/user/frankps), [fsilye](https://github.com/fsilye), [gabrieljackson](https://github.com/gabrieljackson), [hanzei](https://github.com/hanzei), [harshilsharma63](https://github.com/harshilsharma63), [hmhealey](https://github.com/hmhealey), [isacikgoz](https://github.com/isacikgoz), [jesperfj](https://translate.mattermost.com/user/jesperfj), [jgheithcock](https://github.com/jgheithcock), [johnsonbrothers](https://github.com/johnsonbrothers), [jprusch](https://github.com/jprusch), [JulienTant](https://github.com/JulienTant), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [Kshitij-Katiyar](https://github.com/Kshitij-Katiyar), [larkox](https://github.com/larkox), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [luca.palomba](https://translate.mattermost.com/user/luca.palomba), [lynn915](https://github.com/lynn915), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [majo](https://translate.mattermost.com/user/majo), [mansil](https://github.com/mansil), [marianunez](https://github.com/marianunez), [master7](https://translate.mattermost.com/user/master7), [matthewbirtch](https://github.com/matthewbirtch), [mgdelacroix](https://github.com/mgdelacroix), [Morgansvk](https://github.com/Morgansvk), [neflyte](https://github.com/neflyte), [neil-karania](https://github.com/neil-karania), [nickmisasi](https://github.com/nickmisasi), [panoramix360](https://github.com/panoramix360), [pineoak-audio](https://github.com/pineoak-audio), [pvev](https://github.com/pvev), [rahimrahman](https://github.com/rahimrahman), [Rajat-Dabade](https://github.com/Rajat-Dabade), [Reinkard](https://github.com/Reinkard), [roberson-io](https://github.com/roberson-io), [rohithchandran-mattermost](https://github.com/rohithchandran-mattermost), [rOt779kVceSgL](https://translate.mattermost.com/user/rOt779kVceSgL), [rtfm98](https://github.com/rtfm98), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [Sharuru](https://translate.mattermost.com/user/Sharuru), [stafot](https://github.com/stafot), [streamer45](https://github.com/streamer45), [svelle](https://github.com/svelle), [ThrRip](https://github.com/ThrRip), [tnir](https://translate.mattermost.com/user/tnir), [toffguy77](https://github.com/toffguy77), [vish9812](https://github.com/vish9812), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [yasserfaraazkhan](https://github.com/yasserfaraazkhan)
@@ -699,8 +702,10 @@ New setting options were added to ``config.json``. Below is a list of the additi
 (release-v10.5-extended-support-release)=
 ## Release v10.5 - [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
-- **10.5.12, released 2025-10-08**
-  - Mattermost v10.5.12 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+- **10.5.12, released **
+  - Mattermost v10.5.12 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged MS Teams plugin [v2.2.2](https://github.com/mattermost/mattermost-plugin-msteams/releases/tag/v2.2.2).
+  - Upgraded to go version 1.23.12.
   - Mattermost v10.5.12 contains no database or functional changes.
 - **10.5.11, released 2025-09-10**
   - Mattermost v10.5.11 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
@@ -833,7 +838,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
     - ``remove_masked`` (removes masked fields). 
 
 ### Go Version
- - v10.5 is built with Go ``v1.22.6``.
+ - v10.5 is built with Go ``v1.23.12``.
 
 ### Known Issues
  - Setting the license file location through an envvar still gives the option to upload a new license through the System Console, resulting in the license being overwritten by the one set through the envvar. See this [knowledge base article](https://support.mattermost.com/hc/en-us/articles/33911983851284-System-console-still-displays-old-license-after-uploading-a-new-one) on how to resolve this issue.
