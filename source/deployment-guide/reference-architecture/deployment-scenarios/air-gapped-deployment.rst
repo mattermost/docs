@@ -1,5 +1,5 @@
-Deploy Mattermost in Air-Gapped Environments
-==============================================
+Deploy in Air-Gapped Environments
+=================================
 
 An air-gapped environment is one that is isolated from the public internet, requiring all necessary components to be available locally. This guide outlines what you'll need to deploy Mattermost in a self-hosted air-gapped environment, focusing on appropriate preparation, deployment guidance and configurations required for a successful deployment.
 
