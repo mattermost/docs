@@ -3,7 +3,7 @@ Application architecture
 
 Mattermost is an open-source collaboration platform that offers secure messaging, file sharing, and integrations for team communication. It's self-hosted, providing IT admins full control over data, security, integrations, and customization. The platform is built with modular components to ensure scalability, flexibility, and extensibility.
 
-.. image:: ../images/network-diagram.svg
+.. image:: /images/network-diagram.svg
    :alt: Mattermost network diagram shows how the components can be deployed. Includes optional configurations for scaling for larger enterprise organizations.
    :class: bg-white
 
