@@ -14,7 +14,8 @@
 
 **Release day: 2025-10-16**
 
-### Important Upgrade Notes
+```{Attention}
+The following breaking changes and deprecations are included in the v11.0 release:
  - GitLab SSO has been deprecated from Team Edition. Deployments using GitLab SSO can remain on v10.11 ESR (with 12 months of security updates) while transitioning to our new free offering Mattermost Entry, or can explore commercial/nonprofit options. See more details in [this forum post](https://forum.mattermost.com/t/mattermost-v11-changes-in-free-offerings/25126).
  - The ``TeamSettings.ExperimentalViewArchivedChannels`` setting has been deprecated. Archived channels will always be accessible, subject to normal channel membership. The server will fail to start if this setting is set to ``false``. To deny access to archived channels, mark them as private and remove affected channel members. See more details in [this forum post](https://forum.mattermost.com/t/viewing-accessing-archived-channels-v11/22626).
  - Playbooks has stopped working for Team Edition. Entry, Professional, Enterprise, and Enterprise Advanced plans are automatically upgraded to Playbooks v2 with no expected downtime. See more details in [this forum post](https://forum.mattermost.com/t/clarification-and-update-on-the-playbooks-plugin-v11/25192).
@@ -40,38 +41,10 @@
  - Added logic to migrate the password hashing method from bcrypt to PBKDF2. The migration will happen progressively, migrating the password of a user as soon as they enter it; e.g. when logging in or when double-checking their password for any sensitive action. There is an edge case where users might get locked out of their account: if a server upgrades to v11 and user A logs in (i.e., they need to enter their password), and then the server downgrades to v10.12 or previous, user A will no longer be able to log in. In this case, admins will need to manually reset the password of such users, through the system console or through the [mmctl user reset-password [users]](https://docs.mattermost.com/administration-guide/manage/mmctl-command-line-tool.html#mmctl-user-reset-password) command. The new password hashing method is more CPU-intensive. Admins of servers with password-based login should monitor the performance on periods where many users log in at the same time.
  - ``/api/v4/teams/{team_id}/channels/search_archived`` has been deprecated in favour of ``/api/v4/channels/search`` with the deleted parameter.
  - Changed default database connection pool settings: changed ``MaxOpenConns`` from 300 to 100 and ``MaxIdleConns`` from 20 to 50, establishing a healthier 2:1 ratio for better database connection management.
- - Separate notification log file has been deprecated. If admins want to continue using a separate log file for notification logs, they can use the ``AdvancedLoggingJSON`` configuration. An example configuration to use is:
-
- ```
-   {
-     "LogSettings": {
-       "AdvancedLoggingJSON": {
-         "notifications_file": {
-           "type": "file",
-           "format": "json",
-           "levels": [
-               {"id": 300, "name": "NotificationError"},
-               {"id": 301, "name": "NotificationWarn"},
-               {"id": 302, "name": "NotificationInfo"},
-               {"id": 303, "name": "NotificationDebug"},
-               {"id": 304, "name": "NotificationTrace"}
-           ],
-           "options": {
-               "filename": "notifications.log",
-               "max_size": 100,
-               "max_age": 0,
-               "max_backups": 0,
-               "compress": true
-           }, 
-           "maxqueuesize": 1000 
-         }
-       }
-     }
-   }
- ```
-
+ - Separate notification log file has been deprecated. If admins want to continue using a separate log file for notification logs, they can use the ``AdvancedLoggingJSON`` configuration. See the [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html) for an example configuration.
  - Stopped supporting manually installed plugins as per https://forum.mattermost.com/t/deprecation-notice-manual-plugin-deployment/21192
  - Support for PostgreSQL v13 has been removed. The new minimum PostgreSQL version is v14+. See the [minimum supported PostgreSQL version policy](https://docs.mattermost.com/deployment-guide/software-hardware-requirements.html#minimum-postgresql-database-support-policy) documentation for details.
+```
 
 ```{Important}
 If you upgrade from a release earlier than v10.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
