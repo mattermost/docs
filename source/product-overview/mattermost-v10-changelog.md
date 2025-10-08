@@ -164,11 +164,13 @@ New setting options were added to ``config.json``. Below is a list of the additi
 - **10.10.0, released 2025-07-16**
   - Original 10.10.0 release.
 
+```{attention}
 ### Important Upgrade Notes
  - Added a new column ``DefaultCategoryName`` to the ``Channels`` table. This is nullable and stores a category name to be added/created when new users join a channel. This is only used if the ``ExperimentalChannelCategorySetting`` is enabled. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
  - Added new columns ``RemoteId`` and ``ChannelId`` to the ``PostAcknowledgements`` table. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
  - Added a new column ``LastMembersSyncAt`` to the ``SharedChannelRemotes`` table and added ``LastMembershipSyncAt`` to ``SharedChannelUsers``. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
  - Added a new column ``LastGlobalUserSyncAt`` to the ``RemoteClusters`` table. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
+```
 
 ```{attention}
 If you upgrade from a release earlier than v10.9, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
