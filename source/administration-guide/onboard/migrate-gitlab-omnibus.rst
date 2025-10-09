@@ -80,7 +80,7 @@ Step 5: Migrate the Mattermost Application and Data
 
 To move Mattermost application files from the GitLab server to a new standalone server:
 
-1. **Install the same or newer version** of Mattermost on the new server. See the :ref:`Server Deployment Planning <server-deployment-planning:deployment options>`.
+1. **Install the same or newer version** of Mattermost on the new server. See the :ref:`Server Deployment Planning <deployment-guide/server/server-deployment-planning:deployment options>`.
 2. **Copy your existing configuration and data** from the GitLab Omnibus instance:
 
    .. code-block:: bash
