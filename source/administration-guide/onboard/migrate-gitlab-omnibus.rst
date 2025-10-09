@@ -44,12 +44,10 @@ This will create a compressed SQL dump file of your Mattermost database.
 Step 2: Prepare the New PostgreSQL Server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Set up your new PostgreSQL server following the official Mattermost database preparation guidelines. This includes:
+Set up your new PostgreSQL server following the official :ref:`Mattermost database preparation guidelines <deployment-guide/server/preparations:database preparation>`. This includes:
 
 - Installing the correct PostgreSQL version supported by your Mattermost server.
 - Creating a new Mattermost database and user with appropriate permissions.
-
-Refer to the official setup instructions in the :ref:`database preparation guide <deployment-guide/server/preparations:database preparation>`.
 
 Step 3: Transfer and Restore the Database Dump
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
