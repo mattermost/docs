@@ -49,7 +49,7 @@ Set up your new PostgreSQL server following the official Mattermost database pre
 - Installing the correct PostgreSQL version supported by your Mattermost server.
 - Creating a new Mattermost database and user with appropriate permissions.
 
-Refer to the official setup instructions in the :doc:`Mattermost Database Preparation Guide </install/install-database>`.
+Refer to the official setup instructions in the :doc:`database preparation guide <deployment-guide/server/preparations.html#database-preparation>`.
 
 Step 3: Transfer and Restore the Database Dump
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
