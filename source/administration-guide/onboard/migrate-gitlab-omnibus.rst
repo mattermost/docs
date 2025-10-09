@@ -49,7 +49,7 @@ Set up your new PostgreSQL server following the official Mattermost database pre
 - Installing the correct PostgreSQL version supported by your Mattermost server.
 - Creating a new Mattermost database and user with appropriate permissions.
 
-Refer to the official setup instructions in the :doc:`database preparation guide <deployment-guide/server/preparations.html#database-preparation>`.
+Refer to the official setup instructions in the :ref:`database preparation guide <deployment-guide/server/preparations:database preparation>`.
 
 Step 3: Transfer and Restore the Database Dump
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -82,7 +82,7 @@ Step 5: Migrate the Mattermost Application and Data
 
 To move Mattermost application files from the GitLab server to a new standalone server:
 
-1. **Install the same or newer version** of Mattermost on the new server. See the :doc:`Server Deployment Planning </server-deployment-planning.html#deployment-options>`.
+1. **Install the same or newer version** of Mattermost on the new server. See the :ref:`Server Deployment Planning <server-deployment-planning:deployment options>`.
 2. **Copy your existing configuration and data** from the GitLab Omnibus instance:
 
    .. code-block:: bash
