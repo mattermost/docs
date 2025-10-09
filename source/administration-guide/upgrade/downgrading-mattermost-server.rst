@@ -1,7 +1,7 @@
 Downgrade Mattermost Server
 ===========================
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 In most cases you can downgrade Mattermost Server using the same steps as :doc:`upgrading-mattermost-server`. Server binaries can be found in the :doc:`Mattermost server version archive </product-overview/version-archive>` documentation. 

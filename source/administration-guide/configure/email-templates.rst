@@ -1,7 +1,7 @@
 Email templates
 ===============
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Mattermost has a few email templates that are sent out when a specific event occurs.

@@ -1,7 +1,7 @@
 Manage your security preferences
 =================================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Select your profile picture, select **Profile**, and then select **Security** to configure your password, view access history, and to view or logout of active sessions.

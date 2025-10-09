@@ -3,7 +3,7 @@
 Prepare your Mattermost MySQL database
 ======================================
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 .. important::

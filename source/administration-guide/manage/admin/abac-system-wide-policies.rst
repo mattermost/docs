@@ -1,7 +1,7 @@
 System-wide attribute-based access policies
 ============================================================
 
-.. include:: ../../../_static/badges/ent-adv-cloud-selfhosted.rst
+.. include:: ../../../_static/badges/ent-adv.rst
   :start-after: :nosearch:
 
 Use this guide to create and manage organization-wide attribute-based access policies in the System Console. For channel-level rules managed by Channel Admins, see :doc:`Channel-specific access rules </administration-guide/manage/admin/abac-channel-access-rules>`.

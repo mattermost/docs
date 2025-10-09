@@ -1,7 +1,7 @@
 Channel naming conventions
 ==========================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 All organizations are different and have different communication needs. The importance of organizing your conversations increases as your user base grows. The following are ideas for how you might want to name, group, and structure your channels. If you change your mind about a channel's name, you can :doc:`rename it </end-user-guide/collaborate/rename-channels>`. 

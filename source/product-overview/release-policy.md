@@ -1,8 +1,5 @@
 # Release Policy
 
-```{include} ../_static/badges/allplans-selfhosted.md
-```
-
 This page describes Mattermost’s release policy, and our recommended practices around releases, including extended support releases, so that you can allocate your IT resources effectively.
 
 To ensure a secure, functional, performant, and efficient Mattermost deployment, system admins managing a self-hosted deployment need to be proactive in:
@@ -25,9 +22,6 @@ See the full list of all Mattermost Server and desktop app releases and life cyc
 
 (extended-support-releases)=
 ## Extended Support Releases
-
-```{include} ../_static/badges/ent-only.md
-```
 
 Mattermost Extended Support Releases (ESRs) are a strategic choice for organizations looking for stability and reduced frequency of updates. Using ESRs can minimize disruptions associated with frequent upgrades, making them an attractive option for environments where stability is paramount.
 
@@ -73,9 +67,6 @@ The chart above shows both release dates and end-of-life dates for each version.
 
 (esr-notifications)=
 ### ESR Notifications
-
-```{include} ../_static/badges/ent-only.md
-```
 
 When an ESR is at the end of its life cycle, there will be announcements ahead of time to provide time for people to test, certify, and deploy a newer ESR version before support ends. After a release reaches its end-of-life, no further updates will be provided for that version. 
 

@@ -1,7 +1,7 @@
 User attributes
 =================
 
-.. include:: ../../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 From Mattermost v10.8, ensure your teams always have the critical information they need to collaborate effectively by defining and managing organization-specific user profile attributes as system attributes that you can synchronize with your AD/LDAP or SAML identity provider. 

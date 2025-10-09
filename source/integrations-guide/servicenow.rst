@@ -1,7 +1,7 @@
 Connect ServiceNow to Mattermost
 =================================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Minimize distractions and reduce context switching by bridging the gap between IT service management (ITSM) and team communication. Create and manage incident reports, change requests, and service tickets, as well as manage event-driven notification subscriptions for ServiceNow record changes, in real-time, and automate routine tasks to decrease response times without leaving Mattermost.

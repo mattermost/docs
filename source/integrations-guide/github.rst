@@ -1,7 +1,7 @@
 Connect GitHub to Mattermost
 =============================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Minimize distractions and reduce context switching between your GitHub code repositories and your communication platform by integrating GitHub with Mattermost. Help your teams stay focused and productive with real-time updates on commits, pull requests, issues, and more directly from Mattermost channels.

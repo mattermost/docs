@@ -1,7 +1,7 @@
 Built-In Slash Commands
 ============================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 The following built-in slash comamnds are available in your Mattermost :doc:`workspace </end-user-guide/end-user-guide-index>`. 

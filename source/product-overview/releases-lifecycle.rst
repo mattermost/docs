@@ -1,9 +1,6 @@
 Releases and Life Cycle
 =======================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 .. include:: common-esr-support-rst.rst
 
 .. toctree::

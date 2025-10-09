@@ -1,7 +1,7 @@
 SSL client certificate setup
 ============================
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Follow these steps to configure SSL client certificates for your browser and the Mattermost desktop apps on Windows, macOS, and Linux.

@@ -1,7 +1,7 @@
 Compliance configuration settings
 =================================
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 Review and manage the following compliance configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Compliance**:
@@ -22,9 +22,6 @@ Review and manage the following compliance configuration options in the System C
 
 Data retention policies
 -----------------------
-
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 Changes to properties in this section require a server restart before taking effect.
 
@@ -147,9 +144,6 @@ Start a Data Retention deletion job immediately. You can monitor the status of t
 
 Compliance export
 -----------------
-
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Compliance > Compliance Export**.
 
@@ -313,9 +307,6 @@ The SMTP server port that will receive your Global Relay EML file when a `custom
 Message export batch size
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-only.rst
-  :start-after: :nosearch:
-
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
 Determines how many new posts are batched together to a compliance export file.
@@ -333,9 +324,6 @@ This button initiates a compliance export job immediately. You can monitor the s
 
 Compliance monitoring
 ----------------------
-
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 Settings used to enable and configure Mattermost compliance reports.
 
@@ -417,9 +405,6 @@ Set the size of the batches in which posts will be read from the database to gen
 
 Custom terms of service
 -----------------------
-
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Compliance > Custom Terms of Service**.
 

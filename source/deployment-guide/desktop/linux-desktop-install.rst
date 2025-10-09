@@ -1,6 +1,9 @@
 Install desktop app on Linux
 =============================
 
+.. include:: ../../_static/badges/all-commercial.rst
+  :start-after: :nosearch:
+
 This page describes how to install the Mattermost desktop app on Linux.
 
 .. tab:: Ubuntu/Debian

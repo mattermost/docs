@@ -1,7 +1,7 @@
 Site configuration settings
 ===========================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Review and manage the following site configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Site Configuration**:
@@ -29,9 +29,6 @@ Review and manage the following site configuration options in the System Console
 
 Customization
 -------------
-
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Customization**.
 
@@ -173,9 +170,6 @@ Help link
 Terms of Use link
 ~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 | This field sets the URL for the Terms of Use of a self-hosted site. A link to the terms appears at the bottom of the sign-up and login pages.                                                                                                                                                                                                                                                                                                   | - System Config path: **Site Configuration > Customization**            |
 |                                                                                                                                                                                                                                                                                                                                                                                                                                                 | - ``config.json`` setting: ``SupportSettings`` > ``TermsOfServiceLink`` |
@@ -185,7 +179,7 @@ Terms of Use link
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
 .. note::
-  This setting doesn't change the **Terms of Use** link in the **About Mattermost** window.
+  This setting is applicable to self-hosted deployments only and doesn't change the **Terms of Use** link in the **About Mattermost** window.
 
 .. config:setting:: privacy-policy-link
   :displayname: Privacy Policy link (Customization)
@@ -197,9 +191,6 @@ Terms of Use link
 Privacy Policy link
 ~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 | This field sets the URL for the Privacy Policy of a self-hosted site. A link to the policy appears at the bottom of the sign-up and login pages. If this field is empty, the link does not appear. | - System Config path: **Site Configuration > Customization**           |
 |                                                                                                                                                                                                    | - ``config.json`` setting: ``SupportSettings`` > ``PrivacyPolicyLink`` |
@@ -207,7 +198,7 @@ Privacy Policy link
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 .. note::
-  This setting does not change the **Privacy Policy** link in the **About Mattermost** window. 
+  This setting is applicable to self-hosted deployments only and doesn't change the **Privacy Policy** link in the **About Mattermost** window. 
 
 .. config:setting:: about-link
   :displayname: About link (Customization)
@@ -219,14 +210,14 @@ Privacy Policy link
 About link
 ~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
 | This field sets the URL for a page containing general information about a self-hosted site. A link to the About page appears at the bottom of the sign-up and login pages. If this field is empty the link does not appear. | - System Config path: **Site Configuration > Customization**  |
 |                                                                                                                                                                                                                             | - ``config.json`` setting: ``SupportSettings`` > ``AboutLink``|
 | String input. Default is ``https://about.mattermost.com/default-about/``.                                                                                                                                                   | - Environment variable: ``MM_SUPPORTSETTINGS_ABOUTLINK``      |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+
+.. note::
+  This setting is applicable to self-hosted deployments only.
 
 .. config:setting:: forgot-password-custom-link
   :displayname: Forgot Password custom link (Customization)
@@ -258,10 +249,7 @@ Forgot Password custom link
 Report a Problem
 ~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
-Specify how the **Report a Problem** option behaves in the Mattermost app via the **Help** menu:
+With self-hosted deployments, you can specify how the **Report a Problem** option behaves in the Mattermost app via the **Help** menu:
 
 - **Default link**: Uses the default Mattermost URL to report a problem. For commercial customers, this is the `Mattermost Support Portal <https://support.mattermost.com/hc/en-us/requests/new>`_. Non-commercial customers are directed to `create a new issue on the Mattermost GitHub repository <https://github.com/mattermost/mattermost/issues/new>`_.
 - **Email address**: Enables you to :ref:`enter an email address <administration-guide/configure/site-configuration-settings:report a problem email address>` that users will be prompted to send a message to when they choose **Report a Problem** in Mattermost.
@@ -278,15 +266,15 @@ Specify how the **Report a Problem** option behaves in the Mattermost app via th
 Report a Problem link
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
 +---------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 | This field sets the URL for the **Report a Problem** link in the channel header **Help** menu.    | - System Config path: **Site Configuration > Customization**            |
 | If this field is empty the link does not appear.                                                  | - ``config.json`` setting: ``SupportSettings`` > ``ReportAProblemLink`` |
 |                                                                                                   | - Environment variable: ``MM_SUPPORTSETTINGS_REPORTAPROBLEMLINK``       |
 | String input. Default is ``https://mattermost.com/pl/report-a-bug``.                              |                                                                         |
 +---------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+
+.. note::
+  This setting is applicable to self-hosted deployments only.
 
 .. config:setting:: report-a-problem-email
   :displayname: Report a Problem email (Customization)
@@ -298,15 +286,15 @@ Report a Problem link
 Report a Problem email address
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
 +---------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 | This field sets the email address for the **Report a Problem** link in the channel                | - System Config path: **Site Configuration > Customization**            |
 | header **Help** menu.                                                                             | - ``config.json`` setting: ``SupportSettings`` > ``ReportAProblemMail`` |
 |                                                                                                   | - Environment variable: ``MM_SUPPORTSETTINGS_REPORTAPROBLMEMAIL``       |
 | String input. Cannot be left blank.                                                               |                                                                         |
 +---------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+
+.. note::
+  This setting is applicable to self-hosted deployments only.
 
 .. config:setting:: allow-mobile-app-log-downloads
   :displayname: Allow Mobile App Log Downloads (Customization)
@@ -318,9 +306,6 @@ Report a Problem email address
 Allow mobile app log downloads
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
 +--------------------------------------------------------------------------+-------------------------------------------------------------------------+
 | Enable users to download mobile app logs for troubleshooting.            | - System Config path: **Site Configuration > Customization**            |
 | When the **Report a Problem** link is shown, mobile logs can be          | - ``config.json`` setting: ``SupportSettings`` > ``AllowDownloadLogs``  |
@@ -329,6 +314,9 @@ Allow mobile app log downloads
 | - **true** (**Default**): Users can download mobile app logs.            |                                                                         |
 | - **false** Users can't download mobile app logs.                        |                                                                         |
 +--------------------------------------------------------------------------+-------------------------------------------------------------------------+
+
+.. note::
+  This setting is applicable to self-hosted deployments only.
 
 .. config:setting:: mattermost-apps-download-page-link
   :displayname: Mattermost apps download page link (Customization)
@@ -340,9 +328,6 @@ Allow mobile app log downloads
 Mattermost apps download page link
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
 +-------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 | This field sets the URL for the Download Apps link in the **Product** menu. If this field is empty, the link does not appear. | - System Config path: **Site Configuration > Customization**           |
 |                                                                                                                               | - ``config.json`` setting: ``NativeAppSettings`` > ``AppDownloadLink`` |
@@ -350,6 +335,9 @@ Mattermost apps download page link
 |                                                                                                                               |                                                                        |
 | String input. Default is ``https://mattermost.com/pl/download-apps``.                                                         |                                                                        |
 +-------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+
+.. note::
+  This setting is applicable to self-hosted deployments only.
 
 .. config:setting:: android-app-download-link
   :displayname: Android app download link (Customization)
@@ -361,9 +349,6 @@ Mattermost apps download page link
 Android app download link
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 | This field sets the URL to download the Mattermost Android app. Users who access the Mattermost site on a mobile browser will be prompted to download the app through this link. If this field is empty, the prompt does not appear. | - System Config path: **Site Configuration > Customization**                  |
 |                                                                                                                                                                                                                                      | - ``config.json`` setting: ``NativeAppSettings`` > ``AndroidAppDownloadLink`` |
@@ -371,6 +356,9 @@ Android app download link
 |                                                                                                                                                                                                                                      |                                                                               |
 | String input. Default is ``https://mattermost.com/pl/android-app/``.                                                                                                                                                                 |                                                                               |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+
+.. note::
+  This setting is applicable to self-hosted deployments only.
 
 .. config:setting:: ios-app-download-link
   :displayname: iOS app download link (Customization)
@@ -382,9 +370,6 @@ Android app download link
 iOS app download link
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | This field sets the URL to download the Mattermost iOS app. Users who access the site on a mobile browser will be prompted to download the app through this link. If this field is empty, the prompt does not appear. | - System Config path: **Site Configuration > Customization**             |
 |                                                                                                                                                                                                                       | - ``config.json`` setting: ``NativeAppSettings`` > ``IosAppDownloadLink``|
@@ -392,6 +377,9 @@ iOS app download link
 |                                                                                                                                                                                                                       |                                                                          |
 | String input. Default is ``https://mattermost.com/pl/ios-app/``.                                                                                                                                                      |                                                                          |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+
+.. note::
+  This setting is applicable to self-hosted deployments only.
 
 .. config:setting:: enable-desktop-app-landing-page
   :displayname: Enable desktop app landing page (Customization)
@@ -450,9 +438,6 @@ When configured, after OAuth or SAML user authentication is complete, custom URL
 Mobile external browser
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
 +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 | From Mattermost v10.2 and Mobile v2.2.1, this setting configures the mobile app       | - System Config path: N/A                                                   |
 | to use an external mobile browser to perform SSO authentication.                      | - ``config.json`` setting: ``NativeAppSettings.MobileExternalBrowser``      |
@@ -463,15 +448,15 @@ Mobile external browser
 |   perform SSO authentication.                                                         |                                                                             |
 +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
-Enable this configuration setting when there are issues with the mobile app SSO redirect flow.
+.. note::
+
+  - This setting is applicable to self-hosted deployments only. 
+  - We recommend enabling this configuration setting when there are issues with the mobile app SSO redirect flow.
 
 ----
 
 Localization
 ------------
-
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Localization**. Changes to configuration settings in this section require a server restart before taking effect.
 
@@ -584,9 +569,6 @@ Enable work in progress languages in Mattermost to review translations and ident
 
 Users and teams
 ---------------
-
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Users and Teams**.
 
@@ -725,7 +707,7 @@ Teammate name display
 Lock teammate name display for all users
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-only.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 +---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+
@@ -848,9 +830,6 @@ Enable last active time
 Enable custom user groups
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 +---------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 | - **true**: **(Default)** Users with appropriate permissions can create custom user groups,       | - System Config path: **Site Configuration > Users and Teams**                     |
 |   and users can @mention custom user groups in Mattermost conversations.                          | - ``config.json`` setting: ``ServiceSettings`` > ``EnableCustomGroups`` > ``true`` |
@@ -879,9 +858,6 @@ User statistics update time
 
 Notifications
 -------------
-
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Notifications**.
 
@@ -1002,7 +978,7 @@ Enable email batching
 Email notification contents
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-only.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
@@ -1175,9 +1151,6 @@ Enable notification monitoring
 System-wide notifications
 -------------------------
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 Access the following configuration settings in the System Console by going to **Site Configuration > System-wide notifications**.
 
 .. config:setting:: enable-system-wide-notifications
@@ -1273,9 +1246,6 @@ Allow banner dismissal
 Emoji
 -----
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 Access the following configuration settings in the System Console by going to **Site Configuration > Emoji**.
 
 .. config:setting:: enable-emoji-picker
@@ -1325,9 +1295,6 @@ Enable custom emoji
 Posts
 -----
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 Access the following configuration settings in the System Console by going to **Site Configuration > Posts**.
 
 .. config:setting:: automatically-follow-threads
@@ -1343,9 +1310,6 @@ Access the following configuration settings in the System Console by going to **
 Automatically follow threads
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
 +-------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 | - **true**: **(Default)** Enables automatic following for all threads that a user starts,       | - System Config path: **Site Configuration > Posts**                             |
 |   or in which the user participates or is mentioned. A **Threads** table in the database        | - ``config.json`` setting: ``ServiceSettings`` > ``ThreadAutoFollow`` > ``true`` |
@@ -1355,6 +1319,7 @@ Automatically follow threads
 +-------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 .. note::
+  - This setting is applicable to self-hosted deployments only.
   - This setting **must** be enabled for :doc:`threaded discussions </end-user-guide/collaborate/organize-conversations>` to function.
   - Enabling this setting does not automatically follow threads based on previous user actions.
     For example, threads a user participated in prior to enabling this setting won't be automatically followed, unless the user adds a new comment or is mentioned
@@ -1437,9 +1402,6 @@ Message priority
 Persistent notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 +--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
 | - **true**: **(Default)** Users can trigger repeating notifications to   | - System Config path: **Site Configuration > Posts**                                          |
 |   mentioned recipients of urgent messages.                               | - ``config.json`` setting: ``ServiceSettings`` > ``AllowPersistentNotifications`` > ``true``  |
@@ -1455,9 +1417,6 @@ Persistent notifications
 
 Maximum number of recipients for persistent notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
 | The maximum number of recipients users may send persistent    | - System Config path: **Site Configuration > Posts**                                              |
@@ -1476,9 +1435,6 @@ Maximum number of recipients for persistent notifications
 Frequency of persistent notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
 | The number of minutes between repeated notifications for      | - System Config path: **Site Configuration > Posts**                                                |
 | urgent messages sent with persistent notifications.           | - ``config.json`` setting: ``ServiceSettings`` > ``PersistentNotificationIntervalMinutes`` > ``5``  |
@@ -1495,9 +1451,6 @@ Frequency of persistent notifications
 
 Total number of persistent notifications per post
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 +-------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 | The maximum number of times users may receive persistent    | - System Config path: **Site Configuration > Posts**                                         |
@@ -1701,9 +1654,6 @@ Maximum Markdown nodes
 Google API key
 ~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 | If a key is provided in this setting, Mattermost displays titles of embedded YouTube videos and detects if a video is no longer available. Setting a key should also prevent Google from throttling access to embedded videos that receive a high number of views. | - System Config path: **Site Configuration > Posts**                    |
 |                                                                                                                                                                                                                                                                    | - ``config.json`` setting: ``ServiceSettings`` > ``GoogleDeveloperKey`` |
@@ -1711,7 +1661,9 @@ Google API key
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
 .. note::
-  This key is used in client-side Javascript, and must have the YouTube Data API added as a service.
+
+  - This setting is applicable to self-hosted deployments only.
+  - This key is used in client-side Javascript, and must have the YouTube Data API added as a service.
 
 .. config:setting:: enable-server-syncing-of-message-drafts
   :displayname: Enable server syncing of message drafts (Posts)
@@ -1772,9 +1724,6 @@ Unique emoji reaction limit
 
 File sharing and downloads
 --------------------------
-
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Site Configuration > File Sharing and Downloads**.
 
@@ -1848,7 +1797,7 @@ Allow file downloads on mobile
 Enable secure file preview on mobile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-adv-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-adv.rst
   :start-after: :nosearch:
 
 This setting improves an organization's mobile security posture by restricting file access while still allowing essential file viewing capabilities. 
@@ -1875,7 +1824,7 @@ This setting improves an organization's mobile security posture by restricting f
 Allow PDF link navigation on mobile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-adv-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-adv.rst
   :start-after: :nosearch:
 
 +---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
@@ -1895,10 +1844,7 @@ Allow PDF link navigation on mobile
 Public Links
 ------------
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
-Access the following configuration settings in the System Console by going to **Site Configuration > Public Links**.
+With self-hosted deployments, you can access the following configuration settings in the System Console by going to **Site Configuration > Public Links**.
 
 .. config:setting:: enable-public-file-links
   :displayname: Enable public file links (Public links)
@@ -1943,9 +1889,6 @@ Public link salt
 Notices
 -------
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 Access the following configuration settings in the System Console by going to **Site Configuration > Notices**.
 
 .. config:setting:: enable-admin-notices
@@ -1989,7 +1932,7 @@ Enable end user notices
 Connected workspaces
 ----------------------
 
-.. include:: ../../_static/badges/ent-adv-cloud-selfhosted.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 The following settings aren't available in the System Console and can only be set in ``config.json``. 
@@ -2136,8 +2079,7 @@ Member sync batch size
 config.json-only settings
 -------------------------
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
+The following self-hosted deployment settings are only configurable in the ``config.json`` file and are not available in the System Console.
 
 .. config:setting:: enable-cross-team-search
   :displayname: Enable cross-team search

@@ -1,7 +1,7 @@
 Keyboard accessibility
 =======================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Navigational keyboard shortcuts help you use Mattermost in a web browser or the desktop app without needing a mouse. Below is a list of supported accessibility shortcuts.

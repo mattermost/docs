@@ -1,7 +1,7 @@
 Certificate-based authentication (Experimental)
 ===============================================
 
-.. include:: ../../_static/badges/ent-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 .. important::

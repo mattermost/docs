@@ -1,7 +1,7 @@
 Cloud VPC Private Connectivity
 ===============================
 
-.. include:: ../_static/badges/ent-cloud-only.rst
+.. include:: ../_static/badges/ent-cloud-dedicated.rst
    :start-after: :nosearch:
 
 Virtual Private Cloud (VPC) Private Connectivity (Private Link) offers Enterprise Cloud customers tailored solutions for private connectivity needs with Mattermost Cloud. These options enable customers to access Mattermost Cloud through AWS's network without using the public internet, or allow the Mattermost Infrastructure team to manage a Mattermost instance hosted in the customer's VPC via an EKS cluster.

@@ -1,7 +1,7 @@
 Code signing custom builds
 ==========================
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Code signing is an essential process for ensuring the authenticity and integrity of your custom ``Mattermost`` builds. This guide provides steps on how to code sign a build using your own certificates for Windows, Mac, and Linux.

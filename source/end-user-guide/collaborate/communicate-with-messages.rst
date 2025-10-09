@@ -1,7 +1,7 @@
 Communicate with messages and threads
 =====================================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 :doc:`Sending messages </end-user-guide/collaborate/send-messages>`, :doc:`replying to messages </end-user-guide/collaborate/reply-to-messages>`, and :ref:`participating in discussion threads <end-user-guide/collaborate/organize-conversations:start or reply to threads>` are important ways to keep conversations active with your team.

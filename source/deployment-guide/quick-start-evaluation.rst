@@ -102,7 +102,7 @@ Deployment options
 
   2. Access Mattermost at ``http://localhost:8065``
 
-   3. Create your first admin account when prompted.
+  3. Create your first admin account when prompted.
 
 Next steps
 ----------

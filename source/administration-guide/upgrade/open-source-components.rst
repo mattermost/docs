@@ -1,7 +1,7 @@
 Open Source Components
 =======================
 
-.. include:: ../../_static/badges/ent-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 The following open source components are used to provide the full benefits of Mattermost Enterprise.

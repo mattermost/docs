@@ -1,7 +1,7 @@
 Troubleshoot notifications
 ==========================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 The Mattermost notifications you receive depend on your `Mattermost preferences <#check-your-mattermost-preferences>`__, the `Mattermost client <#check-your-mattermost-client-settings>`__ you're using, and the `operating system (OS) <#check-your-operating-system-settings>`__ you're running Mattermost on.

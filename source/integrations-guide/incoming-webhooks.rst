@@ -1,5 +1,8 @@
 Incoming Webhooks
-=================
+==================
+
+.. include:: ../_static/badges/all-commercial.rst
+  :start-after: :nosearch:
 
 **Technical complexity:** :ref:`No-code <no-code>`
 

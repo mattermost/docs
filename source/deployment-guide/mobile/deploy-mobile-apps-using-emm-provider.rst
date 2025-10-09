@@ -1,7 +1,7 @@
 Deploy using an EMM provider
 =============================
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 You can enhance mobile security by deploying the Mattermost mobile app with `Enterprise Mobility Management (EMM) <https://en.wikipedia.org/wiki/Enterprise_mobility_management>`__ and Mattermost AppConfig compatibility to secure mobile endpoints with management application configuration.

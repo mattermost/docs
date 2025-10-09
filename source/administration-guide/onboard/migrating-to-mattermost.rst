@@ -1,7 +1,7 @@
 Migration guide
 ===============
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Migrations help you move your Mattermost deployment or data from one environment to another with minimal disruption. Whether you’re transitioning your Mattermost server to new infrastructure, restructuring your database, or moving from another collaboration platform like Slack, this guide provides step-by-step instructions for each supported path. Use the sections below to quickly find the scenario that matches your needs and follow the recommended process to ensure a smooth migration.

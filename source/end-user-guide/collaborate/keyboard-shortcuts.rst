@@ -1,15 +1,15 @@
 Mattermost keyboard shortcuts
 =============================
 
+.. include:: ../../_static/badges/all-commercial.rst
+  :start-after: :nosearch:
+
 .. toctree::
   :maxdepth: 1
   :hidden:
   :titlesonly:
 
   Keyboard accessibility </end-user-guide/collaborate/keyboard-accessibility>
-
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 Mattermost keyboard shortcuts help you make a more efficient use of your keyboard when using Mattermost in a web browser or the desktop app.
 

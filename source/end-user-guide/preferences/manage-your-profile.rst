@@ -1,7 +1,7 @@
 Manage your Mattermost profile
 ==============================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Select your profile picture and select **Profile** to manage the details of your Mattermost profile, including your name, username, nickname, email, and profile picture. 

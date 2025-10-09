@@ -1,8 +1,5 @@
 # Mobile Apps Changelog
 
-```{include} ../_static/badges/allplans-cloud-selfhosted.md
-```
-
 This changelog summarizes updates to Mattermost mobile apps releases for [Mattermost](https://mattermost.com).
 
 ```{Important}

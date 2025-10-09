@@ -3,7 +3,7 @@
 Electronic discovery
 =====================
 
-.. include:: ../../_static/badges/ent-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 Electronic discovery (also known as eDiscovery) refers to a process where electronic data is searched with the intent to use it as evidence in a legal case.

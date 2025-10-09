@@ -1,7 +1,7 @@
 Connect Microsoft Calendar to Mattermost
 =========================================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Connect your Microsoft M365 Calendar to your Mattermost instance to receive daily summaries of calendar events, synchronize your  M365 status in Mattermost, and accept or decline calendar invites from Mattermost.

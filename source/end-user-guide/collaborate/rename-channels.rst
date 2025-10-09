@@ -1,7 +1,7 @@
 Rename channels
 ===============
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Anyone can rename the channels they belong to, unless the system admin has :doc:`restricted the permissions to do so using advanced permissions </administration-guide/onboard/advanced-permissions>`.
