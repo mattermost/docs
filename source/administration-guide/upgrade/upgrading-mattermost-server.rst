@@ -47,7 +47,10 @@ Comprehensive upgrade guide
 Before you begin
 ~~~~~~~~~~~~~~~~~
 
-**Read these instructions carefully from start to finish.** 
+**Read these instructions carefully from start to finish.**
+
+.. important::
+   **Before upgrading to Mattermost v11.0**: If you're currently using Bleve search (found under **System Console > Experimental > Bleve**), ensure that ``DisableDatabaseSearch`` is set to ``false`` before upgrading, or search will become non-functional after the upgrade. Bleve search has been removed in v11.0. For enterprise search capabilities, consider migrating to :doc:`Elasticsearch </administration-guide/scale/elasticsearch-setup>` or :doc:`OpenSearch <administration-guide/scale/opensearch-setup>` for :doc:`enterprise search </administration-guide/scale/enterprise-search>` capabilities.
 
 Make sure that you understand how to :doc:`prepare for your upgrade </administration-guide/upgrade/prepare-to-upgrade-mattermost>`, familiarize yourself with all :doc:`software and hardware requirements </deployment-guide/software-hardware-requirements>`, read the :doc:`important upgrade notes </administration-guide/upgrade/important-upgrade-notes>` and that you understand each step of the upgrade process documented below before starting a Mattermost upgrade. If you have questions or concerns, you can ask on the Mattermost forum at https://forum.mattermost.com/.
 
@@ -168,7 +171,7 @@ Upgrade Mattermost Server
 
         - You can either move the bleve index directory out from the ``mattermost`` directory before upgrading or, following an upgrade, you can copy the contents of the bleve index directory from the ``backup`` directory. 
         - You can then store that directory or re-index as preferred. 
-        - The bleve indexes can be migrated without reindexing between Mattermost versions. See our :ref:`Configuration Settings <administration-guide/configure/experimental-configuration-settings:experimental bleve configuration settings>` documentation for details on configuring the bleve index directory.
+        - The bleve indexes can be migrated without reindexing between Mattermost versions. See our :ref:`Configuration Settings <administration-guide/configure/deprecated-configuration-settings:bleve settings>` documentation for details on configuring the bleve index directory.
 
      Once you've completed all of the steps above (where applicable), you're ready to execute the full command that includes ``xargs rm -r`` to delete the files. Note that the following example includes ``-o -path mattermost/yourFolderHere``:
 

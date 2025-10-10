@@ -6,6 +6,12 @@ This deployment method shouldn't be used in production environments as it doesn'
 
 Choose your preferred container platform below for specific deployment instructions:
 
+.. tab:: FIPS/STIG
+  :parse-titles:
+
+  .. include:: containers/fips-stig.rst
+    :start-after: :nosearch:
+
 .. tab:: Docker
   :parse-titles:
 

@@ -1,6 +1,12 @@
 MySQL installation troubleshooting
 ==================================
 
+.. important::
+
+    - From Mattermost v11, Mattermost completely stops support MySQL as a database driver. MySQL support has been completely removed from the codebase, and the product will throw an invalid configuration error. 
+
+    - PostgreSQL is our preferred database of choice. See the :ref:`database software <deployment-guide/software-hardware-requirements:database software>` documentation for details on database version support, and see the :doc:`Migrate from MySQL to PostgreSQL </deployment-guide/postgres-migration>` documentation for details on migrating from MySQL to PostgreSQL.
+
 Before you can run the Mattermost server, you must first install and configure a database. You can start Mattermost by navigating to the ``/opt/mattermost`` directory and entering the command ``sudo -u mattermost bin/mattermost``. If the Mattermost server can't connect to the database, it will fail to start. This section deals with MySQL database issues that you may encounter when you start up Mattermost for the first time.
 
 .. note::

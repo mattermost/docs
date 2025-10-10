@@ -43,6 +43,10 @@ From Mattermost v9.6, you can review the following user data in the System Conso
 - **Days active**: (PostgreSQL only) The total number of days in which the user has sent a message in Mattermost.
 - **Messages posted**: (PostgreSQL only) The total number of messages the user has sent on the server.
 
+From Mattermost v11.0, you can also review the following authentication data for each user:
+
+- **Authentication Method**: Shows how users authenticate with the Mattermost server, including external authentication system details such as LDAP Distinguished Name (DN), SAML NameID, OAuth ID, or other external authentication identifiers. This information helps system administrators troubleshoot authentication issues and correlate Mattermost users with their external authentication systems.
+
 By default, you see all columns of data and data for all time. 
 
 - Show or hide data all data columns exccept **User details** and **Actions**, as preferred.

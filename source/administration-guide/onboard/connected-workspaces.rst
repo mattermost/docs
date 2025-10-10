@@ -19,7 +19,7 @@ The process of connecting Mattermost workspaces involves the following 5 steps:
 
 2. `Enable the connected workflows functionality <#enable-connected-workflows>`__ for each Mattermost Enterprise instance you want to connect.
 
-3. System admins must `create a secure and trusted connection <#create-a-secure-connection>`__ with other Mattermost Enterprise instances using the System Console or slash commands. This process involves creating a password-protected, encrypted invitation, creating a strong decryption password, then sending the invitation and password to the system admin of a remote Mattermost instance.
+3. System admins must `create a secure and trusted connection <#create-a-secure-connection>`__ with other Mattermost Enterprise instances using the System Console or slash commands. This process involves creating a password-protected, encrypted invitation, creating a strong decryption password, then sending the invitation and password to the system admin of a remote Mattermost instance. From Mattermost v11.0, remote cluster invitations use PBKDF2 key derivation for enhanced security.
 
 4. When a remote system admin receives the invitation, they must `accept the invitation <#accept-a-secure-connection-invitation>`__ using the System Console or slash commands.
 
@@ -58,7 +58,7 @@ Create a secure connection
     4. Select the **Destination Team** as the default team where shared channels will be added. This team will be used as the default location for organizing shared channels from this connected workspace.
     5. Select **Save**.
 
-    An invitation consisting of a password-protected AES 256-bit encrypted code blob is generated. The connection is labeled as **Connection Pending** until the remote system admin accepts the invitation.
+    An invitation consisting of a password-protected AES 256-bit encrypted code blob is generated. From Mattermost v11.0, password protection uses PBKDF2 key derivation for enhanced security. The connection is labeled as **Connection Pending** until the remote system admin accepts the invitation.
 
 .. tab:: Slash Commands
 
@@ -72,7 +72,7 @@ Create a secure connection
 
     ``/secure-connection create --name AcmeUS --displayname "AcmeUSA" --password examplepassword``
 
-    This slash command creates an invitation consisting of a password-protected AES 256-bit encrypted code blob for a remote Mattermost entity known locally as ``AcmeUS`` with a password of ``examplepassword``. Within Mattermost, this shared connection displays to the local system admin based on the ``name`` and ``displayname`` provided.
+    This slash command creates an invitation consisting of a password-protected AES 256-bit encrypted code blob for a remote Mattermost entity known locally as ``AcmeUS`` with a password of ``examplepassword``. From Mattermost v11.0, password protection uses PBKDF2 key derivation for enhanced security. Within Mattermost, this shared connection displays to the local system admin based on the ``name`` and ``displayname`` provided.
 
 Extend the invitation
 ~~~~~~~~~~~~~~~~~~~~~~
