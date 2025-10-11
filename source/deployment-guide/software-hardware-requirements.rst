@@ -93,7 +93,7 @@ While community support exists for Fedora, FreeBSD, and Arch Linux, Mattermost d
 Database software
 ^^^^^^^^^^^^^^^^^
 
--  PostgreSQL 13.0+
+-  PostgreSQL 14.0+
 
 Amazon Aurora equivalents of PostgreSQL is also supported.
 
