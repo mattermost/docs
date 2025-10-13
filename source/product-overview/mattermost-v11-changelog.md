@@ -93,8 +93,6 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to all plans:
- - Under ``ServiceSettings`` in ``config.json``:
-     - ``ExperimentalStrictCSRFEnforcement`` has been renamed to ``StrictCSRFEnforcement`` and has been changed to be ``true`` by default for new installations. For existing installations, the value will remain unchanged.
  - Under ``CloudSettings`` in ``config.json``:
      - Added ``PreviewModalBucketURL``.
  - Removed ``VerboseDiagnostics`` configuration setting as part of removing all telemetry support from Mattermost.
