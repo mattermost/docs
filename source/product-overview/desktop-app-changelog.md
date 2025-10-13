@@ -14,7 +14,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
 - **v5.13.2, released **
 
-  - Upgraded to Electron v38.2.1.
+  - Upgraded to Electron to v37.6.1.
 
 - **v5.13.1, released 2025-09-10**
 
@@ -30,7 +30,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 ### Compatibility
 
 - Desktop App is supported on any currently supported [Mattermost server version](https://docs.mattermost.com/product-overview/mattermost-desktop-releases.html#latest-releases).
-- Updated Chromium minimum supported version to 140+.
+- Updated Chromium minimum supported version to 138+.
 
 ### Improvements
 
