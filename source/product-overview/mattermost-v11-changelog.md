@@ -12,7 +12,10 @@
 (release-v11.0-major-release)=
 ## Release v11.0 - [Major Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
-**Release day: 2025-10-16**
+- **11.0.2, released 2025-10-16**
+  - Reverted a breaking change related to ``ServiceSettings.ExperimentalStrictCSRFEnforcement`` setting.
+- **11.0.1, released 2025-10-16**
+  - Original 11.0.1 release.
 
 ```{Attention}
 **Breaking Changes**
