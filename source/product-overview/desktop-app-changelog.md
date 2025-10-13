@@ -25,7 +25,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
   - Original v5.13.0 release
 
-**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/v5.13.2)
+**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/latest)
 
 ### Compatibility
 
