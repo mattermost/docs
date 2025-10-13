@@ -12,6 +12,10 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 (release-v5-13)=
 ## Release v5.13 (Extended Support Release)
 
+- **v5.13.2, released 2025-10-13**
+
+  - Mattermost Desktop App v5.13.2 contains low to medium severity level security fixes. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+
 - **v5.13.1, released 2025-09-10**
 
   - Mattermost Desktop App v5.13.1 contains low to medium severity level security fixes. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
@@ -21,7 +25,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
   - Original v5.13.0 release
 
-**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/v5.13.1)
+**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/v5.13.2)
 
 ### Compatibility
 
