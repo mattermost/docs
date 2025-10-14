@@ -1,5 +1,5 @@
-Deploy Mattermost as an Out-of-Band (OOB) Communication System
-==============================================================
+Deploy for Out-of-Band (OOB) Communications
+===========================================
 
 When a critical incident disrupts an organization’s primary infrastructure—due to a cyberattack, cloud outage, or internal failure—a secure, independent communication channel becomes essential. Mattermost can serve as that channel by operating in an Out-of-Band (OOB) environment: isolated, pre-provisioned, and ready to support incident response and business continuity teams.
 
