@@ -1,5 +1,5 @@
 Reference Architecture
-=====================
+=======================
 
 Mattermost reference architectures describe recommended deployment patterns and system designs that ensure secure, scalable, and resilient collaboration. These frameworks serve as a guide for implementing Mattermost at scale across a range of operational scenarios.
 
