@@ -13,13 +13,13 @@ This guide provides step-by-step instructions for deploying Mattermost using Doc
    - macOS and Windows Docker deployments are supported for testing and development purposes only.
    - Docker is not ideal for High Availability (HA) because it lacks key features including automatic failover, shared storage, and load balancing. Docker also has challenges managing multiple nodes and recovering from failures. We recommend :doc:`deploying on Kubernetes </deployment-guide/server/deploy-kubernetes>` for HA for these features to ensure reliability.
 
-Step 1: Install Docker
------------------------
+Install Docker
+--------------
 
 If you don't have Docker installed, follow the instructions below based on your operating system. You'll need `Docker Engine <https://docs.docker.com/engine/install/>`__ and `Docker Compose <https://docs.docker.com/compose/install/>`_ (release 1.28 or later).
 
-Step 2: Deploy Mattermost on Docker
------------------------------------
+Deploy Mattermost on Docker
+----------------------------
 
 This section provides a quick start guide for deploying Mattermost on Docker by leveraging `Docker Compose <https://docs.docker.com/compose/install/>`_.
 
