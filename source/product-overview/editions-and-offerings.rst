@@ -17,10 +17,7 @@ Once you’ve installed Mattermost Enterprise Edition in your preferred environm
 Mattermost Entry
 ~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
-Mattermost Entry gives small, forward-leaning teams a **free Intelligent Mission Environment** to get started on improving their mission-critical secure collaborative workflows. Entry has all features of **Enterprise Advanced** with the following limitations and omissions: 
+Mattermost Entry gives small, forward-leaning teams a **free self-hosted Intelligent Mission Environment** to get started on improving their mission-critical secure collaborative workflows. Entry has all features of **Enterprise Advanced** with the following limitations and omissions: 
 
 - 10,000 Channel message history 
 - 1000 Board cards\*
@@ -32,11 +29,10 @@ Mattermost Entry gives small, forward-leaning teams a **free Intelligent Mission
 - No Delegated Granular System Administrative Roles 
 - No High Availability (cluster-based deployment, horizontal scale, Enterprise search)
 - `Community support only <https://mattermost.com/support/>`_.
+
 \* *Limits will take effect in a future release.*
 
 Mattermost Entry is best suited for teams less than 50 users. Organizations with larger deployments are encouraged to obtain a supported commercial subscription to ensure reliable operations and access to enterprise-grade support.
-
-
 
 The following sections outline our paid offerings which provide commercial support and remove free limitations.  
 

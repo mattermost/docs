@@ -1200,7 +1200,7 @@ Enable login with SAML
 Enable synchronizing SAML accounts with AD/LDAP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+

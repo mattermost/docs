@@ -1,9 +1,6 @@
 Mattermost workspace migration
 ==============================
 
-.. include:: ../../_static/badges/all-commercial.rst
-  :start-after: :nosearch:
-
 This document outlines the process for migrating an existing Mattermost instance `from self-hosted to Cloud <#migrate-from-self-hosted-to-cloud>`__, and `from Cloud to self-hosted <#migrate-from-cloud-to-self-hosted>`__.
 
 .. note::

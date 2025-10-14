@@ -159,11 +159,17 @@ This is the default mode when first installing the plugin on a single Mattermost
 
 #### rtcd
 
+```{include} ../../_static/badges/ent-plus.md
+```
+
 An external, dedicated and scalable WebRTC service (`rtcd`) is used to handle all calls media routing.
 
 ![A diagram of a Web RTC deployment configuration.](/images/calls-deployment-image7.png)
 
 ### High availability cluster-based
+
+```{include} ../../_static/badges/ent-plus.md
+```
 
 #### Clustered
 
@@ -575,7 +581,7 @@ net.core.optmem_max = 16777216
 
 ## The rtcd service
 
-```{include} ./calls-rtcd-ent-only.md
+```{include} ../../_static/badges/ent-plus.md
 ```
 
 The Calls plugin has a built-in [Selective Forwarding Unit (SFU)](https://bloggeek.me/webrtcglossary/sfu/) to route audio and screensharing data. This is the `integrated` option described in the [Modes of operation](#modes-of-operation) section above. But this SFU functionality can be deployed separately as an external `rtcd` instance.
@@ -610,7 +616,7 @@ See the [Mattermost rtcd repository documentation](https://github.com/mattermost
 
 ### Horizontal scalability
 
-```{include} ./calls-rtcd-ent-only.md
+```{include} ../../_static/badges/ent-plus.md
 ```
 
 The supported way to enable horizontal scalability for Calls is through a form of DNS based load balancing. This can be achieved regardless of how the `rtcd` service is deployed (bare bone instance, Kubernetes, or an alternate way).
@@ -629,7 +635,7 @@ The expected requirements are the following:
 
 ## Configure recording, transcriptions, and live captions
 
-```{include} ./calls-rtcd-ent-only.md
+```{include} ../../_static/badges/ent-plus.md
 ```
 
 Before you can start recording, transcribing, and live captioning calls, you need to configure the `calls-offloader` job service. See the [calls-offloader](https://github.com/mattermost/calls-offloader/blob/master/docs/getting_started.md) documentation on GitHub for details on deploying and running this service. [Performance and scalability recommendations](https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md) related to this service are also available on GitHub.
@@ -651,7 +657,7 @@ Live captions can be enabled through the [Enable live captions](https://docs.mat
 
 ## Kubernetes deployments
 
-```{include} ./calls-rtcd-ent-only.md
+```{include} ../../_static/badges/ent-plus.md
 ```
 
 The Calls plugin has been designed to integrate well with Kubernetes to offer improved scalability and control over the deployment.
