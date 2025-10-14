@@ -30,11 +30,11 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 #### All Platforms
 
 - Added the ability to open multiple tabs and windows for any given server.
-- Added server version to the **Help** menu.
-- Created a **File** menu on macOS, and added **New Window/Tab** and **Close Window/tab** to the **File** menu.
-- Added clear cache and reload link to the error screen.
-- Unified and polished basic authentication, client certificate and pre-auth header authentication methods.
 - Added pre-auth headers to the server modal and an inject header into all requests to that server.
+- Unified and polished basic authentication, client certificate and pre-auth header authentication methods.
+- Added server version information to the **Help** menu.
+- Created a **File** menu on macOS, and added **New Window/Tab** and **Close Window/tab** to the **File** menu.
+- Added **clear the cache and reload** link to the error screen.
 - Disallowed other servers to end the current call, showing an error message.
 - Adjusted colors to be more accurate to Mattermost theming.
 
