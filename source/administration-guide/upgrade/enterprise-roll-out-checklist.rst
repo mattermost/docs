@@ -114,7 +114,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 
 - Finalize production environment design basing hardware on expected usage and requirements for high availability
 
- - Resource: https://docs.mattermost.com/deployment-guide/application-architecture.html
+ - Resource: https://docs.mattermost.com/deployment-guide/reference-architecture/application-architecture.html
  - Resource: https://docs.mattermost.com/deployment-guide/deployment-guide-index.html 
  - Resource: https://docs.mattermost.com/administration-guide/scale/scaling-for-enterprise.html 
  - Resource: https://docs.mattermost.com/administration-guide/scale/high-availability-cluster-based-deployment.html

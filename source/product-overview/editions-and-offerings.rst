@@ -17,43 +17,26 @@ Once you’ve installed Mattermost Enterprise Edition in your preferred environm
 Mattermost Entry
 ~~~~~~~~~~~~~~~~
 
-Mattermost Entry gives small, forward-leaning teams a **free, production-ready Intelligent Mission Environment** to get started on improving their mission-critical secure collaborative workflows. This offering includes: 
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
 
-- Teams and channels for one-to-one and group messaging, file sharing, and unlimited search history with threaded messaging, emoji, and custom emoji with 10,000 messages history and 10,000 monthly push notifications.
-- :doc:`Collaborative playbooks </end-user-guide/workflow-automation/learn-about-playbooks>` with ad hoc add/remove tasks, automated triggers, and stakeholders dashboard up to 5 runs each month.
-- Kanban-style work management with :doc:`Boards </end-user-guide/project-task-management>` up to 1,000 cards.
-- Audio and screenshare with :doc:`Calls </end-user-guide/collaborate/audio-and-screensharing>` up to 40 minutes.
-- Interactive :doc:`AI agents </end-user-guide/agents>` with bring-your-own LLM integration with 250 queries each month.
-- Native apps for :doc:`iOS </end-user-guide/collaborate/install-ios-app>`, :doc:`Android </end-user-guide/collaborate/install-android-app>`, :doc:`Windows, macOS, and Linux </end-user-guide/collaborate/install-desktop-app>`.
-- :doc:`Pre-packaged integrations </integrations-guide/popular-integrations>` with most common developer tools, including Jira, GitHub, GitLab, Zoom, and more.
-- Tools for :doc:`custom branding </administration-guide/configure/custom-branding-tools>` and :doc:`themes </end-user-guide/preferences/customize-your-theme>`.
-- :doc:`Multi-factor authentication </administration-guide/onboard/multi-factor-authentication>`.
-- :doc:`Granular system permissions </administration-guide/onboard/advanced-permissions>`.
-- Highly customizable `third-party bots, integrations <https://mattermost.com/marketplace/#publicApps>`_, and :doc:`command line tools </administration-guide/manage/mmctl-command-line-tool>`.
-- `Extensive integration support <https://developers.mattermost.com/integrate/getting-started/>`_ via webhooks, APIs, drivers , and `third-party extensions <https://mattermost.com/marketplace/>`_.
-- Multiple languages including English (Australian, US), Bulgarian, Chinese (Simplified and Traditional), Dutch, French, German, Hungarian, Italian, Japanese, Korean, Persian, Polish, Portuguese (Brazil), Romanian, Russian, Spanish, Swedish, Turkish, Ukrainian, and Vietnamese.
-- :doc:`Guest access </administration-guide/onboard/guest-accounts>` and :doc:`custom user groups </end-user-guide/collaborate/organize-using-custom-user-groups>`.
-- :doc:`Active Directory/LDAP Single Sign-on and user synchronization </administration-guide/onboard/ad-ldap>`.
-- Single Sign-on with :doc:`GitLab </administration-guide/onboard/sso-gitlab>` using the OpenID Connect standard, :doc:`Google </administration-guide/onboard/sso-google>`, :doc:`OpenID Connect </administration-guide/onboard/sso-openidconnect>`, :doc:`SAML </administration-guide/onboard/sso-saml>` or :doc:`Entra ID </administration-guide/onboard/sso-entraid>`.
-- :ref:`MFA enforcement <administration-guide/onboard/multi-factor-authentication:enforcing mfa>`.
-- :ref:`Advanced team permissions <administration-guide/onboard/advanced-permissions:team override scheme>`.
-- :ref:`Read-only announcement channels <administration-guide/manage/team-channel-members:advanced access controls>`.
-- :doc:`System-wide announcement banners </administration-guide/manage/system-wide-notifications>`.
-- O365 integration with `Microsoft Teams Meetings <https://mattermost.com/marketplace/microsoft-teams-meetings/>`_ and `Jira multi-server <https://mattermost.com/marketplace/jira-plugin/>`_.
-- :doc:`Sychronization of access controls, channels, and teams with AD/LDAP Groups </administration-guide/onboard/ad-ldap-groups-synchronization>`.
-- :doc:`Enterprise mobile device management with custom EMM support via AppConfig </deployment-guide/mobile/deploy-mobile-apps-using-emm-provider>`.
-- :ref:`Private mobility with ID-only push notifications <administration-guide/configure/site-configuration-settings:push notification contents>`.
-- :doc:`Advanced configuration of playbook permissions, and analytics dashboards </end-user-guide/workflow-automation/share-and-collaborate>`
-- :doc:`Channel export </administration-guide/comply/export-mattermost-channel-data>`
-- `Granular audit logs with data export <administration-guide/manage/logging:audit logging>`_.
-- :doc:`Advanced collaboration with connected workspaces across Mattermost instances </administration-guide/onboard/connected-workspaces>`.
-- :doc:`Advanced performance monitoring </administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring>`.
-- :doc:`Server health checks </administration-guide/manage/request-server-health-check>`.
-- :doc:`Classified and Sensitive Information Controls </end-user-guide/collaborate/display-channel-banners>`
-- :doc:`Zero Trust Security </administration-guide/manage/admin/attribute-based-access-control>` with dynamic attribute-based policy controls, environmental atributes, and User Authoritative Source integration
-- :doc:`Mobile security </security-guide/mobile-security>` controls
-- :doc:`Air-gapped deployment workflows </deployment-guide/server/air-gapped-deployment>`
-- `Community support <https://mattermost.com/support/>`_.
+Mattermost Entry gives small, forward-leaning teams a **free Intelligent Mission Environment** to get started on improving their mission-critical secure collaborative workflows. Entry has all features of **Enterprise Advanced** with the following limitations and omissions: 
+
+- 10,000 Channel message history 
+- 1000 Board cards\*
+- 5 Active Playbook runs / month\*
+- 250 Agent queries/ month\*
+- 40-minute Calls\*
+- 10,000 push notifications / month\*
+- No Compliance features (compliance monitoring, exports, legal hold, data retention)
+- No Delegated Granular System Administrative Roles 
+- No High Availability (cluster-based deployment, horizontal scale, Enterprise search)
+- `Community support only <https://mattermost.com/support/>`_.
+\* *Limits will take effect in a future release.*
+
+Mattermost Entry is best suited for teams less than 50 users. Organizations with larger deployments are encouraged to obtain a supported commercial subscription to ensure reliable operations and access to enterprise-grade support.
+
+
 
 The following sections outline our paid offerings which provide commercial support and remove free limitations.  
 
@@ -65,7 +48,7 @@ Built for **multi-domain secure operations**, Enterprise Advanced builds on all 
 - :doc:`Classified and Sensitive Information Controls </end-user-guide/collaborate/display-channel-banners>`
 - :doc:`Zero Trust Security </administration-guide/manage/admin/attribute-based-access-control>` with dynamic attribute-based policy controls, environmental atributes, and User Authoritative Source integration
 - :doc:`Mobile security </security-guide/mobile-security>` controls
-- :doc:`Air-gapped deployment workflows </deployment-guide/server/air-gapped-deployment>`
+- :doc:`Air-gapped deployment workflows </deployment-guide/reference-architecture/deployment-scenarios/air-gapped-deployment>`
 
 Mattermost Enterprise 
 ~~~~~~~~~~~~~~~~~~~~~

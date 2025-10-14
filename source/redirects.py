@@ -1995,7 +1995,7 @@ redirects_map = {
 
 # Deploy redirects
 "deploy/application-architecture.html":
-        "https://docs.mattermost.com/deployment-guide/application-architecture.html",
+        "https://docs.mattermost.com/deployment-guide/reference-architecture/application-architecture.html",
 "deploy/backup-disaster-recovery.html":
         "https://docs.mattermost.com/deployment-guide/backup-disaster-recovery.html",
 "deploy/bleve-search.html":
@@ -2125,7 +2125,7 @@ redirects_map = {
 "deploy/desktop-app.html":
         "https://docs.mattermost.com/deployment-guide/desktop/desktop-app-deployment.html",
 "deploy/deployment-overview.html":
-        "https://docs.mattermost.com/deployment-guide/application-architecture.html",
+        "https://docs.mattermost.com/deployment-guide/reference-architecture/application-architecture.html",
 "deploy/deprecated-features.html":
         "https://docs.mattermost.com/product-overview/deprecated-features.html",
 "deploy/desktop-app-changelog.html":
@@ -2311,6 +2311,8 @@ redirects_map = {
         "https://mattermost.com/marketplace/",
 "deployment/webrtc.html":
         "https://mattermost.com/marketplace/",
+"deployment-guide/application-architecture.html":
+        "https://docs.mattermost.com/deployment-guide/reference-architecture/application-architecture.html",
 
 # Developer redirects.
 "developer/api.html":
@@ -2410,7 +2412,7 @@ redirects_map = {
 "getting-started/welcome-email-to-end-users.html":
         "https://docs.mattermost.com/administration-guide/upgrade/welcome-email-to-end-users.html",
 "getting-started/architecture-overview.html":
-        "https://docs.mattermost.com/deployment-guide/application-architecture.html",
+        "https://docs.mattermost.com/deployment-guide/reference-architecture/application-architecture.html",
 "getting-started/implementation-plan.html":
         "https://docs.mattermost.com/deployment-guide/server/server-deployment-planning.html",
 "getting-started/light-install.html":
@@ -3738,11 +3740,11 @@ redirects_map = {
 
 # Overview redirects
 "overview/architecture.html":
-        "https://docs.mattermost.com/deployment-guide/application-architecture.html",
+        "https://docs.mattermost.com/deployment-guide/reference-architecture/application-architecture.html",
 "overview/architecture#database-with-vips.html":
-        "https://docs.mattermost.com/deployment-guide/application-architecture.html#database-with-vips",
+        "https://docs.mattermost.com/deployment-guide/reference-architecture/application-architecture.html",
 "overview/architecture#reference-architectures.html":
-        "https://docs.mattermost.com/deployment-guide/application-architecture.html#reference-architectures",
+        "https://docs.mattermost.com/deployment-guide/reference-architecture/application-architecture.html",
 "overview/auth.html":
         "https://docs.mattermost.com/product-overview/corporate-directory-integration.html",
 "overview/authentication.html":

@@ -1,5 +1,5 @@
-Reference Architecture for Mattermost Server
-=============================================
+Deployment Architecture at Scale
+================================
 
 The following diagrams detail suggested architecture configurations of :ref:`high availability Mattermost deployments <administration-guide/scale/high-availability-cluster-based-deployment:deployment guide>` at different scales. Hardware and infrastructure requirements will vary significantly based on usage and policies. See the :doc:`scaling for enterprise </administration-guide/scale/scaling-for-enterprise>` documentation for reference architecture guidance at scale, including hardware and infrastructure requirements.
 

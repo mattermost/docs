@@ -9,7 +9,7 @@
       <ul>
         <li>Operating System: Enterprise Linux 7+, Oracle Linux  6+, Oracle Linux 7+</li>
         <li>Hardware: 1 vCPU/core with 2GB RAM (support for up to 1,000 users)</li>
-        <li>Database: <a href="https://docs.mattermost.com/deployment-guide/postgres-migration.html">PostgreSQL v13+</a></li>
+        <li>Database: <a href="https://docs.mattermost.com/deployment-guide/postgres-migration.html">PostgreSQL v14+</a></li>
         <li>Network:
           <ul>
             <li>Application 80/443, TLS, TCP Inbound</li>
@@ -46,7 +46,7 @@ In a terminal window, ssh onto the system that will host the Mattermost Server. 
 
   .. code-block:: sh
 
-    wget https://releases.mattermost.com/10.12.0/mattermost-10.12.0-linux-amd64.tar.gz
+    wget https://releases.mattermost.com/11.0.2/mattermost-11.0.2-linux-amd64.tar.gz
 
 .. tab:: Current ESR
 

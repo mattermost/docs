@@ -6,7 +6,7 @@ This guide outlines minimum software and hardware requirements for deploying Mat
 Deployment overview
 -------------------
 
-Please see the :doc:`Application architecture </deployment-guide/application-architecture>` documentation for a summary of software systems and components whose requirements are described in this document.
+Please see the :doc:`Application architecture </deployment-guide/reference-architecture/application-architecture>` documentation for a summary of software systems and components whose requirements are described in this document.
 
 Software requirements
 ---------------------
@@ -90,7 +90,7 @@ While community support exists for Fedora, FreeBSD, and Arch Linux, Mattermost d
 Database software
 ^^^^^^^^^^^^^^^^^
 
--  PostgreSQL 13.0+
+-  PostgreSQL 14.0+
 
 Amazon Aurora equivalents of PostgreSQL is also supported.
 
@@ -123,7 +123,7 @@ When a PostgreSQL version reaches its end of life (EOL), Mattermost will require
 +------------------------------------------------------------+------------------+--------------------------------+
 | :ref:`v10.11 ESR <release-v10.11-extended-support-release>`| 2025-8-15        | 13.x                           |
 +------------------------------------------------------------+------------------+--------------------------------+
-| v11.4 ESR ``*``                                            | 2026-2-15        | 14.x (EOL 2026-11-12)          |
+| v11.7 ESR ``*``                                            | 2026-5-15        | 14.x (EOL 2026-11-12)          |
 +------------------------------------------------------------+------------------+--------------------------------+
 
 ``*`` Forcasted release version and date.

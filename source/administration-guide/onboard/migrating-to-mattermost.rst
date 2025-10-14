@@ -35,8 +35,6 @@ Once your migration is complete and verified, you can optionally :ref:`upgrade t
 Move a GitLab Omnibus instance of Mattermost
 --------------------------------------------
 
-From Mattermost v11, Mattermost Omnibus has reached end of life. Current Omnibus deployments will continue working as they do today until you decide to migrate. However, after v10.12, you won’t receive security updates or new features through Omnibus. We recommend migrating to one of our :ref:`supported deployment methods <deployment-guide/server/server-deployment-planning:deployment options>`, which will ensure you continue receiving security patches and feature updates.
-
 See the `Mattermost Omnibus migration guidance <https://github.com/mattermost/mattermost-omnibus/blob/main/README.md>`_ for detailed instructions on migrating your GitLab Omnibus instance of Mattermost.
 
 See the Mattermost Support Knowledge Base article on `Migrating Mattermost DB from GitLab Omnibus PostgreSQL installation to a standalone PostgreSQL <https://support.mattermost.com/hc/en-us/articles/40846797684756-Migrating-Mattermost-DB-from-GitLab-Omnibus-PostgreSQL-installation-to-a-standalone-PostgreSQL>`_. This migration is commonly needed when separating Mattermost from GitLab or when moving to dedicated database infrastructure.

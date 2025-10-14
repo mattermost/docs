@@ -627,6 +627,109 @@ This setting resolves issues where YouTube video previews display as unavailable
 
 ----
 
+Experimental Bleve configuration settings
+-----------------------------------------
+
+.. include:: ../../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
+
+.. important::
+  **From Mattermost v11, Bleve search has been deprecated.** These configuration settings are only available for Mattermost versions prior to v11.0. For v11.0 and later, :doc:`Elasticsearch </administration-guide/scale/elasticsearch-setup>` or :doc:`OpenSearch <administration-guide/scale/opensearch-setup>` for :doc:`enterprise search </administration-guide/scale/enterprise-search>` capabilities.
+
+Access the following configuration settings in the System Console by going to **Experimental > Bleve**, or by editing the ``config.json`` file as described in the following tables:
+
+.. config:setting:: enable-bleve-indexing
+  :displayname: Enable Bleve indexing (Experimental)
+  :systemconsole: Experimental > Bleve
+  :configjson: EnableIndexing
+  :environment: N/A
+
+  - **true**: The indexing of new posts occurs automatically.
+  - **false**: **(Default)** The indexing of new posts does not occur automatically.
+
+Enable Bleve indexing
+~~~~~~~~~~~~~~~~~~~~~
+
+**True**: The indexing of new posts occurs automatically. Search queries will not use bleve search until :ref:`Enable Bleve for search queries <administration-guide/configure/experimental-configuration-settings:enable bleve for search queries>` is enabled.
+
+**False**: The indexing of new posts does not occur automatically.
+
++------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableIndexing": false`` with options ``true`` and ``false``. |
++------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: index-directory
+  :displayname: Index directory (Experimental)
+  :systemconsole: Experimental > Bleve
+  :configjson: IndexDir
+  :environment: N/A
+  :description: Directory path to use for storing bleve indexes.
+
+Index directory
+~~~~~~~~~~~~~~~
+
+Directory path to use for storing bleve indexes.
+
+.. tip::
+
+   The bleve index directory path isn't required to exist within the ``mattermost`` directory. When it exists outside of the ``mattermost`` directory, no  additional steps are needed to preserve or reindex these files as part of a Mattermost upgrade. See our :doc:`Upgrading Mattermost Server </administration-guide/upgrade/upgrading-mattermost-server>` documentation for details.
+
++-----------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"IndexDir": ""`` with string input.                           |
++-----------------------------------------------------------------------------------------------------------+
+
+Bulk index now
+~~~~~~~~~~~~~~
+
+Select **Index Now** to index all users, channels, and posts in the database from oldest to newest. Bleve is available during indexing, but search results may be incomplete until the indexing job is complete.
+
+Purge indexes
+~~~~~~~~~~~~~
+
+Select **Purge Index** to remove the contents of the Bleve index directory. Search results may be incomplete until a bulk index of the existing database is rebuilt.
+
+.. config:setting:: enable-bleve-indexingsearch
+  :displayname: Enable Bleve for search queries (Experimental)
+  :systemconsole: Experimental > Bleve
+  :configjson: EnableSearching
+  :environment: N/A
+
+  - **true**: Search queries will use bleve search.
+  - **false**: **(Default)** Search queries will not use bleve search.
+
+Enable Bleve for search queries
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**True**: Search queries will use bleve search.
+
+**False**: Search queries will not use bleve search.
+
++--------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableSearching": false`` with options ``true`` and ``false``.  |
++--------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: enable-bleve-indexingautocomplete
+  :displayname: Enable Bleve for autocomplete queries (Experimental)
+  :systemconsole: Experimental > Bleve
+  :configjson: EnableAutocomplete
+  :environment: N/A
+
+  - **true**: Autocomplete queries will use bleve search.
+  - **false**: **(Default)** Autocomplete queries will not use bleve search.
+
+Enable Bleve for autocomplete queries
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**True**: Autocomplete queries will use bleve search.
+
+**False**: Autocomplete queries will not use bleve search.
+
++-----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableAutocomplete": false`` with options ``true`` and ``false``.  |
++-----------------------------------------------------------------------------------------------------------------+
+
+----
+
 Experimental audit logging configuration settings
 --------------------------------------------------------
 

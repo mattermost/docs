@@ -42,6 +42,7 @@ Available reference architectures
     :hidden:
     :titlesonly:
 
+    Deployment architecture at scale </administration-guide/scale/server-architecture>
     Backing storage benchmarks </administration-guide/scale/backing-storage-benchmarks>
     Enterprise search </administration-guide/scale/enterprise-search>
     High availability </administration-guide/scale/high-availability-cluster-based-deployment> 
