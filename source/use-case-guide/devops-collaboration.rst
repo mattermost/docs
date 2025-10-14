@@ -42,7 +42,7 @@ Real-time visibility and structured collaboration are critical during service de
 
 - **Automate incident handling** with :doc:`Playbooks </end-user-guide/workflow-automation>` to track diagnostics, assign tasks, and issue updates—supporting NOC, SRE, and AppSec workflows.
 - **Accelerate containment and recovery** by :ref:`integrating alerting tools <integrations-guide/integrations-guide-index:webhooks>` like PagerDuty, Opsgenie, and custom webhooks into secure Mattermost channels.
-- **Ensure communication continuity** during outages using :doc:`high availability architecture </administration-guide/scale/high-availability-cluster-based-deployment>` and :doc:`support for disconnected environments </deployment-guide/server/air-gapped-deployment>`.
+- **Ensure communication continuity** during outages using :doc:`high availability architecture </administration-guide/scale/high-availability-cluster-based-deployment>` and :doc:`support for disconnected environments </deployment-guide/reference-architecture/deployment-scenarios/air-gapped-deployment>`.
 - **Enable forensic review and audit** with :ref:`logging and export capabilities <administration-guide/manage/logging:audit logging>` that preserve all incident-related communications.
 
 Policy-Driven Collaboration in Regulated Environments

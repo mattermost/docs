@@ -48,7 +48,7 @@ The deployment architecture includes the following components:
 - **Allied or Partner Networks:** Globally distributed and segregated networks for each allied or partner organization.
 
   - Networks may have a firewall or access gateway protecting egress and ingress, such as network policies, IP allowlists, or WAFs depending on networking configurations.
-  - Networks may :doc:`operate in contested environments </deployment-guide/reference-architecture/deploy-ddil-operations>` where internet connectivity is intermittent.
+  - Networks may :doc:`operate in contested environments </deployment-guide/reference-architecture/deployment-scenarios/deploy-ddil-operations>` where internet connectivity is intermittent.
 
 - **Users:** Enterprise, allied, and coalition partner users accessing client applications for Mattermost and/or Microsoft 365.
 
