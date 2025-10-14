@@ -291,7 +291,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
 ### Important Upgrade Notes
  - A new index to the ``CategoryId`` column in ``SidebarChannels`` table was added to improve query performance. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
  - Schema changes in the form of a new materialized view (``AttributeView``) was added that aggregates user attributes into a separate table. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
- - When ``SamlSettings.EnableSyncWithLdap`` is enabled, Mattermost will now check if a user exists on the connected LDAP server during login. If the user doesn't exist on the LDAP server, login will fail. Previously, users not present on the LDAP server could login, but would be deactivated on the next LDAP sync. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
+ - When ``SamlSettings.EnableSyncWithLdap`` is enabled, Mattermost will now check if a user exists on the connected LDAP server during login. If the user doesn't exist on the LDAP server, login will fail. Previously, users not present on the LDAP server could login, but would be deactivated on the next LDAP sync.
 
 ```{Important}
 If you upgrade from a release earlier than v10.8, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
