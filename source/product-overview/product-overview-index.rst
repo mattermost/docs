@@ -159,7 +159,7 @@ IME runs on lightweight, ruggedized, or mobile infrastructure, optimized for dis
 
 - Supports :doc:`single-node Linux binaries </deployment-guide/server/deploy-linux>` and :doc:`containerized deployments in local Kubernetes environments </deployment-guide/server/deploy-containers>` for rapid, lightweight setup.
 - Enables flexible deployment on compact, portable compute platforms—ideal for ships, forward operating bases, mobile command units, or disconnected kits. *
-- Operates fully :doc:`air-gapped </deployment-guide/server/air-gapped-deployment>` without reliance on internet, Domain Name System (DNS), or external authentication systems.
+- Operates fully :doc:`air-gapped </deployment-guide/reference-architecture/deployment-scenarios/air-gapped-deployment>` without reliance on internet, Domain Name System (DNS), or external authentication systems.
 - Delivers secure communications, screen sharing, and workflow automation in isolated or DDIL conditions.
 
 Private Cloud & sovereign datacenter

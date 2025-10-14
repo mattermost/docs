@@ -3,7 +3,7 @@ Application architecture
 
 Mattermost is an open-source collaboration platform that offers secure messaging, file sharing, and integrations for team communication. It's self-hosted, providing IT admins full control over data, security, integrations, and customization. The platform is built with modular components to ensure scalability, flexibility, and extensibility.
 
-.. image:: ../images/network-diagram.svg
+.. image:: /images/network-diagram.svg
    :alt: Mattermost network diagram shows how the components can be deployed. Includes optional configurations for scaling for larger enterprise organizations.
    :class: bg-white
 
@@ -37,7 +37,7 @@ Application layer
 
 The Mattermost Server is the heart of the platform and responsible for processing all user and system operations. It's composed of multiple modular elements as follows:
 
-.. image:: ../images/architecture_basics.png
+.. image:: /images/architecture_basics.png
    :alt: Mattermost architecture basics
    :class: bg-white
 
@@ -119,7 +119,7 @@ If a WSS connection is not available and HTTPS is substituted, the system will a
 
 High availability for WSS connections can be achieved through clustering Mattermost servers and load balancing WebSocket connections across those cluster nodes. Proxy servers and WebSocket-specific configurations (such as sticky sessions or connection persistence) are essential to maintain real-time interactivity during server or network failures.
 
-.. image:: ../images/architecture_with_protocol.png
+.. image:: /images/architecture_with_protocol.png
    :alt: Mattermost architecture with protocol connections
    :class: bg-white
 
@@ -150,8 +150,6 @@ The following table lists the Mattermost services ports for Mattermost Server, p
 +=============================================================+=======================================+===================================+===========+============+===============================================================+
 | HTTP/Websocket                                              | ServiceSettings.ListenAddress         | 8065/80/443 (TLS)                 | TCP       | Inbound    | External (no proxy) / Internal (with proxy)                   |
 +-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+ Usually this requires port 80 and 443 when running HTTPS.     |
-|                                                             |                                       |                                   |           |            |                                                               |
-+-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+---------------------------------------------------------------+
 | Cluster                                                     | ClusterSettings.GossipPort            | 8074                              | TCP/UDP   | Inbound    | Internal                                                      |
 +-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+---------------------------------------------------------------+
 | Metrics                                                     | MetricsSettings.ListenAddress         | 8067                              | TCP       | Inbound    | External (no proxy) / Internal (with proxy)                   |
