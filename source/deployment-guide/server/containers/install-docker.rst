@@ -44,7 +44,7 @@ This section provides a quick start guide for deploying Mattermost on Docker by 
    .. important::
 
       - At a minimum, you must edit the ``DOMAIN`` value in the ``.env`` file to correspond to the domain for your Mattermost server.
-      - We recommend configuring the `Support Email <https://docs.mattermost.com/administration/config-settings.html#support-email>`_ via ``MM_SUPPORTSETTINGS_SUPPORTEMAIL``. This is the email address your users will contact when they need help.
+      - We recommend configuring the :ref:`Support Email <administration-guide/configure/site-configuration-settings:support email address>` via ``MM_SUPPORTSETTINGS_SUPPORTEMAIL``. This is the email address your users will contact when they need help.
 
 3. Create the required directories and set their permissions.
 

@@ -164,7 +164,7 @@ Configure the following properties in this file:
 
 .. note::
 
-  We recommend configuring the `Support Email <https://docs.mattermost.com/administration/config-settings.html#support-email>`_ under ``SupportSettings``, set ``"SupportEmail"``. This is the email address your users will contact when they need help.
+  We recommend configuring the :ref:`Support Email <administration-guide/configure/site-configuration-settings:support email address>` under ``SupportSettings``, set ``"SupportEmail"``. This is the email address your users will contact when they need help.
 
 After modifying the ``config.json`` configuration file, you can now start the Mattermost server:
 

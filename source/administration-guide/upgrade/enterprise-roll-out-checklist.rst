@@ -137,7 +137,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 
   - Install the number of read and search replicas based on your high availability requirements outlined in your production environment design
 
-   - Resource: https://docs.mattermost.com/deployment-guide/server/server-architecture.html#database-with-virtual-ips
+   - Resource: https://docs.mattermost.com/deployment-guide/reference-architecture/application-architecture.html
 
   - (Optional) Set up configuration management via the database instead of a config file for high available environments
 

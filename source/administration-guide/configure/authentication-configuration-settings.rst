@@ -381,7 +381,7 @@ Enforce multi-factor authentication
 
 +-------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
 | - **true**: Requires `multi-factor authentication (MFA)                                               | - System Config path: **Authentication > MFA**                                                    |
-|   <https://docs.mattermost.com/administration-guide/onboard/multi-factor-authentication.html>`__      | - ``config.json`` setting: ``ServiceSettings`` > ``EnforceMultifactorAuthentication`` > ``false`` |
+|   :doc:</administration-guide/onboard/multi-factor-authentication>`                                   | - ``config.json`` setting: ``ServiceSettings`` > ``EnforceMultifactorAuthentication`` > ``false`` |
 |   for users who sign-in with AD/LDAP or an email address.                                             | - Environment variable: ``MM_SERVICESETTINGS_ENFORCEMULTIFACTORAUTHENTICATION``                   |
 |   New users must set up MFA. Logged in users are redirected to the MFA                                |                                                                                                   |
 |   setup page until configuration is complete.                                                         |                                                                                                   |
