@@ -1,7 +1,7 @@
 Authentication configuration settings
 =====================================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Mattermost supports up to 4 distinct, concurrent methods of user authentication:
@@ -34,9 +34,6 @@ Review and manage the following authentication configuration options in the Syst
 
 Signup
 ------
-
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Authentication > Signup**.
 
@@ -141,9 +138,6 @@ Invalidate pending email invites
 Email
 -----
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 Access the following configuration settings in the System Console by going to **Authentication > Email**.
 
 .. config:setting:: enable-account-creation-with-email
@@ -239,9 +233,6 @@ Enable sign-in with username
 
 Password
 --------
-
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Authentication > Password**.
 
@@ -353,9 +344,6 @@ Enable forgot password link
 MFA
 ---
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 Access the following configuration settings in the System Console by going to **Authentication > MFA**.
 
 We recommend deploying Mattermost within your own private network, and using VPN clients for mobile access, so that Mattermost is secured with your existing protocols. If you choose to run Mattermost outside your private network, bypassing your existing security protocols, we recommend adding a multi-factor authentication service specifically for accessing Mattermost.
@@ -391,9 +379,6 @@ Enable multi-factor authentication
 Enforce multi-factor authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 +-------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
 | - **true**: Requires `multi-factor authentication (MFA)                                               | - System Config path: **Authentication > MFA**                                                    |
 |   <https://docs.mattermost.com/administration-guide/onboard/multi-factor-authentication.html>`__      | - ``config.json`` setting: ``ServiceSettings`` > ``EnforceMultifactorAuthentication`` > ``false`` |
@@ -411,9 +396,6 @@ Enforce multi-factor authentication
 
 AD/LDAP
 --------
-
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Authentication > AD/LDAP**. This opens the AD/LDAP setup wizard with step-by-step sections and testing to help configure each setting.
 
@@ -463,6 +445,9 @@ Enable sign-in with AD/LDAP
 
 Enable synchronization with AD/LDAP
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../../_static/badges/entry-ent.rst
+  :start-after: :nosearch:
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | - **true**: Mattermost periodically syncs users from AD/LDAP. | - System Config path: **Authentication > AD/LDAP**                       |
@@ -735,7 +720,7 @@ User filter
 Group filter
 ^^^^^^^^^^^^
 
-.. include:: ../../_static/badges/ent-only.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
@@ -806,6 +791,9 @@ Guest filter
 
 Account synchronization
 ~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../../_static/badges/entry-ent.rst
+  :start-after: :nosearch:
 
 Map AD/LDAP user attributes to Mattermost user profile fields. Use the **Test Attributes** button in this section to verify correct attribute mapping and data synchronization before proceeding to other configuration steps.
 
@@ -993,6 +981,9 @@ Profile picture attribute
 Group synchronization
 ~~~~~~~~~~~~~~~~~~~~~~
 
+.. include:: ../../_static/badges/entry-ent.rst
+  :start-after: :nosearch:
+
 Configure group mapping for AD/LDAP group synchronization. Use the **Test Group Attributes** button in this section to verify proper group attribute mapping before proceeding to other configuration steps.
 
 .. config:setting:: group-display-name-attribute
@@ -1004,9 +995,6 @@ Configure group mapping for AD/LDAP group synchronization. Use the **Test Group 
 
 Group display name attribute
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. include:: ../../_static/badges/ent-only.rst
-  :start-after: :nosearch:
 
 +--------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | This is the AD/LDAP Group Display name attribute that populates the Mattermost group name field. | - System Config path: **Authentication > AD/LDAP**                                                                                          |
@@ -1027,9 +1015,6 @@ Group display name attribute
 Group ID attribute
 ^^^^^^^^^^^^^^^^^^^
 
-.. include:: ../../_static/badges/ent-only.rst
-  :start-after: :nosearch:
-
 +--------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | This is an AD/LDAP Group ID attribute that sets a unique identifier for groups.                              | - System Config path: **Authentication > AD/LDAP**                                                                              |
 |                                                                                                              | - ``config.json`` setting: ``LdapSettings`` > ``GroupIdAttribute``                                                              |
@@ -1043,6 +1028,9 @@ Group ID attribute
 
 Synchronization performance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../../_static/badges/entry-ent.rst
+  :start-after: :nosearch:
 
 Configure timing and performance settings for AD/LDAP synchronization. These settings control how often Mattermost syncs with your AD/LDAP server.
 
@@ -1110,6 +1098,9 @@ Query timeout (seconds)
 Synchronization history
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. include:: ../../_static/badges/entry-ent.rst
+  :start-after: :nosearch:
+
 View synchronization status and manually trigger AD/LDAP synchronization. This section includes the **AD/LDAP Synchronize Now** button for immediate synchronization.
 
 AD/LDAP synchronize now
@@ -1131,6 +1122,9 @@ AD/LDAP synchronize now
 
 Config settings not available in the AD/LDAP Wizard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../../_static/badges/entry-ent.rst
+  :start-after: :nosearch:
 
 The following AD/LDAP configuration settings are available in the ``config.json`` file only and aren't available via the AD/LDAP wizard interface in the System Console.
 
@@ -1168,9 +1162,6 @@ Re-add removed members on sync
 SAML 2.0
 --------
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 Access the following configuration settings in the System Console by going to **Authentication > SAML 2.0**.
 
 See the encryption options documentation for details on what :ref:`encryption methods <deployment-guide/encryption-options:saml encryption support>` Mattermost supports for SAML.
@@ -1191,9 +1182,6 @@ See the encryption options documentation for details on what :ref:`encryption me
 Enable login with SAML
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 +---------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 | - **true**: Enables sign-in with SAML. See :doc:`SAML Single Sign-On </administration-guide/onboard/sso-saml>` to learn more.         | - System Config path: **Authentication > SAML 2.0**                  |
 | - **false**: **(Default)** Disables sign-in with SAML.                                                                                | - ``config.json`` setting: ``SamlSettings`` > ``Enable`` > ``false`` |
@@ -1212,7 +1200,7 @@ Enable login with SAML
 Enable synchronizing SAML accounts with AD/LDAP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
@@ -1244,7 +1232,7 @@ Enable synchronizing SAML accounts with AD/LDAP
 Ignore guest users when synchronizing with AD/LDAP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 +-----------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
@@ -1270,9 +1258,6 @@ For more information, see :doc:`AD/LDAP Setup </administration-guide/onboard/ad-
 Override SAML bind data with AD/LDAP information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 +---------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 | - **true**: If the SAML ID attribute is configured, Mattermost overrides the SAML ID attribute with the AD/LDAP ID attribute.   | - System Config path: **Authentication > SAML 2.0**                                         |
 |   If the SAML ID attribute is not present, Mattermost overrides the SAML Email attribute with the AD/LDAP Email attribute.      | - ``config.json`` setting: ``SamlSettings`` > ``EnableSyncWithLdapIncludeAuth`` > ``false`` |
@@ -1296,9 +1281,6 @@ Override SAML bind data with AD/LDAP information
 Identity provider metadata URL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 +------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 | This setting is the URL from which Mattermost requests setup metadata from the provider. | - System Config path: **Authentication > SAML 2.0**                  |
 |                                                                                          | - ``config.json`` setting: ``SamlSettings`` > ``IdpMetadataURL``     |
@@ -1314,9 +1296,6 @@ Identity provider metadata URL
 
 SAML SSO URL
 ~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 +--------------------------------------------------------------------------------------------+----------------------------------------------------------+
 | This setting is the URL where Mattermost sends a SAML request to start the login sequence. | - System Config path: **Authentication > SAML 2.0**      |
@@ -1334,9 +1313,6 @@ SAML SSO URL
 Identity provider issuer URL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 +-----------------------------------------------------------------------------+------------------------------------------------------------------------+
 | This setting is the issuer URL for the Identity Provider for SAML requests. | - System Config path: **Authentication > SAML 2.0**                    |
 |                                                                             | - ``config.json`` setting: ``SamlSettings`` > ``IdpDescriptorURL``     |
@@ -1352,9 +1328,6 @@ Identity provider issuer URL
 
 Identity provider public certificate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 +-------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | The public authentication certificate issued by your Identity Provider. | - System Config path: **Authentication > SAML 2.0**                      |
@@ -1374,9 +1347,6 @@ Identity provider public certificate
 Verify signature
 ~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 +---------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | - **true**: **(Default)** Mattermost checks that the SAML Response signature matches the Service Provider Login URL.      | - System Config path: **Authentication > SAML 2.0**                 |
 | - **false**: The signature is not verified. This is **not recommended** for production. Use this option for testing only. | - ``config.json`` setting: ``SamlSettings`` > ``Verify`` > ``true`` |
@@ -1394,9 +1364,6 @@ Verify signature
 
 Service provider login URL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 +------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+
 | Enter the URL of your Mattermost server, followed by ``/login/sso/saml``, i.e. ``https://example.com/login/sso/saml``. | - System Config path: **Authentication > SAML 2.0**                               |
@@ -1416,9 +1383,6 @@ Service provider login URL
 Service provider identifier
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
 | This setting is the unique identifier for the Service Provider, which in most cases is the same as the Service Provider Login URL. In ADFS, this must match the Relying Party Identifier. | - System Config path: **Authentication > SAML 2.0**                             |
 |                                                                                                                                                                                           | - ``config.json`` setting: ``SamlSettings`` > ``ServiceProviderIdentifier``     |
@@ -1437,9 +1401,6 @@ Service provider identifier
 Enable encryption
 ~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 +---------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 | - **true**: **(Default)** Mattermost will decrypt SAML Assertions that are encrypted with your Service Provider Public Certificate.   | - System Config path: **Authentication > SAML 2.0**                  |
 | - **false**: Mattermost does not decrypt SAML Assertions. Use this option for testing only. It is **not recommended** for production. | - ``config.json`` setting: ``SamlSettings`` > ``Encrypt`` > ``true`` |
@@ -1456,9 +1417,6 @@ Enable encryption
 Service provider private key
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 +-------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 | This setting stores the private key used to decrypt SAML Assertions from the Identity Provider. | - System Config path: **Authentication > SAML 2.0**                  |
 |                                                                                                 | - ``config.json`` setting: ``SamlSettings`` > ``PrivateKeyFile``     |
@@ -1474,9 +1432,6 @@ Service provider private key
 
 Service provider public certificate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 | This setting stores the certificate file used to sign a SAML request to the Identity Provider for a SAML login when Mattermost is initiating the login as the Service Provider. | - System Config path: **Authentication > SAML 2.0**                         |
@@ -1496,9 +1451,6 @@ Service provider public certificate
 Sign request
 ~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 +--------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 | - **true**: Mattermost signs the SAML request with the Service Provider Private Key. | - System Config path: **Authentication > SAML 2.0**             |
 | - **false**: Mattermost does not sign the SAML request.                              | - ``config.json`` setting: ``SamlSettings`` > ``SignRequest``   |
@@ -1514,9 +1466,6 @@ Sign request
 
 Signature algorithm
 ~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | This setting determines the signature algorithm used to sign the SAML request. Options are: ``RSAwithSHA1``, ``RSAwithSHA256``, ``RSAwithSHA512``. | - System Config path: **Authentication > SAML 2.0**                      |
@@ -1542,9 +1491,6 @@ Signature algorithm
 Canonical algorithm
 ~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
 | This setting determines the canonicalization algorithm. With these options:                                                                                                                                                                | - System Config path: **Authentication > SAML 2.0**                             |
 |                                                                                                                                                                                                                                            | - ``config.json`` setting: ``SamlSettings`` > ``CanonicalAlgorithm``            |
@@ -1564,9 +1510,6 @@ Canonical algorithm
 Email attribute
 ~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 +------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 | This setting determines the attribute from the SAML Assertion that populates the user email address field in Mattermost.                                   | - System Config path: **Authentication > SAML 2.0**                  |
 |                                                                                                                                                            | - ``config.json`` setting: ``SamlSettings`` > ``EmailAttribute``     |
@@ -1584,9 +1527,6 @@ Email attribute
 
 Username attribute
 ~~~~~~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 | This setting determines the SAML Assertion attribute that populates the username field in the Mattermost UI.                                                                                                                                             | - System Config path: **Authentication > SAML 2.0**                     |
@@ -1606,9 +1546,6 @@ Username attribute
 Id attribute
 ~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 +----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 | (Optional) This setting determines the SAML Assertion attribute used to bind users from SAML to users in Mattermost. | - System Config path: **Authentication > SAML 2.0**          |
 |                                                                                                                      | - ``config.json`` setting: ``SamlSettings`` > ``IdAttribute``|
@@ -1624,9 +1561,6 @@ Id attribute
 
 Guest attribute
 ~~~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 +--------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 | (Optional) This setting determines the SAML Assertion attribute used to apply a Guest role to users in Mattermost.       | - System Config path: **Authentication > SAML 2.0**             |
@@ -1648,9 +1582,6 @@ Guest attribute
 Enable admin attribute
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 +-----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 | - **true**: System admin status is determined by the SAML Assertion attribute set in **Admin attribute**. | - System Config path: **Authentication > SAML 2.0**                                |
 | - **false**: **(Default)** System admin status is **not** determined by the SAML Assertion attribute.     | - ``config.json`` setting: ``SamlSettings`` > ``EnableAdminAttribute`` > ``false`` |
@@ -1666,9 +1597,6 @@ Enable admin attribute
 
 Admin attribute
 ~~~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 +-------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 | (Optional) This setting determines the attribute in the SAML Assertion for designating system admins.                         | - System Config path: **Authentication > SAML 2.0**                  |
@@ -1690,9 +1618,6 @@ Admin attribute
 First name attribute
 ~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 +-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | (Optional) This setting determines the SAML Assertion attribute that populates the first name of users in Mattermost. | - System Config path: **Authentication > SAML 2.0**                      |
 |                                                                                                                       | - ``config.json`` setting: ``SamlSettings`` > ``FirstNameAttribute``     |
@@ -1709,9 +1634,6 @@ First name attribute
 
 Last name attribute
 ~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 +----------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 | (Optional) This setting determines the SAML Assertion attribute that populates the last name of users in Mattermost. | - System Config path: **Authentication > SAML 2.0**                     |
@@ -1730,9 +1652,6 @@ Last name attribute
 Nickname attribute
 ~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 +---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 | (Optional) This setting determines the SAML Assertion attribute that populates the nickname of users in Mattermost. | - System Config path: **Authentication > SAML 2.0**                     |
 |                                                                                                                     | - ``config.json`` setting: ``SamlSettings`` > ``NicknameAttribute``     |
@@ -1749,9 +1668,6 @@ Nickname attribute
 
 Position attribute
 ~~~~~~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 | (Optional) This setting determines the SAML Assertion attribute that populates the position (job title or role at company) of users in Mattermost. | - System Config path: **Authentication > SAML 2.0**                     |
@@ -1770,9 +1686,6 @@ Position attribute
 Preferred language attribute
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 +--------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 | (Optional) This setting determines the SAML Assertion attribute that populates the language preference of users in Mattermost. | - System Config path: **Authentication > SAML 2.0**              |
 |                                                                                                                                | - ``config.json`` setting: ``SamlSettings`` > ``LocaleAttribute``|
@@ -1790,9 +1703,6 @@ Preferred language attribute
 Login button text
 ~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 +---------------------------------------------------------------------------+-------------------------------------------------------------------+
 | (Optional) The text that appears in the login button on the sign-in page. | - System Config path: **Authentication > SAML 2.0**               |
 |                                                                           | - ``config.json`` setting: ``SamlSettings`` > ``LoginButtonText`` |
@@ -1803,9 +1713,6 @@ Login button text
 
 OAuth 2.0
 ---------
-
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Authentication > OAuth 2.0**. Settings for GitLab OAuth authentication can also be accessed under **Authentication > GitLab** in self-hosted deployments.
 
@@ -1832,9 +1739,6 @@ Select OAuth 2.0 service provider
 
 GitLab OAuth 2.0 settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 .. note::
    For Enterprise subscriptions, GitLab settings can be found under **OAuth 2.0**
@@ -1972,9 +1876,6 @@ GitLab OAuth 2.0 Token endpoint
 Google OAuth 2.0 settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 .. config:setting:: oauth-googleenable
   :displayname: Enable OAuth 2.0 authentication with Google (OAuth - Google)
   :systemconsole: Authentication > OAuth 2.0
@@ -2078,9 +1979,6 @@ Google OAuth 2.0 Token endpoint
 
 Entra ID OAuth 2.0 settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 .. note::
    In line with Microsoft ADFS guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
@@ -2216,9 +2114,6 @@ Entra ID OAuth 2.0 Token endpoint
 OpenID Connect
 ---------------
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 Access the following configuration settings in the System Console by going to **Authentication > OpenID Connect**.
 
 .. config:setting:: select-openid-connect-service-provider
@@ -2246,9 +2141,6 @@ Select OpenID Connect service provider
 
 GitLab OpenID settings
 ^^^^^^^^^^^^^^^^^^^^^^
-
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 .. config:setting:: guest-access
   :displayname: Enable (OpenID Connect - GitLab)
@@ -2354,9 +2246,6 @@ GitLab OpenID Client secret
 Google OpenID settings
 ^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 
 .. config:setting:: oidc-googleenable
   :displayname: Enable Google Settings (OpenID Connect - Google)
@@ -2433,9 +2322,6 @@ Google OpenID Client secret
 
 Entra ID OpenID settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 .. note::
    In line with Microsoft ADFS guidance, we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
@@ -2534,9 +2420,6 @@ Entra ID Client secret
 OpenID Connect (other) settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 .. config:setting:: oidc-enable
   :displayname: Enable (OpenID Connect)
   :systemconsole: Authentication > OpenID Connect
@@ -2548,9 +2431,6 @@ OpenID Connect (other) settings
 
 Enable OpenID Connect authentication with other service providers
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 +---------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 | - **true**: Allows team and account creation using other OpenID Connect service providers.                                      | - System Config path: **Authentication > OpenID Connect**              |
@@ -2657,9 +2537,6 @@ OpenID Connect (other) Client secret
 
 Guest access
 ------------
-
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Authentication > Guest Access**.
 

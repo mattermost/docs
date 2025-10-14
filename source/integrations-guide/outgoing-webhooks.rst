@@ -1,6 +1,9 @@
 Outgoing Webhooks
 =================
 
+.. include:: ../_static/badges/all-commercial.rst
+  :start-after: :nosearch:
+
 **Technical complexity:** :ref:`Low-code <low-code>`
 
 Outgoing webhooks can be used to create rich, interactive experiences in Mattermost by letting external services respond with rich message attachments, such as structured fields, buttons, and menus. Additionally, these responses can trigger interactive dialog forms where users provide additional input directly in Mattermost, or interactive messages that update dynamically based on user actions. Together, these capabilities turn simple keyword triggers into powerful in-product workflows that streamline how teams interact with external systems, all with minimal coding required.

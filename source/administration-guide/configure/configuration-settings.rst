@@ -1,7 +1,7 @@
 Configuration settings
 ======================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 System admins for both self-hosted and Cloud Mattermost deployments can manage Mattermost configuration using the System Console by selecting the **Product** |product-list| menu and selecting **System Console**. 
@@ -51,26 +51,17 @@ Mattermost configuration settings are organized into the following categories wi
 Configuration in database
 --------------------------
 
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
 Self-hosted system configuration can be stored in the database. This changes the Mattermost binary from reading the default ``config.json`` file to reading the configuration settings stored within a configuration table in the database. See the :doc:`Mattermost database configuration </administration-guide/configure/configuration-in-your-database>` documentation for migration details.
 
 Environment variables
 ---------------------
 
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
-You can use :doc:`environment variables </administration-guide/configure/environment-variables>` to manage Mattermost configuration. Environment variables override settings in ``config.json``. If a change to a setting in ``config.json`` requires a restart to take effect, then changes to the corresponding environment variable also require a server restart. 
+You can use :doc:`environment variables </administration-guide/configure/environment-variables>` to manage Mattermost configuration for self-hosted deployments. Environment variables override settings in ``config.json``. If a change to a setting in ``config.json`` requires a restart to take effect, then changes to the corresponding environment variable also require a server restart. 
 
 Configuration reload
 --------------------
 
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
-The “config watcher”, the mechanism that automatically reloads the ``config.json`` file, has been deprecated in favor of the :ref:`mmctl config reload <administration-guide/manage/mmctl-command-line-tool:mmctl config reload>` command that you must run to apply configuration changes you've made. This improves configuration performance and robustness.
+In self-hosted deployments, the “config watcher”, the mechanism that automatically reloads the ``config.json`` file, has been deprecated in favor of the :ref:`mmctl config reload <administration-guide/manage/mmctl-command-line-tool:mmctl config reload>` command that you must run to apply configuration changes you've made. This improves configuration performance and robustness.
 
 Deprecated configuration settings
 ---------------------------------

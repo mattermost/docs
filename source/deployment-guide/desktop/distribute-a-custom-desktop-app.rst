@@ -1,9 +1,10 @@
 Distribute a custom desktop app
 ================================
 
+.. include:: ../../_static/badges/all-commercial.rst
+  :start-after: :nosearch:
+
 You can customize and distribute your own Mattermost desktop application by configuring `src/common/config/buildConfig.ts <https://github.com/mattermost/desktop/blob/master/src/common/config/buildConfig.ts>`__.
-
-
 
 1. Configure the desktop app's ``buildConfig.ts`` file. You can configure the following parameters to customize the user experience, including `defaultTeams <#defaultTeams>`__, `helpLink <#helpLink>`__, and `enableServerManagement <#enableServerManagement>`__.
 

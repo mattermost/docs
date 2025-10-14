@@ -1,6 +1,9 @@
 Important Upgrade Notes
 =======================
 
+.. include:: ../../_static/badges/all-commercial.rst
+  :start-after: :nosearch:
+
 .. include:: ../../product-overview/common-esr-support-rst.rst
 
 We recommend reviewing the `additional upgrade notes <#additional-upgrade-notes>`__ at the bottom of this page.

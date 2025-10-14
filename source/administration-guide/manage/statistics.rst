@@ -1,16 +1,16 @@
 Statistics
 ==========
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Statistics on users, posts, and channels are tracked for each system and team. Enterprise Editions have access to advanced system statistics.
 
 .. note::
 
-  To maximize performance for large Enterprise deployments, statistics for total messages, total hashtag messages, total file messages, messages per day, and activated users with messages per day is configurable by changing the ``MaxUsersForStatistics`` value :ref:`in config.json <administration-guide/configure/reporting-configuration-settings:maximum users for statistics>`.
+  To maximize performance for large enterprise deployments, statistics for total messages, total hashtag messages, total file messages, messages per day, and activated users with messages per day is configurable by changing the ``MaxUsersForStatistics`` value :ref:`in config.json <administration-guide/configure/reporting-configuration-settings:maximum users for statistics>`.
 
-For advanced metrics for Enterprise deployments, :doc:`see performance monitoring documentation to learn more </administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring>`.
+For advanced metrics for Entry, Enterprise, and Enterprise deployments, :doc:`see performance monitoring documentation to learn more </administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring>`.
 
 Site statistics
 ---------------
@@ -47,10 +47,10 @@ Active Users with Posts (graph)
 Advanced system statistics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted-only.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
-Mattermost Enterprise includes additional system statistics.
+Self-hosted deployments include additional system statistics.
 
 Total Sessions
     The number of active user sessions connected to your system. Expired sessions are not counted.
@@ -125,10 +125,10 @@ If the statistics page is loading endlessly and you get an error message saying 
 Can team admins review their own team's statistics?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted-only.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
-Yes. In Mattermost Enterprise, you can enable team admins to see their team's statistics by modifying available delegated granular administration system roles. See the :doc:`delegated granular administration </administration-guide/onboard/delegated-granular-administration>` documentation to learn more about these admin roles, including how to manage privileges and assign roles.
+Yes. With self-hosted deployments, you can enable team admins to see their team's statistics by modifying available delegated granular administration system roles. See the :doc:`delegated granular administration </administration-guide/onboard/delegated-granular-administration>` documentation to learn more about these admin roles, including how to manage privileges and assign roles.
 
 To enable team admins to access their team's statistics:
 

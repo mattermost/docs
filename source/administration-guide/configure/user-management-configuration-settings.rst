@@ -1,7 +1,7 @@
 User management configuration settings
 ======================================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Review and manage the following in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **User Management**:
@@ -221,7 +221,7 @@ Add or remove users from teams using the System Console.
 Manage user's settings
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-only.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 From Mattermost v9.11, system admins can help end users customize their Mattermost notifications by editing the user's :doc:`notification settings </end-user-guide/preferences/manage-your-notifications>` on the user's behalf within the System Console. Users can view, modify, and override their own settings at any time.
@@ -488,6 +488,7 @@ Manage the Management actions available to channel members and guests.
 
 Create Posts
 ^^^^^^^^^^^^
+
 The ability for members and guests to create posts in the channel.
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
@@ -500,6 +501,7 @@ The ability for members and guests to create posts in the channel.
 
 Post Reactions
 ^^^^^^^^^^^^^^
+
 The ability for members and guests to react with emojis on messages in the channel.
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
@@ -512,6 +514,7 @@ The ability for members and guests to react with emojis on messages in the chann
 
 Manage Members
 ^^^^^^^^^^^^^^
+
 The ability for members to add and remove people from the channels. Guests can't add or remove people from channels.
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
@@ -524,6 +527,7 @@ The ability for members to add and remove people from the channels. Guests can't
 
 Channel Mentions
 ^^^^^^^^^^^^^^^^
+
 The ability for members and guests to use channel mentions, including **@all**, **@here**, and **@channel**, in the channel.
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
@@ -534,11 +538,13 @@ The ability for members and guests to use channel mentions, including **@all**, 
 .. image:: ../../images/allow-mentions-for-a-channel.png
   :alt: Add Members and Guests to use mentions in a channel using the System Console.
 
-.. tip::                                                                                                                                                                
+.. tip::
+
   **Guests** and **Members** can't use channel mentions without the ability to **Create Posts**. To enable this permission, these users must have been granted **Create Posts** permission first.
 
 Manage Bookmarks
 ^^^^^^^^^^^^^^^^
+
 The ability for members to add, delete, and sort bookmarks. Guests can't add, remove, or sort bookmarks for the channel.
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
@@ -549,7 +555,8 @@ The ability for members to add, delete, and sort bookmarks. Guests can't add, re
 .. image:: ../../images/allow-manage-bookmarks-for-a-channel.png
   :alt: Allow Members to manage bookmarks for the channel using the System Console.
 
-.. tip::                                                                                                                                                                
+.. tip::
+
   The ability to manage bookmarks for the channel is available for **Members** only. **Guests** can't add, remove or sort bookmarks for the channel.
 
 Channel Management
@@ -559,6 +566,7 @@ Choose between inviting members manually or sychronizing members automatically f
 
 Sync Group Members
 ^^^^^^^^^^^^^^^^^^
+
 When enabled, adding and removing users from groups will add or remove them from this team. The only way of inviting members to this team is by adding the groups they belong to. See the :ref:`Synchronize teams and channels <administration-guide/onboard/ad-ldap-groups-synchronization:synchronize teams and channels>` documentation for further details.
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
@@ -571,6 +579,7 @@ When enabled, adding and removing users from groups will add or remove them from
 
 Public channel or private channel
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Public channels are discoverable and any user can join. Private channels require invitations to join.
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
@@ -632,9 +641,6 @@ Archive a channel
 Permissions
 -----------
 
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 +---------------------------------------------------------------------+-------------------------------------------------------------+
 | Restrict actions in Mattermost to authorized users only.            | - System Config path: **User Management > Permissions**     |
 |                                                                     | - ``config.json setting``: N/A                              |
@@ -647,6 +653,9 @@ Permissions
 
 System roles
 ------------
+
+.. include:: ../../_static/badges/pro-plus.rst
+  :start-after: :nosearch:
 
 +----------------------------------------------------------------------+------------------------------------------------------------+
 | Restrict System Console access to authorized users only.             | - System Config path: **User Management > System Roles**   |

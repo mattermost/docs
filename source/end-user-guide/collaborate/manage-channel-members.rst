@@ -3,7 +3,7 @@ Manage channel members
 
 .. The Add People option on mobile isn't yet supported, so this page doesn't yet include mobile app details.
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Add members to a channel

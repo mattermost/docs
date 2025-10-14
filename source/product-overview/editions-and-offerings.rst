@@ -17,10 +17,7 @@ Once you’ve installed Mattermost Enterprise Edition in your preferred environm
 Mattermost Entry
 ~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
-Mattermost Entry gives small, forward-leaning teams a **free Intelligent Mission Environment** to get started on improving their mission-critical secure collaborative workflows. Entry has all features of **Enterprise Advanced** with the following limitations and omissions: 
+Mattermost Entry gives small, forward-leaning teams a **free self-hosted Intelligent Mission Environment** to get started on improving their mission-critical secure collaborative workflows. Entry has all features of **Enterprise Advanced** with the following limitations and omissions: 
 
 - 10,000 Channel message history 
 - 1000 Board cards\*
@@ -32,19 +29,15 @@ Mattermost Entry gives small, forward-leaning teams a **free Intelligent Mission
 - No Delegated Granular System Administrative Roles 
 - No High Availability (cluster-based deployment, horizontal scale, Enterprise search)
 - `Community support only <https://mattermost.com/support/>`_.
+
 \* *Limits will take effect in a future release.*
 
 Mattermost Entry is best suited for teams less than 50 users. Organizations with larger deployments are encouraged to obtain a supported commercial subscription to ensure reliable operations and access to enterprise-grade support.
-
-
 
 The following sections outline our paid offerings which provide commercial support and remove free limitations.  
 
 Mattermost Enterprise Advanced
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 Built for **multi-domain secure operations**, Enterprise Advanced builds on all Enterprise-level secure collaborative workflow capabilities with specialized features for environments requiring the strictest security, compliance, and operational integrity, including: 
 
@@ -55,9 +48,6 @@ Built for **multi-domain secure operations**, Enterprise Advanced builds on all 
 
 Mattermost Enterprise 
 ~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 Mattermost Enterprise supports large-scale, mission-critical **secure collaborative workflows** with robust security, compliance, and productivity tooling. It builds on core ChatOps capabilities from the Professional offering, plus:
 
@@ -86,9 +76,6 @@ Mattermost Enterprise supports large-scale, mission-critical **secure collaborat
 
 Mattermost Professional 
 ~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
 
 Professional best serves technical and operational teams of up to 500 users looking to run **Sovereign ChatOps workflows**, with advanced collaboration and security controls. This offering provides robust collaboration and administration tools including:  
 
@@ -126,6 +113,5 @@ Since 2016, Mattermost has partnered with GitLab to include Team Edition in the 
 In 2025, GitLab began evaluating the removal of Mattermost from the Omnibus package to reduce its size. This prompted both companies to redefine their shared offering. As part of this transition, SSO is being removed from the Team Edition, aligning it with its intended scope for small teams and hobbyist use. Advanced access controls features will continue to be available in the commercial editions, including Mattermost Entry (free).  Gitlab Omnibus will ship with the v10.11 ESR, enabling continued use of Gitlab SSO until a redefinition of the partnership is determined. Please see more details in `this forum post <https://forum.mattermost.com/t/mattermost-v11-changes-in-free-offerings/25126>`_.
 
 Mattermost, Inc. offers its software under different licenses, including open source. An open source “community edition” of the offering is compiled from the `Mattermost open source project <https://github.com/mattermost/mattermost>`_ under a reciprocal open source license agreement, and in accordance with the `Mattermost trademark policy <https://mattermost.com/trademark-standards-of-use>`_, which requires Mattermost wordmark and trademark be replaced, unless in some circumstances special permission is extended.  The purpose of the reciprocal open source license, known as AGPLv3 or “GNU Affero General Public License”, is to have the benefits of open source reach the broader community. Community members creating derivative works of the open source code base are required to use the same reciprocal open source license, AGPLv3, to downstream beneficiaries.  
- 
 
 Organizations who prefer not to use a reciprocal open source license can choose to use one of the Enterprise Edition offerings under a commercial license.  

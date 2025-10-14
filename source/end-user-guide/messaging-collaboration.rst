@@ -1,7 +1,7 @@
 Messaging Collaboration
 =======================================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Mattermost provides 1:1 and group messaging that features integrated voice/video conferencing, file, image, and link sharing, rich markdown formatting, and a fully searchable message history. With Mattermost, you can keep all of your team's communications in one place and remove information and organizational silos. 
@@ -10,9 +10,6 @@ This Mattermost end user documentation is designed for anyone who wants guidance
 
 Getting Started
 ---------------
-
-.. include:: ../_static/badges/academy-channels.rst
-  :start-after: :nosearch:
 
 .. toctree::
    :maxdepth: 1

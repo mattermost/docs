@@ -1,13 +1,13 @@
 Bleve search
 =============
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 .. important::
   **From Mattermost v11, Bleve search has been deprecated.** 
    
-  - **For v11.0 and later**: Use :doc:`Elasticsearch </administration-guide/scale/elasticsearch-setup>` or :doc:`OpenSearch <administration-guide/scale/opensearch-setup>` for :doc:`enterprise search </administration-guide/scale/enterprise-search>` capabilities
+  - **For v11.0 and later**: Use :doc:`Elasticsearch </administration-guide/scale/elasticsearch-setup>` or :doc:`OpenSearch </administration-guide/scale/opensearch-setup>` for :doc:`enterprise search </administration-guide/scale/enterprise-search>` capabilities
   - **For pre-v11.0 deployments**: This documentation remains relevant for existing installations that continue using Bleve.
 
 Bleve is a search engine that uses Lucene-style full-text search and indexing. This style of search and indexing helps overcome limitations of the default database search such as challenges with characters and advanced search capabilities.

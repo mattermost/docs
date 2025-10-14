@@ -1,10 +1,13 @@
 Configure SAML with Microsoft ADFS for Windows Server 2012
 ==========================================================
 
+.. include:: ../../_static/badges/all-commercial.rst
+  :start-after: :nosearch:
+
 The following process provides steps to configure SAML 2.0 with Microsoft ADFS for Mattermost.
 
 .. include:: sso-saml-before-you-begin.rst
-	:start-after: :nosearch:
+  :start-after: :nosearch:
 
 The following are basic requirements to use ADFS for Mattermost:
  - An Active Directory instance where all users have a specified email and username attributes. For Mattermost servers running 3.3 and earlier, users must also have their first name and last name attributes specified.

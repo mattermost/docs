@@ -1,7 +1,7 @@
 Advanced permissions
 ====================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Mattermost system admins using Mattermost Cloud or Mattermost Server can use Advanced Permissions to customize which users can perform specific actions, such as creating teams, managing channels, and configuring webhooks. The Mattermost permission system is based on a modified RBAC (role-based access control) architecture, using roles to determine which users have the ability to perform various actions.
@@ -37,7 +37,7 @@ You can access the System Scheme interface by going to **System Console > User M
 Team override scheme
 ~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-only.rst
+.. include:: ../../_static/badges/ent-adv.rst
   :start-after: :nosearch:
 
 On systems with multiple :ref:`Mattermost teams <end-user-guide/collaborate/organize-using-teams:single team versus multiple teams>`, each team may operate and collaborate in a unique way. Team Override Schemes give Admins the flexibility to tailor permissions to the needs of each team.
@@ -60,7 +60,7 @@ The channel permissions interface is accessed in **System Console > User Managem
 Advanced access controls
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See the :ref:`team and channel management <administration-guide/manage/team-channel-members:advanced access controls>` documentation for details.
+See the :ref:`team and channel management <administration-guide/manage/team-channel-members:advanced access controls>` documentation for details on available channel access controls. 
 
 Recipes
 -------
@@ -145,7 +145,7 @@ This permission is applied to all other roles (excluding the Guest role). When t
 Read-only channels
 ~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-only.rst
+.. include:: ../../_static/badges/ent-adv.rst
   :start-after: :nosearch:
 
 Members can participate but guests can only read and react

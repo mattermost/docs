@@ -1,7 +1,7 @@
 Experimental configuration settings
 =====================================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Review and manage the following :ref:`experimental <administration-guide/manage/feature-labels:experimental>` configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Experimental > Features**:
@@ -49,9 +49,6 @@ Specify the color of the AD/LDAP login button for white labeling purposes. Use a
 AD/LDAP login button border color
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 Specify the color of the AD/LDAP login button border for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile app.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -67,9 +64,6 @@ Specify the color of the AD/LDAP login button border for white labeling purposes
 
 AD/LDAP login button text color
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 Specify the color of the AD/LDAP login button text for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile app.
 
@@ -88,9 +82,6 @@ Specify the color of the AD/LDAP login button text for white labeling purposes. 
 
 Change authentication method
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 **True**: Users can change their sign-in method to any that is enabled on the server, either via their Profile or the APIs.
 
@@ -336,9 +327,6 @@ Changes made when hardened mode is enabled:
 Enable theme selection
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 **True**: Enables the **Display > Theme** tab in **Settings** so users can select their theme.
 
 **False**: Users cannot select a different theme. The **Display > Theme** tab is hidden in **Settings**.
@@ -359,9 +347,6 @@ Enable theme selection
 Allow custom themes
 ~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 **True**: Enables the **Display > Theme > Custom Theme** section in **Settings**.
 
 **False**: Users cannot use a custom theme. The **Display > Theme > Custom Theme** section is hidden in **Settings**.
@@ -379,9 +364,6 @@ Allow custom themes
 
 Default theme
 ~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 Set a default theme that applies to all new users on the system.
 
@@ -517,9 +499,6 @@ If the team URL of the primary team is ``https://example.mattermost.com/myteam/`
 SAML login button color
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 Specify the color of the SAML login button for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile app.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -536,9 +515,6 @@ Specify the color of the SAML login button for white labeling purposes. Use a he
 SAML login button border color
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 Specify the color of the SAML login button border for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile app.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -554,9 +530,6 @@ Specify the color of the SAML login button border for white labeling purposes. U
 
 SAML login button text color
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 Specify the color of the SAML login button text for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile app.
 
@@ -657,11 +630,11 @@ This setting resolves issues where YouTube video previews display as unavailable
 Experimental Bleve configuration settings
 -----------------------------------------
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 .. important::
-  **From Mattermost v11, Bleve search has been deprecated.** These configuration settings are only available for Mattermost versions prior to v11.0. For v11.0 and later, :doc:`Elasticsearch </administration-guide/scale/elasticsearch-setup>` or :doc:`OpenSearch <administration-guide/scale/opensearch-setup>` for :doc:`enterprise search </administration-guide/scale/enterprise-search>` capabilities.
+  **From Mattermost v11, Bleve search has been deprecated.** These configuration settings are only available for Mattermost versions prior to v11.0. For v11.0 and later, :doc:`Elasticsearch </administration-guide/scale/elasticsearch-setup>` or :doc:`OpenSearch </administration-guide/scale/opensearch-setup>` for :doc:`enterprise search </administration-guide/scale/enterprise-search>` capabilities.
 
 Access the following configuration settings in the System Console by going to **Experimental > Bleve**, or by editing the ``config.json`` file as described in the following tables:
 
@@ -776,8 +749,8 @@ Enable the following settings to output audit events in the System Console by go
 Advanced logging
 ~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-cloud-only.rst
-   :start-after: :nosearch:
+.. include:: ../../_static/badges/entry-ent.rst
+  :start-after: :nosearch:
 
 Output log and audit records to any combination of console, local file, syslog, and TCP socket targets for a Mattermost Cloud deployment. See the :ref:`advanced logging <administration-guide/manage/logging:advanced logging>` documentation for details about logging options.
 
@@ -791,7 +764,7 @@ Output log and audit records to any combination of console, local file, syslog, 
 Enable audit logging
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 When audit logging is enabled in a self-hosted instance, you can specify size, backup interval, compression, maximium age to manage file rotation, and timestamps for audit logging, as defined below. You can specify these settings independently for audit events and AD/LDAP events. 
@@ -814,7 +787,7 @@ When audit logging is enabled in a self-hosted instance, you can specify size, b
 File name
 ~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 Specify the path to the audit file for a self-hosted deployment.
@@ -833,7 +806,7 @@ Specify the path to the audit file for a self-hosted deployment.
 Max file size
 ~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 This is the maximum size, in megabytes, that the file can grow before triggering rotation for a self-hosted deployment. The default setting is ``100``.
@@ -852,7 +825,7 @@ This is the maximum size, in megabytes, that the file can grow before triggering
 Max file age
 ~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 This is the maximum age, in days, a file can reach before triggering rotation for a self-hosted deployment. The default value is ``0``, indicating no limit on the age.
@@ -871,7 +844,7 @@ This is the maximum age, in days, a file can reach before triggering rotation fo
 Maximum file backups
 ~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 This is the maximum number of rotated files kept for a self-hosted deployment. The oldest is deleted first. The default value is ``0``, indicating no limit on the number of backups.
@@ -890,7 +863,7 @@ This is the maximum number of rotated files kept for a self-hosted deployment. T
 File compression
 ~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 When ``true``, rotated files are compressed using ``gzip`` in a self-hosted deployment.
@@ -909,7 +882,7 @@ When ``true``, rotated files are compressed using ``gzip`` in a self-hosted depl
 Maximum file queue 
 ~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 This setting determines how many audit records can be queued/buffered at any point in time when writing to a file for a self-hosted deployment. The default is ``1000`` records.
@@ -940,19 +913,8 @@ Upload the certificate PEM file in the System Console by going to **System Conso
   :environment: N/A
   :description: Output log and audit records to any combination of console, local file, syslog, and TCP socket targets for a Mattermost self-hosted deployment.
 
-Advanced logging
-~~~~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-selfhosted.rst
-  :start-after: :nosearch:
-
-Output log and audit records to any combination of console, local file, syslog, and TCP socket targets for a Mattermost self-hosted deployment. See the :ref:`advanced logging <administration-guide/manage/logging:advanced logging>` documentation for details about logging options.
-
 Experimental configuration settings for self-hosted deployments only
 --------------------------------------------------------------------
-
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
 
 Access the following self-hosted configuration settings by editing the ``config.json`` file as described in the following tables. These configuration settings are not accessible through the System Console.
 
@@ -972,9 +934,6 @@ Access the following self-hosted configuration settings by editing the ``config.
 
 Allowed themes
 ~~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -996,7 +955,7 @@ Select the themes that can be chosen by users when ``EnableThemeSelection`` is s
 File Location
 ~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-only.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
@@ -1062,7 +1021,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 Enable client-side certification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-only.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 .. important::
@@ -1089,7 +1048,7 @@ Enable client-side certification
 Client-side certification login method
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-only.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 .. important::
@@ -1272,7 +1231,7 @@ Standard setting for OAuth to determine the scope of information shared with OAu
 Global relay SMTP server timeout
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-only.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
@@ -1292,9 +1251,6 @@ The number of seconds that can elapse before the connection attempt to the SMTP 
 
 Google scope
 ~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -1350,7 +1306,7 @@ The number of days to retain the imported files before deleting them.
 Export from timestamp
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-only.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
@@ -1395,9 +1351,6 @@ To include every blocking event in the profile, set the rate to ``1``. To turn o
 
 Entra ID Scope
 ~~~~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -1519,9 +1472,6 @@ The location of client plugin files. If blank, they are stored in the ``./client
 Scoping IDP provider ID
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
 Allows an authenticated user to skip the initial login page of their federated Azure AD server, and only require a password to log in.
@@ -1539,9 +1489,6 @@ Allows an authenticated user to skip the initial login page of their federated A
 
 Scoping IDP provider name
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -1587,10 +1534,9 @@ This setting applies to the new sidebar only. You must disable the :ref:`Enable 
 Enable channel category sorting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/allplans-cloud.rst
-  :start-after: :nosearch:
+From Mattermost v10.10, when this :ref:`experimental <administration-guide/manage/feature-labels:experimental>` feature is enabled, users can assign channels to new or existing channel categories when creating or renaming channels. 
 
-From Mattermost v10.10, when this :ref:`experimental <administration-guide/manage/feature-labels:experimental>` feature is enabled, users can assign channels to new or existing channel categories when creating or renaming channels. This configuration setting applies only to cloud-based deployments.
+**This configuration setting applies only to cloud-based deployments.**
 
 **True**: Users can assign channels to new or existing channel categories when creating or renaming channels.
 
@@ -1782,7 +1728,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 Enable local mode for mmctl
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This setting isn't available in the System Console and can only be set in ``config.json``.
+This self-hosted deployment setting isn't available in the System Console and can only be set in ``config.json``.
 
 **True**: Enables local mode for mmctl.
 
@@ -1806,7 +1752,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 Enable local mode socket location
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This setting isn't available in the System Console and can only be set in ``config.json``.
+This self-hosted deployment setting isn't available in the System Console and can only be set in ``config.json``.
 
 The path for the socket that the server will create for mmctl to connect and communicate through local mode. If the default value for this key is changed, you will need to point mmctl to the new socket path when in local mode, using the ``--local-socket-path /new/path/to/socket`` flag in addition to the ``--local`` flag.
 
@@ -1845,10 +1791,7 @@ When not set, every user is added to the ``town-square`` channel by default.
 Experimental job configuration settings
 ---------------------------------------
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
-Settings to configure how Mattermost schedules and completes periodic tasks such as the deletion of old posts with Data Retention enabled or indexing posts with Elasticsearch. These settings control which Mattermost servers are designated as a Scheduler, a server that queues the tasks at the correct times, and as a Worker, a server that completes the given tasks.
+With self-hosted deployments, you can configure how Mattermost schedules and completes periodic tasks such as the deletion of old posts with Data Retention enabled or indexing posts with Elasticsearch. These settings control which Mattermost servers are designated as a Scheduler, a server that queues the tasks at the correct times, and as a Worker, a server that completes the given tasks.
 
 When running Mattermost on a single machine, both ``RunJobs`` and ``RunScheduler`` should be enabled. Without both of these enabled, Mattermost will not function properly.
 

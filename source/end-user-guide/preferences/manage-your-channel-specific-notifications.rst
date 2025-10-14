@@ -1,7 +1,7 @@
 Manage your channel-specific notifications
 ===========================================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 By default, your web and desktop notification preferences apply to all channels you’re a member of. You can customize your per-channel notification preferences for any channel you're a member of for the following actions:

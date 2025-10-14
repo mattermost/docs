@@ -4,9 +4,6 @@ Server
 .. meta::
 	:page_title: Mattermost Server
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 Mattermost Server installs as a single compiled binary file that includes the RESTful JSON web service, authentication client, authentication provider, notification service, and data management service. The Mattermost Server can be deployed in stand-alone or high availability mode where two or more servers are clustered together using gossip protocol and a proxy server that routes traffic from client applications to healthy servers in the cluster. 
 
 .. toctree::
