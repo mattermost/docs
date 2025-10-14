@@ -51,7 +51,7 @@ Built for **multi-domain secure operations**, Enterprise Advanced builds on all 
 - :doc:`Classified and Sensitive Information Controls </end-user-guide/collaborate/display-channel-banners>`
 - :doc:`Zero Trust Security </administration-guide/manage/admin/attribute-based-access-control>` with dynamic attribute-based policy controls, environmental atributes, and User Authoritative Source integration
 - :doc:`Mobile security </security-guide/mobile-security>` controls
-- :doc:`Air-gapped deployment workflows </deployment-guide/server/air-gapped-deployment>`
+- :doc:`Air-gapped deployment workflows </deployment-guide/reference-architecture/deployment-scenarios/air-gapped-deployment>`
 
 Mattermost Enterprise 
 ~~~~~~~~~~~~~~~~~~~~~
