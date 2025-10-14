@@ -1,5 +1,5 @@
-Deploy Mattermost in Air-Gapped Environments
-==============================================
+Deploy in Air-Gapped Environments
+=================================
 
 An air-gapped environment is one that is isolated from the public internet, requiring all necessary components to be available locally. This guide outlines what you'll need to deploy Mattermost in a self-hosted air-gapped environment, focusing on appropriate preparation, deployment guidance and configurations required for a successful deployment.
 
@@ -14,7 +14,7 @@ This step is often dictated by the infrastruture already running in your air-gap
 
 2. **Setup a private container registry or package mirror:** 
 
-Ideally the air-gapped environment already has a private container registry or package mirror available. If not, we recommend following :ref:`our frequently asked questions <deployment-guide/server/air-gapped-deployment:frequently asked questions>` or referencing online resources specific to your environment.
+Ideally the air-gapped environment already has a private container registry or package mirror available. If not, we recommend following `our frequently asked questions <#frequently-asked-questions>`__ or referencing online resources specific to your environment.
 
 3. **Prepare your Bill of Materials:**
 
@@ -30,7 +30,7 @@ Once you have all the necessary resources in your air-gapped environment, you ca
 
 6. **Configure Mattermost for air-gapped operation**
 
-The :ref:`configuration settings <deployment-guide/server/air-gapped-deployment:server configuration>` recommended in this document accomodate for the lack of internet access to operate Mattermost in an air-gapped environment.
+The `configuration settings <server-configuration>`__ recommended in this document accomodate for the lack of internet access to operate Mattermost in an air-gapped environment.
 
 
 .. note::
@@ -405,8 +405,7 @@ A private container registry securely stores the Docker images necessary for air
 
    **Populate your private registry**
 
-   Ensure the required images from the :ref:`Bill of Materials <deployment-guide/server/air-gapped-deployment:bill of materials>` are downloaded and pushed to the private registry.
-
+   Ensure the required images from the `Bill of Materials <bill-of-materials>`__ are downloaded and pushed to the private registry.
 
    **Configure Docker to use private image registries**
 
