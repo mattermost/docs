@@ -1206,8 +1206,8 @@ Enable login with SAML
   :configjson: .SamlSettings.EnableSyncWithLdap
   :environment: MM_SAMLSETTINGS_ENABLESYNCWITHLDAP
 
-  - **true**: Mattermost updates configured Mattermost user attributes (ex. FirstName, Position, Email) with their values from AD/LDAP. From Mattermost v11, Mattermost checks whether a user exists on the connected LDAP server during login. If the user doesn't exist on the LDAP server, login fails.
-  - **false**: **(Default)** Disables syncing of SAML-authenticated Mattermost users with AD/LDAP. From Mattermost v11, Mattermost doesn't check whether a user exists on the connected LDAP server during login.
+  - **true**: Mattermost updates configured Mattermost user attributes (ex. FirstName, Position, Email) with their values from AD/LDAP. From Mattermost v10.9, Mattermost checks whether a user exists on the connected LDAP server during login. If the user doesn't exist on the LDAP server, login fails.
+  - **false**: **(Default)** Disables syncing of SAML-authenticated Mattermost users with AD/LDAP. From Mattermost v10.9, Mattermost doesn't check whether a user exists on the connected LDAP server during login.
 
 Enable synchronizing SAML accounts with AD/LDAP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1218,18 +1218,18 @@ Enable synchronizing SAML accounts with AD/LDAP
 +--------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 | - **true**: Mattermost updates configured Mattermost user attributes                                         | - System Config path: **Authentication > SAML 2.0**                              |
 |   (ex. FirstName, Position, Email) with their values from AD/LDAP.                                           | - ``config.json`` setting: ``SamlSettings`` > ``EnableSyncWithLdap`` > ``false`` |
-|   From v11, Mattermost checks whether a user exists on the connected LDAP server during login.               | - Environment variable: ``MM_SAMLSETTINGS_ENABLESYNCWITHLDAP``                   |
+|   From v10.9, Mattermost checks whether a user exists on the connected LDAP server during login.             | - Environment variable: ``MM_SAMLSETTINGS_ENABLESYNCWITHLDAP``                   |
 |   If the user doesn't exist on the LDAP server, login fails.                                                 |                                                                                  |
 |                                                                                                              |                                                                                  |
 | - **false**: **(Default)** Disables syncing of SAML-authenticated Mattermost users with AD/LDAP.             |                                                                                  |
-|   From Mattermost v11, Mattermost doesn't check whether a user exists on the connected LDAP server           |                                                                                  |
+|   From Mattermost v10.9, Mattermost doesn't check whether a user exists on the connected LDAP server         |                                                                                  |
 |   during login.                                                                                              |                                                                                  |
 +--------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 .. note::
 
   - AD/LDAP synchronization must be enabled and configured through the settings under **Authentication > AD/LDAP**.
-  - Prior to Mattermost v11, users not present on the LDAP server could log in, but would be deactivated on the next LDAP sync.
+  - Prior to Mattermost v10.9, users not present on the LDAP server could log in, but would be deactivated on the next LDAP sync.
   - See :doc:`AD/LDAP Setup </administration-guide/onboard/ad-ldap>` to learn more about configuring AD/LDAP.
 
 .. config:setting:: ignore-guest-users-when-synchronizing-with-adldap
