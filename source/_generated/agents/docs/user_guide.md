@@ -14,8 +14,8 @@ Access AI features through the right pane in one of the following ways:
 
 - Select the **Agents** icon in the apps sidebar.
 - @mention an AI bot in any channel where you have access (such as `@copilot`).
-- Use the **AI Actions** menu by hovering over the first message in any conversation thread (see [license requirements](/agents/docs/admin_guide.html#license-requirements))
-- Use the **Ask AI** option in channels with unread messages (see [license requirements](/agents/docs/admin_guide.html#license-requirements))
+- Use the **AI Actions** menu by hovering over the first message in any conversation thread (see [license requirements](https://docs.mattermost.com/administration-guide/configure/agents-admin-guide.html#license-requirements))
+- Use the **Ask AI** option in channels with unread messages (see [license requirements](https://docs.mattermost.com/administration-guide/configure/agents-admin-guide.html#license-requirements))
 
 ### Mobile
 
@@ -55,7 +55,7 @@ Available tools in direct messages include:
 
 ### Summarize discussion threads
 
-Summarizing a discussion thread requires a license. See [license requirements](/agents/docs/admin_guide.html#license-requirements) for details.
+Summarizing a discussion thread requires a license. See [license requirements](https://docs.mattermost.com/administration-guide/configure/agents-admin-guide.html#license-requirements) for details.
 
 To summarize a discussion thread:
 
@@ -69,7 +69,7 @@ This is particularly useful for catching up on long discussions, creating meetin
 
 ### Summarize unread channels
 
-Summarizing unread Mattermost channels requires a license. See [license requirements](/agents/docs/admin_guide.html#license-requirements) for details.
+Summarizing unread Mattermost channels requires a license. See [license requirements](https://docs.mattermost.com/administration-guide/configure/agents-admin-guide.html#license-requirements) for details.
 
 To summarize unread Mattermost channels:
 
@@ -81,7 +81,7 @@ The channel summary is generated in the Agents pane, and only you can view the s
 
 ## Search with AI
 
-You can enhance Mattermost [search](https://docs.mattermost.com/collaborate/search-for-messages.html) with AI capabilities. Semantic AI search requires a license (see [license requirements](/agents/docs/admin_guide.html#license-requirements)), and AI search is an [experimental](https://docs.mattermost.com/manage/feature-labels.html#experimental) feature.
+You can enhance Mattermost [search](https://docs.mattermost.com/collaborate/search-for-messages.html) with AI capabilities. Semantic AI search requires a license (see [license requirements](https://docs.mattermost.com/administration-guide/configure/agents-admin-guide.html#license-requirements)), and AI search is an [experimental](https://docs.mattermost.com/manage/feature-labels.html#experimental) feature.
 
 Open the Agents pane from the right sidebar and use natural language to search for content (such as "find discussions about the new product launch"). The AI will find semantically relevant results, even if they don't contain the exact keywords, and results respect your permissions so you'll only see content you have access to.
 
@@ -106,4 +106,4 @@ To summarize a Mattermost call recording:
 
 The meeting summary is generated and shared as a direct message with the person who requested the meeting summary.
 
-Both call recordings and recorded meeting summarization require a license. See [license requirements](/agents/docs/admin_guide.html#license-requirements) for details. Contact your system admin if these features aren't available for your Mattermost instance.
+Both call recordings and recorded meeting summarization require a license. See [license requirements](https://docs.mattermost.com/administration-guide/configure/agents-admin-guide.html#license-requirements) for details. Contact your system admin if these features aren't available for your Mattermost instance.
