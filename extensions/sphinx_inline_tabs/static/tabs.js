@@ -114,6 +114,11 @@ function ready() {
 
     // Reset the active section in the ToC
     updateScrollCurrentForHash("");
+    
+    // If there's a hash in the URL, handle it now
+    if (window.location.hash !== "") {
+        onHashchange();
+    }
 
     // Register the hashchange handler
     window.addEventListener("hashchange", onHashchange);
