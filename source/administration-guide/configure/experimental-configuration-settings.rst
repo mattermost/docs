@@ -1552,21 +1552,21 @@ From Mattermost v10.10, when this :ref:`experimental <administration-guide/manag
   :configjson: ExperimentalStrictCSRFEnforcement
   :environment: N/A
 
-  - **true**: **(Default for new deployments from Mattermost Server v11 onward)** Enables CSRF protection tokens for additional hardening compared to the currently used custom header.
-  - **false**: **(Default for deployments prior to v11)** Disables CSRF protection tokens and enables legacy X-Requested-With header fallback.
+  - **true**: Enables CSRF protection tokens for additional hardening compared to the currently used custom header.
+  - **false**: **(Default)** Disables CSRF protection tokens and enables legacy X-Requested-With header fallback.
 
 Strict CSRF token enforcement
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-**True**: Enables CSRF protection tokens for additional hardening compared to the currently used custom header. When the user logs in, an additional cookie is created with the CSRF token contained. This is the default behavior for new deployments from Mattermost Server v11 onward.
+**True**: Enables CSRF protection tokens for additional hardening compared to the currently used custom header. When the user logs in, an additional cookie is created with the CSRF token contained.
 
-**False**: Disables CSRF protection tokens and enables legacy X-Requested-With header fallback for backward compatibility. This setting maintains the previous CSRF protection method used prior to v11. Existing deployments upgrading to v11 will retain their current configuration.
+**False**: Disables CSRF protection tokens and enables legacy X-Requested-With header fallback for backward compatibility.
 
-+------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalStrictCSRFEnforcement": true`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalStrictCSRFEnforcement": false`` with options ``true`` and ``false``. |
++-------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: developer-flags
   :displayname: Developer flags (Experimental)

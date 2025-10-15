@@ -32,13 +32,6 @@ The following instructions migrate Mattermost from one server to another by back
 
 Once your migration is complete and verified, you can optionally :ref:`upgrade the Team Edition of Mattermost to Enterprise Edition using the upgrade guide <administration-guide/upgrade/upgrading-mattermost-server:upgrade team edition to enterprise edition>`.
 
-Move a GitLab Omnibus instance of Mattermost
---------------------------------------------
-
-See the `Mattermost Omnibus migration guidance <https://github.com/mattermost/mattermost-omnibus/blob/main/README.md>`_ for detailed instructions on migrating your GitLab Omnibus instance of Mattermost.
-
-See the Mattermost Support Knowledge Base article on `Migrating Mattermost DB from GitLab Omnibus PostgreSQL installation to a standalone PostgreSQL <https://support.mattermost.com/hc/en-us/articles/40846797684756-Migrating-Mattermost-DB-from-GitLab-Omnibus-PostgreSQL-installation-to-a-standalone-PostgreSQL>`_. This migration is commonly needed when separating Mattermost from GitLab or when moving to dedicated database infrastructure.
-
 Move from Slack
 ------------------
 
