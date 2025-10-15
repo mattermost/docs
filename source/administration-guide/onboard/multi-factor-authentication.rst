@@ -35,9 +35,6 @@ MFA can be disabled for user accounts using the API. See the `Mattermost API Ref
 Enforcing MFA
 --------------
 
-.. include:: ../../_static/badges/pro-plus.rst
-  :start-after: :nosearch:
-
 Admins can fulfill Multi-Factor Authentication (MFA) compliance requirements by enforcing an MFA requirement for login with email and LDAP accounts. Go to **System Console > Authentication > MFA**, then set **Enforce Multi-factor Authentication** to **true**.
 
 When MFA enforcement is set to **true**, users with email or LDAP authentication who don't have MFA set up will be directed to the MFA setup page when they log in to Mattermost. They will not be able to access the site until MFA setup is complete. Any new users will be required to set up MFA during the sign up process.

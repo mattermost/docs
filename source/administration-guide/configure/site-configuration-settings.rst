@@ -1151,6 +1151,9 @@ Enable notification monitoring
 System-wide notifications
 -------------------------
 
+.. include:: ../../_static/badges/all-commercial.rst
+  :start-after: :nosearch:
+
 Access the following configuration settings in the System Console by going to **Site Configuration > System-wide notifications**.
 
 .. config:setting:: enable-system-wide-notifications

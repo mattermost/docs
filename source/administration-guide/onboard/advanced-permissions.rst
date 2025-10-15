@@ -37,7 +37,7 @@ You can access the System Scheme interface by going to **System Console > User M
 Team override scheme
 ~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-adv.rst
+.. include:: ../../_static/badges/entry-adv.rst
   :start-after: :nosearch:
 
 On systems with multiple :ref:`Mattermost teams <end-user-guide/collaborate/organize-using-teams:single team versus multiple teams>`, each team may operate and collaborate in a unique way. Team Override Schemes give Admins the flexibility to tailor permissions to the needs of each team.
@@ -60,6 +60,9 @@ The channel permissions interface is accessed in **System Console > User Managem
 Advanced access controls
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. include:: ../../_static/badges/entry-adv.rst
+  :start-after: :nosearch:
+
 See the :ref:`team and channel management <administration-guide/manage/team-channel-members:advanced access controls>` documentation for details on available channel access controls. 
 
 Recipes
@@ -69,6 +72,9 @@ This section provides some examples of common permissions use cases for team man
 
 Team management
 ~~~~~~~~~~~~~~~~
+
+.. include:: ../../_static/badges/entry-adv.rst
+  :start-after: :nosearch:
 
 Ensure users only see each other when in the same team or channel
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -99,6 +105,9 @@ Example: In Team A, only allow system and team admins to add new team members. A
 
 Public and private channel management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../../_static/badges/entry-adv.rst
+  :start-after: :nosearch:
 
 Restrict who can rename & edit channels
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -145,7 +154,7 @@ This permission is applied to all other roles (excluding the Guest role). When t
 Read-only channels
 ~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-adv.rst
+.. include:: ../../_static/badges/entry-adv.rst
   :start-after: :nosearch:
 
 Members can participate but guests can only read and react

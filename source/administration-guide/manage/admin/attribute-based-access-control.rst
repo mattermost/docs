@@ -1,7 +1,7 @@
 Attribute-Based Access Control
 ================================
 
-.. include:: ../../../_static/badges/ent-adv.rst
+.. include:: ../../../_static/badges/entry-adv.rst
   :start-after: :nosearch:
 
 .. toctree::

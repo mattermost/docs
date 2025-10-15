@@ -43,7 +43,7 @@ Alternatively, system admins can use the mmctl ``mmctl team restore`` to archive
 Team management
 ~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-adv.rst
+.. include:: ../../_static/badges/entry-adv.rst
   :start-after: :nosearch:
 
 - When **Sync Group Members** is enabled, the **Synced Groups** list is visible and additional groups can be added.
@@ -52,7 +52,7 @@ Team management
 Groups
 ~~~~~~~
 
-.. include:: ../../_static/badges/ent-adv.rst
+.. include:: ../../_static/badges/entry-adv.rst
   :start-after: :nosearch:
 
 You can add and remove groups, as well as promote or demote group members to team admin/member roles.
@@ -88,7 +88,7 @@ The name and description of the channel. To archive the channel, select **Archiv
 Channel management
 ~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-adv.rst
+.. include:: ../../_static/badges/entry-adv.rst
   :start-after: :nosearch:
 
 - When **Sync Group Members** is enabled, the **Synced Groups** list is visible and additional groups can be added.
@@ -96,6 +96,9 @@ Channel management
 
 Advanced access controls
 ~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../../_static/badges/entry-adv.rst
+  :start-after: :nosearch:
 
 Advanced access control settings enable system admins to restrict actions within specific channels. These actions include:
 
@@ -136,7 +139,7 @@ The channel is available for all members and guests to access but only Admins ca
 Groups
 ~~~~~~
 
-.. include:: ../../_static/badges/ent-adv.rst
+.. include:: ../../_static/badges/entry-adv.rst
   :start-after: :nosearch:
 
 You can add and remove groups, as well as promote or demote group members to team admin/member roles.

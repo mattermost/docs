@@ -1,7 +1,7 @@
 Channel-specific access rules
 =============================
 
-.. include:: ../../../_static/badges/ent-adv.rst
+.. include:: ../../../_static/badges/entry-adv.rst
   :start-after: :nosearch:
 
 Channel and Team Admins can self-manage access controls for their private channels directly through the Channel Settings modal, without requiring System Admin intervention. For organization-wide policies created by System Admins, see :doc:`System-wide attribute-based access policies </administration-guide/manage/admin/abac-system-wide-policies>`.

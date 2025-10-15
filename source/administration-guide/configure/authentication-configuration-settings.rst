@@ -344,6 +344,9 @@ Enable forgot password link
 MFA
 ---
 
+.. include:: ../../_static/badges/all-commercial.rst
+  :start-after: :nosearch:
+
 Access the following configuration settings in the System Console by going to **Authentication > MFA**.
 
 We recommend deploying Mattermost within your own private network, and using VPN clients for mobile access, so that Mattermost is secured with your existing protocols. If you choose to run Mattermost outside your private network, bypassing your existing security protocols, we recommend adding a multi-factor authentication service specifically for accessing Mattermost.
@@ -374,14 +377,14 @@ Enable multi-factor authentication
 
   - **true**: Requires `multi-factor authentication (MFA) <https://docs.mattermost.com/administration-guide/onboard/multi-factor-authentication.html>`__ for users who sign-in with AD/LDAP or an email address.
     New users must configure MFA. Logged in users are redirected to the MFA setup page until configuration is complete.
-  - **false**: MFA is optional.
+  - **false**: **(Default)** MFA is optional.
 
 Enforce multi-factor authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +-------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
-| - **true**: Requires `multi-factor authentication (MFA)                                               | - System Config path: **Authentication > MFA**                                                    |
-|   :doc:</administration-guide/onboard/multi-factor-authentication>`                                   | - ``config.json`` setting: ``ServiceSettings`` > ``EnforceMultifactorAuthentication`` > ``false`` |
+| - **true**: Requires :doc:`multi-factor authentication (MFA)                                          | - System Config path: **Authentication > MFA**                                                    |
+|   </administration-guide/onboard/multi-factor-authentication>`                                        | - ``config.json`` setting: ``ServiceSettings`` > ``EnforceMultifactorAuthentication`` > ``false`` |
 |   for users who sign-in with AD/LDAP or an email address.                                             | - Environment variable: ``MM_SERVICESETTINGS_ENFORCEMULTIFACTORAUTHENTICATION``                   |
 |   New users must set up MFA. Logged in users are redirected to the MFA                                |                                                                                                   |
 |   setup page until configuration is complete.                                                         |                                                                                                   |
@@ -2586,18 +2589,6 @@ Whitelisted guest domains
 
   - **True**: Multi-factor authentication (MFA) is required for login.
   - **False**: **(Default)** Multi-factor authentication for guests is optional.
-
-Enforce multi-factor authentication
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
-| - **true**: Guests must use MFA. Guests without MFA are redirected to the setup page until MFA is configured. | - System Config path: **Authentication > Guest Access**                                                 |
-| - **false**: **(Default)** MFA is not required for guests.                                                    | - ``config.json`` setting: ``GuestAccountsSettings`` > ``EnforceMultifactorAuthentication`` > ``false`` |
-|                                                                                                               | - Environment variable: ``MM_GUESTACCOUNTSSETTINGS_ENFORCEMULTIFACTORAUTHENTICATION``                   |
-+---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
-
-.. note::
-  This setting defaults to false and cannot be changed if MFA isn't enforced for non-guest users.
 
 .. config:setting:: show-guest-tag
   :displayname: Show guest tag (Guest Access)

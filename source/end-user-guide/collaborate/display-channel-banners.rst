@@ -1,7 +1,7 @@
 Display channel banners
 =======================
 
-.. include:: ../../_static/badges/ent-adv.rst
+.. include:: ../../_static/badges/entry-adv.rst
   :start-after: :nosearch:
 
 From Mattermost v10.9, users with admin permissions can enable channel banners to remind channel members about being diligent to avoid data spillage in channels that aren't intended for classified or sensitive information. These non-dismissible banners can be styled using Markdown and are visible across all Mattermost clients, including web browsers, the desktop app, and the mobile app.
