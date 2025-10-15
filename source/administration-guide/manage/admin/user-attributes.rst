@@ -81,7 +81,11 @@ From Mattermost v11, system administrators have enhanced control over custom pro
 Add attributes
 ---------------
 
-You can define and manage up to 20 system attributes using the System Console. Each attribute becomes a user profile option users can populate. Once you reach the maximum of 20 attributes, you can't create new attributes until you `delete attributes <#manage-attributes>`__ you no longer need.
+You can define and manage up to 20 system attributes using the System Console. Each attribute becomes a user profile option users can populate, unless you disable the **Editable by Users** option, available from Mattermost v11. Once you reach the maximum of 20 attributes, you can't create new attributes until you `delete attributes <#manage-attributes>`__ you no longer need.
+
+.. note::
+
+  When you disable the **Editable by Users** option for an attribute, only admins can set its value using :ref:`mmctl cpa <administration-guide/manage/mmctl-command-line-tool:mmctl cpa>` commands.
 
 1. In the System Console, go to **Site Configuration > System Attributes > User Attributes** and select **Add Attribute**.
 2. Enter the following details:
