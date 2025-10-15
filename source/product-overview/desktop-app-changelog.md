@@ -30,6 +30,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 #### All Platforms
 
 - Added the ability to open multiple tabs and windows for any given server.
+- Added parent-child popout window support, with listeners to facilitate communication.
 - Added pre-auth headers to the server modal and an inject header into all requests to that server.
 - Unified and polished basic authentication, client certificate and pre-auth header authentication methods.
 - Added server version information to the **Help** menu.
