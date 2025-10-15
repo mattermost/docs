@@ -21,7 +21,7 @@ If you want to check that the version of Mattermost you are installing is the of
     - SBOM Download Link: https://releases.mattermost.com/10.12.1/sbom-enterprise-v10.12.1.json
   Mattermost Enterprise Edition v10.11.4 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v10-changelog.html#release-v10-11-extended-support-release>`__ - `Download <https://releases.mattermost.com/10.11.4/mattermost-10.11.4-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.11.4/mattermost-10.11.4-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``4996a48fd5ddd44e88b99b0b7a8f03c362ac36794cf68bef4e7eb4be204890c1``
+    - SHA-256 Checksum: ``c616b539d991f17802bbde268bbfcb6727a2be3a7eb38b66b97c032685fe96a5``
     - GPG Signature: https://releases.mattermost.com/10.11.4/mattermost-10.11.4-linux-amd64.tar.gz.sig
     - SBOM Download Link: https://releases.mattermost.com/10.11.4/sbom-enterprise-v10.11.4.json
   Mattermost Enterprise Edition v10.10.3 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-10-feature-release>`__ - `Download <https://releases.mattermost.com/10.10.3/mattermost-10.10.3-linux-amd64.tar.gz?src=arc>`__
@@ -51,7 +51,7 @@ If you want to check that the version of Mattermost you are installing is the of
     - SBOM Download Link: https://releases.mattermost.com/10.6.6/sbom-enterprise-v10.6.6.json
   Mattermost Enterprise Edition v10.5.12 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-5-extended-support-release>`__ - `Download <https://releases.mattermost.com/10.5.12/mattermost-10.5.12-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.5.12/mattermost-10.5.12-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``d77e136fb45352c49969bd7418899f9ddbc8daf73f297bfa4b7bc9ad2f9a8b0d``
+    - SHA-256 Checksum: ``163d0050ffd6fe92ef5fa5697180e0e3a280e27453108d5d000f246073f778d4``
     - GPG Signature: https://releases.mattermost.com/10.5.12/mattermost-10.5.12-linux-amd64.tar.gz.sig
     - SBOM Download Link: https://releases.mattermost.com/10.5.12/sbom-enterprise-v10.5.12.json
   Mattermost Enterprise Edition v10.4.5 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-4-feature-release>`__ - `Download <https://releases.mattermost.com/10.4.5/mattermost-10.4.5-linux-amd64.tar.gz?src=arc>`__
@@ -454,7 +454,7 @@ If you want to check that the version of Mattermost you are installing is the of
     - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v10.12.1/sbom-mattermost-v10.12.1.json
   Mattermost Team Edition v10.11.4 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v10-changelog.html#release-v10-11-extended-support-release>`__ - `Download <https://releases.mattermost.com/10.11.4/mattermost-team-10.11.4-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.11.4/mattermost-team-10.11.4-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``fa0710eecc7607797e4dc5b7b361ae7436f2836eb27bc321f4885e7c88857fd6``
+    - SHA-256 Checksum: ``32aff9dea662de7aa9fa2ae3387f7eb207571af8cca95900ec7e80f91919263e``
     - GPG Signature: https://releases.mattermost.com/10.11.4/mattermost-team-10.11.4-linux-amd64.tar.gz.sig
     - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v10.11.4/sbom-mattermost-v10.11.4.json
   Mattermost Team Edition v10.10.3 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-10-feature-release>`__ - `Download <https://releases.mattermost.com/10.10.3/mattermost-team-10.10.3-linux-amd64.tar.gz?src=arc>`__
@@ -484,7 +484,7 @@ If you want to check that the version of Mattermost you are installing is the of
     - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v10.6.6/sbom-mattermost-v10.6.6.json
   Mattermost Team Edition v10.5.12 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-5-extended-support-release>`__ - `Download <https://releases.mattermost.com/10.5.12/mattermost-team-10.5.12-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.5.12/mattermost-team-10.5.12-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``0c4b44036902dfe6a89dea08a55e57feb00ad9d76011d2aa7fc4a9fe2a0c6f7c``
+    - SHA-256 Checksum: ``db827149ee575614cc4855b13d49be893710d14ed38495660087f31d7ae4f34e``
     - GPG Signature: https://releases.mattermost.com/10.5.12/mattermost-team-10.5.12-linux-amd64.tar.gz.sig
     - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v10.5.12/sbom-mattermost-v10.5.12.json
   Mattermost Team Edition v10.4.5 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-4-feature-release>`__ - `Download <https://releases.mattermost.com/10.4.5/mattermost-team-10.4.5-linux-amd64.tar.gz?src=arc>`__
