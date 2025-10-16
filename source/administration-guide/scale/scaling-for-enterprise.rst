@@ -1,6 +1,9 @@
 Scaling for Enterprise 
 ======================
 
+.. include:: ../../_static/badges/ent-plus.rst
+  :start-after: :nosearch:
+
 Mattermost is designed to scale from small teams hosted on a single server to large enterprises running in cluster-based, highly available deployment configurations.
 
 - Mattermost supports any 64-bit x86 processor architecture
@@ -39,6 +42,7 @@ Available reference architectures
     :hidden:
     :titlesonly:
 
+    Deployment architecture at scale </administration-guide/scale/server-architecture>
     Backing storage benchmarks </administration-guide/scale/backing-storage-benchmarks>
     Enterprise search </administration-guide/scale/enterprise-search>
     High availability </administration-guide/scale/high-availability-cluster-based-deployment> 

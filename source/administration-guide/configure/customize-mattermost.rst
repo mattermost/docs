@@ -1,7 +1,7 @@
 Customizing Mattermost
 ======================
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 There are several ways to customize your Mattermost server. 

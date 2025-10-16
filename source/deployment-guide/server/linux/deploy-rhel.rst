@@ -9,7 +9,7 @@
       <ul>
         <li>Operating System: Enterprise Linux 7+, Oracle Linux  6+, Oracle Linux 7+</li>
         <li>Hardware: 1 vCPU/core with 2GB RAM (support for up to 1,000 users)</li>
-        <li>Database: <a href="https://docs.mattermost.com/deployment-guide/postgres-migration.html">PostgreSQL v13+</a></li>
+        <li>Database: <a href="https://docs.mattermost.com/deployment-guide/postgres-migration.html">PostgreSQL v14+</a></li>
         <li>Network:
           <ul>
             <li>Application 80/443, TLS, TCP Inbound</li>
@@ -46,13 +46,13 @@ In a terminal window, ssh onto the system that will host the Mattermost Server. 
 
   .. code-block:: sh
 
-    wget https://releases.mattermost.com/10.12.0/mattermost-10.12.0-linux-amd64.tar.gz
+    wget https://releases.mattermost.com/11.0.2/mattermost-11.0.2-linux-amd64.tar.gz
 
 .. tab:: Current ESR
 
   .. code-block:: sh
 
-    wget https://releases.mattermost.com/10.11.3/mattermost-10.11.3-linux-amd64.tar.gz
+    wget https://releases.mattermost.com/10.11.4/mattermost-10.11.4-linux-amd64.tar.gz
 
 .. tab:: Older releases
 
@@ -164,7 +164,7 @@ Configure the following properties in this file:
 
 .. note::
 
-  We recommend configuring the `Support Email <https://docs.mattermost.com/administration/config-settings.html#support-email>`_ under ``SupportSettings``, set ``"SupportEmail"``. This is the email address your users will contact when they need help.
+  We recommend configuring the :ref:`Support Email <administration-guide/configure/site-configuration-settings:support email address>` under ``SupportSettings``, set ``"SupportEmail"``. This is the email address your users will contact when they need help.
 
 After modifying the ``config.json`` configuration file, you can now start the Mattermost server:
 

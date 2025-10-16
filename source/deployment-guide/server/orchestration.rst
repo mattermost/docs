@@ -56,7 +56,7 @@ Installation
 Documentation 
 ~~~~~~~~~~~~~
 
-1. **Include link to official Mattermost documentation**. README or equivalent contains statement ``Please see https://docs.mattermost.com for official documentation.``
+1. **Include link to official Mattermost documentation**. README or equivalent contains statement **Please see https://docs.mattermost.com for official documentation.**
 
   Include the following information in text, markdown, HTML or other format. Square brackets ``[]`` indicate optional statements depending on the configuration of your solution:
 
@@ -64,8 +64,8 @@ Documentation
 
     Following automated deployment, the following steps are required to make your system production-ready:
 
-    - [Configure SSL for Mattermost](https://docs.mattermost.com/deployment-guide/server/setup-nginx-proxy.html#configure-nginx-with-ssl-and-http-2)
-    - [Configure SMTP email for Mattermost](https://docs.mattermost.com/administration-guide/configure/smtp-email.html)
+    - :ref:`Configure SSL for Mattermost <deployment-guide/server/setup-nginx-proxy:configure nginx with ssl and http/2>`
+    - :doc:`Configure SMTP email for Mattermost </administration-guide/configure/smtp-email>`
 
 2. **Unofficial deployment options should be documented**. Unofficial deployment configurations, such as use of Linux operating systems that are not officially supported, should be documented in the README.
 
@@ -79,7 +79,7 @@ Security updates
 Branding 
 ~~~~~~~~
 
-**Support Mattermost branding and naming guidelines**. To ensure naming is clear across deployment solutions, README or equivalent should contain ``The name for this deployment solution in the context of [Mattermost branding guidelines](https://handbook.mattermost.com/operations/operations/publishing/publishing-guidelines/brand-and-visual-design-guidelines) is `[NAME] for Mattermost by [CREATOR]`.`` For example, ``Multi-node Docker deployment solution for Mattermost by John Doe``. This is the name that will be used to refer to your work in Mattermost community materials.
+**Support Mattermost branding and naming guidelines**. To ensure naming is clear across deployment solutions, README or equivalent should contain ``The name for this deployment solution in the context of `Mattermost branding guidelines <https://handbook.mattermost.com/operations/operations/publishing/publishing-guidelines/brand-and-visual-design-guidelines>`_ is `[NAME] for Mattermost by [CREATOR]`.`` For example, ``Multi-node Docker deployment solution for Mattermost by John Doe``. This is the name that will be used to refer to your work in Mattermost community materials.
 
 Upgrade 
 ~~~~~~~

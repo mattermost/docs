@@ -1,7 +1,7 @@
 Performance monitoring metrics
 ==============================
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 Mattermost provides the following performance monitoring statistics to integrate with Prometheus and Grafana.
@@ -231,7 +231,7 @@ Web app metrics
 Standard Go metrics
 --------------------
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 The performance monitoring feature provides standard Go metrics for HTTP server runtime profiling data and system monitoring, such as:
@@ -268,9 +268,6 @@ where you can replace ``localhost`` with the server name. The profiling reports 
 
 Host/system metrics
 --------------------
-
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 From Metrics Plugin v0.7.0, you can pull metrics from `node exporter <https://github.com/prometheus/node_exporter>`_ targets to access network-related panels for Mattermost Calls.
 

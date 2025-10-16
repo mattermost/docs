@@ -3,7 +3,7 @@
 Chinese, Japanese and Korean search
 ======================================
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Enabling search for Chinese, Japanese and Korean (CJK) requires special configuration, since these languages do not contain spaces.

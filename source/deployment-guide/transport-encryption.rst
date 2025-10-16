@@ -1,7 +1,7 @@
 Configuring transport encryption
 =================================
 
-.. include:: ../_static/badges/ent-selfhosted.rst
+.. include:: ../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 The components of the Mattermost setup are shown in the following diagram, including the transport encryption used. Aside from the encryption between the nodes of the Mattermost cluster, all transports rely on TLS encryption.
@@ -15,9 +15,6 @@ The components of the Mattermost setup are shown in the following diagram, inclu
 
 Configuring proxy to Mattermost transport encryption
 -----------------------------------------------------
-
-.. include:: ../_static/badges/ent-selfhosted.rst
-  :start-after: :nosearch:
 
 Mattermost is able to encrypt the traffic between the proxy and the application server using TLS.
 
@@ -130,9 +127,6 @@ Finally, on the **NGINX server**, reload the configuration to ensure that reques
 Configuring database transport encryption
 ------------------------------------------
 
-.. include:: ../_static/badges/ent-selfhosted.rst
-  :start-after: :nosearch:
-
 Mattermost is able to encrypt the traffic between the database and the application using TLS. This guide describes the setup steps for a single, separate MySQL server.
 
 Prerequisites
@@ -174,7 +168,7 @@ Any connection to the MySQL server must now be made with secure transport enable
 
 Last but not least, restart the server and confirm it is up and running:
 
-  .. code-block:: sh
+.. code-block:: sh
 
   systemctl restart mysql
   systemctl status mysql
@@ -251,9 +245,6 @@ Once complete, restart the Mattermost server and ensure the system is operationa
 
 Configuring cluster transport encryption
 -----------------------------------------
-
-.. include:: ../_static/badges/ent-selfhosted.rst
-  :start-after: :nosearch:
 
 Mattermost is able to encrypt the messages sent within the cluster of a deployment using SSH tunneling. The guide walks through the deployment of this solution on Ubuntu 20.04, but it can be adapted for any Linux operating system.
 

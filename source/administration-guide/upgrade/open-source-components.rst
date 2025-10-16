@@ -1,7 +1,7 @@
 Open Source Components
 =======================
 
-.. include:: ../../_static/badges/ent-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 The following open source components are used to provide the full benefits of Mattermost Enterprise.
@@ -36,6 +36,7 @@ Desktop
 Mobile
 -------
 
+- Mattermost Mobile v2.33.0 - `View Open Source Components <https://github.com/mattermost/mattermost-mobile/blob/release-2.33/NOTICE.txt>`__.
 - Mattermost Mobile v2.32.0 - `View Open Source Components <https://github.com/mattermost/mattermost-mobile/blob/release-2.32/NOTICE.txt>`__.
 - Mattermost Mobile v2.31.0 - `View Open Source Components <https://github.com/mattermost/mattermost-mobile/blob/release-2.31/NOTICE.txt>`__.
 - Mattermost Mobile v2.30.0 - `View Open Source Components <https://github.com/mattermost/mattermost-mobile/blob/release-2.30/NOTICE.txt>`__.
@@ -129,6 +130,7 @@ Mobile
 Server
 ------------------------------
 
+- Mattermost Enterprise Edition v11.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-11.0/NOTICE.txt>`__.
 - Mattermost Enterprise Edition v10.12.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-10.12/NOTICE.txt>`__.
 - Mattermost Enterprise Edition v10.11.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-10.11/NOTICE.txt>`__.
 - Mattermost Enterprise Edition v10.10.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-10.10/NOTICE.txt>`__.

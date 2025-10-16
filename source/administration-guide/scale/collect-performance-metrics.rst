@@ -1,7 +1,7 @@
 Collect performance metrics
 ============================
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 System admins can collect and store the :doc:`same performance monitoring metrics </administration-guide/scale/performance-monitoring-metrics>` as Prometheus, without having to deploy these third-party tools. Data is collected every minute and is stored in a path you configure. The data is synchronized to either a cloud-based or local file store every hour, and retained for 15 days. 
@@ -26,6 +26,7 @@ For a self-hosted Mattermost deployment, a Mattermost system admin must perform 
 3. Go to **System Console > Plugins > Plugin Management**. In the **Installed Plugins** section, scroll to **Mattermost Metrics Plugin**, and select **Enable Plugin**.
 4. Specify the path of the time-series database, and select **Save**.
 5. Go to **System Console > Environment > Performance Monitoring**, and set **Enable Performance Monitoring** to **true**. Select **Save**.
+6. Go to **System Console > Environment > Performance Monitoring**, and set **Enable Client Performance Monitoring** to **true**. This setting is required for the system administrator's performance monitoring product experience. Select **Save**.
 
 .. note::
 

@@ -1,8 +1,5 @@
 # Mobile Releases
 
-```{include} ../_static/badges/allplans-cloud-selfhosted.md
-```
-
 ```{Important}
 ```{include} common-esr-support.md
 ```
@@ -21,6 +18,7 @@ We strongly recommend using the latest mobile app release available that contain
 
 | **Release** | **Support** | **Compatible with** |
 |:---|:---|:---|
+| v2.33 {ref}`FEATURE <release-v2-33-0>` \| [Download](https://github.com/mattermost/mattermost-mobile/releases/tag/v2.33.0) \| {ref}`Changelog <release-v2-33-0>` \| [SBOM download](https://github.com/mattermost/mattermost-mobile/releases/download/v2.33.0/sbom-mattermost-mobile-v2.33.0.json) | Released: 2025-10-16<br/>Support Ends: 2025-11-15 | {ref}`v11.0 <release-v11.0-major-release>`, {ref}`v10.12 <release-v10.12-feature-release>`, {ref}`v10.11 <release-v10.11-extended-support-release>`, {ref}`v10.5 <release-v10.5-extended-support-release>` 
 | v2.32 {ref}`FEATURE <release-v2-32-0>` \| [Download](https://github.com/mattermost/mattermost-mobile/releases/tag/v2.32.0) \| {ref}`Changelog <release-v2-32-0>` \| [SBOM download](https://github.com/mattermost/mattermost-mobile/releases/download/v2.32.0/sbom-mattermost-mobile-v2.32.0.json) | Released: 2025-09-15<br/>Support Ends: 2025-10-15 | {ref}`v10.12 <release-v10.12-feature-release>`, {ref}`v10.11 <release-v10.11-extended-support-release>`, {ref}`v10.10 <release-v10.10-feature-release>`, {ref}`v10.5 <release-v10.5-extended-support-release>` 
 | v2.31 {ref}`FEATURE <release-v2-31-0>` \| [Download](https://github.com/mattermost/mattermost-mobile/releases/tag/v2.31.0) \| {ref}`Changelog <release-v2-31-0>` \| [SBOM download](https://github.com/mattermost/mattermost-mobile/releases/download/v2.31.0/sbom-mattermost-mobile-v2.31.0.json) | Released: 2025-08-15<br/>Support Ends: 2025-09-15 | {ref}`v10.11 <release-v10.11-extended-support-release>`, {ref}`v10.10 <release-v10.10-feature-release>`, {ref}`v10.9 <release-v10.9-feature-release>`, {ref}`v10.5 <release-v10.5-extended-support-release>` |
 | v2.30 {ref}`FEATURE <release-v2-30-0>` \| [Download](https://github.com/mattermost/mattermost-mobile/releases/tag/v2.30.0) \| {ref}`Changelog <release-v2-30-0>` \| [SBOM download](https://github.com/mattermost/mattermost-mobile/releases/download/v2.30.0/sbom-mattermost-mobile-v2.30.0.json) | Released: 2025-07-16<br/>Support Ends: 2025-08-15 | {ref}`v10.10 <release-v10.10-feature-release>`, {ref}`v10.9 <release-v10.9-feature-release>`, {ref}`v10.8 <release-v10.8-feature-release>`, {ref}`v10.5 <release-v10.5-extended-support-release>` |
@@ -61,9 +59,9 @@ Note that the below versions have not yet been tested. The information below is 
 
 | **Release** | **Support** | **Compatible with** |
 |:---|:---|:---|
+| v2.39 | Releasing: 2026-04-16<br/>Support Ends: 2026-05-15 | v11.6, v11.5, v11.4, v10.11 |
 | v2.38 | Releasing: 2026-03-16<br/>Support Ends: 2026-04-15 | v11.5, v11.4, v11.3, v10.11 |
 | v2.37 | Releasing: 2026-02-16<br/>Support Ends: 2026-03-15 | v11.4, v11.3, v11.2, v10.11 |
 | v2.36 | Releasing: 2026-01-16<br/>Support Ends: 2026-02-15 | v11.3, v11.2, v11.1, v10.11 |
 | v2.35 | Releasing: 2025-12-16<br/>Support Ends: 2026-01-15 | v11.2, v11.1, v11.0, v10.11 |
 | v2.34 | Releasing: 2025-11-16<br/>Support Ends: 2025-12-15 | v11.1, v11.0, v10.12, v10.11 |
-| v2.33 | Releasing: 2025-10-16<br/>Support Ends: 2025-11-15 | v11.0, v10.12, v10.11, v10.5 |

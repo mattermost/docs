@@ -30,6 +30,86 @@ The following Mattermost configuration settings are deprecated and are no longer
 Bleve settings
 --------------
 
+*Bleve search has been deprecated from Mattermost v11.0. We recommend using Elasticsearch or OpenSearch for enterprise search capabilities.*
+
+Enable Bleve indexing
+~~~~~~~~~~~~~~~~~~~~~
+
+*Deprecated from Mattermost v11.0*
+
+This setting was available in the System Console by going to **Experimental > Bleve**, or by editing the ``config.json`` file.
+
+**True**: The indexing of new posts occurs automatically.
+
+**False**: The indexing of new posts does not occur automatically.
+
++------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableIndexing": false`` with options ``true`` and ``false``. |
++------------------------------------------------------------------------------------------------------------+
+
+Index directory
+~~~~~~~~~~~~~~~
+
+*Deprecated from Mattermost v11.0*
+
+This setting was available in the System Console by going to **Experimental > Bleve**, or by editing the ``config.json`` file.
+
+Directory path to use for storing bleve indexes.
+
++-----------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"IndexDir": ""`` with string input.                           |
++-----------------------------------------------------------------------------------------------------------+
+
+Bulk index now
+~~~~~~~~~~~~~~
+
+Select **Index Now** to index all users, channels, and posts in the database from oldest to newest. Bleve is available during indexing, but search results may be incomplete until the indexing job is complete.
+
+Purge indexes
+~~~~~~~~~~~~~
+
+Select **Purge Index** to remove the contents of the Bleve index directory. Search results may be incomplete until a bulk index of the existing database is rebuilt.
+
+.. config:setting:: enable-bleve-indexingsearch
+  :displayname: Enable Bleve for search queries (Experimental)
+  :systemconsole: Experimental > Bleve
+  :configjson: EnableSearching
+  :environment: N/A
+
+  - **true**: Search queries will use bleve search.
+  - **false**: **(Default)** Search queries will not use bleve search.
+
+
+Enable Bleve for search queries
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*Deprecated from Mattermost v11.0*
+
+This setting was available in the System Console by going to **Experimental > Bleve**, or by editing the ``config.json`` file.
+
+**True**: Search queries will use bleve search.
+
+**False**: Search queries will not use bleve search.
+
++--------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableSearching": false`` with options ``true`` and ``false``.  |
++--------------------------------------------------------------------------------------------------------------+
+
+Enable Bleve for autocomplete queries
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*Deprecated from Mattermost v11.0*
+
+This setting was available in the System Console by going to **Experimental > Bleve**, or by editing the ``config.json`` file.
+
+**True**: Autocomplete queries will use bleve search.
+
+**False**: Autocomplete queries will not use bleve search.
+
++-----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableAutocomplete": false`` with options ``true`` and ``false``.  |
++-----------------------------------------------------------------------------------------------------------------+
+
 Bulk Indexing Time Window Seconds
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -392,17 +472,6 @@ The port used for streaming data between servers.
 | This feature's ``config.json`` setting is ``"StreamingPort": ":8075"`` with string input. |
 +-------------------------------------------------------------------------------------------+
 
-Maximum idle database connections
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-*Deprecated. Not used in Mattermost v7.0 and later*
-
-+--------------------------------------------------------+------------------------------------------------------------------+
-| The maximum number of idle connections held open       | - System Config path: **Environment > Database**                 |
-| to the database.                                       | - ``config.json`` setting: ``".SqlSettings.MaxIdleConns": 20,``  |
-|                                                        | - Environment variable: ``MM_SQLSETTINGS_MAXIDLECONNS``          |
-| Numerical input. Default is **20**.                    |                                                                  |
-+--------------------------------------------------------+------------------------------------------------------------------+
 
 Maximum idle connections for high availability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -858,9 +927,6 @@ Enable the ability to establish secure connections between Mattermost instances,
 
 User satisfaction surveys plugin settings
 -----------------------------------------
-
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 .. important::
 
