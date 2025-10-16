@@ -33,6 +33,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 - Added parent-child popout window support, with listeners to facilitate communication.
 - Added pre-auth headers to the server modal and an inject header into all requests to that server.
 - Unified and polished basic authentication, client certificate and pre-auth header authentication methods.
+- Added default theme syncing with the web app.
 - Added server version information to the **Help** menu.
 - Created a **File** menu on macOS, and added **New Window/Tab** and **Close Window/tab** to the **File** menu.
 - Added **clear the cache and reload** link to the error screen.
