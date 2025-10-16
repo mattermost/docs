@@ -1,7 +1,7 @@
 Team keyboard shortcuts
 =======================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Keyboard shortcuts help you make a more efficient use of your keyboard when navigating Mattermost teams in a web browser or the desktop app.

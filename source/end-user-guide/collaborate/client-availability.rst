@@ -1,6 +1,9 @@
 Client Availability
 ===================
 
+.. include:: ../../_static/badges/all-commercial.rst
+  :start-after: :nosearch:
+
 The following tables highlight the end user features of Mattermost and their support across Web, Desktop, and Mobile applications (iOS and Android).
 
 Messages

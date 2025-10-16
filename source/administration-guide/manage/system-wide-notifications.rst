@@ -1,7 +1,7 @@
 System-wide notifications
 =========================
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 System admins can configure system-wide notifications visibile in all channels for all users across all teams.

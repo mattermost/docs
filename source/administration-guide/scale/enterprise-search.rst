@@ -1,7 +1,7 @@
 Enterprise search
 ==================
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 Mattermost database search starts to show performance degradation at around 2 million posts, on a server with 32 GB RAM and 4 CPUs. If you anticipate your Mattermost server reaching more than 2.5 million posts, we recommend enabling `Elasticsearch <#elasticsearch>`__ or `AWS OpenSearch Service <#aws-opensearch-service>`__ for optimum search performance **before** reaching 3 million posts. Both tools are highly capable and can handle enterprise-scale workloads. The choice between them depends on the following factors:
@@ -121,6 +121,13 @@ How do I know if a search job fails?
 Mattermost provides the status of each Elasticsearch or OpenSearch indexing job in **System Console > Environment > Elasticsearch**. Here you can see if the job succeeded or failed, including the details of the error.
 
 Failures are returned in the server logs. The error log begins with the string ``Failed job`` and includes a job_id key/value pair. Search job failures are identified with worker name ``EnterpriseElasticsearchAggregator`` and ``EnterpriseElasticsearchIndexer``. You can optionally create a script that programmatically queries for such failures and notifies the appropriate system.
+
+How do I diagnose enterprise search connection issues?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+From Mattermost v11, :doc:`Support Packet generation </administration-guide/manage/admin/generating-support-packet>` automatically tests the connection to your configured Elasticsearch or AWS OpenSearch server and includes any connection errors in the Support Packet. This provides valuable diagnostic information including server version, installed plugins, and specific error details if the connection fails.
+
+The enterprise search connection test results appear in the Support Packet and can help identify configuration issues such as network connectivity problems, authentication failures, or server availability issues. If connection errors are present, they will be clearly documented with specific error messages to aid in troubleshooting.
 
 My search indexes won't complete, what should I do?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

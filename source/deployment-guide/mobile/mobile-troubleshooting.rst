@@ -1,6 +1,9 @@
 Mobile deployment troubleshooting
 ==================================
 
+.. include:: ../../_static/badges/all-commercial.rst
+  :start-after: :nosearch:
+
 I keep getting a message "Cannot connect to the server. Please check your server URL and internet connection."
 --------------------------------------------------------------------------------------------------------------
 

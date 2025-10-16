@@ -1,8 +1,5 @@
 # Desktop App Changelog
 
-```{include} ../_static/badges/allplans-cloud-selfhosted.md
-```
-
 This changelog summarizes updates to Mattermost desktop app releases for [Mattermost](https://mattermost.com).
 
 ```{Important}
@@ -11,6 +8,10 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
 (release-v5-13)=
 ## Release v5.13 (Extended Support Release)
+
+- **v5.13.2, released 2025-10-16**
+
+  - Upgraded Electron to v37.6.1.
 
 - **v5.13.1, released 2025-09-10**
 
@@ -21,7 +22,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
   - Original v5.13.0 release
 
-**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/v5.13.1)
+**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/latest)
 
 ### Compatibility
 

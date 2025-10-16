@@ -1,7 +1,7 @@
 Share links to channels and messages
 ====================================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 You can share links to Mattermost `channels <#share-channel-links>`__ and `messages <#share-message-links>`__ with other Mattermost users. 
@@ -40,7 +40,7 @@ Share message links
 
 .. tab:: Mobile
 
-  Long press a message, and then tap **Copy Link** to copy the link to the clipboard. Long press to paste the link as a message or reply. Sharing links to messages generates a preview of the message.
+  Long press a message, and then tap **Copy Link** to copy the link to the clipboard. Long press to paste the link as a message or reply. From mobile v2.23, sharing links to messages generates a preview of the message.
 
   .. image:: ../../images/mobile-copy-a-link-to-the-message.gif
       :alt: Tap and hold on a message to access the available options.

@@ -1,7 +1,7 @@
 Integrations configuration settings
 ===================================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Review and manage the following integration configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Integrations**:
@@ -22,9 +22,6 @@ Review and manage the following integration configuration options in the System 
 
 Integrations management
 -----------------------
-
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Integrations > Integration Management**.
 
@@ -218,9 +215,6 @@ To manage who can create personal access tokens or to search users by token ID, 
 Bot accounts
 ------------
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 Access the following configuration settings in the System Console by going to **Integrations > Bot Accounts**.
 
 .. config:setting:: enable-bot-account-creation
@@ -268,9 +262,6 @@ Disable bot accounts when owner is deactivated
 GIF
 ----
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 Access the following configuration settings in the System Console by going to **Integrations > GIF**.
 
 .. config:setting:: enable-gif-picker
@@ -301,10 +292,7 @@ Enable GIF picker
 CORS
 ----
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
-Access the following configuration settings in the System Console by going to **Integrations > CORS**.
+The following configuration settings are applicable only to self-hosted deployments. Access the following configuration settings in the System Console by going to **Integrations > CORS**.
 
 .. config:setting:: enable-cross-origin-requests-from
   :displayname: Enable cross-origin requests from (Integrations)
@@ -392,10 +380,7 @@ CORS debug
 Embedding
 ---------
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
-Access the following configuration settings in the System Console by going to **Integrations > Embedding**.
+The following configuration settings are applicable only to self-hosted deployments. Access the following configuration settings in the System Console by going to **Integrations > Embedding**.
 
 .. config:setting:: frame-ancestors
   :displayname: Frame ancestors (Integrations)
