@@ -9,7 +9,7 @@ This guide outlines minimum software and hardware requirements for deploying Mat
 Deployment overview
 -------------------
 
-Please see the :doc:`Application architecture </deployment-guide/application-architecture>` documentation for a summary of software systems and components whose requirements are described in this document.
+Please see the :doc:`Application architecture </deployment-guide/reference-architecture/application-architecture>` documentation for a summary of software systems and components whose requirements are described in this document.
 
 Software requirements
 ---------------------
