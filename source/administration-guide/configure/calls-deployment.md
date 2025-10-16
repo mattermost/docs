@@ -1,6 +1,6 @@
 # Calls self-hosted deployment
 
-```{include} ../../_static/badges/allplans-selfhosted.md
+```{include} ../../_static/badges/all-commercial.md
 ```
 
 Mattermost Calls is an excellent option for organizations demanding enhanced security and control over their communication infrastructure. Calls is designed to operate securely in self-hosted deployments, including [air-gapped environments](https://docs.mattermost.com/configure/calls-deployment.html#air-gapped-deployments), ensuring private communication without reliance on public internet connectivity with flexible configuration options for complex network requirements.
@@ -159,11 +159,17 @@ This is the default mode when first installing the plugin on a single Mattermost
 
 #### rtcd
 
+```{include} ../../_static/badges/ent-plus.md
+```
+
 An external, dedicated and scalable WebRTC service (`rtcd`) is used to handle all calls media routing.
 
 ![A diagram of a Web RTC deployment configuration.](/images/calls-deployment-image7.png)
 
 ### High availability cluster-based
+
+```{include} ../../_static/badges/ent-plus.md
+```
 
 #### Clustered
 
@@ -575,7 +581,7 @@ net.core.optmem_max = 16777216
 
 ## The rtcd service
 
-```{include} ./calls-rtcd-ent-only.md
+```{include} ../../_static/badges/ent-plus.md
 ```
 
 The Calls plugin has a built-in [Selective Forwarding Unit (SFU)](https://bloggeek.me/webrtcglossary/sfu/) to route audio and screensharing data. This is the `integrated` option described in the [Modes of operation](#modes-of-operation) section above. But this SFU functionality can be deployed separately as an external `rtcd` instance.
@@ -610,6 +616,9 @@ See the [Mattermost rtcd repository documentation](https://github.com/mattermost
 
 ### Horizontal scalability
 
+```{include} ../../_static/badges/ent-plus.md
+```
+
 The supported way to enable horizontal scalability for Calls is through a form of DNS based load balancing. This can be achieved regardless of how the `rtcd` service is deployed (bare bone instance, Kubernetes, or an alternate way).
 
 In order for this to work, the [RTCD Service URL](https://docs.mattermost.com/configure/plugins-configuration-settings.html#rtcd-service-url) should point to a hostname that resolves to multiple IP addresses, each pointing to a running `rtcd` instance. The Mattermost Calls plugin will then automatically distribute calls amongst the available hosts.
@@ -625,6 +634,9 @@ The expected requirements are the following:
 ```
 
 ## Configure recording, transcriptions, and live captions
+
+```{include} ../../_static/badges/ent-plus.md
+```
 
 Before you can start recording, transcribing, and live captioning calls, you need to configure the `calls-offloader` job service. See the [calls-offloader](https://github.com/mattermost/calls-offloader/blob/master/docs/getting_started.md) documentation on GitHub for details on deploying and running this service. [Performance and scalability recommendations](https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md) related to this service are also available on GitHub.
 
@@ -644,6 +656,9 @@ Live captions can be enabled through the [Enable live captions](https://docs.mat
 ```
 
 ## Kubernetes deployments
+
+```{include} ../../_static/badges/ent-plus.md
+```
 
 The Calls plugin has been designed to integrate well with Kubernetes to offer improved scalability and control over the deployment.
 
@@ -729,9 +744,6 @@ The plugin can function in different modes. By default calls are handled complet
 When possible, it's recommended to keep communication between the Mattermost cluster and the dedicated `rtcd` service under the same private network as this can greatly simplify deployment and security. There's no requirement to expose `rtcd`'s HTTP API to the public internet.
 
 ### Can Calls be rolled out on a per-channel basis?
-
-```{include} ../../_static/badges/selfhosted-only.md
-```
 
 Yes. Mattermost system admins running self-hosted deployments can enable or disable call functionality per channel. Once [test mode](https://docs.mattermost.com/configure/plugins-configuration-settings.html#test-mode) is enabled for Mattermost Calls:
 

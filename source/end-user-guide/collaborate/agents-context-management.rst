@@ -1,7 +1,7 @@
 Agents context management
 ==========================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Mattermost Agents are designed to handle context efficiently, ensuring that only necessary information is sent to the Large Language Model (LLM) for generating accurate responses. This document outlines how Agents process and include relevant context. The company name, the server name, and the time are always passed to the LLM to ensure accurate and contextually relevant responses.

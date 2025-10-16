@@ -1,6 +1,9 @@
 Ensuring Releases Perform at Scale
 ==================================
 
+.. include:: ../../_static/badges/entry-ent.rst
+  :start-after: :nosearch:
+
 To ensure each release of Mattermost upholds our high standards for performance at scale, the Mattermost Engineering team performs thorough load testing, develops features with scale in mind, and follows strict guidelines for database schema migrations.
 
 Monthly release load tests
@@ -35,7 +38,6 @@ Database schema changes are kept to a minimum to reduce risk on upgrades and imp
 If a more involved migration is required, detailed analysis is performed and published with guidance. An example analysis is the `Mattermost v6.0 schema migration <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055>`__.
 
 Additionally, all database schema changes are load tested as a part of our monthly release process.
-
 
 Monitoring post-release
 -----------------------

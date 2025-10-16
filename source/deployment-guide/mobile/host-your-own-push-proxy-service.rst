@@ -1,6 +1,9 @@
 Host your own push proxy service
 =================================
 
+.. include:: ../../_static/badges/all-commercial.rst
+  :start-after: :nosearch:
+
 Customers building their own custom mobile apps must host their own push proxy service using one of the following methods:
 
 - Compile your own MPNS from the `open source repository <https://github.com/mattermost/mattermost-push-proxy>`__.

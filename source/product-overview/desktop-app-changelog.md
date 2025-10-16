@@ -1,8 +1,5 @@
 # Desktop App Changelog
 
-```{include} ../_static/badges/allplans-cloud-selfhosted.md
-```
-
 This changelog summarizes updates to Mattermost desktop app releases for [Mattermost](https://mattermost.com).
 
 ```{Important}

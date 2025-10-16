@@ -1,7 +1,7 @@
 User satisfaction surveys
 =========================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Feedback is used to measure user satisfaction and improve product quality by hearing directly from users. Please refer to our `privacy policy <https://mattermost.com/privacy-policy/>`_ for information on the collection and use of information received through our services.
@@ -88,7 +88,4 @@ Data is only collected when a user selects a score or provides written feedback 
 Will this data be sent through my firewall?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
-If Mattermost is hosted in a private network with firewall then data from the User Satisfaction Surveys plugin is not sent unless outbound connections are allowed or specifically configured for this plugin.
+If Mattermost is self-hosted in a private network with firewall then data from the User Satisfaction Surveys plugin is not sent unless outbound connections are allowed or specifically configured for this plugin.

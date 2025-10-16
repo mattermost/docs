@@ -1,7 +1,7 @@
 Desktop managed resources
 =========================
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 The Mattermost desktop app supports managed resources. A managed resource can be any service available on the same hostname using the same protocol as the Mattermost server.

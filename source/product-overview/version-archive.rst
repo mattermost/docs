@@ -1,9 +1,6 @@
 Version Archive
 ================
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 .. include:: common-esr-support-rst.rst
 
 If you want to check that the version of Mattermost you are installing is the official, unmodified version, compare the SHA-256 checksum or the file's GPG signature with the one published in this version archive. To verify the GPG signature of a Mattermost release, use the public key stored at the following URL: https://deb.packages.mattermost.com/pubkey.gpg.

@@ -1,7 +1,7 @@
 Compliance export
 =================
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 Mattermost Enterprise customers can archive history or transfer message data to third-party systems for auditing and compliance purposes with compliance exports. Supported integrations include `Actiance Vantage <#actiance-xml>`__, `Global Relay <#global-relay-eml>`__, and `Proofpoint <#proofpoint>`__. 

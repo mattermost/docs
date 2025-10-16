@@ -1,6 +1,9 @@
 Mobile VPN options
 ===================
 
+.. include:: ../../_static/badges/all-commercial.rst
+  :start-after: :nosearch:
+
 To connect to your private network Mattermost instance, you need to set up a way to connect to your private network Mattermost instance, using an external proxy with encrypted transport through HTTPS and WSS network connections.
 
 Depending on your security policies, we recommend deploying Mattermost behind a VPN and using a `per-app VPN <#id3>`_ with your EMM provider, or a mobile VPN client.

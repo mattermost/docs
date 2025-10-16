@@ -1,7 +1,7 @@
 Invite people to your workspace
 ================================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Anyone can invite people to Mattermost teams and channels, unless your system admin has :doc:`disabled </administration-guide/onboard/advanced-permissions>` your ability to do so.
