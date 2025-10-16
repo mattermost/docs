@@ -12,7 +12,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 (release-v5-13)=
 ## Release v5.13 (Extended Support Release)
 
-- **v5.13.2, released **
+- **v5.13.2, released 2025-10-16**
 
   - Upgraded Electron to v37.6.1.
 
