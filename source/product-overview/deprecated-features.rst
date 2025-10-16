@@ -6,31 +6,41 @@ This page describes features that are removed from support for Mattermost, or wi
 Removed features in upcoming versions
 -------------------------------------
 
-Mattermost Server v11.1.0 (November 2025)
+Mattermost Server v11.1 (November 2025)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - The version of React used by the Mattermost web app will be updated from React 17 to React 18. See more details in `this forum post <https://forum.mattermost.com/t/upgrading-the-mattermost-web-app-to-react-18-v11/25000>`__.
 
-Mattermost Server v11.0.0 (October 2025)
+Removed features by Mattermost version
+----------------------------------------
+
+Mattermost Server v11.0 (October 2025)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- GitLab SSO will be deprecated from Team Edition. Deployments using GitLab SSO can remain on v10.11 ESR (with 12 months of security updates) while transitioning to our new free offering Mattermost Entry, or exploring commercial/nonprofit options. See more details in `this forum post <https://forum.mattermost.com/t/mattermost-v11-changes-in-free-offerings/25126>`__.
-- The ``TeamSettings.ExperimentalViewArchivedChannels`` setting will be deprecated. Archived channels will always be accessible, subject to normal channel membership. The server will fail to start if this setting is set to ``false``; to deny access to archived channels, mark them as private and remove affected channel members. See more details in `this forum post <https://forum.mattermost.com/t/viewing-accessing-archived-channels-v11/22626>`__.
-- Playbooks will stop working for Team Edition. Entry, Professional, Enterprise, and Enterprise Advanced plans will automatically be upgraded to Playbooks v2 with no expected downtime. See more details in `this forum post <https://forum.mattermost.com/t/clarification-and-update-on-the-playbooks-plugin-v11/25192>`__.
-- Experimental Bleve Search functionality will be retired. If Bleve is enabled, search will not work until ``DisableDatabaseSearch`` is set to ``false``. See more details in `this forum post <https://forum.mattermost.com/t/transitioning-from-bleve-search-in-mattermost-v11/22982>`__.
-- Support for MySQL will be ended. See more details in `this forum post <https://forum.mattermost.com/t/transition-to-postgresql/19551>`__.
-- The ``ExperimentalStrictCSRFEnforcement`` setting will be renamed to ``StrictCSRFEnforcement`` and the default value will be changed to ``true`` for new installations. See more details in `this forum post <https://forum.mattermost.com/t/default-value-of-the-experimental-strict-csrf-enforcement-setting-to-be-changed-to-true-v11/23139>`__.
-- The ``registerPostDropdownMenuComponent`` hook in the web app’s plugin API will be removed in favour of ``registerPostDropdownMenuAction``. See more details in `this forum post <https://forum.mattermost.com/t/deprecating-a-post-dropdown-menu-component-plugin-api-v11/25001>`__.
-- The web app will no longer expose the `Styled Components <https://styled-components.com/>`__ dependency for use by web app plugins. See more details in `this forum post <https://forum.mattermost.com/t/removing-styled-components-export-for-web-app-plugins-v11/25002>`__.
-- Omnibus support will be deprecated. The last ``mattermost-omnibus`` release will be v10.12. See more details in `this forum post <https://forum.mattermost.com/t/mattermost-omnibus-to-reach-end-of-life-v11/25175>`__.
-- Deprecated ``include_removed_members`` option in ``api/v4/ldap/sync`` will be removed. Admins can use the LDAP setting ``ReAddRemovedMembers``.
-- All telemetry support will be removed from Mattermost. The system will no longer collect or send telemetry data to external services. Customers that have the NPS plugin enabled can remove it as it will no longer sent the feedback over through telemetry.
-- Format query parameter requirement in ``/api/v4/config/client`` endpoint will be deprecated.
-- Deprecated mmctl commands and flags will be removed.
-- Experimental certificate-based authentication feature will be removed. ``ExperimentalSettings.ClientSideCertEnable`` must be ``false`` to start the server.
-- The bcrypt password hashing method will be deprecated in favor of PBKDF2. The migration will happen progressively, migrating the password of a user as soon as they enter it; e.g. when logging in or when double-checking their password for any sensitive action. There is an edge case where users might get locked out of their account: if a server upgrades to v11 and user A logs in (i.e., they need to enter their password), and then the server downgrades to v10.12 or previous, user A will no longer be able to log in. In this case, admins will need to manually reset the password of such users, through the system console or through the ``mmctl user reset-password [users]`` command.
-- ``/api/v4/teams/{team_id}/channels/search_archived`` will be deprecated in favour of ``/api/v4/channels/search`` with the deleted parameter.
-- Separate notification log file will be deprecated. If admins want to continue using a separate log file for notification logs, they can use the ``AdvancedLoggingJSON`` configuration. An example configuration to use is:
+- GitLab SSO has been deprecated from Team Edition. Deployments using GitLab SSO can remain on v10.11 ESR (with 12 months of security updates) while transitioning to our new free offering Mattermost Entry, or can explore commercial/nonprofit options. See more details in `this forum post <https://forum.mattermost.com/t/mattermost-v11-changes-in-free-offerings/25126>`__.
+- The ``TeamSettings.ExperimentalViewArchivedChannels`` setting has been deprecated. Archived channels will always be accessible, subject to normal channel membership. The server will fail to start if this setting is set to ``false``. To deny access to archived channels, mark them as private and remove affected channel members. See more details in `this forum post <https://forum.mattermost.com/t/viewing-accessing-archived-channels-v11/22626>`__.
+- Playbooks has stopped working for Team Edition. Entry, Professional, Enterprise, and Enterprise Advanced plans are automatically upgraded to Playbooks v2 with no expected downtime. See more details in `this forum post <https://forum.mattermost.com/t/clarification-and-update-on-the-playbooks-plugin-v11/25192>`__.
+- Experimental Bleve Search functionality has been retired. If Bleve is enabled, search will not work until ``DisableDatabaseSearch`` is set to ``false``. See more details in `this forum post <https://forum.mattermost.com/t/transitioning-from-bleve-search-in-mattermost-v11/22982>`__.
+- Support for MySQL has ended. See more details in `this forum post <https://forum.mattermost.com/t/transition-to-postgresql/19551>`__.
+- The ``registerPostDropdownMenuComponent`` hook in the web app’s plugin API has been removed in favour of ``registerPostDropdownMenuAction``. See more details in `this forum post <https://forum.mattermost.com/t/deprecating-a-post-dropdown-menu-component-plugin-api-v11/25001>`__.
+- The web app is no longer exposing the `Styled Components <https://styled-components.com/>`__ dependency for use by web app plugins. See more details in `this forum post <https://forum.mattermost.com/t/removing-styled-components-export-for-web-app-plugins-v11/25002>`__.
+- Omnibus support has been deprecated. The last ``mattermost-omnibus`` release was v10.12. See more details in `this forum post <https://forum.mattermost.com/t/mattermost-omnibus-to-reach-end-of-life-v11/25175>`__.
+- Deprecated ``include_removed_members`` option in ``api/v4/ldap/sync`` has been removed. Admins can use the LDAP setting ``ReAddRemovedMembers``.
+- Customers that have the NPS plugin enabled can remove it as it no longer sends the feedback over through telemetry.
+- Format query parameter requirement in the ``/api/v4/config/client`` endpoint has been deprecated.
+- Removed deprecated mmctl commands and flags:
+    - ``channel add`` - use ``channel users add``
+    - ``channel remove`` - use ``channel users remove``
+    - ``channel restore`` - use ``channel unarchive``
+    - ``channel make-private`` - use ``channel modify --private``
+    - ``command delete`` - use ``command archive``
+    - ``permissions show`` - use ``permissions role show``
+    - ``mmctl user email`` - use ``mmctl user edit email`` 
+    - ``mmctl user username`` - use ``mmctl user edit username``
+- Experimental certificate-based authentication feature has been removed. ``ExperimentalSettings.ClientSideCertEnable`` must be ``false`` to start the server.
+- Added logic to migrate the password hashing method from bcrypt to PBKDF2. The migration will happen progressively, migrating the password of a user as soon as they enter it; e.g. when logging in or when double-checking their password for any sensitive action. There is an edge case where users might get locked out of their account: if a server upgrades to v11 and user A logs in (i.e., they need to enter their password), and then the server downgrades to v10.12 or previous, user A will no longer be able to log in. In this case, admins will need to manually reset the password of such users, through the system console or through the :ref:`mmctl user reset-password [users] <administration-guide/manage/mmctl-command-line-tool:mmctl user reset-password>` command. The new password hashing method is more CPU-intensive. Admins of servers with password-based login should monitor the performance on periods where many users log in at the same time.
+- ``/api/v4/teams/{team_id}/channels/search_archived`` has been deprecated in favour of ``/api/v4/channels/search`` with the deleted parameter.
+- Separate notification log file has been deprecated. If admins want to continue using a separate log file for notification logs, they can use the ``AdvancedLoggingJSON`` configuration. An example configuration to use is:
 
 .. code-block:: sh
 
@@ -60,8 +70,8 @@ Mattermost Server v11.0.0 (October 2025)
     }
   }
 
-Removed features by Mattermost version
-----------------------------------------
+- Stopped supporting manually installed plugins as per https://forum.mattermost.com/t/deprecation-notice-manual-plugin-deployment/21192.
+- Support for PostgreSQL v13 has been removed. The new minimum PostgreSQL version is v14+. See the :ref:`minimum supported PostgreSQL version policy <deployment-guide/software-hardware-requirements:minimum postgresql database support policy>` documentation for details.
 
 Mattermost Server v10.8.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~

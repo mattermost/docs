@@ -3,11 +3,12 @@
 Prepare your Mattermost MySQL database
 ======================================
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 .. important::
     
+  - From Mattermost v11, Mattermost completely stops support MySQL as a database driver. MySQL support has been completely removed from the codebase, and the product will throw an invalid configuration error.
   - PostgreSQL is our preferred database of choice. See the :ref:`database software <deployment-guide/software-hardware-requirements:database software>` documentation for details on database version support, and see the :doc:`Migrate from MySQL to PostgreSQL </deployment-guide/postgres-migration>` documentation for details on migrating from MySQL to PostgreSQL.
   - MySQL 8.0.22 contains an `issue with JSON column types <https://bugs.mysql.com/bug.php?id=101284>`__ changing string values to integers which is preventing Mattermost from working properly. Users are advised to avoid this database version.
 
@@ -254,7 +255,7 @@ You can perform searches without this configuration by adding wildcards ``*`` to
 Migrate from Bitnami to a self-hosted Mattermost deployment
 ------------------------------------------------------------
 
-If you're planning a migration from Bitnami to a self-hosted Mattermost installation with a MySQL database, read these notes in our migration guide: :ref:`Migrating from Bitnami <administration-guide/onboard/migrating-to-mattermost:migrate from bitnami>`.
+If you're planning a migration from Bitnami to a self-hosted Mattermost installation with a MySQL database, read these notes in our migration guide: :ref:`Migrating from Bitnami <administration-guide/onboard/migrating-to-mattermost:move from bitnami>`.
 
 Downgrade Mattermost v6.0 to v5.38
 -----------------------------------

@@ -1,7 +1,7 @@
 Mark messages as unread
 =======================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 If you read a message, but don't have time to address it right away, you can mark that message as unread. Marking a message as unread displays the channel as bold in the channel sidebar, and groups the message with all other unread messages. 

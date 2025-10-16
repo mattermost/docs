@@ -3,7 +3,7 @@
 Multi-factor authentication
 ===========================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Multi-factor authentication (MFA) is a secondary layer of user authentication applied to your Mattermost server that applies to all users on all teams within your Mattermost workspace.
@@ -34,9 +34,6 @@ MFA can be disabled for user accounts using the API. See the `Mattermost API Ref
 
 Enforcing MFA
 --------------
-
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 Admins can fulfill Multi-Factor Authentication (MFA) compliance requirements by enforcing an MFA requirement for login with email and LDAP accounts. Go to **System Console > Authentication > MFA**, then set **Enforce Multi-factor Authentication** to **true**.
 

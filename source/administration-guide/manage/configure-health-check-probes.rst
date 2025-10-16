@@ -1,7 +1,7 @@
 Configure server health check probes
 ====================================
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 This page describes how to configure health check probes for a Mattermost server.

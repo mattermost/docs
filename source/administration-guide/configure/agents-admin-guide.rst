@@ -1,12 +1,8 @@
 Mattermost Agents Admin Guide
 =============================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
-
-.. note::
-
-  Mattermost Agents is formerly known as Mattermost Copilot.
 
 .. toctree::
    :maxdepth: 1
@@ -24,3 +20,4 @@ Mattermost Agents Admin Guide
 
   - Looking for demo? `Try it yourself <https://mattermost.com/demo/copilot/>`_!
   - Download the `Mattermost datasheet <https://mattermost.com/mattermost-copilot-datasheet/>`_ to learn more about integrating with industry-leading large language models (LLMs).
+  - Mattermost Agents is formerly known as Mattermost Copilot.

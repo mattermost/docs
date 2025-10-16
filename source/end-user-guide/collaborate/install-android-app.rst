@@ -1,6 +1,9 @@
 Install the Mattermost Android mobile app
 =========================================
 
+.. include:: ../../_static/badges/all-commercial.rst
+  :start-after: :nosearch:
+
 Take Mattermost wherever you go by `installing the Mattermost mobile app <https://play.google.com/store/apps/details?id=com.mattermost.rn>`_ on your Android mobile device running Android 7.0 or later.
 
 1. On your device, visit the Play Store.

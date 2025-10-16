@@ -1,7 +1,7 @@
 Set your status and availability
 =================================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Let your team know whether you're available by setting a :ref:`custom status <end-user-guide/preferences/set-your-status-availability:set a custom status>` and your :ref:`availability <end-user-guide/preferences/set-your-status-availability:set your availability>` in Mattermost. 
