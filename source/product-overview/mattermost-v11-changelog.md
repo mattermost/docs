@@ -29,11 +29,12 @@ If you upgrade from a release earlier than v11.0, please read the other [Importa
 ### Improvements
 
 #### User Interface (UI)
- - Pre-packaged Agents plugin [v1.4.0](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.4.0).
- - Pre-packaged Playbooks plugin [v2.5.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.5.0).
+ - Pre-packaged Agents plugin version [v1.4.0](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.4.0).
+ - Pre-packaged Playbooks plugin version [v2.5.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.5.0).
  - Pre-packaged GitLab plugin version [v1.11.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.11.0).
  - Pre-packaged Jira plugin version [v4.4.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.4.0).
  - Pre-packaged GitHub plugin version [v2.5.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.5.0).
+ - Pre-packaged Boards plugin version [v9.1.7](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.7).
  - Removed Mattermost MS Teams Sync plugin from pre-packaged plugins.
  - Added a standalone pop-out controller and thread pop-outs.
  - The desktop app version is now shown on the **About** modal, allowing clicking to copy both the server and desktop app versions.
