@@ -56,7 +56,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - Added a new API endpoint ``POST /api/v4/groups/names``.
  - Added a ``since`` parameter to the property value search method of the ``PluginApi``.
 
-### Audit Event Changes
+### Audit Log Event Changes
  - Added ``AuditEventFlagPost``, ``AuditEventGetFlaggedPost``, ``AuditEventPermanentlyRemoveFlaggedPost``, ``AuditEventKeepFlaggedPost``, ``AuditEventUpdateContentFlaggingConfig``, and ``AuditEventSetReviewer``.
 
 ### Go Version
