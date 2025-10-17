@@ -41,7 +41,7 @@ PC web
     "Chrome", "v140+", "v140+"
     "Firefox", "v128+", "v128+"
     "Safari", "v17.4+", "v17.4+"
-    "Edge", "v140+", "v140+"
+    "Edge", "v138+", "v138+"
 
 `*` Internet Explorer (IE11) is no longer supported. We recommend using the `Mattermost desktop app <https://mattermost.com/apps/>`_ or another supported browser. See `this forum post <https://forum.mattermost.com/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`__ to learn more.
 
