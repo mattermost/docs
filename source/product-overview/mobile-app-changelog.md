@@ -32,6 +32,9 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 ### Bug Fixes
  - Fixed an issue with the Slack attachment button color.
 
+### Open Source Components
+ - Added ``js-sha256`` to https://github.com/mattermost/mattermost-mobile/.
+
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
