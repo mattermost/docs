@@ -1,6 +1,10 @@
 Configure SAML with Microsoft Entra ID
 ========================================
 
+.. note::
+
+  This documentation covers configuring Entra ID for **SAML** authentication. If you need to configure Entra ID for **OpenID Connect** authentication instead, see the :doc:`Entra ID Single Sign-On </administration-guide/onboard/sso-entraid>` documentation.
+
 The following process provides steps to configure SAML with Microsoft Entra ID for Mattermost.
 
 See the encryption options documentation for details on what :ref:`encryption methods <deployment-guide/encryption-options:saml encryption support>` Mattermost supports for SAML.
