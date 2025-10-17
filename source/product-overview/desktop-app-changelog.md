@@ -16,7 +16,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 ### Compatibility
 
 - Desktop App is supported on any currently supported [Mattermost server version](https://docs.mattermost.com/product-overview/mattermost-desktop-releases.html#latest-releases).
-- Updated Chromium minimum supported version to 140+.
+- Updated Chromium minimum supported version to 140+ and updated Windows minimum supported version to v11+.
 
 ### Improvements
 
