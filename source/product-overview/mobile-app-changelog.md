@@ -9,18 +9,28 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 (release-v2-34-0)=
 ## 2.34.0 Release
  - Release Date: November 16, 2025
- - Server Versions Supported: Server v10.5.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+ - Server Versions Supported: Server v10.11.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
 
 ### Compatibility
- - **Upgrade to server version v10.5.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#esr-life-cycle-changes) (ESR) v9.11.0 has ended and upgrading to server ESR v10.5.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - **Upgrade to server version v10.11.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#esr-life-cycle-changes) (ESR) v10.5.0 has ended and upgrading to server ESR v10.11.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 6s devices and later with iOS 15.1+ are required.
 
 ### Improvements
- - To be added.
+ - Added the ability to finish a playbook run.
+ - Added post update functionality to playbooks.
+ - Added a unified playbook runs view.
+ - Added functionality to create playbook runs.
+ - Added support for playbook conditionals.
+ - Improved the visuals for selectors.
+ - Added a floating banner system for network connectivity notifications including WebSocket disconnections, reconnections, and limited connectivity alerts.
+ - Added a descriptive error message for the pre-auth secret when the ping fails with an authentication error.
+ - Improved the advanced options animation and layout in the server form.
+ - Temporarily opted out of Android ``EdgeToEdge`` and iOS 26 Liquid Glass for compatibility.
+ - Added a notice to the user on the **Notification Settings** modal to show that notifications are disabled.
 
 ### Bug Fixes
- - To be added.
+ - Fixed an issue with the Slack attachment button color.
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
