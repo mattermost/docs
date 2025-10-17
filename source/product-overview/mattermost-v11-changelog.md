@@ -19,6 +19,9 @@
  - The version of React used by the Mattermost web app has been updated from React 17 to React 18. See more details in [this forum post](https://forum.mattermost.com/t/upgrading-the-mattermost-web-app-to-react-18-v11/25000).
 ```
 
+### Compatibility
+ - Updated minimum required Edge and Chrome versions to v140+ and updated minimum supported Windows version to v11+. 
+
 ```{Important}
 If you upgrade from a release earlier than v11.0, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
 ```
