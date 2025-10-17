@@ -20,7 +20,7 @@ Desktop apps
 .. csv-table::
     :header: "Operating System", "Self-Hosted Technical Requirement", "Cloud Technical Requirement"
 
-    "Windows", "Windows 10+", "Windows 10+"
+    "Windows", "Windows 11+", "Windows 11+"
     "Mac", "macOS 12+", "macOS 12+"
     "Linux", "Ubuntu LTS releases 22.04 or later", "Ubuntu LTS releases 22.04 or later"
 
