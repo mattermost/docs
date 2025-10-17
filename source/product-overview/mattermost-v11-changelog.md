@@ -12,29 +12,61 @@
 (release-v11.1-feature-release)=
 ## Release v11.1 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
-- **11.1.0, released 2025-11-14**
-  - Original 11.1.0 release.
+**Release day: 2025-11-14**
+
+```{Attention}
+**Breaking Changes**
+ - The version of React used by the Mattermost web app has been updated from React 17 to React 18. See more details in [this forum post](https://forum.mattermost.com/t/upgrading-the-mattermost-web-app-to-react-18-v11/25000).
+```
 
 ```{Important}
-If you upgrade from a release earlier than v10.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
+If you upgrade from a release earlier than v11.0, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
 ```
 
 ### Improvements
 
 #### User Interface (UI)
- - TBD - Feature release improvements will be documented here.
+ - Pre-packaged Agents plugin [v1.4.0](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.4.0).
+ - Pre-packaged Playbooks plugin [v2.5.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.5.0).
+ - Pre-packaged GitLab plugin version [v1.11.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.11.0).
+ - Pre-packaged Jira plugin version [v4.4.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.4.0).
+ - Pre-packaged GitHub plugin version [v2.5.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.5.0).
+ - Removed Mattermost MS Teams Sync plugin from pre-packaged plugins.
+ - Added a standalone pop-out controller and thread pop-outs.
+ - The desktop app version is now shown on the **About** modal, allowing clicking to copy both the server and desktop app versions.
+ - Downgraded French language support from Beta to Alpha.
 
 #### Administration
- - TBD - Administrative improvements will be documented here.
+ - Added the ability to edit User Attributes in **System Console > Users > User Configuration**.
+ - Added ``Date`` and ``DateTime`` types for interactive dialogs.
+ - Added ``MultiForm`` and ``Element`` refresh support for interactive dialogs.
 
 ### Bug Fixes
- - TBD - Bug fixes will be documented here.
+ - Fixed an issue where email address verification for SAML/LDAP users was required when a user’s email address changed.
+ - Fixed an issue where users could still message each other when not sharing a team, despite the configuration setting stating otherwise.
+ - Fixed an issue with the mmctl system status to return non-zero exit codes when health checks fail, ensuring proper integration with container orchestration health check systems.
+
+### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to Enterprise Advanced plan: 
+ - Added a new ``AutoTranslationSettings`` configuration settings section.
+
+### API Changes
+ - Added a new API endpoint ``POST /api/v4/groups/names``.
+ - Added a ``since`` parameter to the property value search method of the ``PluginApi``.
+
+### Audit Event Changes
+ - Added ``AuditEventFlagPost``, ``AuditEventGetFlaggedPost``, ``AuditEventPermanentlyRemoveFlaggedPost``, ``AuditEventKeepFlaggedPost``, ``AuditEventUpdateContentFlaggingConfig``, and ``AuditEventSetReviewer``.
 
 ### Go Version
  - v11.1 is built with Go ``v1.24.6``.
 
+### Open Source Components
+ - Added ``@redux-devtools/extension`` and ``@types/react-is``, and removed ``react-intl`` from https://github.com/mattermost/mattermost/.
+
 ### Contributors
- - TBD - Contributors list will be updated here.
+ - 
 
 (release-v11.0-major-release)=
 ## Release v11.0 - [Major Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
