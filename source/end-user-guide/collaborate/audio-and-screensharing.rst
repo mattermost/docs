@@ -1,6 +1,9 @@
 Audio and Screensharing
 =======================
 
+.. include:: ../../_static/badges/all-commercial.rst
+  :start-after: :nosearch:
+
 Mattermost Calls offers native real-time chat, self-hosted audio calls, and screen sharing within your own network, enabling secure, effective team communication and collaboration. Learn more about :doc:`deploying Mattermost Calls </administration-guide/configure/calls-deployment>` in a self-hosted environment and :doc:`making calls </end-user-guide/collaborate/make-calls>` with Mattermost.
 
 With calls and screen sharing, Mattermost ensures that communications remain uninterrupted, even during maintenance or outages, and scales effortlessly to meet your team’s growing needs, safeguarding the integrity of mission-critical operations.
@@ -12,13 +15,13 @@ Functionality includes:
 - **Screen Share**:  Share your screen during calls to collaborate visually on tasks, review documents, or troubleshoot live issues. 
 - **Chat/Messaging During Calls**:  Exchange messages alongside audio communication to enhance clarity, drop links, and provide visual context.
 - **Search Chat History Post-Call**: Access in-call messages later to retain decision trails, links, and key points discussed. 
-- **Host Controls**: Manage participants, mute/unmute, and control the flow of conversations during conferences for structured engagements. *(Professional, Enterprise)*
-- **Call Recording**: Record voice sessions for review, compliance, or sharing with unavailable team members. *(Enterprise)*
-- **Call Transcription**: Convert spoken content into text to support documentation, compliance, and improved accessibility. *(Enterprise)*
-- **Live Captioning**: Provide real-time subtitles for inclusivity, accessibility, and support in noisy or multilingual environments. *(Enterprise)*
-- **AI Call Summarization**: Automatically generate concise summaries of calls to save time and preserve key outcomes. *(Enterprise)*
-- **Advanced Security Controls**: Enforce stricter encryption, access policies, and controls for high-assurance environments. *(Enterprise)*
-- **High Availability**: Maintain service continuity through system failover and backup call paths. *(Enterprise)*
+- **Host Controls**: Manage participants, mute/unmute, and control the flow of conversations during conferences for structured engagements.
+- **Call Recording**: Record voice sessions for review, compliance, or sharing with unavailable team members. *(Enterprise, Enterprise Advanced)*
+- **Call Transcription**: Convert spoken content into text to support documentation, compliance, and improved accessibility. *(Enterprise, Enterprise Advanced)*
+- **Live Captioning**: Provide real-time subtitles for inclusivity, accessibility, and support in noisy or multilingual environments. *(Enterprise, Enterprise Advanced)*
+- **AI Call Summarization**: Automatically generate concise summaries of calls to save time and preserve key outcomes. *(Enterprise, Enterprise Advanced)*
+- **Advanced Security Controls**: Enforce stricter encryption, access policies, and controls for high-assurance environments. *(Enterprise, Enterprise Advanced)*
+- **High Availability**: Maintain service continuity through system failover and backup call paths. *(Enterprise, Enterprise Advanced)*
 
 Video conferencing integrations
 -------------------------------

@@ -1,7 +1,7 @@
 Join and leave channels
 =======================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Join a channel

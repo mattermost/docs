@@ -1,7 +1,7 @@
 View system information
 ========================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 You can view technical details about your Mattermost server, including version information and system metrics. This information is useful when working with Mattermost support or troubleshooting issues.

@@ -1,7 +1,7 @@
 Generate a Support Packet
 ==========================
 
-.. include:: ../../../_static/badges/ent-pro-selfhosted.rst
+.. include:: ../../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 The Support Packet is used to help customers diagnose and troubleshoot issues. Use the System Console or the :ref:`mmctl system supportpacket <administration-guide/manage/mmctl-command-line-tool:mmctl system supportpacket>` command to generate a zip file that includes configuration information, logs, plugin details, and data on external dependencies across all nodes in a high-availability cluster. Confidential data, such as passwords, are automatically stripped.
@@ -63,11 +63,60 @@ Contents of a Support Packet
 
 The contents of a Mattermost Support Packet can differ by server version. Select the tab that corresponds to your Mattermost version to see the files included in the Support Packet.
 
-.. tab:: v10.11 and later
+.. tab:: v11.0 and later
 
-   .. note::
+   **Cluster-wide files (root directory):**
 
-      From v10.11, Support Packets include PostgreSQL database schema dump information that provides comprehensive metadata to help diagnose database configuration issues, performance problems, collation mismatches, and other database-related issues.
+   - `metadata.yaml <#metadata>`__
+   - ``plugins.json`` (all active and inactive plugins)
+   - ``sanitized_config.json`` (sanitized copy of the Mattermost configuration)
+   - ``stats.yaml`` (Mattermost usage statistics)
+   - ``jobs.yaml`` (last runs of important jobs)
+   - ``diagnostics.yaml`` (core plugin diagnostics data)
+   - ``permissions.yaml`` (role & scheme information)
+   - ``postgres_schema_dump.sql`` (PostgreSQL database schema information including tables, indexes, constraints, and other database metadata to assist with database configuration diagnosis)
+   - ``warning.txt`` (present when issues are encountered during packet generation)
+   - ``tsdb_dump.tar.gz`` (present when the Metrics plugin is installed and the **Performance metrics** option is selected when generating the Support Packet)
+
+   From Mattermost v11, Support Packet generation includes connection testing for configured :doc:`enterprise search engines </administration-guide/scale/enterprise-search>`, including both :doc:`Elasticsearch </administration-guide/scale/elasticsearch-setup>` and :doc:`AWS OpenSearch </administration-guide/scale/opensearch-setup>`. Any connection errors encountered during this testing are included in the Support Packet to help diagnose enterprise search configuration issues. When enterprise search is configured, the Support Packet includes connection test results and any errors encountered:
+
+   - **Elasticsearch connection test**: Tests server connectivity and reports server version, installed plugins, and any connection errors
+   - **AWS OpenSearch connection test**: Tests server connectivity and reports server version, installed plugins, and any connection errors
+
+   Example Elasticsearch diagnostic output included in the Support Packet:
+
+   .. code-block:: yaml
+
+      elastic:
+          server_version: 8.9.0
+          server_plugins:
+              - analysis-icu
+          error: 'Elasticsearch.checkMaxVersion: Failed to get elasticsearch server version., an error happened during the Info query execution: dial tcp 127.0.0.1:9200: connect: connection refused'
+
+   **Cluster-specific files (in node subdirectories):**
+
+   - ``<node-id>/mattermost.log`` (Mattermost logs for each node)
+   - ``<node-id>/audit.log`` (Mattermost audit logs for each node)
+   - ``<node-id>/ldap.log`` (AD/LDAP logs for each node)
+   - ``<node-id>/notifications.log`` (notifications logs for each node)
+   - ``<node-id>/cpu.prof`` (`Go performance metrics <#go-performance-metrics>`__ for each node)
+   - ``<node-id>/heap.prof`` (`Go performance metrics <#go-performance-metrics>`__ for each node)
+   - ``<node-id>/goroutines`` (`Go performance metrics <#go-performance-metrics>`__ for each node)
+
+   The following additional plugin diagnostic data is included in the generated Support Packet when the plugin is enabled and operational:
+
+   - GitHub: ``/github/diagnostics.yaml``
+   - GitLab: ``/com.github.manland.mattermost-plugin-gitlab/diagnostics.yaml``
+   - Jira: ``/jira/diagnostics.yaml``
+   - Calls: ``/com.mattermost.calls/diagnostics.yaml``
+   - Boards: ``/focalboard/diagnostics.yaml``
+   - Playbooks: ``/playbooks/diagnostics.yaml``
+   - MSCalendar: ``/com.mattermost.mscalendar/diagnostics.yaml``
+   - Google Calendar: ``/com.mattermost.gcal/diagnostics.yaml``
+
+.. tab:: v10.11
+
+   From v10.11, Support Packets include PostgreSQL database schema dump information that provides comprehensive metadata to help diagnose database configuration issues, performance problems, collation mismatches, and other database-related issues.
 
    **Cluster-wide files (root directory):**
 
@@ -105,14 +154,12 @@ The contents of a Mattermost Support Packet can differ by server version. Select
 
 .. tab:: v10.10
 
-   .. note::
-
-      From Mattermost v10.10, Support Packets from :doc:`high availability </administration-guide/scale/high-availability-cluster-based-deployment>` deployments organize cluster-specific files (such as log files) in subdirectories named after each cluster node, while cluster-wide files remain in the root directory. 
+   From Mattermost v10.10, Support Packets from :doc:`high availability </administration-guide/scale/high-availability-cluster-based-deployment>` deployments organize cluster-specific files (such as log files) in subdirectories named after each cluster node, while cluster-wide files remain in the root directory. 
       
-      Support packet file organization has been improved to make it easier to identify cluster-wide versus cluster-specific files:
+   Support packet file organization has been improved to make it easier to identify cluster-wide versus cluster-specific files:
 
-      - **Cluster-wide files** (identical across all nodes in a :doc:`high-availability cluster </administration-guide/scale/high-availability-cluster-based-deployment>`) remain in the root directory of the support packet.
-      - **Cluster-specific files** (unique per node) are now organized in subdirectories named after each cluster node.
+   - **Cluster-wide files** (identical across all nodes in a :doc:`high-availability cluster </administration-guide/scale/high-availability-cluster-based-deployment>`) remain in the root directory of the support packet.
+   - **Cluster-specific files** (unique per node) are now organized in subdirectories named after each cluster node.
 
    **Cluster-wide files (root directory):**
 
@@ -151,15 +198,15 @@ The contents of a Mattermost Support Packet can differ by server version. Select
 
    Prior to v10.10, each node in the cluster of a high availability deployment has its own ``mattermost.log`` file and advanced logging files included directly in the Support Packet.
 
-   .. note::
+   From v10.5, the following Support Packet data has changed:
 
-      From v10.5, the following Support Packet data has changed:
+   - The ``support_packet.yaml`` file has been removed and split into ``diagnostics.yaml`` and ``stats.yaml`` files.
+   - All fields in ``diagnostics.yaml`` have been moved into their own objects for improved readability.
+   - Field names are normalized.
+   - New data includes server statistics, logs, permissions, and extended job list details.
+   - Mattermost-supported plugin diagnostic data is included where applicable.
 
-      - The ``support_packet.yaml`` file has been removed and split into ``diagnostics.yaml`` and ``stats.yaml`` files.
-      - All fields in ``diagnostics.yaml`` have been moved into their own objects for improved readability.
-      - Field names are normalized.
-      - New data includes server statistics, logs, permissions, and extended job list details.
-      - Mattermost-supported plugin diagnostic data is included where applicable.
+   The contents of a support packet include:
 
    - `metadata.yaml <#metadata>`__
    - ``mattermost.log`` (Mattermost logs)

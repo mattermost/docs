@@ -30,7 +30,7 @@ Once you have all the necessary resources in your air-gapped environment, you ca
 
 6. **Configure Mattermost for air-gapped operation**
 
-The `configuration settings <server-configuration>`__ recommended in this document accomodate for the lack of internet access to operate Mattermost in an air-gapped environment.
+The `configuration settings <#server-configuration>`__ recommended in this document accomodate for the lack of internet access to operate Mattermost in an air-gapped environment.
 
 
 .. note::
@@ -50,7 +50,7 @@ On an internet connected machine, you must gather all required packages, contain
     - :doc:`Mattermost tarball </product-overview/version-archive>`. We recommend using the latest :ref:`ESR <product-overview/release-policy:extended support releases>` for extended support where server upgrades may be infrequent.
     - Database: PostgreSQL `installation packages <https://www.postgresql.org/download/>`_ or container images for your Linux distribution
     - File Storage: Local filesystem storage is sufficient for deployments under 2,000 users. For larger deployments requiring high availability, we recommend using an S3-compatible object storage solution, such as `MinIO <https://min.io/download>`_. NFS can also be considered as an alternative for shared storage needs.
-    - Load balancer: If you already have a load balancer running in your air-gapped environment you can skip this resource, otherwise we recommend deploying `NGINX <https://docs.mattermost.com/deployment-guide/server/setup-nginx-proxy.html>`_ from these `Linux packages <https://nginx.org/en/linux_packages.html>`_.
+    - Load balancer: If you already have a load balancer running in your air-gapped environment you can skip this resource, otherwise we recommend deploying :doc:`NGINX </deployment-guide/server/setup-nginx-proxy>` from these `Linux packages <https://nginx.org/en/linux_packages.html>`_.
 
     **(Optional) Supporting Services**
     Consider downloading these additional resources if you plan to enable these optional components:

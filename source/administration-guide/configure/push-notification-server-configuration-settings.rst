@@ -1,7 +1,7 @@
 :orphan:
 :nosearch:
 
-Configure mobile push notifications for Mattermost by going to **System Console > Environment > Push Notification Server**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
+With self-hosted deployments, you can configure mobile push notifications for Mattermost by going to **System Console > Environment > Push Notification Server**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
 .. config:setting:: enable-push-notifications
   :displayname: Enable push notifications (Push Notifications)
@@ -37,9 +37,6 @@ Enable push notifications
 Hosted Push Notifications Service (HPNS)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 Mattermost Enterprise, Professional, and Cloud customers can use Mattermost's Hosted Push Notification Service (HPNS). The HPNS offers:
 
 - Access to a publicly-hosted Mattermost Push Notification Service (MPNS) `available on GitHub. <https://github.com/mattermost/mattermost-push-proxy>`__
@@ -60,7 +57,7 @@ Mattermost Enterprise, Professional, and Cloud customers can use Mattermost's Ho
 Test Push Notifications Service (TPNS)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Non-commercial and self-hosted customers can use Mattermost's free, basic Test Push Notifications Service (TPNS).
+Non-commercial self-hosted customers can use Mattermost's free, basic Test Push Notifications Service (TPNS).
 
 .. note::
   - The TPNS isn’t recommended for use in production environments, and doesn’t offer production-level update service level agreements (SLAs).
@@ -79,7 +76,7 @@ Non-commercial and self-hosted customers can use Mattermost's free, basic Test P
 ID-only push notifications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 Admins can enable mobile notifications to be fully private to protect a Mattermost customer against breaches in iOS and Android notification infrastructure by limiting the data sent to Apple and Google through a Mattermost configuration setting.

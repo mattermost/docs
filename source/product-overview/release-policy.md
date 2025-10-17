@@ -1,8 +1,5 @@
 # Release Policy
 
-```{include} ../_static/badges/allplans-selfhosted.md
-```
-
 This page describes Mattermost’s release policy, and our recommended practices around releases, including extended support releases, so that you can allocate your IT resources effectively.
 
 To ensure a secure, functional, performant, and efficient Mattermost deployment, system admins managing a self-hosted deployment need to be proactive in:
@@ -25,9 +22,6 @@ See the full list of all Mattermost Server and desktop app releases and life cyc
 
 (extended-support-releases)=
 ## Extended Support Releases
-
-```{include} ../_static/badges/ent-only.md
-```
 
 Mattermost Extended Support Releases (ESRs) are a strategic choice for organizations looking for stability and reduced frequency of updates. Using ESRs can minimize disruptions associated with frequent upgrades, making them an attractive option for environments where stability is paramount.
 
@@ -54,16 +48,16 @@ gantt
     axisFormat  %b %y
 
     section Releases
-    v10.4                  :done,  2025-01-16, 2025-04-15
     v10.5 & Desktop App v5.11 Extended Support :crit,    2025-02-16, 2025-11-15
     v10.6                  :done, 2025-03-16, 2025-06-15
     v10.7                  :done, 2025-04-16, 2025-07-15
     v10.8                  :done, 2025-05-16, 2025-08-15
-    v10.9                  :active, 2025-06-16, 2025-09-15
-    v10.10                 :active, 2025-07-16, 2025-10-15
+    v10.9                  :done, 2025-06-16, 2025-09-15
+    v10.10                 :done, 2025-07-16, 2025-10-15
     v10.11 & Desktop App v5.13 Extended Support :crit,    2025-08-16, 2026-08-15
     v10.12                 :active, 2025-09-16, 2025-12-15
     v11.0                  :active, 2025-10-16, 2026-01-15
+    v11.1                  :active, 2025-11-16, 2026-02-15
 ```
 
 **Timeline Legend:**
@@ -73,9 +67,6 @@ The chart above shows both release dates and end-of-life dates for each version.
 
 (esr-notifications)=
 ### ESR Notifications
-
-```{include} ../_static/badges/ent-only.md
-```
 
 When an ESR is at the end of its life cycle, there will be announcements ahead of time to provide time for people to test, certify, and deploy a newer ESR version before support ends. After a release reaches its end-of-life, no further updates will be provided for that version. 
 

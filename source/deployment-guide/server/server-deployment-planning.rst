@@ -74,7 +74,7 @@ Prerequisites
 Before deploying Mattermost, ensure you have reviewed the :doc:`software and hardware requirements </deployment-guide/software-hardware-requirements>`, and have:
 
 * A supported Linux distribution
-* Database server (PostgreSQL 13+)
+* Database server (PostgreSQL 14+)
 * Reverse proxy (NGINX recommended)
 * SSL/TLS certificates for secure communication
 * Adequate storage for files and database
