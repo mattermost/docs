@@ -7,11 +7,12 @@ Entra ID Single Sign-On
 Configuring EntraID as a Single Sign-On (SSO) service
 --------------------------------------------------------
 
-Follow these steps to configure Mattermost to use your Entra ID logon credentials and Azure Active Directory account as a Single Sign-on (SSO) service for team creation, account creation, and sign-in.
-
 .. note::
 
-  The system must be using SSL as Microsoft only allows OAuth redirect URIs that are SSL-enabled.
+  - This documentation covers configuring Entra ID for **OpenID Connect** authentication. If you need to configure Entra ID for **SAML** authentication instead, see the :doc:`Configure SAML with Microsoft Entra ID </administration-guide/onboard/sso-saml-entraid>` documentation.
+  - The system must be using SSL as Microsoft only allows OAuth redirect URIs that are SSL-enabled.
+
+Follow these steps to configure Mattermost to use your Entra ID logon credentials and Azure Active Directory account as a Single Sign-on (SSO) service for team creation, account creation, and sign-in.
 
 Step 1: Register an application in Azure Portal
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -38,6 +38,7 @@ The SAML Single sign-on integration offers the following benefits:
   OneLogin SAML Configuration <sso-saml-onelogin.rst>
   Microsoft ADFS SAML Configuration for Windows Server 2012 <sso-saml-adfs>
   Microsoft ADFS SAML Configuration for Windows Server 2016 <sso-saml-adfs-msws2016>
+  Microsoft Entra ID SAML Configuration <sso-saml-entraid>
   Keycloak SAML Configuration <sso-saml-keycloak>
 
 Using SAML attributes to apply roles
