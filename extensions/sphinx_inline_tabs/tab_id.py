@@ -4,7 +4,7 @@ from typing import Final, Optional
 from sphinx.util import logging
 from sphinx.util.nodes import _make_id
 
-TAB_ID_PATTERN: Final[str] = "itab--([a-zA-Z0-9-]+)--([0-9]+)_([0-9]+)-(.*)"
+TAB_ID_PATTERN: Final[str] = "itab--([a-zA-Z0-9-.:,'() ]+)--([0-9]+)_([0-9]+)-(.*)"
 """Regex pattern for validating tab identifiers."""
 
 logger: logging.SphinxLoggerAdapter = logging.getLogger(__name__)

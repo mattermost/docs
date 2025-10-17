@@ -16,7 +16,7 @@ const labelsByName = {};
 const labelsById = {};
 
 // Tab ID pattern: "itab--{tab_name}--{level}_{tab_count}-{node_id}"
-const inlinetabRE = new RegExp('itab--([a-zA-Z0-9- ]+)--([0-9]+)_([0-9]+)-(.*)');
+const inlinetabRE = new RegExp('itab--([a-zA-Z0-9-.:,\'\(\) ]+)--([0-9]+)_([0-9]+)-(.*)');
 const SCROLL_CURRENT = "scroll-current";
 
 /**
