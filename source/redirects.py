@@ -2882,6 +2882,8 @@ redirects_map = {
         "https://docs.mattermost.com/integrations-guide/microsoft-calendar.html#enable-and-configure-the-microsoft-calendar-integration-in-mattermost",
 "integrate/microsoft-teams-meetings.html":
         "https://docs.mattermost.com/integrations-guide/microsoft-teams-meetings.html",
+"integrate/microsoft-teams-meetings-interoperability.html":
+        "https://docs.mattermost.com/integrations-guide/microsoft-teams-meetings.html",
 "integrate/microsoft-teams-sync.html":
         "https://docs.mattermost.com/integrations-guide/microsoft-teams-sync.html",
 "integrate/ms-teams-interoperability.html":
