@@ -12,11 +12,13 @@
 (release-v11.0-major-release)=
 ## Release v11.0 - [Major Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
-- **11.0.3, released 2025-10-28**
+- **11.0.4, released 2025-10-28**
  ```{Attention}
  **Critical Fixes**
-  - Mattermost v11.0.3 contains Critical severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is    highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v11.0.4 contains Critical severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is    highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
  ```
+  - Mattermost v11.0.4 contains no database or functional changes.
+- **11.0.3, released 2025-10-27**
   - Fixed an issue where plugin configuration settings were incorrectly sanitized, causing API endpoints and plugins to receive masked values instead of actual configuration values.
   - Pre-packaged Boards plugin [v9.1.7](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.7).
   - Mattermost v11.0.3 contains no database or functional changes.
