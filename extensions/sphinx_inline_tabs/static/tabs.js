@@ -16,7 +16,7 @@ const labelsByName = {};
 const labelsById = {};
 
 // Tab ID pattern: "itab--{tab_name}--{level}_{tab_count}-{node_id}"
-const inlinetabRE = new RegExp('itab--([a-zA-Z0-9- ]+)--([0-9]+)_([0-9]+)-(.*)');
+const inlinetabRE = new RegExp('itab--([a-zA-Z0-9-.:,\'\(\) ]+)--([0-9]+)_([0-9]+)-(.*)');
 const SCROLL_CURRENT = "scroll-current";
 
 /**
@@ -114,6 +114,11 @@ function ready() {
 
     // Reset the active section in the ToC
     updateScrollCurrentForHash("");
+    
+    // If there's a hash in the URL, handle it now
+    if (window.location.hash !== "") {
+        onHashchange();
+    }
 
     // Register the hashchange handler
     window.addEventListener("hashchange", onHashchange);
@@ -165,8 +170,6 @@ function onHashchange() {
   if (hash in labelsByName && labelsByName[hash].length > 0) {
     const labelElement = labelsByName[hash][0];
     if (labelElement) {
-      console.debug(`sphinx_inline_tabs: labelsByName[${hash}][0].click()`);
-      labelElement.click();
       // If the TabId contains the name of a parent tab, extract it and click its label
       let maybeParentId = tabId.tabName.replace(`-${tabId.nodeId}`, "");
       console.debug(`sphinx_inline_tabs: maybeParentId=${maybeParentId}`);
@@ -177,6 +180,10 @@ function onHashchange() {
           parentLabelElement.click();
         }
       }
+      // Click the desired tab
+      console.debug(`sphinx_inline_tabs: labelsByName[${hash}][0].click()`);
+      labelElement.click();
+      // Update the scroll position for the current hash
       console.debug(`sphinx_inline_tabs: update scroll-current for hash ${hash}`);
       updateScrollCurrentForHash(hash);
       return;
@@ -188,8 +195,6 @@ function onHashchange() {
   if (tabId.tabName in labelsById && labelsById[tabId.tabName].length > 0) {
     const labelElement = labelsById[tabId.tabName][0];
     if (labelElement) {
-      console.debug(`sphinx_inline_tabs: labelsById[${tabId.tabName}][0].click()`);
-      labelElement.click();
       // If the TabId contains the name of a parent tab, extract it and click its label
       let maybeParentId = tabId.tabName.replace(`-${tabId.nodeId}`, "");
       console.debug(`sphinx_inline_tabs: maybeParentId=${maybeParentId}`);
@@ -200,6 +205,10 @@ function onHashchange() {
           parentLabelElement.click();
         }
       }
+      // Click the desired tab
+      console.debug(`sphinx_inline_tabs: labelsById[${tabId.tabName}][0].click()`);
+      labelElement.click();
+      // Re-run the current window hash
       console.debug(`sphinx_inline_tabs: re-run current window hash`);
       window.location.hash = `${window.location.hash}`;
     }
