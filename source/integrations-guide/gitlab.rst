@@ -91,7 +91,7 @@ Once connected, you'll receive direct messages from the GitLab bot in Mattermost
 Connect a GitLab account to Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Run the ``/gitlab connect`` slash account in any Mattermost channel to link your Mattermost account with your GitLab account.
+Run the ``/gitlab connect`` slash command in any Mattermost channel to link your Mattermost account with your GitLab account.
 
 Disconnect a GitLab account by running the ``/gitlab disconnect`` slash command. Run the ``/gitlab me`` slash command to review which account is connected to GitLab.
 
