@@ -43,6 +43,8 @@ If you upgrade from a release earlier than v11.0, please read the other [Importa
 
 #### Administration
  - Added the ability to edit User Attributes in **System Console > Users > User Configuration**.
+
+#### Integrations
  - Added ``Date`` and ``DateTime`` types for interactive dialogs.
  - Added ``MultiForm`` and ``Element`` refresh support for interactive dialogs.
 
