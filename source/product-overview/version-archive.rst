@@ -11,11 +11,11 @@ If you want to check that the version of Mattermost you are installing is the of
 
 .. tab:: Mattermost Enterprise
 
-  Mattermost Enterprise Edition v11.0.3 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-0-feature-release>`__ - `Download <https://releases.mattermost.com/11.0.3/mattermost-11.0.3-linux-amd64.tar.gz?src=arc>`__
-    - ``https://releases.mattermost.com/11.0.3/mattermost-11.0.3-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``9b606107743834611cf22c96321e9cbe6fcedf492aa7c4cf3b79090c74475aa7``
-    - GPG Signature: https://releases.mattermost.com/11.0.3/mattermost-11.0.3-linux-amd64.tar.gz.sig
-    - SBOM Download Link: https://releases.mattermost.com/11.0.3/sbom-enterprise-v11.0.3.json
+  Mattermost Enterprise Edition v11.0.4 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-0-feature-release>`__ - `Download <https://releases.mattermost.com/11.0.4/mattermost-11.0.4-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/11.0.4/mattermost-11.0.4-linux-amd64.tar.gz``
+    - SHA-256 Checksum: ``45177fedc52f3679d7a0e2ca5e214abcdf8c944e59524823cd218a0c24a20d51``
+    - GPG Signature: https://releases.mattermost.com/11.0.4/mattermost-11.0.4-linux-amd64.tar.gz.sig
+    - SBOM Download Link: https://releases.mattermost.com/11.0.4/sbom-enterprise-v11.0.4.json
   Mattermost Enterprise Edition v10.12.2 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v10-changelog.html#release-v10-12-feature-release>`__ - `Download <https://releases.mattermost.com/10.12.2/mattermost-10.12.2-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.12.2/mattermost-10.12.2-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``88672b1983318e611fe58c894a4541fd816d91f7a3ca24f751a9fd9ee11b79a2``
@@ -449,11 +449,11 @@ If you want to check that the version of Mattermost you are installing is the of
 
   We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to seamlessly unlock Enterprise features should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
 
-  Mattermost Team Edition v11.0.3 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-0-feature-release>`__ - `Download <https://releases.mattermost.com/11.0.3/mattermost-team-11.0.3-linux-amd64.tar.gz?src=arc>`__
-    - ``https://releases.mattermost.com/11.0.3/mattermost-team-11.0.3-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``f6f53e269035bdeef2ac04d018fd332da0651d4026e70c7bb5f0750cd4ab77a5``
-    - GPG Signature: https://releases.mattermost.com/11.0.3/mattermost-team-11.0.3-linux-amd64.tar.gz.sig
-    - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v11.0.3/sbom-mattermost-v11.0.3.json
+  Mattermost Team Edition v11.0.4 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-0-feature-release>`__ - `Download <https://releases.mattermost.com/11.0.4/mattermost-team-11.0.4-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/11.0.4/mattermost-team-11.0.4-linux-amd64.tar.gz``
+    - SHA-256 Checksum: ``7a69f6e0857b65ce4daaf8987d237620f7b0174ce885034aa1c9f218bd67da38``
+    - GPG Signature: https://releases.mattermost.com/11.0.4/mattermost-team-11.0.4-linux-amd64.tar.gz.sig
+    - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v11.0.4/sbom-mattermost-v11.0.4.json
   Mattermost Team Edition v10.12.2 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v10-changelog.html#release-v10-12-feature-release>`__ - `Download <https://releases.mattermost.com/10.12.2/mattermost-team-10.12.2-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.12.2/mattermost-team-10.12.2-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``54d398d9bcc4cb3986fd7b21f315c66e2ec75726e2921f2994bb8000b4fb47e6``
