@@ -3921,6 +3921,19 @@ With self-hosted deployments, you can configure performance monitoring by going 
 
 See the :doc:`performance monitoring </administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring>` documentation to learn more about setting up performance monitoring.
 
+.. code-block:: json
+
+   {
+     "MetricsSettings": {
+       "Enable": false,
+       "BlockProfileRate": 0,
+       "ListenAddress": ":8067",
+       "EnableClientMetrics": false,
+       "EnableNotificationMetrics": true,
+       "ClientSideUserIds": ""
+     }
+   }
+
 .. config:setting:: enable-performance-monitoring
   :displayname: Enable performance monitoring (Performance Monitoring)
   :systemconsole: Environment > Performance Monitoring
@@ -3961,7 +3974,7 @@ Enable client performance monitoring
 +------------------------------------------------------+----------------------------------------------------------------------------------------+
 | Enable or disable client performance monitoring.     | - System Config path: **Environment > Performance Monitoring**                         |
 |                                                      | - ``config.json`` setting: ``MetricsSettings`` > ``EnableClientMetrics`` > ``false``   |
-| - **true**: Client performance monitoring data       | - Environment variable: ``MM_METRICSSETTINGS_ENABLE``                                  |
+| - **true**: Client performance monitoring data       | - Environment variable: ``MM_METRICSSETTINGS_ENABLECLIENTMETRICS``                     |
 |   collection and profiling is enabled.               |                                                                                        |
 | - **false**: **(Default)** Mattermost                |                                                                                        |
 |   client performance monitoring is disabled.         |                                                                                        |
@@ -3980,13 +3993,20 @@ Client side user ids
 +---------------------------------------------------------------+-------------------------------------------------------------------------+
 | A list of comma-separated user IDs you want to track for      | - System Config path: **Environment > Performance Monitoring**          |
 | client-side webapp metrics.                                   | - ``config.json`` setting: ``MetricsSettings`` > ``ClientSideUserIds``  |
-|                                                               | - Environment variable: ``MM_METRICSSETTINGS_LISTENADDRESS``            |
+|                                                               | - Environment variable: ``MM_METRICSSETTINGS_CLIENTSIDEUSERIDS``        |
 | Limited to 5 user IDs. Blank by default.                      |                                                                         |
 +---------------------------------------------------------------+-------------------------------------------------------------------------+
 
+Environment variable usage example:
+
+.. code-block:: bash
+
+   export MM_METRICSSETTINGS_CLIENTSIDEUSERIDS="user1,user2,user3"
+
 .. note::
 
-  The total number of user IDs is limited to 5 to ensure performance. Adding more IDs can overwhelm Prometheus due to high label cardinality. To avoid performance issues, we recommend minimizing changes to this list.
+  - This setting only applies when ``EnableClientMetrics`` is set to ``true``.
+  - The total number of user IDs is limited to 5 to ensure performance. Adding more IDs can overwhelm Prometheus due to high label cardinality. To avoid performance issues, we recommend minimizing changes to this list.
 
 .. config:setting:: listen-address-for-performance
   :displayname: Listen address for performance (Performance Monitoring)
@@ -4004,6 +4024,67 @@ Listen address
 |                                                               | - Environment variable: ``MM_METRICSSETTINGS_LISTENADDRESS``                  |
 | Numerical input. Default is **8067**.                         |                                                                               |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
+
+.. note::
+
+  The address uses Go's host:port format. Use ``:8067`` to listen on all interfaces on port 8067, or ``localhost:8067`` to restrict to localhost only.
+
+.. config:setting:: block-profile-rate
+  :displayname: Block profile rate (Performance Monitoring)
+  :systemconsole: N/A
+  :configjson: .MetricsSettings.BlockProfileRate
+  :environment: MM_METRICSSETTINGS_BLOCKPROFILERATE
+  :description: Value that controls the fraction of goroutine blocking events reported in the blocking profile. Default is **0**.
+
+Block profile rate
+~~~~~~~~~~~~~~~~~~~
+
+This setting isn't available in the System Console and can only be set in ``config.json``. Changes to this setting require a server restart before taking effect.
+
++---------------------------------------------------------------+-------------------------------------------------------------------------------+
+| Value that controls the `fraction of goroutine blocking       | - System Config path: **N/A**                                                |
+| events reported in the blocking profile                       | - ``config.json`` setting: ``MetricsSettings`` > ``BlockProfileRate`` > ``0`` |
+| <https://pkg.go.dev/runtime#SetBlockProfileRate>`_.           | - Environment variable: ``MM_METRICSSETTINGS_BLOCKPROFILERATE``              |
+|                                                               |                                                                               |
+| The profiler aims to sample an average of one blocking        |                                                                               |
+| event per rate nanoseconds spent blocked.                     |                                                                               |
+|                                                               |                                                                               |
+| To include every blocking event in the profile, set the       |                                                                               |
+| rate to ``1``. To turn off profiling entirely, set the        |                                                                               |
+| rate to ``0``. Default is **0**.                             |                                                                               |
++---------------------------------------------------------------+-------------------------------------------------------------------------------+
+
+.. config:setting:: enable-notification-monitoring
+  :displayname: Enable notification monitoring (Performance Monitoring)
+  :systemconsole: Site Configuration > Notifications
+  :configjson: .MetricsSettings.EnableNotificationMetrics
+  :environment: MM_METRICSSETTINGS_ENABLENOTIFICATIONMETRICS
+  :description: This setting controls whether Mattermost collects notification metrics data for client-side web and desktop app users. Default is **true**.
+
+Enable notification monitoring
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++-----------------------------------------------+----------------------------------------------------------------------------------------------------+
+| Enable or disable notification metrics data   | - System Config path: **Site Configuration > Notifications**                                       |
+| collection.                                   | - ``config.json`` setting: ``MetricsSettings`` > ``EnableNotificationMetrics`` > ``true``          |
+|                                               | - Environment variable: ``MM_METRICSSETTINGS_ENABLENOTIFICATIONMETRICS``                           |
+| - **true**: **(Default)** Mattermost          |                                                                                                    |
+|   notification data collection is enabled for |                                                                                                    |
+|   client-side web and desktop app users.      |                                                                                                    |
+| - **false**: Mattermost notification          |                                                                                                    |
+|   data collection is disabled.                |                                                                                                    |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------+
+
+.. note::
+  
+  **Prerequisites:**
+  
+  - ``MetricsSettings.Enable`` must be set to ``true``
+  - ``NotificationMonitoring`` feature flag must be set to ``true``
+  - Requires cluster license feature
+  
+  See the :ref:`performance monitoring <administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring:getting started>` documentation 
+  to learn more about Mattermost Notification Health metrics.
 
 ----
 
