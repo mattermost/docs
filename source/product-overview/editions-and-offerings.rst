@@ -17,7 +17,7 @@ Once you’ve installed Mattermost Enterprise Edition in your preferred environm
 Mattermost Entry
 ~~~~~~~~~~~~~~~~
 
-Mattermost Entry gives small, forward-leaning teams a **free self-hosted Intelligent Mission Environment** to get started on improving their mission-critical secure collaborative workflows. Entry has all features of **Enterprise Advanced** with the following limitations and omissions: 
+Mattermost Entry gives small, forward-leaning teams a **free self-hosted Intelligent Mission Environment** to get started on improving their mission-critical secure collaborative workflows. Entry has all features of **Enterprise Advanced** with the following server-wide limitations and omissions: 
 
 - 10,000 Channel message history 
 - 1000 Board cards\*
