@@ -24,10 +24,6 @@ Mattermost Desktop App v6.0.0 contains low severity level security fixes. Upgrad
 
 ### Improvements
 
-#### Windows
-
-- Switched to ``registry-js`` native module for Windows registry reading.
-
 #### All Platforms
 
 - Added the ability to open multiple tabs and windows for any given server.
@@ -53,7 +49,7 @@ Mattermost Desktop App v6.0.0 contains low severity level security fixes. Upgrad
 
 ### Open Source Components
 
-- Removed ``@types/winreg`` and ``winreg-utf8`` from https://github.com/mattermost/desktop/.
+- Switched to ``registry-js`` native module for Windows registry reading in https://github.com/mattermost/desktop/.
 
 ### Known Issues
 
