@@ -92,7 +92,7 @@ Database software
 
 -  PostgreSQL 14.0+
 
-Amazon Aurora equivalents of PostgreSQL is also supported.
+Amazon Aurora equivalents of PostgreSQL is also supported. Our `Migration Guide <https://docs.mattermost.com/deployment-guide/postgres-migration.html>`__ outlines the steps, tools and support available for migrating from MySQL to PostgreSQL.
 
 .. important::
 
