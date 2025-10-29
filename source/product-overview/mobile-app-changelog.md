@@ -31,6 +31,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 
 ### Bug Fixes
  - Fixed an issue with the Slack attachment button color.
+ - Fixed an issue with Android system bars taking too much space or overlapping content.
 
 ### Open Source Components
  - Added ``js-sha256`` to https://github.com/mattermost/mattermost-mobile/.
