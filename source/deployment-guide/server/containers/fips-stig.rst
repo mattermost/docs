@@ -25,4 +25,5 @@ All application-level code uses only FIPS-approved algorithms, ensuring that cry
 
 .. note::
 
-   The Mattermost FIPS image includes only prepackaged Boards, Playbooks, and Agents.
+   - The Mattermost FIPS image includes only prepackaged Boards, Playbooks, and Agents. Additional plugins can be added to the Mattermost FIPS image, but they will run in non-FIPS mode. 
+   - Existing Docker or Kubernetes-based deployments can change the image from ``mattermost/mattermost-enterprise-edition`` to ``mattermost/mattermost-enterprise-fips-edition``. 
