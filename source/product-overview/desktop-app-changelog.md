@@ -32,7 +32,7 @@ Mattermost Desktop App v6.0.0 contains low severity level security fixes. Upgrad
 
 - Added the ability to open multiple tabs and windows for any given server.
 - Added parent-child popout window support, with listeners to facilitate communication.
-- Added pre-auth headers to the server modal and an inject header into all requests to that server.
+- Added pre-auth headers to the server modal. This header is injected into all requests to that server.
 - Unified and polished basic authentication, client certificate and pre-auth header authentication methods.
 - Added default theme syncing with the web app.
 - Added server version information to the **Help** menu.
