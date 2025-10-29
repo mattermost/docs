@@ -52,6 +52,7 @@ If you upgrade from a release earlier than v11.0, please read the other [Importa
  - Fixed an issue where email address verification for SAML/LDAP users was required when a user’s email address changed.
  - Fixed an issue where users could still message each other when not sharing a team, despite the configuration setting stating otherwise.
  - Fixed an issue with the mmctl system status to return non-zero exit codes when health checks fail, ensuring proper integration with container orchestration health check systems.
+ - Fixed a configuration retention issue where even active configuration got deleted.
 
 ### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
