@@ -12,6 +12,16 @@
 (release-v11.0-major-release)=
 ## Release v11.0 - [Major Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **11.0.4, released 2025-10-28**
+ ```{Attention}
+ **Critical Fixes**
+  - Mattermost v11.0.4 contains Critical severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is    highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+ ```
+  - Fixed an issue where plugin configuration settings were incorrectly sanitized, causing API endpoints and plugins to receive masked values instead of actual configuration values.
+  - Pre-packaged Boards plugin [v9.1.7](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.7).
+  - Mattermost v11.0.4 contains no database or functional changes.
+- **11.0.3, released 2025-10-27**
+  - Mattermost v11.0.3 contains no database or functional changes.
 - **11.0.2, released 2025-10-16**
   - Reverted a breaking change related to ``ServiceSettings.ExperimentalStrictCSRFEnforcement`` setting.
 - **11.0.1, released 2025-10-16**
@@ -23,7 +33,7 @@
  - The ``TeamSettings.ExperimentalViewArchivedChannels`` setting has been deprecated. Archived channels will always be accessible, subject to normal channel membership. The server will fail to start if this setting is set to ``false``. To deny access to archived channels, mark them as private and remove affected channel members. See more details in [this forum post](https://forum.mattermost.com/t/viewing-accessing-archived-channels-v11/22626).
  - Playbooks has been deprecated from Team Edition. Entry, Professional, Enterprise, and Enterprise Advanced plans are automatically upgraded to Playbooks v2 with no expected downtime. See more details in [this forum post](https://forum.mattermost.com/t/clarification-and-update-on-the-playbooks-plugin-v11/25192).
  - Experimental Bleve Search functionality has been retired. If Bleve is enabled, search will not work until ``DisableDatabaseSearch`` is set to ``false``. See more details in [this forum post](https://forum.mattermost.com/t/transitioning-from-bleve-search-in-mattermost-v11/22982).
- - Support for MySQL has ended. See more details in [this forum post](https://forum.mattermost.com/t/transition-to-postgresql/19551).
+ - Support for MySQL has ended. Our [Migration Guide](https://docs.mattermost.com/deployment-guide/postgres-migration.html) outlines the steps, tools and support available for migrating to PostgreSQL. See more details in [this forum post](https://forum.mattermost.com/t/transition-to-postgresql/19551).
  - The ``registerPostDropdownMenuComponent`` hook in the web app’s plugin API has been removed in favour of ``registerPostDropdownMenuAction``. See more details in [this forum post](https://forum.mattermost.com/t/deprecating-a-post-dropdown-menu-component-plugin-api-v11/25001).
  - The web app is no longer exposing the [Styled Components](https://styled-components.com/) dependency for use by web app plugins. See more details in [this forum post](https://forum.mattermost.com/t/removing-styled-components-export-for-web-app-plugins-v11/25002).
  - Omnibus support has been deprecated. The last ``mattermost-omnibus`` release was v10.12. See more details in [this forum post](https://forum.mattermost.com/t/mattermost-omnibus-to-reach-end-of-life-v11/25175).
