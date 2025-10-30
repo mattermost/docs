@@ -719,11 +719,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
 ## Release v10.5 - [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
 - **10.5.14, released 2025-10-30**
- ```{Attention}
- **Critical Fixes**
-  - Mattermost v10.5.14 contains Critical severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
- ```
-  - Pre-packaged Boards plugin [v9.1.7](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.7).
+  - Fixed Go v1.23 incompatibility issues with plugins [MM-63345](https://mattermost.atlassian.net/browse/MM-63345).
   - Mattermost v10.5.14 contains no database or functional changes.
 - **10.5.13, released 2025-10-28**
  ```{Attention}
