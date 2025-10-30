@@ -39,7 +39,7 @@ PC web
     :header: "Browser", "Self-Hosted Technical Requirement", "Cloud Technical Requirement"
 
     "Chrome", "v138+", "v138+"
-    "Firefox", "v128+", "v128+"
+    "Firefox", "v140+", "v140+"
     "Safari", "v17.4+", "v17.4+"
     "Edge", "v140+", "v140+"
 
