@@ -106,7 +106,7 @@ Web server listen address
 
 .. note::
 
-  Web server uses ``address:port`` (e.g., ":8065"), while :ref:`Metrics <administration-guide/configure/environment-configuration-settings:listen address>` uses a port number only (e.g., 8067).
+  Web server uses ``address:port`` (e.g., ``":8065"``), while :ref:`Metrics <administration-guide/configure/environment-configuration-settings:listen address>` uses a port number only (e.g., ``8067``).
 
 .. config:setting:: forward-port-80-to-443
   :displayname: Forward port 80 to 443 (Web Server)
