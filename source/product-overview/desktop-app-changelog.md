@@ -22,11 +22,15 @@ Mattermost Desktop App v6.0.0 contains low severity level security fixes. Upgrad
 - Desktop App is supported on any currently supported [Mattermost server version](https://docs.mattermost.com/product-overview/mattermost-desktop-releases.html#latest-releases).
 - Updated Chromium minimum supported version to 140+ and updated Windows minimum supported version to v11+.
 
+### Highlights
+
+#### Desktop App Multi-View Architecture
+ - Mattermost Desktop App v6.0 introduces a new Multi-View Architecture that replaces the previous fixed-tab layout. This enhancement introduces a dynamic, flexible system where users can open, close, and manage multiple views or windows, including any part of the Mattermost app (e.g., Channels, Boards, Playbooks). This architectural update provides a more customizable and efficient workspace experience while laying the foundation for advanced multi-window and pop-out features in future releases.
+
 ### Improvements
 
 #### All Platforms
 
-- Added the ability to open multiple tabs and windows for any given server.
 - Added parent-child popout window support, with listeners to facilitate communication.
 - Added pre-auth headers to the server modal. This header is injected into all requests to that server.
 - Unified and polished basic authentication, client certificate and pre-auth header authentication methods.
