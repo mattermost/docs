@@ -40,7 +40,7 @@ Configure SMTP settings
 
 .. note::
 
-  SMTPPort and related port settings use string format (e.g., "465") for compatibility with Go's host:port binding format, which requires string concatenation.
+  ``SMTPPort`` and related port settings use string format (e.g., ``"465"``) for compatibility with the ``host:port`` binding format, which requires string concatenation.
 
 3. Select **Save**.
 4. Under **Connection Security**, select **Test Connection**. Mattermost will confirm whether a connection to the SMTP service is successful by sending you an email. If the test fails, Mattermost will provide details about why it failed in the System Console. See the `check Mattermost logs <#troubleshooting-using-logs>`__ section below for details.

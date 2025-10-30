@@ -8,9 +8,8 @@ When using the `Mattermost Notification Health <https://grafana.com/grafana/dash
 
 .. note::
 
-    - Accessing and enabling Mattermost Notification Health Monitoring requires the feature flag ``NotificationMonitoring`` to be set to ``true``.
+    - Accessing and enabling Mattermost Notification Health Monitoring requires ``MetricsSettings.Enable`` set to ``true``, and the feature flag ``NotificationMonitoring`` set to ``true``.
     - ``MetricsSettings.EnableNotificationMetrics`` must be enabled in the :ref:`Performance Monitoring <administration-guide/configure/environment-configuration-settings:enable notification monitoring>` configuration.
-    - Prerequisites: ``MetricsSettings.Enable`` must be ``true``, ``NotificationMonitoring`` feature flag must be ``true``, and requires cluster license feature.
     - System admins can :ref:`disable notification monitoring data collection <administration-guide/configure/site-configuration-settings:enable notification monitoring>` through the System Console.
 
 Push Proxy Delivery Rate
