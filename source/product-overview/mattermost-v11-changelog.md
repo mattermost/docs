@@ -21,7 +21,7 @@
 ```
 
 ### Compatibility
- - Updated minimum required Edge and Chrome versions to v140+ and updated minimum supported Windows version to v11+. 
+ - Updated minimum required Edge, Firefox and Chrome versions to v140+ and updated minimum supported Windows version to v11+.
 
 ```{Important}
 If you upgrade from a release earlier than v11.0, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
