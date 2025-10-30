@@ -449,6 +449,7 @@ source_suffix = {
 sitemap_excludes = [
     # Original excludes
     "agents/.config/notice-file/README.html",
+    "404.html",
     
     # GitHub directory files
     "agents/.github/CONTRIBUTING.html",
