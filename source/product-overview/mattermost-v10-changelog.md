@@ -718,6 +718,9 @@ New setting options were added to ``config.json``. Below is a list of the additi
 (release-v10.5-extended-support-release)=
 ## Release v10.5 - [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
+- **10.5.14, released 2025-10-30**
+  - Fixed Go v1.23 incompatibility issues with plugins [MM-63345](https://mattermost.atlassian.net/browse/MM-63345).
+  - Mattermost v10.5.14 contains no database or functional changes.
 - **10.5.13, released 2025-10-28**
  ```{Attention}
  **Critical Fixes**
