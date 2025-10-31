@@ -291,11 +291,11 @@ The SMTP server name URL that will receive your Global Relay EML file when a `cu
 SMTP server port
 ~~~~~~~~~~~~~~~~
 
-The SMTP server port that will receive your Global Relay EML file when a `custom customer account type <#global-relay-customer-account>`__ is configured. Default is 25.
+The SMTP server port that will receive your Global Relay EML file when a `custom customer account type <#global-relay-customer-account>`__ is configured. Default is ``"25"``.
 
-+----------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``".MessageExportSettings.GlobalRelaySettings.CustomSMTPPort": 25`` with string input. |
-+----------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``".MessageExportSettings.GlobalRelaySettings.CustomSMTPPort": "25"`` with string input. |
++------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: message-export-batch-size
   :displayname: Message export batch size (Compliance Export)
