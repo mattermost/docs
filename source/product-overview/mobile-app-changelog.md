@@ -23,7 +23,6 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Added functionality to create playbook runs.
  - Added support for playbook conditionals.
  - Improved the visuals for selectors.
- - Added a floating banner system for network connectivity notifications including WebSocket disconnections, reconnections, and limited connectivity alerts.
  - Added a descriptive error message for the pre-auth secret when the ping fails with an authentication error.
  - Improved the advanced options animation and layout in the server form.
  - Temporarily opted out of Android ``EdgeToEdge`` and iOS 26 Liquid Glass for compatibility.
