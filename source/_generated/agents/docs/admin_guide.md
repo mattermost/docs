@@ -13,6 +13,7 @@ Before installing the Agents plugin, ensure your environment meets these require
 - For semantic search: PostgreSQL with pgvector extension
 - Network access to your chosen LLM provider
 - API keys if using a cloud LLM service
+- For file content access: Enable document search by content in [Environment Configuration Settings](https://docs.mattermost.com/administration-guide/configure/environment-configuration-settings.html#enable-document-search-by-content)
 
 ### Installation Steps
 

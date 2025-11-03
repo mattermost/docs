@@ -2029,13 +2029,15 @@ Enable document search by content
 
   Document content search results for files shared before upgrading to Mattermost Server v5.35 may be incomplete until an extraction command is executed using the :ref:`mmctl <administration-guide/manage/mmctl-command-line-tool:mmctl extract>`. If this command is not run, users can search older files based on file name only.
 
+  Enabling document search by content is required when extracting content from files. Both Mattermost regular file search and Mattermost Agents can access files and their content, when enabled with the necessary dependencies.
+
   You can optionally install the following `dependencies <https://github.com/sajari/docconv#dependencies>`__ to extend content searching support in Mattermost to include file formats beyond PDF, DOCX, and ODT, such as DOC, RTF, XML, and HTML:
 
   - **tidy**: Used to search the contents of HTML documents.
   - **wv**: Used to search the contents of DOC documents.
-  - **popplerutils**: Used to significantly improve server performance when extracting the contents of PDF documents.
+  - **poppler-utils**: Used to significantly improve server performance when extracting the contents of PDF documents.
   - **unrtf**: Used to search the contents of RTF documents.
-  - **JusText**: Used to search HTML documents.
+  - **JusText**: Used to search HTML documents. See the `JusText Python package <https://pypi.org/project/jusText/>`__ for deployment information.
 
   If you choose not to install these dependencies, you’ll see log entries for documents that couldn’t be extracted. Any documents that can’t be extracted are skipped and logged so that content extraction can proceed.
 
