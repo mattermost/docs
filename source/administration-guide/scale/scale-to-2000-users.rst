@@ -1,7 +1,7 @@
 Scale Mattermost up to 2000 users
 =================================
 
-.. include:: ../../_static/badges/ent-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 This page describes the Mattermost reference architecture designed for a minimum load of 100 concurrent users and up to 2000 concurrent users. Unsure which reference architecture to use? See the :doc:`scaling for enterprise </administration-guide/scale/scaling-for-enterprise>` documentation for details.

@@ -102,7 +102,7 @@ Deployment options
 
   2. Access Mattermost at ``http://localhost:8065``
 
-   3. Create your first admin account when prompted.
+  3. Create your first admin account when prompted.
 
 Next steps
 ----------
@@ -112,7 +112,7 @@ After setting up your Mattermost instance using either method:
 * Create your first team and channels
 * Invite users to join your workspace
 * Explore Mattermost features and integrations
-* Review the :doc:`Application architecture </deployment-guide/application-architecture>` to understand the system better
+* Review the :doc:`Application architecture </deployment-guide/reference-architecture/application-architecture>` to understand the system better
 * Consider :doc:`Server deployment </deployment-guide/server/server-deployment-planning>` for a production deployment
 
 For additional help or questions, visit the `Mattermost community forums <https://forum.mattermost.com/>`_ or refer to the :doc:`Deployment troubleshooting </deployment-guide/deployment-troubleshooting>` guide.

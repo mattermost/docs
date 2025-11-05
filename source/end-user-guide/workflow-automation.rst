@@ -1,7 +1,7 @@
 Workflow Automation
 =====================
 
-.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Mattermost Playbooks provides structure, monitoring and automation for repeatable, team-based processes integrated with the Mattermost platform. Playbooks are :doc:`configurable checklists </end-user-guide/workflow-automation/work-with-tasks>` for teams to achieve :doc:`specific and predictable outcomes </end-user-guide/workflow-automation/metrics-and-goals>`, such as incident response, software release management, and logistical operations.
@@ -41,15 +41,14 @@ Access
 
 Access playbooks using a web browser or the desktop app by selecting the product menu located in the top-left corner of the Mattermost interface and then selecting **Playbooks**.
 
+From Mattermost v11 and mobile app v2.23.0, you can access playbooks from the mobile app. You can :ref:`interact with playbook tasks <end-user-guide/workflow-automation/work-with-tasks:interact with playbook tasks>` and :ref:`update tasks <end-user-guide/workflow-automation/work-with-tasks:update tasks>`.
+
 From Mattermost v10.11 and mobile app v2.31.0, you can access playbooks from the mobile app in read-only mode. :ref:`Playbooks slash commands <end-user-guide/workflow-automation/interact-with-playbooks:slash commands>` are supported in the mobile app, but actions like starting runs or updating checklists aren't available through the mobile interface.
 
 Usage
 -----
 
 Use collaborative playbooks to orchestrate prescribed workflows and define, streamline, and document complex, recurring operations, and help your organization stay in command with integrated communication, collaboration, and status dashboards managing your workflow life cycles.
-
-.. include:: ../_static/badges/academy-playbooks.rst
-  :start-after: :nosearch:
 
 Try it yourself!
 ~~~~~~~~~~~~~~~~

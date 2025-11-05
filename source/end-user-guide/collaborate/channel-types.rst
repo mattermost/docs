@@ -1,7 +1,7 @@
 Channel types
 =============
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Channels are used to organize conversations across different topics. The channels you're a member of display in the left pane. Learn how to create channels by visiting the :doc:`create channels </end-user-guide/collaborate/create-channels>` documentation.

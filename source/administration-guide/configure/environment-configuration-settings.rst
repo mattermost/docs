@@ -1,7 +1,7 @@
 Environment configuration settings
 ==================================
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Review and manage the following environmental configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Environment**:
@@ -32,10 +32,7 @@ Review and manage the following environmental configuration options in the Syste
 Web server
 ----------
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
-Configure the network environment in which Mattermost is deployed by going to **System Console > Environment > Web Server**, or by updating the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
+With self-hosted deployments, you can configure the network environment in which Mattermost is deployed by going to **System Console > Environment > Web Server**, or by updating the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
 .. config:setting:: site-url
   :displayname: Site URL (Web Server)
@@ -106,6 +103,10 @@ Web server listen address
 | or “well-known ports”, in the range of 0-1023), you must have |                                                                    |
 | permissions to bind to that port.                             |                                                                    |
 +---------------------------------------------------------------+--------------------------------------------------------------------+
+
+.. note::
+
+  Web server uses ``address:port`` (e.g., ``":8065"``), while :ref:`Metrics <administration-guide/configure/environment-configuration-settings:listen address>` uses a port number only (e.g., ``8067``).
 
 .. config:setting:: forward-port-80-to-443
   :displayname: Forward port 80 to 443 (Web Server)
@@ -376,7 +377,7 @@ Managed resource paths
 Reload configuration from disk
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-only.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 +----------------------------------------------------------+---------------------------------------------------------------+
@@ -436,9 +437,6 @@ Websocket URL
 
 License file location
 ~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 +--------------------------------------------------------+------------------------------------------------------------------------------------+
 | The path and filename of the license file on disk.     | - System Config path: N/A                                                          |
@@ -617,7 +615,7 @@ Allow cookies for subdomains
 Cluster log timeout
 ~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-only.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------+------------------------------------------------------------------------------------------------+
@@ -656,13 +654,7 @@ Maximum payload size
 Database
 --------
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
-Configure the database environment in which Mattermost is deployed by going to **System Console > Environment > Database**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
-
-.. include:: ../../_static/badges/academy-mattermost-database.rst
-  :start-after: :nosearch:
+With self-hosted deployments, you can configure the database environment in which Mattermost is deployed by going to **System Console > Environment > Database**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
 .. config:setting:: driver-name
   :displayname: Driver name (Database)
@@ -801,18 +793,53 @@ Mattermost doesn't need to manage this. See the :ref:`high availablility databas
   :systemconsole: Environment > Database
   :configjson: .SqlSettings.MaxOpenConns
   :environment: MM_SQLSETTINGS_MAXOPENCONNS
-  :description: The maximum number of idle connections held open to the database. Default is **300**.
+  :description: The maximum number of open connections to the database. Default is **100**.
 
 Maximum open connections
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------------------------------------------------+-------------------------------------------------------------------------+
 | The maximum number of open connections to the          | - System Config path: **Environment > Database**                        |
-| database.                                              | - ``config.json`` setting: ``SqlSettings`` > ``MaxOpenConns`` > ``300`` |
+| database.                                              | - ``config.json`` setting: ``SqlSettings`` > ``MaxOpenConns`` > ``100`` |
 |                                                        | - Environment variable: ``MM_SQLSETTINGS_MAXOPENCONNS``                 |
-| Numerical input. Default is **300** for self-hosted    |                                                                         |
-| deployments, and **100** for Cloud deployments.        |                                                                         |
+| Numerical input. Default is **100**.                   |                                                                         |
 +--------------------------------------------------------+-------------------------------------------------------------------------+
+
+.. config:setting:: maximum-idle-connections
+  :displayname: Maximum idle connections (Database)
+  :systemconsole: Environment > Database
+  :configjson: .SqlSettings.MaxIdleConns
+  :environment: MM_SQLSETTINGS_MAXIDLECONNS
+  :description: The maximum number of idle connections held open to the database. Default is **50**.
+
+Maximum idle connections
+~~~~~~~~~~~~~~~~~~~~~~~~
+
++--------------------------------------------------------+-------------------------------------------------------------------------+
+| The maximum number of idle connections held open to    | - System Config path: **Environment > Database**                        |
+| the database.                                          | - ``config.json`` setting: ``SqlSettings`` > ``MaxIdleConns`` > ``50``  |
+|                                                        | - Environment variable: ``MM_SQLSETTINGS_MAXIDLECONNS``                 |
+| Numerical input. Default is **50**.                    |                                                                         |
+| A 2:1 ratio with MaxOpenConns is recommended.          |                                                                         |
++--------------------------------------------------------+-------------------------------------------------------------------------+
+
+.. config:setting:: maximum-idle-connections
+  :displayname: Maximum idle connections (Database)
+  :systemconsole: Environment > Database
+  :configjson: .SqlSettings.MaxIdleConns
+  :environment: MM_SQLSETTINGS_MAXIDLECONNS
+  :description: The maximum number of idle connections held open to the database. Default is **50**.
+
+Maximum idle connections
+~~~~~~~~~~~~~~~~~~~~~~~~
+
++-------------------------------------------------------+-------------------------------------------------------------------+
+| The maximum number of idle connections held open      | - System Config path: **Environment > Database**                  |
+| to the database.                                      | - ``config.json`` setting: ``".SqlSettings.MaxIdleConns": 50,``   |
+|                                                       | - Environment variable: ``MM_SQLSETTINGS_MAXIDLECONNS``           |
+| Numerical input. Default is **50**.                   |                                                                   |
+|                                                       |                                                                   |
++-------------------------------------------------------+-------------------------------------------------------------------+
 
 .. config:setting:: query-timeout
   :displayname: Query timeout (Database)
@@ -915,7 +942,7 @@ SQL statement logging
 Recycle database connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-only.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------+------------------------------------------------------------------+
@@ -944,21 +971,21 @@ Recycle database connections
 Disable database search
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-+------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| When `enterprise-scale search </administration-guide/scale/enterprise-search>`,    | - System Config path: **Environment > Database**                                    |
-| database search can be disabled from performing searches.                          | - ``config.json`` setting: ``SqlSettings`` > ``DisableDatabaseSearch`` > ``false``  |
-|                                                                                    | - Environment variable: ``MM_SQLSETTINGS_DISABLEDATABASESEARCH``                    |
-| - **true**: Disables the use of the database to perform                            |                                                                                     |
-|   searches. If another search engine isn't configured,                             |                                                                                     |
-|   setting this value to ``true`` will result in empty search                       |                                                                                     |
-|   results.                                                                         |                                                                                     |
-| - **false**: **(Default)** Database search isn't disabled.                         |                                                                                     |
-+------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| When :doc:`enterprise-scale search </administration-guide/scale/enterprise-search>`,    | - System Config path: **Environment > Database**                                    |
+| database search can be disabled from performing searches.                               | - ``config.json`` setting: ``SqlSettings`` > ``DisableDatabaseSearch`` > ``false``  |
+|                                                                                         | - Environment variable: ``MM_SQLSETTINGS_DISABLEDATABASESEARCH``                    |
+| - **true**: Disables the use of the database to perform                                 |                                                                                     |
+|   searches. If another search engine isn't configured,                                  |                                                                                     |
+|   setting this value to ``true`` will result in empty search                            |                                                                                     |
+|   results.                                                                              |                                                                                     |
+| - **false**: **(Default)** Database search isn't disabled.                              |                                                                                     |
++-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
 Search behavior in Mattermost depends on which search engines are enabled:
 
 - When :doc:`Elasticsearch </administration-guide/scale/elasticsearch-setup>` or :doc:`AWS OpenSearch </administration-guide/scale/opensearch-setup>` is enabled, Mattermost will try to use it first.
-- If Elasticsearch fails or is disabled, Mattermost will attempt to use :doc:`Bleve </administration-guide/configure/bleve-search>`, if enabled. If this occurs, you will see the warning ``Encountered error on SearchPostsInTeamForUser``.
+- If Elasticsearch fails or is disabled, Mattermost will attempt to use Bleve search, if enabled. Bleve search has been deprecated in Mattermost v11.0. We recommend using Elasticsearch or OpenSearch for enterprise search capabilities.
 - If these fail or are disabled, Mattermost tries to search the database directly, if this is enabled.
 - If all of the above methods fail or are disabled, the search results will be empty.
 
@@ -1001,9 +1028,6 @@ Read-only display of the currently active backend used for search. Values can in
 Read replicas
 ~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 +--------------------------------------------------------+-------------------------------------------------------------------------------+
 | Specifies the connection strings for the read replica  | - System Config path: N/A                                                     |
 | databases.                                             | - ``config.json`` setting: ``SqlSettings`` > ``DataSourceReplicas`` > ``[]``  |
@@ -1032,9 +1056,6 @@ For an AWS High Availability RDS cluster deployment, point this configuration se
 Search replicas
 ~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
 | Specifies the connection strings for the search        | - System Config path: N/A                                                           |
 | replica databases. A search replica is similar to a    | - ``config.json`` setting: ``SqlSettings`` > ``DataSourceSearchReplicas`` > ``[]``  |
@@ -1061,7 +1082,7 @@ For an AWS High Availability RDS cluster deployment, point this configuration se
 Replica lag settings
 ~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-only.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 +--------------------------------------------------------+----------------------------------------------------------------------------------+
@@ -1201,9 +1222,6 @@ Replica lag settings
 Replica monitor interval (seconds)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Specifies how frequently unhealthy replicas will be    | - System Config path: N/A                                                               |
 | monitored for liveness check. Mattermost will          | - ``config.json`` setting: ``SqlSettings`` > ``ReplicaMonitorIntervalSeconds`` > ``5``  |
@@ -1212,17 +1230,21 @@ Replica monitor interval (seconds)
 | Numerical input. Default is 5 seconds.                 |                                                                                         |
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
 
+.. note::
+
+  This configuration setting is applicable to self-hosted deployments only.
+
 ----
 
 Enterprise search
 -----------------
 
-.. include:: ../../_static/badges/ent-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 Core database search happens in a relational database and is intended for deployments under about 2–3 million posts and file entries. Beyond that scale, enabling enterprise search with Elasticsearch or AWS OpenSearch is highly recommended for optimum search performance before reaching 3 million posts.
 
-For deployments with over 3 million posts, Elasticsearch or AWS OpenSearch is required to avoid significant performance issues, such as timeouts, with :doc:`message searches </end-user-guide/collaborate/search-for-messages>` and :doc:`@mentions </end-user-guide/collaborate/mention-people>`.
+For self-hosted deployments with over 3 million posts, Elasticsearch or AWS OpenSearch is required to avoid significant performance issues, such as timeouts, with :doc:`message searches </end-user-guide/collaborate/search-for-messages>` and :doc:`@mentions </end-user-guide/collaborate/mention-people>`.
 
 You can configure Mattermost enterprise search by going to **System Console > Environment > Elasticsearch**. The following configuration settings apply to both Elasticsearch and AWS OpenSearch. You can also edit the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
@@ -1899,13 +1921,7 @@ Trace
 File storage
 ------------
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
-Configure file storage settings by going to **System Console > Environment > File Storage**, or by editing the ``config.json`` file as described in the following tables.
-
-.. include:: ../../_static/badges/academy-file-storage.rst
-  :start-after: :nosearch:
+With self-hosted deployments, you can configure file storage settings by going to **System Console > Environment > File Storage**, or by editing the ``config.json`` file as described in the following tables.
 
 .. note::
 
@@ -2220,7 +2236,7 @@ See the `AWS <https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.ht
 Enable server-side encryption for Amazon S3
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 +---------------------------------------------------------------+-----------------------------------------------------------------------------+
@@ -2231,6 +2247,10 @@ Enable server-side encryption for Amazon S3
 | - **false**: **(Default)** Doesn’t encrypt files in           |                                                                             |
 |   Amazon S3.                                                  |                                                                             |
 +---------------------------------------------------------------+-----------------------------------------------------------------------------+
+
+.. note::
+
+  This configuration setting is available for self-hosted deployments only.
 
 .. config:setting:: enable-amazon-s3-debugging
   :displayname: Enable Amazon S3 debugging (File Storage)
@@ -2401,10 +2421,7 @@ Initial font
 Image proxy
 -----------
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
-An image proxy is used by Mattermost apps to prevent them from connecting directly to remote self-hosted servers. Configure an image proxy by going to **System Console > Environment > Image Proxy**, or by editing the ``config.json`` file as described in the following tables.
+With self-hosted deployments, an image proxy can be used by Mattermost apps to prevent them from connecting directly to remote self-hosted servers. Configure an image proxy by going to **System Console > Environment > Image Proxy**, or by editing the ``config.json`` file as described in the following tables.
 
 .. config:setting:: enable-image-proxy
   :displayname: Enable image proxy (Image Proxy)
@@ -2491,10 +2508,7 @@ See the :doc:`image proxy </deployment-guide/server/image-proxy>` documentation 
 SMTP
 ----
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
-Configure SMTP email server settings by going to **System Console > Environment > SMTP**, or by editing the ``config.json`` file as described in the following tables.
+With self-hosted deployments, you can configure SMTP email server settings by going to **System Console > Environment > SMTP**, or by editing the ``config.json`` file as described in the following tables.
 
 .. config:setting:: smtp-server
   :displayname: SMTP server (SMTP)
@@ -2517,16 +2531,16 @@ SMTP server
   :systemconsole: Environment > SMTP
   :configjson: .EmailSettings.SMTPPort
   :environment: MM_EMAILSETTINGS_SMTPPORT
-  :description: The port of SMTP email server.
+  :description: The port of SMTP email server. String input.
 
 SMTP server port
 ~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+---------------------------------------------------------------+
-| The port of SMTP email server.                                  | - System Config path: **Environment > SMTP**                  |
-|                                                                 | - ``config.json`` setting: ``EmailSettings`` > ``SMTPPort``   |
-| Numerical input.                                                | - Environment variable: ``MM_EMAILSETTINGS_SMTPPORT``         |
-+-----------------------------------------------------------------+---------------------------------------------------------------+
++-----------------------------------------------------------------+-----------------------------------------------------------------+
+| The port of SMTP email server.                                  | - System Config path: **Environment > SMTP**                    |
+|                                                                 | - ``config.json`` setting: ``EmailSettings`` > ``"SMTPPort"``   |
+| String input.                                                   | - Environment variable: ``MM_EMAILSETTINGS_SMTPPORT``           |
++-----------------------------------------------------------------+-----------------------------------------------------------------+
 
 .. config:setting:: enable-smtp-authentication
   :displayname: Enable SMTP authentication (SMTP)
@@ -2672,9 +2686,6 @@ SMTP server timeout
 Push notification server
 ------------------------
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 .. include:: push-notification-server-configuration-settings.rst
     :start-after: :nosearch:
 
@@ -2683,10 +2694,10 @@ Push notification server
 High availability
 -----------------
 
-.. include:: ../../_static/badges/ent-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
-You can configure Mattermost as a :doc:`high availability cluster-based deployment </administration-guide/scale/high-availability-cluster-based-deployment>` by going to **System Console > Environment > High Availability**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
+With self-hosted deployments, you can configure Mattermost as a :doc:`high availability cluster-based deployment </administration-guide/scale/high-availability-cluster-based-deployment>` by going to **System Console > Environment > High Availability**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
 In a Mattermost high availability cluster-based deployment, the System Console is set to read-only, and settings can only be changed by editing the ``config.json`` file directly. However, to test a high availability cluster-based environment, you can disable ``ClusterSettings.ReadOnlyConfig`` in the ``config.json`` file by setting it to ``false``. This allows changes applied using the System Console to be saved back to the configuration file.
 
@@ -2925,9 +2936,6 @@ Advertise address
 Rate limiting
 -------------
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 .. include:: rate-limiting-configuration-settings.rst
     :start-after: :nosearch:
 
@@ -2936,10 +2944,7 @@ Rate limiting
 Logging
 --------
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
-Mattermost provides 3 independent logging systems that can be configured separately with separate log files and rotation policies to meet different operational and compliance needs:
+Mattermost provides 3 independent logging systems for self-hosted deployments that can be configured separately with separate log files and rotation policies to meet different operational and compliance needs:
 
 - `Log Settings <#log-settings>`__
 - `Notification Log Settings <#notification-logging>`__
@@ -2976,6 +2981,10 @@ Output logs to console
 | - **false**: Output log messages aren’t       |                                                                           |
 |   written to the console.                     |                                                                           |
 +-----------------------------------------------+---------------------------------------------------------------------------+
+
+.. note::
+
+  From Mattermost v11.0, notification logs are automatically included in the main console logs.
 
 .. config:setting:: console-log-level
   :displayname: Console general log level (General Logging)
@@ -3082,7 +3091,8 @@ Output logs to file
 
 .. note::
 
-  Typically set to **true** in a production environment. When enabled, you can download the ``mattermost.log`` file locally by going to **System Console > Reporting > Server Logs**, and selecting **Download Logs**. 
+  - From Mattermost v11.0, notification logs are automatically included in the main file logs.
+  - This setting is typically set to **true** in a production environment. When enabled, you can download the ``mattermost.log`` file locally by going to **System Console > Reporting > Server Logs**, and selecting **Download Logs**.
 
 .. config:setting:: file-log-directory
   :displayname: General file log directory (General Logging)
@@ -3305,7 +3315,15 @@ Enable Sentry reporting
 Notification logging
 ~~~~~~~~~~~~~~~~~~~~~
 
-Configure logging specifically for Mattermost notifications by editing the ``config.json`` file as described in the following tables. These settings operate independently from the main ``LogSettings`` and allow you to customize logging behavior specifically for the notification subsystem. Changes to these configuration settings require a server restart before taking effect.
+.. important::
+
+  **From Mattermost v11, notification log settings have been consolidated into the standard console logs and mattermost.log file**. You can no longer disable notification logging without using advanced logging settings, as the main log level setting now controls both server and notification logs.
+
+  You can use the ``AdvancedLoggingJSON`` configuration with discrete notification log levels: ``NotificationError``, ``NotificationWarn``, ``NotificationInfo``, ``NotificationDebug``, and ``NotificationTrace`` to split notification logs into separate files and reduce troubleshooting noise. See :ref:`Advanced Logging <administration-guide/manage/logging:advanced logging>` for details.
+
+The following configuration settings apply only to Mattermost server versions prior to v11.0.
+
+You can configure logging specifically for Mattermost notifications by editing the ``config.json`` file as described in the following tables. These settings operate independently from the main ``LogSettings`` and allow you to customize logging behavior specifically for the notification subsystem. Changes to these configuration settings require a server restart before taking effect.
 
 .. config:setting:: output-logs-to-console
   :displayname: Output notification logs to console (Notification Logging)
@@ -3531,6 +3549,9 @@ Output logs to multiple targets
 Audit logging
 ~~~~~~~~~~~~~
 
+.. include:: ../../_static/badges/ent-plus.rst
+  :start-after: :nosearch:
+
 Configure audit logging by going to **System Console > Compliance > Audit Logging**, or by editing the ``config.json`` file as described in the following tables. These settings operate independently from the main ``LogSettings`` and allow you to customize logging behavior specifically for the audit subsystem. Changes to these configuration settings require a server restart before taking effect.
 
 .. config:setting:: auditlog-fileenabled
@@ -3717,10 +3738,7 @@ Output audit logs to multiple targets
 Session lengths
 ---------------
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
-User sessions are cleared when a user tries to log in, and sessions are cleared every 24 hours from the sessions database table. Configure session lengths by going to **System Console > Environment > Session Lengths**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
+With self-hosted deployments, user sessions are cleared when a user tries to log in, and sessions are cleared every 24 hours from the sessions database table. Configure session lengths by going to **System Console > Environment > Session Lengths**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
 .. config:setting:: extend-session-length-with-activity
   :displayname: Extend session length with activity (Session Lengths)
@@ -3900,12 +3918,27 @@ Session idle timeout
 Performance monitoring
 ----------------------
 
-.. include:: ../../_static/badges/ent-selfhosted.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
-Configure performance monitoring by going to **System Console > Environment > Performance Monitoring**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
+With self-hosted deployments, you can configure performance monitoring by going to **System Console > Environment > Performance Monitoring**, or by editing the ``config.json`` file as described in the following tables. 
 
-See the :doc:`performance monitoring </administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring>` documentation to learn more about setting up performance monitoring.
+.. code-block:: json
+
+   {
+     "MetricsSettings": {
+       "Enable": false,
+       "BlockProfileRate": 0,
+       "ListenAddress": :8067,
+       "EnableClientMetrics": false,
+       "EnableNotificationMetrics": true,
+       "ClientSideUserIds": ""
+     }
+   }
+
+Changes to configuration settings in this section require a server restart before taking effect.
+
+See the :doc:`performance monitoring </administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring>` documentation to learn more about setting up performance monitoring with Prometheus and Grafana. See the :doc:`collect performance metrics </administration-guide/scale/collect-performance-metrics>` documentation to learn more about using the Mattermost Metrics plugin.
 
 .. config:setting:: enable-performance-monitoring
   :displayname: Enable performance monitoring (Performance Monitoring)
@@ -3947,7 +3980,7 @@ Enable client performance monitoring
 +------------------------------------------------------+----------------------------------------------------------------------------------------+
 | Enable or disable client performance monitoring.     | - System Config path: **Environment > Performance Monitoring**                         |
 |                                                      | - ``config.json`` setting: ``MetricsSettings`` > ``EnableClientMetrics`` > ``false``   |
-| - **true**: Client performance monitoring data       | - Environment variable: ``MM_METRICSSETTINGS_ENABLE``                                  |
+| - **true**: Client performance monitoring data       | - Environment variable: ``MM_METRICSSETTINGS_ENABLECLIENTMETRICS``                     |
 |   collection and profiling is enabled.               |                                                                                        |
 | - **false**: **(Default)** Mattermost                |                                                                                        |
 |   client performance monitoring is disabled.         |                                                                                        |
@@ -3966,13 +3999,15 @@ Client side user ids
 +---------------------------------------------------------------+-------------------------------------------------------------------------+
 | A list of comma-separated user IDs you want to track for      | - System Config path: **Environment > Performance Monitoring**          |
 | client-side webapp metrics.                                   | - ``config.json`` setting: ``MetricsSettings`` > ``ClientSideUserIds``  |
-|                                                               | - Environment variable: ``MM_METRICSSETTINGS_LISTENADDRESS``            |
+|                                                               | - Environment variable: ``MM_METRICSSETTINGS_CLIENTSIDEUSERIDS``        |
 | Limited to 5 user IDs. Blank by default.                      |                                                                         |
 +---------------------------------------------------------------+-------------------------------------------------------------------------+
 
 .. note::
 
-  The total number of user IDs is limited to 5 to ensure performance. Adding more IDs can overwhelm Prometheus due to high label cardinality. To avoid performance issues, we recommend minimizing changes to this list.
+  - This setting only applies when ``EnableClientMetrics`` is set to ``true``.
+  - Each user ID should correspond to a valid user in the Mattermost system. For example, ``MM_METRICSSETTINGS_CLIENTSIDEUSERIDS="user1,user2,user3"``.
+  - The total number of user IDs is limited to 5 to ensure performance. Adding more IDs can overwhelm Prometheus due to high label cardinality. To avoid performance issues, we recommend minimizing changes to this list.
 
 .. config:setting:: listen-address-for-performance
   :displayname: Listen address for performance (Performance Monitoring)
@@ -3991,15 +4026,77 @@ Listen address
 | Numerical input. Default is **8067**.                         |                                                                               |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 
+.. note::
+
+  - ``ListenAddress`` accepts a port only. It doesn’t take an IP/host. If you need to restrict interfaces, do so via your OS firewall or reverse proxy.
+  - The address uses a ``host:port`` format. Use ``:8067`` to listen on all interfaces on port **8067**, or use ``localhost:8067`` to restrict to **localhost** only.
+
+.. config:setting:: block-profile-rate
+  :displayname: Block profile rate (Performance Monitoring)
+  :systemconsole: N/A
+  :configjson: .MetricsSettings.BlockProfileRate
+  :environment: MM_METRICSSETTINGS_BLOCKPROFILERATE
+  :description: Control how often Mattermost collects data about delays caused by blocking operations within Mattermost (such as when one part of the program has to wait for another). Default is **0** (profiling is disabled).
+
+Block profile rate
+~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+-------------------------------------------------------------------------------+
+| Control how often Mattermost collects data about delays       | - System Config path: **N/A**                                                 |
+| caused by blocking operations within Mattermost (such as      | - ``config.json`` setting: ``MetricsSettings`` > ``BlockProfileRate`` > ``0`` |
+| when one part of the program has to wait for another).        | - Environment variable: ``MM_METRICSSETTINGS_BLOCKPROFILERATE``               |
+| Default is **0** (profiling is disabled).                     |                                                                               |
+|                                                               |                                                                               |
+| The profiler aims to sample an average of one blocking        |                                                                               |
+| event per rate nanoseconds spent blocked.                     |                                                                               |
+|                                                               |                                                                               |
+| Default is **0**.                                             |                                                                               |
++---------------------------------------------------------------+-------------------------------------------------------------------------------+
+
+.. note::
+
+  - This setting isn't available in the System Console and can only be set in ``config.json``.
+  - Only adjust this if you’re diagnosing performance issues and know how to analyze profiling data. The value represents how frequently Mattermost records blocking events in its performance profile:
+
+    - Set to 0 to record no blocking events (profiling is disabled).
+    - Set to 1 to record every blocking event (profiling is fully enabled).
+    - Set to a higher number to record only a fraction of events (useful for sampling instead of full profiling).
+
+.. config:setting:: enable-notification-monitoring
+  :displayname: Enable notification monitoring (Performance Monitoring)
+  :systemconsole: Site Configuration > Notifications
+  :configjson: .MetricsSettings.EnableNotificationMetrics
+  :environment: MM_METRICSSETTINGS_ENABLENOTIFICATIONMETRICS
+  :description: Control whether Mattermost collects notification metrics data for client-side web and desktop app users. Default is **true**.
+
+Enable notification monitoring
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++-----------------------------------------------+----------------------------------------------------------------------------------------------------+
+| Enable or disable notification metrics data   | - System Config path: **Site Configuration > Notifications**                                       |
+| collection.                                   | - ``config.json`` setting: ``MetricsSettings`` > ``EnableNotificationMetrics`` > ``true``          |
+|                                               | - Environment variable: ``MM_METRICSSETTINGS_ENABLENOTIFICATIONMETRICS``                           |
+| - **true**: **(Default)** Mattermost          |                                                                                                    |
+|   notification data collection is enabled for |                                                                                                    |
+|   client-side web and desktop app users.      |                                                                                                    |
+| - **false**: Mattermost notification          |                                                                                                    |
+|   data collection is disabled.                |                                                                                                    |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  - ``MetricsSettings.Enable`` must be set to ``true``
+  - The ``NotificationMonitoring`` feature flag must be set to ``true``
+
+See the :ref:`performance monitoring <administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring:getting started>` documentation 
+to learn more about Mattermost Notification Health metrics.
+
 ----
 
 Developer
 ---------
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
-Configure developer mode by going to **System Console > Environment > Developer**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
+With self-hosted deployments, you can configure developer mode by going to **System Console > Environment > Developer**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
 .. config:setting:: enable-testing-commands
   :displayname: Enable testing commands (Developer)
@@ -4122,10 +4219,10 @@ Some examples of when you may want to modify this setting include:
 Mobile security
 ---------------
 
-.. include:: ../../_static/badges/ent-adv-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-adv.rst
   :start-after: :nosearch:
 
-From Mattermost v10.7 and mobile app v2.27, you can configure biometric authentication, prevent Mattermost use on jailbroken or rooted devices, and can block screen captures without relying on an EMM Provider. Configure these options by going to **System Console > Environment > Mobile Security**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
+From Mattermost v10.7 and mobile app v2.27, you can configure biometric authentication, prevent Mattermost use on jailbroken or rooted devices, and can block screen captures without relying on an EMM Provider. Configure these options by going to **System Console > Environment > Mobile Security**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart and require users to restart their mobile app or log out and back in before taking effect.
 
 .. config:setting:: enable-biometric-authentication
   :displayname: Enable Biometric Authentication
@@ -4154,12 +4251,13 @@ Enable biometric authentication
 
 .. note::
 
-  Users must authenticate in the following situations:
+  - Changing this configuration setting takes effect when mobile users restart their Mattermost mobile app or log out and log back in.
+  - Users must authenticate in the following situations:
 
-  - Adding a new server: When a new server is added to the mobile app and biometric authentication is enabled.
-  - Opening the mobile app: At app launch when the active server requires authentication.
-  - Returning after background use: After the app has been in the background for 5 minutes or more and the active server requires authentication.
-  - Using multiple servers: When accessing a server for the first time, after 5 minutes of inactivity on a server, and when the last authentication attempt fails.
+    - Adding a new server: When a new server is added to the mobile app and biometric authentication is enabled.
+    - Opening the mobile app: At app launch when the active server requires authentication.
+    - Returning after background use: After the app has been in the background for 5 minutes or more and the active server requires authentication.
+    - Using multiple servers: When accessing a server for the first time, after 5 minutes of inactivity on a server, and when the last authentication attempt fails.
 
 .. config:setting:: mobile-security-enabled
   :displayname: Enable Jailbreak/Root Protection
@@ -4189,7 +4287,8 @@ Enable jailbreak/root protection
 
 .. note::
 
-  See the `Expo SDK documentation <https://docs.expo.dev/versions/latest/sdk/device/#deviceisrootedexperimentalasync>`_ to learn more about how checks are performed for this functionality.
+  - Changing this configuration setting takes effect when mobile users restart their Mattermost mobile app or log out and log back in.
+  - See the `Expo SDK documentation <https://docs.expo.dev/versions/latest/sdk/device/#deviceisrootedexperimentalasync>`_ to learn more about how checks are performed for this functionality.
 
 .. config:setting:: mobile-security-enabled
   :displayname: Prevent Screen Capture
@@ -4217,6 +4316,10 @@ Prevent screen capture
 |   blocking is disabled.                       |                                                                                               |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------+
 
+.. note::
+
+  Changing this configuration setting takes effect when mobile users restart their Mattermost mobile app or log out and log back in.
+
 .. config:setting:: mobile-enable-secure-file-preview
   :displayname: Enable secure file preview on mobile (File sharing)
   :systemconsole: Site Configuration > File sharing and downloads
@@ -4240,6 +4343,9 @@ This setting improves an organization's mobile security posture by restricting f
 | - **false**: **(Default)** Secure file preview mode is disabled.                                                                      |                                                                                                   |
 +---------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
 
+.. note::
+  Changing this configuration setting takes effect when mobile users restart their Mattermost mobile app or log out and log back in.
+
 .. config:setting:: mobile-allow-pdf-link-navigation
   :displayname: Allow PDF link navigation on mobile (File sharing)
   :systemconsole: Site Configuration > File sharing and downloads
@@ -4262,15 +4368,15 @@ Allow PDF link navigation on mobile
 
 .. note::
 
-  This setting has no effect when the `Secure file preview on mobile <#enable-secure-file-preview-on-mobile>`__ configuration setting is disabled.
+  - Changing this configuration setting takes effect when mobile users restart their Mattermost mobile app or log out and log back in.
+  - This setting has no effect when the `Secure file preview on mobile <#enable-secure-file-preview-on-mobile>`__ configuration setting is disabled.
 
 ----
 
 config.json-only settings
 -------------------------
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
+The following self-hosted deployment settings are only configurable in the ``config.json`` file and are not available in the System Console.
 
 .. config:setting:: disable-customer-portal-requests
   :displayname: Disable customer portal requests
@@ -4415,10 +4521,10 @@ This setting isn't available in the System Console and can only be enabled in ``
 Redis cache backend
 ~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-adv-selfhosted.rst
+.. include:: ../../_static/badges/ent-adv.rst
   :start-after: :nosearch:
 
-From Mattermost v10.4, Mattermost Enterprise customers can configure `Redis <https://redis.io/>`_ (Remote Dictionary Server) as an alternative cache backend. Redis is an open-source, in-memory data structure store that can be used as a database, cache, and message broker. It supports various data structures and is a top choice for its performance because its able to store data in memory and provide very quick data access.
+From Mattermost v10.4, Mattermost Enterprise customers with self-hosted deployments can configure `Redis <https://redis.io/>`_ (Remote Dictionary Server) as an alternative cache backend. Redis is an open-source, in-memory data structure store that can be used as a database, cache, and message broker. It supports various data structures and is a top choice for its performance because its able to store data in memory and provide very quick data access.
 
 Using Redis as a caching solution can help ensure that Mattermost for enterprise-level deployments with high concurrency and large user bases remains performant and efficient, even under heavy usage.
 

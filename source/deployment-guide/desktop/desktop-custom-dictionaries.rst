@@ -1,6 +1,9 @@
 Desktop App custom dictionaries
 ===============================
 
+.. include:: ../../_static/badges/all-commercial.rst
+  :start-after: :nosearch:
+
 From Mattermost desktop app v4.7.1, custom dictionary definitions can be served through a URL on Windows and Linux. If custom dictionaries aren't specified, default dictionary definitions are obtained automatically from Chromium's CDNs (content delivery networks). On macOS, the Mattermost desktop app uses dictionary definitions provided by Apple that can't be customized.
 
 Prepare custom dictionaries

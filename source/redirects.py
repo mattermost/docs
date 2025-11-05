@@ -371,7 +371,7 @@ redirects_map = {
 "administration/health-check.html":
         "https://docs.mattermost.com/administration-guide/manage/health-checks.html",
 "administration/hipchat-migration-guidelines.html":
-        "https://docs.mattermost.com/administration-guide/onboard/migrating-from-hipchat-to-mattermost.html",
+        "https://docs.mattermost.com/administration-guide/onboard/migrating-to-mattermost.html",
 "administration/image-proxy.html":
         "https://docs.mattermost.com/deployment-guide/server/image-proxy.html",
 "administration/important-upgrade-notes.html":
@@ -555,6 +555,18 @@ redirects_map = {
         "https://docs.mattermost.com/administration-guide/configure/environment-configuration-settings.html#enable-secure-file-preview-on-mobile",
 "administration-guide/configure/site-configuration-settings.html#allow-pdf-link-navigation-on-mobile":
         "https://docs.mattermost.com/administration-guide/configure/environment-configuration-settings.html#allow-pdf-link-navigation-on-mobile",
+"administration-guide/onboard/migrating-to-mattermost.html#migrate-from-slack":
+        "https://docs.mattermost.com/administration-guide/onboard/migrating-to-mattermost.html#move-from-slack",
+"administration-guide/onboard/migrating-to-mattermost.html#migrate-from-jabber":
+        "https://docs.mattermost.com/administration-guide/onboard/migrating-to-mattermost.html#move-from-jabber",
+"administration-guide/onboard/migrating-to-mattermost.html#migrate-from-pidgin":
+        "https://docs.mattermost.com/administration-guide/onboard/migrating-to-mattermost.html#move-from-pidgin",
+"administration-guide/onboard/migrating-to-mattermost.html#migrate-from-bitnami":
+        "https://docs.mattermost.com/administration-guide/onboard/migrating-to-mattermost.html#move-from-bitnami",
+"administration-guide/onboard/migrating-to-mattermost.html#migrate-from-bespoke-messaging-solutions":
+        "https://docs.mattermost.com/administration-guide/onboard/migrating-to-mattermost.html#move-from-bespoke-messaging-solutions",
+"administration-guide/onboard/migrating-to-mattermost.html#migrate-mattermost-from-one-server-to-another":
+        "https://docs.mattermost.com/administration-guide/onboard/migrating-to-mattermost.html#move-mattermost-to-a-new-server",
 
 # Channels redirects
 "channels/find-channels.html":
@@ -1600,13 +1612,13 @@ redirects_map = {
 "configure/configuration-settings.html#enable-shared-channels":
         "https://docs.mattermost.com/administration-guide/configure/site-configuration-settings.html#enable-connected-workspaces",
 "configure/configuration-settings.html#enable-bleve-indexing":
-        "https://docs.mattermost.com/administration-guide/configure/experimental-configuration-settings.html#enable-bleve-indexing",
+        "https://docs.mattermost.com/administration-guide/configure/deprecated-configuration-settings.html#enable-bleve-indexing",
 "configure/configuration-settings.html#index-directory":
-        "https://docs.mattermost.com/administration-guide/configure/experimental-configuration-settings.html#index-directory",
+        "https://docs.mattermost.com/administration-guide/configure/deprecated-configuration-settings.html#index-directory",
 "configure/configuration-settings.html#enable-bleve-for-search-queries":
-        "https://docs.mattermost.com/administration-guide/configure/experimental-configuration-settings.html#enable-bleve-for-search-queries",
+        "https://docs.mattermost.com/administration-guide/configure/deprecated-configuration-settings.html#enable-bleve-for-search-queries",
 "configure/configuration-settings.html#enable-bleve-for-autocomplete-queries":
-        "https://docs.mattermost.com/administration-guide/configure/experimental-configuration-settings.html#enable-bleve-for-autocomplete-queries",
+        "https://docs.mattermost.com/administration-guide/configure/deprecated-configuration-settings.html#enable-bleve-for-autocomplete-queries",
 "configure/configuration-settings.html#allowed-themes":
         "https://docs.mattermost.com/administration-guide/configure/experimental-configuration-settings.html#allowed-themes",
 "configure/configuration-settings.html#maximum-users-for-statistics":
@@ -1983,7 +1995,7 @@ redirects_map = {
 
 # Deploy redirects
 "deploy/application-architecture.html":
-        "https://docs.mattermost.com/deployment-guide/application-architecture.html",
+        "https://docs.mattermost.com/deployment-guide/reference-architecture/application-architecture.html",
 "deploy/backup-disaster-recovery.html":
         "https://docs.mattermost.com/deployment-guide/backup-disaster-recovery.html",
 "deploy/bleve-search.html":
@@ -2113,7 +2125,7 @@ redirects_map = {
 "deploy/desktop-app.html":
         "https://docs.mattermost.com/deployment-guide/desktop/desktop-app-deployment.html",
 "deploy/deployment-overview.html":
-        "https://docs.mattermost.com/deployment-guide/application-architecture.html",
+        "https://docs.mattermost.com/deployment-guide/reference-architecture/application-architecture.html",
 "deploy/deprecated-features.html":
         "https://docs.mattermost.com/product-overview/deprecated-features.html",
 "deploy/desktop-app-changelog.html":
@@ -2299,6 +2311,8 @@ redirects_map = {
         "https://mattermost.com/marketplace/",
 "deployment/webrtc.html":
         "https://mattermost.com/marketplace/",
+"deployment-guide/application-architecture.html":
+        "https://docs.mattermost.com/deployment-guide/reference-architecture/application-architecture.html",
 
 # Developer redirects.
 "developer/api.html":
@@ -2398,7 +2412,7 @@ redirects_map = {
 "getting-started/welcome-email-to-end-users.html":
         "https://docs.mattermost.com/administration-guide/upgrade/welcome-email-to-end-users.html",
 "getting-started/architecture-overview.html":
-        "https://docs.mattermost.com/deployment-guide/application-architecture.html",
+        "https://docs.mattermost.com/deployment-guide/reference-architecture/application-architecture.html",
 "getting-started/implementation-plan.html":
         "https://docs.mattermost.com/deployment-guide/server/server-deployment-planning.html",
 "getting-started/light-install.html":
@@ -2867,6 +2881,8 @@ redirects_map = {
 "integrate/microsoft-calendar-interoperability.html#enable-and-configure-the-microsoft-teams-meetings-integration-in-mattermost":
         "https://docs.mattermost.com/integrations-guide/microsoft-calendar.html#enable-and-configure-the-microsoft-calendar-integration-in-mattermost",
 "integrate/microsoft-teams-meetings.html":
+        "https://docs.mattermost.com/integrations-guide/microsoft-teams-meetings.html",
+"integrate/microsoft-teams-meetings-interoperability.html":
         "https://docs.mattermost.com/integrations-guide/microsoft-teams-meetings.html",
 "integrate/microsoft-teams-sync.html":
         "https://docs.mattermost.com/integrations-guide/microsoft-teams-sync.html",
@@ -3651,7 +3667,7 @@ redirects_map = {
 "onboard/user-provisioning-workflows.html":
         "https://docs.mattermost.com/administration-guide/onboard/user-provisioning-workflows.html",
 "onboard/migrating-from-hipchat-to-mattermost.html":
-        "https://docs.mattermost.com/administration-guide/onboard/migrating-to-mattermost.html#migrating-from-slack",
+        "https://docs.mattermost.com/administration-guide/onboard/migrating-to-mattermost.html",
 "onboard/ad-ldap-groups-synchronization.html#enabling-ad-ldap-group-synchronization":
         "https://docs.mattermost.com/administration-guide/onboard/migrating-to-mattermost.html",
 "onboard/ad-ldap-groups-synchronization.html#enable-ad-ldap-group-synchronization":
@@ -3723,13 +3739,14 @@ redirects_map = {
 "onboard/shared-channels.html#frequently-asked-questions":
         "https://docs.mattermost.com/administration-guide/onboard/connected-workspaces.html#frequently-asked-questions",
 
+
 # Overview redirects
 "overview/architecture.html":
-        "https://docs.mattermost.com/deployment-guide/application-architecture.html",
+        "https://docs.mattermost.com/deployment-guide/reference-architecture/application-architecture.html",
 "overview/architecture#database-with-vips.html":
-        "https://docs.mattermost.com/deployment-guide/application-architecture.html#database-with-vips",
+        "https://docs.mattermost.com/deployment-guide/reference-architecture/application-architecture.html",
 "overview/architecture#reference-architectures.html":
-        "https://docs.mattermost.com/deployment-guide/application-architecture.html#reference-architectures",
+        "https://docs.mattermost.com/deployment-guide/reference-architecture/application-architecture.html",
 "overview/auth.html":
         "https://docs.mattermost.com/product-overview/corporate-directory-integration.html",
 "overview/authentication.html":

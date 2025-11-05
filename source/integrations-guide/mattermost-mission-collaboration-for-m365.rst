@@ -1,12 +1,15 @@
 Connect Microsoft 365, Teams, and Outlook with Mattermost
 ==========================================================
 
-.. include:: ../_static/badges/ent-adv-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-adv.rst
   :start-after: :nosearch:
 
 Mattermost Mission Collaboration for Microsoft extends Microsoft for mission-critical coordination, command and control, incident response, and DevSecOps workflows in demanding environments, including air-gapped and classified networks by embedding Mattermost inside Teams. Use data-sovereign tools like secure chat, Playbooks, and Calls directly within M365, Teams, and Outlook.
 
 This app is designed to work with Microsoft 365, Teams, and Outlook and is currently in :ref:`Beta <administration-guide/manage/feature-labels:beta>`. From Mattermost v10.9, this integration supports third-party Single Sign-On (SSO). See the :doc:`user provisioning </administration-guide/manage/admin/user-provisioning>` product documentation for details on setting up SSO.
+
+.. image:: ../images/mattermost-in-msteams-2.png
+  :alt: Mattermost embedded as a Microsoft Teams app.
 
 Deploy
 -------

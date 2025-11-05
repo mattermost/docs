@@ -1,7 +1,7 @@
 Mobile security features
 ========================
 
-.. include:: ../../_static/badges/ent-adv-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-adv.rst
   :start-after: :nosearch:
 
 This document outlines the key security features implemented in the mobile application, explains the significance of each control, and details our continuous security practices to maintain an up-to-date security posture.

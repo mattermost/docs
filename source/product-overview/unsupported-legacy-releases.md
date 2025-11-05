@@ -12692,7 +12692,7 @@ The following config settings will only work on servers with an Enterprise Licen
 - Added `MetricsSettings` in `config.json` for performance monitoring settings:
   - Added `"Enable": false` to control whether performance monitoring is enabled
   - Added `"BlockProfileRate": 0` to control the [fraction of goroutine blocking events that are reported in the blocking profile](https://pkg.go.dev/runtime#SetBlockProfileRate)
-  - Added `"ListenAddress": ":8067"` to control the address the server will listen on to expose performance metrics
+  - Added `"ListenAddress": :8067` to control the address the server will listen on to expose performance metrics
 - Added `AnalyticsSettings` in `config.json` for analytics settings:
   - Added `"MaxUsersForStatistics": 2500` to set the maximum number of users on the server before statistics for total posts, total hashtag posts, total file posts, posts per day, and active users with posts per day are no longer counted (use this setting to improve performance on large instances)
 

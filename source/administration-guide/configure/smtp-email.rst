@@ -1,7 +1,7 @@
 SMTP email setup
 ================
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 In a production environment, Mattermost requires SMTP email enabled for email notifications and password resets when using :ref:`email-based authentication <administration-guide/configure/authentication-configuration-settings:enable sign-in with email>`.
@@ -37,6 +37,10 @@ Configure SMTP settings
   - Set **Notification Email Address** for the email address used to send notifications.
   - Enter the **SMTP Username**, **SMTP Password**, **SMTP Server**, and **SMTP Port** you copied from initial setup.
   - We recommend setting **Connection Security**: to **TLS (Recommended)** to encrypt communication between Mattermost and your SMTP service.
+
+.. note::
+
+  ``SMTPPort`` and related port settings use string format (e.g., ``"465"``) for compatibility with the ``host:port`` binding format, which requires string concatenation.
 
 3. Select **Save**.
 4. Under **Connection Security**, select **Test Connection**. Mattermost will confirm whether a connection to the SMTP service is successful by sending you an email. If the test fails, Mattermost will provide details about why it failed in the System Console. See the `check Mattermost logs <#troubleshooting-using-logs>`__ section below for details.

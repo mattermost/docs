@@ -1,7 +1,7 @@
 Secure file storage
 ====================
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 This document outlines the security measures governing file storage in the Mattermost mobile app for iOS and Android. It describes how files are stored, accessed, and protected within the application container, addressing concerns related to sensitive data on mobile devices. The objective is to ensure that only authorized personnel can view, access, or share such data while preventing exposure to unauthorized parties and ensuring isolation from third-party applications.
@@ -86,9 +86,9 @@ Mattermost is designed to protect sensitive data—such as sensitive information
 Core defense pillars
 ~~~~~~~~~~~~~~~~~~~~~
 
-- **Robust authentication:** Mattermost requires user authentication through SSO (e.g., SAML, LDAP, OpenID Connect) or traditional username/password logins. This authentication is managed by server-side identity controls, ensuring that only verified users can access the app and its data. For more details, see the `Mattermost Security Overview <https://docs.mattermost.com/about/security.html#authentication-safeguards>`_.
+- **Robust authentication:** Mattermost requires user authentication through SSO (e.g., SAML, LDAP, OpenID Connect) or traditional username/password logins. This authentication is managed by server-side identity controls, ensuring that only verified users can access the app and its data. For more details, see the :doc:`Mattermost Security Overview </security-guide/security-guide-index>`.
 
-- **Server-side access controls:** Administrators can enforce policies through the System Console to restrict file downloads, sharing, and public link generation. Currently, policies are applied at the server level. For more details, see `Configuration Settings - File Sharing and Downloads <https://docs.mattermost.com/administration-guide/configure/site-configuration-settings.html#file-sharing-and-downloads>`_.
+- **Server-side access controls:** Administrators can enforce policies through the System Console to restrict file downloads, sharing, and public link generation. Currently, policies are applied at the server level. For more details, see :ref:`Configuration Settings - File Sharing and Downloads <administration-guide/configure/site-configuration-settings:file sharing and downloads>`.
 
 - **Sandbox isolation:** As discussed earlier, Mattermost’s mobile apps store files in a sandboxed environment. This isolation ensures that even if a device is shared or compromised, other apps cannot access the cached files without explicit user action.
 

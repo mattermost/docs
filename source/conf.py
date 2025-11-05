@@ -5,6 +5,9 @@
 
 import sys
 import os
+import re
+from pathlib import Path
+from sphinx.util.nodes import make_refnode
 from sphinx.application import Sphinx
 from docutils import nodes
 
@@ -89,11 +92,236 @@ def add_page_title_override(app: Sphinx, pagename: str, templatename: str, conte
         pass
 
 
+# Rewrite specific relative Markdown links from the agents submodule into Sphinx {doc} links
+#
+# Context:
+# - The agents content (a Git submodule) contains links like
+#     [license requirements](admin_guide.md#license-requirements)
+#   or
+#     [license requirements](../agents/admin_guide.md#license-requirements)
+# - These break when built inside the main docs because they point outside the submodule.
+# - We normalize them to Sphinx/Myst's {doc} cross-reference form:
+#     {doc}`agents/admin_guide#license-requirements`
+#
+# Implementation notes:
+# - Hook into Sphinx's "source-read" event so we can edit the raw Markdown before parsing.
+# - Apply only to files under the `agents/` directory (our submodule content location).
+# - Keep the change tightly scoped to the exact admin_guide.md#license-requirements link pattern.
+# Match the FULL Markdown link and a bare-parentheses fallback
+_ADMIN_LICENSE_FULL_MD_LINK = re.compile(
+    r"\[([^\]]+)\]\((?:\./|\../)?(?:agents/)?admin_guide\.md#license-requirements\)",
+    re.IGNORECASE,
+)
+_ADMIN_LICENSE_BARE_PARENS = re.compile(
+    r"\((?:\./|\../)?(?:agents/)?admin_guide\.md#license-requirements\)",
+    re.IGNORECASE,
+)
+
+# Match reStructuredText include directive that pulls Markdown from agents submodule
+_INCLUDE_AGENTS_MD = re.compile(
+    r"(?m)^(\s*)\.\.\s+include::\s+/(agents/[^\n]+?\.md)\s*$"
+)
+
+
+def fix_admin_license_links(app: Sphinx, docname: str, source: list[str]) -> None:
+    """Rewrite specific relative links in agents submodule Markdown to {doc} links.
+
+    Only runs for documents under `agents/` to avoid unintended rewrites elsewhere.
+    """
+    # Note: We intentionally do NOT scope by docname here because this content
+    # can be included into other parent documents; limiting by docname would miss
+    # those cases. The substitution is narrowly targeted and safe globally.
+
+    original_text = source[0]
+
+    # Preferred: Replace the entire Markdown link `[text](admin_guide.md#license-requirements)`
+    # with a direct HTML path to the built page, avoiding cross-ref resolver timing.
+    def _sub_full_md_link(m: re.Match) -> str:
+        link_text = m.group(1)
+        return f"[{link_text}](/administration-guide/configure/agents-admin-guide.html#license-requirements)"
+
+    replaced_text = _ADMIN_LICENSE_FULL_MD_LINK.sub(_sub_full_md_link, original_text)
+
+    # Fallback: If any bare parentheses remain, rewrite those as well.
+    replaced_text = _ADMIN_LICENSE_BARE_PARENS.sub(
+        "(/administration-guide/configure/agents-admin-guide.html#license-requirements)", replaced_text
+    )
+
+    if replaced_text != original_text:
+        source[0] = replaced_text
+        try:
+            # Log a helpful message so we can confirm the hook ran for this doc
+            app.logger.info(
+                "agents-link-fix: rewrote admin_guide.md#license-requirements links in %s",
+                docname,
+            )
+        except Exception:
+            pass
+
+    # Handle included Markdown files: rewrite include path to a generated, fixed copy
+    try:
+        srcdir = app.srcdir
+        generated_root = os.path.join(srcdir, "_generated")
+
+        def _rewrite_include(match: re.Match) -> str:
+            indent = match.group(1) or ""
+            rel_path = match.group(2)  # e.g., agents/docs/user_guide.md
+            abs_src = os.path.join(srcdir, rel_path)
+
+            try:
+                with open(abs_src, "r", encoding="utf-8") as f:
+                    included_text = f.read()
+            except Exception:
+                return match.group(0)
+
+            # Apply the same link rewrites to the included file content
+            # Use standard Markdown external links so MyST renders them properly
+            _abs = "https://docs.mattermost.com/administration-guide/configure/agents-admin-guide.html#license-requirements"
+            included_fixed = _ADMIN_LICENSE_FULL_MD_LINK.sub(
+                lambda m: f"[{m.group(1)}]({_abs})",
+                included_text,
+            )
+            included_fixed = _ADMIN_LICENSE_BARE_PARENS.sub(
+                f"(<{_abs}>)",
+                included_fixed
+            )
+
+            # Write fixed copy under _generated/<rel_path>
+            fixed_abs = os.path.join(generated_root, rel_path)
+            os.makedirs(os.path.dirname(fixed_abs), exist_ok=True)
+            with open(fixed_abs, "w", encoding="utf-8") as f:
+                f.write(included_fixed)
+
+            # Point include to the generated copy; keep existing :parser: myst option below
+            fixed_rel_for_include = "/_generated/" + rel_path
+            return f"{indent}.. include:: {fixed_rel_for_include}"
+
+        new_text = _INCLUDE_AGENTS_MD.sub(_rewrite_include, source[0])
+        if new_text != source[0]:
+            source[0] = new_text
+            app.logger.info("agents-link-fix: rewrote include to generated copy in %s", docname)
+    except Exception:
+        # Never break the build due to this helper
+        pass
+
+
+def fix_admin_license_links_in_doctree(app: Sphinx, doctree) -> None:
+    """Secondary safety net: fix links at doctree stage for included Markdown.
+
+    This catches cases where Markdown was included into other documents and
+    the `source-read` hook didn't trigger for the final container doc.
+    """
+    try:
+        for refnode in doctree.traverse(nodes.reference):
+            # Case 1: Markdown turned this into a named reference (refname) → convert to a concrete refuri
+            refname = refnode.get("refname")
+            if refname and re.search(r"(?:\./|\../)?(?:agents/)?admin_guide\.md#license-requirements", refname, re.IGNORECASE):
+                refnode["refuri"] = app.builder.get_relative_uri(app.env.docname, "agents/docs/admin_guide") + "#license-requirements"
+                if "refname" in refnode:
+                    del refnode["refname"]
+                continue
+
+            # Case 2: Regular reference with refuri → rewrite to correct relative URL
+            uri = refnode.get("refuri")
+            if uri and re.search(r"(?:\./|\../)?(?:agents/)?admin_guide\.md#license-requirements", uri, re.IGNORECASE):
+                refnode["refuri"] = app.builder.get_relative_uri(app.env.docname, "agents/docs/admin_guide") + "#license-requirements"
+    except Exception:
+        # Never break the build due to this helper
+        pass
+
+
+def fix_agents_missing_reference(app: Sphinx, env, node, contnode):
+    """Resolve unresolved references for agents admin guide license anchor.
+
+    This is a last-resort resolver to map variations of admin_guide.md#license-requirements
+    into the concrete doc 'agents/docs/admin_guide' with the '#license-requirements' anchor.
+    """
+    try:
+        # Handle doc role refs like {doc}`agents/admin_guide#license-requirements`
+        if node.get("reftype") == "doc":
+            target = node.get("reftarget", "")
+            if re.search(r"admin_guide(?:\.md)?#license-requirements", target, re.IGNORECASE):
+                target_doc = "agents/docs/admin_guide"
+                target_anchor = "license-requirements"
+                if target_doc in env.domains["std"].data["labels"]:
+                    # If a label existed, let std resolver handle it
+                    return None
+                try:
+                    refnode = make_refnode(
+                        app.builder,
+                        fromdocname=env.docname,
+                        todocname=target_doc,
+                        targetid=target_anchor,
+                        child=contnode,
+                        title=None,
+                    )
+                    app.logger.info(
+                        "agents-link-fix: resolved missing {doc} ref to %s#%s in %s",
+                        target_doc,
+                        target_anchor,
+                        env.docname,
+                    )
+                    return refnode
+                except Exception:
+                    return None
+
+        # Handle plain links that became unresolved references
+        if node.get("reftype") in {"any", "ref", "myst"}:
+            target = node.get("reftarget", "")
+            if re.search(r"(?:\./|\../)?(?:agents/)?admin_guide(?:\.md)?#license-requirements", target, re.IGNORECASE):
+                target_doc = "agents/docs/admin_guide"
+                target_anchor = "license-requirements"
+                try:
+                    refnode = make_refnode(
+                        app.builder,
+                        fromdocname=env.docname,
+                        todocname=target_doc,
+                        targetid=target_anchor,
+                        child=contnode,
+                        title=None,
+                    )
+                    app.logger.info(
+                        "agents-link-fix: resolved missing link to %s#%s in %s",
+                        target_doc,
+                        target_anchor,
+                        env.docname,
+                    )
+                    return refnode
+                except Exception:
+                    return None
+    except Exception:
+        return None
+
+
+def ensure_agents_admin_doc_read(app: Sphinx, env, docnames):
+    """Guarantee that agents/docs/admin_guide is included for label/anchor resolution.
+
+    Some included Markdown files may not be in the toctree; we force-read the
+    target so that its section labels and anchors exist for cross-refs.
+    """
+    try:
+        target = "agents/docs/admin_guide"
+        if target not in docnames and env.app.env.find_doc(target, None) is None:
+            # Add to reading list
+            docnames.append(target)
+            app.logger.info("agents-link-fix: forcing read of %s for cross-refs", target)
+    except Exception:
+        pass
+
+
 def setup(app: Sphinx):
     # Check for duplicate redirects when Sphinx builds
     find_duplicate_redirects(redirects_py.redirects_map)
     # Provide per-page HTML <title> override via RST .. meta:: :page_title:
     app.connect("html-page-context", add_page_title_override)
+    # Normalize certain relative links inside the agents submodule Markdown
+    app.connect("source-read", fix_admin_license_links)
+    # Fallback for included Markdown: rewrite link targets at doctree stage as well
+    app.connect("doctree-read", fix_admin_license_links_in_doctree)
+    # Final safety net: resolve unresolved refs for these links
+    app.connect("missing-reference", fix_agents_missing_reference)
+    # Ensure the target doc is read even if not in any toctree
+    app.connect("env-before-read-docs", ensure_agents_admin_doc_read)
     return
 
 
@@ -199,7 +427,7 @@ myst_enable_extensions = ["colon_fence"]
 myst_heading_anchors = 3
 
 # Suppress particular classes of warnings
-suppress_warnings = ["myst.xref_missing", "myst.header", "autosectionlabel"]
+suppress_warnings = ["myst.xref_missing", "myst.header", "autosectionlabel", "toc.not_included"]
 
 # Prefix document path to section labels, otherwise autogenerated labels would look like 'heading'
 # rather than 'path/to/file:heading'
@@ -221,6 +449,7 @@ source_suffix = {
 sitemap_excludes = [
     # Original excludes
     "agents/.config/notice-file/README.html",
+    "404.html",
     
     # GitHub directory files
     "agents/.github/CONTRIBUTING.html",
@@ -293,9 +522,9 @@ author = "Mattermost"
 # built documents.
 #
 # The short X.Y version.
-# version = '10.12'
+# version = '11.0'
 # The full version, including alpha/beta/rc tags.
-# release = '10.12'
+# release = '11.0'
 
 # The language for content autogenerated by Sphinx. Refer to documentation
 # for a list of supported languages.

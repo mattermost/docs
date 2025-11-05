@@ -1,7 +1,7 @@
 Enterprise roll out checklist
 ==============================
 
-.. include:: ../../_static/badges/ent-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 This checklist is intended to serve as a guide to Enterprises who are rolling out Mattermost to thousands of users. 
@@ -114,7 +114,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 
 - Finalize production environment design basing hardware on expected usage and requirements for high availability
 
- - Resource: https://docs.mattermost.com/deployment-guide/application-architecture.html
+ - Resource: https://docs.mattermost.com/deployment-guide/reference-architecture/application-architecture.html
  - Resource: https://docs.mattermost.com/deployment-guide/deployment-guide-index.html 
  - Resource: https://docs.mattermost.com/administration-guide/scale/scaling-for-enterprise.html 
  - Resource: https://docs.mattermost.com/administration-guide/scale/high-availability-cluster-based-deployment.html
@@ -137,7 +137,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 
   - Install the number of read and search replicas based on your high availability requirements outlined in your production environment design
 
-   - Resource: https://docs.mattermost.com/deployment-guide/server/server-architecture.html#database-with-virtual-ips
+   - Resource: https://docs.mattermost.com/deployment-guide/reference-architecture/application-architecture.html
 
   - (Optional) Set up configuration management via the database instead of a config file for high available environments
 

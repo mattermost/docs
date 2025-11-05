@@ -1,7 +1,7 @@
 Connect GitLab to Mattermost
 ================================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Minimize distractions and reduce context switching between your GitLab code repositories and your communication platform by integrating GitLab with Mattermost. You control which events trigger notifications beyond default events, including merges, issue comments, merge request comments, pipelines, pull reviews, and many more. Help your teams stay focused and productive with daily task summaries, real-time updates and notifications on new and closed merge requests, new and closed issues, and tag creation events, directly from Mattermost channel subscriptions.
@@ -91,7 +91,7 @@ Once connected, you'll receive direct messages from the GitLab bot in Mattermost
 Connect a GitLab account to Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Run the ``/gitlab connect`` slash account in any Mattermost channel to link your Mattermost account with your GitLab account.
+Run the ``/gitlab connect`` slash command in any Mattermost channel to link your Mattermost account with your GitLab account.
 
 Disconnect a GitLab account by running the ``/gitlab disconnect`` slash command. Run the ``/gitlab me`` slash command to review which account is connected to GitLab.
 
