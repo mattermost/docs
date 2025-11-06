@@ -41,3 +41,89 @@ li.filtered-toc {
     border-radius: 4px;
     border-left: 4px solid #e74c3c;
 }
+
+/* UI-specific filtering styles */
+.ui-filters {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+}
+
+.ui-filters select {
+    padding: 8px;
+    margin-right: 10px;
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+}
+
+.ui-filters button {
+    padding: 8px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.ui-filters button:hover {
+    background-color: #218838;
+}
+
+.ui-filters button#ui-reset-filter {
+    background-color: #6c757d;
+}
+
+.ui-filters button#ui-reset-filter:hover {
+    background-color: #545b62;
+}
+
+.ui-filter-results {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid #dee2e6;
+}
+
+.ui-version-group {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.ui-version-group:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.ui-version-group h5 {
+    color: #28a745;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.ui-version-group ul {
+    margin-bottom: 0;
+}
+
+.ui-version-group li {
+    margin-bottom: 5px;
+}
+
+.ui-filter-error {
+    color: #e74c3c;
+    margin-top: 10px;
+    padding: 8px;
+    background-color: #fadbd8;
+    border-radius: 4px;
+    border-left: 4px solid #e74c3c;
+}
+
+/* Hide main content when UI filtering is active */
+section.ui-filtered {
+    display: none;
+}

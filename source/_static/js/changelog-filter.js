@@ -1,6 +1,8 @@
 $(document).ready(function () {
     // Only run on the changelog pages.
-    if (!window.location.pathname.includes('/about/mattermost-v10-changelog') && !window.location.pathname.includes('/about/mattermost-v9-changelog')) {
+    if (!window.location.pathname.includes('/product-overview/mattermost-v11-changelog') && 
+        !window.location.pathname.includes('/product-overview/mattermost-v10-changelog') && 
+        !window.location.pathname.includes('/product-overview/mattermost-v9-changelog')) {
         return;
     }
 
@@ -185,4 +187,174 @@ $(document).ready(function () {
             item.item.removeClass('filtered-toc');
         });
     });
+
+    // ===== UI-SPECIFIC FILTERING =====
+    
+    // Extract UI updates from all versions
+    const uiUpdates = [];
+    sections.forEach(sectionItem => {
+        const section = sectionItem.section;
+        const version = sectionItem.version;
+        
+        // Look for "User Interface (UI)" heading within this section
+        const uiHeading = section.find('h4').filter(function() {
+            return $(this).text().trim().includes('User Interface (UI)');
+        });
+        
+        if (uiHeading.length > 0) {
+            // Find all list items under the UI heading
+            let currentElement = uiHeading.first();
+            const uiItems = [];
+            
+            // Traverse siblings until we hit the next h4 or the end of section
+            while (currentElement.length > 0) {
+                currentElement = currentElement.next();
+                if (currentElement.is('h4, h3, h2')) {
+                    break;
+                }
+                if (currentElement.is('ul')) {
+                    currentElement.find('li').each(function() {
+                        const itemText = $(this).text().trim();
+                        if (itemText) {
+                            uiItems.push({
+                                text: itemText,
+                                element: $(this)
+                            });
+                        }
+                    });
+                }
+            }
+            
+            if (uiItems.length > 0) {
+                uiUpdates.push({
+                    version: version,
+                    items: uiItems
+                });
+            }
+        }
+    });
+    
+    // Only create UI filter if we found UI updates
+    if (uiUpdates.length > 0) {
+        // Create UI filter controls
+        const uiFilterHTML = `
+            <div class="ui-filters" style="margin-top: 20px;">
+                <h3>Filter UI Updates Only</h3>
+                <p>View User Interface updates by version range</p>
+                <div>
+                    <label for="ui-source-version">From version:</label>
+                    <select id="ui-source-version">
+                        <option value="all">All versions</option>
+                        ${versions.map(v => `<option value="${v}">v${v}</option>`).join('')}
+                    </select>
+                    
+                    <label for="ui-target-version">To version:</label>
+                    <select id="ui-target-version">
+                        <option value="all">All versions</option>
+                        ${versions.map(v => `<option value="${v}">v${v}</option>`).join('')}
+                    </select>
+
+                    <button id="ui-apply-filter">Show UI Updates</button>
+                    <button id="ui-reset-filter">Show Full Changelog</button>
+                </div>
+                <div id="ui-filter-results" class="ui-filter-results" style="display: none;">
+                    <h4>UI Updates</h4>
+                    <div id="ui-updates-content"></div>
+                </div>
+            </div>
+        `;
+
+        // Insert UI filter below the changelog filter
+        $('.changelog-filters').after(uiFilterHTML);
+
+        // Apply UI filter function
+        $('#ui-apply-filter').on('click', function () {
+            const sourceVersion = $('#ui-source-version').val();
+            const targetVersion = $('#ui-target-version').val();
+
+            // Clear any previous error messages
+            $('.ui-filter-error').remove();
+
+            // Validation for version range
+            if (sourceVersion !== 'all' && targetVersion !== 'all') {
+                const sourceV = parseVersion(sourceVersion);
+                const targetV = parseVersion(targetVersion);
+                
+                if (targetV.major < sourceV.major ||
+                    (targetV.major === sourceV.major && targetV.minor < sourceV.minor)) {
+                    $('.ui-filters').append(
+                        '<div class="ui-filter-error">' +
+                        'Error: Target version must be greater than or equal to source version.' +
+                        '</div>'
+                    );
+                    return;
+                }
+            }
+
+            // Filter and display UI updates
+            let filteredUpdates = uiUpdates.filter(updateGroup => {
+                const updateV = parseVersion(updateGroup.version);
+                
+                const isRelevant = (
+                    (sourceVersion === 'all' ||
+                        (updateV.major > parseVersion(sourceVersion).major ||
+                            (updateV.major === parseVersion(sourceVersion).major && 
+                             updateV.minor >= parseVersion(sourceVersion).minor))) &&
+                    (targetVersion === 'all' ||
+                        (updateV.major < parseVersion(targetVersion).major ||
+                            (updateV.major === parseVersion(targetVersion).major && 
+                             updateV.minor <= parseVersion(targetVersion).minor)))
+                );
+                
+                return isRelevant;
+            });
+
+            // Sort by version (newest first)
+            filteredUpdates.sort((a, b) => {
+                const vA = parseVersion(a.version);
+                const vB = parseVersion(b.version);
+                if (vB.major !== vA.major) {
+                    return vB.major - vA.major;
+                }
+                return vB.minor - vA.minor;
+            });
+
+            // Generate HTML for filtered results
+            let resultsHTML = '';
+            if (filteredUpdates.length === 0) {
+                resultsHTML = '<p>No UI updates found in the selected version range.</p>';
+            } else {
+                filteredUpdates.forEach(updateGroup => {
+                    resultsHTML += `<div class="ui-version-group">`;
+                    resultsHTML += `<h5>Version ${updateGroup.version}</h5>`;
+                    resultsHTML += '<ul>';
+                    updateGroup.items.forEach(item => {
+                        resultsHTML += `<li>${item.text}</li>`;
+                    });
+                    resultsHTML += '</ul>';
+                    resultsHTML += '</div>';
+                });
+            }
+
+            $('#ui-updates-content').html(resultsHTML);
+            $('#ui-filter-results').show();
+            
+            // Hide the main changelog content when showing UI-only view
+            sections.forEach(item => {
+                item.section.addClass('ui-filtered');
+            });
+        });
+
+        // Reset UI filter
+        $('#ui-reset-filter').on('click', function () {
+            $('#ui-source-version, #ui-target-version').val('all');
+            $('#ui-filter-results').hide();
+            $('.ui-filter-error').remove();
+            
+            // Show the main changelog content again
+            sections.forEach(item => {
+                item.section.removeClass('ui-filtered');
+            });
+        });
+    }
 });
