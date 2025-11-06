@@ -58,7 +58,7 @@ Install Prometheus
 
 3. Replace the ``<hostname1>:<port>`` parameter with your Mattermost host IP address and port to scrape the data. It connects to ``/metrics`` using HTTP. 
 
-4. In the Mattermost System Console, go to **Environment > Performance Monitoring** to set **Enable Performance Monitoring** to **true**, then specify the **Listen Address** and select **Save**. See our :ref:`Configuration Settings <administration-guide/configure/environment-configuration-settings:performance monitoring>` documentation for details.
+4. In the Mattermost System Console, go to **Environment > Performance Monitoring** to set **Enable Performance Monitoring** to **true**, then specify the **Listen Address** (port-only, e.g., ``8067``), and select **Save**. See our :ref:`Configuration Settings <administration-guide/configure/environment-configuration-settings:performance monitoring>` documentation for details.
 
    .. image:: ../../images/perf_monitoring_system_console.png
       :scale: 70

@@ -62,6 +62,11 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 (release-v10.11-extended-support-release)=
 ## Release v10.11 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **10.11.6, released 2025-11-04**
+  - Fixed an issue where guest users could not log in via SAML when "Ignore Guest Users when Synchronizing with AD/LDAP" was enabled [MM-66186](https://mattermost.atlassian.net/browse/MM-66186).
+  - Fixed a configuration retention issue where even active configurations got deleted [MM-66216](https://mattermost.atlassian.net/browse/MM-66216).
+  - Pre-packaged MS Teams Meeting plugin version [v2.3.0](https://github.com/mattermost/mattermost-plugin-msteams-meetings/releases/tag/v2.3.0).
+  - Mattermost v10.11.6 contains no database or functional changes.
 - **10.11.5, released 2025-10-28**
  ```{Attention}
  **Critical Fixes**
@@ -718,6 +723,9 @@ New setting options were added to ``config.json``. Below is a list of the additi
 (release-v10.5-extended-support-release)=
 ## Release v10.5 - [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
+- **10.5.14, released 2025-10-30**
+  - Fixed Go v1.23 incompatibility issues with plugins [MM-63345](https://mattermost.atlassian.net/browse/MM-63345).
+  - Mattermost v10.5.14 contains no database or functional changes.
 - **10.5.13, released 2025-10-28**
  ```{Attention}
  **Critical Fixes**

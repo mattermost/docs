@@ -104,6 +104,10 @@ Web server listen address
 | permissions to bind to that port.                             |                                                                    |
 +---------------------------------------------------------------+--------------------------------------------------------------------+
 
+.. note::
+
+  Web server uses ``address:port`` (e.g., ``":8065"``), while :ref:`Metrics <administration-guide/configure/environment-configuration-settings:listen address>` uses a port number only (e.g., ``8067``).
+
 .. config:setting:: forward-port-80-to-443
   :displayname: Forward port 80 to 443 (Web Server)
   :systemconsole: Environment > Web Server
@@ -2527,16 +2531,16 @@ SMTP server
   :systemconsole: Environment > SMTP
   :configjson: .EmailSettings.SMTPPort
   :environment: MM_EMAILSETTINGS_SMTPPORT
-  :description: The port of SMTP email server.
+  :description: The port of SMTP email server. String input.
 
 SMTP server port
 ~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+---------------------------------------------------------------+
-| The port of SMTP email server.                                  | - System Config path: **Environment > SMTP**                  |
-|                                                                 | - ``config.json`` setting: ``EmailSettings`` > ``SMTPPort``   |
-| Numerical input.                                                | - Environment variable: ``MM_EMAILSETTINGS_SMTPPORT``         |
-+-----------------------------------------------------------------+---------------------------------------------------------------+
++-----------------------------------------------------------------+-----------------------------------------------------------------+
+| The port of SMTP email server.                                  | - System Config path: **Environment > SMTP**                    |
+|                                                                 | - ``config.json`` setting: ``EmailSettings`` > ``"SMTPPort"``   |
+| String input.                                                   | - Environment variable: ``MM_EMAILSETTINGS_SMTPPORT``           |
++-----------------------------------------------------------------+-----------------------------------------------------------------+
 
 .. config:setting:: enable-smtp-authentication
   :displayname: Enable SMTP authentication (SMTP)
@@ -3917,9 +3921,24 @@ Performance monitoring
 .. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
-With self-hosted deployments, you can configure performance monitoring by going to **System Console > Environment > Performance Monitoring**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
+With self-hosted deployments, you can configure performance monitoring by going to **System Console > Environment > Performance Monitoring**, or by editing the ``config.json`` file as described in the following tables. 
 
-See the :doc:`performance monitoring </administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring>` documentation to learn more about setting up performance monitoring.
+.. code-block:: json
+
+   {
+     "MetricsSettings": {
+       "Enable": false,
+       "BlockProfileRate": 0,
+       "ListenAddress": :8067,
+       "EnableClientMetrics": false,
+       "EnableNotificationMetrics": true,
+       "ClientSideUserIds": ""
+     }
+   }
+
+Changes to configuration settings in this section require a server restart before taking effect.
+
+See the :doc:`performance monitoring </administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring>` documentation to learn more about setting up performance monitoring with Prometheus and Grafana. See the :doc:`collect performance metrics </administration-guide/scale/collect-performance-metrics>` documentation to learn more about using the Mattermost Metrics plugin.
 
 .. config:setting:: enable-performance-monitoring
   :displayname: Enable performance monitoring (Performance Monitoring)
@@ -3961,7 +3980,7 @@ Enable client performance monitoring
 +------------------------------------------------------+----------------------------------------------------------------------------------------+
 | Enable or disable client performance monitoring.     | - System Config path: **Environment > Performance Monitoring**                         |
 |                                                      | - ``config.json`` setting: ``MetricsSettings`` > ``EnableClientMetrics`` > ``false``   |
-| - **true**: Client performance monitoring data       | - Environment variable: ``MM_METRICSSETTINGS_ENABLE``                                  |
+| - **true**: Client performance monitoring data       | - Environment variable: ``MM_METRICSSETTINGS_ENABLECLIENTMETRICS``                     |
 |   collection and profiling is enabled.               |                                                                                        |
 | - **false**: **(Default)** Mattermost                |                                                                                        |
 |   client performance monitoring is disabled.         |                                                                                        |
@@ -3980,13 +3999,15 @@ Client side user ids
 +---------------------------------------------------------------+-------------------------------------------------------------------------+
 | A list of comma-separated user IDs you want to track for      | - System Config path: **Environment > Performance Monitoring**          |
 | client-side webapp metrics.                                   | - ``config.json`` setting: ``MetricsSettings`` > ``ClientSideUserIds``  |
-|                                                               | - Environment variable: ``MM_METRICSSETTINGS_LISTENADDRESS``            |
+|                                                               | - Environment variable: ``MM_METRICSSETTINGS_CLIENTSIDEUSERIDS``        |
 | Limited to 5 user IDs. Blank by default.                      |                                                                         |
 +---------------------------------------------------------------+-------------------------------------------------------------------------+
 
 .. note::
 
-  The total number of user IDs is limited to 5 to ensure performance. Adding more IDs can overwhelm Prometheus due to high label cardinality. To avoid performance issues, we recommend minimizing changes to this list.
+  - This setting only applies when ``EnableClientMetrics`` is set to ``true``.
+  - Each user ID should correspond to a valid user in the Mattermost system. For example, ``MM_METRICSSETTINGS_CLIENTSIDEUSERIDS="user1,user2,user3"``.
+  - The total number of user IDs is limited to 5 to ensure performance. Adding more IDs can overwhelm Prometheus due to high label cardinality. To avoid performance issues, we recommend minimizing changes to this list.
 
 .. config:setting:: listen-address-for-performance
   :displayname: Listen address for performance (Performance Monitoring)
@@ -4004,6 +4025,71 @@ Listen address
 |                                                               | - Environment variable: ``MM_METRICSSETTINGS_LISTENADDRESS``                  |
 | Numerical input. Default is **8067**.                         |                                                                               |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
+
+.. note::
+
+  - ``ListenAddress`` accepts a port only. It doesn’t take an IP/host. If you need to restrict interfaces, do so via your OS firewall or reverse proxy.
+  - The address uses a ``host:port`` format. Use ``:8067`` to listen on all interfaces on port **8067**, or use ``localhost:8067`` to restrict to **localhost** only.
+
+.. config:setting:: block-profile-rate
+  :displayname: Block profile rate (Performance Monitoring)
+  :systemconsole: N/A
+  :configjson: .MetricsSettings.BlockProfileRate
+  :environment: MM_METRICSSETTINGS_BLOCKPROFILERATE
+  :description: Control how often Mattermost collects data about delays caused by blocking operations within Mattermost (such as when one part of the program has to wait for another). Default is **0** (profiling is disabled).
+
+Block profile rate
+~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+-------------------------------------------------------------------------------+
+| Control how often Mattermost collects data about delays       | - System Config path: **N/A**                                                 |
+| caused by blocking operations within Mattermost (such as      | - ``config.json`` setting: ``MetricsSettings`` > ``BlockProfileRate`` > ``0`` |
+| when one part of the program has to wait for another).        | - Environment variable: ``MM_METRICSSETTINGS_BLOCKPROFILERATE``               |
+| Default is **0** (profiling is disabled).                     |                                                                               |
+|                                                               |                                                                               |
+| The profiler aims to sample an average of one blocking        |                                                                               |
+| event per rate nanoseconds spent blocked.                     |                                                                               |
+|                                                               |                                                                               |
+| Default is **0**.                                             |                                                                               |
++---------------------------------------------------------------+-------------------------------------------------------------------------------+
+
+.. note::
+
+  - This setting isn't available in the System Console and can only be set in ``config.json``.
+  - Only adjust this if you’re diagnosing performance issues and know how to analyze profiling data. The value represents how frequently Mattermost records blocking events in its performance profile:
+
+    - Set to 0 to record no blocking events (profiling is disabled).
+    - Set to 1 to record every blocking event (profiling is fully enabled).
+    - Set to a higher number to record only a fraction of events (useful for sampling instead of full profiling).
+
+.. config:setting:: enable-notification-monitoring
+  :displayname: Enable notification monitoring (Performance Monitoring)
+  :systemconsole: Site Configuration > Notifications
+  :configjson: .MetricsSettings.EnableNotificationMetrics
+  :environment: MM_METRICSSETTINGS_ENABLENOTIFICATIONMETRICS
+  :description: Control whether Mattermost collects notification metrics data for client-side web and desktop app users. Default is **true**.
+
+Enable notification monitoring
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++-----------------------------------------------+----------------------------------------------------------------------------------------------------+
+| Enable or disable notification metrics data   | - System Config path: **Site Configuration > Notifications**                                       |
+| collection.                                   | - ``config.json`` setting: ``MetricsSettings`` > ``EnableNotificationMetrics`` > ``true``          |
+|                                               | - Environment variable: ``MM_METRICSSETTINGS_ENABLENOTIFICATIONMETRICS``                           |
+| - **true**: **(Default)** Mattermost          |                                                                                                    |
+|   notification data collection is enabled for |                                                                                                    |
+|   client-side web and desktop app users.      |                                                                                                    |
+| - **false**: Mattermost notification          |                                                                                                    |
+|   data collection is disabled.                |                                                                                                    |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  - ``MetricsSettings.Enable`` must be set to ``true``
+  - The ``NotificationMonitoring`` feature flag must be set to ``true``
+
+See the :ref:`performance monitoring <administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring:getting started>` documentation 
+to learn more about Mattermost Notification Health metrics.
 
 ----
 
