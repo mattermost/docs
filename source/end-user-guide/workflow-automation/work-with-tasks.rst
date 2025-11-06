@@ -31,6 +31,27 @@ When you edit a task, you'll see the following:
 .. image:: ../../images/task-actions.png
   :alt: Configure tasks to be automatically marked as complete.
 
+Conditional tasks
+~~~~~~~~~~~~~~~~~
+
+From Mattermost v11.1, tasks can be conditionally included in playbook runs based on property values or runtime conditions. This enables adaptive workflows where tasks are only presented when they're relevant to the current context.
+
+Conditional tasks support the following trigger conditions:
+
+- **Property-based conditions**: Tasks that appear only when specific playbook property values are set (e.g., show escalation tasks only for high-severity incidents)
+- **Status-based conditions**: Tasks that are added based on the current run status
+- **Time-based conditions**: Tasks that appear after certain time periods or at specific times
+- **User-based conditions**: Tasks that are shown based on run participants or assignees
+
+When a playbook run is started, conditional tasks are evaluated and automatically added to or removed from the checklist based on the defined conditions. This reduces cognitive load by showing only relevant tasks and ensures that critical steps aren't overlooked in different scenarios.
+
+Example use cases for conditional tasks:
+
+- **Security incidents**: Include additional forensic tasks for incidents classified as security-related
+- **Customer tier workflows**: Show different approval processes based on customer subscription level  
+- **Geographic operations**: Include region-specific compliance tasks based on the location property
+- **Skill-based assignments**: Automatically assign tasks to team members based on their expertise areas
+
 Task inbox
 ----------
 

@@ -126,6 +126,81 @@ Options include:
 
 Actions such as channel creation and adding the channel to a sidebar category are set per-playbook and applied to each run that uses that playbook.
 
+Playbook properties
+-------------------
+
+From Mattermost v11.1, you can define custom properties for your playbooks to create adaptive workflows that respond to changing mission or operational context. Properties such as severity, category, or linked ticket ID can be configured to trigger context-aware tasks and enable intelligent adaptation to situational conditions.
+
+Properties allow you to:
+
+- Define contextual information that varies between runs (e.g., incident severity, priority level, customer type)
+- Trigger different tasks or workflows based on property values
+- Create conditional logic in your playbooks for more sophisticated automation
+- Maintain consistent data collection across runs
+
+Configure properties
+~~~~~~~~~~~~~~~~~~~~~
+
+To add properties to your playbook:
+
+1. Go to **Product menu > Playbooks**.
+2. Select the playbook you want to edit.
+3. Select the **Outline** tab.
+4. Select **Properties** in the left-hand menu.
+5. Select **+ Add property** to create a new property.
+
+For each property, you can configure:
+
+- **Property name**: A descriptive name for the property
+- **Property type**: Choose from text, number, single-select, multi-select, or boolean
+- **Default value**: Set a default value that will be pre-filled when starting a run
+- **Required**: Mark properties as required to ensure they're always completed before starting a run
+
+Use properties in runs
+~~~~~~~~~~~~~~~~~~~~~~
+
+When starting a playbook run that includes properties:
+
+1. Fill in the required property values before starting the run.
+2. Property values can be updated during the run if needed.
+3. Use property values to inform decision-making and task execution.
+4. Properties are visible to all run participants and can be referenced in status updates.
+
+Conditional playbooks
+---------------------
+
+From Mattermost v11.1, you can create conditional playbooks that adapt their behavior based on property values or runtime conditions. This enables sophisticated workflows that respond intelligently to changing circumstances.
+
+Conditional playbooks support:
+
+- **Conditional tasks**: Tasks that are only added to runs when specific conditions are met
+- **Dynamic checklists**: Checklists that change based on property values
+- **Context-aware automation**: Automated actions that trigger based on situational conditions
+- **Adaptive workflows**: Workflows that modify their execution path based on real-time data
+
+Configure conditional logic
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To set up conditional behavior in your playbook:
+
+1. Go to **Product menu > Playbooks**.
+2. Select the playbook you want to edit.
+3. Select the **Checklists** tab.
+4. For each task or checklist, select the **Conditions** option.
+5. Define when the task or checklist should be included:
+
+   - **Property-based conditions**: Include tasks when specific property values are set
+   - **Run status conditions**: Include tasks based on the current status of the run
+   - **Time-based conditions**: Include tasks after certain time periods or at specific times
+   - **User-based conditions**: Include tasks based on who is participating in the run
+
+Example conditional scenarios:
+
+- **High severity incidents**: Include additional escalation tasks when severity is set to "Critical"
+- **Customer type workflows**: Use different approval processes for enterprise vs. standard customers
+- **Time-sensitive operations**: Add urgent notification tasks for runs started during off-hours
+- **Skill-based task assignment**: Assign specialized tasks based on available team member skills
+
 If you’re a system admin or channel admin of the run channel you can also edit these settings in the run channel, via the channel menu, in **Channel Actions**. Editing the settings in the run channel will only affect that channel and the changes aren’t applied to the playbook. Only channel admins can edit the **Channel Actions** items (such as the welcome message) but members who have access to the playbook can edit the welcome message and run behavior settings. Editing these won’t change the welcome message of a run that’s in progress - it only applies going forward.
 
 If you want to change the behavior of all future runs associated with the playbook, edit the playbook directly in the **Actions** menu.
