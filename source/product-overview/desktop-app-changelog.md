@@ -7,73 +7,68 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 ```
 
 (release-v6-0)=
-## Release v6.0 (Major Release)
+## Release v6.0
 
-- **v6.0.0, released 2025-11-15**
+**Release Day:** November 14, 2025
 
-  - Introduced Multi-View Desktop App functionality
-  - Enhanced cross-workspace coordination capabilities
-  - Improved operational visibility across distributed environments
+**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/latest)
 
-**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/tag/v6.0.0)
+```{Note}
+Mattermost Desktop App v6.0.0 contains low severity level security fixes. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+```
 
 ### Compatibility
 
 - Desktop App is supported on any currently supported [Mattermost server version](https://docs.mattermost.com/product-overview/mattermost-desktop-releases.html#latest-releases).
-- Minimum Chromium supported version: 130+.
-- Enhanced system requirements for Multi-View functionality.
+- Updated Chromium minimum supported version to 140+ and updated Windows minimum supported version to v11+.
 
-### Major Features
+### Highlights
 
-#### Multi-View Desktop App
+#### Desktop App Multi-View Architecture
+ - Mattermost Desktop App v6.0 introduces a new Multi-View Architecture that replaces the previous fixed-tab layout. This enhancement introduces a dynamic, flexible system where users can open, close, and manage multiple views or windows, including any part of the Mattermost app (e.g., Channels, Boards, Playbooks). This architectural update provides a more customizable and efficient workspace experience while laying the foundation for advanced multi-window and pop-out features in future releases.
 
-- **Unified Operational Picture**: View and coordinate multiple Mattermost workspaces simultaneously from a single interface
-- **Cross-System Interoperability**: Enhanced coordination capabilities across distributed or multi-domain environments  
-- **Command-Level Situational Awareness**: Comprehensive visibility into organizational communications across multiple instances
-- **Configurable Layouts**: Support for split view, grid view, and custom workspace arrangements
-- **Cross-Workspace Communication**: Advanced messaging and coordination features between different Mattermost environments
-- **Centralized Notification Management**: Unified notification center with priority-based filtering
-- **Enhanced Activity Monitoring**: Real-time activity feeds and synchronized monitoring across workspaces
-
-#### Administrative Features
-
-- **Multi-View Policy Controls**: Administrators can configure Multi-View settings, limits, and permissions
-- **Cross-Workspace Management**: Administrative tools for managing multi-workspace deployments
-- **Enhanced Security Controls**: Additional security settings for multi-environment operations
+.. image:: ../images/desktop-multi.png
 
 ### Improvements
 
 #### All Platforms
 
-- Enhanced workspace switching with improved visual indicators
-- Optimized performance for multiple simultaneous workspace connections
-- Improved memory management for multi-workspace operations
-- Enhanced keyboard navigation for Multi-View interfaces
-- Updated user interface elements to support Multi-View functionality
+- Added parent-child popout window support, with listeners to facilitate communication.
+- Added pre-auth headers to the server modal. This header is injected into all requests to that server.
+- Unified and polished basic authentication, client certificate and pre-auth header authentication methods.
+- Added default theme syncing with the web app.
+- Added server version information to the **Help** menu.
+- Created a **File** menu on macOS, and added **New Window/Tab** and **Close Window/tab** to the **File** menu.
+- Added **clear the cache and reload** link to the error screen.
+- Disallowed other servers to end the current call, showing an error message.
+- Adjusted colors to be more accurate to Mattermost theming.
 
 ### Architectural Changes
 
-- Core desktop app architecture enhanced to support simultaneous multiple workspace rendering
-- Improved inter-workspace communication protocols
-- Enhanced resource management for multi-workspace operations
-- Updated notification system to handle cross-workspace scenarios
+- Major version upgrade of Electron to 38.2.1. Electron is the underlying technology used to build the Desktop App.
 
 ### Bug Fixes
 
 #### All Platforms
 
-- Resolved workspace synchronization issues in multi-environment setups
-- Fixed memory leaks when managing multiple workspace connections
-- Improved stability when switching between workspace layouts
-- Enhanced error handling for cross-workspace operations
+- Fixed various issues with the newer modals.
+- Fixed UX issues with the checkbox component.
 
 ### Open Source Components
 
-Additional open source components included in this release:
+- Switched to ``registry-js`` native module for Windows registry reading in https://github.com/mattermost/desktop/.
 
-- Multi-workspace rendering libraries
-- Enhanced workspace management utilities
-- Cross-environment communication protocols
+### Known Issues
+
+- Sometimes the app will not restart after an auto-update. This is normal, and if this occurs the app can be safely launched manually.
+- Sometimes during installation you may see this message: ``Warning 1946. Property 'System.AppUserModel.ID' for shortcut 'Mattermost.Ink' could not be set``. This message can be safely ignored.
+- Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually delete their cache directory. For macOS it is located in `/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost`, for Windows in `Users/<username>/AppData/Roaming/Mattermost` and for Linux in `~/config/Mattermost` (where `~` is the home directory).
+- On Linux, a left-click on the Mattermost tray icon doesn't open the app window but opens the tray menu.
+- Crashes might be be experienced in some Linux desktop clients due to an upstream bug in the `libnotifyapp` library. A recommended workaround is to disable the Mattermost system tray icon via Desktop Settings.
+
+### Contributors
+
+- [devinbinnie](https://github.com/devinbinnie), [BenCookie95](https://github.com/BenCookie95).
 
 (release-v5-13)=
 ## Release v5.13 (Extended Support Release)
@@ -91,7 +86,7 @@ Additional open source components included in this release:
 
   - Original v5.13.0 release
 
-**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/latest)
+**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/v5.13.2)
 
 ### Compatibility
 
