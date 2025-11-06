@@ -239,7 +239,7 @@ $(document).ready(function () {
         // Create UI filter controls
         const uiFilterHTML = `
             <div class="ui-filters" style="margin-top: 20px;">
-                <h3>Filter UI Updates Only</h3>
+                <h3>Filter UI Updates</h3>
                 <p>View User Interface updates by version range</p>
                 <div>
                     <label for="ui-source-version">From version:</label>
