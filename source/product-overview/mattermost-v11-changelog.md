@@ -17,11 +17,13 @@
 ```{Attention}
 **Breaking Changes**
  - The version of React used by the Mattermost web app has been updated from React 17 to React 18. See more details in [this forum post](https://forum.mattermost.com/t/upgrading-the-mattermost-web-app-to-react-18-v11/25000).
- - Added three new tables, ``ContentFlaggingCommonReviewers``, ``ContentFlaggingTeamSettings``, and ``ContentFlaggingTeamReviewers`` for storing Data Spillage settings. Added an index on ``ContentFlaggingTeamReviewers`` table to optimize fetching the team settings.  No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
 ```
 
 ### Compatibility
  - Updated minimum required Edge, Firefox and Chrome versions to v140+ and updated minimum supported Windows version to v11+.
+
+### Important Upgrade Notes
+ - Added three new tables, ``ContentFlaggingCommonReviewers``, ``ContentFlaggingTeamSettings``, and ``ContentFlaggingTeamReviewers`` for storing Data Spillage settings. Added an index on ``ContentFlaggingTeamReviewers`` table to optimize fetching the team settings.  No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
 
 ```{Important}
 If you upgrade from a release earlier than v11.0, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
