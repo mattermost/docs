@@ -12,6 +12,10 @@ Using the Mattermost desktop or mobile app, you can connect to multiple Mattermo
 
   You can't create and manage multiple server connections when using Mattermost in a web browser.
 
+.. important::
+
+  **Multi-View Desktop App (v6.0+)**: Starting from desktop app v6.0.0, users can take advantage of the Multi-View Desktop App to simultaneously view and coordinate multiple workspaces in a unified interface. This enhancement provides enhanced operational visibility and cross-system interoperability. Learn more about :doc:`Multi-View desktop app features </end-user-guide/preferences/multi-view-desktop-app>`.
+
 Add a server
 ------------
 

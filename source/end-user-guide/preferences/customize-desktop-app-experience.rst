@@ -51,6 +51,7 @@ You can customize your desktop app further with additional settings. Select the 
   - **Logging level**: Adjust logging levels to isolate and troubleshoot issues. Increasing the log level increases disk space usage and can impact performance.
   - **Send anonymous usage data to your configured servers**: Send desktop app usage and performance data to your configured Mattermost servers set up to accept it.
   - **Use GPU hardware acceleration**: GPU hardware acceleration renders the desktop app interface more efficiently. If you encounter decreased stability, disable GPU hardware acceleration. Restart the desktop app to apply changes to this setting.
+  - **Multi-View Options** (v6.0+): Configure Multi-View desktop app settings including layout preferences, workspace arrangement, and cross-workspace communication options. :doc:`Learn more about Multi-View features </end-user-guide/preferences/multi-view-desktop-app>`.
 
 .. tab:: Windows/Linux
   :parse-titles:
@@ -99,3 +100,4 @@ You can customize your desktop app further with additional settings. Select the 
   - **Logging level**: Adjust logging levels to isolate and troubleshoot issues. Increasing the log level increases disk space usage and can impact performance.
   - **Send anonymous usage data to your configured servers**: Send desktop app usage and performance data to your configured Mattermost servers set up to accept it.
   - **Use GPU hardware acceleration**: GPU hardware acceleration renders the desktop app interface more efficiently. If you encounter decreased stability, disable GPU hardware acceleration. Restart the desktop app to apply changes to this setting.
+  - **Multi-View Options** (v6.0+): Configure Multi-View desktop app settings including layout preferences, workspace arrangement, and cross-workspace communication options. :doc:`Learn more about Multi-View features </end-user-guide/preferences/multi-view-desktop-app>`.

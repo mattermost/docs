@@ -6,6 +6,75 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 ```{include} common-esr-support.md
 ```
 
+(release-v6-0)=
+## Release v6.0 (Major Release)
+
+- **v6.0.0, released 2025-11-15**
+
+  - Introduced Multi-View Desktop App functionality
+  - Enhanced cross-workspace coordination capabilities
+  - Improved operational visibility across distributed environments
+
+**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/tag/v6.0.0)
+
+### Compatibility
+
+- Desktop App is supported on any currently supported [Mattermost server version](https://docs.mattermost.com/product-overview/mattermost-desktop-releases.html#latest-releases).
+- Minimum Chromium supported version: 130+.
+- Enhanced system requirements for Multi-View functionality.
+
+### Major Features
+
+#### Multi-View Desktop App
+
+- **Unified Operational Picture**: View and coordinate multiple Mattermost workspaces simultaneously from a single interface
+- **Cross-System Interoperability**: Enhanced coordination capabilities across distributed or multi-domain environments  
+- **Command-Level Situational Awareness**: Comprehensive visibility into organizational communications across multiple instances
+- **Configurable Layouts**: Support for split view, grid view, and custom workspace arrangements
+- **Cross-Workspace Communication**: Advanced messaging and coordination features between different Mattermost environments
+- **Centralized Notification Management**: Unified notification center with priority-based filtering
+- **Enhanced Activity Monitoring**: Real-time activity feeds and synchronized monitoring across workspaces
+
+#### Administrative Features
+
+- **Multi-View Policy Controls**: Administrators can configure Multi-View settings, limits, and permissions
+- **Cross-Workspace Management**: Administrative tools for managing multi-workspace deployments
+- **Enhanced Security Controls**: Additional security settings for multi-environment operations
+
+### Improvements
+
+#### All Platforms
+
+- Enhanced workspace switching with improved visual indicators
+- Optimized performance for multiple simultaneous workspace connections
+- Improved memory management for multi-workspace operations
+- Enhanced keyboard navigation for Multi-View interfaces
+- Updated user interface elements to support Multi-View functionality
+
+### Architectural Changes
+
+- Core desktop app architecture enhanced to support simultaneous multiple workspace rendering
+- Improved inter-workspace communication protocols
+- Enhanced resource management for multi-workspace operations
+- Updated notification system to handle cross-workspace scenarios
+
+### Bug Fixes
+
+#### All Platforms
+
+- Resolved workspace synchronization issues in multi-environment setups
+- Fixed memory leaks when managing multiple workspace connections
+- Improved stability when switching between workspace layouts
+- Enhanced error handling for cross-workspace operations
+
+### Open Source Components
+
+Additional open source components included in this release:
+
+- Multi-workspace rendering libraries
+- Enhanced workspace management utilities
+- Cross-environment communication protocols
+
 (release-v5-13)=
 ## Release v5.13 (Extended Support Release)
 
