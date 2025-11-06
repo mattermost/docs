@@ -39,7 +39,7 @@ If you upgrade from a release earlier than v11.0, please read the other [Importa
  - Pre-packaged MS Teams Meetings plugin version [v2.3.0](https://github.com/mattermost/mattermost-plugin-msteams-meetings/releases/tag/v2.3.0).
  - Pre-packaged Calls plugin version [v1.11.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.11.0).
  - Removed Mattermost MS Teams Sync plugin from pre-packaged plugins.
- - Added a standalone pop-out controller and thread pop-outs.
+ - Added support for standalone windows pop-out. Threads can now be popped out to its own window in Desktop. 
  - The desktop app version is now shown on the **About** modal, allowing clicking to copy both the server and desktop app versions.
  - Downgraded French language support from Beta to Alpha.
 
@@ -61,7 +61,7 @@ If you upgrade from a release earlier than v11.0, please read the other [Importa
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to Enterprise Advanced plan: 
- - Added a new ``AutoTranslationSettings`` configuration settings section.
+ - Added a new ``AutoTranslationSettings`` configuration settings section. The auto-translation feature will be available in a future release.
 
 ### API Changes
  - Added a new API endpoint ``POST /api/v4/groups/names``.
