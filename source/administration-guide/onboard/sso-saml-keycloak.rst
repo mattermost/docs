@@ -14,7 +14,8 @@ Set up a connection app for Mattermost SSO
 .. note:: 
     This was tested with Keycloak v22.0.5.
 
-    Additionally, you don't typically need to make a realm dedicated to Mattermost. We recommend adding Mattermost as a client to your primary realm.
+    Additionally, you don't typically need to make a realm dedicated to Mattermost. 
+    We recommend adding Mattermost as a client to your primary realm.
 
 1. Log in to Keycloak as an administrator.
 
@@ -25,8 +26,8 @@ Set up a connection app for Mattermost SSO
 
 3. Click **Next** and update the following values:
 
-    - **Home URL**: ``https://<<siteURL>>/login/sso/saml``
-    - **Valid redirect URIs**: ``https://<<siteURL>>/login/sso/saml``
+    - **Home URL**: ``/login/sso/saml``
+    - **Valid redirect URIs**: ``/login/sso/saml``
 
 4. **Save** the client.
 
@@ -48,6 +49,9 @@ Set up a connection app for Mattermost SSO
         - Click **Generate**
         - Download the **private.key** file.
         - Click **Confirm**
+
+    .. note:: 
+        Mattermost does not support request signing with Keycloak so make sure to disable the Client signature setting as mentioned above.
     
     - Click **Export** and update the following values:
  
@@ -111,6 +115,13 @@ Configure SAML for Mattermost
     .. image:: ../../images/keycloak_10_get_metadata.png
         :alt: In Mattermost, configure SAML in the System Console by going to Authentication > SAML. Set the Identity Provider Metadata URL to the value you copied in the previous step. When you select Get SAML Metadata from IdP, fields related to your Keycloak configuration are populated.
 
+    .. note::
+        If Mattermost does not correctly pull the idp certificate you can manually add it by opening the metadata URL in a browser, copying the certificate value, and use a tool like: https://www.samltool.com/format_x509cert.php that can format the certificate for you.
+        Save the formatted certificate to a file and upload it to the **Identity Provider Public Certificate** field in the Mattermost System Console.
+
+    .. note::
+        If Mattermost can not pull the metadata and is throwing a connection issue enable debug logging and see if you need to add your Keycloak url to the Allowed Untrusted Internal Connections list in the System Console under **Environment > Developer** and restart the server. More information can be found in the :ref:`documentation on Allowed Untrusted Internal Connections <administration-guide/configure/environment-configuration-settings:allowed untrusted internal connections>`.
+
 3. Set the below fields:
 
     - **Verify Signature**: **false**
@@ -126,11 +137,11 @@ Configure SAML for Mattermost
 
     a. Generate the ``.crt`` file from the ``.p12`` file.
     
-      ``openssl pkcs12 -in keystore.p12 -out mattermost.crt -nodes``
+      ``openssl pkcs12 -password pass:mattermost -in keystore.p12 -out mattermost.crt -nodes -legacy``
 
     b. Generate the ``.key`` file from the ``.p12`` file.
     
-      ``openssl pkcs12 -in keystore.p12 -out mattermost.key -nodes -nocerts``
+      ``openssl pkcs12 -password pass:mattermost -in keystore.p12 -out mattermost.key -nodes -nocerts -legacy``
         
     c. Upload both of these files within the Mattermost System Console. Make sure to select **Upload**.
     
