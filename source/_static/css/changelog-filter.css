@@ -1,28 +1,89 @@
 .changelog-filters {
-    margin-bottom: 20px;
-    padding: 15px;
-    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 6px;
     border: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+    max-width: 800px;
+}
+
+.filter-mode-toggle {
+    margin-bottom: 10px;
+    display: flex;
+    gap: 2px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    padding: 2px;
+}
+
+.mode-btn {
+    flex: 1;
+    padding: 6px 12px;
+    border: none;
+    background-color: transparent;
+    color: #495057;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.mode-btn.active {
+    background-color: #166de0;
+    color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.mode-btn:hover:not(.active) {
+    background-color: #dee2e6;
+}
+
+.filter-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.filter-controls label {
+    font-size: 13px;
+    color: #495057;
+    font-weight: 500;
+    margin: 0;
 }
 
 .changelog-filters select {
-    padding: 8px;
-    margin-right: 10px;
+    padding: 6px 8px;
     border-radius: 4px;
     border: 1px solid #ced4da;
+    background-color: white;
+    font-size: 13px;
+    min-width: 120px;
 }
 
-.changelog-filters button {
-    padding: 8px 15px;
+.filter-controls button {
+    padding: 6px 12px;
     background-color: #166de0;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background-color 0.15s ease;
 }
 
-.changelog-filters button:hover {
+.filter-controls button:hover {
     background-color: #145cc5;
+}
+
+.filter-controls button:last-child {
+    background-color: #6c757d;
+}
+
+.filter-controls button:last-child:hover {
+    background-color: #5a6268;
 }
 
 section.filtered {
@@ -35,9 +96,60 @@ li.filtered-toc {
 
 .changelog-filter-error {
     color: #e74c3c;
-    margin-top: 10px;
-    padding: 8px;
+    margin-top: 8px;
+    padding: 6px 8px;
     background-color: #fadbd8;
     border-radius: 4px;
-    border-left: 4px solid #e74c3c;
+    border-left: 3px solid #e74c3c;
+    font-size: 13px;
+}
+
+/* UI-specific content styling */
+.ui-content {
+    margin-top: 15px;
+}
+
+.ui-version-section {
+    margin-bottom: 20px;
+    padding: 12px;
+    background-color: white;
+    border-radius: 4px;
+    border-left: 4px solid #28a745;
+}
+
+.ui-version-section h3 {
+    margin: 0 0 10px 0;
+    color: #28a745;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.ui-version-section ul,
+.ui-version-section p {
+    margin-bottom: 8px;
+}
+
+.ui-version-section li {
+    margin-bottom: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .filter-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .filter-mode-toggle {
+        flex-direction: row;
+    }
+    
+    .changelog-filters select {
+        min-width: auto;
+    }
+    
+    .filter-controls button {
+        width: 100%;
+        margin-top: 5px;
+    }
 }

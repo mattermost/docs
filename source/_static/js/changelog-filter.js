@@ -1,6 +1,6 @@
 $(document).ready(function () {
     // Only run on the changelog pages.
-    if (!window.location.pathname.includes('/about/mattermost-v10-changelog') && !window.location.pathname.includes('/about/mattermost-v9-changelog')) {
+    if (!window.location.pathname.includes('/about/mattermost-v11-changelog') && !window.location.pathname.includes('/about/mattermost-v10-changelog') && !window.location.pathname.includes('/about/mattermost-v9-changelog')) {
         return;
     }
 
@@ -61,27 +61,29 @@ $(document).ready(function () {
     // Sort versions in descending order (newest first)
     sortVersions(versions);
 
-    // Create filter controls
+    // Create unified, compact filter controls
     const filterHTML = `
         <div class="changelog-filters">
-            <h3>Filter Changelog</h3>
-            <p>Select source and target versions to see only relevant changelog entries</p>
-            <div>
-                <label for="changelog-source-version">From version:</label>
+            <h3>Changelog Filter</h3>
+            <div class="filter-mode-toggle">
+                <button id="mode-full" class="mode-btn active">Full Changelog</button>
+                <button id="mode-ui" class="mode-btn">UI Updates Only</button>
+            </div>
+            <div class="filter-controls">
+                <label for="changelog-source-version">From:</label>
                 <select id="changelog-source-version">
                     <option value="all">All versions</option>
                     ${versions.map(v => `<option value="${v}">v${v}</option>`).join('')}
                 </select>
-
-                <label for="changelog-target-version">To version:</label>
+                <label for="changelog-target-version">To:</label>
                 <select id="changelog-target-version">
                     <option value="all">All versions</option>
                     ${versions.map(v => `<option value="${v}">v${v}</option>`).join('')}
                 </select>
-
-                <button id="changelog-apply-filter">Apply Filter</button>
+                <button id="changelog-apply-filter">Apply</button>
                 <button id="changelog-reset-filter">Reset</button>
             </div>
+            <div id="ui-filtered-content" class="ui-content" style="display: none;"></div>
         </div>
     `;
 
@@ -173,16 +175,256 @@ $(document).ready(function () {
                 item.item.addClass('filtered-toc');
             }
         });
+        }
     });
 
-    // Reset filters
-    $('#changelog-reset-filter').on('click', function () {
+    // Override reset to handle both modes
+    $('#changelog-reset-filter').off('click').on('click', function () {
         $('#changelog-source-version, #changelog-target-version').val('all');
-        sections.forEach(item => {
-            item.section.removeClass('filtered');
+        $('.changelog-filter-error').remove();
+        
+        if (currentMode === 'ui') {
+            applyUIFilter();
+        } else {
+            sections.forEach(item => {
+                item.section.removeClass('filtered');
+            });
+            tocItems.forEach(item => {
+                item.item.removeClass('filtered-toc');
+            });
+        }
+        
+        // Clear UI mode display
+        $('#ui-filtered-content').hide();
+        $('.content > :not(.changelog-filters)').show();
+    });
+
+    // Initialize UI filtering system
+    let currentMode = 'full';
+    let allUiUpdates = [];
+
+    // Function to extract UI updates from sections
+    function extractUIUpdates() {
+        const uiUpdates = [];
+        
+        sections.forEach(sectionData => {
+            const $section = sectionData.section;
+            const version = sectionData.version;
+            
+            // Find UI subsection within this version section
+            const $uiHeader = $section.find('h4').filter(function() {
+                return $(this).text().trim().includes('User Interface (UI)');
+            });
+            
+            if ($uiHeader.length > 0) {
+                // Extract content between UI header and next h4 or end of section
+                let $content = $();
+                let $current = $uiHeader.next();
+                
+                while ($current.length > 0 && !$current.is('h4')) {
+                    $content = $content.add($current);
+                    $current = $current.next();
+                }
+                
+                if ($content.length > 0) {
+                    uiUpdates.push({
+                        version: version,
+                        content: $content.clone()
+                    });
+                }
+            }
         });
-        tocItems.forEach(item => {
-            item.item.removeClass('filtered-toc');
-        });
+        
+        return uiUpdates;
+    }
+
+    // Mode toggle functionality
+    $('.mode-btn').on('click', function() {
+        const mode = $(this).attr('id').replace('mode-', '');
+        
+        if (mode === currentMode) return;
+        
+        $('.mode-btn').removeClass('active');
+        $(this).addClass('active');
+        currentMode = mode;
+        
+        if (mode === 'ui') {
+            // Extract and show only UI updates
+            if (allUiUpdates.length === 0) {
+                allUiUpdates = extractUIUpdates();
+            }
+            
+            // Hide main content
+            $('.content > :not(.changelog-filters)').hide();
+            
+            // Apply current filter to UI updates
+            applyUIFilter();
+            
+        } else {
+            // Show full changelog
+            $('#ui-filtered-content').hide();
+            $('.content > :not(.changelog-filters)').show();
+            
+            // Apply normal filtering if active
+            const sourceVersion = $('#changelog-source-version').val();
+            const targetVersion = $('#changelog-target-version').val();
+            
+            if (sourceVersion !== 'all' || targetVersion !== 'all') {
+                $('#changelog-apply-filter').trigger('click');
+            }
+        }
+    });
+
+    // Function to apply filtering to UI updates
+    function applyUIFilter() {
+        const sourceVersion = $('#changelog-source-version').val();
+        const targetVersion = $('#changelog-target-version').val();
+        
+        let filteredUpdates = allUiUpdates;
+        
+        if (sourceVersion !== 'all' || targetVersion !== 'all') {
+            const sourceV = sourceVersion === 'all' ? null : parseVersion(sourceVersion);
+            const targetV = targetVersion === 'all' ? null : parseVersion(targetVersion);
+            
+            filteredUpdates = allUiUpdates.filter(update => {
+                const updateV = parseVersion(update.version);
+                
+                const afterSource = !sourceV || 
+                    (updateV.major > sourceV.major || 
+                     (updateV.major === sourceV.major && updateV.minor >= sourceV.minor));
+                     
+                const beforeTarget = !targetV || 
+                    (updateV.major < targetV.major || 
+                     (updateV.major === targetV.major && updateV.minor <= targetV.minor));
+                     
+                return afterSource && beforeTarget;
+            });
+        }
+        
+        // Build UI updates display
+        const $uiContent = $('#ui-filtered-content');
+        $uiContent.empty();
+        
+        if (filteredUpdates.length === 0) {
+            $uiContent.html('<p><em>No UI updates found in the selected version range.</em></p>');
+        } else {
+            filteredUpdates.forEach(update => {
+                const $versionSection = $('<div class="ui-version-section">');
+                $versionSection.append(`<h3>v${update.version} UI Updates</h3>`);
+                $versionSection.append(update.content);
+                $uiContent.append($versionSection);
+            });
+        }
+        
+        $uiContent.show();
+    }
+
+    // Override the apply filter function to handle both modes
+    const originalApplyHandler = $('#changelog-apply-filter').get(0);
+    $('#changelog-apply-filter').off('click').on('click', function () {
+        if (currentMode === 'ui') {
+            // Clear any previous error messages
+            $('.changelog-filter-error').remove();
+            
+            const sourceVersion = $('#changelog-source-version').val();
+            const targetVersion = $('#changelog-target-version').val();
+            
+            // Validate version range if both are selected
+            if (sourceVersion !== 'all' && targetVersion !== 'all') {
+                const sourceV = parseVersion(sourceVersion);
+                const targetV = parseVersion(targetVersion);
+                
+                if (targetV.major < sourceV.major ||
+                    (targetV.major === sourceV.major && targetV.minor < sourceV.minor)) {
+                    $('.changelog-filters').append(
+                        '<div class="changelog-filter-error">' +
+                        'Error: Target version must be greater than or equal to source version.' +
+                        '</div>'
+                    );
+                    return;
+                }
+            }
+            
+            applyUIFilter();
+        } else {
+            // Use original full changelog filtering logic
+            const sourceVersion = $('#changelog-source-version').val();
+            const targetVersion = $('#changelog-target-version').val();
+
+            // Clear any previous error messages
+            $('.changelog-filter-error').remove();
+
+            if (sourceVersion === 'all' && targetVersion === 'all') {
+                // Show all sections and TOC items
+                sections.forEach(item => {
+                    item.section.removeClass('filtered');
+                });
+
+                tocItems.forEach(item => {
+                    item.item.removeClass('filtered-toc');
+                });
+                return;
+            }
+
+            // Use the global parseVersion function
+            const sourceV = parseVersion(sourceVersion);
+            const targetV = parseVersion(targetVersion);
+
+            // If both are specific versions, validate that target >= source
+            if (targetV.major < sourceV.major ||
+                (targetV.major === sourceV.major && targetV.minor < sourceV.minor)) {
+                // Display error message
+                $('.changelog-filters').append(
+                    '<div class="changelog-filter-error">' +
+                    'Error: Target version must be greater than or equal to source version.' +
+                    '</div>'
+                );
+                return; // Don't apply the filter
+            }
+
+            // Filter logic
+            sections.forEach(item => {
+                const sectionV = parseVersion(item.version);
+
+                // Show the section if:
+                // 1. Upgrading from a version before or equal to this section's version
+                // 2. Upgrading to a version after or equal to this section's version
+                const isRelevant = (
+                    (sourceVersion === 'all' ||
+                        (sectionV.major > sourceV.major ||
+                            (sectionV.major === sourceV.major && sectionV.minor >= sourceV.minor))) &&
+                    (targetVersion === 'all' ||
+                        (sectionV.major < targetV.major ||
+                            (sectionV.major === targetV.major && sectionV.minor <= targetV.minor)))
+                );
+
+                if (isRelevant) {
+                    item.section.removeClass('filtered');
+                } else {
+                    item.section.addClass('filtered');
+                }
+            });
+
+            // Apply the same filtering logic to TOC items
+            tocItems.forEach(item => {
+                const tocV = parseVersion(item.version);
+
+                // Use the same relevance logic as for sections
+                const isRelevant = (
+                    (sourceVersion === 'all' ||
+                        (tocV.major > sourceV.major ||
+                            (tocV.major === sourceV.major && tocV.minor >= sourceV.minor))) &&
+                    (targetVersion === 'all' ||
+                        (tocV.major < targetV.major ||
+                            (tocV.major === targetV.major && tocV.minor <= targetV.minor)))
+                );
+
+                if (isRelevant) {
+                    item.item.removeClass('filtered-toc');
+                } else {
+                    item.item.addClass('filtered-toc');
+                }
+            });
+        }
     });
 });
