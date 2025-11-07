@@ -18,6 +18,7 @@ Mattermost Agents Admin Guide
 
 .. tip::
 
+  - To access the contents of files using Agents, a Mattermost system admin must :ref:`enable document search by content <administration-guide/configure/environment-configuration-settings:enable document search by content>` in the System Console.
   - Looking for demo? `Try it yourself <https://mattermost.com/demo/copilot/>`_!
   - Download the `Mattermost datasheet <https://mattermost.com/mattermost-copilot-datasheet/>`_ to learn more about integrating with industry-leading large language models (LLMs).
   - Mattermost Agents is formerly known as Mattermost Copilot.
