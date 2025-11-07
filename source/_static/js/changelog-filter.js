@@ -1,6 +1,6 @@
 $(document).ready(function () {
     // Only run on the changelog pages.
-    if (!window.location.pathname.includes('/about/mattermost-v10-changelog') && !window.location.pathname.includes('/about/mattermost-v9-changelog')) {
+    if (!window.location.pathname.includes('/about/mattermost-v11-changelog') && !window.location.pathname.includes('/about/mattermost-v10-changelog') && !window.location.pathname.includes('/about/mattermost-v9-changelog')) {
         return;
     }
 
