@@ -1,0 +1,280 @@
+/* UI Changelog Filter Styles */
+
+.ui-changelog-filters {
+    margin: 24px 0;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.ui-changelog-filters h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.2em;
+    color: #212529;
+    font-weight: 600;
+}
+
+.ui-changelog-filters .filter-description {
+    margin: 0 0 16px 0;
+    color: #6c757d;
+    font-size: 0.9em;
+}
+
+.ui-changelog-filters .filter-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.ui-changelog-filters .filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.ui-changelog-filters label {
+    font-size: 0.85em;
+    font-weight: 500;
+    color: #495057;
+    margin: 0;
+}
+
+.ui-changelog-filters select {
+    padding: 8px 32px 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ced4da;
+    background-color: #ffffff;
+    color: #495057;
+    font-size: 0.9em;
+    min-width: 140px;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 8px center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+}
+
+.ui-changelog-filters select:focus {
+    outline: none;
+    border-color: #166de0;
+    box-shadow: 0 0 0 3px rgba(22, 109, 224, 0.1);
+}
+
+.ui-changelog-filters select:hover {
+    border-color: #adb5bd;
+}
+
+.ui-changelog-filters .button-group {
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+}
+
+.ui-changelog-filters button {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    font-size: 0.9em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.ui-changelog-filters .btn-primary {
+    background-color: #166de0;
+    color: #ffffff;
+}
+
+.ui-changelog-filters .btn-primary:hover {
+    background-color: #145cc5;
+    transform: translateY(-1px);
+}
+
+.ui-changelog-filters .btn-secondary {
+    background-color: #6c757d;
+    color: #ffffff;
+}
+
+.ui-changelog-filters .btn-secondary:hover {
+    background-color: #545b62;
+    transform: translateY(-1px);
+}
+
+.ui-changelog-filters .clear-link {
+    color: #dc3545;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: 500;
+    padding: 8px 0;
+}
+
+.ui-changelog-filters .clear-link:hover {
+    color: #c82333;
+    text-decoration: underline;
+}
+
+.ui-changelog-status {
+    padding: 12px 16px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #e3f2fd 0%, #f8f9ff 100%);
+    border: 1px solid #bbdefb;
+    color: #1565c0;
+    font-size: 0.9em;
+    margin-top: 16px;
+}
+
+.ui-changelog-status.has-filters {
+    background: linear-gradient(135deg, #e8f5e8 0%, #f0fff0 100%);
+    border-color: #c8e6c8;
+    color: #2e7d32;
+}
+
+.ui-changelog-error {
+    color: #dc3545;
+    background-color: #f8d7da;
+    border: 1px solid #f1aeb5;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 0.9em;
+    margin-top: 16px;
+    border-left: 4px solid #dc3545;
+}
+
+/* UI Content Highlighting */
+.ui-item-highlighted {
+    background: linear-gradient(90deg, rgba(22, 109, 224, 0.05) 0%, rgba(22, 109, 224, 0.02) 100%);
+    border-left: 3px solid #166de0;
+    padding-left: 12px;
+    margin-left: -15px;
+}
+
+/* Hide filtered sections */
+section.ui-filtered {
+    display: none;
+}
+
+/* Hide filtered TOC items */
+li.ui-filtered-toc {
+    display: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .ui-changelog-filters .filter-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .ui-changelog-filters .filter-group {
+        width: 100%;
+    }
+    
+    .ui-changelog-filters select {
+        width: 100%;
+        min-width: unset;
+    }
+    
+    .ui-changelog-filters .button-group {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    .ui-changelog-filters button {
+        flex: 1;
+    }
+}
+
+/* Dark Mode Support */
+[data-custom-theme="dark"] .ui-changelog-filters {
+    background-color: #2b3e50;
+    border-color: #34495e;
+    color: #ecf0f1;
+}
+
+[data-custom-theme="dark"] .ui-changelog-filters h3 {
+    color: #ecf0f1;
+}
+
+[data-custom-theme="dark"] .ui-changelog-filters .filter-description {
+    color: #bdc3c7;
+}
+
+[data-custom-theme="dark"] .ui-changelog-filters label {
+    color: #bdc3c7;
+}
+
+[data-custom-theme="dark"] .ui-changelog-filters select {
+    background-color: #34495e;
+    border-color: #4a5f7a;
+    color: #ecf0f1;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23bdc3c7' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+}
+
+[data-custom-theme="dark"] .ui-changelog-filters select:hover {
+    border-color: #5a6d8a;
+    background-color: #3c4f66;
+}
+
+[data-custom-theme="dark"] .ui-changelog-filters select:focus {
+    border-color: #166de0;
+    box-shadow: 0 0 0 3px rgba(22, 109, 224, 0.2);
+}
+
+[data-custom-theme="dark"] .ui-changelog-status {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    border-color: #4a5f7a;
+    color: #3498db;
+}
+
+[data-custom-theme="dark"] .ui-changelog-status.has-filters {
+    background: linear-gradient(135deg, #1e3a2e 0%, #27ae60 20%);
+    border-color: #27ae60;
+    color: #2ecc71;
+}
+
+[data-custom-theme="dark"] .ui-changelog-error {
+    background-color: #3c1f1f;
+    border-color: #7d2d2d;
+    color: #ff6b6b;
+}
+
+[data-custom-theme="dark"] .ui-changelog-filters .clear-link {
+    color: #ff6b6b;
+}
+
+[data-custom-theme="dark"] .ui-changelog-filters .clear-link:hover {
+    color: #ff5252;
+}
+
+[data-custom-theme="dark"] .ui-item-highlighted {
+    background: linear-gradient(90deg, rgba(52, 152, 219, 0.1) 0%, rgba(52, 152, 219, 0.05) 100%);
+    border-left-color: #3498db;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .ui-changelog-filters button {
+        transition: none;
+    }
+    
+    .ui-changelog-filters .btn-primary:hover,
+    .ui-changelog-filters .btn-secondary:hover {
+        transform: none;
+    }
+}
+
+/* Focus indicators for keyboard navigation */
+.ui-changelog-filters button:focus {
+    outline: 2px solid #166de0;
+    outline-offset: 2px;
+}
+
+.ui-changelog-filters .clear-link:focus {
+    outline: 2px solid #dc3545;
+    outline-offset: 2px;
+}
