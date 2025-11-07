@@ -1,0 +1,330 @@
+/* Enhanced UI Changelog Filter Styles */
+
+/* Compact Filter Bar Design */
+.ui-changelog-filters {
+    background: #f8f9fa;
+    border: 1px solid #e1e5e9;
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin: 20px 0 30px 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 10px;
+    z-index: 100;
+}
+
+.ui-changelog-filters h3 {
+    margin: 0 0 12px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1e2329;
+}
+
+.ui-changelog-filters .help-text {
+    margin: 0 0 16px 0;
+    font-size: 13px;
+    color: #5d6b78;
+    line-height: 1.4;
+}
+
+/* Filter Controls Layout */
+.filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 160px;
+}
+
+.filter-group label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #3d4852;
+    white-space: nowrap;
+    margin: 0;
+}
+
+.filter-group select {
+    padding: 6px 8px;
+    border: 1px solid #cbd2d9;
+    border-radius: 4px;
+    font-size: 13px;
+    background: white;
+    color: #2d3748;
+    min-width: 100px;
+}
+
+.filter-group select:focus {
+    outline: none;
+    border-color: #166de0;
+    box-shadow: 0 0 0 2px rgba(22, 109, 224, 0.1);
+}
+
+/* Checkbox Filter */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.checkbox-item input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.checkbox-item label {
+    font-size: 13px;
+    cursor: pointer;
+    margin: 0;
+}
+
+/* Button Styling with Proper Hierarchy */
+.filter-buttons {
+    display: flex;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.btn-primary {
+    background: #166de0;
+    color: white;
+    border: 1px solid #166de0;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-primary:hover {
+    background: #145cc5;
+    border-color: #145cc5;
+}
+
+.btn-primary:active {
+    background: #1248a1;
+    border-color: #1248a1;
+}
+
+.btn-secondary {
+    background: white;
+    color: #4a5568;
+    border: 1px solid #cbd2d9;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+    background: #f7fafc;
+    border-color: #a0aec0;
+}
+
+/* State Feedback */
+.filter-status {
+    background: #e6f3ff;
+    border: 1px solid #b3d9ff;
+    border-radius: 4px;
+    padding: 8px 12px;
+    margin-top: 12px;
+    font-size: 13px;
+    color: #2c5aa0;
+    display: none;
+}
+
+.filter-status.active {
+    display: block;
+}
+
+/* Error Messages */
+.filter-error {
+    background: #fef5e7;
+    border: 1px solid #f6ad55;
+    border-radius: 4px;
+    padding: 8px 12px;
+    margin-top: 8px;
+    font-size: 13px;
+    color: #c53030;
+    display: none;
+}
+
+.filter-error.active {
+    display: block;
+}
+
+/* Content Filtering */
+section.ui-filtered {
+    display: none !important;
+}
+
+.toc-drawer li.ui-filtered-toc {
+    display: none !important;
+}
+
+/* UI Item Highlighting */
+.ui-item-highlighted {
+    background: linear-gradient(90deg, rgba(22, 109, 224, 0.1) 0%, rgba(22, 109, 224, 0.05) 100%);
+    border-left: 3px solid #166de0;
+    padding-left: 13px;
+    margin-left: -16px;
+    border-radius: 0 4px 4px 0;
+}
+
+.ui-section-highlighted h4 {
+    color: #166de0;
+    font-weight: 600;
+}
+
+/* Dark Mode Support */
+[data-theme="dark"] .ui-changelog-filters {
+    background: #2d3748;
+    border-color: #4a5568;
+    color: #e2e8f0;
+}
+
+[data-theme="dark"] .ui-changelog-filters h3 {
+    color: #f7fafc;
+}
+
+[data-theme="dark"] .ui-changelog-filters .help-text {
+    color: #a0aec0;
+}
+
+[data-theme="dark"] .filter-group label {
+    color: #cbd5e0;
+}
+
+[data-theme="dark"] .filter-group select {
+    background: #4a5568;
+    border-color: #718096;
+    color: #e2e8f0;
+}
+
+[data-theme="dark"] .filter-group select:focus {
+    border-color: #4299e1;
+    box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.1);
+}
+
+[data-theme="dark"] .btn-secondary {
+    background: #4a5568;
+    color: #e2e8f0;
+    border-color: #718096;
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+    background: #5a6578;
+    border-color: #8b9ab5;
+}
+
+[data-theme="dark"] .filter-status {
+    background: rgba(66, 153, 225, 0.1);
+    border-color: rgba(66, 153, 225, 0.3);
+    color: #90cdf4;
+}
+
+[data-theme="dark"] .ui-item-highlighted {
+    background: linear-gradient(90deg, rgba(66, 153, 225, 0.15) 0%, rgba(66, 153, 225, 0.08) 100%);
+    border-left-color: #4299e1;
+}
+
+[data-theme="dark"] .ui-section-highlighted h4 {
+    color: #63b3ed;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    .ui-changelog-filters {
+        padding: 14px 16px;
+        margin: 16px 0 24px 0;
+        position: static;
+    }
+    
+    .filter-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+    
+    .filter-group {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        min-width: auto;
+    }
+    
+    .filter-group select {
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .checkbox-group {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+    
+    .filter-buttons {
+        flex-direction: column;
+        margin-top: 8px;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        padding: 10px 16px;
+        font-size: 14px;
+        touch-action: manipulation;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .ui-changelog-filters *,
+    .btn-primary,
+    .btn-secondary {
+        transition: none;
+    }
+}
+
+/* Focus Indicators for Accessibility */
+.ui-changelog-filters select:focus,
+.ui-changelog-filters input:focus,
+.btn-primary:focus,
+.btn-secondary:focus {
+    outline: 2px solid #4299e1;
+    outline-offset: 2px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .ui-changelog-filters {
+        border-width: 2px;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        border-width: 2px;
+    }
+    
+    .ui-item-highlighted {
+        border-left-width: 4px;
+    }
+}
