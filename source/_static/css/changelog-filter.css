@@ -1,28 +1,368 @@
-.changelog-filters {
-    margin-bottom: 20px;
-    padding: 15px;
-    border-radius: 5px;
+/* UI Changelog Filters - Enhanced Version */
+.ui-changelog-filters {
+    background: #f8f9fa;
     border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.ui-changelog-filters h3 {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1f2328;
+}
+
+.ui-changelog-filters .filter-description {
+    margin: 0 0 16px 0;
+    font-size: 14px;
+    color: #656d76;
+}
+
+.ui-filter-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: flex-end;
+}
+
+.ui-filter-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 160px;
+}
+
+.ui-filter-group label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #1f2328;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.ui-filter-group .helper-text {
+    font-size: 11px;
+    color: #656d76;
+    margin-bottom: 6px;
+}
+
+.ui-filter-group select {
+    background: #ffffff;
+    border: 1px solid #d1d9e0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #1f2328;
+    min-width: 0;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.ui-filter-group select:hover {
+    border-color: #8c959f;
+}
+
+.ui-filter-group select:focus {
+    outline: 2px solid #0969da;
+    outline-offset: -2px;
+    border-color: #0969da;
+}
+
+.ui-filter-actions {
+    display: flex;
+    gap: 8px;
+    align-items: flex-end;
+}
+
+.ui-filter-btn {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid;
+    transition: all 0.15s ease;
+    min-width: 70px;
+    text-align: center;
+}
+
+.ui-filter-btn:focus {
+    outline: 2px solid;
+    outline-offset: 2px;
+}
+
+.ui-filter-btn.primary {
+    background: #0969da;
+    color: #ffffff;
+    border-color: #0969da;
+}
+
+.ui-filter-btn.primary:hover {
+    background: #0860ca;
+    border-color: #0860ca;
+}
+
+.ui-filter-btn.primary:focus {
+    outline-color: #0969da;
+}
+
+.ui-filter-btn.secondary {
+    background: #f6f8fa;
+    color: #1f2328;
+    border-color: #d1d9e0;
+}
+
+.ui-filter-btn.secondary:hover {
+    background: #f3f4f6;
+    border-color: #8c959f;
+}
+
+.ui-filter-btn.secondary:focus {
+    outline-color: #0969da;
+}
+
+.ui-filter-clear {
+    color: #d1242f;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: underline;
+    margin-left: 8px;
+}
+
+.ui-filter-clear:hover {
+    color: #a40e26;
+}
+
+.ui-filter-status {
+    background: #dafbe1;
+    border: 1px solid #2da44e;
+    border-radius: 6px;
+    padding: 10px 16px;
+    margin-top: 16px;
+    color: #1a7f37;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.ui-filter-error {
+    background: #ffebe9;
+    border: 1px solid #d1242f;
+    border-radius: 6px;
+    padding: 10px 16px;
+    margin-top: 16px;
+    color: #d1242f;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .ui-filter-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .ui-filter-group {
+        min-width: auto;
+    }
+    
+    .ui-filter-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .ui-filter-btn {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+}
+
+/* Section and TOC filtering */
+section.ui-filtered {
+    display: none;
+}
+
+li.ui-filtered-toc {
+    display: none;
+}
+
+/* UI content highlighting */
+.ui-content-highlighted {
+    background: linear-gradient(90deg, rgba(9, 105, 218, 0.1) 0%, rgba(9, 105, 218, 0.05) 100%);
+    border-left: 3px solid #0969da;
+    padding-left: 12px;
+    margin-left: -15px;
+    border-radius: 0 4px 4px 0;
+}
+
+/* Dark mode support */
+[data-theme="dark"] .ui-changelog-filters,
+html[data-theme="dark"] .ui-changelog-filters,
+.theme-dark .ui-changelog-filters {
+    background: #161b22;
+    border-color: #30363d;
+}
+
+[data-theme="dark"] .ui-changelog-filters h3,
+html[data-theme="dark"] .ui-changelog-filters h3,
+.theme-dark .ui-changelog-filters h3 {
+    color: #f0f6fc;
+}
+
+[data-theme="dark"] .ui-changelog-filters .filter-description,
+html[data-theme="dark"] .ui-changelog-filters .filter-description,
+.theme-dark .ui-changelog-filters .filter-description {
+    color: #8b949e;
+}
+
+[data-theme="dark"] .ui-filter-group label,
+html[data-theme="dark"] .ui-filter-group label,
+.theme-dark .ui-filter-group label {
+    color: #f0f6fc;
+}
+
+[data-theme="dark"] .ui-filter-group .helper-text,
+html[data-theme="dark"] .ui-filter-group .helper-text,
+.theme-dark .ui-filter-group .helper-text {
+    color: #8b949e;
+}
+
+[data-theme="dark"] .ui-filter-group select,
+html[data-theme="dark"] .ui-filter-group select,
+.theme-dark .ui-filter-group select {
+    background: #21262d;
+    border-color: #30363d;
+    color: #f0f6fc;
+}
+
+[data-theme="dark"] .ui-filter-group select:hover,
+html[data-theme="dark"] .ui-filter-group select:hover,
+.theme-dark .ui-filter-group select:hover {
+    border-color: #8b949e;
+}
+
+[data-theme="dark"] .ui-filter-group select:focus,
+html[data-theme="dark"] .ui-filter-group select:focus,
+.theme-dark .ui-filter-group select:focus {
+    border-color: #1f6feb;
+    outline-color: #1f6feb;
+}
+
+[data-theme="dark"] .ui-filter-btn.primary,
+html[data-theme="dark"] .ui-filter-btn.primary,
+.theme-dark .ui-filter-btn.primary {
+    background: #238636;
+    border-color: #238636;
+}
+
+[data-theme="dark"] .ui-filter-btn.primary:hover,
+html[data-theme="dark"] .ui-filter-btn.primary:hover,
+.theme-dark .ui-filter-btn.primary:hover {
+    background: #2ea043;
+    border-color: #2ea043;
+}
+
+[data-theme="dark"] .ui-filter-btn.secondary,
+html[data-theme="dark"] .ui-filter-btn.secondary,
+.theme-dark .ui-filter-btn.secondary {
+    background: #21262d;
+    color: #f0f6fc;
+    border-color: #30363d;
+}
+
+[data-theme="dark"] .ui-filter-btn.secondary:hover,
+html[data-theme="dark"] .ui-filter-btn.secondary:hover,
+.theme-dark .ui-filter-btn.secondary:hover {
+    background: #30363d;
+    border-color: #8b949e;
+}
+
+[data-theme="dark"] .ui-filter-clear,
+html[data-theme="dark"] .ui-filter-clear,
+.theme-dark .ui-filter-clear {
+    color: #f85149;
+}
+
+[data-theme="dark"] .ui-filter-clear:hover,
+html[data-theme="dark"] .ui-filter-clear:hover,
+.theme-dark .ui-filter-clear:hover {
+    color: #ff7b72;
+}
+
+[data-theme="dark"] .ui-filter-status,
+html[data-theme="dark"] .ui-filter-status,
+.theme-dark .ui-filter-status {
+    background: rgba(46, 160, 67, 0.15);
+    border-color: #238636;
+    color: #2ea043;
+}
+
+[data-theme="dark"] .ui-filter-error,
+html[data-theme="dark"] .ui-filter-error,
+.theme-dark .ui-filter-error {
+    background: rgba(248, 81, 73, 0.15);
+    border-color: #da3633;
+    color: #f85149;
+}
+
+[data-theme="dark"] .ui-content-highlighted,
+html[data-theme="dark"] .ui-content-highlighted,
+.theme-dark .ui-content-highlighted {
+    background: linear-gradient(90deg, rgba(31, 111, 235, 0.15) 0%, rgba(31, 111, 235, 0.08) 100%);
+    border-left-color: #1f6feb;
+}
+
+/* Legacy selectors for backward compatibility */
+.changelog-filters {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.changelog-filters h3 {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1f2328;
 }
 
 .changelog-filters select {
-    padding: 8px;
+    background: #ffffff;
+    border: 1px solid #d1d9e0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #1f2328;
     margin-right: 10px;
-    border-radius: 4px;
-    border: 1px solid #ced4da;
+    cursor: pointer;
+    transition: all 0.15s ease;
 }
 
 .changelog-filters button {
-    padding: 8px 15px;
-    background-color: #166de0;
-    color: white;
-    border: none;
-    border-radius: 4px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
     cursor: pointer;
+    border: 1px solid;
+    transition: all 0.15s ease;
+    background: #0969da;
+    color: #ffffff;
+    border-color: #0969da;
+    margin-right: 8px;
 }
 
 .changelog-filters button:hover {
-    background-color: #145cc5;
+    background: #0860ca;
+    border-color: #0860ca;
 }
 
 section.filtered {
@@ -34,10 +374,57 @@ li.filtered-toc {
 }
 
 .changelog-filter-error {
-    color: #e74c3c;
-    margin-top: 10px;
-    padding: 8px;
-    background-color: #fadbd8;
-    border-radius: 4px;
-    border-left: 4px solid #e74c3c;
+    background: #ffebe9;
+    border: 1px solid #d1242f;
+    border-radius: 6px;
+    padding: 10px 16px;
+    margin-top: 16px;
+    color: #d1242f;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Dark mode for legacy selectors */
+[data-theme="dark"] .changelog-filters,
+html[data-theme="dark"] .changelog-filters,
+.theme-dark .changelog-filters {
+    background: #161b22;
+    border-color: #30363d;
+}
+
+[data-theme="dark"] .changelog-filters h3,
+html[data-theme="dark"] .changelog-filters h3,
+.theme-dark .changelog-filters h3 {
+    color: #f0f6fc;
+}
+
+[data-theme="dark"] .changelog-filters select,
+html[data-theme="dark"] .changelog-filters select,
+.theme-dark .changelog-filters select {
+    background: #21262d;
+    border-color: #30363d;
+    color: #f0f6fc;
+}
+
+[data-theme="dark"] .changelog-filters button,
+html[data-theme="dark"] .changelog-filters button,
+.theme-dark .changelog-filters button {
+    background: #238636;
+    border-color: #238636;
+    color: #f0f6fc;
+}
+
+[data-theme="dark"] .changelog-filters button:hover,
+html[data-theme="dark"] .changelog-filters button:hover,
+.theme-dark .changelog-filters button:hover {
+    background: #2ea043;
+    border-color: #2ea043;
+}
+
+[data-theme="dark"] .changelog-filter-error,
+html[data-theme="dark"] .changelog-filter-error,
+.theme-dark .changelog-filter-error {
+    background: rgba(248, 81, 73, 0.15);
+    border-color: #da3633;
+    color: #f85149;
 }
