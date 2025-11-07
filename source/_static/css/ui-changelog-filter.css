@@ -1,0 +1,283 @@
+/* Enhanced UI Changelog Filter Styles */
+.ui-changelog-filters {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.ui-changelog-filters h3 {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #24292f;
+}
+
+.ui-changelog-filters .filter-description {
+    color: #656d76;
+    font-size: 14px;
+    margin-bottom: 16px;
+    line-height: 1.4;
+}
+
+.ui-filter-controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.ui-filter-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ui-filter-group label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #24292f;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.ui-filter-group select {
+    background: white;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 14px;
+    min-width: 140px;
+    color: #24292f;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+.ui-filter-group select:focus {
+    outline: none;
+    border-color: #0969da;
+    box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.1);
+}
+
+.ui-filter-group select:hover {
+    border-color: #8c959f;
+}
+
+.ui-filter-buttons {
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+}
+
+.ui-filter-button {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.ui-filter-button.primary {
+    background: #0969da;
+    color: white;
+}
+
+.ui-filter-button.primary:hover {
+    background: #0860ca;
+}
+
+.ui-filter-button.primary:active {
+    background: #0757ba;
+}
+
+.ui-filter-button.secondary {
+    background: #f6f8fa;
+    color: #24292f;
+    border: 1px solid #d0d7de;
+}
+
+.ui-filter-button.secondary:hover {
+    background: #f3f4f6;
+    border-color: #8c959f;
+}
+
+.ui-filter-button.secondary:active {
+    background: #e5e5e5;
+}
+
+.ui-filter-status {
+    margin-top: 12px;
+    padding: 8px 12px;
+    background: #ddf4ff;
+    border: 1px solid #54aeff;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #0969da;
+    display: none;
+}
+
+.ui-filter-error {
+    margin-top: 12px;
+    padding: 8px 12px;
+    background: #ffebe9;
+    border: 1px solid #f85149;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #cf222e;
+    display: none;
+}
+
+/* UI Content Highlighting */
+.ui-content-highlighted {
+    background: linear-gradient(90deg, rgba(9, 105, 218, 0.08) 0%, transparent 100%);
+    border-left: 3px solid #0969da;
+    padding-left: 16px;
+    margin-left: -19px;
+}
+
+/* Filtered content hiding */
+section.ui-filtered {
+    display: none;
+}
+
+li.ui-filtered-toc {
+    display: none;
+}
+
+/* Dark mode support */
+[data-theme="dark"] .ui-changelog-filters {
+    background: #161b22;
+    border-color: #30363d;
+    color: #f0f6fc;
+}
+
+[data-theme="dark"] .ui-changelog-filters h3 {
+    color: #f0f6fc;
+}
+
+[data-theme="dark"] .ui-changelog-filters .filter-description {
+    color: #8b949e;
+}
+
+[data-theme="dark"] .ui-filter-group label {
+    color: #f0f6fc;
+}
+
+[data-theme="dark"] .ui-filter-group select {
+    background: #0d1117;
+    border-color: #30363d;
+    color: #f0f6fc;
+}
+
+[data-theme="dark"] .ui-filter-group select:hover {
+    border-color: #6e7681;
+}
+
+[data-theme="dark"] .ui-filter-group select:focus {
+    border-color: #1f6feb;
+    box-shadow: 0 0 0 3px rgba(31, 111, 235, 0.1);
+}
+
+[data-theme="dark"] .ui-filter-button.secondary {
+    background: #21262d;
+    color: #f0f6fc;
+    border-color: #30363d;
+}
+
+[data-theme="dark"] .ui-filter-button.secondary:hover {
+    background: #30363d;
+    border-color: #6e7681;
+}
+
+[data-theme="dark"] .ui-filter-button.secondary:active {
+    background: #262c36;
+}
+
+[data-theme="dark"] .ui-filter-status {
+    background: #033d65;
+    border-color: #1f6feb;
+    color: #58a6ff;
+}
+
+[data-theme="dark"] .ui-filter-error {
+    background: #490202;
+    border-color: #f85149;
+    color: #ff7b72;
+}
+
+[data-theme="dark"] .ui-content-highlighted {
+    background: linear-gradient(90deg, rgba(31, 111, 235, 0.1) 0%, transparent 100%);
+    border-left-color: #1f6feb;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .ui-filter-controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .ui-filter-group {
+        justify-content: space-between;
+    }
+
+    .ui-filter-group select {
+        min-width: auto;
+        flex: 1;
+        margin-left: 8px;
+    }
+
+    .ui-filter-buttons {
+        margin-left: 0;
+        justify-content: stretch;
+    }
+
+    .ui-filter-button {
+        flex: 1;
+    }
+
+    .ui-changelog-filters {
+        padding: 16px;
+        margin: 16px 0;
+    }
+}
+
+/* Accessibility improvements */
+.ui-filter-group select:focus-visible {
+    outline: 2px solid #0969da;
+    outline-offset: 2px;
+}
+
+.ui-filter-button:focus-visible {
+    outline: 2px solid #0969da;
+    outline-offset: 2px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .ui-filter-group select,
+    .ui-filter-button {
+        transition: none;
+    }
+}
+
+/* Helper text styling */
+.ui-filter-helper {
+    font-size: 12px;
+    color: #656d76;
+    margin-top: 4px;
+    font-style: italic;
+}
+
+[data-theme="dark"] .ui-filter-helper {
+    color: #8b949e;
+}
