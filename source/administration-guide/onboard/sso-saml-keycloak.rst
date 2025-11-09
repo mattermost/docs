@@ -69,7 +69,7 @@ Set up a connection app for Mattermost SSO
     .. note::
         In the image below, we used `Mattermost` for the `Realm Certificate Alias`. You should use your Realm Name here, as it's designed to identify what this certificate is within your Keycloak realm.
 
-    .. image:: ../../images/keycloak_2_saml_keys.png
+    .. image:: ../../images/keycloak_2_saml_keys_2.png
         :alt: In Keycloak, on the Keys tab, generate new keys, export using the values documented, then select Download.
 
 7. Navigate to the **Client scopes** tab.
@@ -78,9 +78,6 @@ Set up a connection app for Mattermost SSO
     b. Click **Add predefined mapper**
     c. Select the **X500 email**, **X500 givenName**, and **X500 surname** attributes.
     d. Click **Add**.
-
-    .. image:: ../../images/keycloak_3_add_builtins.png
-        :alt: In Keycloak, on the Mappers tab, add default attributes
 
 8. Add the username and ID attribute.
 
@@ -91,10 +88,14 @@ Set up a connection app for Mattermost SSO
     c. Set **Property** to ``username`` (This is case sensitive and must be lowercase).
     d. Set **SAML Attribute Name** to ``username``.
     e. Select **Save**.
-    f. Repeat the above steps and use the property of ``id`` to create the ID Attribute.
 
     .. image:: ../../images/keycloak_4_create_username_attribute.png
         :alt: In Keycloak, on the Mappers tab, create a protocol mapper, then save your changes.
+
+    f. Repeat the above steps and use the property of ``id`` to create the ID Attribute.
+
+    .. image:: ../../images/keycloak_4_create_id_attribute.png
+        :alt: In Keycloak, on the Mappers tab, create a protocol mapper for the ID attribute, then save your changes.
 
     Once done your Mappers should look like this:
         .. image:: ../../images/keycloak_4_create_username_attribute_finished.png
@@ -106,7 +107,7 @@ Set up a connection app for Mattermost SSO
     a. Within your Realm, select **Realm Settings**.
     b. At the bottom of the **General** tab you should see a **SAML 2.0 Identity Provider Metadata** endpoint. Right-click and copy this URL. Store for the next step.
 
-    .. image:: ../../images/keycloak_9_export_metadata.png
+    .. image:: ../../images/keycloak_5_export_metadata.png
         :alt: Within your Realm, select Realm Settings. At the bottom of the General tab, you should see a SAML 2.0 Identify Provider Metadata endpoint. Copy this URL for the next step.
 
 Configure SAML for Mattermost
@@ -118,7 +119,7 @@ Configure SAML for Mattermost
 
     If you have any issues with this import, you can check the ``mattermost.log`` file for more information. :ref:`Enable debug logging <administration-guide/manage/logging:how do i enable debug logging?>` and try again.
 
-    .. image:: ../../images/keycloak_10_get_metadata.png
+    .. image:: ../../images/keycloak_6_get_metadata.png
         :alt: In Mattermost, configure SAML in the System Console by going to Authentication > SAML. Set the Identity Provider Metadata URL to the value you copied in the previous step. When you select Get SAML Metadata from IdP, fields related to your Keycloak configuration are populated.
 
     .. note::
@@ -136,7 +137,7 @@ Configure SAML for Mattermost
 
     The Service Provider Identifier will match the **Client ID** that you configured in the second Keycloak step.
 
-    .. image:: ../../images/keycloak_5_mattermost_config.png
+    .. image:: ../../images/keycloak_7_mattermost_config.png
         :alt: In the System Console, configure SAML as documented, where the Service Provider Identifier matches the Client ID you configured in Keycloak.
 
 4. Configure the Encryption using the key you downloaded in step 6 of the Keycloak config.
@@ -154,13 +155,8 @@ Configure SAML for Mattermost
       - **Service Provider Private Key**: ``mattermost.key``
       - **Service Provider Private Certificate**: ``mattermost.crt``
 
-    .. image:: ../../images/keycloak_6_mattermost_encryption.png
+    .. image:: ../../images/keycloak_8_mattermost_encryption.png
         :alt: In the System Console, upload both the Service Provider Private Key and the Service Provider Private Certificate.
-
-5. (Optional) Set up request signing with the below parameters.
-
-    .. image:: ../../images/keycloak_7_mattermost_request_signing.png
-        :alt: In the System Console, you can optionally request signing with configured parameters.
 
 6. Set attributes for the SAML Assertions, which will update user information in Mattermost. 
     
@@ -170,7 +166,7 @@ Configure SAML for Mattermost
     - **Username Attribute**:  ``username``
     - **Id Attribute**: ``id``
 
-    .. image:: ../../images/keycloak_8_mattermost_attributes.png
+    .. image:: ../../images/keycloak_9_mattermost_attributes.png
         :alt: Set attributes for the SAML assertions which updates user information in Mattermost.
 
 7. Select **Save**.
