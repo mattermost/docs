@@ -6,14 +6,19 @@ If you have any questions, create an account on the [Mattermost Community server
 
 # Table of Contents
 
- * [Contributing](#contribute-to-mattermost-product-documentation)
-     * [Get started](#get-started)
-     * [Edit content directly on GitHub](#edit-content-directly-on-github)
-     * [Create documentation PRs](#create-documentation-pull-requests)
-     * [Use GitHub PR Labels](#use-github-pr-labels)
-     * [Comment on Pull Requests](#comment-on-pull-requests)
-     * [Review Pull Requests](#review-pull-requests)
- * [Build locally](#build-locally)
+- [Mattermost Documentation](#mattermost-documentation)
+- [Table of Contents](#table-of-contents)
+  - [Contribute to Mattermost product documentation](#contribute-to-mattermost-product-documentation)
+    - [Get started](#get-started)
+    - [Edit content directly on GitHub](#edit-content-directly-on-github)
+    - [Create Documentation pull requests](#create-documentation-pull-requests)
+    - [Comment on pull requests](#comment-on-pull-requests)
+    - [Review pull requests](#review-pull-requests)
+  - [Build locally](#build-locally)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Build commands](#build-commands)
+    - [Troubleshooting](#troubleshooting)
 
 ## Contribute to Mattermost product documentation
 
@@ -56,7 +61,7 @@ If you've downloaded the `mattermost/docs` repository to edit Mattermost documen
 > [!NOTE]
 > You can generate the docs on Linux, Mac, and Windows (using PowerShell); however, builds on Windows are considerably slower because only a single processing core is used.
 > 
-> For faster local docs builds on Windows, we strongly recommend [installing WSL](https://learn.microsoft.com/en-us/windows/wsl/install) to create an Ubuntu virtual machine (VM), where you'll configure the following prerequisites. An Ubuntu VM will use all available processing cores, resulting in faster local builds.
+> For faster local docs builds on Windows, we strongly recommend [installing WSL](https://learn.microsoft.com/en-us/windows/wsl/install) to create an Ubuntu virtual machine (VM), where you'll configure the following prerequisites. This VM will be using all available processing cores, resulting in faster local builds.
 
 ### Prerequisites
 
