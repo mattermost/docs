@@ -83,10 +83,10 @@ If you've downloaded the `mattermost/docs` repository to edit Mattermost documen
 
 2. Install pipenv:
    ```shell
-   # Using Homebrew (i.e. on macOS)
+   # Using Homebrew
    brew install pipenv
 
-   # Other systems
+   # Using pip
    pip install --user pipenv
    ```
 
