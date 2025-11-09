@@ -41,6 +41,9 @@ Set up a connection app for Mattermost SSO
     .. image:: ../../images/keycloak_1_client_settings.png
         :alt: In Keycloak, create the Mattermost client, specify the Client ID and Client Protocol, then save your changes.
 
+    .. image:: ../../images/keycloak_1_client_settings_2.png
+        :alt: In Keycloak, create the Mattermost client, specify the Client ID and Client Protocol, then save your changes.
+
 6. Navigate to the **Keys** tab.
 
     - **Client signature required**: **Off**
@@ -52,6 +55,9 @@ Set up a connection app for Mattermost SSO
 
     .. note:: 
         Mattermost does not support request signing with Keycloak so make sure to disable the Client signature setting as mentioned above.
+
+    .. image:: ../../images/keycloak_2_saml_keys.png
+        :alt: In Keycloak, on the Keys tab, generate new keys for encryption.
     
     - Click **Export** and update the following values:
  
