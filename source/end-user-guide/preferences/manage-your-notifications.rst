@@ -30,8 +30,9 @@ Mattermost notifies you of new activity you're directly involved in. How you're 
 
   **Missing notifications?**
 
-  - You may need to grant permissions in the Mattermost client to show notifications. Learn how to grant permissions within the :ref:`web browser <end-user-guide/preferences/manage-your-web-notifications:enable notifications>`, :ref:`desktop app <end-user-guide/preferences/manage-your-desktop-notifications:enable notifications>`, or :ref:`mobile app <end-user-guide/preferences/manage-your-mobile-notifications:enable notifications>` based on your preferred Mattermost client.
-  - In addition, visit our :doc:`troubleshoot notifications </end-user-guide/preferences/troubleshoot-notifications>` documentation for guidance on ensuring you receive Mattermost notifications.
+  - Your device may have Mattermost notifications disabled. See the :ref:`manage your mobile notifications <end-user-guide/preferences/manage-your-mobile-notifications:enable notifications>` for details.
+  - You may need to grant permissions in the Mattermost client to show notifications. Learn how to grant permissions within the :ref:`web browser <end-user-guide/preferences/manage-your-web-notifications:enable notifications>`, :ref:`desktop app <end-user-guide/preferences/manage-your-desktop-notifications:enable notifications>`, or :ref:`mobile app <end-user-guide/preferences/manage-your-mobile-notifications:enable notifications>`.
+  - Visit our :doc:`troubleshoot notifications </end-user-guide/preferences/troubleshoot-notifications>` documentation for guidance on ensuring you receive Mattermost notifications.
 
 You're in control
 ------------------

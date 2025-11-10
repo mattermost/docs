@@ -109,7 +109,7 @@ Check your Mattermost client settings
   
   .. note::
   
-    From Mattermost mobile app v2.34, if device notifications are turned off, a banner appears in the **Settings > Notifications** screen with a quick link to help you restore notifications. See the :doc:`Mobile Disabled Notifications Banner </end-user-guide/preferences/manage-your-mobile-notifications>` documentation for details.
+    From Mattermost mobile v2.34, if your device has notifications disabled, a banner displays in the Mattermost mobile **Settings > Notifications** screen with a quick link to help you restore device-level notifications.
 
   .. tab:: Android
 

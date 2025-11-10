@@ -11,24 +11,15 @@ Manage your mobile notifications
 Enable notifications
 --------------------
 
+From Mattermost mobile v2.34, the Mattermost **Settings > Notifications** screen alerts you when notifications are disabled by your device. Follow the link in the notification to enable device-level notifications.
+
 From Mattermost v9.9, Mattermost prompts you to enable notifications in the mobile app the first time you open the app.
 
-When you enable notifications, you'll start receiving notifications for all Mattermost activity with `badges <#badge-based-notifications>`__, and `push notifications <#push-notifications>`__. See the section below on `customizing your notifications <#customize-your-notifications>`__ based on how you prefer to be notified about Mattermost activity on your mobile device.
+Once Mattermost notifications are enabled at the device level and in the mobile app, you'll start receiving notifications for all Mattermost activity with `badges <#badge-based-notifications>`__, and `push notifications <#push-notifications>`__. See the section below on `customizing your notifications <#customize-your-notifications>`__ based on how you prefer to be notified about Mattermost activity on your mobile device.
 
 .. note::
 
   You may also need to enable notifications in iOS or Android for Mattermost by changing your device preferences.
-
-Mobile Disabled Notifications Banner
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-From Mattermost mobile app v2.34, Mattermost alerts you when device notifications are disabled by the device itself on the **Settings > Notifications** screen. This banner helps ensure users stay mission-ready by providing:
-
-- A clear notification that device notifications are currently disabled
-- A quick link to restore real-time awareness for critical communications
-- Easy access to enable notifications directly from the Mattermost app
-
-This feature helps users quickly identify and resolve notification issues, ensuring they don't miss important communications.
 
 Badge-based notifications
 -------------------------
