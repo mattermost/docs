@@ -53,6 +53,7 @@ Mattermost Desktop App v6.0.0 contains low severity level security fixes. Upgrad
 
 - Fixed various issues with the newer modals.
 - Fixed UX issues with the checkbox component.
+- Fixed an issue where configuration files could be corrupted by interleaving writes.
 
 ### Open Source Components
 
