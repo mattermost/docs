@@ -12,7 +12,6 @@
 (release-v11.0-major-release)=
 ## Release v11.0 - [Major Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
-
 - **11.0.5, released **
   - Mattermost v11.0.5 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged MS Teams Meetings plugin version [v2.3.0](https://github.com/mattermost/mattermost-plugin-msteams-meetings/releases/tag/v2.3.0).
