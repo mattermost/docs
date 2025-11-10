@@ -57,7 +57,7 @@ Set up keycloak for Mattermost SSO
         :alt: In Keycloak, configure the Signature and Encryption settings for the Mattermost client.
 
     .. warning:: 
-        Mattermost only supports ``RSA_SHA1`` for Keycloak SAML, because Keycloak is using ``xmlenc`` for ``RSA_SHA128`` and ``RSA_SHA256``, wheras Mattermost currently only supports ``xmldsig``. So make sure to use ``RSA_SHA1`` as the *Signature Algorithm* and *Digest Method* as described in this section.
+        Mattermost only supports ``RSA_SHA1`` for Keycloak SAML, because Keycloak is using ``xmlenc`` for ``RSA_SHA512`` and ``RSA_SHA256``, wheras Mattermost currently only supports ``xmldsig``. So make sure to use ``RSA_SHA1`` as the *Signature Algorithm* and *Digest Method* as described in this section.
 
 
 7. Navigate to the **Keys** tab.
