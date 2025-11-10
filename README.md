@@ -110,7 +110,7 @@ If you've downloaded the `mattermost/docs` repository to edit Mattermost documen
 - **`gmake clean html`** - Clean build directory and rebuild all files
 - **`gmake livehtml`** - Start live preview server at `http://127.0.0.1:8000` (auto-updates on save)
 
-Static build output is located in `build/html/index.html`. Build errors are logged to `build/warnings.log` and `build/redirect-warnings.log`.
+Static build output is located in `build/html/index.html`. Build errors are logged to `build/warnings.log` and redirect issues are logged to `build/redirect-warnings.log`.
 
 ### Troubleshooting
 
@@ -118,6 +118,6 @@ Static build output is located in `build/html/index.html`. Build errors are logg
 
 Run `make clean` and rebuild the repository from scratch:
 ```shell
-make clean
+gmake clean
 gmake html
 ```
