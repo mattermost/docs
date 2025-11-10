@@ -22,7 +22,7 @@ When you enable notifications, you'll start receiving notifications for all Matt
 Mobile Disabled Notifications Banner
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-From Mattermost mobile app v2.34, if device notifications are turned off at the system level, Mattermost displays a clear banner in the mobile app on the **Settings > Notifications** screen to alert users about disabled notifications. This banner helps ensure users stay mission-ready by providing:
+From Mattermost mobile app v2.34, Mattermost alerts you when device notifications are disabled by the device itself on the **Settings > Notifications** screen. This banner helps ensure users stay mission-ready by providing:
 
 - A clear notification that device notifications are currently disabled
 - A quick link to restore real-time awareness for critical communications
