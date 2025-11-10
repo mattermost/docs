@@ -12,6 +12,8 @@
 (release-v10.12-feature-release)=
 ## Release v10.12 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **10.12.3, released 2025-11-10**
+  - Mattermost v10.12.3 contains no database or functional changes.
 - **10.12.2, released 2025-10-28**
  ```{Attention}
  **Critical Fixes**
@@ -62,6 +64,8 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 (release-v10.11-extended-support-release)=
 ## Release v10.11 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **10.11.7, released 2025-11-10**
+  - Mattermost v10.11.7 contains no database or functional changes.
 - **10.11.6, released 2025-11-04**
   - Fixed an issue where guest users could not log in via SAML when "Ignore Guest Users when Synchronizing with AD/LDAP" was enabled [MM-66186](https://mattermost.atlassian.net/browse/MM-66186).
   - Fixed a configuration retention issue where even active configurations got deleted [MM-66216](https://mattermost.atlassian.net/browse/MM-66216).

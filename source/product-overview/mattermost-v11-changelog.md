@@ -12,6 +12,8 @@
 (release-v11.0-major-release)=
 ## Release v11.0 - [Major Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **11.0.5, released 2025-11-10**
+  - Mattermost v11.0.5 contains no database or functional changes.
 - **11.0.4, released 2025-10-28**
  ```{Attention}
  **Critical Fixes**
