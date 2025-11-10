@@ -38,7 +38,7 @@ Mattermost Desktop App v6.0.0 contains low severity level security fixes. Upgrad
 - Unified and polished basic authentication, client certificate and pre-auth header authentication methods.
 - Added default theme syncing with the web app.
 - Added server version information to the **Help** menu.
-- Created a **File** menu on macOS, and added **New Window/Tab** and **Close Window/tab** to the **File** menu.
+- Created a **File** menu on macOS, and added **New Window/Tab** and **Close Window/Tab** to the **File** menu.
 - Added **clear the cache and reload** link to the error screen.
 - Disallowed other servers to end the current call, showing an error message.
 - Adjusted colors to be more accurate to Mattermost theming.
@@ -65,7 +65,7 @@ Mattermost Desktop App v6.0.0 contains low severity level security fixes. Upgrad
 - Sometimes during installation you may see this message: ``Warning 1946. Property 'System.AppUserModel.ID' for shortcut 'Mattermost.Ink' could not be set``. This message can be safely ignored.
 - Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually delete their cache directory. For macOS it is located in `/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost`, for Windows in `Users/<username>/AppData/Roaming/Mattermost` and for Linux in `~/config/Mattermost` (where `~` is the home directory).
 - On Linux, a left-click on the Mattermost tray icon doesn't open the app window but opens the tray menu.
-- Crashes might be be experienced in some Linux desktop clients due to an upstream bug in the `libnotifyapp` library. A recommended workaround is to disable the Mattermost system tray icon via Desktop Settings.
+- Crashes might be experienced in some Linux desktop clients due to an upstream bug in the `libnotifyapp` library. A recommended workaround is to disable the Mattermost system tray icon via Desktop Settings.
 
 ### Contributors
 
