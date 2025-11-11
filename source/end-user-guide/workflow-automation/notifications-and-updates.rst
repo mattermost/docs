@@ -13,42 +13,43 @@ Status updates ensure that stakeholders remain informed about the playbook run's
 
 You can post a status update from the run channel and you can also configure the playbook to send a reminder to post a status update.
 
-Desktop and Web
-~~~~~~~~~~~~~~~
+.. tab:: Web and Desktop
 
-To post a status update, access the **Playbooks** tab in Mattermost. Select the run you want to post the update for. In the run details page, select **Post update**.
+   1. To post a status update, access the **Playbooks** tab in Mattermost. Select the run you want to post the update for. In the run details page, select **Post update**.
 
-   - If this is the first status update and the playbook has a defined template, that template will be pre-populated here.
-   - If this is a subsequent status update, the message from the last status update will be pre-populated here.
+      - If this is the first status update and the playbook has a defined template, that template will be pre-populated here.
+      - If this is a subsequent status update, the message from the last status update will be pre-populated here.
 
-3. Optionally set a reminder to prompt for the next status update.
+   2. Optionally set a reminder to prompt for the next status update.
 
-   - If this is the first status update and the playbook has a defined default reminder timer, that timer will be pre-selected here.
-   - If this is a subsequent status update, the last reminder timer will be pre-populated here.
+      - If this is the first status update and the playbook has a defined default reminder timer, that timer will be pre-selected here.
+      - If this is a subsequent status update, the last reminder timer will be pre-populated here.
 
-4. Select **Post update** to post your status update.
+   3. Select **Post update** to post your status update.
 
-Mobile (v2.34.0+)
-~~~~~~~~~~~~~~~~~
+.. tab:: Mobile
 
-Mobile users can post status updates directly from the Mattermost mobile app:
+   From Mattermost v11.1 and mobile v2.34.0, mobile users can post status updates directly from the Mattermost mobile app:
 
-1. Open a playbook run from your mobile app.
-2. Select the status update button that appears when viewing the run details.
-3. In the status update modal:
+   1. Open a playbook run from your mobile app.
+   2. Select the status update button that appears when viewing the run details.
+   3. In the status update modal:
 
-   - If this is your first status update and the playbook has a status update template, the template content will be pre-populated.
-   - For subsequent updates, your most recent status update content will be pre-populated.
-   - The modal header shows how many people and channels will receive your status update.
+      - If this is your first status update and the playbook has a status update template, the template content will be pre-populated.
+      - For subsequent updates, your most recent status update content will be pre-populated.
+      - The modal header shows how many people and channels will receive your status update.
 
-4. Select your reminder timing from the predefined options available in the mobile app.
-5. Select **Post update** to share your status update.
+   4. Select your reminder timing from the predefined options available in the mobile app.
+   5. Select **Post update** to share your status update.
 
-**Note**: The status update button is only available to participants in the playbook run and is disabled when the run is finished. Mobile time selector options are limited to predefined choices, unlike the web interface which allows custom date entry.
+   .. note::
 
-If the playbook has a defined broadcast channel, status updates are copied to the broadcast channel as a message from the Playbooks bot.
+      - The status update button is only available to participants in the playbook run and is disabled when the run is finished. 
+      - Mobile time selector options are limited to predefined choices, unlike the web interface which allows custom date entry.
 
-The most recent status post will also appear in the right-hand sidebar of the run channel and in the timeline. To correct or remove a status post, edit or delete the post as needed. Note that status updates that are broadcast to another channel won’t be updated or removed if the original post is edited or deleted.
+When the playbook has a defined broadcast channel, status updates are copied to the broadcast channel as a message from the Playbooks bot. Status updates broadcast to another channel won’t be updated or removed if the original post is edited or deleted.
+
+The most recent status post alsos displays in the right-hand sidebar of the run channel and in the timeline. To correct or remove a status post, edit or delete the post as needed. 
 
 Request an update
 -----------------

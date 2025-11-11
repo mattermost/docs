@@ -27,22 +27,7 @@ Available slash commands include:
 Playbooks on the go
 --------------------
 
-From Mattermost v11.0 and mobile app v2.34.0, mobile users can:
-
-- :ref:`Interact with playbook tasks <end-user-guide/workflow-automation/work-with-tasks:interact with playbook tasks>` and :ref:`update tasks <end-user-guide/workflow-automation/work-with-tasks:update tasks>`
-- **Post status updates directly from mobile**: When you open a playbook run on mobile, a new status update button allows you to post progress updates and share status with your team while on the move or in the field
-- Create and manage playbook runs for operational command at the edge
-
-**Mobile status updates** (v2.34.0+):
-
-- Select the status update button when viewing a playbook run to open the status update modal
-- Only participants in the playbook run can post status updates; the button is disabled for non-participants or when the run is finished
-- The first status update uses the playbook's status update template as the default when available
-- Subsequent status updates pre-populate with your most recent update content
-- Time reminders are selected from predefined options (unlike the web interface which allows custom dates)
-- The modal header shows exactly how many people and channels will receive your status update
-
-Mattermost v10.11 and mobile app v2.31.0 introduced a read-only mobile interface, with actions like starting runs or updating checklists available through slash commands. Advanced playbook editing and management actions require the desktop or a web browser.
+Learn how to :ref:`access and work with playbooks on the go <end-user-guide/workflow-automation:access>` with the Mattermost mobile app.
 
 API documentation
 -----------------
