@@ -167,7 +167,7 @@ When a user deletes their account, deleted accounts cannot be reactivated, and t
 What data is removed?
 ^^^^^^^^^^^^^^^^^^^^^
 
-When a user deletes their account, the following data is permanently removed:
+When an account is permanently deleted, the following data is permanently removed:
 
 - User profile information (name, email, username)
 - User preferences and settings
@@ -175,13 +175,13 @@ When a user deletes their account, the following data is permanently removed:
 - Direct message channel memberships
 - Team and channel memberships
 - User session data
+- All posts and replies authored by the deleted user
 
 What data is retained?
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 The following data remains in the system after account deletion:
 
-- Message content in public and private channels (displayed as **Deleted User**)
 - File uploads and attachments shared in channels
 - Channel and team audit logs that reference the user's actions
 - Integration logs and webhook history
