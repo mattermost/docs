@@ -145,7 +145,7 @@ Configure SAML in Mattermost
     .. note::
         If Mattermost can not pull the metadata and is throwing a connection issue enable debug logging and see if you need to add your Keycloak url to the **Allowed Untrusted Internal Connections** list in the System Console under **Environment > Developer** and restart the server.  
         
-        More information can be found in the :ref:`documentation on Allowed Untrusted Internal Connections <administration-guide/configure/environment-configuration-settings::allow-untrusted-internal-connections>`.
+        See the :ref:`Allowed Untrusted Internal Connections <administration-guide/configure/environment-configuration-settings:allow untrusted internal connections>` product documentation for details.
 
 3. Set the below fields:
 
