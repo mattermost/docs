@@ -184,7 +184,6 @@ What data is retained?
 
 The following data remains in the system after account deletion:
 
-- File uploads and attachments shared in channels
 - Audit logs referencing the user's actions, channel and team membership
 
 Manage user's roles
