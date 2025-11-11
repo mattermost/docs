@@ -1,8 +1,6 @@
 $(document).ready(function () {
-    // Only run on the changelog pages.
-    if (!window.location.pathname.includes('/product-overview/mattermost-v10-changelog') && 
-        !window.location.pathname.includes('/product-overview/mattermost-v11-changelog') &&
-        !window.location.pathname.includes('/about/mattermost-v9-changelog')) {
+    // Only run on the legacy releases page
+    if (!window.location.pathname.includes('/product-overview/unsupported-legacy-releases')) {
         return;
     }
 
@@ -70,24 +68,24 @@ $(document).ready(function () {
                 <span class="changelog-filters__label">Filters:</span>
                 <div class="changelog-filters__controls">
                     <div class="changelog-filters__dropdown-wrapper">
-                        <select id="changelog-version-filter" class="changelog-filters__select">
+                        <select id="legacy-version-filter" class="changelog-filters__select">
                             <option value="all">All versions</option>
                             ${versions.map(v => `<option value="${v}">v${v}</option>`).join('')}
                         </select>
                     </div>
                     <div class="changelog-filters__dropdown-wrapper">
-                        <select id="changelog-change-type-filter" class="changelog-filters__select">
+                        <select id="legacy-change-type-filter" class="changelog-filters__select">
                             <option value="all">All changes</option>
                             <option value="ui">UI changes</option>
                         </select>
                     </div>
-                    <button id="changelog-apply-filter" class="changelog-filters__apply-btn">Apply</button>
-                    <button id="changelog-reset-filter" class="changelog-filters__clear-btn">
+                    <button id="legacy-apply-filter" class="changelog-filters__apply-btn">Apply</button>
+                    <button id="legacy-reset-filter" class="changelog-filters__clear-btn">
                         <span class="clear-icon">✕</span> Clear filters
                     </button>
                 </div>
             </div>
-            <div id="changelog-filter-status" class="changelog-filters__status" style="display: none;"></div>
+            <div id="legacy-filter-status" class="changelog-filters__status" style="display: none;"></div>
         </div>
     `;
 
@@ -100,9 +98,9 @@ $(document).ready(function () {
     });
 
     // Apply filter function
-    $('#changelog-apply-filter').on('click', function () {
-        const selectedVersion = $('#changelog-version-filter').val();
-        const changeType = $('#changelog-change-type-filter').val();
+    $('#legacy-apply-filter').on('click', function () {
+        const selectedVersion = $('#legacy-version-filter').val();
+        const changeType = $('#legacy-change-type-filter').val();
 
         // Clear any previous error messages
         $('.changelog-filter-error').remove();
@@ -168,7 +166,7 @@ $(document).ready(function () {
         }
 
         // Update status feedback
-        const statusElement = $('#changelog-filter-status');
+        const statusElement = $('#legacy-filter-status');
         if (appliedFilters.length > 0) {
             statusElement.text(`Showing ${appliedFilters.join(' → ')}`).show();
         } else {
@@ -177,14 +175,14 @@ $(document).ready(function () {
     });
 
     // Reset filters
-    $('#changelog-reset-filter').on('click', function () {
-        $('#changelog-version-filter, #changelog-change-type-filter').val('all');
+    $('#legacy-reset-filter').on('click', function () {
+        $('#legacy-version-filter, #legacy-change-type-filter').val('all');
         sections.forEach(item => {
             item.section.removeClass('filtered version-filtered ui-filtered');
         });
         tocItems.forEach(item => {
             item.item.removeClass('filtered-toc version-filtered ui-filtered');
         });
-        $('#changelog-filter-status').hide();
+        $('#legacy-filter-status').hide();
     });
 });

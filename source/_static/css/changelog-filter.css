@@ -1,43 +1,194 @@
+/* Compact filter bar design */
 .changelog-filters {
     margin-bottom: 20px;
-    padding: 15px;
-    border-radius: 5px;
-    border: 1px solid #dee2e6;
+    padding: 12px 16px;
+    border-radius: 6px;
+    border: 1px solid #e1e5e9;
+    background-color: #f8f9fa;
 }
 
-.changelog-filters select {
-    padding: 8px;
-    margin-right: 10px;
+[data-custom-theme="dark"] .changelog-filters {
+    background-color: #2d3748;
+    border-color: #4a5568;
+}
+
+.changelog-filters__header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.changelog-filters__label {
+    font-weight: 600;
+    color: #374151;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+[data-custom-theme="dark"] .changelog-filters__label {
+    color: #e2e8f0;
+}
+
+.changelog-filters__controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.changelog-filters__dropdown-wrapper {
+    position: relative;
+}
+
+.changelog-filters__select {
+    padding: 6px 12px;
     border-radius: 4px;
-    border: 1px solid #ced4da;
+    border: 1px solid #d1d5db;
+    background-color: white;
+    font-size: 14px;
+    min-width: 120px;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
 }
 
-.changelog-filters button {
-    padding: 8px 15px;
+.changelog-filters__select:hover {
+    border-color: #166de0;
+}
+
+.changelog-filters__select:focus {
+    outline: none;
+    border-color: #166de0;
+    box-shadow: 0 0 0 3px rgba(22, 109, 224, 0.1);
+}
+
+[data-custom-theme="dark"] .changelog-filters__select {
+    background-color: #4a5568;
+    border-color: #718096;
+    color: #e2e8f0;
+}
+
+[data-custom-theme="dark"] .changelog-filters__select:hover {
+    border-color: #3182ce;
+}
+
+[data-custom-theme="dark"] .changelog-filters__select:focus {
+    border-color: #3182ce;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
+}
+
+.changelog-filters__apply-btn {
+    padding: 6px 16px;
     background-color: #166de0;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+    min-width: 70px;
 }
 
-.changelog-filters button:hover {
+.changelog-filters__apply-btn:hover {
     background-color: #145cc5;
 }
 
-section.filtered {
-    display: none;
+.changelog-filters__apply-btn:active {
+    background-color: #1248a1;
 }
 
-li.filtered-toc {
-    display: none;
-}
-
-.changelog-filter-error {
-    color: #e74c3c;
-    margin-top: 10px;
-    padding: 8px;
-    background-color: #fadbd8;
+.changelog-filters__clear-btn {
+    padding: 6px 12px;
+    background-color: transparent;
+    color: #6b7280;
+    border: none;
     border-radius: 4px;
-    border-left: 4px solid #e74c3c;
+    cursor: pointer;
+    font-size: 14px;
+    transition: color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.changelog-filters__clear-btn:hover {
+    color: #166de0;
+}
+
+[data-custom-theme="dark"] .changelog-filters__clear-btn {
+    color: #a0aec0;
+}
+
+[data-custom-theme="dark"] .changelog-filters__clear-btn:hover {
+    color: #3182ce;
+}
+
+.clear-icon {
+    font-size: 12px;
+    width: 12px;
+    height: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.changelog-filters__status {
+    margin-top: 8px;
+    padding: 4px 8px;
+    font-size: 13px;
+    color: #6b7280;
+    font-style: italic;
+}
+
+[data-custom-theme="dark"] .changelog-filters__status {
+    color: #a0aec0;
+}
+
+/* Filtered content styles */
+section.filtered,
+section.version-filtered,
+section.ui-filtered {
+    display: none;
+}
+
+li.filtered-toc,
+li.version-filtered,
+li.ui-filtered {
+    display: none;
+}
+
+/* Error messages */
+.changelog-filter-error {
+    color: #dc2626;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #fef2f2;
+    border-radius: 4px;
+    border-left: 4px solid #dc2626;
+    font-size: 14px;
+}
+
+[data-custom-theme="dark"] .changelog-filter-error {
+    background-color: #7f1d1d;
+    color: #fca5a5;
+    border-left-color: #dc2626;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .changelog-filters__header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .changelog-filters__controls {
+        width: 100%;
+        justify-content: flex-start;
+    }
+    
+    .changelog-filters__select {
+        min-width: 100px;
+    }
 }
