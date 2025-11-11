@@ -176,6 +176,8 @@ When an account is permanently deleted, the following data is permanently remove
 - Team and channel memberships
 - User session data
 - All posts and replies authored by the deleted user
+- File uploads and attachments shared in channels by the user
+- All webhooks, slash commands and OAuth apps created by the user
 
 What data is retained?
 ^^^^^^^^^^^^^^^^^^^^^^^
