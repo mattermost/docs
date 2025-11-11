@@ -146,15 +146,15 @@ Enable dynamic client registration
 
 **True**: Enables Dynamic Client Registration (DCR) allowing applications to programmatically register OAuth 2.0 clients without manual admin intervention via the ``POST /api/v4/oauth/apps/register`` endpoint.
 
-**False**: **(Default)** Dynamic Client Registration is disabled. OAuth 2.0 applications must be registered manually through the System Console.
-
-.. important::
-
-  **Security Warning**: When enabled, the DCR endpoint (``/api/v4/oauth/apps/register``) is **publicly accessible without authentication**. Any user or application can register OAuth clients on your Mattermost server. Only enable this setting if you understand and accept this security model, or have additional network-level access controls in place.
+**False**: Dynamic Client Registration is disabled. OAuth 2.0 applications must be registered manually through the System Console.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableDynamicClientRegistration": false`` with options ``true`` and ``false``.  |
 +-------------------------------------------------------------------------------------------------------------------------------+
+
+.. important::
+
+  **Security Warning**: When enabled, the DCR endpoint (``/api/v4/oauth/apps/register``) is **publicly accessible without authentication**. Any user or application can register OAuth clients on your Mattermost server. Only enable this setting if you understand and accept this security model, or have additional network-level access controls in place.
 
 .. note::
 
