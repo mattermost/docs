@@ -2010,8 +2010,6 @@ Collaborative playbooks
 
 Use collaborative playbooks in Mattermost to provide structure, monitoring and automation for repeatable, team-based processes integrated with the Mattermost platform.
 
-From Mattermost v11.1, playbooks support **Properties** and **Conditional Playbooks** that enable adaptive workflows responding in real time to changing mission or operational context. Admins can define properties such as severity, category, or linked ticket ID and use them to trigger context-aware tasks, creating playbooks that adapt intelligently to situational conditions.
-
 Access the following configuration settings in the System Console by going to **Plugins > Collaborative playbooks**.
 
 .. config:setting:: enable-plugin
