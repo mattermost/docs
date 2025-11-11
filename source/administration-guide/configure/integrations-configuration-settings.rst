@@ -132,6 +132,34 @@ Enable OAuth 2.0 service provider
 
   Cloud admins can't modify this configuration setting.
 
+.. config:setting:: enable-dynamic-client-registration
+  :displayname: Enable dynamic client registration (Integrations)
+  :systemconsole: Integrations > Integration Management
+  :configjson: .ServiceSettings.EnableDynamicClientRegistration
+  :environment: MM_SERVICESETTINGS_ENABLEDYNAMICCLIENTREGISTRATION
+
+  - **true**: Enables Dynamic Client Registration (DCR) per RFC 7591, allowing applications to programmatically register OAuth 2.0 clients via the public API endpoint.
+  - **false**: **(Default)** Dynamic Client Registration is disabled.
+
+Enable dynamic client registration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**True**: Enables Dynamic Client Registration (DCR) allowing applications to programmatically register OAuth 2.0 clients without manual admin intervention via the ``POST /api/v4/oauth/apps/register`` endpoint.
+
+**False**: Dynamic Client Registration is disabled. OAuth 2.0 applications must be registered manually through the System Console.
+
+.. important::
+
+  **Security Warning**: When enabled, the DCR endpoint (``/api/v4/oauth/apps/register``) is **publicly accessible without authentication**. Any user or application can register OAuth clients on your Mattermost server. Only enable this setting if you understand and accept this security model, or have additional network-level access controls in place.
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableDynamicClientRegistration": false`` with options ``true`` and ``false``.        |
++-------------------------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  Cloud admins can't modify this configuration setting.
+
 .. config:setting:: integration-request-timeout
   :displayname: Integration request timeout (Integrations)
   :systemconsole: Integrations > Integration Management
