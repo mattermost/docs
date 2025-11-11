@@ -32,25 +32,39 @@ When you edit a task, you'll see the following:
   :alt: Configure tasks to be automatically marked as complete.
 
 Conditional tasks
-~~~~~~~~~~~~~~~~~
+------------------
 
-From Mattermost v11.1, tasks can be conditionally included in playbook runs based on property values or runtime conditions. This enables adaptive workflows where tasks are only presented when they're relevant to the current context.
+From Mattermost v11.1, using Mattermost in a web browser or the desktop app, tasks can be conditionally included in playbook runs based on property values or runtime conditions. This enables adaptive workflows where tasks are only presented when they're relevant to the current context. For example:
 
-Conditional tasks support the following trigger conditions:
+- **Security incidents**: Include additional forensic tasks for incidents classified as security-related.
+- **Customer tier workflows**: Show different approval processes based on customer subscription level.
+- **Geographic operations**: Include region-specific compliance tasks based on the location property.
+- **Skill-based assignments**: Automatically assign tasks to team members based on areas of expertise.
 
-- **Property-based conditions**: Tasks that appear only when specific playbook property values are set (e.g., show escalation tasks only for high-severity incidents)
-- **Status-based conditions**: Tasks that are added based on the current run status
-- **Time-based conditions**: Tasks that appear after certain time periods or at specific times
-- **User-based conditions**: Tasks that are shown based on run participants or assignees
+When you run a playbook, conditional tasks are evaluated and automatically added to or removed from the checklist based on the defined conditions. This reduces cognitive load by showing only relevant tasks and ensures that critical steps aren't overlooked in different scenarios.
 
-When a playbook run is started, conditional tasks are evaluated and automatically added to or removed from the checklist based on the defined conditions. This reduces cognitive load by showing only relevant tasks and ensures that critical steps aren't overlooked in different scenarios.
+Configure conditional logic
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Example use cases for conditional tasks:
+To set up conditional behavior in your playbook:
 
-- **Security incidents**: Include additional forensic tasks for incidents classified as security-related
-- **Customer tier workflows**: Show different approval processes based on customer subscription level  
-- **Geographic operations**: Include region-specific compliance tasks based on the location property
-- **Skill-based assignments**: Automatically assign tasks to team members based on their expertise areas
+1. Go to **Product menu > Playbooks**.
+2. Select the playbook you want to edit.
+3. Select the **Outline** tab.
+4. Under **Tasks**, select the **Conditions** option for each task.
+5. Define when the task or checklist should be included:
+
+  - **Property-based conditions**: Tasks appear only when specific playbook property values are set (e.g., show escalation tasks only for high-severity incidents).
+  - **Status-based conditions**: Tasks are added based on the current run status.
+  - **Time-based conditions**: Tasks appear after certain time periods or at specific times.
+  - **User-based conditions**: Tasks are shown based on run participants or assignees.
+
+.. note::
+
+  - Conditional tasks are evaluated at the start of each playbook run and dynamically updated as properties or conditions change during the run.
+  - You can combine multiple conditions using AND/OR logic to create complex inclusion criteria.
+  - If no conditions are set for a task, it will always be included in the playbook run.
+  - System admins and channel admins for the playbook run channel can edit task conditions via **Channel Actions**. Editing the settings in the run channel only affect that channel and don't apply to the playbook itself. To change the behavior of all future runs associated with the playbook, edit the playbook directly via the **Actions** menu.
 
 Task inbox
 ----------
