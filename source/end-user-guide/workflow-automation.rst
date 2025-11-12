@@ -50,7 +50,7 @@ Access
    - **Post status updates directly from mobile**: When you open a playbook run on mobile, a new status update button allows you to post progress updates and share status with your team while on the move or in the field.
    - **Create and manage playbook runs** for operational command at the edge.
 
-   From Mattermost v11 and mobile app v2.23.0, mobile users can access playbooks from the mobile app to :ref:`interact with playbook tasks <end-user-guide/workflow-automation/work-with-tasks:interact with playbook tasks>` and :ref:`update tasks <end-user-guide/workflow-automation/work-with-tasks:update tasks>`.
+   From Mattermost v11 and mobile app v2.32.0, mobile users can access playbooks from the mobile app to :ref:`interact with playbook tasks <end-user-guide/workflow-automation/work-with-tasks:interact with playbook tasks>` and :ref:`update tasks <end-user-guide/workflow-automation/work-with-tasks:update tasks>`.
 
    From Mattermost v10.11 and mobile app v2.31.0, mobile users can access playbooks from the mobile app in read-only mode. :ref:`Playbooks slash commands <end-user-guide/workflow-automation/interact-with-playbooks:slash commands>` are supported in the mobile app, but actions like starting runs or updating checklists aren't available through the mobile interface.
 
