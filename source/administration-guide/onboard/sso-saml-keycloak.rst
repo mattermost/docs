@@ -109,14 +109,14 @@ Set up Keycloak for Mattermost SSO
    .. image:: ../../images/keycloak_4_create_id_attribute.png
     :alt: In Keycloak, on the Mappers tab, create a protocol mapper for the ID attribute, then save your changes.
 
-    .. note:: 
-        If you're planning to sync your SAML users with LDAP within Mattermost, the ID value used here must match with your Mattermost LDAP ``ID Attribute``.
+.. note:: 
 
-   Once done your Mappers should look like this:
+  If you're planning to sync your SAML users with LDAP within Mattermost, the ID value used here must match with your Mattermost LDAP ``ID Attribute``.
 
-   .. image:: ../../images/keycloak_4_create_username_attribute_finished.png
-     :alt: Example of protocol mapper configuration. 
+Once done your Mappers should look like this:
 
+.. image:: ../../images/keycloak_4_create_username_attribute_finished.png
+  :alt: Example of protocol mapper configuration. 
 
 9. Get the metadata URL from Keycloak:
 
