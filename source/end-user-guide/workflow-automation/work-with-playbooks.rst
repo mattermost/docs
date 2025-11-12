@@ -126,6 +126,8 @@ Options include:
 
 Actions such as channel creation and adding the channel to a sidebar category are set per-playbook and applied to each run that uses that playbook.
 
+If you’re a system admin or channel admin of the run channel you can also edit these settings in the run channel, via the channel menu, in **Channel Actions**. Editing the settings in the run channel will only affect that channel and the changes aren’t applied to the playbook. Only channel admins can edit the **Channel Actions** items (such as the welcome message) but members who have access to the playbook can edit the welcome message and run behavior settings. Editing these won’t change the welcome message of a run that’s in progress - it only applies going forward. If you want to change the behavior of all future runs associated with the playbook, edit the playbook directly in the **Actions** menu.
+
 Playbook attributes
 -------------------
 
