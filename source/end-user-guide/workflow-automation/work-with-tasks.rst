@@ -50,7 +50,7 @@ From Mattermost v11.0 and mobile app v2.23.0, mobile users can perform the follo
 Mobile playbooks task management
 ----------------------------------
 
-From Mattermost v11.0 and mobile v2.23.0, mobile users can perform the following task management operations on playbook runs:
+From Mattermost v11.0 and mobile v2.32.0, mobile users can perform the following task management operations on playbook runs:
 
 Interact with playbook tasks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
