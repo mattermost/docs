@@ -31,6 +31,43 @@ When you edit a task, you'll see the following:
 .. image:: ../../images/task-actions.png
   :alt: Configure tasks to be automatically marked as complete.
 
+Conditional tasks
+------------------
+
+.. include:: ../../_static/badges/entry-ent.rst
+  :start-after: :nosearch:
+
+From Mattermost v11.1, using Mattermost in a web browser or the desktop app, tasks can be conditionally included in playbooks based on attribute values or runtime conditions. This enables adaptive workflows where tasks are only presented when they're relevant to the current context. For example:
+
+- **Security incidents**: Include additional forensic tasks for incidents classified as security-related.
+- **Customer tier workflows**: Show different approval processes based on customer subscription level.
+- **Geographic operations**: Include region-specific compliance tasks based on the location property.
+- **Skill-based assignments**: Automatically assign tasks to team members based on areas of expertise.
+
+Configure conditional logic
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To set up conditional behavior in a playbook:
+
+1. Go to **Product** |product-list| icon and select **Playbooks**.
+2. Select the playbook or run you want to add conditions to.
+3. Select the **Outline** tab.
+4. Under **Tasks**, identify a task you want to make conditional.
+5. From the **More** |more-icon-vertical| icon next to the task, select **Add condition**.
+
+   .. image:: ../../images/playbook-conditions-add.png
+     :alt: An example of a playbook condition being added.
+
+6. Select an attribute, condition, and value to define when the task should be included. Then select **Done editing**.
+
+   .. image:: ../../images/playbook-conditions-values.png
+     :alt: An example of a playbook condition with values defined.
+
+Conditional tasks are evaluated and automatically added to or removed from the checklist based on defined conditions. This reduces cognitive load by showing only relevant tasks and ensures that critical steps aren't overlooked in different scenarios.
+
+.. tip::
+  You can add up to 2 conditions per task to create an either/or condition.
+
 Task inbox
 ----------
 

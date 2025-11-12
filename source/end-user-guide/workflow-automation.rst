@@ -6,9 +6,9 @@ Workflow Automation
 
 Mattermost Playbooks provides structure, monitoring and automation for repeatable, team-based processes integrated with the Mattermost platform. Playbooks are :doc:`configurable checklists </end-user-guide/workflow-automation/work-with-tasks>` for teams to achieve :doc:`specific and predictable outcomes </end-user-guide/workflow-automation/metrics-and-goals>`, such as incident response, software release management, and logistical operations.
 
-For instance, a playbook can be configured to automatically open a dedicated channel for an incident, send template messages or task checklists to that channel, update subscribers on status changes, and so on, all through configuration.
+From Mattermost v11.1, Entry, Enterprise, and Enterprise Advanced customers can enable adaptive, conditional workflows responding in real time to changing mission or operational context. Admins can define attributes such as severity, category, or linked ticket ID, and use those attributes to hide or show tasks depending on the values of these attributes which can be seen and modified during a playbook run. Learn more about :ref:`playbook attributes <end-user-guide/workflow-automation/work-with-playbooks:playbook attributes>` and :ref:`conditional playbook tasks <end-user-guide/workflow-automation/work-with-tasks:conditional tasks>`.
 
-While Playbooks primarily focus on coordinating people and tasks, they also have integration points. You can trigger a playbook run via an incoming webhook (allowing an external tool to trigger a playbook run). Within a playbook, you can define steps that execute webhooks or call external APIs. Additionally, Playbooks can work in conjunction with plugins, keeping the entire workflow visible in Mattermost, and reducing the need to switch between apps during critical processes.
+While Playbooks primarily focus on coordinating people and tasks, they also have integration points. You can trigger a playbook run via an incoming webhook, allowing an external tool to trigger a playbook run. Within a playbook, you can define steps that execute webhooks or call external APIs. Additionally, playbooks can work in conjunction with plugins, keeping the entire workflow visible in Mattermost, and reducing the need to switch between apps during critical processes.
 
 .. toctree::
    :maxdepth: 1
@@ -34,7 +34,7 @@ Playbooks monitor channels for keywords or user actions to trigger a structured 
 Configuration
 --------------
 
-Playbooks comes pre-packaged, installed, and enabled with Mattermost server. 
+Playbooks comes pre-packaged, installed, and enabled with Mattermost server.
 
 Access
 ------
