@@ -27,7 +27,7 @@ Available slash commands include:
 Playbooks on the go
 --------------------
 
-Learn how to :ref:`access and work with playbooks on the go <end-user-guide/workflow-automation:access>` with the Mattermost mobile app.
+Learn how to `access and work with playbooks on the go <https://docs.mattermost.com/end-user-guide/workflow-automation.html#itab--Mobile--0_1-Mobile>`_ with the Mattermost mobile app.
 
 API documentation
 -----------------
