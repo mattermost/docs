@@ -34,37 +34,39 @@ When you edit a task, you'll see the following:
 Conditional tasks
 ------------------
 
-From Mattermost v11.1, using Mattermost in a web browser or the desktop app, tasks can be conditionally included in playbook runs based on property values or runtime conditions. This enables adaptive workflows where tasks are only presented when they're relevant to the current context. For example:
+.. include:: ../../_static/badges/entry-ent.rst
+  :start-after: :nosearch:
+
+From Mattermost v11.1, using Mattermost in a web browser or the desktop app, tasks can be conditionally included in playbooks based on attribute values or runtime conditions. This enables adaptive workflows where tasks are only presented when they're relevant to the current context. For example:
 
 - **Security incidents**: Include additional forensic tasks for incidents classified as security-related.
 - **Customer tier workflows**: Show different approval processes based on customer subscription level.
 - **Geographic operations**: Include region-specific compliance tasks based on the location property.
 - **Skill-based assignments**: Automatically assign tasks to team members based on areas of expertise.
 
-When you run a playbook, conditional tasks are evaluated and automatically added to or removed from the checklist based on the defined conditions. This reduces cognitive load by showing only relevant tasks and ensures that critical steps aren't overlooked in different scenarios.
-
 Configure conditional logic
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To set up conditional behavior in your playbook:
+To set up conditional behavior in a playbook:
 
-1. Go to **Product menu > Playbooks**.
-2. Select the playbook you want to edit.
+1. Go to **Product** |product-list| icon and select **Playbooks**.
+2. Select the playbook or run you want to add conditions to.
 3. Select the **Outline** tab.
-4. Under **Tasks**, select the **Conditions** option for each task.
-5. Define when the task or checklist should be included:
+4. Under **Tasks**, identify a task you want to make conditional.
+5. From the **More** |more-icon-vertical| icon next to the task, select **Add condition**.
 
-  - **Property-based conditions**: Tasks appear only when specific playbook property values are set (e.g., show escalation tasks only for high-severity incidents).
-  - **Status-based conditions**: Tasks are added based on the current run status.
-  - **Time-based conditions**: Tasks appear after certain time periods or at specific times.
-  - **User-based conditions**: Tasks are shown based on run participants or assignees.
+   .. image:: ../../images/playbook-conditions-add.png
+     :alt: An example of a playbook condition being added.
 
-.. note::
+6. Select an attribute, condition, and value to define when the task should be included. Then select **Done editing**.
 
-  - Conditional tasks are evaluated at the start of each playbook run and dynamically updated as properties or conditions change during the run.
-  - You can combine multiple conditions using AND/OR logic to create complex inclusion criteria.
-  - If no conditions are set for a task, it will always be included in the playbook run.
-  - System admins and channel admins for the playbook run channel can edit task conditions via **Channel Actions**. Editing the settings in the run channel only affect that channel and don't apply to the playbook itself. To change the behavior of all future runs associated with the playbook, edit the playbook directly via the **Actions** menu.
+   .. image:: ../../images/playbook-conditions-values.png
+     :alt: An example of a playbook condition with values defined.
+
+Conditional tasks are evaluated and automatically added to or removed from the checklist based on defined conditions. This reduces cognitive load by showing only relevant tasks and ensures that critical steps aren't overlooked in different scenarios.
+
+.. tip::
+  You can add up to 2 conditions per task to create an either/or condition.
 
 Task inbox
 ----------

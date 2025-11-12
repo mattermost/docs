@@ -126,53 +126,66 @@ Options include:
 
 Actions such as channel creation and adding the channel to a sidebar category are set per-playbook and applied to each run that uses that playbook.
 
-Playbook properties
+Playbook attributes
 -------------------
 
-From Mattermost v11.1, using Mattermost in a web browser or the desktop app, you can define custom properties for your playbooks to create adaptive workflows that respond to changing mission or operational context. Properties such as severity, category, or linked ticket ID can be configured to trigger context-aware tasks and enable intelligent adaptation to situational conditions.
+.. include:: ../../_static/badges/entry-ent.rst
+  :start-after: :nosearch:
 
-Properties enable you to:
+From Mattermost v11.1, using Mattermost in a web browser or the desktop app, you can define custom attributes for your playbooks to create adaptive workflows that respond to changing mission or operational context. Attributes such as severity, category, or linked ticket ID can be configured to trigger context-aware tasks and enable intelligent adaptation to situational conditions.
+
+Attributes enable you to:
 
 - Define contextual information that varies between runs (e.g., incident severity, priority level, customer type).
-- Trigger different tasks or workflows based on property values.
+- Trigger different tasks or workflows based on attribute values.
 - Create conditional logic in your playbooks for more sophisticated automation.
 - Maintain consistent data collection across runs.
 
-Playbook properties are visible to all run participants and can be referenced in status updates.
+Playbook attributes are visible to all run participants and can be referenced in status updates.
 
-Configure properties
+Configure attributes
 ~~~~~~~~~~~~~~~~~~~~~
 
-To add properties to your playbook:
+To configure attributes:
 
 1. Go to the **Product** |product-list| icon and select **Playbooks**.
-2. Select the playbook you want to edit.
-3. Select the **Outline** tab.
-4. Select **Properties** in the left-hand menu.
-5. Select **+ Add property** to create a new property.
+2. Select the playbook you want to define attributes for.
+3. Select the **Attributes** tab.
+4. Select **Add your first attribute**.
 
-For each property, you can configure:
+   .. image:: ../../images/playbook-attributes-create-first.png
+     :alt: An example of the Playbooks Attributes tab with no attributes defined.
 
-- **Property name**: A descriptive name for the property.
-- **Property type**: Choose from text, number, single-select, multi-select, or boolean value types.
-- **Default value**: Set a default value that is pre-filled when the playbook is run.
-- **Required**: Mark properties as required to ensure they're always completed before running a playbook.
+5. Enter an attribute name and specify its type as **Text**, **URL**, **Select**, or **Multi-Select**.
+6. For **Select** and **Multi-Select** types, define the available values.
+7. Select **Add attribute** to add additional attributes and values.
 
-Use property values to inform decision-making and task execution. Specify required property values before running the playbook. You can update property values during a run, if needed.
+   .. image:: ../../images/playbook-attributes-create-second.png
+     :alt: An example of the Playbooks Attributes tab with one attribute and multiple values defined.
+
+.. tip::
+
+  - Control how attribute-based conditions appear in a playbook outline by dragging and dropping them into your preferred order.
+  - Use the **Actions** menu to rename, duplicate, or delete attributes.
+
+  .. image:: ../../images/playbook-attribute-actions.png
+     :alt: An example of the Playbooks Attributes tab with the Actions menu open.
 
 Conditional playbooks
 ---------------------
 
-From Mattermost v11.1, using Mattermost in a web browser or the desktop app, you can create conditional playbooks that adapt their behavior based on property values or runtime conditions. This enables sophisticated workflows that respond intelligently to changing circumstances.
+.. include:: ../../_static/badges/entry-ent.rst
+  :start-after: :nosearch:
 
-Conditional playbooks support:
+From Mattermost v11.1, using Mattermost in a web browser or the desktop app, you can create conditional playbooks with more sophisticated workflows that respond intelligently to changing circumstances. By leveraging playbook attributes, you can define conditions that determine which tasks and checklists are included in a playbook run based on real-time data.
 
-- **Conditional tasks**: Tasks that are only added to runs when specific conditions are met.
-- **Dynamic checklists**: Checklists that change based on property values.
-- **Context-aware automation**: Automated actions that trigger based on situational conditions.
-- **Adaptive workflows**: Workflows that modify their execution path based on real-time data.
+Conditional playbooks enable you to:
 
-See the :ref:`Work with tasks <end-user-guide/workflow-automation/work-with-tasks:conditional tasks>` documentation for more information about configuring conditional tasks within playbooks.
+- Add tasks that only apply when specific conditions are met.
+- Define tasks and checklists that change based on attribute values.
+- Create adaptive workflows that change based on real-time data.
+
+See the :ref:`conditional tasks <end-user-guide/workflow-automation/work-with-tasks:conditional tasks>` documentation for details on configuring conditional tasks within playbooks.
 
 Run metrics
 -----------
