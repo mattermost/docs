@@ -165,7 +165,7 @@ The following navigation keyboard shortcuts are supported only in the Mattermost
 
 .. tab:: Desktop app v6.x
 
-  Mattermost desktop app v6.0 introduces the ability to keep multiple workspaces open at the same time and work across them without constant switching contexts. The following keyboard shortcuts help you navigate between workspaces and product tabs:
+  Mattermost desktop app v6.0 introduces the ability to keep multiple workspaces open at the same time and work across them without constant switching contexts. The following keyboard shortcuts help you navigate multiple views:
 
   +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
   | On Windows & Linux                   | On macOS                      | Description                                                                                     |
