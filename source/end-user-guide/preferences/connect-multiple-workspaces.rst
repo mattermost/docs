@@ -135,7 +135,7 @@ Open multiple workspace contexts
 
 From desktop v6.0, you can keep multiple workspaces open at the same time and work across them without constant switching to improve situational awareness and operational efficiency. This capability is especially useful for organizations that operate in distributed or multi-domain environments, as it enhances cross-system interoperability and command-level situational awareness.
 
-Select the **New tab** |plus| icon at the top of the desktop app to open a new tab for the current workspace. Workspace tabs have their own notifications and badges. You can drag and drop to reorder the tabs in the main desktop window.
+Select the **New tab** |plus| icon at the top of the desktop app to open a new tab for the current workspace. You can drag and drop to reorder the tabs in the main desktop window.
 
 Open internal Mattermost links in a new tab or window by right-clicking on the link and selecting **Open in new tab** or **Open in new window**.
 

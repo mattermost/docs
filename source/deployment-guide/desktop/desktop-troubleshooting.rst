@@ -26,11 +26,6 @@ How do I download app diagnostics?
 
 From Mattermost desktop v5.3, you can download a diagnostics text file via **Help > Run diagnostics**, which can be attached to a Support ticket.
 
-Why can't I run multiple Mattermost workspaces at the same time?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Multi-view functionality is available from Mattermost desktop v6.0. To use multi-view, ensure you have installed desktop app v6.0 or later. If you are using an earlier version of the desktop app, you can only run 1 Mattermost workspace at a time.
-
 Deep links open in the wrong workspace in multi-view
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
