@@ -25,14 +25,10 @@ We have done performance testing of 60,000 concurrent users and 60 million posts
 
 Mattermost provides an open source, well-documented `load test simulator <https://github.com/mattermost/mattermost-load-test>`__ to verify that your Mattermost deployment can achieve the stated scale benchmarks ahead of production deployment.
 
-How do I deploy the open source Mattermost Team Edition under an MIT license?
------------------------------------------------------------------------------
+What happens if I have more than 10,000 messages in my database and have upgraded to Entry?
+-------------------------------------------------------------------------------------------
 
-The open source Mattermost Team Edition is functionally identical to the commercial Mattermost Enterprise Edition in its free “team mode”, but there is no ability to unlock enterprise features. It deploys as a single Linux binary with PostgreSQL under an MIT license.
-
-We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to unlock Enterprise features seamlessly should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
-
-To deploy the Team Edition, download the :doc:`Mattermost Team Edition binary </product-overview/version-archive>`, and follow our standard install guides. The same applies to server upgrades.
+Entry limits the number of messages shown in the end user inteface for channel history and search. All records are retained in the database. Upgrading to a paid version of Mattermost will unlock this and other Entry limitations. Migrating to Team Edition will also unlock full history of channels, but will limit what features are available.
 
 What are the limitations for embargoed countries?
 -------------------------------------------------
