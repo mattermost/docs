@@ -31,8 +31,6 @@ This error occurs when:
 - Creating new users would exceed the license user limit.
 - Activating deactivated users would exceed the license user limit.
 
-From Mattermost v10.11, Mattermost licenses enforce a hard seat limit. When all licensed seats are in use, new users can't be added or log in to the workspace until seats are freed or your license is expanded.
-
 To resolve this error, system administrators can:
 
 - :ref:`Deactivate users <administration-guide/configure/user-management-configuration-settings:deactivate users>` to reduce the active user count below the license limit.
