@@ -821,7 +821,7 @@ Enable last active time
   :displayname: Enable custom user groups (Users and Teams)
   :systemconsole: Site Configuration > Users and Teams
   :configjson: ServiceSettings.EnableCustomGroups
-  :environment: MM_SERVICESETTINGS.ENABLECUSTOMGROUPS
+  :environment: MM_SERVICESETTINGS_ENABLECUSTOMGROUPS
   :description: This setting controls whether users with appropriate permissions can create custom user groups, and whether users can @mention custom user groups in Mattermost conversations. Default is **true**.
 
   - **true**: **(Default)** Users with appropriate permissions can create custom user groups, and users can @mention custom user groups in Mattermost conversations.
@@ -833,14 +833,14 @@ Enable custom user groups
 +---------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 | - **true**: **(Default)** Users with appropriate permissions can create custom user groups,       | - System Config path: **Site Configuration > Users and Teams**                     |
 |   and users can @mention custom user groups in Mattermost conversations.                          | - ``config.json`` setting: ``ServiceSettings`` > ``EnableCustomGroups`` > ``true`` |
-| - **false**: Custom user groups cannot be created.                                                | - Environment variable: ``MM_SERVICESETTINGS.ENABLECUSTOMGROUPS``                  |
+| - **false**: Custom user groups cannot be created.                                                | - Environment variable: ``MM_SERVICESETTINGS_ENABLECUSTOMGROUPS``                  |
 +---------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 
 .. config:setting:: user-statistics-update-time
   :displayname: User statistics update time (Users and Teams)
   :systemconsole: Site Configuration > Users and Teams
   :configjson: .ServiceSettings.RefreshPostStatsRunTime
-  :environment: MM_SERVICESETTINGS.REFRESHPOSTSTATSRUNTIME
+  :environment: MM_SERVICESETTINGS_REFRESHPOSTSTATSRUNTIME
   :description: Set the server time for updating the user post statistics, including each user's total message count, and the timestamp of each user's most recently sent message. Default is **00:00**.
 
 User statistics update time
@@ -849,7 +849,7 @@ User statistics update time
 +--------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
 | Set the server time for updating the user post statistics, including each user's total     | - System Config path: **Site Configuration > Users and Teams**                           |
 | message count, and the timestamp of each user's most recently sent message.                | - ``config.json`` setting: ``ServiceSettings`` > ``RefreshPostStatsRunTime`` > ``00:00`` |
-|                                                                                            | - Environment variable: ``MM_SERVICESETTINGS.REFRESHPOSTSTATSRUNTIME``                   |
+|                                                                                            | - Environment variable: ``MM_SERVICESETTINGS_REFRESHPOSTSTATSRUNTIME``                   |
 | Must be a 24-hour time stamp in the form ``HH:MM`` based on the local time of the server.  |                                                                                          |
 | Default is **00:00**.                                                                      |                                                                                          |
 +--------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
@@ -2282,7 +2282,7 @@ The following self-hosted deployment settings are only configurable in the ``con
   :displayname: Enable cross-team search
   :systemconsole: N/A
   :configjson: ServiceSettings.EnableCrossTeamSearch
-  :environment: SERVICESETTINGS.ENABLECROSSTEAMSEARCH
+  :environment: SERVICESETTINGS_ENABLECROSSTEAMSEARCH
   :description: Disable the ability to search all channels the user is a member of across all teams or a specific team, and search all channels the user is a member of within the current team only. Enabled by default.
 
 Cross-team search
