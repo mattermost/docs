@@ -105,6 +105,16 @@ Configure Mattermost using group policy settings
    .. image:: ../../images/desktop/msi_gpo/msi_gpo_installation_test_00012.png
       :alt: Add the default servers by name and by URL, then select OK twice to close the Edit group policy application.
 
+Multi-view and Group Policies
+-----------------------------
+
+From desktop v6.0, users can run multiple Mattermost workspaces at the same time in the desktop app. Use existing methods to pre-provision multiple workspaces for users, as follows:
+
+- On Windows, seed the approved list using the ``DefaultServerList`` Group Policy.
+- For scripted installs, seed ``config.json`` on first run to include multiple entries in the ``teams`` array. See the :doc:`Silent Windows desktop distribution </deployment-guide/desktop/silent-windows-desktop-distribution>` documentation for details.
+- To prevent users from adding or removing workspaces, use the existing ``EnableServerManagement`` Group Policy.
+- Disable ``EnableAutoUpdates`` to turn off automatic updates.
+
 Verify group policy settings have been applied
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -169,7 +179,6 @@ Perform a silent installation of the MSI by running the following command:
 
   Ensure the desktop app is closed before proceeding with a silent installation. Because it's a silent installation, Mattermost won't prompt you to close the desktop app.
 
-
 **Command Prompt:** ``msiexec /i mattermost-desktop-v6.0.0-x64.msi /qn``
 
 **PowerShell:** ``Start-Process -FilePath "$env:systemroot\system32\msiexec.exe" -ArgumentList '/i mattermost-desktop-v6.0.0-x64.msi /qn'``
@@ -181,7 +190,6 @@ From version v5.9.0 of the Mattermost desktop app, the following silent MSI inst
 
 Install for all users
 ~~~~~~~~~~~~~~~~~~~~~
-
 
 Use the ``ALLUSERS`` parameter to install the MSI for all users:
 
@@ -195,7 +203,6 @@ Use the ``ALLUSERS`` parameter to install the MSI for all users:
 
 Specify an install directory
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 Use the ``APPLICATIONFOLDER`` parameter to specify an installation directory for the MSI installation:
 

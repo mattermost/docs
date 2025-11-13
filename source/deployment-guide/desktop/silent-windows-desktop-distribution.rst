@@ -35,6 +35,11 @@ You can distribute the official Windows desktop app silently to end users, pre-c
             echo       "name": "core",
             echo       "url": "https://community.mattermost.com",
             echo       "order": 0
+            echo     },
+            echo     {
+            echo       "name": "hq",
+            echo       "url": "https://hq.example.com",
+            echo       "order": 1
             echo     }
             echo   ],
             echo   "showTrayIcon": true,
