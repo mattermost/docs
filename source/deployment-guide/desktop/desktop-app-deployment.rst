@@ -33,11 +33,9 @@ Learn about installation, configuration, and management options for deploying th
     /deployment-guide/desktop/desktop-msi-installer-and-group-policy-install.rst
     /deployment-guide/desktop/desktop-custom-dictionaries.rst
     /deployment-guide/desktop/desktop-app-managed-resources.rst
-    /deployment-guide/desktop/multi-view-desktop-deployment.rst
 
 * :doc:`Distribute a custom desktop app </deployment-guide/desktop/distribute-a-custom-desktop-app>`
 * :doc:`Silent Windows desktop distribution </deployment-guide/desktop/silent-windows-desktop-distribution>`
 * :doc:`MSI installer and group policy guide </deployment-guide/desktop/desktop-msi-installer-and-group-policy-install>`
 * :doc:`Custom dictionaries for Windows and Linux </deployment-guide/desktop/desktop-custom-dictionaries>`
 * :doc:`Managed resources for the desktop app </deployment-guide/desktop/desktop-app-managed-resources>`
-* :doc:`Multi-View Desktop App deployment (v6.0+) </deployment-guide/desktop/multi-view-desktop-deployment>`

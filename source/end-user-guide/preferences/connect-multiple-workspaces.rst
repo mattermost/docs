@@ -4,17 +4,7 @@ Connect to multiple Mattermost workspaces
 .. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
-
-
 Using the Mattermost desktop or mobile app, you can connect to multiple Mattermost servers from a single interface, and manage system permissions.
-
-.. note::
-
-  You can't create and manage multiple server connections when using Mattermost in a web browser.
-
-.. important::
-
-  **Multi-View Desktop App (v6.0+)**: Starting from desktop app v6.0.0, users can take advantage of the Multi-View Desktop App to simultaneously view and coordinate multiple workspaces in a unified interface. This enhancement provides enhanced operational visibility and cross-system interoperability. Learn more about :doc:`Multi-View desktop app features </end-user-guide/preferences/multi-view-desktop-app>`.
 
 Add a server
 ------------
@@ -44,7 +34,6 @@ Add a server
     .. image:: ../../images/desktop-server-add-2.jpg
       :alt: Desktop app server setup dialog showing the optional pre-authentication secret field.
 
-
   5. Select **Add**.
 
 .. tab:: Mobile
@@ -66,7 +55,6 @@ Add a server
       :width: 300px
 
   5. Tap **Done**.
-
 
 Edit a server
 --------------
@@ -121,6 +109,11 @@ Removing a server from your desktop app doesn't delete its data. You can add the
     :width: 400px
     :alt: In the Mattermost mobile app, swipe left on an existing server connection entry to delete the connection.
 
+Switch between workspaces
+--------------------------
+
+Select a workspace from the **Servers** list in the top left of the desktop app. See :doc:`keyboard shortcuts </end-user-guide/collaborate/keyboard-shortcuts>` for more navigation options.
+
 Manage system permissions
 -------------------------
 
@@ -136,3 +129,20 @@ Granting a system permission sets it to **Accept**, and revoking it sets it to *
   - You can't manage system permissions when using the Mattermost mobile app.
   - You'll be prompted to accept or deny notifications after adding a new server connection, and any time you open the desktop app if you haven't explicitly accepted or denied system permissions.
   - You may also need to enable notifications for Mattermost within your operating system preferences.
+
+Open multiple workspace contexts
+---------------------------------
+
+From desktop v6.0, you can keep multiple workspaces open at the same time and work across them without constant switching to improve situational awareness and operational efficiency. This capability is especially useful for organizations that operate in distributed or multi-domain environments, as it enhances cross-system interoperability and command-level situational awareness.
+
+Select the **New tab** |plus| icon at the top of the desktop app to open a new tab for the current workspace. Workspace tabs have their own notifications and badges. You can drag and drop to reorder the tabs in the main desktop window.
+
+Open internal Mattermost links in a new tab or window by right-clicking on the link and selecting **Open in new tab** or **Open in new window**.
+
+- Convert tabs to new windows by right-clicking the tab label and selecting **Move to new window**. 
+- Convert pop-out windows back to tabs in the main window by right-clicking on the window title and selecting **Move to main window**.
+- Close pop-out windows by right-clicking on the window title and selecting **Close window**.
+
+.. tip::
+
+  You can manage windows and tabs from the Desktop app's **File** menu, and review all open tabs from the **Windows** menu.
