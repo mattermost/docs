@@ -6,6 +6,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 ```{include} common-esr-support.md
 ```
 
+
 (release-v2-33-1)=
 ## 2.33.1 Release
  - Release Date: October 21, 2025
