@@ -20,7 +20,7 @@ Desktop apps
 .. csv-table::
     :header: "Operating System", "Self-Hosted Technical Requirement", "Cloud Technical Requirement"
 
-    "Windows", "Windows 10+", "Windows 10+"
+    "Windows", "Windows 11+", "Windows 11+"
     "Mac", "macOS 12+", "macOS 12+"
     "Linux", "Ubuntu LTS releases 22.04 or later", "Ubuntu LTS releases 22.04 or later"
 
@@ -38,7 +38,7 @@ PC web
 .. csv-table::
     :header: "Browser", "Self-Hosted Technical Requirement", "Cloud Technical Requirement"
 
-    "Chrome", "v138+", "v138+"
+    "Chrome", "v140+", "v140+"
     "Firefox", "v140+", "v140+"
     "Safari", "v17.4+", "v17.4+"
     "Edge", "v140+", "v140+"
@@ -66,8 +66,8 @@ Mobile web
 .. csv-table::
     :header: "Browser", "Technical Requirement"
 
-    "iOS", "iOS 15.1+ with Safari 17.4+ or Chrome 138+"
-    "Android", "Android 7+ with Chrome 138+"
+    "iOS", "iOS 15.1+ with Safari 17.4+ or Chrome 140+"
+    "Android", "Android 7+ with Chrome 140+"
 
 Email client
 ^^^^^^^^^^^^
