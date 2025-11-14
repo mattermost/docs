@@ -64,6 +64,24 @@ Select **Add an Agent** to create a new Agent, then configure the agent settings
 | **Enable Tools** | By default some tool use is enabled to allow for features such as integrations with JIRA. Disabling this allows use of models that do not support or are not very good at tool use. Some features will not work without tools. |
 | **Access Control** | Set which teams, channels, and users can access this agent |
 
+#### LLM Specific Settings
+
+Some LLMs have additional configuration that can enable rich features, like Web Search. 
+
+##### OpenAI, OpenAI Compatible
+
+| Setting | Description |
+|---------|-------------|
+| **Use Responses API** | OpenAI has introduced a new Responses API to the OpenAI API specification. This API allows for richer tool integration like reasoning, and native tool support like Web Search. |
+| **Enable Web Search** | Enabling web search will allow your Agent to leverage OpenAI's (or compatible) native web search tool, enabling Agents to respond with information more recent than the model's cutoff date. Responses API must be enabled in order to configure this setting. |
+
+##### Anthropic
+
+| Setting | Description |
+|---------|-------------|
+| **Enable Web Search** | Enabling web search will allow your Agent to leverage Anthropic's native web search tool, enabling Agents to respond with information more recent than the model's cutoff date.
+
+
 Select **Save** to create the agent.
 
 ### Provider configuration
@@ -164,6 +182,44 @@ The plugin configuration is stored in the Mattermost database. To backup:
 
 1. Ensure your regular Mattermost backup includes plugin configurations
 2. For larger deployments, consider backing up indexed vector data separately
+
+### Configuration format
+
+The plugin uses a service-based architecture stored in the Mattermost database at `PluginSettings.Plugins["mattermost-ai"]`:
+
+- **Services** define LLM provider configurations (API keys, models, endpoints)
+- **Bots** reference services by ID and define agent personalities and access controls
+
+This separation allows multiple bots to share the same LLM service configuration.
+
+**Configuration structure:**
+```json
+{
+  "config": {
+    "services": [
+      {
+        "id": "550e8400-e29b-41d4-a716-446655440000",
+        "type": "openai",
+        "apiKey": "sk-...",
+        "defaultModel": "gpt-4o"
+      }
+    ],
+    "bots": [
+      {
+        "id": "bot-001",
+        "name": "ai",
+        "displayName": "AI Assistant",
+        "serviceID": "550e8400-e29b-41d4-a716-446655440000",
+        "customInstructions": "You are a helpful assistant."
+      }
+    ]
+  }
+}
+```
+
+**Supported service types:** `openai`, `anthropic`, `azure`, `openaicompatible`, `asage`, `cohere`
+
+**Legacy format:** Older configurations with embedded service objects within bots are automatically migrated to the current format on plugin startup.
 
 ## Troubleshooting
 
