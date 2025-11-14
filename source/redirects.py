@@ -2864,6 +2864,8 @@ redirects_map = {
 # The integrations directory and its contents have been archived in FY23 Q2 and all applicable content has been moved from docs.mm.com to developers.mm.com.
 "integrate/github.html":
         "https://docs.mattermost.com/integrations-guide/github.html",
+"integrate/github-interoperability.html#configuration":
+        "https://docs.mattermost.com/integrations-guide/github.html#mattermost-configuration",
 "integrate/gitlab.html":
         "https://docs.mattermost.com/integrations-guide/gitlab.html",
 "integrate/jira.html":

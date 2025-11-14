@@ -126,9 +126,68 @@ Options include:
 
 Actions such as channel creation and adding the channel to a sidebar category are set per-playbook and applied to each run that uses that playbook.
 
-If you’re a system admin or channel admin of the run channel you can also edit these settings in the run channel, via the channel menu, in **Channel Actions**. Editing the settings in the run channel will only affect that channel and the changes aren’t applied to the playbook. Only channel admins can edit the **Channel Actions** items (such as the welcome message) but members who have access to the playbook can edit the welcome message and run behavior settings. Editing these won’t change the welcome message of a run that’s in progress - it only applies going forward.
+If you’re a system admin or channel admin of the run channel you can also edit these settings in the run channel, via the channel menu, in **Channel Actions**. Editing the settings in the run channel will only affect that channel and the changes aren’t applied to the playbook. Only channel admins can edit the **Channel Actions** items (such as the welcome message) but members who have access to the playbook can edit the welcome message and run behavior settings. Editing these won’t change the welcome message of a run that’s in progress - it only applies going forward. If you want to change the behavior of all future runs associated with the playbook, edit the playbook directly in the **Actions** menu.
 
-If you want to change the behavior of all future runs associated with the playbook, edit the playbook directly in the **Actions** menu.
+Playbook attributes
+-------------------
+
+.. include:: ../../_static/badges/entry-ent.rst
+  :start-after: :nosearch:
+
+From Mattermost v11.1, using Mattermost in a web browser or the desktop app, you can define custom attributes for your playbooks to create adaptive workflows that respond to changing mission or operational context. Attributes such as severity, category, or linked ticket ID can be configured to trigger context-aware tasks and enable intelligent adaptation to situational conditions.
+
+Attributes enable you to:
+
+- Define contextual information that varies between runs (e.g., incident severity, priority level, customer type).
+- Trigger different tasks or workflows based on attribute values.
+- Create conditional logic in your playbooks for more sophisticated automation.
+- Maintain consistent data collection across runs.
+
+Playbook attributes are visible to all run participants and can be referenced in status updates.
+
+Configure attributes
+~~~~~~~~~~~~~~~~~~~~~
+
+To configure attributes:
+
+1. Go to the **Product** |product-list| icon and select **Playbooks**.
+2. Select the playbook you want to define attributes for.
+3. Select the **Attributes** tab.
+4. Select **Add your first attribute**.
+
+   .. image:: ../../images/playbook-attributes-create-first.png
+     :alt: An example of the Playbooks Attributes tab with no attributes defined.
+
+5. Enter an attribute name and specify its type as **Text**, **URL**, **Select**, or **Multi-Select**.
+6. For **Select** and **Multi-Select** types, define the available values.
+7. Select **Add attribute** to add additional attributes and values.
+
+   .. image:: ../../images/playbook-attributes-create-second.png
+     :alt: An example of the Playbooks Attributes tab with one attribute and multiple values defined.
+
+.. tip::
+
+  - Control how attribute-based conditions appear in a playbook outline by dragging and dropping them into your preferred order.
+  - Use the **Actions** menu to rename, duplicate, or delete attributes.
+
+  .. image:: ../../images/playbook-attribute-actions.png
+     :alt: An example of the Playbooks Attributes tab with the Actions menu open.
+
+Conditional playbooks
+---------------------
+
+.. include:: ../../_static/badges/entry-ent.rst
+  :start-after: :nosearch:
+
+From Mattermost v11.1, using Mattermost in a web browser or the desktop app, you can create conditional playbooks with more sophisticated workflows that respond intelligently to changing circumstances. By leveraging playbook attributes, you can define conditions that determine which tasks and checklists are included in a playbook run based on real-time data.
+
+Conditional playbooks enable you to:
+
+- Add tasks that only apply when specific conditions are met.
+- Define tasks and checklists that change based on attribute values.
+- Create adaptive workflows that change based on real-time data.
+
+See the :ref:`conditional tasks <end-user-guide/workflow-automation/work-with-tasks:conditional tasks>` documentation for details on configuring conditional tasks within playbooks.
 
 Run metrics
 -----------
