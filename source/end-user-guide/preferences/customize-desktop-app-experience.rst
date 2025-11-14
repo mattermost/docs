@@ -19,7 +19,9 @@ You can customize your desktop app further with additional settings. Select the 
 
   - **Download Location**: Specify where on your machine you want files to be downloaded from the desktop app.
   - **Show icon in the notification area**: The Mattermost icon displays in the notification area. You can hide this icon if preferred. Restart the desktop app to apply changes to this setting.
-  - **Open app in full screen**: Configure the desktop app to open in fullscreen. You can also toggle this setting using the following CLI command: ``open release/mac/Mattermost.app --args --fullscreen true or open release/mac/Mattermost.app --args -f true``
+  - **Synchronize Desktop App theme with server**: The desktop app theme automatically matches the theme set on your primary Mattermost server. Disable this setting to manage desktop app themes independently.
+  - **Open app in full screen**: Configure the desktop app to open in fullscreen. Disable this setting to open the app in a windowed view.
+  - **Maximum number of open views**: From Desktop v6.0, set the maximum number of open tabs and windows per workspace. When a limit is set, Mattermost prompts you to close tabs or windows when the limit is exceeded. Leave this field blank for no maximum limit.
 
   Notifications
   ~~~~~~~~~~~~~~
@@ -43,7 +45,7 @@ You can customize your desktop app further with additional settings. Select the 
   Servers
   ~~~~~~~
 
-  - **Add and manage server connections**: :doc:`Learn more </end-user-guide/preferences/connect-multiple-workspaces>` about connecting your desktop app to multiple Mattermost workspaces.
+  - **Add and manage server connections**: Learn more about :doc:`connecting your desktop app to multiple Mattermost workspaces </end-user-guide/preferences/connect-multiple-workspaces>`.
 
   Advanced
   ~~~~~~~~~
@@ -67,8 +69,10 @@ You can customize your desktop app further with additional settings. Select the 
   - **Start app on login**: The desktop app starts up automatically when you log in to your machine. You can disable this if preferred.
   - **Launch app minimized**: Configure the desktop app to launch minimized in the system tray.
   - **Icon color**: Display a light, dark, or system default-driven Mattermost icon.
-  - **Leave app running in notification area when application window is closed**: When closing the desktop app, you’re prompted to confirm whether you want to permanently close the app. Disable this confirmation by selecting **Don’t ask again**.Silence these notifications by selecting **Don’t show again**.  Restart the desktop app to apply changes to this setting.
-  - **Open app in full screen**:
+  - **Leave app running in notification area when application window is closed**: When closing the desktop app, you’re prompted to confirm whether you want to permanently close the app. Disable this confirmation by selecting **Don’t ask again**. Silence these notifications by selecting **Don’t show again**. Restart the desktop app to apply changes to this setting.
+  - **Open app in full screen**: Configure the desktop app to open in fullscreen. Disable this setting to open the app in a windowed view.
+  - **Synchronize Desktop App theme with server**: The desktop app theme automatically matches the theme set on your primary Mattermost server. Disable this setting to manage desktop app themes independently.
+  - **Maximum number of open views**: From Desktop v6.0, set the maximum number of open tabs and windows per workspace. When a limit is set, Mattermost prompts you to close tabs or windows when the limit is exceeded. Leave this field blank for no maximum limit.
 
   Notifications
   ~~~~~~~~~~~~~~
@@ -91,7 +95,7 @@ You can customize your desktop app further with additional settings. Select the 
   Servers
   ~~~~~~~
 
-  - **Add and manage server connections**: :doc:`Learn more </end-user-guide/preferences/connect-multiple-workspaces>` about connecting your desktop app to multiple Mattermost workspaces.
+  - **Add and manage server connections**: Learn more about :doc:`connecting your desktop app to multiple Mattermost workspaces </end-user-guide/preferences/connect-multiple-workspaces>`.
 
   Advanced
   ~~~~~~~~
