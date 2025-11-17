@@ -22,10 +22,39 @@ If you upgrade from a release earlier than v11.1, please read the other [Importa
 TBD
 
 ### Improvements
-TBD
+
+#### User Interface (UI)
+ - Pre-packaged Zoom plugin [v1.10.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.10.0).
+ - Pre-packaged Agents plugin [v1.6.0](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.6.0).
+ - Pre-packaged ServiceNow plugin [v2.4.0](https://github.com/mattermost/mattermost-plugin-servicenow/releases/tag/v2.4.0), MS Calendar plugin [v1.4.0](https://github.com/mattermost/mattermost-plugin-mscalendar/releases/tag/v1.4.0), and Channel Export plugin [v1.3.0](https://github.com/mattermost/mattermost-plugin-channel-export/releases/tag/v1.3.0).
+ - Enabled thread popouts in the browser.
+ - Improved license and plan name clarity throughout the user interface. License settings and the **About** modal now display specific plan names (Professional, Enterprise, Entry) instead of the generic "Enterprise Edition" label, reducing confusion between edition and plan terminology.
+ - Added AI-enabled rewriting of messages for servers with the Agents plugin.
+ - Applicable posts are now marked as AI-generated.
+
+#### Administration
+ - Introduced authentication token generation for Hosted Push Notification Service.
+ - Added search backend type to the Support Packet.
+ - Added SAML provider type to the Support Packet.
+ - Permission schemes now fully expose controls for managing other users' integrations (Webhooks, Slash Commands, OAuth Apps) in the System Console for greater administrative clarity. Additionally, permissions for managing your own integrations have been renamed for consistency, and a new configuration option allows administrators to enforce Incoming Webhook channel locking.
+ - Added an authorization metadata endpoint and Dynamic Client Registration of Confidential OAuth Apps.
+ - Added OAuth public client support through DCR and PKCE for public/confidential clients.
+ - Added support for a resource parameter with OAuth.
+ - Added ability to create OAuth public clients through the **Integrations** page.
+ - Added ``http.Flusher`` support to the plugin RPC layer. 
 
 ### Bug Fixes
-TBD
+ - Fixed a server panic that could occur when patching channel moderations with restricted permissions.
+ - Fixed the justification of sidebar icons for plugins.
+ - Fixed an issue with the translation of "Until <time>" text for custom statuses.
+ - Fixed an infinite loop on the shared channels tooltip for users when the remote cluster was not available.
+ - Fixed an issue where guest users could not log in via SAML when "Ignore Guest Users when Synchronizing with AD/LDAP" was enabled.
+ - Fixed an issue where length validation was missing for LDAP user fields.
+ - Fixed an issue where some modals would appear when editing messages.
+ - Fixed an issue where the slash command autocomplete did not preserve user input case when forwarding pretext to backend.
+ - Fixed an issue where some text on the signup page was not translatable.
+ - Fixed an issue where thread popouts did not show the current user's status.
+ - Fixed an issue where clicking on a permalink to a reply in another thread would not navigate the main window. 
 
 ### Known Issues
 TBD
