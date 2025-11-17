@@ -9,6 +9,29 @@
 ```{include} common-esr-support-upgrade.md
 ```
 
+(release-v11.2-feature-release)=
+## Release v11.2 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
+
+**Release day: 2025-12-16**
+
+```{Important}
+If you upgrade from a release earlier than v11.1, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
+```
+
+### Compatibility
+TBD
+
+### Improvements
+TBD
+
+### Bug Fixes
+TBD
+
+### Known Issues
+TBD
+
+---
+
 (release-v11.1-feature-release)=
 ## Release v11.1 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
