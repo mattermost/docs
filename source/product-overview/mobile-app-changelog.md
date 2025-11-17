@@ -17,10 +17,11 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - iPhone 6s devices and later with iOS 15.1+ are required.
 
 ### Improvements
- - Placeholder for improvements
+ - Added support for playbook checklists.
 
 ### Bug Fixes
- - Placeholder for bug fixes
+ - Fixed multiple critical crashes in iOS push notification handling that could cause notification extension termination or incorrect retry behavior.
+ - Fixed an issue where small portrait and landscape images in the gallery could overflow the canvas, appearing larger than the viewport. Images now properly scale to fit within viewport bounds while maintaining their aspect ratio.
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
