@@ -6,6 +6,24 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 ```{include} common-esr-support.md
 ```
 
+(release-v6-0-1)=
+## Release v6.0.1
+
+**Release Day:** November 17, 2025
+
+**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/v6.0.1)
+
+```{Note}
+Mattermost Desktop App v6.0.1 is a dot release that includes bug fixes and security improvements.
+```
+
+### Bug Fixes
+
+#### All Platforms
+
+- Fixed critical security issues and performance improvements.
+- Resolved various stability issues reported in v6.0.0.
+
 (release-v6-0)=
 ## Release v6.0
 
