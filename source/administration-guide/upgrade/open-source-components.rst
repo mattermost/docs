@@ -37,6 +37,7 @@ Desktop
 Mobile
 -------
 
+- Mattermost Mobile v2.35.0 - `View Open Source Components <https://github.com/mattermost/mattermost-mobile/blob/release-2.35/NOTICE.txt>`__.
 - Mattermost Mobile v2.34.0 - `View Open Source Components <https://github.com/mattermost/mattermost-mobile/blob/release-2.34/NOTICE.txt>`__.
 - Mattermost Mobile v2.33.0 - `View Open Source Components <https://github.com/mattermost/mattermost-mobile/blob/release-2.33/NOTICE.txt>`__.
 - Mattermost Mobile v2.32.0 - `View Open Source Components <https://github.com/mattermost/mattermost-mobile/blob/release-2.32/NOTICE.txt>`__.
