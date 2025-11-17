@@ -6,28 +6,19 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 ```{include} common-esr-support.md
 ```
 
-(release-v6-0-1)=
-## Release v6.0.1
-
-**Release Day:** November 17, 2025
-
-**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/v6.0.1)
-
-```{Note}
-Mattermost Desktop App v6.0.1 is a dot release that includes bug fixes and security improvements.
-```
-
-### Bug Fixes
-
-#### All Platforms
-
-- Fixed critical security issues and performance improvements.
-- Resolved various stability issues reported in v6.0.0.
-
 (release-v6-0)=
 ## Release v6.0
 
-**Release Day:** November 14, 2025
+- **v6.0.1, released 2025-11-17**
+
+  - Fixed a crash when hovering over an external URL in a re-docked pop-out window [MM-66638](https://mattermost.atlassian.net/browse/MM-66638).
+  - Fixed an issue where the app would crash on errored servers [MM-66655](https://mattermost.atlassian.net/browse/MM-66655).
+  - Fixed an issue upgrading configuration files on Windows [MM-66660](https://mattermost.atlassian.net/browse/MM-66660).
+  - Fixed a potential race condition when writing the JSON config file.
+
+- **v6.0.0, released 2025-11-14**
+
+  - Original v6.0.0 release
 
 **Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/latest)
 
