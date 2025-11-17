@@ -18,30 +18,32 @@
 If you upgrade from a release earlier than v11.1, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
 ```
 
-### Compatibility
-TBD
-
 ### Improvements
 
 #### User Interface (UI)
  - Pre-packaged Zoom plugin [v1.10.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.10.0).
  - Pre-packaged Agents plugin [v1.6.0](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.6.0).
- - Pre-packaged ServiceNow plugin [v2.4.0](https://github.com/mattermost/mattermost-plugin-servicenow/releases/tag/v2.4.0), MS Calendar plugin [v1.4.0](https://github.com/mattermost/mattermost-plugin-mscalendar/releases/tag/v1.4.0), and Channel Export plugin [v1.3.0](https://github.com/mattermost/mattermost-plugin-channel-export/releases/tag/v1.3.0).
+ - Pre-packaged ServiceNow plugin [v2.4.0](https://github.com/mattermost/mattermost-plugin-servicenow/releases/tag/v2.4.0).
+ - Pre-packaged MS Calendar plugin [v1.4.0](https://github.com/mattermost/mattermost-plugin-mscalendar/releases/tag/v1.4.0).
+ - Pre-packaged Channel Export plugin [v1.3.0](https://github.com/mattermost/mattermost-plugin-channel-export/releases/tag/v1.3.0).
+ - Pre-packaged Boards plugin version [v9.2.1](https://github.com/mattermost/mattermost-plugin-boards/releases).
  - Enabled thread popouts in the browser.
  - Improved license and plan name clarity throughout the user interface. License settings and the **About** modal now display specific plan names (Professional, Enterprise, Entry) instead of the generic "Enterprise Edition" label, reducing confusion between edition and plan terminology.
- - Added AI-enabled rewriting of messages for servers with the Agents plugin.
- - Applicable posts are now marked as AI-generated.
 
 #### Administration
  - Introduced authentication token generation for Hosted Push Notification Service.
  - Added search backend type to the Support Packet.
  - Added SAML provider type to the Support Packet.
- - Permission schemes now fully expose controls for managing other users' integrations (Webhooks, Slash Commands, OAuth Apps) in the System Console for greater administrative clarity. Additionally, permissions for managing your own integrations have been renamed for consistency, and a new configuration option allows administrators to enforce Incoming Webhook channel locking.
+
+#### Integrations
+ - Permission schemes now fully expose controls for managing other users' integrations (Webhooks, Slash Commands, OAuth Apps) in the **System Console** for greater administrative clarity. Additionally, permissions for managing your own integrations have been renamed for consistency, and a new configuration option allows administrators to enforce Incoming Webhook channel locking.
+ - Added AI-enabled rewriting of messages for servers with the Agents plugin.
+ - Applicable posts are now marked as AI-generated.
  - Added an authorization metadata endpoint and Dynamic Client Registration of Confidential OAuth Apps.
  - Added OAuth public client support through DCR and PKCE for public/confidential clients.
  - Added support for a resource parameter with OAuth.
  - Added ability to create OAuth public clients through the **Integrations** page.
- - Added ``http.Flusher`` support to the plugin RPC layer. 
+ - Added ``http.Flusher`` support to the plugin RPC layer.
 
 ### Bug Fixes
  - Fixed a server panic that could occur when patching channel moderations with restricted permissions.
@@ -56,10 +58,18 @@ TBD
  - Fixed an issue where thread popouts did not show the current user's status.
  - Fixed an issue where clicking on a permalink to a reply in another thread would not navigate the main window. 
 
-### Known Issues
-TBD
+### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
----
+#### Changes to Enterprise plans: 
+ - Under ``ServiceSettings`` in ``config.json``:
+    - Added ``EnableDynamicClientRegistration`` configuration setting to add support for Dynamic Client Registration of Confidential OAuth Apps.
+
+### API Changes
+ - Added a new ``api/v4/posts/rewrite`` endpoint to enable AI-powered message rewriting. It accepts a message, an AI agent ID, and a rewrite action, and returns a JSON object with a ``rewritten_text`` field containing the rewritten text. The endpoint supports six predefined actions: ``shorten``, ``elaborate``, ``improve_writing``, ``fix_spelling``, ``simplify``, and ``summarize``. A custom action is also available, which requires a ``custom_prompt`` parameter to specify the desired transformation. 
+
+### Go Version
+ - v11.2 is built with Go ``v1.24.6``.
 
 (release-v11.1-feature-release)=
 ## Release v11.1 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
