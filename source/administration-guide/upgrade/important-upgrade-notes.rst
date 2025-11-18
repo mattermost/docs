@@ -320,7 +320,26 @@ We recommend reviewing the `additional upgrade notes <#additional-upgrade-notes>
 |                                                    | for details.                                                                                                                                                     |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Migration times: On a system with 12M posts, and 1M fileinfo entries, the migration takes 15s. This migration is non-locking. Note that there is no migration    |
-|                                                    | for MySQL deployments because this optimization is only applicable for PostgreSQL.                                                                               |
+|                                                    | for MySQL deployments because this optimization is only applicable for PostgreSQL. Below are the SQL queries included in the schema changes:                     |                                                                                                                                               |
+|                                                    |                                                                                                                                                                  |
+|                                                    | .. code-block:: sql                                                                                 |
+|                                                    | 
+|                                                    |  CREATE MATERIALIZED VIEW IF NOT EXISTS posts_by_team_day as
+|                                                    |  SELECT to_timestamp(p.createat/1000)::date as day, COUNT(*) as num, teamid
+|                                                    |  FROM posts p JOIN channels c on p.channelid=c.id
+|                                                    |  GROUP BY day, c.teamid;
+|                                                    | 
+|                                                    |  CREATE MATERIALIZED VIEW IF NOT EXISTS bot_posts_by_team_day as
+|                                                    |  SELECT to_timestamp(p.createat/1000)::date as day, COUNT(*) as num, teamid
+|                                                    |  FROM posts p
+|                                                    |  JOIN Bots b ON p.UserId = b.Userid
+|                                                    |  JOIN channels c on p.channelid=c.id
+|                                                    |  GROUP BY day, c.teamid;
+|                                                    | 
+|                                                    |  CREATE MATERIALIZED VIEW IF NOT EXISTS file_stats as
+|                                                    |  SELECT COUNT(*) as num, COALESCE(SUM(Size), 0) as usage
+|                                                    |  FROM fileinfo
+|                                                    |  WHERE DeleteAt = 0;
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v10.5                                              | Mattermost versions v10.5.0 and v10.5.1 include a bundled Jira plugin (v4.2.0) that contains a bug which may cause plugin configuration settings to disappear.   |
 |                                                    | We strongly advise against upgrading to these versions to avoid potential disruption.                                                                            |
