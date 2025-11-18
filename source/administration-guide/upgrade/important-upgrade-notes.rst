@@ -319,27 +319,33 @@ We recommend reviewing the `additional upgrade notes <#additional-upgrade-notes>
 |                                                    | :ref:`minimum supported PostgreSQL version policy <deployment-guide/software-hardware-requirements:minimum postgresql database support policy>` documentation    |
 |                                                    | for details.                                                                                                                                                     |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                    | Migration times: On a system with 12M posts, and 1M fileinfo entries, the migration takes 15s. This migration is non-locking. Note that there is no migration    |
-|                                                    | for MySQL deployments because this optimization is only applicable for PostgreSQL. Below are the SQL queries included in the schema changes:                     |                                                                                                                                               |
+|                                                    | System Console statistics now perform faster on PostgreSQL. The ``MaxUsersForStatistics`` configuration setting now only disables the **User counts with posts** |
+|                                                    | chart, while all other stats remain unaffected. The other stats remain unaffected because that configuration value is no longer needed to disable the other      |
+|                                                    | queries since they are always fast now. Post and file counts update daily, so they may not always reflect real-time data. Advanced stats, such as line charts    |
+|                                                    | and plugin data, are now hidden until clicked, reducing load time. No performance improvements apply to MySQL since it's scheduled for full deprecation in v11.  |
+|                                                    | We recommend migrating to PostgreSQL for better performance and long-term support. The migration process for PostgreSQL is quick (around 15 seconds for large    |
+|                                                    | systems) and non-blocking. If you're on MySQL, no migration is needed, but transitioning to PostgreSQL is strongly encouraged.Migration times: On a system with  |
+|                                                    | 12M posts, and 1M fileinfo entries, the migration takes 15s. This migration is non-locking. Note that there is no migration                                      |
+|                                                    | for MySQL deployments because this optimization is only applicable for PostgreSQL. Below are the SQL queries included in the schema changes:                     |
 |                                                    |                                                                                                                                                                  |
-|                                                    | .. code-block:: sql                                                                                 |
-|                                                    | 
-|                                                    |  CREATE MATERIALIZED VIEW IF NOT EXISTS posts_by_team_day as
-|                                                    |  SELECT to_timestamp(p.createat/1000)::date as day, COUNT(*) as num, teamid
-|                                                    |  FROM posts p JOIN channels c on p.channelid=c.id
-|                                                    |  GROUP BY day, c.teamid;
-|                                                    | 
-|                                                    |  CREATE MATERIALIZED VIEW IF NOT EXISTS bot_posts_by_team_day as
-|                                                    |  SELECT to_timestamp(p.createat/1000)::date as day, COUNT(*) as num, teamid
-|                                                    |  FROM posts p
-|                                                    |  JOIN Bots b ON p.UserId = b.Userid
-|                                                    |  JOIN channels c on p.channelid=c.id
-|                                                    |  GROUP BY day, c.teamid;
-|                                                    | 
-|                                                    |  CREATE MATERIALIZED VIEW IF NOT EXISTS file_stats as
-|                                                    |  SELECT COUNT(*) as num, COALESCE(SUM(Size), 0) as usage
-|                                                    |  FROM fileinfo
-|                                                    |  WHERE DeleteAt = 0;
+|                                                    | .. code-block:: sql                                                                                                                                              |
+|                                                    |                                                                                                                                                                  |
+|                                                    |  CREATE MATERIALIZED VIEW IF NOT EXISTS posts_by_team_day as                                                                                                     |
+|                                                    |  SELECT to_timestamp(p.createat/1000)::date as day, COUNT(*) as num, teamid                                                                                      |
+|                                                    |  FROM posts p JOIN channels c on p.channelid=c.id                                                                                                                |
+|                                                    |  GROUP BY day, c.teamid;                                                                                                                                         |
+|                                                    |                                                                                                                                                                  |                                                                              
+|                                                    |  CREATE MATERIALIZED VIEW IF NOT EXISTS bot_posts_by_team_day as                                                                                                 |
+|                                                    |  SELECT to_timestamp(p.createat/1000)::date as day, COUNT(*) as num, teamid                                                                                      |
+|                                                    |  FROM posts p                                                                                                                                                    |                                                                                                
+|                                                    |  JOIN Bots b ON p.UserId = b.Userid                                                                                                                              | 
+|                                                    |  JOIN channels c on p.channelid=c.id                                                                                                                             | 
+|                                                    |  GROUP BY day, c.teamid;                                                                                                                                         | 
+|                                                    |                                                                                                                                                                  | 
+|                                                    |  CREATE MATERIALIZED VIEW IF NOT EXISTS file_stats as                                                                                                            | 
+|                                                    |  SELECT COUNT(*) as num, COALESCE(SUM(Size), 0) as usage                                                                                                         | 
+|                                                    |  FROM fileinfo                                                                                                                                                   | 
+|                                                    |  WHERE DeleteAt = 0;                                                                                                                                             | 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v10.5                                              | Mattermost versions v10.5.0 and v10.5.1 include a bundled Jira plugin (v4.2.0) that contains a bug which may cause plugin configuration settings to disappear.   |
 |                                                    | We strongly advise against upgrading to these versions to avoid potential disruption.                                                                            |
