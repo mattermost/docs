@@ -19,7 +19,7 @@ Mattermost Entry
 
 Mattermost Entry gives small, forward-leaning teams a **free self-hosted Intelligent Mission Environment** to get started on improving their mission-critical secure collaborative workflows. Entry has all features of **Enterprise Advanced** with the following server-wide limitations and omissions: 
 
-- 10,000 channel message history across all channels (older messages remain in the database but aren't viewable or searchable)
+- 10,000 Channel messages history across all channels (older messages remain in the database but aren't viewable or searchable)
 - 1000 Board cards\*
 - 5 Active Playbook runs / month\*
 - 250 Agent queries/ month\*
