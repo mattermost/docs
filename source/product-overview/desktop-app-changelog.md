@@ -9,7 +9,16 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 (release-v6-0)=
 ## Release v6.0
 
-**Release Day:** November 14, 2025
+- **v6.0.1, released 2025-11-18**
+
+  - Fixed a crash when hovering over an external URL in a re-docked pop-out window [MM-66638](https://mattermost.atlassian.net/browse/MM-66638).
+  - Fixed an issue where the app would crash on errored servers [MM-66655](https://mattermost.atlassian.net/browse/MM-66655).
+  - Fixed an issue upgrading configuration files on Windows [MM-66660](https://mattermost.atlassian.net/browse/MM-66660).
+  - Fixed a potential race condition when writing the JSON config file.
+
+- **v6.0.0, released 2025-11-14**
+
+  - Original v6.0.0 release
 
 **Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/latest)
 
@@ -61,7 +70,6 @@ Mattermost Desktop App v6.0.0 contains low severity level security fixes. Upgrad
 
 ### Known Issues
 
-- The Desktop App crashes when hovering an external URL from a re-docked window [MM-66638](https://mattermost.atlassian.net/browse/MM-66638).
 - Sometimes the app will not restart after an auto-update. This is normal, and if this occurs the app can be safely launched manually.
 - Sometimes during installation you may see this message: ``Warning 1946. Property 'System.AppUserModel.ID' for shortcut 'Mattermost.Ink' could not be set``. This message can be safely ignored.
 - Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually delete their cache directory. For macOS it is located in `/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost`, for Windows in `Users/<username>/AppData/Roaming/Mattermost` and for Linux in `~/config/Mattermost` (where `~` is the home directory).
