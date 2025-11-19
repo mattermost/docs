@@ -147,6 +147,13 @@ New setting options were added to ``config.json``. Below is a list of the additi
 (release-v11.0-major-release)=
 ## Release v11.0 - [Major Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **11.0.5, released 2025-11-17**
+  - Mattermost v11.0.5 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged MS Teams Meetings plugin version [v2.3.0](https://github.com/mattermost/mattermost-plugin-msteams-meetings/releases/tag/v2.3.0).
+  - Pre-packaged Calls plugin version [v1.11.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.11.0).
+  - Fixed a configuration retention issue where even active configuration got deleted [MM-66216](https://mattermost.atlassian.net/browse/MM-66216).
+  - Fixed an issue where plugins could not receive 3rd-party authorization headers [MM-66335](https://mattermost.atlassian.net/browse/MM-66335).
+  - Mattermost v11.0.5 contains no database or functional changes.
 - **11.0.4, released 2025-10-28**
  ```{Attention}
  **Critical Fixes**
