@@ -57,7 +57,8 @@ If you upgrade from a release earlier than v11.1, please read the other [Importa
  - Fixed an issue where the slash command autocomplete did not preserve user input case when forwarding pretext to backend.
  - Fixed an issue where some text on the signup page was not translatable.
  - Fixed an issue where thread popouts did not show the current user's status.
- - Fixed an issue where clicking on a permalink to a reply in another thread would not navigate the main window. 
+ - Fixed an issue where clicking on a permalink to a reply in another thread would not navigate the main window.
+ - Fixed an issue where focusing on the thread popout would not mark the thread as read.
 
 ### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
