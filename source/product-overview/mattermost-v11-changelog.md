@@ -19,6 +19,7 @@
  ```
   - Fixed an issue where thread popouts did not show the current user's status [MM-66586](https://mattermost.atlassian.net/browse/MM-66586).
   - Fixed an issue where clicking on a permalink to a reply in another thread would not navigate the main window [MM-66614](https://mattermost.atlassian.net/browse/MM-66614).
+  - Fixed an issue where users could not add bots without an error message popping up [MM-66684](https://mattermost.atlassian.net/browse/MM-66684).
   - Mattermost v11.1.1 contains no database or functional changes.
 - **11.1.0, released 2025-11-14**
   - Original 11.1.0 release.
