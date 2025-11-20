@@ -127,7 +127,7 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
  - Modified the input to have the minimum/maximum length validation work the same as the validation around ``required``, and replaced **Create Team** input with an **Input** component. 
  - Improved the YouTube video preview user interface. 
  - Removed the minimum-width for the right-hand side when the window size is <400px. 
- - Added a status region for the channel filter dropdown. 
+ - Added a status region for the channel filter dropdown in the **Browse Channels** modal. 
  - Removed the NPS plugin from pre-packaged plugins. 
 
 #### Administration
@@ -1133,7 +1133,7 @@ See [this walkthrough video](https://mattermost.com/video/mattermost-v10-2-chang
  - Pre-packaged Calls plugin [v1.2.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.2.1).
  - Changed the logic of ``useMilitaryTime`` to ``false`` to default to 12-hour time format unless the user's preference from ``data.Value`` is ``true``. When a notification email is sent to a user, the time should now default to the 12-hour format unless otherwise stated by the user. 
  - A warning is now shown when deleting a post or comment from a remote/shared channel.
- - Bot messages will now properly mention both users when they happen on non-bot Direct Messages.
+ - Bot messages will now properly mention both users when they happen on non-bot Group Messages.
  - Updated the channel header to hide pinned posts when there aren't any in the channel.
  - Added full support for @mentions in the values of fields in [message attachments](https://developers.mattermost.com/integrate/reference/message-attachments/).
 
@@ -1358,7 +1358,7 @@ See [this walkthrough video](https://mattermost.com/video/mattermost-v10-0-chang
  - Added [Do not disturb and late timezone warnings](https://docs.mattermost.com/end-user-guide/collaborate/channel-types.html#direct-message-channels) to Direct Message posts.
  - Added user statuses to the Group Members modal.
  - Added labels for channel header and purpose in the right-hand side channel info view.
- - Added pagination user interface to the ``BackstageList`` component.
+ - Added pagination support to the **Integrations > Incoming WebHooks** page to be able to navigate through all configured incoming webhooks.
  - Made various improvements to code involving user preferences.
  - Promoted GIF picker, custom groups and message priority out of Beta.
  - Removed the **Pre-release features** section from **Settings > Advanced** due to lack of usage.
