@@ -356,7 +356,7 @@ If you upgrade from a release earlier than v10.8, please read the other [Importa
  - Pre-packaged Calls plugin [v1.8.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.8.0).
  - Pre-packaged Jira plugin version [v4.3.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.3.0).
  - Pre-packaged Metrics plugin version [v0.7.0](https://github.com/mattermost/mattermost-plugin-metrics/releases/tag/v0.7.0).
- - Introduced a configurable channel banner feature for channel admins, visible across desktop, web, and mobile platforms. This feature requires an Enterprise Advanced license.
+ - Introduced a configurable [channel banner feature](https://docs.mattermost.com/end-user-guide/collaborate/display-channel-banners.html) for channel admins, visible across desktop, web, and mobile platforms. This feature requires an Enterprise Advanced license.
  - Added more descriptive page titles to the login, account creation, and password reset pages.
  - Improved the **Drafts** list by implementing virtualization.
  - Enhanced the behavior for reporting issues in the platform.
@@ -471,7 +471,7 @@ If you upgrade from a release earlier than v10.7, please read the other [Importa
  - Pre-packaged Metrics plugin version [v0.6.0](https://github.com/mattermost/mattermost-plugin-metrics/releases/tag/v0.6.0).
  - Added an improved channel menu. 
  - Updated email notification settings to provide clearer wording and descriptions for both batched and non-batched scenarios. The settings dialog now reflects the selected status more accurately in both collapsed and expanded views, enhancing consistency and usability.
- - Added the ability to display the nickname or full name in Threads based on settings.
+ - Added the ability to [display the nickname or full name](https://docs.mattermost.com/end-user-guide/preferences/manage-your-profile.html) in Threads based on settings.
  - Improved the error message for failed file copies. 
 
 #### Administration
@@ -840,7 +840,7 @@ If you upgrade from a release earlier than v10.3, please read the other [Importa
  - Pre-packaged Channel Export plugin [v1.2.1](https://github.com/mattermost/mattermost-plugin-channel-export/releases/tag/v1.2.1).
  - Pre-packaged Jira plugin [v4.2.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.2.0).
  - Added the ability to modify post attachments during edit.
- - The channel bookmarks bar is now hidden when there are no bookmarks in the channel. Bookmarks can now be added from the channel menu.
+ - The [channel bookmarks bar](https://docs.mattermost.com/end-user-guide/collaborate/manage-channel-bookmarks.html) is now hidden when there are no bookmarks in the channel. Bookmarks can now be added from the channel menu.
  - Removed the video from the onboarding checklist.
  - Improved accessibility throughout the webapp by fixing several issues around keyboard navigation and screen reader focused on modals, right-hand side and core chat functionality. 
 
@@ -1044,7 +1044,7 @@ See [this walkthrough video](https://mattermost.com/video/mattermost-v10-3-chang
  - Added a feature to schedule a message at a future date (Professional and Enterprise plans).
  - Copilot plugin is now installed and enabled by default.
  - Added an option to test notifications.
- - Added a new search interface.
+ - Added a new [search interface](https://docs.mattermost.com/end-user-guide/collaborate/search-for-messages.html).
  - Updated product string for clarity.
  - Removed most places where deprecated translation code is used in the web app.
  - Removed some duplicate CSS from the web app bundle.
@@ -1135,7 +1135,7 @@ See [this walkthrough video](https://mattermost.com/video/mattermost-v10-2-chang
  - A warning is now shown when deleting a post or comment from a remote/shared channel.
  - Bot messages will now properly mention both users when they happen on non-bot Direct Messages.
  - Updated the channel header to hide pinned posts when there aren't any in the channel.
- - Added full support for @mentions in the values of fields in message attachments.
+ - Added full support for @mentions in the values of fields in [message attachments](https://developers.mattermost.com/integrate/reference/message-attachments/).
 
 #### Administration
  - Added a new URL parameter called ``permanent`` to ``DELETE /api/v4/posts/<post-id>``, and set ``permanent`` to ``true`` in order to permanently delete a post and its attachments.
@@ -1235,7 +1235,7 @@ If you upgrade from a release earlier than v10.0, please read the other [Importa
 #### User Interface (UI)
  - Added Metrics plugin to the prepackaged plugins, [v0.5.3](https://github.com/mattermost/mattermost-plugin-metrics/releases/tag/v0.5.3).
  - Pre-packaged Calls plugin [v1.1.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.1.0).
- - Enabled Channel Bookmarks, added re-ordering, and fixed URL validity checking.
+ - Enabled [Channel Bookmarks](https://docs.mattermost.com/end-user-guide/collaborate/manage-channel-bookmarks.html), added re-ordering, and fixed URL validity checking.
  - Added a more descriptive error message, "Uploaded plugin size exceeds limit." for plugin uploads that are too large.
  - Added channel specific message notification sounds configuration.
 
@@ -1355,7 +1355,7 @@ See [this walkthrough video](https://mattermost.com/video/mattermost-v10-0-chang
  - Added Playbooks [v2.0.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.0.1) to the prepackaged plugins.
  - Added Mattermost user survey plugin to pre-packaged plugins, [v1.1.1](https://github.com/mattermost/mattermost-plugin-user-survey/releases).
  - Changed the right-hand side scroll direction and fixed the advanced text editor to the bottom.
- - Added Do not disturb and late timezone warnings to Direct Message posts.
+ - Added [Do not disturb and late timezone warnings](https://docs.mattermost.com/end-user-guide/collaborate/channel-types.html#direct-message-channels) to Direct Message posts.
  - Added user statuses to the Group Members modal.
  - Added labels for channel header and purpose in the right-hand side channel info view.
  - Added pagination user interface to the ``BackstageList`` component.
