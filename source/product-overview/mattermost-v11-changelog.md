@@ -59,6 +59,7 @@ If you upgrade from a release earlier than v11.1, please read the other [Importa
  - Fixed an issue where thread popouts did not show the current user's status.
  - Fixed an issue where clicking on a permalink to a reply in another thread would not navigate the main window.
  - Fixed an issue where focusing on the thread popout would not mark the thread as read.
+ - Fixed an issue where a content reviewer could not download file attachments from a flagged post.
 
 ### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
@@ -68,7 +69,8 @@ New setting options were added to ``config.json``. Below is a list of the additi
     - Added ``EnableDynamicClientRegistration`` configuration setting to add support for Dynamic Client Registration of Confidential OAuth Apps.
 
 ### API Changes
- - Added a new ``api/v4/posts/rewrite`` endpoint to enable AI-powered message rewriting. It accepts a message, an AI agent ID, and a rewrite action, and returns a JSON object with a ``rewritten_text`` field containing the rewritten text. The endpoint supports six predefined actions: ``shorten``, ``elaborate``, ``improve_writing``, ``fix_spelling``, ``simplify``, and ``summarize``. A custom action is also available, which requires a ``custom_prompt`` parameter to specify the desired transformation. 
+ - Added a new ``api/v4/posts/rewrite`` endpoint to enable AI-powered message rewriting. It accepts a message, an AI agent ID, and a rewrite action, and returns a JSON object with a ``rewritten_text`` field containing the rewritten text. The endpoint supports six predefined actions: ``shorten``, ``elaborate``, ``improve_writing``, ``fix_spelling``, ``simplify``, and ``summarize``. A custom action is also available, which requires a ``custom_prompt`` parameter to specify the desired transformation.
+ - Updated the ``GetFile``  ``GET`` ``api/v4/files/file_id`` endpoint to include two new query params: ``as_content_reviewer`` and ``flagged_post_id``. These are used for the Data Spillage feature to allow content reviewers to download files from flagged posts.
 
 ### Go Version
  - v11.2 is built with Go ``v1.24.6``.
