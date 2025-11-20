@@ -60,6 +60,7 @@ If you upgrade from a release earlier than v11.1, please read the other [Importa
  - Fixed an issue where clicking on a permalink to a reply in another thread would not navigate the main window.
  - Fixed an issue where focusing on the thread popout would not mark the thread as read.
  - Fixed an issue where a content reviewer could not download file attachments from a flagged post.
+ - Fixed an issue where users could not add bots without an error message popping up.
 
 ### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
