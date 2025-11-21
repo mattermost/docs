@@ -67,11 +67,14 @@ New setting options were added to ``config.json``. Below is a list of the additi
 
 #### Changes to Enterprise plans: 
  - Under ``ServiceSettings`` in ``config.json``:
-    - Added ``EnableDynamicClientRegistration`` configuration setting to add support for Dynamic Client Registration of Confidential OAuth Apps.
+    - Added ``EnableDynamicClientRegistration`` configuration setting to control whether Dynamic Client Registration is enabled in your Mattermost instance. The default value is ``false``.
 
 ### API Changes
  - Added a new ``api/v4/posts/rewrite`` endpoint to enable AI-powered message rewriting. It accepts a message, an AI agent ID, and a rewrite action, and returns a JSON object with a ``rewritten_text`` field containing the rewritten text. The endpoint supports six predefined actions: ``shorten``, ``elaborate``, ``improve_writing``, ``fix_spelling``, ``simplify``, and ``summarize``. A custom action is also available, which requires a ``custom_prompt`` parameter to specify the desired transformation.
  - Updated the ``GetFile``  ``GET`` ``api/v4/files/file_id`` endpoint to include two new query params: ``as_content_reviewer`` and ``flagged_post_id``. These are used for the Data Spillage feature to allow content reviewers to download files from flagged posts.
+ - Added two new fields to the ``/oauth/authorize`` endpoints called ``code_challenge`` and ``code_challenge_method`` in order to support PKCE with our OAuth authorization flow.
+ - Added ``/.well-known/oauth-authorization-server`` so that OAuth clients can check what Mattermost supports. The endpoint returns a 501 error if ``ServiceSettings.EnableOAuthServiceProvider`` is disabled.
+ - Added ``/api/v4/oauth/apps/register`` in order to support Dynamic Client Registration for OAuth. This allows **any** external OAuth client to automatically register an OAuth App within Mattermost without requiring authentication. The endpoint requires ``ServiceSettings.EnableOAuthServiceProvider`` and ``ServiceSettings.EnableDynamicClientRegistration`` to be enabled.
 
 ### Go Version
  - v11.2 is built with Go ``v1.24.6``.
