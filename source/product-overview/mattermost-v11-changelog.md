@@ -14,6 +14,9 @@
 
 **Release day: 2025-12-16**
 
+#### Important Upgrade Notes
+ - Added a new column to the ``OAuthApps`` table called ``isdynamicallyregistered``. It has a default value of ``false``. Also added three new columns to the ``OAuthAuthData`` table called ``resource``, ``codechallenge`` and ``codechallengemethod``. All columns default to ``‘’``. Also added a new column to the ``OAuthAccessData`` table called ``audience``. It has a default value of ``‘’``. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
+
 ```{Important}
 If you upgrade from a release earlier than v11.1, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
 ```
