@@ -9,6 +9,80 @@
 ```{include} common-esr-support-upgrade.md
 ```
 
+(release-v11.2-feature-release)=
+## Release v11.2 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
+
+**Release day: 2025-12-16**
+
+#### Important Upgrade Notes
+ - Added a new column to the ``OAuthApps`` table called ``isdynamicallyregistered``. It has a default value of ``false``. Also added three new columns to the ``OAuthAuthData`` table called ``resource``, ``codechallenge`` and ``codechallengemethod``. All columns default to ``‘’``. Also added a new column to the ``OAuthAccessData`` table called ``audience``. It has a default value of ``‘’``. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
+
+```{Important}
+If you upgrade from a release earlier than v11.1, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
+```
+
+### Improvements
+
+#### User Interface (UI)
+ - Pre-packaged Playbooks plugin [v2.6.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.6.0).
+ - Pre-packaged Zoom plugin [v1.10.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.10.0).
+ - Pre-packaged Agents plugin [v1.6.1](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.6.1).
+ - Pre-packaged ServiceNow plugin [v2.4.0](https://github.com/mattermost/mattermost-plugin-servicenow/releases/tag/v2.4.0).
+ - Pre-packaged MS Calendar plugin [v1.4.0](https://github.com/mattermost/mattermost-plugin-mscalendar/releases/tag/v1.4.0).
+ - Pre-packaged Channel Export plugin [v1.3.0](https://github.com/mattermost/mattermost-plugin-channel-export/releases/tag/v1.3.0).
+ - Pre-packaged Boards plugin version [v9.2.1](https://github.com/mattermost/mattermost-plugin-boards/releases).
+ - Pre-packaged Jira plugin version [v4.4.1](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.4.1).
+ - Enabled thread popouts in the browser.
+ - Improved license and plan name clarity throughout the user interface. License settings and the **About** modal now display specific plan names (Professional, Enterprise, Entry) instead of the generic "Enterprise Edition" label, reducing confusion between edition and plan terminology.
+
+#### Administration
+ - Introduced authentication token generation for Hosted Push Notification Service.
+ - Added search backend type to the Support Packet.
+ - Added SAML provider type to the Support Packet.
+
+#### Integrations
+ - Permission schemes now fully expose controls for managing other users' integrations (Webhooks, Slash Commands, OAuth Apps) in the **System Console** for greater administrative clarity. Additionally, permissions for managing your own integrations have been renamed for consistency, and a new configuration option allows administrators to enforce Incoming Webhook channel locking.
+ - Added AI-enabled rewriting of messages for servers with the Agents plugin.
+ - Applicable posts are now marked as AI-generated.
+ - Added an authorization metadata endpoint and Dynamic Client Registration of Confidential OAuth Apps.
+ - Added OAuth public client support through DCR and PKCE for public/confidential clients.
+ - Added support for a resource parameter with OAuth.
+ - Added ability to create OAuth public clients through the **Integrations** page.
+ - Added ``http.Flusher`` support to the plugin RPC layer.
+
+### Bug Fixes
+ - Fixed a server panic that could occur when patching channel moderations with restricted permissions.
+ - Fixed the justification of sidebar icons for plugins.
+ - Fixed an issue with the translation of "Until <time>" text for custom statuses.
+ - Fixed an infinite loop on the shared channels tooltip for users when the remote cluster was not available.
+ - Fixed an issue where guest users could not log in via SAML when "Ignore Guest Users when Synchronizing with AD/LDAP" was enabled.
+ - Fixed an issue where length validation was missing for LDAP user fields.
+ - Fixed an issue where some modals would appear when editing messages.
+ - Fixed an issue where the slash command autocomplete did not preserve user input case when forwarding pretext to backend.
+ - Fixed an issue where some text on the signup page was not translatable.
+ - Fixed an issue where thread popouts did not show the current user's status.
+ - Fixed an issue where clicking on a permalink to a reply in another thread would not navigate the main window.
+ - Fixed an issue where focusing on the thread popout would not mark the thread as read.
+ - Fixed an issue where a content reviewer could not download file attachments from a flagged post.
+ - Fixed an issue where users could not add bots without an error message popping up.
+
+### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to Enterprise plans: 
+ - Under ``ServiceSettings`` in ``config.json``:
+    - Added ``EnableDynamicClientRegistration`` configuration setting to control whether Dynamic Client Registration is enabled in your Mattermost instance. The default value is ``false``.
+
+### API Changes
+ - Added a new ``api/v4/posts/rewrite`` endpoint to enable AI-powered message rewriting. It accepts a message, an AI agent ID, and a rewrite action, and returns a JSON object with a ``rewritten_text`` field containing the rewritten text. The endpoint supports six predefined actions: ``shorten``, ``elaborate``, ``improve_writing``, ``fix_spelling``, ``simplify``, and ``summarize``. A custom action is also available, which requires a ``custom_prompt`` parameter to specify the desired transformation.
+ - Updated the ``GetFile``  ``GET`` ``api/v4/files/file_id`` endpoint to include two new query params: ``as_content_reviewer`` and ``flagged_post_id``. These are used for the Data Spillage feature to allow content reviewers to download files from flagged posts.
+ - Added two new fields to the ``/oauth/authorize`` endpoints called ``code_challenge`` and ``code_challenge_method`` in order to support PKCE with our OAuth authorization flow.
+ - Added ``/.well-known/oauth-authorization-server`` so that OAuth clients can check what Mattermost supports. The endpoint returns a 501 error if ``ServiceSettings.EnableOAuthServiceProvider`` is disabled.
+ - Added ``/api/v4/oauth/apps/register`` in order to support Dynamic Client Registration for OAuth. This allows **any** external OAuth client to automatically register an OAuth App within Mattermost without requiring authentication. The endpoint requires ``ServiceSettings.EnableOAuthServiceProvider`` and ``ServiceSettings.EnableDynamicClientRegistration`` to be enabled.
+
+### Go Version
+ - v11.2 is built with Go ``v1.24.6``.
+
 (release-v11.1-feature-release)=
 ## Release v11.1 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
