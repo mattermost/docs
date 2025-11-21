@@ -17,6 +17,7 @@
  **Critical Fixes**
   - Mattermost v11.1.1 contains a Critical severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
  ```
+  - Pre-packaged Jira plugin version [v4.4.1](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.4.1).
   - Fixed an issue where thread popouts did not show the current user's status [MM-66586](https://mattermost.atlassian.net/browse/MM-66586).
   - Fixed an issue where clicking on a permalink to a reply in another thread would not navigate the main window [MM-66614](https://mattermost.atlassian.net/browse/MM-66614).
   - Fixed an issue where users could not add bots without an error message popping up [MM-66684](https://mattermost.atlassian.net/browse/MM-66684).
@@ -99,6 +100,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
  **Critical Fixes**
   - Mattermost v11.0.6 contains a Critical severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
  ```
+  - Pre-packaged Jira plugin version [v4.4.1](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.4.1).
   - Mattermost v11.0.6 contains no database or functional changes.
 - **11.0.5, released 2025-11-17**
   - Mattermost v11.0.5 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
