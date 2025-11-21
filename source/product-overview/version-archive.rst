@@ -23,12 +23,12 @@ If you want to check that the version of Mattermost you are installing is the of
     - SBOM Download Link: https://releases.mattermost.com/11.0.6/sbom-enterprise-v11.0.6.json
   Mattermost Enterprise Edition v10.12.4 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v10-changelog.html#release-v10-12-feature-release>`__ - `Download <https://releases.mattermost.com/10.12.4/mattermost-10.12.4-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.12.4/mattermost-10.12.4-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``17afbd197c4f6c786ec2e2f05abccdda9eb19dcf21f994227f8c3efe740cf647``
+    - SHA-256 Checksum: ``4b360d1bd3802767472177e2f6097a7e0c7ec271471f6530ccfbf81f650970a4``
     - GPG Signature: https://releases.mattermost.com/10.12.4/mattermost-10.12.4-linux-amd64.tar.gz.sig
     - SBOM Download Link: https://releases.mattermost.com/10.12.4/sbom-enterprise-v10.12.4.json
   Mattermost Enterprise Edition v10.11.8 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v10-changelog.html#release-v10-11-extended-support-release>`__ - `Download <https://releases.mattermost.com/10.11.8/mattermost-10.11.8-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.11.8/mattermost-10.11.8-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``fd65f2da9895f1d67f8316da2623481db96b2b6f553bba05b04f545407a0799b``
+    - SHA-256 Checksum: ``d0d906bc2b93da82028b9a9f281e62e4e0070487f467750fe093db44609aaea7``
     - GPG Signature: https://releases.mattermost.com/10.11.8/mattermost-10.11.8-linux-amd64.tar.gz.sig
     - SBOM Download Link: https://releases.mattermost.com/10.11.8/sbom-enterprise-v10.11.8.json
   Mattermost Enterprise Edition v10.10.3 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-10-feature-release>`__ - `Download <https://releases.mattermost.com/10.10.3/mattermost-10.10.3-linux-amd64.tar.gz?src=arc>`__
@@ -466,12 +466,12 @@ If you want to check that the version of Mattermost you are installing is the of
     - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v11.0.6/sbom-mattermost-v11.0.6.json
   Mattermost Team Edition v10.12.4 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v10-changelog.html#release-v10-12-feature-release>`__ - `Download <https://releases.mattermost.com/10.12.4/mattermost-team-10.12.4-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.12.4/mattermost-team-10.12.4-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``801a84cd4b79abb2880a0d0c55c3637f8a2546f0369d470764df010b136ada93``
+    - SHA-256 Checksum: ``952f629cedcea017d9db43e622eaebb8aef66ac4dcd03e93a1b861a82433d9ea``
     - GPG Signature: https://releases.mattermost.com/10.12.4/mattermost-team-10.12.4-linux-amd64.tar.gz.sig
     - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v10.12.4/sbom-mattermost-v10.12.4.json
   Mattermost Team Edition v10.11.8 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v10-changelog.html#release-v10-11-extended-support-release>`__ - `Download <https://releases.mattermost.com/10.11.8/mattermost-team-10.11.8-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.11.8/mattermost-team-10.11.8-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``641b640075bbcbd83df5fa405a22aecf8242433b7a5f6d1f9faf7972b858752a``
+    - SHA-256 Checksum: ``90138a2b4b6230822eb285731befa40c58c67aa987c9cec11d162c59ac56f492``
     - GPG Signature: https://releases.mattermost.com/10.11.8/mattermost-team-10.11.8-linux-amd64.tar.gz.sig
     - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v10.11.8/sbom-mattermost-v10.11.8.json
   Mattermost Team Edition v10.10.3 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-10-feature-release>`__ - `Download <https://releases.mattermost.com/10.10.3/mattermost-team-10.10.3-linux-amd64.tar.gz?src=arc>`__
