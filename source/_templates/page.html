@@ -8,13 +8,17 @@
     {{ super() }}
 {% endblock extrahead %}
 {% block footer -%}
-    <div class="docs-feedback-block">
-        {% include "feedback.html" %}
-    </div>
+    {% if webdocs %}
+      <div class="docs-feedback-block">
+          {% include "feedback.html" %}
+      </div>
+    {%endif %}
     {{ super() }}
 {% endblock footer %}
 {% block body -%}
     {% include "google-tag-manager-noscript.html" %}
-    {% include "custom-nav.html" %}
+    {% if webdocs %}
+      {% include "custom-nav.html" %}
+    {%endif %}
     {{ super() }}
 {% endblock body %}
