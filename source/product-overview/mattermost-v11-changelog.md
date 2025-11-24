@@ -44,7 +44,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
    - Added a new ``AutoTranslationSettings`` configuration settings section. The auto-translation feature will be available in a future release.
 
 ```{Important}
-If you upgrade from a release earlier than v11.0, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
+If you upgrade from a release earlier than v11.0, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html). In case of an upgrade failure, please check the [Downgrade guide](https://docs.mattermost.com/administration-guide/upgrade/downgrading-mattermost-server.html) and [Recovery guide](https://docs.mattermost.com/deployment-guide/backup-disaster-recovery.html) for rollback steps and an interim mitigation strategy.
 ```
 
 ### Improvements
