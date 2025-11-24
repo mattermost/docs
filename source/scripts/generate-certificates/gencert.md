@@ -1,7 +1,7 @@
 # gencert.sh for Mattermost
 
-.. include:: ../../_static/badges/all-commercial.md
-  :start-after: :nosearch:
+```{include} ../../_static/badges/all-commercial.md
+```
 
 Generate a self-signed x509v3 certificate for use with multiple URLs / IPs.
 
