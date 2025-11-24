@@ -44,7 +44,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
    - Added a new ``AutoTranslationSettings`` configuration settings section. The auto-translation feature will be available in a future release.
 
 ```{Important}
-If you upgrade from a release earlier than v11.0, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html). In case of an upgrade failure, please check the [Downgrade guide](https://docs.mattermost.com/administration-guide/upgrade/downgrading-mattermost-server.html) and [Recovery guide](https://docs.mattermost.com/deployment-guide/backup-disaster-recovery.html) for rollback steps and an interim mitigation strategy.
+If you upgrade from a release earlier than v11.0, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html). In case of an upgrade failure, please check the [Downgrade Guide](https://docs.mattermost.com/administration-guide/upgrade/downgrading-mattermost-server.html) and the [Recovery Guide](https://docs.mattermost.com/deployment-guide/backup-disaster-recovery.html) for rollback steps and interim mitigation strategy.
 ```
 
 ### Improvements
@@ -167,8 +167,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
 #### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
  - **Changes to all plans:**
-   - Under ``CloudSettings`` in ``config.json``:
-       - Added ``PreviewModalBucketURL``.
+   - Under ``CloudSettings`` in ``config.json``, added ``PreviewModalBucketURL``.
    - Removed ``VerboseDiagnostics`` configuration setting as part of removing all telemetry support from Mattermost.
    - Removed ``BleveSettings`` configuration setting as part of removing Bleve.
    - Removed ``NotificationLogSettings`` as part of deprecating the separate notification log file.
@@ -176,7 +175,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
    - Removed ``ClientSideCertCheck`` as part of removing the experimental certificate-based authentication feature.
 
 ```{Important}
-If you upgrade from a release earlier than v10.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html). In case of an upgrade failure, please check the [Downgrade guide](https://docs.mattermost.com/administration-guide/upgrade/downgrading-mattermost-server.html) and [Recovery guide](https://docs.mattermost.com/deployment-guide/backup-disaster-recovery.html) for rollback steps and an interim mitigation strategy.
+If you upgrade from a release earlier than v10.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html). In case of an upgrade failure, please check the [Downgrade Guide](https://docs.mattermost.com/administration-guide/upgrade/downgrading-mattermost-server.html) and the [Recovery Guide](https://docs.mattermost.com/deployment-guide/backup-disaster-recovery.html) for rollback steps and interim mitigation strategy.
 ```
 
 ### Improvements
