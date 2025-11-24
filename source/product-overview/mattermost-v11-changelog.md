@@ -162,8 +162,21 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - Support for PostgreSQL v13 has been removed. The new minimum PostgreSQL version is v14+. See the [minimum supported PostgreSQL version policy](https://docs.mattermost.com/deployment-guide/software-hardware-requirements.html#minimum-postgresql-database-support-policy) documentation for details.
 ```
 
+### Upgrade Impact
+
+#### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+ - **Changes to all plans:**
+   - Under ``CloudSettings`` in ``config.json``:
+       - Added ``PreviewModalBucketURL``.
+   - Removed ``VerboseDiagnostics`` configuration setting as part of removing all telemetry support from Mattermost.
+   - Removed ``BleveSettings`` configuration setting as part of removing Bleve.
+   - Removed ``NotificationLogSettings`` as part of deprecating the separate notification log file.
+ - **Changes to Enterprise and Enterprise Advanced plans:**
+   - Removed ``ClientSideCertCheck`` as part of removing the experimental certificate-based authentication feature.
+
 ```{Important}
-If you upgrade from a release earlier than v10.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
+If you upgrade from a release earlier than v10.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html). In case of an upgrade failure, please check the [Downgrade guide](https://docs.mattermost.com/administration-guide/upgrade/downgrading-mattermost-server.html) and [Recovery guide](https://docs.mattermost.com/deployment-guide/backup-disaster-recovery.html) for rollback steps and an interim mitigation strategy.
 ```
 
 ### Improvements
@@ -205,19 +218,6 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
  - Fixed an issue where MFA warning was thrown in the logs for unauthenticated plugin requests.
  - Fixed an issue that prevented new users from searching channels right after joining a team when Elasticsearch was enabled.
  - Fixed some crashes in the threads screen.
-
-### config.json
-New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
-
-#### Changes to all plans:
- - Under ``CloudSettings`` in ``config.json``:
-     - Added ``PreviewModalBucketURL``.
- - Removed ``VerboseDiagnostics`` configuration setting as part of removing all telemetry support from Mattermost.
- - Removed ``BleveSettings`` configuration setting as part of removing Bleve.
- - Removed ``NotificationLogSettings`` as part of deprecating the separate notification log file.
-
-#### Changes to Enterprise and Enterprise Advanced plans: 
- - Removed ``ClientSideCertCheck`` as part of removing the experimental certificate-based authentication feature.
 
 ### API Changes
  - Added a counting plugin API for properties.
