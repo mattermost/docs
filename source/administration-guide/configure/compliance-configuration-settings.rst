@@ -190,14 +190,14 @@ This setting is based on the local time of the server.
   :systemconsole: Compliance > Compliance Export
   :configjson: .MessageExportSettings.ExportFormat
   :environment: MM_MESSAGEEXPORTSETTINGS_EXPORTFORMAT
-  :description: File format of the compliance export. Currently supported formats are CSV, Actiance XML, and Global Relay EML.
+  :description: File format of the compliance export. Currently supported formats are CSV, Smarsh (Actiance) XML, and Global Relay EML.
 
 Export file format
 ~~~~~~~~~~~~~~~~~~~
 
 File format of the compliance export. Corresponds to the system that you want to import the data into.
 
-Currently supported formats are CSV, Actiance XML, and Global Relay EML.
+Currently supported formats are CSV, Smarsh (Actiance) XML, and Global Relay EML.
 
 If Global Relay is chosen, the following options will be presented:
 
