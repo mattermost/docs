@@ -33,6 +33,7 @@ If you upgrade from a release earlier than v11.1, please read the other [Importa
  - Pre-packaged Boards plugin version [v9.2.1](https://github.com/mattermost/mattermost-plugin-boards/releases).
  - Pre-packaged Jira plugin version [v4.4.1](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.4.1).
  - Enabled thread popouts in the browser.
+ - Reduced the channel banner height.
  - Improved license and plan name clarity throughout the user interface. License settings and the **About** modal now display specific plan names (Professional, Enterprise, Entry) instead of the generic "Enterprise Edition" label, reducing confusion between edition and plan terminology.
 
 #### Administration
@@ -79,6 +80,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - Added two new fields to the ``/oauth/authorize`` endpoints called ``code_challenge`` and ``code_challenge_method`` in order to support PKCE with our OAuth authorization flow.
  - Added ``/.well-known/oauth-authorization-server`` so that OAuth clients can check what Mattermost supports. The endpoint returns a 501 error if ``ServiceSettings.EnableOAuthServiceProvider`` is disabled.
  - Added ``/api/v4/oauth/apps/register`` in order to support Dynamic Client Registration for OAuth. This allows **any** external OAuth client to automatically register an OAuth App within Mattermost without requiring authentication. The endpoint requires ``ServiceSettings.EnableOAuthServiceProvider`` and ``ServiceSettings.EnableDynamicClientRegistration`` to be enabled.
+ - Introduced ``GET /api/v4/agents`` and ``GET /api/v4/llmservices`` to allow authenticated clients to fetch available agents and LLM services.
 
 ### Go Version
  - v11.2 is built with Go ``v1.24.6``.
