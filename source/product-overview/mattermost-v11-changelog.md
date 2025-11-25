@@ -77,12 +77,6 @@ If you upgrade from a release earlier than v11.0, please read the other [Importa
  - Fixed a configuration retention issue where even active configuration got deleted.
  - Fixed an issue where plugins could not receive 3rd-party authorization headers.
 
-### config.json
-New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
-
-#### Changes to Enterprise Advanced plan: 
- - Added a new ``AutoTranslationSettings`` configuration settings section. The auto-translation feature will be available in a future release.
-
 ### API Changes
  - Added a new API endpoint ``POST /api/v4/groups/names``.
  - Added a ``since`` parameter to the property value search method of the ``PluginApi``.
