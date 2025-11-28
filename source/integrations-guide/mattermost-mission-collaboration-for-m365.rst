@@ -48,7 +48,7 @@ An application must be registered in Microsoft Azure to enable secure authentica
 6. Go to **API Permissions** to complete the following steps:
 
   - Ensure the ``User.Read`` **delegated** permission is added. See the `Microsoft SSO documentation <https://learn.microsoft.com/en-us/microsoftteams/platform/tabs/how-to/authentication/tab-sso-register-aad#enable-sso-in-microsoft-entra-id>`_ for details.
-  - Add the **Microsoft Graph API** ``TeamsActivity.Send`` **application** permission for notifications. See the `Microsoft notifications documentation <https://learn.microsoft.com/en-us/graph/teams-send-activityfeednotifications?tabs=desktop%2Chttp>`_ for details.`
+  - Add the **Microsoft Graph API** ``TeamsActivity.Send`` **application** permission for notifications. See the `Microsoft notifications documentation <https://learn.microsoft.com/en-us/graph/teams-send-activityfeednotifications?tabs=desktop%2Chttp>`_ for details.
   - Add the **Microsoft Graph API** ``AppCatalog.Read.All`` **application** permission for notifications. See the `Microsoft List teamsApp documentation <https://learn.microsoft.com/en-us/graph/api/appcatalogs-list-teamsapps?view=graph-rest-1.0&tabs=http>`_ for details.
   - Grant admin consent for the default directory to prevent users from seeing the consent prompt.
 
