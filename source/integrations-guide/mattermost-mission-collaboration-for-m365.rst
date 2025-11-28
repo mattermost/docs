@@ -29,7 +29,7 @@ An application must be registered in Microsoft Azure to enable secure authentica
 
   .. image:: ../images/AzureApp_New_Registration_MS_Embedded.png
 
-  - Give it a name
+  - Give it a name.
   - Choose the "Accounts in this organizational directory only (single tenant)" option.
   - Leave the Redirect URI empty.
 
