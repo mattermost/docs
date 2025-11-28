@@ -54,7 +54,7 @@ An application must be registered in Microsoft Azure to enable secure authentica
 
 7. Go to **Expose an API** to complete the following steps:
 
-  - Add/edit a **Application URI** and set the value to ``api://{{Mattermost Site URL Hostname}}/{{Application (client) ID}}``.
+  - Add/edit a **Application ID URI** and set the value to ``api://{{Mattermost Site URL Hostname}}/{{Application (client) ID}}``.
   - Add the ``access_as_user`` scope by selecting **Add a scope** and setting the following values:
 
     - **Scope name**: ``access_as_user``.
