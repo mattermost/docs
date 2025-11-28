@@ -25,7 +25,7 @@ An application must be registered in Microsoft Azure to enable secure authentica
 
 2. Go to your **Azure Portal > Microsoft Entra ID**.
 
-3. Create a new app registration by selecting the **Add application registration** "Quick Action".:
+3. Create a new app registration by selecting the **Add application registration** "Quick Action":
 
   .. image:: ../images/AzureApp_New_Registration_MS_Embedded.png
 
