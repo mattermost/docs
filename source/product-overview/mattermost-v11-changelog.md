@@ -82,6 +82,9 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - Added ``/api/v4/oauth/apps/register`` in order to support Dynamic Client Registration for OAuth. This allows **any** external OAuth client to automatically register an OAuth App within Mattermost without requiring authentication. The endpoint requires ``ServiceSettings.EnableOAuthServiceProvider`` and ``ServiceSettings.EnableDynamicClientRegistration`` to be enabled.
  - Introduced ``GET /api/v4/agents`` and ``GET /api/v4/llmservices`` to allow authenticated clients to fetch available agents and LLM services.
 
+### Audit Log Event Changes
+ - Added new ``AuditEventRegisterOAuthClient``.
+
 ### Go Version
  - v11.2 is built with Go ``v1.24.6``.
 
