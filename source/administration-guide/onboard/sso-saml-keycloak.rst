@@ -209,6 +209,7 @@ Configuing a SAML user as a Guest in Keycloak
         :alt: In Mattermost, configure the SAML guest attribute
 
 
+
 3. In the Keycloak admin UI add a user attribute mapper for guests
 
   - Select *Clients* from the LHS menu
@@ -217,9 +218,11 @@ Configuing a SAML user as a Guest in Keycloak
   - Select *mattermost dedicated* from the list of scopes
   - Click the *Add mapper* drop down and select *By configuration* 
   - Select *User Attribute* on the model that opens
-  - Add values for *Name*, User Attribute* and *SAML Attribute Name* as shown
+  - Add values for *Name*, *User Attribute* and *SAML Attribute Name* as shown
+
      .. image:: ../../images/keycloak-mapper-details.png
-    :alt: <Add attribute mapper>
+      :alt: <Add attribute mapper>
+
 
 4. In Keycloak specify which users are guest by adding the attribute under **User details** 
 
@@ -227,6 +230,7 @@ Configuing a SAML user as a Guest in Keycloak
   - Click the username of the desired user
   - Select *Attribute* tab and click *+ add an attribute*
   - Add the key and value as shown
+
       .. image:: ../../images/guest-user-attribute.png
         :alt: <Adding attribute to a user>
 
