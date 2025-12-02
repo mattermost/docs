@@ -93,6 +93,19 @@ The contents of a Mattermost Support Packet can differ by server version. Select
               - analysis-icu
           error: 'Elasticsearch.checkMaxVersion: Failed to get elasticsearch server version., an error happened during the Info query execution: dial tcp 127.0.0.1:9200: connect: connection refused'
 
+   From Mattermost v11.1.1, Support Packet generation includes SAML provider type identification for configured SAML Single Sign-On. This enhancement helps administrators and support teams quickly identify the SAML Identity Provider (IdP) in use and provides additional diagnostic context for troubleshooting authentication issues. When SAML is configured, the Support Packet includes:
+
+   - **SAML provider type identification**: Automatically detects and reports the configured SAML provider type (e.g., Okta, OneLogin, Microsoft ADFS, Microsoft Entra ID, Keycloak, or custom providers)
+   - **Enhanced authentication diagnostics**: Provides provider-specific diagnostic information to accelerate troubleshooting of SAML authentication flows
+   - **Configuration context**: Includes relevant metadata about the SAML provider to help identify common configuration patterns and potential issues
+
+   This SAML provider type information appears in the Support Packet's diagnostic files and helps support teams:
+
+   - Quickly understand the SAML environment without needing to analyze configuration details manually
+   - Apply provider-specific troubleshooting approaches based on known IdP characteristics  
+   - Identify potential configuration issues specific to the detected SAML provider type
+   - Streamline the authentication troubleshooting workflow by providing immediate context about the IdP in use
+
    **Cluster-specific files (in node subdirectories):**
 
    - ``<node-id>/mattermost.log`` (Mattermost logs for each node)
