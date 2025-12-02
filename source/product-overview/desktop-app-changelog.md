@@ -6,6 +6,80 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 ```{include} common-esr-support.md
 ```
 
+(release-v6-0)=
+## Release v6.0
+
+- **v6.0.1, released 2025-11-18**
+
+  - Fixed a crash when hovering over an external URL in a re-docked pop-out window [MM-66638](https://mattermost.atlassian.net/browse/MM-66638).
+  - Fixed an issue where the app would crash on errored servers [MM-66655](https://mattermost.atlassian.net/browse/MM-66655).
+  - Fixed an issue upgrading configuration files on Windows [MM-66660](https://mattermost.atlassian.net/browse/MM-66660).
+  - Fixed a potential race condition when writing the JSON config file.
+
+- **v6.0.0, released 2025-11-14**
+
+  - Original v6.0.0 release
+
+**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/latest)
+
+```{Note}
+Mattermost Desktop App v6.0.0 contains low severity level security fixes. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+```
+
+### Compatibility
+
+- Desktop App is supported on any currently supported [Mattermost server version](https://docs.mattermost.com/product-overview/mattermost-desktop-releases.html#latest-releases).
+- Updated Chromium minimum supported version to 140+ and updated Windows minimum supported version to v11+.
+
+### Highlights
+
+#### Desktop App Multi-View Architecture
+ - Mattermost Desktop App v6.0 introduces a new Multi-View Architecture that replaces the previous fixed-tab layout. This enhancement introduces a dynamic, flexible system where users can open, close, and manage multiple views or windows, including any part of the Mattermost app (e.g., Channels, Boards, Playbooks). This architectural update provides a more customizable and efficient workspace experience while laying the foundation for advanced multi-window and pop-out features in future releases.
+
+![image](../images/desktop-multi.png)
+
+### Improvements
+
+#### All Platforms
+
+- Added parent-child popout window support, with listeners to facilitate communication.
+- Added pre-auth headers to the server modal. This header is injected into all requests to that server.
+- Unified and polished basic authentication, client certificate and pre-auth header authentication methods.
+- Added default theme syncing with the web app.
+- Added server version information to the **Help** menu.
+- Created a **File** menu on macOS, and added **New Window/Tab** and **Close Window/Tab** to the **File** menu.
+- Added **clear the cache and reload** link to the error screen.
+- Disallowed other servers to end the current call, showing an error message.
+- Adjusted colors to be more accurate to Mattermost theming.
+
+### Architectural Changes
+
+- Major version upgrade of Electron to 38.2.1. Electron is the underlying technology used to build the Desktop App.
+
+### Bug Fixes
+
+#### All Platforms
+
+- Fixed various issues with the newer modals.
+- Fixed UX issues with the checkbox component.
+- Fixed an issue where configuration files could be corrupted by interleaving writes.
+
+### Open Source Components
+
+- Switched to ``registry-js`` native module for Windows registry reading in https://github.com/mattermost/desktop/.
+
+### Known Issues
+
+- Sometimes the app will not restart after an auto-update. This is normal, and if this occurs the app can be safely launched manually.
+- Sometimes during installation you may see this message: ``Warning 1946. Property 'System.AppUserModel.ID' for shortcut 'Mattermost.Ink' could not be set``. This message can be safely ignored.
+- Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually delete their cache directory. For macOS it is located in `/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost`, for Windows in `Users/<username>/AppData/Roaming/Mattermost` and for Linux in `~/config/Mattermost` (where `~` is the home directory).
+- On Linux, a left-click on the Mattermost tray icon doesn't open the app window but opens the tray menu.
+- Crashes might be experienced in some Linux desktop clients due to an upstream bug in the `libnotifyapp` library. A recommended workaround is to disable the Mattermost system tray icon via Desktop Settings.
+
+### Contributors
+
+- [devinbinnie](https://github.com/devinbinnie), [BenCookie95](https://github.com/BenCookie95).
+
 (release-v5-13)=
 ## Release v5.13 (Extended Support Release)
 
@@ -22,7 +96,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
   - Original v5.13.0 release
 
-**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/latest)
+**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/v5.13.2)
 
 ### Compatibility
 

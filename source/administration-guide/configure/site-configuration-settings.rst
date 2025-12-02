@@ -821,7 +821,7 @@ Enable last active time
   :displayname: Enable custom user groups (Users and Teams)
   :systemconsole: Site Configuration > Users and Teams
   :configjson: ServiceSettings.EnableCustomGroups
-  :environment: MM_SERVICESETTINGS.ENABLECUSTOMGROUPS
+  :environment: MM_SERVICESETTINGS_ENABLECUSTOMGROUPS
   :description: This setting controls whether users with appropriate permissions can create custom user groups, and whether users can @mention custom user groups in Mattermost conversations. Default is **true**.
 
   - **true**: **(Default)** Users with appropriate permissions can create custom user groups, and users can @mention custom user groups in Mattermost conversations.
@@ -833,14 +833,14 @@ Enable custom user groups
 +---------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 | - **true**: **(Default)** Users with appropriate permissions can create custom user groups,       | - System Config path: **Site Configuration > Users and Teams**                     |
 |   and users can @mention custom user groups in Mattermost conversations.                          | - ``config.json`` setting: ``ServiceSettings`` > ``EnableCustomGroups`` > ``true`` |
-| - **false**: Custom user groups cannot be created.                                                | - Environment variable: ``MM_SERVICESETTINGS.ENABLECUSTOMGROUPS``                  |
+| - **false**: Custom user groups cannot be created.                                                | - Environment variable: ``MM_SERVICESETTINGS_ENABLECUSTOMGROUPS``                  |
 +---------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 
 .. config:setting:: user-statistics-update-time
   :displayname: User statistics update time (Users and Teams)
   :systemconsole: Site Configuration > Users and Teams
   :configjson: .ServiceSettings.RefreshPostStatsRunTime
-  :environment: MM_SERVICESETTINGS.REFRESHPOSTSTATSRUNTIME
+  :environment: MM_SERVICESETTINGS_REFRESHPOSTSTATSRUNTIME
   :description: Set the server time for updating the user post statistics, including each user's total message count, and the timestamp of each user's most recently sent message. Default is **00:00**.
 
 User statistics update time
@@ -849,7 +849,7 @@ User statistics update time
 +--------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
 | Set the server time for updating the user post statistics, including each user's total     | - System Config path: **Site Configuration > Users and Teams**                           |
 | message count, and the timestamp of each user's most recently sent message.                | - ``config.json`` setting: ``ServiceSettings`` > ``RefreshPostStatsRunTime`` > ``00:00`` |
-|                                                                                            | - Environment variable: ``MM_SERVICESETTINGS.REFRESHPOSTSTATSRUNTIME``                   |
+|                                                                                            | - Environment variable: ``MM_SERVICESETTINGS_REFRESHPOSTSTATSRUNTIME``                   |
 | Must be a 24-hour time stamp in the form ``HH:MM`` based on the local time of the server.  |                                                                                          |
 | Default is **00:00**.                                                                      |                                                                                          |
 +--------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
@@ -1725,6 +1725,200 @@ Unique emoji reaction limit
 
 ----
 
+Content flagging
+----------------
+
+.. include:: ../../_static/badges/entry-adv.rst
+  :start-after: :nosearch:
+
+Access the following configuration settings in the System Console by going to **Site Configuration > Content Flagging**.
+
+.. config:setting:: enable-content-flagging
+  :displayname: Enable content flagging (Content flagging)
+  :systemconsole: Site Configuration > Content Flagging
+  :configjson: .ContentFlaggingSettings.EnableContentFlagging
+  :environment: MM_CONTENTFLAGGINGSETTINGS_ENABLECONTENTFLAGGING
+  :description: Enable or disable the Content Flagging feature. Default is **false**.
+
+  - **true**: Enables the Content Flagging feature.
+  - **false**: **(Default)** Disables the Content Flagging feature.
+
+Enable content flagging
+~~~~~~~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------+----------------------------------------------------------------------------------------------------+
+| - **true**: Enables the Content Flagging feature.    | - System Config path: **Site Configuration > Content Flagging**                                    |
+| - **false**: **(Default)** Disables the feature.     | - ``config.json`` setting: ``ContentFlaggingSettings`` > ``EnableContentFlagging`` > ``false``     |
+|                                                      | - Environment variable: ``MM_CONTENTFLAGGINGSETTINGS_ENABLECONTENTFLAGGING``                       |
++------------------------------------------------------+----------------------------------------------------------------------------------------------------+
+
+.. config:setting:: content-flagging-notification-settings
+  :displayname: Notification settings (Content flagging)
+  :systemconsole: Site Configuration > Content Flagging
+  :configjson: .ContentFlaggingSettings.NotificationSettings.EventTargetMapping
+  :environment: N/A
+  :description: Map content‑flagging events to who gets notified by the system bot. The value is an object where each key is an event name and each value is an array of recipients. Supported events: ``flagged``, ``assigned``, ``removed``, ``dismissed``. Supported recipients: ``reviewers``, ``author``, ``reporter``. Defaults are shown below.
+
+Notification settings
+~~~~~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| Default notification recipients for each event:      | - System Config path: **Site Configuration > Content Flagging**                                             |
+|                                                      | - ``config.json`` setting: ``ContentFlaggingSettings`` > ``NotificationSettings`` > ``EventTargetMapping``  |
+| - Events: flagged, assigned, removed, dismissed      | - Environment variable: N/A                                                                                 |
+| - Recipients: reviewers, author, reporter            |                                                                                                             |
+|                                                      |                                                                                                             |
+| Default mappings include:                            |                                                                                                             |
+|                                                      |                                                                                                             |
+| - flagged = reviewers                                |                                                                                                             |
+| - assigned = reviewers                               |                                                                                                             |
+| - removed = reviewers, author, reporter              |                                                                                                             |
+| - dismissed = reviewers, reporter                    |                                                                                                             |
++------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: content-flagging-additional-settings
+  :displayname: Additional settings (Content flagging)
+  :systemconsole: Site Configuration > Content Flagging
+  :configjson: .ContentFlaggingSettings.AdditionalSettings
+  :environment: N/A
+  :description: Configure reasons for flagging and related behavior. Defaults include a preset list of editable reasons.
+
+Additional settings
+~~~~~~~~~~~~~~~~~~~
+
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------+
+| Specify the reasons for flagging.                     | - System Config path: **Site Configuration > Content Flagging**                                    |
+|                                                       | - ``config.json`` setting: ``ContentFlaggingSettings`` > ``AdditionalSettings`` > ``Reasons``      |
+| Default reasons include:                              | - Environment variable: N/A                                                                        |
+|                                                       |                                                                                                    |
+| - Inappropriate content                               |                                                                                                    |
+| - Sensitive data                                      |                                                                                                    |
+| - Security concern                                    |                                                                                                    |
+| - Harassment or abuse                                 |                                                                                                    |
+| - Spam or phishing                                    |                                                                                                    |
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------+
+
+.. config:setting:: content-flagging-reporter-comment-required
+  :displayname: Require reporters to add comment (Content flagging)
+  :systemconsole: Site Configuration > Content Flagging
+  :configjson: .ContentFlaggingSettings.AdditionalSettings.ReporterCommentRequired
+  :environment: MM_CONTENTFLAGGINGSETTINGS_ADDITIONALSETTINGS_REPORTERCOMMENTREQUIRED
+  :description: Require reporters to provide a comment when flagging content. Default is **true**.
+
+  - **true**: **(Default)** Reporters must add a comment when flagging.
+  - **false**: Reporters aren't required to add a comment when flagging.
+
+Require reporters to add comment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| - **true**: **(Default)** Reporters must add a comment when flagging.| - System Config path: **Site Configuration > Content Flagging**                                                           |
+| - **false**: Reporters aren't required to add a comment.             | - ``config.json`` setting: ``ContentFlaggingSettings`` > ``AdditionalSettings`` > ``ReporterCommentRequired`` > ``true``  |
+|                                                                      | - Environment variable: ``MM_CONTENTFLAGGINGSETTINGS_ADDITIONALSETTINGS_REPORTERCOMMENTREQUIRED``                         |
++----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: content-flagging-reviewer-comment-required
+  :displayname: Require reviewers to add comment (Content flagging)
+  :systemconsole: Site Configuration > Content Flagging
+  :configjson: .ContentFlaggingSettings.AdditionalSettings.ReviewerCommentRequired
+  :environment: MM_CONTENTFLAGGINGSETTINGS_ADDITIONALSETTINGS_REVIEWERCOMMENTREQUIRED
+  :description: Require reviewers to provide a comment when reviewing flagged content. Default is **true**.
+
+  - **true**: **(Default)** Reviewers must add a comment when reviewing flagged content.
+  - **false**: Reviewers aren't required to add a comment when reviewing flagged content.
+
+Require reviewers to add comment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| - **true**: **(Default)** Reviewers must add a comment when         | - System Config path: **Site Configuration > Content Flagging**                                                          |
+|   reviewing flagged content.                                        | - ``config.json`` setting: ``ContentFlaggingSettings`` > ``AdditionalSettings`` > ``ReviewerCommentRequired`` > ``true`` |
+| - **false**: Reviewers aren't required to add a comment.            | - Environment variable: ``MM_CONTENTFLAGGINGSETTINGS_ADDITIONALSETTINGS_REVIEWERCOMMENTREQUIRED``                        |
++---------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: content-flagging-hide-flagged-content
+  :displayname: Hide message while under review (Content flagging)
+  :systemconsole: Site Configuration > Content Flagging
+  :configjson: .ContentFlaggingSettings.AdditionalSettings.HideFlaggedContent
+  :environment: MM_CONTENTFLAGGINGSETTINGS_ADDITIONALSETTINGS_HIDEFLAGGEDCONTENT
+  :description: Show or hide flagged content from the channel while it is being reviewed. Default is **true**.
+
+  - **true**: **(Default)** Hide flagged content from the channel while under review.
+  - **false**: Keep flagged content visible while under review.
+
+Hide message from channel while it is being reviewed
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| - **true**: **(Default)** Hide flagged content from the channel     | - System Config path: **Site Configuration > Content Flagging**                                                      |
+|   while under review.                                               | - ``config.json`` setting: ``ContentFlaggingSettings`` > ``AdditionalSettings`` > ``HideFlaggedContent`` > ``true``  |
+| - **false**: Keep flagged content visible while under review.       | - Environment variable: ``MM_CONTENTFLAGGINGSETTINGS_ADDITIONALSETTINGS_HIDEFLAGGEDCONTENT``                         |
++---------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: content-flagging-common-reviewers
+  :displayname: Same reviewers for all teams (Content flagging)
+  :systemconsole: Site Configuration > Content Flagging
+  :configjson: .ContentFlaggingSettings.ReviewerSettings.CommonReviewers
+  :environment: MM_CONTENTFLAGGINGSETTINGS_REVIEWERSETTINGS_COMMONREVIEWERS
+  :description: Use the same set of reviewers across all teams. Default is **true**.
+
+  - **true**: **(Default)** The same set of reviewers is used across all teams.
+  - **false**: Reviewers can be managed per team.
+
+Same reviewers for all teams
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| - **true**: **(Default)** Use the same set of        | - System Config path: **Site Configuration > Content Flagging**                                                 |
+|   reviewers across all teams.                        | - ``config.json`` setting: ``ContentFlaggingSettings`` > ``ReviewerSettings`` > ``CommonReviewers`` > ``true``  |
+| - **false**: Reviewers can be managed per team.      | - Environment variable: ``MM_CONTENTFLAGGINGSETTINGS_REVIEWERSETTINGS_COMMONREVIEWERS``                         |
++------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: content-flagging-system-admins-as-reviewers
+  :displayname: System administrators as reviewers (Content flagging)
+  :systemconsole: Site Configuration > Content Flagging
+  :configjson: .ContentFlaggingSettings.ReviewerSettings.SystemAdminsAsReviewers
+  :environment: MM_CONTENTFLAGGINGSETTINGS_REVIEWERSETTINGS_SYSTEMADMINSASREVIEWERS
+  :description: Include system administrators as reviewers for flagged content. Default is **false**.
+
+  - **true**: System administrators are included as reviewers for all teams they belong to.
+  - **false**: **(Default)** System administrators are not included by default.
+
+System administrators as reviewers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| - **true**: Include system administrators as         | - System Config path: **Site Configuration > Content Flagging**                                                         |
+|   reviewers.                                         | - ``config.json`` setting: ``ContentFlaggingSettings`` > ``ReviewerSettings`` > ``SystemAdminsAsReviewers`` > ``false`` |
+| - **false**: **(Default)** System administrators     | - Environment variable: ``MM_CONTENTFLAGGINGSETTINGS_REVIEWERSETTINGS_SYSTEMADMINSASREVIEWERS``                         |
+|   are not included by default.                       |                                                                                                                         |
++------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: content-flagging-team-admins-as-reviewers
+  :displayname: Team administrators as reviewers (Content flagging)
+  :systemconsole: Site Configuration > Content Flagging
+  :configjson: .ContentFlaggingSettings.ReviewerSettings.TeamAdminsAsReviewers
+  :environment: MM_CONTENTFLAGGINGSETTINGS_REVIEWERSETTINGS_TEAMADMINSASREVIEWERS
+  :description: Include team administrators as reviewers for flagged content. Default is **true**.
+
+  - **true**: **(Default)** Team administrators are included as reviewers for their respective teams.
+  - **false**: Team administrators are not included as reviewers.
+
+Team administrators as reviewers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../../_static/badges/entry-ent.rst
+  :start-after: :nosearch:
+
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| - **true**: **(Default)** Include team administrators | - System Config path: **Site Configuration > Content Flagging**                                                      |
+|   as reviewers for their respective teams.            | - ``config.json`` setting: ``ContentFlaggingSettings`` > ``ReviewerSettings`` > ``TeamAdminsAsReviewers`` > ``true`` |
+| - **false**: Team administrators aren't included      | - Environment variable: ``MM_CONTENTFLAGGINGSETTINGS_REVIEWERSETTINGS_TEAMADMINSASREVIEWERS``                        |
+|   as reviewers.                                       |                                                                                                                      |
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+
+----
+
 File sharing and downloads
 --------------------------
 
@@ -2088,7 +2282,7 @@ The following self-hosted deployment settings are only configurable in the ``con
   :displayname: Enable cross-team search
   :systemconsole: N/A
   :configjson: ServiceSettings.EnableCrossTeamSearch
-  :environment: SERVICESETTINGS.ENABLECROSSTEAMSEARCH
+  :environment: SERVICESETTINGS_ENABLECROSSTEAMSEARCH
   :description: Disable the ability to search all channels the user is a member of across all teams or a specific team, and search all channels the user is a member of within the current team only. Enabled by default.
 
 Cross-team search

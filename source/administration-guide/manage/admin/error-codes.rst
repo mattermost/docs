@@ -34,6 +34,6 @@ This error occurs when:
 To resolve this error, system administrators can:
 
 - :ref:`Deactivate users <administration-guide/configure/user-management-configuration-settings:deactivate users>` to reduce the active user count below the license limit.
-- Contact `Mattermost Sales <https://mattermost.com/contact-sales/>`_ to discuss license options.
+- Contact `Mattermost Sales <https://mattermost.com/contact-sales/>`_ to request an updated license that increases the number of licensed users.
 
 `Book a live demo <https://mattermost.com/request-demo/>`_  or `talk to a Mattermost expert <https://mattermost.com/contact-sales/>`_ to explore tailored solutions for your organization's secure collaboration needs. Or try Mattermost yourself with a `1-hour preview <https://mattermost.com/sign-up/>`_ for instant access to a live sandbox environment.

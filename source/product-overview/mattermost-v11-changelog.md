@@ -9,13 +9,110 @@
 ```{include} common-esr-support-upgrade.md
 ```
 
+(release-v11.1-feature-release)=
+## Release v11.1 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
+
+- **11.1.1, released 2025-11-21**
+ ```{Attention}
+ **Critical Fixes**
+  - Mattermost v11.1.1 contains a Critical severity level security fix in the Jira plugin. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+ ```
+  - Pre-packaged Jira plugin version [v4.4.1](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.4.1).
+  - Fixed an issue where thread popouts did not show the current user's status [MM-66586](https://mattermost.atlassian.net/browse/MM-66586).
+  - Fixed an issue where clicking on a permalink to a reply in another thread would not navigate the main window [MM-66614](https://mattermost.atlassian.net/browse/MM-66614).
+  - Fixed an issue where users could not add bots without an error message popping up [MM-66684](https://mattermost.atlassian.net/browse/MM-66684).
+  - Mattermost v11.1.1 contains no database or functional changes.
+- **11.1.0, released 2025-11-14**
+  - Original 11.1.0 release.
+
+```{Attention}
+**Breaking Changes**
+ - The version of React used by the Mattermost web app has been updated from React 17 to React 18. See more details in [this forum post](https://forum.mattermost.com/t/upgrading-the-mattermost-web-app-to-react-18-v11/25000).
+```
+
+### Compatibility
+ - Updated minimum required Edge, Firefox and Chrome versions to v140+ and updated minimum supported Windows version to v11+.
+
+### Important Upgrade Notes
+ - Added three new tables, ``ContentFlaggingCommonReviewers``, ``ContentFlaggingTeamSettings``, and ``ContentFlaggingTeamReviewers`` for storing Data Spillage settings. Added an index on ``ContentFlaggingTeamReviewers`` table to optimize fetching the team settings.  No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
+
+```{Important}
+If you upgrade from a release earlier than v11.0, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
+```
+
+### Improvements
+
+#### User Interface (UI)
+ - Pre-packaged Agents plugin version [v1.4.0](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.4.0).
+ - Pre-packaged Playbooks plugin version [v2.5.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.5.1).
+ - Pre-packaged GitLab plugin version [v1.11.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.11.0).
+ - Pre-packaged Jira plugin version [v4.4.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.4.0).
+ - Pre-packaged GitHub plugin version [v2.5.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.5.0).
+ - Pre-packaged Boards plugin version [v9.1.7](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.7).
+ - Pre-packaged MS Teams Meetings plugin version [v2.3.0](https://github.com/mattermost/mattermost-plugin-msteams-meetings/releases/tag/v2.3.0).
+ - Pre-packaged Calls plugin version [v1.11.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.11.0).
+ - Removed Mattermost MS Teams Sync plugin from pre-packaged plugins.
+ - Added support for standalone windows pop-out. Threads can now be popped out to its own window in Desktop. 
+ - The desktop app version is now shown on the **About** modal, allowing clicking to copy both the server and desktop app versions.
+ - Downgraded French language support from Beta to Alpha.
+
+#### Administration
+ - Added the ability to edit User Attributes in **System Console > Users > User Configuration**.
+
+#### Integrations
+ - Added ``Date`` and ``DateTime`` types for interactive dialogs.
+ - Added ``MultiForm`` and ``Element`` refresh support for interactive dialogs.
+
+### Bug Fixes
+ - Fixed an issue where email address verification for SAML/LDAP users was required when a user’s email address changed.
+ - Fixed an issue where users could still message each other when not sharing a team, despite the configuration setting stating otherwise.
+ - Fixed an issue with the mmctl system status to return non-zero exit codes when health checks fail, ensuring proper integration with container orchestration health check systems.
+ - Fixed a configuration retention issue where even active configuration got deleted.
+ - Fixed an issue where plugins could not receive 3rd-party authorization headers.
+
+### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to Enterprise Advanced plan: 
+ - Added a new ``AutoTranslationSettings`` configuration settings section. The auto-translation feature will be available in a future release.
+
+### API Changes
+ - Added a new API endpoint ``POST /api/v4/groups/names``.
+ - Added a ``since`` parameter to the property value search method of the ``PluginApi``.
+
+### Audit Log Event Changes
+ - Added ``AuditEventFlagPost``, ``AuditEventGetFlaggedPost``, ``AuditEventPermanentlyRemoveFlaggedPost``, ``AuditEventKeepFlaggedPost``, ``AuditEventUpdateContentFlaggingConfig``, and ``AuditEventSetReviewer``.
+
+### Go Version
+ - v11.1 is built with Go ``v1.24.6``.
+
+### Open Source Components
+ - Added ``@redux-devtools/extension`` and ``@types/react-is``, and removed ``react-intl`` from https://github.com/mattermost/mattermost/.
+
+### Contributors
+ - [abbas-dependable-naqvi](https://github.com/abbas-dependable-naqvi), [abhijit-singh](https://github.com/abhijit-singh), [agarciamontoro](https://github.com/agarciamontoro), [amyblais](https://github.com/amyblais), [andrleite](https://github.com/andrleite), [Arusekk](https://translate.mattermost.com/user/Arusekk), [asaadmahmood](https://github.com/asaadmahmood), [BenCookie95](https://github.com/BenCookie95), [bgardner8008](https://github.com/bgardner8008), [buzzyboy](https://github.com/buzzyboy), [calebroseland](https://github.com/calebroseland), [codiphile](https://github.com/codiphile), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://translate.mattermost.com/user/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [davidkrauser](https://github.com/davidkrauser), [devinbinnie](https://github.com/devinbinnie), [DHaussermann](https://github.com/DHaussermann), [enahum](https://github.com/enahum), [enzowritescode](https://github.com/enzowritescode), [esarafianou](https://github.com/esarafianou), [esethna](https://github.com/esethna), [ewwollesen](https://github.com/ewwollesen), [fmartingr](https://github.com/fmartingr), [franklinferre](https://translate.mattermost.com/user/franklinferre), [frankps](https://translate.mattermost.com/user/frankps), [fsilye](https://github.com/fsilye), [grubbins](https://github.com/grubbins), [hanzei](https://github.com/hanzei), [harshilsharma63](https://github.com/harshilsharma63), [hereje](https://github.com/hereje), [hmhealey](https://github.com/hmhealey), [homerCOD](https://github.com/homerCOD), [isacikgoz](https://github.com/isacikgoz), [itz-Me-Pj](https://github.com/itz-Me-Pj), [iyampaul](https://github.com/iyampaul), [jgheithcock](https://github.com/jgheithcock), [johnsonbrothers](https://github.com/johnsonbrothers), [jprusch](https://github.com/jprusch), [jsedy7](https://translate.mattermost.com/user/jsedy7), [JulienTant](https://github.com/JulienTant), [kaakaa](https://github.com/kaakaa), [kayazeren](https://github.com/kayazeren), [KohheiAdachi](https://github.com/KohheiAdachi), [Kshitij-Katiyar](https://github.com/Kshitij-Katiyar), [l-ra](https://github.com/l-ra), [larkox](https://github.com/larkox), [lieut-data](https://github.com/lieut-data), [lindy65](https://github.com/lindy65), [lynn915](https://github.com/lynn915), [majo](https://translate.mattermost.com/user/majo), [mansil](https://github.com/mansil), [marianunez](https://github.com/marianunez), [master7](https://translate.mattermost.com/user/master7), [matt-w99](https://github.com/matt-w99), [matthew-w](https://translate.mattermost.com/user/matthew-w), [matthewbirtch](https://github.com/matthewbirtch), [mental-space1532](https://translate.mattermost.com/user/mental-space1532), [mgdelacroix](https://github.com/mgdelacroix), [moi90](https://github.com/moi90), [neflyte](https://github.com/neflyte), [nickmisasi](https://github.com/nickmisasi), [Omar8345](https://github.com/Omar8345), [pavelzeman](https://github.com/pavelzeman), [pnaskardev](https://github.com/pnaskardev), [polyacedev](https://translate.mattermost.com/user/polyacedev), [pvev](https://github.com/pvev), [rahimrahman](https://github.com/rahimrahman), [Rajat-Dabade](https://github.com/Rajat-Dabade), [Reinkard](https://github.com/Reinkard), [roberson-io](https://github.com/roberson-io), [roskee](https://github.com/roskee), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [Sharuru](https://translate.mattermost.com/user/Sharuru), [shawnaym](https://github.com/shawnaym), [svelle](https://github.com/svelle), [thejoeejoee](https://translate.mattermost.com/user/thejoeejoee), [ThrRip](https://github.com/ThrRip), [tnir](https://github.com/tnir), [Victor-Nyagudi](https://github.com/Victor-Nyagudi), [vpecinka](https://translate.mattermost.com/user/vpecinka), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [yairsz](https://github.com/yairsz), [Yash-Chakerverti](https://github.com/Yash-Chakerverti), [yasserfaraazkhan](https://github.com/yasserfaraazkhan)
+
 (release-v11.0-major-release)=
 ## Release v11.0 - [Major Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **11.0.6, released 2025-11-21**
+ ```{Attention}
+ **Critical Fixes**
+  - Mattermost v11.0.6 contains a Critical severity level security fix in the Jira plugin. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+ ```
+  - Pre-packaged Jira plugin version [v4.4.1](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.4.1).
+  - Mattermost v11.0.6 contains no database or functional changes.
+- **11.0.5, released 2025-11-17**
+  - Mattermost v11.0.5 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged MS Teams Meetings plugin version [v2.3.0](https://github.com/mattermost/mattermost-plugin-msteams-meetings/releases/tag/v2.3.0).
+  - Pre-packaged Calls plugin version [v1.11.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.11.0).
+  - Fixed a configuration retention issue where even active configuration got deleted [MM-66216](https://mattermost.atlassian.net/browse/MM-66216).
+  - Fixed an issue where plugins could not receive 3rd-party authorization headers [MM-66335](https://mattermost.atlassian.net/browse/MM-66335).
+  - Mattermost v11.0.5 contains no database or functional changes.
 - **11.0.4, released 2025-10-28**
  ```{Attention}
  **Critical Fixes**
-  - Mattermost v11.0.4 contains Critical severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is    highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v11.0.4 contains Critical severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
  ```
   - Fixed an issue where plugin configuration settings were incorrectly sanitized, causing API endpoints and plugins to receive masked values instead of actual configuration values.
   - Pre-packaged Boards plugin [v9.1.7](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.7).
