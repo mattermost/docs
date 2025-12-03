@@ -27,7 +27,7 @@ Prerequisites
 Example environment
 ~~~~~~~~~~~~~~~~~~~
 
-In this scenario there is one Mattermost application server and one NGINX server, both running Ubuntu 20.04, with the following IPs:
+In this scenario there is one Mattermost application server and one NGINX server, both running Ubuntu 22.04, with the following IPs:
 
 - **transport-encryption-mattermost1:** 10.10.250.146
 - **transport-encryption-nginx:** 10.10.250.107
@@ -140,7 +140,7 @@ Prerequisites
 Example environment
 ~~~~~~~~~~~~~~~~~~~
 
-In this scenario there is one Mattermost application server and one MySQL server, both running Ubuntu 20.04, with the following IPs:
+In this scenario there is one Mattermost application server and one MySQL server, both running Ubuntu 22.04, with the following IPs:
 
 - **transport-encryption-mattermost1:** 10.10.250.146
 - **transport-encryption-mysql1:** 10.10.250.148
@@ -246,7 +246,7 @@ Once complete, restart the Mattermost server and ensure the system is operationa
 Configuring cluster transport encryption
 -----------------------------------------
 
-Mattermost is able to encrypt the messages sent within the cluster of a deployment using SSH tunneling. The guide walks through the deployment of this solution on Ubuntu 20.04, but it can be adapted for any Linux operating system.
+Mattermost is able to encrypt the messages sent within the cluster of a deployment using SSH tunneling. The guide walks through the deployment of this solution on Ubuntu 22.04, but it can be adapted for any Linux operating system.
 
 While this document only describes the configuration of a three-node cluster, it is by no means limited to that number.
 

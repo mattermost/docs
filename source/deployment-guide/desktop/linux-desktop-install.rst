@@ -9,7 +9,7 @@ This page describes how to install the Mattermost desktop app on Linux.
 .. tab:: Ubuntu/Debian
   :parse-titles:
 
-  Both a ``.deb`` package (Beta), and an official APT repository is available for Debian 9 and for Ubuntu releases 20.04 LTS or later. Automatic app updates are supported and enabled. When a new version of the desktop app is released, your app updates automatically.
+  Both a ``.deb`` package (Beta), and an official APT repository is available for Debian 9 and for Ubuntu releases 22.04 LTS or later. Automatic app updates are supported and enabled. When a new version of the desktop app is released, your app updates automatically.
 
   .. important::
 
