@@ -26,7 +26,7 @@ If you upgrade from a release earlier than v11.1, please read the other [Importa
 #### User Interface (UI)
  - Pre-packaged Playbooks plugin [v2.6.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.6.1).
  - Pre-packaged Zoom plugin [v1.10.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.10.0).
- - Pre-packaged Agents plugin [v1.6.1](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.6.1).
+ - Pre-packaged Agents plugin [v1.6.2](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.6.2).
  - Pre-packaged ServiceNow plugin [v2.4.0](https://github.com/mattermost/mattermost-plugin-servicenow/releases/tag/v2.4.0).
  - Pre-packaged MS Calendar plugin [v1.4.0](https://github.com/mattermost/mattermost-plugin-mscalendar/releases/tag/v1.4.0).
  - Pre-packaged Channel Export plugin [v1.3.0](https://github.com/mattermost/mattermost-plugin-channel-export/releases/tag/v1.3.0).
