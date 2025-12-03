@@ -25,34 +25,36 @@ An application must be registered in Microsoft Azure to enable secure authentica
 
 2. Go to your **Azure Portal > Microsoft Entra ID**.
 
-3. Go to **App registrations**.
+3. Create a new app registration by selecting the **Add application registration** "Quick Action":
 
-4. Create a new app registration by selecting **Add > App registration**:
+  .. image:: ../images/AzureApp_New_Registration_MS_Embedded.png
 
-  - Give it a name
-  - Accounts in this organizational directory only (single tenant)
-  - No redirect URIs
+  - Give it a name.
+  - Choose the "Accounts in this organizational directory only (single tenant)" option.
+  - Leave the Redirect URI empty.
 
-5. Go to your newly created application and copy the **Application (client) ID** and **Directory (tenant) ID** values. You'll need those later to configure the plugin.
+  .. image:: ../images/AzureApp_New_Registration_MS_Embedded_Application.png
+
+4. Go to your newly created application and copy the **Application (client) ID** and **Directory (tenant) ID** values. You'll need those later to configure the plugin.
 
   .. image:: ../images/remember-tenant-client.png
     :alt: Go to your newly created application and copy the Application (client) ID and Directory (tenant) ID values. You'll need those later to configure the plugin.
 
-6. Go to **Certificates and secrets** to generate a new client secret. Make a copy of the secret value, as it will only be shown once. You'll need this value to configure the plugin.
+5. Go to **Certificates and secrets** to generate a new client secret. Make a copy of the secret value, as it will only be shown once. You'll need this value to configure the plugin.
 
   .. image:: ../images/remember-client-secret.png
     :alt: Go to Certificates and secrets to generate a new client secret. Make a copy of the secret value, as it will only be shown once. You'll need this value to configure the plugin.
 
-7. Go to **API Permissions** to complete the following steps:
+6. Go to **API Permissions** to complete the following steps:
 
   - Ensure the ``User.Read`` **delegated** permission is added. See the `Microsoft SSO documentation <https://learn.microsoft.com/en-us/microsoftteams/platform/tabs/how-to/authentication/tab-sso-register-aad#enable-sso-in-microsoft-entra-id>`_ for details.
-  - Add the ``TeamsActivity.Send`` **application** permission for notifications. See the `Microsoft notifications documentation <https://learn.microsoft.com/en-us/graph/teams-send-activityfeednotifications?tabs=desktop%2Chttp>`_ for details.`
-  - Add the ``AppCatalog.Read.All`` **application** permission for notifications. See the `Microsoft List teamsApp documentation <https://learn.microsoft.com/en-us/graph/api/appcatalogs-list-teamsapps?view=graph-rest-1.0&tabs=http>`_ for details.
+  - Add the **Microsoft Graph API** ``TeamsActivity.Send`` **application** permission for notifications. See the `Microsoft notifications documentation <https://learn.microsoft.com/en-us/graph/teams-send-activityfeednotifications?tabs=desktop%2Chttp>`_ for details.
+  - Add the **Microsoft Graph API** ``AppCatalog.Read.All`` **application** permission for notifications. See the `Microsoft List teamsApp documentation <https://learn.microsoft.com/en-us/graph/api/appcatalogs-list-teamsapps?view=graph-rest-1.0&tabs=http>`_ for details.
   - Grant admin consent for the default directory to prevent users from seeing the consent prompt.
 
-8. Go to **Expose an API** to complete the following steps:
+7. Go to **Expose an API** to complete the following steps:
 
-  - Edit the ``_Application ID URI_`` to ``api://{{Mattermost Site URL Hostname}}/{{Application (client) ID}}``.
+  - Add/edit a **Application ID URI** and set the value to ``api://{{Mattermost Site URL Hostname}}/{{Application (client) ID}}``.
   - Add the ``access_as_user`` scope by selecting **Add a scope** and setting the following values:
 
     - **Scope name**: ``access_as_user``.
@@ -82,6 +84,8 @@ An application must be registered in Microsoft Azure to enable secure authentica
 
     - If you want to make your application available in more Microsoft applications, keep adding client applications from `the following table <https://learn.microsoft.com/en-us/microsoftteams/platform/tabs/how-to/authentication/tab-sso-register-aad#to-configure-authorized-client-application:~:text=Select%20one%20of%20the%20following%20client%20IDs%3A>`_.
 
+.. image:: ../images/AzureApp_New_Registration_MSEmbedded_ExposeAPI.png
+
 Configure the Mattermost plugin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -102,7 +106,7 @@ A Microsoft Teams app is installed into Microsoft Teams. This app facilitates co
     .. image:: ../images/tenant-client-secret-sysconsole.png
       :alt: In the Mattermost System Console, enter the Directory (tenant) ID, Application (client) ID, and Client Secret for the plugin.
 
-7. Enter an **Application Display Name** to define how your application is named in the MS Teams App Store.
+7. Enter an **Application Display Name** to define how your application is named in the MS Teams App Store.  Make it company specific for easy discovery.
 
 8. Save the changes and enable the plugin.
 
@@ -128,6 +132,26 @@ Within Mattermost, the Mattermost Mission Collaboration for Microsoft plugin nee
 
 Use
 ------
+
+Add the app
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Once the application is deployed, your users can add the Mattermost app to their Microsoft Teams environment. Inform your users to:
+
+1. Open Microsoft Teams and go to **Apps** in the left sidebar.
+
+2. Search for the **Application Display Name** you configured in the plugin settings (step 7 of the `Configure the Mattermost plugin <#configure-the-mattermost-plugin>`__ section).
+
+3. The app will display a **Built for your org** tag, indicating it's a custom application approved for your organization.
+
+4. Select the app and then select **Add** to install it in their Teams environment.
+
+Once added, users can access Mattermost directly within Microsoft Teams through the app tab.
+
+.. image:: ../images/AzureApp_New_Registration_MSEmbedded_TeamsAppAdd.png
+
+Authentication
+~~~~~~~~~~~~~~
 
 This plugin supports automatic authentication when logged into Microsoft Teams. Teams authentication automatically logs users into Mattermost if the email addresses in both platforms match exactly. Regular authentication methods (LDAP, SAML, email/password, OpenID) can additionally be used for Mattermost.
 
