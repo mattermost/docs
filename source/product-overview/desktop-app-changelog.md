@@ -9,6 +9,10 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 (release-v6-0)=
 ## Release v6.0
 
+- **v6.0.2, released 2025-12-08**
+
+  - Fixed additional stability issues and security improvements.
+
 - **v6.0.1, released 2025-11-18**
 
   - Fixed a crash when hovering over an external URL in a re-docked pop-out window [MM-66638](https://mattermost.atlassian.net/browse/MM-66638).
