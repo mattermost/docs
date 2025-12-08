@@ -45,7 +45,7 @@ If you upgrade from a release earlier than v11.1, please read the other [Importa
  - Permission schemes now fully expose controls for managing other users' integrations (Webhooks, Slash Commands, OAuth Apps) in the **System Console** for greater administrative clarity. Additionally, permissions for managing your own integrations have been renamed for consistency, and a new configuration option allows administrators to enforce Incoming Webhook channel locking.
  - Added AI-enabled rewriting of messages for servers with the Agents plugin.
  - Applicable posts are now marked as AI-generated.
- - Added an authorization metadata endpoint and Dynamic Client Registration of Confidential OAuth Apps.
+ - Added an authorization metadata endpoint and [Dynamic Client Registration of Confidential OAuth Apps](https://docs.mattermost.com/administration-guide/configure/integrations-configuration-settings.html#enable-dynamic-client-registration).
  - Added OAuth public client support through DCR and PKCE for public/confidential clients.
  - Added support for a resource parameter with OAuth.
  - Added ability to create OAuth public clients through the **Integrations** page.
