@@ -11,7 +11,14 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
 - **v6.0.2, released 2025-12-08**
 
-  - Fixed additional stability issues and security improvements.
+  - Fixed the missing Cmd/Ctrl+W shortcut for closing windows [MM-66686](https://mattermost.atlassian.net/browse/MM-66686).
+  - Fixed an issue where quitting the app while the last server set was a GPO server would corrupt the config file [MM-66719](https://mattermost.atlassian.net/browse/MM-66719).
+  - Fixed an issue where a global shortcuts window would pop up on every start of the app on Linux [MM-66831](https://mattermost.atlassian.net/browse/MM-66831).
+  - Fixed a visual issue with the **Settings** modal while scrolling [MM-66676](https://mattermost.atlassian.net/browse/MM-66676).
+  - Fixed an issue where the URL view could end up in the middle of the screen [MM-66807](https://mattermost.atlassian.net/browse/MM-66807).
+  - Fixed an issue where links in the Calls widget did not open in an external tab [MM-66759](https://mattermost.atlassian.net/browse/MM-66759).
+  - Fixed an issue where redirection would not focus the pop-out window when popping out a thread from a window [MM-66759](https://mattermost.atlassian.net/browse/MM-66759).
+  - Fixed an issue where the Windows tray icon theme would not respect the system theme [MM-66805](https://mattermost.atlassian.net/browse/MM-66805).
 
 - **v6.0.1, released 2025-11-18**
 
