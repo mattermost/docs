@@ -21,7 +21,7 @@
 
 #### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
- - **Changes to the Enterprise plans:**
+ - **Changes to Enterprise plans:**
    - Under ``ServiceSettings`` in ``config.json``, added ``EnableDynamicClientRegistration`` configuration setting to control whether Dynamic Client Registration is enabled in your Mattermost instance. The default value is ``false``.
 
 ```{Important}
