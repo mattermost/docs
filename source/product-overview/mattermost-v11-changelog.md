@@ -14,11 +14,18 @@
 
 **Release day: 2025-12-16**
 
-#### Important Upgrade Notes
+### Upgrade Impact
+
+#### Database Schema Changes
  - Added a new column to the ``OAuthApps`` table called ``isdynamicallyregistered``. It has a default value of ``false``. Also added three new columns to the ``OAuthAuthData`` table called ``resource``, ``codechallenge`` and ``codechallengemethod``. All columns default to ``‘’``. Also added a new column to the ``OAuthAccessData`` table called ``audience``. It has a default value of ``‘’``. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
 
+#### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+ - **Changes to the Enterprise plans:**
+   - Under ``ServiceSettings`` in ``config.json``, added ``EnableDynamicClientRegistration`` configuration setting to control whether Dynamic Client Registration is enabled in your Mattermost instance. The default value is ``false``.
+
 ```{Important}
-If you upgrade from a release earlier than v11.1, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
+If you upgrade from a release earlier than v11.1, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html). In case of an upgrade failure, please check the [Downgrade Guide](https://docs.mattermost.com/administration-guide/upgrade/downgrading-mattermost-server.html) and the [Recovery Guide](https://docs.mattermost.com/deployment-guide/backup-disaster-recovery.html) for rollback steps and interim mitigation strategy.
 ```
 
 ### Improvements
@@ -67,13 +74,6 @@ If you upgrade from a release earlier than v11.1, please read the other [Importa
  - Fixed an issue where a content reviewer could not download file attachments from a flagged post.
  - Fixed an issue where users could not add bots without an error message popping up.
  - Fixed an issue displaying custom emojis in thread popouts.
-
-### config.json
-New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
-
-#### Changes to Enterprise plans: 
- - Under ``ServiceSettings`` in ``config.json``:
-    - Added ``EnableDynamicClientRegistration`` configuration setting to control whether Dynamic Client Registration is enabled in your Mattermost instance. The default value is ``false``.
 
 ### API Changes
  - Added a new ``api/v4/posts/rewrite`` endpoint to enable AI-powered message rewriting. It accepts a message, an AI agent ID, and a rewrite action, and returns a JSON object with a ``rewritten_text`` field containing the rewritten text. The endpoint supports six predefined actions: ``shorten``, ``elaborate``, ``improve_writing``, ``fix_spelling``, ``simplify``, and ``summarize``. A custom action is also available, which requires a ``custom_prompt`` parameter to specify the desired transformation.
