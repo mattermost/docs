@@ -149,7 +149,7 @@ Enable dynamic client registration
 **False**: Dynamic Client Registration is disabled. OAuth 2.0 applications must be registered manually through the System Console.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableDynamicClientRegistration": false`` with options ``true`` and ``false``.  |
+| This feature's ``config.json`` setting is ``"EnableDynamicClientRegistration": false`` with options ``true`` and ``false``.   |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
 .. important::
