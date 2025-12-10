@@ -12,8 +12,8 @@
 (release-v11.1-feature-release)=
 ## Release v11.1 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
-- **11.1.2, released 2025-12-10**
-  - Mattermost v11.1.2 is a dot release. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) is recommended.
+- **11.1.2, released **
+  - Mattermost v11.1.2 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v11.1.2 contains no database or functional changes.
 - **11.1.1, released 2025-11-21**
  ```{Attention}
@@ -99,8 +99,8 @@ If you upgrade from a release earlier than v11.0, please read the other [Importa
 (release-v11.0-major-release)=
 ## Release v11.0 - [Major Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
-- **11.0.7, released 2025-12-10**
-  - Mattermost v11.0.7 is a dot release. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) is recommended.
+- **11.0.7, released **
+  - Mattermost v11.0.7 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v11.0.7 contains no database or functional changes.
 - **11.0.6, released 2025-11-21**
  ```{Attention}
