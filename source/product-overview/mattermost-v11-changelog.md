@@ -62,7 +62,6 @@ If you upgrade from a release earlier than v11.1, please read the other [Importa
  - Fixed a server panic that could occur when patching channel moderations with restricted permissions.
  - Fixed the justification of sidebar icons for plugins.
  - Fixed an issue with the translation of "Until <time>" text for custom statuses.
- - Fixed an infinite loop on the shared channels tooltip for users when the remote cluster was not available.
  - Fixed an issue where guest users could not log in via SAML when "Ignore Guest Users when Synchronizing with AD/LDAP" was enabled.
  - Fixed an issue where length validation was missing for LDAP user fields.
  - Fixed an issue where some modals would appear when editing messages.
