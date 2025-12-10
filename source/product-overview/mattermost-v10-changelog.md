@@ -75,6 +75,9 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 (release-v10.11-extended-support-release)=
 ## Release v10.11 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **10.11.9, released 2025-12-10**
+  - Mattermost v10.11.9 is a dot release. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) is recommended.
+  - Mattermost v10.11.9 contains no database or functional changes.
 - **10.11.8, released 2025-11-21**
  ```{Attention}
  **Critical Fixes**
