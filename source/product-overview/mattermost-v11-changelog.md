@@ -49,7 +49,6 @@ If you upgrade from a release earlier than v11.1, please read the other [Importa
  - Improved license and plan name clarity throughout the user interface. License settings and the **About** modal now display specific plan names (Professional, Enterprise, Entry) instead of the generic "Enterprise Edition" label, reducing confusion between edition and plan terminology.
 
 #### Administration
- - Introduced authentication token generation for Hosted Push Notification Service.
  - Added search backend type to the Support Packet.
  - Added SAML provider type to the Support Packet.
 
