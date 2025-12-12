@@ -906,6 +906,8 @@ rst_prolog = """
     :class: theme-icon
 .. |scheduled-message-total| image:: /images/schedule-count-red-badge.png
     :alt: Total count of scheduled messages.
+.. |new-window-icon| image:: /images/dock-window_F10AC.svg
+    :alt: Open thread in a new browser window icon.
 """
 # rst_epilog = """
 # .. |mm_badge_version| replace:: 7.2
