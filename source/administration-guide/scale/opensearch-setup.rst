@@ -263,3 +263,41 @@ Follow these steps to configure Mattermost to use your AWS OpenSearch server and
 
 .. include:: /administration-guide/scale/common-configure-mattermost-for-enterprise-search.rst
    :start-after: :nosearch:
+
+
+Handle Protected System Indexes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+AWS OpenSearch includes protected system indexes (such as ``.opendistro*``, ``.opensearch*``, ``.kibana*``) that cannot be purged. Without proper configuration, Mattermost will attempt to purge these indexes and encounter errors.
+
+To prevent this, configure Mattermost to ignore protected indexes by adding the ``IgnoredPurgeIndexes`` parameter to your ``config.json``:
+
+.. code-block:: json
+
+   {
+     "ElasticsearchSettings": {
+       "ConnectionURL": "https://your-opensearch-endpoint.region.es.amazonaws.com",
+       "Backend": "opensearch",
+       "EnableIndexing": true,
+       "EnableSearching": true,
+       "EnableAutocomplete": true,
+       "Sniff": false,
+       "IgnoredPurgeIndexes": [
+         ".opendistro*",
+         ".opensearch*",
+         ".kibana*",
+         ".security*"
+       ]
+     }
+   }
+
+.. note::
+   The ``IgnoredPurgeIndexes`` parameter tells Mattermost to skip these system indexes during purge operations. Without this setting, index purging will fail.
+
+To identify which indexes are protected in your OpenSearch cluster, run:
+
+.. code-block:: bash
+
+   curl -u USERNAME:PASSWORD https://your-opensearch-endpoint/_cat/indices?v=true
+
+Indexes starting with a dot (``.``) are typically system indexes and should be added to the ``IgnoredPurgeIndexes`` list.
