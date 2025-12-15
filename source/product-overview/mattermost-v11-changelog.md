@@ -15,6 +15,7 @@
 - **11.2.1, released 2025-12-16**
   - Improved the performance of the post textbox and fixed typing bugs in the thread popout [MM-66832](https://mattermost.atlassian.net/browse/MM-66832).
   - Fixed an issue where Chrome/Desktop App spell check on Windows often couldn't correct typos [MM-66659](https://mattermost.atlassian.net/browse/MM-66659).
+  - Fixed an issue where some plugin configurations were deleted when another plugin saved its configuration [MM-66943](https://mattermost.atlassian.net/browse/MM-66943).
   - Mattermost v11.2.1 contains no database or functional changes.
 - **11.2.0, released 2025-12-16**
   - Original 11.2.0 release.
