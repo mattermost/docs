@@ -210,7 +210,7 @@ Configuing a SAML user as a Guest in Keycloak
 
 
 
-3. In the Keycloak admin UI add a user attribute mapper for guests
+3. In the Keycloak administration interface, add a user attribute mapper for guests.
 
   - Select *Clients* from the LHS menu
   - Select *mattermost* from the list
