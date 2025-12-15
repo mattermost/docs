@@ -30,14 +30,21 @@
  - The version of React used by the Mattermost web app has been updated from React 17 to React 18. See more details in [this forum post](https://forum.mattermost.com/t/upgrading-the-mattermost-web-app-to-react-18-v11/25000).
 ```
 
+### Upgrade Impact
+
+#### Database Schema Changes
+ - Added three new tables, ``ContentFlaggingCommonReviewers``, ``ContentFlaggingTeamSettings``, and ``ContentFlaggingTeamReviewers`` for storing Data Spillage settings. Added an index on ``ContentFlaggingTeamReviewers`` table to optimize fetching the team settings.  No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
+
+#### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+ - **Changes to Enterprise Advanced plan:**
+   - Added a new ``AutoTranslationSettings`` configuration settings section. The auto-translation feature will be available in a future release.
+
 ### Compatibility
  - Updated minimum required Edge, Firefox and Chrome versions to v140+ and updated minimum supported Windows version to v11+.
 
-### Important Upgrade Notes
- - Added three new tables, ``ContentFlaggingCommonReviewers``, ``ContentFlaggingTeamSettings``, and ``ContentFlaggingTeamReviewers`` for storing Data Spillage settings. Added an index on ``ContentFlaggingTeamReviewers`` table to optimize fetching the team settings.  No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
-
 ```{Important}
-If you upgrade from a release earlier than v11.0, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
+If you upgrade from a release earlier than v11.0, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html). In case of an upgrade failure, please check the [Downgrade Guide](https://docs.mattermost.com/administration-guide/upgrade/downgrading-mattermost-server.html) and the [Recovery Guide](https://docs.mattermost.com/deployment-guide/backup-disaster-recovery.html) for rollback steps and interim mitigation strategy.
 ```
 
 ### Improvements
@@ -69,12 +76,6 @@ If you upgrade from a release earlier than v11.0, please read the other [Importa
  - Fixed an issue with the mmctl system status to return non-zero exit codes when health checks fail, ensuring proper integration with container orchestration health check systems.
  - Fixed a configuration retention issue where even active configuration got deleted.
  - Fixed an issue where plugins could not receive 3rd-party authorization headers.
-
-### config.json
-New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
-
-#### Changes to Enterprise Advanced plan: 
- - Added a new ``AutoTranslationSettings`` configuration settings section. The auto-translation feature will be available in a future release.
 
 ### API Changes
  - Added a new API endpoint ``POST /api/v4/groups/names``.
@@ -155,8 +156,20 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - Support for PostgreSQL v13 has been removed. The new minimum PostgreSQL version is v14+. See the [minimum supported PostgreSQL version policy](https://docs.mattermost.com/deployment-guide/software-hardware-requirements.html#minimum-postgresql-database-support-policy) documentation for details.
 ```
 
+### Upgrade Impact
+
+#### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+ - **Changes to all plans:**
+   - Under ``CloudSettings`` in ``config.json``, added ``PreviewModalBucketURL``.
+   - Removed ``VerboseDiagnostics`` configuration setting as part of removing all telemetry support from Mattermost.
+   - Removed ``BleveSettings`` configuration setting as part of removing Bleve.
+   - Removed ``NotificationLogSettings`` as part of deprecating the separate notification log file.
+ - **Changes to Enterprise and Enterprise Advanced plans:**
+   - Removed ``ClientSideCertCheck`` as part of removing the experimental certificate-based authentication feature.
+
 ```{Important}
-If you upgrade from a release earlier than v10.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
+If you upgrade from a release earlier than v10.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html). In case of an upgrade failure, please check the [Downgrade Guide](https://docs.mattermost.com/administration-guide/upgrade/downgrading-mattermost-server.html) and the [Recovery Guide](https://docs.mattermost.com/deployment-guide/backup-disaster-recovery.html) for rollback steps and interim mitigation strategy.
 ```
 
 ### Improvements
@@ -198,19 +211,6 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
  - Fixed an issue where MFA warning was thrown in the logs for unauthenticated plugin requests.
  - Fixed an issue that prevented new users from searching channels right after joining a team when Elasticsearch was enabled.
  - Fixed some crashes in the threads screen.
-
-### config.json
-New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
-
-#### Changes to all plans:
- - Under ``CloudSettings`` in ``config.json``:
-     - Added ``PreviewModalBucketURL``.
- - Removed ``VerboseDiagnostics`` configuration setting as part of removing all telemetry support from Mattermost.
- - Removed ``BleveSettings`` configuration setting as part of removing Bleve.
- - Removed ``NotificationLogSettings`` as part of deprecating the separate notification log file.
-
-#### Changes to Enterprise and Enterprise Advanced plans: 
- - Removed ``ClientSideCertCheck`` as part of removing the experimental certificate-based authentication feature.
 
 ### API Changes
  - Added a counting plugin API for properties.
