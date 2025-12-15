@@ -45,7 +45,7 @@ If you upgrade from a release earlier than v11.1, please read the other [Importa
  - Pre-packaged Channel Export plugin [v1.3.0](https://github.com/mattermost/mattermost-plugin-channel-export/releases/tag/v1.3.0).
  - Pre-packaged Boards plugin version [v9.2.1](https://github.com/mattermost/mattermost-plugin-boards/releases).
  - Pre-packaged Jira plugin version [v4.4.1](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.4.1).
- - Enabled thread popouts in the browser.
+ - Enabled [thread popouts](https://docs.mattermost.com/end-user-guide/collaborate/organize-conversations.html#start-or-reply-to-threads) in the browser.
  - Reduced the channel banner height.
  - Improved license and plan name clarity throughout the user interface. License settings and the **About** modal now display specific plan names (Professional, Enterprise, Entry) instead of the generic "Enterprise Edition" label, reducing confusion between edition and plan terminology.
 
