@@ -198,6 +198,42 @@ If you have existing users in Mattermost that are going to be migrated to SAML l
 
 You may also configure SAML for Keycloak by editing ``config.json``. Before starting the Mattermost server, edit ``config.json`` to enable SAML based on :ref:`SAML configuration settings <administration-guide/configure/authentication-configuration-settings:saml 2.0>`. You must restart the Mattermost server for the changes to take effect.
 
+Configuing a SAML user as a Guest in Keycloak
+---------------------------------------------
+
+1. In Mattermost, go to **System Console > Authentication > SAML**.
+
+2. Set the **Guest Attribute** to designate which SAML users are guests.
+
+   .. image:: ../../images/mm-guset-config.png
+        :alt: In Mattermost, configure the SAML guest attribute
+
+
+
+3. In the Keycloak administration interface, add a user attribute mapper for guests.
+
+  a. Select **Clients** from the LHS menu.
+  b. Select **mattermost** from the list.
+  - Select the  *Client Scopes* tab
+  - Select *mattermost dedicated* from the list of scopes
+  - Click the *Add mapper* drop down and select *By configuration* 
+  - Select *User Attribute* on the model that opens
+  - Add values for *Name*, *User Attribute* and *SAML Attribute Name* as shown
+
+     .. image:: ../../images/keycloak-mapper-details.png
+      :alt: <Add attribute mapper>
+
+
+4. In Keycloak specify which users are guest by adding the attribute under **User details** 
+
+  a. Select **Users** from the LHS menu.
+  b. Select the username of the desired user.
+  c. Select the **Attribute** tab and select **+ add an attribute**.
+  d. Add the key and value.
+
+      .. image:: ../../images/guest-user-attribute.png
+        :alt: An example of adding an attribute to a user.
+
 .. include:: sso-saml-ldapsync.rst
    :start-after: :nosearch:
 
