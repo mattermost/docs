@@ -12,21 +12,39 @@
 (release-v11.1-feature-release)=
 ## Release v11.1 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
-**Release day: 2025-11-14**
+- **11.1.1, released 2025-11-21**
+ ```{Attention}
+ **Critical Fixes**
+  - Mattermost v11.1.1 contains a Critical severity level security fix in the Jira plugin. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+ ```
+  - Pre-packaged Jira plugin version [v4.4.1](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.4.1).
+  - Fixed an issue where thread popouts did not show the current user's status [MM-66586](https://mattermost.atlassian.net/browse/MM-66586).
+  - Fixed an issue where clicking on a permalink to a reply in another thread would not navigate the main window [MM-66614](https://mattermost.atlassian.net/browse/MM-66614).
+  - Fixed an issue where users could not add bots without an error message popping up [MM-66684](https://mattermost.atlassian.net/browse/MM-66684).
+  - Mattermost v11.1.1 contains no database or functional changes.
+- **11.1.0, released 2025-11-14**
+  - Original 11.1.0 release.
 
 ```{Attention}
 **Breaking Changes**
  - The version of React used by the Mattermost web app has been updated from React 17 to React 18. See more details in [this forum post](https://forum.mattermost.com/t/upgrading-the-mattermost-web-app-to-react-18-v11/25000).
 ```
 
+### Upgrade Impact
+
+#### Database Schema Changes
+ - Added three new tables, ``ContentFlaggingCommonReviewers``, ``ContentFlaggingTeamSettings``, and ``ContentFlaggingTeamReviewers`` for storing Data Spillage settings. Added an index on ``ContentFlaggingTeamReviewers`` table to optimize fetching the team settings.  No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
+
+#### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+ - **Changes to Enterprise Advanced plan:**
+   - Added a new ``AutoTranslationSettings`` configuration settings section. The auto-translation feature will be available in a future release.
+
 ### Compatibility
  - Updated minimum required Edge, Firefox and Chrome versions to v140+ and updated minimum supported Windows version to v11+.
 
-### Important Upgrade Notes
- - Added three new tables, ``ContentFlaggingCommonReviewers``, ``ContentFlaggingTeamSettings``, and ``ContentFlaggingTeamReviewers`` for storing Data Spillage settings. Added an index on ``ContentFlaggingTeamReviewers`` table to optimize fetching the team settings.  No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
-
 ```{Important}
-If you upgrade from a release earlier than v11.0, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
+If you upgrade from a release earlier than v11.0, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html). In case of an upgrade failure, please check the [Downgrade Guide](https://docs.mattermost.com/administration-guide/upgrade/downgrading-mattermost-server.html) and the [Recovery Guide](https://docs.mattermost.com/deployment-guide/backup-disaster-recovery.html) for rollback steps and interim mitigation strategy.
 ```
 
 ### Improvements
@@ -59,12 +77,6 @@ If you upgrade from a release earlier than v11.0, please read the other [Importa
  - Fixed a configuration retention issue where even active configuration got deleted.
  - Fixed an issue where plugins could not receive 3rd-party authorization headers.
 
-### config.json
-New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
-
-#### Changes to Enterprise Advanced plan: 
- - Added a new ``AutoTranslationSettings`` configuration settings section. The auto-translation feature will be available in a future release.
-
 ### API Changes
  - Added a new API endpoint ``POST /api/v4/groups/names``.
  - Added a ``since`` parameter to the property value search method of the ``PluginApi``.
@@ -84,6 +96,13 @@ New setting options were added to ``config.json``. Below is a list of the additi
 (release-v11.0-major-release)=
 ## Release v11.0 - [Major Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **11.0.6, released 2025-11-21**
+ ```{Attention}
+ **Critical Fixes**
+  - Mattermost v11.0.6 contains a Critical severity level security fix in the Jira plugin. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+ ```
+  - Pre-packaged Jira plugin version [v4.4.1](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.4.1).
+  - Mattermost v11.0.6 contains no database or functional changes.
 - **11.0.5, released 2025-11-17**
   - Mattermost v11.0.5 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged MS Teams Meetings plugin version [v2.3.0](https://github.com/mattermost/mattermost-plugin-msteams-meetings/releases/tag/v2.3.0).
@@ -94,7 +113,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
 - **11.0.4, released 2025-10-28**
  ```{Attention}
  **Critical Fixes**
-  - Mattermost v11.0.4 contains Critical severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is    highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v11.0.4 contains Critical severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
  ```
   - Fixed an issue where plugin configuration settings were incorrectly sanitized, causing API endpoints and plugins to receive masked values instead of actual configuration values.
   - Pre-packaged Boards plugin [v9.1.7](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.7).
@@ -137,8 +156,20 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - Support for PostgreSQL v13 has been removed. The new minimum PostgreSQL version is v14+. See the [minimum supported PostgreSQL version policy](https://docs.mattermost.com/deployment-guide/software-hardware-requirements.html#minimum-postgresql-database-support-policy) documentation for details.
 ```
 
+### Upgrade Impact
+
+#### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+ - **Changes to all plans:**
+   - Under ``CloudSettings`` in ``config.json``, added ``PreviewModalBucketURL``.
+   - Removed ``VerboseDiagnostics`` configuration setting as part of removing all telemetry support from Mattermost.
+   - Removed ``BleveSettings`` configuration setting as part of removing Bleve.
+   - Removed ``NotificationLogSettings`` as part of deprecating the separate notification log file.
+ - **Changes to Enterprise and Enterprise Advanced plans:**
+   - Removed ``ClientSideCertCheck`` as part of removing the experimental certificate-based authentication feature.
+
 ```{Important}
-If you upgrade from a release earlier than v10.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
+If you upgrade from a release earlier than v10.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html). In case of an upgrade failure, please check the [Downgrade Guide](https://docs.mattermost.com/administration-guide/upgrade/downgrading-mattermost-server.html) and the [Recovery Guide](https://docs.mattermost.com/deployment-guide/backup-disaster-recovery.html) for rollback steps and interim mitigation strategy.
 ```
 
 ### Improvements
@@ -180,19 +211,6 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
  - Fixed an issue where MFA warning was thrown in the logs for unauthenticated plugin requests.
  - Fixed an issue that prevented new users from searching channels right after joining a team when Elasticsearch was enabled.
  - Fixed some crashes in the threads screen.
-
-### config.json
-New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
-
-#### Changes to all plans:
- - Under ``CloudSettings`` in ``config.json``:
-     - Added ``PreviewModalBucketURL``.
- - Removed ``VerboseDiagnostics`` configuration setting as part of removing all telemetry support from Mattermost.
- - Removed ``BleveSettings`` configuration setting as part of removing Bleve.
- - Removed ``NotificationLogSettings`` as part of deprecating the separate notification log file.
-
-#### Changes to Enterprise and Enterprise Advanced plans: 
- - Removed ``ClientSideCertCheck`` as part of removing the experimental certificate-based authentication feature.
 
 ### API Changes
  - Added a counting plugin API for properties.
