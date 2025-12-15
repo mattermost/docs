@@ -229,7 +229,7 @@ Configuing a SAML user as a Guest in Keycloak
   a. Select **Users** from the LHS menu.
   b. Select the username of the desired user.
   c. Select the **Attribute** tab and select **+ add an attribute**.
-  - Add the key and value as shown
+  d. Add the key and value.
 
       .. image:: ../../images/guest-user-attribute.png
         :alt: An example of adding an attribute to a user.
