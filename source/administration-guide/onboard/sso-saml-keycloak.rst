@@ -203,7 +203,7 @@ Configuing a SAML user as a Guest in Keycloak
 
 1. In Mattermost, go to **System Console > Authentication > SAML**.
 
-2. Set the **Guest Attribute** to the a value you will use to designate which SAML users are guests
+2. Set the **Guest Attribute** to designate which SAML users are guests.
 
    .. image:: ../../images/mm-guset-config.png
         :alt: In Mattermost, configure the SAML guest attribute
