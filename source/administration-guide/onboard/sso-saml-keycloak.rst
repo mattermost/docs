@@ -232,7 +232,7 @@ Configuing a SAML user as a Guest in Keycloak
   - Add the key and value as shown
 
       .. image:: ../../images/guest-user-attribute.png
-        :alt: <Adding attribute to a user>
+        :alt: An example of adding an attribute to a user.
 
 .. include:: sso-saml-ldapsync.rst
    :start-after: :nosearch:
