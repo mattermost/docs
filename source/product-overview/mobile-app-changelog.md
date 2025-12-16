@@ -17,10 +17,19 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - iPhone 6s devices and later with iOS 15.1+ are required.
 
 ### Improvements
- - [Add improvements here when release notes are available]
+ - Added Microsoft Intune MAM integration with multi-server support (requires Enterprise Advanced license).
+ - Added the ability to invite guests to a team from mobile.
+ - Added support for servers with "Easy login" functionality.
+ - Added a new Burn-on-Read message feature (requires Enterprise Advanced license).
+ - Added AI agent streaming support with real-time message updates, reasoning summaries, tool call approval UI, citations display, and generation controls (stop/regenerate).
+ - Added an authentication secret field to the **Edit server** screen with validation and a show/hide toggle.
+ - Updated illustrations and background styles for onboarding and authentication flows.
+ - Reduced channel banner height to provide a more compact interface and to optimize screen space usage.
+ - Added a minor visual tweak to the **Start a new run** button. 
 
 ### Bug Fixes
- - [Add bug fixes here when release notes are available]
+ - Fixed an issue where a message stated that there are 0 pending tasks when completing a Playbook run.
+ - Fixed an issue where users could not manage their own roles and memberships on the **Manage channel members** screen.
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
