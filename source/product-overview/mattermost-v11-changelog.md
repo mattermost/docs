@@ -9,6 +9,94 @@
 ```{include} common-esr-support-upgrade.md
 ```
 
+(release-v11.2-feature-release)=
+## Release v11.2 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
+
+- **11.2.1, released 2025-12-16**
+  - Improved the performance of the post textbox and fixed typing bugs in the thread popout [MM-66832](https://mattermost.atlassian.net/browse/MM-66832).
+  - Fixed an issue where Chrome/Desktop App spell check on Windows often couldn't correct typos [MM-66659](https://mattermost.atlassian.net/browse/MM-66659).
+  - Fixed an issue where some plugin configurations were deleted when another plugin saved its configuration [MM-66943](https://mattermost.atlassian.net/browse/MM-66943).
+  - Pre-packaged Agents plugin [v1.6.3](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.6.3).
+  - Mattermost v11.2.1 contains no database or functional changes.
+- **11.2.0, released 2025-12-16**
+  - Original 11.2.0 release.
+
+### Upgrade Impact
+
+#### Database Schema Changes
+ - Added a new column to the ``OAuthApps`` table called ``isdynamicallyregistered``. It has a default value of ``false``. Also added three new columns to the ``OAuthAuthData`` table called ``resource``, ``codechallenge`` and ``codechallengemethod``. All columns default to ``‘’``. Also added a new column to the ``OAuthAccessData`` table called ``audience``. It has a default value of ``‘’``. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
+
+#### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+ - **Changes to Enterprise plans:**
+   - Under ``ServiceSettings`` in ``config.json``, added ``EnableDynamicClientRegistration`` configuration setting to control whether Dynamic Client Registration is enabled in your Mattermost instance. The default value is ``false``.
+
+```{Important}
+If you upgrade from a release earlier than v11.1, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html). In case of an upgrade failure, please check the [Downgrade Guide](https://docs.mattermost.com/administration-guide/upgrade/downgrading-mattermost-server.html) and the [Recovery Guide](https://docs.mattermost.com/deployment-guide/backup-disaster-recovery.html) for rollback steps and interim mitigation strategy.
+```
+
+### Improvements
+
+#### User Interface (UI)
+ - Pre-packaged Playbooks plugin [v2.6.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.6.1).
+ - Pre-packaged Zoom plugin [v1.10.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.10.0).
+ - Pre-packaged Agents plugin [v1.6.2](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.6.2).
+ - Pre-packaged ServiceNow plugin [v2.4.0](https://github.com/mattermost/mattermost-plugin-servicenow/releases/tag/v2.4.0).
+ - Pre-packaged MS Calendar plugin [v1.4.0](https://github.com/mattermost/mattermost-plugin-mscalendar/releases/tag/v1.4.0).
+ - Pre-packaged Channel Export plugin [v1.3.0](https://github.com/mattermost/mattermost-plugin-channel-export/releases/tag/v1.3.0).
+ - Pre-packaged Boards plugin version [v9.2.1](https://github.com/mattermost/mattermost-plugin-boards/releases).
+ - Pre-packaged Jira plugin version [v4.4.1](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.4.1).
+ - Enabled [thread popouts](https://docs.mattermost.com/end-user-guide/collaborate/organize-conversations.html#start-or-reply-to-threads) in the browser.
+ - Reduced the channel banner height.
+ - Improved license and plan name clarity throughout the user interface. License settings and the **About** modal now display specific plan names (Professional, Enterprise, Entry) instead of the generic "Enterprise Edition" label, reducing confusion between edition and plan terminology.
+
+#### Administration
+ - Added search backend type to the Support Packet.
+ - Added SAML provider type to the Support Packet.
+
+#### Integrations
+ - Permission schemes now fully expose controls for managing other users' integrations (Webhooks, Slash Commands, OAuth Apps) in the **System Console** for greater administrative clarity. Additionally, permissions for managing your own integrations have been renamed for consistency, and a new configuration option allows administrators to enforce Incoming Webhook channel locking.
+ - Added AI-enabled rewriting of messages for servers with the Agents plugin.
+ - Applicable posts are now marked as AI-generated.
+ - Added an authorization metadata endpoint and [Dynamic Client Registration of Confidential OAuth Apps](https://docs.mattermost.com/administration-guide/configure/integrations-configuration-settings.html#enable-dynamic-client-registration).
+ - Added OAuth public client support through DCR and PKCE for public/confidential clients.
+ - Added support for a resource parameter with OAuth.
+ - Added ability to create OAuth public clients through the **Integrations** page.
+ - Added ``http.Flusher`` support to the plugin RPC layer.
+
+### Bug Fixes
+ - Fixed a server panic that could occur when patching channel moderations with restricted permissions.
+ - Fixed the justification of sidebar icons for plugins.
+ - Fixed an issue with the translation of "Until <time>" text for custom statuses.
+ - Fixed an issue where guest users could not log in via SAML when "Ignore Guest Users when Synchronizing with AD/LDAP" was enabled.
+ - Fixed an issue where length validation was missing for LDAP user fields.
+ - Fixed an issue where some modals would appear when editing messages.
+ - Fixed an issue where the slash command autocomplete did not preserve user input case when forwarding pretext to backend.
+ - Fixed an issue where some text on the signup page was not translatable.
+ - Fixed an issue where thread popouts did not show the current user's status.
+ - Fixed an issue where clicking on a permalink to a reply in another thread would not navigate the main window.
+ - Fixed an issue where focusing on the thread popout would not mark the thread as read.
+ - Fixed an issue where a content reviewer could not download file attachments from a flagged post.
+ - Fixed an issue where users could not add bots without an error message popping up.
+ - Fixed an issue displaying custom emojis in thread popouts.
+
+### API Changes
+ - Added a new ``api/v4/posts/rewrite`` endpoint to enable AI-powered message rewriting. It accepts a message, an AI agent ID, and a rewrite action, and returns a JSON object with a ``rewritten_text`` field containing the rewritten text. The endpoint supports six predefined actions: ``shorten``, ``elaborate``, ``improve_writing``, ``fix_spelling``, ``simplify``, and ``summarize``. A custom action is also available, which requires a ``custom_prompt`` parameter to specify the desired transformation.
+ - Updated the ``GetFile``  ``GET`` ``api/v4/files/file_id`` endpoint to include two new query params: ``as_content_reviewer`` and ``flagged_post_id``. These are used for the Data Spillage feature to allow content reviewers to download files from flagged posts.
+ - Added two new fields to the ``/oauth/authorize`` endpoints called ``code_challenge`` and ``code_challenge_method`` in order to support PKCE with our OAuth authorization flow.
+ - Added ``/.well-known/oauth-authorization-server`` so that OAuth clients can check what Mattermost supports. The endpoint returns a 501 error if ``ServiceSettings.EnableOAuthServiceProvider`` is disabled.
+ - Added ``/api/v4/oauth/apps/register`` in order to support Dynamic Client Registration for OAuth. This allows **any** external OAuth client to automatically register an OAuth App within Mattermost without requiring authentication. The endpoint requires ``ServiceSettings.EnableOAuthServiceProvider`` and ``ServiceSettings.EnableDynamicClientRegistration`` to be enabled.
+ - Introduced ``GET /api/v4/agents`` and ``GET /api/v4/llmservices`` to allow authenticated clients to fetch available agents and LLM services.
+
+### Audit Log Event Changes
+ - Added new ``AuditEventRegisterOAuthClient``.
+
+### Go Version
+ - v11.2 is built with Go ``v1.24.6``.
+
+### Contributors
+ - [abbas-dependable-naqvi](https://github.com/abbas-dependable-naqvi), [agarciamontoro](https://github.com/agarciamontoro), [amyblais](https://github.com/amyblais), [andrleite](https://github.com/andrleite), [Arusekk](https://github.com/Arusekk), [asaadmahmood](https://github.com/asaadmahmood), [AurelienS](https://github.com/AurelienS), [BenCookie95](https://github.com/BenCookie95), [bgardner8008](https://github.com/bgardner8008), [calebroseland](https://github.com/calebroseland), [carlisgg](https://github.com/carlisgg), [catenacyber](https://github.com/catenacyber), [coltoneshaw](https://github.com/coltoneshaw), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://translate.mattermost.com/user/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [David](https://translate.mattermost.com/user/David), [davidkrauser](https://github.com/davidkrauser), [devinbinnie](https://github.com/devinbinnie), [DHaussermann](https://github.com/DHaussermann), [domibarton](https://github.com/domibarton), [efemonge](https://translate.mattermost.com/user/efemonge), [enahum](https://github.com/enahum), [enzowritescode](https://github.com/enzowritescode), [esarafianou](https://github.com/esarafianou), [evituzas](https://translate.mattermost.com/user/evituzas), [ferdymercury](https://github.com/ferdymercury), [feyzaozcann](https://github.com/feyzaozcann), [fmartingr](https://github.com/fmartingr), [frankps](https://translate.mattermost.com/user/frankps), [guenjun](https://translate.mattermost.com/user/guenjun), [hanzei](https://github.com/hanzei), [harshilsharma63](https://github.com/harshilsharma63), [helloinah](https://translate.mattermost.com/user/helloinah), [hmhealey](https://github.com/hmhealey), [iamleson98](https://translate.mattermost.com/user/iamleson98), [isacikgoz](https://github.com/isacikgoz), [itz-Me-Pj](https://github.com/itz-Me-Pj), [j0taD](https://translate.mattermost.com/user/j0taD), [jgheithcock](https://github.com/jgheithcock), [jprusch](https://github.com/jprusch), [JulienTant](https://github.com/JulienTant), [kaakaa](https://translate.mattermost.com/user/kaakaa), [kayazeren](https://translate.mattermost.com/user/kayazeren), [KuSh](https://github.com/KuSh), [larkox](https://github.com/larkox), [lieut-data](https://github.com/lieut-data), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [majo](https://translate.mattermost.com/user/majo), [mansil](https://translate.mattermost.com/user/mansil), [marianunez](https://github.com/marianunez), [master7](https://translate.mattermost.com/user/master7), [matthewbirtch](https://github.com/matthewbirtch), [mgdelacroix](https://github.com/mgdelacroix), [Morgan_svk](https://translate.mattermost.com/user/Morgan_svk), [mrckndt](https://github.com/mrckndt), [nevyangelova](https://github.com/nevyangelova), [nickmisasi](https://github.com/nickmisasi), [oberleg](https://translate.mattermost.com/user/oberleg), [pvev](https://github.com/pvev), [quarac](https://translate.mattermost.com/user/quarac), [rahimrahman](https://github.com/rahimrahman), [Rajat-Dabade](https://github.com/Rajat-Dabade), [Reinkard](https://github.com/Reinkard), [RS-labhub](https://github.com/RS-labhub), [sadohert](https://github.com/sadohert), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [Sharuru](https://translate.mattermost.com/user/Sharuru), [svelle](https://github.com/svelle), [TimTin](https://translate.mattermost.com/user/TimTin), [tsakmas](https://translate.mattermost.com/user/tsakmas), [tuladhar](https://github.com/tuladhar), [uright](https://github.com/uright), [vpecinka](https://github.com/vpecinka), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [willypuzzle](https://github.com/willypuzzle), [wooki-00](https://translate.mattermost.com/user/wooki-00), [yasserfaraazkhan](https://github.com/yasserfaraazkhan), [zlv](https://github.com/zlv)
+
 (release-v11.1-feature-release)=
 ## Release v11.1 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
