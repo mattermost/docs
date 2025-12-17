@@ -22,10 +22,11 @@
 #### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
  - **Changes to Enterprise Advanced plan:**
-   - Under ```` in ``config.json``, added ``EnableBurnOnRead``,  ``BurnOnReadDurationSeconds``, ``BurnOnReadMaximumTimeToLiveSeconds`` and ``BurnOnReadSchedulerFrequencySeconds``.
-   - Config ``EnableGuestMagicLink``.
-   - config AWSMeteringTimeoutSeconds.  ``AWSMeteringTimeoutSeconds`` configuration value can be used to set the timeout in seconds when connecting to the AWS marketplace metering service.
-   - config EnableIntuneMAM, section IntuneSettings. Added a new configuration setting ``NativeAppSettings.EnableIntuneMAM`` which can be edited in the **System Console**. 
+   - Under ``ServiceSettings`` in ``config.json``, added ``EnableBurnOnRead``,  ``BurnOnReadDurationSeconds``, ``BurnOnReadMaximumTimeToLiveSeconds`` and ``BurnOnReadSchedulerFrequencySeconds``.
+ - **Changes to Enterprise plans:**
+   - Under ``GuestAccountsSettings`` in ``config.json``, added ``EnableGuestMagicLink``.
+   - Under ``ServiceSettings`` in ``config.json``, added ``AWSMeteringTimeoutSeconds``.  The ``AWSMeteringTimeoutSeconds`` configuration value can be used to set the timeout in seconds when connecting to the AWS marketplace metering service.
+   - Under ``NativeAppSettings`` in ``config.json``, added ``EnableIntuneMAM``, which can be edited in the **System Console**. 
 
 #### Compatibility
 
