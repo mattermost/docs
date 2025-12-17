@@ -12,14 +12,26 @@
 (release-v11.3-feature-release)=
 ## Release v11.3 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
-- **11.3.0, released 2026-01-16**
-  - Original 11.3.0 release.
+**Release Day: January 16, 2026**
+
+### Upgrade Impact
+
+#### Database Schema Changes
+ -  See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
+
+#### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+ - **Changes to Enterprise Advanced plan:**
+   - Under ```` in ``config.json``, added ``EnableBurnOnRead``,  ``BurnOnReadDurationSeconds``, ``BurnOnReadMaximumTimeToLiveSeconds`` and ``BurnOnReadSchedulerFrequencySeconds``.
+   - Config ``EnableGuestMagicLink``.
+   - config AWSMeteringTimeoutSeconds.  ``AWSMeteringTimeoutSeconds`` configuration value can be used to set the timeout in seconds when connecting to the AWS marketplace metering service.
+   - config EnableIntuneMAM, section IntuneSettings. Added a new configuration setting ``NativeAppSettings.EnableIntuneMAM`` which can be edited in the **System Console**. 
+
+#### Compatibility
 
 ```{Important}
 If you upgrade from a release earlier than v11.2, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
 ```
-
-### Compatibility
 
 ### Improvements
 
@@ -44,6 +56,7 @@ If you upgrade from a release earlier than v11.2, please read the other [Importa
  - The channel ABAC auto-sync setting is now individually configurable through the **System Console**.
  - Validated log levels in ``AdvancedLoggingJSON``.
  - Changes to HTML templates now require a server restart to take effect.
+ - Updated AWS SDK dependency.
 
 #### Performance
  - Improved the performance of the post textbox and fixed typing bugs in the thread popout. 
@@ -64,13 +77,21 @@ If you upgrade from a release earlier than v11.2, please read the other [Importa
  - Fixed an issue where the ``TelemetryID`` could be temporarily missing on brand new High Availability clusters due to replica lag. 
 
 ### API Changes
+ - Added a new ``LoginByEntraIdToken`` API endpoint for MSAL ``id_token`` authentication.
+ - Added a new ``report/posts`` API for retrieving posts for reporting. 
 
 ### Audit Log Event Changes
+ - Added new audit events ``AuditEventRevealPost`` and ``AuditEventBurnPost``.
+ - Added a new audit event ``AuditEventSetActiveStatus``.
 
 ### Go Version
  - v11.3 is built with Go ``v1.24.6``.
 
+Open Source Components
+ - Replaced ``aws/aws-sdk-go`` with ``aws/aws-sdk-go-v2``, and replaced ``go-yaml/yaml`` with ``goccy/go-yaml``. Added ``mattermost/mattermost-plugin-agents`` and removed ``fsnotify/fsnotify`` and ``html-to-markdown`` from https://github.com/mattermost/mattermost.
+
 ### Contributors
+ - 
 
 (release-v11.2-feature-release)=
 ## Release v11.2 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
