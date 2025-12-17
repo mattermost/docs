@@ -14,7 +14,10 @@ We recommend reviewing the `additional upgrade notes <#additional-upgrade-notes>
 +====================================================+==================================================================================================================================================================+
 | v11.3                                              | Added schema changes in the form of a new tables (``ReadReceipts`` and ``TemporaryPosts``) that aggregate user attributes into a separate table. Added ``Type``  |
 |                                                    | field for both ``Drafts`` and ``ScheduledPosts``. A previous version of Mattermost can run with the new schema changes. The migrations are fully                 |
-|                                                    | backwards-compatible and no database downtime is expected for this upgrade.                                                                                      |     
+|                                                    | backwards-compatible and no database downtime is expected for this upgrade. 
+
+
+|                                                    | The SQL queries for absolute zero downtime are:                                                                                                                  |     
 |                                                    |                                                                                                                                                                  | 
 |                                                    | .. code-block:: sql                                                                                                                                              |
 |                                                    |                                                                                                                                                                  | 
@@ -45,6 +48,22 @@ We recommend reviewing the `additional upgrade notes <#additional-upgrade-notes>
 |                                                    | fully backwards-compatible and there are no table rewrites. < 1 second of downtime is required. Zero downtime is possible when using                             |
 |                                                    | ``CREATE INDEX CONCURRENTLY`` before upgrading for true zero-downtime upgrade. Standard upgrade is safe for all instance sizes; no special manual steps required |
 |                                                    | unless zero-downtime is critical.                                                                                                                                |
+
+|                                                    | .. code-block:: sql
+
+|                                                    |  CREATE INDEX CONCURRENTLY IF NOT EXISTS 
+|                                                    |  idx_channelmembers_autotranslation_enabled 
+|                                                    |     ON channelmembers (channelid) 
+|                                                    |     WHERE autotranslation = true; 
+|                                                    | 
+|                                                    |  CREATE INDEX CONCURRENTLY IF NOT EXISTS 
+|                                                    |  idx_channels_autotranslation_enabled 
+|                                                    |     ON channels (id) 
+|                                                    |     WHERE autotranslation = true; 
+|                                                    | 
+|                                                    |  CREATE INDEX CONCURRENTLY IF NOT EXISTS 
+|                                                    |  idx_users_id_locale 
+|                                                    |     ON users (id, locale);
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v11.2                                              | Added a new column to the ``OAuthApps`` table called ``isdynamicallyregistered``. It has a default value of ``false``. Also added three new columns to the       |
 |                                                    | ``OAuthAuthData`` table called ``resource``, ``codechallenge`` and ``codechallengemethod``. All columns default to ``‘’``. Also added a new column to the        |
