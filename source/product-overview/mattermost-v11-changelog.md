@@ -23,7 +23,45 @@ If you upgrade from a release earlier than v11.2, please read the other [Importa
 
 ### Improvements
 
+#### User Interface
+ - Pre-packaged Microsoft Calendar plugin version [v1.5.0](https://github.com/mattermost/mattermost-plugin-mscalendar/releases/tag/v1.5.0).
+ - Pre-packaged Agents plugin version [v1.7.1](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.7.1).
+ - Pre-packaged Zoom plugin version [v1.11.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.11.0).
+ - Added Korean language support.
+ - Added pop-outs for right-hand-side (RHS) plugins.
+ - Removed outdated system notices.
+ - Removed the Collapsed Reply Threads tutorial.
+ - Added support for triggering user mentions using the full-width at-sign (＠) in addition to the standard half-width at-sign (@), improving the experience for users of Japanese input methods.
+ - Added the ability to schedule posts in 15-minutes interval.
+ - Updated Giphy SDK from 8.1.0 to 10.1.0.
+ - Custom Profile Attributes now always return a set of default attributes if they're not set.
+ - Added a new webapp plugin component ``registerSidebarBrowseOrAddChannelMenuComponent``, which allows users to add options to the ``BrowseOrCreateChannel`` menu. 
+
+#### Administration
+ - Added Microsoft Intune MAM authentication support (requires Enterprise Advanced license).
+ - Added a Burn-on-Read feature (requires Enterprise Advanced license).
+ - Added support for "Easy login" functionality.
+ - The channel ABAC auto-sync setting is now individually configurable through the **System Console**.
+ - Validated log levels in ``AdvancedLoggingJSON``.
+ - Changes to HTML templates now require a server restart to take effect.
+
+#### Performance
+ - Improved the performance of the post textbox and fixed typing bugs in the thread popout. 
+
 ### Bug Fixes
+ - Fixed a translation issue for invalid slash commands to ensure all locales display the correct message.
+ - Fixed a desktop token infinite redirect when the wrong app was opened.
+ - Fixed the session expired notification not showing the server name on Desktop App.
+ - Fixed development Docker Compose files to work on SELinux-enabled hosts.
+ - Fixed discrepancies with ``control_access_policies/search`` endpoint and its documentation.
+ - Fixed an issue where channel memberships from exports were not properly validated.
+ - Fixed an issue where pressing **Back** in the Desktop App after an external login would cause a weird state.
+ - Fixed a server panic that occurred when a bot created a post with persistent notifications enabled.
+ - Fixed an issue where the Chrome/Desktop App spell check on Windows often couldn't correct typos.
+ - Fixed an issue where pressing ``Shift+Up`` in the channel textbox to reply to a thread could cause the right‑hand sidebar (RHS) reply textbox to not focus.
+ - Fixed an issue where the guest group mentions permission setting was not available in the **System Console** for Professional licenses.
+ - Fixed a minor UX issue in **Set custom status** modal after visiting the **System Console**.
+ - Fixed an issue where the ``TelemetryID`` could be temporarily missing on brand new High Availability clusters due to replica lag. 
 
 ### API Changes
 
