@@ -9,6 +9,31 @@
 ```{include} common-esr-support-upgrade.md
 ```
 
+(release-v11.3-feature-release)=
+## Release v11.3 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
+
+- **11.3.0, released 2026-01-16**
+  - Original 11.3.0 release.
+
+```{Important}
+If you upgrade from a release earlier than v11.2, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
+```
+
+### Compatibility
+
+### Improvements
+
+### Bug Fixes
+
+### API Changes
+
+### Audit Log Event Changes
+
+### Go Version
+ - v11.3 is built with Go ``v1.24.6``.
+
+### Contributors
+
 (release-v11.2-feature-release)=
 ## Release v11.2 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
