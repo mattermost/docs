@@ -30,6 +30,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 ### Bug Fixes
  - Fixed an issue where a message stated that there are 0 pending tasks when completing a Playbook run.
  - Fixed an issue where users could not manage their own roles and memberships on the **Manage channel members** screen.
+ - Fixed an issue with a WebSocket event when a user burns a Burn-on-Read message for themselves.
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
