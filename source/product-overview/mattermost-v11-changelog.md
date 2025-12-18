@@ -87,7 +87,7 @@ If you upgrade from a release earlier than v11.2, please read the other [Importa
 ### Go Version
  - v11.3 is built with Go ``v1.24.6``.
 
-Open Source Components
+### Open Source Components
  - Replaced ``aws/aws-sdk-go`` with ``aws/aws-sdk-go-v2``, and replaced ``go-yaml/yaml`` with ``goccy/go-yaml``. Added ``mattermost/mattermost-plugin-agents`` and removed ``fsnotify/fsnotify`` and ``html-to-markdown`` from https://github.com/mattermost/mattermost.
 
 ### Contributors
