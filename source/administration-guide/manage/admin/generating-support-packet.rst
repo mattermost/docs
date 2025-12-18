@@ -72,13 +72,17 @@ The contents of a Mattermost Support Packet can differ by server version. Select
    - ``sanitized_config.json`` (sanitized copy of the Mattermost configuration)
    - ``stats.yaml`` (Mattermost usage statistics)
    - ``jobs.yaml`` (last runs of important jobs)
-   - ``diagnostics.yaml`` (core plugin diagnostics data)
+   - ``diagnostics.yaml`` (core plugin diagnostics data; from v11.1 also includes active search backend type information)
    - ``permissions.yaml`` (role & scheme information)
    - ``postgres_schema_dump.sql`` (PostgreSQL database schema information including tables, indexes, constraints, and other database metadata to assist with database configuration diagnosis)
    - ``warning.txt`` (present when issues are encountered during packet generation)
    - ``tsdb_dump.tar.gz`` (present when the Metrics plugin is installed and the **Performance metrics** option is selected when generating the Support Packet)
 
-   From Mattermost v11, Support Packet generation includes connection testing for configured :doc:`enterprise search engines </administration-guide/scale/enterprise-search>`, including both :doc:`Elasticsearch </administration-guide/scale/elasticsearch-setup>` and :doc:`AWS OpenSearch </administration-guide/scale/opensearch-setup>`. Any connection errors encountered during this testing are included in the Support Packet to help diagnose enterprise search configuration issues. When enterprise search is configured, the Support Packet includes connection test results and any errors encountered:
+   From Mattermost v11, Support Packet generation includes connection testing for configured :doc:`enterprise search engines </administration-guide/scale/enterprise-search>`, including both :doc:`Elasticsearch </administration-guide/scale/elasticsearch-setup>` and :doc:`AWS OpenSearch </administration-guide/scale/opensearch-setup>`. Any connection errors encountered during this testing are included in the Support Packet to help diagnose enterprise search configuration issues. 
+
+   From Mattermost v11.1, the Support Packet also includes the active search backend type information in the diagnostics data. This helps administrators quickly identify which search backend (Database, Elasticsearch, or AWS OpenSearch) is currently active, making it easier to troubleshoot search-related performance issues and configuration problems.
+
+   When enterprise search is configured, the Support Packet includes connection test results and any errors encountered:
 
    - **Elasticsearch connection test**: Tests server connectivity and reports server version, installed plugins, and any connection errors
    - **AWS OpenSearch connection test**: Tests server connectivity and reports server version, installed plugins, and any connection errors
