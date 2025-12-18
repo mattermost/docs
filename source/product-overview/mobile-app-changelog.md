@@ -19,7 +19,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 ### Improvements
  - Added Microsoft Intune MAM integration for iOS with multi-server support (requires Enterprise Advanced license).
  - Added the ability to invite guests to a team from mobile.
- - Added support for servers with passwordless login with Magic Link functionality.
+ - Added support for guests for servers with passwordless login with Magic Link functionality (requires Enterprise license).
  - Added a new Burn-on-Read message feature (requires Enterprise Advanced license).
  - Added AI agent streaming support with real-time message updates, reasoning summaries, tool call approval UI, citations display, and generation controls (stop/regenerate).
  - Added an authentication secret field to the **Edit server** screen with validation and a show/hide toggle.
