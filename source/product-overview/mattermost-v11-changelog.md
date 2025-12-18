@@ -52,7 +52,7 @@ If you upgrade from a release earlier than v11.2, please read the other [Importa
 #### Administration
  - Added Microsoft Intune MAM authentication support (requires Enterprise Advanced license).
  - Added a Burn-on-Read feature (requires Enterprise Advanced license).
- - Added support for "Easy login" functionality.
+ - Added support for passwordless authentication with Magic Link for guest users (requires Enterprise license).
  - The channel ABAC auto-sync setting is now individually configurable through the **System Console**.
  - Validated log levels in ``AdvancedLoggingJSON``.
  - Changes to HTML templates now require a server restart to take effect.
