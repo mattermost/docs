@@ -696,7 +696,7 @@ Fields of the User object
         <kbd>"ldap"</kbd> - LDAP authentication (Enterprise and Professional)<br>
         <kbd>"saml"</kbd> - Generic SAML based authentication (Enterprise)<br>
         <kbd>"google"</kbd> - Google OAuth authentication (Enterprise)<br>
-        <kbd>"entra id"</kbd> - Microsoft Entra ID OAuth Authentication (Enterprise)</td>
+        <kbd>"office365"</kbd> - Microsoft Entra ID OAuth Authentication (Enterprise)</td>
       <td align="center" valign="middle">No</td>
       <td align="center" valign="middle">No</td>
     </tr>
