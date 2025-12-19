@@ -176,77 +176,93 @@ Verify that Mattermost is running: curl ``http://localhost:8065``. You should se
 
 The final step, depending on your requirements, is to run sudo ``systemctl enable mattermost.service`` so that Mattermost will start on system boot. If you don't receive an error when starting Mattermost after the previous step, you are good to go. If you did receive an error, continue on.
 
-.. important::
+**Hardened RHEL environments**
 
-  **Modify SELinux settings**: When deploying Mattermost from RHEL9, which has SELinux running with enforceing mode enabled by default, additional configuration is required.
+When deploying Mattermost on hardened RHEL systems, additional security configurations may be required. Select the tab below for your specific security tool:
 
-  - SELinux is a security module that provides access control security policies. It's enabled by default on RHEL and CentOS systems. SELinux can block access to files, directories, and ports, which can cause issues when starting Mattermost. To resolve these issues, you'll need to set the appropriate SELinux contexts for the Mattermost binaries and directories, and allow Mattermost to bind to ports.
-  - Ensure that SELinux is enabled and in enforcing mode by running the ``sestatus`` command. If it's ``enforcing``, you'll need to configure it properly.
-  - Set bin contexts for ``/opt/mattermost/bin``: SELinux enforces security contexts for binaries. To label the Mattermost binaries as safe, you'll need to set them to the below SELinux context.
+.. tab:: SELinux
+
+  When deploying Mattermost from RHEL9, which has SELinux running with enforcing mode enabled by default, additional configuration is required.
+
+  SELinux is a security module that provides access control security policies. It's enabled by default on RHEL and CentOS systems. SELinux can block access to files, directories, and ports, which can cause issues when starting Mattermost. To resolve these issues, you'll need to set the appropriate SELinux contexts for the Mattermost binaries and directories, and allow Mattermost to bind to ports.
+
+  Ensure that SELinux is enabled and in enforcing mode by running the ``sestatus`` command. If it's ``enforcing``, you'll need to configure it properly.
+
+  **Set bin contexts for /opt/mattermost/bin:**
+
+  SELinux enforces security contexts for binaries. To label the Mattermost binaries as safe, you'll need to set them to the below SELinux context.
+
+  .. code-block:: sh
+
+    sudo semanage fcontext -a -t bin_t "/opt/mattermost/bin(/.*)?"
+    sudo restorecon -RF /opt/mattermost/bin
+
+  Now, try starting Mattermost again with
+
+  .. code-block:: sh
+
+    sudo systemctl start mattermost
+
+  If you don't receive an error, verify that Mattermost is running: curl ``http://localhost:8065``. You should see the HTML that's returned by the Mattermost Server. You're all set!
+
+  If on starting Mattermost you receive an error, before moving on, check for the existence of a file in ``/opt/mattermost/logs`` - if ``mattermost.log`` exists in that directory, it's more likely you're dealing with a configuration issue in ``config.json``. Double check the previous steps before continuing.
+
+  **Try different contexts for /opt/mattermost:**
+
+  SELinux enforces security contexts for files and directories. To label your Mattermost directory as safe, you'll need to set an appropriate SELinux context.
+
+  1. Check current context by running ``ls -Z /opt/mattermost``. When you see something like ``drwxr-xr-x. root root unconfined_u:object_r:default_t:s0 mattermost`` returned, the ``default_t`` indicates that SELinux doesn't know what this directory is for.
+  2. Set a safe context by assigning a SELinux type that's compatible with web services or applications by running ``sudo semanage fcontext -a -t httpd_sys_content_t "/opt/mattermost(/.*)?"``. A common one is ``httpd_sys_content_t``, used for serving files. Ensure you match the directory and its contents recursively. Run the ``sudo restorecon -R /opt/mattermost`` to apply the changes.
+
+  **Allow Mattermost to bind to ports:**
+
+  When Mattermost needs specific ports (e.g., 8065), ensure that SELinux allows it by allowing Mattermost to bind to ports. Run the ``sudo semanage port -l | grep 8065`` command, and if the port's not listed, you'll need to add it by running ``sudo semanage port -a -t http_port_t -p tcp 8065``, replacing the ``8065`` with the required port.
+
+  **Handle custom policies:**
+
+  If Mattermost requires actions that SELinux blocks, you'll need to generate a custom policy.
+
+  1. Check for SELinux denials first in the logs by running ``sudo ausearch -m avc -ts recent``, or by checking the audit log: ``sudo cat /var/log/audit/audit.log | grep denied``.
+
+  2. If needed, generate a policy module by installing ``audit2allow`` to generate policies automatically.
 
     .. code-block:: sh
 
-      sudo semanage fcontext -a -t bin_t "/opt/mattermost/bin(/.*)?"
-      sudo restorecon -RF /opt/mattermost/bin
+      sudo yum install -y policycoreutils-python-utils
+      sudo grep mattermost /var/log/audit/audit.log | audit2allow -M mattermost_policy
+      sudo semodule -i mattermost_policy.pp
 
-    Now, try starting Mattermost again with
+  **Test the configuration:**
 
-    .. code-block:: sh
+  Restart Mattermost to confirm the configuation works as expected by running ``sudo systemctl restart mattermost``. In the case of failures, revisit the logs to identify other SELinux-related issues.
 
-      sudo systemctl start mattermost
+  **Need Mattermost working quickly for testing purposes?**
 
-    If you don't receive an error, verify that Mattermost is running: curl ``http://localhost:8065``. You should see the HTML that's returned by the Mattermost Server. You're all set!
+  - You can change SELinux to permissive mode by running the ``sudo setenforce 0``. command where policies aren't enforced, only logged.
+  - This command changes the SELinux mode to "permissive". While in permissive mode, policies aren't enforced, and violations are logged instead of being blocked. This can be helpful for debugging and troubleshooting issues related to SELinux policies.
+  - Ensure you re-enable enforcing mode once context is working as needed by running the ``sudo setenforce 1`` command.
 
-    If on starting Mattermost you receive an error, before moving on, check for the existence of a file in ``/opt/mattermost/logs`` - if ``mattermost.log`` exists in that directory, it's more likely you're dealing with a configuration issue in  ``config.json``. Double check the previous steps before continuing
+  **Additional resources:**
 
-    Try different contexts for ``/opt/mattermost``: SELinux enforces security contexts for files and directories. To label your Mattermost directory as safe, you'll need to set an appropriate SELinux context.
+  - `SELinux User's and Administrator's Guide <https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/selinux_users_and_administrators_guide/index>`_
+  - `SELinux Project Wiki <https://github.com/SELinuxProject/selinux>`_
+  - `Introduction to SELinux <https://github.blog/developer-skills/programming-languages-and-frameworks/introduction-to-selinux/>`_
+  - `A Sysadmin's Guide to SELinux: 42 Answers to the Big Questions <https://opensource.com/article/18/7/sysadmin-guide-selinux>`_
+  - `Mastering SELinux: A Comprehensive Guide to Linux Security <https://srivastavayushmaan1347.medium.com/mastering-selinux-a-comprehensive-guide-to-linux-security-8bed9976da88>`_
 
-      1. Check current context by running ``ls -Z /opt/mattermost``. When you see something like ``drwxr-xr-x. root root unconfined_u:object_r:default_t:s0 mattermost`` returned, the ``default_t`` indicates that SELinux doesn't know what this directory is for.
-      2. Set a safe context by assigning a SELinux type that's compatible with web services or applications by running ``sudo semanage fcontext -a -t httpd_sys_content_t "/opt/mattermost(/.*)?"``. A common one is ``httpd_sys_content_t``, used for serving files. Ensure you match the directory and its contents recursively. Run the ``sudo restorecon -R /opt/mattermost`` to apply the changes.
+.. tab:: firewalld
 
-    Allow Mattermost to bind to ports: When Mattermost needs specific ports (e.g., 8065), ensure that SELinux allows it by allowing Mattermost to bind to ports. Run the ``sudo semanage port -l | grep 8065`` command, and if the port's not listed, you'll need to add it by running ``sudo semanage port -a -t http_port_t -p tcp 8065``, replacing the ``8065`` with the required port.
-
-    Handle custom policies: If Mattermost requires actions that SELinux blocks, you'll need to generate a custom policy.
-
-      1. Check for SELinux denials first in the logs by running ``sudo ausearch -m avc -ts recent``, or by checking the audit log: ``sudo cat /var/log/audit/audit.log | grep denied``.
-
-      2. If needed, generate a policy module by installing ``audit2allow`` to generate policies automatically.
-
-        .. code-block:: sh
-
-          sudo yum install -y policycoreutils-python-utils
-          sudo grep mattermost /var/log/audit/audit.log | audit2allow -M mattermost_policy
-          sudo semodule -i mattermost_policy.pp
-
-    Test the configuration: Restart Mattermost to confirm the configuation works as expected by running ``sudo systemctl restart mattermost``. In the case of failures, revisit the logs to identify other SELinux-related issues.
-
-    Need Mattermost working quickly for testing purposes?
-
-    - You can change SELinux to permissive mode by running the ``sudo setenforce 0``. command where policies aren't enforced, only logged.
-    - This command changes the SELinux mode to "permissive". While in permissive mode, policies aren't enforced, and violations are logged instead of being blocked. This can be helpful for debugging and troubleshooting issues related to SELinux policies.
-    - Ensure you re-enable enforcing mode once context is working as needed by running the ``sudo setenforce 1`` command.
-
-    See the following SELinux resources for additional details:
-
-      - `SELinux User's and Administrator's Guide <https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/selinux_users_and_administrators_guide/index>`_
-      - `SELinux Project Wiki <https://github.com/SELinuxProject/selinux>`_
-      - `Introduction to SELinux <https://github.blog/developer-skills/programming-languages-and-frameworks/introduction-to-selinux/>`_
-      - `A Sysadmin's Guide to SELinux: 42 Answers to the Big Questions <https://opensource.com/article/18/7/sysadmin-guide-selinux>`_
-      - `Mastering SELinux: A Comprehensive Guide to Linux Security <https://srivastavayushmaan1347.medium.com/mastering-selinux-a-comprehensive-guide-to-linux-security-8bed9976da88>`_
-
-.. important::
-
-  **Configure firewalld for government hardened environments**: When deploying Mattermost on RHEL systems with firewalld enabled, you'll need to configure firewall rules to allow access to the Mattermost Server.
+  When deploying Mattermost on RHEL systems with firewalld enabled, you'll need to configure firewall rules to allow access to the Mattermost Server.
 
   Firewalld is the default firewall management tool on RHEL systems and provides a dynamically managed firewall with support for network zones. By default, it may block incoming connections to Mattermost's port (8065).
 
-  Check if firewalld is running:
+  **Check if firewalld is running:**
 
   .. code-block:: sh
 
     sudo systemctl status firewalld
 
-  If firewalld is active, configure it to allow Mattermost traffic:
+  If firewalld is active, configure it to allow Mattermost traffic.
 
   **Configure firewalld for Mattermost Server:**
 
@@ -309,13 +325,13 @@ The final step, depending on your requirements, is to run sudo ``systemctl enabl
     - TCP support for RTC requires Calls v0.17+ and rtcd v0.11+
     - If you're using custom ports, replace the default port numbers with your configured values
 
-.. important::
+.. tab:: fapolicyd
 
-  **Configure fapolicyd for government hardened environments**: When deploying Mattermost on RHEL systems with fapolicyd enabled, you may encounter "operation not permitted" errors in the Mattermost logs.
+  When deploying Mattermost on RHEL systems with fapolicyd enabled, you may encounter "operation not permitted" errors in the Mattermost logs.
 
   Fapolicyd (File Access Policy Daemon) is a userspace daemon that determines access rights to files based on trust. It's commonly enabled in secure environments to prevent execution of unauthorized binaries. By default, fapolicyd may block Mattermost binaries and plugins from executing.
 
-  Troubleshoot fapolicyd issues:
+  **Troubleshoot fapolicyd issues:**
 
   1. If you're seeing "operation not permitted" errors in your Mattermost logs, first check if fapolicyd is the cause by temporarily stopping it:
 
@@ -341,7 +357,7 @@ The final step, depending on your requirements, is to run sudo ``systemctl enabl
 
     Note the rule number that's denying execution - your rule file must be numbered to come before this rule.
 
-  Configure fapolicyd to allow Mattermost:
+  **Configure fapolicyd to allow Mattermost:**
 
   1. Create a rule file for Mattermost. The naming convention is critical - it must come before the rule that's denying Mattermost. If you're using a stock fapolicyd configuration, ``80`` works fine:
 
@@ -461,7 +477,9 @@ The final step, depending on your requirements, is to run sudo ``systemctl enabl
     - If you continue to see denials after following these steps, run ``sudo fapolicyd --debug`` to identify the specific paths being denied and adjust your rules accordingly.
     - See the :doc:`rtcd deployment documentation </administration-guide/configure/calls-deployment>` for installation and configuration details.
 
-  See the `Mattermost and fapolicyd <https://support.mattermost.com/hc/en-us/articles/12167526545172-Mattermost-and-fapolicyd>`_ support article for additional troubleshooting steps.
+  **Additional resources:**
+
+  - `Mattermost and fapolicyd <https://support.mattermost.com/hc/en-us/articles/12167526545172-Mattermost-and-fapolicyd>`_ support article
 
 Step 6: Update the server
 ~~~~~~~~~~~~~~~~~~~~~~~~~
