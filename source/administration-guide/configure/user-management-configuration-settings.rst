@@ -143,38 +143,22 @@ If you deactivate a Mattermost user who has integrations tied to their user acco
 Manage user attributes
 ~~~~~~~~~~~~~~~~~~~~~~
 
-*Available from Mattermost Server v11.1*
-
-System administrators can view and update users' custom profile attribute values directly from the System Console. This capability provides a centralized way to manage user profile attributes without requiring users to update their own profiles or using command-line tools.
-
-**To edit a user's custom profile attributes:**
+From Mattermost v11.1, you can can view and update custom profile attribute values for individual users directly from the System Console. This capability provides a centralized way to manage user profile attributes without requiring users to update their own profiles or using :ref:`mmctl user attribute commands <administration-guide/manage/mmctl-command-line-tool:mmctl cpa>`.
 
 1. Go to **System Console > User Management > Users** to access all user accounts.
 2. Select a **User** to open their User Configuration page.
 3. Scroll to the **User Attributes** section to view and edit the user's custom profile attribute values.
 4. Update attribute values as needed and save your changes.
 
-**Permission and role considerations:**
+.. note::
 
-- This capability is available to system administrators by default
-- The ability to view and edit user attributes is controlled by the same system admin permissions that govern other user management functions
-- Users retain the ability to edit their own attributes if the attribute is configured as :ref:`user-editable <administration-guide/manage/admin/user-attributes:admin-managed vs user-editable attributes>`
-
-**Related documentation:**
-
-- :doc:`User attributes </administration-guide/manage/admin/user-attributes>` - Complete guide to creating and configuring custom profile attributes
-- :ref:`mmctl user attribute commands <administration-guide/manage/mmctl-command-line-tool:mmctl cpa>` - Command-line tools for managing custom profile attributes
-
-.. tip::
-
-  Custom profile attributes must be created first through **System Console > Site Configuration > System Attributes > User Attributes** before they can be edited in individual user profiles. See the :doc:`User attributes </administration-guide/manage/admin/user-attributes>` documentation for details on creating and configuring attributes.
+  - Custom profile attributes must be created first through **System Console > Site Configuration > System Attributes > User Attributes** before they can be edited in individual user profiles. See the :doc:`User attributes </administration-guide/manage/admin/user-attributes>` documentation for details on creating and configuring attributes.
+  - Users can edit their own attributes if that attribute is configured as :ref:`user-editable <administration-guide/manage/admin/user-attributes:admin-managed vs user-editable attributes>`.
 
 Delete users
 ~~~~~~~~~~~~~
 
-*Available from Mattermost Server v10.11*
-
-When using email/password for authentication, you can enable users to permanently delete their own accounts, or you can delete user accounts as a system administrator.
+From Mattermost v10.11, when using email/password for authentication, you can enable users to permanently delete their own accounts, or you can delete user accounts as a system administrator.
 
 .. config:setting:: delete-users
   :displayname: Delete users
@@ -211,9 +195,7 @@ When an account is permanently deleted, the following data is permanently remove
 What data is retained?
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-The following data remains in the system after account deletion:
-
-- Audit logs referencing the user's actions, channel and team membership
+After account deletion, audit logs referencing the user's actions, channel and team membership are retained.
 
 Manage user's roles
 ~~~~~~~~~~~~~~~~~~~~

@@ -124,7 +124,7 @@ Manage attributes
 
 - **User Edit Permissions**: From Mattermost v11, all custom profile attributes are admin-managed by default for enhanced security. To allow user editing for specific attributes, administrators can enable this through the **More** |more-icon| menu and selecting **Allow user editing**. This should only be enabled for attributes that do not impact security access controls or organizational policies. Attributes used in ABAC policies should remain admin-managed unless there's a specific business need and the security implications are fully understood.
 
-- **Edit User Attribute Values**: From Mattermost v11.1, system administrators can view and update individual users' custom profile attribute values through the System Console. Go to **System Console > User Management > Users**, select a user, and scroll to the **User Attributes** section to edit their attribute values directly. This provides a centralized way to manage user profile data without requiring command-line tools. See :doc:`User Management Configuration Settings </administration-guide/configure/user-management-configuration-settings>` for complete details.
+- **Edit User Attribute Values**: From Mattermost v11.1, you can view and update custom profile attribute values for individual users through the System Console. See the :ref:`Manage user attributes <administration-guide/configure/user-management-configuration-settings:manage user attributes>` documentation for details.
 
 In cases where multiple system admins manage system attributes, refresh your web browser instance to see real-time updates to system attributes made by other admins.
 
