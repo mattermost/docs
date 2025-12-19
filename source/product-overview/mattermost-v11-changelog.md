@@ -9,6 +9,91 @@
 ```{include} common-esr-support-upgrade.md
 ```
 
+(release-v11.3-feature-release)=
+## Release v11.3 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
+
+**Release Day: January 16, 2026**
+
+### Upgrade Impact
+
+#### Database Schema Changes
+ - Added schema changes in the form of a new tables (``ReadReceipts`` and ``TemporaryPosts``) that aggregate user attributes into a separate table. Added ``Type`` field for both ``Drafts`` and ``ScheduledPosts``. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
+ - Added a new ``translations`` table and two new columns (``channels.autotranslation``, ``channelmembers.autotranslation)``. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
+
+#### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+ - **Changes to Enterprise Advanced plan:**
+   - Under ``ServiceSettings`` in ``config.json``, added ``EnableBurnOnRead``,  ``BurnOnReadDurationSeconds``, ``BurnOnReadMaximumTimeToLiveSeconds`` and ``BurnOnReadSchedulerFrequencySeconds``.
+ - **Changes to Enterprise plans:**
+   - Under ``GuestAccountsSettings`` in ``config.json``, added ``EnableGuestMagicLink``.
+   - Under ``ServiceSettings`` in ``config.json``, added ``AWSMeteringTimeoutSeconds``.  This configuration value can be used to set the timeout in seconds when connecting to the AWS marketplace metering service.
+   - Under ``NativeAppSettings`` in ``config.json``, added ``EnableIntuneMAM``, which can be edited in the **System Console**.
+
+```{Important}
+If you upgrade from a release earlier than v11.2, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html). In case of an upgrade failure, please check the [Downgrade Guide](https://docs.mattermost.com/administration-guide/upgrade/downgrading-mattermost-server.html) and the [Recovery Guide](https://docs.mattermost.com/deployment-guide/backup-disaster-recovery.html) for rollback steps and interim mitigation strategy.
+```
+
+### Improvements
+
+#### User Interface
+ - Pre-packaged Microsoft Calendar plugin version [v1.5.0](https://github.com/mattermost/mattermost-plugin-mscalendar/releases/tag/v1.5.0).
+ - Pre-packaged Agents plugin version [v1.7.2](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.7.2).
+ - Pre-packaged Zoom plugin version [v1.11.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.11.0).
+ - Added Korean language support.
+ - Added pop-outs for right-hand-side (RHS) plugins.
+ - Removed outdated system notices.
+ - Removed the Collapsed Reply Threads tutorial.
+ - Added support for triggering user mentions using the full-width at-sign (＠) in addition to the standard half-width at-sign (@), improving the experience for users of Japanese input methods.
+ - Added the ability to schedule posts in 15-minutes interval.
+ - Updated Giphy SDK from 8.1.0 to 10.1.0.
+ - Custom Profile Attributes now always return a set of default attributes if they're not set.
+ - Added a new webapp plugin component ``registerSidebarBrowseOrAddChannelMenuComponent``, which allows users to add options to the ``BrowseOrCreateChannel`` menu. 
+
+#### Administration
+ - Added Microsoft Intune MAM authentication support (requires Enterprise Advanced license).
+ - Added a Burn-on-Read feature (requires Enterprise Advanced license).
+ - Added support for passwordless authentication with Magic Link for guest users (requires Enterprise license).
+ - The channel ABAC auto-sync setting is now individually configurable through the **System Console**.
+ - Validated log levels in ``AdvancedLoggingJSON``.
+ - Changes to HTML templates now require a server restart to take effect.
+ - Updated AWS SDK dependency.
+
+#### Performance
+ - Improved the performance of the post textbox and fixed typing bugs in the thread popout. 
+
+### Bug Fixes
+ - Fixed a translation issue for invalid slash commands to ensure all locales display the correct message.
+ - Fixed a desktop token infinite redirect when the wrong app was opened.
+ - Fixed the session expired notification not showing the server name on Desktop App.
+ - Fixed development Docker Compose files to work on SELinux-enabled hosts.
+ - Fixed discrepancies with ``control_access_policies/search`` endpoint and its documentation.
+ - Fixed an issue where channel memberships from exports were not properly validated.
+ - Fixed an issue where pressing **Back** in the Desktop App after an external login would cause a weird state.
+ - Fixed a server panic that occurred when a bot created a post with persistent notifications enabled.
+ - Fixed an issue where the Chrome/Desktop App spell check on Windows often couldn't correct typos.
+ - Fixed an issue where pressing ``Shift+Up`` in the channel textbox to reply to a thread could cause the right‑hand sidebar (RHS) reply textbox to not focus.
+ - Fixed an issue where the guest group mentions permission setting was not available in the **System Console** for Professional licenses.
+ - Fixed a minor UX issue in **Set custom status** modal after visiting the **System Console**.
+ - Fixed an issue where the ``TelemetryID`` could be temporarily missing on brand new High Availability clusters due to replica lag.
+ - Fixed an issue where scheduling a post in the thread popout did not work.
+
+### API Changes
+ - Added a new ``LoginByEntraIdToken`` API endpoint for MSAL ``id_token`` authentication.
+ - Added a new ``report/posts`` API for retrieving posts for reporting. 
+
+### Audit Log Event Changes
+ - Added new audit events ``AuditEventRevealPost`` and ``AuditEventBurnPost``.
+ - Added a new audit event ``AuditEventSetActiveStatus``.
+
+### Go Version
+ - v11.3 is built with Go ``v1.24.6``.
+
+### Open Source Components
+ - Replaced ``aws/aws-sdk-go`` with ``aws/aws-sdk-go-v2``, and replaced ``go-yaml/yaml`` with ``goccy/go-yaml``. Added ``mattermost/mattermost-plugin-agents`` and removed ``fsnotify/fsnotify`` and ``html-to-markdown`` from https://github.com/mattermost/mattermost.
+
+### Contributors
+ - 
+
 (release-v11.2-feature-release)=
 ## Release v11.2 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
