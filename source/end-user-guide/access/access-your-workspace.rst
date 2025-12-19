@@ -4,7 +4,7 @@ Access your workspace
 .. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
-Access your Mattermost instance with your credentials using a web browser, the desktop app, or the mobile app for iOS or Android. Depending on how Mattermost is configured, you'll log in using your email address, username, or single sign-on (SSO) username, and your password. See the :doc:`Client availability </end-user-guide/collaborate/client-availability>` documentation to learn which features are available on different Mattermost clients.
+Access your Mattermost instance with your credentials using a web browser, the desktop app, or the mobile app for iOS or Android. Depending on how Mattermost is configured, you'll log in using your email address, username, or single sign-on (SSO) username, and your password. See the :doc:`Client availability </end-user-guide/access/client-availability>` documentation to learn which features are available on different Mattermost clients.
 
 .. tip::
 
@@ -15,11 +15,12 @@ Access your Mattermost instance with your credentials using a web browser, the d
   :hidden:
   :titlesonly:
 
-  Install the desktop app </end-user-guide/collaborate/install-desktop-app>
-  Install the iOS mobile app </end-user-guide/collaborate/install-ios-app>
-  Install the Android mobile app </end-user-guide/collaborate/install-android-app>
-  Client availability </end-user-guide/collaborate/client-availability>
-  Log out of Mattermost </end-user-guide/collaborate/log-out>
+  Acceptable Use Policy and Privacy Policy </end-user-guide/access/acceptable-use-policy-and-privacy-policy>
+  Install the desktop app </end-user-guide/access/install-desktop-app>
+  Install the iOS mobile app </end-user-guide/access/install-ios-app>
+  Install the Android mobile app </end-user-guide/access/install-android-app>
+  Client availability </end-user-guide/access/client-availability>
+  Log out of Mattermost </end-user-guide/access/log-out>
 
 .. tab:: Web/Desktop
   :parse-titles:
