@@ -91,17 +91,13 @@ Define access controls per channel
 
 You can assign an existing access control policy to a private channels for more granular control over channel membership. This is useful when you need to apply different rules for different channels.
 
-**Option 1: Via User Management > Channels**
-
 1. In the System Console, go to **User Management > Channels** to select the private channel you want to configure, and select **Edit**.
 2. In the **Channel Management** section, enable the **Enable attribute-based channel access** option.
 3. Under **Access policy**, select **Link to a policy** to select an existing policy.
 
-**Option 2: Via Channel Details (Mattermost v11.1.1+)**
+.. tip::
 
-1. From a channel's details page in the System Console, navigate to the **Access Control** section.
-2. Enable the **Enable attribute-based channel access** option.
-3. Under **Access policy**, select **Link to a policy** to select an existing policy.
+  You can also assign ABAC rules to a channel directly from a channel's details page in the System Console under **Channel Management** by enabling the **Enable attribute-based channel access** option. Under **Access policy**, select **Link to a policy** to select an existing policy.
 
 Remove channel policies
 ~~~~~~~~~~~~~~~~~~~~~~~

@@ -23,19 +23,13 @@ Prerequisites
 Access Channel Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Primary method (for Channel and Team Admins):**
-
 1. In a private channel where you have Channel Admin permissions, select the channel name at the top of the center pane.
 2. Select **Channel Settings** from the dropdown menu.
-3. Navigate to the **Access Control** tab.
+3. Navigate to the **Access Control** tab. This tab is only visible for private channels when you have the appropriate permissions and ABAC is enabled system-wide.
 
-**Alternative method (for System Admins in Mattermost v11.1.1+):**
+.. tip::
 
-System Admins can also access and edit ABAC rules directly from a channel's details page in the System Console. This provides convenient access to channel-specific rules alongside system-wide ABAC policies. See :doc:`System-wide attribute-based access policies </administration-guide/manage/admin/abac-system-wide-policies>` for more details on System Console access.
-
-.. note::
-
-  The **Access Control** tab is only visible for private channels when you have the appropriate permissions and ABAC is enabled system-wide.
+  You can also assign ABAC rules to a channel directly from a channel's details page in the System Console under **Channel Management** by enabling the **Enable attribute-based channel access** option. Under **Access policy**, select **Link to a policy** to select an existing policy.
 
 Configure access rules
 ----------------------
