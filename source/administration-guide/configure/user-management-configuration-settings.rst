@@ -143,16 +143,16 @@ If you deactivate a Mattermost user who has integrations tied to their user acco
 Manage user attributes
 ~~~~~~~~~~~~~~~~~~~~~~
 
-From Mattermost v11.1, you can can view and update custom profile attribute values for individual users directly from the System Console. This capability provides a centralized way to manage user profile attributes without requiring users to update their own profiles or using :ref:`mmctl user attribute commands <administration-guide/manage/mmctl-command-line-tool:mmctl cpa>`.
+From Mattermost v11.1, you can can view and update user attribute values for individual users directly from the System Console. This capability provides a centralized way to manage user profile attributes without requiring users to update their own profiles or using :ref:`mmctl user attribute commands <administration-guide/manage/mmctl-command-line-tool:mmctl cpa>`.
 
 1. Go to **System Console > User Management > Users** to access all user accounts.
 2. Select a **User** to open their User Configuration page.
-3. Scroll to the **User Attributes** section to view and edit the user's custom profile attribute values.
+3. Scroll to the **User Attributes** section to view and edit the user's attribute values.
 4. Update attribute values as needed and save your changes.
 
 .. note::
 
-  - Custom profile attributes must be created first through **System Console > Site Configuration > System Attributes > User Attributes** before they can be edited in individual user profiles. See the :doc:`User attributes </administration-guide/manage/admin/user-attributes>` documentation for details on creating and configuring attributes.
+  - User attributes must be created first through **System Console > Site Configuration > System Attributes > User Attributes** before they can be edited in individual user profiles. See the :doc:`User attributes </administration-guide/manage/admin/user-attributes>` documentation for details on creating and configuring attributes.
   - Users can edit their own attributes if that attribute is configured as :ref:`user-editable <administration-guide/manage/admin/user-attributes:admin-managed vs user-editable attributes>`.
 
 Delete users
