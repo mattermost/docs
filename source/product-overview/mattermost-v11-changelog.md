@@ -74,7 +74,8 @@ If you upgrade from a release earlier than v11.2, please read the other [Importa
  - Fixed an issue where pressing ``Shift+Up`` in the channel textbox to reply to a thread could cause the right‑hand sidebar (RHS) reply textbox to not focus.
  - Fixed an issue where the guest group mentions permission setting was not available in the **System Console** for Professional licenses.
  - Fixed a minor UX issue in **Set custom status** modal after visiting the **System Console**.
- - Fixed an issue where the ``TelemetryID`` could be temporarily missing on brand new High Availability clusters due to replica lag. 
+ - Fixed an issue where the ``TelemetryID`` could be temporarily missing on brand new High Availability clusters due to replica lag.
+ - Fixed an issue where scheduling a post in the thread popout did not work.
 
 ### API Changes
  - Added a new ``LoginByEntraIdToken`` API endpoint for MSAL ``id_token`` authentication.
