@@ -45,7 +45,7 @@ The official Privacy Policy is available at: https://mattermost.com/privacy-poli
 Commercial and Self-Hosted Deployments
 --------------------------------------
 
-For **commercial customers**, including self-hosted deployments, organizations may replace or override these policies in the :ref:`Mattermost System Console <administration-guide/configure/site-configuration-settings:customization>` with their own acceptable use or conduct policies, based on contractual terms.
+For **commercial customers**, including self-hosted deployments, organizations may replace or override these policies in the :ref:`Mattermost System Console <administration-guide/configure/site-configuration-settings:customization>` with their own acceptable use or conduct policies, based on contractual terms. If you change the default link to add your own terms for using the service you provide, your new terms must include a link to the default terms so end users are aware of the Mattermost Acceptable Use Policy for Mattermost software.
 
 Additional Information
 ----------------------
