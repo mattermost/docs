@@ -954,7 +954,7 @@ Mattermost v5.1.0 contains a low severity level security fix. Upgrading is highl
 
 ### Highlights
 
-- Added [a Desktop App auto-updater](https://docs.mattermost.com/collaborate/install-desktop-app.html). The app now automatically checks for new updates on app start up. Note that the Mac builds provided on GitHub do not support auto-updates.
+- Added [a Desktop App auto-updater](https://docs.mattermost.com/end-user-guide/access/install-desktop-app.html). The app now automatically checks for new updates on app start up. Note that the Mac builds provided on GitHub do not support auto-updates.
 
 ### Improvements
 

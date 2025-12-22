@@ -76,7 +76,7 @@ Join a team
 
 You can join any open teams, or join any team you receive an invitation to join.
 
-If you haven't yet joined any teams in Mattermost, you're prompted to join available teams when you :doc:`log in to Mattermost </end-user-guide/collaborate/access-your-workspace>`.
+If you haven't yet joined any teams in Mattermost, you're prompted to join available teams when you :doc:`log in to Mattermost </end-user-guide/access/access-your-workspace>`.
 
 You can be a member of multiple teams at the same time. To join additional teams, select the current team name, choose **Join Another Team**, and select the name of the team you want to join.
 

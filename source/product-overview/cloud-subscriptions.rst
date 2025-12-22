@@ -121,7 +121,7 @@ Mattermost may conduct unscheduled maintenance to address high-severity issues a
 Mattermost Cloud uses a Cloud-First Release Strategy with Ring-Based staged releases aligned to Mattermost licenses with a 24 hour soak time for :doc:`Mattermost Cloud Dedicated </product-overview/cloud-dedicated>` and for Enterprise customers using :doc:`Mattermost Cloud Shared </product-overview/cloud-shared>`.
 
 Can I use a custom URL at my organization's domain?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 No. Custom URLs are not currently supported for Mattermost Cloud deployments.
 
