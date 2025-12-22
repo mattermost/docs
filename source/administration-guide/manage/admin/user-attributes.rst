@@ -8,7 +8,7 @@ From Mattermost v10.8, ensure your teams always have the critical information th
 
 System attributes enable you to customize user profile attributes to match your organization's unique needs and streamline collaboration while keeping user data centralized and consistent. 
 
-From Mattermost v11, you have enhanced control over these custom profile attributes through admin-managed vs user-editable settings. By default, attributes are admin-managed for security, but you can explicitly allow user editing for specific attributes that don't impact access control or sensitive organizational data. These custom profile attributes supplement existing user details visible from the user's profile picture.
+From Mattermost v11, you have enhanced control over these user attributes through admin-managed vs user-editable settings. By default, attributes are admin-managed for security, but you can explicitly allow user editing for specific attributes that don't impact access control or sensitive organizational data. These user attributes supplement existing user details visible from the user's profile picture.
 
 .. image:: ../../../images/cpa-properties.png
   :alt: Mobile examples of a user profile with custom user attributes added as system attributes.
@@ -20,7 +20,7 @@ If you plan to synchronize system properties with your AD/LDAP or SAML identity 
 
 .. tab:: Mattermost v11 or later
 
-  From Mattermost v11, custom profile attributes have enhanced admin controls with a security-first approach. All attributes are admin-managed by default, providing better security and governance. System administrators can explicitly enable user editing for specific attributes through the System Console interface.
+  From Mattermost v11, user attributes have enhanced admin controls with a security-first approach. All attributes are admin-managed by default, providing better security and governance. System administrators can explicitly enable user editing for specific attributes through the System Console interface.
 
   If your organization uses :doc:`attribute-based access control (ABAC) </administration-guide/manage/admin/attribute-based-access-control>`, which requires an Enterprise Edition Advanced license, attributes used in access control policies should remain admin-managed for security reasons. You can enable user-managed attributes for ABAC by setting ``EnableUserManagedAttributes`` in ``config.json``, or via an environment variable as noted below, but this should be done with caution:
 
@@ -51,7 +51,7 @@ If you plan to synchronize system properties with your AD/LDAP or SAML identity 
 Admin-managed vs user-editable attributes
 -------------------------------------------
 
-From Mattermost v11, system administrators have enhanced control over custom profile attributes through admin-managed vs user-editable settings. This distinction provides better security and governance for organizational profile data.
+From Mattermost v11, system administrators have enhanced control over user attributes through admin-managed vs user-editable settings. This distinction provides better security and governance for organizational profile data.
 
 **Admin-managed attributes** (default behavior):
 
@@ -122,7 +122,9 @@ Manage attributes
 
 - **Delete**: Delete attributes you no longer need or want by selecting **More** |more-icon| and selecting **Delete property**.
 
-- **User Edit Permissions**: From Mattermost v11, all custom profile attributes are admin-managed by default for enhanced security. To allow user editing for specific attributes, administrators can enable this through the **More** |more-icon| menu and selecting **Allow user editing**. This should only be enabled for attributes that do not impact security access controls or organizational policies. Attributes used in ABAC policies should remain admin-managed unless there's a specific business need and the security implications are fully understood.
+- **User Edit Permissions**: From Mattermost v11, all user attributes are admin-managed by default for enhanced security. To allow user editing for specific attributes, administrators can enable this through the **More** |more-icon| menu and selecting **Allow user editing**. This should only be enabled for attributes that do not impact security access controls or organizational policies. Attributes used in ABAC policies should remain admin-managed unless there's a specific business need and the security implications are fully understood.
+
+- **Edit User Attribute Values**: From Mattermost v11.1, you can view and update custom profile attribute values for individual users through the System Console. See the :ref:`Manage user attributes <administration-guide/configure/user-management-configuration-settings:manage user attributes>` documentation for details.
 
 In cases where multiple system admins manage system attributes, refresh your web browser instance to see real-time updates to system attributes made by other admins.
 
@@ -131,7 +133,7 @@ Sync attributes with your identity provider
 
 1. Synchronize a attribute with AD/LDAP or SAML by selecting **More** |more-icon| and selecting **Link attribute to AD/LDAP** or **Link attribute to SAML**. Mattermost takes you directly to the **AD/LDAP** or **SAML 2.0** configuration settings page in the System Console where you can map the attributes you want to synchronize.
 
-2. Scroll to the **Custom profile attributes sync** section to specify the attribute used to populate the attribute in user profiles.
+2. Scroll to the **User attributes sync** section to specify the attribute used to populate the attribute in user profiles.
 
 3. Specify the attribute mapping for the attribute by entering the attribute name in the system attribute's **Attribute** field. The attribute name must match the attribute name in your identity provider.
 

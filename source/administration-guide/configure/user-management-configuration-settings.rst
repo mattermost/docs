@@ -140,12 +140,25 @@ If you deactivate a Mattermost user who has integrations tied to their user acco
 - **Bot accounts** won't continue to work after user deactivation when the :ref:`disable bot accounts when owner is deactivated <administration-guide/configure/integrations-configuration-settings:disable bot accounts when owner is deactivated>` is enabled. This configuration setting is enabled by default.
 - **OAuth apps** won't continue to work after user deactivation, and associated tokens are deleted. Manual action is needed to keep these integrations running.
 
+Manage user attributes
+~~~~~~~~~~~~~~~~~~~~~~
+
+From Mattermost v11.1, you can can view and update user attribute values for individual users directly from the System Console. This capability provides a centralized way to manage user profile attributes without requiring users to update their own profiles or using :ref:`mmctl user attribute commands <administration-guide/manage/mmctl-command-line-tool:mmctl cpa>`.
+
+1. Go to **System Console > User Management > Users** to access all user accounts.
+2. Select a **User** to open their User Configuration page.
+3. Scroll to the **User Attributes** section to view and edit the user's attribute values.
+4. Update attribute values as needed and save your changes.
+
+.. note::
+
+  - User attributes must be created first through **System Console > Site Configuration > System Attributes > User Attributes** before they can be edited in individual user profiles. See the :doc:`User attributes </administration-guide/manage/admin/user-attributes>` documentation for details on creating and configuring attributes.
+  - Users can edit their own attributes if that attribute is configured as :ref:`user-editable <administration-guide/manage/admin/user-attributes:admin-managed vs user-editable attributes>`.
+
 Delete users
 ~~~~~~~~~~~~~
 
-*Available from Mattermost Server v10.11*
-
-When using email/password for authentication, you can enable users to permanently delete their own accounts, or you can delete user accounts as a system administrator.
+From Mattermost v10.11, when using email/password for authentication, you can enable users to permanently delete their own accounts, or you can delete user accounts as a system administrator.
 
 .. config:setting:: delete-users
   :displayname: Delete users
@@ -182,9 +195,7 @@ When an account is permanently deleted, the following data is permanently remove
 What data is retained?
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-The following data remains in the system after account deletion:
-
-- Audit logs referencing the user's actions, channel and team membership
+After account deletion, audit logs referencing the user's actions, channel and team membership are retained.
 
 Manage user's roles
 ~~~~~~~~~~~~~~~~~~~~
