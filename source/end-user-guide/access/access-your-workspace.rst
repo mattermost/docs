@@ -53,6 +53,118 @@ Access your Mattermost instance with your credentials using a web browser, the d
   3. Enter your user credentials to log into Mattermost. 
   4. The team that displays first in the team sidebar opens. If you're not a member of a team yet, you're prompted to select a team to join.
 
+.. tab:: Mobile via Microsoft Intune
+  :parse-titles:
+
+  When your organization uses Microsoft Intune App Protection to secure Mattermost on iOS mobile devices, you must enroll to access Mattermost on mobile. Enrollment adds extra protection to work data while keeping your personal device and apps private.
+
+  What to Expect
+  ---------------
+
+  Enrollment is mandatory and cannot be bypassed. It happens during sign-in and is typically a quick process. Access to Mattermost content is blocked until enrollment completes.
+
+  After enrolling, your Mattermost experience generally stays the same, but some restrictions are enforced.
+
+  Intune protections apply **per Mattermost workspace** (the Mattermost server you sign in to). If you have access to multiple Mattermost workspaces, each workspace may have different protections and requirements in place. This guide explains what to expect when the workspace you are connecting to is protected by Intune.
+
+  .. note::
+
+    * Intune protections are based on your **user account**, not your Mattermost role or permissions.
+    * Intune policies are controlled by your organization, not by Mattermost.
+    * If you have questions about protections, contact your IT support team.
+
+  Sign In to Enroll
+  -----------------
+
+  You only need to complete enrollment once per device.
+
+  1. Open the Mattermost mobile app on your iOS device.
+  2. Sign in with Microsoft (your organization’s sign-in option).
+  3. Enter your credentials.
+  4. When prompted, tap **Enroll**.
+
+     During enrollment, you may see the Microsoft sign-in screen again. This is normal and usually takes only a few seconds.
+
+  5. When enrollment completes, you are notified.
+  6. When prompted, enter a PIN to add an extra layer of protection for your work data.
+
+     Once the PIN is confirmed, Mattermost unlocks access to your workspace.
+
+  .. note::
+
+    If you tap **Cancel**, you will not be able to use Mattermost on mobile until enrollment succeeds. You can retry immediately or `log out <#what-happens-when-i-log-out-manually>`__ and retry later.
+
+  What Changes After Enrollment?
+  ------------------------------
+
+  Your Mattermost experience remains the same until protection rules apply. Depending on your organization’s Intune policies, some actions are limited.
+
+  Clipboard Restrictions
+  ~~~~~~~~~~~~~~~~~~~~~~~
+
+  To prevent sensitive data from leaving protected apps, you will not be able to copy or paste content out of Mattermost.
+
+  If you try to copy content from Mattermost into another app, the paste will not work.
+
+  Screenshot & Screen Recording Restrictions
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  To prevent sensitive content from being captured, you will not be able to take screenshots or record your screen while using Mattermost.
+
+  If you try to take a screenshot or record your screen, the screenshot or recording will not be captured.
+
+  File Save Restrictions
+  ~~~~~~~~~~~~~~~~~~~~~~~
+
+  To keep work files protected, you will not be able to save files to personal locations.
+
+  If you try to save a file from Mattermost to a personal location, the save will not work. Files can be saved only to locations approved by your organization.
+
+  Browser & Sharing Restrictions
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  To ensure data stays within protected apps, you will not be able to open links in unapproved browsers or share content to unmanaged apps.
+
+  If you tap a link in Mattermost, it opens only in an approved browser. If you try to share content to an unmanaged app, the share will not work.
+
+  Frequently Asked Questions
+  --------------------------
+
+  What Happens If I Leave the Organization or Lose My Device?
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  If you leave the organization, or your device is lost or compromised, your IT support team can wipe Mattermost work data from your iOS device. This is called a **selective wipe**.
+
+  This means:
+
+  * Only Mattermost work data is removed from your device.
+  * Personal apps, photos, and files are untouched.
+  * You are logged out of the affected Mattermost workspace.
+  * Other Mattermost workspaces on your device remain unaffected.
+
+  Why Can’t I Access Mattermost After Enrollment?
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Mattermost may restrict access after enrollment if Intune detects a risk, such as:
+
+  * Your device operating system is out of date
+  * The device is too old to meet security requirements
+  * A jailbroken device is detected
+  * Malware is detected
+  * Re-authentication is required
+
+  If this occurs, Intune blocks access and displays an error message in the Mattermost mobile app explaining what action is required. Contact your IT support team for help.
+
+  What Happens When I Log Out Manually?
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  When you log out of Mattermost:
+
+  * All workspace data is securely removed from the device.
+  * Intune protection for that workspace is removed.
+
+  You can sign back in with Microsoft if you need access again.
+
 Reset your password
 --------------------
 
