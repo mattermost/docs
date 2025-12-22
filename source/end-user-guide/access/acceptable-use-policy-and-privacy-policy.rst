@@ -6,7 +6,7 @@ To use Mattermost, all users **must agree** to the Mattermost **Acceptable Use P
 Acceptable Use Policy
 ---------------------
 
-The **Acceptable Use Policy (AUP)** explains how Mattermost may and may not be used.
+The **Acceptable Use Policy** explains how Mattermost may and may not be used.
 
 The policy exists to:
 
