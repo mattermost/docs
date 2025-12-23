@@ -315,17 +315,15 @@ Expected Mobile Login & Enrollment Flow
 
 When Intune MAM is enabled:
 
-1. The user taps **Sign in with Microsoft**.
-2. MSAL authenticates the user.
-3. Mattermost validates the access token.
-4. The mobile app checks:
-   
+1. The mobile app checks:
    * Platform is iOS
    * Intune MAM is enabled
    * Authentication service matches
-   * Required scope is populated
    * License is **Enterprise Advanced**
 
+2. The user taps **Sign in**. careful with using `Microsoft` explicitly cause we don't enforce it
+3. MSAL authenticates the user.
+4. Mattermost validates the access token.
 5. Intune MAM enrollment is triggered.
 6. App protection policies are applied.
 
