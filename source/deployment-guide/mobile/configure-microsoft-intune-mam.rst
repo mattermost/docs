@@ -23,7 +23,7 @@ If any of the following apply, stop. This configuration will fail.
 
 * You require Android Intune MAM support (not yet available).
 * Your deployment cannot use Microsoft Entra ID (Azure AD).
-* Your identity strategy cannot use Azure AD ``objectId`` as the authoritative user identifier.
+* The authentication method you plan to protect with Intune MAM cannot use Azure AD objectId as the authoritative user identifier.
 * You need a rollout model where users can defer or bypass Intune enrollment.
 
 Before You Continue
@@ -42,7 +42,7 @@ If any of the above are not true, do not proceed.
 Configuration Overview
 ----------------------
 
-Configuring Intune MAM for Mattermost Mobile requires coordinated setup across the following four systems:
+Configuring Intune MAM for Mattermost Mobile requires coordinated setup across the following 4 systems:
 
 * **Microsoft Entra ID (Azure AD)** – identity, app registration, API permissions
 * **Microsoft Intune** – app protection policies and user targeting
@@ -58,14 +58,14 @@ Setup Order
 
 Follow this setup order exactly to avoid enrollment failures and rework.
 
-Step 1: Finalize Identity Strategy (Entra + Mattermost)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Step 1: Finalize Identity Requirements
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Commit to Azure AD ``objectId`` as the authoritative identity.
-* Ensure all authentication methods (OAuth, SAML, LDAP) resolve to the same value.
-* Confirm access tokens include the ``oid`` claim.
+* Azure AD ``objectId`` is the authoritative identity.
+* All sign-in paths used by the authentication method selected for Intune MAM must resolve to the same identifier.
+* Access tokens issued by Entra include the ``oid`` claim.
 
-Identity must be finalized before enabling Intune or enrolling users.
+These conditions are enforced through Microsoft Entra configuration. If they are not met, Intune MAM enrollment will fail even if all other steps are completed correctly.
 
 Step 2: Configure Microsoft Entra Applications & Permissions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -110,9 +110,13 @@ Step 5: Validate Using the Mobile App
 Identity Configuration for Intune MAM
 --------------------------------------
 
-This section defines the identity requirements, constraints, and runtime behavior for using Microsoft Intune MAM with Mattermost.
+This section defines the identity requirements, constraints, and runtime behavior for the authentication method selected for Microsoft Intune MAM enforcement.
 
-All identity prerequisites must be met before enabling Intune MAM or enrolling users.
+.. important::
+
+  Mattermost can support multiple authentication methods at the same time. Intune MAM enforcement applies only to the authentication method selected in the Intune MAM configuration in the Mattermost System Console. That authentication method must resolve users by Azure AD ``objectId``. Other authentication methods are not evaluated by Intune MAM.
+
+All identity prerequisites for the authentication method selected in the Intune MAM configuration must be met before enabling Intune MAM or enrolling users.
 
 Required Identity Model
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -127,11 +131,11 @@ Microsoft Intune MAM for Mattermost requires Azure AD ``objectId`` as the author
 Identity Consistency Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The same Azure AD ``objectId`` must resolve consistently across:
+The Azure AD ``objectId`` must be resolved consistently across all sign-in paths used by the authentication method selected for Intune MAM, including:
 
-* Mobile authentication (OAuth / MSAL)
-* Web authentication (SAML)
-* Directory sync (LDAP / Entra ID Domain Services)
+* Mobile (OAuth / MSAL)
+* Web (SAML), if the same IdP is used
+* LDAP sync, if used to provision those users
 
 ``IdAttribute`` is the Mattermost Server configuration that specifies which user attribute contains the Azure AD ``objectId``.
 
@@ -139,7 +143,7 @@ The following rules apply:
 
 * ``IdAttribute`` must equal Azure AD ``objectId``.
 * MSAL access tokens must include the ``oid`` claim.
-* All authentication systems must resolve to the same value.
+* Any mobile, web, or directory sign-in flows used by the authentication method selected for Intune MAM must resolve to the same Azure AD ``objectId``.
 
 If any authentication path resolves a different identifier, enrollment will fail.
 
@@ -335,7 +339,7 @@ Most Intune MAM enrollment failures are caused by:
 * Incorrect ``IdAttribute``
 * Missing Microsoft Entra API permissions
 * Access token missing the ``oid`` claim
-* Mixed identity sources resolving different identifiers
+* The authentication method selected for Intune MAM resolves a different identifier than expected (not Azure AD ``objectId``)
 * Android device usage
 
 Always fix identity alignment first.
