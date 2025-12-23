@@ -4,7 +4,7 @@ Configure Microsoft Intune Mobile Application Management (MAM)
 .. include:: ../../_static/badges/entry-adv.rst
   :start-after: :nosearch:
 
-You can configure the Mattermost Mobile App to enforce Microsoft Intune App Protection Policies (MAM) on iOS devices so organizational data remains protected on Bring Your Own Device (BYOD) and mixed-use devices. This guide provides the required configuration to activate Intune MAM successfully on iOS.
+You can configure the Mattermost Mobile App to enforce Microsoft Intune App Protection Policies (MAM) on iOS devices so organizational data remains protected on Bring Your Own Device (BYOD) and mixed-use devices without requiring device enrollment (MDM). This guide provides the required configuration to activate Intune MAM successfully on iOS.
 
 Getting Started
 ---------------
@@ -22,8 +22,8 @@ When Not to Use This Guide
 If any of the following apply, stop. This configuration will fail.
 
 * You require Android Intune MAM support (not yet available).
-* Your deployment cannot use Microsoft Entra ID (Azure AD).
-* The authentication method you plan to protect with Intune MAM cannot use Azure AD objectId as the authoritative user identifier.
+* Your deployment can't use Microsoft Entra ID (Azure AD).
+* The authentication method you plan to protect with Intune MAM can't use Azure AD ``objectId`` as the authoritative user identifier.
 * You need a rollout model where users can defer or bypass Intune enrollment.
 
 Before You Continue
@@ -36,13 +36,18 @@ Before proceeding, confirm the following are true:
 * You have (or can obtain) a Mattermost Enterprise Advanced license.
 * Target users are licensed for Microsoft Intune.
 * You can register applications and grant admin consent in Microsoft Entra.
+* If using SAML for Intune MAM enforcement, users must already exist in Mattermost before signing in on mobile. Mobile sign-in doesn’t create users for SAML.
 
 If any of the above are not true, do not proceed.
+
+.. note::
+
+  In this guide, OpenID Connect (OIDC) refers to the Microsoft Entra sign-in method used by the Mattermost Mobile App via MSAL.
 
 Configuration Overview
 ----------------------
 
-Configuring Intune MAM for Mattermost Mobile requires coordinated setup across the following 4 systems:
+Configuring Intune MAM for the Mattermost Mobile App requires coordinated setup across the following 4 systems:
 
 * **Microsoft Entra ID (Azure AD)** – identity, app registration, API permissions
 * **Microsoft Intune** – app protection policies and user targeting
@@ -56,34 +61,34 @@ Before beginning configuration, review the `Identity Configuration <#identity-co
 Setup Order
 ~~~~~~~~~~~
 
+.. important::
+
+  Intune MAM enforcement is evaluated only for the authentication provider selected in **System Console > Environment > Mobile Security**. Before you enable Intune MAM, confirm all of the following for the selected provider:
+
+  * Mattermost resolves user identity to Azure AD objectId (``IdAttribute`` = ``objectId``).
+  * MSAL access tokens include the ``oid`` claim.
+  * Required Intune MAM API permissions have tenant-wide admin consent.
+
 Follow this setup order exactly to avoid enrollment failures and rework.
 
-Step 1: Finalize Identity Requirements
+Step 1: Confirm Identity Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Commit to Azure AD ``objectId`` as the authoritative identity.
-* Ensure all authentication methods (OpenID Connect or SAML, LDAP) resolve to the same value.
-* Confirm access tokens include the ``oid`` claim.
+* Ensure the authentication provider selected for Intune MAM enforcement (OIDC or SAML) is backed by Microsoft Entra ID and resolves users to Azure AD ``objectId``.
+* If LDAP is used to provision those users, LDAP must also resolve the same Azure AD ``objectId``.
+* Confirm MSAL access tokens include the ``oid`` claim.
 
 These conditions are enforced through Microsoft Entra configuration. If they are not met, Intune MAM enrollment will fail even if all other steps are completed correctly.
 
-Step 2: Configure Microsoft Entra Applications & Permissions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Step 2: Configure Microsoft Entra for Mattermost Mobile Authentication
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Register the Mattermost mobile app as a public/native Entra application.
-* Copy the **Application (Client) ID**.
+* Register a Microsoft Entra application used by Mattermost Server to validate MSAL access tokens and support Intune MAM enrollment.
+* Grant required Intune MAM API permissions and tenant-wide admin consent.
+* Configure the Microsoft Entra application to issue MSAL v2 access tokens that include the ``oid`` claim.
 
-  To register an application in Microsoft Entra, see: https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app
-
-* Configure the iOS platform with the correct bundle ID and redirect URI.
-
-  For Entra portal steps, see: https://learn.microsoft.com/en-us/entra/identity-platform/scenario-mobile-app-configuration
-
-  For redirect URI formatting details, see: https://learn.microsoft.com/en-us/entra/identity-platform/how-to-add-redirect-uri
-
-* Grant required Intune MAM API permissions with admin consent.
-
-  To grant tenant-wide admin consent, see: https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/grant-admin-consent
+See the detailed Entra configuration steps for execution details.
 
 Step 3: Configure Mattermost Server for Intune MAM
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -96,16 +101,22 @@ Step 4: Configure Intune App Protection Policies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Create an iOS App Protection Policy.
-* Add the Mattermost bundle ID.
-* Assign the policy using Azure AD groups.
+* Add the Mattermost bundle ID based on the app you deploy:
+
+  * **Mattermost Mobile (Production)**: ``com.mattermost.rn``
+  * **Mattermost Mobile Beta**: ``com.mattermost.rnbeta``
+
+* Assign the policy using Microsoft Entra groups.
 
 Step 5: Validate Using the Mobile App
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Ensure test users are assigned in Intune and properly licensed.
+* Ensure test users are assigned in Intune and properly licensed, and perform the first validation login using a Microsoft Entra administrator account that can grant tenant-wide admin consent.
 * Test enrollment from an iOS device.
 * Confirm enforcement behaviors.
 * Verify mid-session enforcement behavior.
+
+If enrollment doesn't complete as expected, see the `Troubleshooting <#troubleshooting>`__ section for guidance.
 
 Identity Configuration for Intune MAM
 --------------------------------------
@@ -114,9 +125,10 @@ This section defines the identity requirements, constraints, and runtime behavio
 
 .. important::
 
-  Mattermost can support multiple authentication methods at the same time. Intune MAM enforcement applies only to the authentication method selected in the Intune MAM configuration in the Mattermost System Console. That authentication method must resolve users by Azure AD ``objectId``. Other authentication methods are not evaluated by Intune MAM.
+  - Mattermost can support multiple authentication methods at the same time. Intune MAM enforcement applies only to the authentication method selected in the Intune MAM configuration in the Mattermost System Console. That authentication method must resolve users by Azure AD ``objectId``. Other authentication methods are not evaluated by Intune MAM.
+  - Intune MAM enforcement is identity-based and policy-driven. Mattermost roles and permissions don't affect whether Intune MAM is required or which protections apply.
 
-All identity prerequisites for the authentication method selected in the Intune MAM configuration must be met before enabling Intune MAM or enrolling users.
+All identity prerequisites for the authentication method selected for Intune MAM enforcement must be met before enabling Intune MAM or enrolling users.
 
 Required Identity Model
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -131,11 +143,11 @@ Microsoft Intune MAM for Mattermost requires Azure AD ``objectId`` as the author
 Identity Consistency Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Azure AD ``objectId`` must be resolved consistently across all sign-in paths used by the authentication method selected for Intune MAM, including:
+The Azure AD ``objectId`` must be resolved consistently across all sign-in paths used by the authentication method selected for Intune MAM, including any of the following that apply to that authentication method and user population:
 
-* Mobile (OAuth / MSAL)
+* Mobile (OIDC via MSAL)
 * Web (SAML), if the same IdP is used
-* LDAP sync, if used to provision those users
+* LDAP sync (if you use LDAP to provision those users)
 
 ``IdAttribute`` is the Mattermost Server configuration that specifies which user attribute contains the Azure AD ``objectId``.
 
@@ -166,10 +178,10 @@ Only the identity attributes listed below are supported for Intune MAM.
 | Custom attributes | Not supported    | Unsupported by Intune        |
 +-------------------+------------------+------------------------------+
 
-Attribute Synchronization & Access Enforcement
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Attribute Synchronization and Access Enforcement
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When Intune MAM is enabled, some users may authenticate exclusively through the Mattermost mobile app. If your deployment uses SAML or OpenID Connect, note the following behavior:
+When Intune MAM is enabled, some users may authenticate exclusively through the Mattermost Mobile App. If your deployment uses SAML or OIDC, note the following behavior:
 
 * User attributes synchronize only at login.
 * Changes made in the identity provider do not apply until the next login.
@@ -177,22 +189,48 @@ When Intune MAM is enabled, some users may authenticate exclusively through the 
 
 As a result, attribute-based access control (ABAC) may not apply immediately.
 
-If proactive enforcement of attribute-based access changes is required, we recommend LDAP (including Entra ID Domain Services). This behavior affects **access enforcement**, not Intune MAM enrollment.
+If proactive enforcement of attribute-based access changes is required, we recommend LDAP (including Entra ID Domain Services). This behavior affects access enforcement, not Intune MAM enrollment.
 
 Runtime Enforcement Behavior
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost Mobile enforces Intune MAM requirements during active sessions, not only at login.
+The Mattermost Mobile App enforces Intune MAM requirements during active sessions, not only at login.
 
 If Intune MAM becomes newly required due to policy, licensing, or configuration changes:
 
 * Enrollment is triggered immediately.
 * Access to sensitive content is restricted until enrollment succeeds.
-* Users cannot bypass enforcement.
+* Users can't bypass enforcement.
 
 Plan rollouts assuming enforcement can occur instantly.
 
 Once your identity model and enforcement behavior are understood and aligned, ensure the following prerequisites are in place before beginning configuration.
+
+Microsoft Entra Configuration for Intune MAM
+--------------------------------------------
+
+This section provides the detailed Microsoft Entra configuration required to support Mattermost Mobile App authentication and Intune MAM enforcement. Complete this section before 
+`configuring the Mattermost server <#configure-mattermost-server>`__ or `Intune App Protection Policies <#configure-intune-app-protection-policies>`__.
+
+The steps below require changes in App registrations (manifest + API permissions) and Enterprise applications (admin consent).
+
+Entra Application Registration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Register an application in Microsoft Entra that will be used by the Mattermost Mobile App for authentication and Intune MAM enrollment. This application represents the Mattermost Mobile client and is used to acquire MSAL access tokens during mobile sign-in.
+
+This Entra application is referenced by the Mattermost server when Intune MAM is enabled to validate MSAL access tokens issued during mobile sign-in. Redirect URI configuration isn't required for Intune MAM enforcement.
+
+Access Token Requirements
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The Mattermost Mobile App relies on the MSAL access token for identity resolution and Intune MAM enforcement.
+
+The following requirements must be met:
+
+* Access tokens must include the ``oid`` claim.
+* The application must issue tokens compatible with MSAL v2.
+* ``accessTokenAcceptedVersion`` must be set to ``2`` in the app manifest.
 
 Detailed Prerequisites
 ----------------------
@@ -201,20 +239,22 @@ Microsoft Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 * Microsoft Entra tenant
-* Permissions to register and manage enterprise applications
+* Permissions to register applications and grant admin consent in Microsoft Entra
 * Microsoft Intune App Protection Policies enabled
 * Microsoft Entra–backed sign-in functions for web and mobile
 * Targeted users are licensed for Microsoft Intune
+
+.. note::
+
+  Microsoft Entra uses both App registrations and Enterprise Applications to represent the same application. You may need access to both areas to complete registration, permission assignment, and admin consent.
 
 Mattermost Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 * Mattermost Enterprise Advanced license
-* Microsoft Entra (OIDC) SSO configured
-* Mattermost mobile app registered as a public/native Entra application
-* iOS platform configured with the correct bundle ID and redirect URI
-* ``accessTokenAcceptedVersion = 2`` set in the app manifest to ensure access tokens include required claims (such as ``oid``) in the correct format
+* An authentication method backed by Microsoft Entra is configured (OIDC or SAML)
 * Intune enabled
+* The authentication method selected for Intune MAM enforcement in the System Console must be backed by Microsoft Entra
 
 User Requirements
 ~~~~~~~~~~~~~~~~~
@@ -227,10 +267,10 @@ With prerequisites in place, the next sections describe how identity requirement
 Identity Enforcement by Authentication Method
 ---------------------------------------------
 
-Apply the same identity rule everywhere.
+Only the authentication method selected for Intune MAM enforcement must meet these requirements. Apply the same identity rule consistently for that selected method.
 
-OAuth / Entra (Mobile)
-~~~~~~~~~~~~~~~~~~~~~~
+OIDC (Mobile sign-in via MSAL)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * Only the access token is used.
 * The ``oid`` claim is required.
@@ -241,46 +281,42 @@ SAML (Web Login)
 * ``SamlSettings.IdAttribute`` must map to ``objectidentifier``.
 * Email, UPN, and ``immutableID`` are not supported.
 
+.. important::
+
+  When SAML is selected as the authentication method for Intune MAM enforcement, users must already exist in Mattermost before signing in on mobile. Users who haven't yet been provisioned must first sign in using the Mattermost web or desktop application. Mobile sign-in doesn't create new users for SAML-based authentication. If a user attempts to sign in on mobile before being provisioned, the user will be prompted to sign in using web or desktop.
+
 LDAP (Entra ID Domain Services)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * Use ``msDS-aadObjectId`` as the identity attribute.
 * Do not use ``objectGUID``.
 
-Mandatory Microsoft Entra API Permissions
------------------------------------------
-
-The following Microsoft Entra API permissions are mandatory for Intune MAM enrollment and server-side token validation. Missing permissions will block enrollment.
-
-Grant admin consent for each required permission below:
-
-+-----------------------+--------------------------------------------------------------+
-| Component             | Permission                                                   |
-+=======================+==============================================================+
-| Mattermost Mobile App | Microsoft Mobile Application Management →                    |
-|                       | ``user_impersonation`` (Delegated)                           |
-+-----------------------+--------------------------------------------------------------+
-| Mattermost Server     | ``https://msmamservice.api.application/.default``            |
-+-----------------------+--------------------------------------------------------------+
-
-.. note::
-
-    ``user_impersonation`` appears as ``DeviceManagementManagedApps.ReadWrite``.
-
 With prerequisites met and identity requirements understood, proceed to the configuration steps in the next section.
 
-Required Mattermost Server Configuration
-----------------------------------------
+Configure Mattermost Server
+----------------------------
 
-1. Go to **System Console > Environment > Mobile App Management**.
+1. Go to **System Console > Environment > Mobile Security**.
 2. Enable **Microsoft Intune App Protection Policies**.
-3. Set ``IdAttribute`` to ``objectId``.
-4. Save your changes.
+3. Configure the following fields using values from the Microsoft Entra application created earlier:
+   
+   * **Application (Client) ID**
+   * **Directory (Tenant) ID**
+   * **Authentication Provider**:
+     * OIDC (Microsoft Entra-backed), or
+     * SAML (backed by Microsoft Entra)
+
+4. Set ``IdAttribute`` to ``objectId``.
+5. Save your changes.
+
+.. important::
+
+  If you select **SAML** as the authentication provider for Intune MAM enforcement, the SAML identity provider must be backed by Microsoft Entra ID. Mattermost doesn't validate whether a SAML IdP is Entra-backed. Using a non-Entra SAML identity provider with Intune MAM will result in enrollment failures.
 
 Validation Checklist
 --------------------
 
-Before rolling out to production, validate the configuration using a test user account. Confirm the following values match for the same user:
+Before rolling out to production, validate the configuration using a test user account. This checklist validates identity alignment, which is the most common cause of Intune MAM enrollment failure. Confirm the following values match for the same user (using Entra, Mattermost logs, or directory sync data as applicable):
 
 * Azure AD ``objectId``
 * MSAL access token ``oid`` claim
@@ -292,27 +328,34 @@ Any mismatch will cause Intune MAM enrollment to fail.
 Deploy or Update Mattermost Mobile Apps
 ---------------------------------------
 
-Install the latest Mattermost iOS mobile app using one of the following methods:
+Install the Mattermost iOS mobile app using one of the following supported methods:
 
-* Public App Store
-* Microsoft Intune deployment
-* Private or wrapped builds
+* Apple App Store (production)
+* TestFlight (beta)
+
+Other distribution methods, including Intune-wrapped apps, re-signed binaries, or private IPA deployments, aren't supported for Intune MAM enforcement and won't work.
 
 .. note::
 
-   Mattermost Beta (``com.mattermost.rnbeta``) and Production (``com.mattermost.rn``) apps require **separate** Microsoft Entra app registrations.
-
-MDM device enrollment is not required.
+  - Mattermost Beta (``com.mattermost.rnbeta``) and Production (``com.mattermost.rn``) apps can share the same Microsoft Entra app registration when using an exposed API configuration. Separate app registrations are optional and only required if you intentionally isolate environments or scopes.
+  - MDM device enrollment isn't required. Intune App Protection Policies are enforced at the app level and require the official Mattermost iOS app from the App Store or TestFlight.
 
 Configure Intune App Protection Policies
 ----------------------------------------
 
 1. Go to the **Microsoft Intune Admin Center**.
-2. Create an **iOS App Protection Policy**.
-3. Add the Mattermost bundle ID.
-4. Assign the policy using **Azure AD groups**.
+2. Create an iOS App Protection Policy.
+3. Add the appropriate Mattermost iOS bundle ID:
 
-Mattermost roles do not control Intune MAM enforcement.
+  * **Mattermost Mobile (Production)**: ``com.mattermost.rn``
+  * **Mattermost Mobile Beta**: ``com.mattermost.rnbeta``
+
+4. Assign the policy using Microsoft Entra groups.
+
+.. note::
+
+  - You must create separate Intune App Protection Policies for each Mattermost iOS app you deploy. Policies applied to one bundle ID do not apply to the other.
+  - Intune App Protection Policies are assigned using Microsoft Entra groups, not Mattermost teams, channels, or roles.
 
 Expected Mobile Login & Enrollment Flow
 ---------------------------------------
@@ -325,7 +368,7 @@ When Intune MAM is enabled:
    * Authentication service matches
    * License is **Enterprise Advanced**
 
-2. The user taps **Sign in**. careful with using `Microsoft` explicitly cause we don't enforce it
+2. The user taps **Sign in**.
 3. MSAL authenticates the user.
 4. Mattermost validates the access token.
 5. Intune MAM enrollment is triggered.
@@ -347,7 +390,7 @@ Always fix identity alignment first.
 Intune MAM Errors
 ~~~~~~~~~~~~~~~~~~
 
-The following errors are displayed in the **Mattermost mobile app** during user login or when enrollment is triggered mid-session. Errors are **not** displayed in the Mattermost System Console.
+The following errors are displayed in the Mattermost Mobile App during user login or when enrollment is triggered mid-session. Errors aren't displayed in the Mattermost System Console.
 
 +-------------------------------+---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | Error                         | Meaning                                     | Cause & Next Step                                                                                                                |
@@ -366,17 +409,17 @@ The following errors are displayed in the **Mattermost mobile app** during user 
 |                               |                                             |                                                                                                                                  |
 |                               |                                             | Add the permission in Microsoft Entra and grant admin consent.                                                                   |
 +-------------------------------+---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
-| MissingAuthAccountError       | Access token does not contain the identity  | MSAL error indicating the access token does not contain the identity claim Mattermost expects.                                   |
+| MissingAuthAccountError       | Access token doesn't contain the identity   | MSAL error indicating the access token doesn't contain the identity claim Mattermost expects.                                    |
 |                               | claim Mattermost expects                    |                                                                                                                                  |
 |                               |                                             | Unsupported or custom ``IdAttribute`` used, or required claim missing from the access token.                                     |
 |                               |                                             |                                                                                                                                  |
 |                               |                                             | Use only supported ``IdAttributes`` (``objectId``) and ensure the ``oid`` claim is present.                                      |
 +-------------------------------+---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
-| User mismatch                 | Mobile identity does not match the          | Mutable identifiers (email, ``preferred_username``) used, or user email/UPN changed.                                             |
+| User mismatch                 | Mobile identity doesn't match the           | Mutable identifiers (email, ``preferred_username``) used, or user email/UPN changed.                                             |
 |                               | server-side user                            |                                                                                                                                  |
 |                               |                                             | Reconfigure identity to use Azure AD ``objectId`` exclusively.                                                                   |
 +-------------------------------+---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
-| NotLicensed                   | Server is not licensed for Intune MAM       | Enterprise Advanced license missing or not applied to the server.                                                                |
+| NotLicensed                   | Server isn't licensed for Intune MAM        | Enterprise Advanced license missing or not applied to the server.                                                                |
 |                               |                                             |                                                                                                                                  |
 |                               |                                             | Verify license tier and server coverage.                                                                                         |
 +-------------------------------+---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
@@ -392,9 +435,34 @@ Enrollment Failure Session Behavior
 If Intune MAM enrollment fails due to a **technical error**, the following occurs:
 
 * The user is logged out of the affected Mattermost server.
-* The server is removed from the Mattermost mobile app.
+* The server is removed from the Mattermost Mobile App.
 * All cached data for that server is wiped from the device.
 
 If a user has multiple Mattermost servers configured in the app, **only the failing server is removed**. Other servers remain accessible and unaffected.
 
 If the user **declines enrollment**, retry is allowed and no server data is removed unless enrollment later fails due to a technical error.
+
+Consent Required During First Login
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In some cases, a user’s first mobile sign-in may succeed, but Intune MAM enrollment doesn't complete. Authentication can succeed even when required Intune MAM permissions are missing, which can make this issue non-obvious during initial rollout or testing.
+
+This issue occurs when required Microsoft Entra permissions for Intune MAM haven't yet been granted with tenant-wide admin consent. This issue is most commonly encountered during initial rollout or testing, before admin consent has been granted for the tenant.
+
+If users are prompted for Microsoft Entra consent during first login, this is expected behavior when tenant-wide admin consent hasn't yet been granted. A Microsoft Entra administrator with permission to grant tenant-wide admin consent must approve the request on behalf of the organization before Intune MAM enrollment can complete. 
+
+Verify that the following permissions have been granted with admin consent in Microsoft Entra:
+
+* Microsoft Mobile Application Management → ``user_impersonation`` (Delegated)
+* ``https://msmamservice.api.application/.default``
+
+If admin consent is missing, Intune MAM enrollment can't complete, even if authentication succeeds.
+
+To resolve this:
+
+1. Go to **Microsoft Entra Admin Center > Enterprise applications**.
+2. Locate the Mattermost Mobile enterprise application (service principal).
+3. Grant **tenant-wide admin consent** for all required Intune MAM permissions.
+4. Have the affected user **retry mobile sign-in**.
+
+Once admin consent is granted, enrollment should complete successfully on retry.

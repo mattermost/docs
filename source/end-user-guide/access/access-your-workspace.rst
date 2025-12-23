@@ -76,14 +76,13 @@ Access your Mattermost instance with your credentials using a web browser, the d
   Sign In to Enroll
   -----------------
 
-  You only need to complete enrollment once per device.
+  You only need to complete enrollment once per account.
 
   1. Open the Mattermost mobile app on your iOS device.
   2. Sign in with Microsoft (your organization’s sign-in option).
   3. Enter your credentials.
-  4. When prompted, tap **Enroll**.
 
-     During enrollment, you may see the Microsoft sign-in screen again. This is normal and usually takes only a few seconds.
+     During enrollment, you may be asked to confirm your Microsoft sign-in again. This is normal and usually takes only a few seconds.
 
   5. When enrollment completes, you are notified.
   6. When prompted, enter a PIN to add an extra layer of protection for your work data.
