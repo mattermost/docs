@@ -101,7 +101,7 @@ Access your Mattermost instance with your credentials using a web browser, the d
   Clipboard Restrictions
   ~~~~~~~~~~~~~~~~~~~~~~~
 
-  To prevent sensitive data from leaving protected apps, you will not be able to copy or paste content out of Mattermost.
+  To prevent sensitive data from leaving protected apps, you will not be able to copy or paste content out or into the Mattermost Server with the enrolled account.
 
   If you try to copy content from Mattermost into another app, the paste will not work.
 
