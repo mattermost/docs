@@ -85,46 +85,36 @@ Access your Mattermost instance with your credentials using a web browser, the d
      During enrollment, you may be asked to confirm your Microsoft sign-in again. This is normal and usually takes only a few seconds.
 
   5. When enrollment completes, you are notified.
-  6. When prompted, enter a PIN to add an extra layer of protection for your work data.
+  6. If your organization’s Intune App Protection Policy requires it, you’ll be prompted to set a PIN to protect your work data.
 
-     Once the PIN is confirmed, Mattermost unlocks access to your workspace.
+     Once the PIN is confirmed, the Mattermost Mobile App unlocks access to your workspace.
 
-  .. note::
+  If you dismiss enrollment during sign-in, return to the sign-in flow and complete enrollment to continue using Mattermost on that device.
 
-    If you tap **Cancel**, you will not be able to use Mattermost on mobile until enrollment succeeds. You can retry immediately or `log out <#what-happens-when-i-log-out-manually>`__ and retry later.
+  Mid-Session Enrollment
+  ----------------------
+
+  If enrollment is triggered while you're already signed in and you tap **Cancel**, you won’t be able to continue using Mattermost on that device until enrollment succeeds. You can retry immediately, or `log out <#what-happens-when-i-log-out-manually>`__ and retry later.
 
   What Changes After Enrollment?
   ------------------------------
 
-  Your Mattermost experience remains the same until protection rules apply. Depending on your organization’s Intune policies, some actions are limited.
-
-  Clipboard Restrictions
-  ~~~~~~~~~~~~~~~~~~~~~~~
-
-  To prevent sensitive data from leaving protected apps, you will not be able to copy or paste content out of Mattermost.
-
-  If you try to copy content from Mattermost into another app, the paste will not work.
+  Your organization’s Intune App Protection Policy may restrict how you copy, capture, save, and share data from Mattermost. The exact behavior depends on the specific policy settings your organization has configured.
 
   Screenshot & Screen Recording Restrictions
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  To prevent sensitive content from being captured, you will not be able to take screenshots or record your screen while using Mattermost.
-
-  If you try to take a screenshot or record your screen, the screenshot or recording will not be captured.
+  Depending on your organization’s policy, you may not be able to take screenshots or record your screen while using Mattermost. If screenshot or screen recording is blocked, your device may still show the screenshot or recording UI, but the content may not be captured.
 
   File Save Restrictions
-  ~~~~~~~~~~~~~~~~~~~~~~~
+  ~~~~~~~~~~~~~~~~~~~~~~
 
-  To keep work files protected, you will not be able to save files to personal locations.
-
-  If you try to save a file from Mattermost to a personal location, the save will not work. Files can be saved only to locations approved by your organization.
+  Depending on policy, you may not be able to save files from Mattermost to personal or unmanaged locations. Files may be limited to locations approved by your organization.
 
   Browser & Sharing Restrictions
-  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  To ensure data stays within protected apps, you will not be able to open links in unapproved browsers or share content to unmanaged apps.
-
-  If you tap a link in Mattermost, it opens only in an approved browser. If you try to share content to an unmanaged app, the share will not work.
+  Depending on policy, links may open only in an approved browser and sharing may be restricted to managed apps. If you try to open a link in an unapproved browser or share content to an unmanaged app, the action may be blocked.
 
   Frequently Asked Questions
   --------------------------
@@ -134,7 +124,7 @@ Access your Mattermost instance with your credentials using a web browser, the d
 
   If you leave the organization, or your device is lost or compromised, your IT support team can wipe Mattermost work data from your iOS device. This is called a **selective wipe**.
 
-  This means:
+  A selective wipe means that:
 
   * Only Mattermost work data is removed from your device.
   * Personal apps, photos, and files are untouched.
