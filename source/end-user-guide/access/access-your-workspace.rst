@@ -101,8 +101,8 @@ Access your Mattermost instance with your credentials using a web browser, the d
 
   Your organization’s Intune App Protection Policy may restrict how you copy, capture, save, and share data from Mattermost. The exact behavior depends on the specific policy settings your organization has configured.
 
-  Screenshot & Screen Recording Restrictions
-  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Screenshot and Screen Recording Restrictions
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Depending on your organization’s policy, you may not be able to take screenshots or record your screen while using Mattermost. If screenshot or screen recording is blocked, your device may still show the screenshot or recording UI, but the content may not be captured.
 
@@ -111,8 +111,8 @@ Access your Mattermost instance with your credentials using a web browser, the d
 
   Depending on policy, you may not be able to save files from Mattermost to personal or unmanaged locations. Files may be limited to locations approved by your organization.
 
-  Browser & Sharing Restrictions
-  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Browser and Sharing Restrictions
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Depending on policy, links may open only in an approved browser and sharing may be restricted to managed apps. If you try to open a link in an unapproved browser or share content to an unmanaged app, the action may be blocked.
 

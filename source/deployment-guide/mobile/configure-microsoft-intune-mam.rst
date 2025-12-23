@@ -82,7 +82,7 @@ Step 1: Confirm Identity Requirements
 These conditions are enforced through Microsoft Entra configuration. If they are not met, Intune MAM enrollment will fail even if all other steps are completed correctly.
 
 Step 2: Configure Microsoft Entra for Mattermost Mobile Authentication
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Register a Microsoft Entra application used by Mattermost Server to validate MSAL access tokens and support Intune MAM enrollment.
 * Grant required Intune MAM API permissions and tenant-wide admin consent.
