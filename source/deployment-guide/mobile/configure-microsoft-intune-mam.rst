@@ -61,9 +61,9 @@ Follow this setup order exactly to avoid enrollment failures and rework.
 Step 1: Finalize Identity Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Azure AD ``objectId`` is the authoritative identity.
-* All sign-in paths used by the authentication method selected for Intune MAM must resolve to the same identifier.
-* Access tokens issued by Entra include the ``oid`` claim.
+* Commit to Azure AD ``objectId`` as the authoritative identity.
+* Ensure all authentication methods (OpenID Connect or SAML, LDAP) resolve to the same value.
+* Confirm access tokens include the ``oid`` claim.
 
 These conditions are enforced through Microsoft Entra configuration. If they are not met, Intune MAM enrollment will fail even if all other steps are completed correctly.
 
