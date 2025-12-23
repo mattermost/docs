@@ -62,7 +62,7 @@ Step 1: Finalize Identity Strategy (Entra + Mattermost)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Commit to Azure AD ``objectId`` as the authoritative identity.
-* Ensure all authentication methods (OAuth, SAML, LDAP) resolve to the same value.
+* Ensure all authentication methods (OpenID Connect or SAML, LDAP) resolve to the same value.
 * Confirm access tokens include the ``oid`` claim.
 
 Identity must be finalized before enabling Intune or enrolling users.
