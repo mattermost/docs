@@ -1,3 +1,23 @@
+// Function to sort version numbers in descending order (newer versions first)
+function sortVersions(versions) {
+    return versions.sort((a, b) => {
+        const [majorA, minorA] = a.split('.').map(Number);
+        const [majorB, minorB] = b.split('.').map(Number);
+
+        if (majorA !== majorB) {
+            return majorB - majorA;
+        }
+        return minorB - minorA;
+    });
+}
+
+// Function to parse a version string to an object with major and minor properties
+function parseVersion(v) {
+    if (v === 'all') return { major: 0, minor: 0 };
+    const [major, minor] = v.split('.').map(Number);
+    return { major, minor };
+}
+
 $(document).ready(function () {
     // Function to set the custom theme attribute based on the current theme
     function setCustomTheme(theme) {
@@ -68,11 +88,11 @@ $(document).ready(function () {
     // Fallback for when a notification CTA expires
     const dateInFuture = (value) =>
         new Date().getTime() <= new Date(value).getTime();
-    const expiryDate = '2024-10-31T00:00:00-0500';
-    // 12am EST
+    const expiryDate = '2025-12-31T23:59:59-0500';
+    // Expires end of day ET on Dec 31, 2025
     const fallback_url =
-        'https://mattermost.com/solutions/mattermost-for-microsoft-teams/';
-    const fallback_text = 'Learn more about Mattermost for Microsoft Teams »';
+        'https://mattermost.com/platform-overview/';
+    const fallback_text = 'Learn about Mattermost\'s Intelligent Mission Environment';
 
     if (!dateInFuture(expiryDate)) {
         if ($('.notification-bar').length) {
@@ -85,7 +105,7 @@ $(document).ready(function () {
     // So it will show up for new announcements
     // Keep "mm_notification_banner__" at the beginning of the key
     // Add system to clean out storage items that are no longer needed
-    let notification_banner_key = 'mm_notification_banner__v10-mst-sept';
+    let notification_banner_key = 'mm_notification_banner__v11_dec_2025';
     if (!dateInFuture(expiryDate)) {
         notification_banner_key = 'mm_notification_banner__fallback-mst';
     }

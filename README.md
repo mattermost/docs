@@ -6,20 +6,25 @@ If you have any questions, create an account on the [Mattermost Community server
 
 # Table of Contents
 
- * [Contributing](#contribute-to-mattermost-product-documentation)
-     * [Get started](#get-started)
-     * [Edit content directly on GitHub](#edit-content-directly-on-github)
-     * [Create documentation PRs](#create-documentation-pull-requests)
-     * [Use GitHub PR Labels](#use-github-pr-labels)
-     * [Comment on Pull Requests](#comment-on-pull-requests)
-     * [Review Pull Requests](#review-pull-requests)
- * [Build locally](#build-locally)
+- [Mattermost Documentation](#mattermost-documentation)
+- [Table of Contents](#table-of-contents)
+  - [Contribute to Mattermost product documentation](#contribute-to-mattermost-product-documentation)
+    - [Get started](#get-started)
+    - [Edit content directly on GitHub](#edit-content-directly-on-github)
+    - [Create Documentation pull requests](#create-documentation-pull-requests)
+    - [Comment on pull requests](#comment-on-pull-requests)
+    - [Review pull requests](#review-pull-requests)
+  - [Build locally](#build-locally)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Build commands](#build-commands)
+    - [Troubleshooting](#troubleshooting)
 
 ## Contribute to Mattermost product documentation
 
 ### Get started
 
-You can edit or create Mattermost documentation directly in GitHub, or by downloading the `mattermost/docs` repository onto your machine and using an IDE such as VS Code. Consult the Mattermost [Documentation Style Guide](https://handbook.mattermost.com/operations/research-and-development/product/technical-writing-team-handbook/documentation-style-guide) and [reStructuredText Markup](https://handbook.mattermost.com/operations/research-and-development/product/technical-writing-team-handbook/documentation-style-guide#using-restructuredtext-markup-rst) section for stylistic and technical guidance.
+You can edit or create Mattermost documentation directly in GitHub, or by downloading the `mattermost/docs` repository onto your machine and using an IDE such as VSCode.
 
 If this is your first time contributing to Mattermost, first read and sign the [Mattermost Contributor Agreement](https://mattermost.com/mattermost-contributor-agreement/), so you can be added to the Mattermost [Approved Contributor List](https://docs.google.com/spreadsheets/d/1NTCeG-iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true).
 
@@ -39,12 +44,6 @@ If this is the first time you're contributing, follow these steps:
 4. Scroll down to compare changes with the original document.
 5. Select **Create pull request**. 
 
-### Use GitHub PR labels
-
-GitHub PR labels are used to track the life cycle and status of a pull request. Using the correct labels helps with managing workflows and ensuring that content is edited, merged and released at the correct time. For example, PRs that include an **Editor Review** label will be processed by an editor on the writing team to ensure the documentation is correctly formatted at https://docs.mattermost.com/ based on guidelines outlined in the style guide.
-
-Take a look at the [Labels](https://developers.mattermost.com/contribute/getting-started/labels/) page for information about how and when to use which labels.
-
 ### Comment on pull requests
 
 Once a pull request is submitted, multiple committers may comment on it and provide edits or suggestions which you can commit directly. You can also add line comments. Take a look at [Commenting on pull requests](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/commenting-on-a-pull-request) for more details.
@@ -62,69 +61,63 @@ If you've downloaded the `mattermost/docs` repository to edit Mattermost documen
 > [!NOTE]
 > You can generate the docs on Linux, Mac, and Windows (using PowerShell); however, builds on Windows are considerably slower because only a single processing core is used.
 > 
-> For faster local docs builds on Windows, we strongly recommend [installing WSL](https://learn.microsoft.com/en-us/windows/wsl/install) to create an Ubuntu virtual machine (VM), where you'll configure the following prerequisites. An Ubuntu VM will use all available processing cores, resulting in faster local builds.
+> For faster local docs builds on Windows, we strongly recommend [installing WSL](https://learn.microsoft.com/en-us/windows/wsl/install) to create an Ubuntu virtual machine (VM), where you'll configure the following prerequisites. This VM will be using all available processing cores, resulting in faster local builds.
 
-### Build prerequisites
-
-The following software is required to build the documentation:
+### Prerequisites
 
 - Git [[download]](https://git-scm.com/downloads)
-- Python 3.9 or later [[download]](https://www.python.org/downloads)
+- Python 3.11 or later [[download]](https://www.python.org/downloads)
 - Pipenv [[download]](https://pipenv.pypa.io)
-
-### Build instructions
-
-1. Open a native or VM terminal window, then clone a forked copy of the documentation repository:
-    ```shell
-    git clone https://github.com/mattermost/docs.git
-    ```
-
-2. In the terminal window, navigate into the cloned repository:
-    ```shell
-    cd docs
-    ```
-
-3. Install [pipenv](https://docs.pipenv.org/) by using one of the following commands based on your operating system:
-
-    For Mac users and Ubuntu VM users where Homebrew is installed:
-    ```shell
-    brew install pipenv
-    ```
-
-    For other operating systems:
-    ```shell
-    pip install --user pipenv
-    ```
-
-4. Install required Python packages:
-    ```shell
-    pipenv install --dev
-    ```
-
-5. Build the documentation set. You have three build commands available at the terminal:
-
-    - Use `make html` to generate HTML files in the `/build` directory. Only file you've modified are re-built.
-    - Use `make clean html` to delete all static HTML output in the `/build` directory and re-build all files. This command is particularly useful when you're making changes to the LHS navigation pane and want to ensure you're not reviewing cached results.
-    - Use `make livehtml` to review a live preview published to `http://127.0.0.1:8000` that automatically updates as new changes are saved in your local IDE.
+- GNU Make 3.82 or later
 
 > [!NOTE]
-> Windows users who aren't building the docs in an Ubuntu VM also require `make` installed for the build commands above to work correctly. To install `make` via Chocolatey:
->
-> 1. Install [chocolatey](https://chocolatey.org/).
-> 2. In a Windows terminal, select the downward chevron, and hold `CTRL` while selecting **PowerShell** to run commands as an admin.
-> 3. Accept the admin prompt.
-> 4. Run the following command: `choco install make`
-> 5. Exit the terminal.
->
-> If `make` isn't installed, substitute `CMD /C make.bat` for make in the build commands above to use the Windows command interpreter. For example, to run `make html`, run the command: `CMD /C make.bat html`. Only a single target may be specified using this method. This means that, instead of running `CMD /C make.bat clean html`, each target must be run separately as `CMD /C make.bat clean` followed by `CMD /C make.bat html`. 
->
-> When building the Mattermost Product Documentation locally, Windows users will see slower build speeds because only a single processing core is used to build the docs. Mac & Linux users will see faster build speeds because multiple cores are used to build. It's not yet clear where to make changes to support multiple processing cores on Windows machines. More investigation is needed.
+> Windows users who aren't using WSL require `make` installed. To install via Chocolatey: run `choco install make` in an admin PowerShell terminal after installing [chocolatey](https://chocolatey.org/).
 
-6. When working with static build results, navigate to the `build` directory:
-    ```sh
-    cd build
-    ```
-   
-7. Then, preview your changes by opening the `build/html/index.html` file.
+### Setup
 
-Build errors are written to the `build/warnings.log` file. 
+1. Clone the repository and navigate to it:
+   ```shell
+   git clone https://github.com/mattermost/docs.git
+   cd docs
+   ```
+
+2. Install pipenv:
+   ```shell
+   # Using Homebrew
+   brew install pipenv
+
+   # Using pip
+   pip install --user pipenv
+   ```
+
+3. Install dependencies (choose one):
+   ```shell
+   # For local development (recommended for first-time setup)
+   pipenv install --dev
+
+   # For exact reproducibility (CI/CD or team environments)
+   pipenv sync --dev
+   ```
+
+4. Initialize Git submodules:
+   ```shell
+   git submodule update --init --recursive
+   ```
+
+### Build commands
+
+- **`gmake html`** - Build only modified files (fastest for iterative changes)
+- **`gmake clean html`** - Clean build directory and rebuild all files
+- **`gmake livehtml`** - Start live preview server at `http://127.0.0.1:8000` (auto-updates on save)
+
+Static build output is located in `build/html/index.html`. Build errors are logged to `build/warnings.log` and redirect issues are logged to `build/redirect-warnings.log`.
+
+### Troubleshooting
+
+**What if my local build starts becoming slow?**
+
+Run `make clean` and rebuild the repository from scratch:
+```shell
+gmake clean
+gmake html
+```

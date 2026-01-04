@@ -69,3 +69,9 @@ source/developer/localization.md
 # Generated PKI files
 *.key
 *.crt
+.aider*
+
+# Sphinx build artifacts
+*.doctree
+_build/
+build/
