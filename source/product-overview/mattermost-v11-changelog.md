@@ -39,7 +39,8 @@ If you upgrade from a release earlier than v11.2, please read the other [Importa
  - Pre-packaged Microsoft Calendar plugin version [v1.5.0](https://github.com/mattermost/mattermost-plugin-mscalendar/releases/tag/v1.5.0).
  - Pre-packaged Agents plugin version [v1.7.2](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.7.2).
  - Pre-packaged Zoom plugin version [v1.11.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.11.0).
- - Added Korean language support.
+ - Pre-packaged Jira plugin version [v4.5.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.5.0).
+ - Added Korean language support and upgraded Korean translations from Alpha to Official.
  - Added pop-outs for right-hand-side (RHS) plugins.
  - Removed outdated system notices.
  - Removed the Collapsed Reply Threads tutorial.
