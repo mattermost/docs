@@ -29,6 +29,9 @@ New setting options were added to ``config.json``. Below is a list of the additi
    - Under ``ServiceSettings`` in ``config.json``, added ``AWSMeteringTimeoutSeconds``.  This configuration value can be used to set the timeout in seconds when connecting to the AWS marketplace metering service.
    - Under ``NativeAppSettings`` in ``config.json``, added ``EnableIntuneMAM``, which can be edited in the **System Console**.
 
+#### Important Upgrade Notes
+ - Beginning in Mattermost v11.3, some plugins that register a Right Hand Sidebar (RHS) component using ``registerRightHandSidebarComponent`` will need to implement additional code to support RHS popouts if their RHS component relies on plugin-specific state. See [this forum post](https://forum.mattermost.com/t/rhs-popout-support-for-plugins/25626) for full details.
+
 ```{Important}
 If you upgrade from a release earlier than v11.2, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html). In case of an upgrade failure, please check the [Downgrade Guide](https://docs.mattermost.com/administration-guide/upgrade/downgrading-mattermost-server.html) and the [Recovery Guide](https://docs.mattermost.com/deployment-guide/backup-disaster-recovery.html) for rollback steps and interim mitigation strategy.
 ```
