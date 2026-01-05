@@ -95,6 +95,10 @@ You can assign an existing access control policy to a private channels for more 
 2. In the **Channel Management** section, enable the **Enable attribute-based channel access** option.
 3. Under **Access policy**, select **Link to a policy** to select an existing policy.
 
+.. tip::
+
+  You can also assign ABAC rules to a channel directly from a channel's details page in the System Console under **Channel Management** by enabling the **Enable attribute-based channel access** option. Under **Access policy**, select **Link to a policy** to select an existing policy.
+
 Remove channel policies
 ~~~~~~~~~~~~~~~~~~~~~~~
 
