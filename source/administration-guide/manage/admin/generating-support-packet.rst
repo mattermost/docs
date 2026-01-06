@@ -76,16 +76,16 @@ The contents of a Mattermost Support Packet can differ by server version. Select
    - ``sanitized_config.json`` (sanitized copy of the Mattermost configuration)
    - ``stats.yaml`` (Mattermost usage statistics)
    - ``jobs.yaml`` (last runs of important jobs)
-   - ``diagnostics.yaml`` (core plugin diagnostics data)
-   - ``permissions.yaml`` (role & scheme information)
-   - ``postgres_schema_dump.sql`` (PostgreSQL database schema information including tables, indexes, constraints, and other database metadata to assist with database configuration diagnosis)
+   - ``diagnostics.yaml`` (system and plugin diagnostics)
+   - ``permissions.yaml`` (role and scheme information)
+   - ``postgres_schema_dump.sql`` (PostgreSQL database schema information including tables, indexes, constraints, and other metadata to assist with database configuration diagnosis)
    - ``warning.txt`` (present when issues are encountered during packet generation)
    - ``tsdb_dump.tar.gz`` (present when the Metrics plugin is installed and the **Performance metrics** option is selected when generating the Support Packet)
 
    Node-specific files
    ~~~~~~~~~~~~~~~~~~~~~~
 
-   The following cluster-specific files are located in node subdirectories:
+   The following node-specific files are located in node subdirectories:
 
    - ``<node-id>/mattermost.log`` (Mattermost logs for each node)
    - ``<node-id>/audit.log`` (Mattermost audit logs for each node)
@@ -95,15 +95,26 @@ The contents of a Mattermost Support Packet can differ by server version. Select
    - ``<node-id>/heap.prof`` (`Go performance metrics <#go-performance-metrics>`__ for each node)
    - ``<node-id>/goroutines`` (`Go performance metrics <#go-performance-metrics>`__ for each node)
 
-   Enterprise search
-   ~~~~~~~~~~~~~~~~~~
+   Diagnostics highlights
+   ~~~~~~~~~~~~~~~~~~~~~~
 
-   From Mattermost v11.2, the Support Packet ``diagnostics.yaml`` file includes connection testing for configured :doc:`enterprise search engines </administration-guide/scale/enterprise-search>`, including both :doc:`Elasticsearch </administration-guide/scale/elasticsearch-setup>` and :doc:`AWS OpenSearch </administration-guide/scale/opensearch-setup>`. Any connection errors encountered during testing are included to help diagnose enterprise search configuration issues.
+   The Support Packet ``diagnostics.yaml`` file includes system and plugin diagnostics to support troubleshooting and configuration validation.
+
+   Enterprise search
+   ^^^^^^^^^^^^^^^^^^^
+
+   From Mattermost v11.2, ``diagnostics.yaml`` includes connectivity checks for configured enterprise search backends. Any connection errors encountered during testing are captured to help diagnose indexing or search issues. Use this information when troubleshooting:
+
+   - Search returns no results or incomplete results
+   - Indexing failures, timeouts, or connection errors
 
    SAML provider type
-   ~~~~~~~~~~~~~~~~~~~
+   ^^^^^^^^^^^^^^^^^^^^
 
-   From Mattermost v11.2, the Support Packet ``diagnostics.yaml`` file includes SAML provider details to help administrators and support teams quickly identify the SAML Identity Provider (IdP) in use and provides additional diagnostic context for troubleshooting authentication issues. When SAML SSO is configured, SAML details include provider type, provider-specific diagnostic information to accelerate troubleshooting of SAML authentication flows, and relevant metadata about the SAML provider to help identify common configuration patterns and potential issues.
+   From Mattermost v11.2, when SAML SSO is configured, ``diagnostics.yaml`` includes the detected SAML identity provider type and related diagnostic details to help identify the IdP in use and speed up troubleshooting of SAML authentication issues. Use this information when troubleshooting:
+
+   - SAML login failures or redirect loops
+   - Identity provider configuration mismatches
 
    Plugin diagnostic data
    ~~~~~~~~~~~~~~~~~~~~~~~
