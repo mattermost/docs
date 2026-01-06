@@ -10,7 +10,7 @@ Take Mattermost wherever you go by `installing the Mattermost mobile app <https:
 2. Search for "Mattermost" and select **INSTALL** to download the app.
 3. Open Mattermost from your homescreen and enter your team and account information to login:
 
-   a. **Enter Server URL:** This is the web address you go to when you want to access Mattermost. See the :doc:`access your workspace </end-user-guide/collaborate/access-your-workspace>` documentation for additional details.
+   a. **Enter Server URL:** This is the web address you go to when you want to access Mattermost. See the :doc:`access your workspace </end-user-guide/access/access-your-workspace>` documentation for additional details.
    b. Enter your credentials as specified by your Mattermost system admin. Select **Log in**.
 
 .. tip::
