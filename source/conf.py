@@ -496,6 +496,10 @@ sitemap_excludes = [
     "agents/CLAUDE.html",
     "agents/README.html",
     "agents/interpluginclient/README.html",
+    "agents/.claude/agents/playwright-test-generator.html",
+    "agents/.claude/agents/playwright-test-healer.html",
+    "agents/.claude/agents/playwright-test-planner.html",
+    "agents/.claude/skills/e2e-testing-skill/SKILL.html",
 ]
 
 # -- Page redirects -------------------------------------------------
