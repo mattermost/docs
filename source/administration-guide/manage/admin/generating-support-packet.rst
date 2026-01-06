@@ -82,7 +82,7 @@ The contents of a Mattermost Support Packet can differ by server version. Select
    - ``warning.txt`` (present when issues are encountered during packet generation)
    - ``tsdb_dump.tar.gz`` (present when the Metrics plugin is installed and the **Performance metrics** option is selected when generating the Support Packet)
 
-   Cluster-specific files
+   Node-specific files
    ~~~~~~~~~~~~~~~~~~~~~~
 
    The following cluster-specific files are located in node subdirectories:
