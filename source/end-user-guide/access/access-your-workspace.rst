@@ -61,9 +61,7 @@ Access your Mattermost instance with your credentials using a web browser, the d
   What to Expect
   ---------------
 
-  Enrollment is mandatory and cannot be bypassed. It happens during sign-in and is typically a quick process. Access to Mattermost content is blocked until enrollment completes.
-
-  After enrolling, your Mattermost experience generally stays the same, but some restrictions are enforced.
+  Each time you sign in, Mattermost checks the Intune App Protection Policy applied to your account. If enrollment is required, you’ll be prompted to complete it before you can access your workspace. After enrollment, your Mattermost experience generally stays the same, but some restrictions may be enforced.
 
   Intune protections apply **per Mattermost workspace** (the Mattermost server you sign in to). If you have access to multiple Mattermost workspaces, each workspace may have different protections and requirements in place. This guide explains what to expect when the workspace you are connecting to is protected by Intune.
 
@@ -76,25 +74,22 @@ Access your Mattermost instance with your credentials using a web browser, the d
   Sign In to Enroll
   -----------------
 
-  You only need to complete enrollment once per account.
+  To sign in and enroll your iOS device:
 
   1. Open the Mattermost mobile app on your iOS device.
   2. Sign in with Microsoft (your organization’s sign-in option).
   3. Enter your credentials.
-
-     During enrollment, you may be asked to confirm your Microsoft sign-in again. This is normal and usually takes only a few seconds.
-
-  5. When enrollment completes, you are notified.
-  6. If your organization’s Intune App Protection Policy requires it, you’ll be prompted to set a PIN to protect your work data.
-
-     Once the PIN is confirmed, the Mattermost Mobile App unlocks access to your workspace.
+  4. When enrollment completes, you are notified.
+  5. If your organization’s Intune App Protection Policy requires it, you’ll be prompted to set a PIN to protect your work data. Once the PIN is confirmed, the Mattermost Mobile App unlocks access to your workspace.
 
   If you dismiss enrollment during sign-in, return to the sign-in flow and complete enrollment to continue using Mattermost on that device.
 
   Mid-Session Enrollment
   ----------------------
 
-  If enrollment is triggered while you're already signed in and you tap **Cancel**, you won’t be able to continue using Mattermost on that device until enrollment succeeds. You can retry immediately, or `log out <#what-happens-when-i-log-out-manually>`__ and retry later.
+  If enrollment is triggered while you're already signed in, you may be prompted to confirm your Microsoft sign-in again. This is expected and typically takes only a few seconds.
+
+  If you tap **Cancel**, you won’t be able to continue using Mattermost on that device until enrollment succeeds. You can retry immediately, or `log out <#what-happens-when-i-log-out-manually>`__ and retry later.
 
   What Changes After Enrollment?
   ------------------------------
