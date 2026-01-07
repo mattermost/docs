@@ -496,6 +496,10 @@ sitemap_excludes = [
     "agents/CLAUDE.html",
     "agents/README.html",
     "agents/interpluginclient/README.html",
+    "agents/.claude/agents/playwright-test-generator.html",
+    "agents/.claude/agents/playwright-test-healer.html",
+    "agents/.claude/agents/playwright-test-planner.html",
+    "agents/.claude/skills/e2e-testing-skill/SKILL.html",
 ]
 
 # -- Page redirects -------------------------------------------------
@@ -514,7 +518,7 @@ redirects_write_extensionless_pages = False
 
 # General information about the project.
 project = "Mattermost"
-copyright = "2015-2025 Mattermost"
+copyright = "2015-2026 Mattermost"
 author = "Mattermost"
 
 # The version info for the project you're documenting, acts as replacement for
