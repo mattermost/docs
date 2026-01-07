@@ -17,7 +17,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - iPhone 6s devices and later with iOS 15.1+ are required.
 
 ### Improvements
- - Added Microsoft Intune MAM integration for iOS with multi-server support (requires Enterprise Advanced license).
+ - Added [Microsoft Intune MAM integration](https://docs.mattermost.com/deployment-guide/mobile/mobile-security-features.html#microsoft-intune-mobile-application-management-mam) for iOS with multi-server support (requires Enterprise Advanced license).
  - Added the ability to invite guests to a team from mobile.
  - Added support for servers with passwordless authentication with Magic Link for guest users (requires Enterprise license).
  - Added a new Burn-on-Read message feature (requires Enterprise Advanced license).
