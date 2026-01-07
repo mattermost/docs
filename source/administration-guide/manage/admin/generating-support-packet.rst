@@ -100,22 +100,6 @@ The contents of a Mattermost Support Packet can differ by server version. Select
 
    The Support Packet ``diagnostics.yaml`` file includes system and plugin diagnostics to support troubleshooting and configuration validation.
 
-   Enterprise search
-   ^^^^^^^^^^^^^^^^^^^
-
-   From Mattermost v11.2, ``diagnostics.yaml`` includes connectivity checks for configured enterprise search backends. Any connection errors encountered during testing are captured to help diagnose indexing or search issues. Use this information when troubleshooting:
-
-   - Search returns no results or incomplete results
-   - Indexing failures, timeouts, or connection errors
-
-   SAML provider type
-   ^^^^^^^^^^^^^^^^^^^^
-
-   From Mattermost v11.2, when SAML SSO is configured, ``diagnostics.yaml`` includes the detected SAML identity provider type and related diagnostic details to help identify the IdP in use and speed up troubleshooting of SAML authentication issues. Use this information when troubleshooting:
-
-   - SAML login failures or redirect loops
-   - Identity provider configuration mismatches
-
    Plugin diagnostic data
    ~~~~~~~~~~~~~~~~~~~~~~~
 
