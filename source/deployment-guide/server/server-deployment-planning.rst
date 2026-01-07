@@ -32,7 +32,7 @@ Mattermost's architecture is built on modern, reliable technologies:
 * **Frontend**: React-based web application and mobile apps
 * **Database**: PostgreSQL for primary data storage
 * **Search**: Elasticsearch (optional) for advanced search capabilities
-* **File Storage**: Local filesystem or cloud storage (S3, MinIO) for media and attachments
+* **File Storage**: Local filesystem, network storage using NFS, or cloud storage (S3 or S3-compatible services) for media and attachments
 * **Caching**: Built-in support for Redis for enhanced performance
 
 Deployment options
