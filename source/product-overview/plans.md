@@ -53,7 +53,7 @@
   <thead>
     <tr>
       <th>Feature Category</th>
-      <th>Team Edition</th>
+      <th>Team Plan</th>
       <th>Entry</th>
       <th>Professional</th>
       <th>Enterprise</th>

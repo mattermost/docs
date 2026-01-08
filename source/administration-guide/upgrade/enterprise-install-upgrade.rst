@@ -11,8 +11,8 @@ Check your edition and version
 
 Open **Product menu > About Mattermost** to check your edition and version from the web or desktop interface.
 
-- **Mattermost Enterprise Edition** indicates you can apply a license key to enable Enterprise features.
-- **Mattermost Team Edition** indicates you're using the open source version and need to upgrade before a license key can be applied.
+- **Mattermost Enterprise Plan** indicates you can apply a license key to enable Enterprise features.
+- **Mattermost Team Plan** indicates you're using the open source version and need to upgrade before a license key can be applied.
 
 Upgrade via System Console (Recommended)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -26,7 +26,7 @@ During the upgrade process, the Mattermost Enterprise Edition binary file that m
 .. note::
   If you're using a modified version of Mattermost, using this tool will overwrite your changes and replace them with the official Enterprise Edition binary. 
 
-Once this process is complete, you're prompted to restart your server. The Mattermost version listed in **Product menu > System Console > Edition and License** will change from **Team Edition** to **Enterprise Edition**, and you can now start a trial or upload a license to unlock paid features.
+Once this process is complete, you're prompted to restart your server. The Mattermost version listed in **Product menu > System Console > Edition and License** will change from **Team Plan** to **Enterprise Plan**, and you can now start a trial or upload a license to unlock paid features.
 
 Upgrade manually
 ~~~~~~~~~~~~~~~~~
