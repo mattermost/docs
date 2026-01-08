@@ -33,6 +33,36 @@ Mattermost may notify you when a recipient's availability is set to :ref:`Do Not
     :alt: Tap on the send icon to send the message in the channel.
     :scale: 50
 
+Rewrite messages with AI
+-------------------------
+
+From Mattermost v11.2, you can use AI to enhance your messages before sending them. This feature helps you improve writing quality, fix spelling, adjust message length, or transform your text based on specific needs.
+
+.. tab:: Web/Desktop
+
+  1. Type your message in the text field.
+  2. Select the **AI rewrite** option from the message actions.
+  3. Choose from available rewrite options:
+
+     - **Improve writing** - Enhance clarity and professionalism
+     - **Fix spelling** - Correct spelling and grammar errors
+     - **Shorten** - Make your message more concise
+     - **Elaborate** - Add more detail and context
+     - **Simplify** - Use clearer, easier-to-understand language
+     - **Summarize** - Condense your message to key points
+     - **Custom prompt** - Specify your own transformation instructions
+
+  4. Review the AI-generated suggestion and select **Use** to apply it or **Regenerate** to try again.
+  5. Select **Send** |send-icon| to send your rewritten message.
+
+.. tab:: Mobile
+
+  AI rewriting functionality is available in the mobile app with the same rewrite options as the desktop experience.
+
+.. note::
+
+  Messages that have been rewritten using AI are automatically marked as AI-generated content for transparency. Your system admin must configure AI agents for this feature to be available.
+
 Draft messages
 --------------
 
