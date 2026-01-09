@@ -179,7 +179,8 @@ Terms of Use link
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
 .. note::
-  This setting is applicable to self-hosted deployments only and doesn't change the **Terms of Use** link in the **About Mattermost** window.
+  - Customers with a Mattermost subscription may replace or override the Acceptable Use Policy with their own acceptable use or conduct policies, based on contractual terms with Mattermost, so long as your own terms either incorporate the Acceptable Use Policy or include equivalent terms. If you change the default link to add your own terms for using the service you provide, your new terms must include a `link to the default terms <https://mattermost.com/terms-of-use/#acceptable-use-policy>`_ so end users are aware of the Mattermost Acceptable Use Policy for Mattermost software.
+  - This setting is applicable to self-hosted deployments only and doesn't change the **Terms of Use** link in the **About Mattermost** window.
 
 .. config:setting:: privacy-policy-link
   :displayname: Privacy Policy link (Customization)
@@ -198,7 +199,7 @@ Privacy Policy link
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 .. note::
-  This setting is applicable to self-hosted deployments only and doesn't change the **Privacy Policy** link in the **About Mattermost** window. 
+  - This setting is applicable to self-hosted deployments only and doesn't change the **Privacy Policy** link in the **About Mattermost** window. 
 
 .. config:setting:: about-link
   :displayname: About link (Customization)
@@ -251,7 +252,7 @@ Report a Problem
 
 With self-hosted deployments, you can specify how the **Report a Problem** option behaves in the Mattermost app via the **Help** menu:
 
-- **Default link**: Uses the default Mattermost URL to report a problem. For commercial customers, this is the `Mattermost Support Portal <https://support.mattermost.com/hc/en-us/requests/new>`_. Non-commercial customers are directed to `create a new issue on the Mattermost GitHub repository <https://github.com/mattermost/mattermost/issues/new>`_.
+- **Default link**: Uses the default Mattermost URL to report a problem. Customers with a Mattermost subscription are directed to the `Mattermost Support Portal <https://support.mattermost.com/hc/en-us/requests/new>`_. Community deployments are directed to `create a new issue on the Mattermost GitHub repository <https://github.com/mattermost/mattermost/issues/new>`_.
 - **Email address**: Enables you to :ref:`enter an email address <administration-guide/configure/site-configuration-settings:report a problem email address>` that users will be prompted to send a message to when they choose **Report a Problem** in Mattermost.
 - **Custom link**: Enables you to :ref:`enter a URL <administration-guide/configure/site-configuration-settings:report a problem link>` that users will be directed to when they choose **Report a Problem** in Mattermost.
 - **Hide link**: Removes the **Report a Problem** option from Mattermost.

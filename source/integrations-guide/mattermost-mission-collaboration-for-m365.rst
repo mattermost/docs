@@ -163,6 +163,6 @@ In air-gapped environments or during business continuity disruptions, users who 
 Get Help
 ---------
 
-Mattermost commercial customers can open a `Mattermost support case <https://support.mattermost.com/hc/en-us/requests/new>`_. 
+Customers with a Mattermost subscription can open a `Mattermost support case <https://support.mattermost.com/hc/en-us/requests/new>`_. 
 
 For questions, feedback, and assistance, join our pubic `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance.
