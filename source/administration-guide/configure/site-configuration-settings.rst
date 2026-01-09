@@ -199,7 +199,6 @@ Privacy Policy link
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 .. note::
-  - Customers with a Mattermost subscription may replace or override the Privacy Policy with their own acceptable use or conduct policies, based on contractual terms with Mattermost, so long as your own terms either incorporate the Privacy Policy or include equivalent terms. If you change the default link to add your own policy for using the service you provide, your new terms must include a link to the default terms so end users are aware of the Mattermost Privacy Policy for Mattermost software.
   - This setting is applicable to self-hosted deployments only and doesn't change the **Privacy Policy** link in the **About Mattermost** window. 
 
 .. config:setting:: about-link
