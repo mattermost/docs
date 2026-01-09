@@ -179,7 +179,8 @@ Terms of Use link
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
 .. note::
-  This setting is applicable to self-hosted deployments only and doesn't change the **Terms of Use** link in the **About Mattermost** window.
+  - Customers with a Mattermost subscription may replace or override the Acceptable Use Policy with their own acceptable use or conduct policies, based on contractual terms with Mattermost, so long as your own terms either incorporate the Acceptable Use Policy or include equivalent terms. If you change the default link to add your own terms for using the service you provide, your new terms must include a link to the default terms so end users are aware of the Mattermost Acceptable Use Policy for Mattermost software.
+  - This setting is applicable to self-hosted deployments only and doesn't change the **Terms of Use** link in the **About Mattermost** window.
 
 .. config:setting:: privacy-policy-link
   :displayname: Privacy Policy link (Customization)
@@ -198,7 +199,8 @@ Privacy Policy link
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 .. note::
-  This setting is applicable to self-hosted deployments only and doesn't change the **Privacy Policy** link in the **About Mattermost** window. 
+  - Customers with a Mattermost subscription may replace or override the Privacy Policy with their own acceptable use or conduct policies, based on contractual terms with Mattermost, so long as your own terms either incorporate the Privacy Policy or include equivalent terms. If you change the default link to add your own policy for using the service you provide, your new terms must include a link to the default terms so end users are aware of the Mattermost Privacy Policy for Mattermost software.
+  - This setting is applicable to self-hosted deployments only and doesn't change the **Privacy Policy** link in the **About Mattermost** window. 
 
 .. config:setting:: about-link
   :displayname: About link (Customization)
