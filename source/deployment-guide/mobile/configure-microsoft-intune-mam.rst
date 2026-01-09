@@ -82,8 +82,8 @@ Capture these during setup:
 +-------------------------------+-----------------------------------------+---------------------------------------------------------------+
 | Application (client) ID       | Entra app registration overview         | Mattermost System Console                                     |
 +-------------------------------+-----------------------------------------+---------------------------------------------------------------+
-| Application ID URI            | Entra app > Expose an API               | Used to form the ``api://<APPLICATION-ID>/login.mattermost``   |
-|                               |                                         | scope reference in Authorized client applications              |
+| Application ID URI            | Entra app > Expose an API               | Used to form the ``api://<APPLICATION-ID>/login.mattermost``  |
+|                               |                                         | scope reference in Authorized client applications             |
 +-------------------------------+-----------------------------------------+---------------------------------------------------------------+
 | ``login.mattermost`` scope    | Entra app > Expose an API               | Authorized client applications                                |
 +-------------------------------+-----------------------------------------+---------------------------------------------------------------+
