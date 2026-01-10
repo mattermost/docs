@@ -616,6 +616,7 @@ html_context = {
     # Enable Google Analytics
     "googleanalytics_id": "UA-67846571-2",
     "googleanalytics_enabled": True,
+    "webdocs": "LOCAL_DOCS" not in os.environ,
 }
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
