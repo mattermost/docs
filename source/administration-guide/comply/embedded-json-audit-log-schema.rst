@@ -801,8 +801,8 @@ Access Control Events
 | ``updateActiveStatus``        | Updating active status of access control policies                 |
 +-------------------------------+-------------------------------------------------------------------+
 
-Custom Profile Attributes Events
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+User Attributes Events
+~~~~~~~~~~~~~~~~~~~~~~~
 
 +-------------------------------+-------------------------------------------------------------------+
 | **Event Name**                | **Description**                                                   |
