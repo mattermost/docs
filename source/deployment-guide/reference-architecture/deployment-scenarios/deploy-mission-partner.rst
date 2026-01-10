@@ -15,7 +15,7 @@ Collaboration challenges
 
 Multi-agency collaborations face complex communication challenges:
 
-- **Platform diversity:** Organizations often use different platforms, including Microsoft 365, Mattermost, and Matrix - with some using Teams for enterprise productivity :doc:`supplemented with Mattermost </deployment-guide/reference-architecture/deployment-scenarios/deploy-sovereign-collaboration>` for sovereign collaboration, data residency, and offline resilience. 
+- **Platform diversity:** Organizations often use different platforms, including Microsoft 365, Mattermost, and Matrix - with some using Teams for enterprise productivity :doc:`supplemented with Mattermost </deployment-guide/reference-architecture/deployment-scenarios/deploy-sovereign-collaboration>` for sovereign collaboration, data residency, and offline resilience.
 - **External access:** External partners need controlled access without full organizational membership.
 - **Language barriers:** Organizations may speak different languages.
 - **Compliance:** Data residency and compliance requirements vary across organizations.
@@ -23,7 +23,7 @@ Multi-agency collaborations face complex communication challenges:
 Solution Architecture
 ---------------------
 
-Traditional solutions require everyone to adopt the same platform or use insecure external tools. Mattermost powers a multi-layer approach addressing these collaboration challenges and diverse organizational needs, including: 
+Traditional solutions require everyone to adopt the same platform or use insecure external tools. Mattermost powers a multi-layer approach addressing these collaboration challenges and diverse organizational needs, including:
 
 - **Mattermost ↔ Mattermost Collaboration:** Organizations with Mattermost deployments establish secure connections and share specific channels using :doc:`connected workspaces </administration-guide/onboard/connected-workspaces>` over standard HTTPS/VPN.
 
@@ -64,7 +64,7 @@ The deployment architecture includes the following components:
 
   - **Mattermost Desktop Apps:** Access Mattermost directly by deploying :doc:`desktop </deployment-guide/desktop/desktop-app-deployment>` or web apps in your organization.
   - **Mattermost Mobile Apps:** Access Mattermost via :doc:`iPhone and Android apps </deployment-guide/mobile/mobile-app-deployment>`, with support for :doc:`ID-only push notifications </deployment-guide/mobile/host-your-own-push-proxy-service>` to ensure compliance with data sovereignty requirements. *(Optional - not shown)*
-  - **Microsoft 365 Desktop Apps:** For partnered organizations using Microsoft 365 services, Teams and Outlook can be deployed with the :doc:`embedded Mattermost application </integrations-guide/mattermost-mission-collaboration-for-m365>` for cross-domain partner collaboration within a familiar interface. *(Optional)* 
+  - **Microsoft 365 Desktop Apps:** For partnered organizations using Microsoft 365 services, Teams and Outlook can be deployed with the :doc:`embedded Mattermost application </integrations-guide/mattermost-mission-collaboration-for-m365>` for cross-domain partner collaboration within a familiar interface. *(Optional)*
 
 - **Mattermost Deployments:** Mattermost deployed for sovereign collaboration on private cloud or local infrastructure, such as :doc:`Azure </deployment-guide/server/deploy-kubernetes>` or `Azure Local <https://learn.microsoft.com/en-us/azure/azure-local/manage/disconnected-operations-overview>`_, to maintain compliance with STIG, FedRAMP, and NIST 800-53 standards. See :doc:`reference architecture </administration-guide/scale/server-architecture>` documentation for Mattermost deployment configurations based on expected scale.
 
@@ -80,7 +80,7 @@ The deployment architecture includes the following components:
 
   - **PostgreSQL Database:** Stores persistent application data on a :doc:`PostgreSQL v13+ database </deployment-guide/server/preparations>`, such as `Azure Database for PostgreSQL <https://azure.microsoft.com/en-us/products/postgresql>`_.
 
-  - **Object Storage:** File uploads, images, and attachments are stored outside the application node on an :doc:`S3-compatible store </deployment-guide/server/preparations>`, such as MinIO. `Azure Blob Storage <https://azure.microsoft.com/en-us/products/storage/blobs>`_ can be used, but needs an S3-compatible proxy for Mattermost to interface with.
+  - **Object Storage:** File uploads, images, and attachments are stored outside the application node on an :doc:`S3-compatible store </deployment-guide/server/preparations>` or an NFS (Network File System) server. `Azure Blob Storage <https://azure.microsoft.com/en-us/products/storage/blobs>`_ can be used, but needs an S3-compatible proxy for Mattermost to interface with.
 
   - **Recording Instance:** ``calls-offloader`` :ref:`job service <administration-guide/configure/calls-deployment:configure recording, transcriptions, and live captions>` to offload heavy processing tasks from Mattermost Calls, such as recordings, transcriptions, and live captioning, to local infrastructure or private cloud. *(Optional)*
 
@@ -88,7 +88,7 @@ The deployment architecture includes the following components:
 
 - **Self-hosted LLM:** Locally hosted :doc:`OpenAI compatible LLM </agents/docs/providers>` for agentic powered collaboration. *(Optional)*
 
-- **Microsoft Global Network:** `World-wide network <https://learn.microsoft.com/en-us/azure/networking/microsoft-global-network>`_ of Microsoft data centers, delivering public cloud services including M365 and Azure OpenAI. *(Optional)* 
+- **Microsoft Global Network:** `World-wide network <https://learn.microsoft.com/en-us/azure/networking/microsoft-global-network>`_ of Microsoft data centers, delivering public cloud services including M365 and Azure OpenAI. *(Optional)*
 
 Operational Best Practices
 --------------------------

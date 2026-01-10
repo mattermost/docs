@@ -19,7 +19,7 @@ Review and manage the following environmental configuration options in the Syste
 - `Session lengths <#session-lengths>`__
 - `Performance monitoring <#performance-monitoring>`__
 - `Developer <#developer>`__
-- `Mobile security <#mobile-security>`__ 
+- `Mobile security <#mobile-security>`__
 - `config.json-only settings <#config-json-only-settings>`__
 
 .. tip::
@@ -343,7 +343,7 @@ Enable insecure outgoing connections
 
 .. warning::
 
-  Enabling this feature makes these connections susceptible to man-in-the-middle attacks. 
+  Enabling this feature makes these connections susceptible to man-in-the-middle attacks.
 
 .. config:setting:: managed-resource-paths
   :displayname: Managed resource paths (Web Server)
@@ -702,7 +702,7 @@ The parameter to encrypt connection against a PostgreSQL server is sslmode. The 
 
 Your database admin must configure the functionality according to the supported values described below.
 
-+----------------------------------------+-----------------+---------------------------------------------------------------------------+ 
++----------------------------------------+-----------------+---------------------------------------------------------------------------+
 | Short description of the ``sslmode``   | Value           | Example of a data source name                                             |
 | parameter                              |                 |                                                                           |
 +========================================+=================+===========================================================================+
@@ -729,7 +729,7 @@ MySQL Databases
 
 When Driver Name is set to mysql, we recommend using collation over using charset.
 
-To specify collation:  
+To specify collation:
 
 .. code-block:: text
 
@@ -1119,7 +1119,7 @@ Replica lag settings
 
   .. tab:: AWS Aurora
 
-    Add the configuration highlighted below to your ``SqlSettings.ReplicaLagSettings`` array. You only need to add this once because replication statistics for AWS Aurora nodes are visible across all server instances that are members of the cluster. Be sure to change the ``DataSource`` to point to a single node in the group. 
+    Add the configuration highlighted below to your ``SqlSettings.ReplicaLagSettings`` array. You only need to add this once because replication statistics for AWS Aurora nodes are visible across all server instances that are members of the cluster. Be sure to change the ``DataSource`` to point to a single node in the group.
 
     For more information on Aurora replication stats, see the `AWS Aurora documentaion <https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora_global_db_instance_status.html>`__.
 
@@ -1142,7 +1142,7 @@ Replica lag settings
 
   .. tab:: MySQL Group Replication
 
-    Add the configuration highlighted below to your ``SqlSettings.ReplicaLagSettings`` array. You only need to add this once because replication statistics for all nodes are shared across all server instances that are members of the MySQL replication group. Be sure to change the ``DataSource`` to point to a single node in the group. 
+    Add the configuration highlighted below to your ``SqlSettings.ReplicaLagSettings`` array. You only need to add this once because replication statistics for all nodes are shared across all server instances that are members of the MySQL replication group. Be sure to change the ``DataSource`` to point to a single node in the group.
 
     For more information on group replication stats, see the `MySQL documentation <https://dev.mysql.com/doc/refman/8.0/en/group-replication-replication-group-member-stats.html>`__.
 
@@ -1165,7 +1165,7 @@ Replica lag settings
 
   .. tab:: PostgreSQL replication slots
 
-    1. Add the configuration highlighted below to your ``SqlSettings.ReplicaLagSettings`` array. This query should run against the **primary** node in your cluster, to do this change the ``DataSource`` to match the `SqlSettings.DataSource <#data-source>`__ setting you have configured. 
+    1. Add the configuration highlighted below to your ``SqlSettings.ReplicaLagSettings`` array. This query should run against the **primary** node in your cluster, to do this change the ``DataSource`` to match the `SqlSettings.DataSource <#data-source>`__ setting you have configured.
 
     For more information on pg_stat_replication, see the `PostgreSQL documentation <https://www.postgresql.org/docs/current/monitoring-stats.html#MONITORING-PG-STAT-REPLICATION-VIEW>`__.
 
@@ -1637,7 +1637,7 @@ Channel index replicas
 
 .. note::
 
-  If there are ``n`` data nodes, the number of replicas per shard for each index should be ``n-1``. If the number of nodes in an Elasticsearch or AWS OpenSearch cluster changes, this configuration setting, as well as `Post Index Replicas <#post-index-shards>`__ and `User Index Replicas <#user-index-replicas>`__ must also be updated accordingly. 
+  If there are ``n`` data nodes, the number of replicas per shard for each index should be ``n-1``. If the number of nodes in an Elasticsearch or AWS OpenSearch cluster changes, this configuration setting, as well as `Post Index Replicas <#post-index-shards>`__ and `User Index Replicas <#user-index-replicas>`__ must also be updated accordingly.
 
 .. config:setting:: channel-index-shards
   :displayname: Channel index shards (Elasticsearch)
@@ -1673,7 +1673,7 @@ User index replicas
 
 .. note::
 
-  If there are ``n`` data nodes, the number of replicas per shard for each index should be ``n-1``. If the number of nodes in an Elasticsearch or AWS OpenSearch cluster changes, this configuration setting, as well as `Post Index Replicas <#post-index-shards>`__ and `User Index Replicas <#user-index-replicas>`__ must also be updated accordingly. 
+  If there are ``n`` data nodes, the number of replicas per shard for each index should be ``n-1``. If the number of nodes in an Elasticsearch or AWS OpenSearch cluster changes, this configuration setting, as well as `Post Index Replicas <#post-index-shards>`__ and `User Index Replicas <#user-index-replicas>`__ must also be updated accordingly.
 
 .. config:setting:: user-index-shards
   :displayname: User index shards (Elasticsearch)
@@ -1812,15 +1812,15 @@ During busy periods, this delay will be faster as more traffic is occurring, cau
 1. You must understand how many posts your server makes every minute. Run the query below to calculate your server's average posts per minute.
 
     Note that this query can be heavy, so we recommend that you run it during non-peak hours.
-    Additionally, you can adjust the ``WHERE`` clause to see the posts per minute over a different time period. Right now ``31536000000`` represents the number of milliseconds in a year. 
+    Additionally, you can adjust the ``WHERE`` clause to see the posts per minute over a different time period. Right now ``31536000000`` represents the number of milliseconds in a year.
 
     .. code-block:: SQL
 
       SELECT
         AVG(postsPerMinute) as averagePostsPerMinute
       FROM (
-        SELECT 
-          count(*) as postsPerMinute, 
+        SELECT
+          count(*) as postsPerMinute,
           date_trunc('minute', to_timestamp(createat/1000))
         FROM posts
         WHERE createAt > ( (extract(epoch from now()) * 1000 )  - 31536000000)
@@ -1925,7 +1925,7 @@ With self-hosted deployments, you can configure file storage settings by going t
 
 .. note::
 
-  Mattermost currently supports storing files on the local filesystem and Amazon S3 or S3-compatible containers. We have tested Mattermost with `MinIO <https://min.io/>`__ and `Digital Ocean Spaces <https://docs.digitalocean.com/products/spaces/>`__ products, but not all S3-compatible containers on the market. If you are looking to use other S3-compatible containers, we recommend completing your own testing.
+  Mattermost currently supports storing files on the local filesystem and Amazon S3 or S3-compatible containers. We have tested Mattermost with `Digital Ocean Spaces <https://docs.digitalocean.com/products/spaces/>`__, but not all S3-compatible containers on the market. If you are looking to use other S3-compatible containers, we recommend completing your own testing. You can also use local storage or a network drive using NFS.
 
 .. config:setting:: file-storage-system
   :displayname: File storage system (File Storage)
@@ -1948,8 +1948,8 @@ File storage system
 |   the specified local file directory.                         |                                                                             |
 | - **amazons3**: Files and images are stored on Amazon S3      |                                                                             |
 |   based on the access key, bucket, and region fields          |                                                                             |
-|   provided. The driver is compatible with MinIO (Beta)        |                                                                             |
-|   and Digital Ocean Spaces.                                   |                                                                             |
+|   provided. The driver is compatible with other S3-compatible |                                                                             |
+|   services, such as Digital Ocean Spaces.                     |                                                                             |
 +---------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 .. config:setting:: local-storage-directory
@@ -2067,7 +2067,7 @@ Enable searching content of documents within ZIP files
 .. note::
 
   - You can search for document content within ZIP files when using Mattermost in a web browser or the desktop app.
-  - Searching document contents adds load to your server. 
+  - Searching document contents adds load to your server.
   - For large deployments, or teams that share many large, text-heavy documents, we recommend you review our :ref:`hardware requirements <deployment-guide/software-hardware-requirements:hardware requirements>`, and test enabling this feature in a staging environment before enabling it in a production environment.
 
 .. config:setting:: amazon-s3-bucket
@@ -2108,7 +2108,7 @@ Amazon S3 path prefix
   :systemconsole: Environment > File Storage
   :configjson: .FileSettings.AmazonS3Region
   :environment: MM_FILESETTINGS_AMAZONS3REGION
-  :description: The AWS region you selected when creating your **Amazon S3 bucket** in AWS. For MinIO or Digital Ocean Spaces, leave this setting empty.
+  :description: The AWS region you selected when creating your **Amazon S3 bucket** in AWS. For Digital Ocean Spaces or other S3-compatible services, leave this setting empty.
 
 Amazon S3 region
 ~~~~~~~~~~~~~~~~
@@ -2123,7 +2123,7 @@ Amazon S3 region
 | if none found.                                                |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
-For MinIO or Digital Ocean Spaces, leave this setting empty.
+For Digital Ocean Spaces or other S3-compatible services, leave this setting empty.
 
 .. config:setting:: amazon-s3-access-key-id
   :displayname: Amazon S3 access key ID (File Storage)
@@ -2329,7 +2329,7 @@ Export Amazon S3 storage class
   :environment: MM_FILESETTINGS_AMAZONS3REQUESTTIMEOUTMILLISECONDS
   :description: Amount of time, in milliseconds, before requests to Amazon S3 time out. Default value is 30000 (30 seconds).
 
-Amazon S3 request timeout 
+Amazon S3 request timeout
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -2388,7 +2388,7 @@ Amazon S3 exported upload part size
   :environment: MM_FILESETTINGS_AMAZONS3REQUESTTIMEOUTMILLISECONDS
   :description: Amount of time, in milliseconds, before requests to Amazon S3 time out. Default value is 30000 (30 seconds).
 
-Amazon S3 request timeout 
+Amazon S3 request timeout
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -2812,7 +2812,7 @@ Enable gossip encryption
 .. note::
 
   - The Gossip protocol is based on principles outlined in the `SWIM protocol developed by researchers at Cornell University <https://www.cs.cornell.edu/projects/Quicksilver/public_pdfs/SWIM.pdf>`_. The gossip protocol is a communication mechanism in distributed systems where nodes randomly exchange information to ensure data consistency across the network. It is decentralized, scalable, and fault-tolerant, making it ideal for systems with numerous nodes. Information is spread in a manner similar to social gossip, with nodes periodically "gossiping" updates to random peers until the network converges to a consistent state. Widely used in distributed databases, blockchain networks, and peer-to-peer systems, the protocol is simple to implement and resilient to node failures. However, it can suffer from redundancy and propagation delays in large networks.
-  - Alternatively, you can manually set the ``ClusterEncryptionKey`` row value in the **Systems** table. A key is a byte array converted to base64. Set this value to either 16, 24, or 32 bytes to select AES-128, AES-192, or AES-256 respectively. 
+  - Alternatively, you can manually set the ``ClusterEncryptionKey`` row value in the **Systems** table. A key is a byte array converted to base64. Set this value to either 16, 24, or 32 bytes to select AES-128, AES-192, or AES-256 respectively.
   - From Mattermost v10.11, gossip encryption is enabled by default for all new deployments. For existing deployments, all communication using the gossip protocol remains unencrypted unless you manually enable encryption. Prior to v10.11, gossip encryption is enabled by default for Cloud deployments and disabled by default for self-hosted deployments.
 
 .. config:setting:: enable-gossip-compression
@@ -3921,7 +3921,7 @@ Performance monitoring
 .. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
-With self-hosted deployments, you can configure performance monitoring by going to **System Console > Environment > Performance Monitoring**, or by editing the ``config.json`` file as described in the following tables. 
+With self-hosted deployments, you can configure performance monitoring by going to **System Console > Environment > Performance Monitoring**, or by editing the ``config.json`` file as described in the following tables.
 
 .. code-block:: json
 
@@ -4088,7 +4088,7 @@ Enable notification monitoring
   - ``MetricsSettings.Enable`` must be set to ``true``
   - The ``NotificationMonitoring`` feature flag must be set to ``true``
 
-See the :ref:`performance monitoring <administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring:getting started>` documentation 
+See the :ref:`performance monitoring <administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring:getting started>` documentation
 to learn more about Mattermost Notification Health metrics.
 
 ----
@@ -4332,7 +4332,7 @@ Prevent screen capture
 Enable secure file preview on mobile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This setting improves an organization's mobile security posture by restricting file access while still allowing essential file viewing capabilities. 
+This setting improves an organization's mobile security posture by restricting file access while still allowing essential file viewing capabilities.
 
 +---------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
 | - **true**: Prevents file downloads, previews, and sharing for most file types,                                                       | - System Config path: **Site Configuration > File sharing and downloads**                         |
@@ -4406,7 +4406,7 @@ Disable Customer Portal requests
 
 .. note::
 
-  Cloud admins can’t modify this configuration setting. 
+  Cloud admins can’t modify this configuration setting.
 
 .. config:setting:: enable-api-team-deletion
   :displayname: Enable API team deletion (ServiceSettings)

@@ -9,7 +9,7 @@ Overview
 
 Mattermost provides a reliable migration path from Slack, enabling you to bring your organization’s collaboration history into a secure, self-hosted Mattermost environment. The migration process supports full workspaces, including users, channels and message history, direct messages, and threads so your teams can continue working without losing valuable context.
 
-This process generally involves preparing your environment, exporting data from Slack, converting that data into a compatible format, and then importing it into Mattermost. Migrating from Slack is a multi-step process that can be complex, particularly for larger organizations or those with multiple Slack workspaces. 
+This process generally involves preparing your environment, exporting data from Slack, converting that data into a compatible format, and then importing it into Mattermost. Migrating from Slack is a multi-step process that can be complex, particularly for larger organizations or those with multiple Slack workspaces.
 
 Additionally, please consider that Slack's data control policies or export capabilities may change at any time, or they may charge fees to customers for exporting data stored in Slack. Support for negotiating export of customer IP from Slack Enterprise can be requested by contacting a `Mattermost Expert <https://mattermost.com/contact-sales/>`_.
 
@@ -72,30 +72,30 @@ Scope definition
 Start by defining the scope of your migration:
 
 - **Slack edition**: Migrating from Slack Enterprise Grid involves additional `steps and planning <#faq>`_.
-- **Data history**: Decide how much history is necesary to import. Importing a smaller time window (e.g., the last six months) can significantly reduce complexity and processing time.  
-- **Export size**: Consider the size of your Slack export file as you progress through this guide. File size directly impacts how long the import will take - for example, files under ~25 GB often complete within a day, while exports over 100 GB can take several days, significantly lengthening the time between iterations and the overall timeline to complete the migration.   
-- **File attachments**: Consider whether you can exclude very large or non-critical attachments (for example, public software download packages, videos, or outdated media assets) to reduce import size and speed up processing.  
+- **Data history**: Decide how much history is necesary to import. Importing a smaller time window (e.g., the last six months) can significantly reduce complexity and processing time.
+- **Export size**: Consider the size of your Slack export file as you progress through this guide. File size directly impacts how long the import will take - for example, files under ~25 GB often complete within a day, while exports over 100 GB can take several days, significantly lengthening the time between iterations and the overall timeline to complete the migration.
+- **File attachments**: Consider whether you can exclude very large or non-critical attachments (for example, public software download packages, videos, or outdated media assets) to reduce import size and speed up processing.
 
 Infrastructure considerations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The environment where you run the import can significantly affect performance:
 
-- **Test environment**: Always run the migration in a development or staging environment first. Most migrations require multiple iterations before a production import is successful.  
+- **Test environment**: Always run the migration in a development or staging environment first. Most migrations require multiple iterations before a production import is successful.
 - **Operating system**: The ``mmetl`` and ``slack_advanced_exporter`` tools are supported on Linux and macOS. Windows is not supported, and we do not recommend using Windows Subsystem for Linux (WSL) since the file system is not performant enought for the heavier processes involved in migration.
-- **Storage requirements**: Ensure your server can store both the Slack export archive and the fully unpacked data. As a best practice, plan for at least three times the size of your Slack export in available server storage.  
-- **File Storage**: Imports into S3 file storage typically complete faster than imports into MinIO. If using MinIO, you may want to consider increasing the number of volumes per server. 
+- **Storage requirements**: Ensure your server can store both the Slack export archive and the fully unpacked data. As a best practice, plan for at least three times the size of your Slack export in available server storage.
+- **File Storage**: Imports into S3 file storage typically complete faster than imports into local storage or NFS. For large imports, we recommend using AWS S3 or another S3-compatible storage service for best performance.
 
 Mattermost server considerations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Carefully preparing your environment and making these adjustments up front will help ensure the migration proceeds smoothly and reduces the need for repeated trial-and-error. 
+Carefully preparing your environment and making these adjustments up front will help ensure the migration proceeds smoothly and reduces the need for repeated trial-and-error.
 
 - **Fresh server**: The most reliable imports happen on a fresh Mattermost installation. If importing into an existing server, never import over an existing team.
 
 - **Server version**: Make sure you are running the latest supported version of :doc:`Mattermost </product-overview/mattermost-server-releases>` to benefit from the most up-to-date functionality and fixes.
 
-- **Backups**: When importing into an already existing Mattermost environment, back up both the Mattermost database and the data directory before starting. If an import fails, you’ll need to roll back or reset.  
+- **Backups**: When importing into an already existing Mattermost environment, back up both the Mattermost database and the data directory before starting. If an import fails, you’ll need to roll back or reset.
 
   - If merging multiple Slack workspaces into a single team is the desired end-result, we recommend completing the import to separate teams, validating the results, then using :ref:`mmctl <administration-guide/manage/mmctl-command-line-tool:mmctl channel move>` to move channels between teams.
 
@@ -106,7 +106,7 @@ Carefully preparing your environment and making these adjustments up front will 
   - **Team Settings > Allow any user with an account on this server to join this team**: Ensure this is enabled for the team receiving the import.
   - ``EmailSettings.EnableSignUpWithEmail`` and ``EmailSettings.EnableSignInWithEmail``: Both must be set to ``true``
   - ``FileSettings.MaxFileSize``: Set this higher than the largest file in your Slack export.
-  - ``ElasticsearchSettings. EnableIndexing``, ``ElasticsearchSettings > EnableSearching`` and ``ElasticsearchSettings.EnableAutocomplete``: All must be set to ``false`` during the import to prevent performance issues. After the import, you can purge and reindex before enabling Elasticsearch.  
+  - ``ElasticsearchSettings. EnableIndexing``, ``ElasticsearchSettings > EnableSearching`` and ``ElasticsearchSettings.EnableAutocomplete``: All must be set to ``false`` during the import to prevent performance issues. After the import, you can purge and reindex before enabling Elasticsearch.
 
 .. _export-slack-data:
 
@@ -185,7 +185,7 @@ It's preferable to fetch e-mails first to avoid copying large attachments around
 3. Transform the export for Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Now that you have a Slack export file with emails and attachments, let's convert this information into Mattermost's bulk import format using the import preparation tool ``mmetl``. 
+Now that you have a Slack export file with emails and attachments, let's convert this information into Mattermost's bulk import format using the import preparation tool ``mmetl``.
 
 `Download the latest release of mmetl <https://github.com/mattermost/mmetl/releases/>`__ for your OS and architecture. Run ``mmetl help`` to learn more about using the tool.
 
@@ -233,7 +233,7 @@ In this phase, channel references are updated. Example log line:
 
 This step typically completes in about half the time required for user mentions.
 
-**4. Converting post markup**  
+**4. Converting post markup**
 
 Finally, Slack message formatting is converted into Mattermost-compatible Markdown. Example log line:
 
@@ -246,7 +246,7 @@ This is the fastest step and usually completes quickly.
 4. Import data into Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can upload the export through Mattermost's API from the server or from another computer using mmctl commands. The server will save the import in its file store before running the import (e.g. AWS S3), so there will be time spent uploading/downloading the file in this case. 
+You can upload the export through Mattermost's API from the server or from another computer using mmctl commands. The server will save the import in its file store before running the import (e.g. AWS S3), so there will be time spent uploading/downloading the file in this case.
 
 The migration is idempotent, meaning that you can run multiple imports that contain the same posts, and there won't be duplicated created posts in Mattermost. Each post is imported with the correct user/author and ``created_at`` value from your Slack instance.
 
@@ -300,18 +300,18 @@ After importing, all messages may appear as unread for users. To resolve this is
 
    begin;
    UPDATE channelmembers
-   SET 
-       msgcount = channels.totalmsgcount, 
-       lastupdateat = channels.lastpostat, 
+   SET
+       msgcount = channels.totalmsgcount,
+       lastupdateat = channels.lastpostat,
        lastviewedat = channels.lastpostat,
        msgcountroot = channels.totalmsgcountroot
    FROM channels
    WHERE channelmembers.channelid = channels.id;
-       
+
    INSERT INTO preferences (UserId, Category, Name, Value)
    SELECT
        cm.userid,
-       'channel_approximate_view_time', 
+       'channel_approximate_view_time',
        cm.channelid,
        cm.lastupdateat
    FROM
@@ -319,15 +319,15 @@ After importing, all messages may appear as unread for users. To resolve this is
    ON CONFLICT (userid, category, name)
    DO UPDATE SET
        Value = EXCLUDED.Value;
-       
-   update preferences 
-     set value = false 
+
+   update preferences
+     set value = false
      where category = 'direct_channel_show';
-     
-   update preferences 
-     set value = false 
+
+   update preferences
+     set value = false
      where category = 'group_channel_show';
-     
+
    commit;
 
 Additional tools
@@ -375,11 +375,11 @@ FAQ
 What additional conderations are there for Slack Enterprise Grid?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Slack Enterprise Grid combines multiple workspaces under a single management plane and the associate export reflect that complexity. An Enterprise Grid export is a single archive containing all workspaces and shared channels. 
+Slack Enterprise Grid combines multiple workspaces under a single management plane and the associate export reflect that complexity. An Enterprise Grid export is a single archive containing all workspaces and shared channels.
 
 Mattermost does not support shared channels between teams, so Slack Shared Channels must be mapped to a single team in Mattermost. We can create this mapping by determining the originating teams in Slack and creating a ``team.json`` mapping file for use with ``mmetl``. Because of the manual effort required to identify and map team IDs, Enterprise Grid migrations are typically more time-consuming than single-workspace migrations. Plan additional time and resources to complete this step successfully.
 
-Export structure 
+Export structure
 ^^^^^^^^^^^^^^^^
 
 At the root level, you’ll see shared channels that span across Slack workspaces, and under ``/teams/`` you’ll find per-workspace data such as channels and users files. A typical structure looks like:
@@ -421,7 +421,7 @@ At the root level, you’ll see shared channels that span across Slack workspace
 Mapping shared channels to Mattermost teams
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Download the full Enterprise Grid export from Slack. 
+1. Download the full Enterprise Grid export from Slack.
 
 2. To determine where each shared channel belongs in Mattermost, looks for a ``team`` attribute on the first post in each shared channel. These ``team`` values map the channel back to its originating workspace in Slack. This is where each shared channel will live in Mattermost once imported.
 
@@ -440,7 +440,7 @@ Mapping shared channels to Mattermost teams
       "user_profile": { }
     },
 
-3. Create a ``teams.json`` file that maps Slack team IDs to each ``team`` attribute you found above. For example:  
+3. Create a ``teams.json`` file that maps Slack team IDs to each ``team`` attribute you found above. For example:
 
   .. code-block:: json
 
@@ -449,7 +449,7 @@ Mapping shared channels to Mattermost teams
         "T0002" : "team2"
     }
 
-4. Run the ``mmetl grid-transform`` command to split the Enterprise Grid export into per-team files:  
+4. Run the ``mmetl grid-transform`` command to split the Enterprise Grid export into per-team files:
 
   .. code-block:: bash
 
@@ -460,14 +460,14 @@ This process outputs a new archive for each team defined in ``teams.json``. Once
 Are there features of Slack that are not supported for migration to Mattermost?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Slack import process focuses on preserving core collaboration data such as messages, files, channels, and users. However, certain Slack features are not supported by the Mattermost product and thus will not be migrated using the import tools in this document: 
+The Slack import process focuses on preserving core collaboration data such as messages, files, channels, and users. However, certain Slack features are not supported by the Mattermost product and thus will not be migrated using the import tools in this document:
 
 - **Slack apps and integrations**: Installed apps, bots, slash commands, webhooks, workflow builder and other integrations do not migrate. Most integrations supported by Slack can be recreated using the :doc:`integration and automation </integrations-guide/integrations-guide-index>` options in Mattermost.
-- **Stared conversations**: Starred conversations are not preserved. 
-- **User groups**: User groups from Slack are not preserved, however they can be recreated in Mattermost using the :doc:`Custom Groups </end-user-guide/collaborate/organize-using-custom-user-groups>` feature.  
+- **Stared conversations**: Starred conversations are not preserved.
+- **User groups**: User groups from Slack are not preserved, however they can be recreated in Mattermost using the :doc:`Custom Groups </end-user-guide/collaborate/organize-using-custom-user-groups>` feature.
 - **Threaded Converations**: Slack threads are mostly supported, however some threading relationships may not always be preserved given the differences in how Mattermost and Slack threading works.
 - **Canvases**: Canvases are not supported in Mattermost and will not be migrated.
-- **User presence and profiles**: User status (online/away), profile pictures, and custom profile fields do not carry over. Users will need to update their profiles in Mattermost.  
-- **Channel memberships for deactivated users**: Deactivated or deleted Slack users are not migrated to Mattermost.  
+- **User presence and profiles**: User status (online/away), profile pictures, and custom profile fields do not carry over. Users will need to update their profiles in Mattermost.
+- **Channel memberships for deactivated users**: Deactivated or deleted Slack users are not migrated to Mattermost.
 
 Because of these limitations, some manual reconfiguration is typically required after the import, especially for workflows and integrations. Support from a `Mattermost expert is available <https://mattermost.com/contact-sales/>`_ for your Slack migration.
