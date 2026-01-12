@@ -64,36 +64,28 @@ Contents of a Support Packet
 The contents of a Mattermost Support Packet can differ by server version. Select the tab that corresponds to your Mattermost version to see the files included in the Support Packet.
 
 .. tab:: v11.0 and later
+   :parse-titles:
 
-   **Cluster-wide files (root directory):**
+   Cluster-wide files
+   ~~~~~~~~~~~~~~~~~~
+
+   The following cluster-wide files are located in the root directory of the Support Packet:
 
    - `metadata.yaml <#metadata>`__
    - ``plugins.json`` (all active and inactive plugins)
    - ``sanitized_config.json`` (sanitized copy of the Mattermost configuration)
    - ``stats.yaml`` (Mattermost usage statistics)
    - ``jobs.yaml`` (last runs of important jobs)
-   - ``diagnostics.yaml`` (core plugin diagnostics data)
-   - ``permissions.yaml`` (role & scheme information)
-   - ``postgres_schema_dump.sql`` (PostgreSQL database schema information including tables, indexes, constraints, and other database metadata to assist with database configuration diagnosis)
+   - ``diagnostics.yaml`` (system and plugin diagnostics)
+   - ``permissions.yaml`` (role and scheme information)
+   - ``postgres_schema_dump.sql`` (PostgreSQL database schema information including tables, indexes, constraints, and other metadata to assist with database configuration diagnosis)
    - ``warning.txt`` (present when issues are encountered during packet generation)
    - ``tsdb_dump.tar.gz`` (present when the Metrics plugin is installed and the **Performance metrics** option is selected when generating the Support Packet)
 
-   From Mattermost v11, Support Packet generation includes connection testing for configured :doc:`enterprise search engines </administration-guide/scale/enterprise-search>`, including both :doc:`Elasticsearch </administration-guide/scale/elasticsearch-setup>` and :doc:`AWS OpenSearch </administration-guide/scale/opensearch-setup>`. Any connection errors encountered during this testing are included in the Support Packet to help diagnose enterprise search configuration issues. When enterprise search is configured, the Support Packet includes connection test results and any errors encountered:
+   Node-specific files
+   ~~~~~~~~~~~~~~~~~~~~~~
 
-   - **Elasticsearch connection test**: Tests server connectivity and reports server version, installed plugins, and any connection errors
-   - **AWS OpenSearch connection test**: Tests server connectivity and reports server version, installed plugins, and any connection errors
-
-   Example Elasticsearch diagnostic output included in the Support Packet:
-
-   .. code-block:: yaml
-
-      elastic:
-          server_version: 8.9.0
-          server_plugins:
-              - analysis-icu
-          error: 'Elasticsearch.checkMaxVersion: Failed to get elasticsearch server version., an error happened during the Info query execution: dial tcp 127.0.0.1:9200: connect: connection refused'
-
-   **Cluster-specific files (in node subdirectories):**
+   The following node-specific files are located in node subdirectories:
 
    - ``<node-id>/mattermost.log`` (Mattermost logs for each node)
    - ``<node-id>/audit.log`` (Mattermost audit logs for each node)
@@ -103,7 +95,15 @@ The contents of a Mattermost Support Packet can differ by server version. Select
    - ``<node-id>/heap.prof`` (`Go performance metrics <#go-performance-metrics>`__ for each node)
    - ``<node-id>/goroutines`` (`Go performance metrics <#go-performance-metrics>`__ for each node)
 
-   The following additional plugin diagnostic data is included in the generated Support Packet when the plugin is enabled and operational:
+   Diagnostics highlights
+   ~~~~~~~~~~~~~~~~~~~~~~
+
+   The Support Packet ``diagnostics.yaml`` file includes system and plugin diagnostics to support troubleshooting and configuration validation.
+
+   Plugin diagnostic data
+   ~~~~~~~~~~~~~~~~~~~~~~~
+
+   The following additional plugin diagnostic data is available when the plugin is enabled and operational:
 
    - GitHub: ``/github/diagnostics.yaml``
    - GitLab: ``/com.github.manland.mattermost-plugin-gitlab/diagnostics.yaml``

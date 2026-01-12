@@ -36,8 +36,8 @@ If you are new to Mattermost, we recommend starting with the Application Archite
 
   - If you encounter issues that aren't covered in this documentation:
 
-    - Non-commercial customers: Reference the `Mattermost community forums <https://forum.mattermost.com/>`_
-    - Commercial customers: See the `Mattermost Support Knowledge Base <https://support.mattermost.com/hc/en-us>`_, or `contact Mattermost Support <https://support.mattermost.com/hc/en-us/requests/new>`_ for assistance. 
+    - Customers with a Mattermost subscription: See the `Mattermost Support Knowledge Base <https://support.mattermost.com/hc/en-us>`_, or `contact Mattermost Support <https://support.mattermost.com/hc/en-us/requests/new>`_ for assistance. 
+    - Community deployments: Reference the `Mattermost community forums <https://forum.mattermost.com/>`_
     - For advanced customization or integrations, refer to the :doc:`Open source components </administration-guide/upgrade/open-source-components>` documentation for details about extending Mattermost functionality.
 
 Enjoy deploying Mattermost with confidence!
