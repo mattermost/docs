@@ -15,7 +15,6 @@ Access your Mattermost instance with your credentials using a web browser, the d
   :hidden:
   :titlesonly:
 
-  Acceptable Use Policy and Privacy Policy </end-user-guide/access/acceptable-use-policy-and-privacy-policy>
   Install the desktop app </end-user-guide/access/install-desktop-app>
   Install the iOS mobile app </end-user-guide/access/install-ios-app>
   Install the Android mobile app </end-user-guide/access/install-android-app>
