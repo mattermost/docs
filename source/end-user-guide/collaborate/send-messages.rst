@@ -40,28 +40,29 @@ From Mattermost v11.2, you can use AI to enhance your messages before sending th
 
 .. tab:: Web/Desktop
 
-  1. Type your message in the text field.
-  2. Select the **Rewrite** option from the message actions.
-  3. Choose from available rewrite options:
+  1. Type your message in the message compose field.
+  2. Select the **Rewrite** |ai-rewrite| option from the message actions.
+  3. Select a bot from the list of available AI agents.
+  4. Choose from available rewrite options:
 
-     - **Improve writing** - Enhance clarity and professionalism
-     - **Fix spelling** - Correct spelling and grammar errors
-     - **Shorten** - Make your message more concise
-     - **Elaborate** - Add more detail and context
-     - **Simplify** - Use clearer, easier-to-understand language
-     - **Summarize** - Condense your message to key points
-     - **Custom prompt** - Specify your own transformation instructions
+     - **Improve writing**: Enhance clarity and professionalism
+     - **Fix spelling**: Correct spelling and grammar errors
+     - **Shorten**: Make your message more concise
+     - **Elaborate**: Add more detail and context
+     - **Simplify**: Use clearer, easier-to-understand language
+     - **Summarize**: Condense your message to key points
+     - **Custom prompt**: Specify your own transformation instructions
 
-  4. Review the AI-generated suggestion and select **Use** to apply it or **Regenerate** to try again.
-  5. Select **Send** |send-icon| to send your rewritten message.
+  5. Review the AI-generated suggestion. Select **Regenerate** to try again or **Discard** to return to your original message.
+  6. Select **Send** |send-icon| to send your rewritten message.
 
 .. tab:: Mobile
 
-  AI rewriting functionality is available in the mobile app with the same rewrite options as the desktop experience.
+  AI rewriting functionality is available in the mobile app with the same rewrite options as the desktop and web experience.
 
 .. note::
 
-  Messages that have been rewritten using AI are automatically marked as AI-generated content for transparency. Your system admin must configure AI agents for this feature to be available.
+  Messages that have been rewritten using AI are automatically marked as AI-generated content for transparency. Your system admin must :doc:`configure AI agents </administration-guide/configure/agents-admin-guide>` for the rewrite feature to be available.
 
 Draft messages
 --------------
