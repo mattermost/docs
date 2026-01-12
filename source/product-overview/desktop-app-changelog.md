@@ -11,7 +11,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
 - **v6.0.3, released TBD**
 
-  - Mattermost Desktop App v6.0.3 contains a high severity level security fix. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost Desktop App v6.0.3 contains medium to high severity level security fixes. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 
 - **v6.0.2, released 2025-12-10**
 
