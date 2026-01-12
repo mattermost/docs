@@ -61,7 +61,7 @@ Access your Mattermost instance with your credentials using a web browser, the d
   What to Expect
   ---------------
 
-  Each time you sign in, Mattermost checks the Intune App Protection Policy applied to your account. If enrollment is required, you’ll be prompted to complete it before you can access your workspace. After enrollment, your Mattermost experience generally stays the same, but some restrictions may be enforced.
+  Each time you sign in, Mattermost checks the Intune App Protection Policy applied to your account and automatically enroll your account before you can access your workspace. After enrollment, your Mattermost experience generally stays the same, but some restrictions may be enforced.
 
   Intune protections apply **per Mattermost workspace** (the Mattermost server you sign in to). If you have access to multiple Mattermost workspaces, each workspace may have different protections and requirements in place. This guide explains what to expect when the workspace you are connecting to is protected by Intune.
 
