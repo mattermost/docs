@@ -9,6 +9,10 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 (release-v6-0)=
 ## Release v6.0
 
+- **v6.0.3, released TBD**
+
+  - [Placeholder: v6.0.3 changelog items need to be provided]
+
 - **v6.0.2, released 2025-12-10**
 
   - Fixed the missing Cmd/Ctrl+W shortcut for closing windows [MM-66686](https://mattermost.atlassian.net/browse/MM-66686).
