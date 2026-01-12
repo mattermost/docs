@@ -82,7 +82,7 @@ Access your Mattermost instance with your credentials using a web browser, the d
   4. When enrollment completes, you are notified.
   5. If your organization’s Intune App Protection Policy requires it, you’ll be prompted to set a PIN to protect your work data. Once the PIN is confirmed, the Mattermost Mobile App unlocks access to your workspace.
 
-  If you dismiss enrollment during sign-in, return to the sign-in flow and complete enrollment to continue using Mattermost on that device.
+  Enrollment happens automatically during sign-in. If you cancel the sign-in flow before it completes, return to the sign-in flow and finish signing in to continue using Mattermost on that device.
 
   Mid-Session Enrollment
   ----------------------

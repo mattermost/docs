@@ -11,7 +11,7 @@ This guide documents the required configuration to enable Intune MAM successfull
 Read This First
 ----------------
 
-Intune MAM enforcement in Mattermost is identity-based for the enforced sign-in method.
+Intune MAM enforcement in Mattermost is identity-based and applies only to the sign-in method selected as the enforced **Auth Provider** in **System Console > Environment > Mobile Security**.
 
 * The enforced authentication provider must resolve users using Azure AD ``objectId`` (``IdAttribute = objectId``).
 * MSAL access tokens must include the ``oid`` claim, and it must match the same Azure AD ``objectId`` (confirm identity alignment: ``objectId ↔ oid``).
@@ -65,9 +65,9 @@ Setup Summary
 
 1. Confirm identity requirements and alignment (``objectId ↔ oid``).
 2. Configure Microsoft Entra (server-referenced application).
-3. Enable Intune MAM in Mattermost and select the enforced provider.
-4. Deploy the official Mattermost iOS app.
-5. Configure Intune App Protection Policies.
+3. Configure Intune App Protection Policies.
+4. Enable Intune MAM in Mattermost and select the enforced provider.
+5. Deploy the official Mattermost iOS app.
 6. Validate enrollment and enforcement.
 
 Values You’ll Need Later
@@ -201,11 +201,9 @@ Authorize the official Mattermost Mobile client application ID (provided by Matt
 
 1. In the Entra app registration, go to **Expose an API**.
 2. Under **Authorized client applications**, select **Add a client application**.
-3. Add the official Mattermost Mobile client application ID (provided by Mattermost).
+3. Add the official Mattermost Mobile client application ID (provided by Mattermost) as ``64e9952b-20eb-46dc-92ad-99089ed24903``.
 4. Authorize the ``api://<APPLICATION-ID>/login.mattermost`` scope.
 5. Save your changes.
-
-If the official client application ID isn't yet available, complete the remaining steps and return here once Mattermost provides it.
 
 API Permissions and Admin Consent
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -213,17 +211,42 @@ API Permissions and Admin Consent
 .. _api-permissions-admin-consent:
 
 1. Go to **API permissions**.
-2. Add the required Intune MAM permissions for enrollment (minimum required):
+2. Select **Add a permission**.
+3. Add the following **Microsoft Graph** delegated permissions:
 
-   * ``https://msmamservice.api.application/.default``
-   * Microsoft Mobile Application Management → ``user_impersonation`` (Delegated)
+   * Microsoft Graph → ``email`` (Delegated)
+   * Microsoft Graph → ``profile`` (Delegated)
 
-3. Grant **tenant-wide admin consent**.
+4. Select **Grant admin consent** for your tenant.
 
-If these permissions are missing or lack tenant-wide admin consent, enrollment can fail with an Entra permissions error (for example, ``AADSTS650057``).
+These are the permissions the customer admin must grant for the Entra application referenced by Mattermost Server.
 
-Configure MSAL v2 Tokens
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+If these permissions are missing or lack tenant-wide admin consent, enrollment can fail with an Entra permissions/admin-consent error (for example, ``AADSTS650057``) or a user-visible **Consent Denied** message during first sign-in.
+
+Configure MSAL tokens and required claims
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Before enabling Intune MAM, ensure the Entra app registration issues access tokens with the claims Mattermost expects during mobile sign-in.
+
+1. In the Entra app registration, go to **Token configuration**.
+2. Select **Add optional claim**.
+3. Under **Token type**, select **Access**.
+4. Add the following optional claims:
+
+   * ``email``
+   * ``family_name``
+   * ``given_name``
+   * ``preferred_username``
+   * ``upn``
+
+5. Save your changes.
+
+.. note::
+
+   Mattermost Intune MAM enforcement uses the MSAL access token. If required claims are missing, sign-in and/or enrollment may fail.
+
+Enable MSAL v2 access tokens
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Open the app **Manifest**.
 2. Set the token version to ``2``:
@@ -233,38 +256,7 @@ Configure MSAL v2 Tokens
 
 3. Save your changes.
 
-Step 3: Configure Mattermost Server for Intune MAM
---------------------------------------------------
-
-.. _step-3-configure-mattermost-server-for-intune-mam:
-
-1. Go to **System Console > Environment > Mobile Security**
-2. Set **Enable Microsoft Intune MAM** to **True**
-3. Select **Auth Provider**:
-
-   * OpenID Connect (Entra-backed)
-   * SAML 2.0 (Entra-backed)
-
-4. Enter:
-
-   * **Tenant ID**
-   * **Application (Client) ID**
-
-5. Save your changes.
-
-The enforced provider must resolve identity using ``IdAttribute = objectId``.
-
-Step 4: Deploy the Mattermost iOS App
--------------------------------------
-
-Install the official Mattermost iOS app using:
-
-* Apple App Store (Production)
-* TestFlight (Beta)
-
-Wrapped, re-signed, or privately distributed apps aren't supported.
-
-Step 5: Configure Intune App Protection Policies
+Step 3: Configure Intune App Protection Policies
 ------------------------------------------------
 
 1. Go to **Intune admin center > Apps > App protection policies**.
@@ -283,6 +275,37 @@ Step 5: Configure Intune App Protection Policies
 6. Save your changes.
 
 Separate policies are required for Production and Beta apps.
+
+Step 4: Configure Mattermost Server for Intune MAM
+--------------------------------------------------
+
+.. _step-4-configure-mattermost-server-for-intune-mam:
+
+1. Go to **System Console > Environment > Mobile Security**
+2. Set **Enable Microsoft Intune MAM** to **True**
+3. Select **Auth Provider**:
+
+   * OpenID Connect (Entra-backed)
+   * SAML 2.0 (Entra-backed)
+
+4. Enter:
+
+   * **Tenant ID**
+   * **Application (Client) ID**
+
+5. Save your changes.
+
+The enforced provider must resolve identity using ``IdAttribute = objectId``.
+
+Step 5: Deploy the Mattermost iOS App
+-------------------------------------
+
+Download and install the official Mattermost iOS app using:
+
+* Apple App Store (Production)
+* TestFlight (Beta)
+
+Wrapped, re-signed, or privately distributed apps aren't supported.
 
 Step 6: Validate Enrollment
 ---------------------------
@@ -333,6 +356,10 @@ Intune MAM Errors
 ~~~~~~~~~~~~~~~~~
 
 The errors below may occur during mobile sign-in or when Intune MAM enforcement is triggered mid-session. Some errors are shown in the Mattermost Mobile App, while others are silent and must be diagnosed using Mattermost server logs.
+
+.. note::
+
+   In the table below, **Fallback: Web SSO** means the mobile app uses the **non-Intune** version of the configured sign-in method (SAML or OpenID Connect) as if Intune MAM were not enabled.
 
 .. raw:: html
 
@@ -474,6 +501,7 @@ The errors below may occur during mobile sign-in or when Intune MAM enforcement 
           <span class="label">Next step:</span> Instruct the user to retry enrollment when ready.
         </td>
       </tr>
+
       <!-- Consent Denied (admin consent missing) -->
       <tr>
         <td>
@@ -488,14 +516,15 @@ The errors below may occur during mobile sign-in or when Intune MAM enforcement 
           </div>
         </td>
         <td>
-          Enrollment cannot complete because required Intune MAM permissions don’t have tenant-wide admin consent.
+          Enrollment cannot complete because required Entra app permissions don’t have tenant-wide admin consent.
         </td>
         <td>
-          <span class="label">Cause:</span> Required Intune MAM API permissions are present or requested, but tenant-wide admin consent has not been granted for the Entra app registration configured in Mattermost.<br/>
-          <span class="label">Behavior:</span> The message may appear as if the user denied consent, but the underlying issue is admin consent.<br/>
-          <span class="label">Next step:</span> Grant tenant-wide admin consent for the required Intune MAM permissions on the same Entra app registration configured in Mattermost (Step 3), then have the user retry mobile sign-in.
+          <span class="label">Cause:</span> Tenant-wide admin consent has not been granted for the required delegated permissions on the Entra app registration configured in Mattermost Server.<br/>
+          <span class="label">Behavior:</span> The message may appear as if the user denied consent, but the underlying issue is missing admin consent.<br/>
+          <span class="label">Next step:</span> In Microsoft Entra, grant tenant-wide admin consent for Microsoft Graph delegated permissions <code>email</code> and <code>profile</code> on the same Entra app registration configured in Mattermost, then have the user retry mobile sign-in.
         </td>
       </tr>
+
       <!-- Enterprise not compiled -->
       <tr>
         <td>
@@ -506,7 +535,7 @@ The errors below may occur during mobile sign-in or when Intune MAM enforcement 
             <div><span class="label">Scenario:</span> Enterprise not compiled</div>
             <div><span class="label">User message:</span> (silent)</div>
             <div><span class="label">Retry:</span> No</div>
-            <div><span class="label">Fallback:</span> Web SSO</div>
+            <div><span class="label">Fallback:</span> Standard SSO (non-Intune)</div>
           </div>
         </td>
         <td>
@@ -515,7 +544,7 @@ The errors below may occur during mobile sign-in or when Intune MAM enforcement 
         <td>
           <span class="label">Cause:</span> The server does not support Intune MAM (feature not available in this build or not enabled for the deployment).<br/>
           <span class="label">Next step:</span> Confirm the server build includes Intune MAM support and the deployment is licensed for Enterprise Advanced.<br/>
-          <span class="label">User guidance:</span> Have the user sign in via web/desktop while the server is updated or configuration is corrected.
+          <span class="label">User guidance:</span> Have the user sign in via web/desktop using the standard (non-Intune) SSO flow for their provider (SAML or OpenID Connect) while the server is updated or configuration is corrected.
         </td>
       </tr>
 
@@ -529,7 +558,7 @@ The errors below may occur during mobile sign-in or when Intune MAM enforcement 
             <div><span class="label">Scenario:</span> Intune not configured</div>
             <div><span class="label">User message:</span> (silent)</div>
             <div><span class="label">Retry:</span> No</div>
-            <div><span class="label">Fallback:</span> Web SSO</div>
+            <div><span class="label">Fallback:</span> Standard SSO (non-Intune)</div>
           </div>
         </td>
         <td>
@@ -539,7 +568,7 @@ The errors below may occur during mobile sign-in or when Intune MAM enforcement 
           <span class="label">Cause:</span> Intune MAM isn't fully configured in <strong>System Console &gt; Environment &gt; Mobile Security</strong>.<br/>
           <span class="label">Next step:</span> Enable Microsoft Intune MAM and ensure <strong>Tenant ID</strong>, <strong>Application (Client) ID</strong>, and <strong>Auth Provider</strong> are set correctly.<br/>
           <span class="label">Admin checks:</span> Confirm the selected auth provider is Entra-backed and required permissions/admin consent have been granted for the Entra app registration.<br/>
-          <span class="label">User guidance:</span> Have the user sign in via web/desktop while configuration is completed.
+          <span class="label">User guidance:</span> Have the user sign in via web/desktop using the standard (non-Intune) SSO flow for their provider (SAML or OpenID Connect) while the server is updated or configuration is corrected.
         </td>
       </tr>
 
@@ -597,7 +626,7 @@ The errors below may occur during mobile sign-in or when Intune MAM enforcement 
             <div><span class="label">Scenario:</span> IsConfigured() = false</div>
             <div><span class="label">User message:</span> (silent)</div>
             <div><span class="label">Retry:</span> No</div>
-            <div><span class="label">Fallback:</span> Web SSO</div>
+            <div><span class="label">Fallback:</span> Standard SSO (non-Intune)</div>
           </div>
         </td>
         <td>
@@ -606,7 +635,7 @@ The errors below may occur during mobile sign-in or when Intune MAM enforcement 
         <td>
           <span class="label">Cause:</span> Intune MAM isn't configured for the requested authentication path (configuration incomplete or mismatched provider selection).<br/>
           <span class="label">Next step:</span> Confirm Intune MAM is enabled and configured, and the selected <strong>Auth Provider</strong> matches how users authenticate (OIDC vs SAML).<br/>
-          <span class="label">User guidance:</span> Have the user sign in via web/desktop while configuration is corrected.
+          <span class="label">User guidance:</span> Have the user sign in via web/desktop using the standard (non-Intune) SSO flow for their provider (SAML or OpenID Connect) while the server is updated or configuration is corrected.
         </td>
       </tr>
 
@@ -673,8 +702,8 @@ The errors below may occur during mobile sign-in or when Intune MAM enforcement 
         </td>
         <td>
           <span class="label">Cause:</span> Token validation failed (token malformed, wrong issuer/audience, missing permissions, or Entra configuration mismatch).<br/>
-          <span class="label">Next step:</span> Verify configured <strong>Tenant ID</strong> and <strong>Application (Client) ID</strong> match the Entra app used for Intune MAM. Confirm tenant-wide admin consent for required Intune MAM permissions. Then confirm identity alignment (<code>objectId ↔ oid</code>) for the affected user.<br/>
-          <span class="label">Admin checks:</span> Confirm v2 tokens (<code>accessTokenAcceptedVersion = 2</code>) and required Intune MAM permissions have admin consent.
+          <span class="label">Next step:</span> Verify the configured <strong>Tenant ID</strong> and <strong>Application (Client) ID</strong> match the Entra app registration referenced by Mattermost Server. Confirm tenant-wide admin consent has been granted for Microsoft Graph delegated permissions <code>email</code> and <code>profile</code> on that same app registration. Then confirm identity alignment (<code>objectId ↔ oid</code>) for the affected user.<br/>
+          <span class="label">Admin checks:</span> Confirm v2 tokens (<code>accessTokenAcceptedVersion = 2</code>) and that Microsoft Graph delegated permissions <code>email</code> and <code>profile</code> have tenant-wide admin consent.
         </td>
       </tr>
 
@@ -715,11 +744,11 @@ The errors below may occur during mobile sign-in or when Intune MAM enforcement 
           </div>
         </td>
         <td>
-          The access token is missing required identity claims.
+          The access token is missing required claims for sign-in and enrollment.
         </td>
         <td>
-          <span class="label">Cause:</span> Required claims are missing from the access token (most commonly <code>oid</code>).<br/>
-          <span class="label">Next step:</span> Confirm MSAL v2 tokens are issued (<code>accessTokenAcceptedVersion = 2</code>) and the access token includes <code>oid</code>. Confirm the enforced provider uses <code>IdAttribute = objectId</code>. Then confirm identity alignment (<code>objectId ↔ oid</code>).
+          <span class="label">Cause:</span> Required claims are missing from the MSAL access token (most commonly <code>oid</code>, or optional claims required by Mattermost).<br/>
+          <span class="label">Next step:</span> Confirm MSAL v2 access tokens are issued (<code>accessTokenAcceptedVersion = 2</code>) and the token includes <code>oid</code>. In the Entra app registration, go to <strong>Token configuration</strong> and ensure optional claims are added for the <strong>Access</strong> token: <code>email</code>, <code>family_name</code>, <code>given_name</code>, <code>preferred_username</code>, and <code>upn</code>. Confirm the enforced provider uses <code>IdAttribute = objectId</code>, then verify identity alignment (<code>objectId ↔ oid</code>).
         </td>
       </tr>
 
@@ -760,11 +789,11 @@ The errors below may occur during mobile sign-in or when Intune MAM enforcement 
           </div>
         </td>
         <td>
-          Required Intune MAM API permission is missing.
+          The Entra app configuration is missing required permissions and/or admin consent.
         </td>
         <td>
           <span class="label">Cause:</span> Required Intune MAM API permissions are missing or do not have tenant-wide admin consent.<br/>
-          <span class="label">Next step:</span> Add and grant admin consent for <code>https://msmamservice.api.application/.default</code> and Microsoft Mobile Application Management → <code>user_impersonation</code> (Delegated), then have the user retry sign-in.
+          <span class="label">Next step:</span> In the Microsoft Entra admin center, go to <strong>Enterprise applications</strong> (not App registrations), search for <strong>Mattermost Mobile</strong> / <strong>Mattermost Mobile Beta</strong>, then open <strong>Permissions</strong> and add/grant admin consent for the Intune MAM permissions (for example, <code>https://msmamservice.api.application/.default</code> and <strong>Microsoft Mobile Application Management</strong> → <code>user_impersonation</code> (Delegated)). Then have the user retry sign-in.
         </td>
       </tr>
 
@@ -818,14 +847,18 @@ The errors below may occur during mobile sign-in or when Intune MAM enforcement 
 Consent During First Login
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If a user’s first mobile sign-in fails with a message such as **Consent Denied** or: ``You denied consent for Intune management. The affected accounts have been unenrolled and signed out.``
+If a user’s first mobile sign-in fails with **Consent Denied** or:
 
-Treat this as a tenant-wide admin consent issue for the Intune MAM permissions on the Entra app registration configured in Mattermost Server (Step 3). The message may appear as if the user denied consent, but the underlying issue is that required admin consent has not been granted for the tenant.
+``You denied consent for Intune management. The affected accounts have been unenrolled and signed out.``
+
+Treat this as missing tenant-wide admin consent for the Entra app registration referenced by Mattermost Server. See the **Consent Denied** entry in the `Intune MAM Errors`_ table above for remediation steps.
 
 To resolve this:
 
-1. In Microsoft Entra, grant **tenant-wide admin consent** for the required Intune MAM permissions on the same Entra app registration configured in Mattermost.
-2. Have the user retry mobile sign-in.
+1. In the Microsoft Entra admin center, go to **Enterprise applications**.
+2. Search for **Mattermost Mobile** or **Mattermost Mobile Beta**.
+3. Go to **Permissions** and add/grant **tenant-wide admin consent** for the Intune MAM permissions (for example, ``https://msmamservice.api.application/.default`` and Microsoft Mobile Application Management → ``user_impersonation`` (Delegated)).
+4. Have the user retry mobile sign-in.
 
 Rollout and Recovery Guidance
 -----------------------------
