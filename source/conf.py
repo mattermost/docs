@@ -496,6 +496,10 @@ sitemap_excludes = [
     "agents/CLAUDE.html",
     "agents/README.html",
     "agents/interpluginclient/README.html",
+    "agents/.claude/agents/playwright-test-generator.html",
+    "agents/.claude/agents/playwright-test-healer.html",
+    "agents/.claude/agents/playwright-test-planner.html",
+    "agents/.claude/skills/e2e-testing-skill/SKILL.html",
 ]
 
 # -- Page redirects -------------------------------------------------
@@ -514,7 +518,7 @@ redirects_write_extensionless_pages = False
 
 # General information about the project.
 project = "Mattermost"
-copyright = "2015-2025 Mattermost"
+copyright = "2015-2026 Mattermost"
 author = "Mattermost"
 
 # The version info for the project you're documenting, acts as replacement for
@@ -908,6 +912,9 @@ rst_prolog = """
     :alt: Total count of scheduled messages.
 .. |new-window-icon| image:: /images/dock-window_F10AC.svg
     :alt: Open thread in a new browser window icon.
+.. |ai-rewrite| image:: /images/creation-outline_F1C2B.svg
+    :alt: AI Rewrite icon.
+    :class: theme-icon
 """
 # rst_epilog = """
 # .. |mm_badge_version| replace:: 7.2
