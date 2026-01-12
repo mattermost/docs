@@ -30,7 +30,7 @@ During the upgrade process, the Mattermost Enterprise Edition binary file that m
 .. note::
   If you're using a modified version of Mattermost, using this tool will overwrite your changes and replace them with the official Enterprise Edition binary. 
 
-Once this process is complete, you're prompted to restart your server. The Mattermost version listed in **Product menu > System Console > Edition and License** will change from **Team Plan** to **Enterprise Plan**, and you can now start a trial or upload a license to unlock paid features.
+Once this process is complete, you're prompted to restart your server. The Mattermost version listed in **Product menu > System Console > Edition and License** will change from **Team Edition** to **Mattermost Entry**, and you can now upload a professional, enterprise, or enterprise advanced license to unlock paid features.
 
 Upgrade manually
 ~~~~~~~~~~~~~~~~~
