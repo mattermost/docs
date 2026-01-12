@@ -41,7 +41,7 @@ From Mattermost v11.2, you can use AI to enhance your messages before sending th
 .. tab:: Web/Desktop
 
   1. Type your message in the text field.
-  2. Select the **AI rewrite** option from the message actions.
+  2. Select the **Rewrite** option from the message actions.
   3. Choose from available rewrite options:
 
      - **Improve writing** - Enhance clarity and professionalism
