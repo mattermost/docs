@@ -8,7 +8,7 @@
 
 Mattermost releases a new mobile app version every month.
 
-See the [Mobile app changelog](/product-overview/mobile-app-changelog) for release details, and see the [iOS mobile app](/collaborate/install-ios-app) and the [Android mobile app](/collaborate/install-android-app) documentation for installation details. 
+See the [Mobile app changelog](/product-overview/mobile-app-changelog) for release details, and see the [iOS mobile app](/end-user-guide/access/install-ios-app) and the [Android mobile app](/end-user-guide/access/install-android-app) documentation for installation details. 
 
 ```{Important}
 We strongly recommend using the latest mobile app release available that contains the latest security fixes and user experience enhancements. Mobile app releases are compatible with and tested against [supported Mattermost server and extended support releases](https://docs.mattermost.com/product-overview/mattermost-server-releases.html#latest-releases).
@@ -18,6 +18,7 @@ We strongly recommend using the latest mobile app release available that contain
 
 | **Release** | **Support** | **Compatible with** |
 |:---|:---|:---|
+| v2.35 {ref}`FEATURE <release-v2-35-0>` \| [Download](https://github.com/mattermost/mattermost-mobile/releases/tag/v2.35.0) \| {ref}`Changelog <release-v2-35-0>` \| [SBOM download](https://github.com/mattermost/mattermost-mobile/releases/download/v2.35.0/sbom-mattermost-mobile-v2.35.0.json) | Released: 2025-12-16<br/>Support Ends: 2026-01-15 | {ref}`v11.2 <release-v11.2-feature-release>`, {ref}`v11.1 <release-v11.1-feature-release>`, {ref}`v11.0 <release-v11.0-major-release>`, {ref}`v10.11 <release-v10.11-extended-support-release>` |
 | v2.34 {ref}`FEATURE <release-v2-34-0>` \| [Download](https://github.com/mattermost/mattermost-mobile/releases/tag/v2.34.0) \| {ref}`Changelog <release-v2-34-0>` \| [SBOM download](https://github.com/mattermost/mattermost-mobile/releases/download/v2.34.0/sbom-mattermost-mobile-v2.34.0.json) | Released: 2025-11-14<br/>Support Ends: 2025-12-15 | {ref}`v11.1 <release-v11.1-feature-release>`, {ref}`v11.0 <release-v11.0-major-release>`, {ref}`v10.12 <release-v10.12-feature-release>`, {ref}`v10.11 <release-v10.11-extended-support-release>` |
 | v2.33 {ref}`FEATURE <release-v2-33-1>` \| [Download](https://github.com/mattermost/mattermost-mobile/releases/tag/v2.33.1) \| {ref}`Changelog <release-v2-33-1>` \| [SBOM download](https://github.com/mattermost/mattermost-mobile/releases/download/v2.33.1/sbom-mattermost-mobile-v2.33.1.json) | Released: 2025-10-16<br/>Support Ends: 2025-11-15 | {ref}`v11.0 <release-v11.0-major-release>`, {ref}`v10.12 <release-v10.12-feature-release>`, {ref}`v10.11 <release-v10.11-extended-support-release>`, {ref}`v10.5 <release-v10.5-extended-support-release>` |
 | v2.32 {ref}`FEATURE <release-v2-32-0>` \| [Download](https://github.com/mattermost/mattermost-mobile/releases/tag/v2.32.0) \| {ref}`Changelog <release-v2-32-0>` \| [SBOM download](https://github.com/mattermost/mattermost-mobile/releases/download/v2.32.0/sbom-mattermost-mobile-v2.32.0.json) | Released: 2025-09-15<br/>Support Ends: 2025-10-15 | {ref}`v10.12 <release-v10.12-feature-release>`, {ref}`v10.11 <release-v10.11-extended-support-release>`, {ref}`v10.10 <release-v10.10-feature-release>`, {ref}`v10.5 <release-v10.5-extended-support-release>` | 
@@ -60,9 +61,9 @@ Note that the below versions have not yet been tested. The information below is 
 
 | **Release** | **Support** | **Compatible with** |
 |:---|:---|:---|
+| v2.41 | Releasing: 2026-06-16<br/>Support Ends: 2026-07-15 | v11.8, v11.7, v11.6, v10.11 |
 | v2.40 | Releasing: 2026-05-16<br/>Support Ends: 2026-06-15 | v11.7, v11.6, v11.5, v10.11 |
 | v2.39 | Releasing: 2026-04-16<br/>Support Ends: 2026-05-15 | v11.6, v11.5, v11.4, v10.11 |
 | v2.38 | Releasing: 2026-03-16<br/>Support Ends: 2026-04-15 | v11.5, v11.4, v11.3, v10.11 |
 | v2.37 | Releasing: 2026-02-16<br/>Support Ends: 2026-03-15 | v11.4, v11.3, v11.2, v10.11 |
 | v2.36 | Releasing: 2026-01-16<br/>Support Ends: 2026-02-15 | v11.3, v11.2, v11.1, v10.11 |
-| v2.35 | Releasing: 2025-12-16<br/>Support Ends: 2026-01-15 | v11.2, v11.1, v11.0, v10.11 |

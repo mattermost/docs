@@ -75,6 +75,10 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 (release-v10.11-extended-support-release)=
 ## Release v10.11 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **10.11.9, released 2025-12-17**
+  - Mattermost v10.11.9 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue where pressing ``Shift+Up`` in the channel textbox to reply to a thread could cause the right‑hand sidebar (RHS) reply textbox to not focus [MM-65186](https://mattermost.atlassian.net/browse/MM-65186).
+  - Mattermost v10.11.9 contains no database or functional changes.
 - **10.11.8, released 2025-11-21**
  ```{Attention}
  **Critical Fixes**
@@ -260,7 +264,7 @@ If you upgrade from a release earlier than v10.9, please read the other [Importa
    - Hid plugin components in Connected Workspaces and introduced ``EnableSharedChannelsPlugins`` to re-enable them if needed.
  - Added new feature flags (default off) ``EnableSharedChannelsMemberSync`` and ``EnableSyncAllUsersForRemoteCluster`` for Connected Workspaces.
  - Added an LDAP Wizard with various enhancements, including a **Test Group Attributes** button for feedback on matching group attributes, a **Test Connection** button with improved error reporting, a **Test Attributes** button showing attribute success and matching user count, a **Test Filters** button with failure feedback, an expandable **User Filters** section with "More info" hover texts, and a help text explaining the possible delay when running tests on large LDAP servers.
- - Added support for licenses that enforce seat counts with a configurable ``ExtraUsers`` field for exact control over allowed overages.
+ - Added support for [licenses that enforce seat counts](https://docs.mattermost.com/administration-guide/manage/admin/error-codes.html#error-licensed-users-limit-exceeded) with a configurable ``ExtraUsers`` field for exact control over allowed overages.
  - Organized cluster files into directories for the Support Packet.
  - Partially sanitized database datasources for the Support Packet.
  - Added deactivation status to the mmctl user search output.
@@ -384,7 +388,7 @@ If you upgrade from a release earlier than v10.8, please read the other [Importa
  - Added a license load metric to the **About** screen to display current license usage.
  - Upgraded the logr dependency to version 2.0.22.
  - Removed telemetry tracking from Redux selectors.
- - Made it possible to view JSON logs in plain text within the **System Console**.
+ - Made it possible to [view JSON logs in plain text](https://docs.mattermost.com/administration-guide/configure/reporting-configuration-settings.html#server-logs) within the **System Console**.
  - Enhanced the **System Console** search functionality to include all log fields.
  - Enhanced error reporting related to cluster management.
  - Added an LDAP setting to re-add removed members.

@@ -58,7 +58,7 @@ Mattermost Cloud subscriptions are offered as an annual subscription. Contact a 
 
 If you’re currently using a Mattermost Cloud trial, contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ to upgrade to Mattermost Enterprise. Your plan immediately changes to your upgraded plan. You will be invoiced as specified in your sales agreement.
 
-What is the minimum number of users I can purhcase on a subscription? 
+What is the minimum number of users I can purchase on a subscription? 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The minimum purchase for a Mattermost license subscription is 100 users, with no set maximum. You can buy as many user seats as needed. 
@@ -119,5 +119,10 @@ Mattermost performs monthly upgrades to your instance with the latest patch rele
 Mattermost may conduct unscheduled maintenance to address high-severity issues affecting the security, availability, or reliability of your instance. Maintenance windows are announced in advance on https://status.mattermost.com/
 
 Mattermost Cloud uses a Cloud-First Release Strategy with Ring-Based staged releases aligned to Mattermost licenses with a 24 hour soak time for :doc:`Mattermost Cloud Dedicated </product-overview/cloud-dedicated>` and for Enterprise customers using :doc:`Mattermost Cloud Shared </product-overview/cloud-shared>`.
+
+Can I use a custom URL at my organization's domain?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+No. Custom URLs are not currently supported for Mattermost Cloud deployments.
 
 `Book a live demo <https://mattermost.com/request-demo/>`_  or `talk to a Mattermost expert <https://mattermost.com/contact-sales/>`_ to explore tailored solutions for your organization's secure collaboration needs. Or try Mattermost yourself with a `1-hour preview <https://mattermost.com/sign-up/>`_ for instant access to a live sandbox environment.
