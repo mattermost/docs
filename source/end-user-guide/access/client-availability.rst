@@ -165,7 +165,7 @@ Authentication
 |                                     **Feature**                                           |   **Web**   | **Desktop** |  **Mobile** |
 +-------------------------------------------------------------------------------------------+-------------+-------------+-------------+
 | :ref:`Email password login                                                                |             |             |             |
-| <end-user-guide/collaborate/access-your-workspace:email address or username>`             | |checkmark| | |checkmark| | |checkmark| |
+| <end-user-guide/access/access-your-workspace:email address or username>`                  | |checkmark| | |checkmark| | |checkmark| |
 +-------------------------------------------------------------------------------------------+-------------+-------------+-------------+
 | :doc:`AD/LDAP </administration-guide/onboard/ad-ldap>`                                    | |checkmark| | |checkmark| | |checkmark| |
 +-------------------------------------------------------------------------------------------+-------------+-------------+-------------+

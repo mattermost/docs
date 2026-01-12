@@ -132,7 +132,7 @@ The enterprise search connection test results appear in the Support Packet and c
 My search indexes won't complete, what should I do?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you have an search indexing job that's paused, it's likely your Elasticsearch or OpenSearch server has restarted. If you restart that server, you must also restart Mattermost to ensure jobs are completed. If restarting the Mattermost server does not resolve the issue, `commercial customers can contact Mattermost Support <https://mattermost.com/support/>`__ for assistance.
+If you have an search indexing job that's paused, it's likely your Elasticsearch or OpenSearch server has restarted. If you restart that server, you must also restart Mattermost to ensure jobs are completed. If restarting the Mattermost server does not resolve the issue, `customers with a Mattermost subscription can contact Mattermost Support <https://mattermost.com/support/>`__ for assistance.
 
 Do I need to purge first then bulk index each time?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
