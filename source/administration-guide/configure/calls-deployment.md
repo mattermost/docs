@@ -137,7 +137,7 @@ When deploying Mattermost Calls or the rtcd service on RHEL systems with firewal
 
 **Configuration steps:**
 
-For complete firewalld and fapolicyd configuration instructions, including troubleshooting steps and example rules, see the [RHEL deployment guide](https://docs.mattermost.com/deploy/server/deploy-rhel.html). The guide includes:
+For complete firewalld and fapolicyd configuration instructions, including troubleshooting steps and example rules, see the [RHEL deployment guide](https://docs.mattermost.com/deployment-guide/server/deploy-linux.html#itab--RHEL-CentOS--0_1-RHEL-CentOS). The guide includes:
 - firewalld port configuration for Mattermost, Calls plugin, and rtcd service
 - fapolicyd rules for Mattermost server and Calls plugin
 - Separate fapolicyd configuration for standalone rtcd service
