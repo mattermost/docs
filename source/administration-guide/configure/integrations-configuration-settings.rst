@@ -238,6 +238,28 @@ To manage who can create personal access tokens or to search users by token ID, 
 | This feature's ``config.json`` setting is ``"EnableUserAccessTokens": false`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: enforce-incoming-webhook-channel-locking
+  :displayname: Enforce incoming webhook channel locking (Integrations)
+  :systemconsole: Integrations > Integration Management
+  :configjson: .ServiceSettings.EnforceIncomingWebhookChannelLocking
+  :environment: MM_SERVICESETTINGS_ENFORCEINCOMINGWEBHOOKCHANNELLOCKING
+
+  - **true**: Incoming webhooks are required to be locked to their specific channel and cannot post to other channels.
+  - **false**: **(Default)** Incoming webhook creators can choose whether to lock webhooks to a specific channel or allow posting to any channel they have access to.
+
+Enforce incoming webhook channel locking
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When enabled, this setting enforces that all incoming webhooks must be locked to their designated channel and cannot post messages to other channels. This provides administrators with greater control over webhook security and ensures that webhooks can only post to their intended channels.
+
+**True**: Incoming webhooks are required to be locked to their specific channel. The **Lock to this channel** option is automatically enabled and cannot be disabled when creating or editing webhooks.
+
+**False**: **(Default)** Incoming webhook creators can choose whether to lock webhooks to a specific channel by selecting **Lock to this channel**, or allow the webhook to post to any public channel or private channel the webhook creator is a member of.
+
++-------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnforceIncomingWebhookChannelLocking": false`` with options ``true`` and ``false``. |
++-------------------------------------------------------------------------------------------------------------------------------+
+
 ----
 
 Bot accounts
