@@ -37,6 +37,10 @@ If you upgrade from a release earlier than v11.1, please read the other [Importa
 
 ### Improvements
 
+```{eval-rst}
+.. _ui_v11_2:
+```
+
 #### User Interface (UI)
  - Pre-packaged Playbooks plugin [v2.6.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.6.1).
  - Pre-packaged Zoom plugin [v1.10.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.10.0).
@@ -141,6 +145,10 @@ If you upgrade from a release earlier than v11.0, please read the other [Importa
 ```
 
 ### Improvements
+
+```{eval-rst}
+.. _ui_v11_1:
+```
 
 #### User Interface (UI)
  - Pre-packaged Agents plugin version [v1.4.0](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.4.0).
@@ -269,6 +277,10 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 ```
 
 ### Improvements
+
+```{eval-rst}
+.. _ui_v11_0:
+```
 
 #### User Interface (UI)
  - Pre-packaged Agents plugin [v1.3.1](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.3.1).

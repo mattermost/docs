@@ -17,6 +17,7 @@ Whether you’re configuring server settings, managing users, monitoring perform
     User provisioning </administration-guide/manage/admin/user-provisioning>
     User management </administration-guide/manage/admin/user-management>
     Monitoring and performance </administration-guide/manage/admin/monitoring-and-performance>
+    UI and Accessibility Changes </administration-guide/manage/ui-accessibility-changes>
     Compliance </administration-guide/compliance-with-mattermost>
     Migration </administration-guide/manage/admin/migration>
 
@@ -27,5 +28,6 @@ Whether you’re configuring server settings, managing users, monitoring perform
 * :doc:`User provisioning </administration-guide/manage/admin/user-provisioning>` - Learn about user provisioning and management.
 * :doc:`User management </administration-guide/manage/admin/user-management>` - Learn about user management and best practices.
 * :doc:`Monitoring and performance </administration-guide/manage/admin/monitoring-and-performance>` - Learn about monitoring and performance optimization.
+* :doc:`UI and Accessibility Changes </administration-guide/manage/ui-accessibility-changes>` - Track UI improvements and accessibility changes across Mattermost versions.
 * :doc:`Compliance </administration-guide/compliance-with-mattermost>` - Learn about compliance and security best practices.
 * :doc:`Migration </administration-guide/manage/admin/migration>` - Learn about migrating to Mattermost.

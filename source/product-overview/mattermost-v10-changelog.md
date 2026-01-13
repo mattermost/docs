@@ -49,6 +49,10 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 
 ### Improvements
 
+```{eval-rst}
+.. _ui_v10_12:
+```
+
 #### User Interface (UI)
  - Improved screen reader readouts and accessibility of various autocomplete components.
 
@@ -135,6 +139,10 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 
 ### Improvements
 
+```{eval-rst}
+.. _ui_v10_11:
+```
+
 #### User Interface (UI)
  - Pre-packaged Calls plugin [v1.10.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.10.0).
  - Pre-packaged Boards plugin [v9.1.5](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.5).
@@ -155,6 +163,19 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
  - Improved the efficiency of getting sidebar categories from the database. 
  - Added a database schema dump to the Support Packet.
 
+```{eval-rst}
+.. _accessibility_v10_11:
+```
+
+#### Accessibility
+ - Fixed an issue where the **Thread Menu** would not have its actions read by a screen reader. 
+ - Fixed an issue with the **Delete** button aria-label on **User Groups** list modal. 
+ - Fixed some semantic HTML issues with the use of ``header``. 
+ - Fixed various accessibility issues for the **Create Channel** modal. 
+ - Fixed more accessibility issues around search. 
+ - Fixed **Create User Group** modal accessibility issues. 
+ - Fixed mobile view accessibility issues. 
+
 #### mmctl Changes
  - Added ``AuthData`` to mmctl user search output. 
  - mmctl: Added ``compliance export list`` command. 
@@ -164,15 +185,8 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 
 ### Bug Fixes
  - Fixed an issue with the onboarding checklist being cut off when on multiple teams. 
- - Fixed an issue where the **Thread Menu** would not have its actions read by a screen reader. 
  - Fixed an issue where some users would not get a warning when joining a private channel. 
  - Fixed an issue with the overflow formatting on the suggestion list. 
- - Fixed an issue with the **Delete** button aria-label on **User Groups** list modal. 
- - Fixed some semantic HTML issues with the use of ``header``. 
- - Fixed various accessibility issues for the **Create Channel** modal. 
- - Fixed more accessibility issues around search. 
- - Fixed **Create User Group** modal accessibility issues. 
- - Fixed mobile view accessibility issues. 
  - Fixed an issue with accents. 
  - Fixed an issue with rendering of remote user at-mentions in the web app. 
  - Fixed a potential panic when running the ``mmctl ldap job show`` without the required argument. 
@@ -238,6 +252,10 @@ If you upgrade from a release earlier than v10.9, please read the other [Importa
 
 ### Improvements
 
+```{eval-rst}
+.. _ui_v10_10:
+```
+
 #### User Interface (UI)
  - Pre-packaged Calls plugin [v1.9.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.9.1).
  - Pre-packaged GitLab plugin [v1.10.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.10.0).
@@ -273,14 +291,21 @@ If you upgrade from a release earlier than v10.9, please read the other [Importa
  - Improved memory performance of post list scrolling.
  - Improved the performance of sidebar update APIs slightly.
 
+```{eval-rst}
+.. _accessibility_v10_10:
+```
+
+#### Accessibility
+ - Added an aria-live region for improved accessibility of file preview modal carousel position updates.
+ - Updated **Profile** settings client-side validation to use more modern/accessible paradigms.
+ - Enhanced the accessibility of login and password reset functionality.
+
 ### Bug Fixes
  - Fixed an issue where a ``MESSAGES`` badge appeared in the search bar after clearing text and closing the search box.
  - Fixed an issue where overridden webhook usernames did not appear in replies when Threaded Discussions were disabled.
  - Fixed indentation issues in Markdown lists containing checkboxes.
  - Fixed desktop notifications for posts without text content to display "posted a message" instead of "did something new".
  - Fixed the height of the automatic replies text area to align with proper dimensions.
- - Fixed various accessibility issues in the User Groups modals.
- - Fixed accessibility issues in Profile Settings to enhance usability.
  - Fixed dialog dropdowns to ensure they were not cut off visually.
  - Fixed an issue where deactivated users still maintained their previous status.
  - Fixed an issue with plugin dialogs triggering errors upon submission.
@@ -367,6 +392,10 @@ If you upgrade from a release earlier than v10.8, please read the other [Importa
 
 ### Improvements
 
+```{eval-rst}
+.. _ui_v10_9:
+```
+
 #### User Interface (UI)
  - Consolidated all channel editing functionality into a single, accessible modal located in the channel header menu. Users can now update channel names, URL slugs, convert to private, modify/add a purpose and header (with a live markdown preview), manage channel banners, and archive the channel—all in one place. Updates include safeguards for unsaved edits, improved URL-slug editing, and enhanced keyboard and navigation accessibility.
  - Pre-packaged MS Teams plugin [v2.2.1](https://github.com/mattermost/mattermost-plugin-msteams/releases/tag/v2.2.1).
@@ -399,20 +428,27 @@ If you upgrade from a release earlier than v10.8, please read the other [Importa
  - Optimized the team-switching operation by eliminating unnecessary calls to retrieve channels and channel members.
  - Improved websocket re-opening speed when network conditions change.
 
-### Bug Fixes
- - Fixed various issues on the **Create Team** screen.
+```{eval-rst}
+.. _accessibility_v10_9:
+```
+
+#### Accessibility
+ - Enhanced keyboard and navigation accessibility in the consolidated channel editing modal.
  - Fixed several accessibility issues across the login process, account creation, and MFA setup.
- - Fixed an issue where horizontal rule (HR) elements were not visible in preview mode in the right-hand sidebar (RHS).
- - Fixed an issue with inconsistent sizing of markdown images in preview mode.
  - Fixed a keyboard navigation issue within thread items.
- - Fixed layout issues with the emoji picker on mobile browsers.
- - Fixed an issue with the positioning of **Edited** text and tooltips in certain scenarios.
  - Fixed the accessibility of the search box.
- - Fixed an issue where post list scrolling didn’t work when pressing the **Page Up** or **Page Down** keys.
  - Fixed issues with screen reader support in the **Threads** view.
  - Fixed keyboard navigation issues in the **Threads** view.
  - Fixed accessibility issues in the **Invite** modal.
  - Fixed various accessibility issues in the **Browse Channels** modal.
+
+### Bug Fixes
+ - Fixed various issues on the **Create Team** screen.
+ - Fixed an issue where horizontal rule (HR) elements were not visible in preview mode in the right-hand sidebar (RHS).
+ - Fixed an issue with inconsistent sizing of markdown images in preview mode.
+ - Fixed layout issues with the emoji picker on mobile browsers.
+ - Fixed an issue with the positioning of **Edited** text and tooltips in certain scenarios.
+ - Fixed an issue where post list scrolling didn't work when pressing the **Page Up** or **Page Down** keys.
  - Fixed an issue that prevented team admin permissions from being modified when missing in the **All Members** section.
  - Fixed possible deadlocks when updating ``SidebarCategories`` and ``SidebarChannels`` tables.
  - Fixed an issue where unreads from deleted teams would display in the titlebar/Desktop App.
@@ -483,6 +519,10 @@ If you upgrade from a release earlier than v10.7, please read the other [Importa
 ```
 
 ### Improvements
+
+```{eval-rst}
+.. _ui_v10_8:
+```
 
 #### User Interface (UI)
  - Pre-packaged Calls plugin version [v1.7.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.7.1).
@@ -585,6 +625,10 @@ If you upgrade from a release earlier than v10.6, please read the other [Importa
 ```
 
 ### Improvements
+
+```{eval-rst}
+.. _ui_v10_7:
+```
 
 #### User Interface (UI)
  - Pre-packaged Calls plugin version [v1.6.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.6.0). 
@@ -696,6 +740,10 @@ If you upgrade from a release earlier than v10.5, please read the other [Importa
 ```
 
 ### Improvements
+
+```{eval-rst}
+.. _ui_v10_6:
+```
 
 #### User Interface (UI)
  - Pre-packaged Boards plugin version [v9.1.1](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.1). 
@@ -851,6 +899,10 @@ If you upgrade from a release earlier than v10.3, please read the other [Importa
 
 ### Improvements
 
+```{eval-rst}
+.. _ui_v10_5:
+```
+
 #### User Interface (UI)
  - Pre-packaged Boards plugin [v9.1.0](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.0).
  - Pre-packaged Calls plugin [v1.5.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.5.1).
@@ -860,6 +912,11 @@ If you upgrade from a release earlier than v10.3, please read the other [Importa
  - Added the ability to modify post attachments during edit.
  - The [channel bookmarks bar](https://docs.mattermost.com/end-user-guide/collaborate/manage-channel-bookmarks.html) is now hidden when there are no bookmarks in the channel. Bookmarks can now be added from the channel menu.
  - Removed the video from the onboarding checklist.
+```{eval-rst}
+.. _accessibility_v10_5:
+```
+
+#### Accessibility
  - Improved accessibility throughout the webapp by fixing several issues around keyboard navigation and screen reader focused on modals, right-hand side and core chat functionality. 
 
 #### Administration
@@ -947,6 +1004,10 @@ If you upgrade from a release earlier than v10.3, please read the other [Importa
 ```
 
 ### Improvements
+
+```{eval-rst}
+.. _ui_v10_4:
+```
 
 #### User Interface (UI)
  - Pre-packaged Calls plugin [v1.4.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.4.0).
@@ -1056,6 +1117,10 @@ If you upgrade from a release earlier than v10.2, please read the other [Importa
 
 See [this walkthrough video](https://mattermost.com/video/mattermost-v10-3-changelog/) on some of the highlights and improvements in our latest release below.
 
+```{eval-rst}
+.. _ui_v10_3:
+```
+
 #### User Interface (UI)
  - Pre-packaged Calls plugin [v1.3.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.3.0).
  - Downgraded Traditional Chinese language to Beta.
@@ -1146,6 +1211,10 @@ If you upgrade from a release earlier than v10.0, please read the other [Importa
 ### Improvements
 
 See [this walkthrough video](https://mattermost.com/video/mattermost-v10-2-changelog/) on some of the highlights and improvements in our latest release below.
+
+```{eval-rst}
+.. _ui_v10_2:
+```
 
 #### User Interface (UI)
  - Pre-packaged Calls plugin [v1.2.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.2.1).
@@ -1249,6 +1318,10 @@ If you upgrade from a release earlier than v10.0, please read the other [Importa
 ```
 
 ### Improvements
+
+```{eval-rst}
+.. _ui_v10_1:
+```
 
 #### User Interface (UI)
  - Added Metrics plugin to the prepackaged plugins, [v0.5.3](https://github.com/mattermost/mattermost-plugin-metrics/releases/tag/v0.5.3).
@@ -1367,6 +1440,10 @@ See [this walkthrough video](https://mattermost.com/video/mattermost-v10-0-chang
  - Pre-packaged Mattermost Copilot plugin version [v1.0.0](https://github.com/mattermost/mattermost-plugin-ai/releases/tag/v1.0.0).
 
 ### Improvements
+
+```{eval-rst}
+.. _ui_v10_0:
+```
 
 #### User Interface (UI)
  - Pre-packaged Calls plugin [v1.0.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.0.1).
