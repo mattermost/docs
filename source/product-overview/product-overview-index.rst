@@ -14,6 +14,7 @@ Overview
    /product-overview/subscription.rst
    /product-overview/certifications-and-compliance.rst
    /product-overview/accessibility-compliance-policy.rst
+   /product-overview/ui-accessibility-changes-history.rst
    /product-overview/releases-lifecycle.rst
    /product-overview/frequently-asked-questions.rst
 
