@@ -13,7 +13,7 @@ Changelog
    * - Version
      - Category
      - Change Description
-     - Internal Ticket #
+     - Ticket #
    * - v11.2
      - UI
      - Enabled `thread popouts <https://docs.mattermost.com/end-user-guide/collaborate/organize-conversations.html#start-or-reply-to-threads>`__ in the browser.
