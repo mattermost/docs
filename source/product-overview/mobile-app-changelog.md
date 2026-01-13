@@ -17,20 +17,20 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - iPhone 6s devices and later with iOS 15.1+ are required.
 
 ### Improvements
- - Added [Microsoft Intune MAM integration](https://docs.mattermost.com/deployment-guide/mobile/mobile-security-features.html#microsoft-intune-mobile-application-management-mam) for iOS with multi-server support (requires Enterprise Advanced license).
- - Added the ability to invite guests to a team from mobile.
- - Added support for servers with passwordless authentication with Magic Link for guest users (requires Enterprise license).
- - Added a new Burn-on-Read message feature (requires Enterprise Advanced license).
- - Added AI agent streaming support with real-time message updates, reasoning summaries, tool call approval UI, citations display, and generation controls (stop/regenerate).
+ - Added [Microsoft Intune MAM integration](https://docs.mattermost.com/deployment-guide/mobile/mobile-security-features.html#microsoft-intune-mobile-application-management-mam) for iOS with multi-server support (requires Enterprise Advanced license) [MM-66736](https://mattermost.atlassian.net/browse/MM-66736).
+ - Added the ability to invite guests to a team from mobile [MM-66449](https://mattermost.atlassian.net/browse/MM-66449).
+ - Added support for servers with passwordless authentication with Magic Link for guest users (requires Enterprise license) [MM-66445](https://mattermost.atlassian.net/browse/MM-66445).
+ - Added a new Burn-on-Read message feature (requires Enterprise Advanced license) [MM-61758](https://mattermost.atlassian.net/browse/MM-61758).
+ - Added AI agent streaming support with real-time message updates, reasoning summaries, tool call approval UI, citations display, and generation controls (stop/regenerate) [MM-66762](https://mattermost.atlassian.net/browse/MM-66762).
  - Added an authentication secret field to the **Edit server** screen with validation and a show/hide toggle.
- - Updated illustrations and background styles for onboarding and authentication flows.
- - Reduced channel banner height to provide a more compact interface and to optimize screen space usage.
- - Added a minor visual tweak to the **Start a new run** button. 
+ - Updated illustrations and background styles for onboarding and authentication flows [MM-62240](https://mattermost.atlassian.net/browse/MM-62240).
+ - Reduced channel banner height to provide a more compact interface and to optimize screen space usage [MM-66509](https://mattermost.atlassian.net/browse/MM-66509).
+ - Added a minor visual tweak to the **Start a new run** button [MM-66485](https://mattermost.atlassian.net/browse/MM-66485). 
 
 ### Bug Fixes
- - Fixed an issue where a message stated that there are 0 pending tasks when completing a Playbook run.
- - Fixed an issue where users could not manage their own roles and memberships on the **Manage channel members** screen.
- - Fixed an issue with a WebSocket event when a user burns a Burn-on-Read message for themselves.
+ - Fixed an issue where a message stated that there are zero pending tasks when completing a Playbook run [MM-66695](https://mattermost.atlassian.net/browse/MM-66695).
+ - Fixed an issue where users could not manage their own roles and memberships on the **Manage channel members** screen [MM-66375](https://mattermost.atlassian.net/browse/MM-66375).
+ - Fixed an issue with a WebSocket event when a user burns a Burn-on-Read message for themselves [MM-66911](https://mattermost.atlassian.net/browse/MM-66911).
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
