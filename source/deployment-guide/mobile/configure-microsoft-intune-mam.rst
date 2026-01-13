@@ -1,7 +1,7 @@
 Configure Microsoft Intune Mobile Application Management (MAM)
 ==============================================================
 
-.. include:: ../../_static/badges/entry-adv.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 You can configure the Mattermost Mobile App on iOS to enforce Microsoft Intune App Protection Policies (MAM) so organizational data remains protected on Bring Your Own Device (BYOD) and mixed-use devices without requiring device enrollment (MDM).
