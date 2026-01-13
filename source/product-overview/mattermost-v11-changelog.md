@@ -17,20 +17,20 @@
 ### Upgrade Impact
 
 #### Database Schema Changes
- - Added schema changes in the form of a new tables (``ReadReceipts`` and ``TemporaryPosts``) that aggregate user attributes into a separate table. Added ``Type`` field for both ``Drafts`` and ``ScheduledPosts``. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
- - Added a new ``translations`` table and two new columns (``channels.autotranslation``, ``channelmembers.autotranslation)``. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
+ - Added schema changes in the form of a new tables (``ReadReceipts`` and ``TemporaryPosts``) that aggregate user attributes into a separate table. Added ``Type`` field for both ``Drafts`` and ``ScheduledPosts``. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details [MM-61758](https://mattermost.atlassian.net/browse/MM-61758).
+ - Added a new ``translations`` table and two new columns (``channels.autotranslation``, ``channelmembers.autotranslation)``. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details [MM-65756](https://mattermost.atlassian.net/browse/MM-65756).
 
 #### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
  - **Changes to Enterprise Advanced plan:**
-   - Under ``ServiceSettings`` in ``config.json``, added ``EnableBurnOnRead``,  ``BurnOnReadDurationSeconds``, ``BurnOnReadMaximumTimeToLiveSeconds`` and ``BurnOnReadSchedulerFrequencySeconds``.
+   - Under ``ServiceSettings`` in ``config.json``, added ``EnableBurnOnRead``,  ``BurnOnReadDurationSeconds``, ``BurnOnReadMaximumTimeToLiveSeconds`` and ``BurnOnReadSchedulerFrequencySeconds`` [MM-61758](https://mattermost.atlassian.net/browse/MM-61758).
  - **Changes to Enterprise plans:**
-   - Under ``GuestAccountsSettings`` in ``config.json``, added ``EnableGuestMagicLink``.
-   - Under ``ServiceSettings`` in ``config.json``, added ``AWSMeteringTimeoutSeconds``.  This configuration value can be used to set the timeout in seconds when connecting to the AWS marketplace metering service.
-   - Under ``NativeAppSettings`` in ``config.json``, added ``EnableIntuneMAM``, which can be edited in the **System Console**.
+   - Under ``GuestAccountsSettings`` in ``config.json``, added ``EnableGuestMagicLink`` [MM-66445](https://mattermost.atlassian.net/browse/MM-66445).
+   - Under ``ServiceSettings`` in ``config.json``, added ``AWSMeteringTimeoutSeconds``.  This configuration value can be used to set the timeout in seconds when connecting to the AWS marketplace metering service [MM-66202](https://mattermost.atlassian.net/browse/MM-66202).
+   - Under ``NativeAppSettings`` in ``config.json``, added ``EnableIntuneMAM``, which can be edited in the **System Console** [MM-66736](https://mattermost.atlassian.net/browse/MM-66736).
 
 #### Important Upgrade Notes
- - Beginning in Mattermost v11.3, some plugins that register a Right Hand Sidebar (RHS) component using ``registerRightHandSidebarComponent`` will need to implement additional code to support RHS popouts if their RHS component relies on plugin-specific state. See [this forum post](https://forum.mattermost.com/t/rhs-popout-support-for-plugins/25626) for full details.
+ - Beginning in Mattermost v11.3, some plugins that register a Right Hand Sidebar (RHS) component using ``registerRightHandSidebarComponent`` will need to implement additional code to support RHS popouts if their RHS component relies on plugin-specific state. See [this forum post](https://forum.mattermost.com/t/rhs-popout-support-for-plugins/25626) for full details [MM-66875](https://mattermost.atlassian.net/browse/MM-66875).
 
 ```{Important}
 If you upgrade from a release earlier than v11.2, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html). In case of an upgrade failure, please check the [Downgrade Guide](https://docs.mattermost.com/administration-guide/upgrade/downgrading-mattermost-server.html) and the [Recovery Guide](https://docs.mattermost.com/deployment-guide/backup-disaster-recovery.html) for rollback steps and interim mitigation strategy.
@@ -40,54 +40,54 @@ If you upgrade from a release earlier than v11.2, please read the other [Importa
 
 #### User Interface
  - Pre-packaged Microsoft Calendar plugin version [v1.5.0](https://github.com/mattermost/mattermost-plugin-mscalendar/releases/tag/v1.5.0).
- - Pre-packaged Agents plugin version [v1.7.2](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.7.2).
+ - Pre-packaged Agents plugin version [v1.7.2](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.7.2) [MM-66650](https://mattermost.atlassian.net/browse/MM-66650).
  - Pre-packaged Zoom plugin version [v1.11.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.11.0).
  - Pre-packaged Jira plugin version [v4.5.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.5.0).
  - Added Korean language support and upgraded Korean translations from Alpha to Official.
- - Added pop-outs for right-hand-side (RHS) plugins.
- - Removed outdated system notices.
- - Removed the Collapsed Reply Threads tutorial.
+ - Added pop-outs for right-hand-side (RHS) plugins [MM-66875](https://mattermost.atlassian.net/browse/MM-66875).
+ - Removed outdated system notices [MM-65785](https://mattermost.atlassian.net/browse/MM-65785).
+ - Removed the Collapsed Reply Threads tutorial [MM-66470](https://mattermost.atlassian.net/browse/MM-66470).
  - Added support for triggering user mentions using the full-width at-sign (＠) in addition to the standard half-width at-sign (@), improving the experience for users of Japanese input methods.
- - Added the ability to schedule posts in 15-minutes interval.
- - Updated Giphy SDK from 8.1.0 to 10.1.0.
- - Custom Profile Attributes now always return a set of default attributes if they're not set.
+ - Added the ability to schedule posts in 15-minutes interval [MM-66859](https://mattermost.atlassian.net/browse/MM-66859).
+ - Updated Giphy SDK from 8.1.0 to 10.1.0 [MM-66374](https://mattermost.atlassian.net/browse/MM-66374).
+ - Custom Profile Attributes now always return a set of default attributes if they're not set [MM-66460](https://mattermost.atlassian.net/browse/MM-66460).
  - Added a new webapp plugin component ``registerSidebarBrowseOrAddChannelMenuComponent``, which allows users to add options to the ``BrowseOrCreateChannel`` menu. 
 
 #### Administration
- - Added [Microsoft Intune MAM authentication](https://docs.mattermost.com/deployment-guide/mobile/mobile-security-features.html#microsoft-intune-mobile-application-management-mam) support (requires Enterprise Advanced license).
- - Added a Burn-on-Read feature (requires Enterprise Advanced license).
- - Added support for passwordless authentication with Magic Link for guest users (requires Enterprise license).
- - The channel ABAC auto-sync setting is now individually configurable through the **System Console**.
- - Validated log levels in ``AdvancedLoggingJSON``.
- - Changes to HTML templates now require a server restart to take effect.
- - Updated AWS SDK dependency.
+ - Added [Microsoft Intune MAM authentication](https://docs.mattermost.com/deployment-guide/mobile/mobile-security-features.html#microsoft-intune-mobile-application-management-mam) support (requires Enterprise Advanced license) [MM-66736](https://mattermost.atlassian.net/browse/MM-66736).
+ - Added a Burn-on-Read feature (requires Enterprise Advanced license) [MM-61758](https://mattermost.atlassian.net/browse/MM-61758).
+ - Added support for passwordless authentication with Magic Link for guest users (requires Enterprise license) [MM-66445](https://mattermost.atlassian.net/browse/MM-66445).
+ - The channel ABAC auto-sync setting is now individually configurable through the **System Console** [MM-65956](https://mattermost.atlassian.net/browse/MM-65956).
+ - Validated log levels in ``AdvancedLoggingJSON`` [MM-62770](https://mattermost.atlassian.net/browse/MM-62770).
+ - Changes to HTML templates now require a server restart to take effect [MM-66718](https://mattermost.atlassian.net/browse/MM-66718).
+ - Updated the AWS SDK dependency [MM-66202](https://mattermost.atlassian.net/browse/MM-66202).
 
 #### Performance
- - Improved the performance of the post textbox and fixed typing bugs in the thread popout. 
+ - Improved the performance of the post textbox and fixed typing bugs in the thread popout [MM-66832](https://mattermost.atlassian.net/browse/MM-66832). 
 
 ### Bug Fixes
  - Fixed a translation issue for invalid slash commands to ensure all locales display the correct message.
  - Fixed a desktop token infinite redirect when the wrong app was opened.
- - Fixed the session expired notification not showing the server name on Desktop App.
+ - Fixed the session expired notification not showing the server name on Desktop App [MM-66361](https://mattermost.atlassian.net/browse/MM-66361).
  - Fixed development Docker Compose files to work on SELinux-enabled hosts.
  - Fixed discrepancies with ``control_access_policies/search`` endpoint and its documentation.
  - Fixed an issue where channel memberships from exports were not properly validated.
  - Fixed an issue where pressing **Back** in the Desktop App after an external login would cause a weird state.
- - Fixed a server panic that occurred when a bot created a post with persistent notifications enabled.
- - Fixed an issue where the Chrome/Desktop App spell check on Windows often couldn't correct typos.
- - Fixed an issue where pressing ``Shift+Up`` in the channel textbox to reply to a thread could cause the right‑hand sidebar (RHS) reply textbox to not focus.
- - Fixed an issue where the guest group mentions permission setting was not available in the **System Console** for Professional licenses.
- - Fixed a minor UX issue in **Set custom status** modal after visiting the **System Console**.
- - Fixed an issue where the ``TelemetryID`` could be temporarily missing on brand new High Availability clusters due to replica lag.
+ - Fixed a server panic that occurred when a bot created a post with persistent notifications enabled [MM-65575](https://mattermost.atlassian.net/browse/MM-65575).
+ - Fixed an issue where the Chrome/Desktop App spell check on Windows often couldn't correct typos [MM-66659](https://mattermost.atlassian.net/browse/MM-66659).
+ - Fixed an issue where pressing ``Shift+Up`` in the channel textbox to reply to a thread could cause the right‑hand sidebar (RHS) reply textbox to not focus [MM-65186](https://mattermost.atlassian.net/browse/MM-65186).
+ - Fixed an issue where the guest group mentions permission setting was not available in the **System Console** for Professional licenses [MM-66366](https://mattermost.atlassian.net/browse/MM-66366).
+ - Fixed a minor UX issue in **Set custom status** modal after visiting the **System Console** [MM-66880](https://mattermost.atlassian.net/browse/MM-66880).
+ - Fixed an issue where the ``TelemetryID`` could be temporarily missing on brand new High Availability clusters due to replica lag [MM-65960](https://mattermost.atlassian.net/browse/MM-65960).
  - Fixed an issue where scheduling a post in the thread popout did not work.
 
 ### API Changes
- - Added a new ``LoginByEntraIdToken`` API endpoint for MSAL ``id_token`` authentication.
- - Added a new ``report/posts`` API for retrieving posts for reporting. 
+ - Added a new ``LoginByEntraIdToken`` API endpoint for MSAL ``id_token`` authentication [MM-66733](https://mattermost.atlassian.net/browse/MM-66733).
+ - Added a new ``report/posts`` API for retrieving posts for reporting [MM-66268](https://mattermost.atlassian.net/browse/MM-66268). 
 
 ### Audit Log Event Changes
- - Added new audit events ``AuditEventRevealPost`` and ``AuditEventBurnPost``.
- - Added a new audit event ``AuditEventSetActiveStatus``.
+ - Added new audit events ``AuditEventRevealPost`` and ``AuditEventBurnPost`` [MM-61758](https://mattermost.atlassian.net/browse/MM-61758).
+ - Added a new audit event ``AuditEventSetActiveStatus`` [MM-65956](https://mattermost.atlassian.net/browse/MM-65956).
 
 ### Go Version
  - v11.3 is built with Go ``v1.24.6``.
