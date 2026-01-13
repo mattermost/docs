@@ -68,7 +68,8 @@ Access your Mattermost instance with your credentials using a web browser, the d
 
     * Intune protections are based on your **user account**, not your Mattermost role or permissions.
     * Intune policies are controlled by your organization, not by Mattermost.
-    * If you have questions about protections, contact your IT support team.
+    * Intune enrollment applies only when you sign in using your organization’s **Microsoft/Entra ID** sign-in method (for example, **Sign in with Microsoft**). If you sign in using a different method (such as email/password or another SSO provider), Intune App Protection may not be applied for that workspace.
+    * If you’re unsure which sign-in option to use, contact your IT support team.
 
   Sign In to Enroll
   -----------------

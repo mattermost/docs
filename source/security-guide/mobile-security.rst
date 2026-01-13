@@ -28,7 +28,9 @@ Mattermost mobile applications can be operated under the protection of mobile ac
 Microsoft Intune Mobile Application Management (MAM)
 ----------------------------------------------------
 
-Mattermost supports Microsoft Intune MAM to enforce app-level data protection on iOS devices without requiring full device enrollment in a mobile device management (MDM) solution. Intune MAM applies security policies directly to the Mattermost mobile app based on user identity, enabling organizations to protect corporate or mission-sensitive data on Bring Your Own Device (BYOD) and mixed-use devices while preserving user privacy.
+Mattermost supports Microsoft Intune Mobile Application Management (MAM) to enforce app-level data protection on **iOS** devices without requiring full device enrollment in a mobile device management (MDM) solution. Intune MAM applies security policies directly to the Mattermost mobile app based on user identity, enabling organizations to protect corporate or mission-sensitive data on Bring Your Own Device (BYOD) and mixed-use devices while preserving user privacy.
+
+Intune MAM for Mattermost is currently supported on iOS only. For Android deployments, we recommend using **Android Enterprise work profiles** as an alternative approach until Mattermost adds support for Intune MAM on Android.
 
 Intune MAM enforcement is applied per Mattermost workspace and is evaluated continuously at runtime. If a device becomes non-compliant or enrollment fails, access to protected content is blocked automatically. This approach allows organizations to extend zero-trust and data loss prevention (DLP) controls to mobile users without assuming ownership of the underlying device.
 
