@@ -16,7 +16,7 @@ Changelog
      - Internal Ticket #
    * - v11.2
      - UI
-     - Enabled [thread popouts](https://docs.mattermost.com/end-user-guide/collaborate/organize-conversations.html#start-or-reply-to-threads) in the browser.
+     - Enabled `thread popouts <https://docs.mattermost.com/end-user-guide/collaborate/organize-conversations.html#start-or-reply-to-threads>`__ in the browser.
      - 
    * - v11.2
      - UI
