@@ -11,7 +11,6 @@ Check your edition and version
 
 Open **Product menu > About Mattermost** to check your edition and version from the web or desktop interface.
 
-- **Mattermost Enterprise Plan** indicates you can apply a license key to enable Enterprise features.
 - **Mattermost Entry** indicates you're using the licensed edition of Mattermost without a paid license.
 - **Mattermost Professional** indicates you're using the licensed edition of Mattermost with a paid professional license.
 - **Mattermost Enterprise** indicates you're using the licensed edition of Mattermost with a paid enterprise license.
