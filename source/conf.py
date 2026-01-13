@@ -912,6 +912,9 @@ rst_prolog = """
     :alt: Total count of scheduled messages.
 .. |new-window-icon| image:: /images/dock-window_F10AC.svg
     :alt: Open thread in a new browser window icon.
+.. |ai-rewrite| image:: /images/creation-outline_F1C2B.svg
+    :alt: AI Rewrite icon.
+    :class: theme-icon
 """
 # rst_epilog = """
 # .. |mm_badge_version| replace:: 7.2
