@@ -37,18 +37,9 @@ If you upgrade from a release earlier than v11.1, please read the other [Importa
 
 ### Improvements
 
-#### User Interface (UI)
- - Pre-packaged Playbooks plugin [v2.6.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.6.1).
- - Pre-packaged Zoom plugin [v1.10.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.10.0).
- - Pre-packaged Agents plugin [v1.6.2](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.6.2).
- - Pre-packaged ServiceNow plugin [v2.4.0](https://github.com/mattermost/mattermost-plugin-servicenow/releases/tag/v2.4.0).
- - Pre-packaged MS Calendar plugin [v1.4.0](https://github.com/mattermost/mattermost-plugin-mscalendar/releases/tag/v1.4.0).
- - Pre-packaged Channel Export plugin [v1.3.0](https://github.com/mattermost/mattermost-plugin-channel-export/releases/tag/v1.3.0).
- - Pre-packaged Boards plugin version [v9.2.1](https://github.com/mattermost/mattermost-plugin-boards/releases).
- - Pre-packaged Jira plugin version [v4.4.1](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.4.1).
- - Enabled [thread popouts](https://docs.mattermost.com/end-user-guide/collaborate/organize-conversations.html#start-or-reply-to-threads) in the browser.
- - Reduced the channel banner height.
- - Improved license and plan name clarity throughout the user interface. License settings and the **About** modal now display specific plan names (Professional, Enterprise, Entry) instead of the generic "Enterprise Edition" label, reducing confusion between edition and plan terminology.
+```{eval-rst}
+.. include:: /snippets/v11-2-ui-changes.rst
+```
 
 #### Administration
  - Added search backend type to the Support Packet.
@@ -142,19 +133,9 @@ If you upgrade from a release earlier than v11.0, please read the other [Importa
 
 ### Improvements
 
-#### User Interface (UI)
- - Pre-packaged Agents plugin version [v1.4.0](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.4.0).
- - Pre-packaged Playbooks plugin version [v2.5.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.5.1).
- - Pre-packaged GitLab plugin version [v1.11.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.11.0).
- - Pre-packaged Jira plugin version [v4.4.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.4.0).
- - Pre-packaged GitHub plugin version [v2.5.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.5.0).
- - Pre-packaged Boards plugin version [v9.1.7](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.7).
- - Pre-packaged MS Teams Meetings plugin version [v2.3.0](https://github.com/mattermost/mattermost-plugin-msteams-meetings/releases/tag/v2.3.0).
- - Pre-packaged Calls plugin version [v1.11.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.11.0).
- - Removed Mattermost MS Teams Sync plugin from pre-packaged plugins.
- - Added support for standalone windows pop-out. Threads can now be popped out to its own window in Desktop. 
- - The desktop app version is now shown on the **About** modal, allowing clicking to copy both the server and desktop app versions.
- - Downgraded French language support from Beta to Alpha.
+```{eval-rst}
+.. include:: /snippets/v11-1-ui-changes.rst
+```
 
 #### Administration
  - Added the ability to edit User Attributes in **System Console > Users > User Configuration**.

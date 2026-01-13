@@ -15,6 +15,8 @@ Overview
    /product-overview/certifications-and-compliance.rst
    /product-overview/accessibility-compliance-policy.rst
    /product-overview/releases-lifecycle.rst
+   /product-overview/ui-changes-history.rst
+   /product-overview/ada-improvements-history.rst
    /product-overview/frequently-asked-questions.rst
 
 The Intelligent Mission Environment (IME)

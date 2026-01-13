@@ -1,0 +1,3 @@
+# This file ensures the snippets directory is tracked by Git
+# This directory contains reusable snippets for release notes that can be included
+# in both individual release pages and master rollup pages using Sphinx's .. include:: directive
