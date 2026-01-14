@@ -2010,7 +2010,7 @@ mmctl cpa
 .. include:: ../../_static/badges/ent-adv.rst
   :start-after: :nosearch:
 
-Manage Custom Profile Attributes (CPA) for extended user profile information.
+Manage User Attributes for extended user profile information.
 
    Child Commands
       - `mmctl cpa field`_ - Manage CPA fields
