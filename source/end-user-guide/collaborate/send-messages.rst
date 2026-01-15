@@ -168,6 +168,76 @@ Message recipients can't see your message edit history, and restoring a previous
 .. image:: ../../images/restore-previous-edited-message.gif
   :alt: Select Edited next to an edited message, and then select the version you want to restore.
 
+Send burn-on-read messages
+---------------------------
+
+.. include:: ../../_static/badges/ent-adv.rst
+  :start-after: :nosearch:
+
+Burn-on-read messages are a secure messaging feature that allows you to send messages that remain concealed until recipients choose to reveal them. Once revealed, these messages automatically expire and are permanently deleted after a specified duration.
+
+.. warning::
+
+  **Burn-on-read messages have irreversible behavior:**
+  
+  - Once you reveal a burn-on-read message, it cannot be hidden again
+  - Once a burn-on-read message expires, it is permanently deleted and cannot be recovered
+  - You cannot reply to, edit, or create threads from burn-on-read messages
+  - Recipients cannot copy text from burn-on-read messages until after they reveal them
+
+.. tab:: Web/Desktop
+
+  **Send a burn-on-read message:**
+
+  1. In any channel or direct message, type your message in the text field.
+  2. Select the **burn-on-read** toggle in the message compose toolbar to enable burn-on-read mode.
+  3. Optionally, adjust the burn duration if your system admin allows it.
+  4. Select **Send** |send-icon| to send the burn-on-read message.
+
+  **What recipients see:**
+
+  - Recipients see a concealed message placeholder with a **Reveal** button
+  - The message content remains hidden until the recipient chooses to reveal it
+  - Once revealed, recipients can see the message content and a countdown timer showing when it will expire
+  - After expiration, the message is permanently deleted and shows "This message is no longer available"
+
+.. tab:: Mobile
+
+  **Send a burn-on-read message:**
+
+  1. In any channel or direct message, tap the text field to start composing.
+  2. Type your message.
+  3. Select the **burn-on-read** option from the message options.
+  4. Tap **Send** |send-icon| to send the burn-on-read message.
+
+  **Mobile-specific limitations:**
+
+  - Recipients cannot reply to burn-on-read messages on mobile
+  - Threading is not available for burn-on-read messages on mobile
+  - **Copy text** is only available after revealing the message
+  - Limited post actions are available before revealing the message
+
+  **What recipients see:**
+
+  - Recipients see a concealed message placeholder
+  - Tap **Reveal** to view the message content
+  - Once revealed, a timer shows when the message will expire
+  - After expiration, the message shows "This message is no longer available"
+
+**Message lifecycle:**
+
+1. **Concealed state**: Message is sent but content remains hidden from recipients
+2. **Revealed state**: Recipient reveals the message and can view the content
+3. **Expired/Burned state**: Message automatically expires and is permanently deleted
+
+**Important notes:**
+
+- Only users with appropriate permissions can send burn-on-read messages
+- The feature must be enabled by your system administrator
+- Burn-on-read messages cannot be forwarded, saved, or pinned
+- Message reactions may be limited depending on reveal state
+- Connection issues may affect message reveal or expiration timing
+
 Do more with your messages
 --------------------------
 
