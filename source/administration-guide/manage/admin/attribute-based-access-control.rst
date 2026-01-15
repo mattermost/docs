@@ -16,7 +16,7 @@ From Mattermost v10.9, system admins in large or complex organizations who requi
 
 Enforcing strict access controls based on user attributes eliminates manual role adjustment processes that can lead to security risks, inefficiencies, or inappropriate access, while maintaining security and compliance by ensuring that only authorized users can access specific Mattermost channels.
 
-Access-based access control (ABAC) provides 2 levels of control:
+Attribute-based access control (ABAC) provides 2 levels of control:
 
 - **System-wide policies** (managed by System Admins): Centralized policies that can be applied across multiple channels in the System Console. See :doc:`System-wide attribute-based access policies </administration-guide/manage/admin/abac-system-wide-policies>`.
 - **Channel-specific rules** (managed by Channel Admins): Self-service access rules that Channel Admins can configure directly in Channel Settings for individual channels. See :doc:`Channel-specific access rules </administration-guide/manage/admin/abac-channel-access-rules>`.
@@ -26,7 +26,7 @@ Before you begin
 
 Attribute-based access controls require defined user attributes that are either synchronized from an external system (such as LDAP or SAML) or manually configured and enabled on your Mattermost server. You'll need to :doc:`configure user attributes </administration-guide/manage/admin/user-attributes>` in the System Console first before creating access policies.
 
-Each attribute becomes a user profile option users can populate, unless you disable the **Editable by Users** option, available from Mattermost v11. Admin-managed attributes can be used in addition to the LDAP/SAML synchronized attributes for access-based access control rules.
+Each attribute becomes a user profile option users can populate, unless you disable the **Editable by Users** option, available from Mattermost v11. Admin-managed attributes can be used in addition to the LDAP/SAML synchronized attributes for attribute-based access control rules.
 
 Once user attributes are defined, go to **System Console > System Attributes > Attribute-Based Access** to enable attribute-based access controls for your Mattermost instance. This functionality requires a Mattermost Enterprise Advanced license.
 
