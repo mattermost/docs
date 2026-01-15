@@ -11,8 +11,11 @@ Check your edition and version
 
 Open **Product menu > About Mattermost** to check your edition and version from the web or desktop interface.
 
-- **Mattermost Enterprise Edition** indicates you can apply a license key to enable Enterprise features.
-- **Mattermost Team Edition** indicates you're using the open source version and need to upgrade before a license key can be applied.
+- **Mattermost Entry** indicates you're using the licensed edition of Mattermost without a paid license.
+- **Mattermost Professional** indicates you're using the licensed edition of Mattermost with a paid professional license.
+- **Mattermost Enterprise** indicates you're using the licensed edition of Mattermost with a paid enterprise license.
+- **Mattermost Enterprise Advanced** indicates you're using the licensed edition of Mattermost with a paid enterprise advanced license.
+- **Mattermost Team Edition** indicates you're using the open source version and need to upgrade to a licensed edition before a license key can be applied.
 
 Upgrade via System Console (Recommended)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -26,7 +29,7 @@ During the upgrade process, the Mattermost Enterprise Edition binary file that m
 .. note::
   If you're using a modified version of Mattermost, using this tool will overwrite your changes and replace them with the official Enterprise Edition binary. 
 
-Once this process is complete, you're prompted to restart your server. The Mattermost version listed in **Product menu > System Console > Edition and License** will change from **Team Edition** to **Enterprise Edition**, and you can now start a trial or upload a license to unlock paid features.
+Once this process is complete, you're prompted to restart your server. The Mattermost version listed in **Product menu > System Console > Edition and License** will change from **Team Edition** to **Mattermost Entry**, and you can now upload a professional, enterprise, or enterprise advanced license to unlock paid features.
 
 Upgrade manually
 ~~~~~~~~~~~~~~~~~
