@@ -95,6 +95,10 @@ Mattermost Desktop App v6.0.0 contains low severity level security fixes. Upgrad
 (release-v5-13)=
 ## Release v5.13 (Extended Support Release)
 
+- **v5.13.3, released **
+
+  - Mattermost Desktop App v5.13.3 contains medium to high severity level security fixes. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+
 - **v5.13.2, released 2025-10-16**
 
   - Upgraded Electron to v37.6.1.
