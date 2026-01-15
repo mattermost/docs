@@ -75,6 +75,12 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 (release-v10.11-extended-support-release)=
 ## Release v10.11 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **10.11.10, released 2026-01-15**
+  - Mattermost v10.11.10 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed a server panic that occurred when a bot created a post with persistent notifications enabled [MM-65575](https://mattermost.atlassian.net/browse/MM-65575).
+  - Pre-packaged Zoom plugin version [v1.11.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.11.0).
+  - Pre-packaged Jira plugin version [v4.5.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.5.0).
+  - Mattermost v10.11.10 contains no database or functional changes.
 - **10.11.9, released 2025-12-17**
   - Mattermost v10.11.9 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue where pressing ``Shift+Up`` in the channel textbox to reply to a thread could cause the right‑hand sidebar (RHS) reply textbox to not focus [MM-65186](https://mattermost.atlassian.net/browse/MM-65186).
