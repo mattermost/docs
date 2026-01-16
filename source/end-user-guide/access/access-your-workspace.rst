@@ -59,6 +59,42 @@ Reset your password
 
 If you've forgotten your password, you can reset it on the login screen by selecting **Forgot your password?**, or by contacting your system admin for assistance.
 
+Magic link login for guest users  
+---------------------------------
+
+*Available in Mattermost v11.3 and later*
+
+If you're a guest user and your system admin has enabled magic link authentication, you may be able to log in without a password using a secure link sent to your email address.
+
+**What has changed for guest users:**
+
+- Guest users can now receive a magic link in their email to log in without entering a password
+- This provides a passwordless login option as an alternative to traditional username/password authentication
+
+**What has NOT changed:**
+
+- All other guest user permissions and capabilities remain the same
+- Access to channels and teams is still controlled by invitations from system admins
+- Guest users still cannot discover public channels or create direct messages outside their assigned channels
+
+**To use magic link authentication:**
+
+1. Visit the Mattermost login page for your organization
+2. If magic link authentication is available for your account, you'll see an option to request a magic link
+3. Enter your email address and select the magic link option
+4. Check your email for a secure login link
+5. Click the link in your email to automatically log in to Mattermost
+
+**If magic link login doesn't work:**
+
+- Verify you're using the correct email address associated with your guest account
+- Check your spam/junk folder for the magic link email
+- Ensure the link hasn't expired - magic links are only valid for a limited time
+- Contact your system admin if you continue to experience issues or if you need to use traditional password authentication instead
+
+.. note::
+   Magic link authentication is only available for guest users when enabled by your system administrator. Regular member users continue to use standard authentication methods.
+
 Email address or username
 --------------------------
 

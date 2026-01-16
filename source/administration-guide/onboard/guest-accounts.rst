@@ -38,11 +38,44 @@ Guests cannot:
 Guest authentication
 ---------------------
 
-Guests can access the Mattermost server via email invitation, and be authenticated using AD/LDAP or SAML 2.0.
+Guests can access the Mattermost server via email invitation, and be authenticated using AD/LDAP, SAML 2.0, or magic link passwordless authentication.
 
 Before you proceed, ensure that the authentication method you wish to use is correctly configured on your server and enabled in Mattermost. For configuration steps and technical documentation, see :doc:`Active Directory/LDAP setup </administration-guide/onboard/ad-ldap>` and :doc:`SAML Single-Sign-On </administration-guide/onboard/sso-saml>`.
 
 Converting a member user to a guest won't change the channels they are in. However, they will be restricted from discovering additional channels and are unable to direct message/group message users outside of the channels they are in. They can be added to channels by system admins and other roles that have the correct permissions to invite guests.
+
+Configure magic link authentication for guests
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../../_static/badges/entry-ent.rst
+  :start-after: :nosearch:
+
+*Available in Mattermost v11.3 and later*
+
+When enabled, the magic link feature allows guest users to access Mattermost without a password by using a secure link sent to their email address. This provides a passwordless authentication option for guest users.
+
+**What this enables:**
+
+- Guest users can log in using a magic link sent to their email address instead of entering a password
+- Eliminates the need for guests to remember or manage passwords for Mattermost access
+- Provides a streamlined authentication experience for external collaborators
+
+**What this does NOT do:**
+
+- This feature does not automatically enable guest access - guest access must still be enabled separately
+- This feature does not change any other guest permissions or capabilities  
+- This feature is not available for regular member users - it is guest-specific
+
+**To configure magic link authentication for guests:**
+
+1. Ensure :ref:`guest access is enabled <administration-guide/onboard/guest-accounts:manage guests>` in **System Console > Authentication > Guest Access**.
+2. Go to **System Console > Authentication > Guest Access**.
+3. Enable **Guest Magic Link Authentication**.
+4. Select **Save**.
+
+.. note::
+   
+   Magic link authentication for guests requires an Enterprise license and is available in Mattermost v11.3 and later.
 
 Configure AD/LDAP authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
