@@ -54,7 +54,7 @@ If you upgrade from a release earlier than v11.2, please read the other [Importa
  - Added a new webapp plugin component ``registerSidebarBrowseOrAddChannelMenuComponent``, which allows users to add options to the ``BrowseOrCreateChannel`` menu. 
 
 #### Administration
- - Added [Microsoft Intune MAM authentication](https://docs.mattermost.com/deployment-guide/mobile/mobile-security-features.html#microsoft-intune-mobile-application-management-mam) support (requires Enterprise Advanced license) [MM-66736](https://mattermost.atlassian.net/browse/MM-66736).
+ - Added Microsoft Intune MAM authentication support (requires Enterprise Advanced license) [MM-66736](https://mattermost.atlassian.net/browse/MM-66736).
  - Added a Burn-on-Read feature (requires Enterprise Advanced license) [MM-61758](https://mattermost.atlassian.net/browse/MM-61758).
  - Added support for passwordless authentication with Magic Link for guest users (requires Enterprise license) [MM-66445](https://mattermost.atlassian.net/browse/MM-66445).
  - The channel ABAC auto-sync setting is now individually configurable through the **System Console** [MM-65956](https://mattermost.atlassian.net/browse/MM-65956).
