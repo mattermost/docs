@@ -6,6 +6,29 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 ```{include} common-esr-support.md
 ```
 
+(release-v6-1)=
+## Release v6.1
+
+- **v6.1.0, released 2026-02-16**
+  - Feature updates and improvements for Desktop App v6.1
+
+**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/latest)
+
+### Compatibility
+- Desktop App is supported on any currently supported [Mattermost server version](https://docs.mattermost.com/product-overview/mattermost-desktop-releases.html#latest-releases).
+
+### Highlights
+- Continued improvements to the Multi-View Architecture introduced in v6.0
+- Performance enhancements and bug fixes
+
+### Improvements
+#### All Platforms
+- Various performance and stability improvements
+
+### Bug Fixes
+#### All Platforms
+- Various bug fixes and stability improvements
+
 (release-v6-0)=
 ## Release v6.0
 
