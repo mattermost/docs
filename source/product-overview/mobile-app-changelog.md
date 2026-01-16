@@ -17,10 +17,15 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - iPhone 6s devices and later with iOS 15.1+ are required.
 
 ### Improvements
- - Placeholder for Mobile v2.37 improvements.
+ - Added support for emoji picker on mobile [MM-53959](https://mattermost.atlassian.net/browse/MM-53959).
+ - Added an option to rename playbook runs/checklists on mobile [MM-66610](https://mattermost.atlassian.net/browse/MM-66610).
+ - Added support for viewing and editing playbook run attributes [MM-65768](https://mattermost.atlassian.net/browse/MM-65768).
+ - Added support for deleting Playbook tasks from mobile [MM-67006](https://mattermost.atlassian.net/browse/MM-67006).
 
 ### Bug Fixes
- - Placeholder for Mobile v2.37 bug fixes.
+ - Fixed an access issue to gallery tools [MM-67056](https://mattermost.atlassian.net/browse/MM-67056).
+ - Fixed an issue with the notification settings screen sometimes not showing updates when changing the email notifications [MM-66858](https://mattermost.atlassian.net/browse/MM-66858).
+ - Fixed an issue where the server was pinged on edit even if the pre-auth secret didn't change.
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
