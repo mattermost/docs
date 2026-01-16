@@ -35,7 +35,7 @@ Set up and maintain a high availability cluster-based deployment on your Matterm
 To ensure your instance and configuration are compatible with a high availability cluster-based deployment, please review the `configuration and compatibility`_ section.
 
 .. note::
-  
+
   Back up your Mattermost database and file storage locations before configuring high availability. For more information about backing up, see :doc:`/deployment-guide/backup-disaster-recovery`.
 
 1. Set up a new Mattermost server by following one of our **Install Guides**. This server must use an identical copy of the configuration file, ``config.json``. Verify the servers are functioning by hitting each independent server through its private IP address.
@@ -257,7 +257,7 @@ File storage configuration
 
   1. File storage is assumed to be shared between all the machines that are using services such as NAS or Amazon S3.
   2. If ``"DriverName": "local"`` is used then the directory at ``"FileSettings":`` ``"Directory": "./data/"`` is expected to be a NAS location mapped as a local directory, otherwise high availability will not function correctly and may corrupt your file storage.
-  3. If you’re using Amazon S3 or MinIO for file storage then no other configuration is required.
+  3. If you're using Amazon S3 or another S3-compatible service for file storage then no other configuration is required.
 
 If you’re using the Compliance Reports feature in Mattermost Enterprise, you need to configure the ``"ComplianceSettings":`` ``"Directory": "./data/",`` to share between all machines or the reports will only be available from the System Console on the local Mattermost server.
 
@@ -270,13 +270,13 @@ Database configuration
 
   Specifying configuration setting values using Mattermost environment variables ensure that they always take precedent over any other configuration settings.
 
-For an AWS High Availability RDS cluster deployment, point the :ref:`datasource <administration-guide/configure/environment-configuration-settings:data source>` configuration setting to the write/read endpoint at the **cluster** level to benefit from the AWS failover handling. AWS takes care of promoting different database nodes to be the writer node. Mattermost doesn't need to manage this. 
+For an AWS High Availability RDS cluster deployment, point the :ref:`datasource <administration-guide/configure/environment-configuration-settings:data source>` configuration setting to the write/read endpoint at the **cluster** level to benefit from the AWS failover handling. AWS takes care of promoting different database nodes to be the writer node. Mattermost doesn't need to manage this.
 
-Use the :ref:`read replica <administration-guide/configure/environment-configuration-settings:read replicas>` feature to scale the database. The Mattermost server can be set up to use one master database and one or more read replica databases. 
+Use the :ref:`read replica <administration-guide/configure/environment-configuration-settings:read replicas>` feature to scale the database. The Mattermost server can be set up to use one master database and one or more read replica databases.
 
 .. note::
-  
-  For an AWS High Availability RDS cluster deployment, don't hard-code the IP addresses. Point this configuration setting to the write/read endpoint at the **cluster** level. This will benefit from the AWS failover handling where AWS takes care of promoting different database nodes to be the writer node. Mattermost doesn't need to manage this. 
+
+  For an AWS High Availability RDS cluster deployment, don't hard-code the IP addresses. Point this configuration setting to the write/read endpoint at the **cluster** level. This will benefit from the AWS failover handling where AWS takes care of promoting different database nodes to be the writer node. Mattermost doesn't need to manage this.
 
 On large deployments, also consider using the :ref:`search replicas <administration-guide/configure/environment-configuration-settings:search replicas>` feature to isolate search queries onto one or more search replicas. A search replica is similar to a read replica, but is used only for handling search queries.
 
@@ -319,7 +319,7 @@ Here's an example ``SqlSettings`` block for one master and two read replicas:
         "Trace": false,
         "AtRestEncryptKey": "",
         "QueryTimeout": 30
-    }  
+    }
 
 The new settings can be applied by either stopping and starting the server, or by loading the configuration settings as described in the next section.
 
@@ -361,8 +361,8 @@ For the Postgres service we recommend the following configuration optimizations 
 
 .. code-block:: sh
 
-  # If the instance is lower capacity than r5.xlarge, then set it to a lower number. 
-  # Also tune the "MaxOpenConns" setting under the "SqlSettings" of the Mattermost app accordingly. 
+  # If the instance is lower capacity than r5.xlarge, then set it to a lower number.
+  # Also tune the "MaxOpenConns" setting under the "SqlSettings" of the Mattermost app accordingly.
   # Note that "MaxOpenConns" on Mattermost is per data source name.
   # Recommended: MaxOpenConns: 100, MaxIdleConns: 50 (2:1 ratio)
   max_connections = 1024
@@ -370,7 +370,7 @@ For the Postgres service we recommend the following configuration optimizations 
   # Set it to 1.1, unless the DB is using spinning disks.
   random_page_cost = 1.1
 
-  # This should be 32MB if using read replicas, or 16MB if using a single PostgreSQL instance. 
+  # This should be 32MB if using read replicas, or 16MB if using a single PostgreSQL instance.
   # If the instance is of a lower capacity than r5.xlarge, then set it to a lower number.
   work_mem = 32MB
 
@@ -380,8 +380,8 @@ For the Postgres service we recommend the following configuration optimizations 
   effective_cache_size = 21GB
   shared_buffers = 21GB
 
-  # If you are using pgbouncer, or any similar connection pooling proxy, 
-  # in front of your DB, then apply the keepalive settings to the proxy instead, 
+  # If you are using pgbouncer, or any similar connection pooling proxy,
+  # in front of your DB, then apply the keepalive settings to the proxy instead,
   # and revert the keepalive settings for the DB back to defaults.
   tcp_keepalives_idle = 5
   tcp_keepalives_interval = 1
@@ -389,7 +389,7 @@ For the Postgres service we recommend the following configuration optimizations 
 
   # 1GB (reduce this to 512MB if your server has less than 32GB of RAM)
   maintenance_work_mem = 512MB
-  
+
   autovacuum_max_workers = 4
   autovacuum_vacuum_cost_limit = 500
 
@@ -402,12 +402,12 @@ For the Postgres service we recommend the following configuration optimizations 
 
 **Config for Postgres Replica node**
 
-Copy all the above settings to the read replica, and modify or add only the below. 
+Copy all the above settings to the read replica, and modify or add only the below.
 
 .. code-block:: sh
-  
-  # If the instance is lower capacity than r5.xlarge, then set it to a lower number. 
-  # Also tune the "MaxOpenConns" setting under the "SqlSettings" of the Mattermost app accordingly. 
+
+  # If the instance is lower capacity than r5.xlarge, then set it to a lower number.
+  # Also tune the "MaxOpenConns" setting under the "SqlSettings" of the Mattermost app accordingly.
   # Note that "MaxOpenConns" on Mattermost is per data source name.
   # Recommended: MaxOpenConns: 100, MaxIdleConns: 50 (2:1 ratio)
   max_connections = 1024
@@ -415,8 +415,8 @@ Copy all the above settings to the read replica, and modify or add only the belo
   # This setting should be 16MB on read nodes, and 32MB on writer nodes
   work_mem = 16MB
 
-  # The below settings allow the reader to return query results even when the primary has a write process running, a query conflict. 
-  # This is set to on because of the high volume of write traffic that can prevent the reader from returning query results within the timeout. 
+  # The below settings allow the reader to return query results even when the primary has a write process running, a query conflict.
+  # This is set to on because of the high volume of write traffic that can prevent the reader from returning query results within the timeout.
   # https://www.postgresql.org/docs/current/hot-standby.html#HOT-STANDBY-CONFLICT
   hot_standby = on
   hot_standby_feedback = on
@@ -603,14 +603,14 @@ Troubleshooting
 Capture high availability troubleshooting data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When deploying Mattermost in a high availability configuration, we recommend that you keep Prometheus and Grafana metrics as well as cluster server logs for as long as possible - and at minimum two weeks. 
+When deploying Mattermost in a high availability configuration, we recommend that you keep Prometheus and Grafana metrics as well as cluster server logs for as long as possible - and at minimum two weeks.
 
 You may be asked to provide this data to Mattermost for analysis and troubleshooting purposes.
 
 .. note::
 
   - Ensure that server log files are being created. You can find more on working with Mattermost logs :ref:`here <deployment-guide/server/troubleshooting:review mattermost logs>`.
-  - When investigating and replicating issues, we recommend opening **System Console > Environment > Logging** and setting **File Log Level** to **DEBUG** for more complete logs. Make sure to revert to **INFO** after troubleshooting to save disk space. 
+  - When investigating and replicating issues, we recommend opening **System Console > Environment > Logging** and setting **File Log Level** to **DEBUG** for more complete logs. Make sure to revert to **INFO** after troubleshooting to save disk space.
   - Each server has its own server log file, so make sure to provide server logs for all servers in your High Availability cluster-based deployment.
 
 Red server status
