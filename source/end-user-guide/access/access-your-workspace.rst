@@ -38,7 +38,8 @@ Access your Mattermost instance with your credentials using a web browser, the d
   1. Download and install the Mattermost desktop app from the App Store (macOS), Microsoft Store (Windows), or by :doc:`using a package manager (Linux) </deployment-guide/desktop/linux-desktop-install>`.
   2. When prompted, enter the Mattermost server link and a display name for the Mattermost instance. The display name is helpful in cases where you connect to multiple Mattermost instances. See the :doc:`server connections </end-user-guide/preferences/connect-multiple-workspaces>` documentation for details.
   3. Enter your user credentials to log into Mattermost.
-  4. The team that displays first in the team sidebar opens. If you're not a member of a team yet, you're prompted to select a team to join.
+  4. If the server requires an authentication secret, you'll be prompted to enter it when you connect. Enter the secret provided by your system admin and select **OK**. See the `troubleshooting <#troubleshooting-authentication-secrets>`__ section below for help if you're having issues.
+  5. The team that displays first in the team sidebar opens. If you're not a member of a team yet, you're prompted to select a team to join.
 
   .. note::
 
@@ -49,8 +50,9 @@ Access your Mattermost instance with your credentials using a web browser, the d
 
   1. Download and install the Mattermost mobile app from the `Apple App Store (iOS) <https://www.apple.com/app-store/>`__ or `Google Play Store (Android) <https://play.google.com/store/games?hl=en>`__.
   2. When prompted, enter the Mattermost server link and a display name for the Mattermost instance. Server URLs must begin with either ``http://`` or ``https://``. The display name is helpful in cases where you connect to multiple Mattermost instances. See the :doc:`server connections </end-user-guide/preferences/connect-multiple-workspaces>` documentation for details.
-  3. Enter your user credentials to log into Mattermost. 
-  4. The team that displays first in the team sidebar opens. If you're not a member of a team yet, you're prompted to select a team to join.
+  3. Enter your user credentials to log into Mattermost.
+  4. Optionally toggle the **Advanced Options** section to enter an **Authentication secret**. This is an additional security measure that some organizations use. Your system admin can provide you with the secret if required. See the `troubleshooting <#troubleshooting-authentication-secrets>`__ section below for help if you're having issues.
+  5. The team that displays first in the team sidebar opens. If you're not a member of a team yet, you're prompted to select a team to join.
 
 Reset your password
 --------------------
@@ -114,3 +116,51 @@ Multi-factor authentication
 If your system admin :ref:`enables multi-factor authentication <administration-guide/onboard/multi-factor-authentication:enabling mfa>` for your Mattermost instance, you can :doc:`optionally set up multi-factor authentication </end-user-guide/preferences/manage-your-security-preferences>` for your Mattermost user account by selecting your profile picture located in the top-right corner of Mattermost, and going to **Security > Multi-Factor Authentication**.
 
 If your system admin :ref:`enforces multi-factor authentication <administration-guide/onboard/multi-factor-authentication:enforcing mfa>`, you are required to :doc:`set up multi-factor authentication </end-user-guide/preferences/manage-your-security-preferences>` for your Mattermost account. When you attempt to log in to Mattermost, you're directed to the multi-factor authentication setup page. You won't be able to access Mattermost until multi-factor setup is complete. If you encounter issues setting up multi-factor authentication, contact your Mattermost system admin for assistance.
+
+Troubleshooting authentication secrets
+---------------------------------------
+
+If you're having trouble connecting to a Mattermost server that requires an authentication secret, consider the following troubleshooting tips:
+
+- **Authentication secrets are case-sensitive**: Ensure you're entering the secret exactly as provided, including any uppercase letters, numbers, or special characters.
+- **Spaces matter**: Don't add extra spaces before or after the secret.
+- **Copy/paste issues**: If copying the secret from a document, ensure you're not accidentally copying extra characters. It may be safer to type it manually.
+- **Contact your administrator**: If you continue experiencing issues, contact your IT department or Mattermost system administrator. They can verify the secret is configured correctly on the server side.
+
+.. tab:: Desktop
+
+  If you're having trouble connecting to a server with an authentication secret:
+
+  .. list-table::
+   :header-rows: 1
+   :widths: 40 60
+
+   * - Issue
+     - What To Do
+   * - Error: **Server authentication required**
+     - Your server requires an authentication secret. Enter the secret provided by your system administrator in the modal that appears.
+   * - Error: **The provided authentication secret is incorrect**
+     - The secret you entered doesn't match the server's configuration. Verify with your system admin that you have the correct secret (secrets are case-sensitive).
+   * - **Connection works but then stops**
+     - Your organization may have rotated the authentication secret. Try connecting again. The app will automatically prompt you to enter the new secret.
+   * - **Modal doesn't appear**
+     - If you're not seeing the authentication prompt, try removing the server and adding it again. This will reset all stored credentials.
+
+.. tab:: Mobile
+
+  If you're having trouble connecting to a server with an authentication secret:
+
+  .. list-table::
+    :header-rows: 1
+    :widths: 40 60
+
+    * - Issue
+      - What To Do
+    * - Error: **"Authentication secret is invalid"**
+      - Tap on the server entry, tap **Edit**, expand **Advanced Options**, verify the secret is entered correctly, and tap **Save** to retry.
+    * - **Forgot to enter secret during setup**
+      - Tap on the server entry, tap **Edit**, expand **Advanced Options**, enter the secret in the **Authentication secret** field, and tap **Save**.
+    * - **Need to update secret after rotation**
+      - Swipe left on the server, tap **Edit**, expand **Advanced Options**, update the **Authentication secret** field with the new value, and tap **Save**.
+    * - **Error persists with correct secret**
+      - Try removing the server completely and adding it again with the authentication secret entered during initial setup.
