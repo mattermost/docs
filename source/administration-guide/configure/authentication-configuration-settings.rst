@@ -2145,7 +2145,7 @@ Select OpenID Connect service provider
 GitLab OpenID settings
 ^^^^^^^^^^^^^^^^^^^^^^
 
-.. config:setting:: guest-access
+.. config:setting:: gitlab-oidc-enable
   :displayname: Enable (OpenID Connect - GitLab)
   :systemconsole: Authentication > OpenID Connect
   :configjson: N/A
@@ -2611,29 +2611,25 @@ Show guest tag
 .. note::
   This configuration setting applies to all Mattermost clients, including web, desktop app, and mobile app. See the :doc:`guest accounts </administration-guide/onboard/guest-accounts>` documentation for details.
 
-.. config:setting:: enable-guest-magic-link
-  :displayname: Enable guest magic link authentication (Guest Access)
+.. config:setting:: enable-guest-easy-link
+  :displayname: Enable guest easy link authentication (Guest Access)
   :systemconsole: Authentication > Guest Access
   :configjson: .GuestAccountsSettings.EnableGuestMagicLink
   :environment: MM_GUESTACCOUNTSSETTINGS_ENABLEGUESTMAGICLINK
 
-  *Available in Mattermost v11.3 and later*
+  - **true**: Enables easy link passwordless authentication for guest users.
+  - **false**: **(Default)** Easy link authentication for guest users is disabled.
 
-  - **true**: Enables magic link passwordless authentication for guest users.
-  - **false**: **(Default)** Magic link authentication for guest users is disabled.
-
-Enable guest magic link authentication
+Enable guest easy link authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
-*Available in Mattermost v11.3 and later*
-
-+-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+
-| - **true**: Enables magic link passwordless authentication for guest users.              | - System Config path: **Authentication > Guest Access**                                   |
-| - **false**: **(Default)** Magic link authentication for guest users is disabled.        | - ``config.json`` setting: ``GuestAccountsSettings`` > ``EnableGuestMagicLink`` > ``false`` |
-+-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| - **true**: Enables easy link passwordless authentication for guest users.                | - System Config path: **Authentication > Guest Access**                                     |
+| - **false**: **(Default)** Easy link authentication for guest users is disabled.          | - ``config.json`` setting: ``GuestAccountsSettings`` > ``EnableGuestEasyLink`` > ``false``  |
++-------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 
 .. note::
-  When enabled, guest users can authenticate using a secure link sent to their email address instead of entering a password. This feature requires an Enterprise license and guest access must be enabled. See the :doc:`guest accounts </administration-guide/onboard/guest-accounts>` documentation for setup details.
+  See the :ref:`guest accounts <administration-guide/onboard/guest-accounts:configure easy links for guests>` documentation for guest user setup details.
