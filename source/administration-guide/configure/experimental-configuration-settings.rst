@@ -943,8 +943,6 @@ Select the themes that can be chosen by users when ``EnableThemeSelection`` is s
 | This feature's ``config.json`` setting is ``"AllowedThemes": []`` with string array input consisting of the options ``"default"``, ``"organization"``, ``"mattermostDark"``, and ``"windows10"``, such as ``["mattermostDark", "windows10"]``.     |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
-
 .. config:setting:: file-location
   :displayname: File location (Experimental)
   :systemconsole: N/A
@@ -1853,32 +1851,3 @@ Defines the threshold in days beyond which outdated configurations are removed f
 | This feature's ``config.json`` setting is ``"JobSettings.CleanupConfigThresholdDays": 30`` with numerical input.   |
 +--------------------------------------------------------------------------------------------------------------------+
 
-Feature flags
-~~~~~~~~~~~~~
-
-Use the ``MM_FEATUREFLAGS`` environment variable to enable or disable experimental features. Multiple flags can be separated by commas.
-
-.. config:setting:: burn-on-read-feature-flag
-  :displayname: Burn on Read feature flag (Feature Flags)
-  :systemconsole: N/A
-  :configjson: N/A
-  :environment: MM_FEATUREFLAGS_BURNONREAD
-  :description: Enables the Burn on Read feature for enterprise advanced deployments.
-
-Burn on Read feature flag
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-adv.rst
-  :start-after: :nosearch:
-
-This setting isn't available in the System Console and can only be set via environment variable.
-
-Enables the Burn on Read messaging feature that allows users to send messages that are concealed until revealed by recipients and automatically expire after a specified duration.
-
-+------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature flag is set using ``MM_FEATUREFLAGS_BURNONREAD=true``. The feature also requires the system setting to be enabled.         |
-+------------------------------------------------------------------------------------------------------------------------------------------+
-
-.. warning::
-  
-  This feature flag must be set to ``true`` in addition to enabling the system configuration setting for Burn on Read functionality to work properly.

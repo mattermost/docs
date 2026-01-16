@@ -1464,99 +1464,78 @@ Total number of persistent notifications per post
 +-------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 
 .. config:setting:: enable-burn-on-read
-  :displayname: Enable burn-on-read (Posts)
+  :displayname: Enable burn-on-read messages (Posts)
   :systemconsole: Site Configuration > Posts
-  :configjson: .ServiceSettings.BurnOnRead
-  :environment: MM_SERVICESETTINGS_BURNONREAD
-  :description: Controls whether burn-on-read messaging is enabled. Default is **false**.
-  - **true**: Enables burn-on-read messaging for users who have permission to send these messages.
-  - **false**: **(Default)** Disables burn-on-read messaging functionality.
+  :configjson: .ServiceSettings.EnableBurnOnRead
+  :environment: MM_SERVICESETTINGS_ENABLEBURNONREAD
+  :description: Controls whether users can send burn-on-read messages. Default is **false**.
 
-Enable burn-on-read
-~~~~~~~~~~~~~~~~~~~~
+  - **true**: Users can send burn-on-read messages in channels, direct messages, and group messages.
+  - **false**: **(Default)** The option to send a burn-on-read message isn't available.
 
-.. include:: ../../_static/badges/ent-adv.rst
+Enable burn-on-read messages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../../_static/badges/entry-adv.rst
   :start-after: :nosearch:
 
 .. warning::
 
   Burn-on-read messages have irreversible behavior:
   
-  - Once a recipient reveals a burn-on-read message, it cannot be hidden again
-  - Once a burn-on-read message expires or is burned, it is permanently deleted and cannot be recovered
-  - Recipients cannot reply to, edit, or thread burn-on-read messages
+  - Once a recipient reveals a burn-on-read message, it can't be hidden again.
+  - Once a burn-on-read message expires or is burned, it is permanently deleted and can't be recovered.
+  - Recipients can't reply to, edit, or thread burn-on-read messages.
 
 +------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
-| - **true**: Enables burn-on-read messaging for users who have permission to send these messages.          | - System Config path: **Site Configuration > Posts**                               |
-|   Users can send messages that are concealed until revealed by recipients and automatically expire         | - ``config.json`` setting: ``ServiceSettings`` > ``BurnOnRead`` > ``true``         |
-|   after the specified burn duration.                                                                      | - Environment variable: ``MM_SERVICESETTINGS_BURNONREAD``                         |
-| - **false**: **(Default)** Disables burn-on-read messaging functionality.                                 |                                                                                    |
+| Enable or disable burn-on-read messages.                                                                   | - System Config path: **Site Configuration > Posts**                               |
+|                                                                                                            | - ``config.json`` setting: ``ServiceSettings`` > ``EnableBurnOnRead`` > ``false``  |
+| - **false**: **(Default)** The option to send a burn-on-read message isn't available.                      | - Environment variable: ``MM_SERVICESETTINGS_ENABLEBURNONREAD``                    |
+| - **true**: Users can send burn-on-read messages in channels, direct messages, and group messages.         |                                                                                    |
 +------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 
 .. note::
-  This feature requires an Enterprise Advanced license and must be enabled via both the system setting and feature flag.
+  This feature must be enabled via both the system setting and the ``MM_FEATUREFLAGS_BURNONREAD`` feature flag. See the Mattermost developer documentation for details on `enabling feature flags in a self-hosted deployment <https://developers.mattermost.com/contribute/more-info/server/feature-flags/#self-hosted-and-local-development>`_. Mattermost Cloud customers can request this feature flag be enabled by contacting their Mattermost Account Manager or by `creating a support ticket <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=11184911962004>`_ request.
 
-.. config:setting:: burn-on-read-default-duration
-  :displayname: Default burn duration (Posts)
+.. config:setting:: burn-on-read-duration
+  :displayname: Burn-on-read duration (Posts)
   :systemconsole: Site Configuration > Posts
-  :configjson: .ServiceSettings.BurnOnReadDefaultDuration
-  :environment: MM_SERVICESETTINGS_BURNONREADDEFAULTDURATION
-  :description: The default duration in minutes for burn-on-read messages to expire after being revealed. Default is **30**.
+  :configjson: .ServiceSettings.BurnOnReadDurationSeconds
+  :environment: MM_SERVICESETTINGS_BURNONREADDURATIONSECONDS
+  :description: Sets the countdown duration for burn-on-read messages once they are revealed. Default is **10 minutes**.
 
-Default burn duration
+Burn-on-read duration
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-adv.rst
+.. include:: ../../_static/badges/entry-adv.rst
   :start-after: :nosearch:
 
-+-------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
-| The default duration in minutes for burn-on-read messages  | - System Config path: **Site Configuration > Posts**                                                |
-| to expire after being revealed by recipients.              | - ``config.json`` setting: ``ServiceSettings`` > ``BurnOnReadDefaultDuration`` > ``30``           |
-|                                                             | - Environment variable: ``MM_SERVICESETTINGS_BURNONREADDEFAULTDURATION``                           |
-| Numerical input. Default is **30** minutes.                |                                                                                                     |
-+-------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
+| Sets the countdown duration for burn-on-read messages once they are revealed. After a recipient reveals a burn-on-read message,   | - System Config path: **Site Configuration > Posts**                                                |
+| the message is deleted for that user after the specified duration. This setting applies to all burn-on-read messages.             | - ``config.json`` setting: ``ServiceSettings`` > ``BurnOnReadDurationSeconds`` > ``600``            |
+|                                                                                                                                   | - Environment variable: ``MM_SERVICESETTINGS_BURNONREADDURATIONSECONDS``                            |
+| Numerical input in seconds. Default is **600** seconds (10 minutes).                                                              |                                                                                                     |
++-----------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
 
-.. config:setting:: burn-on-read-allowed-users
-  :displayname: Users allowed to send burn-on-read messages (Posts)
+.. config:setting:: burn-on-read-maximum-time-to-live
+  :displayname: Maximum time to live for burn-on-read messages (Posts)
   :systemconsole: Site Configuration > Posts
-  :configjson: .ServiceSettings.BurnOnReadAllowedUsers
-  :environment: MM_SERVICESETTINGS_BURNONREADALLOWEDUSERS
-  :description: Comma-separated list of user IDs who are allowed to send burn-on-read messages. Leave empty to allow all users.
+  :configjson: .ServiceSettings.BurnOnReadMaximumTimeToLiveSeconds
+  :environment: MM_SERVICESETTINGS_BURNONREADMAXIMUMTIMETOLIVESECONDS
+  :description: Sets the maximum duration that burn-on-read messages can exist after they are sent. Default is **7 days**.
 
-Users allowed to send burn-on-read messages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Maximum time to live for burn-on-read messages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-adv.rst
+.. include:: ../../_static/badges/entry-adv.rst
   :start-after: :nosearch:
 
-+-------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
-| Comma-separated list of user IDs who are allowed to send   | - System Config path: **Site Configuration > Posts**                                                |
-| burn-on-read messages. Leave empty to allow all users      | - ``config.json`` setting: ``ServiceSettings`` > ``BurnOnReadAllowedUsers``                       |
-| (subject to group restrictions).                           | - Environment variable: ``MM_SERVICESETTINGS_BURNONREADALLOWEDUSERS``                             |
-|                                                             |                                                                                                     |
-| String input. Default is empty.                            |                                                                                                     |
-+-------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
-
-.. config:setting:: burn-on-read-allowed-groups
-  :displayname: Groups allowed to send burn-on-read messages (Posts)
-  :systemconsole: Site Configuration > Posts
-  :configjson: .ServiceSettings.BurnOnReadAllowedGroups
-  :environment: MM_SERVICESETTINGS_BURNONREADALLOWEDGROUPS
-  :description: Comma-separated list of group IDs who are allowed to send burn-on-read messages. Leave empty to allow all groups.
-
-Groups allowed to send burn-on-read messages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-adv.rst
-  :start-after: :nosearch:
-
-+-------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
-| Comma-separated list of group IDs who are allowed to send  | - System Config path: **Site Configuration > Posts**                                                |
-| burn-on-read messages. Leave empty to allow all groups     | - ``config.json`` setting: ``ServiceSettings`` > ``BurnOnReadAllowedGroups``                      |
-| (subject to user restrictions).                            | - Environment variable: ``MM_SERVICESETTINGS_BURNONREADALLOWEDGROUPS``                            |
-|                                                             |                                                                                                     |
-| String input. Default is empty.                            |                                                                                                     |
-+-------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
+| Sets the maximum duration that burn-on-read messages can exist after they are sent. The message is deleted after the specified      | - System Config path: **Site Configuration > Posts**                                                 |
+| duration, even if it hasn't been revealed by all recipients.                                                                        | - ``config.json`` setting: ``ServiceSettings`` > ``BurnOnReadMaximumTimeToLiveSeconds`` > ``604800`` |
+|                                                                                                                                     | - Environment variable: ``MM_SERVICESETTINGS_BURNONREADMAXIMUMTIMETOLIVESECONDS``                    |
+| Numerical input in seconds. Default is **604800** seconds (7 days).                                                                 |                                                                                                      |
++-------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: enable-website-link-previews
   :displayname: Enable website link previews (Posts)

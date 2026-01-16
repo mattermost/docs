@@ -54,7 +54,7 @@ From Mattermost v11.2, you can use AI to enhance your messages before sending th
      - **Custom prompt**: Specify your own transformation instructions
 
   5. Review the AI-generated suggestion. Select **Regenerate** to try again or **Discard** to return to your original message.
-  6. Select **Send** |send-icon| to send your rewritten message.
+  6. Select **Send** |send-icon|
 
 .. tab:: Mobile
 
@@ -63,6 +63,30 @@ From Mattermost v11.2, you can use AI to enhance your messages before sending th
 .. note::
 
   Messages that have been rewritten using AI are automatically marked as AI-generated content for transparency. Your system admin must :doc:`configure AI agents </administration-guide/configure/agents-admin-guide>` for the rewrite feature to be available.
+
+Send burn-on-read messages
+---------------------------
+
+.. include:: ../../_static/badges/entry-adv.rst
+  :start-after: :nosearch:
+
+From Mattermost v11.3, burn-on-read messages stay concealed until recipients reveal them. After revealing, the message is deleted for that recipient when the timer expires. Burn-on-read messages can't be replied to or edited. You can send burn-on-read messages unless your system admin has :ref:`disabled your ability to do so <administration-guide/configure/site-configuration-settings:enable burn-on-read messages>`.
+
+.. tab:: Web/Desktop
+
+  1. Compose your message.
+  2. Select the **Burn-on-read** |burn-on-read-icon| icon in the message toolbar.
+  3. Select **Send** |send-icon|
+
+.. tab:: Mobile
+
+  1. Tap the message field and type your message.
+  2. Tap the **Burn-on-read** |burn-on-read-icon| icon from message options.
+  3. Tap **Send** |send-icon|
+
+Recipients see a concealed placeholder with **Reveal**. After revealing, a timer shows when the message will be deleted. 
+
+As the message sender, hover over the **Burn-on-read** |burn-on-read-icon| icon above the sent message to see how many recipients have read the message. You can also delete the burn-on-read message for all recipients before the timer expires by selecting the **Burn-on-read** |burn-on-read-icon| icon above the sent message.
 
 Draft messages
 --------------
@@ -125,6 +149,25 @@ All users can edit their own sent messages, unless the system admin has :doc:`re
 
     From Mattermost v10.11 and mobile app v2.31.0, when editing messages on mobile, you can also view, delete, and save message attachments as you would when using Mattermost in a web browser or the desktop app.
 
+Restore a previous version of an edited message
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+From Mattermost v7.9, `Mattermost Enterprise or Professional <https://mattermost.com/pricing>`__ customers can `edit or delete messages <#edit-or-delete-messages>`__ after sending them if your system admin hasn't restricted the ability to do so using :doc:`advanced permissions </administration-guide/onboard/advanced-permissions>`.
+
+Message recipients can't see your message edit history, and restoring a previous message version won't trigger new :doc:`@mention notifications </end-user-guide/collaborate/mention-people>`.
+
+.. note::
+  
+  Restoring a previous version of the message is available in the Mattermost desktop app or a web browser. The ability to restore using the mobile app isn't supported.
+
+1. Select the word **Edited** next to your message. 
+2. In the right pane, review all previous versions of the message.
+3. Select the **Restore** |restore-edit| icon next to the version you want to restore.
+4. Select **Confirm**.
+
+.. image:: ../../images/restore-previous-edited-message.gif
+  :alt: Select Edited next to an edited message, and then select the version you want to restore.
+
 Delete messages
 ----------------
 
@@ -148,95 +191,6 @@ Delete messages
   .. image:: ../../images/mobile-confirm-delete-a-message.jpg
     :alt: Confirm your choice to delete the message.
     :scale: 30
-
-Restore a previous version of an edited message
------------------------------------------------
-
-From Mattermost v7.9, `Mattermost Enterprise or Professional <https://mattermost.com/pricing>`__ customers can `edit or delete messages <#edit-or-delete-messages>`__ after sending them if your system admin hasn't restricted the ability to do so using :doc:`advanced permissions </administration-guide/onboard/advanced-permissions>`.
-
-Message recipients can't see your message edit history, and restoring a previous message version won't trigger new :doc:`@mention notifications </end-user-guide/collaborate/mention-people>`.
-
-.. note::
-  
-  Restoring a previous version of the message is available in the Mattermost desktop app or a web browser. The ability to restore using the mobile app isn't supported.
-
-1. Select the word **Edited** next to your message. 
-2. In the right pane, review all previous versions of the message.
-3. Select the **Restore** |restore-edit| icon next to the version you want to restore.
-4. Select **Confirm**.
-
-.. image:: ../../images/restore-previous-edited-message.gif
-  :alt: Select Edited next to an edited message, and then select the version you want to restore.
-
-Send burn-on-read messages
----------------------------
-
-.. include:: ../../_static/badges/ent-adv.rst
-  :start-after: :nosearch:
-
-Burn-on-read messages are a secure messaging feature that allows you to send messages that remain concealed until recipients choose to reveal them. Once revealed, these messages automatically expire and are permanently deleted after a specified duration.
-
-.. warning::
-
-  **Burn-on-read messages have irreversible behavior:**
-  
-  - Once you reveal a burn-on-read message, it cannot be hidden again
-  - Once a burn-on-read message expires, it is permanently deleted and cannot be recovered
-  - You cannot reply to, edit, or create threads from burn-on-read messages
-  - Recipients cannot copy text from burn-on-read messages until after they reveal them
-
-.. tab:: Web/Desktop
-
-  **Send a burn-on-read message:**
-
-  1. In any channel or direct message, type your message in the text field.
-  2. Select the **burn-on-read** toggle in the message compose toolbar to enable burn-on-read mode.
-  3. Optionally, adjust the burn duration if your system admin allows it.
-  4. Select **Send** |send-icon| to send the burn-on-read message.
-
-  **What recipients see:**
-
-  - Recipients see a concealed message placeholder with a **Reveal** button
-  - The message content remains hidden until the recipient chooses to reveal it
-  - Once revealed, recipients can see the message content and a countdown timer showing when it will expire
-  - After expiration, the message is permanently deleted and shows "This message is no longer available"
-
-.. tab:: Mobile
-
-  **Send a burn-on-read message:**
-
-  1. In any channel or direct message, tap the text field to start composing.
-  2. Type your message.
-  3. Select the **burn-on-read** option from the message options.
-  4. Tap **Send** |send-icon| to send the burn-on-read message.
-
-  **Mobile-specific limitations:**
-
-  - Recipients cannot reply to burn-on-read messages on mobile
-  - Threading is not available for burn-on-read messages on mobile
-  - **Copy text** is only available after revealing the message
-  - Limited post actions are available before revealing the message
-
-  **What recipients see:**
-
-  - Recipients see a concealed message placeholder
-  - Tap **Reveal** to view the message content
-  - Once revealed, a timer shows when the message will expire
-  - After expiration, the message shows "This message is no longer available"
-
-**Message lifecycle:**
-
-1. **Concealed state**: Message is sent but content remains hidden from recipients
-2. **Revealed state**: Recipient reveals the message and can view the content
-3. **Expired/Burned state**: Message automatically expires and is permanently deleted
-
-**Important notes:**
-
-- Only users with appropriate permissions can send burn-on-read messages
-- The feature must be enabled by your system administrator
-- Burn-on-read messages cannot be forwarded, saved, or pinned
-- Message reactions may be limited depending on reveal state
-- Connection issues may affect message reveal or expiration timing
 
 Do more with your messages
 --------------------------
