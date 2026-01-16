@@ -6,7 +6,7 @@ Pre-authentication secrets
 
 From Mattermost server v10.12 and mobile v2.32, Mattermost deployments can use a reverse proxy to validate authentication secrets before allowing desktop and mobile requests to reach the Mattermost server. This adds an additional security layer by checking for the ``X-Mattermost-Preauth-Secret`` header.
 
-Authentication secrets are only supported for mobile and desktop applications. Desktop automatically prompts users when a secret is required, while mobile users enter secrets in an Advanced Options section during server setup. Web browser clients don't support this feature.
+Authentication secrets are only supported for mobile and desktop applications. When a secret is required, desktop prompts users directly while mobile displays the secret field in Advanced Options. Web browser clients don't support this feature.
 
 When authentication secret validation fails, the reverse proxy must return the ``X-Reject-Reason: pre-auth`` header along with the 403 status code. This header allows mobile and desktop applications to specifically identify authentication failures and provide appropriate error messaging to users.
 
