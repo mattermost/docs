@@ -10,17 +10,17 @@ At a high level, deploying Mattermost in an air-gapped environment requires prep
 
 1. **Select your preferred Mattermost deployment option:**
 
-This step is often dictated by the infrastruture already running in your air-gapped environment. If you're deploying from scratch, we recommend reviewing our :ref:`server deployment documentation <deployment-guide/server/server-deployment-planning:deployment options>` to select the optimal option given your organizations needs.    
+This step is often dictated by the infrastruture already running in your air-gapped environment. If you're deploying from scratch, we recommend reviewing our :ref:`server deployment documentation <deployment-guide/server/server-deployment-planning:deployment options>` to select the optimal option given your organizations needs.
 
-2. **Setup a private container registry or package mirror:** 
+2. **Setup a private container registry or package mirror:**
 
 Ideally the air-gapped environment already has a private container registry or package mirror available. If not, we recommend following `our frequently asked questions <#frequently-asked-questions>`__ or referencing online resources specific to your environment.
 
 3. **Prepare your Bill of Materials:**
 
-Depending on your deployment method method, you'll need to download, tag, and push required materials into your private registry or mirror.  
+Depending on your deployment method method, you'll need to download, tag, and push required materials into your private registry or mirror.
 
-4. **Transfer materials into the air-gapped environment:**   
+4. **Transfer materials into the air-gapped environment:**
 
 If the private registry cannot access the public internet, you can prepare an archive of the registry data on your internet connected machine and securely transfer it using approved data transfer methods - for example, burning to a disk.
 
@@ -49,7 +49,7 @@ On an internet connected machine, you must gather all required packages, contain
 
     - :doc:`Mattermost tarball </product-overview/version-archive>`. We recommend using the latest :ref:`ESR <product-overview/release-policy:extended support releases>` for extended support where server upgrades may be infrequent.
     - Database: PostgreSQL `installation packages <https://www.postgresql.org/download/>`_ or container images for your Linux distribution
-    - File Storage: Local filesystem storage is sufficient for deployments under 2,000 users. For larger deployments requiring high availability, we recommend using an S3-compatible object storage solution, such as `MinIO <https://min.io/download>`_. NFS can also be considered as an alternative for shared storage needs.
+    - File Storage: Local filesystem storage is sufficient for deployments under 2,000 users. For larger deployments requiring high availability, we recommend using an S3-compatible object storage solution or an NFS (Network File System) server for shared storage needs.
     - Load balancer: If you already have a load balancer running in your air-gapped environment you can skip this resource, otherwise we recommend deploying :doc:`NGINX </deployment-guide/server/setup-nginx-proxy>` from these `Linux packages <https://nginx.org/en/linux_packages.html>`_.
 
     **(Optional) Supporting Services**
@@ -67,7 +67,7 @@ On an internet connected machine, you must gather all required packages, contain
 
     -  `Mattermost Operator <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-operator>`_ and `values <https://github.com/mattermost/mattermost-helm/blob/master/charts/mattermost-operator/values.yaml>`__
     - Database: We recommend options such as the `Postgres Operator <https://access.crunchydata.com/documentation/postgres-operator/latest/quickstart>`_ from Crunchy Data, `CloudNativePG <https://cloudnative-pg.io/documentation/1.27/installation_upgrade/>`__ or `pgEdge <https://github.com/pgEdge/pgedge-helm>`__.
-    - File Storage: We recommend the `MinIO Operator <https://github.com/minio/operator>`__.
+    - File Storage: We recommend using an S3-compatible storage service or a mounted NFS volume for shared storage needs.
     - Load balancer: If you already have a load balancer running in your air-gapped environment you can skip this resource, otherwise we recommend deploying :doc:`NGINX </deployment-guide/server/setup-nginx-proxy>`, using the `NGINX Ingress Controller operator <https://docs.nginx.com/nginx-ingress-controller/installation/installing-nic/installation-with-operator/>`__.
 
     **(Optional) Supporting Services**
@@ -97,7 +97,7 @@ On an internet connected machine, you must gather all required packages, contain
 Mattermost Plugins
 ~~~~~~~~~~~~~~~~~~
 
-Mattermost includes a number of :doc:`pre-built integrations </integrations-guide/popular-integrations>` for mission-critical tools. If you'd like to use any plugins beyond those that are pre-built in the Mattermost package you'll need to download the plugin binaries from the `Mattermost Marketplace <https://mattermost.com/marketplace/>`_. Once you have Mattermost deployed, these plugin binaries can be uploaded directly in the System Console. 
+Mattermost includes a number of :doc:`pre-built integrations </integrations-guide/popular-integrations>` for mission-critical tools. If you'd like to use any plugins beyond those that are pre-built in the Mattermost package you'll need to download the plugin binaries from the `Mattermost Marketplace <https://mattermost.com/marketplace/>`_. Once you have Mattermost deployed, these plugin binaries can be uploaded directly in the System Console.
 
 SSL/TLS Certificates and Keys
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -120,7 +120,7 @@ The following software is required to build the documentation locally:
 Server configuration
 --------------------
 
-After successful deployment, you'll need to configure Mattermost for air-gapped operation. The following sections describe these configuration options and offers recommendations for settings. 
+After successful deployment, you'll need to configure Mattermost for air-gapped operation. The following sections describe these configuration options and offers recommendations for settings.
 
 Mobile push notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -157,7 +157,7 @@ Frequently Asked Questions
 
 What if my air-gapped environment doesn't have a private container registry or package mirror?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-A private container registry securely stores the Docker images necessary for air-gapped deployments, ensuring compliance with data isolation requirements. Similarly, a private package mirror stores operating system packages necessary for air-gapped deployments in Ubuntu or RHEL/CentOS Linux environments. Setting up a local registry or mirror is a critical step in deploying Mattermost to ensure all images, dependencies and packages are available to you in the air-gapped environment. The steps below outline the process required to setup a local registry or mirror, depending on the deployment method you are using. These steps are a rough guide, and can be supplemented with online resources depending on your specific deployment needs. 
+A private container registry securely stores the Docker images necessary for air-gapped deployments, ensuring compliance with data isolation requirements. Similarly, a private package mirror stores operating system packages necessary for air-gapped deployments in Ubuntu or RHEL/CentOS Linux environments. Setting up a local registry or mirror is a critical step in deploying Mattermost to ensure all images, dependencies and packages are available to you in the air-gapped environment. The steps below outline the process required to setup a local registry or mirror, depending on the deployment method you are using. These steps are a rough guide, and can be supplemented with online resources depending on your specific deployment needs.
 
 
 .. tab:: Linux
@@ -265,7 +265,7 @@ A private container registry securely stores the Docker images necessary for air
          enabled=1
          gpgcheck=0
          EOF
-      
+
          cat > /etc/yum.repos.d/local-appstream.repo << EOF
          [local-appstream]
          name=Red Hat Enterprise Linux 8 AppStream
@@ -359,7 +359,7 @@ A private container registry securely stores the Docker images necessary for air
            repository: registry.example.com:5000/mattermost/mattermost-enterprise-edition
            tag: latest
            pullPolicy: IfNotPresent
-      
+
          imagePullSecrets:
            - name: regcred
 
