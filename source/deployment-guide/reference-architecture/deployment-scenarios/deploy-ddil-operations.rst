@@ -8,7 +8,7 @@ Disconnected, Denied, Intermittent, and Limited (DDIL) network conditions presen
 
 Mattermost enables resilient collaboration by remaining fully operational in DDIL environments. Mission users continue to access self-hosted messaging collaboration, workflow automation, and mission planning within their mobile tactical network. No internet connectivity is required for enhanced collaboration functions, including mission tuned AI agents powered by self-hosted LLMs, and audio and screen sharing services.
 
-When connectivity is restored, mission users regain access to M365 enterprise systems in addition to collaboration continuity with enterprise users through the :doc:`embedded Mattermost experience </integrations-guide/mattermost-mission-collaboration-for-m365>` inside their Microsoft Teams and Outlook applications. All mission activity during the period of disconnection becomes available across enterprise and tactical environments when connectivity returns. 
+When connectivity is restored, mission users regain access to M365 enterprise systems in addition to collaboration continuity with enterprise users through the :doc:`embedded Mattermost experience </integrations-guide/mattermost-mission-collaboration-for-m365>` inside their Microsoft Teams and Outlook applications. All mission activity during the period of disconnection becomes available across enterprise and tactical environments when connectivity returns.
 
 Traditional cloud-only solutions fail in these scenarios, while fully disconnected systems don't integrate with enterprise tools during normal operations. This deployment architecture :doc:`extends sovereign collaboration with Microsoft Teams and Outlook </deployment-guide/reference-architecture/deployment-scenarios/deploy-sovereign-collaboration>` to the tactical edge, providing a hybrid solution that enables enterprise integration and fully disconnected tactical collaboration.
 
@@ -35,7 +35,7 @@ This hybrid deployment architecture provides optimal collaboration in both conne
 
   - **Microsoft Entra ID:** Enterprise users authenticate to M365 applications and Mattermost using :doc:`single sign-on Entra ID </administration-guide/onboard/sso-entraid>` via OpenID Connect (OIDC) or SAML. This provider only works with functioning internet access.
 
-  - **Alternative Local Identity Provider:** Deployed within the tactical network to provide authentication services for mission users during disconnected periods when M365 is unreachable. The local IdP serves as the primary authentication source for Mattermost and maintains an independent user directory that operates without internet connectivity. 
+  - **Alternative Local Identity Provider:** Deployed within the tactical network to provide authentication services for mission users during disconnected periods when M365 is unreachable. The local IdP serves as the primary authentication source for Mattermost and maintains an independent user directory that operates without internet connectivity.
 
 - **Client Applications:**
 
@@ -59,7 +59,7 @@ This hybrid deployment architecture provides optimal collaboration in both conne
 
     - :doc:`Project Tracking </end-user-guide/project-task-management>`: Boards enables project management capabilities built-in to your local Mattermost deployment.
 
-    - :doc:`AI Agents </administration-guide/configure/agents-admin-guide>`: AI Agents run against a local LLM hosted within your tactical network. 
+    - :doc:`AI Agents </administration-guide/configure/agents-admin-guide>`: AI Agents run against a local LLM hosted within your tactical network.
 
     - :doc:`Audio & Screenshare </administration-guide/configure/calls-deployment>`: Calls offers native real-time self-hosted audio calls and screen sharing within your tactical network.
 
@@ -67,7 +67,7 @@ This hybrid deployment architecture provides optimal collaboration in both conne
 
   - **PostgreSQL Database:** Stores persistent application data on a :doc:`PostgreSQL v13+ database </deployment-guide/server/preparations>` hosted locally within your tactical network.
 
-  - **Object Storage:** File uploads, images, and attachments are stored outside the application node on an :doc:`S3-compatible store </deployment-guide/server/preparations>`, such as MinIO, hosted locally within your tactical network.
+  - **Object Storage:** File uploads, images, and attachments are stored outside the application node on an :doc:`S3-compatible store </deployment-guide/server/preparations>` or network/local storage, hosted locally within your tactical network.
 
   - **Recording Instance:** ``calls-offloader`` :ref:`job service <administration-guide/configure/calls-deployment:configure recording, transcriptions, and live captions>` to offload heavy processing tasks from Mattermost Calls to self-hosted infrastructure within your tactical network, such as recordings, transcriptions, and live captioning. *(Optional)*
 
@@ -75,7 +75,7 @@ This hybrid deployment architecture provides optimal collaboration in both conne
 
 - **Self-hosted LLM:** Locally hosted :doc:`OpenAI compatible LLM </agents/docs/providers>` for agentic powered collaboration within your tactical network. *(Optional)*
 
-- **Microsoft Global Network:** `World-wide network <https://learn.microsoft.com/en-us/azure/networking/microsoft-global-network>`_ of Microsoft data centers, delivering public cloud services when internet connectivity permits. 
+- **Microsoft Global Network:** `World-wide network <https://learn.microsoft.com/en-us/azure/networking/microsoft-global-network>`_ of Microsoft data centers, delivering public cloud services when internet connectivity permits.
 
 Operational Best Practices
 --------------------------
@@ -91,7 +91,7 @@ DDIL environments require authentication infrastructure that remains fully opera
 
 - **Mission users:** Authenticate to Mattermost using a local IdP, such as :doc:`Keycloak </administration-guide/onboard/sso-saml-keycloak>` (open-source IdP with OIDC/SAML support), Active Directory with ADFS, or OpenLDAP with an OIDC bridge. When internet connected, the local IdP can optionally federate with Microsoft Entra ID to synchronize user accounts, credentials, and group memberships to enable access to Microsoft applications.
 
-User accounts must be provisioned in the local IdP before disconnection occurs to ensure authentication services remain available throughout DDIL conditions. 
+User accounts must be provisioned in the local IdP before disconnection occurs to ensure authentication services remain available throughout DDIL conditions.
 
 Sovereign AI
 ~~~~~~~~~~~~
