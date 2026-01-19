@@ -49,7 +49,15 @@ jobs:
           # allowed_tools: "Bash(npm install),Bash(npm run build),Bash(npm run test:*),Bash(npm run lint:*)"
 
           # Optional: Pass CLI options like model, max_turns, etc.
-          # claude_args: "--max-turns 5 --model claude-sonnet-4-20250514"
+          # Allow Claude to run specific commands
+          # (curl to GitHub API + simple file/JSON tools)
+          claude_args: >
+            --allowed-tools
+            "Bash(curl https://api.github.com:*),
+             Bash(jq *),
+             Bash(cat *),
+             Bash(ls *),
+             Bash(echo *)"
 
           # Optional: Custom environment variables for Claude
           # claude_env: |
