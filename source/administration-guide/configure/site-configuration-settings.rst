@@ -1479,13 +1479,11 @@ Enable burn-on-read messages
 .. include:: ../../_static/badges/entry-adv.rst
   :start-after: :nosearch:
 
-.. warning::
+:ref:`Burn-on-read messages <end-user-guide/collaborate/send-messages:send burn-on-read messages>` have irreversible behavior:
 
-  Burn-on-read messages have irreversible behavior:
-  
-  - Once a recipient reveals a burn-on-read message, it can't be hidden again.
-  - Once a burn-on-read message expires or is burned, it is permanently deleted and can't be recovered.
-  - Recipients can't reply to, edit, or thread burn-on-read messages.
+- Once a recipient reveals a burn-on-read message, it can't be hidden again.
+- Once a burn-on-read message expires or is burned, it is permanently deleted and can't be recovered.
+- Recipients can't reply to, edit, or thread burn-on-read messages.
 
 +------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 | Enable or disable burn-on-read messages.                                                                   | - System Config path: **Site Configuration > Posts**                               |
