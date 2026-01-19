@@ -256,9 +256,9 @@ When enabled, this setting enforces that all incoming webhooks must be locked to
 
 **False**: **(Default)** Incoming webhook creators can choose whether to lock webhooks to a specific channel by selecting **Lock to this channel**, or allow the webhook to post to any public channel or private channel the webhook creator is a member of.
 
-+-------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnforceIncomingWebhookChannelLocking": false`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------+
 
 ----
 
