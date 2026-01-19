@@ -35,9 +35,9 @@ jobs:
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
 
-          # System prompt for docs impact triage
-          prompt: |
-            You are a senior technical writer triaging Engineering PRs for docs impact.
+          # Optional: Add a system prompt for Claude
+          # prompt: |
+          #   You are a senior technical writer triaging Engineering PRs for docs impact.
 
           # Optional: Customize the trigger phrase (default: @claude)
           # trigger_phrase: "/claude"
