@@ -26,6 +26,9 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Fixed an issue with the notification settings screen sometimes not showing updates when changing the email notifications [MM-66858](https://mattermost.atlassian.net/browse/MM-66858).
  - Fixed an issue where the server was pinged on edit even if the pre-auth secret didn't change.
 
+### Open Source Components
+ - Added ``@gorhom/portal``, ``grapheme-splitter``, and ``react-native-keyboard-controller`` to  https://github.com/mattermost/mattermost-mobile.
+
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
