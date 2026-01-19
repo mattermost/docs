@@ -737,7 +737,7 @@ Enable the following settings to output audit events in the System Console by go
 
 .. note::
 
-  The ability to enable and configure audit logging is currently in :ref:`Beta <administration-guide/manage/feature-labels:beta>`. 
+  The ability to enable and configure audit logging is currently in :ref:`Beta <administration-guide/manage/feature-labels:beta>`. From Mattermost v11.3, the admin console displays "Audit Logging" instead of "Audit logging (Beta)", though the feature remains in beta status. 
 
 .. config:setting:: advanced-logging
   :displayname: Advanced Logging (Audit Logging > Cloud)
