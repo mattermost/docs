@@ -2145,7 +2145,7 @@ Select OpenID Connect service provider
 GitLab OpenID settings
 ^^^^^^^^^^^^^^^^^^^^^^
 
-.. config:setting:: guest-access
+.. config:setting:: gitlab-oidc-enable
   :displayname: Enable (OpenID Connect - GitLab)
   :systemconsole: Authentication > OpenID Connect
   :configjson: N/A
@@ -2610,3 +2610,26 @@ Show guest tag
 
 .. note::
   This configuration setting applies to all Mattermost clients, including web, desktop app, and mobile app. See the :doc:`guest accounts </administration-guide/onboard/guest-accounts>` documentation for details.
+
+.. config:setting:: enable-guest-magic-link
+  :displayname: Enable guest magic link authentication (Guest Access)
+  :systemconsole: Authentication > Guest Access
+  :configjson: .GuestAccountsSettings.EnableGuestMagicLink
+  :environment: MM_GUESTACCOUNTSSETTINGS_ENABLEGUESTMAGICLINK
+
+  - **true**: Enables magic link passwordless authentication for guest users.
+  - **false**: **(Default)** Magic link authentication for guest users is disabled.
+
+Enable guest magic link authentication
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../../_static/badges/entry-ent.rst
+  :start-after: :nosearch:
+
++-------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| - **true**: Enables magic link passwordless authentication for guest users.               | - System Config path: **Authentication > Guest Access**                                     |
+| - **false**: **(Default)** Magic link authentication for guest users is disabled.         | - ``config.json`` setting: ``GuestAccountsSettings`` > ``EnableGuestMagicLink`` > ``false`` |
++-------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+
+.. note::
+  See the :ref:`guest accounts <administration-guide/onboard/guest-accounts:configure magic links for guests>` documentation for guest user setup details.

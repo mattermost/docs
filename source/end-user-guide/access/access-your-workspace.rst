@@ -59,6 +59,21 @@ Reset your password
 
 If you've forgotten your password, you can reset it on the login screen by selecting **Forgot your password?**, or by contacting your system admin for assistance.
 
+Magic link login for guests  
+----------------------------
+
+.. include:: ../../_static/badges/entry-ent.rst
+  :start-after: :nosearch:
+
+From Mattermost v11.3, guests can log in to Mattermost without a password using a secure link sent to their email address when :ref:`enabled by the system admin <administration-guide/onboard/guest-accounts:configure magic links for guests>`. The magic link login provides a streamlined passwordless authentication option for guest users.
+
+If you've been invited as a guest to a Mattermost workspace, enter your email address on the login screen. You'll receive an email with a link to log in without a password. The link expires in 48 hours for security purposes. To log in again at a later time, enter your email address on login to receive a new login link by email that expires in 5 minutes.
+
+.. important::
+  
+  - Magic link security depends on your email account security.
+  - Never share your magic link with anyone else, as doing so would give that person full access to your account.
+
 Email address or username
 --------------------------
 
