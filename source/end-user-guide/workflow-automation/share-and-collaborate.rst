@@ -21,6 +21,10 @@ In the context of collaborative playbooks, members are assigned a role and based
 
 Permissions are applied only to playbooks - there are no permissions that are specific to runs.
 
+.. important::
+
+   From Mattermost v2.6.0, access control for channel checklists has changed to use channel-based permissions rather than playbook-specific permissions. This means that users with appropriate channel permissions can create, manage, and interact with checklists directly within channels without requiring separate playbook access permissions. This change provides more flexible and intuitive access control aligned with existing channel permission models, and affects operational expectations for administrators managing access to workflow functionality.
+
 Playbook roles
 ---------------
 

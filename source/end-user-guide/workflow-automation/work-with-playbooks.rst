@@ -64,6 +64,10 @@ Make checklists
 3. Name your playbook and provide a description.
 4. Select the **Checklists** tab.
 
+.. note::
+
+   From Mattermost v2.6.0, you can also create and manage checklists directly within channels as first-class workflows accessible through the right-hand sidebar (RHS), without requiring a playbook template. This channel-based checklist functionality provides more flexible workflow management for teams.
+
   You can start with the default checklist and edit it, or you can delete it and select **+ New checklist**.
 
   * Within each checklist, select **+ New task** to add tasks that are meant to be completed together.

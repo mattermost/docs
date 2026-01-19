@@ -4,7 +4,7 @@ Workflow Automation
 .. include:: ../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
-Mattermost Playbooks provides structure, monitoring and automation for repeatable, team-based processes integrated with the Mattermost platform. Playbooks are :doc:`configurable checklists </end-user-guide/workflow-automation/work-with-tasks>` for teams to achieve :doc:`specific and predictable outcomes </end-user-guide/workflow-automation/metrics-and-goals>`, such as incident response, software release management, and logistical operations.
+Mattermost Playbooks provides structure, monitoring and automation for repeatable, team-based processes integrated with the Mattermost platform. Playbooks are :doc:`configurable checklists </end-user-guide/workflow-automation/work-with-tasks>` for teams to achieve :doc:`specific and predictable outcomes </end-user-guide/workflow-automation/metrics-and-goals>`, such as incident response, software release management, and logistical operations. From Mattermost v2.6.0, checklists can be created and managed directly in channels as first-class workflows, accessible through the right-hand sidebar (RHS).
 
 From Mattermost v11.1, Entry, Enterprise, and Enterprise Advanced customers can enable adaptive, conditional workflows responding in real time to changing mission or operational context. Admins can define attributes such as severity, category, or linked ticket ID, and use those attributes to hide or show tasks depending on the values of these attributes which can be seen and modified during a playbook run. Learn more about :ref:`playbook attributes <end-user-guide/workflow-automation/work-with-playbooks:playbook attributes>` and :ref:`conditional playbook tasks <end-user-guide/workflow-automation/work-with-tasks:conditional tasks>`.
 
@@ -53,6 +53,8 @@ Access
    From Mattermost v11 and mobile app v2.32.0, mobile users can access playbooks from the mobile app to :ref:`interact with playbook tasks <end-user-guide/workflow-automation/work-with-tasks:interact with playbook tasks>` and :ref:`update tasks <end-user-guide/workflow-automation/work-with-tasks:update tasks>`.
 
    From Mattermost v10.11 and mobile app v2.31.0, mobile users can access playbooks from the mobile app in read-only mode. :ref:`Playbooks slash commands <end-user-guide/workflow-automation/interact-with-playbooks:slash commands>` are supported in the mobile app, but actions like starting runs or updating checklists aren't available through the mobile interface.
+
+   From Mattermost mobile v2.35.0, the mobile interface has been updated to display "Playbook checklists" terminology consistently across the mobile app experience.
 
 Usage
 -----
