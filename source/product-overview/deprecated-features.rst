@@ -9,6 +9,11 @@ Removed features in upcoming versions
 Removed features by Mattermost version
 ----------------------------------------
 
+Mattermost Server v11.4 (February 2026)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 
+
 Mattermost Server v11.1 (November 2025)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
