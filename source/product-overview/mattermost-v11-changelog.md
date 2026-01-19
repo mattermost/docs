@@ -14,15 +14,48 @@
 
 **Release Day: February 16, 2026**
 
-- **11.4.0, released 2026-02-16**
-  - Original 11.4.0 release.
+### Upgrade Impact
+
+```{Attention}
+**Breaking Changes**
+ - Fixed an issue with PSD file previews. PSDs are now no longer inline previewed, they are treated as regular file attachments.
+```
+
+#### Database Schema Changes
+ - Added two new tables, ``Recaps`` and ``RecapChannels``. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details [MM-66359](https://mattermost.atlassian.net/browse/MM-66359).
+
+#### Compatibility
+ - Updated minimum Edge and Chrome versions to 142+.
 
 ```{Important}
 If you upgrade from a release earlier than v11.3, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html). In case of an upgrade failure, please check the [Downgrade Guide](https://docs.mattermost.com/administration-guide/upgrade/downgrading-mattermost-server.html) and the [Recovery Guide](https://docs.mattermost.com/deployment-guide/backup-disaster-recovery.html) for rollback steps and interim mitigation strategy.
 ```
 
+### Improvements
+
+#### User Interface
+ - Pre-packaged Boards plugin version [v9.2.2](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.2.2)([MM-66985](https://mattermost.atlassian.net/browse/MM-66985)).
+ - Updated illustrations and visual design for the initial loading screen, preparing workspace flow, IP filtering empty state, and admin console feature discovery panels [MM-67081](https://mattermost.atlassian.net/browse/MM-67081).
+ - Added adjustments to thread and right-hand side plugin pop-out titles [MM-66898](https://mattermost.atlassian.net/browse/MM-66898).
+ - MSTeams and Outlook on mobile no longer display a "Your browser does not support notifications" warning banner when running Mattermost embedded in those apps [MM-66769](https://mattermost.atlassian.net/browse/MM-66769).
+
+#### Administration
+ - Added debug logs to indicate if the scheduled post job, Do Not Disturb status reset job, or the post reminder job is not running with the current node not being a leader node [MM-66861](https://mattermost.atlassian.net/browse/MM-66861).
+ - Added CPU cores and total memory to the Support Packet [MM-66840](https://mattermost.atlassian.net/browse/MM-66840).
+
+### Bug Fixes
+ - Fixed an issue with the behavior of the right‑hand sidebar (RHS) when navigating to global threads. The application now checks the current RHS state and suppresses the sidebar only if it is not showing mentions, search results, or flagged posts [MM-66871](https://mattermost.atlassian.net/browse/MM-66871). 
+ - Fixed an issue where the post list automatically scrolled to the bottom when a user edited a message [MM-64810](https://mattermost.atlassian.net/browse/MM-64810). 
+ - Fixed the misaligned design in posts in the thread view on mobile view.
+ - Fixed **Add channels** menu getting cut off when the **Direct Messages** category was collapsed [MM-66800](https://mattermost.atlassian.net/browse/MM-66800).
+ - Fixed an issue with the user's theme applying when it shouldn't, such as when creating a new team [MM-65828](https://mattermost.atlassian.net/browse/MM-65828).
+ - Fixed an issue where the channel info right sidebar was not scrollable [MM-62503](https://mattermost.atlassian.net/browse/MM-62503).
+
 ### Go Version
- - v11.4 is built with Go ``v1.24.6``.
+ - v11.4 is built with Go ``v1.24.11``.
+
+### Open Source Components
+ - Added ``react-intl`` to https://github.com/mattermost/mattermost.
 
 ### Contributors
  - TBD
