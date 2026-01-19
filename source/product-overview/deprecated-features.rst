@@ -6,6 +6,11 @@ This page describes features that are removed from support for Mattermost, or wi
 Removed features in upcoming versions
 -------------------------------------
 
+Mattermost Server v11.4 (February 2026)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- PSDs are now no longer inline previewed, they are treated as regular file attachments.
+
 Removed features by Mattermost version
 ----------------------------------------
 
