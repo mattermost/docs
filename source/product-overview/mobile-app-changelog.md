@@ -23,7 +23,6 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Added support for deleting Playbook tasks from mobile [MM-67006](https://mattermost.atlassian.net/browse/MM-67006).
 
 ### Bug Fixes
- - Fixed an access issue to gallery tools [MM-67056](https://mattermost.atlassian.net/browse/MM-67056).
  - Fixed an issue with the notification settings screen sometimes not showing updates when changing the email notifications [MM-66858](https://mattermost.atlassian.net/browse/MM-66858).
  - Fixed an issue where the server was pinged on edit even if the pre-auth secret didn't change.
 
