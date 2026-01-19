@@ -18,7 +18,7 @@
 
 ```{Attention}
 **Breaking Changes**
- - Fixed an issue with PSD file previews. PSDs are now no longer inline previewed, they are treated as regular file attachments.
+ - PSDs are now no longer inline previewed, they are treated as regular file attachments.
 ```
 
 #### Database Schema Changes
@@ -50,6 +50,7 @@ If you upgrade from a release earlier than v11.3, please read the other [Importa
  - Fixed **Add channels** menu getting cut off when the **Direct Messages** category was collapsed [MM-66800](https://mattermost.atlassian.net/browse/MM-66800).
  - Fixed an issue with the user's theme applying when it shouldn't, such as when creating a new team [MM-65828](https://mattermost.atlassian.net/browse/MM-65828).
  - Fixed an issue where the channel info right sidebar was not scrollable [MM-62503](https://mattermost.atlassian.net/browse/MM-62503).
+ - Fixed an issue with PSD file previews.
 
 ### Go Version
  - v11.4 is built with Go ``v1.24.11``.
