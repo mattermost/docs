@@ -69,6 +69,11 @@ From Mattermost v11.3, guests can log in to Mattermost without a password using 
 
 If you've been invited as a guest to a Mattermost workspace, enter your email address on the login screen. You'll receive an email with a link to log in without a password. The link expires in 48 hours for security purposes. To log in again at a later time, enter your email address on login to receive a new login link by email that expires in 5 minutes.
 
+.. important::
+  
+  - Magic link security depends on your email account security.
+  - Never share your magic link with anyone else, as doing so would give that person full access to your account.
+
 Email address or username
 --------------------------
 
