@@ -1494,9 +1494,6 @@ Enable burn-on-read messages
 | - **true**: Users can send burn-on-read messages in channels, direct messages, and group messages.         |                                                                                    |
 +------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 
-.. note::
-  This feature must be enabled via both the system setting and the ``MM_FEATUREFLAGS_BURNONREAD`` feature flag. See the Mattermost developer documentation for details on `enabling feature flags in a self-hosted deployment <https://developers.mattermost.com/contribute/more-info/server/feature-flags/#self-hosted-and-local-development>`_. Mattermost Cloud customers can request this feature flag be enabled by contacting their Mattermost Account Manager or by `creating a support ticket <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=11184911962004>`_ request.
-
 .. config:setting:: burn-on-read-duration
   :displayname: Burn-on-read duration (Posts)
   :systemconsole: Site Configuration > Posts

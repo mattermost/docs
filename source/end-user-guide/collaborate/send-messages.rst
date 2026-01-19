@@ -70,7 +70,7 @@ Send burn-on-read messages
 .. include:: ../../_static/badges/entry-adv.rst
   :start-after: :nosearch:
 
-From Mattermost v11.3, burn-on-read messages stay concealed until recipients reveal them. After revealing, the message is deleted for that recipient when the timer expires. Burn-on-read messages can't be replied to or edited. You can send burn-on-read messages unless your system admin has :ref:`disabled your ability to do so <administration-guide/configure/site-configuration-settings:enable burn-on-read messages>`.
+From Mattermost v11.3, burn-on-read messages stay concealed until recipients reveal them. After revealing, the message is deleted for that recipient when the timer expires. Burn-on-read messages can't be replied to or edited.
 
 .. tab:: Web/Desktop
 
