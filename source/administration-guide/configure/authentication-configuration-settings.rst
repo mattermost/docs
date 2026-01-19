@@ -2611,25 +2611,25 @@ Show guest tag
 .. note::
   This configuration setting applies to all Mattermost clients, including web, desktop app, and mobile app. See the :doc:`guest accounts </administration-guide/onboard/guest-accounts>` documentation for details.
 
-.. config:setting:: enable-guest-easy-link
-  :displayname: Enable guest easy link authentication (Guest Access)
+.. config:setting:: enable-guest-magic-link
+  :displayname: Enable guest magic link authentication (Guest Access)
   :systemconsole: Authentication > Guest Access
   :configjson: .GuestAccountsSettings.EnableGuestMagicLink
   :environment: MM_GUESTACCOUNTSSETTINGS_ENABLEGUESTMAGICLINK
 
-  - **true**: Enables easy link passwordless authentication for guest users.
-  - **false**: **(Default)** Easy link authentication for guest users is disabled.
+  - **true**: Enables magic link passwordless authentication for guest users.
+  - **false**: **(Default)** Magic link authentication for guest users is disabled.
 
-Enable guest easy link authentication
+Enable guest magic link authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 +-------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
-| - **true**: Enables easy link passwordless authentication for guest users.                | - System Config path: **Authentication > Guest Access**                                     |
-| - **false**: **(Default)** Easy link authentication for guest users is disabled.          | - ``config.json`` setting: ``GuestAccountsSettings`` > ``EnableGuestEasyLink`` > ``false``  |
+| - **true**: Enables magic link passwordless authentication for guest users.               | - System Config path: **Authentication > Guest Access**                                     |
+| - **false**: **(Default)** Magic link authentication for guest users is disabled.         | - ``config.json`` setting: ``GuestAccountsSettings`` > ``EnableGuestMagicLink`` > ``false`` |
 +-------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 
 .. note::
-  See the :ref:`guest accounts <administration-guide/onboard/guest-accounts:configure easy links for guests>` documentation for guest user setup details.
+  See the :ref:`guest accounts <administration-guide/onboard/guest-accounts:configure magic links for guests>` documentation for guest user setup details.
