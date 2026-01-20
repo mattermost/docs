@@ -55,9 +55,6 @@ If you upgrade from a release earlier than v11.3, please read the other [Importa
 ### Go Version
  - v11.4 is built with Go ``v1.24.11``.
 
-### Open Source Components
- - Added ``react-intl`` to https://github.com/mattermost/mattermost.
-
 ### Contributors
  - TBD
 
