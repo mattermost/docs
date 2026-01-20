@@ -8,7 +8,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 
 (release-v2-36-1)=
 ## 2.36.1 Release
- - Release Date: January 21, 2026
+ - Release Date: January 20, 2026
  - Server Versions Supported: Server v10.11.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
 
 ### Compatibility
@@ -17,6 +17,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - iPhone 6s devices and later with iOS 15.1+ are required.
 
 ### Bug Fixes
+ - Disabled Intune for Mobile v2.36.1 so that it does not crash on iOS v15 and v16.
  - Fixed an access issue to gallery tools [MM-67056](https://mattermost.atlassian.net/browse/MM-67056).
 
 ### Known Issues
