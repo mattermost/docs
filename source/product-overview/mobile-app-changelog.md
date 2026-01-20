@@ -18,7 +18,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 
 ### Bug Fixes
  - Re-enabled Intune for Mobile v2.36.2.
- - Updated iOS minimum version to v16.
+ - Updated iOS minimum version to v16. See more details in [this forum post](https://forum.mattermost.com/t/mobile-app-ios-version-support-update-v2-36-1-and-v2-36-2/25664).
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
