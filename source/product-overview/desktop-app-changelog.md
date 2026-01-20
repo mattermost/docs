@@ -13,6 +13,10 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
 **Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/latest)
 
+### Important Upgrade Notes
+
+- The in-app auto-updater for Windows and Linux AppImage installations have been deprecated. See more details in [this forum post](https://forum.mattermost.com/t/important-update-changes-to-desktop-app-auto-updater/25657).
+
 ### Compatibility
 
 - Desktop App is supported on any currently supported [Mattermost server version](https://docs.mattermost.com/product-overview/mattermost-desktop-releases.html#latest-releases).
