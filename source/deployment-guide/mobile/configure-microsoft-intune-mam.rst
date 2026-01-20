@@ -201,7 +201,11 @@ Authorize the official Mattermost Mobile client application ID (provided by Matt
 
 1. In the Entra app registration, go to **Expose an API**.
 2. Under **Authorized client applications**, select **Add a client application**.
-3. Add the official Mattermost Beta Mobile client application ID (provided by Mattermost) as ``64e9952b-20eb-46dc-92ad-99089ed24903``.
+3. Add the official Mattermost Mobile client application ID (provided by Mattermost) as:
+
+  - Beta: ``64e9952b-20eb-46dc-92ad-99089ed24903``
+  - Production: ``9ac649f1-4f77-44d6-9792-b2f54ab3c9a7``
+
 4. Authorize the ``api://<APPLICATION-ID>/login.mattermost`` scope.
 5. Save your changes.
 
