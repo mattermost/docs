@@ -11,7 +11,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
 - **v6.0.4, released 2026-01-20**
 
-  - Added an in-app notice for auto-update deprecation for users who have auto-updates enabled.
+  - Added an in-app notice for auto-update deprecation for users who have auto-updates enabled. See more details in [this forum post](https://forum.mattermost.com/t/important-update-changes-to-desktop-app-auto-updater/25657).
 
 - **v6.0.3, released 2026-01-16**
 
