@@ -24,9 +24,13 @@ Depending on your deployment method method, you'll need to download, tag, and pu
 
 If the private registry cannot access the public internet, you can prepare an archive of the registry data on your internet connected machine and securely transfer it using approved data transfer methods - for example, burning to a disk.
 
-5. **Install Mattermost**
+5. **Install Mattermost Server**
 
 Once you have all the necessary resources in your air-gapped environment, you can move forward with deployment following the instructions for :doc:`Linux </deployment-guide/server/deploy-linux>`, :doc:`Kubernetes </deployment-guide/server/deploy-kubernetes>`, or :doc:`Docker </deployment-guide/server/deploy-containers>`.
+
+6. **Install Mattermost Desktop Apps**
+
+Since air-gapped devices cannot access the publicly available app stores, you'll need to install the apps directly from the latest `packages available on our GitHub release page <https://github.com/mattermost/desktop/releases>`_. You'll find :doc:`installation instructions </deployment-guide/desktop/desktop-app-deployment>` in our documentation based on your desired deployment method.
 
 6. **Configure Mattermost for air-gapped operation**
 
@@ -51,6 +55,7 @@ On an internet connected machine, you must gather all required packages, contain
     - Database: PostgreSQL `installation packages <https://www.postgresql.org/download/>`_ or container images for your Linux distribution
     - File Storage: Local filesystem storage is sufficient for deployments under 2,000 users. For larger deployments requiring high availability, we recommend using an S3-compatible object storage solution or an NFS (Network File System) server for shared storage needs.
     - Load balancer: If you already have a load balancer running in your air-gapped environment you can skip this resource, otherwise we recommend deploying :doc:`NGINX </deployment-guide/server/setup-nginx-proxy>` from these `Linux packages <https://nginx.org/en/linux_packages.html>`_.
+    - Desktop app: Download the `required package <https://github.com/mattermost/desktop/releases>`_ based on your deployment method.
 
     **(Optional) Supporting Services**
     Consider downloading these additional resources if you plan to enable these optional components:
@@ -69,6 +74,7 @@ On an internet connected machine, you must gather all required packages, contain
     - Database: We recommend options such as the `Postgres Operator <https://access.crunchydata.com/documentation/postgres-operator/latest/quickstart>`_ from Crunchy Data, `CloudNativePG <https://cloudnative-pg.io/documentation/1.27/installation_upgrade/>`__ or `pgEdge <https://github.com/pgEdge/pgedge-helm>`__.
     - File Storage: We recommend using an S3-compatible storage service or a mounted NFS volume for shared storage needs.
     - Load balancer: If you already have a load balancer running in your air-gapped environment you can skip this resource, otherwise we recommend deploying :doc:`NGINX </deployment-guide/server/setup-nginx-proxy>`, using the `NGINX Ingress Controller operator <https://docs.nginx.com/nginx-ingress-controller/installation/installing-nic/installation-with-operator/>`__.
+    - Desktop app: Download the `required package <https://github.com/mattermost/desktop/releases>`_ based on your deployment method.
 
     **(Optional) Supporting Services**
     Consider downloading these additional resources if you plan to enable these optional components:
@@ -86,6 +92,7 @@ On an internet connected machine, you must gather all required packages, contain
     - `Mattermost Enterprise Edition <https://hub.docker.com/r/mattermost/mattermost-enterprise-edition>`__ image.
     - Database: `PostgreSQL <https://hub.docker.com/_/postgres>`__ image.
     - Load balancer: If you already have a load balancer running in your air-gapped environment you can skip this resource, otherwise we recommend deploying :doc:`NGINX </deployment-guide/server/setup-nginx-proxy>` from this `images <https://hub.docker.com/_/nginx>`__.
+    - Desktop app: Download the `required package <https://github.com/mattermost/desktop/releases>`_ based on your deployment method.
 
     **(Optional) Supporting Services**
     Consider downloading these additional resources if you plan to enable these optional components:
