@@ -6,7 +6,7 @@ Connect Microsoft 365, Teams, and Outlook with Mattermost
 
 Mattermost Mission Collaboration for Microsoft extends Microsoft for mission-critical coordination, command and control, incident response, and DevSecOps workflows in demanding environments, including air-gapped and classified networks by embedding Mattermost inside Teams. Use data-sovereign tools like secure chat, Playbooks, and Calls directly within M365, Teams, and Outlook.
 
-This app is designed to work with Microsoft 365, Teams, and Outlook and is currently in :ref:`Beta <administration-guide/manage/feature-labels:beta>`. From Mattermost v10.9, this integration supports third-party Single Sign-On (SSO). See the :doc:`user provisioning </administration-guide/manage/admin/user-provisioning>` product documentation for details on setting up SSO.
+This app is designed to work with Microsoft 365, Teams, and Outlook and is currently in :ref:`Beta <administration-guide/manage/feature-labels:beta>`. From Mattermost v10.7.1, this integration supports Entra ID-based Single Sign-On (SSO) for automatic authentication. Users must exist in both Mattermost and Microsoft with matching email addresses; the integration handles authentication but does not automatically provision new users. See the :doc:`user provisioning </administration-guide/manage/admin/user-provisioning>` product documentation for details on setting up SSO.
 
 .. image:: ../images/mattermost-in-msteams-2.png
   :alt: Mattermost embedded as a Microsoft Teams app.
@@ -95,7 +95,7 @@ A Microsoft Teams app is installed into Microsoft Teams. This app facilitates co
 
 2. Go to **System Console > Plugins > Plugin Management > Upload Plugin**, and upload the plugin binary you downloaded in the previous step.
 
-3. Go to **System Console > Plugins > Plugin Management**. In the **Installed Plugins** section, scroll to **MSTeams DevSecOps**.
+3. Go to **System Console > Plugins > Plugin Management**. In the **Installed Plugins** section, scroll to **Mattermost Mission Collaboration for Microsoft**.
 
 4. Enter an **Application Version**. You can start with ``1.0.0``.
 
@@ -155,10 +155,35 @@ Authentication
 
 This plugin supports automatic authentication when logged into Microsoft Teams. Teams authentication automatically logs users into Mattermost if the email addresses in both platforms match exactly. Regular authentication methods (LDAP, SAML, email/password, OpenID) can additionally be used for Mattermost.
 
+The integration automatically configures Content Security Policy (CSP) and Frame Ancestors settings to ensure secure embedding of Mattermost within Microsoft Teams, Outlook, and other Microsoft 365 applications. Deep linking is supported, allowing users to select links in Teams notifications and navigate directly to specific Mattermost posts or conversations.
+
 In air-gapped environments or during business continuity disruptions, users who can't join Microsoft Teams, can continue to access Mattermost using their Mattermost credentials by opening Mattermost in a separate app (e.g., in a new browser window). Alternatively, a Mattermost admin can pre-distribute the Mattermost desktop app using Windows MSI or the mobile app via EMM.
 
 .. image:: ../images/mattermost-in-msteams.png
   :alt: Mattermost embedded in a Microsoft Teams tab.
+
+Activity Feed notifications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When you're mentioned in Mattermost while working in Microsoft Teams, you'll receive notifications directly in your Teams Activity Feed. This keeps you connected to important Mattermost conversations without switching applications.
+
+**What triggers notifications:**
+
+- Direct mentions using @username
+- Channel-wide mentions using @channel, @all, or @here
+- Direct messages sent to you
+
+**How it works:**
+
+When someone mentions you in Mattermost, a notification appears in your Microsoft Teams Activity Feed. Select the notification to open Mattermost and view the full context of the message. This feature uses the ``TeamsActivity.Send`` permission configured during the Azure app registration setup.
+
+**Disable notifications:**
+
+System admins can disable Activity Feed notifications for specific users or across your organization by configuring the ``disable_user_activity_notifications`` setting in the plugin configuration. This setting is useful if you want to reduce notification noise or if users prefer to check Mattermost manually.
+
+.. note::
+
+  Activity Feed notifications require the ``TeamsActivity.Send`` application permission to be configured in Azure (step 6 of the `Register an MS Teams app in Azure <#register-an-ms-teams-app-in-azure>`__ section).
 
 Get Help
 ---------
