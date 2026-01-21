@@ -65,10 +65,6 @@ Define logging output for general activities in JSON format in the System Consol
 
 You can use the sample JSON below as a starting point.
 
-.. important::
-
-    From Mattermost v11.3, these standard logging configurations will be validated and will reject audit-specific log levels (``audit-api``, ``audit-content``, ``audit-permissions``, ``audit-cli``). For audit logging, use separate configurations with only audit levels. See the `Configuration validation <#configuration-validation>`__ section for details.
-
 .. tab:: v11 or later
 
     .. code-block:: JSON
@@ -214,7 +210,7 @@ Audit logging
 .. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
-By default, Mattermost doesn't write audit logs locally to a file on the server, and the ability to enable audit logging in Mattermost is currently in :ref:`Beta <administration-guide/manage/feature-labels:beta>`. From Mattermost v11.3, the admin console displays "Audit Logging" instead of "Audit logging (Beta)", though the feature remains in beta status.
+By default, Mattermost doesn't write audit logs locally to a file on the server, and the ability to enable audit logging in Mattermost is currently in :ref:`Beta <administration-guide/manage/feature-labels:beta>`.
 
 You can enable and customize advanced audit logging in Mattermost to record activities and events performed within Mattermost, such as user access to the Mattermost REST API or mmctl. Audit logs are recorded asynchronously to reduce latency to the caller, and are stored separately from general logging. During short spans of inability to write to targets, the audit records buffer in memory with a configurable maximum record cap. Based on typical audit record volumes, it could take many minutes to fill the buffer. After that, the records are dropped, and the record drop event is logged.
 
@@ -562,36 +558,6 @@ GELF log format configuration options
 +---------------+----------+----------------------------------------------------------------------------------------------+
 | enable_caller | string   | Enables output of the file and line number that emitted a log record.  Default is ``false``. |
 +---------------+----------+----------------------------------------------------------------------------------------------+
-
-Configuration validation
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-From Mattermost v11.3, AdvancedLoggingJSON configurations are validated to ensure proper log level usage:
-
-**Standard logging validation**:
-
-- Configurations for standard logging (general server activities) reject audit-specific log levels
-- Invalid levels: ``audit-api``, ``audit-content``, ``audit-permissions``, ``audit-cli``
-- Valid levels include: ``debug``, ``info``, ``warn``, ``error``, ``fatal``, ``panic``, ``stdlog``, notification levels (``NotificationError``, ``NotificationWarn``, etc.), and LDAP levels
-
-**Audit logging validation**:
-
-- Configurations for audit logging reject standard log levels
-- Only audit-specific log levels are permitted: ``audit-api``, ``audit-content``, ``audit-permissions``, ``audit-cli``
-- Standard levels like ``debug``, ``info``, ``warn``, ``error`` are rejected
-
-**Common validation errors**:
-
-- ``Invalid log level 'audit-api' for standard logging target`` - Occurs when audit levels are used in standard logging configuration
-- ``Invalid log level 'info' for audit logging target`` - Occurs when standard levels are used in audit logging configuration  
-- ``Unknown log level ID`` - Occurs when using incorrect level IDs that don't match expected values
-
-**Troubleshooting validation errors**:
-
-1. **Separate configurations**: Use separate target configurations for standard and audit logging
-2. **Check level IDs**: Ensure audit levels use IDs 100-103, standard levels use documented ID ranges
-3. **Validate JSON syntax**: Ensure proper JSON formatting in AdvancedLoggingJSON configuration
-4. **Review examples**: Use the provided configuration examples as templates for valid configurations
 
 Configure log levels and events
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
