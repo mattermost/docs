@@ -30,8 +30,11 @@ Anyone can invite people to Mattermost teams and channels, unless your system ad
       :alt: When you select +, you can access more options from the popup window.
       :scale: 30
 
-    - Send an email-based member invitation to people who don't have an account on your Mattermost server by specifying email addresses and tap **Send**. 
-    - Add existing workspace users as members of the current team by specifying users by usernames and tap **Send**.
+  2. Choose how to invite people:
+
+    - **Invite as member**: Send an email-based member invitation to people who don't have an account on your Mattermost server by specifying email addresses and tap **Send**. 
+    - **Invite as guest**: Invite someone temporarily as a guest with limited workspace access by specifying email addresses, selecting the channels they can access, and optionally adding a custom message. Tap **Send** when ready.
+    - **Add existing users**: Add existing workspace users as members of the current team by specifying users by usernames and tap **Send**.
 
       .. image:: ../../images/direct-mobile-invite-by-email.jpg
         :alt: You can invite a user using their email address.
@@ -41,11 +44,16 @@ Anyone can invite people to Mattermost teams and channels, unless your system ad
         :alt: You can invite a user using their name.
         :scale: 30
 
-    - Tap **Share link** to share an invitation link with others via apps on your mobile device.
+    - **Share link**: Tap **Share link** to share an invitation link with others via apps on your mobile device.
   
       .. image:: ../../images/direct-mobile-invite-by-share-link.jpg
         :alt: You can invite a user by sharing the invite link directly with them.
         :scale: 30
+
+  .. note::
+  
+    - When inviting as a guest, you must select at least one channel. Guests are limited to the channels you specify and cannot discover other channels.
+    - A guest magic link toggle is available when enabled by your system admin, allowing passwordless authentication for guests.
 
 .. note::
 

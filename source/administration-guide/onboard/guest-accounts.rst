@@ -60,6 +60,22 @@ To configure magic link authentication for guests:
 
 When a guest is initially invited to Mattermost, they will receive an email with a link that allows them to log in without a password. The link expires in 48 hours for security purposes. When that guest returns to Mattermost and enters their email address, Mattermost sends them a new link to their email address that expires in 5 minutes. See the :ref:`magic link login for guests <end-user-guide/access/access-your-workspace:magic link login for guests>` documentation for details on how guests can use magic links to log in.
 
+Mobile guest invites
+~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../../_static/badges/entry-ent.rst
+  :start-after: :nosearch:
+
+From Mattermost mobile v2.36, users can invite guests directly from mobile devices. For the guest invite option to appear on mobile, the following prerequisites must be met:
+
+- **Guest accounts enabled**: :ref:`Guest access <administration-guide/configure/authentication-configuration-settings:enable guest access>` must be enabled in **System Console > Authentication > Guest Access**.
+- **Email invitations enabled**: :ref:`Email invitations <administration-guide/configure/authentication-configuration-settings:enable email invitations>` must be enabled for email entry options to appear.
+- **User permissions**: The user must have the **Invite Guest** permission (not restricted by custom roles).
+- **Team constraints**: The team must not be group constrained.
+- **Guest magic link toggle**: Available only if :ref:`magic link authentication for guests <administration-guide/configure/authentication-configuration-settings:enable guest magic link authentication>` is enabled.
+
+When inviting guests on mobile, channel selection is required as guests are limited to the channels specified during invitation and cannot discover other channels.
+
 Configure AD/LDAP authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
