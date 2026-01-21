@@ -9,6 +9,10 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 (release-v6-0)=
 ## Release v6.0
 
+- **v6.0.4, released 2026-01-20**
+
+  - Added an in-app notice for auto-update deprecation for users who have auto-updates enabled. See more details in [this forum post](https://forum.mattermost.com/t/important-update-changes-to-desktop-app-auto-updater/25657).
+
 - **v6.0.3, released 2026-01-16**
 
   - Mattermost Desktop App v6.0.3 contains medium to high severity level security fixes. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
