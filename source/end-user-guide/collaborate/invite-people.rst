@@ -33,12 +33,13 @@ Anyone can invite people to Mattermost teams and channels, unless your system ad
   2. Choose how to invite people:
 
     - **Invite as member**: Send an email-based member invitation to people who don't have an account on your Mattermost server by specifying email addresses and tap **Send**. 
-    - **Invite as guest**: Invite someone temporarily as a guest with limited workspace access by specifying email addresses, selecting the channels they can access, and optionally adding a custom message. Tap **Send** when ready.
-    - **Add existing users**: Add existing workspace users as members of the current team by specifying users by usernames and tap **Send**.
+    - **Invite as guest**: Invite someone as a guest with limited workspace access by specifying email addresses, selecting the channels they can access, and optionally adding a custom message. Tap **Send** when ready.
 
       .. image:: ../../images/direct-mobile-invite-by-email.jpg
         :alt: You can invite a user using their email address.
         :scale: 30
+
+    - **Add existing users**: Add existing workspace users as members of the current team by specifying users by usernames and tap **Send**.
 
       .. image:: ../../images/direct-mobile-invite-by-name.jpg
         :alt: You can invite a user using their name.
@@ -53,7 +54,7 @@ Anyone can invite people to Mattermost teams and channels, unless your system ad
   .. note::
   
     - When inviting as a guest, you must select at least one channel. Guests are limited to the channels you specify and cannot discover other channels.
-    - A guest magic link toggle is available when enabled by your system admin, allowing passwordless authentication for guests.
+    - Guests may access a Mattermost instance without a password with a magic link when :ref:`enabled by your system admin <administration-guide/onboard/guest-accounts:configure magic links for guests>`. See the :ref:`magic link login for guests <end-user-guide/access/access-your-workspace:magic link login for guests>` documentation for details.
 
 .. note::
 
