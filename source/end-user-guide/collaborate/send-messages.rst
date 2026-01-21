@@ -80,9 +80,7 @@ From Mattermost v11.3, burn-on-read messages stay concealed until recipients rev
 
 .. tab:: Mobile
 
-  1. Tap the message field and type your message.
-  2. Tap the **Burn-on-read** |burn-on-read-icon| icon from message options.
-  3. Tap **Send** |send-icon|
+  Users can receive and interact with burn-on-read messages, but can't send them using the mobile app.
 
 Recipients see a concealed placeholder with **Reveal**. After revealing, a timer shows when the message will be deleted. 
 

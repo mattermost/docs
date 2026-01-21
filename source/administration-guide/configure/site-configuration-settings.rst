@@ -1492,6 +1492,9 @@ Enable burn-on-read messages
 | - **true**: Users can send burn-on-read messages in channels, direct messages, and group messages.         |                                                                                    |
 +------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 
+.. note::
+  Disabling this feature prevents users from sending new burn-on-read messages. Once disabled, users can interact with existing burn-on-read messages.
+
 .. config:setting:: burn-on-read-duration
   :displayname: Burn-on-read duration (Posts)
   :systemconsole: Site Configuration > Posts
