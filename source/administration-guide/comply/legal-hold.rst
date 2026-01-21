@@ -185,7 +185,7 @@ The Legal Hold plugin frequently modifies files in the ``legalhold`` directory, 
 How to view the downloaded Legal Hold zip file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To make use of the Legal Hold data, you use the `processor tool <https://github.com/mattermost/mattermost-plugin-legal-hold/releases#:~:text=processor%2Dv1.0.2%2Ddarwin%2Damd64>`_) available on the Mattermost GitHub repository. This will output a self-contained HTML site you can open with your browser.
+To make use of the Legal Hold data, you use the `processor tool <https://github.com/mattermost/mattermost-plugin-legal-hold/releases#:~:text=processor%2Dv1.0.2%2Ddarwin%2Damd64>`_ available on the Mattermost GitHub repository. This will output a self-contained HTML site you can open with your browser.
 
 **Download and setup the processor tool:**
 

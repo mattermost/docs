@@ -106,7 +106,7 @@ If you upgrade from a release earlier than v11.2, please read the other [Importa
 #### Administration
  - Added Microsoft Intune MAM authentication support (requires Enterprise Advanced license) [MM-66736](https://mattermost.atlassian.net/browse/MM-66736).
  - Added a Burn-on-Read feature (requires Enterprise Advanced license) [MM-61758](https://mattermost.atlassian.net/browse/MM-61758).
- - Added support for passwordless authentication with Magic Link for guest users (requires Enterprise license) [MM-66445](https://mattermost.atlassian.net/browse/MM-66445).
+ - Added support for passwordless authentication with [Magic Link for guest users](https://docs.mattermost.com/end-user-guide/access/access-your-workspace.html#magic-link-login-for-guests) (requires Enterprise license) [MM-66445](https://mattermost.atlassian.net/browse/MM-66445).
  - The channel ABAC auto-sync setting is now individually configurable through the **System Console** [MM-65956](https://mattermost.atlassian.net/browse/MM-65956).
  - Validated log levels in ``AdvancedLoggingJSON`` [MM-62770](https://mattermost.atlassian.net/browse/MM-62770).
  - Changes to HTML templates now require a server restart to take effect [MM-66718](https://mattermost.atlassian.net/browse/MM-66718).
