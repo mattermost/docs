@@ -6,6 +6,8 @@ Channel-specific access rules
 
 Channel and Team Admins can self-manage access controls for their private channels directly through the Channel Settings modal, without requiring System Admin intervention. For organization-wide policies created by System Admins, see :doc:`System-wide attribute-based access policies </administration-guide/manage/admin/abac-system-wide-policies>`.
 
+Each ABAC channel access policy has an explicit **active state** that determines whether the policy's rules are enforced and whether automatic member synchronization applies to the channel. Channel-level (child) ABAC policies behave independently and consistently, even when parent system-wide policies exist.
+
 With channel access rules, Channel and Team Admins can:
 
 - Create channel-specific access rules using a simple interface.
@@ -56,13 +58,14 @@ Channel access rules use the same simple interface as system policies, allowing 
 Auto-sync membership
 ~~~~~~~~~~~~~~~~~~~~
 
-The **Auto-add members based on access rules** toggle controls automatic membership management:
+The **Auto-add members based on access rules** toggle controls automatic membership management. Auto-sync behavior follows the channel policy's active state, reducing unexpected inheritance-related behavior:
 
 - **Enabled**: Users matching the rules are automatically added to the channel, and users who no longer match are removed
 - **Disabled**: Rules act as a gate (preventing unauthorized joins) but don't automatically add qualifying users
 
 .. important::
 
+  - Auto-sync behavior is determined by the channel policy's active state, not inherited from parent policies.
   - If a system policy has auto-sync enabled, Channel and Team Admins cannot disable it at the channel level.
   - If a system policy has auto-sync disabled, Channel and Team Admins can choose to enable it for their channel.
   - When no rules are configured, this toggle is automatically disabled.
@@ -85,12 +88,15 @@ When you save changes that affect membership, a confirmation dialog shows you:
 Policy inheritance
 --------------------
 
+Channel-level (child) ABAC policies now behave independently and consistently, even when parent system-wide policies exist. Each policy maintains its own active state and configuration.
+
 When both :doc:`system policies </administration-guide/manage/admin/abac-system-wide-policies>` and channel rules are configured:
 
 1. **System policies** are displayed in a blue banner at the top (read-only)
 2. **Channel rules** are managed in the access rules section below
 3. **Users must satisfy BOTH** system policies and channel rules to access the channel
 4. Channel rules **add restrictions** but cannot weaken system policies
+5. **Auto-sync behavior** follows the channel policy's active state, not the parent system policy
 
 Use cases and recommendations
 -----------------------------
@@ -199,6 +205,13 @@ The auto-sync toggle is automatically disabled when:
 - No access rules are configured
 - A system policy with auto-sync enabled is applied (Channel and Team Admins cannot disable it)
 - There are validation errors in the current rules
+- The channel's access control policy is not in an active state
+
+If auto-sync is not behaving as expected, verify that the channel's access control policy is active.
+
+.. note::
+
+  **Troubleshooting auto-sync issues**: If auto-sync functionality is not working as expected, first verify that the channel's access control policy is in an active state. An inactive policy will prevent automatic member synchronization from occurring, even if the toggle appears to be enabled.
 
 Synchronization and membership 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
