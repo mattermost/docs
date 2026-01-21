@@ -51,6 +51,9 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
 ### Known Issues
 
+- Desktop App v6.1 has been tested against our existing EXE and MSI installers, with a few caveats:
+   - When installing over top of the MSI installer for versions below v5.9, an extra shortcut may be left in the user's start menu. This can be safely deleted
+   - When installing over top of the MSI installer for versions from v5.9 to v6.0.4, if the installation was done per-user (as is the default), the new installer will not replace the old one. This is due to the fact that MSIs cannot modify across contexts, so as a one-time fix, users will have to manually uninstall the old one. We recommend doing this before installing the new one.
 - Sometimes the app will not restart after an auto-update. This is normal, and if this occurs the app can be safely launched manually.
 - Sometimes during installation you may see this message: ``Warning 1946. Property 'System.AppUserModel.ID' for shortcut 'Mattermost.Ink' could not be set``. This message can be safely ignored.
 - Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually delete their cache directory. For macOS it is located in `/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost`, for Windows in `Users/<username>/AppData/Roaming/Mattermost` and for Linux in `~/config/Mattermost` (where `~` is the home directory).
