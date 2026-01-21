@@ -19,6 +19,11 @@ Mattermost Desktop App v6.1 (February 2026)
 
 - The in-app auto-updater for Windows and Linux AppImage installations have been deprecated. See more details in `this forum post <https://forum.mattermost.com/t/important-update-changes-to-desktop-app-auto-updater/25657>`__.
 
+Mattermost Mobile App v2.36.2 (January 2026)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Removed support for iOS v15 and updated the iOS minimum version to v16. See more details in `this forum post <https://forum.mattermost.com/t/mobile-app-ios-version-support-update-v2-36-1-and-v2-36-2/25664>`__.
+
 Mattermost Server v11.1 (November 2025)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
