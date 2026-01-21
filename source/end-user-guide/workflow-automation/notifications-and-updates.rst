@@ -56,12 +56,20 @@ Request an update
 
 To request a status update, access the **Playbooks** tab in Mattermost. Select the run you want an update for. In the run details page, select the |more-icon-vertical| menu next to **Post update** and select **Request update**.
 
+.. note::
+
+   Requesting updates is only available in the web browser and desktop app. This functionality is not available on mobile.
+
 Follow runs and playbooks
 -------------------------
 
-Follow specific playbooks to receive updates on important events such as when a run is started and finished, as well as status and retrospective updates every time that playbook is run. This is a good option if you’re interested in all instances of a specific workflow, such as an outage resolution playbook.
+Follow specific playbooks to receive updates on important events such as when a run is started and finished, as well as status and retrospective updates every time that playbook is run. This is a good option if you're interested in all instances of a specific workflow, such as an outage resolution playbook.
 
-As a stakeholder, you can also choose to follow only a specific run. This means that while you don’t have to participate in the run, you’ll receive updates and can decide what, if any, actions to take. This is a good option if you’re only interested in a single instance of a procedure. For example, you may want to only follow customer onboarding for one specific customer instead of all onboarding runs.
+As a stakeholder, you can also choose to follow only a specific run. This means that while you don't have to participate in the run, you'll receive updates and can decide what, if any, actions to take. This is a good option if you're only interested in a single instance of a procedure. For example, you may want to only follow customer onboarding for one specific customer instead of all onboarding runs.
+
+.. note::
+
+   Following playbooks and runs is only available in the web browser and desktop app. This functionality is not available on mobile.
 
 Daily digest
 ------------
