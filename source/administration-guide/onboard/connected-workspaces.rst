@@ -17,7 +17,7 @@ The process of connecting Mattermost workspaces involves the following 5 steps:
 
 1. Ensure that all Mattermost Enterprise servers are running v10.2 or later.
 
-2. `Enable the connected workflows functionality <#enable-connected-workflows>`__ for each Mattermost Enterprise instance you want to connect.
+2. `Enable the connected workspaces functionality <#enable-connected-workspaces>`__ for each Mattermost Enterprise instance you want to connect.
 
 3. System admins must `create a secure and trusted connection <#create-a-secure-connection>`__ with other Mattermost Enterprise instances using the System Console or slash commands. This process involves creating a password-protected, encrypted invitation, creating a strong decryption password, then sending the invitation and password to the system admin of a remote Mattermost instance. From Mattermost v11.0, remote cluster invitations use PBKDF2 key derivation for enhanced security.
 
@@ -31,7 +31,7 @@ The process of connecting Mattermost workspaces involves the following 5 steps:
     - System admins must use Mattermost to generate a password-protected encrypted invitation code. However, sending secure connection invitations is not completed using Mattermost. System admins must have an independent way to extend the secure connection invitation, such as by email.
     - A channel shared by a host organization cannot be shared from the receiving organization to another organization. Organizations can't share a channel originating from another organization.
 
-Enable connected workflows
+Enable connected workspaces
 ---------------------------
 
 System admins must enable connected workspaces functionality for their Mattermost instance. Ensure the following configuration settings are set to ``true`` in ``config.json``:
