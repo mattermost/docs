@@ -19,22 +19,17 @@ For more information about System and Team Override Schemes, refer to the :doc:`
 
 In the context of collaborative playbooks, members are assigned a role and based on the selected permissions, this determines how they interact with playbooks. A member can be a member of one playbook, and an admin of another. This allows for granular permissions across teams and departments. For example, setting playbook visibility so only certain teams can view it, or setting permissions to allow an organization to view a playbook but only designated team members can make edits.
 
-Permissions are applied only to playbooks - there are no permissions that are specific to runs.
+Permissions are applied only to playbooks. There are no permissions that are specific to runs.
 
 .. important::
 
-   From Mattermost v2.6.0, access control for channel checklists has changed to use channel-based permissions rather than playbook-specific permissions. This means that users with appropriate channel permissions can create, manage, and interact with checklists directly within channels without requiring separate playbook access permissions. This change provides more flexible and intuitive access control aligned with existing channel permission models, and affects operational expectations for administrators managing access to workflow functionality.
+  From Playbooks v2.6.0, channel checklists use :doc:`channel-based permissions </administration-guide/manage/team-channel-members>` rather than playbook-specific permissions. This means that users with appropriate channel permissions can create, manage, and interact with checklists directly within channels without requiring separate playbook access permissions.
 
 Playbook roles
 ---------------
 
-**Member**
-
-In the context of collaborative playbooks, members are users of Mattermost who are added to a playbook.
-
-**Playbook Admin**
-
-Playbook Admins are also members, and may have elevated permissions to change playbook and run visibility as well as functional settings. They do not have access to the System Console and their privileges are managed by the system admin. Members need to be promoted to the role from within playbooks. The Playbook Admin role is applied per playbook.
+- **Member**: In the context of collaborative playbooks, members are users of Mattermost who are added to a playbook.
+- **Playbook Admin**: Playbook Admins are also members, and may have elevated permissions to change playbook and run visibility as well as functional settings. They do not have access to the System Console and their privileges are managed by the system admin. Members need to be promoted to the role from within playbooks. The Playbook Admin role is applied per playbook.
 
 .. note::
 

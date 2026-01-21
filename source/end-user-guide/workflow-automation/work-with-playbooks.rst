@@ -6,10 +6,6 @@ Work with collaborative playbooks
 
 A collaborative playbook is a checklist of the tasks that make up your processes. Collaborative playbooks allow you to take codified knowledge and processes and make them accessible and editable by your organization and team. When you're setting up your playbook, you'll be able to break tasks down, and assign actions to them - such as using a slash command to start a Zoom call. You can also decide whether to use the same channel every time your playbook is run, or a new one.
 
-.. tip::
-
-  Watch this `on-demand webinar on securing your mission-critical work <https://mattermost.com/webinar/cybersecurity-incident-response/>`_ to learn about the key features and functionality to look for in your incident response tooling.
-
 There are other parts of a playbook, such as automation settings, and metrics. Playbook configuration applies both to the execution of the playbook as well as to its management and improvement.
 
 But the very first thing you’ll want to set up is a checklist.
@@ -59,27 +55,13 @@ You can change a playbook’s configuration at any time, but changes will only b
 Make checklists
 ----------------
 
-1. In channels, select **Toggle Playbook List** from the Apps Bar.
-2. Select **Blank Playbook**, or use the built-in template.
-3. Name your playbook and provide a description.
-4. Select the **Checklists** tab.
+To create a checklist in a playbook, go to the **Tasks** section. Start from templated tasks or create your own. Select **Add a task** or **Add a section** to build out checklists in the playbook. Drag and drop to reorder tasks and sections as needed. Task descriptions support a limited form of Markdown, including text styling and hyperlinks.
 
-.. note::
+Playbook tasks consist of text rendered in Markdown (when present). You can't run commands directly from a task in a playbook, but you can trigger :doc:`built-in slash commands </integrations-guide/built-in-slash-commands>` and `custom slash commands <https://developers.mattermost.com/integrate/slash-commands/custom/>`_, or outgoing webhooks, to run as part of the task action by starting the task with ``/``.
 
-   From Mattermost v2.6.0, you can also create and manage checklists directly within channels as first-class workflows accessible through the right-hand sidebar (RHS), without requiring a playbook template. This channel-based checklist functionality provides more flexible workflow management for teams.
+.. tip::
 
-  You can start with the default checklist and edit it, or you can delete it and select **+ New checklist**.
-
-  * Within each checklist, select **+ New task** to add tasks that are meant to be completed together.
-
-    * Drag and drop to reorganize checklists and tasks.
-    * Add task descriptions to give additional context to members of the playbook. Descriptions support a limited form of Markdown, including text styling and hyperlinks.
-
-5. Choose **Save**.
-
-.. note::
-
-  Tasks in a playbook consists of text rendered in Markdown (when present). You can't run commands directly from a task in a playbook, but you can trigger :doc:`built-in slash commands </integrations-guide/built-in-slash-commands>` and `custom slash commands <https://developers.mattermost.com/integrate/slash-commands/custom/>`_, or outgoing webhooks, to run as part of the task action by starting the task with ``/``.
+  From Playbooks v2.6.0, you can create and manage checklists directly within public and private channels without requiring a playbook. Select the **Checklists** option in the right-hand sidebar to create a new checklist or manage existing ones. Access control for these channel checklists is based on :doc:`channel-based permissions </administration-guide/manage/team-channel-members>` rather than :doc:`playbook-specific permissions </end-user-guide/workflow-automation/share-and-collaborate>`.
 
 Multiple runs in a channel
 --------------------------
@@ -203,3 +185,7 @@ Webhooks
 
 - For information about the webhook payload for ``run start``, see the `PlaybookRunWebhookPayload <https://github.com/mattermost/mattermost-plugin-playbooks/blob/b4c8058d8660efe35050bc7eb080e3819c7ab09c/server/app/playbook_run_service.go#L176-L185>`_ struct. An example of the JSON payload for a run start `is available <https://gist.github.com/icelander/b68f2bf2b4ffefec93400cb050211cf1>`__.
 - For information about the webhook payload for ``status update``, see the `PlaybookRunWebhookPayload <https://github.com/mattermost/mattermost-plugin-playbooks/blob/b4c8058d8660efe35050bc7eb080e3819c7ab09c/server/app/playbook_run_service.go#L176-L185>`_ struct. An example JSON payload for a status update `is available <https://gist.github.com/icelander/2f9938ad68d1e0aa656f97969895d080>`__.
+
+.. tip::
+
+  Watch this `on-demand webinar on securing your mission-critical work <https://mattermost.com/webinar/cybersecurity-incident-response/>`_ to learn about the key features and functionality to look for in your incident response tooling.

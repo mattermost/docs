@@ -9,10 +9,6 @@ Tasks and due dates
 
 In some workflows, there are time constraints on tasks and others may have more flexible timeframes. Associating tasks with deliverable dates provides visibility into workloads and helps everyone stay accountable during the run.
 
-.. note::
-
-   From Mattermost v2.6.0, as part of the interface updates, some terminology has been updated in the user interface. While the underlying functionality remains the same, you may see "sections" referenced in certain UI contexts where "checklists" were previously used. This rebrand tour messaging "Playbook Runs are now Checklists" provides clarity on the terminology changes and new app bar access point.
-
 To assign a due date to a task, select the **Toggle Run Details** icon to open the **Run Details** screen. Hover over the task you’d like to edit and select the calendar icon to assign a due date. Due dates can be used to sort tasks in the run overview.
 
 When a due date is assigned to a task, and the task is overdue or due today, a reminder is added to the playbook's daily digest along with tasks that don't have an assigned due date. As tasks are completed, they're removed from the daily digest reminders. You can refresh the list of assigned tasks at any time using the ``/playbook todo`` slash command.
@@ -109,7 +105,3 @@ Update tasks
 - **Change run ownership**: Transfer run ownership between team members.
 
 These mobile capabilities provide full task management functionality for teams working with playbooks while on mobile devices, complementing your existing desktop and web browser experiences.
-
-.. note::
-
-   From Mattermost mobile v2.35.0, mobile UI labels have been updated to display "Playbook checklists" terminology consistently across checklist actions and interfaces. This terminology update aligns with the server v2.6.0 rebrand where "Playbook Runs" became "Checklists" to better reflect the workflow-centric nature of these features.

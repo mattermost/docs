@@ -4,7 +4,7 @@ Work with runs
 .. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
-A run is the execution of a collaborative playbook. You can start each run in a new channel or you can elect to use the same channel for multiple runs. From Mattermost v2.6.0, you can also create and manage checklists directly within channels as standalone workflows, without requiring a playbook template.
+A run is the execution of a collaborative playbook. You can start each run in a new channel or you can elect to use the same channel for multiple runs.
 
 To access runs, select the product menu in the top-left corner of Mattermost, then select **Playbooks**. In the runs list, you can select a run to view more details, such as the overview and retrospective. This is an easy way to assess all the active runs to which you have access.
 
@@ -32,8 +32,6 @@ Runs and channel behavior
 -------------------------
 
 When you configure your playbook, you can decide whether each run of that playbook starts in a new channel or uses the same channel. You can run multiple playbooks in the same channel, simultaneously. Each playbook in use is listed in the RHS of the run channel.
-
-From Mattermost v2.6.0, runs can exist as channel checklists without being associated with a specific playbook (runs can exist without a playbook_id and are typed as channel checklists). This allows for more flexible workflow management where checklists can be created on-demand within any channel context. Access control for these channel checklists is based on channel-level permissions rather than playbook-specific permissions.
 
 If you decide to run a playbook in a new channel, you can do this when you start the run. In the channel RHS, select **Start run**. Then select how you'd like it to be executed.
 
