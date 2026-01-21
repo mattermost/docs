@@ -110,6 +110,23 @@ You can leave public or private channels any time.
       :alt: Tap on Leave to confirm your choice.
       :scale: 30
 
+Manage your own membership 
+----------------------------
+
+Using Mattermost mobile v2.36+, you can manage your own roles and membership from the **Manage Channel Members** screen when you have permission to manage channel members.
+
+.. tab:: Mobile
+
+  1. In a channel, tap |more-icon-vertical| in the top right corner.
+
+  2. Tap **View Info**.
+
+  3. Tap **Members**.
+
+  4. Tap **Manage** in the top right corner of the screen.
+
+  5. Find your own name in the member list and tap your user role to change it or remove yourself from the channel (if you have the appropriate permissions).
+
 Remove other members from a channel
 -----------------------------------
 
