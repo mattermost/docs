@@ -21,7 +21,7 @@ When you send a priority message, the priority label displays next to your name 
 Send persistent notifications
 -----------------------------
 
-From Mattermost v8.0, when you add an urgent priority label, and your message @mentions at least one other user, you can enable persistent notifications which notify recipients at regular intervals and for a set amount of time until the recipient acknowledges, reacts, or replies to the message.
+From Mattermost v8.0, messages marked as urgent with a priority label and containing an @mention can trigger persistent notifications that repeat until the recipient acknowledges, reacts, or replies.
 
 To enable persistent notifications for a message:
 
