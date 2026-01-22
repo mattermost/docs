@@ -13,27 +13,9 @@ The email templates are located in the Mattermost server directory in the ``temp
 The corresponding strings for each prop can be found in the ``i18n`` folder. 
 
 .. note::
-  The props between different email templates are not interchangeable without additional server code changes.  
-
-.. warning::
-  Changes made inside of the ``templates`` or ``i18n`` folder might get overwritten during a server update. 
-  Please make sure to backup them accordingly.
-
-.. important::
-  From Mattermost v11.3.0, changes to HTML templates require a server restart to take effect. The filesystem watcher functionality that previously enabled automatic template reloading has been removed to simplify the templates package.
-
-Template modification troubleshooting
---------------------------------------
-
-If your template modifications are not appearing after editing:
-
-**For Mattermost v11.3.0 and later**:
-- **What changed**: Templates are no longer watched for filesystem changes
-- **How to apply changes**: Restart the Mattermost server after modifying any HTML template files
-- **Why it happens**: The filesystem watcher functionality has been removed to simplify the templates package
-
-**For earlier versions**:
-- Template changes should apply automatically without requiring a restart
+  - The props between different email templates are not interchangeable without additional server code changes.
+  - Always back up changes to the ``templates`` and ``i18n`` folders before upgrading the server to avoid losing customizations.
+  - From Mattermost v11.3, changes to HTML templates require a server restart to take effect.
 
 Available templates
 -------------------
