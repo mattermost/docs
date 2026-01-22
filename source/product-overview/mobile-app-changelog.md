@@ -14,10 +14,11 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 ### Compatibility
  - **Upgrade to server version v10.11.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#extended-support-releases) (ESR) v10.5.0 has ended and upgrading to server ESR v10.11.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
- - iPhone 8+ devices and later with iOS 16.0+ are [required](https://support.apple.com/en-il/guide/iphone/iphe3fa5df43/16.0/ios/16.0).
+ - iPhone 6+ devices and later with iOS 15.1+ are required.
 
 ### Bug Fixes
  - Disabled Intune for Mobile v2.36.3 to fix a crash.
+ - Temporarily updated minimum iOS version to 15.1+.
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
