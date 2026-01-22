@@ -312,7 +312,7 @@
       <td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v11.1+</td>
     </tr>
     <tr>
-      <td><strong>Burn-on-Read Messages</strong>: <a href="https://docs.mattermost.com/end-user-guide/collaborate/send-messages.html#send-burn-on-read-messages>Time-limited message viewing functionality</a> where messages automatically delete after being read for a configured duration, ensuring sensitive information has controlled exposure. Administrators can configure read durations and maximum time-to-live settings.</td>
+      <td><strong>Burn-on-Read Messages</strong>: <a href="https://docs.mattermost.com/end-user-guide/collaborate/send-messages.html#send-burn-on-read-messages">Time-limited message viewing functionality</a> where messages automatically delete after being read for a configured duration, ensuring sensitive information has controlled exposure. Administrators can configure read durations and maximum time-to-live settings.</td>
       <td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v11.3+</td>
     </tr>
     <tr>
