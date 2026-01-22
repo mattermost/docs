@@ -307,6 +307,18 @@
       <td><strong>Air-gapped deployment workflows</strong>: Specialized deployment workflows and procedures for completely <a href="https://docs.mattermost.com/deploy/server/air-gapped-deployment.html">disconnected and air-gapped</a> environments with no external network connectivity.</td>
       <td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v10.9+</td>
     </tr>
+    <tr>
+      <td><strong>Data Spillage Prevention</strong>: Advanced <a href="https://docs.mattermost.com/administration-guide/manage/admin/content-flagging.html">content flagging and review system</a> enabling designated reviewers to identify, review, and manage potentially sensitive information that may have been inappropriately shared in channels. Supports team-specific reviewer assignments and common reviewers across teams.</td>
+      <td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v11.1+</td>
+    </tr>
+    <tr>
+      <td><strong>Burn-on-Read Messages</strong>: <a href="https://docs.mattermost.com/end-user-guide/collaborate/send-messages.html#send-burn-on-read-messages>Time-limited message viewing functionality</a> where messages automatically delete after being read for a configured duration, ensuring sensitive information has controlled exposure. Administrators can configure read durations and maximum time-to-live settings.</td>
+      <td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v11.3+</td>
+    </tr>
+    <tr>
+      <td><strong>Microsoft Intune MAM Support</strong>: Enhanced mobile security through <a href="https://docs.mattermost.com/deployment-guide/mobile/configure-microsoft-intune-mam.html">Microsoft Intune Mobile Application Management (MAM)</a>, enabling organizations to secure and manage Mattermost mobile deployments with Intune's enterprise mobility management capabilities.</td>
+      <td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v11.3+</td>
+    </tr>
     <!-- Support -->
     <tr class="section"><td colspan="7"><strong>Support</strong></td></tr>
     <tr class="subsection"><td colspan="7"><strong>A range of support options are available across Mattermost Free, Professional, and Enterprise offerings.</strong></td></tr>
