@@ -26,6 +26,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
 #### All Platforms
 
+- Forced MSI to install per-machine by default. See Known Issues below for more details.
 - Added support for servers with passwordless authentication with [Magic Link for guest users](https://docs.mattermost.com/end-user-guide/access/access-your-workspace.html#magic-link-login-for-guests) (requires Enterprise license) [MM-66445](https://mattermost.atlassian.net/browse/MM-66445).
 - Remove MAS (Mac App Store) migration logic [MM-66704](https://mattermost.atlassian.net/browse/MM-66704).
 - Added Sentry error tracking.
@@ -52,7 +53,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 ### Known Issues
 
 - Desktop App v6.1 has been tested against our existing EXE and MSI installers, with a few caveats:
-   - When installing over top of the MSI installer for versions below v5.9, an extra shortcut may be left in the user's start menu. This can be safely deleted
+   - When installing over top of the MSI installer for versions below v5.9, an extra shortcut may be left in the user's start menu. This can be safely deleted.
    - When installing over top of the MSI installer for versions from v5.9 to v6.0.4, if the installation was done per-user (as is the default), the new installer will not replace the old one. This is due to the fact that MSIs cannot modify across contexts, so as a one-time fix, users will have to manually uninstall the old one. We recommend doing this before installing the new one.
 - Sometimes the app will not restart after an auto-update. This is normal, and if this occurs the app can be safely launched manually.
 - Sometimes during installation you may see this message: ``Warning 1946. Property 'System.AppUserModel.ID' for shortcut 'Mattermost.Ink' could not be set``. This message can be safely ignored.
