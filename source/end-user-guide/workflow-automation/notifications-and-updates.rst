@@ -65,7 +65,7 @@ Follow runs and playbooks
 
 Follow specific playbooks to receive updates on important events such as when a run is started and finished, as well as status and retrospective updates every time that playbook is run. This is a good option if you're interested in all instances of a specific workflow, such as an outage resolution playbook.
 
-As a stakeholder, you can also choose to follow only a specific run. This means that while you don't have to participate in the run, you'll receive updates and can decide what, if any, actions to take. This is a good option if you're only interested in a single instance of a procedure. For example, you may want to only follow customer onboarding for one specific customer instead of all onboarding runs.
+You can also choose to follow a specific run without actively participating. You’ll receive updates for that run only and can take action if needed. This is useful when you’re only interested in a single instance of a procedure—for example, following onboarding for one specific customer rather than every onboarding run.
 
 .. note::
 
