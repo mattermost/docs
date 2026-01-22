@@ -87,4 +87,11 @@ Additionally, administrators can control link navigation within PDF files when s
 
 Learn more about :ref:`enabling secure file preview on mobile <administration-guide/configure/environment-configuration-settings:enable secure file preview on mobile>` and :ref:`allow PDF link navigation on mobile <administration-guide/configure/environment-configuration-settings:allow pdf link navigation on mobile>` in the Mattermost mobile app.
 
+Burn-on-read messages
+---------------------
+
+Burn-on-read messages reduce the window of exposure for sensitive content by automatically deleting messages after they are revealed. This approach supports secure, time-bound communication by ensuring that sensitive information doesn't persist on the device longer than necessary.
+
+Administrators can enable burn-on-read messaging and set the burn-on-read duration to align with organizational policies. Learn more about :ref:`sending burn-on-read messages <end-user-guide/collaborate/send-messages:send burn-on-read messages>` and :ref:`enabling burn-on-read messages <administration-guide/configure/site-configuration-settings:enable burn-on-read messages>`.
+
 `Book a live demo <https://mattermost.com/request-demo/>`_  or `talk to a Mattermost expert <https://mattermost.com/contact-sales/>`_ to explore tailored solutions for your organization's secure collaboration needs. Or try Mattermost yourself with a `1-hour preview <https://mattermost.com/sign-up/>`_ for instant access to a live sandbox environment.
