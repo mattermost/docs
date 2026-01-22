@@ -6,7 +6,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 ```{include} common-esr-support.md
 ```
 
-(release-v2-36-2)=
+(release-v2-36-4)=
 ## 2.36.4 Release
  - Release Date: January 22, 2026
  - Server Versions Supported: Server v10.11.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
