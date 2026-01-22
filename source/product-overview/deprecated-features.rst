@@ -19,7 +19,7 @@ Mattermost Server v11.4 (February 2026)
 
 - PSDs are now no longer inline previewed, they are treated as regular file attachments.
 
-Mattermost Mobile App v2.36.2 (January 2026)
+Mattermost Mobile App v2.36.4 (January 2026)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Removed support for iOS v15 and updated the iOS minimum version to v16. See more details in `this forum post <https://forum.mattermost.com/t/mobile-app-ios-version-support-update-v2-36-1-and-v2-36-2/25664>`__.
