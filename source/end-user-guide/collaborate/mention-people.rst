@@ -27,7 +27,7 @@ Type *@* or the full-width "＠" (U+FF20) to bring up a list of team members who
 
 .. note::
 
-   **Full-width @ support:** Starting in Mattermost v11.3, both the standard "@" and the full-width "＠" (U+FF20) trigger user mention suggestions. This improves the experience for users of Japanese input methods (IME) and other international keyboard layouts. For example, when using a Japanese IME, typing the full-width "＠" will bring up the mention list just like the standard "@" symbol. All existing @ mentions continue to work as before. See the :doc:`v11.3 release notes </product-overview/mattermost-v11-changelog>` for more details. 
+  Mattermost v11.3 added support for full-width @, improving the experience for Japanese IME and other international keyboard users. Existing @ mentions are unaffected. See the :doc:v11.3 release notes </product-overview/mattermost-v11-changelog> for details.
 
 .. tip::
   
