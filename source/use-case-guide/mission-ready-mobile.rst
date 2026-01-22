@@ -47,7 +47,7 @@ Mattermost on mobile is hardened to operate under mission-grade security expecta
 
 - **Zero Trust security architecture** with channel- and file-level :doc:`attribute-based access control (ABAC) </administration-guide/manage/admin/attribute-based-access-control>`.
 - **TLS with post-quantum readiness** and end-to-end* :doc:`encryption options </security-guide/security-guide-index>` for high-assurance deployments.
-- **Burn-on-read messaging**: Use secure file viewers*, burn on read messaging*, and advanced data spillage controls* to protect sensitive information and minimize persistent data exposure.
+- **Burn-on-read messaging**: Use :ref:`secure file viewers <security-guide/mobile-security:secure file preview>`, :ref:`burn on read messaging <end-user-guide/collaborate/send-messages:send burn-on-read messages>`, and advanced data spillage controls* to protect sensitive information and minimize persistent data exposure.
 - **DoD STIG container support** with FIPS 140-3 validation*, and :ref:`audit logging <administration-guide/manage/logging:audit logging>` to ensure deployment compliance in regulated missions.
 - **Isolated mobile sessions** from host operating systems by partnering with platforms like Hypori in high-assurance BYOD scenarios.
 
