@@ -1,14 +1,15 @@
 Push notification health targets
 =================================
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
-When using the `Mattermost Notification Health <https://grafana.com/grafana/dashend-user-guide/boards/21305-mattermost-notification-health>`_ Grafana dashboard to track different types of notifications sent from Mattermost, we recommend adhering to the following mobile push notification health targets to ensure a performant production deployment of Mattermost.
+When using the `Mattermost Notification Health <https://grafana.com/grafana/dashboards/21305-mattermost-notification-health>`_ Grafana dashboard to track different types of notifications sent from Mattermost, we recommend adhering to the following mobile push notification health targets to ensure a performant production deployment of Mattermost.
 
 .. note::
 
-    - Accessing and enabling Mattermost Notification Health Monitoring requires the feature flag ``NotificationMonitoring`` to be set to ``true``. 
+    - Accessing and enabling Mattermost Notification Health Monitoring requires ``MetricsSettings.Enable`` set to ``true``, and the feature flag ``NotificationMonitoring`` set to ``true``.
+    - ``MetricsSettings.EnableNotificationMetrics`` must be enabled in the :ref:`Performance Monitoring <administration-guide/configure/environment-configuration-settings:enable notification monitoring>` configuration.
     - System admins can :ref:`disable notification monitoring data collection <administration-guide/configure/site-configuration-settings:enable notification monitoring>` through the System Console.
 
 Push Proxy Delivery Rate

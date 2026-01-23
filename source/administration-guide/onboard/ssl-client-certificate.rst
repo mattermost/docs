@@ -1,10 +1,10 @@
 SSL client certificate setup
 ============================
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
-Follow these steps to configure SSL client certificates for your browser and the Mattermost desktop apps on Windows, macOS, and Linux. SSL client certificates are not yet supported on the Mattermost mobile apps.
+Follow these steps to configure SSL client certificates for your browser and the Mattermost desktop apps on Windows, macOS, and Linux.
 
 Before you begin, follow the :doc:`official guides to install Mattermost </deployment-guide/deployment-guide-index>` on your system, including NGINX configuration as a proxy with SSL and HTTP/2, and a valid SSL certificate such as Let's Encrypt.
 
@@ -13,6 +13,7 @@ For the purposes of this guide, the Mattermost server domain name is ``example.m
 .. important::
   - Generating the client certificates in this section is optional if you have already generated them before.
   - We strongly recommend configuring an SSL certificate (or a self-signed certificate) for security, privacy, compliance, as well as to avoid browser limitations that can prevent Mattermost product features from working that copy data using the user's local clipboard, including :ref:`sharing message links <end-user-guide/collaborate/share-links:share message links>` and :doc:`inviting people </end-user-guide/collaborate/invite-people>`. 
+  - SSL client certificates are not yet supported on the Mattermost mobile apps.
 
 Set up mutual TLS authentication for the web app
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

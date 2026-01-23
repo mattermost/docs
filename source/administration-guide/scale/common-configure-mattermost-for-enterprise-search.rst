@@ -1,7 +1,3 @@
-.. meta::
-   :name: robots
-   :content: noindex
-
 :orphan:
 :nosearch:
 
@@ -15,6 +11,10 @@ Set server connection details
 3. Set **Enable Cluster Sniffing** (Optional). Sniffing finds and connects to all data nodes in your cluster automatically.
 4. Optional CA and client certificate configuration settings are available for use with basic authentication credentials or to replace them. See the :ref:`Enterprise search configuration settings <administration-guide/configure/environment-configuration-settings:enterprise search>` documentation for details.
 5. Select **Test Connection** and then select **Save**. If the server connection is unsuccessful you won't be able to save the configuration or enable searching with Elasticsearch or AWS OpenSearch.
+
+.. note::
+
+   From Mattermost v11, enterprise search server connections are tested during :doc:`Support Packet generation </administration-guide/manage/admin/generating-support-packet>`. Any connection errors encountered during Support Packet generation are automatically included in the packet to help diagnose configuration issues.
 
 Build the post index of existing messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -31,6 +31,11 @@ Set **Enable Elasticsearch for search queries** to ``true``, and setting **Enabl
 .. note::
 
   For high post volume deployments, we strongly encourage you to read and properly configure the Mattermost :ref:`LiveIndexingBatchSize <administration-guide/configure/environment-configuration-settings:live indexing batch size>` configuration setting.
+
+
+.. warning::
+
+   For high post volume deployments, we also strongly recommend *disabling* Database Search once Elasticsearch or AWS OpenSearch is fully configured and running. The Mattermost Server will fall back on Database search if ElasticSearch or OpenSearch are unavailable which can lead to performance degradation on high post volume deployments.
 
 Once the configuration is saved, new posts made to the database are automatically indexed on the Elasticsearch or AWS OpenSearch server.
 

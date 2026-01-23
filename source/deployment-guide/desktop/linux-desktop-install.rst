@@ -1,6 +1,9 @@
 Install desktop app on Linux
 =============================
 
+.. include:: ../../_static/badges/all-commercial.rst
+  :start-after: :nosearch:
+
 This page describes how to install the Mattermost desktop app on Linux.
 
 .. tab:: Ubuntu/Debian
@@ -54,13 +57,13 @@ This page describes how to install the Mattermost desktop app on Linux.
   Install the Mattermost desktop app
   ----------------------------------
 
-  1. Download the latest version of the Mattermost desktop app for 64-bit systems: `mattermost-desktop-5.12.1-linux-x86_64.rpm <https://releases.mattermost.com/desktop/5.12.1/mattermost-desktop-5.12.1-linux-x86_64.rpm>`_
+  1. Download the latest version of the Mattermost desktop app for 64-bit systems: `mattermost-desktop-6.0.4-linux-x86_64.rpm <https://releases.mattermost.com/desktop/6.0.4/mattermost-desktop-6.0.4-linux-x86_64.rpm>`_
 
   2. At the command line, execute the following command:
     
     .. code-block:: sh
 
-      sudo rpm -i mattermost-desktop-5.12.1-linux-x86_64.rpm
+      sudo rpm -i mattermost-desktop-6.0.4-linux-x86_64.rpm
 
   3. Run Mattermost as a desktop app.
 
@@ -68,7 +71,7 @@ This page describes how to install the Mattermost desktop app on Linux.
   
     .. code-block:: sh
 
-      sudo rpm -u mattermost-desktop-5.12.1-linux-x86_64.rpm
+      sudo rpm -u mattermost-desktop-6.0.4-linux-x86_64.rpm
 
   .. tip:: 
     You can review the current version of your desktop app by selecting the **More** |more-icon-vertical| icon located in the top left corner of the desktop app, then selecting **Help > Version...**.
@@ -83,7 +86,7 @@ This page describes how to install the Mattermost desktop app on Linux.
   Install the Desktop App's compressed tarball
   ---------------------------------------------
 
-  1. Download the latest version of the Mattermost desktop app for 64-bit systems: `mattermost-desktop-5.12.1-linux-x64.tar.gz <https://releases.mattermost.com/desktop/5.12.1/mattermost-desktop-5.12.1-linux-x64.tar.gz>`_
+  1. Download the latest version of the Mattermost desktop app for 64-bit systems: `mattermost-desktop-6.0.4-linux-x64.tar.gz <https://releases.mattermost.com/desktop/6.0.4/mattermost-desktop-6.0.4-linux-x64.tar.gz>`_
 
   2. Extract the archive to a convenient location, then give ``chrome-sandbox`` in the extracted directory the required ownership and permissions: ``sudo chown root:root chrome-sandbox && sudo chmod 4755 chrome-sandbox``
 

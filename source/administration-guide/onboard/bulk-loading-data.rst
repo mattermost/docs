@@ -1,7 +1,7 @@
 Bulk loading data
 =================
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Large quantities of data can be imported from a `JSONL <https://jsonlines.org>`__ file into Mattermost at the command line using the bulk loading feature. This feature is most suitable for migrating data from an existing system, or for pre-populating a new installation with data.
@@ -696,7 +696,7 @@ Fields of the User object
         <kbd>"ldap"</kbd> - LDAP authentication (Enterprise and Professional)<br>
         <kbd>"saml"</kbd> - Generic SAML based authentication (Enterprise)<br>
         <kbd>"google"</kbd> - Google OAuth authentication (Enterprise)<br>
-        <kbd>"entra id"</kbd> - Microsoft Entra ID OAuth Authentication (Enterprise)</td>
+        <kbd>"office365"</kbd> - Microsoft Entra ID OAuth Authentication (Enterprise)</td>
       <td align="center" valign="middle">No</td>
       <td align="center" valign="middle">No</td>
     </tr>

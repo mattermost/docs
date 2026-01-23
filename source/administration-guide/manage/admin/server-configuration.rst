@@ -16,6 +16,7 @@ Whether you’re setting up email notifications, optimizing search capabilities,
     Set up Mattermost Agents </administration-guide/configure/agents-admin-guide>
     Install Mattermost Boards </administration-guide/configure/install-boards>
     Manage user attributes </administration-guide/manage/admin/user-attributes>
+    Enable content flagging </administration-guide/manage/admin/content-flagging>
     Environment variables </administration-guide/configure/environment-variables>
     Customize the server </administration-guide/manage/admin/customize-branding>
     SMTP email setup </administration-guide/configure/smtp-email>

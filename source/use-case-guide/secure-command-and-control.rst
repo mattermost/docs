@@ -19,9 +19,9 @@ In high-stakes missions—including classified operations—real-time collaborat
 
 - **Surface essential context faster for decisive action** using :doc:`threaded messaging </end-user-guide/collaborate/organize-conversations>`, :doc:`file previews </end-user-guide/collaborate/share-files-in-messages>`, and :doc:`channel-based discussion </end-user-guide/messaging-collaboration>` to consolidate signals and reduce noise.
 - **Integrate mission tooling and automation** via the :doc:`Mattermost integrations platform </integrations-guide/integrations-guide-index>`—connecting alerting, workflow engines, and tactical systems directly into operational channels.
-- **Strengthen mobile communication channels** through :doc:`enterprise mobility security </security-guide/security/mobile-security>` that reduce reliance on personal messaging apps, control data exposure, and ensure secure, compliant access.
+- **Strengthen mobile communication channels** through :doc:`enterprise mobility security </security-guide/mobile-security>` that reduce reliance on personal messaging apps, control data exposure, and ensure secure, compliant access.
 - **Coordinate operations with structured workflows** using :doc:`Collaborative Playbooks </end-user-guide/workflow-automation>` that standardize task execution, streamline decision-making, and maintain continuity across teams and mission roles.
-- **Deploy sovereign AI for operational intelligence** using :doc:`air-gapped and private AI operations </deployment-guide/server/air-gapped-deployment>` to power decision support and automation in disconnected or classified settings.
+- **Deploy sovereign AI for operational intelligence** using :doc:`air-gapped and private AI operations </deployment-guide/reference-architecture/deployment-scenarios/air-gapped-deployment>` to power decision support and automation in disconnected or classified settings.
 
 Disconnected, Intermittent, and Low-Bandwidth (DDIL) Collaboration
 -------------------------------------------------------------------
@@ -63,7 +63,7 @@ Coordinating across departments, agencies, and external stakeholders—especiall
 
 **Benefits**
 
-- **Unify mission stakeholders on a common-use platform** that supports :ref:`hybrid deployments <deployment-guide/server/server-deployment-planning:deployment options>` across private cloud, edge environments, and :doc:`air-gapped infrastructure </deployment-guide/server/air-gapped-deployment>`.
+- **Unify mission stakeholders on a common-use platform** that supports :ref:`hybrid deployments <deployment-guide/server/server-deployment-planning:deployment options>` across private cloud, edge environments, and :doc:`air-gapped infrastructure </deployment-guide/reference-architecture/deployment-scenarios/air-gapped-deployment>`.
 - **Maintain data sovereignty and mission alignment** with deployments that avoid consumer infrastructure and retain control over all communications and file transfers—even in classified operations.
 - **Apply role-based separation of access** through :doc:`advanced permissions </administration-guide/onboard/advanced-permissions>` and :ref:`channel-level controls <administration-guide/manage/team-channel-members:advanced access controls>` to protect mission integrity across organizational boundaries.
 - **Enable secure real-time collaboration across entities** using :doc:`Connected Workspaces </administration-guide/onboard/connected-workspaces>` to synchronize discussions, files, and reactions between teams without compromising internal governance.

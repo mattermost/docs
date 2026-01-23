@@ -1,7 +1,7 @@
 Advanced permissions
 ====================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Mattermost system admins using Mattermost Cloud or Mattermost Server can use Advanced Permissions to customize which users can perform specific actions, such as creating teams, managing channels, and configuring webhooks. The Mattermost permission system is based on a modified RBAC (role-based access control) architecture, using roles to determine which users have the ability to perform various actions.
@@ -37,6 +37,9 @@ You can access the System Scheme interface by going to **System Console > User M
 Team override scheme
 ~~~~~~~~~~~~~~~~~~~~
 
+.. include:: ../../_static/badges/entry-adv.rst
+  :start-after: :nosearch:
+
 On systems with multiple :ref:`Mattermost teams <end-user-guide/collaborate/organize-using-teams:single team versus multiple teams>`, each team may operate and collaborate in a unique way. Team Override Schemes give Admins the flexibility to tailor permissions to the needs of each team.
 
 When you use this permission scheme:
@@ -57,14 +60,10 @@ The channel permissions interface is accessed in **System Console > User Managem
 Advanced access controls
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See the :ref:`team and channel management <administration-guide/manage/team-channel-members:advanced access controls>` documentation for details.
+.. include:: ../../_static/badges/entry-adv.rst
+  :start-after: :nosearch:
 
-Supplementary roles
-~~~~~~~~~~~~~~~~~~~~
-
-*Being considered for a future release of Mattermost Enterprise*
-
-Allows admins to grant additional permissions to specific users or to a group of users based on AD/LDAP group membership. Permissions can be granted within the scope of channels, teams, or system level.
+See the :ref:`team and channel management <administration-guide/manage/team-channel-members:advanced access controls>` documentation for details on available channel access controls. 
 
 Recipes
 -------
@@ -73,6 +72,9 @@ This section provides some examples of common permissions use cases for team man
 
 Team management
 ~~~~~~~~~~~~~~~~
+
+.. include:: ../../_static/badges/entry-adv.rst
+  :start-after: :nosearch:
 
 Ensure users only see each other when in the same team or channel
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -103,6 +105,9 @@ Example: In Team A, only allow system and team admins to add new team members. A
 
 Public and private channel management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../../_static/badges/entry-adv.rst
+  :start-after: :nosearch:
 
 Restrict who can rename & edit channels
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -149,7 +154,7 @@ This permission is applied to all other roles (excluding the Guest role). When t
 Read-only channels
 ~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-only.rst
+.. include:: ../../_static/badges/entry-adv.rst
   :start-after: :nosearch:
 
 Members can participate but guests can only read and react
@@ -200,6 +205,8 @@ Example: As the default for the entire system, only allow users to edit their ow
 
 Integration management
 ~~~~~~~~~~~~~~~~~~~~~~
+
+From Mattermost v11.2, the System Console provides enhanced controls for managing integrations (webhooks, slash commands, OAuth apps), including separate permissions for managing your own integrations versus other users' integrations.
 
 Restrict who can manage webhooks and slash commands
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

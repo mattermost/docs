@@ -1,14 +1,14 @@
 Connect Jira to Mattermost
 ============================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Minimize distractions, reduce context switching between your project management tool and your communication platform by integrating Jira with Mattermost. You control which events trigger notifications including issue creation, field-specific issue updates, reopened, resolved, or deleted issues, as well as new, updated, or deleted issue comments. Create Jira issues directly from Mattermost conversations, attach messages to Jira issues, transition and assign Jira issues, and follow up on action items in real-time, directly from Mattermost channel subscriptions.
 
 Mattermost supports versions 7 and 8 of Jira Core and Jira Software products, for Server, Data Center, and Cloud platforms. From v3.0 of this integration, a commercial Mattermost license is required for multiple Jira instances with Mattermost configured using Administrator Slash Commands.
 
-Jira Service Management (formally known as Jira Service Desk) isn't supported.
+Jira Service Management (formerly known as Jira Service Desk) isn't supported.
 
 Deploy
 ------
@@ -18,7 +18,7 @@ Setup starts in Mattermost, moves to Jira, and finishes in Mattermost.
 .. note::
 
   - Jira Core and Jira Software products, for Server, Data Center, and Cloud platforms are supported, and tested with versions 7 and 8.
-  - Jira Service Management (formally known as Jira Service Desk) isn't supported.
+  - Jira Service Management (formerly known as Jira Service Desk) isn't supported.
   - From v3.0 of this integration, support for multiple Jira instances is supported with Mattermost Enterprise and Professional plans, configured using Administrator Slash Commands.
 
 Mattermost configuration
@@ -37,9 +37,9 @@ A Mattermost system admin must perform the following steps in Mattermost.
 
     - Generate a **Webhook Secret** by selecting **Regenerate**.
 
-  .. note::
+    .. note::
   
-    We recommend making a copy of your webhook secret, as it will only be visible to you once.
+      We recommend making a copy of your webhook secret, as it will only be visible to you once.
 
     - **Allow users to attach and create Jira issues in Mattermost**: Enable or disable the user's ability to attach and create Jira issues in Mattermost. When enabled, you must also `install this Jira integration in your Jira instance <#install-integration-as-Jira-app>`__.
     - **Mattermost Roles Allowed to Edit Jira Subscriptions**: Specify the Mattermost roles that can edit Jira subscriptions to control which Mattermost users can subscribe channels to Jira tickets.
@@ -285,11 +285,9 @@ This integration contains both a server and web app portion. Visit the `Mattermo
 Get help
 --------
 
-Mattermost commercial customers can open a `Mattermost support case <https://support.mattermost.com/hc/en-us/requests/new>`_. To report a bug, please open a GitHub issue against the `Mattermost Jira plugin repository <https://github.com/mattermost/mattermost-plugin-jira>`_.
+Customers with a Mattermost subscription can open a `Mattermost support case <https://support.mattermost.com/hc/en-us/requests/new>`_. Community deployments can report a bug by opening a GitHub issue against the `Mattermost Jira plugin repository <https://github.com/mattermost/mattermost-plugin-jira>`_, or visit the Mattermost `peer-to-peer troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`_ to access the global Mattermost Community for assistance.
 
 For questions, feedback, and assistance, join our pubic `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance.
-
-Mattermost Team Edition and Free customers can visit the Mattermost `peer-to-peer troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`_ to access the global Mattermost Community for assistance.
 
 .. tip::
 

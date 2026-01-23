@@ -26,8 +26,24 @@ How do I download app diagnostics?
 
 From Mattermost desktop v5.3, you can download a diagnostics text file via **Help > Run diagnostics**, which can be attached to a Support ticket.
 
+Deep links open in the wrong workspace in multi-view
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you experience deep links opening in the wrong workspace, ensure all relevant workspaces are pre-provisioned via the Group Policy ``DefaultServerList``. See the :ref:`multi-view and group policies <deployment-guide/desktop/desktop-msi-installer-and-group-policy-install:multi-view and Group Policies>` documentation for details.
+
+- Verify that workspace URLs match exactly (including protocol and subdomain) so links route to the intended workspace.
+- Edit the workspace list to correct or remove stale entries, then retry the link.
+
+High CPU or memory when multiple workspaces open
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Verify the device is powerful enough to run several workspaces concurrently. Close unused tabs and pop-out windows to reduce load.
+
+Check the :doc:`desktop app advanced settings </end-user-guide/preferences/customize-desktop-app-experience>`. Toggle **Use GPU hardware acceleration** off on systems with unstable drivers.
+
 Desktop App displays white screen while launching and doesn't load the page
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 1. Delete the local ``Mattermost desktop app`` configuration file. See the `Where is configuration stored locally? <#where-is-configuration-stored-locally>`__ section above for file location details.
 2. Reinstall the application. 
 

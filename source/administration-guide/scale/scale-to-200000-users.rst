@@ -1,7 +1,7 @@
 Scale Mattermost up to 200000 users
 ====================================
 
-.. include:: ../../_static/badges/ent-adv-selfhosted.rst
+.. include:: ../../_static/badges/ent-adv.rst
   :start-after: :nosearch:
 
 This page describes the Mattermost reference architecture designed for the load of up to 200000 concurrent users. Unsure which reference architecture to use? See the :doc:`scaling for enterprise </administration-guide/scale/scaling-for-enterprise>` documentation for details.
@@ -145,3 +145,5 @@ Additional considerations
 
 .. include:: additional-ha-considerations.rst
   :start-after: :nosearch:
+
+`Book a live demo <https://mattermost.com/request-demo/>`_  or `talk to a Mattermost expert <https://mattermost.com/contact-sales/>`_ to explore tailored solutions for your organization's secure collaboration needs. Or try Mattermost yourself with a `1-hour preview <https://mattermost.com/sign-up/>`_ for instant access to a live sandbox environment.

@@ -1,6 +1,9 @@
 Distribute a custom mobile app
 ================================
 
+.. include:: ../../_static/badges/all-commercial.rst
+  :start-after: :nosearch:
+
 To control the look and feel of the Mattermost mobile app requires building your own mobile apps, :doc:`hosting your own push proxy service </deployment-guide/mobile/host-your-own-push-proxy-service>`, and managing your own app distribution.
 
 .. note::
@@ -41,7 +44,7 @@ When you decide to build your own Mattermost mobile apps, you have multiple ways
 
 Our recommend approach is to submit your app to an Enterprise App Store. Once your custom app is added to your own enterprise App Store, your users can download it from the store directly or from an EMM catalog.
 
-Alternatively, use `an Enterprise Mobile Management (EMM) provider </deployment-guide/mobile/deploy-mobile-apps-using-emm-provider>` to push the mobile app to the user’s device, and use the AppConfig standard to enforce a selection of app-specific controls. Or, you can use `another distribution method <#using-another-distribution-method>`__, such as a file sharing platform.
+Alternatively, use :doc:`an Enterprise Mobile Management (EMM) provider </deployment-guide/mobile/deploy-mobile-apps-using-emm-provider>` to push the mobile app to the user’s device, and use the AppConfig standard to enforce a selection of app-specific controls. Or, you can use `another distribution method <#using-another-distribution-method>`__, such as a file sharing platform.
 
 You can also submit your app to `public app stores <#using-public-app-stores>`__. This is the same process Mattermost uses to make Mattermost mobile apps available for everyone. However, before your app can be listed on the public app stores, you need to submit it to the public app stores for review and approval. 
 

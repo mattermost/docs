@@ -22,12 +22,93 @@ The following Mattermost configuration settings are deprecated and are no longer
 - `Experimental display settings <#experimental-display-settings>`__
 - `Experimental API endpoint settings <#experimental-api-endpoint-settings>`__
 - `Shared channels settings <#shared-channels-settings>`__
+- `User satisfaction survey plugin settings <#user-satisfaction-surveys-plugin-settings>`__
 - `Other deprecated settings <#other-deprecated-settings>`__
 
 ----
 
 Bleve settings
 --------------
+
+*Bleve search has been deprecated from Mattermost v11.0. We recommend using Elasticsearch or OpenSearch for enterprise search capabilities.*
+
+Enable Bleve indexing
+~~~~~~~~~~~~~~~~~~~~~
+
+*Deprecated from Mattermost v11.0*
+
+This setting was available in the System Console by going to **Experimental > Bleve**, or by editing the ``config.json`` file.
+
+**True**: The indexing of new posts occurs automatically.
+
+**False**: The indexing of new posts does not occur automatically.
+
++------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableIndexing": false`` with options ``true`` and ``false``. |
++------------------------------------------------------------------------------------------------------------+
+
+Index directory
+~~~~~~~~~~~~~~~
+
+*Deprecated from Mattermost v11.0*
+
+This setting was available in the System Console by going to **Experimental > Bleve**, or by editing the ``config.json`` file.
+
+Directory path to use for storing bleve indexes.
+
++-----------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"IndexDir": ""`` with string input.                           |
++-----------------------------------------------------------------------------------------------------------+
+
+Bulk index now
+~~~~~~~~~~~~~~
+
+Select **Index Now** to index all users, channels, and posts in the database from oldest to newest. Bleve is available during indexing, but search results may be incomplete until the indexing job is complete.
+
+Purge indexes
+~~~~~~~~~~~~~
+
+Select **Purge Index** to remove the contents of the Bleve index directory. Search results may be incomplete until a bulk index of the existing database is rebuilt.
+
+.. config:setting:: enable-bleve-indexingsearch
+  :displayname: Enable Bleve for search queries (Experimental)
+  :systemconsole: Experimental > Bleve
+  :configjson: EnableSearching
+  :environment: N/A
+
+  - **true**: Search queries will use bleve search.
+  - **false**: **(Default)** Search queries will not use bleve search.
+
+
+Enable Bleve for search queries
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*Deprecated from Mattermost v11.0*
+
+This setting was available in the System Console by going to **Experimental > Bleve**, or by editing the ``config.json`` file.
+
+**True**: Search queries will use bleve search.
+
+**False**: Search queries will not use bleve search.
+
++--------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableSearching": false`` with options ``true`` and ``false``.  |
++--------------------------------------------------------------------------------------------------------------+
+
+Enable Bleve for autocomplete queries
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*Deprecated from Mattermost v11.0*
+
+This setting was available in the System Console by going to **Experimental > Bleve**, or by editing the ``config.json`` file.
+
+**True**: Autocomplete queries will use bleve search.
+
+**False**: Autocomplete queries will not use bleve search.
+
++-----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableAutocomplete": false`` with options ``true`` and ``false``.  |
++-----------------------------------------------------------------------------------------------------------------+
 
 Bulk Indexing Time Window Seconds
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -391,17 +472,6 @@ The port used for streaming data between servers.
 | This feature's ``config.json`` setting is ``"StreamingPort": ":8075"`` with string input. |
 +-------------------------------------------------------------------------------------------+
 
-Maximum idle database connections
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-*Deprecated. Not used in Mattermost v7.0 and later*
-
-+--------------------------------------------------------+------------------------------------------------------------------+
-| The maximum number of idle connections held open       | - System Config path: **Environment > Database**                 |
-| to the database.                                       | - ``config.json`` setting: ``".SqlSettings.MaxIdleConns": 20,``  |
-|                                                        | - Environment variable: ``MM_SQLSETTINGS_MAXIDLECONNS``          |
-| Numerical input. Default is **20**.                    |                                                                  |
-+--------------------------------------------------------+------------------------------------------------------------------+
 
 Maximum idle connections for high availability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -852,6 +922,57 @@ Enable the ability to establish secure connections between Mattermost instances,
 +---------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalSettings.EnableSharedChannels": false`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------------------------------------+
+
+----
+
+User satisfaction surveys plugin settings
+-----------------------------------------
+
+.. important::
+
+   This plugin is deprecated from Mattermost v10.11, and is no longer included as a pre-packaged plugin for new Mattermost deployments. For new installations, we strongly recommend using the :doc:`Mattermost User Survey integration </administration-guide/configure/manage-user-surveys>` instead.
+
+This plugin enables Mattermost to send user satisfaction surveys to gather feedback and improve product quality directly from your Mattermost users. Please refer to the `Mattermost Privacy Policy <https://mattermost.com/privacy-policy/>`__ for more information on the collection and use of information received through Mattermost services.
+
+Access the following configuration settings in the System Console by going to **Plugins > User Satisfaction Surveys**.
+
+.. config:setting:: enable-plugin
+  :displayname: Enable plugin (Plugins - User Satisfaction Surveys)
+  :systemconsole: Plugins > User Satisfaction Surveys
+  :configjson: PluginSettings.PluginStates.com.mattermost.user-survey.Enable
+  :environment: N/A
+
+  - **true**: (Default) Enables the Mattermost User Satisfaction Surveys plugin on your Mattermost workspace.
+  - **false**: Disables the Mattermost User Satisfaction Surveys plugin on your Mattermost workspace.
+
+Enable plugin
+~~~~~~~~~~~~~
+
++---------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| - **true**: (Default) Enables the Mattermost User Satisfaction Surveys plugin on your Mattermost workspace.   | - System Config path: **Plugins > User Satisfaction Surveys**                                |
+| - **false**: Disables the Mattermost User Satisfaction Surveys plugin on your Mattermost workspace.           | - ``config.json`` setting: ``PluginSettings.PluginStates.com.mattermost.user-survey.Enable`` |
+|                                                                                                               | - Environment variable: N/A                                                                  |
++---------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+
+.. config:setting:: enable-pluginsend
+  :displayname: Enable user satisfaction survey (Plugins - User Satisfaction Surveys)
+  :systemconsole: Plugins > User Satisfaction Surveys
+  :configjson: PluginSettings.PluginStates.com.mattermost.user-survey.Enable
+  :environment: N/A
+
+  - **true**: A user satisfaction survey is sent to all users every quarter.
+  - **false**: (Default) User satisfaction surveys are disabled.
+
+Enable user satisfaction survey
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++-----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| - **true**: A survey is sent to all users every quarter. Results are used by Mattermost, Inc. to improve the product.       | - System Config path: **Plugins > User Satisfaction Surveys**                                                      |
+| - **false**: (Default) User satisfaction surveys are disabled.                                                              | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.user-survey.systemconsolesetting.EnableSurvey`` |
+|                                                                                                                             | - Environment variable: N/A                                                                                        |
++-----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| **Note**: See the `Mattermost Privacy Policy <https://mattermost.com/privacy-policy/>`__ for more information on the collection and use of information by Mattermost.                                                                            |
++-----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 
 ----
 

@@ -1,7 +1,7 @@
 Manage your web notifications
 ==============================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 .. |chrome-mention-badge| image:: ../../images/chrome-mention-badge.png

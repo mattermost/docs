@@ -1,6 +1,9 @@
 Scaling for Enterprise 
 ======================
 
+.. include:: ../../_static/badges/ent-plus.rst
+  :start-after: :nosearch:
+
 Mattermost is designed to scale from small teams hosted on a single server to large enterprises running in cluster-based, highly available deployment configurations.
 
 - Mattermost supports any 64-bit x86 processor architecture
@@ -39,6 +42,7 @@ Available reference architectures
     :hidden:
     :titlesonly:
 
+    Deployment architecture at scale </administration-guide/scale/server-architecture>
     Backing storage benchmarks </administration-guide/scale/backing-storage-benchmarks>
     Enterprise search </administration-guide/scale/enterprise-search>
     High availability </administration-guide/scale/high-availability-cluster-based-deployment> 
@@ -98,3 +102,5 @@ Visit the `Mattermost Load Test Tool <https://github.com/mattermost/mattermost-l
     - The Mattermost Load Test Tool was designed by and is used by our performance engineers to compare and benchmark the performance of the service from month to month to prepare for new releases. It's also used extensively in developing our recommended hardware sizing. 
     - We recommend deploying :doc:`Prometheus and Grafana </administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring>` with our :ref:`dashboards <administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring:getting started>` for ongoing monitoring and scale guidance.
     - If you encounter performance concerns, we recommend :doc:`collecting performance metrics </administration-guide/scale/collect-performance-metrics>` and sharing them with us as a first troubleshooting step.
+
+`Book a live demo <https://mattermost.com/request-demo/>`_  or `talk to a Mattermost expert <https://mattermost.com/contact-sales/>`_ to explore tailored solutions for your organization's secure collaboration needs. Or try Mattermost yourself with a `1-hour preview <https://mattermost.com/sign-up/>`_ for instant access to a live sandbox environment.

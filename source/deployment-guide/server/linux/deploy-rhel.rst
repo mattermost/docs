@@ -9,7 +9,7 @@
       <ul>
         <li>Operating System: Enterprise Linux 7+, Oracle Linux  6+, Oracle Linux 7+</li>
         <li>Hardware: 1 vCPU/core with 2GB RAM (support for up to 1,000 users)</li>
-        <li>Database: <a href="https://docs.mattermost.com/deployment-guide/postgres-migration.html">PostgreSQL v13+</a></li>
+        <li>Database: <a href="https://docs.mattermost.com/deployment-guide/postgres-migration.html">PostgreSQL v14+</a></li>
         <li>Network:
           <ul>
             <li>Application 80/443, TLS, TCP Inbound</li>
@@ -21,21 +21,22 @@
     </div>
   </div>
 
-You can deploy Mattermost Server using our ``rpm`` signed packages available through the Mattermost Yum repository.
-
 This Mattermost deployment includes the following steps: install PostgreSQL database, prepare the database, download the Mattermost server, install the server, set up the server, and update the server.
 
-**Step 1: Install PostgreSQL database or get database connection credentials**
+Step 1: Install PostgreSQL database or get database connection credentials
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Install PostgreSQL locally on the same server by following the `PostgreSQL installation <https://www.postgresql.org/download/>`_ documentation.
 - Use an external PostgreSQL database server. Ensure you have connection credentials, including hostname, port, database name, username, and password available.
 - Use a managed database service.
 
-**Step 2: Prepare the database**
+Step 2: Prepare the database
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Follow the :ref:`database preparation <deployment-guide/server/preparations:database preparation>` documentation to set up your PostgreSQL database for Mattermost.
 
-**Step 3: Download the latest Mattermost Server tarball**
+Step 3: Download the latest Mattermost Server tarball
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In a terminal window, ssh onto the system that will host the Mattermost Server. Using ``wget``, download the Mattermost Server release you want to install using one of the following commands. Replace ``amd64`` with the appropriate architecture (e.g., ``arm64`` for ARM-based systems) in the link as needed.
 
@@ -43,19 +44,20 @@ In a terminal window, ssh onto the system that will host the Mattermost Server. 
 
   .. code-block:: sh
 
-    wget https://releases.mattermost.com/10.10.1/mattermost-10.10.1-linux-amd64.tar.gz
+    wget https://releases.mattermost.com/11.3.0/mattermost-11.3.0-linux-amd64.tar.gz
 
 .. tab:: Current ESR
 
   .. code-block:: sh
 
-    wget https://releases.mattermost.com/10.5.9/mattermost-10.5.9-linux-amd64.tar.gz
+    wget https://releases.mattermost.com/10.11.10/mattermost-10.11.10-linux-amd64.tar.gz
 
 .. tab:: Older releases
 
   If you are looking for an older release, Enterprise and Team Edition releases can be found in our :doc:`version archive </product-overview/version-archive>` documentation.
 
-**Step 4: Install Mattermost server**
+Step 4: Install Mattermost server
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Ahead of installing the Mattermost Server, we recommend updating all your repositories and, where required, update existing packages by running the following commands:
 
@@ -143,7 +145,8 @@ In a terminal window, ssh onto the system that will host the Mattermost Server. 
 
 8. Save the file and reload systemd using ``sudo systemctl daemon-reload``. Mattermost Server is now installed and is ready for setup.
 
-**Step 5: Set up the server**
+Step 5: Set up the server
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Before you start the Mattermost Server, you need to edit the configuration file. A default configuration file is located at ``/opt/mattermost/config/config.json``. We recommend taking a backup of this default config ahead of making changes:
 
@@ -159,7 +162,7 @@ Configure the following properties in this file:
 
 .. note::
 
-  We recommend configuring the `Support Email <https://docs.mattermost.com/administration/config-settings.html#support-email>`_ under ``SupportSettings``, set ``"SupportEmail"``. This is the email address your users will contact when they need help.
+  We recommend configuring the :ref:`Support Email <administration-guide/configure/site-configuration-settings:support email address>` under ``SupportSettings``, set ``"SupportEmail"``. This is the email address your users will contact when they need help.
 
 After modifying the ``config.json`` configuration file, you can now start the Mattermost server:
 
@@ -229,7 +232,8 @@ The final step, depending on your requirements, is to run sudo ``systemctl enabl
       - `A Sysadmin's Guide to SELinux: 42 Answers to the Big Questions <https://opensource.com/article/18/7/sysadmin-guide-selinux>`_
       - `Mastering SELinux: A Comprehensive Guide to Linux Security <https://srivastavayushmaan1347.medium.com/mastering-selinux-a-comprehensive-guide-to-linux-security-8bed9976da88>`_
 
-**Step 6: Update the server**
+Step 6: Update the server
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Updating your Mattermost Server installation when using the tarball requires several manual steps. See the :doc:`upgrade Mattermost Server </administration-guide/upgrade/upgrading-mattermost-server>` documentation for details.
 

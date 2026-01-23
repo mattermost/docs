@@ -1,7 +1,7 @@
 Interact with playbooks
 =======================
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Slash commands
@@ -23,6 +23,11 @@ Available slash commands include:
 - ``/playbook todo`` - Get a list of your assigned tasks.
 - ``/playbook settings digest [on/off]`` - Turn daily digest on/off.
 - ``/playbook settings weekly-digest [on/off]`` - Turn weekly digest on/off.
+
+Playbooks on the go
+--------------------
+
+Learn how to `access and work with playbooks on the go <https://docs.mattermost.com/end-user-guide/workflow-automation.html#itab--Mobile--0_1-Mobile>`_ with the Mattermost mobile app.
 
 API documentation
 -----------------

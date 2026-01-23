@@ -1,7 +1,7 @@
 Collect performance metrics
 ============================
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 System admins can collect and store the :doc:`same performance monitoring metrics </administration-guide/scale/performance-monitoring-metrics>` as Prometheus, without having to deploy these third-party tools. Data is collected every minute and is stored in a path you configure. The data is synchronized to either a cloud-based or local file store every hour, and retained for 15 days. 
@@ -26,6 +26,7 @@ For a self-hosted Mattermost deployment, a Mattermost system admin must perform 
 3. Go to **System Console > Plugins > Plugin Management**. In the **Installed Plugins** section, scroll to **Mattermost Metrics Plugin**, and select **Enable Plugin**.
 4. Specify the path of the time-series database, and select **Save**.
 5. Go to **System Console > Environment > Performance Monitoring**, and set **Enable Performance Monitoring** to **true**. Select **Save**.
+6. Go to **System Console > Environment > Performance Monitoring**, and set **Enable Client Performance Monitoring** to **true**. This setting is required for the system administrator's performance monitoring product experience. Select **Save**.
 
 .. note::
 
@@ -53,7 +54,7 @@ The volume configuration for Prometheus should look like the code below in the `
 
 Once you set this up, run ``docker-compose`` as described in `Dockprom Repository <https://github.com/stefanprodan/dockprom?tab=readme-ov-file#install>`__. 
 
-You can also use our `Mattermost Performance Monitoring v2 <https://grafana.com/grafana/dashend-user-guide/boards/15582-mattermost-performance-monitoring-v2/>`_ dashboard by simply importing it into Grafana.
+You can also use our `Mattermost Performance Monitoring v2 <https://grafana.com/grafana/dashboards/15582-mattermost-performance-monitoring-v2/>`_ dashboard by simply importing it into Grafana.
 
 1. Open Grafana (``<localhost>:3000`` by default) and then log into it. 
 2. Once you log in, go to the **Plus** |plus| icon on the left sidebar, and then select **Import**.

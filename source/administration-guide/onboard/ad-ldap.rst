@@ -1,13 +1,13 @@
 AD/LDAP setup
 =============
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Overview
 --------
 
-Mattermost offers “Same Sign-On” with Microsoft AD/LDAP (formally known as Active Directory/LDAP). Enable the same credentials used in on-prem AD/LDAP deployments to be reused in Mattermost, with optional :doc:`multi-factor authentication </administration-guide/onboard/multi-factor-authentication>`.
+Mattermost offers “Same Sign-On” with Microsoft AD/LDAP (formerly known as Active Directory/LDAP). Enable the same credentials used in on-prem AD/LDAP deployments to be reused in Mattermost, with optional :doc:`multi-factor authentication </administration-guide/onboard/multi-factor-authentication>`.
 
 AD/LDAP is a service that stores authentication and authorization details of users on your organization's network. When you integrate your AD/LDAP system with Mattermost, users can log into Mattermost without having to create new credentials. User accounts are managed in AD/LDAP, and changes are synchronized with Mattermost.
 
@@ -101,17 +101,26 @@ Configure AD/LDAP login
 Configure AD/LDAP synchronization
 ----------------------------------
 
+.. include:: ../../_static/badges/entry-ent.rst
+  :start-after: :nosearch:
+
 In addition to configuring AD/LDAP sign-in, you can also configure AD/LDAP synchronization. When synchronizing, Mattermost queries AD/LDAP for relevant account information and updates Mattermost accounts based on changes to attributes (first name, last name, and nickname). When accounts are disabled in AD/LDAP users are deactivated in Mattermost, and their active sessions are revoked once Mattermost synchronizes the updated attributes.
 
 The AD/LDAP synchronization depends on email. Make sure all users on your AD/LDAP server have an email address, or ensure their account is deactivated in Mattermost.
 
-When Mattermost is configured to use AD/LDAP for user authentication, the following user attribute changes can't be made through the API: first name, last name, position, nickname, email, profile image, or username. LDAP must be the authoritative source for these user attributes.
+When Mattermost is configured to use AD/LDAP for user authentication, the following user attribute changes can't be made through the API: first name, last name, position, nickname, email, profile picture, or username. LDAP must be the authoritative source for these user attributes.
 
 To configure AD/LDAP synchronization with AD/LDAP sign-in:
 
 1. Go to **System Console > Authentication > AD/LDAP** to open the AD/LDAP wizard and navigate to the **Connection Settings** section. Set **Enable Synchronization with AD/LDAP** to **true**.
 
-2. Navigate to the **Sync Performance** section and configure the **Synchronization Interval (minutes)** to specify how often Mattermost accounts synchronize attributes with AD/LDAP. The default setting is 60 minutes. The profile picture attribute is only synchronized when the user logs in.
+2. Navigate to the **Sync Performance** section and configure the **Synchronization Interval (minutes)** to specify how often Mattermost accounts synchronize attributes with AD/LDAP. The default setting is 60 minutes. 
+
+.. note::
+
+  - The profile picture attribute is only synchronized when the user logs in. 
+  - From Mattermost v11, if a profile picture in AD/LDAP is removed, the next time the user logs in, their Mattermost profile picture is also removed and returns to the default image. 
+  - Additionally, after configuring profile pictures in AD/LDAP configuration, all AD/LDAP user accounts in Mattermost will synchronize to use the profile picture from AD/LDAP on their next login.
 
   - If you want to synchronize immediately after disabling an account, use the **AD/LDAP Synchronize Now** button in the **Sync History** section of the wizard.
   - To configure AD/LDAP synchronization with SAML sign-in, see the :doc:`SAML documentation </administration-guide/onboard/sso-saml>`.

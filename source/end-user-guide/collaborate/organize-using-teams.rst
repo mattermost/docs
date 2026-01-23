@@ -1,7 +1,7 @@
 Organize using teams
 ====================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 .. toctree::
@@ -15,9 +15,6 @@ Organize using teams
 A team is a digital :doc:`workspace </end-user-guide/end-user-guide-index>` where you and your teammates can collaborate in Mattermost. Depending on how Mattermost is :ref:`set up <administration-guide/configure/experimental-configuration-settings:primary team>` in your organization, you can belong to one team or multiple teams, and :ref:`access to the team <end-user-guide/collaborate/team-settings:access settings>` can be open or restricted.
 
 Users with the **Create Teams** permission can `create new teams <#create-a-team>`__ and :doc:`manage team settings </end-user-guide/collaborate/team-settings>` for existing teams. System admins can grant the **Create Team** permission to roles via the :ref:`System scheme <administration-guide/onboard/advanced-permissions:system scheme>` or the :ref:`Team override scheme <administration-guide/onboard/advanced-permissions:team override scheme>`.
-
-.. include:: ../../_static/badges/academy-teams.rst
-  :start-after: :nosearch:
 
 Single team versus multiple teams
 ----------------------------------
@@ -79,7 +76,7 @@ Join a team
 
 You can join any open teams, or join any team you receive an invitation to join.
 
-If you haven't yet joined any teams in Mattermost, you're prompted to join available teams when you :doc:`log in to Mattermost </end-user-guide/collaborate/access-your-workspace>`.
+If you haven't yet joined any teams in Mattermost, you're prompted to join available teams when you :doc:`log in to Mattermost </end-user-guide/access/access-your-workspace>`.
 
 You can be a member of multiple teams at the same time. To join additional teams, select the current team name, choose **Join Another Team**, and select the name of the team you want to join.
 

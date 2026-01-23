@@ -25,14 +25,10 @@ We have done performance testing of 60,000 concurrent users and 60 million posts
 
 Mattermost provides an open source, well-documented `load test simulator <https://github.com/mattermost/mattermost-load-test>`__ to verify that your Mattermost deployment can achieve the stated scale benchmarks ahead of production deployment.
 
-How do I deploy the open source Mattermost Team Edition under an MIT license?
------------------------------------------------------------------------------
+What happens if I have more than 10,000 messages in my database and have upgraded to Entry?
+-------------------------------------------------------------------------------------------
 
-The open source Mattermost Team Edition is functionally identical to the commercial Mattermost Enterprise Edition in its free “team mode”, but there is no ability to unlock enterprise features. It deploys as a single Linux binary with PostgreSQL under an MIT license.
-
-We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to unlock Enterprise features seamlessly should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
-
-To deploy the Team Edition, download the :doc:`Mattermost Team Edition binary </product-overview/version-archive>`, and follow our standard install guides. The same applies to server upgrades.
+Entry limits the number of messages shown in the end user inteface for channel history and search. All records are retained in the database. Upgrading to a paid version of Mattermost will unlock this and other Entry limitations. Migrating to Team Edition will also unlock full history of channels, but will limit what features are available.
 
 What are the limitations for embargoed countries?
 -------------------------------------------------
@@ -46,3 +42,12 @@ This includes:
 - We are not permitted to provide our software, including any updates, upgrades or cloud-hosted versions to your organization. We must ask that you do not use any software or online services provided by Mattermost, Inc., including any versions that have been provided online to the general public.
 
 We deeply apologize for the inconvenience. We must abide by United States laws. We hope after sanctions are lifted that we can support your interest once again. Please reach out to compliance@mattermost.com for any questions around current export limitations.
+
+How do I report illicit use of Mattermost software? 
+---------------------------------------------------
+
+Illicit use of Mattermost software to harm others, infringe on their rights, break laws or policies is explicitly against our `Terms of Use <https://mattermost.com/terms-of-use/>`__.
+
+If the illicit use is happening on a web address ending in ``“mattermost.com”``, it means the suspected perpetrators are using Mattermost software controlled by our company, Mattermost, Inc. In this case, please get in touch with us at ``compliance@mattermost.com`` to report the issue for us to investigate.
+
+If the illicit use is happening on a different web address, then it means the suspected perpetrators may be using Mattermost software controlled by a person or company other than Mattermost, Inc. In this case, you need to contact the person or company who controls the web address by using a lookup service such as https://www.whois.com/ to find the contact email to report abuse. You can use a link to this FAQ as a reference to our `Terms of Use <https://mattermost.com/terms-of-use/>`__ policy for Mattermost software.

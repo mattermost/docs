@@ -1,7 +1,7 @@
 User management configuration settings
 ======================================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Review and manage the following in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **User Management**:
@@ -42,6 +42,10 @@ From Mattermost v9.6, you can review the following user data in the System Conso
 - **Last post**: The total number of days since the user's last sent message on the server.
 - **Days active**: (PostgreSQL only) The total number of days in which the user has sent a message in Mattermost.
 - **Messages posted**: (PostgreSQL only) The total number of messages the user has sent on the server.
+
+From Mattermost v11.0, you can also review the following authentication data for each user:
+
+- **Authentication Method**: Shows how users authenticate with the Mattermost server, including external authentication system details such as LDAP Distinguished Name (DN), SAML NameID, OAuth ID, or other external authentication identifiers. This information helps system administrators troubleshoot authentication issues and correlate Mattermost users with their external authentication systems.
 
 By default, you see all columns of data and data for all time. 
 
@@ -97,6 +101,12 @@ From Mattermost v9.6, Mattermost Enterprise and Professional customers can expor
 2. `Filter <#filter-user-searches>`__ the user data as needed.
 3. Select **Export** located in the top right corner of the System Console interface, and then select **Export data**. You'll receive the report in CSV format as a direct message in Mattermost.
 
+.. config:setting:: deactivate-users
+  :displayname: Deactivate users
+  :systemconsole: Site Configuration > Users and Teams
+  :configjson: N/A
+  :environment: N/A
+
 Deactivate users
 ~~~~~~~~~~~~~~~~~
 
@@ -104,16 +114,13 @@ To delete a user from your Mattermost deployment, you can deactivate the user's 
 
 .. note::
 
-  From Mattermost v10.10, when a user account is deactivated, the account's :ref:`availability <end-user-guide/preferences/set-your-status-availability:set your availability>` is automatically set to offline.
-
-.. note::
-
-  LDAP-managed users must be deactivated through LDAP, and can't be deactivated using the System Console or the API.
+  - From Mattermost v10.10, when a user account is deactivated, the account's :ref:`availability <end-user-guide/preferences/set-your-status-availability:set your availability>` is automatically set to offline.
+  - LDAP-managed users must be deactivated through LDAP, and can't be deactivated using the System Console or the API.
 
 1. Go to **System Console > User Management > Users** to access all user accounts.
 2. Select a **User** that you wish to activate or deactivate.
 3. If the selected user is currently active, you can find the **Deactivate** button in the **User Configuration** page.
-4. Select **Deactivate**, and confirm the deactivation.
+4. Select **Deactivate**, and confirm the deactivation. You can re-activate a deactivated user by selecting **Activate**.
 
 .. image:: ../../images/deactivate-user.png
   :alt: Deactivate a user in Mattermost using the System Console.
@@ -125,15 +132,70 @@ To delete a user from your Mattermost deployment, you can deactivate the user's 
 What happens to deactivated user integrations?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. important::
+If you deactivate a Mattermost user who has integrations tied to their user account, consider the following consequences and recommendations based on the integration type:
 
-  If you deactivate a Mattermost user who has integrations tied to their user account, consider the following consequences and recommendations based on the integration type:
+- **Slash commands** will continue to work after user deactivation. Consider deleting the existing slash command and creating a new slash command associated with a different user account to decouple sensitive token data from the deactivated user account. Alternatively, consider regenerating the token of the existing slash command. Check that the deactivated user doesn't have access to the slash command **Request URL** which is the callback URL to receive the HTTP POST or GET event request when the slash command is run.
+- **Outgoing webhooks** will continue to work after user deactivation. Consider regenerating the webhook token and check that the deactivated user no longer has access to the callback URLs, as having access would result in the deactivating user receiving the outgoing webhooks.
+- **Incoming webhooks** will continue to work after user deactivation. Because the `URL produced <https://developers.mattermost.com/integrate/webhooks/incoming/#create-an-incoming-webhook>`_ includes ``xxx-generatedkey-xxx``, anyone who has the URL can post messages to the Mattermost instance. We recommend removing the incoming webhook and creating a new one associated with a different user account. 
+- **Bot accounts** won't continue to work after user deactivation when the :ref:`disable bot accounts when owner is deactivated <administration-guide/configure/integrations-configuration-settings:disable bot accounts when owner is deactivated>` is enabled. This configuration setting is enabled by default.
+- **OAuth apps** won't continue to work after user deactivation, and associated tokens are deleted. Manual action is needed to keep these integrations running.
 
-  - **Slash commands** will continue to work after user deactivation. Consider deleting the existing slash command and creating a new slash command associated with a different user account to decouple sensitive token data from the deactivated user account. Alternatively, consider regenerating the token of the existing slash command. Check that the deactivated user doesn't have access to the slash command **Request URL** which is the callback URL to receive the HTTP POST or GET event request when the slash command is run.
-  - **Outgoing webhooks** will continue to work after user deactivation. Consider regenerating the webhook token and check that the deactivated user no longer has access to the callback URLs, as having access would result in the deactivating user receiving the outgoing webhooks.
-  - **Incoming webhooks** will continue to work after user deactivation. Because the `URL produced <https://developers.mattermost.com/integrate/webhooks/incoming/#create-an-incoming-webhook>`_ includes ``xxx-generatedkey-xxx``, anyone who has the URL can post messages to the Mattermost instance. We recommend removing the incoming webhook and creating a new one associated with a different user account. 
-  - **Bot accounts** won't continue to work after user deactivation when the :ref:`disable bot accounts when owner is deactivated <administration-guide/configure/integrations-configuration-settings:disable bot accounts when owner is deactivated>` is enabled. This configuration setting is enabled by default.
-  - **OAuth apps** won't continue to work after user deactivation, and associated tokens are deleted. Manual action is needed to keep these integrations running.
+Manage user attributes
+~~~~~~~~~~~~~~~~~~~~~~
+
+From Mattermost v11.1, you can can view and update user attribute values for individual users directly from the System Console. This capability provides a centralized way to manage user profile attributes without requiring users to update their own profiles or using :ref:`mmctl user attribute commands <administration-guide/manage/mmctl-command-line-tool:mmctl cpa>`.
+
+1. Go to **System Console > User Management > Users** to access all user accounts.
+2. Select a **User** to open their User Configuration page.
+3. Scroll to the **User Attributes** section to view and edit the user's attribute values.
+4. Update attribute values as needed and save your changes.
+
+.. note::
+
+  - User attributes must be created first through **System Console > Site Configuration > System Attributes > User Attributes** before they can be edited in individual user profiles. See the :doc:`User attributes </administration-guide/manage/admin/user-attributes>` documentation for details on creating and configuring attributes.
+  - Users can edit their own attributes if that attribute is configured as :ref:`user-editable <administration-guide/manage/admin/user-attributes:admin-managed vs user-editable attributes>`.
+
+Delete users
+~~~~~~~~~~~~~
+
+From Mattermost v10.11, when using email/password for authentication, you can enable users to permanently delete their own accounts, or you can delete user accounts as a system administrator.
+
+.. config:setting:: delete-users
+  :displayname: Delete users
+  :systemconsole: Site Configuration > Users and Teams
+  :configjson: DeleteAccountLink
+  :environment: N/A
+
+Enable account deletion
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Define the URL for a **Delete Account Link** that users can access by going to their profile and selecting **Security > Delete Your Account**. Leave this field blank to hide the abiltiy for users to delete their account. 
+
++-----------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ServiceSettings.DeleteAccountLink": ""`` with string input.  |
++-----------------------------------------------------------------------------------------------------------+
+
+When a user deletes their account, deleted accounts cannot be reactivated, and the user is automatically removed from all teams and channels.
+
+What data is removed?
+^^^^^^^^^^^^^^^^^^^^^
+
+When an account is permanently deleted, the following data is permanently removed:
+
+- User profile information (name, email, username)
+- User preferences and settings
+- User authentication credentials
+- Direct message channel memberships
+- Team and channel memberships
+- User session data
+- All posts and replies authored by the deleted user
+- File uploads and attachments shared in channels by the user
+- All webhooks, slash commands and OAuth apps created by the user
+
+What data is retained?
+^^^^^^^^^^^^^^^^^^^^^^^
+
+After account deletion, audit logs referencing the user's actions, channel and team membership are retained.
 
 Manage user's roles
 ~~~~~~~~~~~~~~~~~~~~
@@ -170,7 +232,7 @@ Add or remove users from teams using the System Console.
 Manage user's settings
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-only.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 From Mattermost v9.11, system admins can help end users customize their Mattermost notifications by editing the user's :doc:`notification settings </end-user-guide/preferences/manage-your-notifications>` on the user's behalf within the System Console. Users can view, modify, and override their own settings at any time.
@@ -259,8 +321,9 @@ Groups
 | to Mattermost groups.                                         | - ``config.json setting``: N/A                              |
 |                                                               | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
-
-See the :doc:`AD/LDAP groups </administration-guide/onboard/ad-ldap-groups-synchronization>` documentation for details.
+| See the :doc:`AD/LDAP groups </administration-guide/onboard/ad-ldap-groups-synchronization>` documentation for              |
+| details.                                                                                                                    |
++---------------------------------------------------------------+-------------------------------------------------------------+
 
 ----
 
@@ -436,6 +499,7 @@ Manage the Management actions available to channel members and guests.
 
 Create Posts
 ^^^^^^^^^^^^
+
 The ability for members and guests to create posts in the channel.
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
@@ -448,6 +512,7 @@ The ability for members and guests to create posts in the channel.
 
 Post Reactions
 ^^^^^^^^^^^^^^
+
 The ability for members and guests to react with emojis on messages in the channel.
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
@@ -460,6 +525,7 @@ The ability for members and guests to react with emojis on messages in the chann
 
 Manage Members
 ^^^^^^^^^^^^^^
+
 The ability for members to add and remove people from the channels. Guests can't add or remove people from channels.
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
@@ -472,6 +538,7 @@ The ability for members to add and remove people from the channels. Guests can't
 
 Channel Mentions
 ^^^^^^^^^^^^^^^^
+
 The ability for members and guests to use channel mentions, including **@all**, **@here**, and **@channel**, in the channel.
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
@@ -482,11 +549,13 @@ The ability for members and guests to use channel mentions, including **@all**, 
 .. image:: ../../images/allow-mentions-for-a-channel.png
   :alt: Add Members and Guests to use mentions in a channel using the System Console.
 
-.. tip::                                                                                                                                                                
+.. tip::
+
   **Guests** and **Members** can't use channel mentions without the ability to **Create Posts**. To enable this permission, these users must have been granted **Create Posts** permission first.
 
 Manage Bookmarks
 ^^^^^^^^^^^^^^^^
+
 The ability for members to add, delete, and sort bookmarks. Guests can't add, remove, or sort bookmarks for the channel.
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
@@ -497,7 +566,8 @@ The ability for members to add, delete, and sort bookmarks. Guests can't add, re
 .. image:: ../../images/allow-manage-bookmarks-for-a-channel.png
   :alt: Allow Members to manage bookmarks for the channel using the System Console.
 
-.. tip::                                                                                                                                                                
+.. tip::
+
   The ability to manage bookmarks for the channel is available for **Members** only. **Guests** can't add, remove or sort bookmarks for the channel.
 
 Channel Management
@@ -507,6 +577,7 @@ Choose between inviting members manually or sychronizing members automatically f
 
 Sync Group Members
 ^^^^^^^^^^^^^^^^^^
+
 When enabled, adding and removing users from groups will add or remove them from this team. The only way of inviting members to this team is by adding the groups they belong to. See the :ref:`Synchronize teams and channels <administration-guide/onboard/ad-ldap-groups-synchronization:synchronize teams and channels>` documentation for further details.
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
@@ -519,6 +590,7 @@ When enabled, adding and removing users from groups will add or remove them from
 
 Public channel or private channel
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Public channels are discoverable and any user can join. Private channels require invitations to join.
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
@@ -572,8 +644,7 @@ Archive a channel
 .. image:: ../../images/archive-a-channel.png
   :alt: Archive a channel using the System Console.
 
-.. tip::
-
+.. tip::                                                                                                                                                                
   Channels can be deleted with all content, including posts in the database, using the :ref:`mmctl channel delete <administration-guide/manage/mmctl-command-line-tool:mmctl channel delete>` tool.
 
 ----
@@ -581,26 +652,27 @@ Archive a channel
 Permissions
 -----------
 
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 +---------------------------------------------------------------------+-------------------------------------------------------------+
 | Restrict actions in Mattermost to authorized users only.            | - System Config path: **User Management > Permissions**     |
 |                                                                     | - ``config.json setting``: N/A                              |
 |                                                                     | - Environment variable: N/A                                 |
 +---------------------------------------------------------------------+-------------------------------------------------------------+
-
-See :doc:`advanced permissions </administration-guide/onboard/advanced-permissions>` documentation for details.
+| See :doc:`advanced permissions </administration-guide/onboard/advanced-permissions>` documentation for details                    |
++---------------------------------------------------------------------+-------------------------------------------------------------+
 
 ----
 
 System roles
 ------------
 
+.. include:: ../../_static/badges/pro-plus.rst
+  :start-after: :nosearch:
+
 +----------------------------------------------------------------------+------------------------------------------------------------+
 | Restrict System Console access to authorized users only.             | - System Config path: **User Management > System Roles**   |
 |                                                                      | - ``config.json setting``: N/A                             |
 |                                                                      | - Environment variable: N/A                                |
 +----------------------------------------------------------------------+------------------------------------------------------------+
-
-See the :doc:`delegated granular administration </administration-guide/onboard/delegated-granular-administration>` documentation for details.
+| See the :doc:`delegated granular administration </administration-guide/onboard/delegated-granular-administration>`                |
+| documentation for details                                                                                                         |
++----------------------------------------------------------------------+------------------------------------------------------------+

@@ -1,7 +1,7 @@
 Reporting configuration settings
 ================================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 View the following statistics for your overall deployment and specific teams, as well as access server logs, in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Reporting**:
@@ -48,9 +48,6 @@ Team statistics
 Server logs
 -----------
 
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
 +---------------------------------------------------------------+---------------------------------------------------------------+
 | View logging of server-side events.                           | - System Config path: **Reporting > Server Logs**             |
 |                                                               | - ``config.json`` setting: N/A                                |
@@ -58,19 +55,17 @@ Server logs
 | and view full log event details for any log entry.            |                                                               |
 +---------------------------------------------------------------+---------------------------------------------------------------+
 
-.. tip::
+.. note::
 
-  From Mattermost v10.9, you can toggle between JSON and plain text server logs in the System Console when console log output is configured as :ref:`JSON <administration-guide/configure/environment-configuration-settings:output console logs as json>` by specifying the log format as **JSON** or **Plain text**. This option is located in the top right corner of the page **Server logs** page.
+  - This setting is applicable to self-hosted deployments only.
+  - From Mattermost v10.9, you can toggle between JSON and plain text server logs in the System Console when console log output is configured as :ref:`JSON <administration-guide/configure/environment-configuration-settings:output console logs as json>` by specifying the log format as **JSON** or **Plain text**. This option is located in the top right corner of the page **Server logs** page.
 
 ----
 
 Statistics configuration settings
 ---------------------------------
 
-.. include:: ../../_static/badges/selfhosted-only.rst
-  :start-after: :nosearch:
-
-The following configuration setting controls statistics collection behavior. This setting is not available in the System Console and can only be set in the ``config.json`` file.
+The following self-hosted deployment configuration setting controls statistics collection behavior. This setting is not available in the System Console and can only be set in the ``config.json`` file.
 
 .. config:setting:: maximum-users-for-statistics
   :displayname: Maximum users for statistics (Reporting)
@@ -81,9 +76,6 @@ The following configuration setting controls statistics collection behavior. Thi
 
 Maximum users for statistics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 This setting is used to maximize performance for large Enterprise deployments and isn't available in the System Console and can only be set in ``config.json``.
 

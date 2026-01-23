@@ -61,7 +61,7 @@ Data management
 Data portability
 ^^^^^^^^^^^^^^^^^
 
-- **Data Import:** Use the :doc:`bulk loading tool </administration-guide/onboard/bulk-loading-data>` to migrate data from an existing messaging system, or for pre-populating a new installation with data. :ref:`Review this guide <administration-guide/onboard/migrating-to-mattermost:migrate from slack>` which summarizes the different approaches and meets the `Right to Data Portability <https://gdpr-info.eu/art-20-gdpr/>`_ principle.
+- **Data Import:** Use the :doc:`bulk loading tool </administration-guide/onboard/bulk-loading-data>` to migrate data from an existing messaging system, or for pre-populating a new installation with data. :doc:`Review our migrate from Slack guidance </administration-guide/onboard/migrate-from-slack>` which summarizes the different approaches and meets the `Right to Data Portability <https://gdpr-info.eu/art-20-gdpr/>`_ principle.
 - **Data Export:** Use :doc:`compliance exports </administration-guide/comply/compliance-export>` to export conversations from public, private and direct message channels in XML or EML format. Those in Team Edition can export conversations directly from the database, both in PostgreSQL and in MySQL.
 
 Accessibility compliance
@@ -237,3 +237,5 @@ Are you 508 compliant?
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Yes, the Mattermost platform is compliant with 508. See the :doc:`accessibility compliance policy </product-overview/accessibility-compliance-policy>` documentation for details.
+
+`Book a live demo <https://mattermost.com/request-demo/>`_  or `talk to a Mattermost expert <https://mattermost.com/contact-sales/>`_ to explore tailored solutions for your organization's secure collaboration needs. Or try Mattermost yourself with a `1-hour preview <https://mattermost.com/sign-up/>`_ for instant access to a live sandbox environment.

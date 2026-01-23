@@ -1,7 +1,7 @@
 Desktop App Deployment
 =======================
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 The Mattermost desktop app is available for Windows, macOS, and Linux operating systems, and offers :doc:`additional functionality </end-user-guide/preferences/customize-desktop-app-experience>` beyond the web-based experience.
@@ -11,13 +11,11 @@ Learn more about desktop app :ref:`software requirements <deployment-guide/softw
 Download
 ---------
 
-Download and install the Mattermost desktop app from the `App Store (macOS) <https://www.apple.com/app-store/>`_, `Microsoft Store (Windows) <https://apps.microsoft.com/home?hl=en-US&gl=US>`_, or by :doc:`using a package manager (Linux) </deployment-guide/desktop/linux-desktop-install>`. 
+Download and install the Mattermost desktop app from the `App Store (macOS) <https://www.apple.com/app-store/>`_, `Microsoft Store (Windows) <https://apps.microsoft.com/home?hl=en-US&gl=US>`_, or by :doc:`using a package manager (Linux) </deployment-guide/desktop/linux-desktop-install>`. We strongly recommend installing the desktop app on a local drive. Network shares aren't supported.
 
-In Matermost, you're notified under **Downloads** when new desktop app releases become available, where you can view the changelog and download updates.
+In Matermost, users are notified under **Downloads** when new desktop app releases become available. If managing the distribution of the mobile app on behalf of users, you can recommend that your users disable desktop update notifications by going to **… > File > Settings** on Windows or **Mattermost > Settings** on Mac and clearing the **Automatically check for updates** option.
 
-We strongly recommend installing the desktop app on a local drive. Network shares aren't supported.
-
-If you prefer to manage distribution of the mobile app to your users, see the additional deployment options below.
+See additional deployment options below to manage distribution of the mobile app to your users.
 
 Deployment options
 ------------------

@@ -1,7 +1,7 @@
 Learn about Mattermost roles
 ============================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 There are 6 types of user roles with different permission levels in Mattermost: `system admin <#system-admin>`__, `team admin <#team-admin>`__, `channel admin <#channel-admin>`__, `member <#member>`__, `guest <#guest>`__, and `deactivated <#deactivated>`__. 

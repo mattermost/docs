@@ -1,7 +1,7 @@
 Integrations configuration settings
 ===================================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Review and manage the following integration configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Integrations**:
@@ -22,9 +22,6 @@ Review and manage the following integration configuration options in the System 
 
 Integrations management
 -----------------------
-
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Integrations > Integration Management**.
 
@@ -135,6 +132,34 @@ Enable OAuth 2.0 service provider
 
   Cloud admins can't modify this configuration setting.
 
+.. config:setting:: enable-dynamic-client-registration
+  :displayname: Enable dynamic client registration (Integrations)
+  :systemconsole: Integrations > Integration Management
+  :configjson: .ServiceSettings.EnableDynamicClientRegistration
+  :environment: MM_SERVICESETTINGS_ENABLEDYNAMICCLIENTREGISTRATION
+
+  - **true**: Enables Dynamic Client Registration (DCR) per RFC 7591, allowing applications to programmatically register OAuth 2.0 clients via the public API endpoint.
+  - **false**: **(Default)** Dynamic Client Registration is disabled.
+
+Enable dynamic client registration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**True**: Enables Dynamic Client Registration (DCR) allowing applications to programmatically register OAuth 2.0 clients without manual admin intervention via the ``POST /api/v4/oauth/apps/register`` endpoint.
+
+**False**: Dynamic Client Registration is disabled. OAuth 2.0 applications must be registered manually through the System Console.
+
++-------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableDynamicClientRegistration": false`` with options ``true`` and ``false``.   |
++-------------------------------------------------------------------------------------------------------------------------------+
+
+.. important::
+
+  **Security Warning**: When enabled, the DCR endpoint (``/api/v4/oauth/apps/register``) is **publicly accessible without authentication**. Any user or application can register OAuth clients on your Mattermost server. Only enable this setting if you understand and accept this security model, or have additional network-level access controls in place.
+
+.. note::
+
+  Cloud admins can't modify this configuration setting.
+
 .. config:setting:: integration-request-timeout
   :displayname: Integration request timeout (Integrations)
   :systemconsole: Integrations > Integration Management
@@ -213,13 +238,32 @@ To manage who can create personal access tokens or to search users by token ID, 
 | This feature's ``config.json`` setting is ``"EnableUserAccessTokens": false`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: enforce-incoming-webhook-channel-locking
+  :displayname: Enforce incoming webhook channel locking (Integrations)
+  :systemconsole: Integrations > Integration Management
+  :configjson: .ServiceSettings.EnforceIncomingWebhookChannelLocking
+  :environment: MM_SERVICESETTINGS_ENFORCEINCOMINGWEBHOOKCHANNELLOCKING
+
+  - **true**: Incoming webhooks are required to be locked to their specific channel and cannot post to other channels.
+  - **false**: **(Default)** Incoming webhook creators can choose whether to lock webhooks to a specific channel or allow posting to any channel they have access to.
+
+Enforce incoming webhook channel locking
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When enabled, this setting enforces that all incoming webhooks must be locked to their designated channel and cannot post messages to other channels. This provides administrators with greater control over webhook security and ensures that webhooks can only post to their intended channels.
+
+**True**: Incoming webhooks are required to be locked to their specific channel. The **Lock to this channel** option is automatically enabled and cannot be disabled when creating or editing webhooks.
+
+**False**: **(Default)** Incoming webhook creators can choose whether to lock webhooks to a specific channel by selecting **Lock to this channel**, or allow the webhook to post to any public channel or private channel the webhook creator is a member of.
+
++----------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnforceIncomingWebhookChannelLocking": false`` with options ``true`` and ``false``. |
++----------------------------------------------------------------------------------------------------------------------------------+
+
 ----
 
 Bot accounts
 ------------
-
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Integrations > Bot Accounts**.
 
@@ -268,9 +312,6 @@ Disable bot accounts when owner is deactivated
 GIF
 ----
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 Access the following configuration settings in the System Console by going to **Integrations > GIF**.
 
 .. config:setting:: enable-gif-picker
@@ -301,10 +342,7 @@ Enable GIF picker
 CORS
 ----
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
-Access the following configuration settings in the System Console by going to **Integrations > CORS**.
+The following configuration settings are applicable only to self-hosted deployments. Access the following configuration settings in the System Console by going to **Integrations > CORS**.
 
 .. config:setting:: enable-cross-origin-requests-from
   :displayname: Enable cross-origin requests from (Integrations)
@@ -392,10 +430,7 @@ CORS debug
 Embedding
 ---------
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
-Access the following configuration settings in the System Console by going to **Integrations > Embedding**.
+The following configuration settings are applicable only to self-hosted deployments. Access the following configuration settings in the System Console by going to **Integrations > Embedding**.
 
 .. config:setting:: frame-ancestors
   :displayname: Frame ancestors (Integrations)

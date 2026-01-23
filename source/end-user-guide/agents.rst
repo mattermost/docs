@@ -1,12 +1,8 @@
 AI Agents
 ===========
 
-.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../_static/badges/all-commercial.rst
   :start-after: :nosearch:
-
-.. note::
-
-  Mattermost Agents is formally known as Mattermost Copilot.
 
 .. toctree::
    :maxdepth: 1
@@ -19,3 +15,7 @@ AI Agents
 .. include:: /agents/docs/user_guide.md
   :parser: myst
   :start-after: # Mattermost Agents User Guide
+
+.. note::
+
+  Mattermost Agents is formerly known as Mattermost Copilot.

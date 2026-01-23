@@ -1,7 +1,7 @@
 Share links to channels and messages
 ====================================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 You can share links to Mattermost `channels <#share-channel-links>`__ and `messages <#share-message-links>`__ with other Mattermost users. 
@@ -40,7 +40,7 @@ Share message links
 
 .. tab:: Mobile
 
-  Long press a message, and then tap **Copy Link** to copy the link to the clipboard. Long press to paste the link as a message or reply. Sharing links to messages generates a preview of the message.
+  Long press a message, and then tap **Copy Link** to copy the link to the clipboard. Long press to paste the link as a message or reply. From mobile v2.23, sharing links to messages generates a preview of the message.
 
   .. image:: ../../images/mobile-copy-a-link-to-the-message.gif
       :alt: Tap and hold on a message to access the available options.
@@ -52,17 +52,20 @@ Share message links
   - If you're unable to share links, contact your Mattermost system admin for assistance. An :doc:`SSL certificate (or a self-signed certificate) </administration-guide/onboard/ssl-client-certificate>` may be required for this functionality to work.
 
 Deep links
---------------
-A Mattermost deep link is a URL that directs users to a specific location within Mattermost. Typically, these links are used to go to specific teams, channels, messages, or threads. 
+-----------
 
-.. tip::
+Deep links are a powerful feature in Mattermost that allow you to create direct links to specific teams, channels, messages, or threads. These links can be used to quickly navigate to important content within Mattermost, enhancing collaboration and efficiency.
 
-  Deep links can also be used, in combination with bots, scripts, and integrations, to trigger specific actions within Mattermost.
-  
+Deep links can also be used, in combination with bots, scripts, and integrations, to trigger specific actions within Mattermost.
+
+From Mattermost v10.11, :doc:`channel bookmarks </end-user-guide/collaborate/manage-channel-bookmarks>` containing ``mattermost://`` open directly in the desktop app using deep linking. This turns channel bookmarks into one-click shortcuts that enable you jump straight to key assets in Mattermost quickly and easily.
+
 Format deep links
 ~~~~~~~~~~~~~~~~~
+
 Deep links must be formatted in Mattermost as follows:
 
 - Deep link to a team: ``mattermost://<your-Mattermost-server-URL>/<team-name>``
 - Deep link to a channel: ``mattermost://<your-Mattermost-server-URL>/<team-name>/channels/<channel-name>``
-- Deep link to a message or thread: ``mattermost://<your-Mattermost-server-URL>/<team-name>/pl/<post-id>``
+- Deep link to a channel message or thread: ``mattermost://<your-Mattermost-server-URL>/<team-name>/pl/<post-id>``
+- Deep link to a direct message: ``mattermost://<your-Mattermost-server-URL>/<team-name>/messages/@<user-name>``

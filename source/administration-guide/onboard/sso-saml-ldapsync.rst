@@ -1,7 +1,3 @@
-.. meta::
-   :name: robots
-   :content: noindex
-
 :orphan:
 :nosearch:
 
@@ -10,8 +6,8 @@ Configure SAML synchronization with AD/LDAP
 
 In addition to configuring SAML sign-in, you can optionally configure synchronizing SAML accounts with AD/LDAP. When configured:
 
- - Mattermost queries AD/LDAP for relevant account information and updates SAML accounts based on changes to attributes (first name, last name, and nickname)
- - Accounts disabled in AD/LDAP are deactivated in Mattermost, and their active sessions are revoked once Mattermost synchronizes attributes.
+- Mattermost queries AD/LDAP for relevant account information and updates SAML accounts based on changes to attributes (first name, last name, and nickname)
+- Accounts disabled in AD/LDAP are deactivated in Mattermost, and their active sessions are revoked once Mattermost synchronizes attributes.
 
 To configure SAML synchronization with AD/LDAP:
 
@@ -20,7 +16,7 @@ To configure SAML synchronization with AD/LDAP:
 3. To ignore guest users when sychronizing, go to **System Console > Authentication > SAML 2.0**, then set **Ignore Guest Users when Synchronizing with AD/LDAP** to **true**. 
 4. Set the rest of the AD/LDAP settings based on :ref:`configuration settings documentation <administration-guide/configure/authentication-configuration-settings:ad/ldap>` to connect Mattermost with your AD/LDAP server.
 
- - If you don't want to enable AD/LDAP sign-in, go to **System Console > Authentication > AD/LDAP** wizard, navigate to the **Connection Settings** section, then set **Enable sign-in with AD/LDAP** to **false**.
+   If you don't want to enable AD/LDAP sign-in, go to **System Console > Authentication > AD/LDAP** wizard, navigate to the **Connection Settings** section, then set **Enable sign-in with AD/LDAP** to **false**.
 
 5. To specify how often Mattermost synchronizes SAML user accounts with AD/LDAP, go to **System Console > Authentication > AD/LDAP** wizard, navigate to the **Sync Performance** section, then set a **Synchronization Interval** in minutes. The default setting is 60 minutes. If you want to synchronize immediately after disabling an account, go to the **Sync History** section and select **AD/LDAP Synchronize Now**.
 6. To confirm that Mattermost can successfully connect to your AD/LDAP server, go to **System Console > Authentication > AD/LDAP** wizard, navigate to the **Connection Settings** section, then select **Test Connection**.
@@ -34,15 +30,10 @@ To re-activate the account:
 3. Run AD/LDAP synchronization by going to **System Console > Authentication > AD/LDAP** wizard, navigating to the **Sync History** section, then select **AD/LDAP Synchronize Now**.
 4. Purge all caches again in Mattermost by going to **System Console > Environment > Web Server**, then select **Purge All Caches** again. This re-activates the account in Mattermost.
 
-  .. note::
-    If a user is deactivated from AD/LDAP, they will be deactivated in Mattermost on the next sync. They will be shown as "Deactivated" in the System Console users list, all of their sessions will expire and they won't be able to log back in to Mattermost.
-
-    If a user is deactivated from SAML, their session won't expire until they're deactivated from AD/LDAP. However, they won't be able to log back in to Mattermost.
-
-  .. note::
-    SAML synchronization with AD/LDAP is designed to pull user attributes such as first name and last name from your AD/LDAP, not to control authentication.
-
-    In particular, the user filter cannot be used to control who can log in to Mattermost, this should be controlled by your SAML service provider's group permissions.
+.. note::
+  - If a user is deactivated from AD/LDAP, they will be deactivated in Mattermost on the next sync. They will be shown as "Deactivated" in the System Console users list, all of their sessions will expire and they won't be able to log back in to Mattermost.
+  - If a user is deactivated from SAML, their session won't expire until they're deactivated from AD/LDAP. However, they won't be able to log back in to Mattermost.
+  - SAML synchronization with AD/LDAP is designed to pull user attributes such as first name and last name from your AD/LDAP, not to control authentication. In particular, the user filter cannot be used to control who can log in to Mattermost, this should be controlled by your SAML service provider's group permissions.
 
 See :ref:`technical description of SAML synchronization with AD/LDAP <administration-guide/onboard/sso-saml-technical>` for more details.
 

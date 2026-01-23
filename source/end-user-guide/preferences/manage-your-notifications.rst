@@ -1,7 +1,7 @@
 Manage your notifications
 =========================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 .. |dot-badge| image:: ../../images/dot-badge.png
@@ -26,15 +26,13 @@ Manage your notifications
 
 Mattermost notifies you of new activity you're directly involved in. How you're notified depends on what Mattermost client you're using, the type of Mattermost activity you're being notified about, and how you prefer to be notified.
 
-.. include:: ../../_static/badges/academy-notifications.rst
-  :start-after: :nosearch:
-
 .. tip::
 
   **Missing notifications?**
 
-  - You may need to grant permissions in the Mattermost client to show notifications. Learn how to grant permissions within the :ref:`web browser <end-user-guide/preferences/manage-your-web-notifications:enable notifications>`, :ref:`desktop app <end-user-guide/preferences/manage-your-desktop-notifications:enable notifications>`, or :ref:`mobile app <end-user-guide/preferences/manage-your-mobile-notifications:enable notifications>` based on your preferred Mattermost client.
-  - In addition, visit our :doc:`troubleshoot notifications </end-user-guide/preferences/troubleshoot-notifications>` documentation for guidance on ensuring you receive Mattermost notifications.
+  - Your mobile device may have Mattermost notifications disabled. See the :ref:`manage your mobile notifications <end-user-guide/preferences/manage-your-mobile-notifications:enable notifications>` for details.
+  - You may need to grant permissions in the Mattermost :ref:`desktop app <end-user-guide/preferences/manage-your-desktop-notifications:enable notifications>` or :ref:`web browser <end-user-guide/preferences/manage-your-web-notifications:enable notifications>` to show notifications.
+  - Visit our :doc:`troubleshoot notifications </end-user-guide/preferences/troubleshoot-notifications>` documentation for guidance on ensuring you receive Mattermost notifications.
 
 You're in control
 ------------------

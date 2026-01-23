@@ -1,7 +1,7 @@
 Audit Log JSON Schema
 ==============================
 
-.. include:: ../../_static/badges/ent-selfhosted.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 The audit log JSON schema functions as a standardized blueprint or schematic that consistently defines how a single event should appear when being written to the audit log, including: field names, data types, objects, and structure.
@@ -801,8 +801,8 @@ Access Control Events
 | ``updateActiveStatus``        | Updating active status of access control policies                 |
 +-------------------------------+-------------------------------------------------------------------+
 
-Custom Profile Attributes Events
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+User Attributes Events
+~~~~~~~~~~~~~~~~~~~~~~~
 
 +-------------------------------+-------------------------------------------------------------------+
 | **Event Name**                | **Description**                                                   |

@@ -1,7 +1,7 @@
 Email templates
 ===============
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Mattermost has a few email templates that are sent out when a specific event occurs.
@@ -13,12 +13,9 @@ The email templates are located in the Mattermost server directory in the ``temp
 The corresponding strings for each prop can be found in the ``i18n`` folder. 
 
 .. note::
-  The props between different email templates are not interchangeable without additional server code changes.  
-
-.. warning::
-  Changes made inside of the ``templates`` or ``i18n`` folder might get overwritten during a server update. 
-  Please make sure to backup them accordingly.
-
+  - The props between different email templates are not interchangeable without additional server code changes.
+  - Always back up changes to the ``templates`` and ``i18n`` folders before upgrading the server to avoid losing customizations.
+  - From Mattermost v11.3, changes to HTML templates require a server restart to take effect.
 
 Available templates
 -------------------

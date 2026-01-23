@@ -1,21 +1,27 @@
 Server deployment planning
 ==========================
 
+This section provides comprehensive guidance on deploying and managing your Mattermost server. Mattermost is a flexible, high-performance messaging platform built with Go and React, designed to provide secure team collaboration at scale. Use the navigation below to learn more about how Mattermost supports a wide range of deployment options, from single-server installations to complex, distributed architectures:
+
 .. toctree::
-    :maxdepth: 4
-    :titlesonly:
+   :maxdepth: 1
+   :titlesonly:
+   :hidden:
 
     Preparations </deployment-guide/server/preparations>
     Deploy with Kubernetes </deployment-guide/server/deploy-kubernetes>
     Deploy with Linux </deployment-guide/server/deploy-linux>
     Deploy with Containers </deployment-guide/server/deploy-containers>
-    Deploy for Out-of-Band Use </deployment-guide/server/deploy-oob>
-    Deploy in Air-Gapped Environments </deployment-guide/server/air-gapped-deployment>
-    Reference Architecture </deployment-guide/server/server-architecture>
+    Pre-authentication secrets </deployment-guide/server/pre-authentication-secrets>
     Deployment Solution Programs </deployment-guide/server/orchestration>
-    Scale for Enterprise </administration-guide/scale/scaling-for-enterprise>
 
-This section provides comprehensive guidance on deploying and managing your Mattermost server. Mattermost is a flexible, high-performance messaging platform built with Go and React, designed to provide secure team collaboration at scale.
+* :doc:`Preparations </deployment-guide/server/preparations>` - Software and hardware requirements, proxy setup, TLS configuration, and other pre-deployment tasks.
+* :doc:`Deploy with Kubernetes </deployment-guide/server/deploy-kubernetes>` - Scalable deployment on various Kubernetes platforms with high availability support.
+* :doc:`Deploy with Linux </deployment-guide/server/deploy-linux>` - Direct installation on Linux servers for full control over the deployment.
+* :doc:`Deploy with Containers </deployment-guide/server/deploy-containers>` - Docker-based deployment suitable for smaller installations.
+* :doc:`Pre-authentication secrets </deployment-guide/server/pre-authentication-secrets>` - Configure reverse proxy validation for mobile and desktop applications using pre-authentication headers.
+* :doc:`Deployment Solution Programs </deployment-guide/server/orchestration>` - Automated deployment tools and orchestration solutions.
+
 
 Core technology stack
 ----------------------
@@ -26,7 +32,7 @@ Mattermost's architecture is built on modern, reliable technologies:
 * **Frontend**: React-based web application and mobile apps
 * **Database**: PostgreSQL for primary data storage
 * **Search**: Elasticsearch (optional) for advanced search capabilities
-* **File Storage**: Local filesystem or cloud storage (S3, MinIO) for media and attachments
+* **File Storage**: Local filesystem, network storage using NFS, or cloud storage (S3 or S3-compatible services) for media and attachments
 * **Caching**: Built-in support for Redis for enhanced performance
 
 Deployment options
@@ -68,7 +74,7 @@ Prerequisites
 Before deploying Mattermost, ensure you have reviewed the :doc:`software and hardware requirements </deployment-guide/software-hardware-requirements>`, and have:
 
 * A supported Linux distribution
-* Database server (PostgreSQL 13+)
+* Database server (PostgreSQL 14+)
 * Reverse proxy (NGINX recommended)
 * SSL/TLS certificates for secure communication
 * Adequate storage for files and database

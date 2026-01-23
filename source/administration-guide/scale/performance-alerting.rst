@@ -1,7 +1,7 @@
 Mattermost performance alerting guide
 ======================================
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 Mattermost recommends using `Prometheus <https://prometheus.io/>`_ and `Grafana <https://grafana.com/>`_ to track performance metrics of the Mattermost application servers. The purpose of this guide is to help you set up alerts on your Grafana dashboard once you've :doc:`set up system health tracking </administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring>`.
@@ -36,7 +36,7 @@ If you would also like to get email alerts, you can follow `these instructions <
 Configure alerts
 ----------------
 
-The `Mattermost dashboards <https://grafana.com/grafana/dashend-user-guide/boards/?search=mattermost>`_ for Grafana come with some partially pre-configured alerts on the following charts:
+The `Mattermost dashboards <https://grafana.com/grafana/dashboards/?search=mattermost>`_ for Grafana come with some partially pre-configured alerts on the following charts:
 
 * CPU Utilization Rate
 * Memory Usage

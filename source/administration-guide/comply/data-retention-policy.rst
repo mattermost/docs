@@ -1,7 +1,7 @@
 Data retention policy
 =====================
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 Mattermost stores all message history providing an unlimited search history to system admins and end users. 

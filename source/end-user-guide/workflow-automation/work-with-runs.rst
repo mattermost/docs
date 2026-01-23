@@ -1,7 +1,7 @@
 Work with runs
 ==============
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 A run is the execution of a collaborative playbook. You can start each run in a new channel or you can elect to use the same channel for multiple runs.
@@ -22,6 +22,11 @@ View run details
 When you’re in a channel with an active run, select the **Toggle Run Details** icon in the channel header to open the right-hand pane to view the run details. Information such as run name and description can be edited in-line, and the checklists can be collapsed and filtered based on their status.
 
 Some run actions can be edited while the run is in progress. This increases visibility into the run's progress and can improve accountability.
+
+Playbook runs on mobile
+------------------------
+
+From Mattermost server v11.0 and mobile app v2.34.0, mobile users can create and manage playbook runs for operational command at the edge.
 
 Runs and channel behavior
 -------------------------

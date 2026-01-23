@@ -1,7 +1,7 @@
 Legal Hold
 ===========
 
-.. include:: ../../_static/badges/ent-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 A Legal Hold, also known as a litigation hold, is a process that an organization uses to preserve all forms of relevant information when litigation is reasonably anticipated. It's a requirement established by the Federal Rules of Civil Procedure (FRCP) in the United States and similar laws in other jurisdictions.
@@ -181,3 +181,29 @@ How do I manage storage costs and version retention in S3?
 If you plan to use an existing S3 bucket for Legal Hold data storage, and your existing S3 bucket has versioning enabled, we strongly recommend using a dedicated S3 bucket with versioning disabled. 
 
 The Legal Hold plugin frequently modifies files in the ``legalhold`` directory, and when S3 bucket versioning is enabled, each modification creates a new version. This can result in a rapid accumulation of object versions, increased storage costs, potential performance impact, higher S3 API usage, and complicating version management over time. See the `S3 Lifecycle Rules <https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html>`_ documentation for additional details.
+
+How to view the downloaded Legal Hold zip file
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To make use of the Legal Hold data, you use the `processor tool <https://github.com/mattermost/mattermost-plugin-legal-hold/releases#:~:text=processor%2Dv1.0.2%2Ddarwin%2Damd64>`_ available on the Mattermost GitHub repository. This will output a self-contained HTML site you can open with your browser.
+
+**Download and setup the processor tool:**
+
+1. Download the appropriate processor binary for your platform from the `GitHub releases page <https://github.com/mattermost/mattermost-plugin-legal-hold/releases>`_.
+2. On macOS and Linux, make the processor executable:
+
+.. code-block:: bash
+
+   $ chmod +x processor-vX.X.X-<platform>   # Replace with the actual filename you downloaded
+
+**Usage:**
+
+.. code-block:: bash
+
+   $ ./processor --legal-hold-data ./legalholddata.zip --output-path ./path/to/where/you/want/the/html/output --legal-hold-secret "your secret"
+
+**Arguments:**
+
+- ``--legal-hold-data``: Path to the Legal Hold zip file downloaded from Mattermost
+- ``--output-path``: Directory where the HTML output will be generated
+- ``--legal-hold-secret``: (Optional) Used as a security measure for an operator to ensure the authenticity of a downloaded zip file. The operator can copy the key corresponding to a particular "hold" from the Legal Hold Plugin settings page in the System Console by selecting the **Show** |preview-icon| icon next to the Legal Hold entry.

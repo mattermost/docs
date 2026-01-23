@@ -1,19 +1,17 @@
 Manage channel bookmarks
 =========================
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
-From Mattermost v10.1, you can bookmark up to 50 links or files to the top of channels for quick and easy access, unless your system admin has disabled your ability to do so. Bookmarks display directly under channel headers.
-
-.. tip::
-
-    Any file added as a channel bookmark is also :doc:`searchable </end-user-guide/collaborate/search-for-messages>` in Mattermost.
+From Mattermost v10.1, you can bookmark up to 50 links or files to the top of channels for quick and easy access, unless your system admin has disabled your ability to do so. Bookmarks display directly under channel headers. Files added as channel bookmarks are also :doc:`searchable </end-user-guide/collaborate/search-for-messages>` in Mattermost.
 
 Open a bookmark
 ---------------
 
 Opening a channel bookmark works the same way as selecting a file link or attachment in a message. Select or tap a bookmark to view the file or link.
+
+From Mattermost v10.11, bookmarks containing ``mattermost://`` links open directly in the desktop app using deep linking. This turns bookmarks into one-click shortcuts to channels, threads, or messages, letting you jump straight to key assets in Mattermost quickly and easily.
 
 Add a bookmark
 --------------

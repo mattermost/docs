@@ -1,7 +1,7 @@
 Compliance configuration settings
 =================================
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 Review and manage the following compliance configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Compliance**:
@@ -23,9 +23,6 @@ Review and manage the following compliance configuration options in the System C
 Data retention policies
 -----------------------
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 Changes to properties in this section require a server restart before taking effect.
 
 .. warning::
@@ -45,9 +42,11 @@ Access the following configuration settings in the System Console by going to **
 Global retention policy for messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Set how long Mattermost keeps messages across all teams and channels. Doesn't apply to custom retention policies. Requires the :ref:`global retention policy for messages <administration-guide/configure/compliance-configuration-settings:global retention policy for messages>` configuration setting to be set to ``true``.
+Set how long Mattermost keeps messages across all teams and channels. This value is not used for any teams and channels that have a custom retention policy applied . Requires the :ref:`global retention policy for messages <administration-guide/configure/compliance-configuration-settings:global retention policy for messages>` configuration setting to be set to ``true``.
 
 By default, messages are kept forever. If **Hours**, **Days**, or **Years** is chosen, set how many hours, days, or years messages are kept in Mattermost. Messages older than the duration you set will be deleted nightly. The minimum message retention time is one hour.
+
+The global retention time for messages can be superseded on a team or channel level by creating custom policies with unique post retention times See the `Custom retention policy <#custom-retention-policy>`__ section below for details. 
 
 +--------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MessageRetentionHours": 1`` with numerical input.                           |
@@ -67,7 +66,7 @@ By default, messages are kept forever. If **Hours**, **Days**, or **Years** is c
 Global retention policy for files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Set how long Mattermost keeps files across all teams and channels. Doesn't apply to custom retention policies. Requires the :ref:`global retention policy for files <administration-guide/configure/compliance-configuration-settings:global retention policy for files>` configuration setting to be set to ``true``.
+Set how long Mattermost keeps files across all teams and channels. Custom policies on team and channel level don't apply to file attachments. The global retention time for files will be used even if a custom policy for messages is in place. Requires the :ref:`global retention policy for files <administration-guide/configure/compliance-configuration-settings:global retention policy for files>` configuration setting to be set to ``true``.
 
 By default, files are kept forever. If **Hours**, **Days**, or **Years** is chosen, set how many hours, days, or years files are kept in Mattermost. Files older than the duration you set will be deleted nightly. The minimum file retention time is one hour.
 
@@ -116,7 +115,7 @@ From Mattermost v10.10, controls whether pinned posts are preserved when data re
 Custom retention policy
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Set how long Mattermost keeps messages and files across specific teams and channels by specifying a name for the custom retention policy, setting a duration value in days or years, and specifying the teams and channels that will follow this policy.
+Set how long Mattermost keeps messages across specific teams and channels by specifying a name for the custom retention policy, setting a duration value in days or years, and specifying the teams and channels that will follow this policy. The attachment retention time cannot be set on custom policy levels and the global retention time for attachments is always applied.
 
 .. config:setting:: data-deletion-time
   :displayname: Data deletion time (Data Retention)
@@ -145,9 +144,6 @@ Start a Data Retention deletion job immediately. You can monitor the status of t
 
 Compliance export
 -----------------
-
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Compliance > Compliance Export**.
 
@@ -295,11 +291,11 @@ The SMTP server name URL that will receive your Global Relay EML file when a `cu
 SMTP server port
 ~~~~~~~~~~~~~~~~
 
-The SMTP server port that will receive your Global Relay EML file when a `custom customer account type <#global-relay-customer-account>`__ is configured. Default is 25.
+The SMTP server port that will receive your Global Relay EML file when a `custom customer account type <#global-relay-customer-account>`__ is configured. Default is ``"25"``.
 
-+----------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``".MessageExportSettings.GlobalRelaySettings.CustomSMTPPort": 25`` with string input. |
-+----------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``".MessageExportSettings.GlobalRelaySettings.CustomSMTPPort": "25"`` with string input. |
++------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: message-export-batch-size
   :displayname: Message export batch size (Compliance Export)
@@ -310,9 +306,6 @@ The SMTP server port that will receive your Global Relay EML file when a `custom
 
 Message export batch size
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-only.rst
-  :start-after: :nosearch:
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -331,9 +324,6 @@ This button initiates a compliance export job immediately. You can monitor the s
 
 Compliance monitoring
 ----------------------
-
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 Settings used to enable and configure Mattermost compliance reports.
 
@@ -415,9 +405,6 @@ Set the size of the batches in which posts will be read from the database to gen
 
 Custom terms of service
 -----------------------
-
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Compliance > Custom Terms of Service**.
 
