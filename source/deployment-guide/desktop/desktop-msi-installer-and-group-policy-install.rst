@@ -206,8 +206,7 @@ Specify an install directory
 
 Use the ``APPLICATIONFOLDER`` parameter to specify an installation directory for the MSI installation:
 
-**Command Prompt:** ``msiexec /i mattermost-desktop-v6.0.4-x64.msi APPLICATIONFOLDER="<install directory>"``
-
-**PowerShell:** ``Start-Process -FilePath "$env:systemroot\system32\msiexec.exe" -ArgumentList '/i mattermost-desktop-v6.0.4-x64.msi APPLICATIONFOLDER="<install directory>"''
+- **Command Prompt:** ``msiexec /i mattermost-desktop-v6.0.4-x64.msi APPLICATIONFOLDER="<install directory>"``
+- **PowerShell:** ``Start-Process -FilePath "$env:systemroot\system32\msiexec.exe" -ArgumentList '/i mattermost-desktop-v6.0.4-x64.msi APPLICATIONFOLDER="<install directory>"'``
 
 Change this command as new versions of the Mattermost Desktop App are released.
