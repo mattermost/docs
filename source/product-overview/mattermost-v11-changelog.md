@@ -173,6 +173,7 @@ If you upgrade from a release earlier than v11.1, please read the other [Importa
  - Fixed an issue where a content reviewer could not download file attachments from a flagged post.
  - Fixed an issue where users could not add bots without an error message popping up.
  - Fixed an issue displaying custom emojis in thread popouts.
+ - Fixed an issue where the channel URL got updated when the channel display name was changed.
 
 ### API Changes
  - Added a new ``api/v4/posts/rewrite`` endpoint to enable AI-powered message rewriting. It accepts a message, an AI agent ID, and a rewrite action, and returns a JSON object with a ``rewritten_text`` field containing the rewritten text. The endpoint supports six predefined actions: ``shorten``, ``elaborate``, ``improve_writing``, ``fix_spelling``, ``simplify``, and ``summarize``. A custom action is also available, which requires a ``custom_prompt`` parameter to specify the desired transformation.
