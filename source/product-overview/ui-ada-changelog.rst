@@ -3,15 +3,7 @@ UI & ADA Changelog
 
 This changelog tracks User Interface (UI) and Accessibility (ADA) changes across Mattermost releases. Administrators can use this page to easily see what changed in the UI from their current version to the one they're upgrading to, and track ADA improvements release to release.
 
-How to Use This Changelog
--------------------------
-
-To see what UI and ADA changes occurred between versions:
-
-1. Find your current Mattermost version in the **Version** column.
-2. Look at all entries for versions above your current version to see what interface and accessibility changes will be included in your upgrade.
-
-UI Changelog
+Changelog
 --------------
 
 .. list-table::
