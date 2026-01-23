@@ -65,6 +65,7 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
  - Fixed an issue where extra content was not accounted for in the focus order.
  - Fixed an issue where search filters were not readable by screen readers when a search term had not been typed in before reading the number of results.
  - Fixed an issue where the content of webhook posts did not display.
+ - Fixed an issue where the channel URL got updated when the channel display name was changed.
 
 ### Go Version
  - v10.12 is built with Go ``v1.24.6``.
