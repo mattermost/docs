@@ -51,7 +51,7 @@ Mobile apps
 .. csv-table::
     :header: "Operating System", "Technical Requirement"
 
-    "iOS", "iPhone 6s devices and later with iOS 15.1+"
+    "iOS", "iPhone 8+ devices and later with iOS 16.0+"
     "Android", "Android devices with Android 7+"
 
 .. note::
@@ -66,7 +66,7 @@ Mobile web
 .. csv-table::
     :header: "Browser", "Technical Requirement"
 
-    "iOS", "iOS 15.1+ with Safari 17.4+ or Chrome 140+"
+    "iOS", "iOS 16.0+ with Safari 17.4+ or Chrome 140+"
     "Android", "Android 7+ with Chrome 140+"
 
 Email client
@@ -221,4 +221,4 @@ For Enterprise Edition deployments with a multi-server setup, we highly recommen
 - Prometheus to track system health of your Mattermost deployment, through :doc:`performance monitoring feature </administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring>` available in Mattermost Enterprise.
 - Grafana to visualize the system health metrics collected by Prometheus with the :doc:`performance monitoring feature </administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring>`. Grafana 5.0.0 and later is recommended.
 - Elasticsearch to support highly efficient database searches in a cluster environment. Elasticsearch v7.17+ is supported, and Elasticsearch v8.x or AWS OpenSearch is recommended from Mattermost v9.11. :doc:`Learn more </administration-guide/scale/enterprise-search>`.
-- MinIO or AWS S3. Mattermost is compatible with object storage systems which implement the S3 API. Other S3-compatible systems may work, but are not officially supported. Learn more about file storage configuration options :ref:`in our documentation <administration-guide/configure/environment-configuration-settings:file storage>`.
+- AWS S3 or any S3-compatible service. Mattermost is compatible with object storage systems which implement the S3 API. You can also use local storage or a network drive using NFS. Learn more about file storage configuration options :ref:`in our documentation <administration-guide/configure/environment-configuration-settings:file storage>`.

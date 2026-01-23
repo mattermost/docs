@@ -4,11 +4,11 @@ Deploy for Sovereign Collaboration in Microsoft
 Overview
 --------
 
-Agencies and critical infrastructure organizations often face strict data sovereignty requirements that restrict the use of public cloud services for sensitive collaboration. 
+Agencies and critical infrastructure organizations often face strict data sovereignty requirements that restrict the use of public cloud services for sensitive collaboration.
 
 Deploying Mattermost for sovereign collaboration within Microsoft Teams and Outlook enables secure, compliant, and resilient communication while maintaining workflow continuity inside familiar Microsoft interfaces. Users access both Teams channels and Mattermost channels :doc:`from within the Microsoft ecosystem </integrations-guide/mattermost-mission-collaboration-for-m365>`, providing a single-pane-of-glass experience and eliminating application switching.
 
-Mattermost can be hosted on-premises or in sovereign clouds, such as Azure GovCloud or Azure Local, ensuring that messages, files, recordings, and transcriptions remain in compliance-approved systems with encryption and strict policy enforcement. 
+Mattermost can be hosted on-premises or in sovereign clouds, such as Azure GovCloud or Azure Local, ensuring that messages, files, recordings, and transcriptions remain in compliance-approved systems with encryption and strict policy enforcement.
 
 Unified authentication with Microsoft Entra-ID extends your Microsoft enterprise IT investments while delivering the compliance, control, and resilience required for mission-critical operations or out-of-band scenarios.
 
@@ -25,7 +25,7 @@ Architecture components
 
 The deployment architecture includes the following components:
 
-- **Users:** Enterprise users within the network boundary accessing client applications for M365 services and Mattermost.   
+- **Users:** Enterprise users within the network boundary accessing client applications for M365 services and Mattermost.
 
 - **Microsoft Entra ID (Identity Provider):** Users authenticate to M365 applications and Mattermost using :doc:`single sign-on Entra ID </administration-guide/onboard/sso-entraid>` via OpenID Connect (OIDC) or SAML.
 
@@ -47,7 +47,7 @@ The deployment architecture includes the following components:
 
     - :doc:`Project Tracking </end-user-guide/project-task-management>`: Boards enables project management capabilities built-in to your sovereign Mattermost deployment.
 
-    - :doc:`AI Agents </administration-guide/configure/agents-admin-guide>`: AI Agents run against Azure OpenAI endpoints or a self-hosted LLM that is OpenAI-compatible. 
+    - :doc:`AI Agents </administration-guide/configure/agents-admin-guide>`: AI Agents run against Azure OpenAI endpoints or a self-hosted LLM that is OpenAI-compatible.
 
     - :doc:`Audio & Screenshare </administration-guide/configure/calls-deployment>`: Calls offers native real-time self-hosted audio calls and screen sharing within your own network.
 
@@ -55,7 +55,7 @@ The deployment architecture includes the following components:
 
   - **PostgreSQL Database:** Stores persistent application data on a :doc:`PostgreSQL v13+ database </deployment-guide/server/preparations>`, such as `Azure Database for PostgreSQL <https://azure.microsoft.com/en-us/products/postgresql>`_.
 
-  - **Object Storage:** File uploads, images, and attachments are stored outside the application node on an :doc:`S3-compatible store </deployment-guide/server/preparations>`, such as MinIO. `Azure Blob Storage <https://azure.microsoft.com/en-us/products/storage/blobs>`_ can be used, but needs an S3-compatible proxy for Mattermost to interface with.
+  - **Object Storage:** File uploads, images, and attachments are stored outside the application node on an :doc:`S3-compatible store </deployment-guide/server/preparations>` or an NFS (Network File System) server. `Azure Blob Storage <https://azure.microsoft.com/en-us/products/storage/blobs>`_ can be used, but needs an S3-compatible proxy for Mattermost to interface with.
 
   - **Recording Instance:** ``calls-offloader`` :ref:`job service <administration-guide/configure/calls-deployment:configure recording, transcriptions, and live captions>` to offload heavy processing tasks from Mattermost Calls, such as recordings, transcriptions, and live captioning, to enterprise-controlled infrastructure or private cloud. *(Optional)*
 
@@ -63,7 +63,7 @@ The deployment architecture includes the following components:
 
 **Secure Access Layer:** A firewall or access gateway protecting entry into the enterprise network. This may include network policies, IP allowlists, or WAFs depending on your networking configurations. *(Optional)*
 
-**Microsoft Global Network:** `World-wide network <https://learn.microsoft.com/en-us/azure/networking/microsoft-global-network>`_ of Microsoft data centers, delivering public cloud services including M365 and Azure OpenAI. 
+**Microsoft Global Network:** `World-wide network <https://learn.microsoft.com/en-us/azure/networking/microsoft-global-network>`_ of Microsoft data centers, delivering public cloud services including M365 and Azure OpenAI.
 
 **Azure OpenAI Service:** :doc:`LLM service </agents/docs/providers>` used for summarization, ai-enhanced search, and agent-assisted workflows, hosted within the Microsoft Global Network. *(Optional)*
 

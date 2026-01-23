@@ -21,8 +21,6 @@
     </div>
   </div>
 
-You can deploy Mattermost Server using our ``rpm`` signed packages available through the Mattermost Yum repository.
-
 This Mattermost deployment includes the following steps: install PostgreSQL database, prepare the database, download the Mattermost server, install the server, set up the server, and update the server.
 
 Step 1: Install PostgreSQL database or get database connection credentials
@@ -46,7 +44,7 @@ In a terminal window, ssh onto the system that will host the Mattermost Server. 
 
   .. code-block:: sh
 
-    wget https://releases.mattermost.com/11.2.2/mattermost-11.2.2-linux-amd64.tar.gz
+    wget https://releases.mattermost.com/11.3.0/mattermost-11.3.0-linux-amd64.tar.gz
 
 .. tab:: Current ESR
 
