@@ -823,24 +823,6 @@ Maximum idle connections
 | A 2:1 ratio with MaxOpenConns is recommended.          |                                                                         |
 +--------------------------------------------------------+-------------------------------------------------------------------------+
 
-.. config:setting:: maximum-idle-connections
-  :displayname: Maximum idle connections (Database)
-  :systemconsole: Environment > Database
-  :configjson: .SqlSettings.MaxIdleConns
-  :environment: MM_SQLSETTINGS_MAXIDLECONNS
-  :description: The maximum number of idle connections held open to the database. Default is **50**.
-
-Maximum idle connections
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-+-------------------------------------------------------+-------------------------------------------------------------------+
-| The maximum number of idle connections held open      | - System Config path: **Environment > Database**                  |
-| to the database.                                      | - ``config.json`` setting: ``".SqlSettings.MaxIdleConns": 50,``   |
-|                                                       | - Environment variable: ``MM_SQLSETTINGS_MAXIDLECONNS``           |
-| Numerical input. Default is **50**.                   |                                                                   |
-|                                                       |                                                                   |
-+-------------------------------------------------------+-------------------------------------------------------------------+
-
 .. config:setting:: query-timeout
   :displayname: Query timeout (Database)
   :systemconsole: Environment > Database
