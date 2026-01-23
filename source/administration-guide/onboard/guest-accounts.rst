@@ -38,11 +38,27 @@ Guests cannot:
 Guest authentication
 ---------------------
 
-Guests can access the Mattermost server via email invitation, and be authenticated using AD/LDAP or SAML 2.0.
+Guests can access the Mattermost server via email invitation, and be authenticated using AD/LDAP, SAML 2.0, or magic link passwordless authentication.
 
 Before you proceed, ensure that the authentication method you wish to use is correctly configured on your server and enabled in Mattermost. For configuration steps and technical documentation, see :doc:`Active Directory/LDAP setup </administration-guide/onboard/ad-ldap>` and :doc:`SAML Single-Sign-On </administration-guide/onboard/sso-saml>`.
 
 Converting a member user to a guest won't change the channels they are in. However, they will be restricted from discovering additional channels and are unable to direct message/group message users outside of the channels they are in. They can be added to channels by system admins and other roles that have the correct permissions to invite guests.
+
+Configure magic links for guests
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../../_static/badges/entry-ent.rst
+  :start-after: :nosearch:
+
+From Mattermost v11.3, magic links allow guest users to access Mattermost without a password by using a secure link sent to their email address. This provides a streamlined passwordless authentication option for guest users.
+
+To configure magic link authentication for guests:
+
+1. Ensure :ref:`guest access is enabled <administration-guide/configure/authentication-configuration-settings:enable guest magic link authentication>` in **System Console > Authentication > Guest Access**.
+2. Set **Enable passwordless authentication for guests using magic links via email** to **True**.
+3. Select **Save**.
+
+When a guest is initially invited to Mattermost, they will receive an email with a link that allows them to log in without a password. The link expires in 48 hours for security purposes. When that guest returns to Mattermost and enters their email address, Mattermost sends them a new link to their email address that expires in 5 minutes. See the :ref:`magic link login for guests <end-user-guide/access/access-your-workspace:magic link login for guests>` documentation for details on how guests can use magic links to log in.
 
 Configure AD/LDAP authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

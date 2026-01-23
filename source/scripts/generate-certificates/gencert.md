@@ -3,7 +3,7 @@
 ```{include} ../../_static/badges/all-commercial.md
 ```
 
-Generate a self-signed x509v3 certificate for use with multiple URLs / IPs.
+Generate a self-signed x509v3 certificate for use with multiple URLs / IPs. See the [configure SAML 2.0 with Okta for Mattermost](https://docs.mattermost.com/administration-guide/onboard/sso-saml-okta.html#before-you-begin) documentation for details on generating encryption certificates for encrypting the SAML connection.
 
 ## Generate Certificates
 
