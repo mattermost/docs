@@ -1083,6 +1083,8 @@ redirects_map = {
         "https://docs.mattermost.com/administration-guide/configure/reporting-configuration-settings.html#server-logs",
 "configure/configuration-settings.html#site-url":
         "https://docs.mattermost.com/administration-guide/configure/environment-configuration-settings.html#site-url",
+"configure/environment-configuration-settings.html#site-url":
+        "https://docs.mattermost.com/administration-guide/configure/environment-configuration-settings.html#site-url",
 "configure/configuration-settings.html#sql-statement-logging-trace":
         "https://docs.mattermost.com/administration-guide/configure/environment-configuration-settings.html#sql-statement-logging",
 "configure/configuration-settings.html#teams":
