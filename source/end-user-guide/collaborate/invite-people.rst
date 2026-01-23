@@ -23,7 +23,7 @@ Anyone can invite people to Mattermost teams and channels, unless your system ad
       - **Use magic link**: Invite guests to log in without a password using a magic link when :ref:`enabled by your system admin <administration-guide/onboard/guest-accounts:configure magic links for guests>`. See the :ref:`magic link login for guests <end-user-guide/access/access-your-workspace:magic link login for guests>` documentation for login details.
 
     .. image:: ../../images/web-desktop-invite-people-to-the-team.png
-      :alt: You can invite users through the mobile app in a number of ways.
+      :alt: You can invite users through the web or desktop app in a number of ways.
 
 .. tab:: Mobile
 
@@ -35,9 +35,9 @@ Anyone can invite people to Mattermost teams and channels, unless your system ad
 
   2. Choose how to invite people:
 
+    - **Share link**: Share an invitation link with others using apps on your mobile device.
     - **Invite as member**: Send an invitation by email to people who don't have an account on your Mattermost workspace by specifying their email address and tap **Send**. 
     - **Add existing users**: Add existing workspace users as members of the current team by specifying their username and tap **Send**.
-    - **Share link**: Share an invitation link with others using apps on your mobile device.
     - **Invite as guest**: Invite a guest temporarily with limited workspace access. See the :doc:`guest accounts </administration-guide/onboard/guest-accounts>` documentation to learn more about guest accounts. Specify their email address, select the channels they can access, and optionally add a custom message.  Tap **Send** when ready.
 
       - **Use magic link**: Invite guests to log in without a password using a magic link when :ref:`enabled by your system admin <administration-guide/onboard/guest-accounts:configure magic links for guests>`. See the :ref:`magic link login for guests <end-user-guide/access/access-your-workspace:magic link login for guests>` documentation for login details.
