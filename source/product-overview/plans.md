@@ -266,6 +266,10 @@
       <td><strong>Private mobility with ID-only push notifications</strong>: <a href="https://docs.mattermost.com/configure/push-notification-server-configuration-settings.html#id-only-push-notifications">ID-only push notifications protect</a> a Mattermost customer against breaches in iOS and Android notification infrastructure by enabling mobile notifications to be fully private. The <a href="https://docs.mattermost.com/deploy/mobile/mobile-faq.html#how-do-push-notifications-work">standard way to send notifications</a> to iOS and Android applications requires sending clear text messages to Apple or Google so they can be forwarded to a user's phone and displayed on iOS or Android. <p> While Apple and Google assure the data is not collected or stored, all standard mobile notifications on the platform could be compromised should the organizations be breached or coerced. To avoid this risk, Mattermost can be configured to replace mobile notification text with message ID numbers that pass no information to Apple of Google, and which, when received by the Mattermost mobile application on a user's phone, are used to privately communicate with their Mattermost server and use the message ID to retrieve mobile notification messages over an encrypted channel. This means at no time will the message text be visible to Apple or Google's message relay system. </p> <p>Because of the extra steps to retrieve the notifications messages under Mattermost's private mobility capability with ID-only push notifications, end users may experience a slight delay before the mobile notification is fully displayed compared to sending clear text through Apple and Google's platform.</td>
       <td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
+    <tr>
+      <td><strong>Microsoft Intune MAM Support</strong>: Enhanced mobile security through <a href="https://docs.mattermost.com/deployment-guide/mobile/configure-microsoft-intune-mam.html">Microsoft Intune Mobile Application Management (MAM)</a>, enabling organizations to secure and manage Mattermost mobile deployments with Intune's enterprise mobility management capabilities.</td>
+      <td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v11.3+</td>
+    </tr>
     <!-- Workflow automation -->
     <tr class="section"><td colspan="7"><strong>Workflow automation</strong></td></tr>
     <tr class="subsection"><td colspan="7"><strong>Streamline and automate workflows to reduce errors and delays while increasing efficiency and innovation using collaborative playbooks to speed structured team processes, from incident response and software release cycle management to accelerating operational logistics, as well as workflow dashboards to assess and refine process outcomes and operations.</strong></td></tr>
@@ -306,6 +310,14 @@
     <tr>
       <td><strong>Air-gapped deployment workflows</strong>: Specialized deployment workflows and procedures for completely <a href="https://docs.mattermost.com/deploy/server/air-gapped-deployment.html">disconnected and air-gapped</a> environments with no external network connectivity.</td>
       <td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v10.9+</td>
+    </tr>
+    <tr>
+      <td><strong>Data Spillage Prevention</strong>: Advanced <a href="https://docs.mattermost.com/administration-guide/manage/admin/content-flagging.html">content flagging and review system</a> enabling designated reviewers to identify, review, and manage potentially sensitive information that may have been inappropriately shared in channels. Supports team-specific reviewer assignments and common reviewers across teams.</td>
+      <td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v11.1+</td>
+    </tr>
+    <tr>
+      <td><strong>Burn-on-Read Messages</strong>: <a href="https://docs.mattermost.com/end-user-guide/collaborate/send-messages.html#send-burn-on-read-messages">Time-limited message viewing functionality</a> where messages automatically delete after being read for a configured duration, ensuring sensitive information has controlled exposure. Administrators can configure read durations and maximum time-to-live settings.</td>
+      <td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v11.3+</td>
     </tr>
     <!-- Support -->
     <tr class="section"><td colspan="7"><strong>Support</strong></td></tr>
