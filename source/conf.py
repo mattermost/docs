@@ -915,6 +915,10 @@ rst_prolog = """
 .. |ai-rewrite| image:: /images/creation-outline_F1C2B.svg
     :alt: AI Rewrite icon.
     :class: theme-icon
+.. |burn-on-read-icon| image:: /images/fire_F0238.svg
+    :alt: Burn on Read icon.
+    :class: theme-icon
+    
 """
 # rst_epilog = """
 # .. |mm_badge_version| replace:: 7.2

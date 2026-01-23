@@ -6,6 +6,42 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 ```{include} common-esr-support.md
 ```
 
+(release-v2-36-4)=
+## 2.36.4 Release
+ - Release Date: January 22, 2026
+ - Server Versions Supported: Server v10.11.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v10.11.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#extended-support-releases) (ESR) v10.5.0 has ended and upgrading to server ESR v10.11.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 8+ devices and later with iOS 16.0+ are [required](https://support.apple.com/en-il/guide/iphone/iphe3fa5df43/16.0/ios/16.0).
+
+### Bug Fixes
+ - Re-enabled Intune for Mobile v2.36.4.
+ - Updated iOS minimum version back to v16. See more details in [this forum post](https://forum.mattermost.com/t/mobile-app-ios-version-support-update-v2-36-1-and-v2-36-2/25664).
+
+### Known Issues
+ - Users are unable to adjust the font size via the OS font size setting.
+ - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
+
+(release-v2-36-3)=
+## 2.36.3 Release
+ - Release Date: January 21, 2026
+ - Server Versions Supported: Server v10.11.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v10.11.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#extended-support-releases) (ESR) v10.5.0 has ended and upgrading to server ESR v10.11.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 6+ devices and later with iOS 15.1+ are required.
+
+### Bug Fixes
+ - Disabled Intune for Mobile v2.36.3 to fix a crash.
+ - Temporarily updated minimum iOS version to 15.1+.
+
+### Known Issues
+ - Users are unable to adjust the font size via the OS font size setting.
+ - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
+
 (release-v2-36-2)=
 ## 2.36.2 Release
  - Release Date: January 20, 2026
@@ -56,7 +92,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Added [Microsoft Intune MAM integration](https://docs.mattermost.com/deployment-guide/mobile/mobile-security-features.html#microsoft-intune-mobile-application-management-mam) for iOS with multi-server support (requires Enterprise Advanced license) [MM-66736](https://mattermost.atlassian.net/browse/MM-66736).
  - Added the ability to invite guests to a team from mobile [MM-66449](https://mattermost.atlassian.net/browse/MM-66449).
  - Added support for servers with passwordless authentication with [Magic Link for guest users](https://docs.mattermost.com/end-user-guide/access/access-your-workspace.html#magic-link-login-for-guests) (requires Enterprise license) [MM-66445](https://mattermost.atlassian.net/browse/MM-66445).
- - Added a new Burn-on-Read message feature (requires Enterprise Advanced license) [MM-61758](https://mattermost.atlassian.net/browse/MM-61758).
+ - Added a new [Burn-on-Read message feature](https://docs.mattermost.com/end-user-guide/collaborate/send-messages.html#send-burn-on-read-messages) (requires Enterprise Advanced license) [MM-61758](https://mattermost.atlassian.net/browse/MM-61758).
  - Added AI agent streaming support with real-time message updates, reasoning summaries, tool call approval UI, citations display, and generation controls (stop/regenerate) [MM-66762](https://mattermost.atlassian.net/browse/MM-66762).
  - Added an authentication secret field to the **Edit server** screen with validation and a show/hide toggle.
  - Updated illustrations and background styles for onboarding and authentication flows [MM-62240](https://mattermost.atlassian.net/browse/MM-62240).
