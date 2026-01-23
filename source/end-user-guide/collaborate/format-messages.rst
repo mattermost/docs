@@ -1,10 +1,7 @@
 Format messages
 ===============
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
-.. include:: ../../_static/badges/academy-message-formatting.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Use the messaging formatting toolbar
@@ -688,3 +685,6 @@ Math Formulas
 
   .. image:: ../../images/latex-codeblock.png
     :alt: A LaTeX code block math equation sample.
+
+.. include:: ../../_static/badges/academy-message-formatting.rst
+  :start-after: :nosearch:

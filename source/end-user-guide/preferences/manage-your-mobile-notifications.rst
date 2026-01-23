@@ -1,7 +1,7 @@
 Manage your mobile notifications
 =================================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 .. |numbered-badge| image:: ../../images/numbered-badge.png
@@ -11,9 +11,11 @@ Manage your mobile notifications
 Enable notifications
 --------------------
 
+From Mattermost mobile v2.34, the Mattermost **Settings > Notifications** screen alerts you when notifications are disabled by your device. Follow the link in the notification to enable device-level notifications.
+
 From Mattermost v9.9, Mattermost prompts you to enable notifications in the mobile app the first time you open the app.
 
-When you enable notifications, you'll start receiving notifications for all Mattermost activity with `badges <#badge-based-notifications>`__, and `push notifications <#push-notifications>`__. See the section below on `customizing your notifications <#customize-your-notifications>`__ based on how you prefer to be notified about Mattermost activity on your mobile device.
+Once Mattermost notifications are enabled at the device level and in the mobile app, you'll start receiving notifications for all Mattermost activity with `badges <#badge-based-notifications>`__, and `push notifications <#push-notifications>`__. See the section below on `customizing your notifications <#customize-your-notifications>`__ based on how you prefer to be notified about Mattermost activity on your mobile device.
 
 .. note::
 

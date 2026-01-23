@@ -1,7 +1,7 @@
 Deploy Prometheus and Grafana for performance monitoring
 ========================================================
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 Performance monitoring support enables admins to track system health for large Enterprise deployments through integrations with `Prometheus <https://prometheus.io/>`_ and `Grafana <https://grafana.com/>`__. These integrations support data collection from several Mattermost servers, which is particularly useful if you're running Mattermost :doc:`in high availability mode </administration-guide/scale/high-availability-cluster-based-deployment>`. Once you're tracking system health, you can :doc:`set up performance alerts </administration-guide/scale/performance-alerting>` on your Grafana dashboard.
@@ -58,7 +58,7 @@ Install Prometheus
 
 3. Replace the ``<hostname1>:<port>`` parameter with your Mattermost host IP address and port to scrape the data. It connects to ``/metrics`` using HTTP. 
 
-4. In the Mattermost System Console, go to **Environment > Performance Monitoring** to set **Enable Performance Monitoring** to **true**, then specify the **Listen Address** and select **Save**. See our :ref:`Configuration Settings <administration-guide/configure/environment-configuration-settings:performance monitoring>` documentation for details.
+4. In the Mattermost System Console, go to **Environment > Performance Monitoring** to set **Enable Performance Monitoring** to **true**, then specify the **Listen Address** (port-only, e.g., ``8067``), and select **Save**. See our :ref:`Configuration Settings <administration-guide/configure/environment-configuration-settings:performance monitoring>` documentation for details.
 
    .. image:: ../../images/perf_monitoring_system_console.png
       :scale: 70

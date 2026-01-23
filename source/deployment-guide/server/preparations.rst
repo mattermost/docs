@@ -25,7 +25,7 @@ Before installing Mattermost Server, review the following preparation requiremen
 Database preparation
 --------------------
 
-PostgreSQL v13+ is required for Mattermost server installations. :doc:`MySQL database support </deployment-guide/server/prepare-mattermost-mysql-database>` is being deprecated starting with Mattermost v11. See the :doc:`PostgreSQL migration </deployment-guide/postgres-migration>` documentation for guidance on migrating from MySQL to PostgreSQL.
+PostgreSQL v14+ is required for Mattermost server installations. :doc:`MySQL database support </deployment-guide/server/prepare-mattermost-mysql-database>` is being deprecated starting with Mattermost v11. See the :doc:`PostgreSQL migration </deployment-guide/postgres-migration>` documentation for guidance on migrating from MySQL to PostgreSQL.
 
 1. Create an PostgreSQL server instance. See the `PostgreSQL documentation <https://www.postgresql.org/download/>`_ for details. When the installation is complete, the PostgreSQL server is running, and a Linux user account called postgres has been created.
 
@@ -119,7 +119,8 @@ File storage preparation
 Mattermost requires a file storage system for storing user files, images, and attachments. You have several options, including:
 
 - S3-compatibile object storage (recommended)
-- local file storage
+- Network file storage
+- Local file storage
 
 S3-compatible object storage (Recommended)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -127,7 +128,6 @@ S3-compatible object storage (Recommended)
 For production environments, we recommend using S3-compatible object storage such as:
 
 - Amazon S3
-- MinIO
 - Digital Ocean Spaces
 - Other S3-compatible services
 
@@ -143,6 +143,14 @@ When using S3 storage, you'll need:
    - Access Key
    - Secret Key
    - Endpoint URL (for non-AWS S3 services)
+
+Network file storage
+~~~~~~~~~~~~~~~~~~~~~
+
+For production environments that cannot use S3-compatible object storage, we recommend using a Network Addressable Storage (NAS) solution with Network File System (NFS).
+
+You'll need to prepare an NFS server with a dedicated share for Mattermost (e.g. `/mnt/mattermost_data`) and mount it on all servers that will be running Mattermost.
+
 
 Local file storage
 ~~~~~~~~~~~~~~~~~~
@@ -196,10 +204,10 @@ The following table outlines the network ports and protocols required for Matter
 +-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+---------------------------------------------------------------+
 
 .. note::
-   
+
    - All outbound ports may vary based on your specific configuration
    - Mattermost can be configured to use an outbound proxy for any HTTP/HTTPS traffic (see below)
-   - Calls service may require additional ports 
+   - Calls service may require additional ports
 
 Outbound proxy configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -274,7 +282,7 @@ Ensure your system meets these minimum requirements:
 - Operating System: 64-bit Linux distribution
 - Hardware: 1 vCPU/core with 2GB RAM (supports up to 1,000 users)
 - Storage: Minimum 10GB available space
-- Database: PostgreSQL v13+
+- Database: PostgreSQL v14+
 - Network: Reliable internet connection with sufficient bandwidth
 
 See the :doc:`software and hardware requirements </deployment-guide/software-hardware-requirements>` documentation for additional requirements.

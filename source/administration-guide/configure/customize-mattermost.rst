@@ -1,7 +1,7 @@
 Customizing Mattermost
 ======================
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 There are several ways to customize your Mattermost server. 
@@ -36,7 +36,7 @@ There are a few things you can customize in the Mattermost server without forkin
 
 1. Modify text in the Mattermost interface by modifying the ``en.json`` file.
 2. Customize or hide help and support links by modifying your :ref:`configuration settings <administration-guide/configure/site-configuration-settings:customization>`.
-3. Customize the email notifications by editing the HTML files in ``/templates``.
+3. Customize the email notifications by editing the HTML files in ``/templates``. From Mattermost v11.3.0, changes to HTML templates require a server restart to take effect.
 
 Mattermost mobile apps
 ----------------------

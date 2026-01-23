@@ -1,7 +1,3 @@
-.. meta::
-   :name: robots
-   :content: noindex
-
 :orphan:
 :nosearch:
 
@@ -25,7 +21,7 @@ The installation process involves setting up necessary operators and then deploy
 Step 1: Install the NGINX Ingress Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Follow the instructions in the `Kubernetes deployment documentation <https://kubernetes.github.io/ingress-nginx/deployment-guide/>`_ to install the NGINX ingress controller on your Kubernetes cluster. Mattermost recommends installing the Nginx Operator via helm, regardless of platform you are installing to.
+Follow the instructions in the `Kubernetes deployment documentation <https://kubernetes.github.io/ingress-nginx/deploy/>`_ to install the NGINX ingress controller on your Kubernetes cluster. Mattermost recommends installing the Nginx Operator via helm, regardless of platform you are installing to.
 
 Step 2: Install the Mattermost Operator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -48,7 +44,7 @@ The Mattermost Kubernetes Operator can be installed using Helm.
 
     kubectl create ns mattermost-operator
 
-5. Install the Mattermost Operator. If you don't specify a version, the latest version of the Mattermost Operator will be installed.
+5. Install the Mattermost Operator. If you don't specify a version, the latest version of the Mattermost Operator will be installed. We recommend using the latest version of the Mattermost Operator.
 
   .. code-block:: sh
 
@@ -109,7 +105,7 @@ Step 3: Deploy Mattermost
   * ``metadata.name``: The name of your Mattermost deployment in Kubernetes.
   * ``spec.size``: The size of your installation (e.g., "100users", "1000users", etc.).
   * ``spec.ingress.host``: The DNS name for your Mattermost installation.
-  * ``spec.version``: The Mattermost version. See the :doc:`server version archive </product-overview/version-archive>` for available versions.
+  * ``spec.version``: The Mattermost version. See the :doc:`server version archive </product-overview/version-archive>` for available versions. You should use a :doc:`supported version </product-overview/release-policy>` of Mattermost in conjunction with the latest version of the Mattermost Operator.
   * ``spec.licenseSecret``: The name of the Kubernetes secret containing your license (required for Enterprise).
 
   For a full list of configurable fields, see the `example manifest <https://github.com/mattermost/mattermost-operator/blob/master/docs/examples/mattermost_full.yaml>`_ and the `Custom Resource Definition <https://github.com/mattermost/mattermost-operator/blob/master/config/crd/bases/installation.mattermost.com_mattermosts.yaml>`_.
@@ -145,7 +141,7 @@ Step 3: Deploy Mattermost
 Step 4: Create the Filestore Secret
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Create a file named ``mattermost-filestore-secret.yaml`` to store the credentials for your object storage service (e.g., AWS S3, MinIO). This secret must be created in the same namespace where you intend to install Mattermost. The file should contain the following YAML structure:
+Create a file named ``mattermost-filestore-secret.yaml`` to store the credentials for your object storage service (e.g., AWS S3 or any S3-compatible service). This secret must be created in the same namespace where you intend to install Mattermost. The file should contain the following YAML structure:
 
 .. code-block:: yaml
 
@@ -250,8 +246,16 @@ This command can be used to review the Mattermost Operator or Mattermost server 
 
 .. note::
 
-  - If you're new to Kubernetes or prefer a managed solution, consider using a service like `Amazon EKS <https://aws.amazon.com/eks/>`_, `Azure Kubernetes Service <https://azure.microsoft.com/en-ca/products/kubernetes-service/>`_, `Google Kubernetes Engine <https://cloud.google.com/kubernetes-engine/>`_, or `DigitalOcean Kubernetes <https://www.digitalocean.com/products/kubernetes/>`_.- While this guidance focuses on using external, managed services for your database and file storage, the Mattermost Operator *does* offer the flexibility to use other solutions. For example, you could choose to deploy a PostgreSQL database within your Kubernetes cluster using the CloudNative PG operator (or externally however you wish), or use a self-hosted MinIO instance for object storage.
-  - While using managed cloud services is generally simpler to maintain and our recommended approach for production deployments, using self-managed services like MinIO for storage and CloudNative PG for PostgreSQL are also valid options if you have the expertise to manage them.
+  - If you're new to Kubernetes or prefer a managed solution, consider using a service like `Amazon EKS <https://aws.amazon.com/eks/>`_, `Azure Kubernetes Service <https://azure.microsoft.com/en-ca/products/kubernetes-service/>`_, `Google Kubernetes Engine <https://cloud.google.com/kubernetes-engine/>`_, or `DigitalOcean Kubernetes <https://www.digitalocean.com/products/kubernetes/>`_. While this guidance focuses on using external, managed services for your database and file storage, the Mattermost Operator *does* offer the flexibility to use other solutions. For example, you could choose to deploy a PostgreSQL database within your Kubernetes cluster using the CloudNative PG operator (or externally however you wish), or use any self-hosted S3-compatible storage service.
+  - While using managed cloud services is generally simpler to maintain and our recommended approach for production deployments, using self-managed S3-compatible storage services and CloudNative PG for PostgreSQL are also valid options if you have the expertise to manage them.
   - If you choose to use self-managed components, you'll need to adapt the instructions accordingly, pointing to your internal services instead.
   - To customize your production deployment, refer to the :doc:`configuration settings documentation </administration-guide/configure/configuration-settings>`.
   - If you encounter issues during deployment, consult the :doc:`deployment troubleshooting guide </deployment-guide/deployment-troubleshooting>`.
+
+Frequently Asked Questions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What is the Operator's version compatibility with Mattermost Server?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+While generally speaking, the Operator should be compatible with most, or all versions of Mattermost Server, we recommend always using the latest version of the Operator in conjunction with a :doc:`supported version </product-overview/release-policy>` of Mattermost Server.

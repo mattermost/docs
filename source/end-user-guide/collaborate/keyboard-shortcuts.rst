@@ -1,17 +1,15 @@
 Mattermost keyboard shortcuts
 =============================
 
+.. include:: ../../_static/badges/all-commercial.rst
+  :start-after: :nosearch:
+
 .. toctree::
   :maxdepth: 1
   :hidden:
   :titlesonly:
 
   Keyboard accessibility </end-user-guide/collaborate/keyboard-accessibility>
-  Run slash commands </end-user-guide/collaborate/run-slash-commands>
-  Built-in-slash-commands </end-user-guide/collaborate/built-in-slash-commands>
-
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 Mattermost keyboard shortcuts help you make a more efficient use of your keyboard when using Mattermost in a web browser or the desktop app.
 
@@ -165,7 +163,29 @@ Navigation in the desktop app
 
 The following navigation keyboard shortcuts are supported only in the Mattermost desktop app.
 
-.. tab:: Desktop app v5.0 onwards
+.. tab:: Desktop app v6.x
+
+  Mattermost desktop app v6.0 introduces the ability to keep multiple workspaces open at the same time and work across them without constant switching contexts. The following keyboard shortcuts help you navigate multiple views:
+
+  +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
+  | On Windows & Linux                   | On macOS                      | Description                                                                                     |
+  +======================================+===============================+=================================================================================================+
+  | :kbd:`Ctrl` :kbd:`N`                 | :kbd:`⌘` :kbd:`N`             | Open a new window for the current server                                                        |
+  +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
+  | :kbd:`Ctrl` :kbd:`T`                 | :kbd:`⌘` :kbd:`T`             | Open a new tab for the current server                                                           |
+  +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
+  | :kbd:`Ctrl` :kbd:`Tab`               | :kbd:`⌘` :kbd:`Tab`           | Go to the next tab                                                                              |
+  +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
+  | :kbd:`Ctrl` :kbd:`Shift` :kbd:`Tab`  | :kbd:`⌘` :kbd:`⇧` :kbd:`Tab`  | Go to the previous tab                                                                          |
+  +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
+  | :kbd:`Ctrl` :kbd:`1-9`               | :kbd:`⌘` :kbd:`1-9`           | Jump to a specific tab based on its position                                                    |
+  +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
+  | :kbd:`Ctrl` :kbd:`W`                 | :kbd:`⌘` :kbd:`W`             | Close current tab when multiple tabs are open                                                   |
+  +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
+  | :kbd:`Ctrl` :kbd:`Shift` :kbd:`W`    | :kbd:`⌘` :kbd:`⇧` :kbd:`W`    | Close main window                                                                               |
+  +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
+
+.. tab:: Desktop app v5.x
 
   Mattermost desktop app v5.0 introduces additional ways to navigate your Mattermost interface, including server selections, as well as tabs for channels, collaborative playbooks, and boards. 
   
@@ -189,8 +209,6 @@ The following navigation keyboard shortcuts are supported only in the Mattermost
   | :kbd:`Ctrl` :kbd:`2`                 | :kbd:`⌘` :kbd:`2`             | Navigate to the **Boards** tab.                                                                 |
   +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
   | :kbd:`Ctrl` :kbd:`3`                 | :kbd:`⌘` :kbd:`3`             | Navigate to the **Playbooks** tab.                                                              |
-  +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
-  | :kbd:`Ctrl` :kbd:`Tab`               | :kbd:`⌘` :kbd:`Tab`           | Navigate to the next product tab based on your current position.                                |
   +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
   
 .. tab:: Desktop app v4.7 and earlier

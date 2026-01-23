@@ -1,7 +1,7 @@
 AWS OpenSearch server setup
 ============================
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 AWS OpenSearch Service allows you to search large volumes of data quickly, in near real-time, by creating and managing an index of post data. The indexing process can be managed from the System Console after setting up and connecting an OpenSearch server. The post index is stored on the OpenSearch server and updated constantly after new posts are made. In order to index existing posts, a bulk index of the entire post database must be generated.
@@ -65,15 +65,23 @@ We highly recommend that you set up an AWS OpenSearch server on a separate machi
 
   6. Edit ``opensearch.yml`` to include the following:
 
-    .. code-block:: sh
+    .. code-block:: yaml
 
-      cluster.name: mattermost-cluster node.name: 
-      node-1 
-      path.data: /var/lib/opensearch 
+      cluster.name: mattermost-cluster
+      node.name: node-1
+      path.data: /var/lib/opensearch
       path.logs: /var/log/opensearch
-      network.host: 0.0.0.0 
-      discovery.seed_hosts: ["<other-node-ip>"] 
+      network.host: 0.0.0.0
+      discovery.seed_hosts: ["<other-node-ip>"]
       cluster.initial_master_nodes: ["node-1", "node-2"]
+
+    .. note::
+       Ensure ``path.data`` and ``path.logs`` directories exist and are owned by the ``opensearch`` user before starting the service:
+
+       .. code-block:: sh
+
+          sudo mkdir -p /var/lib/opensearch /var/log/opensearch
+          sudo chown -R opensearch:opensearch /var/lib/opensearch /var/log/opensearch
 
   7. Enable & start OpenSearch:
 
@@ -83,6 +91,12 @@ We highly recommend that you set up an AWS OpenSearch server on a separate machi
       sudo systemctl enable opensearch 
       sudo systemctl start opensearch 
       sudo systemctl status opensearch
+
+  8. Install the `icu-analyzer plugin <https://docs.opensearch.org/latest/install-and-configure/additional-plugins/index/>`__ to the ``/usr/share/opensearch/plugins`` directory by running the following command:
+
+    .. code-block:: sh
+
+      sudo /usr/share/opensearch/bin/opensearch-plugin install analysis-icu
 
   Terraform (Docker) Example
   --------------------------
@@ -119,6 +133,14 @@ We highly recommend that you set up an AWS OpenSearch server on a separate machi
       restart = "unless-stopped" 
     }
 
+    resource "null_resource" "install_icu_plugin" {
+      depends_on = [docker_container.opensearch]
+
+      provisioner "local-exec" {
+        command = "docker exec opensearch /usr/share/opensearch/bin/opensearch-plugin install analysis-icu && docker restart opensearch"
+      }
+    }
+
 .. tab:: AWS OpenSearch Console Setup
   :parse-titles:
 
@@ -138,8 +160,8 @@ We highly recommend that you set up an AWS OpenSearch server on a separate machi
 
   4. Specify the network for: VPC with 2 subnets, and a security group allowing Mattermost IPs on port ``443``.
 
-.. note::
-   Port 9200 is commonly used for local or on-premise OpenSearch. The AWS OpenSearch domain only supports HTTPS over port 443.
+  .. note::
+     Port 9200 is commonly used for local or on-premise OpenSearch. The AWS OpenSearch domain only supports HTTPS over port 443.
 
   5. Configure the access policy (JSON):
 
@@ -174,81 +196,81 @@ We highly recommend that you set up an AWS OpenSearch server on a separate machi
 
       curl https://mattermost-os-xxxxxxxxxxx.us-east-1.es.amazonaws.com
 
-AWS Terraform Example
-----------------------
+  AWS Terraform Example
+  ----------------------
 
-  .. code-block:: sh
+    .. code-block:: sh
 
-    provider "aws" { 
-      region = "us-east-1" 
-    }
-
-    resource "aws_iam_role" "os_service_role" { 
-      name = "OSServiceRole" 
-      assume_role_policy = <<EOF 
-    {
-      "Version": "2012-10-17", 
-      "Statement": [{ 
-        "Action": "sts:AssumeRole", 
-        "Effect": "Allow", 
-        "Principal": { "Service": "es.amazonaws.com" } 
-      }]
-    }
-    EOF
-    }
-
-    resource "aws_opensearch_domain" "mattermost" { 
-      domain_name = "mattermost-os" 
-      engine_version = "OpenSearch_2.9"
-      cluster_config { 
-        instance_type = "r6g.xlarge.search" 
-        instance_count = 2 
-        dedicated_master_enabled = true 
-        dedicated_master_type = "r6g.xlarge.search" 
-        dedicated_master_count = 2 
-        zone_awareness_enabled = true 
+      provider "aws" { 
+        region = "us-east-1" 
       }
 
-      ebs_options { 
-        ebs_enabled = true 
-          volume_type = "gp3" 
-          volume_size = 1536 
-          iops = 4608 
-      }
-
-      vpc_options { 
-        subnet_ids = ["subnet-blah1", "subnet-blah2"] 
-        security_group_ids = ["sg-1234567890"] 
-      }
-
-      advanced_options = { 
-        "rest.action.multi.allow_explicit_index" = "true" 
-        "indices.query.bool.max_clause_count" = "1024" 
-        "indices.fielddata.cache.size" = "20" 
-        "action.destructive_requires_name" = "false" 
-      }
-
-      access_policies = <<POLICY 
-    {
-      "Version": "2012-10-17", 
-      "Statement": [{ 
-        "Effect": "Allow", 
-        "Principal": { 
-          "AWS": "arn:aws:iam::123456789012:role/MattermostAppRole" 
-        },
-          "Action": "es:*", 
-          "Resource": "arn:aws:es:us-east-1:123456789012:domain/mattermost-os/*" 
+      resource "aws_iam_role" "os_service_role" { 
+        name = "OSServiceRole" 
+        assume_role_policy = <<EOF 
+      {
+        "Version": "2012-10-17", 
+        "Statement": [{ 
+          "Action": "sts:AssumeRole", 
+          "Effect": "Allow", 
+          "Principal": { "Service": "es.amazonaws.com" } 
         }]
       }
-      POLICY
-        service_software_options { 
-          automated_snapshot_start_hour = 23 
+      EOF
+      }
+
+      resource "aws_opensearch_domain" "mattermost" { 
+        domain_name = "mattermost-os" 
+        engine_version = "OpenSearch_2.9"
+        cluster_config { 
+          instance_type = "r6g.xlarge.search" 
+          instance_count = 2 
+          dedicated_master_enabled = true 
+          dedicated_master_type = "r6g.xlarge.search" 
+          dedicated_master_count = 2 
+          zone_awareness_enabled = true 
         }
 
-        domain_endpoint_options { 
-          enforce_https = true 
+        ebs_options { 
+          ebs_enabled = true 
+            volume_type = "gp3" 
+            volume_size = 1536 
+            iops = 4608 
         }
-    }
+
+        vpc_options { 
+          subnet_ids = ["subnet-blah1", "subnet-blah2"] 
+          security_group_ids = ["sg-1234567890"] 
+        }
+
+        advanced_options = { 
+          "rest.action.multi.allow_explicit_index" = "true" 
+          "indices.query.bool.max_clause_count" = "1024" 
+          "indices.fielddata.cache.size" = "20" 
+          "action.destructive_requires_name" = "false" 
+        }
+
+        access_policies = <<POLICY 
+      {
+        "Version": "2012-10-17", 
+        "Statement": [{ 
+          "Effect": "Allow", 
+          "Principal": { 
+            "AWS": "arn:aws:iam::123456789012:role/MattermostAppRole" 
+          },
+            "Action": "es:*", 
+            "Resource": "arn:aws:es:us-east-1:123456789012:domain/mattermost-os/*" 
+          }]
+        }
+        POLICY
+          service_software_options { 
+            automated_snapshot_start_hour = 23 
+          }
+
+          domain_endpoint_options { 
+            enforce_https = true 
+          }
+      }
 
 Configure Mattermost
 ---------------------

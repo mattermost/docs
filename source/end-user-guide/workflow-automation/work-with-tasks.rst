@@ -1,7 +1,7 @@
 Work with tasks
 ===============
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Tasks and due dates
@@ -31,6 +31,43 @@ When you edit a task, you'll see the following:
 .. image:: ../../images/task-actions.png
   :alt: Configure tasks to be automatically marked as complete.
 
+Conditional tasks
+------------------
+
+.. include:: ../../_static/badges/entry-ent.rst
+  :start-after: :nosearch:
+
+From Mattermost v11.1, using Mattermost in a web browser or the desktop app, tasks can be conditionally included in playbooks based on attribute values or runtime conditions. This enables adaptive workflows where tasks are only presented when they're relevant to the current context. For example:
+
+- **Security incidents**: Include additional forensic tasks for incidents classified as security-related.
+- **Customer tier workflows**: Show different approval processes based on customer subscription level.
+- **Geographic operations**: Include region-specific compliance tasks based on the location property.
+- **Skill-based assignments**: Automatically assign tasks to team members based on areas of expertise.
+
+Configure conditional logic
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To set up conditional behavior in a playbook:
+
+1. Go to **Product** |product-list| icon and select **Playbooks**.
+2. Select the playbook or run you want to add conditions to.
+3. Select the **Outline** tab.
+4. Under **Tasks**, identify a task you want to make conditional.
+5. From the **More** |more-icon-vertical| icon next to the task, select **Add condition**.
+
+   .. image:: ../../images/playbook-conditions-add.png
+     :alt: An example of a playbook condition being added.
+
+6. Select an attribute, condition, and value to define when the task should be included. Then select **Done editing**.
+
+   .. image:: ../../images/playbook-conditions-values.png
+     :alt: An example of a playbook condition with values defined.
+
+Conditional tasks are evaluated and automatically added to or removed from the checklist based on defined conditions. This reduces cognitive load by showing only relevant tasks and ensures that critical steps aren't overlooked in different scenarios.
+
+.. tip::
+  You can add up to 2 conditions per task to create an either/or condition.
+
 Task inbox
 ----------
 
@@ -44,3 +81,27 @@ You can:
 - You can change the due date of tasks to manage priorities and urgency.
 
 To view your task inbox, access the **Playbooks** tab in Mattermost. In the header, next to your profile image, select the tasks list icon. A list of every task assigned to you from every run that's in progress is displayed.
+
+From Mattermost v11.0 and mobile app v2.23.0, mobile users can perform the following task management operations on playbook runs:
+
+Mobile playbooks task management
+----------------------------------
+
+From Mattermost v11.0 and mobile v2.32.0, mobile users can perform the following task management operations on playbook runs:
+
+Interact with playbook tasks
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- **Task interaction**: Tap on any task to open a detailed bottom sheet view with task options and information.
+- **Check/Uncheck tasks**: Complete or reopen tasks directly from the Mattermost mobile app.
+- **Skip/Unskip tasks**: Mark tasks as skipped or return them to active status as workflow requirements change.
+
+Update tasks
+~~~~~~~~~~~~~
+
+- **Update assignee**: Change who is responsible for completing a task directly from the mobile app.
+- **Modify due dates**: Adjust task deadlines to accommodate changing priorities and schedules.
+- **Edit task commands**: Update slash commands or instructions associated with tasks.
+- **Change run ownership**: Transfer run ownership between team members.
+
+These mobile capabilities provide full task management functionality for teams working with playbooks while on mobile devices, complementing your existing desktop and web browser experiences.

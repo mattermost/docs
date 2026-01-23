@@ -3,7 +3,7 @@
 SAML Single Sign-On: technical documentation
 ============================================
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Security Assertion Markup Language (SAML) is an open standard that allows identity providers (IdP), like OneLogin, to pass authorization credentials to service providers (SP), like Mattermost.
@@ -16,9 +16,9 @@ Mattermost supports using a single metadata URL to retrieve configuration inform
 
 Using this URL populates the SAML SSO URL and the Identity Provider Issuer URL fields in the configuration process automatically and the Identity Provider Public Certificate is also downloaded from the server and set locally. 
 
-This is currently supported for Okta and Microsoft ADFS server 2012 and 2016. OneLogin support will be added in a future release. 
+This is currently supported for Okta and Microsoft ADFS server 2012 and 2016.
 
-For detailed steps, view the :doc:`Configure SAML with Okta <sso-saml-okta>`, :doc:`Configure SAML with Microsoft ADFS for Windows Server 2012 <sso-saml-adfs>`, and :doc:`Configure SAML with Microsoft ADFS using Microsoft Windows Server 2016 <sso-saml-adfs-msws2016>` documentation. See the encryption options documentation for details on what :ref:`encryption methods <deployment-guide/encryption-options:saml encryption support>` Mattermost supports for SAML.
+For detailed steps, view the :doc:`Configure SAML with Okta <sso-saml-okta>`, :doc:`Configure SAML with Microsoft ADFS for Windows Server 2012 <sso-saml-adfs>`, and :doc:`Configure SAML with Microsoft ADFS using Microsoft Windows Server 2016 <sso-saml-adfs-msws2016>` documentation. See the encryption options documentation for details on what :ref:`encryption methods <deployment-guide/encryption-options:saml encryption support>` Mattermost supports for SAML, including AES-192-GCM and AES-256-GCM encryption support introduced in v10.9.
 
 SAML providers
 --------------
@@ -42,6 +42,9 @@ When Mattermost initiates an SP-initiated SAML request flow, it generates a **HT
 
 AuthNRequests can also be signed by Mattermost, in which case the XML payload is similar to:
 
+.. note::
+  From Mattermost v11, the default signature algorithm has been updated from SHA-1 to SHA-256 for improved security. The example below reflects the new default SHA-256 algorithm.
+
 .. code-block:: XML
 
   <samlp:AuthnRequest xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:samlsig="https://www.w3.org/2000/09/xmldsig#" ID="_u5mpjadp1fdozfih4cj8ap4brh" Version="2.0" ProtocolBinding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" AssertionConsumerServiceURL="http://localhost:8065/login/sso/saml" IssueInstant="2019-06-08T16:00:31Z">
@@ -49,12 +52,12 @@ AuthNRequests can also be signed by Mattermost, in which case the XML payload is
       <samlsig:Signature Id="Signature1">
           <samlsig:SignedInfo>
               <samlsig:CanonicalizationMethod Algorithm="https://www.w3.org/2001/10/xml-exc-c14n#"></samlsig:CanonicalizationMethod>
-              <samlsig:SignatureMethod Algorithm="https://www.w3.org/2000/09/xmldsig#rsa-sha1"></samlsig:SignatureMethod>
+              <samlsig:SignatureMethod Algorithm="https://www.w3.org/2000/09/xmldsig#rsa-sha256"></samlsig:SignatureMethod>
               <samlsig:Reference URI="#_u5mpjadp1fdozfih4cj8ap4brh">
                   <samlsig:Transforms>
                       <samlsig:Transform Algorithm="https://www.w3.org/2000/09/xmldsig#enveloped-signature"></samlsig:Transform>
                   </samlsig:Transforms>
-                  <samlsig:DigestMethod Algorithm="https://www.w3.org/2000/09/xmldsig#sha1"></samlsig:DigestMethod>
+                  <samlsig:DigestMethod Algorithm="https://www.w3.org/2000/09/xmldsig#sha256"></samlsig:DigestMethod>
                   <samlsig:DigestValue></samlsig:DigestValue>
               </samlsig:Reference>
           </samlsig:SignedInfo>

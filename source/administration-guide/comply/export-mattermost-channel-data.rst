@@ -1,7 +1,7 @@
 Export channel data
 ===================
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 Ensure important data isn't trapped in silos by migrating data between systems or backing data up for operational continuity. Once exported, channel data can be analyzed using various tools for insights into team dynamics, productivity, and communication patterns, and to fulfill reporting and auditability requirements.
@@ -18,7 +18,7 @@ For self-hosted deployments, a Mattermost system admin must install the Channel 
 1. In Mattermost, from the Product menu |product-list|, select **App Marketplace**.
 2. Search for or scroll to **Channel Export**, and select **Install**.
 3. Once installed, select **Configure**. You're taken to the System Console.
-4. On the **Channel Export** configuration page, enable and configure the plugin, and then select **Save**. You can restrict the ability to export channels to system and channel admins only, and you can configure a maximum file size for channel export files.
+4. On the **Channel Export** configuration page, enable and configure the plugin, and then select **Save**. You can restrict the ability to export channels to system, team, and channel admins only, and you can configure a maximum file size for channel export files.
 
 Upgrade
 -------

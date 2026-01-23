@@ -88,11 +88,11 @@ $(document).ready(function () {
     // Fallback for when a notification CTA expires
     const dateInFuture = (value) =>
         new Date().getTime() <= new Date(value).getTime();
-    const expiryDate = '2024-10-31T00:00:00-0500';
-    // 12am EST
+    const expiryDate = '2025-12-31T23:59:59-0500';
+    // Expires end of day ET on Dec 31, 2025
     const fallback_url =
-        'https://docs.mattermost.com/about/maximize-microsoft-investments.html';
-    const fallback_text = 'Maximize your Microsoft investments  »';
+        'https://mattermost.com/platform-overview/';
+    const fallback_text = 'Learn about Mattermost\'s Intelligent Mission Environment';
 
     if (!dateInFuture(expiryDate)) {
         if ($('.notification-bar').length) {
@@ -105,7 +105,7 @@ $(document).ready(function () {
     // So it will show up for new announcements
     // Keep "mm_notification_banner__" at the beginning of the key
     // Add system to clean out storage items that are no longer needed
-    let notification_banner_key = 'mm_notification_banner__v10-mst-sept';
+    let notification_banner_key = 'mm_notification_banner__v11_dec_2025';
     if (!dateInFuture(expiryDate)) {
         notification_banner_key = 'mm_notification_banner__fallback-mst';
     }

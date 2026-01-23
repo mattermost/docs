@@ -1,7 +1,7 @@
 Backup and disaster recovery 
 =============================
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
+.. include:: ../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Options to protect your Mattermost server from different types of failures range from simple backups to sophisticated disaster recovery deployments and automation.
@@ -327,7 +327,7 @@ ES/OS does not allow multi-writer for a single index. You can only write to 1 in
 
 For simplicity, let’s say ``site1`` is primary, and ``site2`` is secondary. Therefore, OS in ``site1`` is the leader domain, and in ``site2`` is the follower. The follower pulls from the leader. To switch the direction where ``site2`` becomes leader, and ``site1`` becomes follower.
 
-1. Remove the rule from ``site1`` → ``site 2`` in AWS Console. This will auto-pause the replication, but the indices in ``site2`` will still be read-only. Remove the replication rules for that.
+1. Remove the rule from ``site1`` > ``site 2`` in AWS Console. This will auto-pause the replication, but the indices in ``site2`` will still be read-only. Remove the replication rules for that.
 
 2. Remove auto-follow rule:
 
@@ -353,7 +353,7 @@ For simplicity, let’s say ``site1`` is primary, and ``site2`` is secondary. Th
 
 6. Now indices will become writable
 
-7. Add rule from ``site2`` → ``site1`` in AWS console.
+7. Add rule from ``site2`` > ``site1`` in AWS console.
 
 8. In ``site1``, make all the indices as followers. You must delete all indices first:
 

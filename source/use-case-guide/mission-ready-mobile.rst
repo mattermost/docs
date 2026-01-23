@@ -34,7 +34,7 @@ When personal devices are the only available channel—whether in partner nation
 
 - **Enable trusted communications on BYOD** using lightweight AppConfig policies with :doc:`EMM optionality </deployment-guide/mobile/deploy-mobile-apps-using-emm-provider>` that avoids intrusive control while ensuring essential security baselines.
 - **Prevent unauthorized data sharing**: Mitigate leakage with :ref:`screenshot and screen recording prevention <deployment-guide/mobile/mobile-security-features:screenshot and screen recording prevention>` and :ref:`jailbreak/root detection <deployment-guide/mobile/mobile-security-features:jailbreak and root detection>` that block high-risk mobile behaviors.
-- **Secure access without cloud dependency** via :ref:`self-hosted deployments <deployment-guide/server/server-deployment-planning:deployment options>` or :doc:`air-gapped infrastructures </deployment-guide/server/air-gapped-deployment>` that prevent sensitive data from touching public networks.
+- **Secure access without cloud dependency** via :ref:`self-hosted deployments <deployment-guide/server/server-deployment-planning:deployment options>` or :doc:`air-gapped infrastructures </deployment-guide/reference-architecture/deployment-scenarios/air-gapped-deployment>` that prevent sensitive data from touching public networks.
 - **Deliver rapid alerts with low bandwidth impact** using :ref:`ID-only push notifications <administration-guide/configure/environment-configuration-settings:id-only push notifications>`, ideal for DDIL (disconnected, intermittent, low-bandwidth) conditions.
 - **Support interagency or coalition workflows** in mission-partner environments through :doc:`Connected Workspaces </administration-guide/onboard/connected-workspaces>` with :doc:`role-based </administration-guide/onboard/delegated-granular-administration>` and :doc:`attribute-based access controls (ABAC) </administration-guide/manage/admin/attribute-based-access-control>`.
 
@@ -47,7 +47,7 @@ Mattermost on mobile is hardened to operate under mission-grade security expecta
 
 - **Zero Trust security architecture** with channel- and file-level :doc:`attribute-based access control (ABAC) </administration-guide/manage/admin/attribute-based-access-control>`.
 - **TLS with post-quantum readiness** and end-to-end* :doc:`encryption options </security-guide/security-guide-index>` for high-assurance deployments.
-- **Burn-on-read messaging**: Use secure file viewers*, burn on read messaging*, and advanced data spillage controls* to protect sensitive information and minimize persistent data exposure.
+- **Burn-on-read messaging**: Use :ref:`secure file viewers <security-guide/mobile-security:secure file preview>`, :ref:`burn on read messaging <end-user-guide/collaborate/send-messages:send burn-on-read messages>`, and advanced data spillage controls* to protect sensitive information and minimize persistent data exposure.
 - **DoD STIG container support** with FIPS 140-3 validation*, and :ref:`audit logging <administration-guide/manage/logging:audit logging>` to ensure deployment compliance in regulated missions.
 - **Isolated mobile sessions** from host operating systems by partnering with platforms like Hypori in high-assurance BYOD scenarios.
 
@@ -56,4 +56,4 @@ Features marked with an asterisk above ``*`` will be available in a future 2025 
 Get Started
 -----------
 
-`Talk to an Expert <https://mattermost.com/contact-sales/>`_ to explore how Mattermost can support mission-ready mobile collaboration. Whether you're securing communications on government-issued devices or enabling compliant collaboration on personal phones, Mattermost provides the control, trust, and extensibility needed to stay connected—without compromise. 
+`Book a live demo <https://mattermost.com/request-demo/>`_  or `talk to a Mattermost expert <https://mattermost.com/contact-sales/>`_ to explore how Mattermost can support mission-ready mobile collaboration. Or try Mattermost yourself with a `1-hour preview <https://mattermost.com/sign-up/>`_ for instant access to a live sandbox environment. Whether you're securing communications on government-issued devices or enabling compliant collaboration on personal phones, Mattermost provides the control, trust, and extensibility needed to stay connected—without compromise. 

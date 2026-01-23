@@ -1,7 +1,7 @@
 User management configuration settings
 ======================================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Review and manage the following in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **User Management**:
@@ -42,6 +42,10 @@ From Mattermost v9.6, you can review the following user data in the System Conso
 - **Last post**: The total number of days since the user's last sent message on the server.
 - **Days active**: (PostgreSQL only) The total number of days in which the user has sent a message in Mattermost.
 - **Messages posted**: (PostgreSQL only) The total number of messages the user has sent on the server.
+
+From Mattermost v11.0, you can also review the following authentication data for each user:
+
+- **Authentication Method**: Shows how users authenticate with the Mattermost server, including external authentication system details such as LDAP Distinguished Name (DN), SAML NameID, OAuth ID, or other external authentication identifiers. This information helps system administrators troubleshoot authentication issues and correlate Mattermost users with their external authentication systems.
 
 By default, you see all columns of data and data for all time. 
 
@@ -136,12 +140,25 @@ If you deactivate a Mattermost user who has integrations tied to their user acco
 - **Bot accounts** won't continue to work after user deactivation when the :ref:`disable bot accounts when owner is deactivated <administration-guide/configure/integrations-configuration-settings:disable bot accounts when owner is deactivated>` is enabled. This configuration setting is enabled by default.
 - **OAuth apps** won't continue to work after user deactivation, and associated tokens are deleted. Manual action is needed to keep these integrations running.
 
+Manage user attributes
+~~~~~~~~~~~~~~~~~~~~~~
+
+From Mattermost v11.1, you can can view and update user attribute values for individual users directly from the System Console. This capability provides a centralized way to manage user profile attributes without requiring users to update their own profiles or using :ref:`mmctl user attribute commands <administration-guide/manage/mmctl-command-line-tool:mmctl cpa>`.
+
+1. Go to **System Console > User Management > Users** to access all user accounts.
+2. Select a **User** to open their User Configuration page.
+3. Scroll to the **User Attributes** section to view and edit the user's attribute values.
+4. Update attribute values as needed and save your changes.
+
+.. note::
+
+  - User attributes must be created first through **System Console > Site Configuration > System Attributes > User Attributes** before they can be edited in individual user profiles. See the :doc:`User attributes </administration-guide/manage/admin/user-attributes>` documentation for details on creating and configuring attributes.
+  - Users can edit their own attributes if that attribute is configured as :ref:`user-editable <administration-guide/manage/admin/user-attributes:admin-managed vs user-editable attributes>`.
+
 Delete users
 ~~~~~~~~~~~~~
 
-*Available from Mattermost Server v10.11*
-
-When using email/password for authentication, you can enable users to permanently delete their own accounts, or you can delete user accounts as a system administrator.
+From Mattermost v10.11, when using email/password for authentication, you can enable users to permanently delete their own accounts, or you can delete user accounts as a system administrator.
 
 .. config:setting:: delete-users
   :displayname: Delete users
@@ -163,7 +180,7 @@ When a user deletes their account, deleted accounts cannot be reactivated, and t
 What data is removed?
 ^^^^^^^^^^^^^^^^^^^^^
 
-When a user deletes their account, the following data is permanently removed:
+When an account is permanently deleted, the following data is permanently removed:
 
 - User profile information (name, email, username)
 - User preferences and settings
@@ -171,16 +188,14 @@ When a user deletes their account, the following data is permanently removed:
 - Direct message channel memberships
 - Team and channel memberships
 - User session data
+- All posts and replies authored by the deleted user
+- File uploads and attachments shared in channels by the user
+- All webhooks, slash commands and OAuth apps created by the user
 
 What data is retained?
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-The following data remains in the system after account deletion:
-
-- Message content in public and private channels (displayed as **Deleted User**)
-- File uploads and attachments shared in channels
-- Channel and team audit logs that reference the user's actions
-- Integration logs and webhook history
+After account deletion, audit logs referencing the user's actions, channel and team membership are retained.
 
 Manage user's roles
 ~~~~~~~~~~~~~~~~~~~~
@@ -217,7 +232,7 @@ Add or remove users from teams using the System Console.
 Manage user's settings
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-only.rst
+.. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
 From Mattermost v9.11, system admins can help end users customize their Mattermost notifications by editing the user's :doc:`notification settings </end-user-guide/preferences/manage-your-notifications>` on the user's behalf within the System Console. Users can view, modify, and override their own settings at any time.
@@ -484,6 +499,7 @@ Manage the Management actions available to channel members and guests.
 
 Create Posts
 ^^^^^^^^^^^^
+
 The ability for members and guests to create posts in the channel.
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
@@ -496,6 +512,7 @@ The ability for members and guests to create posts in the channel.
 
 Post Reactions
 ^^^^^^^^^^^^^^
+
 The ability for members and guests to react with emojis on messages in the channel.
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
@@ -508,6 +525,7 @@ The ability for members and guests to react with emojis on messages in the chann
 
 Manage Members
 ^^^^^^^^^^^^^^
+
 The ability for members to add and remove people from the channels. Guests can't add or remove people from channels.
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
@@ -520,6 +538,7 @@ The ability for members to add and remove people from the channels. Guests can't
 
 Channel Mentions
 ^^^^^^^^^^^^^^^^
+
 The ability for members and guests to use channel mentions, including **@all**, **@here**, and **@channel**, in the channel.
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
@@ -530,11 +549,13 @@ The ability for members and guests to use channel mentions, including **@all**, 
 .. image:: ../../images/allow-mentions-for-a-channel.png
   :alt: Add Members and Guests to use mentions in a channel using the System Console.
 
-.. tip::                                                                                                                                                                
+.. tip::
+
   **Guests** and **Members** can't use channel mentions without the ability to **Create Posts**. To enable this permission, these users must have been granted **Create Posts** permission first.
 
 Manage Bookmarks
 ^^^^^^^^^^^^^^^^
+
 The ability for members to add, delete, and sort bookmarks. Guests can't add, remove, or sort bookmarks for the channel.
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
@@ -545,7 +566,8 @@ The ability for members to add, delete, and sort bookmarks. Guests can't add, re
 .. image:: ../../images/allow-manage-bookmarks-for-a-channel.png
   :alt: Allow Members to manage bookmarks for the channel using the System Console.
 
-.. tip::                                                                                                                                                                
+.. tip::
+
   The ability to manage bookmarks for the channel is available for **Members** only. **Guests** can't add, remove or sort bookmarks for the channel.
 
 Channel Management
@@ -555,6 +577,7 @@ Choose between inviting members manually or sychronizing members automatically f
 
 Sync Group Members
 ^^^^^^^^^^^^^^^^^^
+
 When enabled, adding and removing users from groups will add or remove them from this team. The only way of inviting members to this team is by adding the groups they belong to. See the :ref:`Synchronize teams and channels <administration-guide/onboard/ad-ldap-groups-synchronization:synchronize teams and channels>` documentation for further details.
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
@@ -567,6 +590,7 @@ When enabled, adding and removing users from groups will add or remove them from
 
 Public channel or private channel
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Public channels are discoverable and any user can join. Private channels require invitations to join.
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
@@ -628,9 +652,6 @@ Archive a channel
 Permissions
 -----------
 
-.. include:: ../../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
 +---------------------------------------------------------------------+-------------------------------------------------------------+
 | Restrict actions in Mattermost to authorized users only.            | - System Config path: **User Management > Permissions**     |
 |                                                                     | - ``config.json setting``: N/A                              |
@@ -643,6 +664,9 @@ Permissions
 
 System roles
 ------------
+
+.. include:: ../../_static/badges/pro-plus.rst
+  :start-after: :nosearch:
 
 +----------------------------------------------------------------------+------------------------------------------------------------+
 | Restrict System Console access to authorized users only.             | - System Config path: **User Management > System Roles**   |

@@ -1,7 +1,7 @@
 Deploy Mattermost on Linux
 ==========================
 
-Mattermost Server can be deployed on various Linux distributions, providing a flexible and robust platform for smaller teams and non-commercial customers. We don't recommend deploying Mattermost Server and database on a single system for production use, but it is a good option for development and testing purposes.
+Mattermost Server can be deployed on various Linux distributions, providing a flexible and robust platform for smaller teams and community deployments. We don't recommend deploying Mattermost Server and database on a single system for production use, but it is a good option for development and testing purposes.
 
 This page covers deployment options for major Linux distributions and installation methods. Choose your preferred platform below for specific deployment instructions:
 

@@ -1,7 +1,7 @@
 Product limits
 ===============
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 This page describes some of the product limits that apply to Mattermost, including hard and recommended limits.
@@ -35,3 +35,5 @@ This page describes some of the product limits that apply to Mattermost, includi
     ":doc:`Message length </end-user-guide/collaborate/send-messages>`", "16,383 characters", ""
     ":ref:`Teams per deployment <end-user-guide/collaborate/organize-using-teams:create a team>`", "10,000", ""
     ":doc:`Users per team </end-user-guide/collaborate/invite-people>`", "No enforced limit", "Dependent on infrastructure"
+
+`Book a live demo <https://mattermost.com/request-demo/>`_  or `talk to a Mattermost expert <https://mattermost.com/contact-sales/>`_ to explore tailored solutions for your organization's secure collaboration needs. Or try Mattermost yourself with a `1-hour preview <https://mattermost.com/sign-up/>`_ for instant access to a live sandbox environment.

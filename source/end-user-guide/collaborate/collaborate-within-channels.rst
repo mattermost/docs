@@ -1,7 +1,7 @@
 Collaborate within channels
 ===========================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Channels are where you connect, collaborate, and communicate with your team about various topics or projects. Use channels to organize conversations across different topics. as you're :doc:`sending messages </end-user-guide/collaborate/send-messages>`, :doc:`replying to messages </end-user-guide/collaborate/reply-to-messages>`, and :ref:`participating in conversation threads <end-user-guide/collaborate/organize-conversations:start or reply to threads>`.

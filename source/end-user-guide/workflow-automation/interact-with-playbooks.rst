@@ -1,7 +1,7 @@
 Interact with playbooks
 =======================
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Slash commands
@@ -24,9 +24,10 @@ Available slash commands include:
 - ``/playbook settings digest [on/off]`` - Turn daily digest on/off.
 - ``/playbook settings weekly-digest [on/off]`` - Turn weekly digest on/off.
 
-.. note::
+Playbooks on the go
+--------------------
 
-  The Playbooks mobile interface is read-only from Mattermost v10.11 and mobile app v2.31.0, and actions like starting runs or updating checklists aren’t available through the mobile interface. However, if you can use playbooks slash commands in a browser or the Mattermost desktop app, you can use them in the mobile app as well. Slash commands are processed by the server-side Playbooks plugin, not the mobile app’s interface, so they work via all Mattermost clients.
+Learn how to `access and work with playbooks on the go <https://docs.mattermost.com/end-user-guide/workflow-automation.html#itab--Mobile--0_1-Mobile>`_ with the Mattermost mobile app.
 
 API documentation
 -----------------

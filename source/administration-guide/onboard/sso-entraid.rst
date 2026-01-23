@@ -1,24 +1,25 @@
 Entra ID Single Sign-On
 =========================
 
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Configuring EntraID as a Single Sign-On (SSO) service
 --------------------------------------------------------
 
-Follow these steps to configure Mattermost to use your Entra ID logon credentials and Azure Active Directory account as a Single Sign-on (SSO) service for team creation, account creation, and sign-in.
-
 .. note::
 
-  The system must be using SSL as Microsoft only allows OAuth redirect URIs that are SSL-enabled.
+  - This documentation covers configuring Entra ID for **OpenID Connect** authentication. If you need to configure Entra ID for **SAML** authentication instead, see the :doc:`Configure SAML with Microsoft Entra ID </administration-guide/onboard/sso-saml-entraid>` documentation.
+  - The system must be using SSL as Microsoft only allows OAuth redirect URIs that are SSL-enabled.
+
+Follow these steps to configure Mattermost to use your Entra ID logon credentials and Azure Active Directory account as a Single Sign-on (SSO) service for team creation, account creation, and sign-in.
 
 Step 1: Register an application in Azure Portal
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Log in to the `Azure Portal <https://portal.azure.com/>`_ with the account that relates to the Azure Active Directory tenant where you want to register the application. You can confirm the tenant in the top right corner of the portal.
 
-2. In the left-hand navigation pane, select the **Azure Active Directory service**, then select **App registrations > New registration**.
+2. In the left-hand navigation pane, select the **Microsoft EntraID**, then toward the bottom select **Add application registrations**.
 
 3. Give your new registration a **Name**.
 
@@ -35,19 +36,27 @@ Once the App Registration has been created, you can configure it further. See th
 Step 2: Generate a new client secret in Azure Portal
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. In the Azure Portal, select **Certificates and Secrets** from the menu, then select the button to generate a **New Client secret**. 
+1. From the overview page of the newly created **Registered App**, select **Certificates and Secrets** from the menu, then select the button to generate a **New Client secret**. 
+
+.. image:: /images/AzureApp_Client_Secret_Setup.png
 
 2. Provide a description, define the expiry for the token, then select **Add**.
 
-3. In Azure Portal, select **Overview** from the menu, then copy and paste both the Application (client) ID and the Directory (tenant) ID to a temporary location. You will enter these values as an **Application ID** and as part of an **Auth Endpoint** and **Token Endpoint** URL in the Mattermost System Console.
-
 .. image:: /images/AzureApp_Client_Secret_Expiry.png
+
+3. Store the **value** of the new secret somewhere secure.
+
+4. In Azure Portal, select **Overview** from the menu, then copy and paste both the Application (client) ID and the Directory (tenant) ID to a temporary location. You will enter these values as an **Application ID** and as part of an **Auth Endpoint** and **Token Endpoint** URL in the Mattermost System Console.
 
 .. image:: /images/AzureApp_App_Directory_IDsv2.png
 
+5. Grant admin concent for the configured permissions under **App Registrations > <Your App> > Manage > API Permissions**
+
+.. image:: /images/AzureApp_App_Directory_Grant_Admin_Consent.png
+
+
 Step 3: Configure Mattermost for Entra ID SSO
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 1. Log in to Mattermost, then go to **System Console > Authentication > OpenID Connect**.
 
 2. Select **Entra ID** as the service provider.
@@ -80,9 +89,6 @@ If you don't register Mattermost in the Microsoft Azure AD tenant your organizat
 
 Configure Mattermost ``config.json`` for Entra ID SSO
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 Instead of using the System Console, you can add the Entra ID settings directly to the ``config.json`` file on your Mattermost server.
 

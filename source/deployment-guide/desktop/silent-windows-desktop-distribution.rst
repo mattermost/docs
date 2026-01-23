@@ -1,6 +1,9 @@
 Silent Windows desktop distribution
 =====================================
 
+.. include:: ../../_static/badges/all-commercial.rst
+  :start-after: :nosearch:
+
 You can distribute the official Windows desktop app silently to end users, pre-configured with the server URL. Additionally, you can customize all of the :doc:`desktop app settings </end-user-guide/preferences/customize-desktop-app-experience>`, except the **Start app on login** option.
 
 .. tip::
@@ -32,6 +35,11 @@ You can distribute the official Windows desktop app silently to end users, pre-c
             echo       "name": "core",
             echo       "url": "https://community.mattermost.com",
             echo       "order": 0
+            echo     },
+            echo     {
+            echo       "name": "hq",
+            echo       "url": "https://hq.example.com",
+            echo       "order": 1
             echo     }
             echo   ],
             echo   "showTrayIcon": true,

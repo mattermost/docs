@@ -1,46 +1,39 @@
 Organize conversations using threaded discussions
 ====================================================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Threads are a key part of the messaging experience in Mattermost. They're used to organize conversations and enable users to discuss topics without adding noise to channels or direct messages.
 
 Threaded discussions offers an enhanced experience for users communicating in threads and replying to messages that includes a unified threads inbox to read all conversations in one view. Threads improve the ability to process channel content, find, follow, and resume conversations more easily, and keep threaded conversations focused.
 
-From Mattermost v7.0, threaded discussions are enabled by default for all new Mattermost deployments. All Mattermost users can create new threads, unless the system admin has :ref:`disabled the ability to do so <administration-guide/configure/site-configuration-settings:threaded discussions>`.
+.. image:: ../../images/collapsed-reply-threads.gif
+  :alt: Organize conversations using threaded discussions.
 
 .. note::
 
-  System admins can :ref:`configure default availability and user opt-in <administration-guide/configure/site-configuration-settings:threaded discussions>` of threaded discussions.
-
-.. image:: ../../images/collapsed-reply-threads.gif
-  :alt: Organize conversations using threaded discussions.
+  - From Mattermost v7.0, threaded discussions are enabled by default for all new Mattermost deployments. All Mattermost users can create new threads, unless the system admin has :ref:`disabled the ability to do so <administration-guide/configure/site-configuration-settings:threaded discussions>`.
+  - System admins can :ref:`configure default availability and user opt-in <administration-guide/configure/site-configuration-settings:threaded discussions>` of threaded discussions.
 
 Start or reply to threads
 -------------------------
 
-:doc:`Replies to messages </end-user-guide/collaborate/reply-to-messages>` are collapsed under the first message of a thread. 
+:doc:`Replies to messages </end-user-guide/collaborate/reply-to-messages>` are collapsed under the first message of a thread. Open a thread by selecting the message or reply count.
 
-.. tip:: 
-    
-    - When replying to a thread in a web browser or the desktop app, you can also select the reply count if a thread already exists, and you can select anywhere on a message in a channel in the center pane to view it or reply to it.
-    - In channels, a dot next to the thread participants indicates there are unread replies. You'll only see unreads for threads you're following.
-
-.. image:: ../../images/crt-new-unread-threads.jpg
-   :alt: A dot on threads in a channel indicates unread replies.
+From Mattermost v11.2, when using Mattermost in a web browser, you can open threads in separate browser windows by selecting the **New Window** |new-window-icon| icon in the thread header. This allows you to view and participate in multiple threads simultaneously without losing context.
 
 Follow threads and messages
 ---------------------------
 
-You'll automatically follow every thread you participate or are mentioned in. You can manually follow particular messages and threads so that any reply activity triggers :doc:`notifications </end-user-guide/preferences/manage-your-notifications>`. Follow or unfollow any thread, at any time.
+You'll automatically follow every thread you participate or are mentioned in. You can manually follow particular messages and threads so that any reply activity triggers :doc:`notifications </end-user-guide/preferences/manage-your-notifications>`. Follow or unfollow any thread, at any time. In channels, a dot next to thread participants means there are unread replies for the threads you're following.
 
 .. image:: ../../images/crt-following-thread.png
    :alt: Follow threads to stay updated on replies to messages.
 
 .. tab:: Web/Desktop
 
-  Toggle the thread’s **Follow** indicator, or select **Follow thread** from the **More Actions** |more-icon| icon.
+  Toggle the thread’s **Follow** option, or select **Follow thread** from the **More Actions** |more-icon| icon.
 
   .. image:: ../../images/crt-following-thread.jpg
     :alt: Unfollow threads from the More Actions icon.

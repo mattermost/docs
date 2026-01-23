@@ -1,7 +1,7 @@
 Manage your security preferences
 =================================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
 Select your profile picture, select **Profile**, and then select **Security** to configure your password, view access history, and to view or logout of active sessions.
@@ -12,10 +12,15 @@ Select your profile picture, select **Profile**, and then select **Security** to
 | Password             | You may change your password if you've logged in by email using Mattermost in                              |
 |                      | a web browser or using the desktop app.                                                                    |
 |                      |                                                                                                            |
-|                      | .. note::                                                                                                  |
+|                      | .. important::                                                                                             |
 |                      |                                                                                                            |
-|                      |   If you sign in to Mattermost using a single sign-on service, you must update your password through       |
-|                      |   your SSO service account.                                                                                |
+|                      |   - If you sign in to Mattermost using a single sign-on service, you must update your password through     |
+|                      |     your SSO service account.                                                                              |
+|                      |   - **Password Security Enhancement**: From v11.0, Mattermost uses PBKDF2 password hashing for improved    |
+|                      |     security. When you log in after your server upgrades to v11.0+, your password will be automatically    |
+|                      |     migrated to the more secure format. If your server is later downgraded to a version prior to v11.0,    |
+|                      |     you may be unable to log in and will need to contact your system administrator for a password reset.   |
+|                      |                                                                                                            |
 +----------------------+------------------------------------------------------------------------------------------------------------+
 | Multi-factor         | If your system admin has enabled :ref:`multi-factor authentication                                         |
 | authentication (MFA) | <administration-guide/configure/authentication-configuration-settings:enable multi-factor authentication>` |
@@ -51,7 +56,7 @@ Select your profile picture, select **Profile**, and then select **Security** to
 |                      | 7. Select **Save**.                                                                                        |
 +----------------------+------------------------------------------------------------------------------------------------------------+
 | Sign-in method       | This option allows you to switch your login method between using email/username and password and           |
-|                      | :ref:`single sign-on credentials <end-user-guide/collaborate/access-your-workspace:single sign-on (sso)>`. |
+|                      | :ref:`single sign-on credentials <end-user-guide/access/access-your-workspace:single sign-on (sso)>`.      |
 |                      |                                                                                                            |
 |                      | You can configure this setting using Mattermost in a web browser or using the desktop app.                 |
 |                      |                                                                                                            |

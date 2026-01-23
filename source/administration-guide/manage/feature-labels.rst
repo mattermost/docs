@@ -1,6 +1,9 @@
 Mattermost feature labels
 ==========================
 
+.. include:: ../../_static/badges/all-commercial.rst
+  :start-after: :nosearch:
+
 Mattermost’s feature labels serve as indicators of the status, maturity, and support level of each feature, helping users and system administrators navigate product feature adoption with clarity and confidence. Feature labels communicate the stage of development, level of readiness, and potential risks associated with a feature for customers seeking to adopt new value.
 
 Experimental
