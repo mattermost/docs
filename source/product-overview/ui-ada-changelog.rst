@@ -17,7 +17,7 @@ Changelog
 
 .. list-table::
    :header-rows: 1
-   :widths: 10 15 60 15
+   :widths: 10 15 60
 
    * - Version
      - Category
