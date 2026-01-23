@@ -13,19 +13,15 @@ Changelog
    * - Version
      - Category
      - Change Description
-     - Ticket #
    * - v11.2
      - UI
      - Enabled `thread popouts <https://docs.mattermost.com/end-user-guide/collaborate/organize-conversations.html#start-or-reply-to-threads>`__ in the browser.
-     - 
    * - v11.2
      - UI
      - Reduced the channel banner height.
-     - 
    * - v11.2
      - UI
      - Improved license and plan name clarity throughout the user interface. License settings and the **About** modal now display specific plan names (Professional, Enterprise, Entry) instead of the generic "Enterprise Edition" label, reducing confusion between edition and plan terminology.
-     - 
 
 How to Use This Changelog
 -------------------------
