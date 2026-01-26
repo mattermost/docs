@@ -207,3 +207,23 @@ To make use of the Legal Hold data, you use the `processor tool <https://github.
 - ``--legal-hold-data``: Path to the Legal Hold zip file downloaded from Mattermost
 - ``--output-path``: Directory where the HTML output will be generated
 - ``--legal-hold-secret``: (Optional) Used as a security measure for an operator to ensure the authenticity of a downloaded zip file. The operator can copy the key corresponding to a particular "hold" from the Legal Hold Plugin settings page in the System Console by selecting the **Show** |preview-icon| icon next to the Legal Hold entry.
+
+Is data gathered when a channel has been archived?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes, no filtering is done based on archive or deleted status. However, archived channels can be permanently deleted based on Data Retention settings, at which point they will no longer appear in legal hold reports.
+
+Is data gathered when a user was a member of a channel for a period of time but has since left the channel?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes, channels are included when a target user was a member at any time during the legal hold start and end dates.
+
+Is data gathered from a direct message or group message with a user who has since been deactivated?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes, no filtering is done based on user deactivation state.
+
+Is data collected from group messages?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes, data is collected from group messages as if they were any other channel or direct message.
