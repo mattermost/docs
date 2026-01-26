@@ -211,7 +211,7 @@ To make use of the Legal Hold data, you use the `processor tool <https://github.
 Is data gathered when a channel has been archived?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes, no filtering is done based on archive or deleted status. However, archived channels can be permanently deleted based on Data Retention settings, at which point they will no longer appear in legal hold reports.
+Yes. Filtering isn't done based on archive or deleted status. However, archived channels can be permanently deleted based on Data Retention settings, at which point they will no longer appear in legal hold reports.
 
 Is data gathered when a user was a member of a channel for a period of time but has since left the channel?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
