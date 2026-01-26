@@ -221,7 +221,7 @@ Yes. Channels are included when a target user was a member at any time during th
 Is data gathered from a direct message or group message with a user who has since been deactivated?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes, no filtering is done based on user deactivation state.
+Yes. Filtering isn't done based on user deactivation state.
 
 Is data collected from group messages?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
