@@ -226,4 +226,4 @@ Yes. Filtering isn't done based on user deactivation state.
 Is data collected from group messages?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes, data is collected from group messages as if they were any other channel or direct message.
+Yes. Data is collected from group messages like any public or private channel or direct message.
