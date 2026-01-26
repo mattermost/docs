@@ -216,7 +216,7 @@ Yes. Filtering isn't done based on archive or deleted status. However, archived 
 Is data gathered when a user was a member of a channel for a period of time but has since left the channel?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes, channels are included when a target user was a member at any time during the legal hold start and end dates.
+Yes. Channels are included when a target user was a member at any time during the legal hold start and end dates.
 
 Is data gathered from a direct message or group message with a user who has since been deactivated?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
