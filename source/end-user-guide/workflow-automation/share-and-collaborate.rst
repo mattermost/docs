@@ -15,8 +15,8 @@ For more information about System and Team Override Schemes, refer to the :doc:`
 
 .. note::
 
-   Some permissions functionality is only available to Mattermost Enterprise customers. For more information, visit `https://mattermost.com/pricing <https://mattermost.com/pricing>`__.
-   
+  Some permissions functionality is only available to Mattermost Enterprise customers. For more information, visit `https://mattermost.com/pricing <https://mattermost.com/pricing>`__.
+
 In the context of collaborative playbooks, members are assigned a role and based on the selected permissions, this determines how they interact with playbooks. A member can be a member of one playbook, and an admin of another. This allows for granular permissions across teams and departments. For example, setting playbook visibility so only certain teams can view it, or setting permissions to allow an organization to view a playbook but only designated team members can make edits.
 
 Permissions are applied only to playbooks - there are no permissions that are specific to runs.
@@ -34,7 +34,7 @@ Playbook Admins are also members, and may have elevated permissions to change pl
 
 .. note::
 
-   Before you make system or team changes to permissions, ensure that you don't lose access to your existing playbooks. Navigate to the playbook you're a member of. Select the **Manage Access** icon and change your role from **Member** to **Admin**.
+  Before you make system or team changes to permissions, ensure that you don't lose access to your existing playbooks. Navigate to the playbook you're a member of. Select the **Manage Access** icon and change your role from **Member** to **Admin**.
 
 Playbooks permissions
 ---------------------

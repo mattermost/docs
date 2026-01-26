@@ -27,9 +27,7 @@ Available slash commands include:
 Playbooks on the go
 --------------------
 
-From Mattermost v11.0 and mobile app v2.23.0, mobile users can :ref:`interact with playbook tasks <end-user-guide/workflow-automation/work-with-tasks:interact with playbook tasks>` and :ref:`update tasks <end-user-guide/workflow-automation/work-with-tasks:update tasks>`.
-
-Mattermost v10.11 and mobile app v2.31.0 introduced a read-only mobile interface, with actions like starting runs or updating checklists only available through slash commands. Advanced playbook editing and management actions require the desktop or a web browser.
+Learn how to `access and work with playbooks on the go <https://docs.mattermost.com/end-user-guide/workflow-automation.html#itab--Mobile--0_1-Mobile>`_ with the Mattermost mobile app.
 
 API documentation
 -----------------

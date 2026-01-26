@@ -1,12 +1,12 @@
 Connect Microsoft 365, Teams, and Outlook with Mattermost
 ==========================================================
 
-.. include:: ../_static/badges/ent-adv.rst
+.. include:: ../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 Mattermost Mission Collaboration for Microsoft extends Microsoft for mission-critical coordination, command and control, incident response, and DevSecOps workflows in demanding environments, including air-gapped and classified networks by embedding Mattermost inside Teams. Use data-sovereign tools like secure chat, Playbooks, and Calls directly within M365, Teams, and Outlook.
 
-This app is designed to work with Microsoft 365, Teams, and Outlook and is currently in :ref:`Beta <administration-guide/manage/feature-labels:beta>`. From Mattermost v10.9, this integration supports third-party Single Sign-On (SSO). See the :doc:`user provisioning </administration-guide/manage/admin/user-provisioning>` product documentation for details on setting up SSO.
+This app is designed to work with Microsoft 365, Teams, and Outlook and is currently in :ref:`Beta <administration-guide/manage/feature-labels:beta>`. From Mattermost v10.7.1, this integration supports Entra ID-based Single Sign-On (SSO) for automatic authentication. Users must exist in both Mattermost and Microsoft with matching email addresses; the integration handles authentication but does not automatically provision new users. See the :doc:`user provisioning </administration-guide/manage/admin/user-provisioning>` product documentation for details on setting up SSO.
 
 .. image:: ../images/mattermost-in-msteams-2.png
   :alt: Mattermost embedded as a Microsoft Teams app.
@@ -25,34 +25,36 @@ An application must be registered in Microsoft Azure to enable secure authentica
 
 2. Go to your **Azure Portal > Microsoft Entra ID**.
 
-3. Go to **App registrations**.
+3. Create a new app registration by selecting the **Add application registration** "Quick Action":
 
-4. Create a new app registration by selecting **Add > App registration**:
+  .. image:: ../images/AzureApp_New_Registration_MS_Embedded.png
 
-  - Give it a name
-  - Accounts in this organizational directory only (single tenant)
-  - No redirect URIs
+  - Give it a name.
+  - Choose the "Accounts in this organizational directory only (single tenant)" option.
+  - Leave the Redirect URI empty.
 
-5. Go to your newly created application and copy the **Application (client) ID** and **Directory (tenant) ID** values. You'll need those later to configure the plugin.
+  .. image:: ../images/AzureApp_New_Registration_MS_Embedded_Application.png
+
+4. Go to your newly created application and copy the **Application (client) ID** and **Directory (tenant) ID** values. You'll need those later to configure the plugin.
 
   .. image:: ../images/remember-tenant-client.png
     :alt: Go to your newly created application and copy the Application (client) ID and Directory (tenant) ID values. You'll need those later to configure the plugin.
 
-6. Go to **Certificates and secrets** to generate a new client secret. Make a copy of the secret value, as it will only be shown once. You'll need this value to configure the plugin.
+5. Go to **Certificates and secrets** to generate a new client secret. Make a copy of the secret value, as it will only be shown once. You'll need this value to configure the plugin.
 
   .. image:: ../images/remember-client-secret.png
     :alt: Go to Certificates and secrets to generate a new client secret. Make a copy of the secret value, as it will only be shown once. You'll need this value to configure the plugin.
 
-7. Go to **API Permissions** to complete the following steps:
+6. Go to **API Permissions** to complete the following steps:
 
   - Ensure the ``User.Read`` **delegated** permission is added. See the `Microsoft SSO documentation <https://learn.microsoft.com/en-us/microsoftteams/platform/tabs/how-to/authentication/tab-sso-register-aad#enable-sso-in-microsoft-entra-id>`_ for details.
-  - Add the ``TeamsActivity.Send`` **application** permission for notifications. See the `Microsoft notifications documentation <https://learn.microsoft.com/en-us/graph/teams-send-activityfeednotifications?tabs=desktop%2Chttp>`_ for details.`
-  - Add the ``AppCatalog.Read.All`` **application** permission for notifications. See the `Microsoft List teamsApp documentation <https://learn.microsoft.com/en-us/graph/api/appcatalogs-list-teamsapps?view=graph-rest-1.0&tabs=http>`_ for details.
+  - Add the **Microsoft Graph API** ``TeamsActivity.Send`` **application** permission for notifications. See the `Microsoft notifications documentation <https://learn.microsoft.com/en-us/graph/teams-send-activityfeednotifications?tabs=desktop%2Chttp>`_ for details.
+  - Add the **Microsoft Graph API** ``AppCatalog.Read.All`` **application** permission for notifications. See the `Microsoft List teamsApp documentation <https://learn.microsoft.com/en-us/graph/api/appcatalogs-list-teamsapps?view=graph-rest-1.0&tabs=http>`_ for details.
   - Grant admin consent for the default directory to prevent users from seeing the consent prompt.
 
-8. Go to **Expose an API** to complete the following steps:
+7. Go to **Expose an API** to complete the following steps:
 
-  - Edit the ``_Application ID URI_`` to ``api://{{Mattermost Site URL Hostname}}/{{Application (client) ID}}``.
+  - Add/edit a **Application ID URI** and set the value to ``api://{{Mattermost Site URL Hostname}}/{{Application (client) ID}}``.
   - Add the ``access_as_user`` scope by selecting **Add a scope** and setting the following values:
 
     - **Scope name**: ``access_as_user``.
@@ -82,6 +84,8 @@ An application must be registered in Microsoft Azure to enable secure authentica
 
     - If you want to make your application available in more Microsoft applications, keep adding client applications from `the following table <https://learn.microsoft.com/en-us/microsoftteams/platform/tabs/how-to/authentication/tab-sso-register-aad#to-configure-authorized-client-application:~:text=Select%20one%20of%20the%20following%20client%20IDs%3A>`_.
 
+.. image:: ../images/AzureApp_New_Registration_MSEmbedded_ExposeAPI.png
+
 Configure the Mattermost plugin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -91,7 +95,7 @@ A Microsoft Teams app is installed into Microsoft Teams. This app facilitates co
 
 2. Go to **System Console > Plugins > Plugin Management > Upload Plugin**, and upload the plugin binary you downloaded in the previous step.
 
-3. Go to **System Console > Plugins > Plugin Management**. In the **Installed Plugins** section, scroll to **MSTeams DevSecOps**.
+3. Go to **System Console > Plugins > Plugin Management**. In the **Installed Plugins** section, scroll to **Mattermost Mission Collaboration for Microsoft**.
 
 4. Enter an **Application Version**. You can start with ``1.0.0``.
 
@@ -102,7 +106,7 @@ A Microsoft Teams app is installed into Microsoft Teams. This app facilitates co
     .. image:: ../images/tenant-client-secret-sysconsole.png
       :alt: In the Mattermost System Console, enter the Directory (tenant) ID, Application (client) ID, and Client Secret for the plugin.
 
-7. Enter an **Application Display Name** to define how your application is named in the MS Teams App Store.
+7. Enter an **Application Display Name** to define how your application is named in the MS Teams App Store.  Make it company specific for easy discovery.
 
 8. Save the changes and enable the plugin.
 
@@ -129,16 +133,61 @@ Within Mattermost, the Mattermost Mission Collaboration for Microsoft plugin nee
 Use
 ------
 
+Add the app
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Once the application is deployed, your users can add the Mattermost app to their Microsoft Teams environment. Inform your users to:
+
+1. Open Microsoft Teams and go to **Apps** in the left sidebar.
+
+2. Search for the **Application Display Name** you configured in the plugin settings (step 7 of the `Configure the Mattermost plugin <#configure-the-mattermost-plugin>`__ section).
+
+3. The app will display a **Built for your org** tag, indicating it's a custom application approved for your organization.
+
+4. Select the app and then select **Add** to install it in their Teams environment.
+
+Once added, users can access Mattermost directly within Microsoft Teams through the app tab.
+
+.. image:: ../images/AzureApp_New_Registration_MSEmbedded_TeamsAppAdd.png
+
+Authentication
+~~~~~~~~~~~~~~
+
 This plugin supports automatic authentication when logged into Microsoft Teams. Teams authentication automatically logs users into Mattermost if the email addresses in both platforms match exactly. Regular authentication methods (LDAP, SAML, email/password, OpenID) can additionally be used for Mattermost.
+
+The integration automatically configures Content Security Policy (CSP) and Frame Ancestors settings to ensure secure embedding of Mattermost within Microsoft Teams, Outlook, and other Microsoft 365 applications. Deep linking is supported, allowing users to select links in Teams notifications and navigate directly to specific Mattermost posts or conversations.
 
 In air-gapped environments or during business continuity disruptions, users who can't join Microsoft Teams, can continue to access Mattermost using their Mattermost credentials by opening Mattermost in a separate app (e.g., in a new browser window). Alternatively, a Mattermost admin can pre-distribute the Mattermost desktop app using Windows MSI or the mobile app via EMM.
 
 .. image:: ../images/mattermost-in-msteams.png
   :alt: Mattermost embedded in a Microsoft Teams tab.
 
+Activity Feed notifications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When you're mentioned in Mattermost while working in Microsoft Teams, you'll receive notifications directly in your Teams Activity Feed. This keeps you connected to important Mattermost conversations without switching applications.
+
+**What triggers notifications:**
+
+- Direct mentions using @username
+- Channel-wide mentions using @channel, @all, or @here
+- Direct messages sent to you
+
+**How it works:**
+
+When someone mentions you in Mattermost, a notification appears in your Microsoft Teams Activity Feed. Select the notification to open Mattermost and view the full context of the message. This feature uses the ``TeamsActivity.Send`` permission configured during the Azure app registration setup.
+
+**Disable notifications:**
+
+System admins can disable Activity Feed notifications for specific users or across your organization by configuring the ``disable_user_activity_notifications`` setting in the plugin configuration. This setting is useful if you want to reduce notification noise or if users prefer to check Mattermost manually.
+
+.. note::
+
+  Activity Feed notifications require the ``TeamsActivity.Send`` application permission to be configured in Azure (step 6 of the `Register an MS Teams app in Azure <#register-an-ms-teams-app-in-azure>`__ section).
+
 Get Help
 ---------
 
-Mattermost commercial customers can open a `Mattermost support case <https://support.mattermost.com/hc/en-us/requests/new>`_. 
+Customers with a Mattermost subscription can open a `Mattermost support case <https://support.mattermost.com/hc/en-us/requests/new>`_. 
 
 For questions, feedback, and assistance, join our pubic `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance.

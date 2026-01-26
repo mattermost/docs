@@ -19,7 +19,7 @@ Review and manage the following environmental configuration options in the Syste
 - `Session lengths <#session-lengths>`__
 - `Performance monitoring <#performance-monitoring>`__
 - `Developer <#developer>`__
-- `Mobile security <#mobile-security>`__ 
+- `Mobile security <#mobile-security>`__
 - `config.json-only settings <#config-json-only-settings>`__
 
 .. tip::
@@ -103,6 +103,10 @@ Web server listen address
 | or “well-known ports”, in the range of 0-1023), you must have |                                                                    |
 | permissions to bind to that port.                             |                                                                    |
 +---------------------------------------------------------------+--------------------------------------------------------------------+
+
+.. note::
+
+  Web server uses ``address:port`` (e.g., ``":8065"``), while :ref:`Metrics <administration-guide/configure/environment-configuration-settings:listen address>` uses a port number only (e.g., ``8067``).
 
 .. config:setting:: forward-port-80-to-443
   :displayname: Forward port 80 to 443 (Web Server)
@@ -339,7 +343,7 @@ Enable insecure outgoing connections
 
 .. warning::
 
-  Enabling this feature makes these connections susceptible to man-in-the-middle attacks. 
+  Enabling this feature makes these connections susceptible to man-in-the-middle attacks.
 
 .. config:setting:: managed-resource-paths
   :displayname: Managed resource paths (Web Server)
@@ -698,7 +702,7 @@ The parameter to encrypt connection against a PostgreSQL server is sslmode. The 
 
 Your database admin must configure the functionality according to the supported values described below.
 
-+----------------------------------------+-----------------+---------------------------------------------------------------------------+ 
++----------------------------------------+-----------------+---------------------------------------------------------------------------+
 | Short description of the ``sslmode``   | Value           | Example of a data source name                                             |
 | parameter                              |                 |                                                                           |
 +========================================+=================+===========================================================================+
@@ -725,7 +729,7 @@ MySQL Databases
 
 When Driver Name is set to mysql, we recommend using collation over using charset.
 
-To specify collation:  
+To specify collation:
 
 .. code-block:: text
 
@@ -818,24 +822,6 @@ Maximum idle connections
 | Numerical input. Default is **50**.                    |                                                                         |
 | A 2:1 ratio with MaxOpenConns is recommended.          |                                                                         |
 +--------------------------------------------------------+-------------------------------------------------------------------------+
-
-.. config:setting:: maximum-idle-connections
-  :displayname: Maximum idle connections (Database)
-  :systemconsole: Environment > Database
-  :configjson: .SqlSettings.MaxIdleConns
-  :environment: MM_SQLSETTINGS_MAXIDLECONNS
-  :description: The maximum number of idle connections held open to the database. Default is **50**.
-
-Maximum idle connections
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-+-------------------------------------------------------+-------------------------------------------------------------------+
-| The maximum number of idle connections held open      | - System Config path: **Environment > Database**                  |
-| to the database.                                      | - ``config.json`` setting: ``".SqlSettings.MaxIdleConns": 50,``   |
-|                                                       | - Environment variable: ``MM_SQLSETTINGS_MAXIDLECONNS``           |
-| Numerical input. Default is **50**.                   |                                                                   |
-|                                                       |                                                                   |
-+-------------------------------------------------------+-------------------------------------------------------------------+
 
 .. config:setting:: query-timeout
   :displayname: Query timeout (Database)
@@ -1115,7 +1101,7 @@ Replica lag settings
 
   .. tab:: AWS Aurora
 
-    Add the configuration highlighted below to your ``SqlSettings.ReplicaLagSettings`` array. You only need to add this once because replication statistics for AWS Aurora nodes are visible across all server instances that are members of the cluster. Be sure to change the ``DataSource`` to point to a single node in the group. 
+    Add the configuration highlighted below to your ``SqlSettings.ReplicaLagSettings`` array. You only need to add this once because replication statistics for AWS Aurora nodes are visible across all server instances that are members of the cluster. Be sure to change the ``DataSource`` to point to a single node in the group.
 
     For more information on Aurora replication stats, see the `AWS Aurora documentaion <https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora_global_db_instance_status.html>`__.
 
@@ -1138,7 +1124,7 @@ Replica lag settings
 
   .. tab:: MySQL Group Replication
 
-    Add the configuration highlighted below to your ``SqlSettings.ReplicaLagSettings`` array. You only need to add this once because replication statistics for all nodes are shared across all server instances that are members of the MySQL replication group. Be sure to change the ``DataSource`` to point to a single node in the group. 
+    Add the configuration highlighted below to your ``SqlSettings.ReplicaLagSettings`` array. You only need to add this once because replication statistics for all nodes are shared across all server instances that are members of the MySQL replication group. Be sure to change the ``DataSource`` to point to a single node in the group.
 
     For more information on group replication stats, see the `MySQL documentation <https://dev.mysql.com/doc/refman/8.0/en/group-replication-replication-group-member-stats.html>`__.
 
@@ -1161,7 +1147,7 @@ Replica lag settings
 
   .. tab:: PostgreSQL replication slots
 
-    1. Add the configuration highlighted below to your ``SqlSettings.ReplicaLagSettings`` array. This query should run against the **primary** node in your cluster, to do this change the ``DataSource`` to match the `SqlSettings.DataSource <#data-source>`__ setting you have configured. 
+    1. Add the configuration highlighted below to your ``SqlSettings.ReplicaLagSettings`` array. This query should run against the **primary** node in your cluster, to do this change the ``DataSource`` to match the `SqlSettings.DataSource <#data-source>`__ setting you have configured.
 
     For more information on pg_stat_replication, see the `PostgreSQL documentation <https://www.postgresql.org/docs/current/monitoring-stats.html#MONITORING-PG-STAT-REPLICATION-VIEW>`__.
 
@@ -1633,7 +1619,7 @@ Channel index replicas
 
 .. note::
 
-  If there are ``n`` data nodes, the number of replicas per shard for each index should be ``n-1``. If the number of nodes in an Elasticsearch or AWS OpenSearch cluster changes, this configuration setting, as well as `Post Index Replicas <#post-index-shards>`__ and `User Index Replicas <#user-index-replicas>`__ must also be updated accordingly. 
+  If there are ``n`` data nodes, the number of replicas per shard for each index should be ``n-1``. If the number of nodes in an Elasticsearch or AWS OpenSearch cluster changes, this configuration setting, as well as `Post Index Replicas <#post-index-shards>`__ and `User Index Replicas <#user-index-replicas>`__ must also be updated accordingly.
 
 .. config:setting:: channel-index-shards
   :displayname: Channel index shards (Elasticsearch)
@@ -1669,7 +1655,7 @@ User index replicas
 
 .. note::
 
-  If there are ``n`` data nodes, the number of replicas per shard for each index should be ``n-1``. If the number of nodes in an Elasticsearch or AWS OpenSearch cluster changes, this configuration setting, as well as `Post Index Replicas <#post-index-shards>`__ and `User Index Replicas <#user-index-replicas>`__ must also be updated accordingly. 
+  If there are ``n`` data nodes, the number of replicas per shard for each index should be ``n-1``. If the number of nodes in an Elasticsearch or AWS OpenSearch cluster changes, this configuration setting, as well as `Post Index Replicas <#post-index-shards>`__ and `User Index Replicas <#user-index-replicas>`__ must also be updated accordingly.
 
 .. config:setting:: user-index-shards
   :displayname: User index shards (Elasticsearch)
@@ -1808,15 +1794,15 @@ During busy periods, this delay will be faster as more traffic is occurring, cau
 1. You must understand how many posts your server makes every minute. Run the query below to calculate your server's average posts per minute.
 
     Note that this query can be heavy, so we recommend that you run it during non-peak hours.
-    Additionally, you can adjust the ``WHERE`` clause to see the posts per minute over a different time period. Right now ``31536000000`` represents the number of milliseconds in a year. 
+    Additionally, you can adjust the ``WHERE`` clause to see the posts per minute over a different time period. Right now ``31536000000`` represents the number of milliseconds in a year.
 
     .. code-block:: SQL
 
       SELECT
         AVG(postsPerMinute) as averagePostsPerMinute
       FROM (
-        SELECT 
-          count(*) as postsPerMinute, 
+        SELECT
+          count(*) as postsPerMinute,
           date_trunc('minute', to_timestamp(createat/1000))
         FROM posts
         WHERE createAt > ( (extract(epoch from now()) * 1000 )  - 31536000000)
@@ -1921,7 +1907,7 @@ With self-hosted deployments, you can configure file storage settings by going t
 
 .. note::
 
-  Mattermost currently supports storing files on the local filesystem and Amazon S3 or S3-compatible containers. We have tested Mattermost with `MinIO <https://min.io/>`__ and `Digital Ocean Spaces <https://docs.digitalocean.com/products/spaces/>`__ products, but not all S3-compatible containers on the market. If you are looking to use other S3-compatible containers, we recommend completing your own testing.
+  Mattermost currently supports storing files on the local filesystem and Amazon S3 or S3-compatible containers. We have tested Mattermost with `Digital Ocean Spaces <https://docs.digitalocean.com/products/spaces/>`__, but not all S3-compatible containers on the market. If you are looking to use other S3-compatible containers, we recommend completing your own testing. You can also use local storage or a network drive using NFS.
 
 .. config:setting:: file-storage-system
   :displayname: File storage system (File Storage)
@@ -1944,8 +1930,8 @@ File storage system
 |   the specified local file directory.                         |                                                                             |
 | - **amazons3**: Files and images are stored on Amazon S3      |                                                                             |
 |   based on the access key, bucket, and region fields          |                                                                             |
-|   provided. The driver is compatible with MinIO (Beta)        |                                                                             |
-|   and Digital Ocean Spaces.                                   |                                                                             |
+|   provided. The driver is compatible with other S3-compatible |                                                                             |
+|   services, such as Digital Ocean Spaces.                     |                                                                             |
 +---------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 .. config:setting:: local-storage-directory
@@ -2023,15 +2009,15 @@ Enable document search by content
 
 .. note::
 
-  Document content search results for files shared before upgrading to Mattermost Server v5.35 may be incomplete until an extraction command is executed using the :ref:`mmctl <administration-guide/manage/mmctl-command-line-tool:mmctl extract>`. If this command is not run, users can search older files based on file name only.
+  Enabling document search by content is required when extracting content from files. Both Mattermost :doc:`file search </end-user-guide/collaborate/search-for-messages>` and :doc:`Mattermost Agents </end-user-guide/agents>` can access files and their content, when enabled with the necessary dependencies. Document content search results for files shared before upgrading to Mattermost Server v5.35 may be incomplete until an extraction command is executed using the :ref:`mmctl <administration-guide/manage/mmctl-command-line-tool:mmctl extract>`. If this command is not run, users can search older files based on file name only.
 
   You can optionally install the following `dependencies <https://github.com/sajari/docconv#dependencies>`__ to extend content searching support in Mattermost to include file formats beyond PDF, DOCX, and ODT, such as DOC, RTF, XML, and HTML:
 
   - **tidy**: Used to search the contents of HTML documents.
   - **wv**: Used to search the contents of DOC documents.
-  - **popplerutils**: Used to significantly improve server performance when extracting the contents of PDF documents.
+  - **poppler-utils**: Used to significantly improve server performance when extracting the contents of PDF documents.
   - **unrtf**: Used to search the contents of RTF documents.
-  - **JusText**: Used to search HTML documents.
+  - **JusText**: Used to search HTML documents. See the `JusText Python package <https://pypi.org/project/jusText/>`__ for deployment information.
 
   If you choose not to install these dependencies, you’ll see log entries for documents that couldn’t be extracted. Any documents that can’t be extracted are skipped and logged so that content extraction can proceed.
 
@@ -2063,7 +2049,7 @@ Enable searching content of documents within ZIP files
 .. note::
 
   - You can search for document content within ZIP files when using Mattermost in a web browser or the desktop app.
-  - Searching document contents adds load to your server. 
+  - Searching document contents adds load to your server.
   - For large deployments, or teams that share many large, text-heavy documents, we recommend you review our :ref:`hardware requirements <deployment-guide/software-hardware-requirements:hardware requirements>`, and test enabling this feature in a staging environment before enabling it in a production environment.
 
 .. config:setting:: amazon-s3-bucket
@@ -2104,7 +2090,7 @@ Amazon S3 path prefix
   :systemconsole: Environment > File Storage
   :configjson: .FileSettings.AmazonS3Region
   :environment: MM_FILESETTINGS_AMAZONS3REGION
-  :description: The AWS region you selected when creating your **Amazon S3 bucket** in AWS. For MinIO or Digital Ocean Spaces, leave this setting empty.
+  :description: The AWS region you selected when creating your **Amazon S3 bucket** in AWS. For Digital Ocean Spaces or other S3-compatible services, leave this setting empty.
 
 Amazon S3 region
 ~~~~~~~~~~~~~~~~
@@ -2119,7 +2105,7 @@ Amazon S3 region
 | if none found.                                                |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
-For MinIO or Digital Ocean Spaces, leave this setting empty.
+For Digital Ocean Spaces or other S3-compatible services, leave this setting empty.
 
 .. config:setting:: amazon-s3-access-key-id
   :displayname: Amazon S3 access key ID (File Storage)
@@ -2325,7 +2311,7 @@ Export Amazon S3 storage class
   :environment: MM_FILESETTINGS_AMAZONS3REQUESTTIMEOUTMILLISECONDS
   :description: Amount of time, in milliseconds, before requests to Amazon S3 time out. Default value is 30000 (30 seconds).
 
-Amazon S3 request timeout 
+Amazon S3 request timeout
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -2384,7 +2370,7 @@ Amazon S3 exported upload part size
   :environment: MM_FILESETTINGS_AMAZONS3REQUESTTIMEOUTMILLISECONDS
   :description: Amount of time, in milliseconds, before requests to Amazon S3 time out. Default value is 30000 (30 seconds).
 
-Amazon S3 request timeout 
+Amazon S3 request timeout
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -2527,16 +2513,16 @@ SMTP server
   :systemconsole: Environment > SMTP
   :configjson: .EmailSettings.SMTPPort
   :environment: MM_EMAILSETTINGS_SMTPPORT
-  :description: The port of SMTP email server.
+  :description: The port of SMTP email server. String input.
 
 SMTP server port
 ~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+---------------------------------------------------------------+
-| The port of SMTP email server.                                  | - System Config path: **Environment > SMTP**                  |
-|                                                                 | - ``config.json`` setting: ``EmailSettings`` > ``SMTPPort``   |
-| Numerical input.                                                | - Environment variable: ``MM_EMAILSETTINGS_SMTPPORT``         |
-+-----------------------------------------------------------------+---------------------------------------------------------------+
++-----------------------------------------------------------------+-----------------------------------------------------------------+
+| The port of SMTP email server.                                  | - System Config path: **Environment > SMTP**                    |
+|                                                                 | - ``config.json`` setting: ``EmailSettings`` > ``"SMTPPort"``   |
+| String input.                                                   | - Environment variable: ``MM_EMAILSETTINGS_SMTPPORT``           |
++-----------------------------------------------------------------+-----------------------------------------------------------------+
 
 .. config:setting:: enable-smtp-authentication
   :displayname: Enable SMTP authentication (SMTP)
@@ -2808,7 +2794,7 @@ Enable gossip encryption
 .. note::
 
   - The Gossip protocol is based on principles outlined in the `SWIM protocol developed by researchers at Cornell University <https://www.cs.cornell.edu/projects/Quicksilver/public_pdfs/SWIM.pdf>`_. The gossip protocol is a communication mechanism in distributed systems where nodes randomly exchange information to ensure data consistency across the network. It is decentralized, scalable, and fault-tolerant, making it ideal for systems with numerous nodes. Information is spread in a manner similar to social gossip, with nodes periodically "gossiping" updates to random peers until the network converges to a consistent state. Widely used in distributed databases, blockchain networks, and peer-to-peer systems, the protocol is simple to implement and resilient to node failures. However, it can suffer from redundancy and propagation delays in large networks.
-  - Alternatively, you can manually set the ``ClusterEncryptionKey`` row value in the **Systems** table. A key is a byte array converted to base64. Set this value to either 16, 24, or 32 bytes to select AES-128, AES-192, or AES-256 respectively. 
+  - Alternatively, you can manually set the ``ClusterEncryptionKey`` row value in the **Systems** table. A key is a byte array converted to base64. Set this value to either 16, 24, or 32 bytes to select AES-128, AES-192, or AES-256 respectively.
   - From Mattermost v10.11, gossip encryption is enabled by default for all new deployments. For existing deployments, all communication using the gossip protocol remains unencrypted unless you manually enable encryption. Prior to v10.11, gossip encryption is enabled by default for Cloud deployments and disabled by default for self-hosted deployments.
 
 .. config:setting:: enable-gossip-compression
@@ -3917,9 +3903,24 @@ Performance monitoring
 .. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
-With self-hosted deployments, you can configure performance monitoring by going to **System Console > Environment > Performance Monitoring**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
+With self-hosted deployments, you can configure performance monitoring by going to **System Console > Environment > Performance Monitoring**, or by editing the ``config.json`` file as described in the following tables.
 
-See the :doc:`performance monitoring </administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring>` documentation to learn more about setting up performance monitoring.
+.. code-block:: json
+
+   {
+     "MetricsSettings": {
+       "Enable": false,
+       "BlockProfileRate": 0,
+       "ListenAddress": :8067,
+       "EnableClientMetrics": false,
+       "EnableNotificationMetrics": true,
+       "ClientSideUserIds": ""
+     }
+   }
+
+Changes to configuration settings in this section require a server restart before taking effect.
+
+See the :doc:`performance monitoring </administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring>` documentation to learn more about setting up performance monitoring with Prometheus and Grafana. See the :doc:`collect performance metrics </administration-guide/scale/collect-performance-metrics>` documentation to learn more about using the Mattermost Metrics plugin.
 
 .. config:setting:: enable-performance-monitoring
   :displayname: Enable performance monitoring (Performance Monitoring)
@@ -3961,7 +3962,7 @@ Enable client performance monitoring
 +------------------------------------------------------+----------------------------------------------------------------------------------------+
 | Enable or disable client performance monitoring.     | - System Config path: **Environment > Performance Monitoring**                         |
 |                                                      | - ``config.json`` setting: ``MetricsSettings`` > ``EnableClientMetrics`` > ``false``   |
-| - **true**: Client performance monitoring data       | - Environment variable: ``MM_METRICSSETTINGS_ENABLE``                                  |
+| - **true**: Client performance monitoring data       | - Environment variable: ``MM_METRICSSETTINGS_ENABLECLIENTMETRICS``                     |
 |   collection and profiling is enabled.               |                                                                                        |
 | - **false**: **(Default)** Mattermost                |                                                                                        |
 |   client performance monitoring is disabled.         |                                                                                        |
@@ -3980,13 +3981,15 @@ Client side user ids
 +---------------------------------------------------------------+-------------------------------------------------------------------------+
 | A list of comma-separated user IDs you want to track for      | - System Config path: **Environment > Performance Monitoring**          |
 | client-side webapp metrics.                                   | - ``config.json`` setting: ``MetricsSettings`` > ``ClientSideUserIds``  |
-|                                                               | - Environment variable: ``MM_METRICSSETTINGS_LISTENADDRESS``            |
+|                                                               | - Environment variable: ``MM_METRICSSETTINGS_CLIENTSIDEUSERIDS``        |
 | Limited to 5 user IDs. Blank by default.                      |                                                                         |
 +---------------------------------------------------------------+-------------------------------------------------------------------------+
 
 .. note::
 
-  The total number of user IDs is limited to 5 to ensure performance. Adding more IDs can overwhelm Prometheus due to high label cardinality. To avoid performance issues, we recommend minimizing changes to this list.
+  - This setting only applies when ``EnableClientMetrics`` is set to ``true``.
+  - Each user ID should correspond to a valid user in the Mattermost system. For example, ``MM_METRICSSETTINGS_CLIENTSIDEUSERIDS="user1,user2,user3"``.
+  - The total number of user IDs is limited to 5 to ensure performance. Adding more IDs can overwhelm Prometheus due to high label cardinality. To avoid performance issues, we recommend minimizing changes to this list.
 
 .. config:setting:: listen-address-for-performance
   :displayname: Listen address for performance (Performance Monitoring)
@@ -4004,6 +4007,71 @@ Listen address
 |                                                               | - Environment variable: ``MM_METRICSSETTINGS_LISTENADDRESS``                  |
 | Numerical input. Default is **8067**.                         |                                                                               |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
+
+.. note::
+
+  - ``ListenAddress`` accepts a port only. It doesn’t take an IP/host. If you need to restrict interfaces, do so via your OS firewall or reverse proxy.
+  - The address uses a ``host:port`` format. Use ``:8067`` to listen on all interfaces on port **8067**, or use ``localhost:8067`` to restrict to **localhost** only.
+
+.. config:setting:: block-profile-rate
+  :displayname: Block profile rate (Performance Monitoring)
+  :systemconsole: N/A
+  :configjson: .MetricsSettings.BlockProfileRate
+  :environment: MM_METRICSSETTINGS_BLOCKPROFILERATE
+  :description: Control how often Mattermost collects data about delays caused by blocking operations within Mattermost (such as when one part of the program has to wait for another). Default is **0** (profiling is disabled).
+
+Block profile rate
+~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+-------------------------------------------------------------------------------+
+| Control how often Mattermost collects data about delays       | - System Config path: **N/A**                                                 |
+| caused by blocking operations within Mattermost (such as      | - ``config.json`` setting: ``MetricsSettings`` > ``BlockProfileRate`` > ``0`` |
+| when one part of the program has to wait for another).        | - Environment variable: ``MM_METRICSSETTINGS_BLOCKPROFILERATE``               |
+| Default is **0** (profiling is disabled).                     |                                                                               |
+|                                                               |                                                                               |
+| The profiler aims to sample an average of one blocking        |                                                                               |
+| event per rate nanoseconds spent blocked.                     |                                                                               |
+|                                                               |                                                                               |
+| Default is **0**.                                             |                                                                               |
++---------------------------------------------------------------+-------------------------------------------------------------------------------+
+
+.. note::
+
+  - This setting isn't available in the System Console and can only be set in ``config.json``.
+  - Only adjust this if you’re diagnosing performance issues and know how to analyze profiling data. The value represents how frequently Mattermost records blocking events in its performance profile:
+
+    - Set to 0 to record no blocking events (profiling is disabled).
+    - Set to 1 to record every blocking event (profiling is fully enabled).
+    - Set to a higher number to record only a fraction of events (useful for sampling instead of full profiling).
+
+.. config:setting:: enable-notification-monitoring
+  :displayname: Enable notification monitoring (Performance Monitoring)
+  :systemconsole: Site Configuration > Notifications
+  :configjson: .MetricsSettings.EnableNotificationMetrics
+  :environment: MM_METRICSSETTINGS_ENABLENOTIFICATIONMETRICS
+  :description: Control whether Mattermost collects notification metrics data for client-side web and desktop app users. Default is **true**.
+
+Enable notification monitoring
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++-----------------------------------------------+----------------------------------------------------------------------------------------------------+
+| Enable or disable notification metrics data   | - System Config path: **Site Configuration > Notifications**                                       |
+| collection.                                   | - ``config.json`` setting: ``MetricsSettings`` > ``EnableNotificationMetrics`` > ``true``          |
+|                                               | - Environment variable: ``MM_METRICSSETTINGS_ENABLENOTIFICATIONMETRICS``                           |
+| - **true**: **(Default)** Mattermost          |                                                                                                    |
+|   notification data collection is enabled for |                                                                                                    |
+|   client-side web and desktop app users.      |                                                                                                    |
+| - **false**: Mattermost notification          |                                                                                                    |
+|   data collection is disabled.                |                                                                                                    |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  - ``MetricsSettings.Enable`` must be set to ``true``
+  - The ``NotificationMonitoring`` feature flag must be set to ``true``
+
+See the :ref:`performance monitoring <administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring:getting started>` documentation
+to learn more about Mattermost Notification Health metrics.
 
 ----
 
@@ -4246,7 +4314,7 @@ Prevent screen capture
 Enable secure file preview on mobile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This setting improves an organization's mobile security posture by restricting file access while still allowing essential file viewing capabilities. 
+This setting improves an organization's mobile security posture by restricting file access while still allowing essential file viewing capabilities.
 
 +---------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
 | - **true**: Prevents file downloads, previews, and sharing for most file types,                                                       | - System Config path: **Site Configuration > File sharing and downloads**                         |
@@ -4320,7 +4388,7 @@ Disable Customer Portal requests
 
 .. note::
 
-  Cloud admins can’t modify this configuration setting. 
+  Cloud admins can’t modify this configuration setting.
 
 .. config:setting:: enable-api-team-deletion
   :displayname: Enable API team deletion (ServiceSettings)

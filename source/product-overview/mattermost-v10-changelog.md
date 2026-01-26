@@ -12,6 +12,26 @@
 (release-v10.12-feature-release)=
 ## Release v10.12 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **10.12.4, released 2025-11-21**
+ ```{Attention}
+ **Critical Fixes**
+  - Mattermost v10.12.4 contains a Critical severity level security fix in the Jira plugin. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+ ```
+  - Pre-packaged Jira plugin version [v4.4.1](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.4.1).
+  - Mattermost v10.12.4 contains no database or functional changes.
+- **10.12.3, released 2025-11-17**
+  - Mattermost v10.12.3 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged MS Teams Meetings plugin version [v2.3.0](https://github.com/mattermost/mattermost-plugin-msteams-meetings/releases/tag/v2.3.0).
+  - Pre-packaged Calls plugin version [v1.11.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.11.0).
+  - Fixed a configuration retention issue where even active configuration got deleted [MM-66216](https://mattermost.atlassian.net/browse/MM-66216).
+  - Mattermost v10.12.3 contains no database or functional changes.
+- **10.12.2, released 2025-10-28**
+ ```{Attention}
+ **Critical Fixes**
+  - Mattermost v10.12.2 contains Critical severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+ ```
+  - Pre-packaged Boards plugin [v9.1.7](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.7).
+  - Mattermost v10.12.2 contains no database or functional changes.
 - **10.12.1, released 2025-10-15**
   - Mattermost v10.12.1 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged MS Teams plugin [v2.2.2](https://github.com/mattermost/mattermost-plugin-msteams/releases/tag/v2.2.2).
@@ -45,6 +65,7 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
  - Fixed an issue where extra content was not accounted for in the focus order.
  - Fixed an issue where search filters were not readable by screen readers when a search term had not been typed in before reading the number of results.
  - Fixed an issue where the content of webhook posts did not display.
+ - Fixed an issue where the channel URL got updated when the channel display name was changed.
 
 ### Go Version
  - v10.12 is built with Go ``v1.24.6``.
@@ -55,6 +76,42 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 (release-v10.11-extended-support-release)=
 ## Release v10.11 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **10.11.10, released 2026-01-15**
+  - Mattermost v10.11.10 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed a server panic that occurred when a bot created a post with persistent notifications enabled [MM-65575](https://mattermost.atlassian.net/browse/MM-65575).
+  - Pre-packaged Zoom plugin version [v1.11.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.11.0).
+  - Pre-packaged Jira plugin version [v4.5.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.5.0).
+  - Mattermost v10.11.10 contains no database or functional changes.
+- **10.11.9, released 2025-12-17**
+  - Mattermost v10.11.9 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue where pressing ``Shift+Up`` in the channel textbox to reply to a thread could cause the right‑hand sidebar (RHS) reply textbox to not focus [MM-65186](https://mattermost.atlassian.net/browse/MM-65186).
+  - Mattermost v10.11.9 contains no database or functional changes.
+- **10.11.8, released 2025-11-21**
+ ```{Attention}
+ **Critical Fixes**
+  - Mattermost v10.11.8 contains a Critical severity level security fix in the Jira plugin. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+ ```
+  - Pre-packaged Jira plugin version [v4.4.1](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.4.1).
+  - Mattermost v10.11.8 contains no database or functional changes.
+- **10.11.7, released 2025-11-17**
+  - Mattermost v10.11.7 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged MS Teams Meetings plugin version [v2.3.0](https://github.com/mattermost/mattermost-plugin-msteams-meetings/releases/tag/v2.3.0).
+  - Pre-packaged Calls plugin version [v1.11.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.11.0).
+  - Pre-packaged Agents plugin version [v1.4.0](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.4.0).
+  - Pre-packaged GitHub plugin version [v2.5.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.5.0).
+  - Mattermost v10.11.7 contains no database or functional changes.
+- **10.11.6, released 2025-11-04**
+  - Fixed an issue where guest users could not log in via SAML when "Ignore Guest Users when Synchronizing with AD/LDAP" was enabled [MM-66186](https://mattermost.atlassian.net/browse/MM-66186).
+  - Fixed a configuration retention issue where even active configurations got deleted [MM-66216](https://mattermost.atlassian.net/browse/MM-66216).
+  - Pre-packaged MS Teams Meeting plugin version [v2.3.0](https://github.com/mattermost/mattermost-plugin-msteams-meetings/releases/tag/v2.3.0).
+  - Mattermost v10.11.6 contains no database or functional changes.
+- **10.11.5, released 2025-10-28**
+ ```{Attention}
+ **Critical Fixes**
+  - Mattermost v10.11.5 contains Critical severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+ ```
+  - Pre-packaged Boards plugin [v9.1.7](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.7).
+  - Mattermost v10.11.5 contains no database or functional changes.
 - **10.11.4, released 2025-10-15**
   - Mattermost v10.11.4 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged MS Teams plugin [v2.2.2](https://github.com/mattermost/mattermost-plugin-msteams/releases/tag/v2.2.2).
@@ -95,7 +152,7 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
  - Modified the input to have the minimum/maximum length validation work the same as the validation around ``required``, and replaced **Create Team** input with an **Input** component. 
  - Improved the YouTube video preview user interface. 
  - Removed the minimum-width for the right-hand side when the window size is <400px. 
- - Added a status region for the channel filter dropdown. 
+ - Added a status region for the channel filter dropdown in the **Browse Channels** modal. 
  - Removed the NPS plugin from pre-packaged plugins. 
 
 #### Administration
@@ -214,7 +271,7 @@ If you upgrade from a release earlier than v10.9, please read the other [Importa
    - Hid plugin components in Connected Workspaces and introduced ``EnableSharedChannelsPlugins`` to re-enable them if needed.
  - Added new feature flags (default off) ``EnableSharedChannelsMemberSync`` and ``EnableSyncAllUsersForRemoteCluster`` for Connected Workspaces.
  - Added an LDAP Wizard with various enhancements, including a **Test Group Attributes** button for feedback on matching group attributes, a **Test Connection** button with improved error reporting, a **Test Attributes** button showing attribute success and matching user count, a **Test Filters** button with failure feedback, an expandable **User Filters** section with "More info" hover texts, and a help text explaining the possible delay when running tests on large LDAP servers.
- - Added support for licenses that enforce seat counts with a configurable ``ExtraUsers`` field for exact control over allowed overages.
+ - Added support for [licenses that enforce seat counts](https://docs.mattermost.com/administration-guide/manage/admin/error-codes.html#error-licensed-users-limit-exceeded) with a configurable ``ExtraUsers`` field for exact control over allowed overages.
  - Organized cluster files into directories for the Support Packet.
  - Partially sanitized database datasources for the Support Packet.
  - Added deactivation status to the mmctl user search output.
@@ -324,7 +381,7 @@ If you upgrade from a release earlier than v10.8, please read the other [Importa
  - Pre-packaged Calls plugin [v1.8.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.8.0).
  - Pre-packaged Jira plugin version [v4.3.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.3.0).
  - Pre-packaged Metrics plugin version [v0.7.0](https://github.com/mattermost/mattermost-plugin-metrics/releases/tag/v0.7.0).
- - Introduced a configurable channel banner feature for channel admins, visible across desktop, web, and mobile platforms. This feature requires an Enterprise Advanced license.
+ - Introduced a configurable [channel banner feature](https://docs.mattermost.com/end-user-guide/collaborate/display-channel-banners.html) for channel admins, visible across desktop, web, and mobile platforms. This feature requires an Enterprise Advanced license.
  - Added more descriptive page titles to the login, account creation, and password reset pages.
  - Improved the **Drafts** list by implementing virtualization.
  - Enhanced the behavior for reporting issues in the platform.
@@ -338,7 +395,7 @@ If you upgrade from a release earlier than v10.8, please read the other [Importa
  - Added a license load metric to the **About** screen to display current license usage.
  - Upgraded the logr dependency to version 2.0.22.
  - Removed telemetry tracking from Redux selectors.
- - Made it possible to view JSON logs in plain text within the **System Console**.
+ - Made it possible to [view JSON logs in plain text](https://docs.mattermost.com/administration-guide/configure/reporting-configuration-settings.html#server-logs) within the **System Console**.
  - Enhanced the **System Console** search functionality to include all log fields.
  - Enhanced error reporting related to cluster management.
  - Added an LDAP setting to re-add removed members.
@@ -439,7 +496,7 @@ If you upgrade from a release earlier than v10.7, please read the other [Importa
  - Pre-packaged Metrics plugin version [v0.6.0](https://github.com/mattermost/mattermost-plugin-metrics/releases/tag/v0.6.0).
  - Added an improved channel menu. 
  - Updated email notification settings to provide clearer wording and descriptions for both batched and non-batched scenarios. The settings dialog now reflects the selected status more accurately in both collapsed and expanded views, enhancing consistency and usability.
- - Added the ability to display the nickname or full name in Threads based on settings.
+ - Added the ability to [display the nickname or full name](https://docs.mattermost.com/end-user-guide/preferences/manage-your-profile.html) in Threads based on settings.
  - Improved the error message for failed file copies. 
 
 #### Administration
@@ -639,7 +696,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
 
 ### Important Upgrade Notes
  - Support for PostgreSQL v11 and v12 have been removed. The new minimum PostgreSQL version is v13+. See the [minimum supported PostgreSQL version policy](https://docs.mattermost.com/deploy/software-hardware-requirements.html#minimum-postgresql-database-support-policy) documentation for details.
- - Migration times: On a system with 12M posts, and 1M fileinfo entries, the migration takes 15s. This migration is non-locking. Note that there is no migration for MySQL deployments because this optimization is only applicable for PostgreSQL.
+ - System Console statistics now perform faster on PostgreSQL. The ``MaxUsersForStatistics`` configuration setting now only disables the **User counts with posts** chart, while all other stats remain unaffected. The other stats remain unaffected because that configuration value is no longer needed to disable the other queries since they are always fast now. Post and file counts update daily, so they may not always reflect real-time data. Advanced stats, such as line charts and plugin data, are now hidden until clicked, reducing load time. No performance improvements apply to MySQL since it's scheduled for full deprecation in v11. We recommend migrating to PostgreSQL for better performance and long-term support. Migration times: On a system with 12M posts, and 1M fileinfo entries, the migration takes 15s, but could take several minutes depending on the server's table sizes and database specs. This migration is non-locking. Note that there is no migration for MySQL deployments because this optimization is only applicable for PostgreSQL. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
 
 ```{Important}
 If you upgrade from a release earlier than v10.5, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
@@ -656,7 +713,6 @@ If you upgrade from a release earlier than v10.5, please read the other [Importa
  - Upgraded Ukrainian language to official.
 
 #### Administration
- - System Console statistics now perform faster on PostgreSQL. The ``MaxUsersForStatistics`` configuration setting now only disables the **User counts with posts** chart, while all other stats remain unaffected. The other stats remain unaffected because that configuration value is no longer needed to disable the other queries since they are always fast now. Post and file counts update daily, so they may not always reflect real-time data. Advanced stats, such as line charts and plugin data, are now hidden until clicked, reducing load time. No performance improvements apply to MySQL since it's scheduled for full deprecation in v11. We recommend migrating to PostgreSQL for better performance and long-term support. The migration process for PostgreSQL is quick (around 15 seconds for large systems) and non-blocking. If you're on MySQL, no migration is needed, but transitioning to PostgreSQL is strongly encouraged.
  - Unlicensed server limits have been updated: a soft limit of 2500 users now results in a banner notification visible by admins, and a 5K hard limit that prevents the creation or activation of users until the user count is reduced below the hard limit.
  - Removed the automatic Elasticsearch/OpenSearch channel index schema check. As a result, admins will no longer receive Direct Message alerts to notify that their ``elasticsearch`` channel index is out of date.
 
@@ -704,6 +760,16 @@ New setting options were added to ``config.json``. Below is a list of the additi
 (release-v10.5-extended-support-release)=
 ## Release v10.5 - [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
+- **10.5.14, released 2025-10-30**
+  - Fixed Go v1.23 incompatibility issues with plugins [MM-63345](https://mattermost.atlassian.net/browse/MM-63345).
+  - Mattermost v10.5.14 contains no database or functional changes.
+- **10.5.13, released 2025-10-28**
+ ```{Attention}
+ **Critical Fixes**
+  - Mattermost v10.5.13 contains Critical severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+ ```
+  - Pre-packaged Boards plugin [v9.1.7](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.7).
+  - Mattermost v10.5.13 contains no database or functional changes.
 - **10.5.12, released 2025-10-15**
   - Mattermost v10.5.12 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged MS Teams plugin [v2.2.2](https://github.com/mattermost/mattermost-plugin-msteams/releases/tag/v2.2.2).
@@ -799,7 +865,7 @@ If you upgrade from a release earlier than v10.3, please read the other [Importa
  - Pre-packaged Channel Export plugin [v1.2.1](https://github.com/mattermost/mattermost-plugin-channel-export/releases/tag/v1.2.1).
  - Pre-packaged Jira plugin [v4.2.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.2.0).
  - Added the ability to modify post attachments during edit.
- - The channel bookmarks bar is now hidden when there are no bookmarks in the channel. Bookmarks can now be added from the channel menu.
+ - The [channel bookmarks bar](https://docs.mattermost.com/end-user-guide/collaborate/manage-channel-bookmarks.html) is now hidden when there are no bookmarks in the channel. Bookmarks can now be added from the channel menu.
  - Removed the video from the onboarding checklist.
  - Improved accessibility throughout the webapp by fixing several issues around keyboard navigation and screen reader focused on modals, right-hand side and core chat functionality. 
 
@@ -1003,7 +1069,7 @@ See [this walkthrough video](https://mattermost.com/video/mattermost-v10-3-chang
  - Added a feature to schedule a message at a future date (Professional and Enterprise plans).
  - Copilot plugin is now installed and enabled by default.
  - Added an option to test notifications.
- - Added a new search interface.
+ - Added a new [search interface](https://docs.mattermost.com/end-user-guide/collaborate/search-for-messages.html).
  - Updated product string for clarity.
  - Removed most places where deprecated translation code is used in the web app.
  - Removed some duplicate CSS from the web app bundle.
@@ -1092,9 +1158,9 @@ See [this walkthrough video](https://mattermost.com/video/mattermost-v10-2-chang
  - Pre-packaged Calls plugin [v1.2.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.2.1).
  - Changed the logic of ``useMilitaryTime`` to ``false`` to default to 12-hour time format unless the user's preference from ``data.Value`` is ``true``. When a notification email is sent to a user, the time should now default to the 12-hour format unless otherwise stated by the user. 
  - A warning is now shown when deleting a post or comment from a remote/shared channel.
- - Bot messages will now properly mention both users when they happen on non-bot Direct Messages.
+ - Bot messages will now properly mention both users when they happen on non-bot Group Messages.
  - Updated the channel header to hide pinned posts when there aren't any in the channel.
- - Added full support for @mentions in the values of fields in message attachments.
+ - Added full support for @mentions in the values of fields in [message attachments](https://developers.mattermost.com/integrate/reference/message-attachments/).
 
 #### Administration
  - Added a new URL parameter called ``permanent`` to ``DELETE /api/v4/posts/<post-id>``, and set ``permanent`` to ``true`` in order to permanently delete a post and its attachments.
@@ -1194,7 +1260,7 @@ If you upgrade from a release earlier than v10.0, please read the other [Importa
 #### User Interface (UI)
  - Added Metrics plugin to the prepackaged plugins, [v0.5.3](https://github.com/mattermost/mattermost-plugin-metrics/releases/tag/v0.5.3).
  - Pre-packaged Calls plugin [v1.1.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.1.0).
- - Enabled Channel Bookmarks, added re-ordering, and fixed URL validity checking.
+ - Enabled [Channel Bookmarks](https://docs.mattermost.com/end-user-guide/collaborate/manage-channel-bookmarks.html), added re-ordering, and fixed URL validity checking.
  - Added a more descriptive error message, "Uploaded plugin size exceeds limit." for plugin uploads that are too large.
  - Added channel specific message notification sounds configuration.
 
@@ -1314,10 +1380,10 @@ See [this walkthrough video](https://mattermost.com/video/mattermost-v10-0-chang
  - Added Playbooks [v2.0.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.0.1) to the prepackaged plugins.
  - Added Mattermost user survey plugin to pre-packaged plugins, [v1.1.1](https://github.com/mattermost/mattermost-plugin-user-survey/releases).
  - Changed the right-hand side scroll direction and fixed the advanced text editor to the bottom.
- - Added Do not disturb and late timezone warnings to Direct Message posts.
+ - Added [Do not disturb and late timezone warnings](https://docs.mattermost.com/end-user-guide/collaborate/channel-types.html#direct-message-channels) to Direct Message posts.
  - Added user statuses to the Group Members modal.
  - Added labels for channel header and purpose in the right-hand side channel info view.
- - Added pagination user interface to the ``BackstageList`` component.
+ - Added pagination support to the **Integrations > Incoming WebHooks** page to be able to navigate through all configured incoming webhooks.
  - Made various improvements to code involving user preferences.
  - Promoted GIF picker, custom groups and message priority out of Beta.
  - Removed the **Pre-release features** section from **Settings > Advanced** due to lack of usage.

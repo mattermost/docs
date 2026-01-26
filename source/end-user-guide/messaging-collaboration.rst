@@ -16,7 +16,6 @@ Getting Started
    :hidden:
    :titlesonly:
 
-   Access your Mattermost workspace </end-user-guide/collaborate/access-your-workspace>
    Organize using teams </end-user-guide/collaborate/organize-using-teams>
    Organize using custom user groups </end-user-guide/collaborate/organize-using-custom-user-groups>
    Invite people </end-user-guide/collaborate/invite-people>
@@ -28,7 +27,6 @@ Getting Started
    Keyboard shortcuts </end-user-guide/collaborate/keyboard-shortcuts>
    Extend Mattermost with integrations </end-user-guide/collaborate/extend-mattermost-with-integrations>
 
-* :doc:`Access your Mattermost workspace </end-user-guide/collaborate/access-your-workspace>` - Log in to a Mattermost workspace to connect with your teammates.
 * :doc:`Organize using teams </end-user-guide/collaborate/organize-using-teams>` - Learn about team-based organization in Mattermost.
 * :doc:`Organize using custom user groups </end-user-guide/collaborate/organize-using-custom-user-groups>` - Learn about creating and managing custom user groups in Mattermost.
 * :doc:`Invite people to your workspace </end-user-guide/collaborate/invite-people>` - Learn how to add new users to Mattermost and add users to existing teams and channels.

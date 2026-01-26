@@ -6,13 +6,28 @@ This page describes features that are removed from support for Mattermost, or wi
 Removed features in upcoming versions
 -------------------------------------
 
-Mattermost Server v11.1 (November 2025)
+Mattermost Server v11.4 (February 2026)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- The version of React used by the Mattermost web app will be updated from React 17 to React 18. See more details in `this forum post <https://forum.mattermost.com/t/upgrading-the-mattermost-web-app-to-react-18-v11/25000>`__.
+- PSDs will no longer be inline previewed, they will be treated as regular file attachments.
+
+Mattermost Desktop App v6.1 (February 2026)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- The in-app auto-updater for Windows and Linux AppImage installations will be deprecated. See more details in `this forum post <https://forum.mattermost.com/t/important-update-changes-to-desktop-app-auto-updater/25657>`__.
 
 Removed features by Mattermost version
 ----------------------------------------
+
+Mattermost Mobile App v2.36.4 (January 2026)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Removed support for iOS v15 and updated the iOS minimum version to v16. See more details in `this forum post <https://forum.mattermost.com/t/mobile-app-ios-version-support-update-v2-36-1-and-v2-36-2/25664>`__.
+
+Mattermost Server v11.1 (November 2025)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- The version of React used by the Mattermost web app has been updated from React 17 to React 18. See more details in `this forum post <https://forum.mattermost.com/t/upgrading-the-mattermost-web-app-to-react-18-v11/25000>`__.
 
 Mattermost Server v11.0 (October 2025)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -21,7 +36,7 @@ Mattermost Server v11.0 (October 2025)
 - The ``TeamSettings.ExperimentalViewArchivedChannels`` setting has been deprecated. Archived channels will always be accessible, subject to normal channel membership. The server will fail to start if this setting is set to ``false``. To deny access to archived channels, mark them as private and remove affected channel members. See more details in `this forum post <https://forum.mattermost.com/t/viewing-accessing-archived-channels-v11/22626>`__.
 - Playbooks has stopped working for Team Edition. Entry, Professional, Enterprise, and Enterprise Advanced plans are automatically upgraded to Playbooks v2 with no expected downtime. See more details in `this forum post <https://forum.mattermost.com/t/clarification-and-update-on-the-playbooks-plugin-v11/25192>`__.
 - Experimental Bleve Search functionality has been retired. If Bleve is enabled, search will not work until ``DisableDatabaseSearch`` is set to ``false``. See more details in `this forum post <https://forum.mattermost.com/t/transitioning-from-bleve-search-in-mattermost-v11/22982>`__.
-- Support for MySQL has ended. See more details in `this forum post <https://forum.mattermost.com/t/transition-to-postgresql/19551>`__.
+- Support for MySQL has ended. Our `Migration Guide <https://docs.mattermost.com/deployment-guide/postgres-migration.html>`__ outlines the steps, tools and support available for migrating to PostgreSQL. See more details in `this forum post <https://forum.mattermost.com/t/transition-to-postgresql/19551>`__.
 - The ``registerPostDropdownMenuComponent`` hook in the web app’s plugin API has been removed in favour of ``registerPostDropdownMenuAction``. See more details in `this forum post <https://forum.mattermost.com/t/deprecating-a-post-dropdown-menu-component-plugin-api-v11/25001>`__.
 - The web app is no longer exposing the `Styled Components <https://styled-components.com/>`__ dependency for use by web app plugins. See more details in `this forum post <https://forum.mattermost.com/t/removing-styled-components-export-for-web-app-plugins-v11/25002>`__.
 - Omnibus support has been deprecated. The last ``mattermost-omnibus`` release was v10.12. See more details in `this forum post <https://forum.mattermost.com/t/mattermost-omnibus-to-reach-end-of-life-v11/25175>`__.

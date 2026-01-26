@@ -20,7 +20,7 @@ Desktop apps
 .. csv-table::
     :header: "Operating System", "Self-Hosted Technical Requirement", "Cloud Technical Requirement"
 
-    "Windows", "Windows 10+", "Windows 10+"
+    "Windows", "Windows 11+", "Windows 11+"
     "Mac", "macOS 12+", "macOS 12+"
     "Linux", "Ubuntu LTS releases 22.04 or later", "Ubuntu LTS releases 22.04 or later"
 
@@ -38,10 +38,10 @@ PC web
 .. csv-table::
     :header: "Browser", "Self-Hosted Technical Requirement", "Cloud Technical Requirement"
 
-    "Chrome", "v138+", "v138+"
-    "Firefox", "v128+", "v128+"
+    "Chrome", "v140+", "v140+"
+    "Firefox", "v140+", "v140+"
     "Safari", "v17.4+", "v17.4+"
-    "Edge", "v138+", "v138+"
+    "Edge", "v140+", "v140+"
 
 `*` Internet Explorer (IE11) is no longer supported. We recommend using the `Mattermost desktop app <https://mattermost.com/apps/>`_ or another supported browser. See `this forum post <https://forum.mattermost.com/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`__ to learn more.
 
@@ -51,7 +51,7 @@ Mobile apps
 .. csv-table::
     :header: "Operating System", "Technical Requirement"
 
-    "iOS", "iPhone 6s devices and later with iOS 15.1+"
+    "iOS", "iPhone 8+ devices and later with iOS 16.0+"
     "Android", "Android devices with Android 7+"
 
 .. note::
@@ -66,8 +66,8 @@ Mobile web
 .. csv-table::
     :header: "Browser", "Technical Requirement"
 
-    "iOS", "iOS 15.1+ with Safari 17.4+ or Chrome 138+"
-    "Android", "Android 7+ with Chrome 138+"
+    "iOS", "iOS 16.0+ with Safari 17.4+ or Chrome 140+"
+    "Android", "Android 7+ with Chrome 140+"
 
 Email client
 ^^^^^^^^^^^^
@@ -92,7 +92,7 @@ Database software
 
 -  PostgreSQL 14.0+
 
-Amazon Aurora equivalents of PostgreSQL is also supported.
+Amazon Aurora equivalents of PostgreSQL is also supported. Our `Migration Guide <https://docs.mattermost.com/deployment-guide/postgres-migration.html>`__ outlines the steps, tools and support available for migrating from MySQL to PostgreSQL.
 
 .. important::
 
@@ -221,4 +221,4 @@ For Enterprise Edition deployments with a multi-server setup, we highly recommen
 - Prometheus to track system health of your Mattermost deployment, through :doc:`performance monitoring feature </administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring>` available in Mattermost Enterprise.
 - Grafana to visualize the system health metrics collected by Prometheus with the :doc:`performance monitoring feature </administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring>`. Grafana 5.0.0 and later is recommended.
 - Elasticsearch to support highly efficient database searches in a cluster environment. Elasticsearch v7.17+ is supported, and Elasticsearch v8.x or AWS OpenSearch is recommended from Mattermost v9.11. :doc:`Learn more </administration-guide/scale/enterprise-search>`.
-- MinIO or AWS S3. Mattermost is compatible with object storage systems which implement the S3 API. Other S3-compatible systems may work, but are not officially supported. Learn more about file storage configuration options :ref:`in our documentation <administration-guide/configure/environment-configuration-settings:file storage>`.
+- AWS S3 or any S3-compatible service. Mattermost is compatible with object storage systems which implement the S3 API. You can also use local storage or a network drive using NFS. Learn more about file storage configuration options :ref:`in our documentation <administration-guide/configure/environment-configuration-settings:file storage>`.

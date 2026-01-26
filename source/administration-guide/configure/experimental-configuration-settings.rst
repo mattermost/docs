@@ -943,8 +943,6 @@ Select the themes that can be chosen by users when ``EnableThemeSelection`` is s
 | This feature's ``config.json`` setting is ``"AllowedThemes": []`` with string array input consisting of the options ``"default"``, ``"organization"``, ``"mattermostDark"``, and ``"windows10"``, such as ``["mattermostDark", "windows10"]``.     |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
-
 .. config:setting:: file-location
   :displayname: File location (Experimental)
   :systemconsole: N/A
@@ -1317,30 +1315,6 @@ Set the Unix timestamp (seconds since epoch, UTC) to export data from.
 | This feature's ``config.json`` setting is ``"ExportFromTimestamp": 0`` with numerical input. |
 +----------------------------------------------------------------------------------------------+
 
-.. config:setting:: block-profile-rate
-  :displayname: Block profile rate (Experimental)
-  :systemconsole: N/A
-  :configjson: BlockProfileRate
-  :environment: N/A
-
-  Value that controls the `fraction of goroutine blocking events reported in the blocking profile <https://pkg.go.dev/runtime#SetBlockProfileRate>`_.
-  To include every blocking event in the profile, set the rate to ``1``. To turn off profiling entirely, set the rate to ``0``.
-  Default is **0**.
-
-Block profile rate
-~~~~~~~~~~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``. Changes to this setting require a server restart before taking effect.
-
-Value that controls the `fraction of goroutine blocking events reported in the blocking profile <https://pkg.go.dev/runtime#SetBlockProfileRate>`_.
-
-The profiler aims to sample an average of one blocking event per rate nanoseconds spent blocked.
-
-To include every blocking event in the profile, set the rate to ``1``. To turn off profiling entirely, set the rate to ``0``.
-
-+---------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"BlockProfileRate": 0`` with options ``0`` and ``1``. |
-+---------------------------------------------------------------------------------------------------+
 
 .. config:setting:: entra-id-scope
   :displayname: Entra ID scope (Experimental)
@@ -1876,3 +1850,4 @@ Defines the threshold in days beyond which outdated configurations are removed f
 +--------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"JobSettings.CleanupConfigThresholdDays": 30`` with numerical input.   |
 +--------------------------------------------------------------------------------------------------------------------+
+
