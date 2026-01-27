@@ -23,7 +23,11 @@ When you want to get the attention of specific Mattermost users, you can use @me
 
 You can mention a teammate by using the *@* symbol plus their username to send them a mention notification.
 
-Type *@* to bring up a list of team members who can be mentioned. To filter the list, type the first few letters of any username, first name, last name, or nickname. 
+Type *@* or the full-width "＠" (U+FF20) to bring up a list of team members who can be mentioned. To filter the list, type the first few letters of any username, first name, last name, or nickname.
+
+.. note::
+
+  Mattermost v11.3 added support for full-width @, improving the experience for Japanese IME and other international keyboard users. Existing @ mentions are unaffected. See the :doc:v11.3 release notes </product-overview/mattermost-v11-changelog> for details.
 
 .. tip::
   
