@@ -42,7 +42,6 @@ Access the following configuration settings in the System Console by going to **
 Global retention policy for messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-<<<<<<< HEAD:source/configure/compliance-configuration-settings.rst
 +----------------------------------------------------------------+------------------------------------------------------------------------------------------+
 | Set how long Mattermost keeps messages across all teams and    | - System Config path: **Compliance > Data Retention Policies**                           |
 | channels. This setting doesn't apply to custom retention       | - ``config.json`` setting: ``DataRetentionSettings`` > ``MessageRetentionHours`` > ``0`` |
@@ -59,22 +58,7 @@ Global retention policy for messages
 
 .. note::
 
-  From Mattermost v9.5, ``MessageRetentionDays`` has been deprecated in favor of ``MessageRetentionHours``. See :ref:`deprecated configuration settings <configure/deprecated-configuration-settings:Message Retention (Days)>` for details.
-=======
-Set how long Mattermost keeps messages across all teams and channels. This value is not used for any teams and channels that have a custom retention policy applied . Requires the :ref:`global retention policy for messages <administration-guide/configure/compliance-configuration-settings:global retention policy for messages>` configuration setting to be set to ``true``.
-
-By default, messages are kept forever. If **Hours**, **Days**, or **Years** is chosen, set how many hours, days, or years messages are kept in Mattermost. Messages older than the duration you set will be deleted nightly. The minimum message retention time is one hour.
-
-The global retention time for messages can be superseded on a team or channel level by creating custom policies with unique post retention times See the `Custom retention policy <#custom-retention-policy>`__ section below for details. 
-
-+--------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MessageRetentionHours": 1`` with numerical input.                           |
-+--------------------------------------------------------------------------------------------------------------------------+
-
-.. note::
-
-  From Mattermost v9.5, ``MessageRetentionDays`` has been deprecated in favor of ``MessageRetentionHours``. See :doc:`deprecated configuration settings </administration-guide/configure/deprecated-configuration-settings>` for details.
->>>>>>> master:source/administration-guide/configure/compliance-configuration-settings.rst
+  From Mattermost v9.5, ``MessageRetentionDays`` has been deprecated in favor of ``MessageRetentionHours``. See :ref:`deprecated configuration settings <administration-guide/configure/deprecated-configuration-settings:Message Retention (Days)>` for details.
 
 .. config:setting:: global-retention-policy-for-files
   :displayname: Global retention policy for files (Data Retention)
@@ -86,7 +70,6 @@ The global retention time for messages can be superseded on a team or channel le
 Global retention policy for files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-<<<<<<< HEAD:source/configure/compliance-configuration-settings.rst
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------+
 | Set how long Mattermost keeps files across all teams and      | - System Config path: **Compliance > Data Retention Policies**                        |
 | channels. This setting doesn't apply to custom retention      | - ``config.json`` setting: ``DataRetentionSettings`` > ``FileRetentionHours`` > ``0`` |
@@ -103,20 +86,7 @@ Global retention policy for files
 
 .. note::
 
-  From Mattermost v9.5, ``FileRetentionDays`` has been deprecated in favor of ``FileRetentionHours``. See :ref:`deprecated configuration settings <configure/deprecated-configuration-settings:File Retention (Days)>` for details.
-=======
-Set how long Mattermost keeps files across all teams and channels. Custom policies on team and channel level don't apply to file attachments. The global retention time for files will be used even if a custom policy for messages is in place. Requires the :ref:`global retention policy for files <administration-guide/configure/compliance-configuration-settings:global retention policy for files>` configuration setting to be set to ``true``.
-
-By default, files are kept forever. If **Hours**, **Days**, or **Years** is chosen, set how many hours, days, or years files are kept in Mattermost. Files older than the duration you set will be deleted nightly. The minimum file retention time is one hour.
-
-+--------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FileRetentionHours": 1`` with numerical input.                              |
-+--------------------------------------------------------------------------------------------------------------------------+
-
-.. note::
-
-  From Mattermost v9.5, ``FileRetentionDays`` has been deprecated in favor of ``FileRetentionHours``. See :doc:`deprecated configuration settings </administration-guide/configure/deprecated-configuration-settings>` for details.
->>>>>>> master:source/administration-guide/configure/compliance-configuration-settings.rst
+  From Mattermost v9.5, ``FileRetentionDays`` has been deprecated in favor of ``FileRetentionHours``. See :ref:`deprecated configuration settings <administration-guide/configure/deprecated-configuration-settings:File Retention (Days)>` for details.
 
 .. config:setting:: preserve-pinned-posts
   :displayname: Preserve pinned posts (Data Retention)
@@ -155,11 +125,7 @@ From Mattermost v10.10, controls whether pinned posts are preserved when data re
 Custom retention policy
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-<<<<<<< HEAD:source/configure/compliance-configuration-settings.rst
-Select **Add Policy** to define a custom retention policy. See the :doc:`custom data retention policy </comply/data-retention-policy>` documentation for details.
-=======
 Set how long Mattermost keeps messages across specific teams and channels by specifying a name for the custom retention policy, setting a duration value in days or years, and specifying the teams and channels that will follow this policy. The attachment retention time cannot be set on custom policy levels and the global retention time for attachments is always applied.
->>>>>>> master:source/administration-guide/configure/compliance-configuration-settings.rst
 
 .. config:setting:: data-deletion-time
   :displayname: Data deletion time (Data Retention)
@@ -212,26 +178,16 @@ Access the following configuration settings in the System Console by going to **
 Enable compliance export
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-<<<<<<< HEAD:source/configure/compliance-configuration-settings.rst
-+-----------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| - **True**: Mattermost will generate a compliance export file   | - System Config path: **Compliance > Compliance Export**                            |
-|   that contains all messages that were posted in the last 24    | - ``config.json`` setting: ``MessageExportSettings`` > ``EnableExport`` > ``false`` |
-|   hours. The export task is scheduled to run once per day.      | - Environment variable: ``MM_MESSAGEEXPORTSETTINGS_ENABLEEXPORT``                   |
-|   See the :doc:`compliance export documentation                 |                                                                                     |
-|   </comply/compliance-export>`  to learn more.                  |                                                                                     |
-|                                                                 |                                                                                     |
-| - **False**: **(Default)** Mattermost doesn't generate a        |                                                                                     |
-|   compliance export file.                                       |                                                                                     |
-+-----------------------------------------------------------------+-------------------------------------------------------------------------------------+
-=======
-**True**: Mattermost will generate a compliance export file that contains all messages that were posted in the last 24 hours. The export task is scheduled to run once per day. See the :doc:`documentation to learn more </administration-guide/comply/compliance-export>`.
-
-**False**: Mattermost doesn't generate a compliance export file.
-
-+----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableExport": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------------+
->>>>>>> master:source/administration-guide/configure/compliance-configuration-settings.rst
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| - **True**: Mattermost will generate a compliance export file      | - System Config path: **Compliance > Compliance Export**                            |
+|   that contains all messages that were posted in the last 24       | - ``config.json`` setting: ``MessageExportSettings`` > ``EnableExport`` > ``false`` |
+|   hours. The export task is scheduled to run once per day.         | - Environment variable: ``MM_MESSAGEEXPORTSETTINGS_ENABLEEXPORT``                   |
+|   See the :doc:`compliance export documentation                    |                                                                                     |
+|   </administration-guide/comply/compliance-export>` to learn more. |                                                                                     |
+|                                                                    |                                                                                     |
+| - **False**: **(Default)** Mattermost doesn't generate a           |                                                                                     |
+|   compliance export file.                                          |                                                                                     |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
 .. config:setting:: administration-guide/comply/compliance-export-time
   :displayname: Compliance export time (Compliance Export)
@@ -367,7 +323,6 @@ SMTP server name
 SMTP server port
 ~~~~~~~~~~~~~~~~
 
-<<<<<<< HEAD:source/configure/compliance-configuration-settings.rst
 +---------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
 | The SMTP server port that will receive your Global Relay EML        | - System Config path: **Compliance > Compliance Export**                                                     |
 | file when a                                                         | - ``config.json`` setting: ``MessageExportSettings`` > ``GlobalRelaySettings`` > ``CustomSMTPPort`` > ``25`` |
@@ -376,13 +331,6 @@ SMTP server port
 |                                                                     |                                                                                                              |
 | Numerical input. Default is **25**.                                 |                                                                                                              |
 +---------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
-=======
-The SMTP server port that will receive your Global Relay EML file when a `custom customer account type <#global-relay-customer-account>`__ is configured. Default is ``"25"``.
-
-+------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``".MessageExportSettings.GlobalRelaySettings.CustomSMTPPort": "25"`` with string input. |
-+------------------------------------------------------------------------------------------------------------------------------------+
->>>>>>> master:source/administration-guide/configure/compliance-configuration-settings.rst
 
 .. config:setting:: message-export-batch-size
   :displayname: Message export batch size (Compliance Export)
@@ -394,19 +342,12 @@ The SMTP server port that will receive your Global Relay EML file when a `custom
 Message export batch size
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-<<<<<<< HEAD:source/configure/compliance-configuration-settings.rst
-.. include:: ../_static/badges/ent-only.rst
-  :start-after: :nosearch:
-
 +---------------------------------------------------------------+----------------------------------------------------------------------------------+
 | Determines how many new messages are batched together to a    | - System Config path: N/A                                                        |
 | compliance export file.                                       | - ``config.json`` setting: ``MessageExportSettings`` > ``BatchSize`` > ``10000`` |
 |                                                               | - Environment variable: ``MM_MESSAGEEXPORTSETTINGS_BATCHSIZE``                   |
 | Numerical input. Default is **10000** messages.               |                                                                                  |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------+
-=======
-This setting isn't available in the System Console and can only be set in ``config.json``.
->>>>>>> master:source/administration-guide/configure/compliance-configuration-settings.rst
 
 .. note::
   This setting isn't available in the System Console and can only be set in ``config.json``.
@@ -428,16 +369,9 @@ Select **Run Compliance Export Job Now** to start a compliance export job immedi
 Compliance monitoring
 ----------------------
 
-<<<<<<< HEAD:source/configure/compliance-configuration-settings.rst
-.. include:: ../_static/badges/ent-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
-Settings to enable and configure Mattermost compliance reports. Access the following configuration settings in the System Console by going to **Compliance > Compliance Monitoring**.
-=======
 Settings used to enable and configure Mattermost compliance reports.
 
 Access the following configuration settings in the System Console by going to **Compliance > Compliance Monitoring**.
->>>>>>> master:source/administration-guide/configure/compliance-configuration-settings.rst
 
 .. config:setting:: enable-compliance-reporting
   :displayname: Enable compliance reporting (Compliance Monitoring)
