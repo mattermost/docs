@@ -1,8 +1,7 @@
 """
 Sphinx directive implementation.
 """
-
-from typing import Final
+from typing import Final, Optional
 
 from docutils import nodes
 from docutils.parsers.rst import directives
@@ -17,6 +16,10 @@ from .tab_id import TabId
 logger: logging.SphinxLoggerAdapter = logging.getLogger(__name__)
 LOG_PREFIX: Final[str] = "[sphinx_inline_tabs]"
 
+INLINE_TAB_DOCNAMES: Final[str] = "inline_tab_docnames"
+"""The key in the Sphinx environment to store a list of documents with inline tabs"""
+GENERATED_TAB_IDS: Final[str] = "generated_tab_ids"
+"""The key in the Sphinx environment to store a list of generated tab IDs"""
 
 class TabDirective(SphinxDirective):
     """Tabbed content in Sphinx documentation."""
@@ -70,20 +73,28 @@ class TabDirective(SphinxDirective):
         Walk the parsed content and add new `id` attributes on section nodes that
         will be used for HTML page navigation.
         """
+        if not hasattr(self.env, GENERATED_TAB_IDS):
+            setattr(self.env, GENERATED_TAB_IDS, dict())
+        all_generated_tab_ids: dict[str, set[str]] = getattr(self.env, GENERATED_TAB_IDS)
+        if self.env.docname not in all_generated_tab_ids:
+            all_generated_tab_ids[self.env.docname] = set()
+        generated_tab_ids: set[str] = all_generated_tab_ids[self.env.docname]
         self.walk_parsed_nodes(
-            [container], tab_name=_make_id(self.arguments[0]), docname=self.env.docname
+            [container],
+            tab_name=_make_id(self.arguments[0]),
+            docname=self.env.docname,
+            generated_tab_ids=generated_tab_ids,
         )
 
         """
-        Record the name of this tab in a list of tabs for this document in the
+        Record the name of this document in a list of documents with tabs in the
         Sphinx environment.
         """
-        # TODO: is this valuable any longer?
-        if not hasattr(self.env, "sphinx_tabs"):
-            self.env.sphinx_tabs = {}
-        if self.env.docname not in self.env.sphinx_tabs:
-            self.env.sphinx_tabs[self.env.docname] = []
-        self.env.sphinx_tabs[self.env.docname].append(self.arguments[0])
+        if not hasattr(self.env, INLINE_TAB_DOCNAMES):
+            setattr(self.env, INLINE_TAB_DOCNAMES, [])
+        tab_docnames: list[str] = getattr(self.env, INLINE_TAB_DOCNAMES)
+        if self.env.docname not in tab_docnames:
+            tab_docnames.append(self.env.docname)
 
         return [container]
 
@@ -94,6 +105,7 @@ class TabDirective(SphinxDirective):
         tab_name: str = "",
         docname: str = "",
         tab_counter: int = 0,
+        generated_tab_ids: Optional[set[str]] = None,
     ):
         """
         Recursively walk a docutils node tree, adding new `id` attributes to TabContainer and section nodes.
@@ -104,10 +116,13 @@ class TabDirective(SphinxDirective):
         :param tab_name: The name of the tab, encoded as a Sphinx `id` attribute.
         :param docname: The document name.
         :param tab_counter: The current tab counter.
+        :param generated_tab_ids: A set of generated tab IDs to ensure they are unique in the document.
         :return:
         """
+        if generated_tab_ids is None:
+            generated_tab_ids = set()
         for parsed_node in parsed_nodes:
-            node_info = (
+            node_info: str = (
                 f"type(parsed_node)={type(parsed_node)}; "
                 f"has_ids={True if hasattr(parsed_node, 'attributes') and parsed_node.attributes["ids"] else False}; "
                 f"parent={parsed_node.parent!r}"
@@ -134,6 +149,7 @@ class TabDirective(SphinxDirective):
                     tab_count=tab_counter + 1,
                     node_id=_make_id(tab_container_name),
                 )
+                tab_id.ensure_unique(generated_tab_ids)
                 parsed_node.tab_counter = tab_counter + 1
                 parsed_node.is_parsed = True
                 parsed_node.tab_id = tab_id
@@ -141,6 +157,7 @@ class TabDirective(SphinxDirective):
                     f"{LOG_PREFIX} walk_parsed_nodes({docname}|{tab_name}): [{level}/{tab_counter}] {tab_container_name}; set ids to [{str(tab_id)}]"
                 )
                 parsed_node.attributes["ids"] = [str(tab_id)]
+                generated_tab_ids.add(str(tab_id))
 
             elif isinstance(parsed_node, nodes.section):
                 section_title: str = parsed_node.next_node(nodes.title).astext()
@@ -160,6 +177,7 @@ class TabDirective(SphinxDirective):
                         tab_count=tab_counter,
                         node_id=node_id,
                     )
+                    new_id.ensure_unique(generated_tab_ids)
                     logger.debug(
                         f"{LOG_PREFIX} walk_parsed_nodes({docname}|{tab_name}): [{level}/{tab_counter}] section={node_id}, new_id={str(new_id)}"
                     )
@@ -172,6 +190,7 @@ class TabDirective(SphinxDirective):
                         f"{LOG_PREFIX} walk_parsed_nodes({docname}|{tab_name}): [{level}/{tab_counter}] set attributes['ids'] to {new_ids}"
                     )
                     parsed_node.attributes["ids"] = new_ids
+                    generated_tab_ids.add(str(new_id))
                 else:
                     logger.warning(
                         f"{LOG_PREFIX} walk_parsed_nodes({docname}|{tab_name}): [{level}/{tab_counter}] section has no IDs; this is unexpected"
@@ -192,11 +211,12 @@ class TabDirective(SphinxDirective):
                         child_tab_name,
                         docname,
                         tab_counter + 1,
+                        generated_tab_ids,
                     )
                 else:
                     logger.debug(
                         f"{LOG_PREFIX} walk_parsed_nodes({docname}|{tab_name}): [{level}/{tab_counter}] {type(parsed_node)}(); parse {len(parsed_node.children)} children"
                     )
                     self.walk_parsed_nodes(
-                        parsed_node.children, level + 1, tab_name, docname, tab_counter
+                        parsed_node.children, level + 1, tab_name, docname, tab_counter, generated_tab_ids
                     )

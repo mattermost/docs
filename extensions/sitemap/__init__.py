@@ -15,7 +15,7 @@ import os
 import queue
 from multiprocessing import Manager
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Set
 from xml.etree import ElementTree
 
 from sphinx.application import Sphinx
@@ -89,6 +89,54 @@ def get_locales(app: Sphinx) -> List[str]:
     return locales
 
 
+def _normalize_redirect_source(source: str) -> Optional[str]:
+    """
+    Normalizes a redirect source entry from the configuration into the
+    corresponding Sphinx docname that would be generated for that redirect.
+    """
+    if not source:
+        return None
+
+    base = source.split("#", 1)[0].strip()
+    if not base:
+        return None
+
+    if base.endswith(".html"):
+        base = base[:-5]
+
+    # Remove any trailing slashes to ensure consistent matching with pagenames.
+    base = base.rstrip("/")
+    if not base:
+        return None
+
+    return base
+
+
+def _get_redirect_docnames(app: Sphinx, env) -> Set[str]:
+    """
+    Returns the set of redirect docnames derived from the configured redirects.
+    The computed set is cached on the build environment to avoid recomputation.
+    """
+    cached = getattr(env, "_sitemap_redirect_docnames", None)
+    if cached is not None:
+        return cached
+
+    redirects_cfg: Dict[str, str] = getattr(app.config, "redirects", {}) or {}
+    docnames: Set[str] = set()
+
+    for source in redirects_cfg.keys():
+        normalized = _normalize_redirect_source(source)
+        if not normalized:
+            continue
+
+        docnames.add(normalized)
+        if normalized.endswith("/index"):
+            docnames.add(normalized[: -len("/index")])
+
+    setattr(env, "_sitemap_redirect_docnames", docnames)
+    return docnames
+
+
 def record_builder_type(app: Sphinx):
     """
     Determine if the Sphinx Builder is an instance of DirectoryHTMLBuilder and store that in the
@@ -128,6 +176,13 @@ def add_html_link(app: Sphinx, pagename: str, templatename, context, doctree):
     :param pagename: The current page being built
     """
     env = app.builder.env
+
+    redirect_docnames = _get_redirect_docnames(app, env)
+    docs_with_content = getattr(env, "all_docs", {})
+    if pagename in redirect_docnames and pagename not in docs_with_content:
+        # Skip adding redirect-only pages to the sitemap; real docs remain included.
+        return
+
     if app.builder.config.html_file_suffix is None:
         file_suffix = ".html"
     else:

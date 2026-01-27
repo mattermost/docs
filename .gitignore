@@ -70,3 +70,11 @@ source/developer/localization.md
 *.key
 *.crt
 .aider*
+
+# Sphinx build artifacts
+*.doctree
+_build/
+build/
+
+# Cursor instructions
+*.cursor
