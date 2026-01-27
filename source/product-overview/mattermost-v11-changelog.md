@@ -18,7 +18,7 @@
 
 ```{Attention}
 **Breaking Changes**
- - PSDs are now no longer inline previewed, they are treated as regular file attachments.
+ - Photoshop Document (PSD) files are now no longer inline previewed, they are treated as regular file attachments.
 ```
 
 #### Database Schema Changes
