@@ -30,6 +30,14 @@ By default, all Mattermost plans write logs to both the console and to the ``mat
 
 System admins can customize the following logging options based on your business practices and needs by going to **System Console > Environment > Logging** or by editing the ``config.json`` file directly.
 
+.. note::
+
+    From Mattermost v11.3, AdvancedLoggingJSON configuration includes enhanced validation that enforces proper separation between standard and audit log levels:
+    
+    - Standard logging configurations reject audit-specific log levels (``audit-api``, ``audit-content``, ``audit-permissions``, ``audit-cli``)
+    - Audit logging configurations reject standard log levels (``debug``, ``info``, ``warn``, ``error``, ``fatal``, ``panic``, etc.)
+    - Configuration validation occurs at startup and when updating settings, preventing invalid log level combinations
+
 Console logs
 ------------
 
@@ -202,7 +210,7 @@ Audit logging
 .. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
-By default, Mattermost doesn’t write audit logs locally to a file on the server, and the ability to enable audit logging in Mattermost is currently in :ref:`Beta <administration-guide/manage/feature-labels:beta>`.
+By default, Mattermost doesn't write audit logs locally to a file on the server, and the ability to enable audit logging in Mattermost is currently in :ref:`Beta <administration-guide/manage/feature-labels:beta>`.
 
 You can enable and customize advanced audit logging in Mattermost to record activities and events performed within Mattermost, such as user access to the Mattermost REST API or mmctl. Audit logs are recorded asynchronously to reduce latency to the caller, and are stored separately from general logging. During short spans of inability to write to targets, the audit records buffer in memory with a configurable maximum record cap. Based on typical audit record volumes, it could take many minutes to fill the buffer. After that, the records are dropped, and the record drop event is logged.
 
