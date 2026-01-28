@@ -45,6 +45,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 - Fixed an issue where macOS permission dialogs were specifically referencing Jitsi instead of using general wording [MM-66775](https://mattermost.atlassian.net/browse/MM-66775).
 - Fixed an issue where installing over top of an old Desktop App on Windows could break the shortcut. NOTE: You may need to remake your shortcut in the taskbar once after this change [MM-63779](https://mattermost.atlassian.net/browse/MM-63779).
 - Fixed an issue where clicking the tray menu items would not open the main window if it was occluded.
+- Fixed an issue where Sentry and anonymous server metrics were not enabled by default.
 
 ### Open Source Components
 
