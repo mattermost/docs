@@ -9,7 +9,7 @@ Removed features in upcoming versions
 Mattermost Server v11.4 (February 2026)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- PSDs will no longer be inline previewed, they will be treated as regular file attachments.
+- Photoshop Document (PSD) files will no longer be inline previewed, they will be treated as regular file attachments.
 
 Removed features by Mattermost version
 ----------------------------------------
