@@ -127,6 +127,26 @@ Mattermost Calls can function in air-gapped environments. Exposing Calls to the 
 - Configuring a STUN server is unnecessary, as all connections occur within the local network.
 - The [ICE Host Override](https://docs.mattermost.com/configure/plugins-configuration-settings.html#ice-host-override) configuration setting can be optionally set with a local IP address (e.g., 192.168.1.45), depending on the specific network configuration and topology.
 
+### RHEL deployments with firewalld and fapolicyd
+
+When deploying Mattermost Calls or the rtcd service on RHEL systems with firewalld or fapolicyd enabled, additional firewall and security configuration is required.
+
+**Required ports:**
+- **Calls plugin (integrated)**: Port 8443 UDP/TCP for RTC media traffic
+- **rtcd service (standalone)**: Ports 8443 UDP/TCP for RTC media traffic + Port 8045 TCP for API communication with Mattermost
+
+**Configuration steps:**
+
+For complete firewalld and fapolicyd configuration instructions, including troubleshooting steps and example rules, see the [RHEL deployment guide](https://docs.mattermost.com/deployment-guide/server/deploy-linux.html#itab--RHEL-CentOS--0_1-RHEL-CentOS). The guide includes:
+- firewalld port configuration for Mattermost, Calls plugin, and rtcd service
+- fapolicyd rules for Mattermost server and Calls plugin
+- Separate fapolicyd configuration for standalone rtcd service
+- Troubleshooting guidance for "operation not permitted" errors
+
+```{note}
+The Calls plugin runs as part of Mattermost and is covered by the standard Mattermost fapolicyd rules. Only the standalone rtcd service requires separate fapolicyd configuration.
+```
+
 ## Limitations
 
 - All Mattermost customers can start, join, and participate in 1:1 audio calls with optional screen sharing.
