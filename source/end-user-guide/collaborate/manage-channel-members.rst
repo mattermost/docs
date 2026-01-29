@@ -110,6 +110,10 @@ You can leave public or private channels any time.
       :alt: Tap on Leave to confirm your choice.
       :scale: 30
 
+.. note::
+
+  If you have permission to manage channel members, you can also leave a channel from **View Info → Members → Manage** by selecting your own name. This setting also allows you to manage your role if that permission is granted.
+
 Remove other members from a channel
 -----------------------------------
 
