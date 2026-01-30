@@ -22,6 +22,16 @@ section[id] {
     }
 }
 
+:target {
+    scroll-margin-top: 130px;
+}
+
+@media (min-width: 767.98px) {
+    :target {
+        scroll-margin-top: 150px;
+    }
+}
+
 
 .pointer-events-none {
     pointer-events: none;
