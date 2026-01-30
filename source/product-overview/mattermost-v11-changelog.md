@@ -44,6 +44,7 @@ If you upgrade from a release earlier than v11.3, please read the other [Importa
 #### Administration
  - Added debug logs to indicate if the scheduled post job, Do Not Disturb status reset job, or the post reminder job is not running with the current node not being a leader node [MM-66861](https://mattermost.atlassian.net/browse/MM-66861).
  - Added CPU cores and total memory to the Support Packet [MM-66840](https://mattermost.atlassian.net/browse/MM-66840).
+ - Added a new ``MM_LOG_PATH`` environment variable to restrict log file locations. Log files must now be within a configured root directory.
 
 ### Bug Fixes
  - Fixed an issue with the behavior of the right‑hand sidebar (RHS) when navigating to global threads. The application now checks the current RHS state and suppresses the sidebar only if it is not showing mentions, search results, or flagged posts [MM-66871](https://mattermost.atlassian.net/browse/MM-66871). 
@@ -53,6 +54,18 @@ If you upgrade from a release earlier than v11.3, please read the other [Importa
  - Fixed an issue with the user's theme applying when it shouldn't, such as when creating a new team [MM-65828](https://mattermost.atlassian.net/browse/MM-65828).
  - Fixed an issue where the channel info right sidebar was not scrollable [MM-62503](https://mattermost.atlassian.net/browse/MM-62503).
  - Fixed an issue with PSD file previews.
+ - Fixed an issue where users removed from a private team could still enumerate public channels in that team via the channel search API.
+ - Fixed an issue with permalink embeds arriving from websocket messages.
+ - Fixed an issue with memory use during integration actions.
+ - Fixed an issue with permalink preview information after losing channel or team permissions.
+ - Fixed a permission validation issue when attaching files to posts.
+ - Fixed a memory allocation issue by updating ``mscfb`` and ``msoleps`` dependencies.
+ - User's actual authentication method is now validated before processing authentication type switch.
+
+### API Changes
+ - Updated the POST `/api/v4/teams` team creation API to omit the `invite_id` value in the response when the requesting user does not have permission to invite members to the new team.
+ - ``ImportSettings.Directory`` can no longer be modified through the REST API. Infrastructure operators can still modify this setting via configuration file, environment variables, or mmctl in local mode.
+ - ``/api/v4/access_control_policies/{policy_id}/activate`` has been deprecated.
 
 ### Audit Log Event Changes
  - Added a new audit event ``AuditEventGenerateSupportPacket``.
