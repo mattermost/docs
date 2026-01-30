@@ -737,7 +737,7 @@ Enable the following settings to output audit events in the System Console by go
 
 .. note::
 
-  The ability to enable and configure audit logging is currently in :ref:`Beta <administration-guide/manage/feature-labels:beta>`. 
+  The ability to enable and configure audit logging is currently in :ref:`Beta <administration-guide/manage/feature-labels:beta>`.
 
 .. config:setting:: advanced-logging
   :displayname: Advanced Logging (Audit Logging > Cloud)
@@ -942,8 +942,6 @@ Select the themes that can be chosen by users when ``EnableThemeSelection`` is s
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AllowedThemes": []`` with string array input consisting of the options ``"default"``, ``"organization"``, ``"mattermostDark"``, and ``"windows10"``, such as ``["mattermostDark", "windows10"]``.     |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
 
 .. config:setting:: file-location
   :displayname: File location (Experimental)
@@ -1852,3 +1850,4 @@ Defines the threshold in days beyond which outdated configurations are removed f
 +--------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"JobSettings.CleanupConfigThresholdDays": 30`` with numerical input.   |
 +--------------------------------------------------------------------------------------------------------------------+
+
