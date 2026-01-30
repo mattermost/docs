@@ -14,62 +14,80 @@ Mattermost supports both Software-as-a-Service (SaaS) and on-premises versions o
 Deploy
 ------
 
-Setup starts in GitLab and configuration ends in Mattermost.
+A Mattermost system admin must perform the following steps to deploy the GitLab integration.
 
-Register an OAuth app in GitLab
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-A Mattermost system admin must perform the following steps in GitLab.
-
-1. Go to ``https://gitlab.com/-/profile/applications`` or ``https://gitlab.YOURDOMAIN.com/-/profile/applications``, replacing ``YOURDOMAIN.COM`` with your GitHub URL, to register an OAuth app with GitLab.
-2. Set the following values:
-
-  - **Name**: ``Mattermost GitLab Plugin - <YOUR COMPANY NAME>``
-  - **Redirect URI**: ``https://YOUR-MATTERMOST-URL.COM/plugins/com.github.manland.mattermost-plugin-gitlab/oauth/complete``, replacing ``YOUR-MATTERMOST-URL.COM`` with your Mattermost URL. This value must match the Mattermost server URL you use to log in.
-
-3. Select ``api`` and ``read_user`` in **Scopes**.
-4. Save your changes. Copy the **Application ID** and **Secret** fields in the resulting screen.
-
-Mattermost configuration
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-A Mattermost system admin must perform the following steps in Mattermost.
-
-Install the GitLab integration from the in-product App Marketplace:
-
-.. note::
-
-  We recommend making a copy of your webhook secret and encryption key, as it will only be visible to you once.
+Install the integration
+~~~~~~~~~~~~~~~~~~~~~~~
 
 1. In Mattermost, from the Product menu |product-list|, select **App Marketplace**.
 2. Search for or scroll to GitLab, and select **Install**.
-3. Once installed, select **Configure**. You're taken to the System Console.
-4. On the GitLab configuration page, enable and configure GitLab interoperability as follows, and then select **Save**:
 
- - Enter the **GitLab URL**, **GitLab OAuth Client ID**, and **GitLab OAuth Client Secret** you obtained when `registering the OAuth app in GitLab <#register-an-oauth-app-in-GitLab>`__.
- - Generate a **Webhook Secret** and **At Rest Encryption Key** by selecting **Generate**.
- - (Optional) **GitLab Group**: Lock the integration to a single GitLab group.
- - (Optional) **Enable Private Repositories**: Enable the ability to work with private repositories. Affected users are notified once private repositories are enabled, and must reconnect their GitLab accounts to gain access to private repositories.
- - (Optional) **Enable Child Pipeline Notifications**: When enabled, allows notifications for child pipeline events in addition to parent pipeline events. When disabled, only parent pipeline notifications are sent. This setting helps reduce notification noise in environments with complex CI/CD pipeline structures that use child pipelines extensively.
- - (Optional) **Enable Code Previews**: Control automatic expansion of GitLab file permalinks with code previews. Options include:
+Set up the integration
+~~~~~~~~~~~~~~~~~~~~~~
 
-   - **Enable for public projects** (Default): Shows previews only for public GitLab repositories.
-   - **Enable for public and private projects**: Shows previews for both public and private repositories. 
+You can configure the GitLab integration using either the built-in setup wizard (recommended) or by following the manual configuration steps.
 
-     .. warning::
-        This setting has the potential to leak confidential code into public channels in cases where users with access to private GitLab repositories post permalinks in public Mattermost channels. The plugin automatically generates previews using the poster's GitLab permissions, allowing other channel members without access to view the confidential code.
+.. tab:: Setup wizard (recommended)
 
-   - **Disable**: Completely disables code preview functionality.
+  The recommended way to configure the GitLab integration is using the built-in setup wizard. The wizard guides you through each step of the configuration process, including creating the OAuth app in GitLab.
 
-   **Supported Permalink Types:**
+  1. In any Mattermost channel, run the ``/gitlab setup`` slash command.
+  2. Follow the interactive prompts to complete the setup.
 
-   - Single line permalinks: Shows target line plus 3 lines of context
-   - File permalinks: Shows file information (no code preview)
-   - Line range permalinks: Shows file information (no code preview)
+  The wizard walks you through:
 
-   **Preview Limits:**
+  - Creating and configuring an OAuth app in GitLab
+  - Configuring the plugin settings in Mattermost
+  - Announcing the integration to your team
 
-   - Maximum 10 lines displayed per preview (single line permalinks may show fewer preview lines due to context limits)
+  You can also run individual setup steps at any time using the following subcommands:
+
+  - ``/gitlab setup oauth``: Configure the OAuth2 application in GitLab.
+  - ``/gitlab setup announce``: Announce the integration availability to designated channels.
+
+.. tab:: Manual configuration
+
+  If you prefer to configure the integration manually instead of using the setup wizard, follow the steps below.
+
+  **Register an OAuth app in GitLab**
+
+  1. Go to ``https://gitlab.com/-/profile/applications`` or ``https://gitlab.YOURDOMAIN.com/-/profile/applications``, replacing ``YOURDOMAIN.COM`` with your GitLab URL, to register an OAuth app with GitLab.
+  2. Set the following values:
+
+    - **Name**: ``Mattermost GitLab Plugin - <YOUR COMPANY NAME>``
+    - **Redirect URI**: ``https://YOUR-MATTERMOST-URL.COM/plugins/com.github.manland.mattermost-plugin-gitlab/oauth/complete``, replacing ``YOUR-MATTERMOST-URL.COM`` with your Mattermost URL. This value must match the Mattermost server URL you use to log in.
+
+  3. Select ``api`` and ``read_user`` in **Scopes**.
+  4. Save your changes. Copy the **Application ID** and **Secret** fields in the resulting screen.
+
+  **Configure the integration in Mattermost**
+
+  1. In Mattermost, go to **System Console > Plugins > GitLab** and configure the following settings, then select **Save**:
+
+    - Enter the **GitLab URL**, **GitLab OAuth Client ID**, and **GitLab OAuth Client Secret** you obtained when registering the OAuth app in GitLab.
+    - Generate a **Webhook Secret** and **At Rest Encryption Key** by selecting **Generate**.
+    - (Optional) **GitLab Group**: Lock the integration to a single GitLab group.
+    - (Optional) **Enable Private Repositories**: Enable the ability to work with private repositories. Affected users are notified once private repositories are enabled, and must reconnect their GitLab accounts to gain access to private repositories.
+    - (Optional) **Enable Child Pipeline Notifications**: When enabled, allows notifications for child pipeline events in addition to parent pipeline events. When disabled, only parent pipeline notifications are sent. This setting helps reduce notification noise in environments with complex CI/CD pipeline structures that use child pipelines extensively.
+    - (Optional) **Enable Code Previews**: Control automatic expansion of GitLab file permalinks with code previews. Options include:
+
+      - **Enable for public projects** (Default): Shows previews only for public GitLab repositories.
+      - **Enable for public and private projects**: Shows previews for both public and private repositories.
+
+        .. warning::
+           This setting has the potential to leak confidential code into public channels in cases where users with access to private GitLab repositories post permalinks in public Mattermost channels. The plugin automatically generates previews using the poster's GitLab permissions, allowing other channel members without access to view the confidential code.
+
+      - **Disable**: Completely disables code preview functionality.
+
+      **Supported Permalink Types:**
+
+      - Single line permalinks: Shows target line plus 3 lines of context
+      - File permalinks: Shows file information (no code preview)
+      - Line range permalinks: Shows file information (no code preview)
+
+      **Preview Limits:**
+
+      - Maximum 10 lines displayed per preview (single line permalinks may show fewer preview lines due to context limits)
 
 Enable
 ------
@@ -84,7 +102,7 @@ We recommend updating this integration as new versions are released. Generally, 
 Use
 -----
 
-Users who want to use GitLab interconnectivity must register an OAuth app in GitLab for Mattermost, and then connect a GitLab account to Mattermost. 
+Users who want to use GitLab interconnectivity must connect their GitLab account to Mattermost.
 
 Once connected, you'll receive direct messages from the GitLab bot in Mattermost when someone mentions you, requests a review, comments on, or modifies one of your merge requests/issues, or assigns you to an issue on GitLab.
 
@@ -168,11 +186,6 @@ Run the ``/gitlab settings [setting] [value]`` slash command to update your pref
 
 - Turn personal notifications on or off.
 - Turn reminders on or off when you connect initially each day.
-
-Customize
----------
-
-This integration contains both a server and web app portion. Visit the `Mattermost Developer Workflow <https://developers.mattermost.com/extend/plugins/developer-workflow/>`__ and `Mattermost Developer environment setup <https://developers.mattermost.com/extend/plugins/developer-setup/>`_ for information about developing, customizing, and extending Mattermost functionality.
 
 Get help
 --------
