@@ -9,6 +9,74 @@
 ```{include} common-esr-support-upgrade.md
 ```
 
+(release-v11.4-feature-release)=
+## Release v11.4 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
+
+**Release Day: February 16, 2026**
+
+### Upgrade Impact
+
+```{Attention}
+**Breaking Changes**
+ - Photoshop Document (PSD) files are now no longer inline previewed, they are treated as regular file attachments.
+```
+
+#### Database Schema Changes
+ - Added two new tables, ``Recaps`` and ``RecapChannels``. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details [MM-66359](https://mattermost.atlassian.net/browse/MM-66359).
+
+#### Compatibility
+ - Updated minimum Edge and Chrome versions to 142+.
+
+```{Important}
+If you upgrade from a release earlier than v11.3, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html). In case of an upgrade failure, please check the [Downgrade Guide](https://docs.mattermost.com/administration-guide/upgrade/downgrading-mattermost-server.html) and the [Recovery Guide](https://docs.mattermost.com/deployment-guide/backup-disaster-recovery.html) for rollback steps and interim mitigation strategy.
+```
+
+### Improvements
+
+#### User Interface
+ - Pre-packaged Boards plugin version [v9.2.2](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.2.2) ([MM-66985](https://mattermost.atlassian.net/browse/MM-66985)).
+ - Prepackage Jira plugin version [v4.5.1](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.5.1).
+ - Pre-packaged Playbooks plugin version [v2.6.2](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.6.2).
+ - Updated illustrations and visual design for the initial loading screen, preparing workspace flow, IP filtering empty state, and admin console feature discovery panels [MM-67081](https://mattermost.atlassian.net/browse/MM-67081).
+ - Added adjustments to thread and right-hand side plugin pop-out titles [MM-66898](https://mattermost.atlassian.net/browse/MM-66898).
+ - MS Teams and Outlook on mobile no longer display a "Your browser does not support notifications" warning banner when running Mattermost embedded in those apps [MM-66769](https://mattermost.atlassian.net/browse/MM-66769).
+
+#### Administration
+ - Added debug logs to indicate if the scheduled post job, Do Not Disturb status reset job, or the post reminder job is not running with the current node not being a leader node [MM-66861](https://mattermost.atlassian.net/browse/MM-66861).
+ - Added CPU cores and total memory to the Support Packet [MM-66840](https://mattermost.atlassian.net/browse/MM-66840).
+ - Added a new ``MM_LOG_PATH`` environment variable to restrict log file locations. Log files must now be within a configured root directory.
+
+### Bug Fixes
+ - Fixed an issue with the behavior of the right‑hand sidebar (RHS) when navigating to global threads. The application now checks the current RHS state and suppresses the sidebar only if it is not showing mentions, search results, or flagged posts [MM-66871](https://mattermost.atlassian.net/browse/MM-66871). 
+ - Fixed an issue where the post list automatically scrolled to the bottom when a user edited a message [MM-64810](https://mattermost.atlassian.net/browse/MM-64810). 
+ - Fixed the misaligned design in posts in the thread view on mobile view.
+ - Fixed **Add channels** menu getting cut off when the **Direct Messages** category was collapsed [MM-66800](https://mattermost.atlassian.net/browse/MM-66800).
+ - Fixed an issue with the user's theme applying when it shouldn't, such as when creating a new team [MM-65828](https://mattermost.atlassian.net/browse/MM-65828).
+ - Fixed an issue where the channel info right sidebar was not scrollable [MM-62503](https://mattermost.atlassian.net/browse/MM-62503).
+ - Fixed an issue with PSD file previews.
+ - Fixed an issue where users removed from a private team could still enumerate public channels in that team via the channel search API.
+ - Fixed an issue with permalink embeds arriving from websocket messages.
+ - Fixed an issue with memory use during integration actions.
+ - Fixed an issue with permalink preview information after losing channel or team permissions.
+ - Fixed a permission validation issue when attaching files to posts.
+ - Fixed a memory allocation issue by updating ``mscfb`` and ``msoleps`` dependencies.
+ - User's actual authentication method is now validated before processing authentication type switch.
+ - Fixed an issue where the ``/mute`` slash command could be used to enumerate private channels.
+
+### API Changes
+ - Updated the POST `/api/v4/teams` team creation API to omit the `invite_id` value in the response when the requesting user does not have permission to invite members to the new team.
+ - ``ImportSettings.Directory`` can no longer be modified through the REST API. Infrastructure operators can still modify this setting via configuration file, environment variables, or mmctl in local mode.
+ - ``/api/v4/access_control_policies/{policy_id}/activate`` has been deprecated.
+
+### Audit Log Event Changes
+ - Added a new audit event ``AuditEventGenerateSupportPacket``.
+
+### Go Version
+ - v11.4 is built with Go ``v1.24.11``.
+
+### Contributors
+ - TBD
+
 (release-v11.3-feature-release)=
 ## Release v11.3 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
