@@ -61,6 +61,7 @@ If you upgrade from a release earlier than v11.3, please read the other [Importa
  - Fixed a permission validation issue when attaching files to posts.
  - Fixed a memory allocation issue by updating ``mscfb`` and ``msoleps`` dependencies.
  - User's actual authentication method is now validated before processing authentication type switch.
+ - Fixed an issue where the ``/mute`` slash command could be used to enumerate private channels.
 
 ### API Changes
  - Updated the POST `/api/v4/teams` team creation API to omit the `invite_id` value in the response when the requesting user does not have permission to invite members to the new team.
