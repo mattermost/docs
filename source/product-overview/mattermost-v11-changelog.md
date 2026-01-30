@@ -104,7 +104,7 @@ If you upgrade from a release earlier than v11.2, please read the other [Importa
  - Added support for triggering user mentions using the full-width at-sign (＠) in addition to the standard half-width at-sign (@), improving the experience for users of Japanese input methods.
  - Added the ability to schedule posts in 15-minutes interval [MM-66859](https://mattermost.atlassian.net/browse/MM-66859).
  - Updated Giphy SDK from 8.1.0 to 10.1.0 [MM-66374](https://mattermost.atlassian.net/browse/MM-66374).
- - Custom Profile Attributes now always return a set of default attributes if they're not set [MM-66460](https://mattermost.atlassian.net/browse/MM-66460).
+ - Custom Profile Attributes now always return a set of [default attributes](https://docs.mattermost.com/administration-guide/manage/admin/user-attributes.html#add-attributes) if they're not set [MM-66460](https://mattermost.atlassian.net/browse/MM-66460).
  - Added a new webapp plugin component ``registerSidebarBrowseOrAddChannelMenuComponent``, which allows users to add options to the ``BrowseOrCreateChannel`` menu. 
 
 #### Administration
@@ -112,7 +112,7 @@ If you upgrade from a release earlier than v11.2, please read the other [Importa
  - Added a [Burn-on-Read feature](https://docs.mattermost.com/end-user-guide/collaborate/send-messages.html#send-burn-on-read-messages) (requires Enterprise Advanced license) [MM-61758](https://mattermost.atlassian.net/browse/MM-61758).
  - Added support for passwordless authentication with [Magic Link for guest users](https://docs.mattermost.com/end-user-guide/access/access-your-workspace.html#magic-link-login-for-guests) (requires Enterprise license) [MM-66445](https://mattermost.atlassian.net/browse/MM-66445).
  - The channel ABAC auto-sync setting is now individually configurable through the **System Console** [MM-65956](https://mattermost.atlassian.net/browse/MM-65956).
- - Validated log levels in ``AdvancedLoggingJSON`` [MM-62770](https://mattermost.atlassian.net/browse/MM-62770).
+ - Validated [log levels in ``AdvancedLoggingJSON``](https://docs.mattermost.com/administration-guide/manage/logging.html) [MM-62770](https://mattermost.atlassian.net/browse/MM-62770).
  - Changes to HTML templates now require a server restart to take effect [MM-66718](https://mattermost.atlassian.net/browse/MM-66718).
  - Updated the AWS SDK dependency [MM-66202](https://mattermost.atlassian.net/browse/MM-66202).
 
