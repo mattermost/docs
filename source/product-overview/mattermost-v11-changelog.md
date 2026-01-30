@@ -54,9 +54,6 @@ If you upgrade from a release earlier than v11.3, please read the other [Importa
  - Fixed an issue where the channel info right sidebar was not scrollable [MM-62503](https://mattermost.atlassian.net/browse/MM-62503).
  - Fixed an issue with PSD file previews.
 
-### Audit Log Event Changes
- - Added a new audit event ``AuditEventGenerateSupportPacket``.
-
 ### Go Version
  - v11.4 is built with Go ``v1.24.11``.
 
