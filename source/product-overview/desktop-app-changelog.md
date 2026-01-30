@@ -24,12 +24,21 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
 ### Improvements
 
-#### All Platforms
+#### macOS
+
+- Removed MAS (Mac App Store) migration logic [MM-66704](https://mattermost.atlassian.net/browse/MM-66704).
+- Changed the name of the macOS ARM64 DMG from ``m1`` to ``arm64`` [MM-54413](https://mattermost.atlassian.net/browse/MM-54413).
+
+#### Windows
 
 - Forced MSI to install per-machine by default. See Known Issues below for more details.
+- Removed the Windows EXE installer.
+
+#### All Platforms
+
 - Added support for servers with passwordless authentication with [Magic Link for guest users](https://docs.mattermost.com/end-user-guide/access/access-your-workspace.html#magic-link-login-for-guests) (requires Enterprise license) [MM-66445](https://mattermost.atlassian.net/browse/MM-66445).
-- Remove MAS (Mac App Store) migration logic [MM-66704](https://mattermost.atlassian.net/browse/MM-66704).
 - Added Sentry error tracking.
+- Added in-app notifications for new versions, including for Mac App Store and the Windows MSI.
 
 ### Architectural Changes
 
@@ -37,13 +46,19 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
 ### Bug Fixes
 
+#### macOS
+
+- Fixed an issue where macOS permission dialogs were specifically referencing Jitsi instead of using general wording [MM-66775](https://mattermost.atlassian.net/browse/MM-66775).
+
+#### Windows
+
+- Fixed an issue where installing over top of an old Desktop App on Windows could break the shortcut. NOTE: You may need to remake your shortcut in the taskbar once after this change [MM-63779](https://mattermost.atlassian.net/browse/MM-63779).
+
 #### All Platforms
 
 - Fixed a potential crash in the context menu [MM-66902](https://mattermost.atlassian.net/browse/MM-66902).
 - Fixed an unnecessary exception handler dialog box appearing when clicking **Clear All Data** [MM-64601](https://mattermost.atlassian.net/browse/MM-64601).
 - Fixed an issue where clicking the tray menu items would not open the main window.
-- Fixed an issue where macOS permission dialogs were specifically referencing Jitsi instead of using general wording [MM-66775](https://mattermost.atlassian.net/browse/MM-66775).
-- Fixed an issue where installing over top of an old Desktop App on Windows could break the shortcut. NOTE: You may need to remake your shortcut in the taskbar once after this change [MM-63779](https://mattermost.atlassian.net/browse/MM-63779).
 - Fixed an issue where clicking the tray menu items would not open the main window if it was occluded.
 - Fixed an issue where Sentry and anonymous server metrics were not enabled by default.
 
