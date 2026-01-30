@@ -79,7 +79,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
 ### Contributors
 
-- [devinbinnie](https://github.com/devinbinnie), [enahum](https://github.com/enahum), [lieut-data](https://github.com/lieut-data).
+- [devinbinnie](https://github.com/devinbinnie), [enahum](https://github.com/enahum), [hmhealey](https://github.com/hmhealey), [lieut-data](https://github.com/lieut-data), [lifeisafractal ](https://github.com/lifeisafractal), [NARSimoes](https://github.com/NARSimoes).
 
 (release-v6-0)=
 ## Release v6.0
