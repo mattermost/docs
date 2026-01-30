@@ -89,15 +89,15 @@ You can configure the GitLab integration using either the built-in setup wizard 
 
       - Maximum 10 lines displayed per preview (single line permalinks may show fewer preview lines due to context limits)
 
-Enable
-------
-
-Notify your teams that they can `connect their GitLab accounts to Mattermost <#connect-a-gitlab-account-to-mattermost>`__.
-
 Upgrade
 -------
 
 We recommend updating this integration as new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost. Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-gitlab/releases>`__ for the latest release, available releases, and compatibility considerations.
+
+Enable
+------
+
+Once you setup the integration, notify your teams that they can `connect their GitLab accounts to Mattermost <#connect-a-gitlab-account-to-mattermost>`__.
 
 Use
 -----

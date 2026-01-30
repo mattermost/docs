@@ -121,6 +121,11 @@ Upgrade
 
 We recommend updating this integration as new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost. Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-github/releases>`__ for the latest release, available releases, and compatibiilty considerations.
 
+Enable
+------
+
+Once you setup the integration, notify your teams that they can `connect their GitHub accounts to Mattermost <#connect-a-github-account-to-mattermost>`__.
+
 Use
 -----
 
@@ -157,12 +162,6 @@ Run the ``/github settings`` slash command to update your settings for notificat
 Run the ``/github mute`` slash command to manage muted GitHub users. You won't receive notifications for comments in your pull requests and issues from muted users.
 
 Run the ``/github default-repo`` slash command to set a default repository for the current channel. This repository will be auto-filled in the Create GitHub Issue modal for convenience.
-
-Enable
-------
-
-Notify your teams that they can `connect their GitHub accounts to Mattermost <#connect-a-github-account-to-mattermost>`__.
-
 
 Frequently asked questions
 ---------------------------
