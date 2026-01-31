@@ -27,7 +27,7 @@ Changes to properties in this section require a server restart before taking eff
 
 .. warning::
 
-  - Once a message or a file is deleted, the action is irreversible. Please be careful when setting up a custom data retention policy.
+  - Once a message or a file is deleted, the action is irreversible. Please set up a custom data retention policy with care.
   - From Mattermost v9.5, data retention removes Elasticsearch indexes based on the day of the retention cut-off time.
 
 Access the following configuration settings in the System Console by going to **Compliance > Data Retention Policies**.
@@ -37,46 +37,56 @@ Access the following configuration settings in the System Console by going to **
   :systemconsole: Compliance > Data Retention Policies
   :configjson: .DataRetentionSettings.MessageRetentionHours
   :environment: MM_DATARETENTIONSETTINGS_MESSAGERETENTIONHOURS
-  :description: Set how long Mattermost keeps messages across all teams and channels. Doesn't apply to custom retention policies. The minimum time is 1 hour.
+  :description: Set how long Mattermost keeps messages across all teams and channels. Doesn't apply to custom retention policies. Default is **O** and the minimum time is 1 hour.
 
 Global retention policy for messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Set how long Mattermost keeps messages across all teams and channels. This value is not used for any teams and channels that have a custom retention policy applied . Requires the :ref:`global retention policy for messages <administration-guide/configure/compliance-configuration-settings:global retention policy for messages>` configuration setting to be set to ``true``.
-
-By default, messages are kept forever. If **Hours**, **Days**, or **Years** is chosen, set how many hours, days, or years messages are kept in Mattermost. Messages older than the duration you set will be deleted nightly. The minimum message retention time is one hour.
-
-The global retention time for messages can be superseded on a team or channel level by creating custom policies with unique post retention times See the `Custom retention policy <#custom-retention-policy>`__ section below for details. 
-
-+--------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MessageRetentionHours": 1`` with numerical input.                           |
-+--------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------+------------------------------------------------------------------------------------------+
+| Set how long Mattermost keeps messages across all teams and    | - System Config path: **Compliance > Data Retention Policies**                           |
+| channels. This setting doesn't apply to custom retention       | - ``config.json`` setting: ``DataRetentionSettings`` > ``MessageRetentionHours`` > ``0`` |
+| policies.                                                      | - Environment variable: ``MM_DATARETENTIONSETTINGS_MESSAGERETENTIONHOURS``               |
+|                                                                |                                                                                          |
+| By default, messages are kept forever. If **Hours**, **Days**, |                                                                                          |
+| or **Years** is chosen, set how many hours, days, or years     |                                                                                          |
+| messages are kept in Mattermost. Messages older than the       |                                                                                          |
+| duration you set will be deleted nightly.                      |                                                                                          |
+|                                                                |                                                                                          |
+| The default  is **0** (messages are kept forever).             |                                                                                          |
+| The minimum message retention is 1 hour.                       |                                                                                          |
++----------------------------------------------------------------+------------------------------------------------------------------------------------------+
 
 .. note::
 
-  From Mattermost v9.5, ``MessageRetentionDays`` has been deprecated in favor of ``MessageRetentionHours``. See :doc:`deprecated configuration settings </administration-guide/configure/deprecated-configuration-settings>` for details.
+  From Mattermost v9.5, ``MessageRetentionDays`` has been deprecated in favor of ``MessageRetentionHours``. See :ref:`deprecated configuration settings <administration-guide/configure/deprecated-configuration-settings:Message Retention (Days)>` for details.
 
 .. config:setting:: global-retention-policy-for-files
   :displayname: Global retention policy for files (Data Retention)
   :systemconsole: Compliance > Data Retention Policies
   :configjson: .DataRetentionSettings.FileRetentionHours
   :environment: MM_DATARETENTIONSETTINGS_FILERETENTIONHOURS
-  :description: Set how long Mattermost keeps files across all teams and channels. Doesn't apply to custom retention policies. The minimum time is 1 hour.
+  :description: Set how long Mattermost keeps files across all teams and channels. Doesn't apply to custom retention policies. Default is **0** and the minimum time is 1 hour.
 
 Global retention policy for files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Set how long Mattermost keeps files across all teams and channels. Custom policies on team and channel level don't apply to file attachments. The global retention time for files will be used even if a custom policy for messages is in place. Requires the :ref:`global retention policy for files <administration-guide/configure/compliance-configuration-settings:global retention policy for files>` configuration setting to be set to ``true``.
-
-By default, files are kept forever. If **Hours**, **Days**, or **Years** is chosen, set how many hours, days, or years files are kept in Mattermost. Files older than the duration you set will be deleted nightly. The minimum file retention time is one hour.
-
-+--------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FileRetentionHours": 1`` with numerical input.                              |
-+--------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------+---------------------------------------------------------------------------------------+
+| Set how long Mattermost keeps files across all teams and      | - System Config path: **Compliance > Data Retention Policies**                        |
+| channels. This setting doesn't apply to custom retention      | - ``config.json`` setting: ``DataRetentionSettings`` > ``FileRetentionHours`` > ``0`` |
+| policies.                                                     | - Environment variable: ``MM_DATARETENTIONSETTINGS_FILERETENTIONHOURS``               |
+|                                                               |                                                                                       |
+| By default, files are kept forever. If **Hours**, **Days**,   |                                                                                       |
+| or **Years** is chosen, set how many hours, days, or years    |                                                                                       |
+| files are kept in Mattermost. Files older than the duration   |                                                                                       |
+| you set will be deleted nightly.                              |                                                                                       |
+|                                                               |                                                                                       |
+| The default is **0** (files kept forever).                    |                                                                                       |
+| The minimum file retention time is 1 hour.                    |                                                                                       |
++---------------------------------------------------------------+---------------------------------------------------------------------------------------+
 
 .. note::
 
-  From Mattermost v9.5, ``FileRetentionDays`` has been deprecated in favor of ``FileRetentionHours``. See :doc:`deprecated configuration settings </administration-guide/configure/deprecated-configuration-settings>` for details.
+  From Mattermost v9.5, ``FileRetentionDays`` has been deprecated in favor of ``FileRetentionHours``. See :ref:`deprecated configuration settings <administration-guide/configure/deprecated-configuration-settings:File Retention (Days)>` for details.
 
 .. config:setting:: preserve-pinned-posts
   :displayname: Preserve pinned posts (Data Retention)
@@ -108,9 +118,9 @@ From Mattermost v10.10, controls whether pinned posts are preserved when data re
 .. config:setting:: custom-retention-policy
   :displayname: Custom retention policy (Data Retention)
   :systemconsole: Compliance > Data Retention Policies
-  :configjson: .DataRetentionSettings.DeletionJobStartTime
-  :environment: MM_DATARETENTIONSETTINGS_DELETIONJOBSTARTTIME
-  :description: Set the start time of the daily scheduled data retention job. Must be a 24-hour time stamp in the form ``HH:MM``. This setting is based on the local time of the server.
+  :configjson: N/A
+  :environment: N/A
+  :description: Define a custom retention policy to override the global retention policy for messages and files. Custom policies can be set for specific teams, channels, or users.
 
 Custom retention policy
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -122,23 +132,32 @@ Set how long Mattermost keeps messages across specific teams and channels by spe
   :systemconsole: Compliance > Data Retention Policies
   :configjson: .DataRetentionSettings.DeletionJobStartTime
   :environment: MM_DATARETENTIONSETTINGS_DELETIONJOBSTARTTIME
-  :description: Set the start time of the daily scheduled data retention job. Must be a 24-hour time stamp in the form ``HH:MM``. This setting is based on the local time of the server.
+  :description: Set the start time of the daily scheduled data retention job. Must be a 24-hour time stamp in the form ``HH:MM``. Default is **02:00** and this setting is based on the local time of the server.
 
 Data deletion time
 ~~~~~~~~~~~~~~~~~~
 
-Set the start time of the daily scheduled data retention job. Choose a time when fewer people are using your system. Must be a 24-hour time stamp in the form ``HH:MM``.
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+| Set the start time of the daily scheduled data retention job. | - System Config path: **Compliance > Data Retention Policies**                                |
+| Choose a time when fewer people are using your system. Must   | - ``config.json`` setting: ``DataRetentionSettings`` > ``DeletionJobStartTime`` > ``"02:00"`` |
+| be a 24-hour time stamp in the form ``HH:MM``.                | - Environment variable: ``MM_DATARETENTIONSETTINGS_DELETIONJOBSTARTTIME``                     |
+|                                                               |                                                                                               |
+| This setting is based on the local time of the server.        |                                                                                               |
+|                                                               |                                                                                               |
+| Default is **02:00**.                                         |                                                                                               |
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
 
-This setting is based on the local time of the server.
-
-+-------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DeletionJobStartTime": "02:00"`` with 24-hour timestamp input in the form ``"HH:MM"``. |
-+-------------------------------------------------------------------------------------------------------------------------------------+
+.. config:setting:: run-deletion-job-now
+  :displayname: Run deletion job now (Data Retention)
+  :systemconsole: Compliance > Data Retention Policies
+  :configjson: N/A
+  :environment: N/A
+  :description: Start a data retention deletion job immediately. Monitor the status of the job in the data deletion job table within the Policy Log section. 
 
 Run deletion job now
 ~~~~~~~~~~~~~~~~~~~~~
 
-Start a Data Retention deletion job immediately. You can monitor the status of the job in the data deletion job table within the Policy Log section.
+Select **Run Deletion Job Now** to start a Data Retention deletion job immediately. Monitor the status of the job in the data deletion job table within the Policy Log section.
 
 ----
 
@@ -159,31 +178,36 @@ Access the following configuration settings in the System Console by going to **
 Enable compliance export
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Mattermost will generate a compliance export file that contains all messages that were posted in the last 24 hours. The export task is scheduled to run once per day. See the :doc:`documentation to learn more </administration-guide/comply/compliance-export>`.
-
-**False**: Mattermost doesn't generate a compliance export file.
-
-+----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableExport": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| - **True**: Mattermost will generate a compliance export file      | - System Config path: **Compliance > Compliance Export**                            |
+|   that contains all messages that were posted in the last 24       | - ``config.json`` setting: ``MessageExportSettings`` > ``EnableExport`` > ``false`` |
+|   hours. The export task is scheduled to run once per day.         | - Environment variable: ``MM_MESSAGEEXPORTSETTINGS_ENABLEEXPORT``                   |
+|   See the :doc:`compliance export documentation                    |                                                                                     |
+|   </administration-guide/comply/compliance-export>` to learn more. |                                                                                     |
+|                                                                    |                                                                                     |
+| - **False**: **(Default)** Mattermost doesn't generate a           |                                                                                     |
+|   compliance export file.                                          |                                                                                     |
++--------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
 .. config:setting:: administration-guide/comply/compliance-export-time
   :displayname: Compliance export time (Compliance Export)
   :systemconsole: Compliance > Compliance Export
   :configjson: .MessageExportSettings.DailyRunTime
   :environment: MM_MESSAGEEXPORTSETTINGS_DAILYRUNTIME
-  :description: Set the start time of the daily scheduled compliance export job. Must be a 24-hour time stamp in the form ``HH:MM``. This setting is based on the local time of the server.
+  :description: Set the start time of the daily scheduled compliance export job. Must be a 24-hour time stamp in the form ``HH:MM``. Default is **01:00** and this setting is based on the local time of the server.
 
 Compliance export time
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Set the start time of the daily scheduled compliance export job. Choose a time when fewer people are using your system. Must be a 24-hour time stamp in the form ``HH:MM``.
-
-This setting is based on the local time of the server.
-
-+---------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DailyRunTime": 01:00`` with 24-hour timestamp input in the form ``"HH:MM"``. |
-+---------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------+---------------------------------------------------------------------------------------+
+| Set the start time of the daily scheduled compliance export   | - System Config path: **Compliance > Compliance Export**                              |
+| job. Choose a time when fewer people are using your system.   | - ``config.json`` setting: ``MessageExportSettings`` > ``DailyRunTime`` > ``"01:00"`` |
+| Must be a 24-hour time stamp in the form ``HH:MM``.           | - Environment variable: ``MM_MESSAGEEXPORTSETTINGS_DAILYRUNTIME``                     |
+|                                                               |                                                                                       |
+| This setting is based on the local time of the server.        |                                                                                       |
+|                                                               |                                                                                       |
+| Default is **01:00**.                                         |                                                                                       |
++---------------------------------------------------------------+---------------------------------------------------------------------------------------+
 
 .. config:setting:: export-file-format
   :displayname: Export file format (Compliance Export)
@@ -195,11 +219,13 @@ This setting is based on the local time of the server.
 Export file format
 ~~~~~~~~~~~~~~~~~~~
 
-File format of the compliance export. Corresponds to the system that you want to import the data into.
-
-Currently supported formats are CSV, Actiance XML, and Global Relay EML.
-
-If Global Relay is chosen, the following options will be presented:
++---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| File format of the compliance export. Corresponds to the      | - System Config path: **Compliance > Compliance Export**                            |
+| system that you want to import the data into.                 | - ``config.json`` setting: ``MessageExportSettings`` > ``ExportFormat`` > ``"csv"`` |
+|                                                               | - Environment variable: ``MM_MESSAGEEXPORTSETTINGS_EXPORTFORMAT``                   |
+| Currently supported formats are **CSV**, **Actiance XML**,    |                                                                                     |
+| and **Global Relay EML**.                                     |                                                                                     |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
 .. config:setting:: global-relay-customer-account
   :displayname: Global Relay customer account (Compliance Export - Global Relay EML)
@@ -211,11 +237,12 @@ If Global Relay is chosen, the following options will be presented:
 Global Relay customer account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Type of Global Relay customer account your organization has. Can be one of: ``A9/Type 9``, ``A10/Type 10``, or ``Custom``.
-
-+---------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"CustomerType": "A9"`` with options ``"A9``, ``"A10"``, and ``CUSTOM``. |
-+---------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
+| Type of Global Relay customer account your organization has.  | - System Config path: **Compliance > Compliance Export**                                                     |
+| Can be one of: **A9/Type 9**, **A10/Type 10**, or **Custom**. | - ``config.json`` setting: ``MessageExportSettings`` > ``GlobalRelaySettings`` > ``CustomerType`` > ``"A9"`` |
+|                                                               | - Environment variable: ``MM_MESSAGEEXPORTSETTINGS_GLOBALRELAYSETTINGS_CUSTOMERTYPE``                        |
+| Default is **A9**.                                            |                                                                                                              |
++---------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: global-relay-smtp-username
   :displayname: Global Relay SMTP username (Compliance Export - Global Relay EML)
@@ -227,11 +254,12 @@ Type of Global Relay customer account your organization has. Can be one of: ``A9
 Global Relay SMTP username
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The username for authenticating to the Global Relay SMTP server.
-
-+-------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SmtpUsername": ""`` with string input. |
-+-------------------------------------------------------------------------------------+
++---------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| The username for authenticating to the Global Relay SMTP      | - System Config path: **Compliance > Compliance Export**                                                   |
+| server.                                                       | - ``config.json`` setting: ``MessageExportSettings`` > ``GlobalRelaySettings`` > ``SmtpUsername`` > ``""`` |
+|                                                               | - Environment variable: ``MM_MESSAGEEXPORTSETTINGS_GLOBALRELAYSETTINGS_SMTPUSERNAME``                      |
+| String input. Default is an empty string.                     |                                                                                                            |
++---------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: global-relay-smtp-password
   :displayname: Global Relay SMTP password (Compliance Export - Global Relay EML)
@@ -243,11 +271,11 @@ The username for authenticating to the Global Relay SMTP server.
 Global Relay SMTP password
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The password associated with the Global Relay SMTP username.
-
-+-------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SmtpPassword": ""`` with string input. |
-+-------------------------------------------------------------------------------------+
++---------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| The password associated with the Global Relay SMTP username.  | - System Config path: **Compliance > Compliance Export**                                                   |
+|                                                               | - ``config.json`` setting: ``MessageExportSettings`` > ``GlobalRelaySettings`` > ``SMTPPassword`` > ``""`` |
+| String input. Default is an empty string.                     | - Environment variable: ``MM_MESSAGEEXPORTSETTINGS_GLOBALRELAYSETTINGS_SMTPPASSWORD``                      |
++---------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: global-relay-email-address
   :displayname: Global Relay email address (Compliance Export - Global Relay EML)
@@ -259,11 +287,12 @@ The password associated with the Global Relay SMTP username.
 Global Relay email address
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The email address your Global Relay server monitors for incoming compliance exports.
-
-+-------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EmailAddress": ""`` with string input. |
-+-------------------------------------------------------------------------------------+
++---------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| The email address your Global Relay server monitors for       | - System Config path: **Compliance > Compliance Export**                                                   |
+| incoming compliance exports.                                  | - ``config.json`` setting: ``MessageExportSettings`` > ``GlobalRelaySettings`` > ``EmailAddress`` > ``""`` |
+|                                                               | - Environment variable: ``MM_MESSAGEEXPORTSETTINGS_GLOBALRELAYSETTINGS_EMAILADDRESS``                      |
+| String input. Default is an empty string.                     |                                                                                                            |
++---------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: smtp-server-name
   :displayname: SMTP server name (Compliance Export - Global Relay EML)
@@ -275,11 +304,14 @@ The email address your Global Relay server monitors for incoming compliance expo
 SMTP server name
 ~~~~~~~~~~~~~~~~
 
-The SMTP server name URL that will receive your Global Relay EML file when a `custom customer account type <#global-relay-customer-account>`__ is configured.
-
-+----------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``".MessageExportSettings.GlobalRelaySettings.CustomSMTPServerName": ""`` with string input. |
-+----------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| The SMTP server name URL that will receive your Global Relay       | - System Config path: **Compliance > Compliance Export**                                                           |
+| EML file when a                                                    | - ``config.json`` setting: ``MessageExportSettings`` > ``GlobalRelaySettings`` > ``CustomSMTPServerName`` > ``""`` |
+| `custom account type <#global-relay-customer-account>`__           | - Environment variable: ``MM_MESSAGEEXPORTSETTINGS_GLOBALRELAYSETTINGS_CUSTOMSMTPSERVERNAME``                      |
+| is configured.                                                     |                                                                                                                    |
+|                                                                    |                                                                                                                    |
+| String input. Default is an empty string.                          |                                                                                                                    |
++--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: smtp-server-port
   :displayname: SMTP server port (Compliance Export - Global Relay EML)
@@ -291,34 +323,46 @@ The SMTP server name URL that will receive your Global Relay EML file when a `cu
 SMTP server port
 ~~~~~~~~~~~~~~~~
 
-The SMTP server port that will receive your Global Relay EML file when a `custom customer account type <#global-relay-customer-account>`__ is configured. Default is ``"25"``.
-
-+------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``".MessageExportSettings.GlobalRelaySettings.CustomSMTPPort": "25"`` with string input. |
-+------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
+| The SMTP server port that will receive your Global Relay EML        | - System Config path: **Compliance > Compliance Export**                                                     |
+| file when a                                                         | - ``config.json`` setting: ``MessageExportSettings`` > ``GlobalRelaySettings`` > ``CustomSMTPPort`` > ``25`` |
+| `custom account type <#global-relay-customer-account>`__            | - Environment variable: ``MM_MESSAGEEXPORTSETTINGS_GLOBALRELAYSETTINGS_CUSTOMSMPTPORT``                      |
+| is configured.                                                      |                                                                                                              |
+|                                                                     |                                                                                                              |
+| Numerical input. Default is **25**.                                 |                                                                                                              |
++---------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: message-export-batch-size
   :displayname: Message export batch size (Compliance Export)
   :systemconsole: N/A
   :configjson: .MessageExportSettings.BatchSize
   :environment: MM_MESSAGEEXPORTSETTINGS_BATCHSIZE
-  :description: Determines how many new posts are batched together to a compliance export file. Default is **10000** posts.
+  :description: Determines how many new messages are batched together to a compliance export file. Default is **10000** messages.
 
 Message export batch size
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This setting isn't available in the System Console and can only be set in ``config.json``.
++---------------------------------------------------------------+----------------------------------------------------------------------------------+
+| Determines how many new messages are batched together to a    | - System Config path: N/A                                                        |
+| compliance export file.                                       | - ``config.json`` setting: ``MessageExportSettings`` > ``BatchSize`` > ``10000`` |
+|                                                               | - Environment variable: ``MM_MESSAGEEXPORTSETTINGS_BATCHSIZE``                   |
+| Numerical input. Default is **10000** messages.               |                                                                                  |
++---------------------------------------------------------------+----------------------------------------------------------------------------------+
 
-Determines how many new posts are batched together to a compliance export file.
+.. note::
+  This setting isn't available in the System Console and can only be set in ``config.json``.
 
-+---------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"BatchSize": 10000`` with numerical input.      |
-+---------------------------------------------------------------------------------------------+
+.. config:setting:: run-compliance-export-job-now
+  :displayname: Run compliance export job now (Compliance Export)
+  :systemconsole: Compliance > Compliance Export
+  :configjson: N/A
+  :environment: N/A
+  :description: Start a compliance export job immediately. Monitor the status of the job in the compliance export job table. 
 
 Run compliance export job now
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This button initiates a compliance export job immediately. You can monitor the status of the job in the compliance export job table.
+Select **Run Compliance Export Job Now** to start a compliance export job immediately. Monitor the status of the job in the compliance export job table.
 
 ----
 
@@ -341,13 +385,11 @@ Access the following configuration settings in the System Console by going to **
 Enable compliance reporting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Compliance reporting is enabled in Mattermost.
-
-**False**: Compliance reporting is disabled.
-
-+----------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------+----------------------------------------------------------------------------+
+| - **True**: Compliance reporting is enabled in Mattermost.      | - System Config path: **Compliance > Compliance Monitoring**               |
+|                                                                 | - ``config.json`` setting: ``ComplianceSettings`` > ``Enable`` > ``false`` |
+| - **False**: **(Default)** Compliance reporting is disabled.    | - Environment variable: ``MM_COMPLIANCESETTINGS_ENABLE``                   |
++-----------------------------------------------------------------+----------------------------------------------------------------------------+
 
 .. config:setting:: compliance-report-directory
   :displayname: Compliance report directory (Compliance Monitoring)
@@ -359,11 +401,11 @@ Enable compliance reporting
 Compliance report directory
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Sets the directory where compliance reports are written.
-
-+-----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Directory": "./data/"`` with string input. |
-+-----------------------------------------------------------------------------------------+
++---------------------------------------------------------------+-----------------------------------------------------------------------------------+
+| Sets the directory where compliance reports are written.      | - System Config path: **Compliance > Compliance Monitoring**                      |
+|                                                               | - ``config.json`` setting: ``ComplianceSettings`` > ``Directory`` > ``"./data/"`` |
+| String input. Default is **./data/**                          | - Environment variable: ``MM_COMPLIANCESETTINGS_DIRECTORY``                       |
++---------------------------------------------------------------+-----------------------------------------------------------------------------------+
 
 .. config:setting:: enable-compliance-reportingdaily
   :displayname: Enable daily report (Compliance Monitoring)
@@ -372,34 +414,37 @@ Sets the directory where compliance reports are written.
   :environment: MM_COMPLIANCESETTINGS_ENABLEDAILY
 
   - **true**: Mattermost generates a daily compliance report.
-  - **false**: **(Default)** Daily reports are not generated.
+  - **false**: **(Default)** Daily reports aren't generated.
 
 Enable daily report
 ~~~~~~~~~~~~~~~~~~~~
 
-**True**: Mattermost generates a daily compliance report.
-
-**False**: Daily reports are not generated.
-
-+---------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableDaily": false`` with options ``true`` and ``false``. |
-+---------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------+---------------------------------------------------------------------------------+
+| - **True**: Mattermost generates a daily compliance report.     | - System Config path: **Compliance > Compliance Monitoring**                    |
+|                                                                 | - ``config.json`` setting: ``ComplianceSettings`` > ``EnableDaily`` > ``false`` |
+| - **False**: **(Default)** Daily reports aren't generated.      | - Environment variable: ``MM_COMPLIANCESETTINGS_ENABLEDAILY``                   |
++-----------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 .. config:setting:: batch-size
   :displayname: Batch size (Compliance Monitoring)
   :systemconsole: Compliance > Compliance Monitoring
   :configjson: .ComplianceSettings.BatchSize
   :environment: MM_COMPLIANCESETTINGS_BATCHSIZE
-  :description: Set the size of the batches in which posts will be read from the database to generate the compliance report. The default value is **30000**.
+  :description: Set the size of the batches in which messages will be read from the database to generate the compliance report. The default value is **30000**.
 
 Batch size
 ~~~~~~~~~~
 
-Set the size of the batches in which posts will be read from the database to generate the compliance report. This setting is currently not available in the System Console and can only be set in ``config.json``.
++---------------------------------------------------------------+-------------------------------------------------------------------------------+
+| Set the size of the batches in which messages will be read    | - System Config path: **Compliance > Compliance Monitoring**                  |
+| from the database to generate the compliance report.          | - ``config.json`` setting: ``ComplianceSettings`` > ``BatchSize`` > ``30000`` |
+|                                                               | - Environment variable: ``MM_COMPLIANCESETTINGS_BATCHSIZE``                   |
+| Numerical input. Default is **30000** messages.               |                                                                               |
++---------------------------------------------------------------+-------------------------------------------------------------------------------+
 
-+------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"BatchSize": 30000`` with default value ``30000``. |
-+------------------------------------------------------------------------------------------------+
+.. note::
+
+  This setting isn't available in the System Console and can only be set in ``config.json``.
 
 ----
 
@@ -415,17 +460,26 @@ Access the following configuration settings in the System Console by going to **
   :environment: MM_SUPPORTSETTINGS_CUSTOMTERMSOFSERVICEENABLED
 
   - **True**: New users must accept the Terms of Service before accessing any Mattermost teams on desktop, web, or mobile. Existing users must accept them after login or a page refresh.
-  - **False**: During account creation or login, users can review Terms of Service by accessing the link configured via **System Console > Legal and Support > Terms of Service link**.
+  - **False**: **(Default)** During account creation or login, users can review Terms of Service by accessing the link configured via **System Console > Legal and Support > Terms of Service link**.
 
 Enable custom terms of service
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
++-------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| - **True**: New users must accept the Terms of Service before     | - System Config path: **Compliance > Custom Terms of Service**                               |
+|   accessing any Mattermost teams on desktop, web, or mobile.      | - ``config.json`` setting: ``SupportSettings`` > ``CustomTermsOfServiceEnabled`` > ``false`` |
+|                                                                   | - Environment variable: ``MM_SUPPORTSETTINGS_CUSTOMTERMSOFSERVICEENABLED``                   |
+| - **False**: **(Default)** During account creation or login,      |                                                                                              |
+|   users can review Terms of Service by accessing the link         |                                                                                              |
+|   configured via **System Console > Legal and Support >           |                                                                                              |
+|   Terms of Service link**.                                        |                                                                                              |
++-------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+
 .. note::
-  This configuration setting can only be modified using the System Console user interface.
 
-**True**: New users must accept the Terms of Service before accessing any Mattermost teams on desktop, web, or mobile. Existing users must accept them after login or a page refresh. To update the Terms of Service link displayed in account creation and login pages, go to **System Console > Legal and Support > Terms of Service Link**.
-
-**False**: During account creation or login, users can review Terms of Service by accessing the link configured via **System Console > Legal and Support > Terms of Service link**.
+  - This configuration setting can only be managed using the System Console user interface. It can't be set in ``config.json`` or through environment variables.
+  - When custom terms of service are enabled, users must accept the terms before they can access Mattermost teams after login or page refresh.
+  - To update the Terms of Service link displayed in account creation and login pages, go to **System Console > Legal and Support > Terms of Service Link**.
 
 .. config:setting:: custom-terms-of-service-text
   :displayname: Custom terms of service text (Custom Terms of Service)
@@ -437,7 +491,12 @@ Enable custom terms of service
 Custom terms of service text
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Text that will appear in your custom Terms of Service. Supports Markdown-formatted text.
++---------------------------------------------------------------+--------------------------------------------------------------------------+
+| Text that will appear in your custom Terms of Service.        | - System Config path: **Compliance > Custom Terms of Service**           |
+| Supports Markdown-formatted text.                             | - ``config.json`` setting: N/A                                           |
+|                                                               | - Environment variable: N/A                                              |
+| Text input.                                                   |                                                                          |
++---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: re-acceptance-period
   :displayname: Re-acceptance period (Custom Terms of Service)
@@ -449,6 +508,10 @@ Text that will appear in your custom Terms of Service. Supports Markdown-formatt
 Re-acceptance period
 ~~~~~~~~~~~~~~~~~~~~
 
-The number of days before Terms of Service acceptance expires, and the terms must be re-accepted.
-
-Defaults to 365 days. 0 indicates the terms do not expire.
++-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| The number of days before Terms of Service acceptance expires,  | - System Config path: **Compliance > Custom Terms of Service**                                        |
+| and the terms must be re-accepted.                              | - ``config.json`` setting: ``SupportSettings`` > ``CustomTermsOfServiceReAcceptancePeriod`` > ``365`` |
+|                                                                 | - Environment variable: ``MM_SUPPORTSETTINGS_CUSTOMTERMSOFSERVICEREACCEPTANCEPERIOD``                 |
+| Numerical input. Default is **365** days, and **0** indicates   |                                                                                                       |
+| that the terms don't expire.                                    |                                                                                                       |
++-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
