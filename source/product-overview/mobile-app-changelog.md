@@ -90,7 +90,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 
 ### Improvements
  - Added [Microsoft Intune MAM integration](https://docs.mattermost.com/deployment-guide/mobile/mobile-security-features.html#microsoft-intune-mobile-application-management-mam) for iOS with multi-server support (requires Enterprise Advanced license) [MM-66736](https://mattermost.atlassian.net/browse/MM-66736).
- - Added the ability to invite guests to a team from mobile [MM-66449](https://mattermost.atlassian.net/browse/MM-66449).
+ - Added the ability to [invite guests to a team](https://docs.mattermost.com/end-user-guide/collaborate/invite-people.html) from mobile [MM-66449](https://mattermost.atlassian.net/browse/MM-66449).
  - Added support for servers with passwordless authentication with [Magic Link for guest users](https://docs.mattermost.com/end-user-guide/access/access-your-workspace.html#magic-link-login-for-guests) (requires Enterprise license) [MM-66445](https://mattermost.atlassian.net/browse/MM-66445).
  - Added a new [Burn-on-Read message feature](https://docs.mattermost.com/end-user-guide/collaborate/send-messages.html#send-burn-on-read-messages) (requires Enterprise Advanced license) [MM-61758](https://mattermost.atlassian.net/browse/MM-61758).
  - Added AI agent streaming support with real-time message updates, reasoning summaries, tool call approval UI, citations display, and generation controls (stop/regenerate) [MM-66762](https://mattermost.atlassian.net/browse/MM-66762).
