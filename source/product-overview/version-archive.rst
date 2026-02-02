@@ -11,11 +11,21 @@ If you want to check that the version of Mattermost you are installing is the of
 
 .. tab:: Mattermost Enterprise
 
+  Mattermost Enterprise Edition v11.3.1 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-3-feature-release>`__ - `Download <https://releases.mattermost.com/11.3.1/mattermost-11.3.1-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/11.3.1/mattermost-11.3.1-linux-amd64.tar.gz``
+    - SHA-256 Checksum: ``CHECKSUM_PLACEHOLDER``
+    - GPG Signature: https://releases.mattermost.com/11.3.1/mattermost-11.3.1-linux-amd64.tar.gz.sig
+    - SBOM Download Link: https://releases.mattermost.com/11.3.1/sbom-enterprise-v11.3.1.json
   Mattermost Enterprise Edition v11.3.0 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-3-feature-release>`__ - `Download <https://releases.mattermost.com/11.3.0/mattermost-11.3.0-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/11.3.0/mattermost-11.3.0-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``ceabba3d9d36dc3598ec7bb89bb277c3227559a647a5b9b37e26682f5d1d420e``
     - GPG Signature: https://releases.mattermost.com/11.3.0/mattermost-11.3.0-linux-amd64.tar.gz.sig
     - SBOM Download Link: https://releases.mattermost.com/11.3.0/sbom-enterprise-v11.3.0.json
+  Mattermost Enterprise Edition v11.2.3 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-2-feature-release>`__ - `Download <https://releases.mattermost.com/11.2.3/mattermost-11.2.3-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/11.2.3/mattermost-11.2.3-linux-amd64.tar.gz``
+    - SHA-256 Checksum: ``CHECKSUM_PLACEHOLDER``
+    - GPG Signature: https://releases.mattermost.com/11.2.3/mattermost-11.2.3-linux-amd64.tar.gz.sig
+    - SBOM Download Link: https://releases.mattermost.com/11.2.3/sbom-enterprise-v11.2.3.json
   Mattermost Enterprise Edition v11.2.2 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-2-feature-release>`__ - `Download <https://releases.mattermost.com/11.2.2/mattermost-11.2.2-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/11.2.2/mattermost-11.2.2-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``76826e19094713a4f075e9b75d1b86b55201a2b5695d137730802d41946add2c``
@@ -36,6 +46,11 @@ If you want to check that the version of Mattermost you are installing is the of
     - SHA-256 Checksum: ``4b360d1bd3802767472177e2f6097a7e0c7ec271471f6530ccfbf81f650970a4``
     - GPG Signature: https://releases.mattermost.com/10.12.4/mattermost-10.12.4-linux-amd64.tar.gz.sig
     - SBOM Download Link: https://releases.mattermost.com/10.12.4/sbom-enterprise-v10.12.4.json
+  Mattermost Enterprise Edition v10.11.11 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v10-changelog.html#release-v10-11-extended-support-release>`__ - `Download <https://releases.mattermost.com/10.11.11/mattermost-10.11.11-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/10.11.11/mattermost-10.11.11-linux-amd64.tar.gz``
+    - SHA-256 Checksum: ``CHECKSUM_PLACEHOLDER``
+    - GPG Signature: https://releases.mattermost.com/10.11.11/mattermost-10.11.11-linux-amd64.tar.gz.sig
+    - SBOM Download Link: https://releases.mattermost.com/10.11.11/sbom-enterprise-v10.11.11.json
   Mattermost Enterprise Edition v10.11.10 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v10-changelog.html#release-v10-11-extended-support-release>`__ - `Download <https://releases.mattermost.com/10.11.10/mattermost-10.11.10-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.11.10/mattermost-10.11.10-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``beda26d85b7e1b8d150cc4a5c7b541da4980a2620d81d8ada3d497a4d2824096``
@@ -464,11 +479,21 @@ If you want to check that the version of Mattermost you are installing is the of
 
   We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to seamlessly unlock Enterprise features should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
 
+  Mattermost Team Edition v11.3.1 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-3-feature-release>`__ - `Download <https://releases.mattermost.com/11.3.1/mattermost-team-11.3.1-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/11.3.1/mattermost-team-11.3.1-linux-amd64.tar.gz``
+    - SHA-256 Checksum: ``CHECKSUM_PLACEHOLDER``
+    - GPG Signature: https://releases.mattermost.com/11.3.1/mattermost-team-11.3.1-linux-amd64.tar.gz.sig
+    - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v11.3.1/sbom-mattermost-v11.3.1.json
   Mattermost Team Edition v11.3.0 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-3-feature-release>`__ - `Download <https://releases.mattermost.com/11.3.0/mattermost-team-11.3.0-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/11.3.0/mattermost-team-11.3.0-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``345b40b9a8781d1fb99e3f4cd6183f05bc9c654664015e821bee9bf5d351c862``
     - GPG Signature: https://releases.mattermost.com/11.3.0/mattermost-team-11.3.0-linux-amd64.tar.gz.sig
     - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v11.3.0/sbom-mattermost-v11.3.0.json
+  Mattermost Team Edition v11.2.3 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-2-feature-release>`__ - `Download <https://releases.mattermost.com/11.2.3/mattermost-team-11.2.3-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/11.2.3/mattermost-team-11.2.3-linux-amd64.tar.gz``
+    - SHA-256 Checksum: ``CHECKSUM_PLACEHOLDER``
+    - GPG Signature: https://releases.mattermost.com/11.2.3/mattermost-team-11.2.3-linux-amd64.tar.gz.sig
+    - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v11.2.3/sbom-mattermost-v11.2.3.json
   Mattermost Team Edition v11.2.2 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-2-feature-release>`__ - `Download <https://releases.mattermost.com/11.2.2/mattermost-team-11.2.2-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/11.2.2/mattermost-team-11.2.2-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``2a2b3c5a065c2adb2d1f9339efe6baf4a8a4fe0f0f2ca1c8811c8b9c4187097b``
@@ -489,6 +514,11 @@ If you want to check that the version of Mattermost you are installing is the of
     - SHA-256 Checksum: ``952f629cedcea017d9db43e622eaebb8aef66ac4dcd03e93a1b861a82433d9ea``
     - GPG Signature: https://releases.mattermost.com/10.12.4/mattermost-team-10.12.4-linux-amd64.tar.gz.sig
     - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v10.12.4/sbom-mattermost-v10.12.4.json
+  Mattermost Team Edition v10.11.11 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v10-changelog.html#release-v10-11-extended-support-release>`__ - `Download <https://releases.mattermost.com/10.11.11/mattermost-team-10.11.11-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/10.11.11/mattermost-team-10.11.11-linux-amd64.tar.gz``
+    - SHA-256 Checksum: ``CHECKSUM_PLACEHOLDER``
+    - GPG Signature: https://releases.mattermost.com/10.11.11/mattermost-team-10.11.11-linux-amd64.tar.gz.sig
+    - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v10.11.11/sbom-mattermost-v10.11.11.json
   Mattermost Team Edition v10.11.10 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v10-changelog.html#release-v10-11-extended-support-release>`__ - `Download <https://releases.mattermost.com/10.11.10/mattermost-team-10.11.10-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.11.10/mattermost-team-10.11.10-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``1fb55fa5b0017845a30d3a7d5b1875fa7c4cba3de2e6bde3d31f02104158bfa8``

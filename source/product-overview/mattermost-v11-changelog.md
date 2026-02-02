@@ -12,6 +12,12 @@
 (release-v11.3-feature-release)=
 ## Release v11.3 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **11.3.1, released 2026-02-02**
+  - Mattermost v11.3.1 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v11.3.1 contains no database or functional changes.
+- **11.3.0, released 2026-01-16**
+  - Original 11.3.0 release.
+
 **Release Day: January 16, 2026**
 
 ### Upgrade Impact
@@ -101,6 +107,9 @@ If you upgrade from a release earlier than v11.2, please read the other [Importa
 (release-v11.2-feature-release)=
 ## Release v11.2 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **11.2.3, released 2026-02-02**
+  - Mattermost v11.2.3 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v11.2.3 contains no database or functional changes.
 - **11.2.2, released 2026-01-15**
   - Mattermost v11.2.2 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Zoom plugin version [v1.11.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.11.0).
