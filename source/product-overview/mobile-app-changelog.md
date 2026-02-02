@@ -9,7 +9,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 (release-v2-37-0)=
 ## 2.37.0 Release
  - Release Date: February 16, 2026
- - Server Versions Supported: Server v10.11.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+ - Server Versions Supported: Server v10.11.0+ is required. Self-Signed SSL certificates are not supported unless the user installs the CA certificate on their device.
 
 ### Compatibility
  - **Upgrade to server version v10.11.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#extended-support-releases) (ESR) v10.5.0 has ended and upgrading to server ESR v10.11.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
