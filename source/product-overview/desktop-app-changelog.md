@@ -34,6 +34,9 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 - Forced MSI to install per-machine by default. See Known Issues below for more details.
 - Removed the Windows EXE installer.
 
+#### Linux
+- Added Flatpak to Linux-packaged builds.
+
 #### All Platforms
 
 - Added support for servers with passwordless authentication with [Magic Link for guest users](https://docs.mattermost.com/end-user-guide/access/access-your-workspace.html#magic-link-login-for-guests) (requires Enterprise license) [MM-66445](https://mattermost.atlassian.net/browse/MM-66445).
@@ -42,7 +45,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
 ### Architectural Changes
 
-- Major version upgrade of Electron to 39.2.7. Electron is the underlying technology used to build the Desktop App.
+- Major version upgrade of Electron to v40.1.0. Electron is the underlying technology used to build the Desktop App.
 
 ### Bug Fixes
 
