@@ -64,7 +64,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
 ### Open Source Components
 
-- Added ``@sentry/electron`` to https://github.com/mattermost/desktop.
+- Added ``@sentry/electron`` and removed ``electron-updater`` from https://github.com/mattermost/desktop.
 
 ### Known Issues
 
