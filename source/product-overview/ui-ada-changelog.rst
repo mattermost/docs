@@ -15,19 +15,19 @@ Changelog
    * - v11.3
      - Added Korean language support and upgraded Korean translations from Alpha to Official.
    * - v11.3
-     - Added pop-outs for right-hand-side (RHS) plugins [MM-66875](https://mattermost.atlassian.net/browse/MM-66875).
+     - Added pop-outs for right-hand-side (RHS) plugins `MM-66875 <https://mattermost.atlassian.net/browse/MM-66875>`__.
    * - v11.3
-     - Removed outdated system notices [MM-65785](https://mattermost.atlassian.net/browse/MM-65785).
+     - Removed outdated system notices `MM-65785 <https://mattermost.atlassian.net/browse/MM-65785>`__.
    * - v11.3
-     - Removed the Collapsed Reply Threads tutorial [MM-66470](https://mattermost.atlassian.net/browse/MM-66470).
+     - Removed the Collapsed Reply Threads tutorial `MM-66470 <https://mattermost.atlassian.net/browse/MM-66470>`__.
    * - v11.3
      - Added support for triggering user mentions using the full-width at-sign (＠) in addition to the standard half-width at-sign (@), improving the experience for users of Japanese input methods.
    * - v11.3
-     - Added the ability to schedule posts in 15-minutes interval [MM-66859](https://mattermost.atlassian.net/browse/MM-66859).
+     - Added the ability to schedule posts in 15-minutes interval `MM-66859 <https://mattermost.atlassian.net/browse/MM-66859>`__.
    * - v11.3
-     - Updated Giphy SDK from 8.1.0 to 10.1.0 [MM-66374](https://mattermost.atlassian.net/browse/MM-66374).
+     - Updated Giphy SDK from 8.1.0 to 10.1.0 `MM-66374 <https://mattermost.atlassian.net/browse/MM-66374>`__.
    * - v11.3
-     - Custom Profile Attributes now always return a set of [default attributes](https://docs.mattermost.com/administration-guide/manage/admin/user-attributes.html#add-attributes) if they're not set [MM-66460](https://mattermost.atlassian.net/browse/MM-66460).
+     - Custom Profile Attributes now always return a set of `default attributes <https://docs.mattermost.com/administration-guide/manage/admin/user-attributes.html#add-attributes>`__ if they're not set [MM-66460](https://mattermost.atlassian.net/browse/MM-66460).
    * - v11.3
      - Added a new webapp plugin component ``registerSidebarBrowseOrAddChannelMenuComponent``, which allows users to add options to the ``BrowseOrCreateChannel`` menu. 
    * - v11.2
