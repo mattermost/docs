@@ -13,7 +13,22 @@
 ## Release v11.3 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
 - **11.3.1, released 2026-02-02**
-  - Mattermost v11.3.1 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+```{Attention}
+**Breaking Changes**
+ - Photoshop Document (PSD) files are now no longer inline previewed, they are treated as regular file attachments.
+```
+  - Mattermost v11.3.1 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Boards plugin version [v9.2.2](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.2.2).
+  - Pre-packaged Playbooks plugin version [v2.6.2](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.6.2).
+  - Fixed an issue with PSD file previews.
+  - Added a new ``MM_LOG_PATH`` environment variable to restrict log file locations. Log files must now be within a configured root directory.
+  - Fixed an issue where the ``/mute`` slash command could be used to enumerate private channels.
+  - Fixed an issue where users removed from a private team could still enumerate public channels in that team via the channel search API.
+  - Fixed an issue with permalink embeds arriving from websocket messages.
+  - Fixed a memory allocation issue by updating ``mscfb`` and ``msoleps`` dependencies.
+  - Updated the POST `/api/v4/teams` team creation API to omit the `invite_id` value in the response when the requesting user does not have permission to invite members to the new team.
+  - ``ImportSettings.Directory`` can no longer be modified through the REST API. Infrastructure operators can still modify this setting via configuration file, environment variables, or mmctl in local mode.
+  - Fixed a permission validation issue when attaching files to posts.
   - Mattermost v11.3.1 contains no database or functional changes.
 - **11.3.0, released 2026-01-16**
   - Original 11.3.0 release.
@@ -108,7 +123,24 @@ If you upgrade from a release earlier than v11.2, please read the other [Importa
 ## Release v11.2 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
 - **11.2.3, released 2026-02-02**
-  - Mattermost v11.2.3 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+```{Attention}
+**Breaking Changes**
+ - Photoshop Document (PSD) files are now no longer inline previewed, they are treated as regular file attachments.
+```
+  - Mattermost v11.2.3 contains medium to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Boards plugin version [v9.2.2](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.2.2).
+  - Pre-packaged Playbooks plugin version [v2.6.2](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.6.2).
+  - Fixed an issue with PSD file previews.
+  - Added a new ``MM_LOG_PATH`` environment variable to restrict log file locations. Log files must now be within a configured root directory.
+  - Fixed an issue where the ``/mute`` slash command could be used to enumerate private channels.
+  - Fixed an issue where users removed from a private team could still enumerate public channels in that team via the channel search API.
+  - Fixed an issue with permalink embeds arriving from websocket messages.
+  - Fixed a memory allocation issue by updating ``mscfb`` and ``msoleps`` dependencies.
+  - ``/api/v4/access_control_policies/{policy_id}/activate`` has been deprecated.
+  - Fixed an issue with memory use during integration actions.
+  - Updated the POST `/api/v4/teams` team creation API to omit the `invite_id` value in the response when the requesting user does not have permission to invite members to the new team.
+  - ``ImportSettings.Directory`` can no longer be modified through the REST API. Infrastructure operators can still modify this setting via configuration file, environment variables, or mmctl in local mode.
+  - Fixed a permission validation issue when attaching files to posts.
   - Mattermost v11.2.3 contains no database or functional changes.
 - **11.2.2, released 2026-01-15**
   - Mattermost v11.2.2 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
