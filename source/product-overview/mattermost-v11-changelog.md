@@ -35,7 +35,7 @@ If you upgrade from a release earlier than v11.3, please read the other [Importa
 
 #### User Interface
  - Pre-packaged Boards plugin version [v9.2.2](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.2.2) ([MM-66985](https://mattermost.atlassian.net/browse/MM-66985)).
- - Prepackage Jira plugin version [v4.5.1](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.5.1).
+ - Pre-packaged Jira plugin version [v4.5.1](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.5.1).
  - Pre-packaged Playbooks plugin version [v2.6.2](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.6.2).
  - Updated illustrations and visual design for the initial loading screen, preparing workspace flow, IP filtering empty state, and admin console feature discovery panels [MM-67081](https://mattermost.atlassian.net/browse/MM-67081).
  - Added adjustments to thread and right-hand side plugin pop-out titles [MM-66898](https://mattermost.atlassian.net/browse/MM-66898).
