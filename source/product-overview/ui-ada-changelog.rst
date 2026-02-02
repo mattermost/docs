@@ -27,7 +27,7 @@ Changelog
    * - v11.3
      - Updated Giphy SDK from 8.1.0 to 10.1.0 `MM-66374 <https://mattermost.atlassian.net/browse/MM-66374>`__.
    * - v11.3
-     - Custom Profile Attributes now always return a set of `default attributes <https://docs.mattermost.com/administration-guide/manage/admin/user-attributes.html#add-attributes>`__ if they're not set [MM-66460](https://mattermost.atlassian.net/browse/MM-66460).
+     - Custom Profile Attributes now always return a set of `default attributes <https://docs.mattermost.com/administration-guide/manage/admin/user-attributes.html#add-attributes>`__ if they're not set `MM-66460 <https://mattermost.atlassian.net/browse/MM-66460>`__.
    * - v11.3
      - Added a new webapp plugin component ``registerSidebarBrowseOrAddChannelMenuComponent``, which allows users to add options to the ``BrowseOrCreateChannel`` menu. 
    * - v11.2
