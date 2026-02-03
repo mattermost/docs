@@ -17,7 +17,7 @@ Using Mattermost in a web browser or the desktop app, any member of a channel ca
 
 .. tab:: Web/Desktop
 
-  1. Select the channel name at the top of the center pane to access the drop-down menu, then select **Add Members**. 
+  1. Select the channel name at the top of the center pane to access the drop-down menu, then select **Add Members**.
 
     .. image:: ../../images/add-member-to-channel.png
       :alt: Use options available through the channel name to add a member to a channel.
@@ -26,7 +26,7 @@ Using Mattermost in a web browser or the desktop app, any member of a channel ca
 
   .. tip::
 
-    - From Mattermost v7.8, people you've messaged directly are listed first, followed by all users in alphabetical order. 
+    - From Mattermost v7.8, people you've messaged directly are listed first, followed by all users in alphabetical order.
     - Alternatively, to add members to a channel, select the channel name, select the **View Info** |channel-info| icon, select **Members** in the right pane, and then select **Add**. If the channel has access control restrictions, you'll see details about required attributes at the top of the right pane.
 
 .. tab:: Mobile
@@ -37,7 +37,7 @@ Using Mattermost in a web browser or the desktop app, any member of a channel ca
       :alt: Click on the channel name to explore available options.
       :scale: 30
 
-  2. Tap **Add members**. 
+  2. Tap **Add members**.
 
   .. image:: ../../images/mobile-edit-channel.jpg
       :alt: Tap on Add members to add members to the channel.
@@ -62,7 +62,7 @@ Using Mattermost in a web browser or the desktop app, any member of a channel ca
    .. image:: ../../images/mobile-add-user-to-a-channel-by-mentioning.jpg
       :alt: If a user mentioned in a channel is not a member already, then Mattermost prompts to add the user.
       :scale: 40
- 
+
 Add users from their profile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -97,13 +97,13 @@ You can leave public or private channels any time.
   .. image:: ../../images/mobile-select-more-options-for-a-channel.jpg
       :alt: Tap on More options to access available options for the channel you want to leave.
       :scale: 30
-  
+
   2. Tap **Leave channel**.
 
   .. image:: ../../images/mobile-select-view-info-for-a-channel.jpg
       :alt: Tap on Leave channel to leave the current channel.
       :scale: 30
-  
+
   3. Tap on **Leave** to confirm you choice.
 
   .. image:: ../../images/mobile-confirm-leave-a-channel.jpg
@@ -170,7 +170,7 @@ Any member of a channel can remove other members from a channel.
   .. image:: ../../images/mobile-confirm-remove-user-from-channel.jpg
       :alt: Tap on Remove to confirm your choice.
       :scale: 30
-  
+
   7. Tap **Done**.
 
   .. image:: ../../images/mobile-exit-after-removing-user-from-a-channel.jpg
