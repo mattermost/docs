@@ -83,7 +83,6 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 ```
   - Mattermost v10.11.11 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Boards plugin version [v9.2.2](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.2.2).
-  - Pre-packaged Playbooks plugin version [v2.6.2](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.6.2).
   - Fixed an issue where the channel URL got updated when the channel display name was changed [MM-64725](https://mattermost.atlassian.net/browse/MM-64725).
   - Added audit logs for when admins access posts on channels they are not a member of [MM-64460](https://mattermost.atlassian.net/browse/MM-64460).
   - Fixed an issue with PSD file previews.
