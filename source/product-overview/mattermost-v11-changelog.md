@@ -26,6 +26,7 @@
   - Fixed an issue where users removed from a private team could still enumerate public channels in that team via the channel search API.
   - Fixed an issue with permalink embeds arriving from websocket messages.
   - Fixed a memory allocation issue by updating ``mscfb`` and ``msoleps`` dependencies.
+  - Fixed an issue with memory use during integration actions.
   - ``/api/v4/access_control_policies/{policy_id}/activate`` has been deprecated.
   - Updated the POST `/api/v4/teams` team creation API to omit the `invite_id` value in the response when the requesting user does not have permission to invite members to the new team.
   - ``ImportSettings.Directory`` can no longer be modified through the REST API. Infrastructure operators can still modify this setting via configuration file, environment variables, or mmctl in local mode.
