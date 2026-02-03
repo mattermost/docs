@@ -450,6 +450,10 @@ A cluster leader election process assigns any scheduled task such as LDAP sync t
 
 The process is based on a widely used `bully leader election algorithm <https://en.wikipedia.org/wiki/Bully_algorithm>`__ where the process with the lowest node ID number from amongst the non-failed processes is selected as the leader.
 
+.. note::
+
+  From Mattermost v11.4, debug-level log messages help identify which node is executing cluster jobs. Non-leader nodes log messages like "Skipping scheduled posts job startup since this is not the leader node" to indicate they are correctly deferring job execution to the leader. These are normal operational messages, not errors. See :doc:`Cluster job execution debug messages </administration-guide/manage/logging>` for details.
+
 Job server
 ^^^^^^^^^^^
 
@@ -459,12 +463,19 @@ Mattermost runs periodic tasks via the :ref:`job server <administration-guide/co
 - Data retention
 - Compliance exports
 - Elasticsearch indexing
+- Scheduled posts
+- DND status reset
+- Post reminders
 
 Make sure you have set ``JobSettings.RunScheduler`` to ``true`` in ``config.json`` for all app and job servers in the cluster. The cluster leader will then be responsible for scheduling recurring jobs.
 
 .. note::
 
   It is strongly recommended not to change this setting from the default setting of ``true`` as this prevents the ``ClusterLeader`` from being able to run the scheduler. As a result, recurring jobs such as LDAP sync, Compliance Export, and data retention will no longer be scheduled.
+
+.. tip::
+
+  From Mattermost v11.4, you can verify that jobs are running on the correct node by enabling debug logging. Non-leader nodes will log messages indicating they are skipping job execution, which is expected behavior. See :doc:`Cluster job execution debug messages </administration-guide/manage/logging>` for more information.
 
 In previous Mattermost Server versions, and this documentation, the instructions stated to run the Job Server with ``RunScheduler: false``. The cluster design has evolved and this is no longer the case.
 

@@ -701,6 +701,56 @@ The TCP socket targets can be configured with an IP address or domain name, port
 
 ---- 
 
+Cluster job execution debug messages
+-------------------------------------
+
+.. include:: ../../_static/badges/ent-plus.rst
+  :start-after: :nosearch:
+
+From Mattermost v11.4, debug-level log messages are available to help system admins understand cluster job execution behavior in high availability deployments.
+
+In a cluster deployment, only the leader node executes scheduled jobs such as scheduled posts, DND status reset, and post reminders. Non-leader nodes skip these jobs and log debug messages to indicate this is expected behavior.
+
+.. note::
+
+  These messages are only visible when debug logging is enabled. See `How do I enable debug logging? <#how-do-i-enable-debug-logging>`__ for details.
+
+Debug messages for job startup
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When a non-leader node starts up, it skips job initialization and logs one of the following debug messages:
+
+- ``Skipping scheduled posts job startup since this is not the leader node``
+- ``Skipping unset DND status job startup since this is not the leader node``
+- ``Skipping post reminder job startup since this is not the leader node``
+
+These messages indicate normal operation. In a high availability cluster, jobs should only run on the leader node to prevent duplicate execution.
+
+Debug messages for leadership changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When a node loses leadership status while jobs are running, it cancels the running jobs and logs:
+
+- ``This is no longer leader node. Cancelling the [job name] task``
+
+Where ``[job name]`` is one of: ``scheduled posts``, ``DND status reset``, or ``post reminder``.
+
+This indicates the cluster is performing leader election correctly. The new leader node will take over job execution.
+
+Troubleshooting with cluster job debug messages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you're investigating why jobs aren't running on a specific node:
+
+1. Enable debug logging if not already enabled
+2. Check the logs for the debug messages listed above
+3. If you see these messages, the node is correctly identified as a non-leader and is behaving as expected
+4. Jobs will be running on the leader node instead
+
+For more information about leader election and cluster configuration, see :doc:`High Availability cluster-based deployment </administration-guide/scale/high-availability-cluster-based-deployment>`.
+
+----
+
 Frequently asked questions
 --------------------------
 

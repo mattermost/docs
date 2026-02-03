@@ -1811,6 +1811,10 @@ When running Mattermost in :doc:`High Availablity mode </administration-guide/sc
 
    We strongly recommend that you not change this setting from the default setting of ``true`` as this prevents the ``ClusterLeader`` from being able to run the scheduler. As a result, recurring jobs such as LDAP sync, Compliance Export, and data retention will no longer be scheduled. In previous Mattermost Server versions, and this documentation, the instructions stated to run the Job Server with ``RunScheduler: false``. The cluster design has evolved and this is no longer the case.
 
+.. tip::
+
+   From Mattermost v11.4, debug-level log messages are available to help verify that cluster job execution is working correctly. Non-leader nodes log messages when they skip job execution, confirming that leader election is functioning as expected. See :doc:`Cluster job execution debug messages </administration-guide/manage/logging>` for details.
+
 +-----------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RunScheduler": true`` with options ``true`` and ``false``.                                 |
 +-----------------------------------------------------------------------------------------------------------------------------------------+
