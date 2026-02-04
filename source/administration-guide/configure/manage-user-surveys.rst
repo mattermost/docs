@@ -10,7 +10,7 @@ All user responses are stored in and remain within your self-hosted deployment, 
 
 .. important::
 
-The User Satisfaction Survey Plugin is the recommended approach for gathering user feedback, replacing the deprecated :doc:`User Satisfaction Survey Plugin </administration-guide/manage/user-satisfaction-surveys>` for new deployments. 
+  The User Satisfaction Survey Plugin is the recommended approach for gathering user feedback, replacing the deprecated :doc:`User Satisfaction Survey Plugin </administration-guide/manage/user-satisfaction-surveys>` for new deployments. 
 
 Setup
 ------
