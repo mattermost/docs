@@ -6,7 +6,7 @@ Channel-specific access rules
 
 Channel and Team Admins can self-manage access controls for their private channels directly through the Channel Settings modal, without requiring System Admin intervention. For organization-wide policies created by System Admins, see :doc:`System-wide attribute-based access policies </administration-guide/manage/admin/abac-system-wide-policies>`.
 
-Each ABAC channel access policy has an explicit **active state** that determines whether the policy's rules are enforced and whether automatic member synchronization applies to the channel. Channel-level (child) ABAC policies behave independently and consistently, even when parent system-wide policies exist.
+Each ABAC channel access policy has an explicit **active state** that determines whether automatic member synchronization (auto-add) applies to the channel. When a policy is applied to a channel, the policy's rules are always enforced, including removing members who no longer meet required attribute rules, regardless of the active state. Channel-level (child) ABAC policies behave independently and consistently, even when parent system-wide policies exist.
 
 With channel access rules, Channel and Team Admins can:
 
@@ -58,17 +58,18 @@ Channel access rules use the same simple interface as system policies, allowing 
 Auto-sync membership
 ~~~~~~~~~~~~~~~~~~~~
 
-The **Auto-add members based on access rules** toggle controls automatic membership management. Auto-sync behavior follows the channel policy's active state, reducing unexpected inheritance-related behavior:
+The **Auto-add members based on access rules** toggle controls automatic membership management. This setting ensures that channel membership stays consistently aligned with the defined attribute rules, similar to how LDAP group channels work:
 
-- **Enabled**: Users matching the rules are automatically added to the channel, and users who no longer match are removed
+- **Enabled**: Users matching the rules are automatically added to the channel. If users temporarily lose attributes and later regain them, they will be automatically re-added
 - **Disabled**: Rules act as a gate (preventing unauthorized joins) but don't automatically add qualifying users
 
 .. important::
 
-  - Auto-sync behavior is determined by the channel policy's active state, not inherited from parent policies.
+  - Auto-add/auto-sync is checked on a per-channel policy basis, not inherited from parent system-wide policies.
   - If a system policy has auto-sync enabled, Channel and Team Admins cannot disable it at the channel level.
   - If a system policy has auto-sync disabled, Channel and Team Admins can choose to enable it for their channel.
   - When no rules are configured, this toggle is automatically disabled.
+  - Regardless of the auto-sync setting, users who no longer meet required attribute rules are always removed during synchronization.
 
 Validation and safety
 ~~~~~~~~~~~~~~~~~~~~~
@@ -96,7 +97,7 @@ When both :doc:`system policies </administration-guide/manage/admin/abac-system-
 2. **Channel rules** are managed in the access rules section below
 3. **Users must satisfy BOTH** system policies and channel rules to access the channel
 4. Channel rules **add restrictions** but cannot weaken system policies
-5. **Auto-sync behavior** follows the channel policy's active state, not the parent system policy
+5. **Auto-add behavior** is determined by the individual channel policy, not inherited from parent system-wide policies. System-wide policies can pass down their rules, but auto-add/auto-sync is evaluated per channel.
 
 Use cases and recommendations
 -----------------------------
@@ -207,11 +208,9 @@ The auto-sync toggle is automatically disabled when:
 - There are validation errors in the current rules
 - The channel's access control policy is not in an active state
 
-If auto-sync is not behaving as expected, verify that the channel's access control policy is active.
-
 .. note::
 
-  **Troubleshooting auto-sync issues**: If auto-sync functionality is not working as expected, first verify that the channel's access control policy is in an active state. An inactive policy will prevent automatic member synchronization from occurring, even if the toggle appears to be enabled.
+  **Troubleshooting auto-sync issues**: If auto-sync functionality (automatic adding/re-adding of members) is not working as expected, verify that the channel's access control policy is in an active state. An inactive policy will prevent automatic member additions from occurring. Note that enforcement of rules (removal of members who no longer meet requirements) happens regardless of the policy's active state.
 
 Synchronization and membership 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
