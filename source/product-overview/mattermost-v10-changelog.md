@@ -85,6 +85,7 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
   - Pre-packaged Boards plugin version [v9.2.2](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.2.2).
   - Fixed an issue where the channel URL got updated when the channel display name was changed [MM-64725](https://mattermost.atlassian.net/browse/MM-64725).
   - Added audit logs for when admins access posts on channels they are not a member of [MM-64460](https://mattermost.atlassian.net/browse/MM-64460).
+  - Fixed a performance regression that caused the requests to populate the **Recent mentions** right-hand side (RHS) to timeout. This, in turn, re-introduces a known bug in searches with quoted strings, that may include results not exactly matching the quoted string [MM-66782](https://mattermost.atlassian.net/browse/MM-66782).
   - Fixed an issue with PSD file previews.
   - Added a new ``MM_LOG_PATH`` environment variable to restrict log file locations. Log files must now be within a configured root directory.
   - Fixed an issue where the ``/mute`` slash command could be used to enumerate private channels.
