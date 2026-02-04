@@ -136,6 +136,10 @@ Playbook attributes
 
 From Mattermost v11.1, using Mattermost in a web browser or the desktop app, you can define custom attributes for your playbooks to create adaptive workflows that respond to changing mission or operational context. From Mattermost mobile v2.37.0, you can view and edit playbook run attributes on mobile devices, including text fields, select, and multi-select types. Attributes such as severity, category, or linked ticket ID can be configured to trigger context-aware tasks and enable intelligent adaptation to situational conditions.
 
+.. note::
+
+  This feature requires Mattermost Playbook v2.5.0 or later.
+
 Attributes enable you to:
 
 - Define contextual information that varies between runs (e.g., incident severity, priority level, customer type).
