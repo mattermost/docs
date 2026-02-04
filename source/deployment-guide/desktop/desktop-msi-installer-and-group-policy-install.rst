@@ -188,16 +188,6 @@ Perform a silent installation of the MSI by running the following command:
 
 From version v5.9.0 of the Mattermost desktop app, the following silent MSI installation options are also available.
 
-Install for all users
-~~~~~~~~~~~~~~~~~~~~~
-
-Use the ``ALLUSERS`` parameter to install the MSI for all users:
-
-**PowerShell:** ``Start-Process -FilePath "$env:systemroot\system32\msiexec.exe" -ArgumentList '/i mattermost-desktop-v6.1.0-x64.msi ALLUSERS=1'``
-
-.. note::
-   - Installing the MSI for all users disables automatic updates for the desktop app on Windows.
-
 Specify an install directory
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
