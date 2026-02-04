@@ -32,31 +32,19 @@ Critical Infrastructure: Energy, utilities, transportation, financial services
 
 FORMAT REQUIREMENTS
 
-PLAIN TEXT ONLY
-
-Remove ALL markdown formatting:
-- No hashtags for headers
-- No asterisks or underscores for bold/italic
-- No backticks for code blocks
-- No pipes for tables
-- No dashes or asterisks for bullet lists
-- No angle brackets for blockquotes
-- No special characters except standard punctuation
-
-Use blank lines to separate sections.
-Section titles as plain text with no symbols.
-Lists as flowing prose or simple numbered format (1. 2. 3.).
-Code examples as plain text blocks with clear labels like "In config.json:" followed by content.
-Tables converted to prose descriptions or simple text format.
+Use markdown, including tables, code blocks, bulleted lists and headings. Exlude the following types of formatting: 
+- Do not use bold or italics unless referring to a button or specific setting name
 
 We are using Workramp as our LMS. Search the internet to understand what options are available for content objects, including text blocks, accordions, images, video blocks, flip cards, and callouts. Suggest when to use each type of content object, and be consistent with the usage of the object type throughtout the entire certification program we will build.
+
+We want to design engaging learning content that is not just a wall of text. So try to utilize bullets, accordions, headings, flips cards, illustrations and images to make the content more scanable, engaging and understandable.  
 
 
 TONE AND STYLE
 
 INTELLIGENT MISSION ENVIRONMENT ALIGNMENT
 
-Reference the Intelligent Mission Environment (IME) framework where applicable for mapping technical concepts to real-world use cases. Key use cases include:
+Reference the Intelligent Mission Environment (IME) framework where applicable for mapping technical concepts to mission-critical use cases. Key use cases include:
 - Cyber Defense: Security operations, threat detection, incident response
 - DevSecOps: Secure development, CI/CD integration, automated security
 - Mission Operations: Command and control, operational coordination, real-time collaboration
@@ -69,6 +57,7 @@ Connect technical features to mission outcomes and operational value.
 PLAIN ENGLISH FOR GLOBAL AUDIENCES
 
 Use simple, clear English suitable for non-native speakers:
+- Do not repeat yourself of start sentences or paragraphs similarly to previous content.
 - Avoid idioms and culturally-specific references
 - Keep sentences under 25 words when possible
 - Break complex ideas into multiple shorter sentences
@@ -116,8 +105,8 @@ PAGE 1: MODULE OVERVIEW
 
 Title: "Module Overview"
 
-Start with mission/operational context (why this matters for IME).
-"In this module, you'll learn:" with list of specific skills.
+Start with mission/operational context (why this matters for a successful deployment).
+"In this module, you will learn:" with list of specific skills. Try not to be duplicative with the way you start sentences.
 Prerequisites section (immediately after overview, not at the end).
 Core concepts introduction.
 
@@ -125,19 +114,18 @@ Example structure:
 
 Module Overview
 
-[Feature name] is foundational to [mission outcome] in the Intelligent Mission Environment. [1-2 sentences on why it matters for defense, intelligence, critical infrastructure]. [Technical capability description in mission context].
+[1-2 sentences on why it matters]. [Technical capability description in mission context, if applicable].
 
 In this module, you will learn [high-level summary of skills gained].
 
-In this module, you'll learn:
 
 You'll begin by exploring how [specific skill 1].
 
-How to [specific skill 2].
+[specific skill 2].
 
-How to [specific skill 3].
+[specific skill 3].
 
-You'll finish by looking at [final skill 4].
+[final skill 4].
 
 Prerequisites
 
