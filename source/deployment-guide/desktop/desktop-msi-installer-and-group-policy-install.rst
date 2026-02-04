@@ -193,13 +193,10 @@ Install for all users
 
 Use the ``ALLUSERS`` parameter to install the MSI for all users:
 
-**Command Prompt:** ``msiexec /i mattermost-desktop-v6.1.0-x64.msi ALLUSERS=1``
-
 **PowerShell:** ``Start-Process -FilePath "$env:systemroot\system32\msiexec.exe" -ArgumentList '/i mattermost-desktop-v6.1.0-x64.msi ALLUSERS=1'``
 
 .. note::
    - Installing the MSI for all users disables automatic updates for the desktop app on Windows.
-   - To disable automatic updates on a per-user basis, use the ``DISABLEAUTOUPDATE`` parameter: ``msiexec /i mattermost-desktop-v6.1.0-x64.msi DISABLEAUTOUPDATE=1``
 
 Specify an install directory
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
