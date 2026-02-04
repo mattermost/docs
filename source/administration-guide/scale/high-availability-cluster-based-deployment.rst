@@ -452,7 +452,7 @@ The process is based on a widely used `bully leader election algorithm <https://
 
 .. note::
 
-  From Mattermost v11.4, debug-level log messages help identify which node is executing cluster jobs. Non-leader nodes log messages like "Skipping scheduled posts job startup since this is not the leader node" to indicate they are correctly deferring job execution to the leader. These are normal operational messages, not errors. See :doc:`Cluster job execution debug messages </administration-guide/manage/logging>` for details.
+  From Mattermost v11.4, debug-level log messages help identify which node is executing specific Recurring Tasks (Scheduled Posts, Post Reminders, and DND Status Reset). Non-leader nodes log messages like "Skipping scheduled posts job startup since this is not the leader node" to indicate they are correctly deferring execution of these Recurring Tasks to the leader. These are normal operational messages, not errors. These debug messages do not apply to other job types such as Elasticsearch indexing, SAML sync, or LDAP sync. See :doc:`Cluster job execution debug messages </administration-guide/manage/logging>` for details.
 
 Job server
 ^^^^^^^^^^^
@@ -475,7 +475,7 @@ Make sure you have set ``JobSettings.RunScheduler`` to ``true`` in ``config.json
 
 .. tip::
 
-  From Mattermost v11.4, you can verify that jobs are running on the correct node by enabling debug logging. Non-leader nodes will log messages indicating they are skipping job execution, which is expected behavior. See :doc:`Cluster job execution debug messages </administration-guide/manage/logging>` for more information.
+  From Mattermost v11.4, you can verify that Recurring Tasks (Scheduled Posts, Post Reminders, and DND Status Reset) are running on the correct node by enabling debug logging. Non-leader nodes will log messages indicating they are skipping execution of these specific Recurring Tasks, which is expected behavior. These debug messages do not apply to other job types. See :doc:`Cluster job execution debug messages </administration-guide/manage/logging>` for more information.
 
 In previous Mattermost Server versions, and this documentation, the instructions stated to run the Job Server with ``RunScheduler: false``. The cluster design has evolved and this is no longer the case.
 
