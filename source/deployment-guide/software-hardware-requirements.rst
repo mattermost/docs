@@ -38,7 +38,7 @@ PC web
 .. csv-table::
     :header: "Browser", "Self-Hosted Technical Requirement", "Cloud Technical Requirement"
 
-    "Chrome", "v142+", "v142+"
+    "Chrome", "v144+", "v144+"
     "Firefox", "v140+", "v140+"
     "Safari", "v17.4+", "v17.4+"
     "Edge", "v142+", "v142+"
@@ -66,8 +66,8 @@ Mobile web
 .. csv-table::
     :header: "Browser", "Technical Requirement"
 
-    "iOS", "iOS 16.0+ with Safari 17.4+ or Chrome 142+"
-    "Android", "Android 7+ with Chrome 142+"
+    "iOS", "iOS 16.0+ with Safari 17.4+ or Chrome 144+"
+    "Android", "Android 7+ with Chrome 144+"
 
 Email client
 ^^^^^^^^^^^^
