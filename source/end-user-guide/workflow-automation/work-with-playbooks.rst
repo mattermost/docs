@@ -134,7 +134,11 @@ Playbook attributes
 .. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
-From Mattermost v11.1, using Mattermost in a web browser or the desktop app, you can define custom attributes for your playbooks to create adaptive workflows that respond to changing mission or operational context. Attributes such as severity, category, or linked ticket ID can be configured to trigger context-aware tasks and enable intelligent adaptation to situational conditions.
+From Mattermost v11.1, using Mattermost in a web browser or the desktop app, you can define custom attributes for your playbooks to create adaptive workflows that respond to changing mission or operational context. From Mattermost mobile v2.37.0, you can view and edit playbook run attributes on mobile devices, including text fields, select, and multi-select types. Attributes such as severity, category, or linked ticket ID can be configured to trigger context-aware tasks and enable intelligent adaptation to situational conditions.
+
+.. note::
+
+  This feature requires Mattermost Playbook v2.5.0 or later.
 
 Attributes enable you to:
 
@@ -144,6 +148,10 @@ Attributes enable you to:
 - Maintain consistent data collection across runs.
 
 Playbook attributes are visible to all run participants and can be referenced in status updates.
+
+.. note::
+
+  When viewing and editing playbook run attributes on mobile devices, color formatting and URL links in attributes are not supported and display as plain text.
 
 Configure attributes
 ~~~~~~~~~~~~~~~~~~~~~
@@ -179,7 +187,7 @@ Conditional playbooks
 .. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
-From Mattermost v11.1, using Mattermost in a web browser or the desktop app, you can create conditional playbooks with more sophisticated workflows that respond intelligently to changing circumstances. By leveraging playbook attributes, you can define conditions that determine which tasks and checklists are included in a playbook run based on real-time data.
+From Mattermost v11.1, using Mattermost in a web browser or the desktop app, you can create conditional playbooks with more sophisticated workflows that respond intelligently to changing circumstances. From Mattermost mobile v2.37.0, you can also view and edit playbook run attributes on mobile devices. By leveraging playbook attributes, you can define conditions that determine which tasks and checklists are included in a playbook run based on real-time data.
 
 Conditional playbooks enable you to:
 
