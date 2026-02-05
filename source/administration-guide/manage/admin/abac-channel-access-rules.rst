@@ -6,7 +6,7 @@ Channel-specific access rules
 
 Channel and Team Admins can self-manage access controls for their private channels directly through the Channel Settings modal, without requiring System Admin intervention. For organization-wide policies created by System Admins, see :doc:`System-wide attribute-based access policies </administration-guide/manage/admin/abac-system-wide-policies>`.
 
-Each ABAC channel access policy has an explicit **active state** that determines whether automatic member synchronization (auto-add) applies to the channel. When a policy is applied to a channel, the policy's rules are always enforced, including removing members who no longer meet required attribute rules, regardless of the active state. Channel-level (child) ABAC policies behave independently and consistently, even when parent system-wide policies exist.
+Each ABAC channel access policy has an explicit active state that determines whether the policy will automatically add users who meet the policy's criteria but are not yet channel members. When a policy is applied to a channel, the policy's rules are always enforced to remove members who no longer meet the required attribute rules, regardless of the active state.
 
 With channel access rules, Channel and Team Admins can:
 
