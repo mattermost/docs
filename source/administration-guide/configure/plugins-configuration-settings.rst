@@ -1714,7 +1714,7 @@ Reindex all posts
 GitLab
 ------
 
-See the :doc:`Connect GitLab to Mattermost </integrations-guide/gitlab>` product documentation for available :ref:`Mattermost configuration options <integrations-guide/gitlab:mattermost configuration>`.
+See the :doc:`Connect GitLab to Mattermost </integrations-guide/gitlab>` product documentation for details.
 
 ----
 
@@ -1728,7 +1728,7 @@ See the :doc:`Connect GitLab to Mattermost </integrations-guide/gitlab>` product
 GitHub
 ------
 
-See the :doc:`Connect GitHub to Mattermost </integrations-guide/github>` product documentation for available :ref:`Mattermost configuration options <integrations-guide/github:mattermost configuration>`.
+See the :doc:`Connect GitHub to Mattermost </integrations-guide/github>` product documentation for details.
 
 ----
 
