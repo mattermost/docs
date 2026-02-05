@@ -55,13 +55,25 @@ You can change a playbook’s configuration at any time, but changes will only b
 Make checklists
 ----------------
 
+Checklists in a playbook or run are restricted to playbook participants and owners.
+
 To create a checklist in a playbook, go to the **Tasks** section. Start from templated tasks or create your own. Select **Add a task** or **Add a section** to build out checklists in the playbook. Drag and drop to reorder tasks and sections as needed. Task descriptions support a limited form of Markdown, including text styling and hyperlinks.
 
 Playbook tasks consist of text rendered in Markdown (when present). You can't run commands directly from a task in a playbook, but you can trigger :doc:`built-in slash commands </integrations-guide/built-in-slash-commands>` and `custom slash commands <https://developers.mattermost.com/integrate/slash-commands/custom/>`_, or outgoing webhooks, to run as part of the task action by starting the task with ``/``.
 
-.. tip::
+Channel checklists
+~~~~~~~~~~~~~~~~~~
 
-  From Playbooks v2.6.0, you can create and manage checklists directly within public and private channels without requiring a playbook. Select the **Checklists** option in the right-hand sidebar to create a new checklist or manage existing ones. Access control for these channel checklists is based on :doc:`channel-based permissions </administration-guide/manage/team-channel-members>` rather than :doc:`playbook-specific permissions </end-user-guide/workflow-automation/share-and-collaborate>`.
+From Playbooks v2.6.0, you can additionally create and manage channel-based checklists directly within :ref:`public <end-user-guide/collaborate/channel-types:public channels>` and :ref:`private <end-user-guide/collaborate/channel-types:private channels>` channels without requiring a playbook template or a run. Channel checklists use existing Mattermost channel permissions to control access, so any channel member who can manage channel names, headers, and purpose can create, edit, and manage channel checklists.
+
+To create a new channel checklist or modify an existing checklist, select the **Checklists** option in the right-hand sidebar.
+
+.. note::
+
+  - Channel checklists aren't available in :ref:`direct message <end-user-guide/collaborate/channel-types:direct message channels>` or :ref:`group message <end-user-guide/collaborate/channel-types:group message channels>`.
+  - To create a channel checklist, you must be a channel :ref:`Member <end-user-guide/collaborate/learn-about-roles:member>` (not a :ref:`Guest <end-user-guide/collaborate/learn-about-roles:guest>`). To edit a channel checklist, any channel member who can post to the channel can do so, including guests.
+  - Channel checklists in :ref:`archived <end-user-guide/collaborate/channel-types:archived channels>` channels can't be modified. Archived channels must be :ref:`unarchived <end-user-guide/collaborate/archive-unarchive-channels:unarchive a channel>` to access and edit their channel checklists.
+  - A single channel can contain both playbook runs and channel checklists.
 
 Multiple runs in a channel
 --------------------------
