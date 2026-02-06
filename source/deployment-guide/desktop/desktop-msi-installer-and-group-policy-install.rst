@@ -23,20 +23,7 @@ From v6.1.0, the desktop app includes in-app update notifications that check the
 Upgrading to v6.1.0 with MSI installer
 ---------------------------------------
 
-**Important upgrade consideration:** Users upgrading from pre-v6.1.0 versions using the MSI installer may need to recreate taskbar shortcuts once after the upgrade.
-
-**Why this change was made:** This fixes a long-standing issue where shortcuts could break during MSI upgrades. The v6.1.0 installer uses a more reliable method for shortcut icons that prevents shortcuts from breaking during future upgrades.
-
-**Communication recommendation:** Advise users in advance that they may need to re-pin the taskbar shortcut after upgrading to v6.1.0. Desktop shortcuts are typically unaffected; taskbar shortcuts are most commonly impacted.
-
-**Scope:** This is a one-time action for the upgrade to v6.1.0. Future upgrades to v6.1.1 and later won't require shortcut recreation. Windows Store deployments are not affected by this change.
-
-**User instructions:** If a user reports a broken shortcut after upgrading to v6.1.0, they should:
-
-1. Right-click the broken shortcut on the taskbar and select "Unpin from taskbar"
-2. Launch Mattermost Desktop from the Start Menu
-3. Right-click the Mattermost icon in the taskbar while running
-4. Select "Pin to taskbar"
+**Important upgrade consideration:** Users upgrading from pre-v6.1.0 versions using the MSI installer may need to recreate taskbar shortcuts once after the upgrade. This one-time change improves shortcut reliability for future upgrades. Consider advising users in advance that they may need to re-pin taskbar shortcuts after upgrading to v6.1.0.
 
 Download group policy and MSI installer files
 ----------------------------------------------
