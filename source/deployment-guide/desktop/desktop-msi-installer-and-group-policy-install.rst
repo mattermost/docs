@@ -43,7 +43,9 @@ The following group policies are available supporting a state option of Not Conf
   +--------------------------+------------------------------------------------------------+----------------------+----------------------------+
   | Default Server List      | Define one or more default, permanent servers.             | v4.3 or later        | ``DefaultServerList``      |
   +--------------------------+------------------------------------------------------------+----------------------+----------------------------+
-  | Automatic Updates        | If disabled, automatic desktop app updates are disabled.   | v5.1 or later        | ``EnableAutoUpdates``      |
+  | Update Notifications     | If disabled, in-app update notifications are not shown.    | v5.1 or later        | ``EnableAutoUpdates``      |
+  |                          | From v6.1.0, this controls notifications only (not         |                      |                            |
+  |                          | automatic downloads/installs).                             |                      |                            |
   +--------------------------+------------------------------------------------------------+----------------------+----------------------------+
 
 1. Browse to the folder the above files were downloaded to and unzip the ``desktop-6.0.3.zip`` file in place.
@@ -76,9 +78,22 @@ The following group policies are available supporting a state option of Not Conf
    * ``\\FQDNDomain\sysvol\FQDNDomain\Policies\PolicyDefinitions`` can be used instead of ``C:\Windows\PolicyDefinitions`` if available.
    * ``\\FQDNDomain\sysvol\FQDNDomain\Policies\PolicyDefinitions\en-US`` can be used instead of ``C:\Windows\PolicyDefinitions\en-US`` if available.
 
-**Disable automatic updates**
+.. important::
 
-Automatic desktop app updates can be disabled by configuring the supported group policy. Changes to group policies require you to restart Mattermost for those changes to take effect.
+   **Update Mechanism Change in v6.1.0**
+
+   From Mattermost Desktop v6.1.0, automatic updates have been replaced with an in-app notification system. The desktop app checks Mattermost's website for new versions and displays notifications in the Downloads dropdown. Users must manually download and install updates.
+
+   - The ``EnableAutoUpdates`` Group Policy now controls whether update **notifications** are displayed (not automatic installations)
+   - When disabled, users will not see update notifications
+   - Organizations managing desktop updates centrally (via SCCM, Intune, etc.) should disable this policy
+   - App Store and Microsoft Store versions receive updates through their respective platforms
+
+   For more information, see `this forum post <https://forum.mattermost.com/t/important-update-changes-to-desktop-app-auto-updater/25657>`__.
+
+**Disable update notifications**
+
+Update notifications can be disabled by configuring the supported group policy. Changes to group policies require you to restart Mattermost for those changes to take effect.
 
 Configure Mattermost using group policy settings
 -------------------------------------------------
@@ -113,7 +128,7 @@ From desktop v6.0, users can run multiple Mattermost workspaces at the same time
 - On Windows, seed the approved list using the ``DefaultServerList`` Group Policy.
 - For scripted installs, seed ``config.json`` on first run to include multiple entries in the ``teams`` array. See the :doc:`Silent Windows desktop distribution </deployment-guide/desktop/silent-windows-desktop-distribution>` documentation for details.
 - To prevent users from adding or removing workspaces, use the existing ``EnableServerManagement`` Group Policy.
-- Disable ``EnableAutoUpdates`` to turn off automatic updates.
+- Disable ``EnableAutoUpdates`` to turn off update notifications.
 
 Verify group policy settings have been applied
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -198,8 +213,9 @@ Use the ``ALLUSERS`` parameter to install the MSI for all users:
 **PowerShell:** ``Start-Process -FilePath "$env:systemroot\system32\msiexec.exe" -ArgumentList '/i mattermost-desktop-v6.0.4-x64.msi ALLUSERS=1'``
 
 .. note::
-   - Installing the MSI for all users disables automatic updates for the desktop app on Windows.
-   - To disable automatic updates on a per-user basis, use the ``DISABLEAUTOUPDATE`` parameter: ``msiexec /i mattermost-desktop-v6.0.4-x64.msi DISABLEAUTOUPDATE=1``
+   - The ``ALLUSERS`` and ``DISABLEAUTOUPDATE`` parameters control update notification behavior from v6.1.0 onwards (automatic updates have been replaced with notifications).
+   - Installing the MSI for all users (``ALLUSERS=1``) disables update notifications for the desktop app on Windows.
+   - To disable update notifications on a per-user basis, use the ``DISABLEAUTOUPDATE`` parameter: ``msiexec /i mattermost-desktop-v6.0.4-x64.msi DISABLEAUTOUPDATE=1``
 
 Specify an install directory
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
