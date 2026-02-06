@@ -248,6 +248,124 @@ You can enable and customize advanced audit logging in Mattermost to record acti
 
 ----
 
+Log path restrictions
+---------------------
+
+.. include:: ../../_static/badges/all-commercial.rst
+  :start-after: :nosearch:
+
+From Mattermost v11.4, log file paths are validated to ensure they remain within a designated logging root directory. This security enhancement prevents log files from being written to or read from unauthorized locations on the file system.
+
+Configure the logging root directory
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Use the ``MM_LOG_PATH`` environment variable to define the root directory for all log files:
+
+.. code-block:: sh
+
+   export MM_LOG_PATH=/var/log/mattermost
+
+**Default behavior**: If ``MM_LOG_PATH`` is not set, Mattermost uses the default ``logs`` directory relative to the Mattermost binary location.
+
+Log path validation
+~~~~~~~~~~~~~~~~~~~
+
+All log file paths configured via the following settings are validated:
+
+- ``LogSettings.FileLocation`` - main server log file location
+- ``LogSettings.AdvancedLoggingJSON`` - all file targets in advanced logging configuration
+- ``ExperimentalAuditSettings.AdvancedLoggingJSON`` - all file targets in audit logging configuration
+
+**How validation works**:
+
+1. Paths are resolved to absolute paths
+2. Symlinks are resolved to their actual locations
+3. The resolved path must be within the logging root directory
+4. Paths outside the root directory are blocked
+
+**When validation occurs**:
+
+- When accessing log files via **System Console > Reporting > Server Logs**
+- When generating support packets
+- During configuration changes (warnings logged for invalid paths)
+
+**Error behavior**: When a log file path is outside the allowed root directory, Mattermost blocks access and logs an error: ``"Blocked attempt to read log file outside allowed root"``. The error message includes the file path, configuration section, and validation failure details.
+
+Configuration requirements
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**If using default logging**: No action required. Logs are stored in the default ``logs`` directory.
+
+**If using custom log paths**: Ensure all log file paths in ``AdvancedLoggingJSON`` point to locations within your logging root directory.
+
+**Valid configuration example**:
+
+.. code-block:: sh
+
+   export MM_LOG_PATH=/var/log/mattermost
+
+In ``config.json``:
+
+.. code-block:: JSON
+
+   {
+     "file1": {
+       "type": "file",
+       "format": "json",
+       "levels": [
+         {"id": 2, "name": "error", "stacktrace": true}
+       ],
+       "options": {
+         "filename": "/var/log/mattermost/errors.log",
+         "max_size": 100,
+         "max_age": 7,
+         "max_backups": 10,
+         "compress": true
+       },
+       "maxqueuesize": 1000
+     }
+   }
+
+This configuration is valid because ``/var/log/mattermost/errors.log`` is within the ``/var/log/mattermost`` root.
+
+**Invalid configuration example**:
+
+If ``MM_LOG_PATH=/var/log/mattermost``, this configuration fails:
+
+.. code-block:: JSON
+
+   {
+     "file1": {
+       "type": "file",
+       "options": {
+         "filename": "/tmp/logs/app.log"
+       }
+     }
+   }
+
+This fails because ``/tmp/logs/app.log`` is outside the ``/var/log/mattermost`` root directory.
+
+Troubleshooting log path validation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Symptom**: Log files not appearing in **System Console > Reporting > Server Logs** or support packets; error message indicating log file path is outside allowed directory.
+
+**Cause**: From v11.4, log file paths must be within the logging root directory.
+
+**Solution**:
+
+1. Check server logs for ``"Blocked attempt to read log file outside allowed root"`` messages
+2. Identify which configuration section has an invalid path (``LogSettings.FileLocation`` or ``AdvancedLoggingJSON``)
+3. Choose one of these options:
+
+   - **Option A**: Move log files to the default ``logs`` directory by updating your configuration
+   - **Option B**: Set ``MM_LOG_PATH`` environment variable to a root directory that contains your log files
+
+4. Restart the Mattermost server
+5. Verify logs are accessible in **System Console > Reporting > Server Logs**
+
+----
+
 Advanced logging
 -----------------
 
@@ -638,7 +756,7 @@ File targets support rotation and compression triggered by size and/or duration.
 +-------------+----------+---------------------------------------------------------------------------------------------------------------------+
 | **Key**     | **Type** | **Description**                                                                                                     |
 +-------------+----------+---------------------------------------------------------------------------------------------------------------------+
-| filename    | string   | Full path to the output file.                                                                                       |
+| filename    | string   | Full path to the output file. From v11.4, must be within the directory specified by ``MM_LOG_PATH``.                |
 +-------------+----------+---------------------------------------------------------------------------------------------------------------------+
 | max_size    | number   | Maximum size, in megabytes (MB), the log file can grow before it gets rotated. Default is ``100`` MB.               |
 +-------------+----------+---------------------------------------------------------------------------------------------------------------------+

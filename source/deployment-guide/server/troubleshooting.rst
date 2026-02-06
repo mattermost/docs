@@ -32,7 +32,7 @@ Review Mattermost logs
 
 You can access logs for Mattermost and use them for troubleshooting. These steps assume that you have appropriate :doc:`system admin permissions </administration-guide/onboard/advanced-permissions>` to do so.
 
-Mattermost Server logs 
+Mattermost Server logs
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 - Ensure that log files are being created: Navigate to **System Console > Environment > Logging**, confirm that **Output logs to file** is set to **true**.
@@ -46,6 +46,74 @@ The resulting server log file is called ``mattermost.log`` and can be opened wit
 If filesystem access is not possible, navigate to **System Console > Reporting > Server Logs** to locate the current system logs which can be copied to a file.
 
 You can find more on logging settings :ref:`here <administration-guide/configure/environment-configuration-settings:logging>`.
+
+Log files not accessible
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+From Mattermost v11.4, log file paths are validated to ensure they remain within a designated logging root directory.
+
+**Symptom**: Log files not appearing in **System Console > Reporting > Server Logs** or support packets. Error messages in server console indicate log file path is outside allowed directory.
+
+**Common error message**: ``"Blocked attempt to read log file outside allowed root"``
+
+**Cause**: Log file paths must be within the directory specified by the ``MM_LOG_PATH`` environment variable. If ``MM_LOG_PATH`` is not set, log files must be within the default ``logs`` directory.
+
+**Troubleshooting steps**:
+
+1. Check the server console logs for error messages containing ``"Blocked attempt to read log file outside allowed root"``
+2. The error message will identify which configuration setting has an invalid path:
+
+   - ``LogSettings.FileLocation`` - main server log file
+   - ``LogSettings.AdvancedLoggingJSON`` - advanced logging file targets
+   - ``ExperimentalAuditSettings.AdvancedLoggingJSON`` - audit logging file targets
+
+3. Choose one of these solutions:
+
+   **Option A - Use default logging directory**:
+
+   - Update your configuration to use the default ``logs`` directory
+   - Remove or update the ``MM_LOG_PATH`` environment variable
+   - Restart Mattermost server
+
+   **Option B - Configure logging root to match your log paths**:
+
+   - Set the ``MM_LOG_PATH`` environment variable to a directory that contains all your log files
+   - Ensure all configured log file paths are within this root directory
+   - Restart Mattermost server
+
+4. Verify logs are accessible:
+
+   - Navigate to **System Console > Reporting > Server Logs**
+   - Confirm log entries are visible
+   - Generate a test support packet to verify logs are included
+
+**Decision flowchart**:
+
+.. code-block:: text
+
+   Log files not accessible?
+   │
+   ├─> Check server console for "Blocked attempt" errors
+   │   │
+   │   ├─> Error found?
+   │   │   │
+   │   │   └─> Note which config setting is invalid
+   │   │       │
+   │   │       ├─> Using default logs directory?
+   │   │       │   │
+   │   │       │   ├─> YES: No action needed
+   │   │       │   │
+   │   │       │   └─> NO: Choose solution
+   │   │       │       │
+   │   │       │       ├─> Option A: Update config to use
+   │   │       │       │             default logs directory
+   │   │       │       │
+   │   │       │       └─> Option B: Set MM_LOG_PATH to
+   │   │       │                     match your log paths
+   │   │       │
+   │   │       └─> Restart server and verify
+
+See the :ref:`log path restrictions <administration-guide/manage/logging:log path restrictions>` documentation for detailed configuration examples.
 
 Mattermost Desktop App logs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -3095,7 +3095,8 @@ File log directory
 
 .. note::
 
-  The path you configure must exist, and Mattermost must have write permissions for this directory.
+  - The path you configure must exist, and Mattermost must have write permissions for this directory.
+  - From Mattermost v11.4, log file paths are validated to ensure they remain within the directory specified by the ``MM_LOG_PATH`` environment variable. If ``MM_LOG_PATH`` is not set, the default ``logs`` directory is used. Paths outside the allowed root directory are blocked. See the :doc:`Mattermost logging </administration-guide/manage/logging>` documentation for details.
 
 .. config:setting:: file-log-level
   :displayname: General file log level (General Logging)
@@ -3203,6 +3204,7 @@ Output logs to multiple targets
   - See the :doc:`Mattermost logging </administration-guide/manage/logging>` documentation for details. These targets have been chosen as they support the vast majority of log aggregators, and other log analysis tools, without needing additional software installed.
   - Logs are recorded asynchronously to reduce latency to the caller.
   - Advanced logging supports hot-reloading of logger configuration.
+  - From Mattermost v11.4, all file paths specified in ``AdvancedLoggingJSON`` configurations must be within the directory specified by the ``MM_LOG_PATH`` environment variable. See :ref:`log path restrictions <administration-guide/manage/logging:log path restrictions>` for details.
 
 .. config:setting:: maximum-field-size
   :displayname: Maximum general log field size (General Logging)
