@@ -138,3 +138,26 @@ Maximum notifications per channel
     - **Improved User Experience**: An overload of notifications can lead to performance lags and a cluttered experience for users. Limiting the number ensures that users receive only the most important notifications, which can enhance usability and response times.
     - **Network Bandwidth**: High numbers of notifications can consume a lot of bandwidth, particularly if they are being sent to many users. Fewer notifications can lead to lower overall network usage and potentially faster delivery of critical messages.
     - **Server Load Balancing**: By reducing the number of notifications, the workload can be more evenly distributed across the servers, leading to better load balancing and preventing any single server from becoming a bottleneck.
+
+config.json-only settings
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following push notification configuration settings are only available by editing the ``config.json`` file.
+
+.. config:setting:: push-notification-buffer
+  :displayname: Push notification buffer (Push Notifications)
+  :systemconsole: N/A
+  :configjson: PushNotificationBuffer
+  :environment: N/A
+  :description: Used to control the buffer of outstanding Push Notification messages to be sent. Default is **1000** notifications.
+
+Push notification buffer
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Used to control the buffer of outstanding Push Notification messages to be sent. If the number of messages exceeds that number, then the request making the Push Notification will be blocked until there's room.
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"PushNotificationBuffer": 1000"`` with numerical input.                                         |
++---------------------------------------------------------------------------------------------------------------------------------------------+

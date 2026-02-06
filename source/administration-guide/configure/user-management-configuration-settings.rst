@@ -676,3 +676,34 @@ System roles
 | See the :doc:`delegated granular administration </administration-guide/onboard/delegated-granular-administration>`                |
 | documentation for details                                                                                                         |
 +----------------------------------------------------------------------+------------------------------------------------------------+
+
+----
+
+config.json-only settings
+--------------------------
+
+The following user management configuration settings are only available by editing the ``config.json`` file.
+
+.. config:setting:: restrict-system-admin
+  :displayname: Restrict system admin (User Management)
+  :systemconsole: N/A
+  :configjson: FileEnabled
+  :environment: N/A
+  :description: Enable this setting to restrict the system admin from viewing and modifying a subset of server configuration settings from the System Console. Default value is **false**.
+
+Restrict system admin
+~~~~~~~~~~~~~~~~~~~~~
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+**True**: **(Default for Cloud deployments)** Restricts the system admin from viewing and modifying a subset of server configuration settings from the System Console. Not recommended for use in on-prem installations. This is intended to support Mattermost Private Cloud in giving the system admin role to users but restricting certain actions only for Cloud Admins.
+
+**False**: **(Default for self-host deployments)** No restrictions are applied to the system admin role.
+
++-------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RestrictSystemAdmin": "false"`` with options ``true`` and ``false``. |
++-------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  The ability to restrict the system admin from viewing and modifying a subset of server configuration settings is currently in :ref:`Beta <administration-guide/manage/feature-labels:beta>`.

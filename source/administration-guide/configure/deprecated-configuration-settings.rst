@@ -32,29 +32,53 @@ Bleve settings
 
 *Bleve search has been deprecated from Mattermost v11.0. We recommend using Elasticsearch or OpenSearch for enterprise search capabilities.*
 
+.. config:setting:: enable-bleve-indexing
+  :displayname: Enable Bleve indexing (Deprecated)
+  :systemconsole: N/A
+  :configjson: EnableIndexing
+  :environment: N/A
+
+  - **true**: The indexing of new posts occurs automatically.
+  - **false**: **(Default)** The indexing of new posts does not occur automatically.
+
 Enable Bleve indexing
 ~~~~~~~~~~~~~~~~~~~~~
 
-*Deprecated from Mattermost v11.0*
+*Deprecated in Mattermost v11.0*
 
 This setting was available in the System Console by going to **Experimental > Bleve**, or by editing the ``config.json`` file.
+
+Bleve search was deprecated in favor of database search and Elasticsearch. Use database search (default) or configure Elasticsearch for large deployments.
 
 **True**: The indexing of new posts occurs automatically.
 
 **False**: The indexing of new posts does not occur automatically.
 
+This setting is no longer functional.
+
 +------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableIndexing": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: index-directory
+  :displayname: Index directory (Deprecated)
+  :systemconsole: N/A
+  :configjson: IndexDir
+  :environment: N/A
+  :description: Directory path to use for storing bleve indexes.
+
 Index directory
 ~~~~~~~~~~~~~~~
 
-*Deprecated from Mattermost v11.0*
+*Deprecated in Mattermost v11.0*
 
 This setting was available in the System Console by going to **Experimental > Bleve**, or by editing the ``config.json`` file.
 
+Bleve search was deprecated in favor of database search and Elasticsearch. Use database search (default) or configure Elasticsearch for large deployments.
+
 Directory path to use for storing bleve indexes.
+
+This setting is no longer functional.
 
 +-----------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IndexDir": ""`` with string input.                           |
@@ -71,40 +95,56 @@ Purge indexes
 Select **Purge Index** to remove the contents of the Bleve index directory. Search results may be incomplete until a bulk index of the existing database is rebuilt.
 
 .. config:setting:: enable-bleve-indexingsearch
-  :displayname: Enable Bleve for search queries (Experimental)
-  :systemconsole: Experimental > Bleve
+  :displayname: Enable Bleve for search queries (Deprecated)
+  :systemconsole: N/A
   :configjson: EnableSearching
   :environment: N/A
 
   - **true**: Search queries will use bleve search.
   - **false**: **(Default)** Search queries will not use bleve search.
 
-
 Enable Bleve for search queries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Deprecated from Mattermost v11.0*
+*Deprecated in Mattermost v11.0*
 
 This setting was available in the System Console by going to **Experimental > Bleve**, or by editing the ``config.json`` file.
+
+Bleve search was deprecated in favor of database search and Elasticsearch. Use database search (default) or configure Elasticsearch for large deployments.
 
 **True**: Search queries will use bleve search.
 
 **False**: Search queries will not use bleve search.
 
+This setting is no longer functional.
+
 +--------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableSearching": false`` with options ``true`` and ``false``.  |
 +--------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: enable-bleve-indexingautocomplete
+  :displayname: Enable Bleve for autocomplete queries (Deprecated)
+  :systemconsole: N/A
+  :configjson: EnableAutocomplete
+  :environment: N/A
+
+  - **true**: Autocomplete queries will use bleve search.
+  - **false**: **(Default)** Autocomplete queries will not use bleve search.
+
 Enable Bleve for autocomplete queries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Deprecated from Mattermost v11.0*
+*Deprecated in Mattermost v11.0*
 
 This setting was available in the System Console by going to **Experimental > Bleve**, or by editing the ``config.json`` file.
+
+Bleve search was deprecated in favor of database search and Elasticsearch. Use database search (default) or configure Elasticsearch for large deployments.
 
 **True**: Autocomplete queries will use bleve search.
 
 **False**: Autocomplete queries will not use bleve search.
+
+This setting is no longer functional.
 
 +-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableAutocomplete": false`` with options ``true`` and ``false``.  |

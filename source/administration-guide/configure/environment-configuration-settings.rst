@@ -649,6 +649,55 @@ Maximum payload size
 | Numerical value. Default is **300000** (300 kB).          |                                                                                            |
 +-----------------------------------------------------------+--------------------------------------------------------------------------------------------+
 
+config.json-only settings
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following configuration settings are only accessible through ``config.json``.
+
+.. config:setting:: websocket-secure-port
+  :displayname: Websocket secure port (Web Server)
+  :systemconsole: N/A
+  :configjson: .ServiceSettings.WebsocketSecurePort
+  :environment: MM_SERVICESETTINGS_WEBSOCKETSECUREPORT
+  :description: This setting defines the port on which the secured WebSocket will listen using the wss protocol. Default is **443**.
+
+**Websocket secure port**
+
+This setting isn't available in the System Console and can only be set in ``config.json``. Changes to this setting require a server restart before taking effect.
+
++---------------------------------------------------------------+--------------------------------------------------------------------------------------+
+| This setting defines the port on which the secured WebSocket  | - System Config path: N/A                                                            |
+| is listening using the ``wss`` protocol.                      | - ``config.json`` setting: ``ServiceSettings`` > ``WebsocketSecurePort`` > ``443``   |
+|                                                               | - Environment variable: ``MM_SERVICESETTINGS_WEBSOCKETSECUREPORT``                   |
+| Numeric value. Default is **443**.                            |                                                                                      |
++---------------------------------------------------------------+--------------------------------------------------------------------------------------+
+
+.. note::
+
+   This is a client-only override that doesn't affect the listening port of the server process, which is controlled by the :ref:`Web server listen address <administration-guide/configure/environment-configuration-settings:web server listen address>` setting. It is highly recommended that production deployments only operate under HTTPS and WSS.
+
+.. config:setting:: websocket-port
+  :displayname: Websocket port (Web Server)
+  :systemconsole: N/A
+  :configjson: .ServiceSettings.WebsocketPort
+  :environment: MM_SERVICESETTINGS_WEBSOCKETPORT
+  :description: This setting defines the port on which the unsecured WebSocket will listen using the ws protocol. Default is **80**.
+
+**Websocket port**
+
+This setting isn't available in the System Console and can only be set in ``config.json``. Changes to this setting require a server restart before taking effect.
+
++---------------------------------------------------------------+------------------------------------------------------------------------------+
+| This setting defines the port on which the unsecured          | - System Config path: N/A                                                    |
+| WebSocket is listening using the ``ws`` protocol.             | - ``config.json`` setting: ``ServiceSettings`` > ``WebsocketPort`` > ``80``  |
+|                                                               | - Environment variable: ``MM_SERVICESETTINGS_WEBSOCKETPORT``                 |
+| Numeric value. Default is **80**.                             |                                                                              |
++---------------------------------------------------------------+------------------------------------------------------------------------------+
+
+.. note::
+
+   This is a client-only override that doesn't affect the listening port of the server process, which is controlled by the :ref:`Web server listen address <administration-guide/configure/environment-configuration-settings:web server listen address>` setting. It is highly recommended that production deployments only operate under HTTPS and WSS.
+
 ----
 
 Database
@@ -1893,10 +1942,77 @@ Trace
 |   template creation or search query that returns an error as part   |                                                                          |
 |   of the error message.                                             |                                                                          |
 | - **all**: Creates the three traces (error, trace and info)         |                                                                          |
-|   for the driver and doesn’t print the queries because they         |                                                                          |
+|   for the driver and doesn't print the queries because they         |                                                                          |
 |   will be part of the trace log level of the driver.                |                                                                          |
 | - **not specified**: **(Default)** No error trace is created.       |                                                                          |
 +---------------------------------------------------------------------+--------------------------------------------------------------------------+
+
+config.json-only settings
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following search configuration settings are only available by editing the ``config.json`` file.
+
+.. config:setting:: enable-post-search
+  :displayname: Enable post search (Enterprise Search)
+  :systemconsole: N/A
+  :configjson: EnablePostSearch
+  :environment: N/A
+  :description: If this setting is enabled, users can search messages. Default is **true**.
+
+Enable post search
+~~~~~~~~~~~~~~~~~~
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+If this setting is enabled, users can search for messages in their Mattermost instance.
+
++-------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnablePostSearch": true`` with options ``true`` and ``false``. |
++-------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  Disabling this experimental configuration setting in larger deployments may improve server performance in the following areas:
+
+  - Reduced Database Load: When post search is enabled, every search query adds additional load to the database. Disabling search reduces these queries, leading to better database performance and lower response times for other operations.
+  - Lower Memory Usage: Search functionality often requires indexing of posts, which consumes memory. By disabling search, the memory required for maintaining these indexes is freed up for other uses, improving overall system performance.
+  - Faster Write Operations: When post search is enabled, indexing has to be updated with every new post, edit, or deletion. Disabling search avoids this overhead, allowing for faster write operations.
+  - Performance Consistency: Without the search feature, the application avoids potential performance bottlenecks and can maintain more consistent performance levels, especially under heavy usage scenarios with a high number of posts.
+  - Simplified System Maintenance: Managing search indexes can be complex and resource-intensive. Disabling search simplifies this aspect of system maintenance, potentially reducing the risk of performance issues related to search index corruption or degradation.
+  - However, the ability to search messages in Mattermost is a critical feature for many users, and disabling this feature will result in users seeing an error if they attempt to use the Mattermost Search box. It's important to balance performance improvements with the needs of your organization and users.
+
+.. config:setting:: enable-file-search
+  :displayname: Enable file search (Enterprise Search)
+  :systemconsole: N/A
+  :configjson: EnableFileSearch
+  :environment: N/A
+  :description: This configuration setting enables users to search documents attached to messages by filename. Default is **true**.
+
+Enable file search
+~~~~~~~~~~~~~~~~~~
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+.. important::
+
+  This experimental configuration setting enables users to search documents attached to messages by filename. To enable users to search documents by their content, you must also enable the ``ExtractContent`` configuration setting. See our :ref:`Enable Document Search by Content <administration-guide/configure/environment-configuration-settings:enable document search by content>` documentation for details. Document content search is available in Mattermost Server from v5.35, with mobile support coming soon.
+
+**True**: Supported document types are searchable by their filename.
+
+**False**: File-based searches are disabled.
+
++-------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableFileSearch": true`` with options ``true`` and ``false``. |
++-------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  Disabling this experimental configuration setting in larger deployments may improve server performance in the following areas:
+
+  - Less Data to Index: Indexing files in addition to messages adds to the amount of data that needs to be processed and stored in the search index.
+  - Fewer Complex Queries: Searching through files can require more complex queries, which can be more resource-intensive and time-consuming as compared to searching through messages alone.
+  - Lower IO Operations: Searching files can generate more input/output operations, impacting the overall disk performance, especially if the system handles a large volume of file uploads and searches.
+  - However, the ability to search for files in Mattermost is a critical feature for many users, and disabling this feature will result in users seeing an error if they attempt to use the Mattermost Search box. It's important to balance performance improvements with the needs of your organization and users.
 
 ----
 
@@ -2397,6 +2513,51 @@ Initial font
 | A string with the font file name. Default is                  |                                                                                         |
 | **nunito-bold.ttf**.                                          |                                                                                         |
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+
+.. config:setting:: maximum-image-resolution
+  :displayname: Maximum image resolution (File Storage)
+  :systemconsole: N/A
+  :configjson: .FileSettings.MaxImageResolution
+  :environment: MM_FILESETTINGS_MAXIMAGERESOLUTION
+  :description: Maximum image resolution size for message attachments in pixels. Default value is **33177600** pixels.
+
+Maximum image resolution
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
++---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| Maximum image resolution size for message attachments         | - System Config path: N/A                                                                   |
+| in pixels.                                                    | - ``config.json`` setting: ``FileSettings`` > ``MaxImageResolution`` > ``33177600``         |
+|                                                               | - Environment variable: ``MM_FILESETTINGS_MAXIMAGERESOLUTION``                              |
+| Numeric value. Default is 33177600 pixels.                    |                                                                                             |
++---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+
+.. config:setting:: maximum-image-decoder-concurrency
+  :displayname: Maximum image decoder concurrency (File Storage)
+  :systemconsole: N/A
+  :configjson: .FileSettings.MaxImageDecoderConcurrency
+  :environment: MM_FILESETTINGS_MAXIMAGEDECODERCONCURRENCY
+  :description: Indicates how many images can be decoded concurrently at once. The default value of **-1** configures Mattermost to automatically use the number of CPUs present.
+
+Maximum image decoder concurrency
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
++---------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+| Indicates how many images can be decoded concurrently         | - System Config path: N/A                                                                       |
+| at once. The default value of ``-1`` configures Mattermost    | - ``config.json`` setting: ``FileSettings`` > ``MaxImageDecoderConcurrency`` > ``-1``           |
+| to automatically use the number of CPUs present.              | - Environment variable: ``MM_FILESETTINGS_MAXIMAGEDECODERCONCURRENCY``                          |
+|                                                               |                                                                                                 |
+| Numeric value. Default is -1.                                 |                                                                                                 |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  - This configuration setting affects the total memory consumption of the server. The maximum memory of a single image is dictated by ``MaxImageResolution * 24 bytes``, where the default maximum image resolution value is 33MB.
+  - Therefore, a good rule of thumb to follow is that ``33MB * MaxImageDecoderConcurrency * 24`` should be less than the total memory for the server.
+  - For example, if you have a 4-core server, you should leave aside at least ``33 * 4 * 24 = 3168MB`` memory for image processing. Otherwise, adjust the `MaxImageResolution <#maximum-image-resolution>`_ configuration setting to adjust the amount of memory needed for image processing.
 
 ----
 
@@ -4073,6 +4234,97 @@ Enable notification monitoring
 See the :ref:`performance monitoring <administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring:getting started>` documentation
 to learn more about Mattermost Notification Health metrics.
 
+config.json-only settings
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following configuration settings are only accessible through ``config.json``.
+
+.. config:setting:: run-jobs
+  :displayname: Run jobs (Performance Monitoring)
+  :systemconsole: N/A
+  :configjson: .JobSettings.RunJobs
+  :environment: MM_JOBSETTINGS_RUNJOBS
+  :description: Set whether this Mattermost server will handle tasks created by the scheduler. Default is **true**.
+
+**Run jobs**
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
++---------------------------------------------------------------+------------------------------------------------------------------------+
+| Set whether this Mattermost server will handle tasks created  | - System Config path: N/A                                              |
+| by the scheduler. When running Mattermost on a single         | - ``config.json`` setting: ``JobSettings`` > ``RunJobs`` > ``true``    |
+| machine, this setting should always be enabled.               | - Environment variable: ``MM_JOBSETTINGS_RUNJOBS``                     |
+|                                                               |                                                                        |
+| - **true**: **(Default)** Server handles scheduled tasks.     |                                                                        |
+| - **false**: Server doesn't handle scheduled tasks.           |                                                                        |
++---------------------------------------------------------------+------------------------------------------------------------------------+
+
+When running Mattermost in :doc:`High Availability mode </administration-guide/scale/high-availability-cluster-based-deployment>`, one or more servers should have this setting enabled. We recommend that your High Availability cluster-based deployment has one or more dedicated Workers with this setting enabled while the remaining Mattermost app servers have it disabled.
+
+.. config:setting:: run-scheduler
+  :displayname: Run scheduler (Performance Monitoring)
+  :systemconsole: N/A
+  :configjson: .JobSettings.RunScheduler
+  :environment: MM_JOBSETTINGS_RUNSCHEDULER
+  :description: Set whether this Mattermost server will schedule tasks to be completed by a Worker. Default is **true**.
+
+**Run scheduler**
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
++---------------------------------------------------------------+----------------------------------------------------------------------------+
+| Set whether this Mattermost server will schedule tasks to be  | - System Config path: N/A                                                  |
+| completed by a Worker. When running Mattermost on a single    | - ``config.json`` setting: ``JobSettings`` > ``RunScheduler`` > ``true``   |
+| machine, this setting should always be enabled.               | - Environment variable: ``MM_JOBSETTINGS_RUNSCHEDULER``                    |
+|                                                               |                                                                            |
+| - **true**: **(Default)** Server schedules tasks.             |                                                                            |
+| - **false**: Server doesn't schedule tasks.                   |                                                                            |
++---------------------------------------------------------------+----------------------------------------------------------------------------+
+
+When running Mattermost in :doc:`High Availability mode </administration-guide/scale/high-availability-cluster-based-deployment>`, this setting should always be enabled. In a High Availability cluster-based deployment, exactly one of the servers will be designated as the Scheduler at a time to ensure that duplicate tasks aren't created.
+
+.. warning::
+
+   We strongly recommend that you not change this setting from the default setting of ``true`` as this prevents the ``ClusterLeader`` from being able to run the scheduler. As a result, recurring jobs such as LDAP sync, Compliance Export, and data retention will no longer be scheduled.
+
+.. config:setting:: clean-up-old-database-jobs
+  :displayname: Clean up old database jobs (Performance Monitoring)
+  :systemconsole: N/A
+  :configjson: .JobSettings.CleanupJobsThresholdDays
+  :environment: MM_JOBSETTINGS_CLEANUPJOBSTHRESHOLDDAYS
+  :description: Defines the threshold in days beyond which older completed database jobs are removed. Must be set to a value greater than or equal to 0 to be enabled. Default is **-1** (disabled).
+
+**Clean up old database jobs**
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| Defines the threshold in days beyond which older completed    | - System Config path: N/A                                                               |
+| database jobs are removed. This setting is disabled by        | - ``config.json`` setting: ``JobSettings`` > ``CleanupJobsThresholdDays`` > ``-1``      |
+| default, and must be set to a value greater than or equal     | - Environment variable: ``MM_JOBSETTINGS_CLEANUPJOBSTHRESHOLDDAYS``                     |
+| to 0 to be enabled.                                           |                                                                                         |
+|                                                               |                                                                                         |
+| Numeric value. Default is **-1** (disabled).                  |                                                                                         |
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+
+.. config:setting:: clean-up-outdated-database-entries
+  :displayname: Clean up outdated database entries (Performance Monitoring)
+  :systemconsole: N/A
+  :configjson: .JobSettings.CleanupConfigThresholdDays
+  :environment: MM_JOBSETTINGS_CLEANUPCONFIGTHRESHOLDDAYS
+  :description: Defines the threshold in days beyond which outdated configurations are removed from the database. Default is **30** days.
+
+**Clean up outdated database entries**
+
+This setting only applies to configuration in the database. It isn't available in the System Console and can be set via mmctl or changed in the database.
+
++---------------------------------------------------------------+-------------------------------------------------------------------------------------------+
+| Defines the threshold in days beyond which outdated           | - System Config path: N/A                                                                 |
+| configurations are removed from the database.                 | - ``config.json`` setting: ``JobSettings`` > ``CleanupConfigThresholdDays`` > ``30``      |
+|                                                               | - Environment variable: ``MM_JOBSETTINGS_CLEANUPCONFIGTHRESHOLDDAYS``                     |
+| Numeric value. Default is **30** days.                        |                                                                                           |
++---------------------------------------------------------------+-------------------------------------------------------------------------------------------+
+
 ----
 
 Developer
@@ -4196,7 +4448,84 @@ Some examples of when you may want to modify this setting include:
   - Use whitespaces instead of commas to list the hostnames, IP addresses, or CIDR ranges. For example: ``webhooks.internal.example.com``, ``127.0.0.1``, or ``10.0.16.0/28``.
   - IP address and domain name rules are applied before host resolution.
   - CIDR rules are applied after host resolution, and only CIDR rules require DNS resolution.
-  - Mattermost attempts to match IP addresses and hostnames without even resolving. If that fails, Mattermost resolve using the local resolver (by reading the ``/etc/hosts`` file first), then checking for matching CIDR rules. For example, if the domain “webhooks.internal.example.com” resolves to the IP address ``10.0.16.20``, a webhook with the URL ``https://webhooks.internal.example.com/webhook`` can be whitelisted using ``webhooks.internal.example.com``, or ``10.0.16.16/28``, but not ``10.0.16.20``.
+  - Mattermost attempts to match IP addresses and hostnames without even resolving. If that fails, Mattermost resolve using the local resolver (by reading the ``/etc/hosts`` file first), then checking for matching CIDR rules. For example, if the domain "webhooks.internal.example.com" resolves to the IP address ``10.0.16.20``, a webhook with the URL ``https://webhooks.internal.example.com/webhook`` can be whitelisted using ``webhooks.internal.example.com``, or ``10.0.16.16/28``, but not ``10.0.16.20``.
+
+config.json-only settings
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following configuration settings are only accessible through ``config.json``.
+
+.. config:setting:: enable-local-mode-for-mmctl
+  :displayname: Enable local mode for mmctl (Developer)
+  :systemconsole: N/A
+  :configjson: .ServiceSettings.EnableLocalMode
+  :environment: MM_SERVICESETTINGS_ENABLELOCALMODE
+  :description: Enable or disable local mode for mmctl. Default is **false**.
+
+  - **true**: Enables local mode for mmctl.
+  - **false**: **(Default)** Prevents local mode for mmctl.
+
+**Enable local mode for mmctl**
+
+This self-hosted deployment setting isn't available in the System Console and can only be set in ``config.json``.
+
++---------------------------------------------------------------+-------------------------------------------------------------------------------+
+| Enable or disable local mode for mmctl.                       | - System Config path: N/A                                                     |
+|                                                               | - ``config.json`` setting: ``ServiceSettings`` > ``EnableLocalMode`` >``false``|
+| - **true**: Enables local mode for mmctl.                     | - Environment variable: ``MM_SERVICESETTINGS_ENABLELOCALMODE``                |
+| - **false**: **(Default)** Prevents local mode for mmctl.     |                                                                               |
++---------------------------------------------------------------+-------------------------------------------------------------------------------+
+
+.. tip::
+
+  When trying to use local mode with mmctl, ensure you're using the same user when running the server and mmctl, or clean up the socket file before switching to a new user.
+
+.. config:setting:: enable-local-mode-socket-location
+  :displayname: Enable local mode socket location (Developer)
+  :systemconsole: N/A
+  :configjson: .ServiceSettings.LocalModeSocketLocation
+  :environment: MM_SERVICESETTINGS_LOCALMODESOCKETLOCATION
+  :description: The path for the socket that the server will create for mmctl to connect and communicate through local mode. Default value is **/var/tmp/mattermost_local.socket**.
+
+**Enable local mode socket location**
+
+This self-hosted deployment setting isn't available in the System Console and can only be set in ``config.json``.
+
++---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| The path for the socket that the server will create for      | - System Config path: N/A                                                                   |
+| mmctl to connect and communicate through local mode.          | - ``config.json`` setting: ``ServiceSettings`` > ``LocalModeSocketLocation``                |
+|                                                               | - Environment variable: ``MM_SERVICESETTINGS_LOCALMODESOCKETLOCATION``                      |
+| String input. Default is **/var/tmp/mattermost_local.socket**|                                                                                             |
++---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+
+If the default value for this key is changed, you will need to point mmctl to the new socket path when in local mode, using the ``--local-socket-path /new/path/to/socket`` flag in addition to the ``--local`` flag.
+
+.. config:setting:: developer-flags
+  :displayname: Developer flags (Developer)
+  :systemconsole: N/A
+  :configjson: DeveloperFlags
+  :environment: N/A
+  :description: This configuration setting specifies a list of strings where each string is a flag used to set the content security policy (CSP) for the Mattermost Web App.
+
+Developer flags
+~~~~~~~~~~~~~~~
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+This configuration setting specifies a list of strings where each string is a flag used to set the content security policy (CSP) for the Mattermost Web App. Each flag must be in the format ``flag=true`` (e.g. ``unsafe-eval=true,unsafe-inline=true``). Not recommended for production environments.
+
+The following values are currently supported:
+
+- ``unsafe-eval``: Adds the ``unsafe-eval`` CSP directive to the root webapp, allowing increased debugging in developer environments.
+- ``unsafe-inline``: Adds the ``unsafe-inline`` CSP directive to the root webapp, allowing increased debugging in developer environments.
+
+This configuration setting is disabled by default and requires :ref:`developer mode <administration-guide/configure/environment-configuration-settings:enable developer mode>` to be enabled.
+
++----------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DeveloperFlags": ""`` with string input.  |
++----------------------------------------------------------------------------------------+
+
+----
 
 Mobile security
 ---------------
@@ -4651,6 +4980,84 @@ Enable webhub channel iteration
 |                                                      |                                                                                                  |
 | Disabled by default.                                 |                                                                                                  |
 +------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+
+.. config:setting:: import-input-directory
+  :displayname: Import input directory
+  :systemconsole: N/A
+  :configjson: .ImportSettings.Directory
+  :environment: MM_IMPORTSETTINGS_DIRECTORY
+  :description: The directory where the imported files are stored. The path is relative to the FileSettings directory. Default value is **./import**.
+
+Import input directory
+~~~~~~~~~~~~~~~~~~~~~~
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+| The directory where the imported files are stored.            | - System Config path: N/A                                                          |
+| The path is relative to the ``FileSettings`` directory.       | - ``config.json`` setting: ``ImportSettings`` > ``Directory`` > ``"./import"``     |
+|                                                               | - Environment variable: ``MM_IMPORTSETTINGS_DIRECTORY``                            |
+| String input. Default is **./import**.                        |                                                                                    |
+| By default, imports are stored under ``./data/import``.       |                                                                                    |
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+
+.. config:setting:: import-retention-days
+  :displayname: Import retention days
+  :systemconsole: N/A
+  :configjson: .ImportSettings.RetentionDays
+  :environment: MM_IMPORTSETTINGS_RETENTIONDAYS
+  :description: The number of days to retain the imported files before deleting them. Default is **30** days.
+
+Import retention days
+~~~~~~~~~~~~~~~~~~~~~
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
++---------------------------------------------------------------+-----------------------------------------------------------------------------------+
+| The number of days to retain the imported files before        | - System Config path: N/A                                                         |
+| deleting them.                                                | - ``config.json`` setting: ``ImportSettings`` > ``RetentionDays`` > ``30``        |
+|                                                               | - Environment variable: ``MM_IMPORTSETTINGS_RETENTIONDAYS``                       |
+| Numeric value. Default is **30** days.                        |                                                                                   |
++---------------------------------------------------------------+-----------------------------------------------------------------------------------+
+
+.. config:setting:: export-output-directory
+  :displayname: Export output directory
+  :systemconsole: N/A
+  :configjson: .ExportSettings.Directory
+  :environment: MM_EXPORTSETTINGS_DIRECTORY
+  :description: The directory where the exported files are stored. The path is relative to the FileSettings directory. Default value is **./export**.
+
+Export output directory
+~~~~~~~~~~~~~~~~~~~~~~~
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+| The directory where the exported files are stored.            | - System Config path: N/A                                                          |
+| The path is relative to the ``FileSettings`` directory.       | - ``config.json`` setting: ``ExportSettings`` > ``Directory`` > ``"./export"``     |
+|                                                               | - Environment variable: ``MM_EXPORTSETTINGS_DIRECTORY``                            |
+| String input. Default is **./export**.                        |                                                                                    |
+| By default, exports are stored under ``./data/export``.       |                                                                                    |
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+
+.. config:setting:: export-retention-days
+  :displayname: Export retention days
+  :systemconsole: N/A
+  :configjson: .ExportSettings.RetentionDays
+  :environment: MM_EXPORTSETTINGS_RETENTIONDAYS
+  :description: The number of days to retain the exported files before deleting them. Default value is **30** days.
+
+Export retention days
+~~~~~~~~~~~~~~~~~~~~~
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
++---------------------------------------------------------------+-----------------------------------------------------------------------------------+
+| The number of days to retain the exported files before        | - System Config path: N/A                                                         |
+| deleting them.                                                | - ``config.json`` setting: ``ExportSettings`` > ``RetentionDays`` > ``30``        |
+|                                                               | - Environment variable: ``MM_EXPORTSETTINGS_RETENTIONDAYS``                       |
+| Numeric value. Default is **30** days.                        |                                                                                   |
++---------------------------------------------------------------+-----------------------------------------------------------------------------------+
 
 .. config:setting:: enable-dedicated-export-filestore-target
   :displayname: Enable dedicated export filestore target
