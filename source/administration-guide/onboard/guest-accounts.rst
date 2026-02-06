@@ -34,6 +34,7 @@ Guests cannot:
 - Join open teams
 - Create direct messages or group messages with members who aren’t within the same channel
 - Invite people
+- Create channel checklists
 
 Guest authentication
 ---------------------
