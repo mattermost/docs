@@ -1,6 +1,19 @@
 Desktop app troubleshooting
 ============================
 
+Broken shortcuts after upgrading to v6.1.0 (Windows MSI only)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Symptom:** After upgrading to Mattermost Desktop v6.1.0 using the Windows MSI installer, the taskbar shortcut shows the wrong icon or fails to launch.
+
+**Scope:** Only affects Windows MSI installer upgrades from pre-v6.1.0 versions. This is a one-time action.
+
+**Solution:**
+
+1. Right-click the broken shortcut on the taskbar and select **Unpin from taskbar**.
+2. Launch Mattermost Desktop from the Start Menu.
+3. Right-click the Mattermost icon in the taskbar while running and select **Pin to taskbar**.
+
 Where is configuration stored locally?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

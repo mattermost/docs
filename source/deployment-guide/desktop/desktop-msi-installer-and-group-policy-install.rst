@@ -10,6 +10,21 @@ This page provides guidance on installing the desktop app MSI and use Group Poli
 
    Want to :doc:`distribute the official Windows desktop app silently </deployment-guide/desktop/silent-windows-desktop-distribution>` to your end users instead?
 
+Windows distribution options (v6.1.0+)
+---------------------------------------
+
+Starting with Mattermost Desktop v6.1.0, multiple Windows distribution options are available:
+
+- **Windows Store**: Primary option for automatic updates. Recommended for most users. The Windows Store version handles updates automatically through the Microsoft Store infrastructure.
+- **MSI installer**: Direct download option for traditional deployment methods. This guide covers MSI deployment.
+
+From v6.1.0, the desktop app includes in-app update notifications that check the Mattermost website for new versions. All distribution channels (Windows Store, MSI, Mac App Store, Flathub, APT/RPM) release simultaneously to ensure users receive consistent update notifications regardless of their installation method.
+
+Upgrading to v6.1.0 with MSI installer
+---------------------------------------
+
+**Important upgrade consideration:** Users upgrading from pre-v6.1.0 versions using the MSI installer may need to recreate taskbar shortcuts once after the upgrade. This one-time change improves shortcut reliability for future upgrades. Consider advising users in advance that they may need to re-pin taskbar shortcuts after upgrading to v6.1.0.
+
 Download group policy and MSI installer files
 ----------------------------------------------
 
