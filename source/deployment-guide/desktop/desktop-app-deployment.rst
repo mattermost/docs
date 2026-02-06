@@ -13,9 +13,20 @@ Download
 
 Download and install the Mattermost desktop app from the `App Store (macOS) <https://www.apple.com/app-store/>`_, `Microsoft Store (Windows) <https://apps.microsoft.com/home?hl=en-US&gl=US>`_, or by :doc:`using a package manager (Linux) </deployment-guide/desktop/linux-desktop-install>`. We strongly recommend installing the desktop app on a local drive. Network shares aren't supported.
 
-In Matermost, users are notified under **Downloads** when new desktop app releases become available. If managing the distribution of the mobile app on behalf of users, you can recommend that your users disable desktop update notifications by going to **… > File > Settings** on Windows or **Mattermost > Settings** on Mac and clearing the **Automatically check for updates** option.
+.. important::
 
-See additional deployment options below to manage distribution of the mobile app to your users.
+   **Update Mechanism Change in v6.1.0**
+
+   From Mattermost Desktop v6.1.0, automatic updates have been replaced with an in-app notification system. The desktop app checks Mattermost's website for new versions and displays notifications in the **Downloads** dropdown. Users must manually download and install updates.
+
+   - Provides more reliable update notifications across all platforms (including Mac App Store and Microsoft Store)
+   - Users control when to update (no automatic downloads or installations)
+   - Administrators can disable update notifications via Group Policy for centrally managed deployments
+   - For more information, see `this forum post <https://forum.mattermost.com/t/important-update-changes-to-desktop-app-auto-updater/25657>`__.
+
+In Mattermost, users are notified under **Downloads** when new desktop app releases become available. If managing the distribution of the desktop app on behalf of users, you can recommend that your users disable desktop update notifications by going to **… > File > Settings** on Windows or **Mattermost > Settings** on Mac and clearing the **Automatically check for updates** option.
+
+See additional deployment options below to manage distribution of the desktop app to your users.
 
 Deployment options
 ------------------

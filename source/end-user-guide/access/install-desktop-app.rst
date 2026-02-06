@@ -4,7 +4,11 @@ Install the Mattermost desktop app
 .. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
-Download and install the Mattermost desktop app `for macOS from the App Store <https://apps.apple.com/us/app/mattermost-desktop/id1614666244?mt=12>`_, `for Windows from the Microsoft Store <https://apps.microsoft.com/detail/xp8br8mh3lpklt?hl=en-US&gl=US>`_, or by :doc:`using a package manager (Linux) </deployment-guide/desktop/linux-desktop-install>`. When new desktop app releases become available, your desktop app is automatically updated.
+Download and install the Mattermost desktop app `for macOS from the App Store <https://apps.apple.com/us/app/mattermost-desktop/id1614666244?mt=12>`_, `for Windows from the Microsoft Store <https://apps.microsoft.com/detail/xp8br8mh3lpklt?hl=en-US&gl=US>`_, or by :doc:`using a package manager (Linux) </deployment-guide/desktop/linux-desktop-install>`.
+
+.. important::
+
+   From Mattermost Desktop v6.1.0, updates are no longer downloaded and installed automatically. You'll receive an in-app notification when updates are available, and you'll need to manually download and install them. This provides more reliable update notifications across all platforms while giving you control over when to update.
 
 We strongly recommend installing the desktop app on a local drive. Network shares aren't supported. 
 
@@ -19,6 +23,27 @@ We strongly recommend installing the desktop app on a local drive. Network share
 Upgrade the desktop app
 ------------------------
 
-In Matermost, you’re notified under **Downloads** when new desktop app releases become available.
+**Update notifications**
 
-When automatic updates are disabled, you can manually check for updates by selecting **Help > Check for Updates** from the desktop app menu bar.
+From v6.1.0, Mattermost Desktop uses in-app notifications to alert you when new releases are available. You'll see a notification in the **Downloads** dropdown with platform-specific options:
+
+- **macOS (App Store)**: Select **Open Mac App Store** to update through the App Store.
+- **macOS (DMG)**: Select **Download Update** to download the new DMG file from your browser. Open the DMG and drag Mattermost to your Applications folder.
+- **Windows (Microsoft Store)**: Select **Use Windows Store** to update through the Microsoft Store.
+- **Windows (MSI)**: Select **Download Manually** to download the MSI installer from your browser, then run the installer.
+- **Linux**: Select the notification to open the GitHub releases page, download the appropriate package for your system (AppImage, deb, rpm, Flatpak), and install it.
+
+**Manual update check**
+
+You can manually check for updates at any time by:
+
+- Selecting **Help > Check for Updates** from the menu bar, or
+- Going to **Settings > Updates** and selecting **Check Now**
+
+**Skip a version**
+
+If you don't want to see notifications for a specific version, select **Skip This Version** in the notification. You won't see notifications for that version, but you'll be notified when a newer version is released.
+
+.. note::
+
+   In enterprise deployments, your system administrator may disable update notifications via Group Policy. If you're not seeing update notifications, contact your IT department.
