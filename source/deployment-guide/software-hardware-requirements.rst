@@ -29,7 +29,7 @@ Though not officially supported, the Linux desktop app also runs on RHEL/CentOS 
 .. note::
 
     - `*` Integrated Windows Authentication is not supported by Mattermost desktop apps. If you use ADFS we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
-
+    - From Windows Desktop v6.1.0, the MSI installer installs per-machine (system-wide) by default and requires administrator privileges for installation. This meets enterprise compliance requirements.
     - The minimum content size is 800 x 600 pixels.
 
 PC web
