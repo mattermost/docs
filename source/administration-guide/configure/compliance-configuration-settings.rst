@@ -297,6 +297,25 @@ The SMTP server port that will receive your Global Relay EML file when a `custom
 | This feature's ``config.json`` setting is ``".MessageExportSettings.GlobalRelaySettings.CustomSMTPPort": "25"`` with string input. |
 +------------------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: global-relay-smtp-server-timeout
+  :displayname: Global Relay SMTP server timeout (Compliance Export - Global Relay EML)
+  :systemconsole: N/A
+  :configjson: .MessageExportSettings.GlobalRelaySettings.SMTPServerTimeout
+  :environment: MM_MESSAGEEXPORTSETTINGS_GLOBALRELAYSETTINGS_SMTPSERVERTIMEOUT
+  :description: The number of seconds that can elapse before the connection attempt to the SMTP server is abandoned. Default is **1800** seconds.
+
+Global Relay SMTP server timeout
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
+| The number of seconds that can elapse before the connection   | - System Config path: N/A                                                                                 |
+| attempt to the SMTP server is abandoned.                      | - ``config.json`` setting: ``MessageExportSettings.GlobalRelaySettings.SMTPServerTimeout`` > ``1800``     |
+|                                                               | - Environment variable: ``MM_MESSAGEEXPORTSETTINGS_GLOBALRELAYSETTINGS_SMTPSERVERTIMEOUT``                |
+| Numeric value. Default is **1800** seconds.                   |                                                                                                           |
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
+
 .. config:setting:: message-export-batch-size
   :displayname: Message export batch size (Compliance Export)
   :systemconsole: N/A
@@ -314,6 +333,49 @@ Determines how many new posts are batched together to a compliance export file.
 +---------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"BatchSize": 10000`` with numerical input.      |
 +---------------------------------------------------------------------------------------------+
+
+.. config:setting:: export-from-timestamp
+  :displayname: Export from timestamp (Compliance Export)
+  :systemconsole: N/A
+  :configjson: .MessageExportSettings.ExportFromTimestamp
+  :environment: MM_MESSAGEEXPORTSETTINGS_EXPORTFROMTIMESTAMP
+  :description: Set the Unix timestamp (seconds since epoch, UTC) to export data from. Default is **0**.
+
+Export from timestamp
+~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../../_static/badges/ent-plus.rst
+  :start-after: :nosearch:
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
++---------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+| Set the Unix timestamp (seconds since epoch, UTC) to export   | - System Config path: N/A                                                                  |
+| data from.                                                    | - ``config.json`` setting: ``MessageExportSettings.ExportFromTimestamp`` > ``0``           |
+|                                                               | - Environment variable: ``MM_MESSAGEEXPORTSETTINGS_EXPORTFROMTIMESTAMP``                   |
+| Numeric value. Default is **0**.                              |                                                                                            |
++---------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+
+.. config:setting:: file-location
+  :displayname: File location (Compliance Export)
+  :systemconsole: N/A
+  :configjson: FileLocation
+  :environment: N/A
+  :description: Set the file location of the compliance exports. Default value is **export**.
+
+File location
+~~~~~~~~~~~~~
+
+.. include:: ../../_static/badges/ent-plus.rst
+  :start-after: :nosearch:
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Set the file location of the compliance exports. By default, they are written to the ``exports`` subdirectory of the configured :ref:`Local Storage directory <administration-guide/configure/environment-configuration-settings:local storage directory>`.
+
++-------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"FileLocation": "export"`` with string input. |
++-------------------------------------------------------------------------------------------+
 
 Run compliance export job now
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
