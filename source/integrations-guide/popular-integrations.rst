@@ -6,9 +6,9 @@ Popular Pre-Built Integrations
   :hidden:
   :titlesonly:
 
-    Mattermost Channel Export </administration-guide/comply/export-mattermost-channel-data>
-    Mattermost Legal Hold </administration-guide/comply/legal-hold>
-    Mattermost Metrics </administration-guide/scale/collect-performance-metrics>
+    Mattermost Channel Export </integrations-guide/plugins/channel-export-plugin>
+    Mattermost Legal Hold </integrations-guide/plugins/legal-hold-plugin>
+    Mattermost Metrics </integrations-guide/plugins/metrics-plugin>
     Mattermost User Survey </administration-guide/configure/manage-user-surveys>
     Mattermost Embedded for M365, Teams, and Outlook </integrations-guide/mattermost-mission-collaboration-for-m365>
     Microsoft Calendar </integrations-guide/microsoft-calendar>
@@ -30,11 +30,11 @@ Designed for teams that need reliability, auditability, and ownership of their c
 +------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 | **Mattermost Integration**                                                                     | **How to Get It**                                                 | **What It Does**                                                                                           |
 +================================================================================================+===================================================================+============================================================================================================+
-| :doc:`Mattermost Channel Export </administration-guide/comply/export-mattermost-channel-data>` | |product-list| > **App Marketplace**                              | Exports channel history and data for compliance purposes.                                                  |
+| :doc:`Mattermost Channel Export </integrations-guide/plugins/channel-export-plugin>` | |product-list| > **App Marketplace**                              | Exports channel history and data for compliance purposes.                                                  |
 +------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :doc:`Mattermost Legal Hold </administration-guide/comply/legal-hold>`                         | Manual Upload                                                     | Keeps a copy of messages and files so they cannot be deleted for legal or compliance needs.                |
+| :doc:`Mattermost Legal Hold </integrations-guide/plugins/legal-hold-plugin>`                         | Manual Upload                                                     | Keeps a copy of messages and files so they cannot be deleted for legal or compliance needs.                |
 +------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :doc:`Mattermost Metrics </administration-guide/scale/collect-performance-metrics>`            | |product-list| > **App Marketplace**                              | Shows numbers about system performance when people use Mattermost.                                         |
+| :doc:`Mattermost Metrics </integrations-guide/plugins/metrics-plugin>`            | |product-list| > **App Marketplace**                              | Shows numbers about system performance when people use Mattermost.                                         |
 +------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 | :doc:`Mattermost User Survey </administration-guide/configure/manage-user-surveys>`            | |product-list| > **App Marketplace**                              | Collects feedback by asking questions directly in Mattermost channels.                                     |
 +------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
