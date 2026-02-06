@@ -13,6 +13,8 @@ Download
 
 Download and install the Mattermost desktop app from the `App Store (macOS) <https://www.apple.com/app-store/>`_, `Microsoft Store (Windows) <https://apps.microsoft.com/home?hl=en-US&gl=US>`_, or by :doc:`using a package manager (Linux) </deployment-guide/desktop/linux-desktop-install>`. We strongly recommend installing the desktop app on a local drive. Network shares aren't supported.
 
+From Mattermost Desktop v6.1.0, Linux users can also install using Flatpak packages (currently in beta). Flatpak is a universal Linux package format that provides a sandboxed environment and includes runtime dependencies. Flatpak packages are available for x86_64 (Intel/AMD) and aarch64 (ARM) architectures.
+
 In Matermost, users are notified under **Downloads** when new desktop app releases become available. If managing the distribution of the mobile app on behalf of users, you can recommend that your users disable desktop update notifications by going to **… > File > Settings** on Windows or **Mattermost > Settings** on Mac and clearing the **Automatically check for updates** option.
 
 See additional deployment options below to manage distribution of the mobile app to your users.
