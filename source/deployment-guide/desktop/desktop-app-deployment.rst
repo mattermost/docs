@@ -8,6 +8,46 @@ The Mattermost desktop app is available for Windows, macOS, and Linux operating 
 
 Learn more about desktop app :ref:`software requirements <deployment-guide/software-hardware-requirements:desktop apps>`, :doc:`releases and server compatibility </product-overview/mattermost-desktop-releases>` as well as the :doc:`what's changed across releases </product-overview/desktop-app-changelog>`.
 
+Privacy and data handling
+--------------------------
+
+Error reporting (v6.1.0 and later)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+From Mattermost Desktop v6.1.0, the desktop app includes automatic error reporting to help identify and fix crashes and stability issues. This feature sends error data to Sentry, a third-party error tracking service.
+
+**Default behavior**
+
+- Error reporting is **enabled by default** for all users
+- Error reports help Mattermost identify and fix desktop app issues proactively
+- Users can disable error reporting via **Settings > Advanced > Send error reports to help improve the app**
+
+**Data collected**
+
+Error reports include:
+
+- Crash information and stack traces
+- App version and build information
+- Platform details (OS type, architecture, memory stats)
+- Error messages and context
+
+**Privacy protections**
+
+- **No personally identifiable information (PII)** is included in error reports
+- Message content, user credentials, and authentication tokens are not sent
+- Error reporting only activates in production/release builds (not in development or test builds)
+
+**Organizational considerations**
+
+If your organization has policies restricting external telemetry or data transmission:
+
+1. **Communicate with users**: Inform users about this default-enabled feature and provide guidance on whether to disable it based on your organization's data handling policies
+2. **User control**: Users can disable error reporting at any time through the desktop app Settings. The setting requires an app restart to take effect
+3. **Build-time control**: Organizations building the desktop app from source can prevent Sentry initialization entirely by omitting the ``MM_DESKTOP_BUILD_SENTRYDSN`` environment variable during the build process
+4. **Compliance considerations**: Organizations subject to data residency requirements or strict data handling policies should evaluate whether Sentry's error tracking aligns with their compliance needs
+
+For more information on disabling error reporting, see the :doc:`desktop app troubleshooting guide </deployment-guide/desktop/desktop-troubleshooting>`. For comprehensive privacy and compliance information, see :doc:`Desktop app privacy and data handling </deployment-guide/desktop/desktop-app-privacy>`.
+
 Download
 ---------
 
@@ -33,9 +73,13 @@ Learn about installation, configuration, and management options for deploying th
     /deployment-guide/desktop/desktop-msi-installer-and-group-policy-install.rst
     /deployment-guide/desktop/desktop-custom-dictionaries.rst
     /deployment-guide/desktop/desktop-app-managed-resources.rst
+    /deployment-guide/desktop/desktop-app-privacy.rst
+    /deployment-guide/desktop/desktop-troubleshooting.rst
 
 * :doc:`Distribute a custom desktop app </deployment-guide/desktop/distribute-a-custom-desktop-app>`
 * :doc:`Silent Windows desktop distribution </deployment-guide/desktop/silent-windows-desktop-distribution>`
 * :doc:`MSI installer and group policy guide </deployment-guide/desktop/desktop-msi-installer-and-group-policy-install>`
 * :doc:`Custom dictionaries for Windows and Linux </deployment-guide/desktop/desktop-custom-dictionaries>`
 * :doc:`Managed resources for the desktop app </deployment-guide/desktop/desktop-app-managed-resources>`
+* :doc:`Desktop app privacy and data handling </deployment-guide/desktop/desktop-app-privacy>`
+* :doc:`Desktop app troubleshooting </deployment-guide/desktop/desktop-troubleshooting>`

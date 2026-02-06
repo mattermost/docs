@@ -1,6 +1,37 @@
 Desktop app troubleshooting
 ============================
 
+Error reporting
+~~~~~~~~~~~~~~~
+
+From Mattermost Desktop v6.1.0, the desktop app automatically sends error reports and crash information to Sentry (a third-party error tracking service) to help identify and fix issues proactively. This feature is enabled by default to improve app stability and quality.
+
+Error reports include:
+
+- Error and crash details
+- App version and platform information (OS type, architecture, memory stats)
+- Stack traces and error messages
+
+Error reports do **not** include:
+
+- Personally identifiable information (PII)
+- Message content
+- User credentials
+- Server URLs or team names
+
+If you experience crashes or issues, leaving error reporting enabled helps the development team identify and fix problems in future versions. Error reporting only occurs in production/release builds of the desktop app.
+
+To disable error reporting:
+
+1. Open **Settings** (select **File > Settings** on Windows/Linux or **Mattermost > Settings** on macOS)
+2. Navigate to the **Advanced** section
+3. Locate **Send error reports to help improve the app** and uncheck the option
+4. Restart the application for changes to take effect
+
+.. note::
+
+  Organizations with strict data handling policies may want to advise users about this default-enabled feature. See the :doc:`desktop app deployment guide </deployment-guide/desktop/desktop-app-deployment>` for system administrator guidance.
+
 Where is configuration stored locally?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
