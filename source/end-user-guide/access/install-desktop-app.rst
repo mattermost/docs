@@ -19,6 +19,27 @@ We strongly recommend installing the desktop app on a local drive. Network share
 Upgrade the desktop app
 ------------------------
 
-In Matermost, you’re notified under **Downloads** when new desktop app releases become available.
+In Matermost, you're notified under **Downloads** when new desktop app releases become available.
 
 When automatic updates are disabled, you can manually check for updates by selecting **Help > Check for Updates** from the desktop app menu bar.
+
+Windows MSI installer - Upgrading to v6.1.0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you're upgrading from a version earlier than v6.1.0 using the Windows MSI installer, you may need to recreate your taskbar shortcut once after upgrading. This one-time change improves shortcut reliability and prevents shortcuts from breaking during future upgrades.
+
+**Why this is needed:** Prior to v6.1.0, installing over an older Desktop App version could break shortcuts. The v6.1.0 MSI installer uses a more reliable method for shortcut icons that prevents this issue in future upgrades.
+
+**Note:** This only affects Windows MSI installer upgrades. The Windows Store version is not affected, and future upgrades to v6.1.1 and later won't require shortcut recreation.
+
+Recreate your taskbar shortcut (Windows)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If your taskbar shortcut shows the wrong icon or fails to launch after upgrading to v6.1.0:
+
+1. Right-click the broken shortcut on your taskbar and select **Unpin from taskbar**.
+2. Launch Mattermost Desktop from the Start Menu or desktop shortcut.
+3. Right-click the Mattermost icon in the taskbar while it's running.
+4. Select **Pin to taskbar**.
+
+Your new shortcut will work correctly for all future updates.
