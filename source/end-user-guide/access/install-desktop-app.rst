@@ -19,7 +19,7 @@ We strongly recommend installing the desktop app on a local drive. Network share
 Upgrade the desktop app
 ------------------------
 
-In Matermost, you're notified under **Downloads** when new desktop app releases become available.
+In Matermost, you'll be notified under **Downloads** when a new desktop app release becomes available.
 
 When automatic updates are disabled, you can manually check for updates by selecting **Help > Check for Updates** from the desktop app menu bar.
 
