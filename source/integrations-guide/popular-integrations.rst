@@ -6,9 +6,6 @@ Popular Pre-Built Integrations
   :hidden:
   :titlesonly:
 
-    Mattermost Channel Export </administration-guide/comply/export-mattermost-channel-data>
-    Mattermost Legal Hold </administration-guide/comply/legal-hold>
-    Mattermost Metrics </administration-guide/scale/collect-performance-metrics>
     Mattermost User Survey </administration-guide/configure/manage-user-surveys>
     Mattermost Embedded for M365, Teams, and Outlook </integrations-guide/mattermost-mission-collaboration-for-m365>
     Microsoft Calendar </integrations-guide/microsoft-calendar>
