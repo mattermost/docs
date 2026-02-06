@@ -17,10 +17,10 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - iPhone 8+ devices and later with iOS 16.0+ are [required](https://support.apple.com/en-il/guide/iphone/iphe3fa5df43/16.0/ios/16.0).
 
 ### Improvements
- - Added support for emoji picker on mobile [MM-53959](https://mattermost.atlassian.net/browse/MM-53959).
+ - Added support for [emoji picker](https://docs.mattermost.com/end-user-guide/collaborate/react-with-emojis-gifs.html#manage-emojis) on mobile [MM-53959](https://mattermost.atlassian.net/browse/MM-53959).
  - Added an option to rename playbook runs/checklists on mobile [MM-66610](https://mattermost.atlassian.net/browse/MM-66610).
- - Added support for viewing and editing playbook run attributes [MM-65768](https://mattermost.atlassian.net/browse/MM-65768).
- - Added support for deleting Playbook tasks from mobile [MM-67006](https://mattermost.atlassian.net/browse/MM-67006).
+ - Added support for [viewing and editing playbook run attributes](https://docs.mattermost.com/end-user-guide/workflow-automation/work-with-playbooks.html#playbook-attributes) [MM-65768](https://mattermost.atlassian.net/browse/MM-65768).
+ - Added support for [deleting Playbook tasks](https://docs.mattermost.com/end-user-guide/workflow-automation/work-with-tasks.html#mobile-playbooks-task-management) from mobile [MM-67006](https://mattermost.atlassian.net/browse/MM-67006).
 
 ### Bug Fixes
  - Fixed an issue with the notification settings screen sometimes not showing updates when changing the email notifications [MM-66858](https://mattermost.atlassian.net/browse/MM-66858).
