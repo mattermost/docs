@@ -76,6 +76,57 @@ This page describes how to install the Mattermost desktop app on Linux.
   .. tip:: 
     You can review the current version of your desktop app by selecting the **More** |more-icon-vertical| icon located in the top left corner of the desktop app, then selecting **Help > Version...**.
 
+.. tab:: Flatpak
+  :parse-titles:
+
+  From Mattermost Desktop v6.1.0, Flatpak packages are available for Linux systems. Flatpak is a universal Linux package format that provides a sandboxed environment and includes runtime dependencies. The Flatpak version is currently in **beta**.
+
+  .. note::
+
+    Flatpak requires the Flatpak runtime to be installed on your system. The Mattermost Desktop Flatpak package uses Freedesktop Platform/SDK 25.08 and Electron BaseApp 25.08. Wayland display server support is enabled by default.
+
+  Available architectures
+  -----------------------
+
+  Flatpak packages are available for:
+
+  - **x86_64** (Intel/AMD 64-bit processors)
+  - **aarch64** (ARM 64-bit processors)
+
+  Install Flatpak
+  ---------------
+
+  1. Ensure Flatpak is installed on your system. If not, see the `Flatpak setup guide <https://flatpak.org/setup/>`_ for your distribution.
+
+  2. Download the latest Mattermost Desktop Flatpak package for your architecture from the `Desktop App's Github releases page <https://github.com/mattermost/desktop/releases>`_:
+
+     - For x86_64: ``mattermost-desktop-{VERSION}-linux-x86_64.flatpak``
+     - For aarch64: ``mattermost-desktop-{VERSION}-linux-aarch64.flatpak``
+
+  3. Install the Flatpak package:
+
+    .. code-block:: sh
+
+      flatpak install mattermost-desktop-{VERSION}-linux-{ARCH}.flatpak
+
+    Replace ``{VERSION}`` with the version number (e.g., 6.1.0) and ``{ARCH}`` with your architecture (x86_64 or aarch64).
+
+  4. Run Mattermost as a desktop app:
+
+    .. code-block:: sh
+
+      flatpak run com.mattermost.Desktop
+
+  Considerations
+  --------------
+
+  - The Flatpak version runs in a sandboxed environment, which may affect certain integrations or file access patterns.
+  - Automatic app updates are handled through the Flatpak update mechanism.
+  - The application requires access to Flathub or a compatible Flatpak repository for runtime dependencies.
+
+  .. tip::
+    You can review the current version of your desktop app by selecting the **More** |more-icon-vertical| icon located in the top left corner of the desktop app, then selecting **Help > Version...**.
+
 .. tab:: Generic Linux
   :parse-titles:
 
