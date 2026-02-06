@@ -11,13 +11,13 @@ Mattermost Server v11.4 (February 2026)
 
 - Photoshop Document (PSD) files will no longer be inline previewed, they will be treated as regular file attachments.
 
+Removed features by Mattermost version
+----------------------------------------
+
 Mattermost Desktop App v6.1 (February 2026)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- The in-app auto-updater for Windows and Linux AppImage installations will be deprecated. See more details in `this forum post <https://forum.mattermost.com/t/important-update-changes-to-desktop-app-auto-updater/25657>`__.
-
-Removed features by Mattermost version
-----------------------------------------
+- The in-app auto-updater for Windows and Linux AppImage installations have been deprecated. See more details in `this forum post <https://forum.mattermost.com/t/important-update-changes-to-desktop-app-auto-updater/25657>`__.
 
 Mattermost Mobile App v2.36.4 (January 2026)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
