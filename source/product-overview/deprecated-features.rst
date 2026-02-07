@@ -6,11 +6,6 @@ This page describes features that are removed from support for Mattermost, or wi
 Removed features in upcoming versions
 -------------------------------------
 
-Mattermost Server v11.4 (February 2026)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-- Photoshop Document (PSD) files will no longer be inline previewed, they will be treated as regular file attachments.
-
 Mattermost Desktop App v6.1 (February 2026)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -18,6 +13,11 @@ Mattermost Desktop App v6.1 (February 2026)
 
 Removed features by Mattermost version
 ----------------------------------------
+
+Mattermost Server v11.4 (February 2026)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Photoshop Document (PSD) files are now no longer inline previewed, they are treated as regular file attachments. This change has also been applied to v11.3.1, v11.2.3, and v10.11.11 (Extended Support Release) dot releases.
 
 Mattermost Mobile App v2.36.4 (January 2026)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
