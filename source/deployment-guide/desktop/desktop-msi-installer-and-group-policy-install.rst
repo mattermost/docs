@@ -241,10 +241,6 @@ From version v5.9.0 of the Mattermost desktop app, the following silent MSI inst
 Install for all users
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. note::
-
-   From v6.1.0, the MSI installer defaults to per-machine (all users) installation. The ``ALLUSERS`` parameter is no longer required but can still be specified explicitly if desired.
-
 For versions prior to v6.1.0, use the ``ALLUSERS`` parameter to install the MSI for all users:
 
 **Command Prompt:** ``msiexec /i mattermost-desktop-<version>-x64.msi ALLUSERS=1``
