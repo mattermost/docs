@@ -43,8 +43,7 @@ If your organization has policies restricting external telemetry or data transmi
 
 1. **Communicate with users**: Inform users about this default-enabled feature and provide guidance on whether to disable it based on your organization's data handling policies
 2. **User control**: Users can disable error reporting at any time through the desktop app Settings. The setting requires an app restart to take effect
-3. **Build-time control**: Organizations building the desktop app from source can prevent Sentry initialization entirely by omitting the ``MM_DESKTOP_BUILD_SENTRYDSN`` environment variable during the build process
-4. **Compliance considerations**: Organizations subject to data residency requirements or strict data handling policies should evaluate whether Sentry's error tracking aligns with their compliance needs
+3. **Compliance considerations**: Organizations subject to data residency requirements or strict data handling policies should evaluate whether Sentry's error tracking aligns with their compliance needs
 
 For more information on disabling error reporting, see the :doc:`desktop app troubleshooting guide </deployment-guide/desktop/desktop-troubleshooting>`. For comprehensive privacy and compliance information, see :doc:`Desktop app privacy and data handling </deployment-guide/desktop/desktop-app-privacy>`.
 
