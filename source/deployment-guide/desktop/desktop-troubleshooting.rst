@@ -32,9 +32,7 @@ If you're not seeing in-app update notifications when new versions are available
 
 4. **Check Group Policy settings** (Enterprise deployments): Your system administrator may have disabled update notifications via the ``EnableAutoUpdates`` Group Policy. Contact your IT department for clarification.
 
-5. **Version already installed**: If you're already running the latest version, no notification will appear.
-
-6. **Version previously skipped**: If you selected **Skip This Version** for the current release, manually check for updates to see it again.
+5. **Version previously skipped**: If you selected **Skip This Version** for the current release, manually check for updates to see it again.
 
 How to manually update Mattermost Desktop
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
