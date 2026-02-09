@@ -11,10 +11,10 @@ Learn more about desktop app :ref:`software requirements <deployment-guide/softw
 Privacy and data handling
 --------------------------
 
-Error reporting (v6.1.0 and later)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Error reporting
+~~~~~~~~~~~~~~~~
 
-From Mattermost Desktop v6.1.0, the desktop app includes automatic error reporting to help identify and fix crashes and stability issues.
+From Mattermost Desktop v6.1, the desktop app includes automatic error reporting to help identify and fix crashes and stability issues.
 
 **What information is sent**
 
@@ -33,16 +33,16 @@ Error reports include:
 
 **Privacy and user control**
 
-Error reporting is **enabled by default**. Users can disable it at any time via **Settings > Advanced > Send error reports to help improve the app** (requires app restart).
+Error reporting is **enabled by default**. Users can disable it at any time by going to **Settings > Advanced > Send error reports to help improve the app**. Restart the app to apply the change.
 
-Organizations with data handling policies should inform users about this feature and provide guidance on whether to disable it. For organizations building from source, error reporting can be disabled at build time by omitting the ``MM_DESKTOP_BUILD_SENTRYDSN`` environment variable.
+Organizations with data handling policies should inform users about this feature and provide guidance on whether to disable it. For organizations building the Desktop app from source, error reporting can be disabled at build time by omitting the ``MM_DESKTOP_BUILD_SENTRYDSN`` environment variable.
 
 Download
 ---------
 
 Download and install the Mattermost desktop app from the `App Store (macOS) <https://www.apple.com/app-store/>`_, `Microsoft Store (Windows) <https://apps.microsoft.com/home?hl=en-US&gl=US>`_, or by :doc:`using a package manager (Linux) </deployment-guide/desktop/linux-desktop-install>`. We strongly recommend installing the desktop app on a local drive. Network shares aren't supported.
 
-In Matermost, users are notified under **Downloads** when new desktop app releases become available. If managing the distribution of the mobile app on behalf of users, you can recommend that your users disable desktop update notifications by going to **… > File > Settings** on Windows or **Mattermost > Settings** on Mac and clearing the **Automatically check for updates** option.
+In Mattermost, users are notified under **Downloads** when new desktop app releases become available. If managing the distribution of the mobile app on behalf of users, you can recommend that your users disable desktop update notifications by going to **… > File > Settings** on Windows or **Mattermost > Settings** on Mac and clearing the **Automatically check for updates** option.
 
 See additional deployment options below to manage distribution of the mobile app to your users.
 
