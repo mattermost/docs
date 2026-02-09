@@ -10,11 +10,6 @@ This page provides guidance on installing the desktop app MSI and use Group Poli
 
    Want to :doc:`distribute the official Windows desktop app silently </deployment-guide/desktop/silent-windows-desktop-distribution>` to your end users instead?
 
-Upgrading to v6.1.0 with MSI installer
----------------------------------------
-
-**Important upgrade consideration:** Users upgrading from pre-v6.1.0 versions using the MSI installer may need to recreate taskbar shortcuts once after the upgrade. This one-time change improves shortcut reliability for future upgrades. Consider advising users in advance that they may need to re-pin taskbar shortcuts after upgrading to v6.1.0.
-
 Download group policy and MSI installer files
 ----------------------------------------------
 
