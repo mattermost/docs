@@ -23,7 +23,7 @@ If you're not seeing in-app update notifications when new versions are available
 
 1. **Check your internet connection**: The desktop app checks ``https://mattermost.com/desktop/version/latest-[platform].json`` for updates. Ensure outbound HTTPS to ``mattermost.com`` is allowed.
 
-2. **Manually check for updates**: Go to **Help > Check for Updates** or **Settings > Updates > Check Now** to trigger an immediate check.
+2. **Manually check for updates**: Go to **Help > Check for Updates** or **Settings > General > Check for Updates Now** to trigger an immediate check.
 
 3. **Verify update notifications are enabled**:
 
