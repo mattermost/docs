@@ -114,7 +114,7 @@ Deployment considerations for v6.1.0+
 
 From Mattermost Desktop v6.1.0, the Windows MSI installer defaults to per-machine (system-wide) installation to meet enterprise compliance requirements. The application installs to ``C:\Program Files\Mattermost`` with registry keys in ``HKLM`` (HKEY_LOCAL_MACHINE), and requires administrator privileges for deployment.
 
-Users upgrading from v5.9-v6.0.4 with per-user installations must manually uninstall the old version before installing v6.1.0 to avoid duplicate installs. See the :doc:`Desktop troubleshooting </deployment-guide/desktop/desktop-troubleshooting>` guide for detailed upgrade instructions.
+Users upgrading from v5.9-v6.0.4 with per-user installations must manually uninstall the old version before installing v6.1.0 to avoid duplicate installs. See the :ref:`Desktop troubleshooting <upgrade-to-v6-1-0-fails-or-installs-duplicate-version-windows-msi>` guide for detailed upgrade instructions.
 
 Multi-view and Group Policies
 ------------------------------
