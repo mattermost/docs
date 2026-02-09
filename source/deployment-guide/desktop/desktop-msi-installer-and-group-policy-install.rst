@@ -212,11 +212,6 @@ Use the ``ALLUSERS`` parameter to install the MSI for all users:
 
 **PowerShell:** ``Start-Process -FilePath "$env:systemroot\system32\msiexec.exe" -ArgumentList '/i mattermost-desktop-v6.0.4-x64.msi ALLUSERS=1'``
 
-.. note::
-   - The ``ALLUSERS`` and ``DISABLEAUTOUPDATE`` parameters control update notification behavior from v6.1.0 onwards (automatic updates have been replaced with notifications).
-   - Installing the MSI for all users (``ALLUSERS=1``) disables update notifications for the desktop app on Windows.
-   - To disable update notifications on a per-user basis, use the ``DISABLEAUTOUPDATE`` parameter: ``msiexec /i mattermost-desktop-v6.0.4-x64.msi DISABLEAUTOUPDATE=1``
-
 Specify an install directory
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
