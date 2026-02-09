@@ -22,14 +22,3 @@ Upgrade the desktop app
 In Matermost, you'll be notified under **Downloads** when a new desktop app release becomes available.
 
 When automatic updates are disabled, you can manually check for updates by selecting **Help > Check for Updates** from the desktop app menu bar.
-
-Windows MSI installer - Upgrading to v6.1.0
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you're upgrading from a version earlier than v6.1.0 using the Windows MSI installer, you may need to recreate your taskbar shortcut once after upgrading.
-
-If your taskbar shortcut shows the wrong icon or fails to launch after upgrading:
-
-1. Right-click the broken shortcut on your taskbar and select **Unpin from taskbar**.
-2. Launch Mattermost Desktop from the Start Menu.
-3. Right-click the Mattermost icon in the taskbar while it's running and select **Pin to taskbar**.
