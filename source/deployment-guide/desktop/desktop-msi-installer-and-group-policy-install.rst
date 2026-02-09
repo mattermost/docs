@@ -112,47 +112,9 @@ Configure Mattermost using group policy settings
 Deployment considerations for v6.1.0+
 -------------------------------------
 
-From Mattermost Desktop v6.1.0, the Windows MSI installer defaults to per-machine (system-wide) installation to meet enterprise compliance requirements. This affects deployment strategies and upgrade paths.
+From Mattermost Desktop v6.1.0, the Windows MSI installer defaults to per-machine (system-wide) installation to meet enterprise compliance requirements. The application installs to ``C:\Program Files\Mattermost`` with registry keys in ``HKLM`` (HKEY_LOCAL_MACHINE), and requires administrator privileges for deployment.
 
-**What changed:**
-
-- **Default installation**: MSI now installs per-machine by default
-- **Installation location**: Installs to ``C:\Program Files\Mattermost`` (standard Program Files folder)
-- **Shortcuts**: Created in Public folder (accessible to all users on the machine)
-- **Registry keys**: Written to ``HKLM`` (HKEY_LOCAL_MACHINE) instead of ``HKCU`` (per-user registry)
-- **Privileges required**: Deployment requires administrator/elevated privileges
-- **Compliance benefit**: Meets enterprise MSI compliance requirements for system-wide installations
-
-**Upgrade planning - Critical:**
-
-Before deploying v6.1.0, assess your current environment:
-
-1. Determine which Desktop versions users are currently running
-2. Identify users on v5.9-v6.0.4 with per-user installations (highest risk group)
-3. Plan a phased rollout with v5.9-v6.0.4 users requiring manual intervention
-
-**Deployment communication template** (for v5.9-v6.0.4 per-user users):
-
-  "Mattermost Desktop v6.1.0 introduces a system-wide installation model for compliance. Because your current installation is per-user, you must manually uninstall the old version before installing v6.1.0. Please:
-
-  1. Save any open work in Mattermost
-  2. Uninstall Mattermost Desktop via Settings > Apps
-  3. Install v6.1.0 MSI (will install to C:\\Program Files\\Mattermost with admin privileges)
-
-  This is a one-time migration; future upgrades will work normally."
-
-**Registry and monitoring implications:**
-
-- **Monitoring tools**: Update to check ``HKLM`` instead of ``HKCU`` for Mattermost registry keys
-- **Inventory tools**: Application now appears under "Program Files" for all users
-- **Uninstall location**: Appears in system-wide installed programs (all users), not per-user
-
-**Support readiness:**
-
-- **Expected tickets**: Users on v5.9-v6.0.4 per-user installs reporting "upgrade didn't work"
-- **Triage question**: "What version are you upgrading from?"
-- **Resolution for v5.9-v6.0.4 per-user**: Walk user through uninstall of old version, then guide fresh install of v6.1.0 (may require admin support if user lacks privileges)
-- **Resolution for < v5.9**: Advise user to delete extra Start Menu shortcut
+Users upgrading from v5.9-v6.0.4 with per-user installations must manually uninstall the old version before installing v6.1.0 to avoid duplicate installs. See the :doc:`Desktop troubleshooting </deployment-guide/desktop/desktop-troubleshooting>` guide for detailed upgrade instructions.
 
 Multi-view and Group Policies
 ------------------------------
