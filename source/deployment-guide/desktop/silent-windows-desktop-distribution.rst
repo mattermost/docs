@@ -4,12 +4,6 @@ Silent Windows desktop distribution
 .. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
-.. important::
-
-   **Windows EXE Installer Discontinued**
-
-   From Mattermost Desktop v6.1.0, the Windows EXE installer is no longer available. Only the MSI installer and Microsoft Store versions are supported. This documentation has been updated to reflect MSI-based silent installation.
-
 You can distribute the official Windows desktop app silently to end users using the MSI installer, pre-configured with server URLs and settings. For comprehensive MSI installation options including Group Policy configuration, see the :doc:`MSI installer and Group Policy guide </deployment-guide/desktop/desktop-msi-installer-and-group-policy-install>`.
 
 Silent MSI installation
