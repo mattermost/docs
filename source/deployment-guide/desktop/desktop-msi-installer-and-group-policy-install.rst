@@ -154,26 +154,6 @@ Before deploying v6.1.0, assess your current environment:
 - **Resolution for v5.9-v6.0.4 per-user**: Walk user through uninstall of old version, then guide fresh install of v6.1.0 (may require admin support if user lacks privileges)
 - **Resolution for < v5.9**: Advise user to delete extra Start Menu shortcut
 
-**Standardization benefits (going forward):**
-
-- All new installs consistent: per-machine, Program Files location
-- Simplified inventory: Single install location across organization
-- Compliance alignment: System-wide installs meet enterprise requirements
-- Future upgrades: Simplified (no per-user/per-machine conflicts)
-
-**Risk assessment:**
-
-- **Affected population**: Users on v5.9-v6.0.4 with per-user installs (likely majority from those versions)
-- **Risk**: Failed/incomplete upgrades if users don't follow manual uninstall procedure
-- **Mitigation**: Proactive communication, helpdesk readiness, phased rollout
-- **Residual risk**: Dual installations if users don't uninstall old version first
-
-**Compliance verification:**
-
-- Verify all installations post-v6.1.0 appear in Program Files (not user directories)
-- Check that Mattermost registry keys appear in ``HKLM`` post-v6.1.0
-- Document known upgrade issues for audit trail
-
 Multi-view and Group Policies
 ------------------------------
 
