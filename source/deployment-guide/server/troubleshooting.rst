@@ -52,22 +52,15 @@ Log files not accessible
 
 From Mattermost v11.4, log file paths are validated to ensure they remain within a designated logging root directory.
 
-**Symptom**: Log files not appearing in **System Console > Reporting > Server Logs** or support packets. Error messages in server console indicate log file path is outside allowed directory.
+1. If log files aren't appearing in **System Console > Reporting > Server Logs** or support packets, check error messages in server console to see if the log file path is outside the allowed directory: ``"Blocked attempt to read log file outside allowed root"`` Log file paths outside the directory specified by the ``MM_LOG_PATH`` environment variable generate errors and are excluded from support packet downloads. If ``MM_LOG_PATH`` is not set, the default ``logs`` directory is used.
 
-**Common error message**: ``"Blocked attempt to read log file outside allowed root"``
-
-**Cause**: Log file paths outside the directory specified by the ``MM_LOG_PATH`` environment variable generate errors and are excluded from support packet downloads. If ``MM_LOG_PATH`` is not set, the default ``logs`` directory is used.
-
-**Troubleshooting steps**:
-
-1. Check the server console logs for error messages containing ``"Blocked attempt to read log file outside allowed root"``
-2. The error message will identify which configuration setting has an invalid path:
+   The error message will identify which configuration setting has an invalid path:
 
    - ``LogSettings.FileLocation`` - main server log file
    - ``LogSettings.AdvancedLoggingJSON`` - advanced logging file targets
    - ``ExperimentalAuditSettings.AdvancedLoggingJSON`` - audit logging file targets
 
-3. Choose one of these solutions:
+2. Choose one of these solutions:
 
    **Option A - Use default logging directory**:
 
@@ -81,37 +74,11 @@ From Mattermost v11.4, log file paths are validated to ensure they remain within
    - Ensure all configured log file paths are within this root directory
    - Restart Mattermost server
 
-4. Verify logs are accessible:
+3. Verify logs are accessible:
 
    - Navigate to **System Console > Reporting > Server Logs**
    - Confirm log entries are visible
    - Generate a test support packet to verify logs are included
-
-**Decision flowchart**:
-
-.. code-block:: text
-
-   Log files not accessible?
-   │
-   ├─> Check server console for "Blocked attempt" errors
-   │   │
-   │   ├─> Error found?
-   │   │   │
-   │   │   └─> Note which config setting is invalid
-   │   │       │
-   │   │       ├─> Using default logs directory?
-   │   │       │   │
-   │   │       │   ├─> YES: No action needed
-   │   │       │   │
-   │   │       │   └─> NO: Choose solution
-   │   │       │       │
-   │   │       │       ├─> Option A: Update config to use
-   │   │       │       │             default logs directory
-   │   │       │       │
-   │   │       │       └─> Option B: Set MM_LOG_PATH to
-   │   │       │                     match your log paths
-   │   │       │
-   │   │       └─> Restart server and verify
 
 See the :ref:`log path restrictions <administration-guide/manage/logging:log path restrictions>` documentation for detailed configuration examples.
 
