@@ -6,10 +6,10 @@ Install the Mattermost desktop app
 
 Download and install the Mattermost desktop app `for macOS from the App Store <https://apps.apple.com/us/app/mattermost-desktop/id1614666244?mt=12>`_, `for Windows from the Microsoft Store <https://apps.microsoft.com/detail/xp8br8mh3lpklt?hl=en-US&gl=US>`_, or by :doc:`using a package manager (Linux) </deployment-guide/desktop/linux-desktop-install>`. When new desktop app releases become available, your desktop app is automatically updated.
 
-We strongly recommend installing the desktop app on a local drive. Network shares aren't supported. 
+We strongly recommend installing the desktop app on a local drive. Network shares aren't supported.
 
 1. When prompted, enter the Mattermost server link and a display name for the Mattermost instance. The display name is helpful in cases where you connect to multiple Mattermost instances. See the :doc:`server connections </end-user-guide/preferences/connect-multiple-workspaces>` documentation for details.
-2. Enter your user credentials to log into Mattermost. 
+2. Enter your user credentials to log into Mattermost.
 3. The team that displays first in the team sidebar opens. If you're not a member of a team yet, you're prompted to select a team to join.
 
 .. note::
@@ -19,6 +19,6 @@ We strongly recommend installing the desktop app on a local drive. Network share
 Upgrade the desktop app
 ------------------------
 
-In Matermost, you'll be notified under **Downloads** when a new desktop app release becomes available.
+In Matermost, you're notified under **Downloads** when new desktop app releases become available.
 
 When automatic updates are disabled, you can manually check for updates by selecting **Help > Check for Updates** from the desktop app menu bar.
