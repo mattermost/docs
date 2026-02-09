@@ -44,8 +44,6 @@ The following group policies are available supporting a state option of Not Conf
   | Default Server List      | Define one or more default, permanent servers.             | v4.3 or later        | ``DefaultServerList``      |
   +--------------------------+------------------------------------------------------------+----------------------+----------------------------+
   | Update Notifications     | If disabled, in-app update notifications are not shown.    | v5.1 or later        | ``EnableAutoUpdates``      |
-  |                          | From v6.1.0, this controls notifications only (not         |                      |                            |
-  |                          | automatic downloads/installs).                             |                      |                            |
   +--------------------------+------------------------------------------------------------+----------------------+----------------------------+
 
 1. Browse to the folder the above files were downloaded to and unzip the ``desktop-6.0.3.zip`` file in place.
@@ -77,19 +75,6 @@ The following group policies are available supporting a state option of Not Conf
 
    * ``\\FQDNDomain\sysvol\FQDNDomain\Policies\PolicyDefinitions`` can be used instead of ``C:\Windows\PolicyDefinitions`` if available.
    * ``\\FQDNDomain\sysvol\FQDNDomain\Policies\PolicyDefinitions\en-US`` can be used instead of ``C:\Windows\PolicyDefinitions\en-US`` if available.
-
-.. important::
-
-   **Update Mechanism Change in v6.1.0**
-
-   From Mattermost Desktop v6.1.0, automatic updates have been replaced with an in-app notification system. The desktop app checks Mattermost's website for new versions and displays notifications in the Downloads dropdown. Users must manually download and install updates.
-
-   - The ``EnableAutoUpdates`` Group Policy now controls whether update **notifications** are displayed (not automatic installations)
-   - When disabled, users will not see update notifications
-   - Organizations managing desktop updates centrally (via SCCM, Intune, etc.) should disable this policy
-   - App Store and Microsoft Store versions receive updates through their respective platforms
-
-   For more information, see `this forum post <https://forum.mattermost.com/t/important-update-changes-to-desktop-app-auto-updater/25657>`__.
 
 **Disable update notifications**
 
