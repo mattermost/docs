@@ -56,7 +56,7 @@ From Mattermost v11.4, log file paths are validated to ensure they remain within
 
 **Common error message**: ``"Blocked attempt to read log file outside allowed root"``
 
-**Cause**: Log file paths must be within the directory specified by the ``MM_LOG_PATH`` environment variable. If ``MM_LOG_PATH`` is not set, log files must be within the default ``logs`` directory.
+**Cause**: Log file paths outside the directory specified by the ``MM_LOG_PATH`` environment variable generate errors and are excluded from support packet downloads. If ``MM_LOG_PATH`` is not set, the default ``logs`` directory is used.
 
 **Troubleshooting steps**:
 

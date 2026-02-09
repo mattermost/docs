@@ -280,8 +280,8 @@ All log file paths configured via the following settings are validated:
 
 1. Paths are resolved to absolute paths
 2. Symlinks are resolved to their actual locations
-3. The resolved path must be within the logging root directory
-4. Paths outside the root directory are blocked
+3. The resolved path is validated against the logging root directory
+4. Paths outside the root directory generate error logs and are excluded from downloads
 
 **When validation occurs**:
 
@@ -289,7 +289,7 @@ All log file paths configured via the following settings are validated:
 - When generating support packets
 - During configuration changes (warnings logged for invalid paths)
 
-**Error behavior**: When a log file path is outside the allowed root directory, Mattermost blocks access and logs an error: ``"Blocked attempt to read log file outside allowed root"``. The error message includes the file path, configuration section, and validation failure details.
+**Error behavior**: When a log file path is outside the allowed root directory, Mattermost logs an error and excludes the file from support packet downloads: ``"Blocked attempt to read log file outside allowed root"``. The error message includes the file path, configuration section, and validation failure details.
 
 Configuration requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -350,7 +350,7 @@ Troubleshooting log path validation
 
 **Symptom**: Log files not appearing in **System Console > Reporting > Server Logs** or support packets; error message indicating log file path is outside allowed directory.
 
-**Cause**: From v11.4, log file paths must be within the logging root directory.
+**Cause**: From v11.4, log file paths outside the logging root directory generate errors and are excluded from downloads.
 
 **Solution**:
 
@@ -756,7 +756,7 @@ File targets support rotation and compression triggered by size and/or duration.
 +-------------+----------+---------------------------------------------------------------------------------------------------------------------+
 | **Key**     | **Type** | **Description**                                                                                                     |
 +-------------+----------+---------------------------------------------------------------------------------------------------------------------+
-| filename    | string   | Full path to the output file. From v11.4, must be within the directory specified by ``MM_LOG_PATH``.                |
+| filename    | string   | Full path to the output file. From v11.4, should be within the directory specified by ``MM_LOG_PATH``.              |
 +-------------+----------+---------------------------------------------------------------------------------------------------------------------+
 | max_size    | number   | Maximum size, in megabytes (MB), the log file can grow before it gets rotated. Default is ``100`` MB.               |
 +-------------+----------+---------------------------------------------------------------------------------------------------------------------+
