@@ -27,7 +27,7 @@ Download group policy and MSI installer files
    .. image:: ../../images/desktop/msi_gpo/msi_gpo_installation_test_00002.png
       :alt: Go to the mattermost/desktop repository on GitHub.
 
-3. Navigate to the `releases page <https://github.com/mattermost/desktop/releases>`__ and download the appropriate installer for your version of Windows (32-bit vs. 64-bit) from the latest release.
+3. Navigate to the `releases page <https://github.com/mattermost/desktop/releases>`__ and download the 64-bit installer from the latest release.
 
 4. Expand the **Assets** dropdown and download the **Source code (zip)** file to extract group policy files.
 
