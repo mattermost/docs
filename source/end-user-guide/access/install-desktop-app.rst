@@ -6,10 +6,6 @@ Install the Mattermost desktop app
 
 Download and install the Mattermost desktop app `for macOS from the App Store <https://apps.apple.com/us/app/mattermost-desktop/id1614666244?mt=12>`_, `for Windows from the Microsoft Store <https://apps.microsoft.com/detail/xp8br8mh3lpklt?hl=en-US&gl=US>`_, or by :doc:`using a package manager (Linux) </deployment-guide/desktop/linux-desktop-install>`.
 
-.. important::
-
-   From Mattermost Desktop v6.1.0, updates are no longer downloaded and installed automatically. You'll receive an in-app notification when updates are available, and you'll need to manually download and install them. This provides more reliable update notifications across all platforms while giving you control over when to update.
-
 We strongly recommend installing the desktop app on a local drive. Network shares aren't supported. 
 
 1. When prompted, enter the Mattermost server link and a display name for the Mattermost instance. The display name is helpful in cases where you connect to multiple Mattermost instances. See the :doc:`server connections </end-user-guide/preferences/connect-multiple-workspaces>` documentation for details.
