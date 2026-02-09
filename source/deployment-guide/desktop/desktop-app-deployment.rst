@@ -22,7 +22,7 @@ Windows distribution options (v6.1.0+)
 
 Starting with v6.1.0, organizations deploying on Windows have two primary distribution options:
 
-- **Windows Store**: Provides automatic updates through the Microsoft Store infrastructure. This is the recommended option for most end users. Organizations can deploy through InTune for centralized management.
+- **Windows Store**: Provides automatic updates through the Microsoft Store infrastructure. This is the recommended option for most end users. Organizations can deploy Windows Store apps through InTune for centralized management.
 - **MSI packages**: Traditional deployment method with full control over installation timing. See the :doc:`MSI installer and group policy guide </deployment-guide/desktop/desktop-msi-installer-and-group-policy-install>` for details.
 
 From v6.1.0, the desktop app includes in-app update notifications. All distribution channels release simultaneously to ensure users receive consistent update notifications regardless of installation method.
