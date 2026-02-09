@@ -15,17 +15,11 @@ Silent MSI installation
 
 3. Use your software deployment tool (SCCM, Intune, PDQ Deploy, etc.) to deploy the MSI with silent installation parameters:
 
-   **Basic silent install:**
+   **Silent install:**
 
    .. code-block:: text
 
       msiexec /i \\SERVER\shared_folder\mattermost-desktop-v6.1.0-x64.msi /qn
-
-   **Silent install for all users with disabled update notifications:**
-
-   .. code-block:: text
-
-      msiexec /i \\SERVER\shared_folder\mattermost-desktop-v6.1.0-x64.msi /qn ALLUSERS=1 DISABLEAUTOUPDATE=1
 
 Pre-configuration with config.json
 -----------------------------------
@@ -73,7 +67,7 @@ To pre-configure servers and settings, create a ``config.json`` file in the user
 .. code-block:: batch
 
    rem Install Mattermost desktop app silently
-   msiexec /i \\SERVER\shared_folder\mattermost-desktop-v6.1.0-x64.msi /qn ALLUSERS=1 DISABLEAUTOUPDATE=1
+   msiexec /i \\SERVER\shared_folder\mattermost-desktop-v6.1.0-x64.msi /qn
 
    rem Wait for installation to complete
    timeout /t 10
