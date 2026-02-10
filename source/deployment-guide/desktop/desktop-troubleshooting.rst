@@ -47,29 +47,28 @@ Desktop App displays white screen while launching and doesn't load the page
 1. Delete the local ``Mattermost desktop app`` configuration file. See the `Where is configuration stored locally? <#where-is-configuration-stored-locally>`__ section above for file location details.
 2. Reinstall the application. 
 
+.. _upgrade-to-v6-1-0-fails-or-installs-duplicate-version-windows-msi:
+
 Upgrade to v6.1.0 fails or installs duplicate version (Windows MSI)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Symptom**: After installing v6.1.0 MSI, the old version still appears, both versions are present, or the upgrade doesn't seem to work.
+After installing v6.1.0 MSI, the old version still appears, both versions are present, or the upgrade doesn't seem to work. This is because you had a per-user installation from v5.9 to v6.0.4. From v6.1.0, the MSI installer defaults to per-machine (system-wide) installation. MSI installers cannot automatically upgrade across different installation contexts (per-user to per-machine).
 
-**Cause**: You had a per-user installation from v5.9-v6.0.4. From v6.1.0, the MSI installer defaults to per-machine (system-wide) installation. MSI installers cannot automatically upgrade across different installation contexts (per-user to per-machine).
+To check your installation type before upgrading, open File Explorer.
 
-**Solution**:
+- If Mattermost is in ``C:\Program Files\Mattermost`` or ``C:\Program Files (x86)\Mattermost``: Per-machine install (upgrade will work normally)
+- If Mattermost is in ``C:\Users\<YourName>\AppData\Local\...``: Per-user install (requires manual uninstall before v6.1.0)
+
+To resolve this issue, you must manually uninstall the old version before installing v6.1.0:
 
 1. Uninstall both versions:
 
-   - Go to **Settings > Apps** or **Control Panel > Programs and Features**
-   - Uninstall all Mattermost Desktop entries
+   - Go to **Settings > Apps** or **Control Panel > Programs and Features**.
+   - Uninstall all Mattermost Desktop entries.
 
-2. Download the v6.1.0 MSI installer again from the `releases page <https://github.com/mattermost/desktop/releases>`__
-3. Install v6.1.0 with administrator privileges (it will install to ``C:\Program Files\Mattermost``)
-4. Future upgrades will work normally
-
-**How to check your installation type** (before upgrading):
-
-- Open File Explorer
-- If Mattermost is in ``C:\Program Files\Mattermost`` or ``C:\Program Files (x86)\Mattermost``: Per-machine install (upgrade will work normally)
-- If Mattermost is in ``C:\Users\<YourName>\AppData\Local\...``: Per-user install (requires manual uninstall before v6.1.0)
+2. Download the v6.1.0 MSI installer again from the `releases page <https://github.com/mattermost/desktop/releases>`__.
+3. Install v6.1.0 with administrator privileges (it will install to ``C:\Program Files\Mattermost``).
+4. Future upgrades will work normally.
 
 "Installation has failed" dialog
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

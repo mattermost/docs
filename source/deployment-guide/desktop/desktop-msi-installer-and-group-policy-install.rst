@@ -4,15 +4,11 @@ Desktop MSI installer and group policy guide
 .. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
-This page provides guidance on installing the desktop app MSI and use Group Policies in Windows for Mattermost Enterprise or Professional. The MSI installer package can be downloaded from the `Mattermost Desktop releases page <https://github.com/mattermost/desktop/releases>`_.
+This page provides guidance on installing the desktop app MSI and use Group Policies in Windows for Mattermost Enterprise or Professional. The MSI installer package can be downloaded from the `Mattermost Desktop releases page <https://github.com/mattermost/desktop/releases>`_. See the :doc:`Silent Windows desktop distribution </deployment-guide/desktop/silent-windows-desktop-distribution>` documentation for details on how to distribute the official Windows desktop app silently to your end users instead.
 
 .. important::
 
    **Per-machine installation from v6.1.0**: From Mattermost Desktop v6.1.0, the Windows MSI installer defaults to per-machine (system-wide) installation to meet enterprise compliance requirements. This changes deployment strategies and upgrade paths. See the `Deployment considerations for v6.1.0+ <#deployment-considerations-for-v6-1-0>`__ section below for details.
-
-.. tip::
-
-   Want to :doc:`distribute the official Windows desktop app silently </deployment-guide/desktop/silent-windows-desktop-distribution>` to your end users instead?
 
 Download group policy and MSI installer files
 ----------------------------------------------
@@ -114,7 +110,7 @@ Deployment considerations for v6.1.0+
 
 From Mattermost Desktop v6.1.0, the Windows MSI installer defaults to per-machine (system-wide) installation to meet enterprise compliance requirements. The application installs to ``C:\Program Files\Mattermost`` with registry keys in ``HKLM`` (HKEY_LOCAL_MACHINE), and requires administrator privileges for deployment.
 
-Users upgrading from v5.9-v6.0.4 with per-user installations must manually uninstall the old version before installing v6.1.0 to avoid duplicate installs. See `Desktop troubleshooting <desktop-troubleshooting.html#upgrade-to-v6-1-0-fails-or-installs-duplicate-version-windows-msi>`__ for detailed upgrade instructions.
+Users upgrading from v5.9 to v6.0.4 with per-user installations must manually uninstall the old version before installing v6.1.0 to avoid duplicate installs. See :ref:`Desktop troubleshooting <upgrade-to-v6-1-0-fails-or-installs-duplicate-version-windows-msi>` for detailed upgrade instructions.
 
 Multi-view and Group Policies
 ------------------------------
@@ -221,4 +217,4 @@ Use the ``APPLICATIONFOLDER`` parameter to specify an installation directory for
 - **Command Prompt:** ``msiexec /i mattermost-desktop-<version>-x64.msi APPLICATIONFOLDER="<install directory>"``
 - **PowerShell:** ``Start-Process -FilePath "$env:systemroot\system32\msiexec.exe" -ArgumentList '/i mattermost-desktop-<version>-x64.msi APPLICATIONFOLDER="<install directory>"'``
 
-Replace ``<version>`` with the actual version number and ``<install directory>`` with your desired installation path. Note that from v6.1.0, the default installation directory is ``C:\Program Files\Mattermost``.
+Replace ``<version>`` with the actual version number and ``<install directory>`` with your desired installation path. From v6.1.0, the default installation directory is ``C:\Program Files\Mattermost``.
