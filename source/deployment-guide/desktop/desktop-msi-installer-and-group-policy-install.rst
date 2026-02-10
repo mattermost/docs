@@ -40,7 +40,7 @@ Download group policy and MSI installer files
 1. Using a newly created Windows VM or dedicated Windows computer, make sure to use a Windows version that supports ``Edit group policy`` out of the box (i.e. Windows 10 Pro or Enterprise).
 
    .. image:: ../../images/desktop/msi_gpo/msi_gpo_installation_test_00001.png
-      :alt: When downloading group policy and MIS installer files, ensure to use a Windows version that supports Edit group policy. 
+      :alt: When downloading group policy and MIS installer files, ensure to use a Windows version that supports Edit group policy.
 
 2. Navigate to the `Mattermost Desktop <https://github.com/mattermost/desktop>`__ repository on `GitHub.com <https://github.com/>`__.
 
@@ -77,10 +77,10 @@ The following group policies are available supporting a state option of Not Conf
 
 2. Navigate to the unzipped ``desktop-6.0.3\resources\windows\gpo`` folder and copy the contents.
 
-   .. image:: ../../images/desktop/msi_gpo/msi_gpo_installation_test_00005.png 
+   .. image:: ../../images/desktop/msi_gpo/msi_gpo_installation_test_00005.png
       :alt: Go to the \resources\windows\gpo directory and copy its contents.
 
-3. Navigate to the ``C:\Windows\PolicyDefinitions`` folder and paste the files copied in the last step. 
+3. Navigate to the ``C:\Windows\PolicyDefinitions`` folder and paste the files copied in the last step.
 
    .. image:: ../../images/desktop/msi_gpo/msi_gpo_installation_test_00006.png
       :alt: Go to the Windows\PolicyDefinitions directory and paste the files you copied in the previous step.
@@ -112,7 +112,7 @@ Configure Mattermost using group policy settings
    .. image:: ../../images/desktop/msi_gpo/msi_gpo_installation_test_00009.png
       :alt: When configuring Mattermost using group policy settings, run the Edit group policy application by going to Start, typing gpedit into the search field, then selecting the resulting Edit group policy search option.
 
-2. In the **Edit group policy** window, navigate to ``Local Computer Policy\Computer Configuration\Administrative Templates\Mattermost``. In this example, double-click on ``DefaultServerList`` to set one or more default servers that will appear on app launch. 
+2. In the **Edit group policy** window, navigate to ``Local Computer Policy\Computer Configuration\Administrative Templates\Mattermost``. In this example, double-click on ``DefaultServerList`` to set one or more default servers that will appear on app launch.
 
    .. image:: ../../images/desktop/msi_gpo/msi_gpo_installation_test_00010.png
       :alt: In the Edit group policy window, go to Local Computer Policy > Computer Configuration > Administrative Templates > Mattermost. To set one or more default servers to appear on app launch, for example, double-click on DefaultServerList to begin.
@@ -159,7 +159,7 @@ Install the Mattermost Desktop App using the MSI installer
 
 .. important::
 
-   - If the desktop app is running when you install via the MSI, Mattermost prompts you to close the app manually. After acknkowledging the prompt, select **Retry** to continue the MSI installation. 
+   - If the desktop app is running when you install via the MSI, Mattermost prompts you to close the app manually. After acknkowledging the prompt, select **Retry** to continue the MSI installation.
    - Avoid selecting **Ignore**. If you do, force close the desktop app using Task Manager, ensure the ``Mattermost.exe`` process is stopped, and then restart the MSI installation.
 
 1. Within the folder the MSI installer was downloaded to, double-click on the MSI installer to begin the Mattermost Desktop installation process.
@@ -185,7 +185,7 @@ Verify group policy settings in the installed desktop app
 2. Verify the app loads the first server you defined in the **Edit group policy** app.
 
    .. image:: ../../images/desktop/msi_gpo/msi_gpo_installation_test_00018.png
-      :alt: Verify group policy settings in the Mattermost Desktop App by opening the app from the Start menu, and verifying that the app loads the first server you defined in the Edit group policy. 
+      :alt: Verify group policy settings in the Mattermost Desktop App by opening the app from the Start menu, and verifying that the app loads the first server you defined in the Edit group policy.
 
 Advanced MSI options
 --------------------
