@@ -44,7 +44,7 @@ If you upgrade from a release earlier than v11.3, please read the other [Importa
 #### Administration
  - Added debug logs to indicate if the scheduled post job, Do Not Disturb status reset job, or the post reminder job is not running with the current node not being a leader node [MM-66861](https://mattermost.atlassian.net/browse/MM-66861).
  - Added CPU cores and total memory to the Support Packet [MM-66840](https://mattermost.atlassian.net/browse/MM-66840).
- - Added a new ``MM_LOG_PATH`` environment variable to restrict log file locations. Log files must now be within a configured root directory.
+ - Added a new ``MM_LOG_PATH`` environment variable to [restrict log file locations](https://docs.mattermost.com/administration-guide/manage/logging.html#log-path-restrictions). Log files must now be within a configured root directory.
 
 ### Bug Fixes
  - Fixed an issue with the behavior of the right‑hand sidebar (RHS) when navigating to global threads. The application now checks the current RHS state and suppresses the sidebar only if it is not showing mentions, search results, or flagged posts [MM-66871](https://mattermost.atlassian.net/browse/MM-66871). 
