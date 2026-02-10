@@ -23,17 +23,12 @@ In Matermost, you'll be notified under **Downloads** when a new desktop app rele
 
 When automatic updates are disabled, you can manually check for updates by selecting **Help > Check for Updates** from the desktop app menu bar.
 
-Windows MSI installer - Upgrading to v6.1.0
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Upgrading to v6.1.0 using Windows MSI installer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you're upgrading from a version earlier than v6.1.0 using the Windows MSI installer, you may need to recreate your taskbar shortcut once after upgrading. This one-time change improves shortcut reliability and prevents shortcuts from breaking during future upgrades.
 
-**Why this is needed:** Prior to v6.1.0, installing over an older Desktop App version could break shortcuts. The v6.1.0 MSI installer uses a more reliable method for shortcut icons that prevents this issue in future upgrades.
-
-**Note:** This only affects Windows MSI installer upgrades. The Windows Store version is not affected, and future upgrades to v6.1.1 and later won't require shortcut recreation.
-
-Recreate your taskbar shortcut (Windows)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Prior to v6.1.0, installing over an older Desktop App version could break shortcuts. The v6.1.0 MSI installer uses a more reliable method for shortcut icons that prevents this issue in future upgrades. This only affects Windows MSI installer upgrades. The Windows Store version is not affected, and future upgrades to v6.1.1 and later won't require shortcut recreation.
 
 If your taskbar shortcut shows the wrong icon or fails to launch after upgrading to v6.1.0:
 

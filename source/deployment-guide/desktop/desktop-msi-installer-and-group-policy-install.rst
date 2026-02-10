@@ -10,33 +10,29 @@ This page provides guidance on installing the desktop app MSI and use Group Poli
 
    Want to :doc:`distribute the official Windows desktop app silently </deployment-guide/desktop/silent-windows-desktop-distribution>` to your end users instead?
 
-Windows distribution options (v6.1.0+)
----------------------------------------
+Windows distribution options
+----------------------------
 
-Starting with Mattermost Desktop v6.1.0, multiple Windows distribution options are available:
+From desktop v6.1, the following Windows distribution options are available:
 
 - **Windows Store**: Primary option for automatic updates. Recommended for most users. The Windows Store version handles updates automatically through the Microsoft Store infrastructure.
 - **MSI installer**: Direct download option for traditional deployment methods. This guide covers MSI deployment.
 
-From v6.1.0, the desktop app includes in-app update notifications that check the Mattermost website for new versions. All distribution channels (Windows Store, MSI, Mac App Store, Flathub, APT/RPM) release simultaneously to ensure users receive consistent update notifications regardless of their installation method.
+From v6.1, the desktop app includes in-app update notifications that check the Mattermost website for new versions. All distribution channels (Windows Store, MSI, Mac App Store, Flathub, APT/RPM) release simultaneously to ensure users receive consistent update notifications regardless of their installation method.
 
 Upgrading to v6.1.0 with MSI installer
 ---------------------------------------
 
-**Important upgrade consideration:** Users upgrading from pre-v6.1.0 versions using the MSI installer may need to recreate taskbar shortcuts once after the upgrade.
+Users upgrading from earlier Desktop app versions using the MSI installer may need to recreate taskbar shortcuts once after the upgrade. The v6.1.0 installer uses a more reliable method for shortcut icons that prevents shortcuts from breaking during future upgrades. This fixes a long-standing issue where shortcuts could break during MSI upgrades. This is a one-time action for the upgrade to v6.1.0. Future upgrades to v6.1.1 and later won't require shortcut recreation. Windows Store deployments aren't affected by this change.
 
-**Why this change was made:** This fixes a long-standing issue where shortcuts could break during MSI upgrades. The v6.1.0 installer uses a more reliable method for shortcut icons that prevents shortcuts from breaking during future upgrades.
+We recommend telling your users in advance that they may need to re-pin the taskbar shortcut after upgrading to desktop app v6.1. Desktop shortcuts are typically unaffected while taskbar shortcuts are most commonly impacted.
 
-**Communication recommendation:** Advise users in advance that they may need to re-pin the taskbar shortcut after upgrading to v6.1.0. Desktop shortcuts are typically unaffected; taskbar shortcuts are most commonly impacted.
+If a user reports a broken shortcut after upgrading to v6.1.0, the user should:
 
-**Scope:** This is a one-time action for the upgrade to v6.1.0. Future upgrades to v6.1.1 and later won't require shortcut recreation. Windows Store deployments are not affected by this change.
-
-**User instructions:** If a user reports a broken shortcut after upgrading to v6.1.0, they should:
-
-1. Right-click the broken shortcut on the taskbar and select "Unpin from taskbar"
-2. Launch Mattermost Desktop from the Start Menu
-3. Right-click the Mattermost icon in the taskbar while running
-4. Select "Pin to taskbar"
+1. Right-click the broken shortcut on the taskbar and select **Unpin from taskbar**.
+2. Launch Mattermost Desktop from the Start Menu.
+3. Right-click the Mattermost icon in the taskbar.
+4. Select **Pin to taskbar**.
 
 Download group policy and MSI installer files
 ----------------------------------------------

@@ -4,15 +4,11 @@ Desktop app troubleshooting
 Broken shortcuts after upgrading to v6.1.0 (Windows MSI only)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Symptom:** After upgrading to Mattermost Desktop v6.1.0 using the Windows MSI installer, the desktop or taskbar shortcut shows the wrong icon or fails to launch.
+After upgrading to Mattermost Desktop v6.1.0 using the Windows MSI installer from an older release, the desktop or taskbar shortcut shows the wrong icon or fails to launch. This is due to a one-time icon handling change in the Windows MSI installer to improve shortcut reliability for future upgrades. 
 
-**Cause:** One-time icon handling change in the Windows MSI installer to improve shortcut reliability for future upgrades.
+This issue doesn't block app usage and only affects Windows MSI installer upgrades from pre-v6.1.0 versions. Users can launch Mattermost from the Start Menu or a working desktop shortcut.Future upgrades to v6.1.1 and later will not require shortcut recreation.
 
-**Impact:** Low impact - this is a one-time action that does not block application usage. Users can still launch Mattermost from the Start Menu.
-
-**Scope:** This issue only affects Windows MSI installer upgrades from pre-v6.1.0 versions. The Windows Store version is not affected. Future upgrades to v6.1.1 and later will not require shortcut recreation.
-
-**Solution:** Recreate the shortcut:
+To resolve this issue, recreate the shortcut:
 
 1. Right-click the broken shortcut on the taskbar and select **Unpin from taskbar**.
 2. Launch Mattermost Desktop from the Start Menu or a working desktop shortcut.
@@ -21,13 +17,7 @@ Broken shortcuts after upgrading to v6.1.0 (Windows MSI only)
 
 The new shortcut will work correctly for all future upgrades.
 
-**Rollout planning (IT Operations):**
-
-- **Known one-time action:** Users upgrading via MSI may need to recreate taskbar shortcuts.
-- **Impact assessment:** Simple user action that doesn't block application usage.
-- **Communication template:** "After upgrading to Mattermost Desktop v6.1.0, you may need to recreate your taskbar shortcut. This is a one-time action that improves upgrade reliability."
-- **Support readiness:** Prepare helpdesk with the shortcut recreation instructions above.
-- **Deployment consideration:** Organizations standardizing on Windows installations can choose between Windows Store (recommended for automatic updates) or MSI packages (traditional deployment). The MSI method includes this one-time shortcut adjustment; the Windows Store method does not.
+Organizations standardizing on Windows installations can choose between Windows Store (recommended for automatic updates) or MSI packages (traditional deployment). The MSI method includes this one-time shortcut adjustment; the Windows Store method doesn't.
 
 Where is configuration stored locally?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
