@@ -533,7 +533,6 @@ Define advanced log output
             }
         }
 
-
     v10.12 or earlier
     ^^^^^^^^^^^^^^^^^^
 
@@ -798,6 +797,66 @@ The TCP socket targets can be configured with an IP address or domain name, port
 +----------+----------+--------------------------------------------------------------------------------------------------------------------------+
 
 ---- 
+
+Cluster job execution debug messages
+-------------------------------------
+
+.. include:: ../../_static/badges/ent-plus.rst
+  :start-after: :nosearch:
+
+From Mattermost v11.4, debug-level log messages are available to help system admins understand cluster job execution behavior in :doc:`high availability </administration-guide/scale/high-availability-cluster-based-deployment>` deployments for specific Recurring Tasks.
+
+These debug messages apply only to the following Recurring Tasks:
+
+- Scheduled Posts
+- Post Reminders
+- DND Status Reset
+
+.. important::
+
+  - These debug messages aren't available for other job types such as Elasticsearch indexing, SAML sync, LDAP sync, data retention, or compliance exports. The absence of these debug messages for other job types doesn't indicate a problem with job execution.
+  - These messages are only visible when debug logging is enabled. See `How do I enable debug logging? <#how-do-i-enable-debug-logging>`__ for details.
+  - In a cluster deployment, only the leader node executes these Recurring Tasks. Non-leader nodes skip these specific jobs and log debug messages to indicate this is expected behavior.
+
+Debug messages for job startup
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When a non-leader node starts up, it skips initialization for these specific Recurring Tasks and logs one of the following debug messages:
+
+- ``Skipping scheduled posts job startup since this is not the leader node``
+- ``Skipping unset DND status job startup since this is not the leader node``
+- ``Skipping post reminder job startup since this is not the leader node``
+
+These messages indicate normal operation. In a high availability cluster, these Recurring Tasks should only run on the leader node to prevent duplicate execution.
+
+Debug messages for leadership changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When a node loses leadership status while these Recurring Tasks are running, it cancels the running tasks and logs:
+
+- ``This is no longer leader node. Cancelling the [job name] task``
+
+Where ``[job name]`` is one of: ``scheduled posts``, ``DND status reset``, or ``post reminder``.
+
+This indicates the cluster is performing leader election correctly. The new leader node will take over execution of these Recurring Tasks.
+
+Troubleshooting with cluster job debug messages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you're investigating why Recurring Tasks (Scheduled Posts, Post Reminders, or DND Status Reset) aren't running on a specific node:
+
+1. Enable debug logging if not already enabled.
+2. Check the logs for the debug messages listed above.
+3. If you see these messages, the node is correctly identified as a non-leader and is behaving as expected.
+4. These Recurring Tasks will be running on the leader node instead.
+
+.. note::
+
+  These debug messages only apply to Recurring Tasks. For other job types (Elasticsearch indexing, SAML sync, LDAP sync, data retention, compliance exports), different logging mechanisms apply. The absence of these specific debug messages for other job types is expected and does not indicate a problem.
+
+For more information about leader election and cluster configuration, see :doc:`High Availability cluster-based deployment </administration-guide/scale/high-availability-cluster-based-deployment>`.
+
+----
 
 Frequently asked questions
 --------------------------
