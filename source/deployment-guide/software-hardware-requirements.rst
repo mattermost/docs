@@ -27,9 +27,9 @@ Desktop apps
 Though not officially supported, the Linux desktop app also runs on RHEL/CentOS 7+.
 
 Flatpak package requirements (Linux)
-""""""""""""""""""""""""""""""""""""
+:::::::::::::::::::::::::::::::::::::
 
-From Mattermost Desktop v6.1.0, Flatpak packages are available for Linux (currently in beta). The Flatpak version requires:
+From Mattermost Desktop v6.1, Flatpak packages are available for Linux (currently in beta). The Flatpak version requires:
 
 - Flatpak runtime installed on the system
 - Freedesktop Platform/SDK 25.08

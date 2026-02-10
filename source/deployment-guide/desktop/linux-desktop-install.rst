@@ -79,7 +79,7 @@ This page describes how to install the Mattermost desktop app on Linux.
 .. tab:: Flatpak
   :parse-titles:
 
-  From Mattermost Desktop v6.1.0, Flatpak packages are available for Linux systems. Flatpak is a universal Linux package format that provides a sandboxed environment and includes runtime dependencies. The Flatpak version is currently in **beta**.
+  From Mattermost Desktop v6.1, Flatpak packages are available for Linux systems. Flatpak is a universal Linux package format that provides a sandboxed environment and includes runtime dependencies. The Flatpak version is currently in **beta**.
 
   .. note::
 
@@ -109,7 +109,7 @@ This page describes how to install the Mattermost desktop app on Linux.
 
       flatpak install mattermost-desktop-{VERSION}-linux-{ARCH}.flatpak
 
-    Replace ``{VERSION}`` with the version number (e.g., 6.1.0) and ``{ARCH}`` with your architecture (x86_64 or aarch64).
+     Replace ``{VERSION}`` with the version number (e.g., ``6.1.0``) and ``{ARCH}`` with your architecture (``x86_64`` or ``aarch64``).
 
   4. Run Mattermost as a desktop app:
 
