@@ -67,7 +67,7 @@ The following group policies are available supporting a state option of Not Conf
   +--------------------------+------------------------------------------------------------+----------------------+----------------------------+
   | Default Server List      | Define one or more default, permanent servers.             | v4.3 or later        | ``DefaultServerList``      |
   +--------------------------+------------------------------------------------------------+----------------------+----------------------------+
-  | Automatic Updates        | If disabled, automatic desktop app updates are disabled.   | v5.1 or later        | ``EnableAutoUpdates``      |
+  | Update Notifications     | If disabled, in-app update notifications are not shown.    | v5.1 or later        | ``EnableAutoUpdates``      |
   +--------------------------+------------------------------------------------------------+----------------------+----------------------------+
 
 1. Browse to the folder the above files were downloaded to and unzip the source ZIP file in place.
@@ -100,9 +100,9 @@ The following group policies are available supporting a state option of Not Conf
    * ``\\FQDNDomain\sysvol\FQDNDomain\Policies\PolicyDefinitions`` can be used instead of ``C:\Windows\PolicyDefinitions`` if available.
    * ``\\FQDNDomain\sysvol\FQDNDomain\Policies\PolicyDefinitions\en-US`` can be used instead of ``C:\Windows\PolicyDefinitions\en-US`` if available.
 
-**Disable automatic updates**
+**Disable update notifications**
 
-Automatic desktop app updates can be disabled by configuring the supported group policy. Changes to group policies require you to restart Mattermost for those changes to take effect.
+Update notifications can be disabled by configuring the supported group policy. Changes to group policies require you to restart Mattermost for those changes to take effect.
 
 Configure Mattermost using group policy settings
 -------------------------------------------------
@@ -144,7 +144,7 @@ From desktop v6.0, users can run multiple Mattermost workspaces at the same time
 - On Windows, seed the approved list using the ``DefaultServerList`` Group Policy.
 - For scripted installs, seed ``config.json`` on first run to include multiple entries in the ``teams`` array. See the :doc:`Silent Windows desktop distribution </deployment-guide/desktop/silent-windows-desktop-distribution>` documentation for details.
 - To prevent users from adding or removing workspaces, use the existing ``EnableServerManagement`` Group Policy.
-- Disable ``EnableAutoUpdates`` to turn off automatic updates.
+- Disable ``EnableAutoUpdates`` to turn off update notifications.
 
 Verify group policy settings have been applied
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -229,9 +229,7 @@ For versions prior to v6.1.0, use the ``ALLUSERS`` parameter to install the MSI 
 
 **PowerShell:** ``Start-Process -FilePath "$env:systemroot\system32\msiexec.exe" -ArgumentList '/i mattermost-desktop-<version>-x64.msi ALLUSERS=1'``
 
-.. note::
-   - Installing the MSI for all users disables automatic updates for the desktop app on Windows.
-   - To disable automatic updates on a per-user basis, use the ``DISABLEAUTOUPDATE`` parameter: ``msiexec /i mattermost-desktop-<version>-x64.msi DISABLEAUTOUPDATE=1``
+To disable automatic updates on a per-user basis, use the ``DISABLEAUTOUPDATE`` parameter: ``msiexec /i mattermost-desktop-<version>-x64.msi DISABLEAUTOUPDATE=1``
 
 Specify an install directory
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -13,8 +13,6 @@ Download
 
 Download and install the Mattermost desktop app from the `App Store (macOS) <https://www.apple.com/app-store/>`_, `Microsoft Store (Windows) <https://apps.microsoft.com/home?hl=en-US&gl=US>`_, or by :doc:`using a package manager (Linux) </deployment-guide/desktop/linux-desktop-install>`. We strongly recommend installing the desktop app on a local drive. Network shares aren't supported.
 
-From Mattermost Desktop v6.1, Linux users can also install using `Flatpak packages <https://docs.mattermost.com/deployment-guide/desktop/linux-desktop-install.html#itab--Flatpak--0_1-Flatpak>`_ (currently in beta).
-
 In Matermost, users are notified under **Downloads** when new desktop app releases become available. If managing the distribution of the Desktop app on behalf of users, you can recommend that your users disable desktop update notifications by going to **… > File > Settings** on Windows or **Mattermost > Settings** on Mac and clearing the **Automatically check for updates** option.
 
 See additional deployment options below to manage distribution of the desktop app to your users.
@@ -25,7 +23,7 @@ Windows distribution channels
 From desktop v6.1, organizations deploying on Windows have 2 primary distribution options:
 
 - **Windows Store** (recommended): Provides automatic updates through the Microsoft Store infrastructure. This is the recommended option for most organizations seeking streamlined update management.
-- **MSI packages**: Traditional deployment method with full control over installation timing. See the :doc:`MSI installer and group policy guide </deployment-guide/desktop/desktop-msi-installer-and-group-policy-install>` for details.
+- **MSI packages**: Traditional deployment method with full control over installation timing. See the :doc:`MSI installer and group policy guide </deployment-guide/desktop/desktop-msi-installer-and-group-policy-install>` documentation for details.
 
 The desktop v6.1 app includes in-app update notifications. All distribution channels (Windows Store, MSI, Mac App Store, Flathub, APT/RPM) release simultaneously to prevent notification and availability mismatches across deployment methods.
 
