@@ -435,7 +435,6 @@ Define advanced log output
             }
         }
 
-
     v10.12 or earlier
     ^^^^^^^^^^^^^^^^^^
 
@@ -707,7 +706,7 @@ Cluster job execution debug messages
 .. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
-From Mattermost v11.4, debug-level log messages are available to help system admins understand cluster job execution behavior in high availability deployments for specific Recurring Tasks.
+From Mattermost v11.4, debug-level log messages are available to help system admins understand cluster job execution behavior in :doc:`high availability </administration-guide/scale/high-availability-cluster-based-deployment>` deployments for specific Recurring Tasks.
 
 These debug messages apply only to the following Recurring Tasks:
 
@@ -717,13 +716,9 @@ These debug messages apply only to the following Recurring Tasks:
 
 .. important::
 
-  These debug messages are **not** available for other job types such as Elasticsearch indexing, SAML sync, LDAP sync, data retention, or compliance exports. The absence of these debug messages for other job types does not indicate a problem with job execution.
-
-In a cluster deployment, only the leader node executes these Recurring Tasks. Non-leader nodes skip these specific jobs and log debug messages to indicate this is expected behavior.
-
-.. note::
-
-  These messages are only visible when debug logging is enabled. See `How do I enable debug logging? <#how-do-i-enable-debug-logging>`__ for details.
+  - These debug messages aren't available for other job types such as Elasticsearch indexing, SAML sync, LDAP sync, data retention, or compliance exports. The absence of these debug messages for other job types doesn't indicate a problem with job execution.
+  - These messages are only visible when debug logging is enabled. See `How do I enable debug logging? <#how-do-i-enable-debug-logging>`__ for details.
+  - In a cluster deployment, only the leader node executes these Recurring Tasks. Non-leader nodes skip these specific jobs and log debug messages to indicate this is expected behavior.
 
 Debug messages for job startup
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -752,10 +747,10 @@ Troubleshooting with cluster job debug messages
 
 If you're investigating why Recurring Tasks (Scheduled Posts, Post Reminders, or DND Status Reset) aren't running on a specific node:
 
-1. Enable debug logging if not already enabled
-2. Check the logs for the debug messages listed above
-3. If you see these messages, the node is correctly identified as a non-leader and is behaving as expected
-4. These Recurring Tasks will be running on the leader node instead
+1. Enable debug logging if not already enabled.
+2. Check the logs for the debug messages listed above.
+3. If you see these messages, the node is correctly identified as a non-leader and is behaving as expected.
+4. These Recurring Tasks will be running on the leader node instead.
 
 .. note::
 
