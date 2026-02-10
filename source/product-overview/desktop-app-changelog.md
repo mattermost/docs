@@ -40,7 +40,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 #### All Platforms
 
 - Added support for servers with passwordless authentication with [Magic Link for guest users](https://docs.mattermost.com/end-user-guide/access/access-your-workspace.html#magic-link-login-for-guests) (requires Enterprise license) [MM-66445](https://mattermost.atlassian.net/browse/MM-66445).
-- Added Sentry error tracking.
+- Added [Sentry error tracking](https://docs.mattermost.com/deployment-guide/desktop/desktop-app-deployment.html#privacy-and-data-handling).
 - Added in-app notifications for new versions, including for Mac App Store and the Windows MSI.
 
 ### Architectural Changes
