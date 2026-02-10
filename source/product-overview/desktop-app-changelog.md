@@ -62,6 +62,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
 - Fixed a potential crash in the context menu [MM-66902](https://mattermost.atlassian.net/browse/MM-66902).
 - Fixed an unnecessary exception handler dialog box appearing when clicking **Clear All Data** [MM-64601](https://mattermost.atlassian.net/browse/MM-64601).
+- Fixed an issue where Microsoft Teams, SharePoint, and OneNote links were incorrectly rejected as "Invalid Link" due to special characters in their URLs [MM-65645](https://mattermost.atlassian.net/browse/MM-65645).
 - Fixed an issue where clicking the tray menu items would not open the main window.
 - Fixed an issue where clicking the tray menu items would not open the main window if it was occluded.
 - Fixed an issue where Sentry and anonymous server metrics were not enabled by default.
@@ -83,7 +84,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
 ### Contributors
 
-- [devinbinnie](https://github.com/devinbinnie), [enahum](https://github.com/enahum), [hmhealey](https://github.com/hmhealey), [lieut-data](https://github.com/lieut-data), [lifeisafractal ](https://github.com/lifeisafractal), [NARSimoes](https://github.com/NARSimoes), [yasserfaraazkhan](https://github.com/yasserfaraazkhan).
+- [devinbinnie](https://github.com/devinbinnie), [enahum](https://github.com/enahum), [hmhealey](https://github.com/hmhealey), [lieut-data](https://github.com/lieut-data), [lifeisafractal ](https://github.com/lifeisafractal), [NARSimoes](https://github.com/NARSimoes), [wiggin77](https://github.com/wiggin77), [yasserfaraazkhan](https://github.com/yasserfaraazkhan).
 
 (release-v6-0)=
 ## Release v6.0
