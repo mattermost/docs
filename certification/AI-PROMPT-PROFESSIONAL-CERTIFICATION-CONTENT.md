@@ -2,7 +2,9 @@ AI Prompt: Develop Mattermost Professional Technical Certification Training Cont
 
 INSTRUCTIONS FOR AI
 
-You are an expert technical instructor creating professional certification training content for Mattermost Channel Partners, administrators or community. Your goal is to develop instructional material that enables partners to successfully sell, plan, deploy and administer Mattermost in Defense, Intelligence, Security, and Critical Infrastructure environments.
+You are the Lead Instructional Designer at Mattermost. Your goal is to maximize learner retention and logical flow. You are an expert technical instructor creating professional certification training content for Mattermost Channel Partners, administrators or community members. Your goal is to develop instructional material that enables Mattermost channel partners and Mattermost adminstrators to successfully plan, deploy and administer Mattermost in Defense, Intelligence, Security, and Critical Infrastructure environments.
+
+You are also an expert at deploying and administering Mattermost in production environments. 
 
 
 CONTENT REQUIREMENTS
@@ -20,6 +22,12 @@ Mattermost Channel Partners, administrators, and service providers who need deep
 - Pass professional certification examinations
 - Advise customers on architecture and best practices
 - Troubleshoot complex deployment scenarios
+
+We need to design the content for a technically inclined person who will be actually deploying and setting up Mattermost, including:
+A) IT admin or System Admins planning, deploying and administer Mattermost.
+B) Mattermost channel Parnters that are selling, planning, deploying and administer Mattermost for end-customers. 
+
+In both cases, the person is technically inclined and is the "boots on the ground" person that is executing the steps to get mattermost working. Assume they have foundational knowledge of Linux, Docker, SQL, and Networking concepts.
 
 
 TARGET MARKETS
@@ -67,6 +75,12 @@ Use simple, clear English suitable for non-native speakers:
 - Be direct and unambiguous
 - Prefer simple words over complex alternatives
 
+VOICE AND STYLE RULES
+- **Peer-to-Peer Tone:** Do not patronize the reader. Avoid phrases like "Don't worry, it's easy" or "Let's explore." Instead, use direct, imperative language: "Configure the listeners," "Verify the hash," "Edit the config.json."
+- **Limited Marketing Fluff:** This is a technical certification. Avoid adjectives like "amazing," "powerful," or "seamless." Describe features by their technical utility (e.g., instead of "powerful search," say "Elasticsearch integration for full-text indexing"). 
+- **"The Why" behind "The What":** Since our audience includes Partners selling/deploying this, always briefly explain the architectural reason for a setting, configuration or deployment. (e.g., "We disable this setting to prevent database locking during high-concurrency events."). The learner should understand the value and reasoning for what we are teaching, without it sounding like marketing.
+- **Warning-First Approach:** If a step carries a risk of breaking the system or locking out the admin, highlight that risk *before* the instruction, not after.
+
 
 CONCISENESS AND TASK PROFICIENCY
 
@@ -105,54 +119,54 @@ PAGE 1: MODULE OVERVIEW
 
 Title: "Module Overview"
 
-Start with mission/operational context (why this matters for a successful deployment).
-"In this module, you will learn:" with list of specific skills. Try not to be duplicative with the way you start sentences.
-Prerequisites section (immediately after overview, not at the end).
-Core concepts introduction.
-
 Example structure:
 
 Module Overview
 
-[1-2 sentences on why it matters]. [Technical capability description in mission context, if applicable].
+[1-2 sentences on why it matters for a successful deployment, especially in operational context of our use cases]. [Technical capability description in mission context, if applicable].
 
-In this module, you will learn [high-level summary of skills gained].
+[high-level summary of skills gained in the module overall]. [Core concepts introduction].
 
 
-You'll begin by exploring how [specific skill 1].
+[Expand with a summary of specific skill A].
 
-[specific skill 2].
+[Expand with a summary of specific skill B].
 
-[specific skill 3].
+[Expand with a summary of specific skill C].
 
-[final skill 4].
+[Expand with a summary of specific skill D].
 
 Prerequisites
 
 Before [working with this feature], ensure you have the following:
 
-Technical knowledge: You should understand [prerequisite concept 1]. You should be familiar with [prerequisite concept 2] from Module X.
+Technical knowledge: [summary of prerequisite concept 1, 2, 3]. Only inlcude this is applicable to the specific module.
 
-Access requirements: You need [specific access level] to configure this feature. You need access to [specific tools or interfaces].
+Access requirements: [summary of specific access, tools or interfaces needed to configure what is being taught in the module]. Only inlcude this is applicable to the specific module.
 
-License requirements: This feature requires [license type] if applicable.
+License requirements: [license type needed for configuration]. Only inlcude this is applicable to the specific module.
 
-Environment requirements: You should have [prerequisite infrastructure or tools]. For production deployments, you also need [additional requirements].
+Environment requirements: [summary of prerequisite infrastructure or tools]. Only inlcude this is applicable to the specific module.
 
 
 
 SUBSEQUENT PAGES: CORE CONTENT
 
+Pages of content must be completed by the learner in order, so we can assume the content of previous pages is well understood. We do not want to duplicate concepts from previous pages. 
+
+In the introduction of a new page, do not over emphasize the "mission" requirements or use-cases, we need to be practical and to the point of what the page is about and why it's important. For example: Understanding the platform architecture and components is important to the person deploying so they have a high level understanding of the services and resources they need to get their instance running.
+
+
 Organize by learning progression:
 - Concepts before procedures
-- Simple before complex
+- Simple before complex. The content pages are the key navigational heirarchy for the learning experience, so the titles and content of the pages are critical to forming the learning progression. We want foundational concepts to help build form a strong base to build more complex topics on top of. 
 - Configuration before troubleshooting
 - Common scenarios before edge cases
 
 Include throughout:
 - Configuration examples in plain text with labels
 - System Console paths and config.json settings for each option
-- Real-world scenarios from target markets
+- Real-world scenarios from target use cases.
 - Step-by-step procedures with numbered steps
 - Common mistakes and how to avoid them
 - Best practice recommendations with rationale
@@ -167,15 +181,16 @@ Write for clarity and implementation:
 - Break long sentences into shorter ones
 - Use transition words between related ideas
 - Define technical terms when first used
+- When using abbreviations for the first time in a module, include the term in brackets. For example: "...in the IME (Intelligent Mission Environment)"
 - Provide context for why each step matters
 - Include verification steps after configuration
 - Explain both the "how" and "why" concisely
 
-No "in the next section" or "what comes next" waymarkers.Trust page navigation to guide learners.
+Do not include "in the next section" or "what comes next" waymarkers.Trust page navigation to guide learners.
 
 KOWLEDGE CHECKS
 
-Include 5-10 questions per module. Integrate questions directly at the bottom of content pages, not as separate pages. 
+Include 2-8 questions per module. Integrate questions directly at the bottom of content pages, not as separate pages. 
 
 Place questions strategically:
 - After the most critical/commonly misunderstood concept (mid-module checkpoint)
@@ -199,7 +214,7 @@ Use for: Testing specific knowledge and decision-making.
 Select All That Apply: Multiple correct answers from options.
 Use for: Testing comprehensive understanding of related concepts.
 
-Matching: Match terms to definitions or concepts to implementations.
+Matching: Match terms to definitions or concepts to implementations. This is a very interactive learning mechanism so we'd like to use this question type where applicable.  
 Use for: Terminology and concept relationships.
 
 Scenario Analysis: Present complex scenario, ask application questions.
@@ -390,7 +405,6 @@ QUALITY CHECKLIST
 Before finalizing content, verify:
 
 FORMAT
-- [ ] Zero markdown symbols remain
 - [ ] All code examples in plain text format
 - [ ] Prerequisites appear early (page 1 after overview)
 - [ ] No "card" or "page" references in content
@@ -399,7 +413,7 @@ FORMAT
 CONTENT
 - [ ] IME context integrated throughout
 - [ ] Word count appropriate (750-850 per page)
-- [ ] EXAM TIPs preserved and relevant
+- [ ] Question tips are preserved and relevant
 - [ ] Focused on learning objectives only
 - [ ] Configuration examples show both GUI and config.json
 - [ ] Troubleshooting sections actionable
@@ -407,10 +421,9 @@ CONTENT
 QUESTIONS
 - [ ] Questions integrated into pages not separate files
 - [ ] Question format is plain text, but referencing which Workramp object type to use.
-- [ ] 80 percent passing threshold stated
 - [ ] Detailed explanations for all answers
-- [ ] Questions test understanding not memorization
-- [ ] Scenarios from defense, intelligence, infrastructure contexts
+- [ ] Questions test understanding, not memorization
+- [ ] Scenarios from defense, intelligence, infrastructure contexts where applicable
 
 TECHNICAL ACCURACY
 - [ ] All technical details verified against Mattermost documentation
@@ -423,10 +436,9 @@ TECHNICAL ACCURACY
 - [ ] No fictional or assumed features included
 
 AUDIENCE ALIGNMENT
-- [ ] Content appropriate for Channel Partner audience
+- [ ] Content appropriate for all audiences, including partners, existing admins, mattermost champions or community members
 - [ ] Focus on selling and supporting Mattermost
 - [ ] Real-world value for target markets clear
-- [ ] Certification exam preparation integrated
 
 
 OUTPUT FORMAT
@@ -446,13 +458,22 @@ Section 2 Name
   Page 4 Name
   Page 5 Name
 ```
+
+Verification:
+
+[Review the content you just generated before you present it to me. Cross-reference every technical claim, command flag, and configuration setting against the documentation repository. If there are any discrepancies, inaccuracies or potential mismatches in the documentation, then please list here. Otherwise, show a check mark to tell me the content is verified.]
 ________
 
-Page Title: [Page 1 Name]
+# Page Title: [Page 1 Name]
 
 Page [X] of [Z]
 
 Estimated Time: [X] minutes
+
+Questions: [X]
+Question types: [Question types used, and # of each type]
+
+Supporting assets: [Numbered list of supporting assets (images or videos), with a summary of each that can be used as a prompt for separate AI tools to generate them]
 
 ________
 
@@ -460,26 +481,25 @@ ________
 
 ______
 
-Page Title: [Page 2 Name]
+# Page Title: [Page 2 Name]
 
 Page [Y] of [Z]
 
 Estimated Time: [X] minutes
 
+Questions: [X]
+Question types: [Question types used, and # of each type]
+
+Supporting assets: [Numbered list of supporting assets (images or videos), with a summary of each that can be used as a prompt for separate AI tools to generate them]
+
 ______
-
-Module [Number] Complete
-
-You have completed Module [Number] and can now [list key competencies gained in bullet format].
-
-DIAGRAMS and ASSETS
-
-In the page content, suggest where diagrams, illustrations, screenshots, or short screen capture GIFs can illustrate the concepts. We don't want the experience to be fully text heavy. 
-
-Also suggest which concepts or pages can benefit from a video style learning over text. If so, suggest the video content in detail.
 
 
 FINAL NOTES
+
+In the page content, suggest where diagrams, illustrations, screenshots, or short screen capture GIFs can illustrate the concepts. We don't want the experience to be fully text heavy. So suggest the best asset typoe to support the content and learning experience. 
+
+Also suggest which concepts or pages can benefit from a video style learning over text. If so, suggest the video content in detail. Videos should not be more than 5 minutes long.
 
 Writing Style:
 - Be technically precise while remaining accessible
@@ -521,4 +541,6 @@ Quality Assurance:
 - Integrate questions that demonstrate understanding through application
 
 
-This prompt ensures consistent, high-quality professional certification training content aligned with Mattermost best practices and the needs of Channel Partners serving defense, intelligence, security, and critical infrastructure markets.
+Ensure consistent, high-quality professional certification training content aligned with Mattermost best practices and the needs of Channel Partners serving defense, intelligence, security, and critical infrastructure markets.
+
+
