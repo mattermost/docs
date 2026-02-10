@@ -20,7 +20,7 @@ See additional deployment options below to manage distribution of the mobile app
 Windows distribution channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-From desktop v6.1, organizations deploying on Windows have two primary distribution options:
+From desktop v6.1, organizations deploying on Windows have 2 primary distribution options:
 
 - **Windows Store** (recommended): Provides automatic updates through the Microsoft Store infrastructure. This is the recommended option for most organizations seeking streamlined update management.
 - **MSI packages**: Traditional deployment method with full control over installation timing. See the :doc:`MSI installer and group policy guide </deployment-guide/desktop/desktop-msi-installer-and-group-policy-install>` for details.

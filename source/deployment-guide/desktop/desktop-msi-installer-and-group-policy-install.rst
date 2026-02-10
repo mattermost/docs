@@ -13,12 +13,12 @@ This page provides guidance on installing the desktop app MSI and use Group Poli
 Windows distribution options
 ----------------------------
 
-From desktop v6.1, the following Windows distribution options are available:
+From desktop v6.1, organizations deploying on Windows have 2 primary distribution options:
 
 - **Windows Store**: Primary option for automatic updates. Recommended for most users. The Windows Store version handles updates automatically through the Microsoft Store infrastructure.
 - **MSI installer**: Direct download option for traditional deployment methods. This guide covers MSI deployment.
 
-From v6.1, the desktop app includes in-app update notifications that check the Mattermost website for new versions. All distribution channels (Windows Store, MSI, Mac App Store, Flathub, APT/RPM) release simultaneously to ensure users receive consistent update notifications regardless of their installation method.
+The desktop v6.1 app includes in-app update notifications that check the Mattermost website for new versions. All distribution channels (Windows Store, MSI, Mac App Store, Flathub, APT/RPM) release simultaneously to ensure users receive consistent update notifications regardless of their installation method.
 
 Upgrading to v6.1.0 with MSI installer
 ---------------------------------------
