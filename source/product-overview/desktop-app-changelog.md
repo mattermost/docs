@@ -31,17 +31,17 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
 #### Windows
 
-- Forced MSI to install per-machine by default. See Known Issues below for more details.
+- Forced [MSI to install per-machine](https://docs.mattermost.com/deployment-guide/desktop/desktop-msi-installer-and-group-policy-install.html) by default. See Known Issues below for more details.
 - Removed the Windows EXE installer.
 
 #### Linux
-- Added Flatpak to Linux-packaged builds.
+- Added [Flatpak](https://docs.mattermost.com/deployment-guide/desktop/linux-desktop-install.html) to Linux-packaged builds.
 
 #### All Platforms
 
 - Added support for servers with passwordless authentication with [Magic Link for guest users](https://docs.mattermost.com/end-user-guide/access/access-your-workspace.html#magic-link-login-for-guests) (requires Enterprise license) [MM-66445](https://mattermost.atlassian.net/browse/MM-66445).
 - Added [Sentry error tracking](https://docs.mattermost.com/deployment-guide/desktop/desktop-app-deployment.html#privacy-and-data-handling).
-- Added in-app notifications for new versions, including for Mac App Store and the Windows MSI.
+- Added [in-app notifications for new versions](https://docs.mattermost.com/end-user-guide/access/install-desktop-app.html#upgrade-the-desktop-app), including for Mac App Store and the Windows MSI.
 
 ### Architectural Changes
 
@@ -55,7 +55,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
 #### Windows
 
-- Fixed an issue where installing over top of an old Desktop App on Windows could break the shortcut. NOTE: You may need to remake your shortcut in the taskbar once after this change [MM-63779](https://mattermost.atlassian.net/browse/MM-63779).
+- Fixed an issue where installing over top of an old Desktop App on Windows could break the shortcut. NOTE: You may need to [remake your shortcut](https://docs.mattermost.com/deployment-guide/desktop/desktop-troubleshooting.html) in the taskbar once after this change [MM-63779](https://mattermost.atlassian.net/browse/MM-63779).
 - Fixed an issue where the notification badge on Windows could get out of sync.
 
 #### All Platforms
