@@ -1813,7 +1813,7 @@ When running Mattermost in :doc:`High Availablity mode </administration-guide/sc
 
 .. tip::
 
-   From Mattermost v11.4, debug-level log messages are available to help verify that specific Recurring Tasks (Scheduled Posts, Post Reminders, and DND Status Reset) are executing correctly in a cluster. Non-leader nodes log messages when they skip execution of these Recurring Tasks, confirming that leader election is functioning as expected. These debug messages do not apply to other job types such as Elasticsearch indexing, SAML sync, or LDAP sync. See :doc:`Cluster job execution debug messages </administration-guide/manage/logging>` for details.
+   From Mattermost v11.4, debug-level log messages are available to help verify that specific Recurring Tasks (Scheduled Posts, Post Reminders, and DND Status Reset) are executing correctly in a cluster. Non-leader nodes log messages when they skip execution of these Recurring Tasks, confirming that leader election is functioning as expected. These debug messages do not apply to other job types such as Elasticsearch indexing, SAML sync, or LDAP sync. See :ref:`Cluster job execution debug messages <administration-guide/manage/logging:cluster job execution debug messages>` for details.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RunScheduler": true`` with options ``true`` and ``false``.                                 |
