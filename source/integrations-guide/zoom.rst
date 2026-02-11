@@ -24,7 +24,7 @@ Zoom supports OAuth authentication, and there are 2 types of OAuth Zoom Apps you
 
 .. important::
 
-For Account-Level apps, only Zoom users associated with the Zoom Account that created the app can use this integration. You can add users from the **Manage Users** section in the Zoom Account settings.
+  For Account-Level apps, only Zoom users associated with the Zoom Account that created the app can use this integration. You can add users from the **Manage Users** section in the Zoom Account settings.
 
 .. tab:: Account-Level
 
