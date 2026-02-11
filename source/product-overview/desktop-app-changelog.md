@@ -32,7 +32,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 #### Windows
 
 - Forced [MSI to install per-machine](https://docs.mattermost.com/deployment-guide/desktop/desktop-msi-installer-and-group-policy-install.html) by default. See Known Issues below for more details.
-- Removed the Windows EXE installer.
+- Removed the [Windows EXE installer](https://docs.mattermost.com/deployment-guide/desktop/silent-windows-desktop-distribution.html).
 
 #### Linux
 - Added [Flatpak](https://docs.mattermost.com/deployment-guide/desktop/linux-desktop-install.html) to Linux-packaged builds.
