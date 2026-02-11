@@ -84,7 +84,7 @@ Install the Zoom integration from the in-product App Marketplace:
 8. Select **Regenerate** next to the **At Rest Token Encryption Key** field to generate an AES encryption key. You just need to generate this value, and won't use it anywhere else.
 9. If you're configuring webhook events, select **Regenerate** next to the **Webhook Secret** field. This is the ``WEBHOOKSECRET`` value to use in your webhook URL pointing to Mattermost.
 10. Paste the **Secret Token** from the Zoom webhook configuration page into the plugin setting **Zoom Webhook Secret**.
-11. (Optional) Enable **Restrict Meeting Creation** to restrict user from creating meetings in public channels.
+11. (Optional) Enable **Restrict Meeting Creation** to restrict users from creating meetings in public channels.
 12. Select **Save** to save your changes.
 
 
