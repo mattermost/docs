@@ -34,19 +34,19 @@ processors:
       - context: log
         statements:
           # Postgres severity mapping
-          - set(severity_text, attributes["error_severity"]) where attributes["error_severity"] != nil
-          - set(severity_number, 9) where attributes["error_severity"] == "LOG" or attributes["error_severity"] == "DETAIL" or attributes["error_severity"] == "STATEMENT"
-          - set(severity_number, 13) where attributes["error_severity"] == "WARNING"
-          - set(severity_number, 17) where attributes["error_severity"] == "ERROR" or attributes["error_severity"] == "FATAL" or attributes["error_severity"] == "PANIC"
-          
-          # Mattermost severity fallback (if we were parsing it)
-          - set(severity_text, attributes["level"]) where attributes["level"] != nil
-          - set(severity_number, 9) where attributes["level"] == "info"
-          - set(severity_number, 13) where attributes["level"] == "warn" or attributes["level"] == "warning"
-          - set(severity_number, 17) where attributes["level"] == "error"
+          - set(log.severity_text, log.attributes["error_severity"]) where log.attributes["error_severity"] != nil
+          - set(log.severity_number, 9) where log.attributes["error_severity"] == "LOG" or log.attributes["error_severity"] == "DETAIL" or log.attributes["error_severity"] == "STATEMENT"
+          - set(log.severity_number, 13) where log.attributes["error_severity"] == "WARNING"
+          - set(log.severity_number, 17) where log.attributes["error_severity"] == "ERROR" or log.attributes["error_severity"] == "FATAL" or log.attributes["error_severity"] == "PANIC"
+
+          # Mattermost severity mapping
+          - set(log.severity_text, log.attributes["level"]) where log.attributes["level"] != nil
+          - set(log.severity_number, 9) where log.attributes["level"] == "info"
+          - set(log.severity_number, 13) where log.attributes["level"] == "warn" or log.attributes["level"] == "warning"
+          - set(log.severity_number, 17) where log.attributes["level"] == "error"
 
 exporters:
-  otlphttp/loki:
+  otlp_http/loki:
     endpoint: "http://<LOKI_HOST>:3100/otlp"
     tls:
       insecure: true
@@ -59,8 +59,8 @@ service:
     logs/mattermost:
       receivers: [ filelog/mattermost ]
       processors: [ resource, transform/severity, batch ]
-      exporters: [ otlphttp/loki ]
+      exporters: [ otlp_http/loki ]
     logs/postgres:
       receivers: [ filelog/postgres ]
       processors: [ resource, transform/severity, batch ]
-      exporters: [ otlphttp/loki ]
+      exporters: [ otlp_http/loki ]

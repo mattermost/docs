@@ -103,6 +103,7 @@ Install Loki on the same server that runs Grafana and Prometheus. All commands i
       sudo mkdir -p /opt/loki/data /opt/loki/bin
 
       # Download and extract Loki
+      sudo apt-get install -y unzip
       cd /tmp
       curl -LO https://github.com/grafana/loki/releases/download/v3.4.2/loki-linux-amd64.zip
       unzip loki-linux-amd64.zip
@@ -174,7 +175,7 @@ Install Loki on the same server that runs Grafana and Prometheus. All commands i
       sudo systemctl status loki
       curl -s http://localhost:3100/ready
 
-   The ``/ready`` endpoint should return ``ready``.
+   The ``/ready`` endpoint should return ``ready``. Loki may take 15–20 seconds after startup before it reports ready — this warmup delay is normal.
 
 Step 3: Install OpenTelemetry Collector on each Mattermost server
 -----------------------------------------------------------------
