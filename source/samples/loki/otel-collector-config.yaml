@@ -1,0 +1,66 @@
+# OpenTelemetry Collector configuration for Mattermost and PostgreSQL log collection
+# This version uses script-driven labeling and explicit severity mapping.
+
+receivers:
+  filelog/mattermost:
+    include: [ /opt/mattermost/logs/mattermost.log ]
+    start_at: beginning
+
+  filelog/postgres:
+    include: [ /var/log/postgresql/*.json ]
+    start_at: beginning
+    operators:
+      - type: json_parser
+
+processors:
+  batch:
+    send_batch_size: 10000
+    timeout: 10s
+
+  resource:
+    attributes:
+      - key: host.name
+        value: "<HOSTNAME>"
+        action: upsert
+      - key: service.instance.id
+        value: "<HOSTNAME>"
+        action: upsert
+      - key: service.name
+        value: "<SERVICE_NAME>"
+        action: upsert
+
+  transform/severity:
+    log_statements:
+      - context: log
+        statements:
+          # Postgres severity mapping
+          - set(severity_text, attributes["error_severity"]) where attributes["error_severity"] != nil
+          - set(severity_number, 9) where attributes["error_severity"] == "LOG" or attributes["error_severity"] == "DETAIL" or attributes["error_severity"] == "STATEMENT"
+          - set(severity_number, 13) where attributes["error_severity"] == "WARNING"
+          - set(severity_number, 17) where attributes["error_severity"] == "ERROR" or attributes["error_severity"] == "FATAL" or attributes["error_severity"] == "PANIC"
+          
+          # Mattermost severity fallback (if we were parsing it)
+          - set(severity_text, attributes["level"]) where attributes["level"] != nil
+          - set(severity_number, 9) where attributes["level"] == "info"
+          - set(severity_number, 13) where attributes["level"] == "warn" or attributes["level"] == "warning"
+          - set(severity_number, 17) where attributes["level"] == "error"
+
+exporters:
+  otlphttp/loki:
+    endpoint: "http://<LOKI_HOST>:3100/otlp"
+    tls:
+      insecure: true
+
+service:
+  telemetry:
+    logs:
+      level: "info"
+  pipelines:
+    logs/mattermost:
+      receivers: [ filelog/mattermost ]
+      processors: [ resource, transform/severity, batch ]
+      exporters: [ otlphttp/loki ]
+    logs/postgres:
+      receivers: [ filelog/postgres ]
+      processors: [ resource, transform/severity, batch ]
+      exporters: [ otlphttp/loki ]

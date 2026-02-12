@@ -16,7 +16,7 @@ With Loki in place you can:
 
 .. tip::
 
-   This guide assumes you have already deployed Prometheus and Grafana by following the `performance monitoring guide </administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring>`_. Loki and Promtail will be added to that existing infrastructure.
+   This guide assumes you have already deployed Prometheus and Grafana by following the `performance monitoring guide </administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring>`_. Loki and the OpenTelemetry Collector will be added to that existing infrastructure.
 
 Architecture overview
 ---------------------
@@ -24,7 +24,7 @@ Architecture overview
 The deployment adds two components to your monitoring stack:
 
 - **Loki** — the log aggregation engine, installed on your existing Grafana/Prometheus monitoring server.
-- **Promtail** — a lightweight log-shipping agent, installed on each Mattermost application server.
+- **OpenTelemetry Collector** — a versatile, industry-standard agent installed on each Mattermost application server to ship logs.
 
 .. code-block:: text
 
@@ -34,10 +34,10 @@ The deployment adds two components to your monitoring stack:
    │  /opt/mattermost/    │       │  /opt/mattermost/    │
    │   logs/mattermost.log│       │   logs/mattermost.log│
    │         │            │       │         │            │
-   │    [ Promtail ]      │       │    [ Promtail ]      │
+   │    [ OTel Col ]      │       │    [ OTel Col ]      │
    └─────────┬────────────┘       └─────────┬────────────┘
-             │ push (:3100)                  │
-             ▼                               ▼
+             │ push (:3100/otlp)            │
+             ▼                              ▼
    ┌─────────────────────────────────────────────────────┐
    │           Monitoring Server                         │
    │                                                     │
@@ -49,7 +49,7 @@ The deployment adds two components to your monitoring stack:
    │            Metrics + Logs                           │
    └─────────────────────────────────────────────────────┘
 
-   Optional: Add Promtail on your PostgreSQL server to also
+   Optional: Add the OpenTelemetry Collector on your PostgreSQL server to also
    ship database logs to Loki.
 
 Prerequisites
@@ -109,83 +109,24 @@ Install Loki on the same server that runs Grafana and Prometheus. All commands i
       sudo mv loki-linux-amd64 /opt/loki/bin/loki
       sudo chmod +x /opt/loki/bin/loki
 
-2. Create the production configuration file named ``/opt/loki/loki-config.yaml``:
+2. Download and install the production configuration file:
 
-   .. code-block:: yaml
+   * :download:`Download loki-config.yaml </samples/loki/loki-config.yaml>`
 
-      # Grafana Loki configuration for Mattermost log aggregation
-      # This is a production-ready config for a single-instance deployment
-      # colocated with an existing Grafana/Prometheus monitoring server.
-      
-      auth_enabled: false
-      
-      server:
-        http_listen_port: 3100
-        grpc_listen_port: 9096
-        log_level: warn
-      
-      common:
-        instance_addr: 127.0.0.1
-        path_prefix: /opt/loki/data
-        storage:
-          filesystem:
-            chunks_directory: /opt/loki/data/chunks
-            rules_directory: /opt/loki/data/rules
-        replication_factor: 1
-        ring:
-          kvstore:
-            store: inmemory
-      
-      # ---------------------------------------------------------------------------
-      # Retention settings
-      # ---------------------------------------------------------------------------
-      # Loki requires retention to be specified in hours (h). The default here
-      # is 14 days. To change it, update retention_period below.
-      #
-      # Common values:
-      #   336h   = 14 days  (default)
-      #   720h   = 30 days
-      #   2160h  = 90 days
-      #   8760h  = 365 days
-      # ---------------------------------------------------------------------------
-      limits_config:
-        retention_period: 336h          # 14 days (336 hours) — adjust as needed
-        metric_aggregation_enabled: true
-      
-      compactor:
-        working_directory: /opt/loki/data/compactor
-        compaction_interval: 10m
-        retention_enabled: true         # must be true for retention_period to apply
-        retention_delete_delay: 2h
-        retention_delete_worker_count: 150
-        delete_request_store: filesystem
-      
-      schema_config:
-        configs:
-          - from: "2024-01-01"
-            store: tsdb
-            object_store: filesystem
-            schema: v13
-            index:
-              prefix: index_
-              period: 24h
-      
-      query_range:
-        results_cache:
-          cache:
-            embedded_cache:
-              enabled: true
-              max_size_mb: 100
-      
-      ruler:
-        alertmanager_url: http://localhost:9093
-      
-      frontend:
-        encoding: protobuf
+   .. code-block:: bash
+
+      sudo cp loki-config.yaml /opt/loki/loki-config.yaml
 
    .. tip::
 
-      **Log retention** is set to **14 days** by default. To change this, update the ``retention_period`` value under ``limits_config``. Longer retention increases disk usage (roughly 1–3 GB per day for moderately active deployments). The ``compactor.retention_enabled`` setting must remain ``true`` for retention enforcement to work.
+      **Log retention** is set to **14 days** by default. To change this, edit ``/opt/loki/loki-config.yaml`` and update the ``retention_period`` value under ``limits_config``. Loki requires this value in hours — common values:
+
+      - ``336h`` = 14 days (default)
+      - ``720h`` = 30 days
+      - ``2160h`` = 90 days
+      - ``8760h`` = 365 days
+
+      Longer retention increases disk usage. As a rough guide, expect 1–3 GB per day for a moderately active Mattermost deployment (varies with log volume). Monitor ``/opt/loki/data/`` after the first week to project storage needs. The ``compactor.retention_enabled`` setting must remain ``true`` for retention enforcement to work.
 
 3. Set ownership:
 
@@ -235,143 +176,74 @@ Install Loki on the same server that runs Grafana and Prometheus. All commands i
 
    The ``/ready`` endpoint should return ``ready``.
 
-Step 3: Install Promtail on each Mattermost server
-----------------------------------------------------
+Step 3: Install OpenTelemetry Collector on each Mattermost server
+-----------------------------------------------------------------
 
-Promtail runs on each Mattermost application server and pushes logs to Loki. Repeat these steps on **every Mattermost application server**.
+The OpenTelemetry (OTel) Collector runs on each Mattermost application server and pushes logs to Loki. Repeat these steps on **every Mattermost application server**.
 
 .. important::
 
-   Replace ``<LOKI_HOST>`` with the IP address or hostname of your monitoring server, and ``<MM_HOSTNAME>`` with this server's hostname (e.g., ``mm-app-01``).
+   Replace ``<LOKI_HOST>`` with the IP address or hostname of your monitoring server, ``<HOSTNAME>`` with this server's hostname (e.g., ``mm-app-01``), and ``<SERVICE_NAME>`` with the service type (e.g., ``mattermost`` or ``postgres``).
 
-1. Create the Promtail user, directories, and download the binary:
-
-   .. code-block:: bash
-
-      # Create a dedicated system user
-      sudo useradd --system --no-create-home --shell /bin/false promtail
-
-      # Create directories
-      sudo mkdir -p /opt/promtail/bin
-
-      # Download and extract Promtail
-      cd /tmp
-      curl -LO https://github.com/grafana/loki/releases/download/v3.4.2/promtail-linux-amd64.zip
-      unzip promtail-linux-amd64.zip
-      sudo mv promtail-linux-amd64 /opt/promtail/bin/promtail
-      sudo chmod +x /opt/promtail/bin/promtail
-
-2. Create the Promtail configuration file named ``/opt/promtail/promtail-config.yaml``:
-
-   .. code-block:: yaml
-
-      server:
-        http_listen_port: 9080
-        grpc_listen_port: 0
-      
-      positions:
-        filename: /opt/promtail/positions.yaml
-      
-      clients:
-        - url: http://<LOKI_HOST>:3100/loki/api/v1/push
-      
-      scrape_configs:
-        - job_name: mattermost
-          static_configs:
-            - targets:
-                - localhost
-              labels:
-                service_name: app
-                job: mattermost
-                instance: "<MM_HOSTNAME>"
-                __path__: /opt/mattermost/logs/mattermost.log
-      
-          pipeline_stages:
-            - json:
-                expressions:
-                  level: level
-                  msg: msg
-                  caller: caller
-                  status_code: status_code
-            - labels:
-                level:
-            - structured_metadata:
-                msg:
-                caller:
-                worker_name:
-                job_id:
-                log_file_name:
-            - timestamp:
-                source: timestamp
-                format: "2006-01-02T15:04:05.000Z07:00"
-                fallback_formats:
-                  - "2006-01-02T15:04:05Z07:00"
-                  - "RFC3339"
-
-   Replace the placeholders:
-   - Replace ``<LOKI_HOST>`` with your monitoring server's address.
-   - Replace ``<MM_HOSTNAME>`` with this server's hostname.
-
-3. Grant Promtail read access to the Mattermost log directory:
+1. Install the OTel Collector Contrib distribution:
 
    .. code-block:: bash
 
-      sudo usermod -aG mattermost promtail
-      sudo chmod 640 /opt/mattermost/logs/mattermost.log
-      sudo chmod g+rx /opt/mattermost/logs
+      # Add OTel Collector repository and install
+      # Commands below are for Ubuntu/Debian
+      wget https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v0.145.0/otelcol-contrib_0.145.0_linux_amd64.deb
+      sudo dpkg -i otelcol-contrib_0.145.0_linux_amd64.deb
 
    .. note::
 
-      If Mattermost does not run under a ``mattermost`` group, adjust the group name accordingly. The key requirement is that the ``promtail`` user can read the log file.
+      The installation process automatically creates a system user and group named ``otelcol-contrib``.
 
-4. Set ownership:
+2. Download and edit the OpenTelemetry Collector configuration:
 
-   .. code-block:: bash
-
-      sudo chown -R promtail:promtail /opt/promtail
-
-5. Create a systemd service file:
+   * :download:`Download otel-collector-config.yaml </samples/loki/otel-collector-config.yaml>`
 
    .. code-block:: bash
 
-      sudo tee /etc/systemd/system/promtail.service > /dev/null <<'EOF'
-      [Unit]
-      Description=Grafana Promtail Log Agent
-      Documentation=https://grafana.com/docs/loki/latest/send-data/promtail/
-      After=network-online.target
-      Wants=network-online.target
+      sudo cp otel-collector-config.yaml /etc/otelcol-contrib/config.yaml
 
-      [Service]
-      Type=simple
-      User=promtail
-      Group=promtail
-      ExecStart=/opt/promtail/bin/promtail -config.file=/opt/promtail/promtail-config.yaml
-      Restart=on-failure
-      RestartSec=5
-      StandardOutput=journal
-      StandardError=journal
+   Edit ``/etc/otelcol-contrib/config.yaml`` and replace the placeholders:
 
-      [Install]
-      WantedBy=multi-user.target
-      EOF
-
-6. Start Promtail:
+   - Replace ``<LOKI_HOST>`` with your monitoring server's address.
+   - Replace ``<HOSTNAME>`` with this server's hostname.
+   - Replace ``<SERVICE_NAME>`` with the service type (e.g., ``mattermost``).
 
    .. code-block:: bash
 
-      sudo systemctl daemon-reload
-      sudo systemctl enable --now promtail
+      sudo vi /etc/otelcol-contrib/config.yaml
 
-7. Verify Promtail is running and tailing logs:
+3. Grant the collector read access to the Mattermost log directory:
 
    .. code-block:: bash
 
-      sudo systemctl status promtail
+      # Grant the collector access to read Mattermost logs.
+      # Substitute 'mattermost' for the group that owns your log file.
+      sudo usermod -aG mattermost otelcol-contrib
 
-      # Check Promtail's targets page (from the Mattermost server itself)
-      curl -s http://localhost:9080/targets
+      # Ensure logs are group-readable
+      sudo chmod 640 /opt/mattermost/logs/mattermost.log
+      sudo chmod g+rx /opt/mattermost/logs
 
-   The targets page should show your ``mattermost`` job with the log file path and a ``READY`` state.
+      # Grant access to PostgreSQL logs (if applicable)
+      sudo usermod -aG postgres otelcol-contrib
+
+4. Restart the service:
+
+   .. code-block:: bash
+
+      sudo systemctl restart otelcol-contrib
+      sudo systemctl enable otelcol-contrib
+
+5. Verify the collector is running and shipping logs:
+
+   .. code-block:: bash
+
+      sudo systemctl status otelcol-contrib
+      sudo journalctl -u otelcol-contrib -f
 
 Step 4: Add Loki as a data source in Grafana
 ----------------------------------------------
@@ -387,7 +259,7 @@ Step 4: Add Loki as a data source in Grafana
 Step 5: Import the Mattermost Loki dashboard
 ----------------------------------------------
 
-A pre-built Grafana dashboard is recommended for monitoring your logs. This dashboard serves as a basic example to get started:
+A pre-built Grafana dashboard is recommended for monitoring your logs. This dashboard is provided as a basic example:
 
 * :download:`Download the Mattermost Loki Logs dashboard JSON </samples/grafana-dashboards/mattermost-loki-logs.json>`
 
@@ -420,55 +292,55 @@ You can run these queries directly in **Grafana Explore** (select the Loki data 
 
 .. code-block:: text
 
-   {service_name="app"}
+   {service_name="mattermost"}
 
 **Filter by log level:**
 
 .. code-block:: text
 
-   {service_name="app"} | json | level="error"
+   {service_name="mattermost"} | json | detected_level="error"
 
 **Search for all HTTP 4xx responses:**
 
 .. code-block:: text
 
-   {service_name="app"} | json | status_code >= 400
+   {service_name="mattermost"} | json | status_code >= 400
 
 **Search for all HTTP 5xx responses:**
 
 .. code-block:: text
 
-   {service_name="app"} | json | status_code >= 500
+   {service_name="mattermost"} | json | status_code >= 500
 
 **Top 5 error messages over 5-minute windows:**
 
 .. code-block:: text
 
-   topk(5, sum(count_over_time({service_name="app"} | json | level="error" [5m])) by (msg))
+   topk(5, sum(count_over_time({service_name="mattermost"} | json | detected_level="error" [5m])) by (msg))
 
 **Count errors by message over 5-minute windows:**
 
 .. code-block:: text
 
-   sum(count_over_time({service_name="app"} | json | level="error" [5m])) by (msg)
+   sum(count_over_time({service_name="mattermost"} | json | detected_level="error" [5m])) by (msg)
 
 **Free-text search (e.g., plugin errors):**
 
 .. code-block:: text
 
-   {service_name="app"} |~ "plugin"
+   {service_name="mattermost"} |~ "plugin"
 
 **Authentication-related log lines:**
 
 .. code-block:: text
 
-   {service_name="app"} |~ "(?i)(auth|login|token|session)"
+   {service_name="mattermost"} |~ "(?i)(auth|login|token|session)"
 
 **Logs from a specific server instance:**
 
 .. code-block:: text
 
-   {service_name="app", instance="mm-app-01"}
+   {service_name="mattermost", service_instance_id="mm-app-01"}
 
 .. tip::
 
@@ -479,74 +351,13 @@ Optional: Add PostgreSQL log collection
 
 If your PostgreSQL database runs on a dedicated server (not RDS), you can ship its logs to Loki as well. This is useful for correlating slow queries or database errors with Mattermost application events.
 
-1. Install Promtail on the PostgreSQL server using the same steps from **Step 3** (create user, download binary, create systemd unit).
-2. Create the Promtail configuration file named ``/opt/promtail/promtail-config.yaml``:
-
-   .. code-block:: yaml
-
-      server:
-        http_listen_port: 9080
-        grpc_listen_port: 0
-      
-      positions:
-        filename: /opt/promtail/positions-postgres.yaml
-      
-      clients:
-        - url: http://<LOKI_HOST>:3100/loki/api/v1/push
-      
-      scrape_configs:
-        - job_name: postgres
-          static_configs:
-            - targets:
-                - localhost
-              labels:
-                service_name: postgres
-                job: postgres
-                instance: "<PG_HOSTNAME>"
-                __path__: /var/log/postgresql/*.json
-      
-          pipeline_stages:
-            - json:
-                expressions:
-                  timestamp: timestamp
-                  level: error_severity
-                  msg: message
-                  pid: pid
-                  user_name: user
-                  database_name: dbname
-                  application_name: application_name
-            - labels:
-                level:
-            - structured_metadata:
-                user_name:
-                database_name:
-                application_name:
-            - timestamp:
-                source: timestamp
-                format: "2006-01-02 15:04:05.000 MST"
-
-   - Replace ``<LOKI_HOST>`` with your monitoring server's address.
-   - Replace ``<PG_HOSTNAME>`` with this server's hostname.
-   - Adjust the ``__path__`` to match your PostgreSQL log location.
-
-3. Ensure the ``promtail`` user can read the PostgreSQL log directory:
-
-   .. code-block:: bash
-
-      sudo usermod -aG postgres promtail
-      sudo chmod g+rx /var/lib/pgsql/15/data/log
-
-4. Start Promtail:
-
-   .. code-block:: bash
-
-      sudo systemctl enable --now promtail
-
-5. Once running, PostgreSQL logs appear in Grafana under the label ``{service_name="postgres"}``:
+1. Install the OpenTelemetry Collector on the PostgreSQL server using the same steps from **Step 3**.
+2. Documentation for PostgreSQL log location varies by installation, but the provided config handles common Ubuntu/Debian JSON log paths.
+3. Once running, PostgreSQL logs appear in Grafana under the label ``{service_name="postgres"}``:
 
    .. code-block:: text
 
-      {service_name="postgres"} | level="ERROR"
+      {service_name="postgres"} | json | detected_level="error"
 
 Verification and troubleshooting
 ----------------------------------
@@ -560,16 +371,16 @@ Verification and troubleshooting
       curl -s http://<monitoring-server>:3100/ready
       # Expected: "ready"
 
-2. Promtail is shipping logs (run on each Mattermost server):
+2. OpenTelemetry Collector is shipping logs (run on each Mattermost server):
 
    .. code-block:: bash
 
-      curl -s http://localhost:9080/targets
-      # Look for your mattermost job showing READY
+      sudo journalctl -u otelcol-contrib -n 100
+      # Look for export successful messages or lack of errors
 
-3. Logs are visible in Grafana: Go to **Explore**, select the **Loki** data source, and run ``{service_name="app"}``. You should see recent log lines.
+3. Logs are visible in Grafana: Go to **Explore**, select the **Loki** data source, and run ``{service_name="mattermost"}``. You should see recent log lines.
 
-4. The dashboard loads: Open the **Mattermost Log Aggregation** dashboard and confirm panels are populated.
+4. The dashboard loads: Open the **Mattermost Log Aggregation** dashboard and confirm panels are populated. (Note: You may need to update dashboard queries to use `service_name` and `service_instance_id`).
 
 **Common issues:**
 
@@ -579,12 +390,12 @@ Verification and troubleshooting
 
    * - Symptom
      - Resolution
-   * - Promtail target shows ``DROPPED``
-     - Verify the ``__path__`` in the Promtail config matches the actual log file location. Check file permissions (``promtail`` user must be able to read the file).
+   * - OTel Col target shows errors
+     - Verify the file paths in the config match the actual log file location. Check file permissions (``otelcol-contrib`` user must be able to read the file).
    * - ``connection refused`` on port 3100
      - Ensure Loki is running (``systemctl status loki``). Check firewall rules: ``sudo iptables -L -n | grep 3100`` or check your AWS security group allows TCP 3100 from the Mattermost servers.
    * - Logs appear in Loki but fields aren't parsed
-     - Confirm Mattermost is writing JSON-formatted logs (see Step 1). Check that the ``pipeline_stages`` in your Promtail config include the ``json`` stage.
+     - Confirm Mattermost is writing JSON-formatted logs (see Step 1). Check that the ``json_parser`` operator (for Postgres) or OTel processors are correctly configured.
    * - ``/ready`` returns an error
      - Check Loki logs: ``sudo journalctl -u loki -f``. Common cause: permissions on ``/opt/loki/data/`` — ensure the ``loki`` user owns the directory.
    * - Old logs are not being deleted
