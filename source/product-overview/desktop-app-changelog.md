@@ -15,7 +15,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
 ### Important Upgrade Notes
 
-- The in-app auto-updater for Windows and Linux AppImage installations have been deprecated. See more details in [this forum post](https://forum.mattermost.com/t/important-update-changes-to-desktop-app-auto-updater/25657).
+- The in-app auto-updater for Windows and Linux AppImage installations has been deprecated. See more details in [this forum post](https://forum.mattermost.com/t/important-update-changes-to-desktop-app-auto-updater/25657).
 
 ### Compatibility
 
@@ -84,7 +84,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
 ### Contributors
 
-- [devinbinnie](https://github.com/devinbinnie), [enahum](https://github.com/enahum), [hmhealey](https://github.com/hmhealey), [lieut-data](https://github.com/lieut-data), [lifeisafractal ](https://github.com/lifeisafractal), [NARSimoes](https://github.com/NARSimoes), [wiggin77](https://github.com/wiggin77), [yasserfaraazkhan](https://github.com/yasserfaraazkhan).
+- [devinbinnie](https://github.com/devinbinnie), [enahum](https://github.com/enahum), [hmhealey](https://github.com/hmhealey), [lieut-data](https://github.com/lieut-data), [lifeisafractal](https://github.com/lifeisafractal), [NARSimoes](https://github.com/NARSimoes), [wiggin77](https://github.com/wiggin77), [yasserfaraazkhan](https://github.com/yasserfaraazkhan).
 
 (release-v6-0)=
 ## Release v6.0
