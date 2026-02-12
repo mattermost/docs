@@ -252,6 +252,7 @@ Step 4: Add Loki as a data source in Grafana
 2. Navigate to **Administration > Data Sources > Add data source**.
 3. Select **Loki** from the list.
 4. Configure the connection:
+
    - **Name**: ``Loki``
    - **URL**: ``http://localhost:3100`` (since Loki is colocated with Grafana)
 5. Select **Save & test**. Grafana should confirm the data source is working.
