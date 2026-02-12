@@ -120,7 +120,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
   - Original v6.0.0 release
 
-**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/v6.0.3)
+**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/v6.0.4)
 
 ```{Note}
 Mattermost Desktop App v6.0.0 contains low severity level security fixes. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
