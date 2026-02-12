@@ -4,7 +4,7 @@ Desktop MSI installer and group policy guide
 .. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
-This page provides guidance on installing the desktop app MSI and use Group Policies in Windows for Mattermost Enterprise or Professional. The MSI installer package can be downloaded `here <https://github.com/mattermost/desktop/releases/tag/v6.1.0>`_.
+This page provides guidance on installing the desktop app MSI and use Group Policies in Windows for Mattermost Enterprise or Professional. The MSI installer package can be downloaded `here <https://github.com/mattermost/desktop/releases/latest>`_.
 
 .. tip::
 
@@ -23,7 +23,7 @@ Download group policy and MSI installer files
    .. image:: ../../images/desktop/msi_gpo/msi_gpo_installation_test_00002.png
       :alt: Go to the mattermost/desktop repository on GitHub.
 
-3. Navigate to the release page for `version v6.1.0 <https://github.com/mattermost/desktop/releases/tag/v6.1.0>`__ and download the appropriate installer for your version of Windows (32-bit vs. 64-bit).
+3. Navigate to the release page for `version v6.1.0 <https://github.com/mattermost/desktop/releases/latest>`__ and download the appropriate installer for your version of Windows (32-bit vs. 64-bit).
 
 4. Download the `source.zip <https://github.com/mattermost/desktop/archive/v6.1.0.zip>`__ file as well to extract group policy files.
 
