@@ -17,7 +17,7 @@ Removed features by Mattermost version
 Mattermost Desktop App v6.1 (February 2026)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- The in-app auto-updater for Windows and Linux AppImage installations have been deprecated. See more details in `this forum post <https://forum.mattermost.com/t/important-update-changes-to-desktop-app-auto-updater/25657>`__.
+- The in-app auto-updater for Windows and Linux AppImage installations has been deprecated. See more details in `this forum post <https://forum.mattermost.com/t/important-update-changes-to-desktop-app-auto-updater/25657>`__.
 
 Mattermost Mobile App v2.36.4 (January 2026)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
