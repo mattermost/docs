@@ -12,7 +12,7 @@
 (release-v11.3-feature-release)=
 ## Release v11.3 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
-- **11.3.1, released 2026-02-02**
+- **11.3.1, released 2026-02-13**
 ```{Attention}
 **Breaking Changes**
  - Photoshop Document (PSD) files are now no longer inline previewed, they are treated as regular file attachments.
@@ -124,7 +124,7 @@ If you upgrade from a release earlier than v11.2, please read the other [Importa
 (release-v11.2-feature-release)=
 ## Release v11.2 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
-- **11.2.3, released 2026-02-02**
+- **11.2.3, released 2026-02-13**
 ```{Attention}
 **Breaking Changes**
  - Photoshop Document (PSD) files are now no longer inline previewed, they are treated as regular file attachments.
