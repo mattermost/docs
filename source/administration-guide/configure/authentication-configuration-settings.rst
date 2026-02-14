@@ -1712,6 +1712,47 @@ Login button text
 | String input. Default is **SAML**.                                        | - Environment variable: ``MM_SAMLSETTINGS_LOGINBUTTONTEXT``       |
 +---------------------------------------------------------------------------+-------------------------------------------------------------------+
 
+config.json-only settings
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following SAML configuration settings are only available by editing the ``config.json`` file.
+
+.. config:setting:: scoping-idp-provider-id
+  :displayname: Scoping IDP provider ID (SAML)
+  :systemconsole: N/A
+  :configjson: ScopingIDPProviderId
+  :environment: N/A
+  :description: Allows an authenticated user to skip the initial login page of their federated Azure AD server, and only require a password to log in.
+
+Scoping IDP provider ID
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Allows an authenticated user to skip the initial login page of their federated Azure AD server, and only require a password to log in.
+
++---------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ScopingIDPProviderId": ""`` with string input. |
++---------------------------------------------------------------------------------------------+
+
+.. config:setting:: scoping-idp-provider-name
+  :displayname: Scoping IDP provider name (SAML)
+  :systemconsole: N/A
+  :configjson: ScopingIDPName
+  :environment: N/A
+  :description: Adds the name associated with a user's Scoping Identity Provider ID.
+
+Scoping IDP provider name
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Adds the name associated with a user's Scoping Identity Provider ID.
+
++---------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ScopingIDPName": ""`` with string input. |
++---------------------------------------------------------------------------------------+
+
 ----
 
 OAuth 2.0
@@ -1876,6 +1917,25 @@ GitLab OAuth 2.0 Token endpoint
 | String input.                                                                                                                                                                  |                                                                  |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
+.. config:setting:: oauth-gitlabscope
+  :displayname: GitLab scope (OAuth - GitLab)
+  :systemconsole: N/A
+  :configjson: .GitLabSettings.Scope
+  :environment: MM_GITLABSETTINGS_SCOPE
+  :description: Standard setting for OAuth to determine the scope of information shared with the OAuth client. Not currently supported by GitLab OAuth.
+
+GitLab scope
+''''''''''''
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
++---------------------------------------------------------------+-------------------------------------------------------------+
+| Standard setting for OAuth to determine the scope of          | - System Config path: N/A                                   |
+| information shared with the OAuth client.                     | - ``config.json`` setting: ``GitLabSettings`` > ``Scope``   |
+|                                                               | - Environment variable: ``MM_GITLABSETTINGS_SCOPE``         |
+| String input. Not currently supported by GitLab OAuth.        |                                                             |
++---------------------------------------------------------------+-------------------------------------------------------------+
+
 Google OAuth 2.0 settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1979,6 +2039,25 @@ Google OAuth 2.0 Token endpoint
 |                                                                                                                                                                                           | - ``config.json`` setting: ``GoogleSettings`` > ``TokenEndpoint`` |
 | String input.                                                                                                                                                                             | - Environment variable: ``MM_GOOGLESETTINGS_TOKENENDPOINT``       |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+
+.. config:setting:: oauth-googlescope
+  :displayname: Google scope (OAuth - Google)
+  :systemconsole: N/A
+  :configjson: .GoogleSettings.Scope
+  :environment: MM_GOOGLESETTINGS_SCOPE
+  :description: Standard setting for OAuth to determine the scope of information shared with the OAuth client. Default value is **profile email**.
+
+Google scope
+''''''''''''
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
++---------------------------------------------------------------+-------------------------------------------------------------+
+| Standard setting for OAuth to determine the scope of          | - System Config path: N/A                                   |
+| information shared with the OAuth client.                     | - ``config.json`` setting: ``GoogleSettings`` > ``Scope``   |
+|                                                               | - Environment variable: ``MM_GOOGLESETTINGS_SCOPE``         |
+| String input. Recommended setting is ``profile email``.       |                                                             |
++---------------------------------------------------------------+-------------------------------------------------------------+
 
 Entra ID OAuth 2.0 settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2111,6 +2190,25 @@ Entra ID OAuth 2.0 Token endpoint
 |                                                                                                                                                                                                                   | - ``config.json`` setting: ``Office365Settings`` > ``TokenEndpoint`` |
 | String input.                                                                                                                                                                                                     | - Environment variable: ``MM_OFFICE365SETTINGS_TOKENENDPOINT``       |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
+
+.. config:setting:: oauth-entra-id-scope
+  :displayname: Entra ID scope (OAuth - Entra ID)
+  :systemconsole: N/A
+  :configjson: .Office365Settings.Scope
+  :environment: MM_OFFICE365SETTINGS_SCOPE
+  :description: Standard setting for OAuth to determine the scope of information shared with the OAuth client. Recommended setting is **User.Read**.
+
+Entra ID scope
+''''''''''''''
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
++---------------------------------------------------------------+---------------------------------------------------------------+
+| Standard setting for OAuth to determine the scope of          | - System Config path: N/A                                     |
+| information shared with the OAuth client.                     | - ``config.json`` setting: ``Office365Settings`` > ``Scope``  |
+|                                                               | - Environment variable: ``MM_OFFICE365SETTINGS_SCOPE``        |
+| String input. Recommended setting is ``User.Read``.           |                                                               |
++---------------------------------------------------------------+---------------------------------------------------------------+
 
 ----
 

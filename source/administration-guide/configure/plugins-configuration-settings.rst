@@ -2143,3 +2143,99 @@ Specify the `Chimera <https://github.com/mattermost/chimera>`__ URL used by Matt
 +-------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ChimeraOAuthProxyUrl": {}`` with string input.                             |
 +-------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: enable-plugin-uploads
+  :displayname: Enable plugin uploads (Plugins)
+  :systemconsole: N/A
+  :configjson: EnableUploads
+  :environment: N/A
+
+  - **true**: Enables plugin uploads by system admins at **Plugins > Management**.
+  - **false**: **(Default)** Disables plugin uploads on your Mattermost server.
+
+Enable plugin uploads
+~~~~~~~~~~~~~~~~~~~~~
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Enables plugin uploads by system admins at **Plugins > Management**. If you do not plan to upload a plugin, set to ``false`` to control which plugins are installed on your server. See the `plugins admin guide <https://developers.mattermost.com/integrate/admin-guide/admin-plugins-beta/>`__ documentation for details.
+
++-----------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableUploads": false`` with options ``true`` and ``false``. |
++-----------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: allow-insecure-download-url
+  :displayname: Allow insecure download URL (Plugins)
+  :systemconsole: N/A
+  :configjson: AllowInsecureDownloadUrl
+  :environment: N/A
+
+  - **true**: Enables downloading and installing a plugin from a remote URL.
+  - **false**: **(Default)** Disables downloading and installing a plugin from a remote URL.
+
+Allow insecure download URL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Enables downloading and installing a plugin from a remote URL.
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AllowInsecureDownloadUrl": false`` with options ``true`` and ``false``.                    |
++-----------------------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: enable-plugin-health-check
+  :displayname: Enable plugin health check (Plugins)
+  :systemconsole: N/A
+  :configjson: EnableHealthCheck
+  :environment: N/A
+
+  - **true**: **(Default)** Enables plugin health check to ensure all plugins are periodically monitored, and restarted or deactivated based on their health status.
+  - **false**: Disables plugin health check on your Mattermost server.
+
+Enable plugin health check
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Enables plugin health check to ensure all plugins are periodically monitored, and restarted or deactivated based on their health status. The health check runs every 30 seconds. If the plugin is detected to fail 3 times within an hour, the Mattermost server attempts to restart it. If the restart fails 3 successive times, it's automatically disabled.
+
++--------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableHealthCheck": true`` with options ``true`` and ``false``. |
++--------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: plugin-directory
+  :displayname: Plugin directory (Plugins)
+  :systemconsole: N/A
+  :configjson: Directory
+  :environment: N/A
+  :description: The location of the plugin files. If blank, they are stored in the ``./plugins`` directory.
+
+Plugin directory
+~~~~~~~~~~~~~~~~
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+The location of the plugin files. If blank, they are stored in the ``./plugins`` directory. The path that you set must exist and Mattermost must have write permissions in it.
+
++-----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Directory": "./plugins"`` with string input.                       |
++-----------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: client-plugin-directory
+  :displayname: Client plugin directory (Plugins)
+  :systemconsole: N/A
+  :configjson: ClientDirectory
+  :environment: N/A
+  :description: The location of client plugin files. If blank, they are stored in the ``./client/plugins`` directory.
+
+Client plugin directory
+~~~~~~~~~~~~~~~~~~~~~~~
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+The location of client plugin files. If blank, they are stored in the ``./client/plugins`` directory. The path that you set must exist and Mattermost must have write permissions in it.
+
++-----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ClientDirectory": "./client/plugins"`` with string input.          |
++-----------------------------------------------------------------------------------------------------------------+

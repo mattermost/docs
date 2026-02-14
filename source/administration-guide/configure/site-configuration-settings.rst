@@ -451,8 +451,26 @@ Mobile external browser
 
 .. note::
 
-  - This setting is applicable to self-hosted deployments only. 
+  - This setting is applicable to self-hosted deployments only.
   - We recommend enabling this configuration setting when there are issues with the mobile app SSO redirect flow.
+
+.. config:setting:: allowed-themes
+  :displayname: Allowed themes (Customization)
+  :systemconsole: N/A
+  :configjson: AllowedThemes
+  :environment: N/A
+  :description: Select the themes that can be chosen by users when ``EnableThemeSelection`` is set to ``true``.
+
+Allowed themes
+~~~~~~~~~~~~~~
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Select the themes that can be chosen by users when ``EnableThemeSelection`` is set to ``true``.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AllowedThemes": []`` with string array input consisting of the options ``"default"``, ``"organization"``, ``"mattermostDark"``, and ``"windows10"``, such as ``["mattermostDark", "windows10"]``.     |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ----
 
@@ -854,6 +872,29 @@ User statistics update time
 | Must be a 24-hour time stamp in the form ``HH:MM`` based on the local time of the server.  |                                                                                          |
 | Default is **00:00**.                                                                      |                                                                                          |
 +--------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+
+config.json-only settings
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following user management configuration settings are only available by editing the ``config.json`` file.
+
+.. config:setting:: enable-user-status-updates
+  :displayname: Enable user status updates (Users and Teams)
+  :systemconsole: N/A
+  :configjson: EnableUserStatuses
+  :environment: N/A
+  :description: Turn status updates off to improve performance. Default is **true**.
+
+Enable user status updates
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Turn status updates off to improve performance. When status updates are off, users appear online only for brief periods when posting a message, and only to members of the channel in which the message is posted.
+
++---------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableUserStatuses": true`` with options ``true`` and ``false``. |
++---------------------------------------------------------------------------------------------------------------+
 
 ----
 
