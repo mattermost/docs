@@ -64,6 +64,7 @@ Note that the below versions have not yet been tested. The information below is 
 
 | **Release** | **Support** | **Compatible with** |
 |:---|:---|:---|
+| v2.44 | Releasing: 2026-09-16<br/>Support Ends: 2026-10-15 | v11.11, v11.10, v11.9, v11.7 |
 | v2.43 | Releasing: 2026-08-16<br/>Support Ends: 2026-09-15 | v11.10, v11.9, v11.8, v11.7, v10.11 |
 | v2.42 | Releasing: 2026-07-16<br/>Support Ends: 2026-08-15 | v11.9, v11.8, v11.7, v10.11         |
 | v2.41 | Releasing: 2026-06-16<br/>Support Ends: 2026-07-15 | v11.8, v11.7, v11.6, v10.11         |
