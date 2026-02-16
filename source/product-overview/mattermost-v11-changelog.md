@@ -16,6 +16,11 @@
 
 ### Upgrade Impact
 
+#### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+ - **Changes to Enterprise Advanced plan:**
+   - Added ``Autotranslation`` settings ``Enable``, ``RestrictDMAndGM``, ``Provider``, ``TargetLanguages``, ``Workers``, ``TimeoutMs``, ``LibreTranslate``, and ``Agents`` to support auto-translations.
+
 ```{Important}
 If you upgrade from a release earlier than v11.4, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html). In case of an upgrade failure, please check the [Downgrade Guide](https://docs.mattermost.com/administration-guide/upgrade/downgrading-mattermost-server.html) and the [Recovery Guide](https://docs.mattermost.com/deployment-guide/backup-disaster-recovery.html) for rollback steps and interim mitigation strategy.
 ```
@@ -49,17 +54,40 @@ If you upgrade from a release earlier than v11.4, please read the other [Importa
  - Upgraded to node 24 and main dependencies with ``babel``, ``webpack@5.103`` and ``jest@30`` [MM-66972](https://mattermost.atlassian.net/browse/MM-66972).
  - Added a new column to the channel members table to handle auto translations.
  - Added a new migration to change the primary key in the translations table.
- - Updated audit/activity logging for Desktop App external authentication.
- - Added audit logs for when admins access posts on channels they are not a member of [MM-64460](https://mattermost.atlassian.net/browse/MM-64460).
 
 ### Bug Fixes
+ - Fixed an issue with popout windows in subpath deployments [MM-67269](https://mattermost.atlassian.net/browse/MM-67269).
+ - Fixed an issue where additional error details were missing from ``ElasticSearch`` test connection failures [MM-66306](https://mattermost.atlassian.net/browse/MM-66306).
+ - Fixed an issue where several Shared Channels operations recorded failure into the audit log even when successful [MM-67211](https://mattermost.atlassian.net/browse/MM-67211).
+ - Fixed the AI rewrite menu prompt placeholder and labels to better guide message creation [MM-67141](https://mattermost.atlassian.net/browse/MM-67141).
+ - Fixed an issue where the check-cws-connection endpoint returned 500 errors in self-hosted enterprise environments [MM-67021](https://mattermost.atlassian.net/browse/MM-67021).
+ - Fixed an issue with AI rewrite prompts to preserve the user's locale when available [MM-66577](https://mattermost.atlassian.net/browse/MM-66577).
+ - Fixed a performance regression that caused the requests to populate the **Recent mentions** right-hand side (RHS) to timeout. This, in turn, re-introduces a known bug in searches with quoted strings, that may include results not exactly matching the quoted string [MM-66782](https://mattermost.atlassian.net/browse/MM-66782).
+ - Fixed an issue where an un-needed **Cancel** button was shown for **User Attributes** in the **System Console** [MM-67111](https://mattermost.atlassian.net/browse/MM-67111).
+ - Fixed an issue with post list etags where an autotranslations timestamp for autotranslation channels was not included.
+ - Fixed an issue where plugin settings marked as ``secret: true`` inside ``settings_schema.sections[]`` were not sanitized, potentially exposing secret values through the API [MM-67502](https://mattermost.atlassian.net/browse/MM-67502).
+ - Fixed an issue with link preview metadata processing and image validation.
+ - Fixed an issue with the usage of ``WebSocketClient`` from ``@mattermost/shared`` package being broken in Node.js environments [MM-67137](https://mattermost.atlassian.net/browse/MM-67137).
+ - Fixed an issue where posts that had updated translations didn’t get ``posts since`` endpoint.
+ - Fixed an issue where rate limiting was missing from the login endpoint (5 requests/second, 10 burst).
+ - Fixed an issue where the profile status menu disappeared at higher zoom levels or at resized window on mobile view [MM-64655](https://mattermost.atlassian.net/browse/MM-64655).
 
-### API Changes
+### Audit Log Event Changes
+ - Updated audit/activity logging for Desktop App external authentication.
+ - Added audit logs for when admins access posts on channels they are not a member of [MM-64460](https://mattermost.atlassian.net/browse/MM-64460).
+ - Added new audit events ``AuditEventCreateRecap``, ``AuditEventGetRecap``, ``AuditEventGetRecaps``, ``AuditEventMarkRecapAsRead``, ``AuditEventRegenerateRecap``, and ``AuditEventDeleteRecap``.
+ - Added a new audit event ``AuditEventUpdateChannelMemberAutotranslation``.
+ - Added a new audit event ``AuditEventLoginWithDesktopToken``.
+ - Added new audit events ``AuditEventListChannelBookmarksForChannel``, ``AuditEventGetPinnedPosts``, ``AuditEventGetFileThumbnail``, ``AuditEventGetFileInfosForPost``, ``AuditEventGetFileInfo``, ``AuditEventGetFilePreview``, ``AuditEventSearchFiles``, ``AuditEventCreateEphemeralPost``, ``AuditEventGetEditHistoryForPost``, ``AuditEventGetFlaggedPosts``, ``AuditEventGetPostsForChannel``, ``AuditEventGetPostsForChannelAroundLastUnread``, ``AuditEventGetPost``, ``AuditEventGetPostThread``, ``AuditEventGetPostsByIds``, ``AuditEventGetThreadForUser``, ``AuditEventNotificationAck``, and ``AuditEventWebsocketPost``.
 
 ### Go Version
  - v11.5 is built with Go ``v1.24.11``.
 
+### Open Source Components
+ - Added ``react-intl`` and ``x/sys``, and replaced ``avct/uasurfer`` with ``LumenResearch/uasurfer`` in https://github.com/mattermost/mattermost.
+
 ### Contributors
+ - 
 
 (release-v11.4-feature-release)=
 ## Release v11.4 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
