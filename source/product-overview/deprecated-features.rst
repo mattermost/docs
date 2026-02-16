@@ -14,6 +14,11 @@ Mattermost Desktop App v6.1 (February 2026)
 Removed features by Mattermost version
 ----------------------------------------
 
+Mattermost Server v11.5 (March 2026)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- No features were removed in this release.
+
 Mattermost Server v11.4 (February 2026)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
