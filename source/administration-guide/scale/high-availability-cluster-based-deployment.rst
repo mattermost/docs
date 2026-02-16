@@ -450,6 +450,10 @@ A cluster leader election process assigns any scheduled task such as LDAP sync t
 
 The process is based on a widely used `bully leader election algorithm <https://en.wikipedia.org/wiki/Bully_algorithm>`__ where the process with the lowest node ID number from amongst the non-failed processes is selected as the leader.
 
+.. note::
+
+  From Mattermost v11.4, debug-level log messages help identify which node is executing specific Recurring Tasks (Scheduled Posts, Post Reminders, and DND Status Reset). Non-leader nodes log messages like ``Skipping scheduled posts job startup since this is not the leader node`` to indicate they are correctly deferring execution of these Recurring Tasks to the leader. These are normal operational messages, not errors. These debug messages do not apply to other job types such as Elasticsearch indexing, SAML sync, or LDAP sync. See :ref:`Cluster job execution debug messages <administration-guide/manage/logging:cluster job execution debug messages>` for details.
+
 Job server
 ^^^^^^^^^^^
 
@@ -459,14 +463,16 @@ Mattermost runs periodic tasks via the :ref:`job server <administration-guide/co
 - Data retention
 - Compliance exports
 - Elasticsearch indexing
+- Scheduled posts
+- DND status reset
+- Post reminders
 
 Make sure you have set ``JobSettings.RunScheduler`` to ``true`` in ``config.json`` for all app and job servers in the cluster. The cluster leader will then be responsible for scheduling recurring jobs.
 
 .. note::
 
-  It is strongly recommended not to change this setting from the default setting of ``true`` as this prevents the ``ClusterLeader`` from being able to run the scheduler. As a result, recurring jobs such as LDAP sync, Compliance Export, and data retention will no longer be scheduled.
-
-In previous Mattermost Server versions, and this documentation, the instructions stated to run the Job Server with ``RunScheduler: false``. The cluster design has evolved and this is no longer the case.
+  - We strongly recommend not changing this setting from the default setting of ``true`` as this prevents the ``ClusterLeader`` from being able to run the scheduler. As a result, recurring jobs such as LDAP sync, Compliance Export, and data retention will no longer be scheduled. In previous Mattermost Server versions, and this documentation, the instructions stated to run the Job Server with ``RunScheduler: false``. The cluster design has evolved and this is no longer the case.
+  - From Mattermost v11.4, you can verify that Recurring Tasks (Scheduled Posts, Post Reminders, and DND Status Reset) are running on the correct node by enabling debug logging. Non-leader nodes will log messages indicating they are skipping execution of these specific Recurring Tasks, which is expected behavior. These debug messages don't apply to other job types. See :ref:`Cluster job execution debug messages <administration-guide/manage/logging:cluster job execution debug messages>` for more information.
 
 Plugins and High Availability
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

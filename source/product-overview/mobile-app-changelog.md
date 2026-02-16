@@ -6,6 +6,33 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 ```{include} common-esr-support.md
 ```
 
+(release-v2-37-0)=
+## 2.37.0 Release
+ - Release Date: February 16, 2026
+ - Server Versions Supported: Server v10.11.0+ is required. Self-Signed SSL certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v10.11.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#extended-support-releases) (ESR) v10.5.0 has ended and upgrading to server ESR v10.11.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 8+ devices and later with iOS 16.0+ are [required](https://support.apple.com/en-il/guide/iphone/iphe3fa5df43/16.0/ios/16.0).
+
+### Improvements
+ - Added support for [emoji picker](https://docs.mattermost.com/end-user-guide/collaborate/react-with-emojis-gifs.html#manage-emojis) on mobile [MM-53959](https://mattermost.atlassian.net/browse/MM-53959).
+ - Added an option to rename playbook runs/checklists on mobile [MM-66610](https://mattermost.atlassian.net/browse/MM-66610).
+ - Added support for [viewing and editing playbook run attributes](https://docs.mattermost.com/end-user-guide/workflow-automation/work-with-playbooks.html#playbook-attributes) [MM-65768](https://mattermost.atlassian.net/browse/MM-65768).
+ - Added support for [deleting Playbook tasks](https://docs.mattermost.com/end-user-guide/workflow-automation/work-with-tasks.html#mobile-playbooks-task-management) from mobile [MM-67006](https://mattermost.atlassian.net/browse/MM-67006).
+
+### Bug Fixes
+ - Fixed an issue with the notification settings screen sometimes not showing updates when changing the email notifications [MM-66858](https://mattermost.atlassian.net/browse/MM-66858).
+ - Fixed an issue where the server was pinged on edit even if the pre-auth secret didn't change.
+
+### Open Source Components
+ - Added ``@gorhom/portal``, ``grapheme-splitter``, and ``react-native-keyboard-controller`` to  https://github.com/mattermost/mattermost-mobile.
+
+### Known Issues
+ - Users are unable to adjust the font size via the OS font size setting.
+ - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
+
 (release-v2-36-4)=
 ## 2.36.4 Release
  - Release Date: January 22, 2026

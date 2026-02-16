@@ -53,7 +53,7 @@ Include emojis and GIFs in messages
 Manage emojis
 -------------
 
-Using Mattermost in a web browser or the desktop app, you can select recently used emojis, select a default skin tone for people-based emojis, as well as manage custom emojis.
+Using Mattermost in a web browser or the desktop app, you can select recently used emojis, select a default skin tone for people-based emojis, as well as manage custom emojis. From Mattermost mobile v2.37.0, you can select custom emojis and apply custom skin tones on mobile devices.
 
 Select default skin tone
 ~~~~~~~~~~~~~~~~~~~~~~~~

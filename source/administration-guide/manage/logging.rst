@@ -248,6 +248,104 @@ You can enable and customize advanced audit logging in Mattermost to record acti
 
 ----
 
+Log path restrictions
+---------------------
+
+From Mattermost v11.4, log file paths are validated to ensure they remain within a designated logging root directory. This security enhancement prevents log files from being written to or read from unauthorized locations on the file system.
+
+Configure the logging root directory
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+From Mattermost v11.4, use the ``MM_LOG_PATH`` environment variable to define the root directory for all log files:
+
+.. code-block:: sh
+
+   export MM_LOG_PATH=/var/log/mattermost
+
+If ``MM_LOG_PATH`` isn't set, Mattermost uses the default ``logs`` directory relative to the Mattermost binary location.
+
+Log path validation
+~~~~~~~~~~~~~~~~~~~
+
+All log file paths configured via the following settings are validated:
+
+- ``LogSettings.FileLocation`` - main :ref:`server log file location <administration-guide/configure/environment-configuration-settings:file log directory>`
+- ``LogSettings.AdvancedLoggingJSON`` - all :ref:`file targets in advanced logging configuration <administration-guide/configure/environment-configuration-settings:output logs to multiple targets>`
+- ``ExperimentalAuditSettings.AdvancedLoggingJSON`` - all :ref:`file targets in audit logging configuration <administration-guide/configure/environment-configuration-settings:output audit logs to multiple targets>`
+
+**How validation works**:
+
+1. Paths are resolved to absolute paths
+2. Symlinks are resolved to their actual locations
+3. The resolved path is validated against the logging root directory
+4. Paths outside the root directory generate error logs and are excluded from downloads
+
+**Validation occurs**:
+
+- When accessing log files via **System Console > Reporting > Server Logs**
+- When generating support packets
+- During configuration changes (warnings are logged for invalid paths)
+
+When a log file path is outside the allowed root directory, Mattermost logs an error and excludes the file from support packet downloads: ``"Blocked attempt to read log file outside allowed root"``. The error message includes the file path, configuration section, and validation failure details.
+
+Configuration requirements
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**If using default logging**: No action required. Logs are stored in the default ``logs`` directory.
+
+**If using custom log paths**: Ensure all log file paths in ``AdvancedLoggingJSON`` point to locations within your logging root directory.
+
+**Valid configuration example**:
+
+.. code-block:: sh
+
+   export MM_LOG_PATH=/var/log/mattermost
+
+In ``config.json``:
+
+.. code-block:: JSON
+
+   {
+     "file1": {
+       "type": "file",
+       "format": "json",
+       "levels": [
+         {"id": 2, "name": "error", "stacktrace": true}
+       ],
+       "options": {
+         "filename": "/var/log/mattermost/errors.log",
+         "max_size": 100,
+         "max_age": 7,
+         "max_backups": 10,
+         "compress": true
+       },
+       "maxqueuesize": 1000
+     }
+   }
+
+This configuration is valid because ``/var/log/mattermost/errors.log`` is within the ``/var/log/mattermost`` root.
+
+**Invalid configuration example**:
+
+If ``MM_LOG_PATH=/var/log/mattermost``, this configuration fails:
+
+.. code-block:: JSON
+
+   {
+     "file1": {
+       "type": "file",
+       "options": {
+         "filename": "/tmp/logs/app.log"
+       }
+     }
+   }
+
+This fails because ``/tmp/logs/app.log`` is outside the ``/var/log/mattermost`` root directory. 
+
+See the :ref:`troubleshooting <deployment-guide/server/troubleshooting:log files not accessible>` documentation for troubleshooting steps if logs aren't appearing in the System Console or support packets due to log path issues.
+
+----
+
 Advanced logging
 -----------------
 
@@ -434,7 +532,6 @@ Define advanced log output
                 "maxqueuesize": 1000
             }
         }
-
 
     v10.12 or earlier
     ^^^^^^^^^^^^^^^^^^
@@ -638,7 +735,7 @@ File targets support rotation and compression triggered by size and/or duration.
 +-------------+----------+---------------------------------------------------------------------------------------------------------------------+
 | **Key**     | **Type** | **Description**                                                                                                     |
 +-------------+----------+---------------------------------------------------------------------------------------------------------------------+
-| filename    | string   | Full path to the output file.                                                                                       |
+| filename    | string   | Full path to the output file. From v11.4, should be within the directory specified by ``MM_LOG_PATH``.              |
 +-------------+----------+---------------------------------------------------------------------------------------------------------------------+
 | max_size    | number   | Maximum size, in megabytes (MB), the log file can grow before it gets rotated. Default is ``100`` MB.               |
 +-------------+----------+---------------------------------------------------------------------------------------------------------------------+
@@ -700,6 +797,66 @@ The TCP socket targets can be configured with an IP address or domain name, port
 +----------+----------+--------------------------------------------------------------------------------------------------------------------------+
 
 ---- 
+
+Cluster job execution debug messages
+-------------------------------------
+
+.. include:: ../../_static/badges/ent-plus.rst
+  :start-after: :nosearch:
+
+From Mattermost v11.4, debug-level log messages are available to help system admins understand cluster job execution behavior in :doc:`high availability </administration-guide/scale/high-availability-cluster-based-deployment>` deployments for specific Recurring Tasks.
+
+These debug messages apply only to the following Recurring Tasks:
+
+- Scheduled Posts
+- Post Reminders
+- DND Status Reset
+
+.. important::
+
+  - These debug messages aren't available for other job types such as Elasticsearch indexing, SAML sync, LDAP sync, data retention, or compliance exports. The absence of these debug messages for other job types doesn't indicate a problem with job execution.
+  - These messages are only visible when debug logging is enabled. See `How do I enable debug logging? <#how-do-i-enable-debug-logging>`__ for details.
+  - In a cluster deployment, only the leader node executes these Recurring Tasks. Non-leader nodes skip these specific jobs and log debug messages to indicate this is expected behavior.
+
+Debug messages for job startup
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When a non-leader node starts up, it skips initialization for these specific Recurring Tasks and logs one of the following debug messages:
+
+- ``Skipping scheduled posts job startup since this is not the leader node``
+- ``Skipping unset DND status job startup since this is not the leader node``
+- ``Skipping post reminder job startup since this is not the leader node``
+
+These messages indicate normal operation. In a high availability cluster, these Recurring Tasks should only run on the leader node to prevent duplicate execution.
+
+Debug messages for leadership changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When a node loses leadership status while these Recurring Tasks are running, it cancels the running tasks and logs:
+
+- ``This is no longer leader node. Cancelling the [job name] task``
+
+Where ``[job name]`` is one of: ``scheduled posts``, ``DND status reset``, or ``post reminder``.
+
+This indicates the cluster is performing leader election correctly. The new leader node will take over execution of these Recurring Tasks.
+
+Troubleshooting with cluster job debug messages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you're investigating why Recurring Tasks (Scheduled Posts, Post Reminders, or DND Status Reset) aren't running on a specific node:
+
+1. Enable debug logging if not already enabled.
+2. Check the logs for the debug messages listed above.
+3. If you see these messages, the node is correctly identified as a non-leader and is behaving as expected.
+4. These Recurring Tasks will be running on the leader node instead.
+
+.. note::
+
+  These debug messages only apply to Recurring Tasks. For other job types (Elasticsearch indexing, SAML sync, LDAP sync, data retention, compliance exports), different logging mechanisms apply. The absence of these specific debug messages for other job types is expected and does not indicate a problem.
+
+For more information about leader election and cluster configuration, see :doc:`High Availability cluster-based deployment </administration-guide/scale/high-availability-cluster-based-deployment>`.
+
+----
 
 Frequently asked questions
 --------------------------
