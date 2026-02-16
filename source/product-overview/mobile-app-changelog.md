@@ -17,10 +17,21 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - iPhone 8+ devices and later with iOS 16.0+ are [required](https://support.apple.com/en-il/guide/iphone/iphe3fa5df43/16.0/ios/16.0).
 
 ### Improvements
- - TBD.
+ - Added auto-translation support.
+ - Added ability to send Burn on Read posts from mobile app [MM-66969](https://mattermost.atlassian.net/browse/MM-66969).
+ - Updated the splash screen background graphic.
+ - Added ability to edit Playbook runs and Checklist summaries [MM-66995](https://mattermost.atlassian.net/browse/MM-66995).
+ - Allowed task item renaming and editing descriptions [MM-67007](https://mattermost.atlassian.net/browse/MM-67007).
+ - Updated the Interactive Dialog to use Apps Form Framework [MM-64700](https://mattermost.atlassian.net/browse/MM-64700).
 
 ### Bug Fixes
- - TBD.
+ - Fixed an issue where the playbook menu item was not hidden when there were no runs.
+ - Fixed an issue where the pre-auth secret was removed on logout.
+ - Fixed an issue where Playbooks view didn’t only show the playbooks for the current team [MM-66753](https://mattermost.atlassian.net/browse/MM-66753).
+ - Fixed an issue where the "invite to team" menu did not appear in all cases it should.
+
+### Open Source Components
+ - Added ``@formatjs/intl-displaynames`` to https://github.com/mattermost/mattermost-mobile.
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
