@@ -22,6 +22,36 @@ If you upgrade from a release earlier than v11.4, please read the other [Importa
 
 ### Improvements
 
+#### UI Changes
+ - Pre-packaged GitLab plugin version [v1.12.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.12.0).
+ - Pre-packaged MS Teams Meetings plugin version [v2.4.0](https://github.com/mattermost/mattermost-plugin-msteams-meetings/releases/tag/v2.4.0).
+ - Pre-packaged Zoom plugin version [v1.12.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.12.0).
+ - Pre-packaged Playbooks plugin version [v2.7.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.7.0) [MM-67198](https://mattermost.atlassian.net/browse/MM-67198).
+ - Pre-packaged GitHub plugin version [v2.6.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.6.0).
+ - Updated minimum Edge and Chrome versions to 144+.
+ - Added support for auto-translations.
+ - Auto-translation support for posts [MM-64493](https://mattermost.atlassian.net/browse/MM-64493).
+ - Added support for Agents LLM Services as a translation provider in channel auto-translations.
+ - Added the ability for web app plugin code to be loaded asynchronously [MM-67538](https://mattermost.atlassian.net/browse/MM-67538).
+ - AI Rewrites now includes some context from the most recent messages in the thread to help provide better rewrites.
+ - Added the ability to access channel settings and rename a channel from the channel info right-hand sidebar [MM-66862](https://mattermost.atlassian.net/browse/MM-66862).
+ - Added tooltips to action buttons, and action errors are now displayed [MM-65023](https://mattermost.atlassian.net/browse/MM-65023).
+ - Updated the signup flow to replace the newsletter opt-in with a checkbox to agree to the **Acceptable Use Policy** and **Privacy Policy** [MM-67030](https://mattermost.atlassian.net/browse/MM-67030).
+ - Added back offline **Help** documentation accessible from the message composer [MM-61383](https://mattermost.atlassian.net/browse/MM-61383).
+ - Available AI Agents are now shown in the @-mention autocomplete menu, regardless of channel membership [MM-67118](https://mattermost.atlassian.net/browse/MM-67118).
+ - Added new icons for archived and private channels [MM-66561](https://mattermost.atlassian.net/browse/MM-66561).
+
+#### Administration
+ - Added a ``mmctl license get`` command to retrieve and display current server license information [MM-67114](https://mattermost.atlassian.net/browse/MM-67114).
+ - Introduced ``protected`` attribute on property fields to restrict write access to the managing plugin [MM-66836](https://mattermost.atlassian.net/browse/MM-66836).
+ - Introduced ``access_mode`` attribute on property fields to manage read access.
+ - Configured the build system to natively build the server on FreeBSD.
+ - Upgraded to node 24 and main dependencies with ``babel``, ``webpack@5.103`` and ``jest@30`` [MM-66972](https://mattermost.atlassian.net/browse/MM-66972).
+ - Added a new column to the channel members table to handle auto translations.
+ - Added a new migration to change the primary key in the translations table.
+ - Updated audit/activity logging for Desktop App external authentication.
+ - Added audit logs for when admins access posts on channels they are not a member of [MM-64460](https://mattermost.atlassian.net/browse/MM-64460).
+
 ### Bug Fixes
 
 ### API Changes
