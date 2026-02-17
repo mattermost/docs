@@ -76,7 +76,13 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 (release-v10.11-extended-support-release)=
 ## Release v10.11 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
-- **10.11.12, released 2026-02-17**
+- **10.11.12, released **
+  - Mattermost v10.11.12 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged GitLab plugin version [v1.12.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.12.0).
+  - Pre-packaged Zoom plugin version [v1.12.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.12.0).
+  - Pre-packaged Playbooks plugin version [v2.4.3](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.4.3).
+  - Fixed an issue with link preview metadata processing and image validation.
+  - Fixed an issue where rate limiting was missing from the login endpoint (5 requests/second, 10 burst).
   - Mattermost v10.11.12 contains no database or functional changes.
 - **10.11.11, released 2026-02-13**
 ```{Attention}
