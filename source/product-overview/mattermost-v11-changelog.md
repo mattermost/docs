@@ -21,6 +21,9 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - **Changes to Enterprise Advanced plan:**
    - Added ``Autotranslation`` settings ``Enable``, ``RestrictDMAndGM``, ``Provider``, ``TargetLanguages``, ``Workers``, ``TimeoutMs``, ``LibreTranslate``, and ``Agents`` to support auto-translations.
 
+#### Compatibility
+ - Updated minimum Edge and Chrome versions to 144+.
+
 ```{Important}
 If you upgrade from a release earlier than v11.4, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html). In case of an upgrade failure, please check the [Downgrade Guide](https://docs.mattermost.com/administration-guide/upgrade/downgrading-mattermost-server.html) and the [Recovery Guide](https://docs.mattermost.com/deployment-guide/backup-disaster-recovery.html) for rollback steps and interim mitigation strategy.
 ```
@@ -33,7 +36,6 @@ If you upgrade from a release earlier than v11.4, please read the other [Importa
  - Pre-packaged Zoom plugin version [v1.12.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.12.0).
  - Pre-packaged Playbooks plugin version [v2.7.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.7.0) [MM-67198](https://mattermost.atlassian.net/browse/MM-67198).
  - Pre-packaged GitHub plugin version [v2.6.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.6.0).
- - Updated minimum Edge and Chrome versions to 144+.
  - Added support for auto-translations.
  - Auto-translation support for posts [MM-64493](https://mattermost.atlassian.net/browse/MM-64493).
  - Added support for Agents LLM Services as a translation provider in channel auto-translations.
