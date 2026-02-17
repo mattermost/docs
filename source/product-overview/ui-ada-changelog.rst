@@ -12,12 +12,32 @@ Changelog
 
    * - Version
      - Change Description
+   * - v11.5
+     - (UI) Added support for auto-translations `MM-64493 <https://mattermost.atlassian.net/browse/MM-64493>`__.
+   * - v11.5
+     - (UI) Added the ability for web app plugin code to be loaded asynchronously `MM-67538 <https://mattermost.atlassian.net/browse/MM-67538>`__.
+   * - v11.5
+     - (UI) AI Rewrites now includes some context from the most recent messages in the thread to help provide better rewrites.
+   * - v11.5
+     - (UI) Available AI Agents are now shown in the @-mention autocomplete menu, regardless of channel membership `MM-67118 <https://mattermost.atlassian.net/browse/MM-67118>`__.
+   * - v11.5
+     - (UI) Added the ability to access channel settings and rename a channel from the channel info right-hand sidebar `MM-66862 <https://mattermost.atlassian.net/browse/MM-66862>`__.
+   * - v11.5
+     - (UI) Added tooltips to action buttons, and action errors are now displayed `MM-65023 <https://mattermost.atlassian.net/browse/MM-65023>`__.
+   * - v11.5
+     - (UI) Updated the signup flow to replace the newsletter opt-in with a checkbox to agree to the **Acceptable Use Policy** and **Privacy Policy** `MM-67030 <https://mattermost.atlassian.net/browse/MM-67030>`__.
+   * - v11.5
+     - (UI) Added back offline **Help** documentation accessible from the message composer `MM-61383 <https://mattermost.atlassian.net/browse/MM-61383>`__.
+   * - v11.5
+     - (UI) Added new icons for archived and private channels `MM-66561 <https://mattermost.atlassian.net/browse/MM-66561>`__.
+   * - v11.5
+     - (Accessibility) Fixed an issue where the profile status menu disappeared at higher zoom levels or at resized window on mobile view `MM-64655 <https://mattermost.atlassian.net/browse/MM-64655>`__.
    * - v11.4
-     - Updated illustrations and visual design for the initial loading screen, preparing workspace flow, IP filtering empty state, and admin console feature discovery panels `MM-67081 <https://mattermost.atlassian.net/browse/MM-67081>`__.
+     - (UI) Updated illustrations and visual design for the initial loading screen, preparing workspace flow, IP filtering empty state, and admin console feature discovery panels `MM-67081 <https://mattermost.atlassian.net/browse/MM-67081>`__.
    * - v11.4
-     - Added adjustments to thread and right-hand side plugin pop-out titles `MM-66898 <https://mattermost.atlassian.net/browse/MM-66898>`__.
+     - (UI) Added adjustments to thread and right-hand side plugin pop-out titles `MM-66898 <https://mattermost.atlassian.net/browse/MM-66898>`__.
    * - v11.4
-     - MS Teams and Outlook on mobile no longer display a "Your browser does not support notifications" warning banner when running Mattermost embedded in those apps `MM-66769 <https://mattermost.atlassian.net/browse/MM-66769>`__.
+     - (UI) MS Teams and Outlook on mobile no longer display a "Your browser does not support notifications" warning banner when running Mattermost embedded in those apps `MM-66769 <https://mattermost.atlassian.net/browse/MM-66769>`__.
    * - v11.3
      - (UI) Added Korean language support and upgraded Korean translations from Alpha to Official.
    * - v11.3
