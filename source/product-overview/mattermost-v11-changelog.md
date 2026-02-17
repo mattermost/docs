@@ -36,16 +36,14 @@ If you upgrade from a release earlier than v11.4, please read the other [Importa
  - Pre-packaged Zoom plugin version [v1.12.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.12.0).
  - Pre-packaged Playbooks plugin version [v2.7.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.7.0) [MM-67198](https://mattermost.atlassian.net/browse/MM-67198).
  - Pre-packaged GitHub plugin version [v2.6.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.6.0).
- - Added support for auto-translations.
- - Auto-translation support for posts [MM-64493](https://mattermost.atlassian.net/browse/MM-64493).
- - Added support for Agents LLM Services as a translation provider in channel auto-translations.
+ - Added support for auto-translations [MM-64493](https://mattermost.atlassian.net/browse/MM-64493).
  - Added the ability for web app plugin code to be loaded asynchronously [MM-67538](https://mattermost.atlassian.net/browse/MM-67538).
  - AI Rewrites now includes some context from the most recent messages in the thread to help provide better rewrites.
+ - Available AI Agents are now shown in the @-mention autocomplete menu, regardless of channel membership [MM-67118](https://mattermost.atlassian.net/browse/MM-67118).
  - Added the ability to access channel settings and rename a channel from the channel info right-hand sidebar [MM-66862](https://mattermost.atlassian.net/browse/MM-66862).
  - Added tooltips to action buttons, and action errors are now displayed [MM-65023](https://mattermost.atlassian.net/browse/MM-65023).
  - Updated the signup flow to replace the newsletter opt-in with a checkbox to agree to the **Acceptable Use Policy** and **Privacy Policy** [MM-67030](https://mattermost.atlassian.net/browse/MM-67030).
  - Added back offline **Help** documentation accessible from the message composer [MM-61383](https://mattermost.atlassian.net/browse/MM-61383).
- - Available AI Agents are now shown in the @-mention autocomplete menu, regardless of channel membership [MM-67118](https://mattermost.atlassian.net/browse/MM-67118).
  - Added new icons for archived and private channels [MM-66561](https://mattermost.atlassian.net/browse/MM-66561).
 
 #### Administration
@@ -54,23 +52,17 @@ If you upgrade from a release earlier than v11.4, please read the other [Importa
  - Introduced ``access_mode`` attribute on property fields to manage read access.
  - Configured the build system to natively build the server on FreeBSD.
  - Upgraded to node 24 and main dependencies with ``babel``, ``webpack@5.103`` and ``jest@30`` [MM-66972](https://mattermost.atlassian.net/browse/MM-66972).
- - Added a new column to the channel members table to handle auto translations.
- - Added a new migration to change the primary key in the translations table.
 
 ### Bug Fixes
  - Fixed an issue with popout windows in subpath deployments [MM-67269](https://mattermost.atlassian.net/browse/MM-67269).
  - Fixed an issue where additional error details were missing from ``ElasticSearch`` test connection failures [MM-66306](https://mattermost.atlassian.net/browse/MM-66306).
  - Fixed an issue where several Shared Channels operations recorded failure into the audit log even when successful [MM-67211](https://mattermost.atlassian.net/browse/MM-67211).
- - Fixed the AI rewrite menu prompt placeholder and labels to better guide message creation [MM-67141](https://mattermost.atlassian.net/browse/MM-67141).
  - Fixed an issue where the check-cws-connection endpoint returned 500 errors in self-hosted enterprise environments [MM-67021](https://mattermost.atlassian.net/browse/MM-67021).
- - Fixed an issue with AI rewrite prompts to preserve the user's locale when available [MM-66577](https://mattermost.atlassian.net/browse/MM-66577).
  - Fixed a performance regression that caused the requests to populate the **Recent mentions** right-hand side (RHS) to timeout. This, in turn, re-introduces a known bug in searches with quoted strings, that may include results not exactly matching the quoted string [MM-66782](https://mattermost.atlassian.net/browse/MM-66782).
  - Fixed an issue where an un-needed **Cancel** button was shown for **User Attributes** in the **System Console** [MM-67111](https://mattermost.atlassian.net/browse/MM-67111).
- - Fixed an issue with post list etags where an autotranslations timestamp for autotranslation channels was not included.
  - Fixed an issue where plugin settings marked as ``secret: true`` inside ``settings_schema.sections[]`` were not sanitized, potentially exposing secret values through the API [MM-67502](https://mattermost.atlassian.net/browse/MM-67502).
  - Fixed an issue with link preview metadata processing and image validation.
  - Fixed an issue with the usage of ``WebSocketClient`` from ``@mattermost/shared`` package being broken in Node.js environments [MM-67137](https://mattermost.atlassian.net/browse/MM-67137).
- - Fixed an issue where posts that had updated translations didn’t get ``posts since`` endpoint.
  - Fixed an issue where rate limiting was missing from the login endpoint (5 requests/second, 10 burst).
  - Fixed an issue where the profile status menu disappeared at higher zoom levels or at resized window on mobile view [MM-64655](https://mattermost.atlassian.net/browse/MM-64655).
 
