@@ -12,7 +12,12 @@
 (release-v11.4-feature-release)=
 ## Release v11.4 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
-- **11.4.1, released 2026-02-17**
+- **11.4.1, released **
+  - Mattermost v11.4.1 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged GitLab plugin version [v1.12.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.12.0).
+  - Pre-packaged Zoom plugin version [v1.12.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.12.0).
+  - Fixed an issue with link preview metadata processing and image validation.
+  - Fixed an issue where rate limiting was missing from the login endpoint (5 requests/second, 10 burst).
   - Mattermost v11.4.1 contains no database or functional changes.
 - **11.4.0, released 2026-02-16**
 
@@ -82,7 +87,12 @@ If you upgrade from a release earlier than v11.3, please read the other [Importa
 (release-v11.3-feature-release)=
 ## Release v11.3 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
-- **11.3.2, released 2026-02-17**
+- **11.3.2, released **
+  - Mattermost v11.3.2 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged GitLab plugin version [v1.12.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.12.0).
+  - Pre-packaged Zoom plugin version [v1.12.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.12.0).
+  - Fixed an issue with link preview metadata processing and image validation.
+  - Fixed an issue where rate limiting was missing from the login endpoint (5 requests/second, 10 burst).
   - Mattermost v11.3.2 contains no database or functional changes.
 - **11.3.1, released 2026-02-13**
 ```{Attention}
@@ -197,6 +207,11 @@ If you upgrade from a release earlier than v11.2, please read the other [Importa
 ## Release v11.2 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
 - **11.2.4, released 2026-02-17**
+  - Mattermost v11.2.4 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged GitLab plugin version [v1.12.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.12.0).
+  - Pre-packaged Zoom plugin version [v1.12.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.12.0).
+  - Fixed an issue with link preview metadata processing and image validation.
+  - Fixed an issue where rate limiting was missing from the login endpoint (5 requests/second, 10 burst).
   - Mattermost v11.2.4 contains no database or functional changes.
 - **11.2.3, released 2026-02-13**
 ```{Attention}
