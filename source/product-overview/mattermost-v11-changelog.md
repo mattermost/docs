@@ -45,6 +45,7 @@ If you upgrade from a release earlier than v11.4, please read the other [Importa
  - Updated the signup flow to replace the newsletter opt-in with a checkbox to agree to the **Acceptable Use Policy** and **Privacy Policy** [MM-67030](https://mattermost.atlassian.net/browse/MM-67030).
  - Added back offline **Help** documentation accessible from the message composer [MM-61383](https://mattermost.atlassian.net/browse/MM-61383).
  - Added new icons for archived and private channels [MM-66561](https://mattermost.atlassian.net/browse/MM-66561).
+ - Renamed **Self-Deleting Messages** to **Burn on Read** in the **System Console**.
 
 #### Administration
  - Added a ``mmctl license get`` command to retrieve and display current server license information [MM-67114](https://mattermost.atlassian.net/browse/MM-67114).
