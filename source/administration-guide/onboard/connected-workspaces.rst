@@ -19,16 +19,16 @@ The process of connecting Mattermost workspaces involves the following 5 steps:
 
 2. `Enable the connected workspaces functionality <#enable-connected-workspaces>`__ for each Mattermost Enterprise instance you want to connect.
 
-3. System admins must `create a secure and trusted connection <#create-a-secure-connection>`__ with other Mattermost Enterprise instances using the System Console or slash commands. This process involves creating a password-protected, encrypted invitation, creating a strong decryption password, then sending the invitation and password to the system admin of a remote Mattermost instance. From Mattermost v11.0, remote cluster invitations use PBKDF2 key derivation for enhanced security.
+3. System admins or users with the **Secure Connection Manager** role must `create a secure and trusted connection <#create-a-secure-connection>`__ with other Mattermost Enterprise instances using the System Console or slash commands. This process involves creating a password-protected, encrypted invitation, creating a strong decryption password, then sending the invitation and password to the admin of a remote Mattermost instance. From Mattermost v11.0, remote cluster invitations use PBKDF2 key derivation for enhanced security.
 
-4. When a remote system admin receives the invitation, they must `accept the invitation <#accept-a-secure-connection-invitation>`__ using the System Console or slash commands.
+4. When a remote admin receives the invitation, they must `accept the invitation <#accept-a-secure-connection-invitation>`__ using the System Console or slash commands.
 
-5. Once a trusted relationship is established between 2 Mattermost servers, system admins can `share specific public or private channels <#share-channels-with-secure-connections>`__ with secure connections.
+5. Once a trusted relationship is established between 2 Mattermost servers, system admins or users with the **Shared Channel Manager** role can `share specific public or private channels <#share-channels-with-secure-connections>`__ with secure connections.
 
 .. note:: 
 
-    - System admins can only create secure connections with other Mattermost Enterprise instances, and can only share channels with secured connections.
-    - System admins must use Mattermost to generate a password-protected encrypted invitation code. However, sending secure connection invitations is not completed using Mattermost. System admins must have an independent way to extend the secure connection invitation, such as by email.
+    - Only system admins or users with the appropriate :doc:`delegated administration role </administration-guide/onboard/delegated-granular-administration>` can create secure connections with other Mattermost Enterprise instances and share channels with secured connections.
+    - Users creating secure connections must use Mattermost to generate a password-protected encrypted invitation code. However, sending secure connection invitations is not completed using Mattermost. They must have an independent way to extend the secure connection invitation, such as by email.
     - A channel shared by a host organization cannot be shared from the receiving organization to another organization. Organizations can't share a channel originating from another organization.
 
 Enable connected workspaces
@@ -64,7 +64,7 @@ Create a secure connection
 
     By default, only system admins can use slash commands to create workspace connections. You can delegate these capabilities using the built-in **Shared Channel Manager** and **Secure Connection Manager** :doc:`delegated administration roles </administration-guide/onboard/delegated-granular-administration>`. Alternatively, you can grant the ability to **Manage Shared Channels** and **Manage Secure Connections** to Mattermost users by modifying permissions of the :ref:`system scheme <administration-guide/onboard/advanced-permissions:system scheme>` or :ref:`team override scheme <administration-guide/onboard/advanced-permissions:team override scheme>`.
 
-    System admins can :doc:`run the following slash command </integrations-guide/run-slash-commands>` to create a secure connection invitation:
+    Authorized users can :doc:`run the following slash command </integrations-guide/run-slash-commands>` to create a secure connection invitation:
 
     ``/secure-connection create --name <--displayname> --password``
 
@@ -116,7 +116,7 @@ Accept a connection invitation
 Share channels with secure connections
 --------------------------------------
 
-Once a connection is established between two Mattermost servers, system admins can share channels across secured workspaces.
+Once a connection is established between two Mattermost servers, system admins or users with the **Shared Channel Manager** role can share channels across secured workspaces.
 
 .. tab:: System Console
 
@@ -200,7 +200,7 @@ When ``EnableSharedChannelsMemberSync`` is disabled, channel membership changes 
 Manage connections and invitations
 ----------------------------------
 
-System admins can `edit <#edit-a-connected-workspace>`__ or `delete <#delete-a-connected-workspace>`__ a connected workspace, and `review connection status <#review-connection-status>`__, and `regenerate invitation codes and passwords <#regenerate-invitation-codes-for-pending-connections>`__ for pending connections.
+System admins or users with the **Secure Connection Manager** role can `edit <#edit-a-connected-workspace>`__ or `delete <#delete-a-connected-workspace>`__ a connected workspace, and `review connection status <#review-connection-status>`__, and `regenerate invitation codes and passwords <#regenerate-invitation-codes-for-pending-connections>`__ for pending connections.
 
 Edit a connected workspace
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
