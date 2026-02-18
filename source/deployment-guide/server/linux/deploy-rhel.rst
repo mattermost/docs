@@ -44,13 +44,13 @@ In a terminal window, ssh onto the system that will host the Mattermost Server. 
 
   .. code-block:: sh
 
-    wget https://releases.mattermost.com/11.3.0/mattermost-11.3.0-linux-amd64.tar.gz
+    wget https://releases.mattermost.com/11.4.0/mattermost-11.4.0-linux-amd64.tar.gz
 
 .. tab:: Current ESR
 
   .. code-block:: sh
 
-    wget https://releases.mattermost.com/10.11.10/mattermost-10.11.10-linux-amd64.tar.gz
+    wget https://releases.mattermost.com/10.11.11/mattermost-10.11.11-linux-amd64.tar.gz
 
 .. tab:: Older releases
 
