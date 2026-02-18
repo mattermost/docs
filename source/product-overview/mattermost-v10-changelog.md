@@ -77,7 +77,7 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 ## Release v10.11 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
 - **10.11.12, released **
-  - Mattermost v10.11.12 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v10.11.12 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Zoom plugin version [v1.12.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.12.0).
   - Pre-packaged Playbooks plugin version [v2.4.3](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.4.3).
   - Fixed an issue with link preview metadata processing and image validation.
