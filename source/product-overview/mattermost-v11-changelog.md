@@ -66,6 +66,7 @@ If you upgrade from a release earlier than v11.4, please read the other [Importa
  - Fixed an issue with the usage of ``WebSocketClient`` from ``@mattermost/shared`` package being broken in Node.js environments [MM-67137](https://mattermost.atlassian.net/browse/MM-67137).
  - Fixed an issue where rate limiting was missing from the login endpoint (5 requests/second, 10 burst).
  - Fixed an issue where the profile status menu disappeared at higher zoom levels or at resized window on mobile view [MM-64655](https://mattermost.atlassian.net/browse/MM-64655).
+ - Fixed an issue where importing a guest user without team or channel memberships would cause the bulk import to fail with an error [MM-64224](https://mattermost.atlassian.net/browse/MM-64224).
 
 ### Audit Log Event Changes
  - Updated audit/activity logging for Desktop App external authentication.
