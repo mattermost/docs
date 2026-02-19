@@ -13,7 +13,7 @@ Changelog
    * - Version
      - Change Description
    * - v11.5
-     - (UI) Added support for auto-translations `MM-64493 <https://mattermost.atlassian.net/browse/MM-64493>`__.
+     - (UI) Added support for auto-translations. Initial Beta release. Requires Enterprise Advanced license `MM-64493 <https://mattermost.atlassian.net/browse/MM-64493>`__.
    * - v11.5
      - (UI) Added the ability for web app plugin code to be loaded asynchronously `MM-67538 <https://mattermost.atlassian.net/browse/MM-67538>`__.
    * - v11.5
