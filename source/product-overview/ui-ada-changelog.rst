@@ -32,8 +32,6 @@ Changelog
      - (UI) Added new icons for archived and private channels `MM-66561 <https://mattermost.atlassian.net/browse/MM-66561>`__.
    * - v11.5
      - (Accessibility) Fixed an issue where the profile status menu disappeared at higher zoom levels or at resized window on mobile view `MM-64655 <https://mattermost.atlassian.net/browse/MM-64655>`__.
-   * - v11.5
-     - (UI) Renamed **Self-Deleting Messages** to **Burn on Read** in the **System Console**.
    * - v11.4
      - (UI) Updated illustrations and visual design for the initial loading screen, preparing workspace flow, IP filtering empty state, and admin console feature discovery panels `MM-67081 <https://mattermost.atlassian.net/browse/MM-67081>`__.
    * - v11.4
