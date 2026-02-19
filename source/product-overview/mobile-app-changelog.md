@@ -17,7 +17,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - iPhone 8+ devices and later with iOS 16.0+ are [required](https://support.apple.com/en-il/guide/iphone/iphe3fa5df43/16.0/ios/16.0).
 
 ### Improvements
- - Added auto-translation support.
+ - Added auto-translation support. Initial Beta release. Requires Enterprise Advanced license.
  - Added ability to send Burn on Read posts from mobile app [MM-66969](https://mattermost.atlassian.net/browse/MM-66969).
  - Updated the splash screen background graphic.
  - Added ability to edit Playbook runs and Checklist summaries [MM-66995](https://mattermost.atlassian.net/browse/MM-66995).
