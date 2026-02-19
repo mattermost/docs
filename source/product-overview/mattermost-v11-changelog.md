@@ -45,7 +45,6 @@ If you upgrade from a release earlier than v11.4, please read the other [Importa
  - Updated the signup flow to replace the newsletter opt-in with a checkbox to agree to the **Acceptable Use Policy** and **Privacy Policy** [MM-67030](https://mattermost.atlassian.net/browse/MM-67030).
  - Added back offline **Help** documentation accessible from the message composer [MM-61383](https://mattermost.atlassian.net/browse/MM-61383).
  - Added new icons for archived and private channels [MM-66561](https://mattermost.atlassian.net/browse/MM-66561).
- - Renamed **Self-Deleting Messages** to **Burn on Read** in the **System Console**.
 
 #### Administration
  - Added a ``mmctl license get`` command to retrieve and display current server license information [MM-67114](https://mattermost.atlassian.net/browse/MM-67114).
@@ -53,6 +52,7 @@ If you upgrade from a release earlier than v11.4, please read the other [Importa
  - Introduced ``access_mode`` attribute on property fields to manage read access.
  - Configured the build system to natively build the server on FreeBSD.
  - Upgraded to node 24 and main dependencies with ``babel``, ``webpack@5.103`` and ``jest@30`` [MM-66972](https://mattermost.atlassian.net/browse/MM-66972).
+ - Renamed **Self-Deleting Messages** to **Burn on Read** in the **System Console**.
 
 ### Bug Fixes
  - Fixed an issue with popout windows in subpath deployments [MM-67269](https://mattermost.atlassian.net/browse/MM-67269).
