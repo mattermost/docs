@@ -42,7 +42,7 @@ This page describes how to install the Mattermost desktop app on Linux.
   
     .. code-block:: sh
 
-      sudo snap install mattermost-desktop --beta
+      sudo snap install mattermost-desktop
 
   2. Run Mattermost as a desktop app.
 
