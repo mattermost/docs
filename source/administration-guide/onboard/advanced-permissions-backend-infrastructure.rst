@@ -481,7 +481,7 @@ The following built-in roles with default permissions are available:
 
 - manage_shared_channels
 
-*secure_connection_manager*
+*connected_workspaces_manager*
 
 - manage_secure_connections
 
