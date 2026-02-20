@@ -9,6 +9,77 @@
 ```{include} common-esr-support-upgrade.md
 ```
 
+(release-v11.4-feature-release)=
+## Release v11.4 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
+
+**Release Day: February 16, 2026**
+
+### Upgrade Impact
+
+```{Attention}
+**Breaking Changes**
+ - Photoshop Document (PSD) files are now no longer inline previewed, they are treated as regular file attachments.
+```
+
+#### Database Schema Changes
+ - Added two new tables, ``Recaps`` and ``RecapChannels``. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details [MM-66359](https://mattermost.atlassian.net/browse/MM-66359).
+
+#### Compatibility
+ - Updated minimum Edge and Chrome versions to 142+.
+
+```{Important}
+If you upgrade from a release earlier than v11.3, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html). In case of an upgrade failure, please check the [Downgrade Guide](https://docs.mattermost.com/administration-guide/upgrade/downgrading-mattermost-server.html) and the [Recovery Guide](https://docs.mattermost.com/deployment-guide/backup-disaster-recovery.html) for rollback steps and interim mitigation strategy.
+```
+
+### Improvements
+
+#### User Interface
+ - Pre-packaged Boards plugin version [v9.2.2](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.2.2) ([MM-66985](https://mattermost.atlassian.net/browse/MM-66985)).
+ - Pre-packaged Jira plugin version [v4.5.1](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.5.1).
+ - Pre-packaged Playbooks plugin version [v2.6.2](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.6.2).
+ - Updated illustrations and visual design for the initial loading screen, preparing workspace flow, IP filtering empty state, and admin console feature discovery panels [MM-67081](https://mattermost.atlassian.net/browse/MM-67081).
+ - Added adjustments to thread and right-hand side plugin pop-out titles [MM-66898](https://mattermost.atlassian.net/browse/MM-66898).
+ - MS Teams and Outlook on mobile no longer display a "Your browser does not support notifications" warning banner when running Mattermost embedded in those apps [MM-66769](https://mattermost.atlassian.net/browse/MM-66769).
+
+#### Administration
+ - Added [debug logs](https://docs.mattermost.com/administration-guide/manage/logging.html#cluster-job-execution-debug-messages) to indicate if the scheduled post job, Do Not Disturb status reset job, or the post reminder job is not running with the current node not being a leader node [MM-66861](https://mattermost.atlassian.net/browse/MM-66861).
+ - Added CPU cores and total memory to the Support Packet [MM-66840](https://mattermost.atlassian.net/browse/MM-66840).
+ - Added a new ``MM_LOG_PATH`` environment variable to [restrict log file locations](https://docs.mattermost.com/administration-guide/manage/logging.html#log-path-restrictions). Log files must now be within a configured root directory.
+
+#### Performance
+ - Benchmarking test results showed no significant difference: a 0.28% decrease in the number of supported users for the new release, which lies within the ``[-5%, +5%]`` prediction interval. View the full raw data and methodology in our [Performance Reports repository](https://github.com/mattermost/performance-reports/tree/main/performance-comparisons/v11.4).
+
+### Bug Fixes
+ - Fixed an issue with the behavior of the right‑hand sidebar (RHS) when navigating to global threads. The application now checks the current RHS state and suppresses the sidebar only if it is not showing mentions, search results, or flagged posts [MM-66871](https://mattermost.atlassian.net/browse/MM-66871). 
+ - Fixed an issue where the post list automatically scrolled to the bottom when a user edited a message [MM-64810](https://mattermost.atlassian.net/browse/MM-64810). 
+ - Fixed the misaligned design in posts in the thread view on mobile view.
+ - Fixed **Add channels** menu getting cut off when the **Direct Messages** category was collapsed [MM-66800](https://mattermost.atlassian.net/browse/MM-66800).
+ - Fixed an issue with the user's theme applying when it shouldn't, such as when creating a new team [MM-65828](https://mattermost.atlassian.net/browse/MM-65828).
+ - Fixed an issue where the channel info right sidebar was not scrollable [MM-62503](https://mattermost.atlassian.net/browse/MM-62503).
+ - Fixed an issue with PSD file previews.
+ - Fixed an issue where users removed from a private team could still enumerate public channels in that team via the channel search API.
+ - Fixed an issue with permalink embeds arriving from websocket messages.
+ - Fixed an issue with memory use during integration actions.
+ - Fixed an issue with permalink preview information after losing channel or team permissions.
+ - Fixed a permission validation issue when attaching files to posts.
+ - Fixed a memory allocation issue by updating ``mscfb`` and ``msoleps`` dependencies.
+ - User's actual authentication method is now validated before processing authentication type switch.
+ - Fixed an issue where the ``/mute`` slash command could be used to enumerate private channels.
+
+### API Changes
+ - Updated the POST `/api/v4/teams` team creation API to omit the `invite_id` value in the response when the requesting user does not have permission to invite members to the new team.
+ - ``ImportSettings.Directory`` can no longer be modified through the REST API. Infrastructure operators can still modify this setting via configuration file, environment variables, or mmctl in local mode.
+ - ``/api/v4/access_control_policies/{policy_id}/activate`` has been deprecated.
+
+### Audit Log Event Changes
+ - Added a new audit event ``AuditEventGenerateSupportPacket``.
+
+### Go Version
+ - v11.4 is built with Go ``v1.24.11``.
+
+### Contributors
+ - [agarciamontoro](https://github.com/agarciamontoro), [akshat-khosya](https://github.com/akshat-khosya), [Alesia](https://translate.mattermost.com/user/Alesia), [amyblais](https://github.com/amyblais), [andrleite](https://github.com/andrleite), [angeloskyratzakos](https://github.com/angeloskyratzakos), [Aryakoste](https://github.com/Aryakoste), [asaadmahmood](https://github.com/asaadmahmood), [avasconcelos114](https://github.com/avasconcelos114), [BenCookie95](https://github.com/BenCookie95), [bgardner8008](https://github.com/bgardner8008), [Boruus](https://github.com/Boruus), [brandon1024](https://github.com/brandon1024), [bshumylo](https://translate.mattermost.com/user/bshumylo), [calebroseland](https://github.com/calebroseland), [carlisgg](https://github.com/carlisgg), [CIOSAI](https://translate.mattermost.com/user/CIOSAI), [Combs7th](https://github.com/Combs7th), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://translate.mattermost.com/user/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [danilvalov](https://github.com/danilvalov), [devinbinnie](https://github.com/devinbinnie), [DHaussermann](https://github.com/DHaussermann), [DSchalla](https://github.com/DSchalla), [enahum](https://github.com/enahum), [esarafianou](https://github.com/esarafianou), [esethna](https://github.com/esethna), [ewwollesen](https://github.com/ewwollesen), [fmartingr](https://github.com/fmartingr), [frankps](https://translate.mattermost.com/user/frankps), [hanzei](https://github.com/hanzei), [harshilsharma63](https://github.com/harshilsharma63), [hmhealey](https://github.com/hmhealey), [isacikgoz](https://github.com/isacikgoz), [jgheithcock](https://github.com/jgheithcock), [jprusch](https://translate.mattermost.com/user/jprusch), [JulienTant](https://github.com/JulienTant), [jwilander](https://github.com/jwilander), [Kuruyia](https://github.com/Kuruyia), [larkox](https://github.com/larkox), [lieut-data](https://github.com/lieut-data), [lifeisafractal](https://github.com/lifeisafractal), [lindalumitchell](https://github.com/lindalumitchell), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [majo](https://translate.mattermost.com/user/majo), [marko-matusovic](https://translate.mattermost.com/user/marko-matusovic), [master7](https://translate.mattermost.com/user/master7), [matthewbirtch](https://github.com/matthewbirtch), [merlynadena](https://github.com/merlynadena), [mikhail10](https://translate.mattermost.com/user/mikhail10), [milotype](https://translate.mattermost.com/user/milotype), [Morgan_svk](https://translate.mattermost.com/user/Morgan_svk), [NARSimoes](https://github.com/NARSimoes), [natalie-hub](https://github.com/natalie-hub), [nevyangelova](https://github.com/nevyangelova), [nickmisasi](https://github.com/nickmisasi), [pvev](https://github.com/pvev), [rahimrahman](https://github.com/rahimrahman), [Rajat-Dabade](https://github.com/Rajat-Dabade), [Reinkard](https://translate.mattermost.com/user/Reinkard), [Ricky-Tigg](https://translate.mattermost.com/user/Ricky-Tigg), [roberson-io](https://github.com/roberson-io), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [shawnaym](https://github.com/shawnaym), [svelle](https://github.com/svelle), [ThrRip](https://translate.mattermost.com/user/ThrRip), [tnir](https://github.com/tnir), [tsabi](https://translate.mattermost.com/user/tsabi), [Umeaboy](https://translate.mattermost.com/user/Umeaboy), [vadim.asadchi](https://translate.mattermost.com/user/vadim.asadchi), [varghesejose2020](https://github.com/varghesejose2020), [Victor-Nyagudi](https://github.com/Victor-Nyagudi), [vish9812](https://github.com/vish9812), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [wooki-00](https://translate.mattermost.com/user/wooki-00), [yasserfaraazkhan](https://github.com/yasserfaraazkhan)
+
 (release-v11.3-feature-release)=
 ## Release v11.3 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
@@ -86,7 +157,8 @@ If you upgrade from a release earlier than v11.2, please read the other [Importa
  - Updated the AWS SDK dependency [MM-66202](https://mattermost.atlassian.net/browse/MM-66202).
 
 #### Performance
- - Improved the performance of the post textbox and fixed typing bugs in the thread popout [MM-66832](https://mattermost.atlassian.net/browse/MM-66832). 
+ - Benchmarking test results showed no significant difference: a 1.61% decrease in the number of supported users for the new release, which lies within the ``[-5%, +5%]`` prediction interval. View the full raw data and methodology in our [Performance Reports repository](https://github.com/mattermost/performance-reports/tree/main/performance-comparisons/v11.3).
+ - Improved the performance of the post textbox and fixed typing bugs in the thread popout [MM-66832](https://mattermost.atlassian.net/browse/MM-66832).
 
 ### Bug Fixes
  - Fixed a translation issue for invalid slash commands to ensure all locales display the correct message.
@@ -201,6 +273,9 @@ If you upgrade from a release earlier than v11.1, please read the other [Importa
  - Added ability to create OAuth public clients through the **Integrations** page.
  - Added ``http.Flusher`` support to the plugin RPC layer.
 
+#### Performance
+ - Benchmarking test results showed no significant difference: a 2.62% decrease in the number of supported users for the new release, which lies within the ``[-5%, +5%]`` prediction interval. View the full raw data and methodology in our [Performance Reports repository](https://github.com/mattermost/performance-reports/tree/main/performance-comparisons/v11.2).
+
 ### Bug Fixes
  - Fixed a server panic that could occur when patching channel moderations with restricted permissions.
  - Fixed the justification of sidebar icons for plugins.
@@ -304,6 +379,9 @@ If you upgrade from a release earlier than v11.0, please read the other [Importa
 #### Integrations
  - Added ``Date`` and ``DateTime`` types for interactive dialogs.
  - Added ``MultiForm`` and ``Element`` refresh support for interactive dialogs.
+
+#### Performance
+ - Benchmarking test results showed no significant difference: a 3.64% decrease in the number of supported users for the new release, which lies within the ``[-5%, +5%]`` prediction interval. View the full raw data and methodology in our [Performance Reports repository](https://github.com/mattermost/performance-reports/tree/main/performance-comparisons/v11.1).
 
 ### Bug Fixes
  - Fixed an issue where email address verification for SAML/LDAP users was required when a user’s email address changed.
@@ -443,6 +521,9 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
  - Added ``mmctl user edit`` command.
  - Updated mmctl shell completion to fully support zsh, powershell, and fish. Check out ``mmctl completion`` for a guide on how to set it up for your shell.
  - Added the ``mmctl cpa`` set of commands to manage Custom Profile Attributes.
+
+#### Performance
+ - Benchmarking test results showed no significant difference: a 1.34% decrease in the number of supported users for the new release, which lies within the ``[-5%, +5%]`` prediction interval. View the full raw data and methodology in our [Performance Reports repository](https://github.com/mattermost/performance-reports/tree/main/performance-comparisons/v11.0).
 
 ### Bug Fixes
  - Fixed an issue where extra date separators were added in search results, pinned posts and saved messages.
