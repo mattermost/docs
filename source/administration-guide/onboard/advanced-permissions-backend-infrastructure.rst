@@ -206,7 +206,11 @@ Permissions in Mattermost are a property of the server code base and are not cre
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | demote_to_guest                              | system  | Demote member users to guests.                                                                                                                                                                        |
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| manage_remote_clusters                       | system  | Add, remove, and view remote clusters for shared channels.                                                                                                                                            |
+| manage_remote_clusters (deprecated)          | system  | Add, remove, and view remote clusters for shared channels. Renamed to ``manage_secure_connections``.                                                                                                  |
++----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| manage_shared_channels                       | system  | Share and unshare channels with secure connections to remote Mattermost instances.                                                                                                                    |
++----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| manage_secure_connections                    | system  | Create, manage, and remove secure connections to remote Mattermost servers.                                                                                                                           |
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | manage_post_bleve_indexes_job                | system  | Manage the status of a Bleve post indexing job.                                                                                                                                                       |
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -378,7 +382,7 @@ The following built-in roles with default permissions are available:
 - invite_user
 - manage_shared_channels
 - remove_others_reactions
-- manage_remote_clusters
+- manage_secure_connections
 - sysconsole_write_user_management_users
 - sysconsole_read_experimental
 - sysconsole_write_compliance
@@ -472,6 +476,14 @@ The following built-in roles with default permissions are available:
 - delete
 - manage members
 - restore
+
+*shared_channel_manager*
+
+- manage_shared_channels
+
+*connected_workspaces_manager*
+
+- manage_secure_connections
 
 *system_guest*
 
