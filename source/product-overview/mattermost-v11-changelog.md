@@ -19,6 +19,7 @@
   - Fixed an issue where rate limiting was missing from the login endpoint (5 requests/second, 10 burst).
   - Mattermost v11.4.1 contains no database or functional changes.
 - **11.4.0, released 2026-02-16**
+  - Original 11.4.0 release.
 
 ### Upgrade Impact
 
