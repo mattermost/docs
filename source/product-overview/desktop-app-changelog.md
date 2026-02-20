@@ -45,7 +45,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
 ### Architectural Changes
 
-- Major version upgrade of Electron to v40.1.0. Electron is the underlying technology used to build the Desktop App.
+- Major version upgrade of Electron to v40.6.0. Electron is the underlying technology used to build the Desktop App.
 
 ### Bug Fixes
 
@@ -66,6 +66,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 - Fixed an issue where clicking the tray menu items would not open the main window.
 - Fixed an issue where clicking the tray menu items would not open the main window if it was occluded.
 - Fixed an issue where Sentry and anonymous server metrics were not enabled by default.
+- Fixed an issue where the Desktop App wouldn't load content from the JIRA plugin in certain cases.
 
 ### Open Source Components
 
