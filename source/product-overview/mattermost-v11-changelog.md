@@ -52,6 +52,9 @@ If you upgrade from a release earlier than v11.3, please read the other [Importa
  - Added CPU cores and total memory to the Support Packet [MM-66840](https://mattermost.atlassian.net/browse/MM-66840).
  - Added a new ``MM_LOG_PATH`` environment variable to [restrict log file locations](https://docs.mattermost.com/administration-guide/manage/logging.html#log-path-restrictions). Log files must now be within a configured root directory.
 
+#### Performance
+ - Benchmarking test results showed no significant difference: a 0.28% decrease in the number of supported users for the new release, which lies within the ``[-5%, +5%]`` prediction interval. View the full raw data and methodology in our [Performance Reports repository](https://github.com/mattermost/performance-reports/tree/main/performance-comparisons/v11.4).
+
 ### Bug Fixes
  - Fixed an issue with the behavior of the right‑hand sidebar (RHS) when navigating to global threads. The application now checks the current RHS state and suppresses the sidebar only if it is not showing mentions, search results, or flagged posts [MM-66871](https://mattermost.atlassian.net/browse/MM-66871). 
  - Fixed an issue where the post list automatically scrolled to the bottom when a user edited a message [MM-64810](https://mattermost.atlassian.net/browse/MM-64810). 
@@ -166,7 +169,8 @@ If you upgrade from a release earlier than v11.2, please read the other [Importa
  - Updated the AWS SDK dependency [MM-66202](https://mattermost.atlassian.net/browse/MM-66202).
 
 #### Performance
- - Improved the performance of the post textbox and fixed typing bugs in the thread popout [MM-66832](https://mattermost.atlassian.net/browse/MM-66832). 
+ - Benchmarking test results showed no significant difference: a 1.61% decrease in the number of supported users for the new release, which lies within the ``[-5%, +5%]`` prediction interval. View the full raw data and methodology in our [Performance Reports repository](https://github.com/mattermost/performance-reports/tree/main/performance-comparisons/v11.3).
+ - Improved the performance of the post textbox and fixed typing bugs in the thread popout [MM-66832](https://mattermost.atlassian.net/browse/MM-66832).
 
 ### Bug Fixes
  - Fixed a translation issue for invalid slash commands to ensure all locales display the correct message.
@@ -287,6 +291,9 @@ If you upgrade from a release earlier than v11.1, please read the other [Importa
  - Added ability to create OAuth public clients through the **Integrations** page.
  - Added ``http.Flusher`` support to the plugin RPC layer.
 
+#### Performance
+ - Benchmarking test results showed no significant difference: a 2.62% decrease in the number of supported users for the new release, which lies within the ``[-5%, +5%]`` prediction interval. View the full raw data and methodology in our [Performance Reports repository](https://github.com/mattermost/performance-reports/tree/main/performance-comparisons/v11.2).
+
 ### Bug Fixes
  - Fixed a server panic that could occur when patching channel moderations with restricted permissions.
  - Fixed the justification of sidebar icons for plugins.
@@ -390,6 +397,9 @@ If you upgrade from a release earlier than v11.0, please read the other [Importa
 #### Integrations
  - Added ``Date`` and ``DateTime`` types for interactive dialogs.
  - Added ``MultiForm`` and ``Element`` refresh support for interactive dialogs.
+
+#### Performance
+ - Benchmarking test results showed no significant difference: a 3.64% decrease in the number of supported users for the new release, which lies within the ``[-5%, +5%]`` prediction interval. View the full raw data and methodology in our [Performance Reports repository](https://github.com/mattermost/performance-reports/tree/main/performance-comparisons/v11.1).
 
 ### Bug Fixes
  - Fixed an issue where email address verification for SAML/LDAP users was required when a user’s email address changed.
@@ -529,6 +539,9 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
  - Added ``mmctl user edit`` command.
  - Updated mmctl shell completion to fully support zsh, powershell, and fish. Check out ``mmctl completion`` for a guide on how to set it up for your shell.
  - Added the ``mmctl cpa`` set of commands to manage Custom Profile Attributes.
+
+#### Performance
+ - Benchmarking test results showed no significant difference: a 1.34% decrease in the number of supported users for the new release, which lies within the ``[-5%, +5%]`` prediction interval. View the full raw data and methodology in our [Performance Reports repository](https://github.com/mattermost/performance-reports/tree/main/performance-comparisons/v11.0).
 
 ### Bug Fixes
  - Fixed an issue where extra date separators were added in search results, pinned posts and saved messages.
