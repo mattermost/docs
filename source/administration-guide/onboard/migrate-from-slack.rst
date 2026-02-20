@@ -184,7 +184,7 @@ The ``mmetl transform slack`` command supports several optional flags that can h
 - ``--allow-download`` / ``-l``: Allow downloading attachments from URLs.
 - ``--default-email-domain <DOMAIN>``: When a user's email is missing from the export, generate one from their username and the provided domain (e.g., ``--default-email-domain example.com``).
 - ``--skip-empty-emails``: Allow users with empty email addresses to be included in the output. Note that this results in invalid import data that will need to be manually corrected before importing.
-- ``--discard-invalid-props`` / ``-p``: Discard posts with invalid properties instead of skipping them entirely.
+- ``--discard-invalid-props`` / ``-p``: Discard posts with invalid properties. By default, such posts are kept but imported without their properties.
 
 Debug transform
 ^^^^^^^^^^^^^^^
@@ -247,6 +247,12 @@ To prepare our files to be uploaded to the server, we need to put both the ``.js
 
   zip -r mattermost-bulk-import.zip data mattermost_import.jsonl
 
+Validate the import file locally before uploading. This checks the file structure and content without needing to upload it to the server:
+
+.. code-block:: sh
+
+  mmctl import validate ./mattermost-bulk-import.zip
+
 Then we can upload the zip file to our Mattermost server. These files can be very large, so getting them onto the server can be challenging. You have two primary options for this step:
 
 - You can use the ``mmctl`` tool:
@@ -262,12 +268,6 @@ Run this command to list the available imports:
 .. code-block:: sh
 
   mmctl import list available
-
-Validate the import file before processing it:
-
-.. code-block:: sh
-
-  mmctl import validate ./mattermost-bulk-import.zip
 
 Run this command to process the import. Replace ``<IMPORT FILE NAME>`` with the name you got from the ``mmctl import list available`` command:
 
