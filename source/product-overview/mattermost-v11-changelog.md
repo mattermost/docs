@@ -9,6 +9,84 @@
 ```{include} common-esr-support-upgrade.md
 ```
 
+(release-v11.5-feature-release)=
+## Release v11.5 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
+
+**Release Day: March 16, 2026**
+
+### Upgrade Impact
+
+#### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+ - **Changes to Enterprise Advanced plan:**
+   - Added ``Autotranslation`` settings ``Enable``, ``RestrictDMAndGM``, ``Provider``, ``TargetLanguages``, ``Workers``, ``TimeoutMs``, ``LibreTranslate``, and ``Agents`` to support auto-translations.
+ - **Changes to Enterprise plan:**
+   - Added ``DCRRedirectURIAllowlist`` under ``ServiceSettings`` to restrict OAuth Dynamic Client Registration redirect URIs with glob patterns and to return ``invalid_redirect_uri`` when any redirect URI is not allowlisted.
+
+#### Compatibility
+ - Updated minimum Edge and Chrome versions to 144+.
+
+```{Important}
+If you upgrade from a release earlier than v11.4, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html). In case of an upgrade failure, please check the [Downgrade Guide](https://docs.mattermost.com/administration-guide/upgrade/downgrading-mattermost-server.html) and the [Recovery Guide](https://docs.mattermost.com/deployment-guide/backup-disaster-recovery.html) for rollback steps and interim mitigation strategy.
+```
+
+### Improvements
+
+#### UI Changes
+ - Pre-packaged GitLab plugin version [v1.12.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.12.0).
+ - Pre-packaged MS Teams Meetings plugin version [v2.4.0](https://github.com/mattermost/mattermost-plugin-msteams-meetings/releases/tag/v2.4.0).
+ - Pre-packaged Zoom plugin version [v1.12.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.12.0).
+ - Pre-packaged Playbooks plugin version [v2.7.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.7.0) [MM-67198](https://mattermost.atlassian.net/browse/MM-67198).
+ - Pre-packaged GitHub plugin version [v2.6.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.6.0).
+ - Added support for auto-translations. Initial Beta release. Requires Enterprise Advanced license [MM-64493](https://mattermost.atlassian.net/browse/MM-64493).
+ - Added the ability for web app plugin code to be loaded asynchronously [MM-67538](https://mattermost.atlassian.net/browse/MM-67538).
+ - AI Rewrites now includes some context from the most recent messages in the thread to help provide better rewrites.
+ - Available AI Agents are now shown in the @-mention autocomplete menu, regardless of channel membership [MM-67118](https://mattermost.atlassian.net/browse/MM-67118).
+ - Added the ability to access channel settings and rename a channel from the channel info right-hand sidebar [MM-66862](https://mattermost.atlassian.net/browse/MM-66862).
+ - Added tooltips to action buttons, and action errors are now displayed [MM-65023](https://mattermost.atlassian.net/browse/MM-65023).
+ - Updated the signup flow to replace the newsletter opt-in with a checkbox to agree to the **Acceptable Use Policy** and **Privacy Policy** [MM-67030](https://mattermost.atlassian.net/browse/MM-67030).
+ - Added back offline **Help** documentation accessible from the message composer [MM-61383](https://mattermost.atlassian.net/browse/MM-61383).
+ - Added new icons for archived and private channels [MM-66561](https://mattermost.atlassian.net/browse/MM-66561).
+
+#### Administration
+ - Added a ``mmctl license get`` command to retrieve and display current server license information [MM-67114](https://mattermost.atlassian.net/browse/MM-67114).
+ - Introduced ``protected`` attribute on property fields to restrict write access to the managing plugin [MM-66836](https://mattermost.atlassian.net/browse/MM-66836).
+ - Introduced ``access_mode`` attribute on property fields to manage read access.
+ - Configured the build system to natively build the server on FreeBSD.
+ - Upgraded to node 24 and main dependencies with ``babel``, ``webpack@5.103`` and ``jest@30`` [MM-66972](https://mattermost.atlassian.net/browse/MM-66972).
+ - Renamed **Self-Deleting Messages** to **Burn on Read** in the **System Console**.
+
+### Bug Fixes
+ - Fixed an issue with popout windows in subpath deployments [MM-67269](https://mattermost.atlassian.net/browse/MM-67269).
+ - Fixed an issue where additional error details were missing from ``ElasticSearch`` test connection failures [MM-66306](https://mattermost.atlassian.net/browse/MM-66306).
+ - Fixed an issue where several Shared Channels operations recorded failure into the audit log even when successful [MM-67211](https://mattermost.atlassian.net/browse/MM-67211).
+ - Fixed an issue where the check-cws-connection endpoint returned 500 errors in self-hosted enterprise environments [MM-67021](https://mattermost.atlassian.net/browse/MM-67021).
+ - Fixed a performance regression that caused the requests to populate the **Recent mentions** right-hand side (RHS) to timeout. This, in turn, re-introduces a known bug in searches with quoted strings, that may include results not exactly matching the quoted string [MM-66782](https://mattermost.atlassian.net/browse/MM-66782).
+ - Fixed an issue where an un-needed **Cancel** button was shown for **User Attributes** in the **System Console** [MM-67111](https://mattermost.atlassian.net/browse/MM-67111).
+ - Fixed an issue where plugin settings marked as ``secret: true`` inside ``settings_schema.sections[]`` were not sanitized, potentially exposing secret values through the API [MM-67502](https://mattermost.atlassian.net/browse/MM-67502).
+ - Fixed an issue with link preview metadata processing and image validation.
+ - Fixed an issue with the usage of ``WebSocketClient`` from ``@mattermost/shared`` package being broken in Node.js environments [MM-67137](https://mattermost.atlassian.net/browse/MM-67137).
+ - Fixed an issue where rate limiting was missing from the login endpoint (5 requests/second, 10 burst).
+ - Fixed an issue where the profile status menu disappeared at higher zoom levels or at resized window on mobile view [MM-64655](https://mattermost.atlassian.net/browse/MM-64655).
+ - Fixed an issue where importing a guest user without team or channel memberships would cause the bulk import to fail with an error [MM-64224](https://mattermost.atlassian.net/browse/MM-64224).
+
+### Audit Log Event Changes
+ - Updated audit/activity logging for Desktop App external authentication.
+ - Added audit logs for when admins access posts on channels they are not a member of [MM-64460](https://mattermost.atlassian.net/browse/MM-64460).
+ - Added new audit events ``AuditEventCreateRecap``, ``AuditEventGetRecap``, ``AuditEventGetRecaps``, ``AuditEventMarkRecapAsRead``, ``AuditEventRegenerateRecap``, and ``AuditEventDeleteRecap``.
+ - Added a new audit event ``AuditEventUpdateChannelMemberAutotranslation``.
+ - Added a new audit event ``AuditEventLoginWithDesktopToken``.
+ - Added new audit events ``AuditEventListChannelBookmarksForChannel``, ``AuditEventGetPinnedPosts``, ``AuditEventGetFileThumbnail``, ``AuditEventGetFileInfosForPost``, ``AuditEventGetFileInfo``, ``AuditEventGetFilePreview``, ``AuditEventSearchFiles``, ``AuditEventCreateEphemeralPost``, ``AuditEventGetEditHistoryForPost``, ``AuditEventGetFlaggedPosts``, ``AuditEventGetPostsForChannel``, ``AuditEventGetPostsForChannelAroundLastUnread``, ``AuditEventGetPost``, ``AuditEventGetPostThread``, ``AuditEventGetPostsByIds``, ``AuditEventGetThreadForUser``, ``AuditEventNotificationAck``, and ``AuditEventWebsocketPost``.
+
+### Go Version
+ - v11.5 is built with Go ``v1.24.11``.
+
+### Open Source Components
+ - Added ``react-intl`` and ``x/sys``, and replaced ``avct/uasurfer`` with ``LumenResearch/uasurfer`` in https://github.com/mattermost/mattermost.
+
+### Contributors
+ - 
+
 (release-v11.4-feature-release)=
 ## Release v11.4 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
