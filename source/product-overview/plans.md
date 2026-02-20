@@ -120,6 +120,10 @@
       <td><strong><a href="https://docs.mattermost.com/administration-guide/configure/plugins-configuration-settings.html#enable-llm-trace">Optional full trace mode</a></strong>: Optional full trace mode for detailed monitoring and to verify Responsible AI/LLM assurances by recording every prompt, question, AI request and response across users, systems and LLM-backends and platform source code into specialized audit logs for analysis.</td>
       <td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
+    <tr>
+      <td><strong>Enterprise LLM Management</strong>: <a href="https://docs.mattermost.com/administration-guide/configure/agents-admin-guide.html#token-usage-tracking">Track LLM token usage</a> across users, teams, and agents to support billing, cost tracking, and usage analytics. Administrators gain visibility into input tokens, output tokens, and total token consumption per user, team, and bot to manage LLM spend and resource allocation across all major LLM providers.</td>
+      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v11.4+</td>
+    </tr>
     <!-- Operational & technical collaboration -->
     <tr class="section"><td colspan="7"><strong>Operational &amp; technical collaboration</strong></td></tr>
     <tr class="subsection"><td colspan="7"><strong>Accelerate operational and technical success with a collaboration platform integrating with mainstream and customer toolchains, with information rich visualizations of systems and processes, prioritized message broadcasting, and conversational interoperability with technical systems through platform-level Markdown support.</strong></td></tr>
@@ -295,10 +299,6 @@
     <!-- Enterprise Advanced exclusive features -->
     <tr class="section"><td colspan="7"><strong>Enterprise Advanced exclusive features</strong></td></tr>
     <tr class="subsection"><td colspan="7"><strong>Advanced security, compliance, and deployment capabilities designed for the most demanding cyber defense and mission-critical environments.</strong></td></tr>
-    <tr>
-      <td><strong>Classified and Sensitive Information Controls</strong>: Display <a href="https://docs.mattermost.com/end-user-guide/collaborate/display-channel-banners.html">channel banners</a> to indicate classification levels and sensitive information handling requirements, ensuring compliance with security protocols for classified environments.</td>
-      <td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v10.9+</td>
-    </tr>
     <tr>
       <td><strong>Zero Trust Security</strong>: Implement dynamic <a href="https://docs.mattermost.com/administration-guide/manage/admin/attribute-based-access-control.html">attribute-based policy controls</a> with environmental attributes and <a href="https://docs.mattermost.com/administration-guide/manage/admin/user-attributes.html">User Authoritative Source</a> integration for comprehensive zero trust security architecture.</td>
       <td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v10.9+</td>
