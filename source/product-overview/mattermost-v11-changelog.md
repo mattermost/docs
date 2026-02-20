@@ -20,6 +20,8 @@
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
  - **Changes to Enterprise Advanced plan:**
    - Added ``Autotranslation`` settings ``Enable``, ``RestrictDMAndGM``, ``Provider``, ``TargetLanguages``, ``Workers``, ``TimeoutMs``, ``LibreTranslate``, and ``Agents`` to support auto-translations.
+ - **Changes to Enterprise plan:**
+   - Added ``DCRRedirectURIAllowlist`` under ``ServiceSettings`` to restrict OAuth Dynamic Client Registration redirect URIs with glob patterns and to return ``invalid_redirect_uri`` when any redirect URI is not allowlisted.
 
 #### Compatibility
  - Updated minimum Edge and Chrome versions to 144+.
