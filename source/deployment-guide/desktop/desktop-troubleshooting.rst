@@ -1,6 +1,24 @@
 Desktop app troubleshooting
 ============================
 
+Broken shortcuts after upgrading to v6.1.0 (Windows MSI only)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+After upgrading to Mattermost Desktop v6.1.0 using the Windows MSI installer from an older release, the desktop or taskbar shortcut shows the wrong icon or fails to launch. This is due to a one-time icon handling change in the Windows MSI installer to improve shortcut reliability for future upgrades. 
+
+This issue doesn't block app usage and only affects Windows MSI installer upgrades from pre-v6.1.0 versions. Users can launch Mattermost from the Start Menu or a working desktop shortcut.Future upgrades to v6.1.1 and later will not require shortcut recreation.
+
+To resolve this issue, recreate the shortcut:
+
+1. Right-click the broken shortcut on the taskbar and select **Unpin from taskbar**.
+2. Launch Mattermost Desktop from the Start Menu or a working desktop shortcut.
+3. Right-click the Mattermost icon in the taskbar while the application is running.
+4. Select **Pin to taskbar**.
+
+The new shortcut will work correctly for all future upgrades.
+
+Organizations standardizing on Windows installations can choose between Windows Store (recommended for automatic updates) or MSI packages (traditional deployment). The MSI method includes this one-time shortcut adjustment; the Windows Store method doesn't.
+
 Where is configuration stored locally?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -15,7 +33,65 @@ The location of the Mattermost desktop app configuration file depends on the pla
 
   - Local configuration data is not automatically removed when uninstalling the desktop app. If you wish to remove all data, you must manually remove the files from the applicable location noted above.
   - Prior to uninstalling, you can choose to log out of any active sessions. You can terminate active sessions from another Mattermost session in **Profile > Security > View and Logout of Active Sessions**, then select **Log Out**. Desktop app sessions are labeled as **Native Desktop App**.
-  
+
+Update notifications not appearing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you're not seeing in-app update notifications when new versions are available:
+
+1. **Check your internet connection**: Ensure outbound HTTPS communication to ``mattermost.com`` is allowed.
+
+2. **Manually check for updates**: Go to **Help > Check for Updates** or **Settings > General > Check for Updates Now** to trigger an immediate check.
+
+3. **Verify update notifications are enabled**:
+
+   - On Windows: Go to **… > File > Settings** and ensure **Automatically check for updates** is enabled.
+   - On macOS: Go to **Mattermost > Settings** and ensure **Automatically check for updates** is enabled.
+
+4. **Check Group Policy settings** (Enterprise deployments): Your system administrator may have disabled update notifications via the ``EnableAutoUpdates`` Group Policy. Contact your IT department for clarification.
+
+5. **Version previously skipped**: If you selected **Skip This Version** for the current release, manually check for updates to see it again.
+
+How to manually update Mattermost Desktop
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+From v6.1.0, Mattermost Desktop updates are manual. Follow these steps for your platform:
+
+**macOS (App Store)**:
+
+1. Open the App Store application.
+2. Go to **Updates** section.
+3. Find Mattermost Desktop and select **Update**.
+
+**macOS (DMG installation)**:
+
+1. Download the latest DMG from https://mattermost.com/download or the `GitHub releases page <https://github.com/mattermost/desktop/releases/latest>`__.
+2. Open the downloaded DMG file.
+3. Drag the Mattermost application to your Applications folder, replacing the existing version.
+4. Restart Mattermost Desktop.
+
+**Windows (Microsoft Store)**:
+
+1. Open the Microsoft Store application.
+2. Go to **Library > Get updates**.
+3. Find Mattermost and select **Update**.
+
+**Windows (MSI installation)**:
+
+1. Download the latest MSI installer from the `GitHub releases page <https://github.com/mattermost/desktop/releases/latest>`__.
+2. Run the MSI installer.
+3. Follow the installation prompts (it will upgrade your existing installation).
+
+**Linux**:
+
+1. Visit the `GitHub releases page <https://github.com/mattermost/desktop/releases/latest>`__.
+2. Download the appropriate package for your distribution (AppImage, .deb, .rpm, Flatpak, etc.).
+3. Install using your package manager or standard installation method.
+
+.. tip::
+
+   For AppImage users: Simply download the new AppImage file and replace the old one. Make sure to make it executable: ``chmod +x mattermost-desktop-*.AppImage``
+
 How do I access logs?
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -46,6 +122,29 @@ Desktop App displays white screen while launching and doesn't load the page
 
 1. Delete the local ``Mattermost desktop app`` configuration file. See the `Where is configuration stored locally? <#where-is-configuration-stored-locally>`__ section above for file location details.
 2. Reinstall the application. 
+
+.. _upgrade-to-v6-1-0-fails-or-installs-duplicate-version-windows-msi:
+
+Upgrade to v6.1.0 fails or installs duplicate version (Windows MSI)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+After installing v6.1.0 MSI, the old version still appears, both versions are present, or the upgrade doesn't seem to work. This is because you had a per-user installation from v5.9 to v6.0.4. From v6.1.0, the MSI installer defaults to per-machine (system-wide) installation. MSI installers cannot automatically upgrade across different installation contexts (per-user to per-machine).
+
+To check your installation type before upgrading, open File Explorer.
+
+- If Mattermost is in ``C:\Program Files\Mattermost`` or ``C:\Program Files (x86)\Mattermost``: Per-machine install (upgrade will work normally)
+- If Mattermost is in ``C:\Users\<YourName>\AppData\Local\...``: Per-user install (requires manual uninstall before v6.1.0)
+
+To resolve this issue, you must manually uninstall the old version before installing v6.1.0:
+
+1. Uninstall both versions:
+
+   - Go to **Settings > Apps** or **Control Panel > Programs and Features**.
+   - Uninstall all Mattermost Desktop entries.
+
+2. Download the v6.1.0 MSI installer again from the `releases page <https://github.com/mattermost/desktop/releases>`__.
+3. Install v6.1.0 with administrator privileges (it will install to ``C:\Program Files\Mattermost``).
+4. Future upgrades will work normally.
 
 "Installation has failed" dialog
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
