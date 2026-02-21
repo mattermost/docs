@@ -22,7 +22,7 @@ body:not([data-custom-theme=light]) {
 }
 
 @media (max-width: 1350px) {
-  .site-header {
+  .site-header .nav-container {
     padding: 0 24px;
   }
 }
@@ -53,12 +53,7 @@ body:not([data-custom-theme=light]) .site-header {
 }
 @media (max-width: 770px) {
   .notification-bar {
-    height: 48px;
     align-items: center;
-  }
-
-  .notification-bar__close {
-    top: 0;
   }
 }
 .sidebar-container {
@@ -414,6 +409,24 @@ body:not([data-custom-theme=light]) ::selection {
     padding: 60px 70px 160px;
   }
 }
+
+/* Notification bar positioning adjustments */
+body.with-notification .toc-sticky,
+body.with-notification .main > .content,
+body.with-notification .sidebar-sticky {
+  padding-top: 120px;
+}
+
+body.with-notification .mobile-header {
+  top: -15px;
+}
+
+@media (max-width: 770px) {
+  body.with-notification .sidebar-sticky {
+    padding-top: 120px;
+  }
+}
+
 .homepage-content {
   padding: 0 70px;
   margin-top: -125px;
@@ -867,25 +880,8 @@ body {
   font-family: var(--font-trade);
   color: var(--body);
 }
-body.with-notification .toc-sticky,
-body.with-notification .main > .content,
-body.with-notification .sidebar-sticky {
-  padding-top: 120px;
-}
-body.with-notification .masthead {
-  padding-top: 160px;
-}
-@media (max-width: 770px) {
-  body.with-notification .sidebar-sticky {
-    padding-top: 110px;
-  }
-}
-body.with-notification .mobile-header {
-  top: -15px;
-}
-body.with-notification header {
-  top: 45px;
-}
+/* Notification bar is now inside header, so header height naturally includes it.
+   Furo calculates offset from header.getBoundingClientRect().height automatically. */
 
 .toc-sticky,
 .main > .content,
