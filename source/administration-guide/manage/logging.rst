@@ -974,3 +974,8 @@ Please use the following JSON configuration as as starting point to enable trace
             "maxqueuesize": 1000
         }
     }
+
+How do I configure centralized logging for Mattermost?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost recommends centralized logging using Grafana Loki and the OpenTelemetry Collector. See the :doc:`Deploy Grafana Loki for centralized logging </administration-guide/scale/deploy-grafana-loki-for-centralized-logging>` guide for details on how to set up log aggregation, useful LogQL queries, and Grafana dashboards.
