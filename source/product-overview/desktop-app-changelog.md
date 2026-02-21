@@ -6,6 +6,87 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 ```{include} common-esr-support.md
 ```
 
+(release-v6-1)=
+## Release v6.1
+
+**v6.1.0 Release Day: TBD**
+
+**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/latest)
+
+### Important Upgrade Notes
+
+- The in-app auto-updater for Windows and Linux AppImage installations has been deprecated. See more details in [this forum post](https://forum.mattermost.com/t/important-update-changes-to-desktop-app-auto-updater/25657).
+
+### Compatibility
+
+- Desktop App is supported on any currently supported [Mattermost server version](https://docs.mattermost.com/product-overview/mattermost-desktop-releases.html#latest-releases).
+- Updated Chromium minimum supported version to 144+.
+
+### Improvements
+
+#### macOS
+
+- Removed MAS (Mac App Store) migration logic [MM-66704](https://mattermost.atlassian.net/browse/MM-66704).
+- Changed the name of the macOS ARM64 DMG from ``m1`` to ``arm64`` [MM-54413](https://mattermost.atlassian.net/browse/MM-54413).
+
+#### Windows
+
+- Forced [MSI to install per-machine](https://docs.mattermost.com/deployment-guide/desktop/desktop-msi-installer-and-group-policy-install.html) by default. See Known Issues below for more details.
+- Removed the [Windows EXE installer](https://docs.mattermost.com/deployment-guide/desktop/silent-windows-desktop-distribution.html).
+
+#### Linux
+- Added [Flatpak](https://docs.mattermost.com/deployment-guide/desktop/linux-desktop-install.html) to Linux-packaged builds.
+
+#### All Platforms
+
+- Added support for servers with passwordless authentication with [Magic Link for guest users](https://docs.mattermost.com/end-user-guide/access/access-your-workspace.html#magic-link-login-for-guests) (requires Enterprise license) [MM-66445](https://mattermost.atlassian.net/browse/MM-66445).
+- Added [Sentry error tracking](https://docs.mattermost.com/deployment-guide/desktop/desktop-app-deployment.html#privacy-and-data-handling).
+- Added [in-app notifications for new versions](https://docs.mattermost.com/end-user-guide/access/install-desktop-app.html#upgrade-the-desktop-app), including for Mac App Store and the Windows MSI.
+
+### Architectural Changes
+
+- Major version upgrade of Electron to v40.6.0. Electron is the underlying technology used to build the Desktop App.
+
+### Bug Fixes
+
+#### macOS
+
+- Fixed an issue where macOS permission dialogs were specifically referencing Jitsi instead of using general wording [MM-66775](https://mattermost.atlassian.net/browse/MM-66775).
+
+#### Windows
+
+- Fixed an issue where installing over top of an old Desktop App on Windows could break the shortcut. NOTE: You may need to [remake your shortcut](https://docs.mattermost.com/deployment-guide/desktop/desktop-troubleshooting.html) in the taskbar once after this change [MM-63779](https://mattermost.atlassian.net/browse/MM-63779).
+- Fixed an issue where the notification badge on Windows could get out of sync.
+
+#### All Platforms
+
+- Fixed a potential crash in the context menu [MM-66902](https://mattermost.atlassian.net/browse/MM-66902).
+- Fixed an unnecessary exception handler dialog box appearing when clicking **Clear All Data** [MM-64601](https://mattermost.atlassian.net/browse/MM-64601).
+- Fixed an issue where Microsoft Teams, SharePoint, and OneNote links were incorrectly rejected as "Invalid Link" due to special characters in their URLs [MM-65645](https://mattermost.atlassian.net/browse/MM-65645).
+- Fixed an issue where clicking the tray menu items would not open the main window.
+- Fixed an issue where clicking the tray menu items would not open the main window if it was occluded.
+- Fixed an issue where Sentry and anonymous server metrics were not enabled by default.
+- Fixed an issue where the Desktop App wouldn't load content from the JIRA plugin in certain cases.
+
+### Open Source Components
+
+- Added ``@sentry/electron`` and removed ``electron-updater`` from https://github.com/mattermost/desktop.
+
+### Known Issues
+
+- Desktop App v6.1 has been tested against our existing EXE and MSI installers, with a few caveats:
+   - When installing over top of the MSI installer for versions below v5.9, an extra shortcut may be left in the user's start menu. This can be safely deleted.
+   - When installing over top of the MSI installer for versions from v5.9 to v6.0.4, if the installation was done per-user (as is the default), the new installer will not replace the old one. This is due to the fact that MSIs cannot modify across contexts, so as a one-time fix, users will have to manually uninstall the old one. We recommend doing this before installing the new one.
+- Sometimes the app will not restart after an auto-update. This is normal, and if this occurs the app can be safely launched manually.
+- Sometimes during installation you may see this message: ``Warning 1946. Property 'System.AppUserModel.ID' for shortcut 'Mattermost.Ink' could not be set``. This message can be safely ignored.
+- Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually delete their cache directory. For macOS it is located in `/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost`, for Windows in `Users/<username>/AppData/Roaming/Mattermost` and for Linux in `~/config/Mattermost` (where `~` is the home directory).
+- On Linux, a left-click on the Mattermost tray icon doesn't open the app window but opens the tray menu.
+- Crashes might be experienced in some Linux desktop clients due to an upstream bug in the `libnotifyapp` library. A recommended workaround is to disable the Mattermost system tray icon via Desktop Settings.
+
+### Contributors
+
+- [devinbinnie](https://github.com/devinbinnie), [enahum](https://github.com/enahum), [hmhealey](https://github.com/hmhealey), [lieut-data](https://github.com/lieut-data), [lifeisafractal](https://github.com/lifeisafractal), [NARSimoes](https://github.com/NARSimoes), [wiggin77](https://github.com/wiggin77), [yasserfaraazkhan](https://github.com/yasserfaraazkhan).
+
 (release-v6-0)=
 ## Release v6.0
 
@@ -40,7 +121,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
   - Original v6.0.0 release
 
-**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/latest)
+**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/v6.0.4)
 
 ```{Note}
 Mattermost Desktop App v6.0.0 contains low severity level security fixes. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
