@@ -19,7 +19,7 @@ A system admin can configure the following delegated granular administration rol
 - **System Manager:** This role can be configured to have read/write permissions in different management areas.
 - **User Manager:** This role can be configured to have read/write to all the user management areas and to authentication
 - **Custom Group Manager** This role has permissions to :doc:`create, edit, restore, and delete custom user groups </end-user-guide/collaborate/organize-using-custom-user-groups>`. This role can be used to assign individual users the ability to manage custom groups when **Custom Groups** permissions are removed for **All Members** via **System Console > Permissions > Edit Scheme > Custom Groups**.
-- **Shared Channel Manager** This role has the ``manage_shared_channels`` permission, allowing assigned users to share and unshare channels with secure connections.
+- **Shared Channel Manager** This role has the ``manage_shared_channels`` permission, allowing assigned users to share and unshare channels with existing connections to remote servers.
 - **Secure Connection Manager** This role has the ``manage_secure_connections`` permission, allowing assigned users to create, manage, and remove secure connections to remote servers.
 - **Viewer:** The Viewer role can view all areas of the System Console, and can be configured with write access where needed.
 
