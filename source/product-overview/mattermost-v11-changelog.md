@@ -56,6 +56,9 @@ If you upgrade from a release earlier than v11.4, please read the other [Importa
  - Upgraded to node 24 and main dependencies with ``babel``, ``webpack@5.103`` and ``jest@30`` [MM-66972](https://mattermost.atlassian.net/browse/MM-66972).
  - Renamed **Self-Deleting Messages** to **Burn on Read** in the **System Console**.
 
+#### Performance
+ - Benchmarking test results showed no significant difference: a 4.28% increase in the number of supported users for the new release, which lies within the ``[-5%, +5%]`` prediction interval. View the full raw data and methodology in our [Performance Reports repository](https://github.com/mattermost/performance-reports/tree/main/performance-comparisons/v11.5).
+
 ### Bug Fixes
  - Fixed an issue with popout windows in subpath deployments [MM-67269](https://mattermost.atlassian.net/browse/MM-67269).
  - Fixed an issue where additional error details were missing from ``ElasticSearch`` test connection failures [MM-66306](https://mattermost.atlassian.net/browse/MM-66306).
@@ -132,7 +135,7 @@ If you upgrade from a release earlier than v11.3, please read the other [Importa
  - Added a new ``MM_LOG_PATH`` environment variable to [restrict log file locations](https://docs.mattermost.com/administration-guide/manage/logging.html#log-path-restrictions). Log files must now be within a configured root directory.
 
 #### Performance
- - Benchmarking test results showed no significant difference: a 4.28% increase in the number of supported users for the new release, which lies within the ``[-5%, +5%]`` prediction interval. View the full raw data and methodology in our [Performance Reports repository](https://github.com/mattermost/performance-reports/tree/main/performance-comparisons/v11.5).
+ - Benchmarking test results showed no significant difference: a 0.28% decrease in the number of supported users for the new release, which lies within the ``[-5%, +5%]`` prediction interval. View the full raw data and methodology in our [Performance Reports repository](https://github.com/mattermost/performance-reports/tree/main/performance-comparisons/v11.4).
 
 ### Bug Fixes
  - Fixed an issue with the behavior of the right‑hand sidebar (RHS) when navigating to global threads. The application now checks the current RHS state and suppresses the sidebar only if it is not showing mentions, search results, or flagged posts [MM-66871](https://mattermost.atlassian.net/browse/MM-66871). 
