@@ -74,6 +74,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
 ### Known Issues
 
+- For Calls to work properly with Desktop 6.1, one must use RTCD v1.2.5 (if using external RTCD server) or Calls plugin v1.11.1 (if using integrated RTCD). 
 - Desktop App v6.1 has been tested against our existing EXE and MSI installers, with a few caveats:
    - When installing over top of the MSI installer for versions below v5.9, an extra shortcut may be left in the user's start menu. This can be safely deleted.
    - When installing over top of the MSI installer for versions from v5.9 to v6.0.4, if the installation was done per-user (as is the default), the new installer will not replace the old one. This is due to the fact that MSIs cannot modify across contexts, so as a one-time fix, users will have to manually uninstall the old one. We recommend doing this before installing the new one.
