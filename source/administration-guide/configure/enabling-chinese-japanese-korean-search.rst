@@ -8,7 +8,7 @@ Chinese, Japanese and Korean search
 
 
 ```{Attention}
-Starting on Mattermost v11.6, searching for Chinese, Japanese or Korean (CJK) characters can be enabled with the `feature flag <https://developers.mattermost.com/contribute/more-info/server/feature-flags/#changing-feature-flag-values>` ``MM_FEATUREFLAGS_CJKSEARCH``.
+Starting on Mattermost v11.5, searching for Chinese, Japanese or Korean (CJK) characters can be enabled with the `feature flag <https://developers.mattermost.com/contribute/more-info/server/feature-flags/#changing-feature-flag-values>` ``MM_FEATUREFLAGS_CJKSEARCH``.
 
 What follows is the special configuration required for versions older than v11, where MySQL was still supported.
 ```
