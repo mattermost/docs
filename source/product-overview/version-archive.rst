@@ -16,11 +16,6 @@ If you want to check that the version of Mattermost you are installing is the of
     - SHA-256 Checksum: ``bc789079394a3f37c1d72a2288ecfa444d5aa2a1ed9f249ee9da40e6e1249c22``
     - GPG Signature: https://releases.mattermost.com/11.4.2/mattermost-11.4.2-linux-amd64.tar.gz.sig
     - SBOM Download Link: https://releases.mattermost.com/11.4.2/sbom-enterprise-v11.4.2.json
-  Mattermost Enterprise Edition v11.4.1 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-4-feature-release>`__ - `Download <https://releases.mattermost.com/11.4.1/mattermost-11.4.1-linux-amd64.tar.gz?src=arc>`__
-    - ``https://releases.mattermost.com/11.4.1/mattermost-11.4.1-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``2edfd6c2d7ca60eedda6c52491cc1c8a1b33369c23feed8867105b77d0af2f11``
-    - GPG Signature: https://releases.mattermost.com/11.4.1/mattermost-11.4.1-linux-amd64.tar.gz.sig
-    - SBOM Download Link: https://releases.mattermost.com/11.4.1/sbom-enterprise-v11.4.1.json
   Mattermost Enterprise Edition v11.3.2 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-3-feature-release>`__ - `Download <https://releases.mattermost.com/11.3.2/mattermost-11.3.2-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/11.3.2/mattermost-11.3.2-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``6bf506942ed4971dab603a6d912d995be2867275a0f3d5f3ce591e12640cef10``
@@ -479,11 +474,6 @@ If you want to check that the version of Mattermost you are installing is the of
     - SHA-256 Checksum: ``8dcc384c3fc8c8a88a54f6320cab2bfbfd8067167db256be159ef3d925bb1de0``
     - GPG Signature: https://releases.mattermost.com/11.4.2/mattermost-team-11.4.2-linux-amd64.tar.gz.sig
     - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v11.4.2/sbom-mattermost-v11.4.2.json
-  Mattermost Team Edition v11.4.1 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-4-feature-release>`__ - `Download <https://releases.mattermost.com/11.4.1/mattermost-team-11.4.1-linux-amd64.tar.gz?src=arc>`__
-    - ``https://releases.mattermost.com/11.4.1/mattermost-team-11.4.1-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``5dcf8103e5389ea0ee178591bc29d16abd9467c484ce0392f3de2f7daa52ba3a``
-    - GPG Signature: https://releases.mattermost.com/11.4.1/mattermost-team-11.4.1-linux-amd64.tar.gz.sig
-    - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v11.4.1/sbom-mattermost-v11.4.1.json
   Mattermost Team Edition v11.3.2 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-3-feature-release>`__ - `Download <https://releases.mattermost.com/11.3.2/mattermost-team-11.3.2-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/11.3.2/mattermost-team-11.3.2-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``f80ef2b102430e87653a45127ff7ca5a50bd59d6517b5f4e375a7cb6d055e37e``
