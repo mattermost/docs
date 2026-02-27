@@ -66,8 +66,8 @@ If you've downloaded the `mattermost/docs` repository to edit Mattermost documen
 ### Prerequisites
 
 - Git [[download]](https://git-scm.com/downloads)
-- Python 3.11 or later [[download]](https://www.python.org/downloads)
-- Pipenv [[download]](https://pipenv.pypa.io)
+- Python 3.12 or later [[download]](https://www.python.org/downloads)
+- uv [[download]](https://docs.astral.sh/uv/getting-started/installation/)
 - GNU Make 3.82 or later
 
 > [!NOTE]
@@ -81,22 +81,18 @@ If you've downloaded the `mattermost/docs` repository to edit Mattermost documen
    cd docs
    ```
 
-2. Install pipenv:
+2. Install uv:
    ```shell
-   # Using Homebrew
-   brew install pipenv
+   # Using the standalone installer (recommended)
+   curl -LsSf https://astral.sh/uv/install.sh | sh
 
-   # Using pip
-   pip install --user pipenv
+   # Or using Homebrew
+   brew install uv
    ```
 
-3. Install dependencies (choose one):
+3. Install dependencies:
    ```shell
-   # For local development (recommended for first-time setup)
-   pipenv install --dev
-
-   # For exact reproducibility (CI/CD or team environments)
-   pipenv sync --dev
+   uv sync
    ```
 
 4. Initialize Git submodules:
