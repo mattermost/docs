@@ -55,12 +55,9 @@ class AnchorNode(Element):
     A docutils node that writes an ``<a>`` tag that includes a specific id
     """
 
-    anchor: str
-
     def __init__(self, href: str):
-        super().__init__()
+        super().__init__(anchor=href)
         self.tagname = "a"
-        self.anchor = href
 
 
 def visit_anchor_node(visitor: HTML5Translator, node: AnchorNode) -> None:
@@ -70,7 +67,7 @@ def visit_anchor_node(visitor: HTML5Translator, node: AnchorNode) -> None:
       :param node: The docutils node we're visiting
       :return: None
     """
-    visitor.body.append('<%s id="%s">' % (node.tagname, node.anchor))
+    visitor.body.append('<%s id="%s">' % (node.tagname, node['anchor']))
 
 
 def depart_anchor_node(visitor: HTML5Translator, node: AnchorNode) -> None:
