@@ -23,10 +23,10 @@ jobs:
           fetch-depth: 0
           ref: ${{ inputs.COMMIT_SHA }}
 
-      - name: Setup Python
-        uses: actions/setup-python@f677139bbe7f9c59b41e40162b753c062f5d49a3 # v5.2.0
+      - name: Setup uv
+        uses: astral-sh/setup-uv@f0ec1fc3b38f5e7cd731bb6ce540c5af426746bb  # v5.3.1
         with:
-          python-version: 3.12
+          enable-cache: true
 
       - name: ci/Install dependencies
         run: make python-deps

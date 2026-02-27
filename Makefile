@@ -26,8 +26,8 @@ endif
 SOURCEDIR       = source
 BUILDDIR        = build
 SPHINXOPTS      ?= -j auto
-SPHINXBUILD     ?= pipenv run sphinx-build
-SPHINXAUTOBUILD ?= pipenv run sphinx-autobuild
+SPHINXBUILD     ?= uv run sphinx-build
+SPHINXAUTOBUILD ?= uv run sphinx-autobuild
 AUTOBUILDOPTS   ?= -D=html_baseurl=http://127.0.0.1:8000
 
 # If we're using Windows, use CMD to run commands in the Makefile.
@@ -56,14 +56,12 @@ help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 # Install necessary dependencies for the Mattermost docs CI build pipeline.
-# NOTE: if the version of Python used to build the docs changes, update the `pipenv` command below accordingly.
 python-deps:
-	pip install pipenv==2025.0.2
-	pipenv install --dev --clear --deploy --python 3.12
+	uv sync --frozen
 
 # Run `make test` to start Sphinx extension unit tests.
 test:
-	pipenv run pytest
+	uv run pytest
 
 # Run `make livehtml` to start sphinx-autobuild.
 # Note: sphinx-autobuild seems to want a build directory
