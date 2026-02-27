@@ -47,3 +47,8 @@ sphinx-copybutton = "==0.5.2"
 #
 # MermaidJS support for Sphinx
 sphinxcontrib-mermaid = "==1.0.0"
+#
+# WeasyPrint (https://weasyprint.org/)
+# CSS-based PDF renderer for generating downloadable PDF documentation.
+# Repo: https://github.com/Kozea/WeasyPrint
+weasyprint = "==63.1"

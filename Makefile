@@ -1,6 +1,6 @@
 # Makefile for Sphinx documentation
 #
-.PHONY: Makefile help python-deps linkcheck livehtml python-deps test compass-icons
+.PHONY: Makefile help python-deps linkcheck livehtml python-deps test compass-icons html-package pdf downloads
 
 # Check Make version (we need at least GNU Make 3.82). Fortunately,
 # 'undefine' directive has been introduced exactly in GNU Make 3.82.
@@ -102,6 +102,27 @@ else
 endif
 	curl --no-progress-meter -o source/_static/css/compass-icons.css https://mattermost.github.io/compass-icons/css/compass-icons.css
 	curl --no-progress-meter -o "source/_static/font/compass-icons.#1" "https://mattermost.github.io/compass-icons/font/compass-icons.{eot,woff2,woff,ttf,svg}"
+
+# Run `make html-package` to create a downloadable zip of the HTML docs.
+# Requires a prior `make html` build.
+html-package:
+	pipenv run python source/scripts/package-docs.py --html-package
+
+# Run `make pdf` to generate a PDF of the documentation.
+# Builds single-page HTML first, then converts to PDF via WeasyPrint.
+pdf:
+ifeq ($(OS),Windows_NT)
+	@IF NOT EXIST $(BUILDDIR) MD $(BUILDDIR)
+	@$(SPHINXBUILD) -M singlehtml "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O) -w "$(WARNINGSFILE)"
+else
+	@mkdir -p "$(BUILDDIR)"
+	@$(SPHINXBUILD) -M singlehtml "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS2) $(O) -w "$(WARNINGSFILE)"
+endif
+	pipenv run python source/scripts/package-docs.py --pdf
+
+# Run `make downloads` to build all downloadable artifacts (HTML zip + PDF).
+# Requires a prior `make html` build; single-page HTML is built automatically.
+downloads: html-package pdf
 
 # Catch-all target: route all unknown targets to Sphinx using the
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).

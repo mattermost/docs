@@ -9,6 +9,7 @@ Training and Support
    /get-help/community-chat.rst
    /get-help/community-for-mattermost.rst
    /get-help/contribute-to-documentation.rst
+   /get-help/download-docs.rst
 
 Get the help you need with Mattermost via robust documentation, extensive community support, and professional support services. If you're struggling with something on your Mattermost journey, take a look at the following learning resources:
 
@@ -25,6 +26,8 @@ Documentation
 - `Mattermost API reference <https://api.mattermost.com/>`__ - Read information for developer community members about the Mattermost API used by Mattermost clients and third-party applications.
 
 We welcome :doc:`community contributions to this documentation </get-help/contribute-to-documentation>`.
+
+You can also :doc:`download this documentation </get-help/download-docs>` for offline use as an HTML package or PDF.
 
 Help Center
 -----------

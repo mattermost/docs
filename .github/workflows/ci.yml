@@ -35,11 +35,25 @@ jobs:
           TZ: UTC
         run: make html
 
+      - name: ci/Install WeasyPrint system dependencies
+        run: sudo apt-get update && sudo apt-get install -y libpango-1.0-0 libpangoft2-1.0-0 libharfbuzz-subset0
+
+      - name: ci/Build downloadable artifacts
+        env:
+          TZ: UTC
+        run: make downloads
+
       - name: ci/Persist docs artifacts
         uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882  # v4.4.3
         with:
           name: docs
           path: build/html
+
+      - name: ci/Persist downloadable docs artifacts
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882  # v4.4.3
+        with:
+          name: docs-downloads
+          path: build/downloads
 
       - name: ci/Persist doc logs artifacts
         uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882  # v4.4.3

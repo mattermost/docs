@@ -19,7 +19,7 @@ jobs:
         fetch-depth: 0
         ref: ${{ github.event.workflow_run.head_sha }}
         
-    - name: cd/Download artifacts
+    - name: cd/Download docs artifacts
       uses: actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16 # v4.1.8
       with:
         run-id: ${{ github.event.workflow_run.id }}
@@ -27,13 +27,25 @@ jobs:
         name: docs
         path: build/html
 
+    - name: cd/Download downloadable docs artifacts
+      uses: actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16 # v4.1.8
+      with:
+        run-id: ${{ github.event.workflow_run.id }}
+        github-token: ${{ github.token }}
+        name: docs-downloads
+        path: build/downloads
+
     - name: cd/Configure AWS
       uses: aws-actions/configure-aws-credentials@e3dd6a429d7300a6a4c196c26e071d42e0343502 # v4.0.2
       with:
         aws-region: us-east-1
         aws-access-key-id: ${{ secrets.DOCS_BUILDS_BUCKET_AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.DOCS_BUILDS_BUCKET_AWS_SECRET_ACCESS_KEY }}
-  
-    - name: cd/Upload artifacts to S3
+
+    - name: cd/Upload HTML docs to S3
       run: |
-        aws s3 sync build/html s3://docs.mattermost.com/ --delete --cache-control no-cache --acl public-read --no-progress  
+        aws s3 sync build/html s3://docs.mattermost.com/ --delete --cache-control no-cache --acl public-read --no-progress
+
+    - name: cd/Upload downloadable artifacts to S3
+      run: |
+        aws s3 sync build/downloads s3://docs.mattermost.com/downloads/ --cache-control no-cache --acl public-read --no-progress
