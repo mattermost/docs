@@ -11,7 +11,7 @@ Deploying Elasticsearch includes the following steps: `setting up a single Elast
 Set up a single Elasticsearch node
 ------------------------------------
 
-We highly recommend that you set up Elasticsearch server on a dedicated machine separate from the Mattermost Server. 
+We highly recommend that you set up an Elasticsearch server on a dedicated machine separate from the Mattermost Server.
 
 1. Download and install the latest release of `Elasticsearch v8 <https://www.elastic.co/guide/en/elasticsearch/reference/8.15/install-elasticsearch.html>`_, or `Elasticsearch v7.17+ <https://www.elastic.co/guide/en/elasticsearch/reference/7.17/install-elasticsearch.html>`_. See the Elasticsearch documentation for installation details.
 
@@ -43,23 +43,23 @@ We highly recommend that you set up Elasticsearch server on a dedicated machine 
 
       sudo /usr/share/elasticsearch/bin/elasticsearch-reset-password -u elastic
 
-4. Get your network interface name by running the following command:
+4. Determine the IP address that Elasticsearch should bind to by running the following command:
 
   .. code-block:: sh
 
-    ip addr
+    hostname -I
 
-5. Edit the Elasticsearch configuration file in ``vi`` by running the following command:
+  .. note::
+
+    When deploying in cloud environments such as AWS EC2, use the instance's **private IP address**. The public IP assigned by the cloud provider is not bound to the network interface, and Elasticsearch will fail to start if it cannot bind to the configured address.
+
+5. Edit the Elasticsearch configuration file:
 
   .. code-block:: sh
 
     vi /etc/elasticsearch/elasticsearch.yml
 
-6. Set the ``network.host`` value to the IP address or hostname that Elasticsearch should bind to, and save your changes.
-
-  .. note::
-
-    When deploying in cloud environments such as AWS EC2, use the instance's **private IP address** for ``network.host``. The public IP assigned by the cloud provider is not bound to the network interface, and Elasticsearch will fail to start if it cannot bind to the configured address. You can find the private IP by running ``hostname -I``.
+6. Set the ``network.host`` value to the IP address from step 4, and save your changes.
 
 7. When using Elasticsearch v8, ensure you set ``action.destructive_requires_name`` to ``false`` in ``elasticsearch.yml`` to allow for wildcard operations to work.
 
@@ -74,19 +74,23 @@ We highly recommend that you set up Elasticsearch server on a dedicated machine 
 
   .. code-block:: sh
 
-    netstat -plnt
+    ss -tlnp
 
   You should see ports 9200 and 9300 listening on your server's IP address.
 
-10. Create an Elasticsearch directory and give it the proper permissions.
-
-11. Install the `icu-analyzer plugin <https://www.elastic.co/guide/en/elasticsearch/plugins/current/analysis-icu.html>`__ to the ``/usr/share/elasticsearch/plugins`` directory by running the following command:
+10. Install the `icu-analyzer plugin <https://www.elastic.co/guide/en/elasticsearch/plugins/current/analysis-icu.html>`__ by running the following command:
 
   .. code-block:: sh
 
     sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-icu
 
-12. Test the connection from Mattermost to Elasticsearch by running the following command, replacing the IP address with your server's private IP address. For Elasticsearch 7.x:
+11. Restart Elasticsearch after installing the plugin:
+
+  .. code-block:: sh
+
+    sudo systemctl restart elasticsearch
+
+12. Test the connection from your Mattermost server to Elasticsearch by running the following command from the Mattermost server, replacing the example IP address with your Elasticsearch server's IP address. For Elasticsearch 7.x:
 
   .. code-block:: sh
 
@@ -96,7 +100,7 @@ We highly recommend that you set up Elasticsearch server on a dedicated machine 
 
   .. code-block:: sh
 
-    sudo curl --cacert /etc/elasticsearch/certs/http_ca.crt -u elastic https://10.0.1.10:9200
+    curl -k -u elastic https://10.0.1.10:9200
 
 .. _set-up-an-elasticsearch-cluster:
 
@@ -386,7 +390,7 @@ Configure Mattermost
 Follow these steps to configure Mattermost to use your Elasticsearch server and to generate the post index:
 
 1. Go to **System Console > Environment > Elasticsearch**.
-2. Set **Enable Elasticsearch Indexing** to ``true`` to enable the other the settings on the page. Once the configuration is saved, new posts made to the database are automatically indexed on the Elasticsearch server.
+2. Set **Enable Elasticsearch Indexing** to ``true`` to enable the other settings on the page. Once the configuration is saved, new posts made to the database are automatically indexed on the Elasticsearch server.
 3. Ensure **Backend type** is set to ``elasticsearch``.
 
 Configure Mattermost for an Elasticsearch cluster
