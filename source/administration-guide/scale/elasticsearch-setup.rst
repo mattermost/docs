@@ -55,7 +55,7 @@ We highly recommend that you set up Elasticsearch server on a dedicated machine 
 
     vi /etc/elasticsearch/elasticsearch.yml
 
-6. In this file, replace the ``network.host`` value of ``_eth0_`` with your network interface name, and save your changes.
+6. Set the ``network.host`` value to the IP address or hostname that Elasticsearch should bind to, and save your changes.
 
   .. note::
 
