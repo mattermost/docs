@@ -76,7 +76,7 @@ We highly recommend that you set up an Elasticsearch server on a dedicated machi
 
     ss -tlnp
 
-  You should see ports 9200 and 9300 listening on your server's IP address.
+  Look for two lines with a ``java`` process: one listening on port ``9200`` (the HTTP API) and one on port ``9300`` (the inter-node transport port). Port 9200 may show as ``*:9200`` (listening on all interfaces) and port 9300 should show your server's IP address.
 
 10. Install the `icu-analyzer plugin <https://www.elastic.co/guide/en/elasticsearch/plugins/current/analysis-icu.html>`__ by running the following command:
 
