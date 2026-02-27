@@ -17,6 +17,8 @@ If you have any questions, create an account on the [Mattermost Community server
   - [Build locally](#build-locally)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
+      - [Option A: Pipenv (default)](#option-a-pipenv-default)
+      - [Option B: uv + venv](#option-b-uv--venv)
     - [Build commands](#build-commands)
     - [Troubleshooting](#troubleshooting)
 
@@ -67,7 +69,9 @@ If you've downloaded the `mattermost/docs` repository to edit Mattermost documen
 
 - Git [[download]](https://git-scm.com/downloads)
 - Python 3.11 or later [[download]](https://www.python.org/downloads)
-- Pipenv [[download]](https://pipenv.pypa.io)
+- **One of the following** package managers:
+  - Pipenv [[download]](https://pipenv.pypa.io)
+  - uv [[download]](https://docs.astral.sh/uv/getting-started/installation/)
 - GNU Make 3.82 or later
 
 > [!NOTE]
@@ -81,7 +85,16 @@ If you've downloaded the `mattermost/docs` repository to edit Mattermost documen
    cd docs
    ```
 
-2. Install pipenv:
+2. Initialize Git submodules:
+   ```shell
+   git submodule update --init --recursive
+   ```
+
+3. Install dependencies using **one** of the following options:
+
+#### Option A: Pipenv (default)
+
+1. Install pipenv:
    ```shell
    # Using Homebrew
    brew install pipenv
@@ -90,7 +103,7 @@ If you've downloaded the `mattermost/docs` repository to edit Mattermost documen
    pip install --user pipenv
    ```
 
-3. Install dependencies (choose one):
+2. Install dependencies:
    ```shell
    # For local development (recommended for first-time setup)
    pipenv install --dev
@@ -99,10 +112,51 @@ If you've downloaded the `mattermost/docs` repository to edit Mattermost documen
    pipenv sync --dev
    ```
 
-4. Initialize Git submodules:
+#### Option B: uv + venv
+
+1. Install uv:
    ```shell
-   git submodule update --init --recursive
+   # Using the official installer (macOS/Linux)
+   curl -LsSf https://astral.sh/uv/install.sh | sh
+
+   # Using Homebrew
+   brew install uv
+
+   # Using pip
+   pip install uv
    ```
+
+2. Create and activate a virtual environment:
+   ```shell
+   uv venv
+   source .venv/bin/activate    # macOS/Linux
+   .venv\Scripts\activate       # Windows (PowerShell)
+   ```
+
+3. Install dependencies:
+   ```shell
+   # Runtime packages
+   uv pip install \
+       sphinx==8.2.3 furo==2024.8.6 myst-parser==4.0.1 \
+       sphinx-autobuild==2024.10.3 sphinx-copybutton==0.5.2 \
+       sphinxcontrib-mermaid==1.0.0
+
+   # Dev packages (optional, needed for tests and formatting)
+   uv pip install pytest==8.3.5 black==25.1.0 docutils-stubs==0.0.22
+   ```
+
+> [!NOTE]
+> When using **uv + venv**, the Makefile build commands default to using `pipenv run`. Override this by setting the `SPHINXBUILD` and `SPHINXAUTOBUILD` variables to use the venv directly:
+> ```shell
+> gmake html SPHINXBUILD="sphinx-build" SPHINXAUTOBUILD="sphinx-autobuild"
+> ```
+> Alternatively, ensure your virtual environment is activated before running `make` and export the overrides:
+> ```shell
+> source .venv/bin/activate
+> export SPHINXBUILD="sphinx-build"
+> export SPHINXAUTOBUILD="sphinx-autobuild"
+> gmake html
+> ```
 
 ### Build commands
 
