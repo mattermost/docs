@@ -424,6 +424,68 @@ Follow these steps to configure Mattermost to use your Elasticsearch server and 
 2. Set **Enable Elasticsearch Indexing** to ``true`` to enable the other settings on the page. Once the configuration is saved, new posts made to the database are automatically indexed on the Elasticsearch server.
 3. Ensure **Backend type** is set to ``elasticsearch``.
 
+Configure TLS for Elasticsearch 8.x
+--------------------------------------
+
+Elasticsearch 8.x enables TLS by default. Mattermost must be configured to trust the Elasticsearch CA certificate before it can connect.
+
+.. note::
+
+  This section applies only to Elasticsearch 8.x. Elasticsearch 7.x does not enable TLS by default, and Mattermost can connect to it over plain HTTP without additional certificate configuration.
+
+Copy the CA certificate from Elasticsearch to Mattermost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. On any Elasticsearch 8.x node, locate the CA certificate:
+
+  .. code-block:: sh
+
+    ls -la /etc/elasticsearch/certs/http_ca.crt
+
+2. Create the certificate directory on the Mattermost server:
+
+  .. code-block:: sh
+
+    sudo mkdir -p /opt/mattermost/data/elasticsearch
+    sudo chown mattermost:mattermost /opt/mattermost/data/elasticsearch
+
+3. Copy the CA certificate from the Elasticsearch node to the Mattermost server. Run this from the Mattermost server, replacing the example IP address with the private IP of any Elasticsearch 8.x node:
+
+  .. code-block:: sh
+
+    sudo scp root@10.0.1.10:/etc/elasticsearch/certs/http_ca.crt /opt/mattermost/data/elasticsearch/ca.pem
+
+  .. note::
+
+    The file must be named ``ca.pem`` and placed in ``/opt/mattermost/data/elasticsearch/``. Mattermost expects the certificate at this specific path.
+
+4. Set the correct ownership and permissions:
+
+  .. code-block:: sh
+
+    sudo chown mattermost:mattermost /opt/mattermost/data/elasticsearch/ca.pem
+    sudo chmod 640 /opt/mattermost/data/elasticsearch/ca.pem
+
+Configure the Mattermost connection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Go to **System Console > Environment > Elasticsearch**.
+2. Set the **Server Connection Address** to the HTTPS address of any Elasticsearch 8.x node, e.g. ``https://10.0.1.10:9200``.
+
+  .. important::
+
+    The connection address must use ``https://``, not ``http://``. Elasticsearch 8.x does not respond to plain HTTP connections.
+
+3. Set the **Server Username** to ``elastic``.
+4. Set the **Server Password** to the ``elastic`` superuser password from your Elasticsearch installation.
+5. Set the **CA path** to ``./elasticsearch/ca.pem``.
+6. The **Client Certificate path** and **Client Certificate Key path** fields can be left empty — they are not required for standard Elasticsearch 8.x connections.
+7. Select **Test Connection** to verify that Mattermost can communicate with the Elasticsearch cluster.
+
+.. important::
+
+  Do not set **Skip TLS Verification** to ``true`` as a workaround for certificate issues. Configure the CA certificate path as described above.
+
 Configure Mattermost for an Elasticsearch cluster
 ---------------------------------------------------
 
