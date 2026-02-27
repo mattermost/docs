@@ -61,6 +61,17 @@ We highly recommend that you set up an Elasticsearch server on a dedicated machi
 
 6. Set the ``network.host`` value to the IP address from step 4, and save your changes.
 
+  .. important::
+
+    When ``network.host`` is set to a specific IP address, Elasticsearch will only bind to that address. Local connections via ``localhost`` or ``127.0.0.1`` (e.g. for health checks or troubleshooting from the node itself) will stop working. To allow both local and network connections, also add the following lines to ``elasticsearch.yml``:
+
+    .. code-block:: sh
+
+      http.host: 0.0.0.0
+      transport.host: 0.0.0.0
+
+    This tells Elasticsearch to accept HTTP API and inter-node transport connections on all network interfaces, whilst ``network.host`` continues to control the address advertised to other nodes.
+
 7. When using Elasticsearch v8, ensure you set ``action.destructive_requires_name`` to ``false`` in ``elasticsearch.yml`` to allow for wildcard operations to work.
 
 8. Restart Elasticsearch by running the following commands:
@@ -76,7 +87,7 @@ We highly recommend that you set up an Elasticsearch server on a dedicated machi
 
     ss -tlnp
 
-  Look for two lines with a ``java`` process: one listening on port ``9200`` (the HTTP API) and one on port ``9300`` (the inter-node transport port). Port 9200 may show as ``*:9200`` (listening on all interfaces) and port 9300 should show your server's IP address.
+  Look for two lines with a ``java`` process: one listening on port ``9200`` (the HTTP API) and one on port ``9300`` (the inter-node transport port). If you added the ``http.host`` and ``transport.host`` settings in step 6, both ports will show as ``*:9200`` and ``*:9300`` (listening on all interfaces). If not, they will only appear on the specific IP address configured in ``network.host``.
 
 10. Install the `icu-analyzer plugin <https://www.elastic.co/guide/en/elasticsearch/plugins/current/analysis-icu.html>`__ by running the following command:
 
@@ -169,6 +180,10 @@ Elasticsearch 8.x enables TLS security by default and generates unique certifica
     # Bind to this server's private IP address
     network.host: 10.0.1.10
 
+    # Allow local and network connections
+    http.host: 0.0.0.0
+    transport.host: 0.0.0.0
+
     # List the private IP addresses of all nodes for discovery
     discovery.seed_hosts: ["10.0.1.10", "10.0.1.11", "10.0.1.12"]
 
@@ -208,6 +223,10 @@ Elasticsearch 8.x enables TLS security by default and generates unique certifica
   .. code-block:: sh
 
     sudo /usr/share/elasticsearch/bin/elasticsearch-reset-password -u elastic
+
+  .. note::
+
+    The same ``elastic`` superuser password is used to authenticate against any node in the cluster. You do not need separate passwords for each node.
 
 **Generate an enrollment token**
 
@@ -256,6 +275,10 @@ Repeat the following steps for each additional node (e.g., ``es-node-02``, ``es-
     # Bind to this server's private IP address
     network.host: 10.0.1.11
 
+    # Allow local and network connections
+    http.host: 0.0.0.0
+    transport.host: 0.0.0.0
+
     # Same discovery settings as the first node
     discovery.seed_hosts: ["10.0.1.10", "10.0.1.11", "10.0.1.12"]
 
@@ -301,6 +324,10 @@ For Elasticsearch 7.x, enrollment tokens are not available. Instead, configure e
     # Unique per node
     node.name: es-node-01
     network.host: 10.0.1.10
+
+    # Allow local and network connections
+    http.host: 0.0.0.0
+    transport.host: 0.0.0.0
 
 3. If TLS is required, you must manually generate and distribute certificates to all nodes. See the `Elasticsearch security documentation <https://www.elastic.co/guide/en/elasticsearch/reference/7.17/security-basic-setup.html>`__ for details.
 
@@ -360,6 +387,10 @@ For Elasticsearch 8.x:
   sudo curl --cacert /etc/elasticsearch/certs/http_ca.crt -u elastic https://localhost:9200/_nodes?filter_path=**.mlockall
 
 The response should show ``"mlockall": true`` for each node.
+
+.. note::
+
+  If ``localhost`` does not respond in the commands above, ensure you have configured ``http.host: 0.0.0.0`` and ``transport.host: 0.0.0.0`` in ``elasticsearch.yml`` as described in `step 6 of the single-node setup <#set-up-a-single-elasticsearch-node>`__.
 
 Verify cluster health
 ~~~~~~~~~~~~~~~~~~~~~~
