@@ -4,76 +4,6 @@ Elasticsearch server setup
 .. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
-Elasticsearch allows you to search large volumes of data quickly, in near real-time, by creating and managing an index of post data. The indexing process can be managed from the System Console after setting up and connecting an Elasticsearch server. The post index is stored on the Elasticsearch server and updated constantly after new posts are made. In order to index existing posts, a bulk index of the entire post database must be generated.
-
-Deploying Elasticsearch includes the following steps: `setting up a single Elasticsearch node <#set-up-a-single-elasticsearch-node>`__, optionally `configuring a multi-node cluster <#set-up-an-elasticsearch-cluster>`__, and `configuring Mattermost <#configure-mattermost>`_.
-
-Set up a single Elasticsearch node
-------------------------------------
-
-We highly recommend that you set up Elasticsearch server on a dedicated machine separate from the Mattermost Server. 
-
-1. Download and install the latest release of `Elasticsearch v8 <https://www.elastic.co/guide/en/elasticsearch/reference/8.15/install-elasticsearch.html>`_, or `Elasticsearch v7.17+ <https://www.elastic.co/guide/en/elasticsearch/reference/7.17/install-elasticsearch.html>`_. See the Elasticsearch documentation for installation details.
-
-2. Set up Elasticsearch with ``systemd`` by running the following commands:
-
-  .. code-block:: sh
-
-    sudo /bin/systemctl daemon-reload
-    sudo /bin/systemctl enable elasticsearch.service
-    sudo systemctl start elasticsearch.service
-
-3. Confirm Elasticsearch is working on the server by running the following command:
-
-  .. code-block:: sh
-
-    curl localhost:9200
-
-4. Get your network interface name by running the following command:
-
-  .. code-block:: sh
-
-    ip addr
-
-5. Edit the Elasticsearch configuration file in ``vi`` by running the following command:
-
-  .. code-block:: sh
-
-    vi /etc/elasticsearch/elasticsearch.yml
-
-6. In this file, replace the ``network.host`` value of ``_eth0_`` with your network interface name, and save your changes.
-
-7. When using Elasticsearch v8, ensure you set ``action.destructive_requires_name`` to ``false`` in ``elasticsearch.yml`` to allow for wildcard operations to work.
-
-8. Restart Elasticsearch by running the following commands:
-
-  .. code-block:: sh
-
-    sudo systemctl stop elasticsearch
-    sudo systemctl start elasticsearch
-
-9. Confirm the ports are listenings by running the following command:
-
-  .. code-block:: sh
-
-    netstat -plnt
-
-  You should see the following ports, including  the ones listening on ports 9200 and 9300. Confirm these are listening on your server's IP address. 
-
-10. Create an Elasticsearch directory and give it the proper permissions.
-
-11. Install the `icu-analyzer plugin <https://www.elastic.co/guide/en/elasticsearch/plugins/current/analysis-icu.html>`__ to the ``/usr/share/elasticsearch/plugins`` directory by running the following command:
-
-  .. code-block:: sh
-
-    sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-icu
-
-12. Test the connection from Mattermost to Elasticsearch by running the following command:
-
-  .. code-block:: sh
-
-    curl 172.31.80.220:9200
-
 .. _set-up-an-elasticsearch-cluster:
 
 Set up an Elasticsearch cluster
@@ -96,6 +26,10 @@ Before configuring a cluster, ensure the following requirements are met:
 - **Hostname resolution**: Each node must be able to resolve the hostnames of all other nodes, either via DNS or the ``/etc/hosts`` file.
 - **ICU Analyzer plugin**: The ``analysis-icu`` plugin must be installed on every node in the cluster, not just the first node.
 
+.. note::
+
+  When deploying in cloud environments such as AWS EC2, use each instance's **private IP address** for ``network.host`` and ``discovery.seed_hosts``. The public IP assigned by the cloud provider is typically not bound to the network interface, and Elasticsearch will fail to start if it cannot bind to the configured address. You can find the private IP by running ``hostname -I`` on each instance.
+
 Node roles
 ~~~~~~~~~~~
 
@@ -107,8 +41,16 @@ Each Elasticsearch node can serve one or more roles:
 
 For most Mattermost deployments, a three-node cluster where every node is both master-eligible and a data node is the recommended configuration.
 
-Configure the first node for clustering
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Set up a cluster using Elasticsearch 8.x
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Elasticsearch 8.x enables TLS security by default and generates unique certificates on each node during installation. To form a cluster, nodes must share the same certificate authority (CA). This is handled automatically using **enrollment tokens**: you start the first node, generate a token, and use it to enrol each additional node. This process copies the CA certificates from the first node to each new node.
+
+.. important::
+
+  You must start and verify the first node before configuring additional nodes. Do not attempt to configure all nodes simultaneously — the enrollment token workflow requires a running, healthy first node to generate tokens and distribute certificates.
+
+**Configure and start the first node**
 
 1. Edit the Elasticsearch configuration file on the first node:
 
@@ -116,7 +58,7 @@ Configure the first node for clustering
 
     vi /etc/elasticsearch/elasticsearch.yml
 
-2. Configure the following cluster settings, replacing the example IP addresses with the actual addresses of your servers:
+2. Configure the following cluster settings. Replace the example IP addresses with the actual private IP addresses of your servers:
 
   .. code-block:: sh
 
@@ -126,32 +68,52 @@ Configure the first node for clustering
     # Set a unique name for this node
     node.name: es-node-01
 
-    # Bind to this server's network interface
-    network.host: 192.168.1.10
+    # Bind to this server's private IP address
+    network.host: 10.0.1.10
 
-    # List the addresses of all nodes for discovery
-    discovery.seed_hosts: ["192.168.1.10", "192.168.1.11", "192.168.1.12"]
+    # List the private IP addresses of all nodes for discovery
+    discovery.seed_hosts: ["10.0.1.10", "10.0.1.11", "10.0.1.12"]
 
-    # Define the initial set of master-eligible nodes (first bootstrap only)
-    cluster.initial_master_nodes: ["es-node-01", "es-node-02", "es-node-03"]
+    # Mattermost requirement
+    action.destructive_requires_name: false
 
-3. Restart Elasticsearch:
+  .. warning::
+
+    Elasticsearch 8.x automatically adds a ``cluster.initial_master_nodes`` entry to ``elasticsearch.yml`` during installation. Do not add a second one — duplicate YAML keys will cause Elasticsearch to fail to start with a parse error. Instead, find the existing ``cluster.initial_master_nodes`` line in the file and update it to include only the first node's name:
+
+    .. code-block:: sh
+
+      cluster.initial_master_nodes: ["es-node-01"]
+
+    You can check for duplicate entries by running:
+
+    .. code-block:: sh
+
+      grep -n "cluster.initial_master_nodes" /etc/elasticsearch/elasticsearch.yml
+
+3. Start Elasticsearch on the first node:
 
   .. code-block:: sh
 
-    sudo systemctl stop elasticsearch
-    sudo systemctl start elasticsearch
+    sudo systemctl daemon-reload
+    sudo systemctl enable elasticsearch.service
+    sudo systemctl start elasticsearch.service
 
-.. note::
+4. Verify the first node is running. Elasticsearch 8.x uses HTTPS by default:
 
-  The ``cluster.initial_master_nodes`` setting is only used during the very first bootstrap of the cluster. Once the cluster is formed, this setting is ignored. Some administrators choose to remove it after initial cluster formation to prevent accidental re-bootstrapping.
+  .. code-block:: sh
 
-Add nodes to the cluster (Elasticsearch 8.x)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    sudo curl --cacert /etc/elasticsearch/certs/http_ca.crt -u elastic https://localhost:9200
 
-Elasticsearch 8.x simplifies adding new nodes to a cluster using enrollment tokens. This approach automatically handles TLS certificate distribution between nodes.
+  You will be prompted for the ``elastic`` superuser password that was generated during installation. If you did not save it, reset it by running:
 
-1. On the **first node**, generate an enrollment token:
+  .. code-block:: sh
+
+    sudo /usr/share/elasticsearch/bin/elasticsearch-reset-password -u elastic
+
+**Generate an enrollment token**
+
+5. On the first node, generate an enrollment token for adding new nodes:
 
   .. code-block:: sh
 
@@ -159,27 +121,31 @@ Elasticsearch 8.x simplifies adding new nodes to a cluster using enrollment toke
 
   This token is valid for 30 minutes. If it expires, generate a new one by running the same command again.
 
-2. On each **additional node**, install Elasticsearch (the same version as the first node) and install the ICU Analyzer plugin:
+**Enrol and start each additional node**
+
+Repeat the following steps for each additional node (e.g., ``es-node-02``, ``es-node-03``).
+
+6. Install Elasticsearch and the ICU Analyzer plugin on the additional node (if not already done as part of the single-node setup):
 
   .. code-block:: sh
 
     sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-icu
 
-3. Before starting Elasticsearch on the additional node, run the reconfigure command with the enrollment token from step 1:
+7. **Before starting Elasticsearch**, run the reconfigure command with the enrollment token from step 5:
 
   .. code-block:: sh
 
-    sudo /usr/share/elasticsearch/bin/elasticsearch-reconfigure-node --enrollment-token <token-from-step-1>
+    sudo /usr/share/elasticsearch/bin/elasticsearch-reconfigure-node --enrollment-token <token-from-step-5>
 
-  This configures the node to join the existing cluster and copies the necessary TLS certificates from the first node.
+  This copies the TLS certificates from the first node and configures security automatically.
 
-4. Edit the Elasticsearch configuration file on the additional node:
+8. Edit the Elasticsearch configuration file on the additional node:
 
   .. code-block:: sh
 
     vi /etc/elasticsearch/elasticsearch.yml
 
-5. Configure the cluster settings. The ``cluster.name``, ``discovery.seed_hosts``, and ``cluster.initial_master_nodes`` values must match the first node. Set a unique ``node.name`` and ``network.host`` for each node:
+9. Configure the cluster settings. The ``cluster.name`` and ``discovery.seed_hosts`` must match the first node. Set a unique ``node.name`` and ``network.host`` for this node:
 
   .. code-block:: sh
 
@@ -189,55 +155,68 @@ Elasticsearch 8.x simplifies adding new nodes to a cluster using enrollment toke
     # Set a unique name for this node
     node.name: es-node-02
 
-    # Bind to this server's network interface
-    network.host: 192.168.1.11
+    # Bind to this server's private IP address
+    network.host: 10.0.1.11
 
     # Same discovery settings as the first node
-    discovery.seed_hosts: ["192.168.1.10", "192.168.1.11", "192.168.1.12"]
-    cluster.initial_master_nodes: ["es-node-01", "es-node-02", "es-node-03"]
+    discovery.seed_hosts: ["10.0.1.10", "10.0.1.11", "10.0.1.12"]
 
-6. When using Elasticsearch v8, ensure you set ``action.destructive_requires_name`` to ``false`` in ``elasticsearch.yml`` to allow for wildcard operations to work.
+    # Mattermost requirement
+    action.destructive_requires_name: false
 
-7. Start Elasticsearch on the additional node:
+  As with the first node, check for and update any existing ``cluster.initial_master_nodes`` entry rather than adding a duplicate. For additional nodes, this line can be removed entirely or updated to match the first node's value.
+
+10. Start Elasticsearch on the additional node:
 
   .. code-block:: sh
 
-    sudo /bin/systemctl daemon-reload
-    sudo /bin/systemctl enable elasticsearch.service
+    sudo systemctl daemon-reload
+    sudo systemctl enable elasticsearch.service
     sudo systemctl start elasticsearch.service
 
-8. Repeat steps 2 through 7 for each additional node, adjusting ``node.name`` and ``network.host`` for each server.
+11. Repeat steps 6 through 10 for each remaining node, adjusting ``node.name`` and ``network.host`` accordingly. Generate a new enrollment token on the first node if the previous one has expired.
 
-Add nodes to the cluster (Elasticsearch 7.x)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. note::
 
-For Elasticsearch 7.x, enrollment tokens are not available. Instead, configure each additional node manually.
+  The ``cluster.initial_master_nodes`` setting is only used during the very first bootstrap of the cluster. Once the cluster is formed, this setting is ignored. Some administrators choose to remove it after initial cluster formation to prevent accidental re-bootstrapping.
 
-1. On each **additional node**, install Elasticsearch (the same version as the first node) and install the ICU Analyzer plugin:
+Set up a cluster using Elasticsearch 7.x
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  .. code-block:: sh
+For Elasticsearch 7.x, enrollment tokens are not available. Instead, configure each node manually. Elasticsearch 7.x does not enable TLS by default, so nodes can discover each other without shared certificates.
 
-    sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-icu
-
-2. Edit the Elasticsearch configuration file on the additional node:
+1. On each node, edit the Elasticsearch configuration file:
 
   .. code-block:: sh
 
     vi /etc/elasticsearch/elasticsearch.yml
 
-3. Configure the cluster settings as described above for the first node, ensuring ``cluster.name``, ``discovery.seed_hosts``, and ``cluster.initial_master_nodes`` match the first node, whilst setting a unique ``node.name`` and ``network.host`` for each additional node.
-
-4. If TLS is enabled, you must manually copy the TLS certificates from the first node to each additional node. See the `Elasticsearch security documentation <https://www.elastic.co/guide/en/elasticsearch/reference/7.17/security-basic-setup.html>`__ for details.
-
-5. Start Elasticsearch on the additional node:
+2. Configure the cluster settings on each node. The ``cluster.name``, ``discovery.seed_hosts``, and ``cluster.initial_master_nodes`` values must be the same on every node. Set a unique ``node.name`` and ``network.host`` for each node:
 
   .. code-block:: sh
 
-    sudo /bin/systemctl daemon-reload
-    sudo /bin/systemctl enable elasticsearch.service
+    # Same on all nodes
+    cluster.name: mattermost-es-cluster
+    discovery.seed_hosts: ["10.0.1.10", "10.0.1.11", "10.0.1.12"]
+    cluster.initial_master_nodes: ["es-node-01", "es-node-02", "es-node-03"]
+
+    # Unique per node
+    node.name: es-node-01
+    network.host: 10.0.1.10
+
+3. If TLS is required, you must manually generate and distribute certificates to all nodes. See the `Elasticsearch security documentation <https://www.elastic.co/guide/en/elasticsearch/reference/7.17/security-basic-setup.html>`__ for details.
+
+4. Start Elasticsearch on all nodes. They can be started in any order:
+
+  .. code-block:: sh
+
+    sudo systemctl daemon-reload
+    sudo systemctl enable elasticsearch.service
     sudo systemctl start elasticsearch.service
 
-6. Repeat steps 1 through 5 for each additional node.
+.. note::
+
+  The ``cluster.initial_master_nodes`` setting is only used during the very first bootstrap of the cluster. Once the cluster is formed, this setting is ignored. Some administrators choose to remove it after initial cluster formation to prevent accidental re-bootstrapping.
 
 Disable memory swapping
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -276,26 +255,34 @@ Verify that memory locking is active by running:
 
   curl -X GET "localhost:9200/_nodes?filter_path=**.mlockall"
 
-The response should show ``"mlockall": true`` for each node.
+The response should show ``"mlockall": true`` for each node. For Elasticsearch 8.x, use HTTPS and authentication:
+
+.. code-block:: sh
+
+  sudo curl --cacert /etc/elasticsearch/certs/http_ca.crt -u elastic https://localhost:9200/_nodes?filter_path=**.mlockall
 
 Verify cluster health
 ~~~~~~~~~~~~~~~~~~~~~~
 
-After all nodes have joined the cluster, verify that the cluster is healthy:
+After all nodes have joined the cluster, verify that the cluster is healthy.
+
+For Elasticsearch 7.x:
 
 .. code-block:: sh
 
   curl -X GET "localhost:9200/_cluster/health?pretty"
+  curl -X GET "localhost:9200/_cat/nodes?v"
 
-A healthy cluster returns a ``status`` of ``green``, indicating that all primary and replica shards are allocated. A ``yellow`` status means all primary shards are allocated but some replicas are not yet assigned — this may occur temporarily while the cluster rebalances after a new node joins.
-
-To list all nodes in the cluster:
+For Elasticsearch 8.x:
 
 .. code-block:: sh
 
-  curl -X GET "localhost:9200/_cat/nodes?v"
+  sudo curl --cacert /etc/elasticsearch/certs/http_ca.crt -u elastic https://localhost:9200/_cluster/health?pretty
+  sudo curl --cacert /etc/elasticsearch/certs/http_ca.crt -u elastic https://localhost:9200/_cat/nodes?v
 
-This should list all nodes with their names, roles, heap usage, and other details. Confirm that the expected number of nodes appears in the output.
+A healthy cluster returns a ``status`` of ``green``, indicating that all primary and replica shards are allocated. A ``yellow`` status means all primary shards are allocated but some replicas are not yet assigned — this may occur temporarily while the cluster rebalances after a new node joins.
+
+Confirm that the expected number of nodes appears in the ``_cat/nodes`` output.
 
 Configure Mattermost
 ---------------------
