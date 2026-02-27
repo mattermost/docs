@@ -449,7 +449,7 @@ Mattermost provides three settings to control the number of replicas for each ty
 
 For example, in a three-node cluster, set all three values to ``2``.
 
-These settings can be configured in the ``config.json`` file or via the System Console. See the `enterprise search configuration settings </administration-guide/configure/environment-configuration-settings.html#enterprise-search>`__ documentation for details.
+These settings can be configured in the ``config.json`` file or using ``mmctl``. See the `enterprise search configuration settings </administration-guide/configure/environment-configuration-settings.html#enterprise-search>`__ documentation for details.
 
 .. important::
 
