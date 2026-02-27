@@ -5,7 +5,7 @@ node_modules
 dist
 npm-debug.log
 .venv
-extensions/**/__pycache__/
+__pycache__/
 web/static/js/bundle*.js
 web/static/js/libs*.js
 model/version.go
