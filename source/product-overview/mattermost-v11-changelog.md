@@ -36,8 +36,9 @@ If you upgrade from a release earlier than v11.4, please read the other [Importa
  - Pre-packaged GitLab plugin version [v1.12.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.12.0).
  - Pre-packaged MS Teams Meetings plugin version [v2.4.0](https://github.com/mattermost/mattermost-plugin-msteams-meetings/releases/tag/v2.4.0).
  - Pre-packaged Zoom plugin version [v1.12.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.12.0).
- - Pre-packaged Playbooks plugin version [v2.7.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.7.0) [MM-67198](https://mattermost.atlassian.net/browse/MM-67198).
+ - Pre-packaged Playbooks plugin version [v2.7.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.7.0).
  - Pre-packaged GitHub plugin version [v2.6.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.6.0).
+ - Pre-packaged Calls plugin version [v1.11.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.11.1).
  - Added support for auto-translations. Initial Beta release. Requires Enterprise Advanced license [MM-64493](https://mattermost.atlassian.net/browse/MM-64493).
  - Added the ability for web app plugin code to be loaded asynchronously [MM-67538](https://mattermost.atlassian.net/browse/MM-67538).
  - AI Rewrites now includes some context from the most recent messages in the thread to help provide better rewrites.
