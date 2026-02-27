@@ -4,6 +4,100 @@ Elasticsearch server setup
 .. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
+Elasticsearch allows you to search large volumes of data quickly, in near real-time, by creating and managing an index of post data. The indexing process can be managed from the System Console after setting up and connecting an Elasticsearch server. The post index is stored on the Elasticsearch server and updated constantly after new posts are made. In order to index existing posts, a bulk index of the entire post database must be generated.
+
+Deploying Elasticsearch includes the following steps: `setting up a single Elasticsearch node <#set-up-a-single-elasticsearch-node>`__, optionally `configuring a multi-node cluster <#set-up-an-elasticsearch-cluster>`__, and `configuring Mattermost <#configure-mattermost>`_.
+
+Set up a single Elasticsearch node
+------------------------------------
+
+We highly recommend that you set up Elasticsearch server on a dedicated machine separate from the Mattermost Server. 
+
+1. Download and install the latest release of `Elasticsearch v8 <https://www.elastic.co/guide/en/elasticsearch/reference/8.15/install-elasticsearch.html>`_, or `Elasticsearch v7.17+ <https://www.elastic.co/guide/en/elasticsearch/reference/7.17/install-elasticsearch.html>`_. See the Elasticsearch documentation for installation details.
+
+2. Set up Elasticsearch with ``systemd`` by running the following commands:
+
+  .. code-block:: sh
+
+    sudo /bin/systemctl daemon-reload
+    sudo /bin/systemctl enable elasticsearch.service
+    sudo systemctl start elasticsearch.service
+
+3. Confirm Elasticsearch is working on the server. For Elasticsearch 7.x:
+
+  .. code-block:: sh
+
+    curl localhost:9200
+
+  For Elasticsearch 8.x, TLS is enabled by default:
+
+  .. code-block:: sh
+
+    sudo curl --cacert /etc/elasticsearch/certs/http_ca.crt -u elastic https://localhost:9200
+
+  .. note::
+
+    Elasticsearch 8.x generates a password for the ``elastic`` superuser during installation. If you did not save it, reset it by running:
+
+    .. code-block:: sh
+
+      sudo /usr/share/elasticsearch/bin/elasticsearch-reset-password -u elastic
+
+4. Get your network interface name by running the following command:
+
+  .. code-block:: sh
+
+    ip addr
+
+5. Edit the Elasticsearch configuration file in ``vi`` by running the following command:
+
+  .. code-block:: sh
+
+    vi /etc/elasticsearch/elasticsearch.yml
+
+6. In this file, replace the ``network.host`` value of ``_eth0_`` with your network interface name, and save your changes.
+
+  .. note::
+
+    When deploying in cloud environments such as AWS EC2, use the instance's **private IP address** for ``network.host``. The public IP assigned by the cloud provider is not bound to the network interface, and Elasticsearch will fail to start if it cannot bind to the configured address. You can find the private IP by running ``hostname -I``.
+
+7. When using Elasticsearch v8, ensure you set ``action.destructive_requires_name`` to ``false`` in ``elasticsearch.yml`` to allow for wildcard operations to work.
+
+8. Restart Elasticsearch by running the following commands:
+
+  .. code-block:: sh
+
+    sudo systemctl stop elasticsearch
+    sudo systemctl start elasticsearch
+
+9. Confirm the ports are listening by running the following command:
+
+  .. code-block:: sh
+
+    netstat -plnt
+
+  You should see ports 9200 and 9300 listening on your server's IP address.
+
+10. Create an Elasticsearch directory and give it the proper permissions.
+
+11. Install the `icu-analyzer plugin <https://www.elastic.co/guide/en/elasticsearch/plugins/current/analysis-icu.html>`__ to the ``/usr/share/elasticsearch/plugins`` directory by running the following command:
+
+  .. code-block:: sh
+
+    sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-icu
+
+12. Test the connection from Mattermost to Elasticsearch by running the following command, replacing the IP address with your server's private IP address. For Elasticsearch 7.x:
+
+  .. code-block:: sh
+
+    curl 10.0.1.10:9200
+
+  For Elasticsearch 8.x:
+
+  .. code-block:: sh
+
+    sudo curl --cacert /etc/elasticsearch/certs/http_ca.crt -u elastic https://10.0.1.10:9200
+
 .. _set-up-an-elasticsearch-cluster:
 
 Set up an Elasticsearch cluster
@@ -28,7 +122,7 @@ Before configuring a cluster, ensure the following requirements are met:
 
 .. note::
 
-  When deploying in cloud environments such as AWS EC2, use each instance's **private IP address** for ``network.host`` and ``discovery.seed_hosts``. The public IP assigned by the cloud provider is typically not bound to the network interface, and Elasticsearch will fail to start if it cannot bind to the configured address. You can find the private IP by running ``hostname -I`` on each instance.
+  When deploying in cloud environments such as AWS EC2, use each instance's **private IP address** for ``network.host``, ``discovery.seed_hosts``, and any ``/etc/hosts`` entries. The public IP assigned by the cloud provider is not bound to the network interface, and Elasticsearch will fail to start if it cannot bind to the configured address. You can find the private IP by running ``hostname -I`` on each instance.
 
 Node roles
 ~~~~~~~~~~~
@@ -79,7 +173,7 @@ Elasticsearch 8.x enables TLS security by default and generates unique certifica
 
   .. warning::
 
-    Elasticsearch 8.x automatically adds a ``cluster.initial_master_nodes`` entry to ``elasticsearch.yml`` during installation. Do not add a second one — duplicate YAML keys will cause Elasticsearch to fail to start with a parse error. Instead, find the existing ``cluster.initial_master_nodes`` line in the file and update it to include only the first node's name:
+    Elasticsearch 8.x automatically adds a ``cluster.initial_master_nodes`` entry to ``elasticsearch.yml`` during installation. Do not add a second one — duplicate YAML keys will cause Elasticsearch to fail to start with a parse error. Instead, find the existing ``cluster.initial_master_nodes`` line in the file and update it to contain only the first node's name:
 
     .. code-block:: sh
 
@@ -249,17 +343,19 @@ Reload systemd and restart Elasticsearch:
   sudo systemctl daemon-reload
   sudo systemctl restart elasticsearch
 
-Verify that memory locking is active by running:
+Verify that memory locking is active. For Elasticsearch 7.x:
 
 .. code-block:: sh
 
   curl -X GET "localhost:9200/_nodes?filter_path=**.mlockall"
 
-The response should show ``"mlockall": true`` for each node. For Elasticsearch 8.x, use HTTPS and authentication:
+For Elasticsearch 8.x:
 
 .. code-block:: sh
 
   sudo curl --cacert /etc/elasticsearch/certs/http_ca.crt -u elastic https://localhost:9200/_nodes?filter_path=**.mlockall
+
+The response should show ``"mlockall": true`` for each node.
 
 Verify cluster health
 ~~~~~~~~~~~~~~~~~~~~~~
