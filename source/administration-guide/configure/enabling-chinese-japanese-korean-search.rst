@@ -6,9 +6,16 @@ Chinese, Japanese and Korean search
 .. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
-Enabling search for Chinese, Japanese and Korean (CJK) requires special configuration, since these languages do not contain spaces.
 
-See :doc:`database requirements documentation </deployment-guide/software-hardware-requirements>` for how to set up search for these languages.
+```{Attention}
+Starting on Mattermost v11.5, searching for Chinese, Japanese or Korean (CJK) characters can be enabled with the `feature flag <https://developers.mattermost.com/contribute/more-info/server/feature-flags/#changing-feature-flag-values>` ``MM_FEATUREFLAGS_CJKSEARCH``.
+
+The general recommendation of `using either Elasticsearch or Opensearch once the server reaches 2.5 million posts https://docs.mattermost.com/administration-guide/scale/enterprise-search.html#do-i-need-to-use-elasticsearch-or-aws-opensearch` still applies.
+
+What follows is the special configuration required for versions older than v11, where MySQL was still supported.
+```
+
+See :doc:``database requirements documentation </deployment-guide/software-hardware-requirements>` for how to set up search for these languages.
 
 Below is additional information on how to configure the database for different languages.
 
