@@ -56,7 +56,7 @@ If you upgrade from a release earlier than v11.4, please read the other [Importa
  - Configured the build system to natively build the server on FreeBSD.
  - Upgraded to node 24 and main dependencies with ``babel``, ``webpack@5.103`` and ``jest@30`` [MM-66972](https://mattermost.atlassian.net/browse/MM-66972).
  - Renamed **Self-Deleting Messages** to **Burn on Read** in the **System Console**.
- - Added CJK Post search support for PostgreSQL, which sits behind the new feature flag ``MM_FEATUREFLAGS_CJKSEARCH`` [MM-67671](https://mattermost.atlassian.net/browse/MM-67671).
+ - Added [CJK Post search support for PostgreSQL](https://docs.mattermost.com/administration-guide/configure/enabling-chinese-japanese-korean-search.html), which sits behind the new feature flag ``MM_FEATUREFLAGS_CJKSEARCH`` [MM-67671](https://mattermost.atlassian.net/browse/MM-67671).
 
 #### Performance
  - Benchmarking test results showed no significant difference: a 4.28% increase in the number of supported users for the new release, which lies within the ``[-5%, +5%]`` prediction interval. View the full raw data and methodology in our [Performance Reports repository](https://github.com/mattermost/performance-reports/tree/main/performance-comparisons/v11.5).
