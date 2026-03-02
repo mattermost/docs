@@ -11,7 +11,8 @@ Generate
 
 .. important::
 
-   Before generating a Support Packet, go to **System Console > Environment > Logging** and ensure **Output logs to file** is set to **true**, and set **File Log Level** to **DEBUG**.
+   - Before generating a Support Packet, go to **System Console > Environment > Logging** and ensure **Output logs to file** is set to **true**, and set **File Log Level** to **DEBUG**
+   - From Mattermost v11.4, support packet generation is recorded in the audit log (when :ref:`audit logging is enabled and configured <administration-guide/manage/logging:audit logging>`). The audit event includes the username, timestamp, success/failure status, whether logs were included, plugin packets requested, and the output filename. This audit trail helps track access to potentially sensitive log data for compliance purposes.
 
 .. tab:: Web/Desktop
 

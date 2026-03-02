@@ -12,6 +12,12 @@ Changelog
 
    * - Version
      - Change Description
+   * - v11.4
+     - Updated illustrations and visual design for the initial loading screen, preparing workspace flow, IP filtering empty state, and admin console feature discovery panels `MM-67081 <https://mattermost.atlassian.net/browse/MM-67081>`__.
+   * - v11.4
+     - Added adjustments to thread and right-hand side plugin pop-out titles `MM-66898 <https://mattermost.atlassian.net/browse/MM-66898>`__.
+   * - v11.4
+     - MS Teams and Outlook on mobile no longer display a "Your browser does not support notifications" warning banner when running Mattermost embedded in those apps `MM-66769 <https://mattermost.atlassian.net/browse/MM-66769>`__.
    * - v11.3
      - (UI) Added Korean language support and upgraded Korean translations from Alpha to Official.
    * - v11.3
