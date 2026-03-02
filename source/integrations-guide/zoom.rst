@@ -22,6 +22,10 @@ Zoom supports OAuth authentication, and there are 2 types of OAuth Zoom Apps you
 - **Account-Level**: Individual users in Mattermost are verified by checking their Mattermost email and requesting their Personal Meeting ID via the Zoom API. The user's email address in both Mattermost and Zoom must match. Create a User Level Zoom app instead if you prefer that each user to authorize individually.
 - **User-Managed**: Individual users in Mattermost are required to authorize the Mattermost App to access their Zoom account. Create an Account-Level app instead if you prefer that an admin authorizes access on behalf of the whole Zoom organization.
 
+.. important::
+
+  For Account-Level apps, only Zoom users associated with the Zoom Account that created the app can use this integration. You can add users from the **Manage Users** section in the Zoom Account settings.
+
 .. tab:: Account-Level
 
   Complete the following steps to create an account-level Zoom app for Mattermost.
@@ -80,7 +84,9 @@ Install the Zoom integration from the in-product App Marketplace:
 8. Select **Regenerate** next to the **At Rest Token Encryption Key** field to generate an AES encryption key. You just need to generate this value, and won't use it anywhere else.
 9. If you're configuring webhook events, select **Regenerate** next to the **Webhook Secret** field. This is the ``WEBHOOKSECRET`` value to use in your webhook URL pointing to Mattermost.
 10. Paste the **Secret Token** from the Zoom webhook configuration page into the plugin setting **Zoom Webhook Secret**.
-11. Select **Save** to save your changes.
+11. (Optional) Enable **Restrict Meeting Creation** to restrict users from creating meetings in public channels.
+12. Select **Save** to save your changes.
+
 
 Enable
 ------
@@ -97,6 +103,18 @@ Start a call by selecting the Zoom icon in the right pane, or by running the ``/
 Join the meeting by selecting the call invitation in the channel.
 
 Run the ``/zoom settings`` slash command to set your preference for using your Zoom personal meeting ID as a meeting host. You can choose to always use your personal meeting ID, always use a new unique meeting id, or set Mattermost to prompt you for your preference each time you start a call.
+
+Additional slash commands:
+
+- ``/zoom help`` - Display available commands
+- ``/zoom channel-settings`` - Set whether meetings in the current channel use your personal meeting ID or unique meeting ID
+- ``/zoom channel-settings list`` - List all channel preferences
+
+For User-Managed apps only:
+
+- ``/zoom connect`` - Connect your Zoom account to Mattermost
+- ``/zoom disconnect`` - Disconnect your Zoom account from Mattermost
+
 
 Customize
 ----------
