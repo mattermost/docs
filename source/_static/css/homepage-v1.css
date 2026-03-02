@@ -333,6 +333,31 @@ table.align-default td {
   min-width: 200px;
 }
 
+/* Responsive table styles specifically for important upgrade notes page */
+section#important-upgrade-notes table.align-default {
+  width: 100% !important;
+  table-layout: fixed !important;
+  overflow-wrap: break-word !important;
+  min-width: unset !important;
+}
+
+section#important-upgrade-notes table.align-default td,
+section#important-upgrade-notes table.align-default th {
+  word-wrap: break-word !important;
+  vertical-align: top !important;
+  min-width: unset !important;
+}
+
+section#important-upgrade-notes table.align-default td:first-child,
+section#important-upgrade-notes table.align-default th:first-child {
+  width: 25% !important;
+}
+
+section#important-upgrade-notes table.align-default td:last-child,
+section#important-upgrade-notes table.align-default th:last-child {
+  width: 75% !important;
+}
+
 ::-moz-selection {
   /* Code for Firefox */
   background: rgba(255, 188, 31, 0.2);

@@ -1,6 +1,10 @@
 {% extends "furo/page.html" %}
+{% block title -%}
+    {% if page_title_override %}{{ page_title_override }}{% else %}{{ super() }}{% endif %}
+{%- endblock title %}
 {% block extrahead -%}
     {% include "google-tag-manager.html" %}
+    {% include "zendesk-crawler.html" %}
     {{ super() }}
 {% endblock extrahead %}
 {% block footer -%}
