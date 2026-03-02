@@ -9,7 +9,7 @@ Removed features in upcoming versions
 Removed features by Mattermost version
 ----------------------------------------
 
-Mattermost Desktop App v6.1 (February 2026)
+Mattermost Desktop App v6.1 (March 2026)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - The in-app auto-updater for Windows and Linux AppImage installations has been deprecated. See more details in `this forum post <https://forum.mattermost.com/t/important-update-changes-to-desktop-app-auto-updater/25657>`__.
