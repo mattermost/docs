@@ -104,4 +104,9 @@ Update tasks
 - **Edit task commands**: Update slash commands or instructions associated with tasks.
 - **Change run ownership**: Transfer run ownership between team members.
 
+Delete tasks
+~~~~~~~~~~~~~
+
+From Mattermost mobile v2.37.0, you can delete playbook tasks on mobile devices. Tap the task, select **Delete task**, and confirm. This action cannot be undone.
+
 These mobile capabilities provide full task management functionality for teams working with playbooks while on mobile devices, complementing your existing desktop and web browser experiences.

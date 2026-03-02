@@ -35,7 +35,7 @@ Step 1: Add a Mattermost application to your GitLab account
   c. Select scopes.
   
      - For Mattermost Team Edition, select ``read_user``.
-     - For Mattermost Enterprise, select ``openid``, ``profile``, and ``email``.
+     - For Mattermost Enterprise, select ``read_user``, ``openid``, ``profile``, and ``email``.
 
 3. Select **Save application**.
 

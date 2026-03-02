@@ -28,6 +28,10 @@ This section provides a quick start guide for deploying Mattermost on Docker by 
    - The deployment configuration results in two separate containers: a container for the database and a container for the application. An optional third container results when using NGINX for reverse proxy.
    - Encountering issues with your Docker deployment? See the :doc:`Docker deployment troubleshooting </deployment-guide/server/docker-troubleshooting>` documentation for details.
 
+.. note::
+
+   **Resource limits:** Previous versions of the Docker deployment used ``pids_limit`` to constrain container processes. This caused PostgreSQL connection failures in production because PostgreSQL creates one process per connection, limiting deployments to ~90-95 concurrent connections with ``pids_limit: 100``. We now recommend using ``mem_limit`` instead to constrain resources while allowing normal connection scaling. See the `Mattermost Scaling for Enterprise documentation <https://docs.mattermost.com/administration-guide/scale/scaling-for-enterprise.html>`__ for sizing guidance.
+
 1. In a terminal window, clone the repository and enter the directory.
 
    .. code-block:: sh

@@ -105,6 +105,9 @@ You can define and manage up to 20 system attributes using the System Console. E
   - **Hide when empty**: The attribute is only visible in user profiles when it has a value.
   - **Always hide**: The attribute is never visible in user profiles.
 
+.. note::
+  If an attribute is created or updated without explicit visibility or sort order (for example via API or automation), Mattermost returns default values in responses even if those attributes weren't stored. Visibility defaults to the server's default visibility, and sort order defaults to ``0``.
+
 4. Configure user editing permissions (Mattermost v11 or later) by enabling or disabling the **Editable by users** option.
 
 5. Save your changes.
@@ -121,6 +124,9 @@ Manage attributes
 - **Order**: Control the order you want attributes to appear in user profiles by dragging and dropping them in the list.
 
 - **Delete**: Delete attributes you no longer need or want by selecting **More** |more-icon| and selecting **Delete property**.
+
+.. note::
+  When updating custom profile attributes via API or automation, the ``attrs`` object replaces existing attribute settings rather than merging. If you send only visibility, the sort order resets to ``0`` unless you include ``sort_order`` in the same request. If a patch fails, the API may return the error string "Unable to patch Custom Profile Attribute field".
 
 - **User Edit Permissions**: From Mattermost v11, all user attributes are admin-managed by default for enhanced security. To allow user editing for specific attributes, administrators can enable this through the **More** |more-icon| menu and selecting **Allow user editing**. This should only be enabled for attributes that do not impact security access controls or organizational policies. Attributes used in ABAC policies should remain admin-managed unless there's a specific business need and the security implications are fully understood.
 

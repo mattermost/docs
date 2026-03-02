@@ -26,10 +26,22 @@ Desktop apps
 
 Though not officially supported, the Linux desktop app also runs on RHEL/CentOS 7+.
 
+Flatpak package requirements (Linux)
+:::::::::::::::::::::::::::::::::::::
+
+From Mattermost Desktop v6.1, Flatpak packages are available for Linux (currently in beta). The Flatpak version requires:
+
+- Flatpak runtime installed on the system
+- Freedesktop Platform/SDK 25.08
+- Electron BaseApp 25.08
+- Access to Flathub or compatible Flatpak repository for dependencies
+
+Flatpak packages are available for x86_64 (Intel/AMD) and aarch64 (ARM) architectures. The Flatpak version includes Wayland display server support enabled by default.
+
 .. note::
 
     - `*` Integrated Windows Authentication is not supported by Mattermost desktop apps. If you use ADFS we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
-
+    - From Windows Desktop v6.1.0, the MSI installer installs per-machine (system-wide) by default and requires administrator privileges for installation. This meets enterprise compliance requirements.
     - The minimum content size is 800 x 600 pixels.
 
 PC web
@@ -38,10 +50,10 @@ PC web
 .. csv-table::
     :header: "Browser", "Self-Hosted Technical Requirement", "Cloud Technical Requirement"
 
-    "Chrome", "v140+", "v140+"
+    "Chrome", "v144+", "v144+"
     "Firefox", "v140+", "v140+"
     "Safari", "v17.4+", "v17.4+"
-    "Edge", "v140+", "v140+"
+    "Edge", "v142+", "v142+"
 
 `*` Internet Explorer (IE11) is no longer supported. We recommend using the `Mattermost desktop app <https://mattermost.com/apps/>`_ or another supported browser. See `this forum post <https://forum.mattermost.com/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`__ to learn more.
 
@@ -66,8 +78,8 @@ Mobile web
 .. csv-table::
     :header: "Browser", "Technical Requirement"
 
-    "iOS", "iOS 16.0+ with Safari 17.4+ or Chrome 140+"
-    "Android", "Android 7+ with Chrome 140+"
+    "iOS", "iOS 16.0+ with Safari 17.4+ or Chrome 144+"
+    "Android", "Android 7+ with Chrome 144+"
 
 Email client
 ^^^^^^^^^^^^

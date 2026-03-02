@@ -6,6 +6,8 @@ Channel-specific access rules
 
 Channel and Team Admins can self-manage access controls for their private channels directly through the Channel Settings modal, without requiring System Admin intervention. For organization-wide policies created by System Admins, see :doc:`System-wide attribute-based access policies </administration-guide/manage/admin/abac-system-wide-policies>`.
 
+Each ABAC channel access policy has an explicit active state that determines whether the policy will automatically add users who meet the policy's criteria but are not yet channel members. When a policy is applied to a channel, the policy's rules are always enforced to remove members who no longer meet the required attribute rules, regardless of the active state.
+
 With channel access rules, Channel and Team Admins can:
 
 - Create channel-specific access rules using a simple interface.
@@ -56,16 +58,18 @@ Channel access rules use the same simple interface as system policies, allowing 
 Auto-sync membership
 ~~~~~~~~~~~~~~~~~~~~
 
-The **Auto-add members based on access rules** toggle controls automatic membership management:
+The **Auto-add members based on access rules** toggle controls automatic membership management. This setting ensures that channel membership stays consistently aligned with the defined attribute rules, similar to how LDAP group channels work:
 
-- **Enabled**: Users matching the rules are automatically added to the channel, and users who no longer match are removed
+- **Enabled**: Users matching the rules are automatically added to the channel. If users temporarily lose attributes and later regain them, they will be automatically re-added
 - **Disabled**: Rules act as a gate (preventing unauthorized joins) but don't automatically add qualifying users
 
 .. important::
 
+  - Auto-add/auto-sync is checked on a per-channel policy basis, not inherited from parent system-wide policies.
   - If a system policy has auto-sync enabled, Channel and Team Admins cannot disable it at the channel level.
   - If a system policy has auto-sync disabled, Channel and Team Admins can choose to enable it for their channel.
   - When no rules are configured, this toggle is automatically disabled.
+  - Regardless of the auto-sync setting, users who no longer meet required attribute rules are always removed during synchronization.
 
 Validation and safety
 ~~~~~~~~~~~~~~~~~~~~~
@@ -85,12 +89,15 @@ When you save changes that affect membership, a confirmation dialog shows you:
 Policy inheritance
 --------------------
 
+Channel-level (child) ABAC policies now behave independently and consistently, even when parent system-wide policies exist. Each policy maintains its own active state and configuration.
+
 When both :doc:`system policies </administration-guide/manage/admin/abac-system-wide-policies>` and channel rules are configured:
 
 1. **System policies** are displayed in a blue banner at the top (read-only)
 2. **Channel rules** are managed in the access rules section below
 3. **Users must satisfy BOTH** system policies and channel rules to access the channel
 4. Channel rules **add restrictions** but cannot weaken system policies
+5. **Auto-add behavior** is determined by the individual channel policy, not inherited from parent system-wide policies. System-wide policies can pass down their rules, but auto-add/auto-sync is evaluated per channel.
 
 Use cases and recommendations
 -----------------------------
@@ -199,6 +206,11 @@ The auto-sync toggle is automatically disabled when:
 - No access rules are configured
 - A system policy with auto-sync enabled is applied (Channel and Team Admins cannot disable it)
 - There are validation errors in the current rules
+- The channel's access control policy is not in an active state
+
+.. note::
+
+  **Troubleshooting auto-sync issues**: If auto-sync functionality (automatic adding/re-adding of members) is not working as expected, verify that the channel's access control policy is in an active state. An inactive policy will prevent automatic member additions from occurring. Note that enforcement of rules (removal of members who no longer meet requirements) happens regardless of the policy's active state.
 
 Synchronization and membership 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
