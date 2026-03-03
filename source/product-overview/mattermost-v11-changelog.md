@@ -16,6 +16,15 @@
 
 ### Upgrade Impact
 
+#### Database Schema Changes
+ - The following schema changes are included in the v11.5 release. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
+   - Added a new column ``translations.state`` and a new index ``idx_translations_state`` to the ``translations`` table.
+   - Added a new column ``channelmembers.autotranslationdisabled`` to the ``channelmembers`` table.
+   - Modified the column ``translations.objectType`` and changed the primary key ``(objectId, dstLang)`` to ``(objectId, objectType, dstLang)`` in the ``translations`` table.
+   - Added a new column ``translations.channelid`` to the ``translations`` table.
+   - Added a new index ``idx_translations_channel_updateat`` to the ``translations`` table.
+   - Dropped the index ``idx_translations_updateat`` from the ``translations`` table.
+
 #### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
  - **Changes to Enterprise Advanced plan:**
