@@ -121,3 +121,11 @@ What's collected?
 -----------------
 
 Mattermost provides :ref:`custom metrics <administration-guide/scale/performance-monitoring-metrics:custom Mattermost metrics>` and :ref:`standard Go metrics <administration-guide/scale/performance-monitoring-metrics:standard go metrics>` that can be used to monitor your system's performance.
+
+Next steps
+----------
+
+Once you've set up performance monitoring, you may want to:
+
+* :doc:`Set up performance alerts </administration-guide/scale/performance-alerting>` to be notified when metrics exceed thresholds.
+* :doc:`Deploy Grafana Loki for centralized logging </administration-guide/scale/deploy-grafana-loki-for-centralized-logging>` to search and correlate logs with metric spikes.
