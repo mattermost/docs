@@ -12,7 +12,34 @@ We recommend reviewing the `additional upgrade notes <#additional-upgrade-notes>
 | If you're upgrading                                | Then...                                                                                                                                                          |
 | from a version earlier than...                     |                                                                                                                                                                  |
 +====================================================+==================================================================================================================================================================+
-| v11.5                                              | Review the full changelog for details on any schema changes, compatibility updates, or configuration changes.                                                    |
+| v11.5                                              | Added a new column ``translations.state`` and a new index ``idx_translations_state`` to the ``translations`` table. The migrations are fully                                                                                 |
+|                                                    | backwards-compatible and no database downtime is expected for this upgrade. The SQL queries included are:  
+
+|                                                    | .. code-block:: sql                                                                                                                                              |
+|                                                    |                                                                      | 
+|                                                    |   ```sql
+|                                                    |   ALTER TABLE translations
+|                                                    |   ADD COLUMN IF NOT EXISTS state varchar(20) NOT NULL;
+|                                                    | 
+|                                                    |   CREATE INDEX IF NOT EXISTS idx_translations_state
+|                                                    |   ON translations(state)
+|                                                    |   WHERE state IN ('processing');
+|                                                    |   ```
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | Added a new column ``channelmembers.autotranslationdisabled`` to the ``channelmembers`` table. The migrations are fully                                                                                 |
+|                                                    | backwards-compatible and no database downtime is expected for this upgrade. The SQL queries included are:  
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | Modified the column ``translations.objectType`` and changed the primary key ``(objectId, dstLang)`` to ``(objectId, objectType, dstLang)`` in the ``translations`` table. The migrations are fully                                                                                 |
+|                                                    | backwards-compatible and no database downtime is expected for this upgrade. The SQL queries included are:  
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | Added a new column ``translations.channelid`` to the ``translations`` table. The migrations are fully                                                                                 |
+|                                                    | backwards-compatible and no database downtime is expected for this upgrade. The SQL queries included are:  
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | Added a new index ``idx_translations_channel_updateat`` to the ``translations`` table. The migrations are fully                                                                                 |
+|                                                    | backwards-compatible and no database downtime is expected for this upgrade. The SQL queries included are:  
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | Dropped the index ``idx_translations_updateat`` from the ``translations`` table. The migrations are fully                                                                                 |
+|                                                    | backwards-compatible and no database downtime is expected for this upgrade. The SQL queries included are:                                                    |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v11.4                                              | Photoshop Document (PSD) files are now no longer inline previewed, they are treated as regular file attachments.                                                 |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
