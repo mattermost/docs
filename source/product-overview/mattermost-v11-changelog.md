@@ -93,7 +93,7 @@ If you upgrade from a release earlier than v11.4, please read the other [Importa
  - Added new audit events ``AuditEventListChannelBookmarksForChannel``, ``AuditEventGetPinnedPosts``, ``AuditEventGetFileThumbnail``, ``AuditEventGetFileInfosForPost``, ``AuditEventGetFileInfo``, ``AuditEventGetFilePreview``, ``AuditEventSearchFiles``, ``AuditEventCreateEphemeralPost``, ``AuditEventGetEditHistoryForPost``, ``AuditEventGetFlaggedPosts``, ``AuditEventGetPostsForChannel``, ``AuditEventGetPostsForChannelAroundLastUnread``, ``AuditEventGetPost``, ``AuditEventGetPostThread``, ``AuditEventGetPostsByIds``, ``AuditEventGetThreadForUser``, ``AuditEventNotificationAck``, and ``AuditEventWebsocketPost``.
 
 ### Go Version
- - v11.5 is built with Go ``v1.24.11``.
+ - v11.5 is built with Go ``v1.24.13``.
 
 ### Open Source Components
  - Added ``react-intl`` and ``x/sys``, and replaced ``avct/uasurfer`` with ``LumenResearch/uasurfer`` in https://github.com/mattermost/mattermost.
