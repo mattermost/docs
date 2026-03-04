@@ -75,6 +75,8 @@ Each provider has specific configuration requirements:
 
 For AWS Bedrock, authentication can be configured using AWS credentials in the API Key/Secret fields, or by using IAM roles when running Mattermost on AWS infrastructure.
 
+**Important for Anthropic Claude models**: Before using Claude models via AWS Bedrock, you must submit a one-time First Time Use (FTU) form in the AWS Bedrock Model Catalog, and attach Bedrock API permissions to your Mattermost servers' IAM role. See the [AWS Bedrock setup guide](https://docs.mattermost.com/agents/docs/aws_bedrock_setup.html) for detailed instructions.
+
 See the [Provider Guide](https://docs.mattermost.com/agents/docs/providers.html) for detailed provider-specific configuration.
 
 ### Agent configuration
@@ -373,7 +375,7 @@ Currently integrations are limited to direct messages between users and the agen
 
 ## Model Context Protocol (MCP) Integration
 
-The Model Context Protocol (MCP) integration allows Agents to connect to external tools and services through standardized MCP servers. This [experimental](https://docs.mattermost.com/manage/feature-labels.html#experimental) feature enables expanding AI capabilities with custom integrations.
+The Model Context Protocol (MCP) integration allows Agents to connect to external tools and services through standardized MCP servers. This feature enables expanding AI capabilities with custom integrations.
 
 ### Configuration
 
@@ -430,7 +432,7 @@ For more information, see [Atlassian's documentation on MCP server settings](htt
 
 ## Mattermost MCP Server
 
-The Mattermost MCP Server enables AI agents and external applications to interact with your Mattermost instance through the Model Context Protocol (MCP). This [experimental](https://docs.mattermost.com/manage/feature-labels.html#experimental) feature is a standardized protocol that allows AI assistants to read messages, search content, create posts, and manage channels and teams programmatically. 
+The Mattermost MCP Server enables AI agents and external applications to interact with your Mattermost instance through the Model Context Protocol (MCP). This is a standardized protocol that allows AI assistants to read messages, search content, create posts, and manage channels and teams programmatically. 
 
 ### Overview
 
@@ -469,7 +471,7 @@ The MCP server provides the following tools to AI agents and external clients:
 
 ### Deployment
 
-![MCP Server Configuration](img/system-console-mcp.PNG)
+![MCP Server Configuration](img/system-console-mcp.png)
 
 #### For AI Agents
 
