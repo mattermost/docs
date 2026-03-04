@@ -71,6 +71,8 @@ To configure:
 
    **Choosing between LibreTranslate and Agents**: LibreTranslate is a lightweight, self-hosted translation engine. The Agents provider uses an LLM backend and generally produces more accurate translations, especially for languages such as Japanese, Korean, and Chinese where contextual understanding improves quality. Consider your translation quality needs and existing infrastructure when choosing.
 
+   **Choosing an LLM for the Agents provider**: Smaller, faster models are recommended for autotranslation. Translation is a well-defined task that doesn't benefit from the extended reasoning capabilities of larger models — larger models may actually overthink the task, adding unnecessary latency without improving quality. A model like ``gpt-3.5-turbo`` provides accurate translations with lower latency.
+
 Manage autotranslation per channel
 ----------------------------------
 
