@@ -36,6 +36,7 @@ Learn more about collaborating within Mattermost channels:
   Create channels </end-user-guide/collaborate/create-channels>
   Rename channels </end-user-guide/collaborate/rename-channels>
   Display channel banners </end-user-guide/collaborate/display-channel-banners>
+  Autotranslate messages </end-user-guide/collaborate/autotranslate-messages>
   Convert public channels to private channels </end-user-guide/collaborate/convert-public-channels>
   Convert group messages to private channels </end-user-guide/collaborate/convert-group-messages>
   Join and leave channels </end-user-guide/collaborate/join-leave-channels>
@@ -57,6 +58,7 @@ Learn more about collaborating within Mattermost channels:
 * :doc:`Create channels </end-user-guide/collaborate/create-channels>`  - Create channels to organize discussion by topic, project, or focus.
 * :doc:`Rename a channel </end-user-guide/collaborate/rename-channels>` - Rename channels to make them more discoverable.
 * :doc:`Display channel banners </end-user-guide/collaborate/display-channel-banners>` - Display a fixed banner at the top of channels to warn users about the presence of classified or sensitive information.
+* :doc:`Autotranslate messages </end-user-guide/collaborate/autotranslate-messages>` - Automatically translate channel messages into your preferred language.
 * :doc:`Convert public channels to private channels </end-user-guide/collaborate/convert-public-channels>` - Learn how to convert channel access and visibility.
 * :doc:`Convert group messages to private channels </end-user-guide/collaborate/convert-group-messages>` - Learn how to convert group messages to private channels.
 * :doc:`Manage channel members </end-user-guide/collaborate/manage-channel-members>` - Add and remove users from channels.
