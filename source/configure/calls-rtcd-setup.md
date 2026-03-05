@@ -128,42 +128,9 @@ This is the recommended deployment method for non-Kubernetes production environm
    Replace `rtcd-linux-amd64` with the appropriate binary for your system architecture (e.g., `rtcd-linux-arm64` for ARM64 systems). The binary should be placed at `/opt/rtcd/rtcd` as this is the expected location referenced in systemd service files and other documentation.
    ```
 
-2. **Create a configuration file** (`/opt/rtcd/rtcd.toml`) with the following settings:
+2. **Create a configuration file** (`/opt/rtcd/rtcd.toml`):
 
-   ```toml
-   [api]
-   http.listen_address = ":8045"
-   security.allow_self_registration = true
-
-   [rtc]
-   ice_address_udp = ""
-   ice_port_udp = 8443
-   ice_address_tcp = ""
-   ice_port_tcp = 8443
-   ice_host_override = "YOUR_RTCD_SERVER_PUBLIC_IP"
-
-   # UDP port range for WebRTC connections
-   ice.port_range.min = 9000
-   ice.port_range.max = 10000
-
-   # STUN/TURN server configuration
-   ice_servers = [
-     { urls = ["stun:stun.global.calls.mattermost.com:3478"] }
-   ]
-
-   [store]
-   data_source = "/opt/rtcd/data/db"
-
-   [logger]
-   enable_console = true
-   console_json = true
-   console_level = "INFO"
-   enable_file = true
-   file_json = true
-   file_level = "INFO"
-   file_location = "/opt/rtcd/rtcd.log"
-   enable_color = true
-   ```
+   Mattermost recommends using the official [config.sample.toml](https://github.com/mattermost/rtcd/blob/master/config/config.sample.toml) as a starting point. Download this file and use it as your base configuration.
 
 3. Create a dedicated user for the RTCD service:
 
@@ -221,11 +188,14 @@ Docker deployment is suitable for development, testing, or containerized product
    ```bash
    docker run -d --name rtcd \
      -e "RTCD_LOGGER_ENABLEFILE=true" \
-     -e "RTCD_API_SECURITY_ALLOWSELFREGISTRATION=true" \
      -p 8443:8443/udp \
      -p 8443:8443/tcp \
      -p 8045:8045/tcp \
      mattermost/rtcd:latest
+   ```
+
+   ```{note}
+   If you optionally use the `RTCD_API_SECURITY_ALLOWSELFREGISTRATION` setting, please note that it defaults to `false`. If enabled, it allows anyone who can connect to the service on the API port (8045) to successfully initiate calls. Understand the security implications of this setting before enabling it.
    ```
 
 2. For debugging purposes, you can enable more detailed logging:
@@ -234,7 +204,6 @@ Docker deployment is suitable for development, testing, or containerized product
    docker run -d --name rtcd \
      -e "RTCD_LOGGER_ENABLEFILE=true" \
      -e "RTCD_LOGGER_CONSOLELEVEL=DEBUG" \
-     -e "RTCD_API_SECURITY_ALLOWSELFREGISTRATION=true" \
      -p 8443:8443/udp \
      -p 8443:8443/tcp \
      -p 8045:8045/tcp \
@@ -262,119 +231,27 @@ For a complete sample configuration file, see the [RTCD config.sample.toml](http
 
 ### Kubernetes Deployment
 
-For Kubernetes deployments, use the official Helm chart:
-
-1. Add the Mattermost Helm repository:
-
-   ```bash
-   helm repo add mattermost https://helm.mattermost.com
-   helm repo update
-   ```
-
-2. Install the RTCD chart:
-
-   ```bash
-   helm install mattermost-rtcd mattermost/mattermost-rtcd \
-     --set ingress.enabled=true \
-     --set ingress.host=rtcd.example.com \
-     --set service.annotations."service\\.beta\\.kubernetes\\.io/aws-load-balancer-backend-protocol"=udp \
-     --set rtcd.ice.hostOverride=rtcd.example.com
-   ```
-
-   Refer to the [RTCD Helm chart documentation](https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-rtcd) for additional configuration options.
+For detailed information on deploying RTCD in Kubernetes environments, including Helm chart configurations, resource requirements, and scaling considerations, see the [Calls Deployment on Kubernetes](calls-kubernetes.md) guide.
 
 ## Configuration
 
 ### RTCD Configuration File
 
-The RTCD service uses a TOML configuration file. Here's an example with commonly used settings:
+The RTCD service uses a TOML configuration file. Mattermost recommends using the official [config.sample.toml](https://github.com/mattermost/rtcd/blob/master/config/config.sample.toml) as your base configuration file.
 
-```toml
-[api]
-# The address and port to which the HTTP API server will listen
-http.listen_address = ":8045"
-# Security settings for authentication
-security.allow_self_registration = true
-security.enable_admin = true
-security.admin_secret_key = "YOUR_API_KEY"
-
-[rtc]
-# The UDP address and port for media traffic
-ice_address_udp = ""
-ice_port_udp = 8443
-# The TCP address and port for fallback connections 
-ice_address_tcp = ""
-ice_port_tcp = 8443
-# Public hostname or IP that clients will use to connect
-ice_host_override = "RTCD_SERVER_PUBLIC_IP"
-
-[logger]
-# Logging configuration
-enable_console = true
-console_json = false
-console_level = "INFO"
-enable_file = true
-file_json = true
-file_level = "INFO"
-file_location = "/opt/rtcd/rtcd.log"
+```{note}
+A notable setting to be aware of is `ice_host_override` under the `[rtc]` section. You may need to configure this setting explicitly, particularly when RTCD is deployed behind NAT, in complex network topologies, or when automatic address discovery via STUN is unreliable. Setting `ice_host_override` directly to your server's public IP address or hostname is the preferred approach.
 ```
 
-Key Configuration Options:
+### TURN Configuration
 
-- **api.http.listen_address**: The address and port where the RTCD HTTP API service listens
-- **rtc.ice_address_udp**: The UDP address for media traffic (empty means listen on all interfaces)
-- **rtc.ice_port_udp**: The UDP port for media traffic 
-- **rtc.ice_address_tcp**: The TCP address for fallback media traffic
-- **rtc.ice_port_tcp**: The TCP port for fallback media traffic
-- **rtc.ice_host_override**: The public hostname or IP address clients will use to connect to RTCD
-- **api.security.admin_secret_key**: API key for Mattermost servers to authenticate with RTCD
-
-### Required Mattermost Server Configuration
-
-When using RTCD, you must configure the Mattermost server's CORS settings to allow proper communication between the server and the RTCD service.
-
-#### CORS Configuration
-
-The `AllowCorsFrom` setting must include your SiteURL and, if using calls-offloader in a private network, the Mattermost server's private IP address:
-
-**Using mmctl:**
-```bash
-# Basic RTCD configuration - include your SiteURL
-mmctl config set ServiceSettings.AllowCorsFrom "https://your-domain.com"
-
-# If using calls-offloader in a private network, also include Mattermost's private IP with port 8065
-mmctl config set ServiceSettings.AllowCorsFrom "https://your-domain.com http://192.168.1.100:8065"
-```
-
-**Using System Console:**
-1. Go to **System Console > Environment > Web Server**
-2. Set **Allow cross-origin requests from** to include:
-   - Your SiteURL (e.g., `https://your-domain.com`)
-   - If using calls-offloader in a private network: Also include Mattermost's private IP with port 8065 (e.g., `http://192.168.1.100:8065`)
-
-**Using config.json:**
-```json
-{
-  "ServiceSettings": {
-    "AllowCorsFrom": "https://your-domain.com http://192.168.1.100:8065"
-  }
-}
-```
-
-```{important}
-This CORS configuration is specifically required for RTCD deployments and is not needed for integrated mode deployments. Multiple origins should be separated by spaces.
-```
-
-### STUN/TURN Configuration
-
-For clients behind strict firewalls, you may need to configure STUN/TURN servers. In the RTCD configuration file, reference your STUN/TURN servers as follows:
+For clients behind strict firewalls, you may need to configure TURN servers. In the RTCD configuration file, reference your TURN servers as follows:
 
 ```toml
 [rtc]
-# STUN/TURN server configuration
+# TURN server configuration
    ice_servers = [
-     { urls = ["stun:stun.global.calls.mattermost.com:3478"] }
-   #  { urls = ["turn:turn.example.com:3478"], username = "turnuser", credential = "turnpassword" }
+     { urls = ["turn:turn.example.com:3478"], username = "turnuser", credential = "turnpassword" }
    ]
 
 ```
@@ -414,6 +291,12 @@ After deploying RTCD, validate the installation:
 
 2. **Test UDP connectivity**:
 
+   Before testing, ensure the RTCD service is stopped, as it binds to the same port.
+   
+   ```bash
+   sudo systemctl stop rtcd
+   ```
+
    On the RTCD server:
    
    ```bash
@@ -427,12 +310,6 @@ After deploying RTCD, validate the installation:
    ```
       
    Type a message and hit Enter on either side. If messages are received on both ends, UDP connectivity is working.
-
-   Note: This test must be run with the RTCD service stopped, as it binds to the same port.
-
-   ```bash
-   sudo systemctl stop rtcd
-   ```
 
 3. **Test TCP connectivity** (if enabled):
 
@@ -478,15 +355,13 @@ Once RTCD is properly set up and validated, configure Mattermost to use it:
 
 2. Enable the **Enable RTCD Service** option
 
-3. Set the **RTCD Service URL** to your RTCD service address (either a single server or DNS load-balanced hostname)
+3. Set the **RTCD Service URL** to your RTCD service address (either a single server or DNS load-balanced hostname). Ensure you provide any generated credentials formulated in the URI (e.g., `http://clientID:authKey@rtcd.local`). For detailed capability/credential configuration, reference the [RTCD Service URL](https://docs.mattermost.com/configure/plugins-configuration-settings.html#rtcd-service-url) documentation.
 
-4. If configured, enter the **RTCD API Key** that matches the one in your RTCD configuration
+4. Save the configuration
 
-5. Save the configuration
+5. Test by creating a new call in any Mattermost channel
 
-6. Test by creating a new call in any Mattermost channel
-
-7. Verify that the call is being routed through RTCD by checking the RTCD logs and metrics
+6. Verify that the call is being routed through RTCD by checking the RTCD logs and metrics
 
 ## Other Calls Documentation
 
