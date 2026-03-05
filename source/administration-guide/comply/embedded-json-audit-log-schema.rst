@@ -31,8 +31,9 @@ An outline of the JSON audit logging schema is provided below. See the `JSON dat
             "object_type": ""       // Object targeted by the event or activity
         },
         "meta": {
-            "api_path": "",         // API endpoint interacted with for event or activity
-            "cluster_id": ""        // Unique identifier of the cluster in use by the event user
+            "api_path": "",                    // API endpoint interacted with for event or activity
+            "cluster_id": ""                   // Unique identifier of the cluster in use by the event user
+            "non_channel_member_access": false // true if user accessed channel content without being a member (v11.5.0+)
         }
     }
 
@@ -349,6 +350,9 @@ Posts & Content Events
 +-------------------------------+-------------------------------------------------------------------+
 | ``updateScheduledPost``       | Updating scheduled posts                                          |
 +-------------------------------+-------------------------------------------------------------------+
+
+.. note::
+   From Mattermost v11.5.0, audit log entries for posts and content access events include a ``non_channel_member_access`` field in the ``meta`` object. When a user accesses posts or content in a channel they are not a member of, this field is set to ``true``. Admins can use this indicator to identify and review unauthorized or unexpected content access in their audit logs.
 
 Authentication and Security Events
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -981,13 +985,16 @@ EventActor
 EventMeta
 ~~~~~~~~~
 
-+-------------------+---------------+-------------------------------------------------------------------+
-| **Field name**    | **Data type** | **Description**                                                   |
-+-------------------+---------------+-------------------------------------------------------------------+
-| api_path          | string        | The REST endpoint which caused the event.                         |
-+-------------------+---------------+-------------------------------------------------------------------+
-| cluster_id        | integer       | Cluster identifier.                                               |
-+-------------------+---------------+-------------------------------------------------------------------+
++----------------------------+---------------+-------------------------------------------------------------------+
+| **Field name**             | **Data type** | **Description**                                                   |
++----------------------------+---------------+-------------------------------------------------------------------+
+| api_path                   | string        | The REST endpoint which caused the event.                         |
++----------------------------+---------------+-------------------------------------------------------------------+
+| cluster_id                 | integer       | Cluster identifier.                                               |
++----------------------------+---------------+-------------------------------------------------------------------+
+| non_channel_member_access  | boolean       | (Optional) Available from v11.5.0. Set to ``true`` when a user   |
+|                            |               | accesses posts or content in a channel they are not a member of.  |
++----------------------------+---------------+-------------------------------------------------------------------+
 
 EventError
 ~~~~~~~~~~
