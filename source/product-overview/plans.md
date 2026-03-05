@@ -300,6 +300,10 @@
     <tr class="section"><td colspan="7"><strong>Enterprise Advanced exclusive features</strong></td></tr>
     <tr class="subsection"><td colspan="7"><strong>Advanced security, compliance, and deployment capabilities designed for the most demanding cyber defense and mission-critical environments.</strong></td></tr>
     <tr>
+      <td><strong>Classified and Sensitive Information Controls</strong>: Display <a href="https://docs.mattermost.com/end-user-guide/collaborate/display-channel-banners.html">channel banners</a> to indicate classification levels and sensitive information handling requirements, ensuring compliance with security protocols for classified environments.</td>
+      <td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v10.9+</td>
+    </tr>
+    <tr>
       <td><strong>Zero Trust Security</strong>: Implement dynamic <a href="https://docs.mattermost.com/administration-guide/manage/admin/attribute-based-access-control.html">attribute-based policy controls</a> with environmental attributes and <a href="https://docs.mattermost.com/administration-guide/manage/admin/user-attributes.html">User Authoritative Source</a> integration for comprehensive zero trust security architecture.</td>
       <td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v10.9+</td>
     </tr>
