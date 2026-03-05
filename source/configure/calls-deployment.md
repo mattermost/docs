@@ -239,13 +239,13 @@ For detailed performance metrics, benchmarks, and monitoring guidance, see the [
 
 ## Frequently Asked Questions
 
-**Is calls traffic encrypted?**  
+### Is calls traffic encrypted?
 Media (audio/video) is encrypted using security standards as part of WebRTC. It's mainly a combination of DTLS and SRTP. It's not e2e encrypted in the sense that in the current design all media needs to go through Mattermost which acts as a media router and has complete access to it. Media is then encrypted back to the clients so it's secured during transit. In short: only the participant clients and the Mattermost server have access to unencrypted call data.
 
-**Are there any third-party services involved?**  
+### Are there any third-party services involved?
 Only a Mattermost STUN server (`stun.global.calls.mattermost.com`) is used by default. This can be removed if you set the ICE Host Override configuration.
 
-**Is using UDP a requirement?**  
+### Is using UDP a requirement?
 UDP is recommended protocol to serve real-time media as it allows for the lowest latency between peers, but TCP fallback is supported since plugin version 0.17 and RTCD version 0.11.
 
 If clients are unable to connect using UDP (due to limitations or strict firewalls), you have a few options:
@@ -254,27 +254,27 @@ If clients are unable to connect using UDP (due to limitations or strict firewal
 
 - Run calls through an external TURN server that listens on TCP and relays all media traffic between peers. However, this is a sub-optimal solution that should be avoided if possible as it will introduce extra latency along with added infrastructural cost.
 
-**Do I need a TURN server?**  
+### Do I need a TURN server?
 Only if clients are behind restrictive firewalls that block UDP. We recommend (and officially support) [coturn](https://github.com/coturn/coturn) if needed.
 
-**Can RTCD traffic be kept internal?**  
+### Can RTCD traffic be kept internal?
 Yes, and it's recommended. Only the media ports need to be accessible to end-users.
 
-**How will this work with an existing reverse proxy sitting in front of Mattermost?**
+### How will this work with an existing reverse proxy sitting in front of Mattermost?
 
 Generally clients should connect directly to either Mattermost or, if deployed, the dedicated `rtcd` service through the configured UDP port. However, it's also possible to route the traffic through an existing load balancer as long as this has support for routing the UDP protocol (e.g. nginx). Of course this will require additional configuration and potential changes to how the plugin is run as it won't be possible to load balance the UDP flow across multiple instances like it happens for HTTP.
 
-**Do calls require a dedicated server to work or can they run alongside Mattermost?**
+### Do calls require a dedicated server to work or can they run alongside Mattermost?
 
 The plugin can function in different modes. By default calls are handled completely by the plugin which runs as part of Mattermost. It's also possible to use a dedicated service to offload the computational and bandwidth costs and scale further (Enterprise only).
 
 See [RTCD Setup and Configuration](calls-rtcd-setup.md) for more details on the dedicated RTCD service.
 
-**Can the traffic between Mattermost and `rtcd` be kept internal or should it be opened to the public?**
+### Can the traffic between Mattermost and `rtcd` be kept internal or should it be opened to the public?
 
 When possible, it's recommended to keep communication between the Mattermost cluster and the dedicated `rtcd` service under the same private network as this can greatly simplify deployment and security. There's no requirement to expose `rtcd`'s HTTP API to the public internet.
 
-**Can Calls be rolled out on a per-channel basis?**
+### Can Calls be rolled out on a per-channel basis?
 
 ```{include} ../_static/badges/selfhosted-only.md
 ```
