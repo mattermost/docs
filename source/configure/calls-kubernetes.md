@@ -35,10 +35,7 @@ helm repo add mattermost https://helm.mattermost.com
 helm repo update
 
 helm install mattermost-rtcd mattermost/mattermost-rtcd \
-  --set ingress.enabled=true \
-  --set ingress.host=rtcd.example.com \
-  --set service.annotations."service\\.beta\\.kubernetes\\.io/aws-load-balancer-backend-protocol"=udp \
-  --set rtcd.ice.hostOverride=rtcd.example.com
+  --set service.annotations."service\\.beta\\.kubernetes\\.io/aws-load-balancer-backend-protocol"=udp
 ```
 
 For complete configuration options, see the [RTCD Helm chart documentation](https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-rtcd).
@@ -61,31 +58,16 @@ For complete configuration options, see the [Calls-Offloader Helm chart document
 
 For Kubernetes deployments, you need to ensure specific connectivity paths:
 
-1. **Client to RTCD connectivity**: UDP traffic on port 8443 is properly routed from clients to RTCD pods (for media)
-2. **Mattermost to RTCD API connectivity**: TCP traffic on port 8045 must have a clear connectivity path from Mattermost pods to RTCD pods (for API communication)
-3. **Client to RTCD TCP fallback**: TCP traffic on port 8443 can reach RTCD pods (for fallback connections when UDP fails)
-4. **Load balancer configuration**: Load balancers must be properly configured to handle UDP traffic routing to RTCD pods
-5. **Network policies**: Network policies must allow the required communications between Mattermost and RTCD services
+1. **Client to RTCD connectivity**: UDP and TCP traffic on port 8443 is properly routed from clients to RTCD pods (for media, with TCP acting as a fallback).
+2. **Mattermost to RTCD API connectivity**: There needs to be a clear connectivity path between Mattermost and RTCD on the API port (TCP 8045)
+3. **Load balancer configuration**: Load balancers must be properly configured to handle UDP and TCP traffic routing to RTCD pods
+4. **Network policies**: Network policies must allow the required communications between Mattermost and RTCD services
 
 ### Resource Requirements
 
-For optimal performance in Kubernetes environments:
+Resource requirements for RTCD pods depend heavily on the expected call volume, participant count, and whether screen sharing is used. 
 
-1. **CPU**: At least 2 CPU cores per RTCD pod
-2. **Memory**: At least 1GB RAM per RTCD pod
-3. **Network**: Sufficient bandwidth for expected call volume (see benchmarks)
-
-We recommend setting resource limits and requests in your deployment:
-
-```yaml
-resources:
-  requests:
-    cpu: 1000m
-    memory: 1Gi
-  limits:
-    cpu: 2000m
-    memory: 2Gi
-```
+We strongly recommend reviewing the [Performance Baselines](calls-metrics-monitoring.md#performance-baselines) to determine the appropriate CPU, memory, and network requests and limits for your specific deployment needs rather than relying on generic defaults.
 
 ### Scaling Considerations
 
@@ -100,7 +82,7 @@ Horizontal scaling of RTCD pods is possible, but remember:
 
 Due to the inherent complexities of hosting a WebRTC service, some limitations apply when deploying Calls in a Kubernetes environment.
 
-One key requirement is that each `rtcd` process must live in a dedicated Kubernetes node. This is necessary to forward the data correctly while allowing for horizontal scaling. Data should generally not go through a standard ingress but directly to the pod running the `rtcd` process.
+One key requirement is that each `rtcd` process must live in a dedicated Kubernetes node. This is necessary to forward the data correctly while allowing for horizontal scaling. Data should generally direct directly to the pod running the `rtcd` process, as routing this traffic through a standard ingress is not recommended for RTCD deployments.
 
 The general recommendation is to expose one external IP address per `rtcd` instance (Kubernetes node). This makes it simpler to scale as the application is able to detect its own external address (through STUN) and advertise it to clients to achieve connectivity with minimal configuration.
 
@@ -118,7 +100,7 @@ This case requires a couple of extra configurations:
 
 * The `RTCD_RTC_ICEHOSTPORTOVERRIDE` config should be used to pass a full mapping of node IPs and their respective port.
 
-  * Example: `RTCD_RTC_ICEHOSTPORTOVERRIDE=rtcdA_IP/8443,rtcdB_IP/8444,rtcdC_IP/8445`
+  * Example: `RTCD_RTC_ICEHOSTPORTOVERRIDE=<rtcdA_IP>/8443,<rtcdB_IP>/8444,<rtcdC_IP>/8445`
 
 * The `RTCD_RTC_ICEHOSTOVERRIDE` should be used to set the external IP address.
 
@@ -127,12 +109,6 @@ One option to limit these static mappings is to reduce the size of the local sub
 ```
 
 ## Monitoring and Metrics
-
-We recommend deploying Prometheus and Grafana alongside your Calls deployment:
-
-1. Configure Prometheus to scrape metrics from both Mattermost and RTCD pods
-2. Import the official Mattermost Calls dashboard to Grafana
-3. Set up alerts for CPU usage, connection failures, and error rates
 
 For detailed information on metrics collection and monitoring, see the [Calls Metrics and Monitoring](calls-metrics-monitoring.md) guide.
 
