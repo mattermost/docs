@@ -22,11 +22,14 @@ Before you begin
   - **LibreTranslate**: A running LibreTranslate server reachable from the Mattermost server.
   - **Agents**: The :doc:`Mattermost Agents plugin </administration-guide/configure/agents-admin-guide>` installed and configured with at least one LLM service.
 
-Set up a translation provider
------------------------------
+Set up Auto-translation
+-----------------------
+
+Configure a translation provider
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Set up LibreTranslate
-~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^
 
 `LibreTranslate <https://libretranslate.com/>`__ is a self-hosted, open-source machine translation engine. See the `LibreTranslate installation guide <https://docs.libretranslate.com/guides/installation/>`__ for deployment instructions.
 
@@ -43,7 +46,7 @@ Once your LibreTranslate server is running:
    The Mattermost server must be able to reach the LibreTranslate URL over the network. Ensure firewall rules and DNS resolution allow connectivity between the Mattermost server and the LibreTranslate instance.
 
 Set up the Agents provider
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Agents provider uses the Mattermost Agents plugin to translate messages via a configured LLM service.
 
@@ -65,8 +68,8 @@ To configure:
 
    **Choosing an LLM for the Agents provider**: Smaller, faster models are recommended for auto-translation. Translation is a well-defined task that doesn't benefit from the extended reasoning capabilities of larger models — larger models may actually overthink the task, adding unnecessary latency without improving quality. A model like ``gpt-3.5-turbo`` provides accurate translations with lower latency.
 
-Enable Auto-translation
------------------------
+Enable auto-translation
+~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Go to **System Console > Site Configuration > Localization**.
 2. Set :ref:`Enable autotranslation <administration-guide/configure/site-configuration-settings:enable autotranslation>` to **True**.
@@ -78,8 +81,8 @@ Use the :ref:`Restrict autotranslation in direct and group messages <administrat
 
 See the :ref:`auto-translation configuration reference <administration-guide/configure/site-configuration-settings:autotranslation>` for all available settings.
 
-Enable Auto-translation in a channel
--------------------------------------
+Enable auto-translation in a channel
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Auto-translation is managed on a per-channel basis and is disabled by default for all channels. System admins and channel admins can enable or disable auto-translation for individual channels.
 
