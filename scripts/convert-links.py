@@ -1,7 +1,6 @@
 import re
 from pathlib import Path
-
-from source.conf import redirects
+from source.redirects import redirects_map as redirects
 
 LINK_PATTERN = r"([^>`]?)`([^<`\n]*)<([^>@\n ]+)>`_[_]?"
 IGNORE_DIRECTORIES = [
