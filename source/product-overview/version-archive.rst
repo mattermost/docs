@@ -16,21 +16,11 @@ If you want to check that the version of Mattermost you are installing is the of
     - SHA-256 Checksum: ``<SHA256_CHECKSUM>``
     - GPG Signature: https://releases.mattermost.com/11.4.3/mattermost-11.4.3-linux-amd64.tar.gz.sig
     - SBOM Download Link: https://releases.mattermost.com/11.4.3/sbom-enterprise-v11.4.3.json
-  Mattermost Enterprise Edition v11.4.2 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-4-feature-release>`__ - `Download <https://releases.mattermost.com/11.4.2/mattermost-11.4.2-linux-amd64.tar.gz?src=arc>`__
-    - ``https://releases.mattermost.com/11.4.2/mattermost-11.4.2-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``bc789079394a3f37c1d72a2288ecfa444d5aa2a1ed9f249ee9da40e6e1249c22``
-    - GPG Signature: https://releases.mattermost.com/11.4.2/mattermost-11.4.2-linux-amd64.tar.gz.sig
-    - SBOM Download Link: https://releases.mattermost.com/11.4.2/sbom-enterprise-v11.4.2.json
   Mattermost Enterprise Edition v11.3.3 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-3-feature-release>`__ - `Download <https://releases.mattermost.com/11.3.3/mattermost-11.3.3-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/11.3.3/mattermost-11.3.3-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``<SHA256_CHECKSUM>``
     - GPG Signature: https://releases.mattermost.com/11.3.3/mattermost-11.3.3-linux-amd64.tar.gz.sig
     - SBOM Download Link: https://releases.mattermost.com/11.3.3/sbom-enterprise-v11.3.3.json
-  Mattermost Enterprise Edition v11.3.2 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-3-feature-release>`__ - `Download <https://releases.mattermost.com/11.3.2/mattermost-11.3.2-linux-amd64.tar.gz?src=arc>`__
-    - ``https://releases.mattermost.com/11.3.2/mattermost-11.3.2-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``6bf506942ed4971dab603a6d912d995be2867275a0f3d5f3ce591e12640cef10``
-    - GPG Signature: https://releases.mattermost.com/11.3.2/mattermost-11.3.2-linux-amd64.tar.gz.sig
-    - SBOM Download Link: https://releases.mattermost.com/11.3.2/sbom-enterprise-v11.3.2.json
   Mattermost Enterprise Edition v11.2.4 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-2-feature-release>`__ - `Download <https://releases.mattermost.com/11.2.4/mattermost-11.2.4-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/11.2.4/mattermost-11.2.4-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``189231eb79918a276866d1c33d922979f3214368a7e9239b413afa7ca309dc04``
@@ -56,11 +46,6 @@ If you want to check that the version of Mattermost you are installing is the of
     - SHA-256 Checksum: ``<SHA256_CHECKSUM>``
     - GPG Signature: https://releases.mattermost.com/10.11.13/mattermost-10.11.13-linux-amd64.tar.gz.sig
     - SBOM Download Link: https://releases.mattermost.com/10.11.13/sbom-enterprise-v10.11.13.json
-  Mattermost Enterprise Edition v10.11.12 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v10-changelog.html#release-v10-11-extended-support-release>`__ - `Download <https://releases.mattermost.com/10.11.12/mattermost-10.11.12-linux-amd64.tar.gz?src=arc>`__
-    - ``https://releases.mattermost.com/10.11.12/mattermost-10.11.12-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``38e58b8f4fc58bd9b3bd492c3afe20e533fd97f75415ff8a122c09c3fb39729d``
-    - GPG Signature: https://releases.mattermost.com/10.11.12/mattermost-10.11.12-linux-amd64.tar.gz.sig
-    - SBOM Download Link: https://releases.mattermost.com/10.11.12/sbom-enterprise-v10.11.12.json
   Mattermost Enterprise Edition v10.10.3 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-10-feature-release>`__ - `Download <https://releases.mattermost.com/10.10.3/mattermost-10.10.3-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.10.3/mattermost-10.10.3-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``c970e77aad18f273a25f333192559cb808f73c28b8a89f2bf49be755ec2eff91``
