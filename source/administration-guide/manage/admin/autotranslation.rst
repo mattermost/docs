@@ -28,7 +28,7 @@ Set up a translation provider
 Set up LibreTranslate
 ~~~~~~~~~~~~~~~~~~~~~
 
-`LibreTranslate <https://libretranslate.com/>`__ is a self-hosted, open-source machine translation engine. See the `LibreTranslate install and run documentation <https://github.com/LibreTranslate/LibreTranslate#install-and-run>`__ for deployment instructions.
+`LibreTranslate <https://libretranslate.com/>`__ is a self-hosted, open-source machine translation engine. See the `LibreTranslate installation guide <https://docs.libretranslate.com/guides/installation/>`__ for deployment instructions.
 
 Once your LibreTranslate server is running:
 
