@@ -13,11 +13,11 @@ Changelog
    * - Version
      - Change Description
    * - v11.5
-     - (UI) Added support for auto-translations. Initial Beta release. Requires Enterprise Advanced license `MM-64493 <https://mattermost.atlassian.net/browse/MM-64493>`__.
+     - (UI) Added support for `auto-translations <http://docs.mattermost.com/end-user-guide/collaborate/autotranslate-messages.html>`__. Initial Beta release. Requires Enterprise Advanced license `MM-64493 <https://mattermost.atlassian.net/browse/MM-64493>`__.
    * - v11.5
      - (UI) Added the ability for web app plugin code to be loaded asynchronously `MM-67538 <https://mattermost.atlassian.net/browse/MM-67538>`__.
    * - v11.5
-     - (UI) AI Rewrites now includes some context from the most recent messages in the thread to help provide better rewrites.
+     - (UI) `AI Rewrites <https://docs.mattermost.com/end-user-guide/collaborate/send-messages.html#rewrite-messages-with-ai>`__ now includes some context from the most recent messages in the thread to help provide better rewrites.
    * - v11.5
      - (UI) Available AI Agents are now shown in the @-mention autocomplete menu, regardless of channel membership `MM-67118 <https://mattermost.atlassian.net/browse/MM-67118>`__.
    * - v11.5
@@ -27,9 +27,9 @@ Changelog
    * - v11.5
      - (UI) Updated the signup flow to replace the newsletter opt-in with a checkbox to agree to the **Acceptable Use Policy** and **Privacy Policy** `MM-67030 <https://mattermost.atlassian.net/browse/MM-67030>`__.
    * - v11.5
-     - (UI) Added back offline **Help** documentation accessible from the message composer `MM-61383 <https://mattermost.atlassian.net/browse/MM-61383>`__.
+     - (UI) Added back `offline **Help** documentation <https://docs.mattermost.com/end-user-guide/preferences/set-your-status-availability.html#set-your-availability>`__ accessible from the message composer `MM-61383 <https://mattermost.atlassian.net/browse/MM-61383>`__.
    * - v11.5
-     - (UI) Added new icons for archived and private channels `MM-66561 <https://mattermost.atlassian.net/browse/MM-66561>`__.
+     - (UI) Added `new icons <https://docs.mattermost.com/end-user-guide/collaborate/channel-types.html#archived-channels>`__ for archived and private channels `MM-66561 <https://mattermost.atlassian.net/browse/MM-66561>`__.
    * - v11.5
      - (Accessibility) Fixed an issue where the profile status menu disappeared at higher zoom levels or at resized window on mobile view `MM-64655 <https://mattermost.atlassian.net/browse/MM-64655>`__.
    * - v11.4
