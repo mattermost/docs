@@ -182,7 +182,7 @@ Check the Mattermost server logs for Calls plugin related issues:
 2. **Filter for Calls-related logs**:
 
    ```bash
-   grep -i "calls" /path/to/mattermost.log
+   grep -i "com.mattermost.calls" /path/to/mattermost.log
    ```
       
 3. **Look for common patterns**:
