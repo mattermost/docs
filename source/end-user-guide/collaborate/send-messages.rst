@@ -64,6 +64,8 @@ From Mattermost v11.2, you can use AI to enhance your messages before sending th
 
   Messages that have been rewritten using AI are automatically marked as AI-generated content for transparency. Your system admin must :doc:`configure AI agents </administration-guide/configure/agents-admin-guide>` for the rewrite feature to be available.
 
+  From Mattermost v11.5, when you use AI Rewrite while composing a reply in a thread, the AI incorporates context from the thread to generate suggestions that better fit the ongoing conversation.
+
 Send burn-on-read messages
 ---------------------------
 
