@@ -31,9 +31,8 @@ Before deploying calls-offloader, ensure you have:
 
 - A Mattermost Enterprise license
 - A properly configured Mattermost Calls deployment (either integrated or with RTCD)
-- Docker installed and running (for Docker-based job execution)
+- A moderately powerful server with Docker installed and running
 - Sufficient storage space for recordings (see [Storage Requirements](#storage-requirements))
-- A server or container environment with adequate resources
 
 ### System Requirements
 
@@ -41,10 +40,13 @@ For detailed system requirements and performance recommendations, refer to the [
 
 ### Storage Requirements
 
-Call recordings can consume significant storage space:
+Call recordings can consume significant storage space. Based on average recording sizes with screen sharing on (including one audio track), storage usage by quality chosen is approximately:
 
-- Audio-only recordings: ~1MB per minute per participant
-- Screen sharing recordings: ~10-50MB per minute depending on content
+- **Low**: ~0.5GB/hour (or ~8MB/minute)
+- **Medium**: ~0.7GB/hour (or ~12MB/minute)
+- **High**: ~1.2GB/hour (or ~20MB/minute)
+
+*Note: Audio-only recordings consume approximately 1MB per minute per participant.*
 
 ## Installation and Deployment
 
@@ -78,7 +80,7 @@ Call recordings can consume significant storage space:
 
    [jobs]
    api_type = "docker"
-   max_concurrent_jobs = 2
+   max_concurrent_jobs = 100
    failed_jobs_retention_time = "30d"
    image_registry = "mattermost"
 
@@ -88,7 +90,7 @@ Call recordings can consume significant storage space:
    console_level = "INFO"
    enable_file = true
    file_json = true
-   file_level = "INFO"
+   file_level = "DEBUG"
    file_location = "/opt/calls-offloader/calls-offloader.log"
    enable_color = true
    ```
@@ -152,7 +154,7 @@ The API section controls how the service accepts requests:
 
 Controls persistent data storage:
 
-- **data_source**: Path to directory for storing job metadata and state
+- **data_source**: Path to directory for storing client (i.e., connecting Mattermost nodes) IDs and credentials
 
 ### Jobs Configuration
 
@@ -182,6 +184,12 @@ In such cases, you can override the site URL used by recorder jobs or transcribe
 
 - **MM_CALLS_RECORDER_SITE_URL**: Override the site URL used by recording jobs
 - **MM_CALLS_TRANSCRIBER_SITE_URL**: Override the site URL used by transcription jobs
+
+```{note}
+When these Site URL overrides are used, the `ServiceSettings.AllowCorsFrom` setting on your Mattermost server may need to be adjusted accordingly to ensure CORS does not block requests.
+
+Additionally, this override configuration is particularly useful if your Mattermost public Site URL uses HTTPS, because pointing the offloader directly to an internal HTTP endpoint bypasses the need to deal with client-side certificates.
+```
 
 Example configuration:
 
@@ -254,7 +262,6 @@ After deploying calls-offloader, validate the installation:
    
    - Firewall rules or SELinux policies on the calls-offloader server (port 4545 must be accessible)
    - Network connectivity between Mattermost and calls-offloader servers
-   - calls-offloader service binding configuration (ensure it's not bound to localhost only)
 
 3. **Verify Docker service** (if using docker api_type):
 
@@ -295,7 +302,7 @@ Once calls-offloader is properly set up and validated, configure Mattermost to u
 
 **"failed to create recording job: max concurrent jobs reached"**
 
-This error occurs when the calls-offloader service has reached its configured job limit.
+This error occurs when the calls-offloader service has reached its configured job limit, and it will usually result in a failure message on the Mattermost Calls plugin side (such as a timeout).
 
 Solutions:
 
@@ -367,7 +374,7 @@ When deploying calls-offloader in air-gapped environments, you need to set up a 
 
 The calls-offloader service creates Docker containers to handle:
 - **Call Recording**: Creates containers to record audio/video from calls
-- **Call Transcription**: Creates containers to transcribe recorded calls using speech-to-text
+- **Call Transcription / Live Captioning**: Creates containers to transcribe recorded calls and produce live captions using speech-to-text
 
 These containers are typically pulled from the `mattermost` registry on Docker Hub, but in air-gapped networks, you need to:
 1. Set up a local Docker registry
@@ -405,12 +412,12 @@ To find the correct versions for your Calls plugin:
    - Visit the Calls plugin repository: https://github.com/mattermost/mattermost-plugin-calls
    - Navigate to the tag or branch corresponding to your plugin version
    - Open the `plugin.json` file 
-   - Find the `RecorderImage` and `TranscriberImage` entries (around line 719-720)
+   - Find the `calls_recorder_version` and `calls_transcriber_version` entries (located near the bottom of the file).
 
    Example from plugin.json:
    ```json
-   "RecorderImage": "mattermost/calls-recorder:v0.8.5",
-   "TranscriberImage": "mattermost/calls-transcriber:v0.6.3"
+   "calls_recorder_version": "v0.8.8",
+   "calls_transcriber_version": "v0.7.1"
    ```
 
 3. **Use these exact versions** in your air-gap setup instead of `latest` tags
