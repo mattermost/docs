@@ -6,7 +6,7 @@ Send messages
 
 You can send messages in public and private channels as well as to other users in Mattermost. Depending on when you compose a message, you can send it immediately, :doc:`schedule it for later </end-user-guide/collaborate/schedule-messages>`, or :doc:`set its priority </end-user-guide/collaborate/message-priority>`. 
 
-Mattermost may notify you when a recipient's availability is set to :ref:`Do Not Disturb <end-user-guide/preferences/set-your-status-availability:set your availability>`, and the recipient's local time is outside of regular business hours (between 10PM and 6AM). This warning displays directly above the message text field.
+Mattermost may notify you when a recipient's availability is set to :ref:`Do Not Disturb <end-user-guide/preferences/set-your-status-availability:set your availability>` or :ref:`Offline <end-user-guide/preferences/set-your-status-availability:set your availability>`, and when the recipient's local time is outside of regular business hours (between 10PM and 6AM). This warning displays directly above the message text field.
 
 .. tab:: Web/Desktop
 
