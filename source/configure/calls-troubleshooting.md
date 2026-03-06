@@ -52,7 +52,6 @@ This guide provides comprehensive troubleshooting steps for Mattermost Calls, pa
 
 2. **Network quality**:
    - High latency or packet loss can cause audio issues
-   - Try testing with TCP fallback enabled (requires RTCD v0.11+ and Calls v0.17+)
 
 3. **Audio device configuration**:
    - Users should verify their audio input/output settings
@@ -61,6 +60,10 @@ This guide provides comprehensive troubleshooting steps for Mattermost Calls, pa
 ### Call Quality Issues
 
 **Symptoms**: Calls connect but quality is poor, with latency, echo, or distortion.
+
+```{note}
+Echo and noise issues are generally related to client input/output devices (e.g., microphones and speakers), as the Mattermost Calls services do not process (e.g., denoise) the audio during transmission.
+```
 
 **Possible causes and solutions**:
 
@@ -84,13 +87,18 @@ This guide provides comprehensive troubleshooting steps for Mattermost Calls, pa
 
 1. **HTTP API connectivity test**:
 
-   Test if the RTCD API is reachable:
+   Test if the RTCD API is reachable (this test requires the RTCD service to be *running*):
 
    ```bash
    curl http://YOUR_RTCD_SERVER:8045/version
-   # Example response: {"buildDate":"2025-04-02 21:33","buildVersion":"v1.1.0","buildHash":"7bc1f7a","goVersion":"go1.23.6","goOS":"linux","goArch":"amd64"}   ```
+   # Example response: {"buildDate":"2025-04-02 21:33","buildVersion":"v1.1.0","buildHash":"7bc1f7a","goVersion":"go1.23.6","goOS":"linux","goArch":"amd64"}
+   ```
 
 2. **UDP connectivity test**:
+
+   ```{important}
+   This test must be performed while the RTCD service is **stopped** (so `nc` can bind to the port) and should be run from the Mattermost server machine(s).
+   ```
 
    On the RTCD server:
    
@@ -98,7 +106,7 @@ This guide provides comprehensive troubleshooting steps for Mattermost Calls, pa
    nc -l -u -p 8443
    ```
 
-   On a client machine:
+   On the Mattermost server machine:
    
    ```bash
    nc -v -u YOUR_RTCD_SERVER 8443
@@ -121,38 +129,6 @@ This guide provides comprehensive troubleshooting steps for Mattermost Calls, pa
    ```bash
    nc -v YOUR_RTCD_SERVER 8443
    ```
-
-### Network Packet Analysis
-
-To capture and analyze network traffic:
-
-1. **Capture UDP traffic on the RTCD server**:
-
-   ```bash
-   sudo tcpdump -n 'udp port 8443' -i any
-   ```
-
-2. **Capture TCP API traffic**:
-
-   ```bash
-   sudo tcpdump -n 'tcp port 8045' -i any
-   ```
-
-3. **Analyze traffic patterns**:
-   
-   - Verify packets are flowing both ways
-   - Look for ICMP errors that might indicate firewall issues
-   - Check for patterns of packet loss
-
-4. **Use Wireshark for deeper analysis**:
-   
-   For more detailed packet inspection, capture traffic with tcpdump and analyze with Wireshark:
-   
-   ```bash
-   sudo tcpdump -n -w calls_traffic.pcap 'port 8443'
-   ```
-      
-   Then analyze the `calls_traffic.pcap` file with Wireshark.
 
 ### Firewall Configuration Checks
 
@@ -195,7 +171,6 @@ The RTCD service logs important events and errors. Set the log level to "debug" 
 2. **Common log patterns to look for**:
 
    - **Connection errors**: Look for "failed to connect" or "connection error" messages
-   - **ICE negotiation failures**: Look for "ICE failed" or "ICE timeout" messages
    - **API authentication issues**: Look for "unauthorized" or "invalid API key" messages
 
 ### Mattermost Logs
@@ -254,30 +229,6 @@ If RTCD servers show high CPU usage:
    ps -eLo pid,ppid,tid,pcpu,comm | grep rtcd
    ```
 
-3. **Enable pprof profiling** (if needed):
-
-   Add to your RTCD configuration:
-   
-   ```json
-   {
-     "debug": {
-       "pprof": true,
-       "pprofPort": 6060
-     }
-   }
-   ```
-      
-   Then capture a CPU profile:
-   
-   ```bash
-   curl http://localhost:6060/debug/pprof/profile > cpu.profile
-   ```
-      
-   Analyze with:
-   
-   ```bash
-   go tool pprof -http=:8080 cpu.profile
-   ```
 
 ### Diagnosing Network Bottlenecks
 
