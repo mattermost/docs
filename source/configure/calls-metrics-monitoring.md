@@ -26,114 +26,73 @@ The metrics are exposed through HTTP endpoints:
 - **Calls Plugin**: `/plugins/com.mattermost.calls/metrics`
 - **RTCD Service**: `/metrics` (default) or a configured endpoint
 
+Resource utilization metrics (CPU, memory, network) are mainly provided by an external service ([`node-exporter`](https://prometheus.io/docs/guides/node-exporter/)).
+
+> Metrics for the calls plugin are exposed through the `/plugins/com.mattermost.calls/metrics` subpath under the existing Mattermost server metrics endpoint. This is controlled by the [Listen address for performance](https://docs.mattermost.com/configure/environment-configuration-settings.html#listen-address-for-performance) configuration setting. It defaults to port 8067. For example: `http://localhost:8067/plugins/com.mattermost.calls/metrics`
+> The RTCD Service `/metrics` endpoint is exposed on the HTTP API (e.g. `http://localhost:8045/metrics`).
+
 ## Setting Up Monitoring
 
-### Prerequisites
+For instructions on deploying Prometheus and Grafana for Mattermost, please refer to the [Deploy Prometheus and Grafana for Performance Monitoring](https://docs.mattermost.com/scale/deploy-prometheus-grafana-for-performance-monitoring.html) guide.
 
-To monitor Calls metrics, you'll need:
+Once Prometheus and Grafana are set up, you will need to configure Prometheus to scrape metrics from the Calls-related services.
 
-1. **Prometheus**: For collecting and storing metrics
-2. **Grafana**: For visualizing metrics (optional but recommended)
+### Prometheus Scrape Configuration
 
-### Installing Prometheus
+Add the following jobs to your `prometheus.yml` configuration:
 
-1. **Download and install Prometheus**:
+```yaml
+scrape_configs:
+  - job_name: 'calls-plugin'
+    metrics_path: /plugins/com.mattermost.calls/metrics
+    static_configs:
+      - targets: ['MATTERMOST_SERVER_IP:8067']
+        labels:
+          service_name: 'calls-plugin'
 
-   Visit the [Prometheus download page](https://prometheus.io/download/) for installation instructions.
+  - job_name: 'rtcd'
+    metrics_path: /metrics
+    static_configs:
+      - targets: ['RTCD_SERVER_IP:8045']
+        labels:
+          service_name: 'rtcd'
 
-2. **Configure Prometheus** to scrape metrics from all Calls-related services:
+  - job_name: 'rtcd-node-exporter'
+    metrics_path: /metrics
+    static_configs:
+      - targets: ['RTCD_SERVER_IP:9100']
+        labels:
+          service_name: 'rtcd'
 
-   Complete `prometheus.yml` configuration for Calls monitoring:
+  - job_name: 'calls-offloader-node-exporter'
+    metrics_path: /metrics
+    static_configs:
+      - targets: ['CALLS_OFFLOADER_SERVER_IP:9100']
+        labels:
+          service_name: 'offloader'
+```
 
-   ```yaml
-   global:
-     scrape_interval: 15s
-     evaluation_interval: 15s
+Replace the placeholder IP addresses with your actual server addresses:
 
-   scrape_configs:
-     - job_name: 'prometheus'
-       static_configs:
-         - targets: ['PROMETHEUS_IP:9090']
+- `MATTERMOST_SERVER_IP`: IP address of your Mattermost server
+- `RTCD_SERVER_IP`: IP address of your RTCD server  
+- `CALLS_OFFLOADER_SERVER_IP`: IP address of your calls-offloader server (if deployed)
 
-     - job_name: 'mattermost'
-       metrics_path: /metrics
-       static_configs:
-         - targets: ['MATTERMOST_SERVER_IP:8067']
+```{important}
+**Metrics Configuration Notice**: Use the `service_name` labels as shown in the configuration above. These labels help organize metrics in dashboards and enable proper service identification. 
+```
 
-     - job_name: 'calls-plugin'
-       metrics_path: /plugins/com.mattermost.calls/metrics
-       static_configs:
-         - targets: ['MATTERMOST_SERVER_IP:8067']
-           labels:
-             service_name: 'calls-plugin'
+```{note}
+- **node_exporter**: Optional but recommended for system-level metrics (CPU, memory, disk, network). See [node_exporter setup guide](https://prometheus.io/docs/guides/node-exporter/) for installation instructions.
+- **calls-offloader**: Only needed if you have call recording/transcription enabled.
+```
 
-     - job_name: 'rtcd'
-       metrics_path: /metrics
-       static_configs:
-         - targets: ['RTCD_SERVER_IP:8045']
-           labels:
-             service_name: 'rtcd'
+### Mattermost Calls Grafana Dashboard
 
-     - job_name: 'rtcd-node-exporter'
-       metrics_path: /metrics
-       static_configs:
-         - targets: ['RTCD_SERVER_IP:9100']
-           labels:
-             service_name: 'rtcd'
+You can use the official [Mattermost Calls Performance Monitoring](https://grafana.com/grafana/dashboards/23225-mattermost-calls-performance-monitoring/) dashboard to visualize these metrics. 
 
-     - job_name: 'calls-offloader-node-exporter'
-       metrics_path: /metrics
-       static_configs:
-         - targets: ['CALLS_OFFLOADER_SERVER_IP:9100']
-           labels:
-             service_name: 'offloader'
-   ```
-
-   Replace the placeholder IP addresses with your actual server addresses:
-   
-   - `MATTERMOST_SERVER_IP`: IP address of your Mattermost server
-   - `RTCD_SERVER_IP`: IP address of your RTCD server  
-   - `CALLS_OFFLOADER_SERVER_IP`: IP address of your calls-offloader server (if deployed)
-   - `PROMETHEUS_IP`: IP address of your Prometheus server
-   - **Note**: The configuration above uses the default ports (RTCD: `8045`, Mattermost metrics: `8067`, etc.).  Adjust these ports in `prometheus.yml` if you have customized them.
-
-   ```{important}
-   **Metrics Path**: Ensure the metrics paths are correct. The RTCD service exposes metrics at `/metrics` by default, and the Calls plugin at `/plugins/com.mattermost.calls/metrics`.
-   ```
-
-   ```{important}
-   **Metrics Configuration Notice**: Use the `service_name` labels as shown in the configuration above. These labels help organize metrics in dashboards and enable proper service identification. 
-   ```
-
-   ```{note}
-   - **node_exporter**: Optional but recommended for system-level metrics (CPU, memory, disk, network). See [node_exporter setup guide](https://prometheus.io/docs/guides/node-exporter/) for installation instructions.
-   - **calls-offloader**: Only needed if you have call recording/transcription enabled
-   ```
-
-### Installing Grafana
-
-1. **Download and install Grafana**:
-
-   Visit the [Grafana download page](https://grafana.com/grafana/download) for installation instructions.
-
-2. **Configure Grafana** to use Prometheus as a data source:
-   
-   - Add a new data source in Grafana
-   - Select Prometheus as the type
-   - Enter the URL of your Prometheus server
-   - Test and save the configuration
-
-3. **Import the Mattermost Calls dashboard**:
-
-   - Navigate to Dashboards > Import in Grafana
-   - Enter dashboard ID: `23225` or use the direct link: [Mattermost Calls Performance Monitoring](https://grafana.com/grafana/dashboards/23225-mattermost-calls-performance-monitoring/)
-   - Select your Prometheus data source, and enter values for the
-   - Confirm the port used for RTCD metrics (default is `8045`), and the port used for the Calls plugin metrics (default is `8067`)
-   - Click Import to add the dashboard to your Grafana instance
-
-   ```{note}
-   The dashboard is also available as JSON source from the [Mattermost performance assets repository](https://github.com/mattermost/mattermost-performance-assets/blob/master/grafana/mattermost-calls-performance-monitoring.json) for manual import or customization.
-   ```
+- To import it directly into Grafana, use dashboard ID: `23225`.
+- The dashboard is also available as JSON source from the [Mattermost performance assets repository](https://github.com/mattermost/mattermost-performance-assets/blob/master/grafana/mattermost-calls-performance-monitoring.json) for manual import or customization.
 
 ## Key Metrics to Monitor
 
@@ -149,11 +108,7 @@ These metrics help monitor the health and resource usage of the RTCD process:
 - `rtcd_process_resident_memory_bytes`: Memory usage in bytes
 - `rtcd_process_virtual_memory_bytes`: Virtual memory used
 
-**Interpretation**: 
 
-- High CPU usage (>70%) may indicate the need for additional RTCD instances
-- Steadily increasing memory usage might indicate a memory leak
-- High number of file descriptors could indicate connection handling issues
 
 #### WebRTC Connection Metrics
 
@@ -164,24 +119,16 @@ These metrics track the WebRTC connections and media flow:
 - `rtcd_rtc_rtp_tracks_total{direction="X"}`: Count of RTP tracks (incoming/outgoing)
 - `rtcd_rtc_sessions_total`: Total number of active RTC sessions
 
-**Interpretation**:
 
-- Increasing error counts may indicate connectivity or configuration issues
-- Track by state to see if connections are failing to establish or dropping
-- Larger track counts require proportionally more CPU and bandwidth
 
 #### WebSocket Metrics
 
 These metrics track the signaling channel:
 
-- `rtcd_ws_connections_total`: Total number of active WebSocket connections
+- `rtcd_ws_connections_total`: Total number of active WebSocket connections. This is about RTCD <-> MM, so the connection count should match the number of MM nodes.
 - `rtcd_ws_messages_total{direction="X"}`: Count of WebSocket messages (sent/received)
 
-**Interpretation**:
 
-- Connection count should match expected participant numbers
-- Unusually high message counts might indicate protocol issues
-- Connection drops might indicate network issues
 
 ### Calls Plugin Metrics
 
@@ -220,7 +167,7 @@ The following performance benchmarks provide baseline metrics for RTCD deploymen
 
 Below are the detailed benchmarks based on internal performance testing:
 
-<table class="network-requirements">
+<table border="1" class="network-requirements">
 <thead>
 <tr>
 <th>Calls</th>
@@ -467,4 +414,5 @@ Each target should show status "UP" in green. If a target shows "DOWN" or errors
 - [Calls Deployment on Kubernetes](calls-kubernetes.md): Detailed guide for deploying Calls in Kubernetes environments
 - [Calls Troubleshooting](calls-troubleshooting.md): Detailed troubleshooting steps and debugging techniques
 
-Configure Prometheus storage accordingly to balance disk usage with retention needs.
+**Note:**
+Configure Prometheus storage accordingly to balance disk usage with retention needs. If you need to be tight on storage, you can use a short retention period. If you have lots of storage you can keep the retention length longer.
