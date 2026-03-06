@@ -50,5 +50,5 @@ Limitations
 
 - **Direct and group messages**: Your system admin may have restricted autotranslation in direct and group messages. If autotranslation isn't available in a direct or group message, contact your system admin.
 - **Short or mixed-language messages**: Very short messages or messages that mix multiple languages may not be reliably detected and translated.
-- **Code-only messages**: Messages that contain only code blocks are skipped and not translated.
+- **Code-only messages**: Messages that contain only code blocks are not translated, as code is preserved in its original form.
 - **Translation accuracy**: Translation quality depends on the translation provider configured by your system admin. Some languages or specialized terminology may produce less accurate results.
