@@ -621,48 +621,6 @@ Translation provider
 | Default is ``""`` (no provider selected).                     |                                                                                    |
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
 
-.. config:setting:: autotranslation-target-languages
-  :displayname: Languages allowed (Autotranslation)
-  :systemconsole: Site Configuration > Localization
-  :configjson: .AutoTranslationSettings.TargetLanguages
-  :environment: MM_AUTOTRANSLATIONSETTINGS_TARGETLANGUAGES
-  :description: The languages that all messages in autotranslation-enabled channels are translated into. Every message is translated into each language in this list. Default is **["en"]**.
-
-Languages allowed
-~~~~~~~~~~~~~~~~~
-
-+---------------------------------------------------------------+------------------------------------------------------------------------------------+
-| The languages that all messages in autotranslation-enabled    | - System Config path: **Site Configuration > Localization**                        |
-| channels are translated into. Every message is translated     | - ``config.json`` setting: ``AutoTranslationSettings`` > ``TargetLanguages``       |
-| into each language in this list, regardless of who is in      | - Environment variable: ``MM_AUTOTRANSLATIONSETTINGS_TARGETLANGUAGES``             |
-| the channel. Specify languages as an array of language codes. |                                                                                    |
-|                                                               |                                                                                    |
-| Default is ``["en"]``.                                        |                                                                                    |
-+---------------------------------------------------------------+------------------------------------------------------------------------------------+
-
-.. config:setting:: autotranslation-restrict-dm-gm
-  :displayname: Restrict autotranslation in direct and group messages (Autotranslation)
-  :systemconsole: Site Configuration > Localization
-  :configjson: .AutoTranslationSettings.RestrictDMAndGM
-  :environment: MM_AUTOTRANSLATIONSETTINGS_RESTRICTDMANDGM
-  :description: Restrict autotranslation from being enabled in direct and group messages. Default is **false**.
-
-  - **true**: Autotranslation can't be enabled in direct or group messages.
-  - **false**: **(Default)** Autotranslation can be enabled in direct and group messages.
-
-Restrict autotranslation in direct and group messages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
-| Restrict autotranslation from being enabled in direct and     | - System Config path: **Site Configuration > Localization**                                 |
-| group messages.                                               | - ``config.json`` setting: ``AutoTranslationSettings`` > ``RestrictDMAndGM`` > ``false``    |
-|                                                               | - Environment variable: ``MM_AUTOTRANSLATIONSETTINGS_RESTRICTDMANDGM``                      |
-| - **true**: Autotranslation can't be enabled in direct or     |                                                                                             |
-|   group messages.                                             |                                                                                             |
-| - **false**: **(Default)** Autotranslation can be enabled     |                                                                                             |
-|   in direct and group messages.                               |                                                                                             |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
-
 .. config:setting:: autotranslation-libretranslate-url
   :displayname: LibreTranslate URL (Autotranslation)
   :systemconsole: Site Configuration > Localization
@@ -718,12 +676,72 @@ Agents LLM service ID
 | String value.                                                 |                                                                                    |
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
 
+.. config:setting:: autotranslation-target-languages
+  :displayname: Languages allowed (Autotranslation)
+  :systemconsole: Site Configuration > Localization
+  :configjson: .AutoTranslationSettings.TargetLanguages
+  :environment: MM_AUTOTRANSLATIONSETTINGS_TARGETLANGUAGES
+  :description: The languages that all messages in autotranslation-enabled channels are translated into. Every message is translated into each language in this list. Default is **["en"]**.
+
+Languages allowed
+~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+| The languages that all messages in autotranslation-enabled    | - System Config path: **Site Configuration > Localization**                        |
+| channels are translated into. Every message is translated     | - ``config.json`` setting: ``AutoTranslationSettings`` > ``TargetLanguages``       |
+| into each language in this list, regardless of who is in      | - Environment variable: ``MM_AUTOTRANSLATIONSETTINGS_TARGETLANGUAGES``             |
+| the channel. Specify languages as an array of language codes. |                                                                                    |
+|                                                               |                                                                                    |
+| Default is ``["en"]``.                                        |                                                                                    |
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+
+.. config:setting:: autotranslation-timeout
+  :displayname: Translation timeout (Autotranslation)
+  :systemconsole: Site Configuration > Localization
+  :configjson: .AutoTranslationSettings.TimeoutMs
+  :environment: MM_AUTOTRANSLATIONSETTINGS_TIMEOUTMS
+  :description: The maximum time in milliseconds to wait for a translation to complete. Default is **5000**.
+
+Translation timeout
+~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+| The maximum time in milliseconds to wait for a translation    | - System Config path: **Site Configuration > Localization**                        |
+| to complete. If a translation exceeds this timeout, it is     | - ``config.json`` setting: ``AutoTranslationSettings`` > ``TimeoutMs`` > ``5000``  |
+| skipped.                                                      | - Environment variable: ``MM_AUTOTRANSLATIONSETTINGS_TIMEOUTMS``                   |
+|                                                               |                                                                                    |
+| Numerical value. Default is **5000** (5 seconds).             |                                                                                    |
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+
+.. config:setting:: autotranslation-restrict-dm-gm
+  :displayname: Restrict autotranslation in direct and group messages (Autotranslation)
+  :systemconsole: Site Configuration > Localization
+  :configjson: .AutoTranslationSettings.RestrictDMAndGM
+  :environment: MM_AUTOTRANSLATIONSETTINGS_RESTRICTDMANDGM
+  :description: Restrict autotranslation from being enabled in direct and group messages. Default is **false**.
+
+  - **true**: Autotranslation can't be enabled in direct or group messages.
+  - **false**: **(Default)** Autotranslation can be enabled in direct and group messages.
+
+Restrict autotranslation in direct and group messages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| Restrict autotranslation from being enabled in direct and     | - System Config path: **Site Configuration > Localization**                                 |
+| group messages.                                               | - ``config.json`` setting: ``AutoTranslationSettings`` > ``RestrictDMAndGM`` > ``false``    |
+|                                                               | - Environment variable: ``MM_AUTOTRANSLATIONSETTINGS_RESTRICTDMANDGM``                      |
+| - **true**: Autotranslation can't be enabled in direct or     |                                                                                             |
+|   group messages.                                             |                                                                                             |
+| - **false**: **(Default)** Autotranslation can be enabled     |                                                                                             |
+|   in direct and group messages.                               |                                                                                             |
++---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+
 .. config:setting:: autotranslation-workers
   :displayname: Translation workers (Autotranslation)
   :systemconsole: N/A
   :configjson: .AutoTranslationSettings.Workers
   :environment: MM_AUTOTRANSLATIONSETTINGS_WORKERS
-  :description: The number of concurrent translation workers per node. This setting is not available in the System Console and can only be set in ``config.json`` or via environment variable. Default is **6**.
+  :description: The number of concurrent translation workers per node. This setting is not available in the System Console and can only be set via ``mmctl``, ``config.json``, or environment variable. Default is **6**.
 
 Translation workers
 ~~~~~~~~~~~~~~~~~~~
@@ -732,30 +750,10 @@ Translation workers
 | The number of concurrent translation workers per node.        | - ``config.json`` setting: ``AutoTranslationSettings`` > ``Workers`` > ``6``       |
 | Higher values increase translation throughput but use         | - Environment variable: ``MM_AUTOTRANSLATIONSETTINGS_WORKERS``                     |
 | more resources. This setting is not available in the System   |                                                                                    |
-| Console and can only be set in ``config.json`` or via         |                                                                                    |
-| environment variable.                                         |                                                                                    |
+| Console and can only be set via ``mmctl``, ``config.json``,   |                                                                                    |
+| or environment variable.                                      |                                                                                    |
 |                                                               |                                                                                    |
 | Numerical value. Default is **6**.                            |                                                                                    |
-+---------------------------------------------------------------+------------------------------------------------------------------------------------+
-
-.. config:setting:: autotranslation-timeout
-  :displayname: Translation timeout (Autotranslation)
-  :systemconsole: N/A
-  :configjson: .AutoTranslationSettings.TimeoutMs
-  :environment: MM_AUTOTRANSLATIONSETTINGS_TIMEOUTMS
-  :description: The maximum time in milliseconds to wait for a translation to complete. This setting is not available in the System Console and can only be set in ``config.json`` or via environment variable. Default is **5000**.
-
-Translation timeout
-~~~~~~~~~~~~~~~~~~~
-
-+---------------------------------------------------------------+------------------------------------------------------------------------------------+
-| The maximum time in milliseconds to wait for a translation    | - ``config.json`` setting: ``AutoTranslationSettings`` > ``TimeoutMs`` > ``5000``  |
-| to complete. If a translation exceeds this timeout, it is     | - Environment variable: ``MM_AUTOTRANSLATIONSETTINGS_TIMEOUTMS``                   |
-| skipped. This setting is not available in the System Console  |                                                                                    |
-| and can only be set in ``config.json`` or via environment     |                                                                                    |
-| variable.                                                     |                                                                                    |
-|                                                               |                                                                                    |
-| Numerical value. Default is **5000** (5 seconds).             |                                                                                    |
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
 
 ----
