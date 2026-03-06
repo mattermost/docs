@@ -20,6 +20,10 @@ Install the integration
 1. In Mattermost, from the Product menu |product-list|, select **App Marketplace**.
 2. Search for or scroll to GitHub, and select **Install**.
 
+.. note::
+
+  From Mattermost server v11.6, v2.6.0 of the GitHub plugin is pre-packaged with the Mattermost server. If the :ref:`Automatic prepackaged plugins <administration-guide/configure/plugins-configuration-settings:automatic prepackaged plugins>` setting is enabled (the default), the plugin installs and upgrades automatically. If your Mattermost deployment is on a release prior to v11.6, download the `latest plugin binary release <https://github.com/mattermost/mattermost-plugin-github/releases>`__, and upload it to your server via **System Console > Plugin Management**.
+
 Set up the integration
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -120,6 +124,10 @@ Upgrade
 -------
 
 We recommend updating this integration as new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost. Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-github/releases>`__ for the latest release, available releases, and compatibiilty considerations.
+
+.. note::
+
+  From Mattermost server v11.6, the GitHub plugin v2.6.0 is pre-packaged with the server and upgrades automatically when the :ref:`Automatic prepackaged plugins <administration-guide/configure/plugins-configuration-settings:automatic prepackaged plugins>` setting is enabled (the default). No manual upgrade steps are required.
 
 Enable
 ------
