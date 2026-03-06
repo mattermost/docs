@@ -667,12 +667,10 @@ Agents LLM service ID
 ~~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
-| The service ID of the LLM configured in the Mattermost       | - System Config path: **Site Configuration > Localization**                         |
-| Agents plugin to use for translations. See the                | - ``config.json`` setting: ``AutoTranslationSettings`` > ``Agents``                |
-| :doc:`Agents setup guide                                      |   > ``LLMServiceID``                                                               |
-| </administration-guide/configure/agents-admin-guide>`         | - Environment variable: ``MM_AUTOTRANSLATIONSETTINGS_AGENTS_LLMSERVICEID``         |
-| for details on configuring LLM services.                      |                                                                                    |
-|                                                               |                                                                                    |
+| The service ID of the LLM configured in the Mattermost        | - System Config path: **Site Configuration > Localization**                        |
+| Agents plugin to use for translations. Configure LLM          | - ``config.json`` setting: ``AutoTranslationSettings`` > ``Agents``                |
+| services in the Agents plugin settings.                       |   > ``LLMServiceID``                                                               |
+|                                                               | - Environment variable: ``MM_AUTOTRANSLATIONSETTINGS_AGENTS_LLMSERVICEID``         |
 | String value.                                                 |                                                                                    |
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
 
