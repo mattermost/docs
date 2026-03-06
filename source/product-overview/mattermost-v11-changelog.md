@@ -12,7 +12,15 @@
 (release-v11.5-feature-release)=
 ## Release v11.5 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
-**Release Day: March 16, 2026**
+- **11.5.1, released 2026-03-16**
+  - Mattermost v11.5.1 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Improved security hardening for the user authentication update API endpoint.
+  - Improved token handling in the guest magic link authentication flow.
+  - Increased maximum number of ``autotranslations`` workers per node to 64.
+  - Fixed an issue with the import process looking for the main json import file in subfolders of the export zip file.
+  - Mattermost v11.5.1 contains no database or functional changes.
+- **11.5.0, released 2026-03-16**
+  - Original 11.5.0 release.
 
 ### Upgrade Impact
 
