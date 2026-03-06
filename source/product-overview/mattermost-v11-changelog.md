@@ -46,20 +46,20 @@ If you upgrade from a release earlier than v11.4, please read the other [Importa
  - Pre-packaged MS Teams Meetings plugin version [v2.4.0](https://github.com/mattermost/mattermost-plugin-msteams-meetings/releases/tag/v2.4.0).
  - Pre-packaged Zoom plugin version [v1.12.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.12.0).
  - Pre-packaged Playbooks plugin version [v2.7.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.7.0).
- - Pre-packaged GitHub plugin version [v2.6.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.6.0).
+ - Pre-packaged [GitHub plugin](https://docs.mattermost.com/integrations-guide/github.html#deploy) version [v2.6.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.6.0).
  - Pre-packaged Calls plugin version [v1.11.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.11.1).
  - Added support for [auto-translations](http://docs.mattermost.com/end-user-guide/collaborate/autotranslate-messages.html). Initial Beta release. Requires Enterprise Advanced license [MM-64493](https://mattermost.atlassian.net/browse/MM-64493).
  - Added the ability for web app plugin code to be loaded asynchronously [MM-67538](https://mattermost.atlassian.net/browse/MM-67538).
- - AI Rewrites now includes some context from the most recent messages in the thread to help provide better rewrites.
+ - [AI Rewrites](https://docs.mattermost.com/end-user-guide/collaborate/send-messages.html#rewrite-messages-with-ai) now includes some context from the most recent messages in the thread to help provide better rewrites.
  - Available AI Agents are now shown in the @-mention autocomplete menu, regardless of channel membership [MM-67118](https://mattermost.atlassian.net/browse/MM-67118).
  - Added the ability to access channel settings and rename a channel from the channel info right-hand sidebar [MM-66862](https://mattermost.atlassian.net/browse/MM-66862).
  - Added tooltips to action buttons, and action errors are now displayed [MM-65023](https://mattermost.atlassian.net/browse/MM-65023).
  - Updated the signup flow to replace the newsletter opt-in with a checkbox to agree to the **Acceptable Use Policy** and **Privacy Policy** [MM-67030](https://mattermost.atlassian.net/browse/MM-67030).
- - Added back offline **Help** documentation accessible from the message composer [MM-61383](https://mattermost.atlassian.net/browse/MM-61383).
- - Added new icons for archived and private channels [MM-66561](https://mattermost.atlassian.net/browse/MM-66561).
+ - Added back [offline **Help** documentation](https://docs.mattermost.com/end-user-guide/preferences/set-your-status-availability.html#set-your-availability) accessible from the message composer [MM-61383](https://mattermost.atlassian.net/browse/MM-61383).
+ - Added [new icons](https://docs.mattermost.com/end-user-guide/collaborate/channel-types.html#archived-channels) for archived and private channels [MM-66561](https://mattermost.atlassian.net/browse/MM-66561).
 
 #### Administration
- - Added a ``mmctl license get`` command to retrieve and display current server license information [MM-67114](https://mattermost.atlassian.net/browse/MM-67114).
+ - Added a [``mmctl license get`` command](https://docs.mattermost.com/administration-guide/manage/mmctl-command-line-tool.html#mmctl-license-get) to retrieve and display current server license information [MM-67114](https://mattermost.atlassian.net/browse/MM-67114).
  - Introduced ``protected`` attribute on property fields to restrict write access to the managing plugin [MM-66836](https://mattermost.atlassian.net/browse/MM-66836).
  - Introduced ``access_mode`` attribute on property fields to manage read access.
  - Configured the build system to natively build the server on FreeBSD.
@@ -86,8 +86,8 @@ If you upgrade from a release earlier than v11.4, please read the other [Importa
 
 ### Audit Log Event Changes
  - Updated audit/activity logging for Desktop App external authentication.
- - Added audit logs for when admins access posts on channels they are not a member of [MM-64460](https://mattermost.atlassian.net/browse/MM-64460).
- - Added new audit events ``AuditEventCreateRecap``, ``AuditEventGetRecap``, ``AuditEventGetRecaps``, ``AuditEventMarkRecapAsRead``, ``AuditEventRegenerateRecap``, and ``AuditEventDeleteRecap``.
+ - Added [audit logs](https://docs.mattermost.com/administration-guide/comply/embedded-json-audit-log-schema.html) for when admins access posts on channels they are not a member of [MM-64460](https://mattermost.atlassian.net/browse/MM-64460).
+ - Added new [audit events](https://docs.mattermost.com/administration-guide/comply/embedded-json-audit-log-schema.html#ai-recap-events) ``AuditEventCreateRecap``, ``AuditEventGetRecap``, ``AuditEventGetRecaps``, ``AuditEventMarkRecapAsRead``, ``AuditEventRegenerateRecap``, and ``AuditEventDeleteRecap``.
  - Added a new audit event ``AuditEventUpdateChannelMemberAutotranslation``.
  - Added a new audit event ``AuditEventLoginWithDesktopToken``.
  - Added new audit events ``AuditEventListChannelBookmarksForChannel``, ``AuditEventGetPinnedPosts``, ``AuditEventGetFileThumbnail``, ``AuditEventGetFileInfosForPost``, ``AuditEventGetFileInfo``, ``AuditEventGetFilePreview``, ``AuditEventSearchFiles``, ``AuditEventCreateEphemeralPost``, ``AuditEventGetEditHistoryForPost``, ``AuditEventGetFlaggedPosts``, ``AuditEventGetPostsForChannel``, ``AuditEventGetPostsForChannelAroundLastUnread``, ``AuditEventGetPost``, ``AuditEventGetPostThread``, ``AuditEventGetPostsByIds``, ``AuditEventGetThreadForUser``, ``AuditEventNotificationAck``, and ``AuditEventWebsocketPost``.
