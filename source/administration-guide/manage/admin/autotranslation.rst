@@ -28,6 +28,8 @@ Set up Auto-translation
 Configure a translation provider
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Choose one of the following translation providers and follow the setup instructions for your choice.
+
 Set up LibreTranslate
 ^^^^^^^^^^^^^^^^^^^^^
 
