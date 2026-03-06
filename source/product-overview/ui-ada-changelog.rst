@@ -27,7 +27,7 @@ Changelog
    * - v11.5
      - (UI) Updated the signup flow to replace the newsletter opt-in with a checkbox to agree to the **Acceptable Use Policy** and **Privacy Policy** `MM-67030 <https://mattermost.atlassian.net/browse/MM-67030>`__.
    * - v11.5
-     - (UI) Added back `offline **Help** documentation <https://docs.mattermost.com/end-user-guide/preferences/set-your-status-availability.html#set-your-availability>`__ accessible from the message composer `MM-61383 <https://mattermost.atlassian.net/browse/MM-61383>`__.
+     - (UI) Added back `offline Help documentation <https://docs.mattermost.com/end-user-guide/preferences/set-your-status-availability.html#set-your-availability>`__ accessible from the message composer `MM-61383 <https://mattermost.atlassian.net/browse/MM-61383>`__.
    * - v11.5
      - (UI) Added `new icons <https://docs.mattermost.com/end-user-guide/collaborate/channel-types.html#archived-channels>`__ for archived and private channels `MM-66561 <https://mattermost.atlassian.net/browse/MM-66561>`__.
    * - v11.5
