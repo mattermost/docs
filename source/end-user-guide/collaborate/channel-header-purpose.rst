@@ -37,6 +37,10 @@ A channel's purpose is visible in the right pane when you select the **View Info
   2. Enter or update the channel purpose.
   3. Select **Save**.
 
+  .. tip::
+
+    From Mattermost v11.5, you can also open Channel Settings from the Channel Info right-hand sidebar by selecting the **View Info** |channel-info| icon.
+
 .. tab:: Mobile
 
   1. Tap the channel you want to edit.
@@ -83,6 +87,10 @@ A channel header can be up to 1024 characters in length, include Markdown format
 
   .. image:: ../../images/channel-header.png
     :alt: Channel headers can include links to documents, tools, or websites.
+
+  .. tip::
+
+    From Mattermost v11.5, you can also open Channel Settings from the Channel Info right-hand sidebar by selecting the **View Info** |channel-info| icon.
 
 .. tab:: Mobile
 

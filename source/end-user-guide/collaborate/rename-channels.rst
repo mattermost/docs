@@ -17,6 +17,10 @@ Anyone can rename the channels they belong to, unless the system admin has :doc:
 
   For example, a channel could be named ``UX Design`` and have a URL of ``https://community.mattermost.com/core/channels/ux-design``.
 
+  .. tip::
+
+    From Mattermost v11.5, you can also rename a channel or open Channel Settings from the Channel Info right-hand sidebar by selecting the **View Info** |channel-info| icon.
+
 .. tab:: Mobile
 
   1. Tap the channel you want to rename.
