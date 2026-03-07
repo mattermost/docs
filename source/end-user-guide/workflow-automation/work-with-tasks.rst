@@ -103,6 +103,10 @@ Update tasks
 - **Modify due dates**: Adjust task deadlines to accommodate changing priorities and schedules.
 - **Edit task commands**: Update slash commands or instructions associated with tasks.
 - **Change run ownership**: Transfer run ownership between team members.
+- **Rename tasks**: Update a task's name to reflect evolving scope or priorities.
+- **Add or edit task descriptions**: Add context to a task or update an existing description.
+
+From Mattermost mobile v2.38.0, you can rename tasks and add or edit task descriptions directly from the mobile app.
 
 Delete tasks
 ~~~~~~~~~~~~~
