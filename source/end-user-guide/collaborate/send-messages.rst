@@ -80,7 +80,7 @@ From Mattermost v11.3, burn-on-read messages stay concealed until recipients rev
 
 .. tab:: Mobile
 
-  Users can receive and interact with burn-on-read messages, but can't send them using the mobile app.
+  Users can receive burn-on-read messages on mobile but can't send them. From Mattermost mobile v2.36.0, the post-actions available for burn-on-read messages on mobile match those in the web and desktop app.
 
 Recipients see a concealed placeholder with **Reveal**. After revealing, a timer shows when the message will be deleted. 
 
