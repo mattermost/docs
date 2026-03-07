@@ -26,7 +26,7 @@ Some run actions can be edited while the run is in progress. This increases visi
 Playbook runs on mobile
 ------------------------
 
-From Mattermost server v11.0 and mobile app v2.34.0, mobile users can create and manage playbook runs for operational command at the edge.
+From Mattermost server v11.0 and mobile app v2.34.0, mobile users can create and manage playbook runs for operational command at the edge. From Mattermost mobile v2.38.0, mobile users can also edit the run summary from the run details panel.
 
 Runs and channel behavior
 -------------------------
