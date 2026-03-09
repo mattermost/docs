@@ -1,15 +1,15 @@
-Autotranslate messages (Beta)
+Auto-translate messages (Beta)
 ==============================
 
 .. include:: ../../_static/badges/ent-adv.rst
   :start-after: :nosearch:
 
-From Mattermost v11.5, messages in channels with autotranslation enabled are automatically translated into your preferred language. This enables seamless multilingual collaboration — you can read and respond in your own language while teammates do the same in theirs.
+From Mattermost v11.5, messages in channels with auto-translation enabled are automatically translated into your preferred language. This enables seamless multilingual collaboration — you can read and respond in your own language while teammates do the same in theirs.
 
-How autotranslation works
--------------------------
+How auto-translation works
+--------------------------
 
-Your system admin must first enable autotranslation for your Mattermost instance. Then, a system admin or channel admin can enable it for individual channels. When autotranslation is enabled in a channel:
+Your system admin must first enable auto-translation for your Mattermost instance. Then, a system admin or channel admin can enable it for individual channels. When autotranslation is enabled in a channel:
 
 - The language of each message is automatically detected.
 - Messages are translated into your preferred display language and shown in place of the original text.
@@ -25,7 +25,7 @@ Translated messages display in place of the original text. To view the original 
 Set your preferred language
 ----------------------------
 
-Autotranslation translates messages into your Mattermost display language. To change your display language:
+Auto-translation translates messages into your Mattermost display language. To change your display language:
 
 1. Select the gear icon to open **Settings**.
 2. Select **Display > Language**.
@@ -34,21 +34,21 @@ Autotranslation translates messages into your Mattermost display language. To ch
 
 See the :ref:`language <end-user-guide/preferences/manage-your-display-options:language>` documentation for more details.
 
-Opt out of autotranslation in a channel
+Opt out of auto-translation in a channel
 ----------------------------------------
 
-You can opt out of autotranslation on a per-channel basis if you prefer to see original messages in a specific channel. To opt out:
+You can opt out of auto-translation on a per-channel basis if you prefer to see original messages in a specific channel. To opt out:
 
-1. Open the channel where you want to disable autotranslation.
+1. Open the channel where you want to disable auto-translation.
 2. Select the channel name at the top to open the channel menu.
-3. Disable the autotranslation option for this channel.
+3. Disable the auto-translation option for this channel.
 
-You'll see original, untranslated messages in that channel going forward. You can re-enable autotranslation at any time using the same steps.
+You'll see original, untranslated messages in that channel going forward. You can re-enable auto-translation at any time using the same steps.
 
 Limitations
 -----------
 
-- **Direct and group messages**: Your system admin may have restricted autotranslation in direct and group messages. If autotranslation isn't available in a direct or group message, contact your system admin.
+- **Direct and group messages**: Your system admin may have restricted auto-translation in direct and group messages. If auto-translation isn't available in a direct or group message, contact your system admin.
 - **Short or mixed-language messages**: Very short messages or messages that mix multiple languages may not be reliably detected and translated.
 - **Code-only messages**: Messages that contain only code blocks are not translated, as code is preserved in its original form.
 - **Translation accuracy**: Translation quality depends on the translation provider configured by your system admin. Some languages or specialized terminology may produce less accurate results.
