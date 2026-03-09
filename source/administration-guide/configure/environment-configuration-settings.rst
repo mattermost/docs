@@ -1574,7 +1574,7 @@ Allow searching public channels without membership
 
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
 | Allow users to search for messages in public channels they    | - System Config path: **Environment > Elasticsearch**                                                         |
-| have not joined.                                              | - ``config.json`` setting: ``ElasticsearchSettings`` > ``EnableSearchPublicChannelsWithoutMembership``         |
+| have not joined.                                              | - ``config.json`` setting: ``ElasticsearchSettings`` > ``EnableSearchPublicChannelsWithoutMembership``        |
 |                                                               |   > ``false``                                                                                                 |
 | When enabled for the first time, existing posts are updated   | - Environment variable:                                                                                       |
 | in the background with channel type information. This         |   ``MM_ELASTICSEARCHSETTINGS_ENABLESEARCHPUBLICCHANNELSWITHOUTMEMBERSHIP``                                    |
