@@ -36,7 +36,9 @@ Mattermost may notify you when a recipient's availability is set to :ref:`Do Not
 Rewrite messages with AI
 -------------------------
 
-From Mattermost v11.2, you can use AI to enhance your messages before sending them. This feature helps you improve writing quality, fix spelling, adjust message length, or transform your text based on specific needs.
+You can use AI to enhance your messages before sending them. This feature helps you improve writing quality, fix spelling, adjust message length, or transform your text based on specific needs.
+
+From Mattermost v11.5, when you use AI Rewrite while composing a reply in a thread, the AI incorporates context from the thread to generate suggestions that better fit the ongoing conversation.
 
 .. tab:: Web/Desktop
 
