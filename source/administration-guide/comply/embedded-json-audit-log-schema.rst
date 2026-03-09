@@ -912,6 +912,27 @@ Local Operations Events
 | ``localUpdateConfig``            | Local configuration update                                        |
 +----------------------------------+-------------------------------------------------------------------+
 
+AI Recap Events
+~~~~~~~~~~~~~~~
+
+Recap events include a ``channel_id`` in the event parameters, indicating which channel's content was accessed during the recap operation. Use this field when reviewing audit logs for compliance or access monitoring.
+
++---------------------+-------------------------------------------------------------------+
+| **Event Name**      | **Description**                                                   |
++=====================+===================================================================+
+| ``createRecap``     | Creating channel recaps                                           |
++---------------------+-------------------------------------------------------------------+
+| ``deleteRecap``     | Deleting channel recaps                                           |
++---------------------+-------------------------------------------------------------------+
+| ``getRecap``        | Retrieving channel recaps                                         |
++---------------------+-------------------------------------------------------------------+
+| ``getRecaps``       | Retrieving multiple channel recaps                                |
++---------------------+-------------------------------------------------------------------+
+| ``markRecapAsRead`` | Marking channel recaps as read                                    |
++---------------------+-------------------------------------------------------------------+
+| ``regenerateRecap`` | Regenerating channel recaps                                       |
++---------------------+-------------------------------------------------------------------+
+
 .. note::
    This comprehensive list includes all audit events captured by Mattermost across all major system operations. Additional events may be logged depending on your Mattermost version, enabled features, and configuration settings. Enterprise and Enterprise Advanced features may generate additional audit events.
 
