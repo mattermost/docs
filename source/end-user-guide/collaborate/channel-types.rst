@@ -46,7 +46,7 @@ Direct messages update the numbered badge count and trigger a notification unles
 
 .. note::
 
-  - From Mattermost v10, when sending a direct message, Mattermost warns you that the recipient's availability is set to :ref:`Do Not Disturb <end-user-guide/preferences/set-your-status-availability:set your availability>`, and when the recipient's local time is outside of regular business hours (between 10PM and 6AM). This warning displays directly above the message text field. From Mattermost v11.5, this warning also displays when the recipient's availability is set to :ref:`Offline <end-user-guide/preferences/set-your-status-availability:set your availability>`.
+  - From Mattermost v10, when sending a direct message, Mattermost warns you that the recipient's availability is set to :ref:`Do Not Disturb <end-user-guide/preferences/set-your-status-availability:set your availability>`, and when the recipient's local time is outside of regular business hours (between 10PM and 6AM). This warning displays directly above the message text field.
   - When a Mattermost user is deactivated in the system, your :ref:`direct message channel <end-user-guide/collaborate/channel-types:direct message channels>` with that user are `archived <#archived-channels>`__ and marked as read-only. An **Archived** icon |file-box| displays next to archived channels.
 
 Group message channels
