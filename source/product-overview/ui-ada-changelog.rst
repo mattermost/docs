@@ -21,7 +21,7 @@ Changelog
    * - v11.5
      - (UI) Available AI Agents are now shown in the @-mention autocomplete menu, regardless of channel membership `MM-67118 <https://mattermost.atlassian.net/browse/MM-67118>`__.
    * - v11.5
-     - (UI) Added the ability to access channel settings and rename a channel from the channel info right-hand sidebar `MM-66862 <https://mattermost.atlassian.net/browse/MM-66862>`__.
+     - (UI) Added the ability to `access channel settings and rename a channel <https://docs.mattermost.com/end-user-guide/collaborate/rename-channels.html>`__ from the channel info right-hand sidebar `MM-66862 <https://mattermost.atlassian.net/browse/MM-66862>`__.
    * - v11.5
      - (UI) Added tooltips to action buttons, and action errors are now displayed `MM-65023 <https://mattermost.atlassian.net/browse/MM-65023>`__.
    * - v11.5
