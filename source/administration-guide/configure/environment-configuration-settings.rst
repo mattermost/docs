@@ -1572,9 +1572,6 @@ Autocompletion results may be incomplete until a bulk index of the existing user
 Allow searching public channels without membership
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-plus.rst
-  :start-after: :nosearch:
-
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
 | Allow users to search for messages in public channels they    | - System Config path: **Environment > Elasticsearch**                                                         |
 | have not joined.                                              | - ``config.json`` setting: ``ElasticsearchSettings`` > ``EnableSearchPublicChannelsWithoutMembership``         |
