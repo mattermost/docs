@@ -60,7 +60,7 @@ If you upgrade from a release earlier than v11.4, please read the other [Importa
  - Added the ability for web app plugin code to be loaded asynchronously [MM-67538](https://mattermost.atlassian.net/browse/MM-67538).
  - [AI Rewrites](https://docs.mattermost.com/end-user-guide/collaborate/send-messages.html#rewrite-messages-with-ai) now includes some context from the most recent messages in the thread to help provide better rewrites.
  - Available AI Agents are now shown in the @-mention autocomplete menu, regardless of channel membership [MM-67118](https://mattermost.atlassian.net/browse/MM-67118).
- - Added the ability to access channel settings and rename a channel from the channel info right-hand sidebar [MM-66862](https://mattermost.atlassian.net/browse/MM-66862).
+ - Added the ability to [access channel settings and rename a channel](https://docs.mattermost.com/end-user-guide/collaborate/rename-channels.html) from the channel info right-hand sidebar [MM-66862](https://mattermost.atlassian.net/browse/MM-66862).
  - Added tooltips to action buttons, and action errors are now displayed [MM-65023](https://mattermost.atlassian.net/browse/MM-65023).
  - Updated the signup flow to replace the newsletter opt-in with a checkbox to agree to the **Acceptable Use Policy** and **Privacy Policy** [MM-67030](https://mattermost.atlassian.net/browse/MM-67030).
  - Added back [offline **Help** documentation](https://docs.mattermost.com/end-user-guide/preferences/set-your-status-availability.html#set-your-availability) accessible from the message composer [MM-61383](https://mattermost.atlassian.net/browse/MM-61383).
