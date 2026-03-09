@@ -1578,8 +1578,8 @@ Allow searching public channels without membership
 |                                                               |   > ``false``                                                                                                 |
 | When enabled for the first time, existing posts are updated   | - Environment variable:                                                                                       |
 | in the background with channel type information. This         |   ``MM_ELASTICSEARCHSETTINGS_ENABLESEARCHPUBLICCHANNELSWITHOUTMEMBERSHIP``                                    |
-| backfill process is throttled to avoid impacting search       |                                                                                                               |
-| performance.                                                  |                                                                                                               |
+| backfill process is throttled to ~10,000 posts per second to  |                                                                                                               |
+| avoid impacting search performance.                           |                                                                                                               |
 |                                                               |                                                                                                               |
 | - **true**: Users can find messages in public channels they   |                                                                                                               |
 |   haven't joined, scoped to teams they belong to.             |                                                                                                               |
