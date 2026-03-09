@@ -8,6 +8,10 @@ You can send messages in public and private channels as well as to other users i
 
 Mattermost may notify you when a recipient's availability is set to :ref:`Do Not Disturb <end-user-guide/preferences/set-your-status-availability:set your availability>`, and the recipient's local time is outside of regular business hours (between 10PM and 6AM). This warning displays directly above the message text field.
 
+.. note::
+
+  From Mattermost v11.5, you can access help resources for message formatting by selecting the **Help** link below the message text field.
+
 .. tab:: Web/Desktop
 
   Enter a message in the text field, then select **Send** |send-icon| to send the message. 
