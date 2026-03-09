@@ -8,7 +8,7 @@ Review and manage the following site configuration options in the System Console
 
 - `Customization <#customization>`__
 - `Localization <#localization>`__
-- `Autotranslation <#autotranslation>`__
+- `Auto-translation <#autotranslation>`__
 - `Users and Teams <#users-and-teams>`__
 - `Notifications <#notifications>`__
 - `System-wide notifications <#system-wide-notifications>`__
@@ -571,8 +571,8 @@ Enable work in progress languages in Mattermost to review translations and ident
 
 .. _autotranslation:
 
-Autotranslation
----------------
+Auto-translation
+----------------
 
 .. include:: ../../_static/badges/ent-adv.rst
   :start-after: :nosearch:
@@ -589,8 +589,8 @@ Access the following configuration settings in the System Console by going to **
   - **true**: Autotranslation is available and can be enabled per channel.
   - **false**: **(Default)** Autotranslation is disabled.
 
-Enable autotranslation
-~~~~~~~~~~~~~~~~~~~~~~
+Enable auto-translation
+~~~~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
 | Enable or disable automatic translation of channel messages.  | - System Config path: **Site Configuration > Localization**                        |
