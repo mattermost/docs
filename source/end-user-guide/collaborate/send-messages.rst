@@ -10,7 +10,7 @@ Mattermost may notify you when a recipient's availability is set to :ref:`Do Not
 
 .. note::
 
-  From Mattermost v11.5, you can access Mattermost help resources by selecting the **Help** button in the message text field, even when your client is offline.
+  From Mattermost v11.5, you can access help resources for message formatting by selecting the **Help** link below the message text field.
 
 .. tab:: Web/Desktop
 
