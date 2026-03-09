@@ -160,6 +160,28 @@ Enable dynamic client registration
 
   Cloud admins can't modify this configuration setting.
 
+.. config:setting:: dcr-redirect-uri-allowlist
+  :displayname: DCR redirect URI allowlist (Integrations)
+  :systemconsole: Integrations > Integration Management
+  :configjson: .ServiceSettings.DCRRedirectURIAllowlist
+  :environment: MM_SERVICESETTINGS_DCRREDIRECTURIALLOWLIST
+  :description: A list of permitted redirect URIs for OAuth Dynamic Client Registration (DCR). When configured, only OAuth clients that register with a redirect URI matching an entry in this list are accepted. Leave blank to allow any redirect URI.
+
+DCR redirect URI allowlist
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A list of permitted redirect URIs for OAuth Dynamic Client Registration (DCR). Enter one redirect URI per line. When configured, only OAuth clients that register via the DCR endpoint (``POST /api/v4/oauth/apps/register``) with a redirect URI matching an entry in this list will be accepted. Leave blank to allow any redirect URI.
+
+This setting applies only when :ref:`Enable dynamic client registration <administration-guide/configure/integrations-configuration-settings:enable dynamic client registration>` is enabled.
+
++------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DCRRedirectURIAllowlist": []`` with string array input.            |
++------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  Cloud admins can't modify this configuration setting.
+
 .. config:setting:: integration-request-timeout
   :displayname: Integration request timeout (Integrations)
   :systemconsole: Integrations > Integration Management
