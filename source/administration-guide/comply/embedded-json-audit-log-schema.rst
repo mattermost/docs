@@ -911,6 +911,8 @@ Local Operations Events
 AI Recap Events
 ~~~~~~~~~~~~~~~
 
+Recap events include a ``channel_id`` in the event parameters, indicating which channel's content was accessed during the recap operation. Use this field when reviewing audit logs for compliance or access monitoring.
+
 +---------------------+-------------------------------------------------------------------+
 | **Event Name**      | **Description**                                                   |
 +=====================+===================================================================+
@@ -926,9 +928,6 @@ AI Recap Events
 +---------------------+-------------------------------------------------------------------+
 | ``regenerateRecap`` | Regenerating channel recaps                                       |
 +---------------------+-------------------------------------------------------------------+
-
-.. note::
-   Recap events include a ``channel_id`` in the event parameters, indicating which channel's content was accessed during the recap operation. Use this field when reviewing audit logs for compliance or access monitoring.
 
 .. note::
    This comprehensive list includes all audit events captured by Mattermost across all major system operations. Additional events may be logged depending on your Mattermost version, enabled features, and configuration settings. Enterprise and Enterprise Advanced features may generate additional audit events.
