@@ -37,7 +37,7 @@ Team statistics
 +---------------------------------------------------------------+----------------------------------------------------------------+
 | View statistics per team on number of activated users,        | - System Config path: **Reporting > Team Statistics**          |
 | number of public and private channels, total post count, and  | - ``config.json`` setting: N/A                                 |
-| recent activity for that team.                                | - Environment variable: N/A                                    |
+| count of paid users (self-hosted only).                       | - Environment variable: N/A                                    |
 +---------------------------------------------------------------+----------------------------------------------------------------+
 
 .. note::

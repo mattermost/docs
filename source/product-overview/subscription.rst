@@ -97,7 +97,7 @@ Guests are billed based on channel access:
 
 Bots, deactivated users, and synthetic users in :doc:`Microsoft Teams integrations </end-user-guide/collaborate/collaborate-within-connected-microsoft-teams>` and :doc:`connected workspace </administration-guide/onboard/connected-workspaces>` users aren't counted towards the total number of activated users.
 
-You can review your activated user count in **System Console > Reporting > Site Statistics** under **Total Activated Users**. Review single-channel guest usage separately under **Single-channel Guests**.
+You can review your activated user count in **System Console > Site Statistics** under **Total Activated Users**. Review single-channel guest usage separately under **Single-channel Guests**.
 
 Do I need to pay for deactivated users?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
