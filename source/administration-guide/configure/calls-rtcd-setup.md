@@ -315,6 +315,12 @@ After deploying RTCD, validate the installation:
       
    Type a message and hit Enter on either side. If messages are received on both ends, UDP connectivity is working.
 
+   Restart RTCD after the test:
+
+   ```bash
+   sudo systemctl start rtcd
+   ```
+
 3. **Test TCP connectivity** (if enabled):
 
    Similar to the UDP test, but remove the `-u` flag from both commands.
