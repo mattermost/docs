@@ -86,7 +86,7 @@ The following network connectivity is required:
 <td>TCP (incoming)</td>
 <td>Mattermost instance(s) (Calls plugin)</td>
 <td><code>rtcd</code> service</td>
-<td>To allow for HTTP/WebSocket connectivity from Calls plugin to <code>rtcd</code> service. Can be expose internally as the service only needs to be reachable by the instance(s) running the Mattermost server.</td>
+<td>To allow for HTTP/WebSocket connectivity from Calls plugin to <code>rtcd</code> service. Can be exposed internally as the service only needs to be reachable by the instance(s) running the Mattermost server.</td>
 </tr>
 <tr>
 <td>STUN (Calls plugin or <code>rtcd</code>)</td>
@@ -169,7 +169,7 @@ Looking for an automated setup? Check out these community-maintained [Calls Inst
    WantedBy=multi-user.target
    ```
 
-5. Enable and start the service:
+6. Enable and start the service:
 
    ```bash
    sudo systemctl daemon-reload
@@ -177,7 +177,7 @@ Looking for an automated setup? Check out these community-maintained [Calls Inst
    sudo systemctl start rtcd
    ```
 
-6. Check the service status:
+7. Check the service status:
 
    ```bash
    sudo systemctl status rtcd

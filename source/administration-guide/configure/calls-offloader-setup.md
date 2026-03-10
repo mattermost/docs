@@ -404,7 +404,7 @@ The following Docker images are needed for full calls functionality:
 
 #### Determining the Correct Image Versions
 
-**Important**: The exact versions of `calls-offloader` and `calls-transcriber` images must match what your installed Calls plugin expects. These versions are defined in the Calls plugin source code.
+**Important**: The exact versions of `mattermost/calls-recorder` and `mattermost/calls-transcriber` images must match what your installed Calls plugin expects. These versions are defined in the Calls plugin source code.
 
 To find the correct versions for your Calls plugin:
 

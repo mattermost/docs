@@ -229,7 +229,7 @@ EOF
     
     # Restart Docker daemon
     echo "Restarting Docker daemon..." | tee -a $LOG_FILE
-    sudo systemctl restart docker >> $LOG_FILE 2>&1
+    sudo systemctl restart docker 2>&1 | sudo tee -a "$LOG_FILE" >/dev/null
     
     # Wait for Docker to restart
     sleep 10
@@ -254,7 +254,7 @@ verify_setup() {
     curl -s http://$REGISTRY_HOST:$REGISTRY_PORT/v2/_catalog | jq '.repositories[]' 2>/dev/null || echo "Could not list repositories (jq not available)" | tee -a $LOG_FILE
     
     # Test pulling from local registry
-    test_image="$REGISTRY_HOST:$REGISTRY_PORT/mattermost/calls-offloader:latest"
+    test_image="$REGISTRY_HOST:$REGISTRY_PORT/mattermost/calls-recorder:latest"
     echo "Testing pull from local registry: $test_image" | tee -a $LOG_FILE
     if docker pull $test_image >> $LOG_FILE 2>&1; then
         echo "✓ Successfully pulled test image from local registry" | tee -a $LOG_FILE
@@ -328,6 +328,7 @@ main() {
     # Check if we have internet access for image pulling
     if ! check_internet; then
         echo "Skipping image download phase - run this script with internet access first" | tee -a $LOG_FILE
+        exit 1
     else
         # Setup local registry
         setup_registry
