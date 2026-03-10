@@ -218,6 +218,7 @@ configure_docker_daemon() {
     fi
     
     # Create new daemon.json with insecure registry configuration
+    # Note: If an existing daemon.json exists, these settings should be merged manually instead.
     cat > /tmp/daemon.json << EOF
 {
     "insecure-registries": ["$REGISTRY_HOST:$REGISTRY_PORT"]
@@ -280,6 +281,7 @@ echo "Deploying Mattermost Calls in air-gapped environment..."
 
 # Configure Docker for local registry
 sudo mkdir -p /etc/docker
+# Note: If an existing daemon.json exists, these settings should be merged manually instead.
 cat > /tmp/daemon.json << EOD
 {
     "insecure-registries": ["$REGISTRY_HOST:$REGISTRY_PORT"]

@@ -532,6 +532,9 @@ Transfer the following files to your air-gapped network:
    ```bash
    # Create or update Docker daemon configuration
    sudo mkdir -p /etc/docker
+   
+   # Note: If you already have an existing `/etc/docker/daemon.json` configuration,
+   # merge the `insecure-registries` key into it manually rather than overwriting.
    echo '{"insecure-registries": ["localhost:5000"]}' | sudo tee /etc/docker/daemon.json
    sudo systemctl restart docker
    ```
@@ -560,7 +563,7 @@ For reference, here are the individual configuration steps:
 
 #### 1. Docker Daemon Configuration
 
-Create or update `/etc/docker/daemon.json`:
+Create or update `/etc/docker/daemon.json` (ensure you merge this into your existing configuration if the file already exists):
 ```json
 {
     "insecure-registries": ["localhost:5000"]
@@ -689,6 +692,8 @@ If you want to run the registry on a different host, replace `localhost:5000` wi
 REGISTRY_HOST="registry.internal.domain:5000"
 
 # Update Docker daemon configuration
+# Note: If you already have an existing `/etc/docker/daemon.json` configuration,
+# merge the `insecure-registries` key into it manually rather than overwriting.
 echo "{\"insecure-registries\": [\"$REGISTRY_HOST\"]}" | sudo tee /etc/docker/daemon.json
 
 # Update calls-offloader configuration
