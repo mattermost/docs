@@ -20,7 +20,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Added auto-translation support. Initial Beta release. Requires Enterprise Advanced license.
  - Added ability to send [Burn on Read posts](https://docs.mattermost.com/end-user-guide/collaborate/send-messages.html#send-burn-on-read-messages) from mobile app [MM-66969](https://mattermost.atlassian.net/browse/MM-66969).
  - Updated the splash screen background graphic.
- - Added [ability to edit](https://docs.mattermost.com/end-user-guide/workflow-automation/work-with-runs.html#playbook-runs-on-mobile) Playbook runs and Checklist summaries [MM-66995](https://mattermost.atlassian.net/browse/MM-66995).
+ - Added ability to edit Playbook runs and Checklist summaries [MM-66995](https://mattermost.atlassian.net/browse/MM-66995).
  - Allowed task item [renaming and editing](https://docs.mattermost.com/end-user-guide/workflow-automation/work-with-tasks.html#update-tasks) descriptions [MM-67007](https://mattermost.atlassian.net/browse/MM-67007).
  - Updated the Interactive Dialog to use Apps Form Framework [MM-64700](https://mattermost.atlassian.net/browse/MM-64700).
 
