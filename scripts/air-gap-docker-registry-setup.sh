@@ -190,16 +190,16 @@ configure_calls_offloader() {
     echo "Configuring calls-offloader for local registry..." | tee -a $LOG_FILE
     
     # Create a modified calls-offloader config
-    if [ -f "/opt/calls-offloader/calls-offloader.toml" ]; then
-        sudo cp /opt/calls-offloader/calls-offloader.toml /opt/calls-offloader/calls-offloader.toml.backup
+    if [ -f "/opt/calls-offloader/config.toml" ]; then
+        sudo cp /opt/calls-offloader/config.toml /opt/calls-offloader/config.toml.backup
         
         # Update image_registry setting
-        sudo sed -i "s/image_registry = \"mattermost\"/image_registry = \"$REGISTRY_HOST:$REGISTRY_PORT\/mattermost\"/" /opt/calls-offloader/calls-offloader.toml
+        sudo sed -i "s/image_registry = \"mattermost\"/image_registry = \"$REGISTRY_HOST:$REGISTRY_PORT\/mattermost\"/" /opt/calls-offloader/config.toml
         
         echo "Updated calls-offloader configuration to use local registry" | tee -a $LOG_FILE
-        echo "Backup created at /opt/calls-offloader/calls-offloader.toml.backup" | tee -a $LOG_FILE
+        echo "Backup created at /opt/calls-offloader/config.toml.backup" | tee -a $LOG_FILE
     else
-        echo "Warning: calls-offloader.toml not found. You'll need to manually configure:" | tee -a $LOG_FILE
+        echo "Warning: config.toml not found. You'll need to manually configure:" | tee -a $LOG_FILE
         echo "  image_registry = \"$REGISTRY_HOST:$REGISTRY_PORT/mattermost\"" | tee -a $LOG_FILE
     fi
 }
@@ -292,15 +292,15 @@ sudo systemctl restart docker
 sleep 10
 
 # Update calls-offloader configuration
-if [ -f "/opt/calls-offloader/calls-offloader.toml" ]; then
-    sudo sed -i "s/image_registry = \"mattermost\"/image_registry = \"$REGISTRY_HOST:$REGISTRY_PORT\/mattermost\"/" /opt/calls-offloader/calls-offloader.toml
+if [ -f "/opt/calls-offloader/config.toml" ]; then
+    sudo sed -i "s/image_registry = \"mattermost\"/image_registry = \"$REGISTRY_HOST:$REGISTRY_PORT\/mattermost\"/" /opt/calls-offloader/config.toml
     
     # Restart calls-offloader service
     sudo systemctl restart calls-offloader
     
     echo "Calls-offloader configured for air-gap deployment"
 else
-    echo "Warning: /opt/calls-offloader/calls-offloader.toml not found"
+    echo "Warning: /opt/calls-offloader/config.toml not found"
     echo "Please manually configure image_registry = \"$REGISTRY_HOST:$REGISTRY_PORT/mattermost\""
 fi
 

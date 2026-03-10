@@ -577,7 +577,7 @@ sudo systemctl restart docker
 
 #### 2. Calls-Offloader Configuration
 
-Update `/opt/calls-offloader/calls-offloader.toml`:
+Update `/opt/calls-offloader/config.toml`:
 
 ```toml
 [jobs]
@@ -601,7 +601,8 @@ sudo systemctl restart calls-offloader
 curl http://localhost:5000/v2/_catalog
 
 # Test pulling an image
-docker pull localhost:5000/mattermost/calls-recorder:latest
+# Replace <VERSION> with the specific tag, e.g., v0.8.5
+docker pull localhost:5000/mattermost/calls-recorder:<VERSION>
 ```
 
 #### Test Calls Functionality
@@ -636,7 +637,7 @@ docker pull localhost:5000/mattermost/calls-recorder:latest
 
 3. **calls-offloader fails to create jobs**:
    - Check calls-offloader logs: `sudo journalctl -u calls-offloader`
-   - Verify the `image_registry` configuration in calls-offloader.toml
+   - Verify the `image_registry` configuration in config.toml
    - Ensure the calls-offloader service can reach the registry
 
 4. **"invalid Runner value: failed to validate runner" error**:
@@ -650,16 +651,16 @@ docker pull localhost:5000/mattermost/calls-recorder:latest
      curl http://localhost:5000/v2/mattermost/calls-transcriber/tags/list
      ```
    
-   - **Registry configuration mismatch**: Ensure the `image_registry` setting in calls-offloader.toml matches your registry:
+   - **Registry configuration mismatch**: Ensure the `image_registry` setting in config.toml matches your registry:
      ```bash
-     grep image_registry /opt/calls-offloader/calls-offloader.toml
+     grep image_registry /opt/calls-offloader/config.toml
      # Should show: image_registry = "localhost:5000/mattermost"
      ```
    
-   - **Docker daemon can't reach registry**: Test that Docker can pull from the local registry:
+   - **Docker daemon can't reach registry**: Test that Docker can pull from the local registry (replace `<VERSION>` with the specific tags):
      ```bash
-     docker pull localhost:5000/mattermost/calls-recorder:latest
-     docker pull localhost:5000/mattermost/calls-transcriber:latest
+     docker pull localhost:5000/mattermost/calls-recorder:<VERSION>
+     docker pull localhost:5000/mattermost/calls-transcriber:<VERSION>
      ```
    
    - **Image tag mismatch**: The calls-offloader will be looking for specific image tags. Check what the plugin expects vs what's in your registry:
@@ -697,7 +698,7 @@ REGISTRY_HOST="registry.internal.domain:5000"
 echo "{\"insecure-registries\": [\"$REGISTRY_HOST\"]}" | sudo tee /etc/docker/daemon.json
 
 # Update calls-offloader configuration
-sed -i "s|localhost:5000|$REGISTRY_HOST|g" /opt/calls-offloader/calls-offloader.toml
+sed -i "s|localhost:5000|$REGISTRY_HOST|g" /opt/calls-offloader/config.toml
 ```
 
 **Custom Image Versions**
