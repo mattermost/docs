@@ -9,9 +9,10 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 (release-v6-1)=
 ## Release v6.1
 
-- **v6.1.1, released 2026-03-10**
+- **v6.1.1, released **
 
-  - Mattermost Desktop App v6.1.1 contains bug fixes. Upgrading is recommended.
+  - Fixed additional issues around URL parsing with special characters [MM-65645](https://mattermost.atlassian.net/browse/MM-65645).
+  - Fixed an issue where new views would not load if the URL to open contained query parameters.
 
 - **v6.1.0, released 2026-03-02**
 
@@ -191,9 +192,9 @@ Mattermost Desktop App v6.0.0 contains low severity level security fixes. Upgrad
 (release-v5-13)=
 ## Release v5.13 (Extended Support Release)
 
-- **v5.13.5, released 2026-03-10**
+- **v5.13.5, released **
 
-  - Mattermost Desktop App v5.13.5 contains bug fixes. Upgrading is recommended.
+  - 
 
 - **v5.13.4, released 2026-01-29**
 
