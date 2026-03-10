@@ -52,6 +52,10 @@ Call recordings can consume significant storage space. Based on average recordin
 
 ### Bare Metal or VM Deployment
 
+```{tip}
+Looking for an automated setup? Check out these community-maintained [Calls Installation Scripts](https://github.com/bgardner8008/calls-install-scripts) for quick provisioning of the Calls Offloader service on Ubuntu/Debian systems.
+```
+
 1. Download the latest release from the [calls-offloader GitHub repository](https://github.com/mattermost/calls-offloader/releases)
 
 2. Create the necessary directories:

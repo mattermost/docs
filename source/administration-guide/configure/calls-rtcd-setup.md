@@ -107,6 +107,10 @@ There are multiple ways to deploy RTCD, depending on your environment. We recomm
 
 This is the recommended deployment method for non-Kubernetes production environments as it provides the best performance and operational control. For Kubernetes deployments, see the [Calls Deployment on Kubernetes](calls-kubernetes.md) guide.
 
+```{tip}
+Looking for an automated setup? Check out these community-maintained [Calls Installation Scripts](https://github.com/bgardner8008/calls-install-scripts) for quick provisioning of the RTCD service on Ubuntu/Debian systems.
+```
+
 1. **Download and install the RTCD binary**:
 
    Download the latest release from the [RTCD GitHub repository](https://github.com/mattermost/rtcd/releases):
