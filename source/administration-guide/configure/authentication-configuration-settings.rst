@@ -2562,8 +2562,7 @@ Enable guest access
 +----------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 .. note::
-  For billing purposes, activated guest accounts do consume a licensed seat, which is returned when the guest account is
-  deactivated.This means that guest accounts count as a paid user in your Mattermost :doc:`workspace </end-user-guide/end-user-guide-index>`.
+  Guest billing depends on channel access. Guests in exactly one channel are treated as single-channel guests and don't count toward the primary paid seat count. They're free up to a 1:1 ratio with licensed seats. Guests in multiple channels continue to count as paid active users. Direct messages and group messages don't affect whether a guest is counted as a single-channel guest. See the :doc:`guest accounts </administration-guide/onboard/guest-accounts>` documentation for full details.
 
 .. config:setting:: whitelisted-guest-domains
   :displayname: Whitelisted guest domains (Guest Access)

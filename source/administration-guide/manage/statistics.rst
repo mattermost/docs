@@ -52,6 +52,9 @@ Advanced system statistics
 
 Self-hosted deployments include additional system statistics.
 
+Single-channel Guests
+    The number of active guest accounts that belong to exactly one channel on the server. Direct messages and group messages don't change whether a guest is counted as a single-channel guest. Single-channel guests are counted separately from the primary paid seat count and are free up to a 1:1 ratio with licensed seats. When this count exceeds the allowance, the statistic is highlighted as a warning for system admins.
+
 Total Sessions
     The number of active user sessions connected to your system. Expired sessions are not counted.
 

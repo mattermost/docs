@@ -26,7 +26,8 @@ Site statistics
 .. note::
 
   - Bots, deactivated users, and synthetic users in :doc:`Microsoft Teams integrations </end-user-guide/collaborate/collaborate-within-connected-microsoft-teams>` and :doc:`connected workspaces </administration-guide/onboard/connected-workspaces>` users aren't counted towards the total number of activated users. 
-  - For billing purposes, activated guest accounts do consume a licensed seat, which is returned when the guest account is deactivated. This means that guest accounts count as a paid user in your Mattermost :doc:`workspace </end-user-guide/end-user-guide-index>`
+  - **Single-channel Guests** shows the number of active guest accounts that belong to exactly one channel. Direct messages and group messages don't affect whether a guest is counted as a single-channel guest. Single-channel guests are counted separately from the primary paid seat count and are free up to a 1:1 ratio with licensed seats. When this count exceeds the allowance, the statistic is highlighted as a warning for system admins.
+  - Guests in multiple channels continue to count as paid active users. See the :doc:`guest accounts </administration-guide/onboard/guest-accounts>` documentation for details.
 
 ----
 
@@ -36,7 +37,7 @@ Team statistics
 +---------------------------------------------------------------+----------------------------------------------------------------+
 | View statistics per team on number of activated users,        | - System Config path: **Reporting > Team Statistics**          |
 | number of public and private channels, total post count, and  | - ``config.json`` setting: N/A                                 |
-| count of paid users (self-hosted only).                       | - Environment variable: N/A                                    |
+| recent activity for that team.                                | - Environment variable: N/A                                    |
 +---------------------------------------------------------------+----------------------------------------------------------------+
 
 .. note::

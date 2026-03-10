@@ -87,11 +87,17 @@ In this case, the "physical address" is the location where the individual, who w
 How is a user defined for subscriptions?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For the purpose of billing, a “user” is any account created in Mattermost that does not show as **Deactivated** in **System Console > User Management > Users**. Guests are also defined as users.
+For the purpose of billing, an activated user is any account created in Mattermost that does not show as **Deactivated** in **System Console > User Management > Users**.
+
+Guests are billed based on channel access:
+
+- Guests in exactly one channel are treated as single-channel guests. They don't count toward the primary paid seat count and are free up to a 1:1 ratio with licensed seats.
+- Guests in multiple channels continue to count as activated users for billing purposes.
+- Direct messages and group messages don't affect whether a guest is counted as a single-channel guest.
 
 Bots, deactivated users, and synthetic users in :doc:`Microsoft Teams integrations </end-user-guide/collaborate/collaborate-within-connected-microsoft-teams>` and :doc:`connected workspace </administration-guide/onboard/connected-workspaces>` users aren't counted towards the total number of activated users.
 
-You can review your user count, for billing purposes, by going to **System Console > Site Statistics**, under **Total Activated Users**.
+You can review your activated user count in **System Console > Reporting > Site Statistics** under **Total Activated Users**. Review single-channel guest usage separately under **Single-channel Guests**.
 
 Do I need to pay for deactivated users?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

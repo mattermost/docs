@@ -22,6 +22,7 @@ You can also review and manage the following aspects of your self-hosted deploym
 
 - View the :doc:`edition </product-overview/editions-and-offerings>` of your Mattermost self-hosted deployment.
 - Manage your :doc:`product subscription </product-overview/self-hosted-subscriptions>`.
+- Review licensed seat usage on the **Edition and License** page, including the separate single-channel guest count and any warning state when the single-channel guest allowance is exceeded.
 - :doc:`Upload a new license </administration-guide/manage/admin/installing-license-key>`.
 - Remove a license to :doc:`downgrade the server </administration-guide/upgrade/downgrading-mattermost-server>`.
 - Talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ for assistance.

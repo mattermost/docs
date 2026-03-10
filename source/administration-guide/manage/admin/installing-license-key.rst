@@ -37,7 +37,7 @@ You don't need to wait for your current license key to expire before replacing i
 
 .. tip::
 
-    To find the total number of users, go to **System Console > Reporting > Site Statistics**. The total number of users is displayed in the **Total Activated Users** field. The license will be rejected if this value is greater than the value allowed by your license key.
+    To review license usage before uploading a new key, go to **System Console > Reporting > Site Statistics**. The **Total Activated Users** field shows the primary paid seat count used for license validation. Review **Single-channel Guests** separately because guests in exactly one channel are tracked outside the primary paid seat count, are free up to a 1:1 ratio with licensed seats, and generate warnings instead of hard enforcement when that allowance is exceeded.
 
 Follow these steps to change your license key:
 
