@@ -206,6 +206,8 @@ Instruct users to check their browser console logs:
    - "ICE connection" failures
    - WebSocket connection errors
 
+![Developer Tools for Call Widget](../../images/developer-tools-call-widget.png)
+
 ## Performance Issues
 
 ### Diagnosing High CPU Usage
