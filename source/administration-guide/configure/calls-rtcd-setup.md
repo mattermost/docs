@@ -337,7 +337,7 @@ To scale RTCD horizontally:
    
    Deploy multiple RTCD servers, each with their own unique IP address.
 
-2. **Configure DNS-based load balancing**:
+2. **Configure DNS record**:
    
    Set up a DNS record that points to multiple RTCD IP addresses:
    
@@ -355,7 +355,7 @@ To scale RTCD horizontally:
    
    In the Mattermost System Console, set the **RTCD Service URL** to your DNS name (e.g., `rtcd.example.com`).
 
-The Mattermost Calls plugin will distribute calls among the available RTCD hosts. Remember that a single call will always be hosted on one RTCD instance; sessions belonging to the same call are not spread across different instances.
+When a call starts, the Mattermost server examines the available RTCD servers (via the configured DNS record) and starts the call on the RTCD server with the lowest CPU usage. All participants in the call will connect to that RTCD server; a single call cannot be shared across multiple servers.
 
 ## Integration with Mattermost
 
