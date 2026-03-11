@@ -395,8 +395,8 @@ The following Docker images are needed for full calls functionality:
 
 ```{warning}
 **Disk Space Requirements**: Ensure you have sufficient disk space before starting the setup process. The Docker images can be quite large:
-- **calls-recorder image**: ~1.5-2GB
-- **calls-transcriber image**: ~1.5-2GB  
+- **mattermost/calls-recorder image**: ~1.5-2GB
+- **mattermost/calls-transcriber image**: ~1.5-2GB  
 - **Registry container + data**: ~500MB
 
 **Total recommended free space**: At least 5GB to accommodate image downloads, local registry data, and archive creation.
