@@ -12,7 +12,7 @@
 (release-v11.4-feature-release)=
 ## Release v11.4 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
-- **11.4.3, released **
+- **11.4.3, released 2026-03-13**
   - Mattermost v11.4.3 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Improved security hardening for the user authentication update API endpoint.
   - Improved token handling in the guest magic link authentication flow.
@@ -98,7 +98,7 @@ If you upgrade from a release earlier than v11.3, please read the other [Importa
 (release-v11.3-feature-release)=
 ## Release v11.3 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
-- **11.3.3, released **
+- **11.3.3, released 2026-03-13**
   - Mattermost v11.3.3 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Improved security hardening for the user authentication update API endpoint.
   - Improved token handling in the guest magic link authentication flow.
