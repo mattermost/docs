@@ -402,6 +402,31 @@ Enable desktop app landing page
 |                                                                 | - Environment variable: ``MM_SERVICESETTINGS_ENABLEDESKTOPLANDINGPAGE``                  |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------+
 
+.. config:setting:: minimum-desktop-app-version
+  :displayname: Minimum desktop app version (Customization)
+  :systemconsole: Site Configuration > Customization
+  :configjson: .ServiceSettings.MinimumDesktopAppVersion
+  :environment: MM_SERVICESETTINGS_MINIMUMDESKTOPAPPVERSION
+  :description: Enforce a minimum Mattermost Desktop App version required to connect to the server.
+
+Minimum desktop app version
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
+| Specify the minimum version of the Mattermost Desktop App required to connect to this server      | - System Config path: **Site Configuration > Customization**                                        |
+| (e.g., ``5.10.0``). Users connecting with a Desktop App version below this minimum are shown      | - ``config.json`` setting: ``ServiceSettings`` > ``MinimumDesktopAppVersion``                       |
+| an update required screen and cannot use the application until they update.                       | - Environment variable: ``MM_SERVICESETTINGS_MINIMUMDESKTOPAPPVERSION``                             |
+|                                                                                                   |                                                                                                     |
+| The update screen includes a download link configured via the                                     |                                                                                                     |
+| :ref:`Mattermost apps download page link <configure/site-configuration-settings:mattermost apps   |                                                                                                     |
+| download page link>` setting.                                                                     |                                                                                                     |
+|                                                                                                   |                                                                                                     |
+| Must be a valid semantic version (e.g., ``5.0.0``). Leave blank to allow all Desktop App          |                                                                                                     |
+| versions to connect.                                                                              |                                                                                                     |
+|                                                                                                   |                                                                                                     |
+| String input. Default is empty (no minimum enforced).                                             |                                                                                                     |
++---------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
+
 .. config:setting:: app-custom-url-schemes
   :displayname: App custom URL schemes (Customization)
   :systemconsole: N/A
