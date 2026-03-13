@@ -38,7 +38,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - **Changes to Enterprise Advanced plan:**
    - Added ``Autotranslation`` settings ``Enable``, ``RestrictDMAndGM``, ``Provider``, ``TargetLanguages``, ``Workers``, ``TimeoutMs``, ``LibreTranslate``, and ``Agents`` to support auto-translations.
  - **Changes to Enterprise plan:**
-   - Added ``DCRRedirectURIAllowlist`` under ``ServiceSettings`` to restrict OAuth [Dynamic Client Registration](https://docs.mattermost.com/administration-guide/configure/integrations-configuration-settings.html#dcr-redirect-uri-allowlist) redirect URIs with glob patterns and to return ``invalid_redirect_uri`` when any redirect URI is not allowlisted.
+   - Added ``DCRRedirectURIAllowlist`` under ``ServiceSettings`` to restrict OAuth Dynamic Client Registration redirect URIs with glob patterns and to return ``invalid_redirect_uri`` when any redirect URI is not allowlisted.
 
 #### Compatibility
  - Updated minimum Edge and Chrome versions to 144+.
