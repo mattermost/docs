@@ -111,7 +111,7 @@ To archive a playbook:
 3. Select the **...** in the **Actions** column for the playbook you would like to archive.
 4. Select the **Archive** menu option then the **Archive** button to confirm you would like to archive the playbook.
 
-.. image:: ../../images/archive-a-playbook.png
+.. image:: ../../images/archive-a-playbook.gif
    :alt: Archive a playbook
 
 Restore an archived playbook
@@ -129,7 +129,7 @@ To restore an archived playbook:
 4. Select the **...** in the **Actions** column for the playbook you would like to restore.
 5. Select the **Restore** menu option then the **Restore** button to confirm you would like to restore the playbook.
 
-.. image:: ../../images/restore-an-archived-playbook.png
+.. image:: ../../images/restore-an-archived-playbook.gif
    :alt: Restore an archived playbook
 
 Export channel data
