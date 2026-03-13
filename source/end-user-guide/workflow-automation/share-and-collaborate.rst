@@ -97,6 +97,41 @@ You can do this by duplicating a playbook in the Playbooks screen. Select the **
 
 To import a playbook, go to the Playbooks screen, and select **Import**. Choose the team you’re importing to, then select the JSON file. You can also export any playbook to JSON to easily share with other Mattermost servers.
 
+Archive a playbook
+------------------
+
+.. note::
+
+  To archive a playbook, you must be a member of the playbook or playbook admin and have applicable **Manage Playbook Configurations** permission granted by a system administrator.
+
+To archive a playbook:
+
+1. Go to the **Product** |product-list| icon and select **Playbooks**.
+2. Select **View all...** under the **Playbooks** section in the left menu.
+3. Select the **...** in the **Actions** column for the playbook you would like to archive.
+4. Select the **Archive** menu option then the **Archive** button to confirm you would like to archive the playbook.
+
+.. image:: https://github.com/user-attachments/assets/d665e506-abb5-4005-bd67-aa9e4754bbe2
+   :alt: Archive a playbook
+
+Restore an archived playbook
+-----------------------------
+
+.. note::
+
+  To restore an archived playbook, you must have applicable **Manage Playbook Configurations** permission granted by a system administrator.
+
+To restore an archived playbook:
+
+1. Go to the **Product** |product-list| icon and select **Playbooks**.
+2. Select **View all...** under the **Playbooks** section in the left menu.
+3. Verify the **With archived** checkbox next to the playbook search bar is selected.
+4. Select the **...** in the **Actions** column for the playbook you would like to restore.
+5. Select the **Restore** menu option then the **Restore** button to confirm you would like to restore the playbook.
+
+.. image:: https://github.com/user-attachments/assets/8139bd3c-1148-4164-bfac-3a8c01c06e81
+   :alt: Restore an archived playbook
+
 Export channel data
 --------------------
 
