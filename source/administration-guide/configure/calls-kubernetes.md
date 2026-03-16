@@ -16,9 +16,8 @@ Mattermost Calls has been designed to integrate well with Kubernetes to offer im
 This diagram shows how the RTCD standalone service can be deployed in a Kubernetes cluster. In this architecture:
 
 1. Calls traffic is handled by dedicated RTCD pods
-2. RTCD services are exposed through load balancers
-3. Scaling is managed through Kubernetes deployment configurations
-4. Call recording and transcription is handled by the calls-offloader service (see [Calls Offloader Setup and Configuration](calls-offloader-setup.md))
+2. Scaling is managed through Kubernetes deployment configurations
+3. Call recording and transcription is handled by the calls-offloader service (see [Calls Offloader Setup and Configuration](calls-offloader-setup.md))
 
 If Mattermost isn't already deployed in your Kubernetes cluster and you want to use this deployment type, visit the [Kubernetes operator guide](/install/mattermost-kubernetes-operator.md).
 
@@ -60,8 +59,7 @@ For Kubernetes deployments, you need to ensure specific connectivity paths:
 
 1. **Client to RTCD connectivity**: UDP and TCP traffic on port 8443 is properly routed from clients to RTCD pods (for media, with TCP acting as a fallback).
 2. **Mattermost to RTCD API connectivity**: There needs to be a clear connectivity path between Mattermost and RTCD on the API port (TCP 8045)
-3. **Load balancer configuration**: Load balancers must be properly configured to handle UDP and TCP traffic routing to RTCD pods
-4. **Network policies**: Network policies must allow the required communications between Mattermost and RTCD services
+3. **Network policies**: Network policies must allow the required communications between Mattermost and RTCD services
 
 ### Resource Requirements
 
@@ -74,8 +72,8 @@ We strongly recommend reviewing the [Performance Baselines](calls-metrics-monito
 Horizontal scaling of RTCD pods is possible, but remember:
 
 1. Each call is hosted entirely on a single RTCD pod
-2. DNS-based load balancing should be used to distribute calls among pods
-3. Health checks should ensure that only healthy pods receive new calls
+2. DNS A records should be set up for all RTCD pods so server can discover RTCD servers.
+3. Health checks should ensure that only healthy pods are reported via DNS
 4. Calls remain on their assigned pod for their entire duration
 
 ### Limitations

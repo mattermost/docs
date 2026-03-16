@@ -192,7 +192,7 @@ In such cases, you can override the site URL used by recorder jobs or transcribe
 ```{note}
 When these Site URL overrides are used, the `ServiceSettings.AllowCorsFrom` setting on your Mattermost server may need to be adjusted accordingly to ensure CORS does not block requests.
 
-Additionally, this override configuration is particularly useful if your Mattermost public Site URL uses HTTPS, because pointing the offloader directly to an internal HTTP endpoint bypasses the need to deal with client-side certificates.
+This override configuration lets the recorder and transcriber jobs connect to mattermost server using HTTP instead of HTTPS, which should only be used in a private network.
 ```
 
 Example configuration:
@@ -370,571 +370,126 @@ tail -f /opt/calls-offloader/calls-offloader.log
 
 Monitor calls-offloader performance and resource usage to ensure optimal operation. See [Calls Metrics and Monitoring](calls-metrics-monitoring.md) for details on setting up metrics and observability.
 
-## Air-Gapped Deployments
+# Air-Gapped Installation of `calls-offloader`
 
-When deploying calls-offloader in air-gapped environments, you need to set up a local Docker registry since the service creates Docker containers that normally pull images from Docker Hub.
+This guide covers deploying `calls-offloader` in an environment without internet access. The process uses scripts from the [calls-install-scripts](https://github.com/bgardner8008/calls-install-scripts) repository and follows a two-phase workflow: preparing a transfer bundle on an internet-connected machine, then deploying it on the isolated target machine.
 
-### Overview
+## Overview
 
-The calls-offloader service creates Docker containers to handle:
-- **Call Recording**: Creates containers to record audio/video from calls
-- **Call Transcription / Live Captioning**: Creates containers to transcribe recorded calls and produce live captions using speech-to-text
+Because `calls-offloader` relies on Docker images for the recorder and transcriber jobs, an air-gapped deployment requires that those images be pre-pulled and packaged alongside the `calls-offloader` binary before being transferred to the target environment.
 
-These containers are typically pulled from the `mattermost` registry on Docker Hub, but in air-gapped networks, you need to:
-1. Set up a local Docker registry
-2. Pre-load the required Docker images
-3. Configure the calls-offloader to use the local registry
+The install scripts handle this in two stages:
 
-### Required Docker Images
+1. **Prepare** (internet-connected machine) — `setup-airgap-offloader.sh` pulls the required Docker images and downloads the `calls-offloader` binary, then packages everything into a transfer bundle and generates a ready-to-run deployment script.
+2. **Deploy** (air-gapped machine) — Transfer the bundle and run the generated `deploy-airgap-offloader.sh` script, which loads the Docker images into a local registry and installs the service.
 
-The following Docker images are needed for full calls functionality:
+## Prerequisites
 
-- `mattermost/calls-recorder:v0.8.5` (or version matching your plugin)
-- `mattermost/calls-transcriber:v0.6.3` (or version matching your plugin)
-- `registry:2` (for the local Docker registry)
+- An internet-connected Linux machine with Docker installed (for the preparation phase)
+- A target air-gapped Linux machine with:
+  - systemd
+  - Docker installed
+  - Root or sudo access
+- The [calls-install-scripts](https://github.com/bgardner8008/calls-install-scripts) repository cloned on the internet-connected machine
 
-```{warning}
-**Disk Space Requirements**: Ensure you have sufficient disk space before starting the setup process. The Docker images can be quite large:
-- **mattermost/calls-recorder image**: ~1.5-2GB
-- **mattermost/calls-transcriber image**: ~1.5-2GB  
-- **Registry container + data**: ~500MB
+## Phase 1: Prepare the Transfer Bundle
 
-**Total recommended free space**: At least 5GB to accommodate image downloads, local registry data, and archive creation.
-```
-
-#### Determining the Correct Image Versions
-
-**Important**: The exact versions of `mattermost/calls-recorder` and `mattermost/calls-transcriber` images must match what your installed Calls plugin expects. These versions are defined in the Calls plugin source code.
-
-To find the correct versions for your Calls plugin:
-
-1. **Determine your Calls plugin version**:
-   - In Mattermost, go to **System Console > Plugins > Plugin Management**
-   - Find the **Calls** plugin and note the version number (e.g., `v1.9.0`)
-
-2. **Look up the required image versions**:
-   - Visit the Calls plugin repository: https://github.com/mattermost/mattermost-plugin-calls
-   - Navigate to the tag or branch corresponding to your plugin version
-   - Open the `plugin.json` file 
-   - Find the `calls_recorder_version` and `calls_transcriber_version` entries (located near the bottom of the file).
-
-   Example from plugin.json:
-   ```json
-   "calls_recorder_version": "v0.8.8",
-   "calls_transcriber_version": "v0.7.1"
-   ```
-
-3. **Use these exact versions** in your air-gap setup instead of `latest` tags
-
-**Direct link format**: For plugin version `v1.9.0`, the plugin.json would be at:
-`https://github.com/mattermost/mattermost-plugin-calls/blob/v1.9.0/plugin.json`
-
-### Setup Process
-
-#### Phase 1: Preparation (Internet-Connected Environment)
-
-Run this phase on a machine with internet access to download and prepare the Docker images.
-
-**Automated Setup Script**
-
-For convenience, you can use the automated setup script:
+On the **internet-connected machine**, run `setup-airgap-offloader.sh` specifying the versions of each component to package:
 
 ```bash
-# Download the setup script
-curl -O https://docs.mattermost.com/scripts/air-gap-docker-registry-setup.sh
-chmod +x air-gap-docker-registry-setup.sh
-
-# Run the setup script with the required image versions
-sudo ./air-gap-docker-registry-setup.sh <RECORDER_VERSION> <TRANSCRIBER_VERSION>
+./setup-airgap-offloader.sh \
+  --offloader v0.9.5 \
+  --recorder v0.9.0 \
+  --transcriber v0.3.0 \
+  --arch amd64
 ```
 
-The script will automatically create the required archive files (`docker-registry-data.tar.gz` and `registry-image.tar.gz`) for transfer to your air-gapped environment.
+| Flag | Description | Default |
+|------|-------------|---------|
+| `--offloader VERSION` | `calls-offloader` binary version (e.g. `v0.9.5`) | required |
+| `--recorder VERSION` | `calls-recorder` Docker image version | required |
+| `--transcriber VERSION` | `calls-transcriber` Docker image version | required |
+| `--arch amd64\|arm64` | Target CPU architecture | `amd64` |
 
-**Manual Setup Steps**
+The script will:
 
-If you prefer to set up manually or need to customize the process:
+1. Pull the `calls-recorder` and `calls-transcriber` Docker images from Docker Hub
+2. Download the `calls-offloader` binary from GitHub releases
+3. Save the Docker images as `.tar` archives
+4. Generate a `deploy-airgap-offloader.sh` deployment script configured for the selected versions
+5. Produce a transfer bundle containing all of the above
 
-1. **Set up a local Docker registry**:
-   ```bash
-   # Create registry data directory
-   sudo mkdir -p /opt/docker-registry/data
-   
-   # Start a local Docker registry
-   docker run -d \
-     --name local-registry \
-     --restart=always \
-     -p 5000:5000 \
-     -v /opt/docker-registry/data:/var/lib/registry \
-     registry:2
-   ```
+## Phase 2: Transfer to the Air-Gapped Machine
 
-2. **Download and push required images**:
-   ```bash
-   # Pull required images from Docker Hub
-   docker pull mattermost/calls-recorder:v0.8.5
-   docker pull mattermost/calls-transcriber:v0.6.3
-   
-   # Tag images for local registry
-   docker tag mattermost/calls-recorder:v0.8.5 localhost:5000/mattermost/calls-recorder:v0.8.5
-   docker tag mattermost/calls-transcriber:v0.6.3 localhost:5000/mattermost/calls-transcriber:v0.6.3
-   
-   # Push images to local registry
-   docker push localhost:5000/mattermost/calls-recorder:v0.8.5
-   docker push localhost:5000/mattermost/calls-transcriber:v0.6.3
-   ```
-
-3. **Export the registry data**:
-   ```bash
-   # Create an archive of the registry data
-   sudo tar -czf docker-registry-data.tar.gz -C /opt/docker-registry/data .
-   
-   # Also backup the registry container image
-   docker save registry:2 | gzip > registry-image.tar.gz
-   ```
-
-#### Phase 2: Air-Gap Deployment
-
-Transfer the following files to your air-gapped network:
-- `docker-registry-data.tar.gz` (contains the registry data with pre-loaded images)
-- `registry-image.tar.gz` (contains the Docker registry container image)
-- `deploy-airgap-calls.sh` (deployment script created by the setup script)
-
-**Complete Air-Gap Deployment Steps:**
-
-1. **Load the registry container image**:
-   ```bash
-   # Extract and load the registry container from the gzipped archive
-   gunzip registry-image.tar.gz
-   docker load -i registry-image.tar
-   ```
-
-2. **Set up the registry data directory**:
-   ```bash
-   # Create the registry data directory
-   sudo mkdir -p /opt/docker-registry/data
-   
-   # Extract the pre-loaded registry data
-   sudo tar -xzf docker-registry-data.tar.gz -C /opt/docker-registry/data
-   ```
-
-3. **Start the local registry with pre-loaded data**:
-   ```bash
-   # Start the registry container with the extracted data
-   docker run -d \
-     --name local-registry \
-     --restart=always \
-     -p 5000:5000 \
-     -v /opt/docker-registry/data:/var/lib/registry \
-     registry:2
-   ```
-
-4. **Configure Docker daemon for insecure registry access**:
-   ```bash
-   # Create or update Docker daemon configuration
-   sudo mkdir -p /etc/docker
-   
-   # Note: If you already have an existing `/etc/docker/daemon.json` configuration,
-   # merge the `insecure-registries` key into it manually rather than overwriting.
-   echo '{"insecure-registries": ["localhost:5000"]}' | sudo tee /etc/docker/daemon.json
-   sudo systemctl restart docker
-   ```
-
-5. **Configure Mattermost server environment variable**:
-   ```bash
-   # Add the registry configuration to Mattermost environment
-   echo 'MM_CALLS_JOB_SERVICE_IMAGE_REGISTRY="localhost:5000/mattermost"' | sudo tee -a /opt/mattermost/config/mattermost.environment
-   
-   # Restart Mattermost to apply the environment variable
-   sudo systemctl restart mattermost
-   ```
-
-6. **Run the air-gap deployment script** (if using the automated setup):
-   ```bash
-   # Make the deployment script executable and run it
-   chmod +x deploy-airgap-calls.sh
-   sudo ./deploy-airgap-calls.sh
-   ```
-
-   Or configure calls-offloader manually (see Manual Configuration section below).
-
-### Manual Configuration
-
-For reference, here are the individual configuration steps:
-
-#### 1. Docker Daemon Configuration
-
-Create or update `/etc/docker/daemon.json` (ensure you merge this into your existing configuration if the file already exists):
-```json
-{
-    "insecure-registries": ["localhost:5000"]
-}
-```
-
-Restart Docker:
-```bash
-sudo systemctl restart docker
-```
-
-#### 2. Calls-Offloader Configuration
-
-Update `/opt/calls-offloader/config.toml`:
-
-```toml
-[jobs]
-# Change this line:
-image_registry = "mattermost"
-
-# To this:
-image_registry = "localhost:5000/mattermost"
-```
-
-Restart the calls-offloader service:
-```bash
-sudo systemctl restart calls-offloader
-```
-
-### Verification
-
-#### Test Registry Access
-```bash
-# List available repositories
-curl http://localhost:5000/v2/_catalog
-
-# Test pulling an image
-# Replace <VERSION> with the specific tag, e.g., v0.8.5
-docker pull localhost:5000/mattermost/calls-recorder:<VERSION>
-```
-
-#### Test Calls Functionality
-
-1. **Check calls-offloader logs**:
-   ```bash
-   sudo journalctl -u calls-offloader -f
-   ```
-
-2. **Verify calls-offloader API**:
-   ```bash
-   curl http://localhost:4545/version
-   ```
-
-3. **Test recording job creation** (requires proper Mattermost integration):
-   - Start a call in Mattermost
-   - Enable recording
-   - Check that Docker containers are created for recording jobs
-
-### Troubleshooting Air-Gap Deployments
-
-#### Common Issues
-
-1. **Registry not accessible**:
-   - Check that the registry container is running: `docker ps | grep registry`
-   - Verify Docker daemon configuration includes insecure registry
-   - Check firewall settings on port 5000
-
-2. **Image pull failures**:
-   - Verify images are in the registry: `curl http://localhost:5000/v2/_catalog`
-   - Check Docker daemon logs: `sudo journalctl -u docker`
-
-3. **calls-offloader fails to create jobs**:
-   - Check calls-offloader logs: `sudo journalctl -u calls-offloader`
-   - Verify the `image_registry` configuration in config.toml
-   - Ensure the calls-offloader service can reach the registry
-
-4. **"invalid Runner value: failed to validate runner" error**:
-   This error occurs when calls-offloader cannot validate Docker images from the local registry.
-   
-   **Common causes and solutions:**
-   - **Image not found**: Verify the exact image names and tags in your local registry:
-     ```bash
-     curl http://localhost:5000/v2/_catalog
-     curl http://localhost:5000/v2/mattermost/calls-recorder/tags/list
-     curl http://localhost:5000/v2/mattermost/calls-transcriber/tags/list
-     ```
-   
-   - **Registry configuration mismatch**: Ensure the `image_registry` setting in config.toml matches your registry:
-     ```bash
-     grep image_registry /opt/calls-offloader/config.toml
-     # Should show: image_registry = "localhost:5000/mattermost"
-     ```
-   
-   - **Docker daemon can't reach registry**: Test that Docker can pull from the local registry (replace `<VERSION>` with the specific tags):
-     ```bash
-     docker pull localhost:5000/mattermost/calls-recorder:<VERSION>
-     docker pull localhost:5000/mattermost/calls-transcriber:<VERSION>
-     ```
-   
-   - **Image tag mismatch**: The calls-offloader will be looking for specific image tags. Check what the plugin expects vs what's in your registry:
-     ```bash
-     # Check what tags are available
-     curl http://localhost:5000/v2/mattermost/calls-recorder/tags/list
-     # Compare with what your plugin.json specifies
-     ```
-   
-   **Solution steps:**
-   1. Restart calls-offloader after confirming registry configuration: `sudo systemctl restart calls-offloader`
-   2. If the issue persists, check the exact image names and versions expected by your Calls plugin version
-   3. Ensure both versioned tags (e.g., `v0.8.5`) and `latest` tags are present in your local registry
-
-#### Log Locations
-
-- Setup script logs: `/tmp/air-gap-registry-setup.log`
-- calls-offloader logs: `/opt/calls-offloader/calls-offloader.log`
-- Docker daemon logs: `sudo journalctl -u docker`
-- Registry container logs: `docker logs local-registry`
-
-#### Advanced Configuration
-
-**Using a Different Registry Host**
-
-If you want to run the registry on a different host, replace `localhost:5000` with your registry host in all commands:
+Copy the generated bundle to the target machine using whatever transfer mechanism is available in your environment (USB drive, secure file transfer, etc.):
 
 ```bash
-# Example: using a dedicated registry server
-REGISTRY_HOST="registry.internal.domain:5000"
-
-# Update Docker daemon configuration
-# Note: If you already have an existing `/etc/docker/daemon.json` configuration,
-# merge the `insecure-registries` key into it manually rather than overwriting.
-echo "{\"insecure-registries\": [\"$REGISTRY_HOST\"]}" | sudo tee /etc/docker/daemon.json
-
-# Update calls-offloader configuration
-sed -i "s|localhost:5000|$REGISTRY_HOST|g" /opt/calls-offloader/config.toml
+scp calls-offloader-airgap-bundle.tar.gz user@airgap-host:/tmp/
 ```
 
-**Custom Image Versions**
-
-To use specific versions of the calls images, update the version tags in the docker commands:
+On the air-gapped machine, extract the bundle:
 
 ```bash
-# Example: using specific versions
-RECORDER_VERSION="v0.8.5"
-TRANSCRIBER_VERSION="v0.6.3"
-
-docker pull mattermost/calls-recorder:$RECORDER_VERSION
-docker pull mattermost/calls-transcriber:$TRANSCRIBER_VERSION
+tar -xzf calls-offloader-airgap-bundle.tar.gz
+cd calls-offloader-airgap-bundle/
 ```
 
-### Day 2 Operations: Upgrading Images in Air-Gap Environments
+## Phase 3: Deploy on the Air-Gapped Machine
 
-When you upgrade your Mattermost Calls plugin to a newer version, you'll need to update the Docker images in your air-gapped registry to match the new plugin requirements.
+Run the generated deployment script with root or sudo privileges:
 
-#### Upgrade Process Overview
+```bash
+sudo ./deploy-airgap-offloader.sh
+```
 
-**When to upgrade**: After upgrading the Calls plugin in Mattermost, you must update the Docker images to match the versions expected by the new plugin version.
+This script will:
 
-**Two approaches available**:
+1. Configure the local Docker daemon to use a local image registry
+2. Load the packaged Docker images into that registry
+3. Install the `calls-offloader` binary to `/usr/local/bin/`
+4. Create the `mattermost` system user and add it to the `docker` group
+5. Generate and enable a systemd service unit
+6. Start the service and verify it is running
 
-1. **Complete Rebuild Method**: Re-run the entire air-gap setup process with new image versions
-2. **Incremental Update Method**: Transfer only the new images to minimize data transfer
+Once complete, verify the service is up:
 
-#### Method 1: Complete Rebuild (Recommended for Major Updates)
+```bash
+curl http://localhost:4545/version
+```
 
-This approach rebuilds the entire registry dataset with new image versions:
+## Connecting to Mattermost
 
-1. **On internet-connected machine**, run the air-gap setup script with new versions:
-   ```bash
-   # Find new versions from your updated plugin.json
-   ./air-gap-docker-registry-setup.sh v0.8.5 v0.6.3
-   ```
+Configure the Mattermost Calls plugin to use the offloader service via **System Console > Plugins > Calls > Job service URL**, setting it to `http://<offloader-host>:4545`.
 
-2. **Transfer new archives** to air-gapped environment:
-   - `docker-registry-data.tar.gz` (contains all images including new versions)
-   - `deploy-airgap-calls.sh` (updated deployment script)
+> [!NOTE]
+> The first time Mattermost connects to the offloader it will self-register and store its authentication key in the database, provided `API_SECURITY_ALLOWSELFREGISTRATION=true` is set (the default in the deployment script).
 
-3. **In air-gapped environment**, replace the registry data:
-   ```bash
-   # Stop the existing registry
-   docker stop local-registry
-   docker rm local-registry
-   
-   # Backup existing data (optional)
-   sudo mv /opt/docker-registry/data /opt/docker-registry/data.backup
-   
-   # Extract new registry data
-   sudo mkdir -p /opt/docker-registry/data
-   sudo tar -xzf docker-registry-data.tar.gz -C /opt/docker-registry/data
-   
-   # Restart registry with new data
-   docker run -d \
-     --name local-registry \
-     --restart=always \
-     -p 5000:5000 \
-     -v /opt/docker-registry/data:/var/lib/registry \
-     registry:2
-   ```
+## Private Network Considerations
 
-#### Method 2: Incremental Update (Efficient for Minor Updates)
+In air-gapped environments the recorder and transcriber containers typically need to reach the Mattermost server via an internal URL. Set the following environment variables on the **Mattermost server** to override the site URL used by spawned jobs:
 
-This approach transfers only the new image versions without rebuilding the entire registry:
+```
+MM_CALLS_RECORDER_SITE_URL=http://internal-mattermost-server:8065
+MM_CALLS_TRANSCRIBER_SITE_URL=http://internal-mattermost-server:8065
+```
 
-**Phase 1: Preparation (Internet-Connected Environment)**
+You may also need to add the internal URL to [`ServiceSettings.AllowCorsFrom`](https://docs.mattermost.com/configure/integrations-configuration-settings.html#enable-cross-origin-requests-from) in the Mattermost server configuration.
 
-1. **Download new images**:
-   ```bash
-   # Determine new versions from updated plugin.json
-   NEW_RECORDER_VERSION="v0.8.5"
-   NEW_TRANSCRIBER_VERSION="v0.6.3"
-   
-   # Pull new images
-   docker pull mattermost/calls-recorder:$NEW_RECORDER_VERSION
-   docker pull mattermost/calls-transcriber:$NEW_TRANSCRIBER_VERSION
-   ```
+> [!NOTE]
+> In particularly restrictive environments (e.g., VMs with strict network isolation), set `DOCKER_NETWORK=host` in the `calls-offloader` service environment so that job containers can reach the Mattermost server via its local address.
 
-2. **Create individual image archives**:
-   ```bash
-   # Save each image as a separate tar file
-   docker save mattermost/calls-recorder:$NEW_RECORDER_VERSION -o calls-recorder-$NEW_RECORDER_VERSION.tar
-   docker save mattermost/calls-transcriber:$NEW_TRANSCRIBER_VERSION -o calls-transcriber-$NEW_TRANSCRIBER_VERSION.tar
-   
-   # Compress the files for transfer
-   gzip calls-recorder-$NEW_RECORDER_VERSION.tar
-   gzip calls-transcriber-$NEW_TRANSCRIBER_VERSION.tar
-   ```
+## Custom Docker Registry
 
-3. **Create update script**:
-   ```bash
-   cat > update-air-gap-images.sh << 'EOF'
-   #!/bin/bash
-   
-   # Air-Gap Image Update Script
-   set -e
-   
-   NEW_RECORDER_VERSION="v0.8.5"
-   NEW_TRANSCRIBER_VERSION="v0.6.3"
-   REGISTRY_HOST="${REGISTRY_HOST:-localhost}"
-   REGISTRY_PORT="${REGISTRY_PORT:-5000}"
-   
-   echo "Updating air-gap registry with new image versions..."
-   echo "Recorder: $NEW_RECORDER_VERSION"
-   echo "Transcriber: $NEW_TRANSCRIBER_VERSION"
-   
-   # Load new images into Docker
-   echo "Loading new images..."
-   gunzip calls-recorder-$NEW_RECORDER_VERSION.tar.gz
-   gunzip calls-transcriber-$NEW_TRANSCRIBER_VERSION.tar.gz
-   
-   docker load -i calls-recorder-$NEW_RECORDER_VERSION.tar
-   docker load -i calls-transcriber-$NEW_TRANSCRIBER_VERSION.tar
-   
-   # Tag images for local registry
-   echo "Tagging images for local registry..."
-   docker tag mattermost/calls-recorder:$NEW_RECORDER_VERSION $REGISTRY_HOST:$REGISTRY_PORT/mattermost/calls-recorder:$NEW_RECORDER_VERSION
-   docker tag mattermost/calls-transcriber:$NEW_TRANSCRIBER_VERSION $REGISTRY_HOST:$REGISTRY_PORT/mattermost/calls-transcriber:$NEW_TRANSCRIBER_VERSION
-   
-   # Also update 'latest' tags
-   docker tag mattermost/calls-recorder:$NEW_RECORDER_VERSION $REGISTRY_HOST:$REGISTRY_PORT/mattermost/calls-recorder:latest
-   docker tag mattermost/calls-transcriber:$NEW_TRANSCRIBER_VERSION $REGISTRY_HOST:$REGISTRY_PORT/mattermost/calls-transcriber:latest
-   
-   # Push to local registry
-   echo "Pushing images to local registry..."
-   docker push $REGISTRY_HOST:$REGISTRY_PORT/mattermost/calls-recorder:$NEW_RECORDER_VERSION
-   docker push $REGISTRY_HOST:$REGISTRY_PORT/mattermost/calls-transcriber:$NEW_TRANSCRIBER_VERSION
-   docker push $REGISTRY_HOST:$REGISTRY_PORT/mattermost/calls-recorder:latest
-   docker push $REGISTRY_HOST:$REGISTRY_PORT/mattermost/calls-transcriber:latest
-   
-   echo "Image update complete!"
-   echo ""
-   echo "Verification commands:"
-   echo "curl http://$REGISTRY_HOST:$REGISTRY_PORT/v2/mattermost/calls-recorder/tags/list"
-   echo "curl http://$REGISTRY_HOST:$REGISTRY_PORT/v2/mattermost/calls-transcriber/tags/list"
-   
-   # Clean up temporary files
-   rm calls-recorder-$NEW_RECORDER_VERSION.tar
-   rm calls-transcriber-$NEW_TRANSCRIBER_VERSION.tar
-   
-   echo ""
-   echo "Next steps:"
-   echo "1. Restart calls-offloader service: sudo systemctl restart calls-offloader"
-   echo "2. Test call recording functionality to verify the update"
-   EOF
-   
-   chmod +x update-air-gap-images.sh
-   ```
+If your air-gapped environment already has an internal Docker registry, you can point `install-offloader.sh` at it directly instead of using the local registry set up by the deployment script:
 
-**Phase 2: Air-Gap Update**
+```bash
+sudo ./install-offloader.sh \
+  --binary ./calls-offloader-linux-amd64 \
+  --image-registry registry.internal.example.com/mattermost \
+  --arch amd64
+```
 
-1. **Transfer files to air-gapped environment**:
-   - `calls-recorder-v0.8.5.tar.gz`
-   - `calls-transcriber-v0.6.3.tar.gz`
-   - `update-air-gap-images.sh`
-
-2. **Run the update script**:
-   ```bash
-   chmod +x update-air-gap-images.sh
-   sudo ./update-air-gap-images.sh
-   ```
-
-3. **Restart calls-offloader**:
-   ```bash
-   sudo systemctl restart calls-offloader
-   ```
-
-4. **Verify the update**:
-   ```bash
-   # Check available image tags
-   curl http://localhost:5000/v2/mattermost/calls-recorder/tags/list
-   curl http://localhost:5000/v2/mattermost/calls-transcriber/tags/list
-   
-   # Test calls-offloader functionality
-   curl http://localhost:4545/version
-   ```
-
-#### Advantages of Each Method
-
-**Complete Rebuild Method:**
-- ✅ Ensures clean state with no leftover data
-- ✅ Recommended for major version upgrades
-- ✅ Simpler process (reuse existing automation)
-- ❌ Larger data transfer requirements
-- ❌ More downtime during registry replacement
-
-**Incremental Update Method:**
-- ✅ Minimal data transfer (only new images)
-- ✅ Faster deployment process
-- ✅ Preserves existing registry data
-- ✅ Less downtime (registry stays running)
-- ❌ More complex process
-- ❌ Potential for version conflicts if not managed carefully
-
-#### Choosing the Right Method
-
-**Use Complete Rebuild when:**
-- Upgrading across major plugin versions (e.g., v1.8.x to v1.9.x)
-- Registry has accumulated significant old/unused images
-- You want to ensure a completely clean state
-- Data transfer size is not a primary concern
-
-**Use Incremental Update when:**
-- Applying minor version updates (e.g., v1.9.0 to v1.9.1)
-- Bandwidth or transfer time is limited
-- You need to minimize downtime
-- The registry is working correctly and just needs new image versions
-
-#### Post-Update Verification
-
-After either upgrade method, perform these verification steps:
-
-1. **Test recording functionality**:
-   - Start a call in Mattermost
-   - Enable call recording
-   - Verify recording starts without errors
-
-2. **Check job container creation**:
-   ```bash
-   # Monitor for new job containers during recording
-   docker ps --format "{{.ID}} {{.Image}}" | grep calls
-   ```
-
-3. **Monitor calls-offloader logs**:
-   ```bash
-   sudo journalctl -u calls-offloader -f
-   ```
-
-4. **Verify image versions**:
-   ```bash
-   # Check that the new image versions are being used
-   docker ps --format "{{.Image}}" | grep calls
-   ```
+The `--image-registry` flag sets the registry prefix used when the offloader pulls recorder and transcriber images for each job.
 
 ## Other Calls Documentation
 

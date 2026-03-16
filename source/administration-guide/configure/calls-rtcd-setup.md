@@ -363,7 +363,7 @@ Once RTCD is properly set up and validated, configure Mattermost to use it:
 
 1. Go to **System Console > Plugins > Calls**
 
-2. Set the **RTCD Service URL** to your RTCD service address (either a single server or DNS load-balanced hostname). Ensure you provide any generated credentials formulated in the URI (e.g., `http://clientID:authKey@rtcd.local`). For detailed capability/credential configuration, reference the [RTCD Service URL](https://docs.mattermost.com/configure/plugins-configuration-settings.html#rtcd-service-url) documentation.
+2. Set the **RTCD Service URL** to your RTCD service address (either a single server or DNS load-balanced hostname). Ensure you provide any generated credentials formulated in the URI (e.g., `http://clientID:authKey@rtcd.local`).
 
 3. Save the configuration
 
