@@ -16,6 +16,19 @@
 
 ### Upgrade Impact
 
+#### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+ - **Changes to all plans:**
+   - Under ``ServiceSettings`` in ``config.json``, added a setting ``MinimumDesktopAppVersion`` to enforce a minimum Desktop App version that shows a warning screen when a user is on an older version.
+ - **Changes to Professional and Enterprise plans:**
+   - Under ``SSOSettings`` in ``config.json``, added a setting ``UsePreferredUsername`` to add support for OpenID Connect (OIDC) ``preferred_username`` profile field as the mapped Mattermost username for GitLab, OpenID and EntraID/M365. This feature can be enabled in the **OpenID Connect** tab in the System Console [MM-63393](https://mattermost.atlassian.net/browse/MM-63393).
+ - **Changes to Enterprise plans:**
+   - Under ``ElasticsearchSettings`` in ``config.json``, added a new configuration setting ``EnableCJKAnalyzers`` to enable using CJK analysis plugins when installed.
+   - Under ``ElasticsearchSettings`` in ``config.json``, added a configuration setting ``EnableSearchPublicChannelsWithoutMembership`` to Elasticsearch [MM-67540](https://mattermost.atlassian.net/browse/MM-67540).
+   - Under ``PrivacySettings`` in ``config.json``, added ``UseAnonymousURLs`` to support creating teams and channels using anonymous URLs.
+ - Removed redundant ``EnableChannelScopeAccessControl`` configuration setting; channel-level ABAC is now controlled by main toggle and permissions only [MM-66625](https://mattermost.atlassian.net/browse/MM-66625).
+ - Removed unused configuration settings ``ExperimentalAuditSettings.FileMaxSizeMB``, ``FileMaxAgeDays``, ``FileMaxBackups``, ``FileCompress``, and ``FileMaxQueueSize``. These settings were never applied to the audit log file target. Use ``AdvancedLoggingJSON`` for fine-grained audit log configuration [MM-65587](https://mattermost.atlassian.net/browse/MM-65587).
+
 #### Compatibility
  - Updated minimum supported macOS version to 14+ and minimum Safari version to 26.2+.
 
@@ -35,30 +48,28 @@ If you upgrade from a release earlier than v11.5, please read the other [Importa
  - Added a new feature of creating teams and channels using anonymous URLs so the channel and team name are not revealed in the URL. Requires Enterprise Advanced license.
  - Added popouts for Recent Mentions, Saved Messages, and Search Results via the right-hand side [MM-65630](https://mattermost.atlassian.net/browse/MM-65630).
  - The emoji picker on web and Desktop now inserts unicode emoji characters into the message composer instead of shortcode text.
+ - Renamed Enterprise Advanced feature Content Flagging to Data Spillage.
+ - Added a contextual note in Security Settings that explains how Google SSO can synchronize usernames and emails, shown alongside the Sign-in Method details.
+ - Renamed ``SlackAttachment`` and ``SlackAttachmentField`` types to ``MessageAttachment`` and ``MessageAttachmentField``. Old names are maintained as deprecated aliases for backward compatibility with plugins [MM-67739](https://mattermost.atlassian.net/browse/MM-67739).
+ - Posts created by integrations using Slack-compatible attachments (webhooks, bots, plugins) are now fully searchable in Elasticsearch. Previously, only the attachment text field was indexed. Now title, pretext, fallback, and field content are also indexed. A bulk re-index is required after upgrade to apply this to existing posts [MM-45293](https://mattermost.atlassian.net/browse/MM-45293).
+ - Added timezone support and manual time entry for Interactive Dialog ``datetime`` fields [MM-65082](https://mattermost.atlassian.net/browse/MM-65082).
 
 #### Administration
  - Added "Guests in single channel" and "Guests in multiple channels" role filters and a "Channel count" column to the System Console Users report.
  - Added reporting and soft-limit tracking for single-channel guests. Single-channel guests are no longer counted toward the primary licensed seat count and are permitted free up to a 1:1 ratio with licensed seats. A new stat card, license row, and admin banner provide visibility into single-channel guest usage and overage warnings.
- - Renamed Enterprise Advanced feature Content Flagging to Data Spillage.
  - Introduced authentication token generation for Hosted Push Notification Service.
- - Added a contextual note in Security Settings that explains how Google SSO can synchronize usernames and emails, shown alongside the Sign-in Method details.
- - Added support for using CJK analysis plugins if installed for Elasticsearch (also Opensearch) to improve search results for Korean, Japanese and Chinese languages.
- - Renamed ``SlackAttachment`` and ``SlackAttachmentField`` types to ``MessageAttachment`` and ``MessageAttachmentField``. Old names are maintained as deprecated aliases for backward compatibility with plugins [MM-67739](https://mattermost.atlassian.net/browse/MM-67739).
- - Posts created by integrations using Slack-compatible attachments (webhooks, bots, plugins) are now fully searchable in Elasticsearch. Previously, only the attachment text field was indexed. Now title, pretext, fallback, and field content are also indexed. A bulk re-index is required after upgrade to apply this to existing posts [MM-45293](https://mattermost.atlassian.net/browse/MM-45293).
- - Updated shared channel API endpoints to use the new Shared Channel Manager role's permission. Users assigned the Shared Channel Manager role can now share and unshare channels and browse available connections without needing the Secure Connection Manager role [MM-67684](https://mattermost.atlassian.net/browse/MM-67684).
+ - Users assigned the Shared Channel Manager role can now share and unshare channels and browse available connections without needing the Secure Connection Manager role [MM-67684](https://mattermost.atlassian.net/browse/MM-67684).
  - Added two new built-in delegated administration roles: Shared Channel Manager and Secure Connection Manager. These roles allow System Admins to delegate Connected Workspaces management to specific users without granting full system administration access [MM-67647](https://mattermost.atlassian.net/browse/MM-67647).
  - System Admins are now allowed to view and update User **AuthData** and **Username** in the System Console [MM-64879](https://mattermost.atlassian.net/browse/MM-64879).
- - OpenID Connect (OIDC) ``preferred_username`` profile field is now supported as the mapped Mattermost username for GitLab, OpenID and EntraID/M365.
- - This feature can be enabled in the **OpenID Connect** tab in the System Console [MM-63393](https://mattermost.atlassian.net/browse/MM-63393).
+
+#### Performance
  - Added Prometheus metrics support for plugin webapp performance measurements, enabling monitoring and load testing of plugin client-side operations [MM-65979](https://mattermost.atlassian.net/browse/MM-65979).
- - Added authentication status tracking to logout audit log entries.
- - Implemented ``filewillbedownloaded`` and ``sendtoastmessage`` plugin API calls.
- - Added ``operationId`` annotations to ``content_flagging`` endpoints.
  - Data spillage reports are now cached in the Redux store to reduce unnecessary API calls and to improve performance [MM-67112](https://mattermost.atlassian.net/browse/MM-67112).
 
 #### Plugins
+ - Added support for using CJK analysis plugins if installed for Elasticsearch (also Opensearch) to improve search results for Korean, Japanese and Chinese languages.
  - Added the ability for plugins to programmatically open their right-hand side panel in a pop-out window.
- - Added timezone support and manual time entry for Interactive Dialog ``datetime`` fields. Plugins can now display times in specific timezones and allow text input for exact times [MM-65082](https://mattermost.atlassian.net/browse/MM-65082).
+ - Plugins can now display times in specific timezones and allow text input for exact times [MM-65082](https://mattermost.atlassian.net/browse/MM-65082).
 
 ### Bug Fixes
  - Fixed an issue where OAuth and SAML login failed when a ``redirect_to`` URL parameter was provided [MM-65588](https://mattermost.atlassian.net/browse/MM-65588).
@@ -89,8 +100,13 @@ If you upgrade from a release earlier than v11.5, please read the other [Importa
  - Fixed post rendering errors when certain invalid links were part of message attachments [MM-67387](https://mattermost.atlassian.net/browse/MM-67387).
  - Added security validation to prevent plugin uploads when the plugin directory conflicted with the import directory, and vice versa.
 
-### Open Source Components
- - Added ``TBD`` in https://github.com/mattermost/mattermost.
+### API Changes
+ - Updated shared channel API endpoints to use the new Shared Channel Manager role's permission. Users assigned the Shared Channel Manager role can now share and unshare channels and browse available connections without needing the Secure Connection Manager role [MM-67684](https://mattermost.atlassian.net/browse/MM-67684).
+ - Added ``operationId`` annotations to ``content_flagging`` endpoints.
+ - Implemented ``filewillbedownloaded`` and ``sendtoastmessage`` plugin API calls.
+
+### Audit Log Event Changes
+ - Added authentication status tracking to logout audit log entries.
 
 ### Contributors
  - TBD
