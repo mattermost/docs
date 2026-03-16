@@ -17,10 +17,17 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - iPhone 8+ devices and later with iOS 16.0+ are [required](https://support.apple.com/en-il/guide/iphone/iphe3fa5df43/16.0/ios/16.0).
 
 ### Improvements
- - [Add improvements here.]
+ - Added support for AI rewrites when Agents is enabled on the server.
+ - Added support for ``fillewillbedownloaded`` and ``sendtoastmessage`` plugin APIs.
+ - Permalink previews now get properly autotranslated.
 
 ### Bug Fixes
- - [Add bug fixes here.]
+ - Fixed an issue where option descriptions were not readable due to spacing.
+ - Fixed an issue where profile popovers did not show message/mention actions in Direct Message contexts when viewing someone other than the current Direct Message teammate (e.g., from an at-mention).
+ - Fixed an issue where updates in the roles would not be reflected in the mobile app.
+ - Fixed an issue where the connection banner did not disappear if the user had no connection to the internet.
+ - Fixed an error where changes in the channel level roles permissions were not visible in the mobile app.
+ - Fixed an issue where collapsing the **Sources** citations panel in Agent responses could briefly overlap the content below it.
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
