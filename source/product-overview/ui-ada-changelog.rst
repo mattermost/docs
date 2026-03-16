@@ -19,7 +19,7 @@ Changelog
    * - v11.6
      - (UI) Added a new feature of creating teams and channels using anonymous URLs so the channel and team name are not revealed in the URL. Requires Enterprise Advanced license.
    * - v11.6
-     - (UI) Added popouts for Recent Mentions, Saved Messages, and Search Results via the right-hand side [MM-65630](https://mattermost.atlassian.net/browse/MM-65630).
+     - (UI) Added popouts for Recent Mentions, Saved Messages, and Search Results via the right-hand side `MM-65630 <https://mattermost.atlassian.net/browse/MM-65630>`__.
    * - v11.6
      - (UI) The emoji picker on web and Desktop now inserts unicode emoji characters into the message composer instead of shortcode text.
    * - v11.6
