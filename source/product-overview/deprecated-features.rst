@@ -11,11 +11,6 @@ Upcoming deprecations
 Removed features by Mattermost version
 ----------------------------------------
 
-Mattermost Server v11.6 (April 2026)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-- No deprecated features at this time.
-
 Mattermost Desktop App v6.1 (March 2026)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
