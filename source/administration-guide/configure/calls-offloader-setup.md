@@ -370,11 +370,11 @@ tail -f /opt/calls-offloader/calls-offloader.log
 
 Monitor calls-offloader performance and resource usage to ensure optimal operation. See [Calls Metrics and Monitoring](calls-metrics-monitoring.md) for details on setting up metrics and observability.
 
-# Air-Gapped Installation of `calls-offloader`
+## Air-Gapped Installation of `calls-offloader`
 
 This guide covers deploying `calls-offloader` in an environment without internet access. The process uses scripts from the [calls-install-scripts](https://github.com/bgardner8008/calls-install-scripts) repository and follows a two-phase workflow: preparing a transfer bundle on an internet-connected machine, then deploying it on the isolated target machine.
 
-## Overview
+### Overview
 
 Because `calls-offloader` relies on Docker images for the recorder and transcriber jobs, an air-gapped deployment requires that those images be pre-pulled and packaged alongside the `calls-offloader` binary before being transferred to the target environment.
 
@@ -383,7 +383,7 @@ The install scripts handle this in two stages:
 1. **Prepare** (internet-connected machine) — `setup-airgap-offloader.sh` pulls the required Docker images and downloads the `calls-offloader` binary, then packages everything into a transfer bundle and generates a ready-to-run deployment script.
 2. **Deploy** (air-gapped machine) — Transfer the bundle and run the generated `deploy-airgap-offloader.sh` script, which loads the Docker images into a local registry and installs the service.
 
-## Prerequisites
+### Prerequisites
 
 - An internet-connected Linux machine with Docker installed (for the preparation phase)
 - A target air-gapped Linux machine with:
@@ -392,7 +392,7 @@ The install scripts handle this in two stages:
   - Root or sudo access
 - The [calls-install-scripts](https://github.com/bgardner8008/calls-install-scripts) repository cloned on the internet-connected machine
 
-## Phase 1: Prepare the Transfer Bundle
+### Phase 1: Prepare the Transfer Bundle
 
 On the **internet-connected machine**, run `setup-airgap-offloader.sh` specifying the versions of each component to package:
 
@@ -419,7 +419,7 @@ The script will:
 4. Generate a `deploy-airgap-offloader.sh` deployment script configured for the selected versions
 5. Produce a transfer bundle containing all of the above
 
-## Phase 2: Transfer to the Air-Gapped Machine
+### Phase 2: Transfer to the Air-Gapped Machine
 
 Copy the generated bundle to the target machine using whatever transfer mechanism is available in your environment (USB drive, secure file transfer, etc.):
 
@@ -434,7 +434,7 @@ tar -xzf calls-offloader-airgap-bundle.tar.gz
 cd calls-offloader-airgap-bundle/
 ```
 
-## Phase 3: Deploy on the Air-Gapped Machine
+### Phase 3: Deploy on the Air-Gapped Machine
 
 Run the generated deployment script with root or sudo privileges:
 
@@ -457,14 +457,14 @@ Once complete, verify the service is up:
 curl http://localhost:4545/version
 ```
 
-## Connecting to Mattermost
+### Connecting to Mattermost
 
 Configure the Mattermost Calls plugin to use the offloader service via **System Console > Plugins > Calls > Job service URL**, setting it to `http://<offloader-host>:4545`.
 
 > [!NOTE]
 > The first time Mattermost connects to the offloader it will self-register and store its authentication key in the database, provided `API_SECURITY_ALLOWSELFREGISTRATION=true` is set (the default in the deployment script).
 
-## Private Network Considerations
+### Private Network Considerations
 
 In air-gapped environments the recorder and transcriber containers typically need to reach the Mattermost server via an internal URL. Set the following environment variables on the **Mattermost server** to override the site URL used by spawned jobs:
 
@@ -478,7 +478,7 @@ You may also need to add the internal URL to [`ServiceSettings.AllowCorsFrom`](h
 > [!NOTE]
 > In particularly restrictive environments (e.g., VMs with strict network isolation), set `DOCKER_NETWORK=host` in the `calls-offloader` service environment so that job containers can reach the Mattermost server via its local address.
 
-## Custom Docker Registry
+### Custom Docker Registry
 
 If your air-gapped environment already has an internal Docker registry, you can point `install-offloader.sh` at it directly instead of using the local registry set up by the deployment script:
 
