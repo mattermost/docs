@@ -77,7 +77,7 @@ To summarize unread Mattermost channels:
 2. Select **Ask AI**.
 3. Select **Summarize new messages**. 
 
-The channel summary is generated in the Agents pane, and only you can view the summary.
+The channel summary is generated in the Agents pane, and only you can view the summary. Channel summaries include citation links that reference specific messages from the channel. Select a citation link to open a popover preview of the referenced message without navigating away from the channel.
 
 ## Search with AI
 

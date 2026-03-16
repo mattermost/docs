@@ -65,6 +65,6 @@ Want to have a group conversation with more than 7 people? :doc:`Create a privat
 Archived channels
 -----------------
 
-Archived channels are deactivated public, private, direct message, or group message channels that are no longer used. Archived channels are identified with a **File Box** |file-box| icon. 
+Archived channels are deactivated public, private, direct message, or group message channels that are no longer used. Archived channels are identified with a **File Box** |file-box| icon. From Mattermost v11.5, archived private channels are identified with a distinct **Archive Lock** icon to visually differentiate them from archived public channels.
 
 :ref:`Archiving a channel <end-user-guide/collaborate/archive-unarchive-channels:archive a channel>` marks it read-only to prevent new messages from being sent and preserve channel history. You can continue to access archived channels, unless your system admin has :ref:`disabled <administration-guide/configure/site-configuration-settings:allow users to view archived channels>` your ability to do so.
