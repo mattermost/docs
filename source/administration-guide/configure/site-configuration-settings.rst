@@ -8,6 +8,7 @@ Review and manage the following site configuration options in the System Console
 
 - `Customization <#customization>`__
 - `Localization <#localization>`__
+- `Auto-translation <#autotranslation>`__
 - `Users and Teams <#users-and-teams>`__
 - `Notifications <#notifications>`__
 - `System-wide notifications <#system-wide-notifications>`__
@@ -590,6 +591,193 @@ Enable work in progress languages in Mattermost to review translations and ident
   - Work in progress languages may be incomplete. Strings missing translations display in US English.
   - Currently, only web and desktop app product strings are impacted by this configuration setting. Server and mobile product strings aren't impacted by this setting.
   - See the :ref:`language <end-user-guide/preferences/manage-your-display-options:language>` documentation for details on selecting a language preference in Mattermost.
+
+----
+
+.. _autotranslation:
+
+Auto-translation
+----------------
+
+.. include:: ../../_static/badges/ent-adv.rst
+  :start-after: :nosearch:
+
+Access the following configuration settings in the System Console by going to **Site Configuration > Localization**. These settings configure automatic translation of channel messages. See the :doc:`Auto-translation setup guide </administration-guide/manage/admin/autotranslation>` for deployment details.
+
+.. config:setting:: autotranslation-enable
+  :displayname: Enable autotranslation (Autotranslation)
+  :systemconsole: Site Configuration > Localization
+  :configjson: .AutoTranslationSettings.Enable
+  :environment: MM_AUTOTRANSLATIONSETTINGS_ENABLE
+  :description: Enable or disable automatic translation of channel messages. Default is **false**.
+
+  - **true**: Autotranslation is available and can be enabled per channel.
+  - **false**: **(Default)** Autotranslation is disabled.
+
+Enable auto-translation
+~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+| Enable or disable automatic translation of channel messages.  | - System Config path: **Site Configuration > Localization**                        |
+|                                                               | - ``config.json`` setting: ``AutoTranslationSettings`` > ``Enable`` > ``false``    |
+| - **true**: Autotranslation is available and can be enabled   | - Environment variable: ``MM_AUTOTRANSLATIONSETTINGS_ENABLE``                      |
+|   per channel.                                                |                                                                                    |
+| - **false**: **(Default)** Autotranslation is disabled.       |                                                                                    |
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+
+.. config:setting:: autotranslation-provider
+  :displayname: Translation provider (Autotranslation)
+  :systemconsole: Site Configuration > Localization
+  :configjson: .AutoTranslationSettings.Provider
+  :environment: MM_AUTOTRANSLATIONSETTINGS_PROVIDER
+  :description: The translation provider to use for autotranslation. Options are ``libretranslate`` and ``agents``. Default is empty (no provider selected).
+
+Translation provider
+~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+| The translation provider to use for autotranslation.          | - System Config path: **Site Configuration > Localization**                        |
+|                                                               | - ``config.json`` setting: ``AutoTranslationSettings`` > ``Provider``              |
+| - ``libretranslate``: Use a self-hosted LibreTranslate        | - Environment variable: ``MM_AUTOTRANSLATIONSETTINGS_PROVIDER``                    |
+|   server for translations.                                    |                                                                                    |
+| - ``agents``: Use the Mattermost Agents plugin with an        |                                                                                    |
+|   LLM backend for translations.                               |                                                                                    |
+|                                                               |                                                                                    |
+| Default is ``""`` (no provider selected).                     |                                                                                    |
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+
+.. config:setting:: autotranslation-libretranslate-url
+  :displayname: LibreTranslate URL (Autotranslation)
+  :systemconsole: Site Configuration > Localization
+  :configjson: .AutoTranslationSettings.LibreTranslate.URL
+  :environment: MM_AUTOTRANSLATIONSETTINGS_LIBRETRANSLATE_URL
+  :description: The URL of the LibreTranslate server used for translations.
+
+LibreTranslate URL
+~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+| The URL of the LibreTranslate server used for translations.   | - System Config path: **Site Configuration > Localization**                        |
+| The Mattermost server must be able to reach this URL.         | - ``config.json`` setting: ``AutoTranslationSettings`` > ``LibreTranslate``        |
+|                                                               |   > ``URL``                                                                        |
+| String value.                                                 | - Environment variable: ``MM_AUTOTRANSLATIONSETTINGS_LIBRETRANSLATE_URL``          |
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+
+.. config:setting:: autotranslation-libretranslate-apikey
+  :displayname: LibreTranslate API key (Autotranslation)
+  :systemconsole: Site Configuration > Localization
+  :configjson: .AutoTranslationSettings.LibreTranslate.APIKey
+  :environment: MM_AUTOTRANSLATIONSETTINGS_LIBRETRANSLATE_APIKEY
+  :description: The API key for authenticated access to the LibreTranslate server. Optional if the server doesn't require authentication.
+
+LibreTranslate API key
+~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+| The API key for authenticated access to the LibreTranslate    | - System Config path: **Site Configuration > Localization**                        |
+| server. Leave blank if the LibreTranslate server doesn't      | - ``config.json`` setting: ``AutoTranslationSettings`` > ``LibreTranslate``        |
+| require authentication.                                       |   > ``APIKey``                                                                     |
+|                                                               | - Environment variable: ``MM_AUTOTRANSLATIONSETTINGS_LIBRETRANSLATE_APIKEY``       |
+| String value.                                                 |                                                                                    |
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+
+.. config:setting:: autotranslation-agents-llmserviceid
+  :displayname: Agents LLM service ID (Autotranslation)
+  :systemconsole: Site Configuration > Localization
+  :configjson: .AutoTranslationSettings.Agents.LLMServiceID
+  :environment: MM_AUTOTRANSLATIONSETTINGS_AGENTS_LLMSERVICEID
+  :description: The service ID of the LLM configured in the Mattermost Agents plugin to use for translations.
+
+Agents LLM service ID
+~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+| The service ID of the LLM configured in the Mattermost        | - System Config path: **Site Configuration > Localization**                        |
+| Agents plugin to use for translations. Configure LLM          | - ``config.json`` setting: ``AutoTranslationSettings`` > ``Agents``                |
+| services in the Agents plugin settings.                       |   > ``LLMServiceID``                                                               |
+|                                                               | - Environment variable: ``MM_AUTOTRANSLATIONSETTINGS_AGENTS_LLMSERVICEID``         |
+| String value.                                                 |                                                                                    |
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+
+.. config:setting:: autotranslation-target-languages
+  :displayname: Languages allowed (Autotranslation)
+  :systemconsole: Site Configuration > Localization
+  :configjson: .AutoTranslationSettings.TargetLanguages
+  :environment: MM_AUTOTRANSLATIONSETTINGS_TARGETLANGUAGES
+  :description: The languages that all messages in autotranslation-enabled channels are translated into. Every message is translated into each language in this list. Default is **["en"]**.
+
+Languages allowed
+~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+| The languages that all messages in autotranslation-enabled    | - System Config path: **Site Configuration > Localization**                        |
+| channels are translated into. Every message is translated     | - ``config.json`` setting: ``AutoTranslationSettings`` > ``TargetLanguages``       |
+| into each language in this list, regardless of who is in      | - Environment variable: ``MM_AUTOTRANSLATIONSETTINGS_TARGETLANGUAGES``             |
+| the channel. Specify languages as an array of language codes. |                                                                                    |
+|                                                               |                                                                                    |
+| Default is ``["en"]``.                                        |                                                                                    |
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+
+.. config:setting:: autotranslation-timeout
+  :displayname: Translation timeout (Autotranslation)
+  :systemconsole: Site Configuration > Localization
+  :configjson: .AutoTranslationSettings.TimeoutMs
+  :environment: MM_AUTOTRANSLATIONSETTINGS_TIMEOUTMS
+  :description: The maximum time in milliseconds to wait for a translation to complete. Default is **5000**.
+
+Translation timeout
+~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+| The maximum time in milliseconds to wait for a translation    | - System Config path: **Site Configuration > Localization**                        |
+| to complete. If a translation exceeds this timeout, it is     | - ``config.json`` setting: ``AutoTranslationSettings`` > ``TimeoutMs`` > ``5000``  |
+| skipped.                                                      | - Environment variable: ``MM_AUTOTRANSLATIONSETTINGS_TIMEOUTMS``                   |
+|                                                               |                                                                                    |
+| Numerical value. Default is **5000** (5 seconds).             |                                                                                    |
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+
+.. config:setting:: autotranslation-restrict-dm-gm
+  :displayname: Restrict autotranslation in direct and group messages (Autotranslation)
+  :systemconsole: Site Configuration > Localization
+  :configjson: .AutoTranslationSettings.RestrictDMAndGM
+  :environment: MM_AUTOTRANSLATIONSETTINGS_RESTRICTDMANDGM
+  :description: Restrict autotranslation from being enabled in direct and group messages. Default is **false**.
+
+  - **true**: Autotranslation can't be enabled in direct or group messages.
+  - **false**: **(Default)** Autotranslation can be enabled in direct and group messages.
+
+Restrict autotranslation in direct and group messages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| Restrict autotranslation from being enabled in direct and     | - System Config path: **Site Configuration > Localization**                                 |
+| group messages.                                               | - ``config.json`` setting: ``AutoTranslationSettings`` > ``RestrictDMAndGM`` > ``false``    |
+|                                                               | - Environment variable: ``MM_AUTOTRANSLATIONSETTINGS_RESTRICTDMANDGM``                      |
+| - **true**: Autotranslation can't be enabled in direct or     |                                                                                             |
+|   group messages.                                             |                                                                                             |
+| - **false**: **(Default)** Autotranslation can be enabled     |                                                                                             |
+|   in direct and group messages.                               |                                                                                             |
++---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+
+.. config:setting:: autotranslation-workers
+  :displayname: Translation workers (Autotranslation)
+  :systemconsole: N/A
+  :configjson: .AutoTranslationSettings.Workers
+  :environment: MM_AUTOTRANSLATIONSETTINGS_WORKERS
+  :description: The number of concurrent translation workers per node. This setting is not available in the System Console and can only be set via ``mmctl``, ``config.json``, or environment variable. Default is **6**.
+
+Translation workers
+~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+| The number of concurrent translation workers per node.        | - ``config.json`` setting: ``AutoTranslationSettings`` > ``Workers`` > ``6``       |
+| Higher values increase translation throughput but use         | - Environment variable: ``MM_AUTOTRANSLATIONSETTINGS_WORKERS``                     |
+| more resources. This setting is not available in the System   |                                                                                    |
+| Console and can only be set via ``mmctl``, ``config.json``,   |                                                                                    |
+| or environment variable.                                      |                                                                                    |
+|                                                               |                                                                                    |
+| Numerical value. Default is **6**.                            |                                                                                    |
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
 
 ----
 
