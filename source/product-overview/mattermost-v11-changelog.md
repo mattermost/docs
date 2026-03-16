@@ -9,6 +9,24 @@
 ```{include} common-esr-support-upgrade.md
 ```
 
+(release-v11.6-feature-release)=
+## Release v11.6 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
+
+- **11.6.0, released 2026-04-16**
+  - Original 11.6.0 release.
+
+### Upgrade Impact
+
+```{Important}
+If you upgrade from a release earlier than v11.5, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html). In case of an upgrade failure, please check the [Downgrade Guide](https://docs.mattermost.com/administration-guide/upgrade/downgrading-mattermost-server.html) and the [Recovery Guide](https://docs.mattermost.com/deployment-guide/backup-disaster-recovery.html) for rollback steps and interim mitigation strategy.
+```
+
+### Open Source Components
+ - Added ``TBD`` in https://github.com/mattermost/mattermost.
+
+### Contributors
+ - TBD
+
 (release-v11.5-feature-release)=
 ## Release v11.5 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
