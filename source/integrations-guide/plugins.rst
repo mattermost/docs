@@ -29,4 +29,6 @@ Building a custom plugin for your self-hosted deployment is a **software develop
 
 Plugins can authenticate and interact with Mattermost through `bot accounts <https://developers.mattermost.com/integrate/reference/bot-accounts/>`_, utilizing the `RESTful API <https://developers.mattermost.com/api-documentation/>`_.
 
+From Mattermost v11.5, plugins can register a Channel Header Icon component that places an icon next to the **Files** button in the channel header. This pluggable location is designed for channel-level actions such as custom workflows, analysis, or summarization tools.
+
 Learn more about `building your own plugin <https://developers.mattermost.com/integrate/plugins/>`_.

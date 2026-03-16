@@ -53,7 +53,7 @@ Delete :ref:`public channels <end-user-guide/collaborate/channel-types:public ch
 
 .. note::
 
-  - When a Mattermost user is deactivated in the system, your :ref:`direct message channel <end-user-guide/collaborate/channel-types:direct message channels>` with that user are archived and marked as read-only. An **Archived** icon |file-box| displays next to archived channels.
+  - When a Mattermost user is deactivated in the system, your :ref:`direct message channel <end-user-guide/collaborate/channel-types:direct message channels>` with that user are archived and marked as read-only. An **Archived** icon |file-box| displays next to archived channels. From Mattermost v11.5, archived private channels display a distinct **Archive Lock** icon to differentiate them from other archived channels.
   - :ref:`Group message channels <end-user-guide/collaborate/channel-types:group message channels>` can't be archived, but they can be closed to hide them from the channel sidebar.
   - The default **Town Square** channel can't be archived.
   - System admins can archive channels without needing to be a channel member by using the System Console.
