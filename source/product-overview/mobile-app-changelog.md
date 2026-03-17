@@ -18,8 +18,8 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 
 ### Improvements
  - Added support for AI rewrites when Agents is enabled on the server.
- - Added support for ``fillewillbedownloaded`` and ``sendtoastmessage`` plugin APIs.
  - Permalink previews now get properly autotranslated.
+ - Added support for ``fillewillbedownloaded`` and ``sendtoastmessage`` plugin APIs.
 
 ### Bug Fixes
  - Fixed an issue where option descriptions were not readable due to spacing.
