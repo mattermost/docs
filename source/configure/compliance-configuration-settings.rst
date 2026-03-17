@@ -173,54 +173,72 @@ Default is 365 days. Possible values are any non-negative integer (≥ 0).
   :systemconsole: Compliance > Data Retention Policies
   :configjson: .DataRetentionSettings.EnableMessageDeletion
   :environment: MM_DATARETENTIONSETTINGS_ENABLEMESSAGEDELETION
-  :description: Enable or disable message deletion during data retention job execution. Default is false.
+
+  - **true**: Message deletion is enabled during data retention job execution.
+  - **false**: **(Default)** Messages are not deleted during data retention job execution.
 
 Enable message deletion
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Enable or disable message deletion during data retention job execution. When set to false, messages will not be deleted regardless of other retention settings.
+**True**: Message deletion is enabled during data retention job execution.
 
-Default is false. Possible values are true or false.
+**False**: Messages are not deleted during data retention job execution.
 
-+-----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableMessageDeletion": false`` with boolean input.       |
-+-----------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableMessageDeletion": false`` with options ``true`` and ``false``. |
++-------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  When ``EnableMessageDeletion`` is set to ``false``, messages will not be deleted regardless of other retention policy settings.
 
 .. config:setting:: enable-file-deletion
   :displayname: Enable file deletion (Data Retention)
   :systemconsole: Compliance > Data Retention Policies
   :configjson: .DataRetentionSettings.EnableFileDeletion
   :environment: MM_DATARETENTIONSETTINGS_ENABLEFILEDELETION
-  :description: Enable or disable file deletion during data retention job execution. Default is false.
+
+  - **true**: File deletion is enabled during data retention job execution.
+  - **false**: **(Default)** Files are not deleted during data retention job execution.
 
 Enable file deletion
 ~~~~~~~~~~~~~~~~~~~~
 
-Enable or disable file deletion during data retention job execution. When set to false, files will not be deleted regardless of other retention settings.
+**True**: File deletion is enabled during data retention job execution.
 
-Default is false. Possible values are true or false.
+**False**: Files are not deleted during data retention job execution.
 
-+--------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableFileDeletion": false`` with boolean input.       |
-+--------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableFileDeletion": false`` with options ``true`` and ``false``. |
++----------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  When ``EnableFileDeletion`` is set to ``false``, files will not be deleted regardless of other retention policy settings.
 
 .. config:setting:: enable-boards-deletion
   :displayname: Enable boards deletion (Data Retention)
   :systemconsole: Compliance > Data Retention Policies
   :configjson: .DataRetentionSettings.EnableBoardsDeletion
   :environment: MM_DATARETENTIONSETTINGS_ENABLEBOARDSDELETION
-  :description: Enable or disable boards deletion during data retention job execution. Default is false.
+
+  - **true**: Boards deletion is enabled during data retention job execution.
+  - **false**: **(Default)** Boards data is not deleted during data retention job execution.
 
 Enable boards deletion
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Enable or disable boards deletion during data retention job execution. When set to false, boards data will not be deleted regardless of other retention settings.
+**True**: Boards deletion is enabled during data retention job execution.
 
-Default is false. Possible values are true or false.
+**False**: Boards data is not deleted during data retention job execution.
 
-+----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableBoardsDeletion": false`` with boolean input.       |
-+----------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableBoardsDeletion": false`` with options ``true`` and ``false``. |
++------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  When ``EnableBoardsDeletion`` is set to ``false``, boards data will not be deleted regardless of other retention policy settings.
 
 .. config:setting:: batch-size-data-retention
   :displayname: Batch size (Data Retention)
