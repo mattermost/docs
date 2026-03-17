@@ -103,6 +103,8 @@ If you upgrade from a release earlier than v11.5, please read the other [Importa
  - Fixed an issue where remote cluster invite confirmations could accept a ``RefreshedToken`` that matched the original invite token, preventing proper token rotation.
  - Fixed an issue where membership changes from remote clusters could operate on a different channel than the one validated in the sync message.
  - Fixed a regression where the ``system_admin`` role on new installations or after certain updates was missing the ``manage_oauth`` permission, preventing access to OAuth application management API endpoints. This change restores the permission to the default ``system_admin`` role and includes a migration to backfill it on affected existing servers.
+ - Fixed an issue where popouts changing state did not update the title on Desktop App.
+ - Fixed an issue with angle brackets displaying as HTML entities in inline code blocks within dialog markdown text [MM-67506](https://mattermost.atlassian.net/browse/MM-67506).
 
 ### API Changes
  - Updated shared channel API endpoints to use the new Shared Channel Manager role's permission. Users assigned the Shared Channel Manager role can now share and unshare channels and browse available connections without needing the Secure Connection Manager role [MM-67684](https://mattermost.atlassian.net/browse/MM-67684).
