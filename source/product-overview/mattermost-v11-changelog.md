@@ -19,11 +19,11 @@
 #### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
  - **Changes to all plans:**
-   - Under ``ServiceSettings`` in ``config.json``, added a setting ``MinimumDesktopAppVersion`` to enforce a minimum Desktop App version that shows a warning screen when a user is on an older version.
+   - Under ``ServiceSettings`` in ``config.json``, added a configuration setting ``MinimumDesktopAppVersion`` to enforce a minimum Desktop App version that shows a warning screen when a user is on an older version.
  - **Changes to Professional and Enterprise plans:**
-   - Under ``SSOSettings`` in ``config.json``, added a setting ``UsePreferredUsername`` to add support for OpenID Connect (OIDC) ``preferred_username`` profile field as the mapped Mattermost username for GitLab, OpenID and EntraID/M365. This feature can be enabled in the **OpenID Connect** tab in the System Console [MM-63393](https://mattermost.atlassian.net/browse/MM-63393).
+   - Under ``SSOSettings`` in ``config.json``, added a a configuration setting ``UsePreferredUsername`` to add support for OpenID Connect (OIDC) ``preferred_username`` profile field as the mapped Mattermost username for GitLab, OpenID and EntraID/M365. This feature can be enabled in the **OpenID Connect** tab in the System Console [MM-63393](https://mattermost.atlassian.net/browse/MM-63393).
  - **Changes to Enterprise plans:**
-   - Under ``ElasticsearchSettings`` in ``config.json``, added a new configuration setting ``EnableCJKAnalyzers`` to enable using CJK analysis plugins when installed.
+   - Under ``ElasticsearchSettings`` in ``config.json``, added a configuration setting ``EnableCJKAnalyzers`` to enable using CJK analysis plugins when installed.
    - Under ``ElasticsearchSettings`` in ``config.json``, added a configuration setting ``EnableSearchPublicChannelsWithoutMembership`` to Elasticsearch [MM-67540](https://mattermost.atlassian.net/browse/MM-67540).
    - Under ``PrivacySettings`` in ``config.json``, added ``UseAnonymousURLs`` to support creating teams and channels using anonymous URLs.
  - Removed redundant ``EnableChannelScopeAccessControl`` configuration setting; channel-level ABAC is now controlled by main toggle and permissions only [MM-66625](https://mattermost.atlassian.net/browse/MM-66625).
@@ -77,7 +77,7 @@ If you upgrade from a release earlier than v11.5, please read the other [Importa
  - Fixed Interactive Dialog datetime fields to respect user's 12-hour/24-hour time display preference. Also fixed inconsistent date formatting between date and datetime fields [MM-67121](https://mattermost.atlassian.net/browse/MM-67121).
  - Fixed an issue with Shared Channels where channel memberships would not sync after remote reconnect [MM-67615](https://mattermost.atlassian.net/browse/MM-67615).
  - Fixed an issue where Shared Channels related slash commands were failing in High Availability cluster environments [MM-67611](https://mattermost.atlassian.net/browse/MM-67611).
- - Fixed typing issues in the **Find Channels** modal caused by interference with IMEs [MM-66937]](https://mattermost.atlassian.net/browse/MM-66937).
+ - Fixed typing issues in the **Find Channels** modal caused by interference with IMEs [MM-66937](https://mattermost.atlassian.net/browse/MM-66937).
  - Fixed an issue with incorrectly displaying **Channel Mentions** as **Channel Links** [MM-66266](https://mattermost.atlassian.net/browse/MM-66266).
  - Fixed an issue with the right-hand side panel snapping to minimum width on resize [MM-66830](https://mattermost.atlassian.net/browse/MM-66830).
  - Fixed an issue where encoded special characters present in post attachment titles would be displayed as-is instead of decoding the characters [MM-67091](https://mattermost.atlassian.net/browse/MM-67091).
