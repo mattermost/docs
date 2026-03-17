@@ -265,24 +265,8 @@ Mattermost Calls can function in air-gapped environments. Exposing Calls to the 
 - The [ICE Host Override](https://docs.mattermost.com/configure/plugins-configuration-settings.html#ice-host-override) configuration setting can be optionally set with a local IP address (e.g., 192.168.1.45), depending on the specific network configuration and topology.
 - For call recording and transcription in air-gapped environments, see the [Air-Gapped Deployments](calls-offloader-setup.md#air-gapped-deployments) section in the Calls Offloader Setup documentation.
 
-### RHEL deployments with firewalld and fapolicyd
-
-When deploying Mattermost Calls or the rtcd service on RHEL systems with firewalld or fapolicyd enabled, additional firewall and security configuration is required.
-
-**Required ports:**
-- **Calls plugin (integrated)**: Port 8443 UDP/TCP for RTC media traffic
-- **rtcd service (standalone)**: Ports 8443 UDP/TCP for RTC media traffic + Port 8045 TCP for API communication with Mattermost
-
-**Configuration steps:**
-
-For complete firewalld and fapolicyd configuration instructions, including troubleshooting steps and example rules, see the [RHEL deployment guide](https://docs.mattermost.com/deployment-guide/server/deploy-linux.html#itab--RHEL-CentOS--0_1-RHEL-CentOS). The guide includes:
-- firewalld port configuration for Mattermost, Calls plugin, and rtcd service
-- fapolicyd rules for Mattermost server and Calls plugin
-- Separate fapolicyd configuration for standalone rtcd service
-- Troubleshooting guidance for "operation not permitted" errors
-
 ```{note}
-The Calls plugin runs as part of Mattermost and is covered by the standard Mattermost fapolicyd rules. Only the standalone rtcd service requires separate fapolicyd configuration.
+For RHEL deployments with firewalld or fapolicyd, see the [RHEL deployments with firewalld and fapolicyd](#rhel-deployments-with-firewalld-and-fapolicyd) section above.
 ```
 
 ## Performance Considerations
@@ -305,7 +289,7 @@ Media (audio/video) is encrypted using security standards as part of WebRTC. It'
 Only a Mattermost STUN server (`stun.global.calls.mattermost.com`) is used by default. No user information, call metadata, or media traffic is ever sent to or shared with this STUN service; its sole purpose is to help WebRTC clients discover their public IP address and port mapping. Furthermore, this dependency can be entirely removed if you manually configure the ICE Host Override setting.
 
 ### Is using UDP a requirement?
-UDP is recommended protocol to serve real-time media as it allows for the lowest latency between peers, but TCP fallback is supported since plugin version 0.17 and RTCD version 0.11.
+UDP is the recommended protocol to serve real-time media as it allows for the lowest latency between peers, but TCP fallback is supported since plugin version 0.17 and RTCD version 0.11.
 
 If clients are unable to connect using UDP (due to limitations or strict firewalls), you have a few options:
 

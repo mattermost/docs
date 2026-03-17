@@ -108,4 +108,3 @@ For detailed troubleshooting steps, see the [Calls Troubleshooting](calls-troubl
 - [Calls Offloader Setup and Configuration](calls-offloader-setup.md): Setup guide for call recording and transcription
 - [Calls Metrics and Monitoring](calls-metrics-monitoring.md): Guide to monitoring Calls performance using metrics and observability
 - [Calls Troubleshooting](calls-troubleshooting.md): Detailed troubleshooting steps and debugging techniques
-- If you encounter issues, see [Calls Troubleshooting](calls-troubleshooting.md)
