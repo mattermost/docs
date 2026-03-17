@@ -43,6 +43,7 @@ If you upgrade from a release earlier than v11.5, please read the other [Importa
  - Pre-packaged Playbooks plugin version [v2.8.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.8.0).
  - Pre-packaged MS Calendar plugin version [v1.6.0](https://github.com/mattermost/mattermost-plugin-mscalendar/releases/tag/v1.6.0).
  - Pre-packaged MS Teams Meetings plugin version [v2.4.1](https://github.com/mattermost/mattermost-plugin-msteams-meetings/releases/tag/v2.4.1).
+ - Pre-packaged GitLab plugin version [v1.12.1](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.12.1).
  - Added support for Default Agent in suggestions and integrated Agents into the App Bar.
  - Improved the reliability of AI recap summarization by using structured JSON output from the LLM.
  - Added a new feature of creating teams and channels using anonymous URLs so the channel and team name are not revealed in the URL. Requires Enterprise Advanced license.
@@ -99,6 +100,9 @@ If you upgrade from a release earlier than v11.5, please read the other [Importa
  - Fixed an issue with multiselect dialog fields with dynamic data sources not splitting comma-separated default values into individual selections.
  - Fixed post rendering errors when certain invalid links were part of message attachments [MM-67387](https://mattermost.atlassian.net/browse/MM-67387).
  - Added security validation to prevent plugin uploads when the plugin directory conflicted with the import directory, and vice versa.
+ - Fixed an issue where remote cluster invite confirmations could accept a ``RefreshedToken`` that matched the original invite token, preventing proper token rotation.
+ - Fixed an issue where membership changes from remote clusters could operate on a different channel than the one validated in the sync message.
+ - Fixed a regression where the ``system_admin`` role on new installations or after certain updates was missing the ``manage_oauth`` permission, preventing access to OAuth application management API endpoints. This change restores the permission to the default ``system_admin`` role and includes a migration to backfill it on affected existing servers.
 
 ### API Changes
  - Updated shared channel API endpoints to use the new Shared Channel Manager role's permission. Users assigned the Shared Channel Manager role can now share and unshare channels and browse available connections without needing the Secure Connection Manager role [MM-67684](https://mattermost.atlassian.net/browse/MM-67684).
