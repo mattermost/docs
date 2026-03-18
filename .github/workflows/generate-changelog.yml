@@ -73,6 +73,6 @@ jobs:
           gh pr create \
             --title "Changelog: ${{ inputs.version }}" \
             --body "Auto-generated changelog for milestone \`${{ inputs.milestone }}\` from \`${{ inputs.server_repos }}\`." \
-            --base main \
+            --base master \
             --head "changelog/${{ inputs.version }}"
  
