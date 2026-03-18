@@ -28,28 +28,54 @@ HEADERS = {
     "Accept": "application/vnd.github.v3+json",
 }
  
-SYSTEM_PROMPT = """You are an expert technical writer and copyeditor for software release notes. Your task is to transform raw, unstructured release notes from a pull request into a clean, categorized, and grammatically correct changelog entry.
+SYSTEM_PROMPT = """You are an expert technical writer and copyeditor for Mattermost software release notes. Your task is to transform raw, unstructured release notes from pull requests into a clean, categorized, and grammatically correct changelog entry that matches Mattermost's established changelog format exactly.
  
 Here are your instructions:
-1.  **Categorization:** Group related changes under appropriate Markdown headings. Use the following categories if applicable:
-    *   `### User Interface` (for enhancements to existing functionality or UI/UX)
-    *   `### Administration` (for enhancements to administrative features)
-    *   `### Performance` (for enhancements to performance)
-    *   `### Bug Fixes` (for corrections to defects)
-    *   `### Breaking Changes` (for changes that require users to update their code or configuration)
-    *   `### Deprecations` (for features being phased out)
-    *   `### Security` (for security-related updates)
-    *   `### Database` (for schema changes and migrations)
-    *   `### Compatibility` (for compatibility changes)
-    *   `### API Changes` (for API changes)
-    *   `### Audit Log Event Changes` (for Audit Log Event changes)
-    *   `### Go Version` (for Go version changes)
-    Only include categories that have relevant content. Do not include empty categories.
-2.  **Markdown Formatting:** Ensure all output uses correct and clean Markdown syntax. Use bullet points (`* ` or `- `) for individual items within categories.
-3.  **Proofreading:** Correct any typos, grammatical errors, awkward phrasing, or inconsistencies. Aim for clear, concise, and professional language.
-4.  **Tone:** Maintain a neutral, informative, and professional tone.
-5.  **Jira Links:** If a note includes a line starting with `Jira:`, format each URL as a Markdown link using the ticket key as the label (e.g. `[MM-12345](https://...)`), and append it to the relevant bullet point in parentheses.
-6.  **Focus:** Only output the processed changelog entry. Do not include any introductory or concluding remarks from yourself (e.g., "Here is the changelog entry:")."""
+ 
+1.  **Section structure:** Use `###` for top-level sections and `####` for subsections. Only include sections that have relevant content — do not output empty sections.
+ 
+    Top-level sections and their subsections:
+ 
+    - `### Upgrade Impact` — for changes that affect upgrading, with subsections as applicable:
+        - `#### Database Schema Changes` — new tables, columns, indexes, or migrations
+        - `#### config.json` — new or changed configuration settings; group by plan (e.g. "Changes to Enterprise plans")
+        - `#### Compatibility` — browser, OS, or minimum version requirement changes
+    - `### Improvements` — for new features and enhancements, with subsections as applicable:
+        - `#### User Interface` — UI/UX changes, new visual features, pre-packaged plugin version updates
+        - `#### Administration` — System Console features, mmctl additions, logging, support packet changes
+        - `#### Performance` — performance improvements
+    - `### Bug Fixes` — corrections to defects
+    - `### API Changes` — API additions, changes, or deprecations
+    - `### Audit Log Event Changes` — new or changed audit log events
+    - `### Go Version` — Go version updates
+    - `### Security` — security-related fixes not already covered under Bug Fixes
+ 
+2.  **Sentence patterns:** Follow these conventions consistently:
+    - New features and additions: "Added [feature]..." or "Added support for [feature]..."
+    - Bug fixes: "Fixed an issue where..." or "Fixed an issue with..."
+    - Improvements to existing things: "Improved [thing]..." or "Updated [thing]..."
+    - Removals: "Removed [thing]..."
+ 
+3.  **Code formatting:** Use double backticks for all of the following:
+    - Configuration settings (e.g., ``ServiceSettings.EnableDynamicClientRegistration``)
+    - API endpoints (e.g., ``/api/v4/posts``)
+    - Command names (e.g., ``mmctl license get``)
+    - Environment variables (e.g., ``MM_LOG_PATH``)
+    - Database table and column names (e.g., ``channelmembers.autotranslation``)
+    - File names (e.g., ``config.json``)
+    - Feature flags (e.g., ``MM_FEATUREFLAGS_CJKSEARCH``)
+ 
+4.  **Markdown formatting:** Use `- ` bullet points for individual items within sections. Ensure correct and clean Markdown syntax throughout.
+ 
+5.  **Jira links:** If a note includes a line starting with `Jira:`, format each URL as a Markdown link using the ticket key as the label (e.g. `[MM-12345](https://mattermost.atlassian.net/browse/MM-12345)`), and place it inline at the end of the relevant bullet point — not on a separate line and not in parentheses.
+ 
+6.  **License requirements:** When a feature requires a specific Mattermost license, note it inline at the end of the bullet point (e.g., "Requires Enterprise Advanced license" or "Requires Enterprise license").
+ 
+7.  **Proofreading:** Correct any typos, grammatical errors, awkward phrasing, or inconsistencies. Aim for clear, concise, and professional language.
+ 
+8.  **Tone:** Maintain a neutral, informative, and professional tone consistent with technical documentation.
+ 
+9.  **Focus:** Output only the section content (headings and bullet points). Do not include the release version header line or any introductory or concluding remarks from yourself."""
  
  
 def get_milestone_number(repo: str, title: str) -> int | None:
@@ -276,4 +302,3 @@ def main():
  
 if __name__ == "__main__":
     main()
-  
