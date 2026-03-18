@@ -767,7 +767,7 @@ Enable audit logging
 .. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
-When audit logging is enabled in a self-hosted instance, you can specify size, backup interval, compression, maximium age to manage file rotation, and timestamps for audit logging, as defined below. You can specify these settings independently for audit events and AD/LDAP events. 
+When audit logging is enabled in a self-hosted instance, you can specify a file name and queue size for audit logging, as defined below. To configure file rotation for audit logs, use the :ref:`AdvancedLoggingJSON <administration-guide/configure/environment-configuration-settings:output audit logs to multiple targets>` setting. You can specify these settings independently for audit events and AD/LDAP events.
 
 **True**: Audit logging files are enabled, and audit files are written locally to a file for a self-hosted deployment.
 
@@ -795,82 +795,6 @@ Specify the path to the audit file for a self-hosted deployment.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileName": ""`` with string input consisting of a user-defined path (e.g. ``/var/log/mattermost_audit.log``).         |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: max-file-size
-  :displayname: File max size MB (Audit Logging > Self-Hosted)
-  :systemconsole: Experimental > Features
-  :configjson: FileMaxSizeMB
-  :environment: N/A
-  :description: This is the maximum size (measured in megabytes) that the file can grow before triggering rotation for a self-hosted deployment.. Default is **100** MB.
-
-Max file size
-~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-plus.rst
-  :start-after: :nosearch:
-
-This is the maximum size, in megabytes, that the file can grow before triggering rotation for a self-hosted deployment. The default setting is ``100``.
-
-+---------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileMaxSizeMB": 100`` with numerical input. |
-+---------------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: max-file-age
-  :displayname: File max age days (Audit Logging > Self-Hosted)
-  :systemconsole: Experimental > Features
-  :configjson: FileMaxAgeDays
-  :environment: N/A
-  :description: This is the maximum age in days a file can reach before triggering rotation for a self-hosted deployment.. The default value is **0**, indicating no limit on the age.
-
-Max file age
-~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-plus.rst
-  :start-after: :nosearch:
-
-This is the maximum age, in days, a file can reach before triggering rotation for a self-hosted deployment. The default value is ``0``, indicating no limit on the age.
-
-+--------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileMaxAgeDays": 0`` with numerical input. |
-+--------------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: maximum-file-backups
-  :displayname: File max backups (Audit Logging > Self-Hosted)
-  :systemconsole: Experimental > Features
-  :configjson: FileMaxBackups
-  :environment: N/A
-  :description: This is the maximum number of rotated files kept for a self-hosted deployment. The oldest is deleted first. The default value is **0**, indicating no limit on the number of backups.
-
-Maximum file backups
-~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-plus.rst
-  :start-after: :nosearch:
-
-This is the maximum number of rotated files kept for a self-hosted deployment. The oldest is deleted first. The default value is ``0``, indicating no limit on the number of backups.
-
-+--------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileMaxBackups": 0`` with numerical input. |
-+--------------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: file-compression
-  :displayname: File compress (Audit Logging > Self-Hosted)
-  :systemconsole: Experimental > Features
-  :configjson: FileCompress
-  :environment: N/A
-  :description: When ``true``, rotated files are compressed using ``gzip`` in a self-hosted deployment. Default value is **false**.
-
-File compression
-~~~~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-plus.rst
-  :start-after: :nosearch:
-
-When ``true``, rotated files are compressed using ``gzip`` in a self-hosted deployment.
-
-+-------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileCompress": false`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: maximum-file-queue
   :displayname: File max queue size (Audit Logging > Self-Hosted)
