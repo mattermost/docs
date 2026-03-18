@@ -18,7 +18,10 @@ Site statistics
 System statistics are viewable under **System Console > Reporting**. The data shown here is a cumulative sum across all teams on the system.
 
 Total Users
-    The total number of active accounts created on your system. Excludes deactivated accounts.
+    The total number of active accounts created on your system. Excludes deactivated accounts and single-channel guests.
+
+Single-channel Guests
+    The number of active guest accounts that belong to exactly one channel on the server. Direct messages and group messages don't affect whether a guest is counted as a single-channel guest. Single-channel guests are counted separately from the primary paid seat count and are free up to a 1:1 ratio with licensed seats. When this count exceeds the allowance, the statistic is highlighted as a warning for system admins.
 
 Total Teams
     The total number of teams created on your system.

@@ -12,7 +12,7 @@ Guest accounts in Mattermost are a way to collaborate with individuals, such as 
   
   - A system admin must :ref:`enable guest access <administration-guide/configure/authentication-configuration-settings:guest access>` before guests can be invited.
   - Mattermost Enterprise and Professional customers can :doc:`control who can invite guests </administration-guide/onboard/advanced-permissions>` in their organization. By default, only system admins can invite guests.
-  - Guest accounts count as a paid user in your Mattermost :doc:`workspace </end-user-guide/end-user-guide-index>`. However, guests aren't automatically added to the default **Town-square** channel when they log in. You must :doc:`invite guests </end-user-guide/collaborate/invite-people>` to individual teams and channels manually. Deactivating a guest account reduces your licensed seat count.
+  - Guest accounts don't all consume a licensed seat in the same way. Guests in exactly one channel are treated as single-channel guests and don't count toward the primary paid seat count. They're free up to a 1:1 ratio with licensed seats. Guests in multiple channels continue to count as paid active users. Direct messages and group messages don't affect whether a guest is counted as a single-channel guest.
   - You'll identify guest users in Mattermost based on their **GUEST** badge next to their name and profile picture. Channels that contain guests also display the message ***This channel has guests** in the channel header.
 
 Guests account limits
@@ -115,7 +115,7 @@ System admins can also promote a guest to member by updating their role in **Sys
 
 .. note::
   
-  You can filter the list in **System Console > User Management > Users** to view all guests in the system.
+  You can filter the list in **System Console > User Management > Users** to view **Guests (all)**, **Guests in a single channel**, or **Guests in multiple channels**.
 
 Disable guest accounts
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -147,12 +147,22 @@ Frequently asked questions
 How am I charged for guest accounts?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Guests are charged as a user seat.
+Guest billing depends on how many channels a guest can access:
+
+- Guests in exactly one channel are treated as single-channel guests. They don't count toward the primary paid seat count and are free up to a 1:1 ratio with your licensed seats.
+- Guests in multiple channels continue to count as regular paid active users.
+- Direct messages and group messages don't change whether a guest is treated as a single-channel guest.
+
+If your single-channel guest count exceeds the 1:1 allowance, Mattermost shows soft warnings to system admins. Guest creation and guest access aren't blocked.
 
 Why doesn’t Mattermost have single-channel guests?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We wanted to support collaboration with external guests for the broadest use cases without limiting guests' access to channels. In the future, we may consider adding single-channel guests.
+Mattermost now supports single-channel guests.
+
+Guests who belong to exactly one channel are counted separately from your primary paid seat count and are free up to a 1:1 ratio with licensed seats. Guests who belong to multiple channels continue to count as paid active users. Direct messages and group messages don't change whether a guest is treated as a single-channel guest.
+
+If the number of single-channel guests exceeds the 1:1 allowance, Mattermost shows dismissable warning indicators to system admins on the relevant reporting and license pages. Mattermost doesn't block adding guests or starting the server when this limit is exceeded.
 
 Can I set an expiration date for guests?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
