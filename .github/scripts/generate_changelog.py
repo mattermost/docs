@@ -228,14 +228,25 @@ def polish_with_ai(raw_notes: list[str]) -> str:
     raw_text = "\n\n---\n\n".join(raw_notes)
     user_message = f"Here are the raw release notes to process:\n\n{raw_text}"
  
-    response = client.messages.create(
-        model="claude-sonnet-4-6",
-        max_tokens=4096,
-        system=SYSTEM_PROMPT,
-        messages=[{"role": "user", "content": user_message}],
-    )
- 
-    return response.content[0].text.strip()
+    try:
+        response = client.messages.create(
+            model="claude-sonnet-4-6",
+            max_tokens=4096,
+            system=SYSTEM_PROMPT,
+            messages=[{"role": "user", "content": user_message}],
+        )
+        text_blocks = [
+            block.text
+            for block in response.content
+            if getattr(block, "type", None) == "text" and getattr(block, "text", None)
+        ]
+        polished = "\n".join(text_blocks).strip()
+        if polished:
+            return polished
+    except Exception as exc:
+        print(f"⚠️  AI polish failed ({exc}) — using raw notes")
+
+    return "\n".join(f"- {note}" for note in raw_notes)
  
  
 def prepend_to_changelog(entry: str, changelog_path: str = "CHANGELOG.md") -> None:
