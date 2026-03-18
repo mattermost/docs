@@ -223,7 +223,8 @@ def main():
     else:
         entry += "_No release notes for this version._\n"
  
-    prepend_to_changelog(entry)
+    changelog_path = os.environ.get("CHANGELOG_PATH", "CHANGELOG.md")
+    prepend_to_changelog(entry, changelog_path)
  
     prs_with_notes = total_prs - len(no_notes_prs)
     print(f"✅ CHANGELOG.md updated with notes from {prs_with_notes} PR(s) across {len(REPOS)} repo(s)")
