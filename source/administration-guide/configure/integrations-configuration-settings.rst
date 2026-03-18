@@ -170,13 +170,15 @@ Enable dynamic client registration
 DCR redirect URI allowlist
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A comma-separated list of permitted redirect URIs for OAuth Dynamic Client Registration (DCR). When configured, only OAuth clients that register via the DCR endpoint (``POST /api/v4/oauth/apps/register``) with a redirect URI matching an entry in this list will be accepted. Leave blank to allow any redirect URI.
+A list of permitted redirect URIs for OAuth Dynamic Client Registration (DCR). When configured, only OAuth clients that register via the DCR endpoint (``POST /api/v4/oauth/apps/register``) with a redirect URI matching an entry in this list will be accepted. Leave blank to allow any redirect URI.
+
+In the System Console, enter URIs as a comma-separated list. When setting this value directly in ``config.json`` or via environment variable, provide URIs as a JSON string array (for example, ``["https://example.com/callback", "https://app.example.com/oauth"]``).
 
 This setting applies only when :ref:`Enable dynamic client registration <administration-guide/configure/integrations-configuration-settings:enable dynamic client registration>` is enabled.
 
-+------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DCRRedirectURIAllowlist": []`` with string array input.            |
-+------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DCRRedirectURIAllowlist": []`` with string array input, such as ``["https://example.com/callback", "https://app.example.com/oauth"]``.                 |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
 
