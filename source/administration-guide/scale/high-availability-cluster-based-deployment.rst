@@ -27,129 +27,1023 @@ Moreover, search replicas are also supported to handle search queries.
 
 .. image:: ../../images/architecture_high_availability.png
 
+Preparation
+-----------
+
+* Review :ref:`available reference architectures <administration-guide/scale/scaling-for-enterprise:scaling for enterprise>` for guidance on scaling Mattermost for the applicable number of users. Reference architecture guidance includes recommendations for the number of Mattermost nodes, database writer and reader nodes, Elasticsearch nodes, and proxy nodes, as well as file storage estimates depending on anticipated usage patterns.
+* Determine whether the file storage configuration for Mattermost will be Amazon S3, an S3-compatible file storage service, or network-attached storage (NAS) mounted on each Mattermost node. If Mattermost nodes are left configured with local file system storage on the host file system on each node rather than a NAS location, high availability will not function correctly and may corrupt your file storage.
+* For Kubernetes deployments, review :doc:`Deploy Mattermost on Kubernetes </deployment-guide/server/deploy-kubernetes>`.
+* For non-Kubernetes deployments, install or upgrade Mattermost to the desired version on one server provisioned for Mattermost. Refer to :doc:`Deploy Mattermost on Linux </deployment-guide/server/deploy-linux>` for installation details. :doc:`Install a license key </administration-guide/manage/admin/installing-license-key>` to apply an Enterprise or Enterprise Advanced license key to the installed node.
+* **Recommended:** If using ``config.json`` for Mattermost configuration, refer to :doc:`Store configuration in your database </administration-guide/configure/configuration-in-your-database>` to migrate the Mattermost instance to using the database for configuration. It is also possible to continue using ``config.json`` files. However, when high availability is enabled, the System Console is set to read-only mode to ensure all the ``config.json`` files on the Mattermost servers are always identical.
+* Review :doc:`Calls self-hosted deployment </administration-guide/configure/calls-deployment>` to develop an appropriately-scaled Calls deployment plan.
+* If you anticipate your Mattermost server reaching more than 2.5 million posts, review :doc:`Enterprise search </administration-guide/scale/enterprise-search>` for options to ensure optimum search performance.
+* For Mattermost deployments for more than 100,000 users, review the :doc:`Redis </administration-guide/scale/redis>` deployment guide.
+
 Deployment guide
 ----------------
 
-Set up and maintain a high availability cluster-based deployment on your Mattermost servers. This document doesn't cover the configuration of databases in terms of disaster recovery, however, you can refer to the `frequently asked questions (FAQ)`_ section for our recommendations.
-
-To ensure your instance and configuration are compatible with a high availability cluster-based deployment, please review the `configuration and compatibility`_ section.
+Set up and maintain a high availability cluster-based deployment on your Mattermost servers.
 
 .. note::
 
   Back up your Mattermost database and file storage locations before configuring high availability. For more information about backing up, see :doc:`/deployment-guide/backup-disaster-recovery`.
 
-1. Set up a new Mattermost server by following one of our **Install Guides**. This server must use an identical copy of the configuration file, ``config.json``. Verify the servers are functioning by hitting each independent server through its private IP address.
-2. Modify the ``config.json`` files on both servers to add ``ClusterSettings``. See the :ref:`high availability cluster-based deployment configuration settings <administration-guide/configure/environment-configuration-settings:high availability>` documentation for details.
-3. Verify the configuration files are identical on both servers then restart each machine in the cluster.
-4. Modify your NGINX setup so that it proxies to both servers. For more information about this, see `proxy server configuration`_.
-5. Open **System Console > Environment > High Availability** to verify that each machine in the cluster is communicating as expected with green status indicators. If not, investigate the log files for any extra information.
+Mattermost servers
+~~~~~~~~~~~~~~~~~~
 
-Add a server to the cluster
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1. **Recommended:** :doc:`Store configuration in your database </administration-guide/configure/configuration-in-your-database>` rather than ``config.json`` to simplify configuration management across all servers in the cluster.
 
-1. Back up your Mattermost database and the file storage location. See the :doc:`backup </deployment-guide/backup-disaster-recovery>` documentation for details.
-2. Set up a new Mattermost server. This server must use an identical copy of the configuration file, ``config.json``. Verify the server is functioning by hitting the private IP address.
-3. Modify your NGINX setup to add the new server.
-4. Open **System Console > Environment > High Availability** to verify that all the machines in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
+2. **Set up additional Mattermost servers:** Provision additional Mattermost servers using an identical configuration to your current deployment.
 
-Remove a server from the cluster
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   - **Kubernetes deployments:** Update the ``replicas`` field in the ``spec`` section of your ``mattermost-installation.yaml`` file to the desired number of servers (e.g., ``replicas: 2`` for a two-server cluster), then apply the updated manifest with ``kubectl apply -f mattermost-installation.yaml``.
 
-1. Back up your Mattermost database and the file storage location. See the :doc:`backup </deployment-guide/backup-disaster-recovery>` documentation for details.
-2. Modify your NGINX setup to remove the server. For information about this, see :ref:`proxy server configuration <deployment-guide/server/setup-nginx-proxy:manage the nginx process>` documentation for details.
-3. Open **System Console > Environment > High Availability** to verify that all the machines remaining in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
+   - **Non-Kubernetes deployments:** Follow the :doc:`Deploy Mattermost on Linux </deployment-guide/server/deploy-mattermost-on-linux>` instructions to install the same version of Mattermost on each additional server.
 
-Configuration and compatibility
--------------------------------
+   If configuration is stored in the database, ensure the ``MM_CONFIG`` environment variable on each server points to the same database connection string. If using ``config.json`` files, ensure each server has an identical copy.
 
-Details on configuring your system for High Availability.
+3. **Configure system limits:** On each Mattermost server, set the process limit to 8192 and the maximum number of open files to 65536.
 
-Mattermost Server configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   Edit the systemd service file to set resource limits:
 
-Configuration settings
-^^^^^^^^^^^^^^^^^^^^^^
+   .. code-block:: bash
 
-1. High availability is configured in the ``ClusterSettings`` section of ``config.json`` and the settings are viewable in the System Console. When high availability is enabled, the System Console is set to read-only mode to ensure all the ``config.json`` files on the Mattermost servers are always identical. However, for testing and validating a high availability setup, you can set ``ReadOnlyConfig`` to ``false``, which allows changes made in the System Console to be saved back to the configuration file.
+      sudo sed -i '/\[Service\]/a LimitNOFILE=65536\nLimitNPROC=8192' /etc/systemd/system/mattermost.service
 
-  .. code-block:: json
+   If you prefer to edit manually, add these lines in the ``[Service]`` section of ``/etc/systemd/system/mattermost.service``:
 
-    "ClusterSettings": {
-            "Enable": false,
-            "ClusterName": "production",
-            "OverrideHostname": "",
-            "UseIpAddress": true,
-            "ReadOnlyConfig": true,
-            "GossipPort": 8074
-    }
+   .. code-block:: ini
 
-  For more details on these settings, see the :ref:`high availability configuration settings <administration-guide/configure/environment-configuration-settings:high availability>` documentation.
+      [Service]
+      LimitNOFILE=65536
+      LimitNPROC=8192
 
-2. Change the process limit to 8192 and the maximum number of open files to 65536.
+   Reload systemd and restart the service to apply the limits:
 
-  Modify ``/etc/security/limits.conf`` on each machine that hosts a Mattermost server by adding the following lines:
+   .. code-block:: bash
 
-  .. code-block:: text
+      sudo systemctl daemon-reload
+      sudo systemctl restart mattermost
 
-    * soft nofile 65536
-    * hard nofile 65536
-    * soft nproc 8192
-    * hard nproc 8192
+   Verify the limits are applied:
 
-3. Increase the number of WebSocket connections:
+   .. code-block:: bash
 
-  Modify ``/etc/sysctl.conf`` on each machine that hosts a Mattermost server by adding the following lines:
+      # Check the actual process limits
+      cat /proc/$(pgrep -f mattermost | head -1)/limits | grep -E "Max open files|Max processes"
 
-  .. code-block:: text
+   You should see ``Max open files`` set to 65536.
 
-    # Extending default port range to handle lots of concurrent connections.
-    net.ipv4.ip_local_port_range = 1025 65000
+4. **Optimize network settings:** On each Mattermost server, configure kernel parameters to increase WebSocket connection limits and optimize TCP settings.
 
-    # Lowering the timeout to faster recycle connections in the FIN-WAIT-2 state.
-    net.ipv4.tcp_fin_timeout = 30
+   Create a sysctl configuration file for Mattermost:
 
-    # Reuse TIME-WAIT sockets for new outgoing connections.
-    net.ipv4.tcp_tw_reuse = 1
+   .. code-block:: bash
 
-    # Bumping the limit of a listen() backlog.
-    # This is maximum number of established sockets (with an ACK)
-    # waiting to be accepted by the listening process.
-    net.core.somaxconn = 4096
+      sudo tee /etc/sysctl.d/mattermost.conf > /dev/null <<EOF
+      # Extending default port range to handle lots of concurrent connections.
+      net.ipv4.ip_local_port_range = 1025 65000
 
-    # Increasing the maximum number of connection requests which have
-    # not received an acknowledgment from the client.
-    # This is helpful to handle sudden bursts of new incoming connections.
-    net.ipv4.tcp_max_syn_backlog = 8192
+      # Lowering the timeout to faster recycle connections in the FIN-WAIT-2 state.
+      net.ipv4.tcp_fin_timeout = 30
 
-    # This is tuned to be 2% of the available memory.
-    vm.min_free_kbytes = 167772
+      # Reuse TIME-WAIT sockets for new outgoing connections.
+      net.ipv4.tcp_tw_reuse = 1
 
-    # Disabling slow start helps increasing overall throughput
-    # and performance of persistent single connections.
-    net.ipv4.tcp_slow_start_after_idle = 0
+      # Bumping the limit of a listen() backlog.
+      # This is maximum number of established sockets (with an ACK)
+      # waiting to be accepted by the listening process.
+      net.core.somaxconn = 4096
 
-    # These show a good performance improvement over defaults.
-    # More info at https://blog.cloudflare.com/http-2-prioritization-with-nginx/
-    net.ipv4.tcp_congestion_control = bbr
-    net.core.default_qdisc = fq
-    net.ipv4.tcp_notsent_lowat = 16384
+      # Increasing the maximum number of connection requests which have
+      # not received an acknowledgment from the client.
+      # This is helpful to handle sudden bursts of new incoming connections.
+      net.ipv4.tcp_max_syn_backlog = 8192
 
-    # TCP buffer sizes are tuned for 10Gbit/s bandwidth and 0.5ms RTT (as measured intra EC2 cluster).
-    # This gives a BDP (bandwidth-delay-product) of 625000 bytes.
-    net.ipv4.tcp_rmem = 4096 156250 625000
-    net.ipv4.tcp_wmem = 4096 156250 625000
-    net.core.rmem_max = 312500
-    net.core.wmem_max = 312500
-    net.core.rmem_default = 312500
-    net.core.wmem_default = 312500
-    net.ipv4.tcp_mem = 1638400 1638400 1638400
+      # This is tuned to be 2% of the available memory.
+      vm.min_free_kbytes = 167772
 
-You can do the same for the proxy server.
+      # Disabling slow start helps increasing overall throughput
+      # and performance of persistent single connections.
+      net.ipv4.tcp_slow_start_after_idle = 0
+
+      # These show a good performance improvement over defaults.
+      # More info at https://blog.cloudflare.com/http-2-prioritization-with-nginx/
+      net.ipv4.tcp_congestion_control = bbr
+      net.core.default_qdisc = fq
+      net.ipv4.tcp_notsent_lowat = 16384
+
+      # TCP buffer sizes are tuned for 10Gbit/s bandwidth and 0.5ms RTT (as measured intra EC2 cluster).
+      # This gives a BDP (bandwidth-delay-product) of 625000 bytes.
+      net.ipv4.tcp_rmem = 4096 156250 625000
+      net.ipv4.tcp_wmem = 4096 156250 625000
+      net.core.rmem_max = 312500
+      net.core.wmem_max = 312500
+      net.core.rmem_default = 312500
+      net.core.wmem_default = 312500
+      net.ipv4.tcp_mem = 1638400 1638400 1638400
+      EOF
+
+   Apply the settings immediately:
+
+   .. code-block:: bash
+
+      sudo sysctl -p /etc/sysctl.d/mattermost.conf
+
+5. **Enable time synchronization:** Each server in the cluster must have synchronized time to ensure messages are posted in the correct order and cluster communication functions properly.
+
+   **Ubuntu/Debian:**
+
+   Modern Ubuntu systems use ``systemd-timesyncd`` by default, which is usually already enabled. Verify time synchronization is working:
+
+   .. code-block:: bash
+
+      timedatectl status
+
+   You should see ``System clock synchronized: yes``. If time synchronization is not enabled, enable it with:
+
+   .. code-block:: bash
+
+      sudo timedatectl set-ntp true
+
+   **RHEL/CentOS/Rocky Linux:**
+
+   .. code-block:: bash
+
+      sudo dnf install chrony
+      sudo systemctl enable chronyd
+      sudo systemctl start chronyd
+
+   Verify time synchronization is working:
+
+   .. code-block:: bash
+
+      chronyc sources
+
+6. **Verify individual server functionality:** Before enabling clustering, verify each server is functioning independently by accessing its private IP address directly.
+
+   Get the private IP address of each Mattermost server:
+
+   .. code-block:: bash
+
+      # Get all IP addresses for the server
+      hostname -I
+
+      # Or get the primary network interface IP
+      ip addr show | grep "inet " | grep -v 127.0.0.1 | awk '{print $2}' | cut -d/ -f1
+
+   Test that Mattermost is accessible on each server using its private IP address:
+
+   .. code-block:: bash
+
+      # Replace with your server's actual IP address
+      curl http://192.168.1.10:8065
+
+   You should see HTML output from the Mattermost application. Repeat this verification for each Mattermost server in your cluster.
+
+7. **Configure cluster settings:** Enable high availability by configuring the ``ClusterSettings`` section. Use :doc:`mmctl </administration-guide/manage/mmctl-command-line-tool>` to set cluster settings:
+
+   .. code-block:: bash
+
+      mmctl config set ClusterSettings.Enable true
+      mmctl config set ClusterSettings.ClusterName production
+      mmctl config set ClusterSettings.UseIPAddress true
+      mmctl config set ClusterSettings.ReadOnlyConfig true
+      mmctl config set ClusterSettings.GossipPort 8074
+
+   See the :ref:`high availability configuration settings <administration-guide/configure/environment-configuration-settings:high availability>` documentation for details on all available cluster settings, including ``OverrideHostname`` for non-standard network configurations.
+
+8. **Restart Mattermost servers:** Restart each Mattermost server in the cluster to apply the new configuration.
+
+   .. code-block:: bash
+
+      sudo systemctl restart mattermost
+
+9. **Verify cluster communication:** Open **System Console > Environment > High Availability** to verify that each server in the cluster is communicating as expected with green status indicators. If not, investigate the log files for additional information.
+
+Proxy server
+~~~~~~~~~~~~
+
+The proxy server exposes the cluster of Mattermost servers to external clients. The proxy distributes traffic across all Mattermost servers in the cluster and provides health checking to route traffic only to healthy servers.
+
+Mattermost is designed to work with various load balancing solutions:
+
+- **Software proxies:** NGINX
+- **Cloud load balancers:** Amazon Elastic Load Balancer (ELB/ALB), Azure Load Balancer, Google Cloud Load Balancing
+- **Hardware load balancers:** F5 BIG-IP, Citrix NetScaler ADC, and other enterprise solutions
+
+This section provides configuration instructions for NGINX, which is the most commonly used solution. If you're using a cloud load balancer or hardware load balancer, consult your provider's documentation for configuring health checks on the ``/api/v4/system/ping`` endpoint and load balancing across multiple backend servers.
+
+.. note::
+
+   For detailed NGINX configuration, see :doc:`Set up an NGINX proxy </deployment-guide/server/setup-nginx-proxy>`. This section focuses on the high availability-specific configuration, but the full proxy documentation includes additional optimizations and settings that are important for production deployments.
+
+.. important::
+
+   For high-scale deployments, the NGINX proxy documentation includes additional **main configuration optimizations** (``/etc/nginx/nginx.conf``) that are critical for performance, including worker process settings, connection limits, and keepalive optimizations. See the :ref:`NGINX main configuration optimizations <deployment-guide/server/setup-nginx-proxy:nginx main configuration optimizations>` section in the proxy documentation for these essential settings.
+
+1. **Install NGINX:** Install NGINX on your proxy server(s).
+
+   **Ubuntu/Debian:**
+
+   .. code-block:: bash
+
+      sudo apt update
+      sudo apt install nginx
+
+   **RHEL/CentOS:**
+
+   .. code-block:: bash
+
+      sudo dnf install nginx
+
+2. **Configure high availability backend:** Create an NGINX configuration that defines all Mattermost servers in the cluster with high-performance settings optimized for high availability deployments.
+
+   Set configuration variables for your environment:
+
+   .. code-block:: bash
+
+      # Ubuntu/Debian: Use sites-available directory
+      NGINX_CONF="/etc/nginx/sites-available/mattermost"
+
+      # RHEL/CentOS: Use conf.d directory instead
+      # NGINX_CONF="/etc/nginx/conf.d/mattermost.conf"
+
+      # Set your Mattermost server IP addresses
+      MM_SERVER_1="192.168.1.10"
+      MM_SERVER_2="192.168.1.11"
+
+      # Set your domain name
+      MM_DOMAIN="mattermost.example.com"
+
+   Create the NGINX configuration file with high-performance settings:
+
+   .. code-block:: bash
+
+      sudo tee "$NGINX_CONF" > /dev/null <<EOF
+      upstream backend {
+            server ${MM_SERVER_1}:8065 max_fails=0;
+            server ${MM_SERVER_2}:8065 max_fails=0;
+            keepalive 256;
+      }
+
+      proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=mattermost_cache:10m max_size=3g inactive=120m use_temp_path=off;
+
+      server {
+        listen 80 reuseport;
+        server_name ${MM_DOMAIN};
+
+        location ~ /api/v[0-9]+/(users/)?websocket$ {
+              proxy_set_header Upgrade \$http_upgrade;
+              proxy_set_header Connection "upgrade";
+              client_max_body_size 50M;
+              proxy_set_header Host \$http_host;
+              proxy_set_header X-Real-IP \$remote_addr;
+              proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+              proxy_set_header X-Forwarded-Proto \$scheme;
+              proxy_set_header X-Frame-Options SAMEORIGIN;
+              proxy_buffers 256 16k;
+              proxy_buffer_size 16k;
+              client_body_timeout 60s;
+              send_timeout        300s;
+              lingering_timeout   5s;
+              proxy_connect_timeout   90s;
+              proxy_send_timeout      300s;
+              proxy_read_timeout      90s;
+              proxy_http_version 1.1;
+              proxy_pass http://backend;
+        }
+
+        location ~ /api/v[0-9]+/users/[a-z0-9]+/image\$ {
+              proxy_set_header Connection "";
+              client_max_body_size 50M;
+              proxy_set_header Host \$http_host;
+              proxy_set_header X-Real-IP \$remote_addr;
+              proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+              proxy_set_header X-Forwarded-Proto \$scheme;
+              proxy_set_header X-Frame-Options SAMEORIGIN;
+              proxy_buffers 256 16k;
+              proxy_buffer_size 16k;
+              proxy_read_timeout 600s;
+              proxy_http_version 1.1;
+              proxy_pass http://backend;
+              proxy_cache mattermost_cache;
+              proxy_cache_revalidate on;
+              proxy_cache_min_uses 2;
+              proxy_cache_use_stale timeout;
+              proxy_cache_lock on;
+              proxy_ignore_headers Cache-Control Expires;
+              proxy_cache_valid 200 24h;
+        }
+
+        location / {
+              proxy_set_header Connection "";
+              client_max_body_size 50M;
+              proxy_set_header Host \$http_host;
+              proxy_set_header X-Real-IP \$remote_addr;
+              proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+              proxy_set_header X-Forwarded-Proto \$scheme;
+              proxy_set_header X-Frame-Options SAMEORIGIN;
+              proxy_buffers 256 16k;
+              proxy_buffer_size 16k;
+              proxy_read_timeout 600s;
+              proxy_http_version 1.1;
+              proxy_pass http://backend;
+              proxy_cache mattermost_cache;
+              proxy_cache_revalidate on;
+              proxy_cache_min_uses 2;
+              proxy_cache_use_stale timeout;
+              proxy_cache_lock on;
+        }
+      }
+      EOF
+
+   This configuration includes high-performance optimizations such as preventing servers from being marked unavailable (``max_fails=0``), user image caching for 24 hours, and extended timeouts for long-running operations. For additional NGINX performance tuning options, including worker process optimization and advanced buffer settings, see the :ref:`high-performance scaling configuration <deployment-guide/server/setup-nginx-proxy:high-performance scaling configuration>` section.
+
+3. **Enable the site configuration:**
+
+   **Ubuntu/Debian:**
+
+   .. code-block:: bash
+
+      sudo ln -sf /etc/nginx/sites-available/mattermost /etc/nginx/sites-enabled/mattermost
+      sudo rm -f /etc/nginx/sites-enabled/default
+
+   **RHEL/CentOS:** The configuration file in ``/etc/nginx/conf.d/`` is automatically enabled.
+
+4. **Test and apply NGINX configuration:**
+
+   .. code-block:: bash
+
+      sudo nginx -t
+      sudo systemctl restart nginx
+      sudo systemctl enable nginx
+
+5. **Configure TLS:** For production deployments, configure TLS on your NGINX proxy. See :doc:`Set up TLS </deployment-guide/server/setup-tls>` for detailed instructions on configuring TLS with NGINX. You can either use Let's Encrypt for automatic certificate management or provide your own TLS certificates.
+
+6. **Configure health checks:** NGINX automatically stops routing traffic to backend servers that fail to respond. You can monitor server health using the Mattermost API endpoint ``http://SERVER_IP:8065/api/v4/system/ping`` which returns ``Status 200`` for healthy servers.
+
+7. **Verify proxy functionality:** Test access through the proxy using your configured domain name and verify traffic is distributed across backend servers by checking Mattermost server logs.
+
+File storage
+~~~~~~~~~~~~
+
+In a high availability deployment, all Mattermost servers in the cluster must have access to the same file storage. Local file system storage on each individual server will not work correctly in HA and may corrupt your file storage.
+
+**Supported file storage options for high availability:**
+
+- **Amazon S3 or S3-compatible object storage** (recommended)
+- **Network-attached storage (NAS)** using NFS or similar protocols
+
+.. important::
+
+   If you're currently using local file system storage (``"DriverName": "local"`` with a local directory), you must migrate to shared storage before enabling high availability. Running HA with local storage on each node may cause file corruption and data loss.
+
+Configure S3 or S3-compatible storage
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Amazon S3 and S3-compatible storage solutions (such as MinIO, Digital Ocean Spaces, etc.) are the recommended file storage option for high availability deployments.
+
+1. **Configure file storage settings:** Use :doc:`mmctl </administration-guide/manage/mmctl-command-line-tool>` or the System Console to configure S3 storage:
+
+   .. code-block:: bash
+
+      # Set storage driver to S3
+      mmctl config set FileSettings.DriverName amazons3
+
+      # Configure S3 bucket and region
+      mmctl config set FileSettings.AmazonS3Bucket your-bucket-name
+      mmctl config set FileSettings.AmazonS3Region us-east-1
+
+      # Configure S3 credentials (if not using IAM roles)
+      mmctl config set FileSettings.AmazonS3AccessKeyId your-access-key-id
+      mmctl config set FileSettings.AmazonS3SecretAccessKey your-secret-access-key
+
+   For S3-compatible storage (MinIO, etc.), also configure the endpoint:
+
+   .. code-block:: bash
+
+      mmctl config set FileSettings.AmazonS3Endpoint s3.your-domain.com
+
+2. **Verify configuration:** Restart Mattermost and test file uploads to ensure files are being stored correctly in S3.
+
+   See the :ref:`file storage configuration settings <administration-guide/configure/environment-configuration-settings:file storage>` documentation for complete details on all available S3 configuration options.
+
+Configure NFS shared storage
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+As an alternative to Amazon S3 or S3-compatible storage, network-attached storage (NAS) using NFS allows all Mattermost servers to access the same file directory over the network.
+
+1. **Ensure consistent user IDs:** The ``mattermost`` user must have the same UID and GID on the NFS server and all Mattermost servers.
+
+   Check the UID/GID on your Mattermost servers:
+
+   .. code-block:: bash
+
+      id mattermost
+
+   The output shows something like ``uid=500(mattermost) gid=500(mattermost)``. Note these values.
+
+   On the NFS server, create the ``mattermost`` user with matching UID/GID (replace ``500`` with your actual values):
+
+   .. code-block:: bash
+
+      sudo useradd -r -U -u 500 -M -d /opt/mattermost -s /bin/bash mattermost
+
+   If the user already exists with a different UID:
+
+   .. code-block:: bash
+
+      sudo usermod -u 500 mattermost
+      sudo groupmod -g 500 mattermost
+
+2. **Set up NFS server:** Install NFS server packages and configure the shared directory.
+
+   **Ubuntu/Debian:**
+
+   .. code-block:: bash
+
+      sudo apt update
+      sudo apt install nfs-kernel-server
+
+   **RHEL/CentOS/Rocky Linux:**
+
+   .. code-block:: bash
+
+      sudo dnf install nfs-utils
+
+   Create the shared directory with ``mattermost`` ownership:
+
+   .. code-block:: bash
+
+      sudo mkdir -p /mnt/mattermost-data
+      sudo chown mattermost:mattermost /mnt/mattermost-data
+      sudo chmod 755 /mnt/mattermost-data
+
+   Add an entry to ``/etc/exports``. Replace ``NETWORK/CIDR`` with your network range (e.g., ``192.168.1.0/24``) and use the ``mattermost`` UID/GID values:
+
+   .. code-block:: text
+
+      /mnt/mattermost-data NETWORK/CIDR(rw,sync,anonuid=500,anongid=500)
+
+   Examples:
+
+   .. code-block:: text
+
+      # For subnet 192.168.1.0/24
+      /mnt/mattermost-data 192.168.1.0/24(rw,sync,anonuid=500,anongid=500)
+
+      # For specific servers only
+      /mnt/mattermost-data 192.168.1.10(rw,sync,anonuid=500,anongid=500) 192.168.1.11(rw,sync,anonuid=500,anongid=500)
+
+   Enable and start the NFS server:
+
+   **Ubuntu/Debian:**
+
+   .. code-block:: bash
+
+      sudo systemctl enable --now nfs-kernel-server
+      sudo exportfs -arv
+
+   **RHEL/CentOS/Rocky Linux:**
+
+   .. code-block:: bash
+
+      sudo systemctl enable --now nfs-server
+      sudo exportfs -arv
+
+   Configure firewall if needed:
+
+   **Ubuntu/Debian:**
+
+   .. code-block:: bash
+
+      sudo ufw allow from NETWORK/CIDR to any port nfs
+
+   **RHEL/CentOS/Rocky Linux:**
+
+   .. code-block:: bash
+
+      sudo firewall-cmd --permanent --add-service=nfs
+      sudo firewall-cmd --permanent --add-service=mountd
+      sudo firewall-cmd --permanent --add-service=rpc-bind
+      sudo firewall-cmd --reload
+
+3. **Mount NFS on Mattermost servers:** Install NFS client packages and mount the share on each Mattermost server.
+
+   **Ubuntu/Debian:**
+
+   .. code-block:: bash
+
+      sudo apt update
+      sudo apt install nfs-common
+      sudo mkdir -p /opt/mattermost/data
+      sudo mount -t nfs -o rw,soft,intr NFS_SERVER_IP:/mnt/mattermost-data /opt/mattermost/data
+
+   **RHEL/CentOS/Rocky Linux:**
+
+   .. code-block:: bash
+
+      sudo dnf install nfs-utils
+      sudo mkdir -p /opt/mattermost/data
+      sudo mount -t nfs -o rw,soft,intr NFS_SERVER_IP:/mnt/mattermost-data /opt/mattermost/data
+
+   Replace ``NFS_SERVER_IP`` with your NFS server's IP address.
+
+   Verify the mount shows correct ownership:
+
+   .. code-block:: bash
+
+      df -h /opt/mattermost/data
+      ls -ld /opt/mattermost/data
+
+4. **Configure automatic mounting:** Add to ``/etc/fstab`` on each Mattermost server:
+
+   .. code-block:: text
+
+      NFS_SERVER_IP:/mnt/mattermost-data /opt/mattermost/data nfs rw,soft,intr 0 0
+
+   Example:
+
+   .. code-block:: text
+
+      192.168.1.100:/mnt/mattermost-data /opt/mattermost/data nfs rw,soft,intr 0 0
+
+   .. note::
+
+      The ``soft`` option allows operations to timeout rather than hang indefinitely. For stricter consistency requirements, use ``hard,intr`` instead, but this may cause the application to hang if NFS becomes unavailable.
+
+5. **Test file access:** Verify write permissions from each server:
+
+   .. code-block:: bash
+
+      sudo -u mattermost touch /opt/mattermost/data/test-$(hostname)
+      ls -l /opt/mattermost/data/
+
+   Files should be visible on all servers with ``mattermost:mattermost`` ownership.
+
+6. **Configure Mattermost:** Set the file storage directory:
+
+   .. code-block:: bash
+
+      sudo -u mattermost /opt/mattermost/bin/mmctl --local config set FileSettings.Directory /opt/mattermost/data
+
+7. **Restart Mattermost:** Apply the configuration on all servers:
+
+   .. code-block:: bash
+
+      sudo systemctl restart mattermost
+
+8. **Verify:** Check that Mattermost creates directories in shared storage:
+
+   .. code-block:: bash
+
+      ls -la /opt/mattermost/data/
+
+   You should see directories like ``users``, ``teams``, etc. Test file uploads to confirm files are accessible across all servers.
+
+Migrating from local to shared storage
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you need to migrate existing files from local storage to S3 or NFS, the migration process is beyond the scope of this document. However, the general approach involves:
+
+1. Setting up your new shared storage (S3 or NFS)
+2. Copying all files from the local directory (typically ``/opt/mattermost/data``) to the new storage location
+3. Updating the Mattermost configuration to point to the new storage
+4. Verifying that all files are accessible
+
+
+Database
+~~~~~~~~
+
+In a high availability deployment, the database requires careful configuration to ensure optimal performance and reliability. Mattermost supports using read replicas to distribute database load and search replicas to isolate search queries.
+
+.. danger::
+
+   **PostgreSQL configuration settings are critical for production stability**
+
+   The PostgreSQL configuration settings documented below, particularly ``hot_standby`` and ``hot_standby_feedback`` for read replicas, are **essential** for preventing production outages. Failure to configure these settings correctly will result in outages for deployments at scale. These settings prevent query conflicts that can cause read replicas to terminate queries when the primary database has high write traffic.
+
+   Additionally, incorrect connection pool settings, missing vacuuming configuration, and suboptimal memory settings can severely impact performance and stability. **Review and apply all recommended settings** before deploying to production.
+
+Understanding database query distribution
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Mattermost distributes database queries across your database infrastructure as follows:
+
+- **Write requests** and some specific read requests are sent to the primary database
+- **Read requests** (excluding those that must go to the primary) are distributed among available read replicas. If no read replicas are configured, these are sent to the primary
+- **Search requests** are distributed among available search replicas. If no search replicas are configured, these are sent to the read replicas. If no read replicas are configured, they are sent to the primary
+
+For detailed information on all database configuration options, see the :ref:`database configuration settings <administration-guide/configure/environment-configuration-settings:database>` documentation.
+
+Amazon RDS Aurora PostgreSQL
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Amazon Aurora PostgreSQL provides managed database service with built-in high availability and automatic failover capabilities.
+
+**Architecture overview:**
+
+- Aurora automatically maintains multiple replicas across Availability Zones
+- The cluster provides a single **writer endpoint** that automatically points to the current primary instance
+- The cluster provides a **reader endpoint** that load balances across available read replicas
+- Aurora handles automatic failover, promoting a replica to primary when needed
+
+**Configure Mattermost for Aurora:**
+
+1. **Configure the primary database connection:** Point the DataSource to the Aurora cluster writer endpoint (not individual instance endpoints):
+
+   .. code-block:: bash
+
+      # Use the cluster writer endpoint for the primary connection
+      mmctl config set SqlSettings.DataSource "postgres://username:password@your-cluster.cluster-xxxxx.region.rds.amazonaws.com:5432/mattermost?sslmode=require&connect_timeout=10"
+
+   .. important::
+
+      Always use the **cluster-level writer endpoint**, not instance-specific endpoints. This allows Aurora to handle failover automatically by updating the DNS endpoint to point to the new primary.
+
+2. **Configure read replicas:** Point directly to individual reader instance endpoints (not the reader endpoint). Create a configuration patch file:
+
+   .. code-block:: bash
+
+      # Create a configuration patch file
+      cat > /tmp/replica-config.json <<'EOF'
+      {
+        "SqlSettings": {
+          "DataSourceReplicas": [
+            "postgres://username:password@your-cluster-instance-1.xxxxx.region.rds.amazonaws.com:5432/mattermost?sslmode=require&connect_timeout=10",
+            "postgres://username:password@your-cluster-instance-2.xxxxx.region.rds.amazonaws.com:5432/mattermost?sslmode=require&connect_timeout=10"
+          ]
+        }
+      }
+      EOF
+
+      # Apply the configuration
+      mmctl config patch /tmp/replica-config.json
+
+      # Clean up the temporary file
+      rm /tmp/replica-config.json
+
+   .. note::
+
+      Use **individual reader instance endpoints** rather than the Aurora reader endpoint. Mattermost has its own load balancing logic for read queries and can failover to the primary connection if reader instances become unavailable.
+
+3. **Configure connection pool settings:**
+
+   .. code-block:: bash
+
+      # Set connection pool limits (per database connection)
+      mmctl config set SqlSettings.MaxOpenConns 100
+      mmctl config set SqlSettings.MaxIdleConns 50
+
+   The recommended ratio is 2:1 (MaxOpenConns:MaxIdleConns). These settings apply **per data source**, so with one primary and two read replicas, the total maximum connections would be 300.
+
+4. **Verify database configuration:** Restart Mattermost and check that database connections are healthy:
+
+   .. code-block:: bash
+
+      sudo systemctl restart mattermost
+
+      # Check logs for database connection messages
+      sudo journalctl -u mattermost -n 100
+
+Amazon RDS does not expose direct PostgreSQL configuration access, but Aurora's default settings are generally well-tuned for most workloads. Monitor performance using Amazon CloudWatch and the RDS Performance Insights feature.
+
+Self-managed PostgreSQL
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+For self-managed PostgreSQL deployments, you have full control over database configuration and must configure replication, backups, and PostgreSQL settings yourself.
+
+**Set up PostgreSQL replication:**
+
+1. **Configure the primary database server** for replication by editing ``postgresql.conf``:
+
+   **Ubuntu/Debian:** Edit ``/etc/postgresql/{version}/main/postgresql.conf`` (e.g., ``/etc/postgresql/14/main/postgresql.conf``)
+
+   **RHEL/CentOS:** Edit ``/var/lib/pgsql/{version}/data/postgresql.conf`` (e.g., ``/var/lib/pgsql/14/data/postgresql.conf``)
+
+   .. code-block:: ini
+
+      # Enable replication
+      wal_level = replica
+      max_wal_senders = 10
+      max_replication_slots = 10
+
+      # Configure write-ahead log archiving (recommended)
+      archive_mode = on
+      archive_command = 'cp %p /var/lib/postgresql/wal_archive/%f'
+
+   After editing, restart PostgreSQL:
+
+   .. code-block:: bash
+
+      sudo systemctl restart postgresql
+
+2. **Configure replication access** in ``pg_hba.conf`` on the primary:
+
+   **Ubuntu/Debian:** Edit ``/etc/postgresql/{version}/main/pg_hba.conf``
+
+   **RHEL/CentOS:** Edit ``/var/lib/pgsql/{version}/data/pg_hba.conf``
+
+   .. code-block:: text
+
+      # Allow replication connections from replica servers
+      # Replace REPLICA_IP with your replica server IP addresses
+      host    replication    replication_user    REPLICA_IP/32    scram-sha-256
+
+3. **Create a replication user** on the primary:
+
+   .. code-block:: sql
+
+      CREATE ROLE replication_user WITH REPLICATION LOGIN PASSWORD 'secure_password';
+
+4. **Create the replica** using ``pg_basebackup``:
+
+   .. code-block:: bash
+
+      # On the replica server, create base backup from primary
+      sudo -u postgres pg_basebackup -h PRIMARY_IP -D /var/lib/postgresql/data -U replication_user -P -v -R -X stream
+
+   The ``-R`` flag automatically creates the ``standby.signal`` file and configures replication settings.
+
+5. **Start the replica server:**
+
+   .. code-block:: bash
+
+      sudo systemctl start postgresql
+      sudo systemctl enable postgresql
+
+6. **Verify replication status** on the primary:
+
+   .. code-block:: sql
+
+      SELECT client_addr, state, sync_state FROM pg_stat_replication;
+
+**Configure Mattermost for self-managed PostgreSQL:**
+
+1. **Configure database connections** using mmctl or environment variables:
+
+   .. code-block:: bash
+
+      # Primary database connection
+      mmctl config set SqlSettings.DataSource "postgres://mattermost_user:password@primary-db.example.com:5432/mattermost?sslmode=require&connect_timeout=10"
+
+      # Read replica connections - create a configuration patch file
+      cat > /tmp/replica-config.json <<'EOF'
+      {
+        "SqlSettings": {
+          "DataSourceReplicas": [
+            "postgres://mattermost_user:password@replica1-db.example.com:5432/mattermost?sslmode=require&connect_timeout=10",
+            "postgres://mattermost_user:password@replica2-db.example.com:5432/mattermost?sslmode=require&connect_timeout=10"
+          ]
+        }
+      }
+      EOF
+
+      # Apply the replica configuration
+      mmctl config patch /tmp/replica-config.json
+
+      # Clean up the temporary file
+      rm /tmp/replica-config.json
+
+      # Connection pool settings
+      mmctl config set SqlSettings.MaxOpenConns 100
+      mmctl config set SqlSettings.MaxIdleConns 50
+
+2. **Apply configuration changes** without restarting Mattermost (if already running):
+
+   Go to **System Console > Environment > Web Server**, then select **Reload Configuration from Disk**, followed by **System Console > Environment > Database** and select **Recycle Database Connections**.
+
+   Alternatively, restart the Mattermost service:
+
+   .. code-block:: bash
+
+      sudo systemctl restart mattermost
+
+**Recommended PostgreSQL configuration settings:**
+
+The following settings are critical for production deployments. These were tested on AWS Aurora r5.xlarge instances but apply to any PostgreSQL deployment with similar specifications.
+
+**Primary/Writer node configuration:**
+
+Edit ``postgresql.conf`` on the primary database server:
+
+- **Ubuntu/Debian:** ``/etc/postgresql/{version}/main/postgresql.conf``
+- **RHEL/CentOS:** ``/var/lib/pgsql/{version}/data/postgresql.conf``
+
+Add or modify the following settings:
+
+.. code-block:: ini
+
+   # Connection settings
+   # Adjust based on your hardware - this is for r5.xlarge or equivalent
+   # Coordinate with Mattermost MaxOpenConns setting
+   max_connections = 1024
+
+   # Random page cost - set to 1.1 for SSD storage
+   # Use default 4.0 for spinning disks
+   random_page_cost = 1.1
+
+   # Work memory - use 32MB with read replicas, 16MB for single instance
+   # Adjust downward for smaller instances
+   work_mem = 32MB
+
+   # Cache and buffer settings
+   # Set to 65% of total memory for dedicated database servers
+   # For 32GB RAM instance, use 21GB
+   # For smaller servers (e.g., 4GB RAM), use 20% or less (e.g., 512MB)
+   effective_cache_size = 21GB
+   shared_buffers = 21GB
+
+   # Maintenance work memory
+   # Use 1GB for 32GB+ RAM servers, 512MB for smaller servers
+   maintenance_work_mem = 1GB
+
+   # Autovacuum settings
+   autovacuum_max_workers = 4
+   autovacuum_vacuum_cost_limit = 500
+
+   # Parallel query settings (for servers with 32+ CPUs)
+   max_worker_processes = 12
+   max_parallel_workers_per_gather = 4
+   max_parallel_workers = 12
+   max_parallel_maintenance_workers = 4
+
+   # TCP keepalive settings
+   # If using pgbouncer or connection pooling proxy, apply these to the proxy
+   # and revert to defaults on the database
+   tcp_keepalives_idle = 5
+   tcp_keepalives_interval = 1
+   tcp_keepalives_count = 5
+
+**Read replica node configuration:**
+
+Edit ``postgresql.conf`` on each read replica server and copy all primary settings above, then modify or add the following:
+
+.. code-block:: ini
+
+   # Work memory - use 16MB on replicas, 32MB on primary
+   work_mem = 16MB
+
+   # Hot standby settings - CRITICAL FOR PRODUCTION STABILITY
+   # These settings prevent query cancellations when primary has write activity
+   # Without these settings, high write traffic can cause read queries to fail
+   hot_standby = on
+   hot_standby_feedback = on
+
+.. warning::
+
+   The ``hot_standby_feedback`` setting is **essential** for production stability. Without it, high write traffic on the primary can cause the replica to cancel long-running read queries, leading to application errors and degraded performance.
+
+After editing configuration files on the primary or replicas, restart PostgreSQL for changes to take effect:
+
+.. code-block:: bash
+
+   sudo systemctl restart postgresql
+
+**Vacuuming and maintenance:**
+
+PostgreSQL performance is highly dependent on regular vacuuming. Monitor vacuum activity:
+
+.. code-block:: sql
+
+   -- Check vacuum status for top 10 tables with most dead tuples
+   SELECT relname, n_tup_ins as inserts, n_tup_upd as updates, n_tup_del as deletes,
+          n_live_tup as live_tuples, n_dead_tup as dead_tuples, n_mod_since_analyze,
+          last_autovacuum, last_autoanalyze, autovacuum_count, autoanalyze_count
+   FROM pg_stat_user_tables
+   ORDER BY dead_tuples DESC
+   LIMIT 10;
+
+If you see more than 50,000 dead tuples on a table, or if ``last_autovacuum`` shows the table hasn't been vacuumed in months, tune table-specific autovacuum settings:
+
+.. code-block:: sql
+
+   -- Example: More aggressive vacuuming for high-activity tables
+   ALTER TABLE posts SET (
+     autovacuum_vacuum_scale_factor = 0.1,    -- default is 0.2
+     autovacuum_analyze_scale_factor = 0.05,  -- default is 0.1
+     autovacuum_vacuum_cost_limit = 1000      -- default is 200
+   );
+
+Adjust these values based on your monitoring data. See the `PostgreSQL autovacuum documentation <https://www.postgresql.org/docs/current/routine-vacuuming.html#AUTOVACUUM>`__ for details on how PostgreSQL calculates when to run autovacuum.
+
+Search replicas
+^^^^^^^^^^^^^^^
+
+For large deployments, consider configuring dedicated search replicas to isolate resource-intensive search queries from regular database operations.
+
+Search replicas are PostgreSQL read replicas that are configured in Mattermost specifically to handle search queries:
+
+.. code-block:: bash
+
+   # Configure dedicated search replicas - create a configuration patch file
+   cat > /tmp/search-replica-config.json <<'EOF'
+   {
+     "SqlSettings": {
+       "DataSourceSearchReplicas": [
+         "postgres://mattermost_user:password@search-replica1.example.com:5432/mattermost?sslmode=require&connect_timeout=10",
+         "postgres://mattermost_user:password@search-replica2.example.com:5432/mattermost?sslmode=require&connect_timeout=10"
+       ]
+     }
+   }
+   EOF
+
+   # Apply the search replica configuration
+   mmctl config patch /tmp/search-replica-config.json
+
+   # Clean up the temporary file
+   rm /tmp/search-replica-config.json
+
+Search replicas use the same PostgreSQL configuration as regular read replicas. When configured, all search queries are distributed among the search replicas. If search replicas are unavailable, queries fall back to read replicas, and ultimately to the primary database.
+
+For deployments requiring advanced search capabilities, see :doc:`Enterprise search </administration-guide/scale/enterprise-search>` for information on Elasticsearch integration.
+
+Database sizing
+^^^^^^^^^^^^^^^
+
+Database sizing depends on your expected user count and usage patterns. See the :ref:`hardware-sizing-for-enterprise` documentation for more information.
+
+**Key considerations:**
+
+- Size your primary and replica databases to handle 100% of the load independently to ensure availability during failover scenarios
+- Monitor database CPU, memory, and I/O metrics to identify when additional read replicas are needed
+- Plan for growth - database storage grows based on message history, file metadata, and retention policies
+
+Database failover and disaster recovery
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Manual failover:**
+
+If you need to manually promote a read replica to primary (for maintenance, disaster recovery, or other operational needs):
+
+1. **Promote the replica** to primary:
+
+   For self-managed PostgreSQL:
+
+   .. code-block:: bash
+
+      # On the replica server
+      sudo -u postgres pg_ctl promote -D /var/lib/postgresql/data
+
+   For Amazon RDS:
+
+   Use the AWS Console or CLI to promote the read replica to a standalone instance.
+
+2. **Update Mattermost configuration** to point to the new primary:
+
+   .. code-block:: bash
+
+      # Update the DataSource to point to the new primary
+      mmctl config set SqlSettings.DataSource "postgres://user:password@new-primary.example.com:5432/mattermost?sslmode=require"
+
+3. **Reload configuration without downtime:**
+
+   - Go to **System Console > Environment > Web Server** → **Reload Configuration from Disk**
+   - Go to **System Console > Environment > Database** → **Recycle Database Connections**
+
+   Users may experience a brief interruption (similar to network disconnection) while connections are recycled.
+
+**Disaster recovery:**
+
+For comprehensive disaster recovery planning:
+
+- Implement regular database backups using ``pg_dump``, ``pg_basebackup``, or managed backup services
+- Test restore procedures regularly
+- Document and practice failover procedures
+- Consider cross-region replication for geographic redundancy (note: multi-region Mattermost clusters are not officially supported but can work with proper network configuration)
+
+See the :doc:`backup and disaster recovery </deployment-guide/backup-disaster-recovery>` documentation for more information.
+
+Next steps
+----------
+
+Once your high availability cluster is deployed and operational, consider these additional scaling optimizations based on your deployment size and requirements:
+
+**Calls deployment**
+
+If you're using Mattermost Calls for voice and screen sharing communication, review :doc:`Calls self-hosted deployment </administration-guide/configure/calls-deployment>` to plan an appropriately-scaled Calls infrastructure that matches your HA deployment.
+
+**Enterprise search**
+
+For deployments expected to exceed 2.5 million posts, consider implementing :doc:`Enterprise search </administration-guide/scale/enterprise-search>` with Elasticsearch. Elasticsearch provides significantly faster search performance and advanced search capabilities for large-scale deployments.
+
+**Redis integration**
+
+For deployments serving more than 100,000 users, implement :doc:`Redis </administration-guide/scale/redis>` to improve session management, caching, and real-time communication performance across your cluster.
+
+**Performance monitoring**
+
+Deploy :doc:`Prometheus and Grafana </administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring>` to monitor your high availability cluster's health, performance metrics, and resource utilization. Comprehensive monitoring is essential for identifying bottlenecks, planning capacity, and maintaining optimal performance.
+
+Operations and maintenance
+--------------------------
+
+This section covers the operational aspects of managing and maintaining your high availability cluster after deployment.
 
 Cluster discovery
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
-If you have non-standard (i.e. complex) network configurations, then you may need to use the :ref:`Override Hostname <administration-guide/configure/environment-configuration-settings:override hostname>` setting to help the cluster nodes discover each other. The cluster settings in the config are removed from the config file hash for this reason, meaning you can have ``config.json`` files that are slightly different in high availability mode. The Override Hostname is intended to be different for each clustered node in ``config.json`` if you need to force discovery.
+If you have non-standard (i.e. complex) network configurations, then you may need to use the :ref:`Override Hostname <administration-guide/configure/environment-configuration-settings:override hostname>` setting to help the cluster nodes discover each other. The cluster settings in the config are removed from the config file hash for this reason, meaning you can have slightly different cluster configuration settings in high availability mode. The Override Hostname is intended to be different for each clustered node if you need to force discovery.
 
 If ``UseIpAddress`` is set to ``true``, it attempts to obtain the IP address by searching for the first non-local IP address (non-loop-back, non-localunicast, non-localmulticast network interface). It enumerates the network interfaces using the built-in go function `net.InterfaceAddrs() <https://pkg.go.dev/net#InterfaceAddrs>`_. Otherwise it tries to get the hostname using the `os.Hostname() <https://pkg.go.dev/os#Hostname>`_ built-in go function.
 
@@ -159,15 +1053,10 @@ In short, you should use:
 
 1. IP address discovery if the first non-local address can be seen from the other machines.
 2. Override Hostname on the operating system so that it's a proper discoverable name for the other nodes in the cluster.
-3. Override Hostname in ``config.json`` if the above steps do not work. You can put an IP address in this field if needed. The ``config.json`` will be different for each cluster node.
-
-Time synchronization
-^^^^^^^^^^^^^^^^^^^^
-
-Each server in the cluster must have the Network Time Protocol daemon ``ntpd`` running so that messages are posted in the correct order.
+3. Override Hostname in your server configuration if the above steps do not work. You can put an IP address in this field if needed. If using ``config.json`` files, this setting will be different for each cluster node.
 
 State
-^^^^^
+~~~~~
 
 The Mattermost server is designed to have very little state to allow for horizontal scaling. The items in state considered for scaling Mattermost are listed below:
 
@@ -176,275 +1065,10 @@ The Mattermost server is designed to have very little state to allow for horizon
 - System configuration file that is loaded and stored in memory.
 - WebSocket connections from clients used to send messages.
 
-When the Mattermost server is configured for high availability, the servers  use an inter-node communication protocol on a different listening address to keep the state in sync. When a state changes it is written back to the database and an inter-node message is sent to notify the other servers of the state change. The true state of the items can always be read from the database. Mattermost also uses inter-node communication to forward WebSocket messages to the other servers in the cluster for real-time messages such as “[User X] is typing.”
-
-Proxy server configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The proxy server exposes the cluster of Mattermost servers to the outside world. The Mattermost servers are designed for use with a proxy server such as NGINX, a hardware load balancer, or a cloud service like Amazon Elastic Load Balancer.
-
-If you want to monitor the server with a health check you can use ``http://10.10.10.2/api/v4/system/ping`` and check the response for ``Status 200``, indicating success. Use this health check route to mark the server *in-service* or *out-of-service*.
-
-A sample configuration for NGINX is provided below. It assumes that you have two Mattermost servers running on private IP addresses of ``10.10.10.2`` and ``10.10.10.4``.
-
-.. code-block:: text
-
-    upstream backend {
-          server 10.10.10.2:8065;
-          server 10.10.10.4:8065;
-          keepalive 256;
-    }
-
-    proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=mattermost_cache:50m max_size=16g inactive=60m use_temp_path=off;
-
-    server {
-      listen 80 reuseport;
-      server_name mattermost.example.com;
-
-      location ~ /api/v[0-9]+/(users/)?websocket$ {
-            proxy_set_header Upgrade $http_upgrade;
-            proxy_set_header Connection "upgrade";
-            client_max_body_size 100M;
-            proxy_set_header Host $http_host;
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_set_header X-Forwarded-Proto $scheme;
-            proxy_set_header X-Frame-Options SAMEORIGIN;
-            proxy_buffers 256 16k;
-            proxy_buffer_size 16k;
-            client_body_timeout 60s;
-            send_timeout        300s;
-            lingering_timeout   5s;
-            proxy_connect_timeout   30s;
-            proxy_send_timeout      90s;
-            proxy_read_timeout      90s;
-            proxy_http_version 1.1;
-            proxy_pass http://backend;
-      }
-
-      location / {
-            proxy_set_header Connection "";
-            client_max_body_size 100M;
-            proxy_set_header Host $http_host;
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_set_header X-Forwarded-Proto $scheme;
-            proxy_set_header X-Frame-Options SAMEORIGIN;
-            proxy_buffers 256 16k;
-            proxy_buffer_size 16k;
-            client_body_timeout 60s;
-            send_timeout        300s;
-            lingering_timeout   5s;
-            proxy_connect_timeout   30s;
-            proxy_send_timeout      90s;
-            proxy_read_timeout      90s;
-            proxy_http_version 1.1;
-            proxy_pass http://backend;
-            proxy_cache mattermost_cache;
-            proxy_cache_revalidate on;
-            proxy_cache_min_uses 2;
-            proxy_cache_use_stale timeout;
-            proxy_cache_lock on;
-      }
-    }
-
-You can use multiple proxy servers to limit a single point of failure, but that is beyond the scope of this documentation.
-
-File storage configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. note::
-
-  1. File storage is assumed to be shared between all the machines that are using services such as NAS or Amazon S3.
-  2. If ``"DriverName": "local"`` is used then the directory at ``"FileSettings":`` ``"Directory": "./data/"`` is expected to be a NAS location mapped as a local directory, otherwise high availability will not function correctly and may corrupt your file storage.
-  3. If you're using Amazon S3 or another S3-compatible service for file storage then no other configuration is required.
-
-If you’re using the Compliance Reports feature in Mattermost Enterprise, you need to configure the ``"ComplianceSettings":`` ``"Directory": "./data/",`` to share between all machines or the reports will only be available from the System Console on the local Mattermost server.
-
-Migrating to NAS or S3 from local storage is beyond the scope of this document.
-
-Database configuration
-^^^^^^^^^^^^^^^^^^^^^^
-
-.. tip::
-
-  Specifying configuration setting values using Mattermost environment variables ensure that they always take precedent over any other configuration settings.
-
-For an AWS High Availability RDS cluster deployment, point the :ref:`datasource <administration-guide/configure/environment-configuration-settings:data source>` configuration setting to the write/read endpoint at the **cluster** level to benefit from the AWS failover handling. AWS takes care of promoting different database nodes to be the writer node. Mattermost doesn't need to manage this.
-
-Use the :ref:`read replica <administration-guide/configure/environment-configuration-settings:read replicas>` feature to scale the database. The Mattermost server can be set up to use one master database and one or more read replica databases.
-
-.. note::
-
-  For an AWS High Availability RDS cluster deployment, don't hard-code the IP addresses. Point this configuration setting to the write/read endpoint at the **cluster** level. This will benefit from the AWS failover handling where AWS takes care of promoting different database nodes to be the writer node. Mattermost doesn't need to manage this.
-
-On large deployments, also consider using the :ref:`search replicas <administration-guide/configure/environment-configuration-settings:search replicas>` feature to isolate search queries onto one or more search replicas. A search replica is similar to a read replica, but is used only for handling search queries.
-
-.. note::
-
-  For an AWS High Availability RDS cluster deployment, don't hard-code the IP addresses. Point this configuration setting directly to the underlying read-only node endpoints within the RDS cluster. We recommend circumventing the failover/load balancing that AWS/RDS takes care of (except for the write traffic), and populating the ``DataSourceReplicas`` array with the RDS reader node endpoints. Mattermost has its own method of balancing the read-only connections, and can also balance those queries to the DataSource/write+read connection should those nodes fail.
-
-Mattermost distributes queries as follows:
-
-* All write requests, and some specific read requests, are sent to the master.
-* All other read requests (excluding those specific queries that go to the master) are distributed among the available read replicas. If no read replicas are available, these are sent to the master instead.
-* Search requests are distributed among the available search replicas. If no search replicas are available, these are sent to the read replicas instead (or, if no read replicas are available, to the master).
-
-Size the databases
-``````````````````
-
-For information about sizing database servers, see :ref:`hardware-sizing-for-enterprise`.
-
-In a master/slave environment, make sure to size the slave machine to take 100% of the load in the event that the master machine goes down and you need to fail over.
-
-Deploy a multi-database configuration
-``````````````````````````````````````
-
-To configure a multi-database Mattermost server:
-
-1. Update the ``DataSource`` setting in ``config.json`` with a connection string to your master database server.
-2. Update the ``DataSourceReplicas`` setting in ``config.json`` with a series of connection strings to your database read replica servers in the format ``["readreplica1", "readreplica2"]``. Each connection should also be compatible with the ``DriverName`` setting.
-
-Here's an example ``SqlSettings`` block for one master and two read replicas:
-
-.. code-block:: json
-
-  "SqlSettings": {
-        "DriverName": "mysql",
-        "DataSource": "master_user:master_password@tcp(master.server)/mattermost?charset=utf8mb4,utf8\u0026readTimeout=30s\u0026writeTimeout=30s",
-        "DataSourceReplicas": ["slave_user:slave_password@tcp(replica1.server)/mattermost?charset=utf8mb4,utf8\u0026readTimeout=30s\u0026writeTimeout=30s","slave_user:slave_password@tcp(replica2.server)/mattermost?charset=utf8mb4,utf8\u0026readTimeout=30s\u0026writeTimeout=30s"],
-        "DataSourceSearchReplicas": [],
-        "MaxIdleConns": 50,
-        "MaxOpenConns": 100,
-        "Trace": false,
-        "AtRestEncryptKey": "",
-        "QueryTimeout": 30
-    }
-
-The new settings can be applied by either stopping and starting the server, or by loading the configuration settings as described in the next section.
-
-Once loaded, database write requests are sent to the master database and read requests are distributed among the other databases in the list.
-
-Load a multi-database configuration onto an active server
-`````````````````````````````````````````````````````````
-
-After a multi-database configuration has been defined in ``config.json``, the following procedure can be used to apply the settings without shutting down the Mattermost server:
-
-1. Go to **System Console > Environment > Web Server**, then select **Reload Configuration from Disk** to reload configuration settings for the Mattermost server from ``config.json``.
-2. Go to **System Console > Environment > Database**, then select **Recycle Database Connections** to take down existing database connections and set up new connections in the multi-database configuration.
-
-While the connection settings are changing, there might be a brief moment when writes to the master database are unsuccessful. The process waits for all existing connections to finish and starts serving new requests with the new connections. End users attempting to send messages while the switch is happening will have an experience similar to losing connection to the Mattermost server.
-
-Manual failover for master database
-```````````````````````````````````
-
-If the need arises to switch from the current master database - for example, if it is running out of disk space, or requires maintenance updates, or for other reasons - you can switch Mattermost server to use one of its read replicas as a master database by updating ``DataSource`` in ``config.json``.
-
-To apply the settings without shutting down the Mattermost server:
-
-1. Go to **System Console > Environment > Web Server**, then select **Reload Configuration from Disk** to reload configuration settings for the Mattermost server from ``config.json``.
-2. Go to **System Console > Environment > Database**, then select **Recycle Database Connections** to take down existing database connections and set up new connections in the multi-database configuration.
-
-While the connection settings are changing, there might be a brief moment when writes to the master database are unsuccessful. The process waits for all existing connections to finish and starts serving new requests with the new connections. End users attempting to send messages while the switch is happening can have an experience similar to losing connection to the Mattermost server.
-
-Transparent failover
-````````````````````
-
-The database can be configured for high availability and transparent failover use the existing database technologies. We recommend PostgreSQL Clustering or Amazon Aurora. Database transparent failover is beyond the scope of this documentation.
-
-Recommended configuration settings for PostgreSQL
-``````````````````````````````````````````````````
-
-For the Postgres service we recommend the following configuration optimizations on your Mattermost server. These configurations were tested on an AWS Aurora r5.xlarge instance. There are also some general optimizations mentioned which requires servers with higher specifications.
-
-**Config for Postgres Primary or Writer node**
-
-.. code-block:: sh
-
-  # If the instance is lower capacity than r5.xlarge, then set it to a lower number.
-  # Also tune the "MaxOpenConns" setting under the "SqlSettings" of the Mattermost app accordingly.
-  # Note that "MaxOpenConns" on Mattermost is per data source name.
-  # Recommended: MaxOpenConns: 100, MaxIdleConns: 50 (2:1 ratio)
-  max_connections = 1024
-
-  # Set it to 1.1, unless the DB is using spinning disks.
-  random_page_cost = 1.1
-
-  # This should be 32MB if using read replicas, or 16MB if using a single PostgreSQL instance.
-  # If the instance is of a lower capacity than r5.xlarge, then set it to a lower number.
-  work_mem = 32MB
-
-  # Set both of the below settings to 65% of total memory. For a 32 GB instance, it should be 21 GB.
-  # If on a smaller server, set this to 20% or less total RAM.
-  # ex: 512MB would work for a 4GB RAM server
-  effective_cache_size = 21GB
-  shared_buffers = 21GB
-
-  # If you are using pgbouncer, or any similar connection pooling proxy,
-  # in front of your DB, then apply the keepalive settings to the proxy instead,
-  # and revert the keepalive settings for the DB back to defaults.
-  tcp_keepalives_idle = 5
-  tcp_keepalives_interval = 1
-  tcp_keepalives_count = 5
-
-  # 1GB (reduce this to 512MB if your server has less than 32GB of RAM)
-  maintenance_work_mem = 512MB
-
-  autovacuum_max_workers = 4
-  autovacuum_vacuum_cost_limit = 500
-
-
-  # If you have more than 32 CPUs on your database server, please set the following options to utilize more CPU for your server:
-  max_worker_processes = 12
-  max_parallel_workers_per_gather = 4
-  max_parallel_workers = 12
-  max_parallel_maintenance_workers = 4
-
-**Config for Postgres Replica node**
-
-Copy all the above settings to the read replica, and modify or add only the below.
-
-.. code-block:: sh
-
-  # If the instance is lower capacity than r5.xlarge, then set it to a lower number.
-  # Also tune the "MaxOpenConns" setting under the "SqlSettings" of the Mattermost app accordingly.
-  # Note that "MaxOpenConns" on Mattermost is per data source name.
-  # Recommended: MaxOpenConns: 100, MaxIdleConns: 50 (2:1 ratio)
-  max_connections = 1024
-
-  # This setting should be 16MB on read nodes, and 32MB on writer nodes
-  work_mem = 16MB
-
-  # The below settings allow the reader to return query results even when the primary has a write process running, a query conflict.
-  # This is set to on because of the high volume of write traffic that can prevent the reader from returning query results within the timeout.
-  # https://www.postgresql.org/docs/current/hot-standby.html#HOT-STANDBY-CONFLICT
-  hot_standby = on
-  hot_standby_feedback = on
-
-**A note on vacuuming**
-
-Performance of a Postgres database is particularly sensitive to `vacuuming and analyzing <https://www.postgresql.org/docs/current/sql-vacuum.html>`__. A good way to check how frequently tables are vacuumed is with this query:
-
-.. code-block:: sql
-
-  SELECT relname, n_tup_ins as inserts,n_tup_upd as updates,n_tup_del as deletes, n_live_tup as live_tuples, n_dead_tup as dead_tuples, n_mod_since_analyze, last_autovacuum, last_autoanalyze, autovacuum_count, autoanalyze_count FROM pg_stat_user_tables order by dead_tuples desc LIMIT 10;
-
-The output of this query will indicate which tables have accumulated the most dead tuples. You can also look at the ``last_autovacuum`` and ``last_autoanalyze`` columns to see when the last autovacuum or autoanalyze ran.
-
-Depending on those values, you can choose to tune table-specific values for autovacuum or autoanalyze thresholds. For example, if you see more than 50,000 dead tuples on a table, and it hasn't been vacuumed or analyzed in the last 6 months, there's a good chance that it would benefit from more aggressive vacuuming. In that case, you can run this to tune your tables:
-
-.. code-block:: sql
-
-  ALTER TABLE <table> SET (
-    autovacuum_vacuum_scale_factor = 0.1, -- default is 0.2
-    autovacuum_analyze_scale_factor = 0.05, -- default is 0.1
-    autovacuum_vacuum_cost_limit = 1000 -- default is 200
-  );
-
-Feel free to choose different values as necessary. Refer to https://www.postgresql.org/docs/current/routine-vacuuming.html#AUTOVACUUM for more information on how does Postgres calculate when to run vacuuming. Re-run the initial SQL query from time to time and adjust values accordingly.
+When the Mattermost server is configured for high availability, the servers  use an inter-node communication protocol on a different listening address to keep the state in sync. When a state changes it is written back to the database and an inter-node message is sent to notify the other servers of the state change. The true state of the items can always be read from the database. Mattermost also uses inter-node communication to forward WebSocket messages to the other servers in the cluster for real-time messages such as "[User X] is typing."
 
 Leader election
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 A cluster leader election process assigns any scheduled task such as LDAP sync to run on a single node in a multi-node cluster environment.
 
@@ -455,7 +1079,7 @@ The process is based on a widely used `bully leader election algorithm <https://
   From Mattermost v11.4, debug-level log messages help identify which node is executing specific Recurring Tasks (Scheduled Posts, Post Reminders, and DND Status Reset). Non-leader nodes log messages like ``Skipping scheduled posts job startup since this is not the leader node`` to indicate they are correctly deferring execution of these Recurring Tasks to the leader. These are normal operational messages, not errors. These debug messages do not apply to other job types such as Elasticsearch indexing, SAML sync, or LDAP sync. See :ref:`Cluster job execution debug messages <administration-guide/manage/logging:cluster job execution debug messages>` for details.
 
 Job server
-^^^^^^^^^^^
+~~~~~~~~~~
 
 Mattermost runs periodic tasks via the :ref:`job server <administration-guide/configure/experimental-configuration-settings:experimental job configuration settings>`. These tasks include:
 
@@ -467,7 +1091,19 @@ Mattermost runs periodic tasks via the :ref:`job server <administration-guide/co
 - DND status reset
 - Post reminders
 
-Make sure you have set ``JobSettings.RunScheduler`` to ``true`` in ``config.json`` for all app and job servers in the cluster. The cluster leader will then be responsible for scheduling recurring jobs.
+Make sure you have set ``JobSettings.RunScheduler`` to ``true`` for all app and job servers in the cluster. The cluster leader will then be responsible for scheduling recurring jobs.
+
+You can verify this setting using :doc:`mmctl </administration-guide/manage/mmctl-command-line-tool>`:
+
+.. code-block:: bash
+
+   mmctl config get JobSettings.RunScheduler
+
+If you need to set it (it defaults to ``true``):
+
+.. code-block:: bash
+
+   mmctl config set JobSettings.RunScheduler true
 
 .. note::
 
@@ -475,7 +1111,7 @@ Make sure you have set ``JobSettings.RunScheduler`` to ``true`` in ``config.json
   - From Mattermost v11.4, you can verify that Recurring Tasks (Scheduled Posts, Post Reminders, and DND Status Reset) are running on the correct node by enabling debug logging. Non-leader nodes will log messages indicating they are skipping execution of these specific Recurring Tasks, which is expected behavior. These debug messages don't apply to other job types. See :ref:`Cluster job execution debug messages <administration-guide/manage/logging:cluster job execution debug messages>` for more information.
 
 Plugins and High Availability
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When you install or upgrade a plugin, it's propagated across the servers in the cluster automatically. File storage is assumed to be shared between all the servers, using services such as NAS or Amazon S3.
 
@@ -484,14 +1120,14 @@ If ``"DriverName": "local"`` is used then the directory at ``"FileSettings":`` `
 When you reinstall a plugin in v5.14, the previous **Enabled** or **Disabled** state is retained. As of v5.15, a reinstalled plugin's initial state is **Disabled**.
 
 CLI and High Availability
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The CLI is run in a single node which bypasses the mechanisms that a :doc:`high availability environment </administration-guide/scale/high-availability-cluster-based-deployment>` uses to perform actions across all nodes in the cluster. As a result, when running :doc:`CLI commands </administration-guide/manage/command-line-tools>` in a High Availability environment, tasks such as updating and deleting users or changing configuration settings require a server restart.
 
 We recommend using :doc:`mmctl </administration-guide/manage/mmctl-command-line-tool>` in a high availability environment instead since a server restart is not required. These changes are made through the API layer, so the node receiving the change request notifies all other nodes in the cluster.
 
 Upgrade guide
--------------
+~~~~~~~~~~~~~
 
 An update is an incremental change to Mattermost server that fixes bugs or performance issues. An upgrade adds new or improved functionality to the server.
 
@@ -500,13 +1136,29 @@ An update is an incremental change to Mattermost server that fixes bugs or perfo
   To learn how to safely upgrade your deployment in Kubernetes for High Availability and Active/Active support, see the :doc:`Upgrading Mattermost in Kubernetes and High Availability Environments </administration-guide/upgrade/upgrade-mattermost-kubernetes-ha>` documenation.
 
 Update configuration changes while operating continuously
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A service interruption is not required for most configuration updates. See the section below for details on upgrades requiring service interruption. You can apply updates during a period of low load, but if your high availability cluster-based deployment is sized correctly, you can do it at any time. The system downtime is brief, and depends on the number of Mattermost servers in your cluster. Note that you are not restarting the machines, only the Mattermost server applications. A Mattermost server restart generally takes about five seconds.
 
+**If using database configuration (recommended):**
+
+Use :doc:`mmctl </administration-guide/manage/mmctl-command-line-tool>` to update configuration settings. Changes are automatically propagated to all servers in the cluster:
+
+.. code-block:: bash
+
+   mmctl config set <setting> <value>
+
+For example:
+
+.. code-block:: bash
+
+   mmctl config set TeamSettings.MaxUsersPerTeam 100
+
+**If using config.json files:**
+
 .. note::
 
-  Don't modify configuration settings through the System Console, otherwise you'll have two servers with different ``config.json`` files in a high availability cluster-based deployment causing a refresh every time a user connects to a different app server.
+  Don't modify configuration settings through the System Console when using ``config.json`` files, otherwise you'll have two servers with different configuration files in a high availability cluster-based deployment causing a refresh every time a user connects to a different app server.
 
 1. Make a backup of your existing ``config.json`` file.
 2. For one of the Mattermost servers, make the configuration changes to ``config.json`` and save the file. Do not reload the file yet.
@@ -516,29 +1168,29 @@ A service interruption is not required for most configuration updates. See the s
 6. Start the other servers.
 
 Update the Server version while operating continuously
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A service interruption is not required for security patch dot releases of Mattermost Server. You can apply updates during a period when the anticipated load is small enough that one server can carry the full load of the system during the update.
 
 .. note::
 
-  Mattermost supports one minor version difference between the server versions when performing a rolling upgrade (for example v5.27.1 + v5.27.2 or v5.26.4 + v5.27.1 is supported, whereas v5.25.5 + v5.27.0 is not supported). Running two different versions of Mattermost in your cluster should not be done outside of an upgrade scenario.
+  Mattermost supports one minor version difference between the server versions when performing a rolling upgrade (for example v11.4.1 + v11.4.2 or v11.3.2 + v11.4.2 is supported, whereas v11.1.3 + v11.4.0 is not supported). Running two different versions of Mattermost in your cluster should not be done outside of an upgrade scenario.
 
 When restarting, you aren't restarting the machines, only the Mattermost server applications. A Mattermost server restart generally takes about five seconds.
 
 1. Review the upgrade procedure in the *Upgrade Enterprise Edition* section of :doc:`/administration-guide/upgrade/upgrading-mattermost-server`.
-2. Make a backup of your existing ``config.json`` file.
+2. Back up your Mattermost database. If using ``config.json`` files for configuration, also back up your configuration file.
 3. Set your proxy to move all new requests to a single server. If you are using NGINX and it's configured with an upstream backend section in ``/etc/nginx/sites-available/mattermost`` then comment out all but the one server that you intend to update first, and reload NGINX.
 4. Shut down Mattermost on each server except the one that you are updating first.
 5. Update each Mattermost instance that is shut down.
-6. On each server, replace the new ``config.json`` file with your backed up copy.
+6. If using ``config.json`` files, replace the new ``config.json`` file on each server with your backed up copy.
 7. Start the Mattermost servers.
 8. Repeat the update procedure for the server that was left running.
 
 Server upgrades requiring service interruption
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A service interruption is required when the upgrade includes a change to the database schema or when a change to ``config.json`` requires a server restart, such as when making the following changes:
+A service interruption is required when the upgrade includes a change to the database schema or when a change to server configuration requires a server restart, such as when making the following changes:
 
 - Default server language
 - Rate limiting
@@ -551,23 +1203,23 @@ If the upgrade includes a change to the database schema, the database is upgrade
 Apply upgrades during a period of low load. The system downtime is brief, and depends on the number of Mattermost servers in your cluster. Note that you are not restarting the machines, only the Mattermost server applications.
 
 1. Review the upgrade procedure in the *Upgrade Enterprise Edition* section of :doc:`/administration-guide/upgrade/upgrading-mattermost-server`.
-2. Make a backup of your existing ``config.json`` file.
+2. Back up your Mattermost database. If using ``config.json`` files for configuration, also back up your configuration file.
 3. Stop NGINX.
 4. Upgrade each Mattermost instance.
-5. On each server, replace the new ``config.json`` file with your backed up copy.
+5. If using ``config.json`` files, replace the new ``config.json`` file on each server with your backed up copy.
 6. Start one of the Mattermost servers.
 7. When the server is running, start the other servers.
 8. Restart NGINX.
 
 All cluster nodes must use a single protocol
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 All cluster traffic uses the gossip protocol. :ref:`Gossip clustering can no longer be disabled <administration-guide/configure/deprecated-configuration-settings:use gossip>`.
 
 When upgrading a high availability cluster-based deployment, you can't upgrade other nodes in the cluster when one node isn't using the gossip protocol. You must use gossip to complete this type of upgrade. Alternatively you can shut down all nodes and bring them all up individually following an upgrade.
 
 Requirements for continuous operation
--------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To enable continuous operation at all times, including during server updates and server upgrades, you must make sure that the redundant components are properly sized and that you follow the correct sequence for updating each of the system's components.
 
@@ -592,7 +1244,7 @@ Does Mattermost support multi-region high availability cluster-based deployment?
 Yes. Although not officially tested, you can set up a cluster across AWS regions, for example, and it should work without issues.
 
 What does Mattermost recommend for disaster recovery of the databases?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When deploying Mattermost in a high availability configuration, we recommend using a database load balancer between Mattermost and your database. Depending on your deployment this needs more or less consideration.
 
@@ -607,7 +1259,7 @@ Troubleshooting
 ---------------
 
 Capture high availability troubleshooting data
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When deploying Mattermost in a high availability configuration, we recommend that you keep Prometheus and Grafana metrics as well as cluster server logs for as long as possible - and at minimum two weeks.
 
@@ -638,11 +1290,14 @@ When a client WebSocket receives a disconnect it will automatically attempt to r
 App refreshes continuously
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When configuration settings are modified through the System Console, the client refreshes every time a user connects to a different app server. This occurs because the servers have different ``config.json`` files in a high availability cluster-based deployment.
+When using ``config.json`` files for configuration, if configuration settings are modified through the System Console, the client refreshes every time a user connects to a different app server. This occurs because the servers have different configuration files in a high availability cluster-based deployment.
 
-Modify configuration settings directly through ``config.json`` :ref:`following these steps <administration-guide/scale/high-availability-cluster-based-deployment:update configuration changes while operating continuously>`.
+**Solution:**
+
+- If using database configuration (recommended), modify settings through the System Console or :doc:`mmctl </administration-guide/manage/mmctl-command-line-tool>`. Changes are automatically synchronized across all servers.
+- If using ``config.json`` files, modify configuration settings directly in the files :ref:`following these steps <administration-guide/scale/high-availability-cluster-based-deployment:update configuration changes while operating continuously>`.
 
 Messages do not post until after reloading
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When running in high availability mode, make sure all Mattermost application servers are running the same version of Mattermost. If they are running different versions, it can lead to a state where the lower version app server cannot handle a request and the request will not be sent until the frontend application is refreshed and sent to a server with a valid Mattermost version. Symptoms to look for include requests failing seemingly at random or a single application server having a drastic rise in goroutines and API errors.
