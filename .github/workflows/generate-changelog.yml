@@ -56,6 +56,7 @@ jobs:
           MILESTONE: ${{ inputs.milestone }}
           VERSION: ${{ inputs.version }}
           REPOS: ${{ inputs.server_repos }} # Comma-separated repos to pull PRs from
+          CHANGELOG_PATH: source/product-overview/mattermost-v11-changelog.md
         run: python .github/scripts/generate_changelog.py
  
       - name: Create Pull Request
@@ -65,7 +66,7 @@ jobs:
           git config user.name "${{ vars.UNIFIED_CI_USERNAME }}"
           git config user.email "${{ vars.UNIFIED_CI_EMAIL }}"
           git checkout -b "changelog/${{ inputs.version }}"
-          git add CHANGELOG.md
+          git add source/product-overview/mattermost-v11-changelog.md
           git diff --staged --quiet && echo "No changes to commit" && exit 0
           git commit -m "docs: add changelog for ${{ inputs.version }}"
           git push origin "changelog/${{ inputs.version }}" --force
@@ -74,4 +75,4 @@ jobs:
             --body "Auto-generated changelog for milestone \`${{ inputs.milestone }}\` from \`${{ inputs.server_repos }}\`." \
             --base main \
             --head "changelog/${{ inputs.version }}"
-  
+ 
