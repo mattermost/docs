@@ -88,7 +88,7 @@ def get_merged_prs(repo: str, milestone_number: int) -> list:
             break
         for item in items:
             # Issues and PRs share the same endpoint; filter to merged PRs only
-            if "pull_request" in item and item["pull_request"].get("merged_at"):
+            if "pull_request" in item and item.get("merged_at"):
                 prs.append(item)
         page += 1
     return prs
