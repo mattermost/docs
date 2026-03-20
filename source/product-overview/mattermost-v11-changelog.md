@@ -105,7 +105,6 @@ If you upgrade from a release earlier than v11.5, please read the other [Importa
  - Fixed a regression where the ``system_admin`` role on new installations or after certain updates was missing the ``manage_oauth`` permission, preventing access to OAuth application management API endpoints. This change restores the permission to the default ``system_admin`` role and includes a migration to backfill it on affected existing servers.
  - Fixed an issue where popouts changing state did not update the title on Desktop App.
  - Fixed an issue with angle brackets displaying as HTML entities in inline code blocks within dialog markdown text [MM-67506](https://mattermost.atlassian.net/browse/MM-67506).
- - Fixed an issue where the post list would not scroll down when new posts were received [MM-67518](https://mattermost.atlassian.net/browse/MM-67518).
  - Fixed an issue where image proxies did not detect content-types accurately in certain cases.
 
 ### API Changes
