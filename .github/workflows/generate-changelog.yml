@@ -11,6 +11,11 @@ on:
         description: 'Version label for changelog entry (e.g. 10.6)'
         required: true
         type: string
+      changelog_path:
+        description: 'Path to the changelog file to update'
+        required: true
+        default: 'source/product-overview/mattermost-v11-changelog.md'
+        type: string
       server_repos:
         description: 'Comma-separated repos to pull PRs from'
         required: true
@@ -60,7 +65,7 @@ jobs:
           MILESTONE: ${{ inputs.milestone }}
           VERSION: ${{ inputs.version }}
           REPOS: ${{ inputs.server_repos }} # Comma-separated repos to pull PRs from
-          CHANGELOG_PATH: source/product-overview/mattermost-v11-changelog.md
+          CHANGELOG_PATH: ${{ inputs.changelog_path }}
         run: python .github/scripts/generate_changelog.py
  
       - name: Create Pull Request
@@ -71,11 +76,12 @@ jobs:
           VERSION: ${{ inputs.version }}
           MILESTONE: ${{ inputs.milestone }}
           SERVER_REPOS: ${{ inputs.server_repos }}
+          CHANGELOG_PATH: ${{ inputs.changelog_path }}
         run: |
           git config user.name "$CI_USERNAME"
           git config user.email "$CI_EMAIL"
           git checkout -b "changelog/$VERSION"
-          git add source/product-overview/mattermost-v11-changelog.md
+          git add "$CHANGELOG_PATH"
           git diff --staged --quiet && echo "No changes to commit" && exit 0
           git commit -m "docs: add changelog for $VERSION"
           git push origin "changelog/$VERSION" --force
@@ -84,4 +90,3 @@ jobs:
             --body "Auto-generated changelog for milestone \`$MILESTONE\` from \`$SERVER_REPOS\`." \
             --base master \
             --head "changelog/$VERSION"
- 
