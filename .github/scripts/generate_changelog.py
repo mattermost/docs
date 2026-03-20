@@ -145,7 +145,7 @@ def extract_jira_links(pr: dict) -> list[str]:
  
     # Also look for bare ticket keys in the PR title (e.g. "MM-12345 Fix login bug")
     # and build a URL from any that aren't already covered by a full URL
-    bare_keys = re.findall(r"\b([A-Z]+-\d+)\b", pr.get("title") or "")
+    bare_keys = re.findall(r"\b([A-Z]+-\d+)\b", text)
     for key in bare_keys:
         constructed = f"https://mattermost.atlassian.net/browse/{key}"
         if constructed not in full_urls:
@@ -203,7 +203,17 @@ def extract_release_notes(body: str) -> list[str] | None:
  
     return notes if notes else None
  
- 
+def format_raw_notes(raw_notes: list[str]) -> str:
+    """Render raw notes as valid Markdown bullets, preserving continuation lines."""
+    formatted = []
+    for note in raw_notes:
+        lines = [line.rstrip() for line in note.splitlines() if line.strip()]
+        if not lines:
+            continue
+        formatted.append(f"- {lines[0]}")
+        formatted.extend(f"  {line}" for line in lines[1:])
+    return "\n".join(formatted)
+
 def polish_with_ai(raw_notes: list[str]) -> str:
     """
     Send raw release notes to Claude for categorization, formatting, and proofreading.
@@ -212,13 +222,13 @@ def polish_with_ai(raw_notes: list[str]) -> str:
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     if not api_key:
         print("ℹ️  ANTHROPIC_API_KEY not set — skipping AI polish, using raw notes")
-        return "\n".join(f"- {note}" for note in raw_notes)
+        return format_raw_notes(raw_notes)
  
     try:
         import anthropic
     except ImportError:
         print("⚠️  anthropic package not installed — skipping AI polish")
-        return "\n".join(f"- {note}" for note in raw_notes)
+        return format_raw_notes(raw_notes)
  
     print("✨ Sending notes to Claude for categorization and proofreading...")
     client = anthropic.Anthropic(api_key=api_key)
@@ -244,7 +254,7 @@ def polish_with_ai(raw_notes: list[str]) -> str:
     except Exception as exc:
         print(f"⚠️  AI polish failed ({exc}) — using raw notes")
 
-    return "\n".join(f"- {note}" for note in raw_notes)
+    return format_raw_notes(raw_notes)
  
  
 def prepend_to_changelog(entry: str, changelog_path: str = "CHANGELOG.md") -> None:
@@ -254,10 +264,11 @@ def prepend_to_changelog(entry: str, changelog_path: str = "CHANGELOG.md") -> No
         with open(changelog_path, "r") as f:
             existing = f.read()
  
-    # If the file starts with a top-level heading, insert the new entry below it
-    if existing.startswith("# "):
-        parts = existing.split("\n", 2)
-        new_content = parts[0] + "\n\n" + entry + ("\n" + parts[2] if len(parts) > 2 else "")
+    # Preserve any intro block above the first release heading.
+    release_match = re.search(r"(?m)^##\s+Release\b", existing)
+    if release_match:
+        insert_at = release_match.start()
+        new_content = existing[:insert_at].rstrip() + "\n\n" + entry.rstrip() + "\n\n" + existing[insert_at:].lstrip()
     else:
         new_content = entry + "\n" + existing
  
