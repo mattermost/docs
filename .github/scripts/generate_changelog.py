@@ -80,9 +80,6 @@ Here are your instructions:
  
 def get_milestone_number(repo: str, title: str) -> int | None:
     """Look up the numeric ID for a milestone by its title in the given repo."""
-    url = f"https://api.github.com/repos/{repo}/milestones"
-def get_milestone_number(repo: str, title: str) -> int | None:
-    """Look up the numeric ID for a milestone by its title in the given repo."""
     page = 1
     available = []
     while True:
