@@ -9,9 +9,16 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 (release-v6-1)=
 ## Release v6.1
 
-**v6.1.0 Release Day: 2026-03-02**
+- **v6.1.1, released **
 
-**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/latest)
+  - Fixed additional issues around URL parsing with special characters [MM-65645](https://mattermost.atlassian.net/browse/MM-65645).
+  - Fixed an issue where new views would not load if the URL to open contained query parameters.
+
+- **v6.1.0, released 2026-03-02**
+
+  - Original v6.1.0 release
+
+**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/v6.1.1)
 
 ### Important Upgrade Notes
 
@@ -185,6 +192,10 @@ Mattermost Desktop App v6.0.0 contains low severity level security fixes. Upgrad
 (release-v5-13)=
 ## Release v5.13 (Extended Support Release)
 
+- **v5.13.5, released **
+
+  - 
+
 - **v5.13.4, released 2026-01-29**
 
   - Mattermost Desktop App v5.13.4 contains a medium severity level security fix. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
@@ -206,7 +217,7 @@ Mattermost Desktop App v6.0.0 contains low severity level security fixes. Upgrad
 
   - Original v5.13.0 release
 
-**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/v5.13.2)
+**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/v5.13.5)
 
 ### Compatibility
 
