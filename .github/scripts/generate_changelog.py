@@ -26,6 +26,8 @@ HEADERS = {
     "Authorization": f"token {GITHUB_TOKEN}",
     "Accept": "application/vnd.github.v3+json",
 }
+
+REQUEST_TIMEOUT_SECONDS = 30
  
 SYSTEM_PROMPT = """You are an expert technical writer and copyeditor for Mattermost software release notes. Your task is to transform raw, unstructured release notes from pull requests into a clean, categorized, and grammatically correct changelog entry that matches Mattermost's established changelog format exactly.
  
@@ -84,7 +86,7 @@ def get_milestone_number(repo: str, title: str) -> int | None:
     while True:
         url = f"https://api.github.com/repos/{repo}/milestones"
         params = {"state": "all", "per_page": 100, "page": page}
-        resp = requests.get(url, headers=HEADERS, params=params, timeout=30)
+        resp = requests.get(url, headers=HEADERS, params=params, timeout=REQUEST_TIMEOUT_SECONDS)
         resp.raise_for_status()
         milestones = resp.json()
         if not milestones:
@@ -112,7 +114,7 @@ def get_merged_prs(repo: str, milestone_number: int) -> list:
             "per_page": 100,
             "page": page,
         }
-        resp = requests.get(url, headers=HEADERS, params=params, timeout=30)
+        resp = requests.get(url, headers=HEADERS, params=params, timeout=REQUEST_TIMEOUT_SECONDS)
         resp.raise_for_status()
         items = resp.json()
         if not items:
