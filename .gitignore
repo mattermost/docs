@@ -71,6 +71,8 @@ source/developer/localization.md
 *.crt
 .aider*
 
+**/.claude/settings.local.json
+
 # Sphinx build artifacts
 *.doctree
 _build/

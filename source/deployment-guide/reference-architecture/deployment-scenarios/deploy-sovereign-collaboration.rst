@@ -57,7 +57,7 @@ The deployment architecture includes the following components:
 
   - **Object Storage:** File uploads, images, and attachments are stored outside the application node on an :doc:`S3-compatible store </deployment-guide/server/preparations>` or an NFS (Network File System) server. `Azure Blob Storage <https://azure.microsoft.com/en-us/products/storage/blobs>`_ can be used, but needs an S3-compatible proxy for Mattermost to interface with.
 
-  - **Recording Instance:** ``calls-offloader`` :ref:`job service <administration-guide/configure/calls-deployment:configure recording, transcriptions, and live captions>` to offload heavy processing tasks from Mattermost Calls, such as recordings, transcriptions, and live captioning, to enterprise-controlled infrastructure or private cloud. *(Optional)*
+  - **Recording Instance:** ``calls-offloader`` :ref:`job service <administration-guide/configure/calls-deployment:call recording and transcription>` to offload heavy processing tasks from Mattermost Calls, such as recordings, transcriptions, and live captioning, to enterprise-controlled infrastructure or private cloud. *(Optional)*
 
 - **Self-hosted integrations:** :doc:`Custom apps, plugins, and webhooks </integrations-guide/integrations-guide-index>` can be deployed within the enterprise boundary. *(Optional - not shown)*
 
@@ -88,8 +88,8 @@ Sovereign audio & screensharing
 
 Data sovereignty compliance may require that all voice and screen sharing traffic remain within enterprise-controlled infrastructure and does not traverse third-party services. Deploy :doc:`Mattermost Calls </administration-guide/configure/calls-deployment>` in a self-hosted configuration to ensure that Microsoft Teams users and Mattermost users collaborate without media ever leaving the sovereign network.
 
-- The :ref:`rtcd service <administration-guide/configure/calls-deployment:the rtcd service>` for scalable, low-latency media routing hosted on-premises. Run multiple ``rtcd`` nodes for redundancy.
-- The :ref:`calls offloader <administration-guide/configure/calls-deployment:configure recording, transcriptions, and live captions>` service offloads heavy processing tasks like recording, transcription and live captioning to a compliance-approved job server.
+- The :ref:`rtcd service <administration-guide/configure/calls-deployment:when to use rtcd>` for scalable, low-latency media routing hosted on-premises. Run multiple ``rtcd`` nodes for redundancy.
+- The :ref:`calls offloader <administration-guide/configure/calls-deployment:call recording and transcription>` service offloads heavy processing tasks like recording, transcription and live captioning to a compliance-approved job server.
 
 Compliance and retention
 ~~~~~~~~~~~~~~~~~~~~~~~~
