@@ -1,0 +1,92 @@
+name: Generate Changelog
+ 
+on:
+  workflow_dispatch:
+    inputs:
+      milestone:
+        description: 'Milestone title in the server repo (e.g. v10.6)'
+        required: true
+        type: string
+      version:
+        description: 'Version label for changelog entry (e.g. 10.6)'
+        required: true
+        type: string
+      changelog_path:
+        description: 'Path to the changelog file to update'
+        required: true
+        default: 'source/product-overview/mattermost-v11-changelog.md'
+        type: string
+      server_repos:
+        description: 'Comma-separated repos to pull PRs from'
+        required: true
+        default: 'mattermost/mattermost,mattermost/enterprise'
+        type: string
+ 
+concurrency:
+  group: changelog-${{ inputs.version }}
+  cancel-in-progress: true
+
+jobs:
+  generate-changelog:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+ 
+    steps:
+      # A GitHub App token is required so the workflow can read PRs from the
+      # server repo AND push/create PRs in this docs repo.
+      # The default GITHUB_TOKEN only works within the repo the workflow runs in.
+      - name: Get GitHub App token
+        uses: mattermost/github-app-installation-token-action@4d4c8c09a49df5b54e1eafd372d1a1e44fdcab13
+        id: appToken
+        with:
+          appId: "${{ vars.UNIFIED_CI_APP_ID }}"
+          installationId: "${{ vars.UNIFIED_CI_INSTALLATION_ID }}"
+          privateKey: ${{ secrets.UNIFIED_CI_PRIVATE_KEY }}
+ 
+      - name: Checkout docs repo
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          token: ${{ steps.appToken.outputs.token }}
+
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests==2.32.5 anthropic==0.86.0
+ 
+      - name: Generate changelog
+        env:
+          GITHUB_TOKEN: ${{ steps.appToken.outputs.token }} # App token has read access to the server repo
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }} # Add this secret under Settings → Secrets and variables → Actions to enable AI categorization and proofreading
+          MILESTONE: ${{ inputs.milestone }}
+          VERSION: ${{ inputs.version }}
+          REPOS: ${{ inputs.server_repos }} # Comma-separated repos to pull PRs from
+          CHANGELOG_PATH: ${{ inputs.changelog_path }}
+        run: python .github/scripts/generate_changelog.py
+ 
+      - name: Create Pull Request
+        env:
+          GH_TOKEN: ${{ steps.appToken.outputs.token }}
+          CI_USERNAME: ${{ vars.UNIFIED_CI_USERNAME }}
+          CI_EMAIL: ${{ vars.UNIFIED_CI_EMAIL }}
+          VERSION: ${{ inputs.version }}
+          MILESTONE: ${{ inputs.milestone }}
+          SERVER_REPOS: ${{ inputs.server_repos }}
+          CHANGELOG_PATH: ${{ inputs.changelog_path }}
+        run: |
+          git config user.name "$CI_USERNAME"
+          git config user.email "$CI_EMAIL"
+          git checkout -b "changelog/$VERSION"
+          git add "$CHANGELOG_PATH"
+          git diff --staged --quiet && echo "No changes to commit" && exit 0
+          git commit -m "docs: add changelog for $VERSION"
+          git push origin "changelog/$VERSION" --force
+          gh pr create \
+            --title "Changelog: $VERSION" \
+            --body "Auto-generated changelog for milestone \`$MILESTONE\` from \`$SERVER_REPOS\`." \
+            --base master \
+            --head "changelog/$VERSION"
