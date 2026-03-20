@@ -62,17 +62,22 @@ jobs:
       - name: Create Pull Request
         env:
           GH_TOKEN: ${{ steps.appToken.outputs.token }}
+          CI_USERNAME: ${{ vars.UNIFIED_CI_USERNAME }}
+          CI_EMAIL: ${{ vars.UNIFIED_CI_EMAIL }}
+          VERSION: ${{ inputs.version }}
+          MILESTONE: ${{ inputs.milestone }}
+          SERVER_REPOS: ${{ inputs.server_repos }}
         run: |
-          git config user.name "${{ vars.UNIFIED_CI_USERNAME }}"
-          git config user.email "${{ vars.UNIFIED_CI_EMAIL }}"
-          git checkout -b "changelog/${{ inputs.version }}"
+          git config user.name "$CI_USERNAME"
+          git config user.email "$CI_EMAIL"
+          git checkout -b "changelog/$VERSION"
           git add source/product-overview/mattermost-v11-changelog.md
           git diff --staged --quiet && echo "No changes to commit" && exit 0
-          git commit -m "docs: add changelog for ${{ inputs.version }}"
-          git push origin "changelog/${{ inputs.version }}" --force
+          git commit -m "docs: add changelog for $VERSION"
+          git push origin "changelog/$VERSION" --force
           gh pr create \
-            --title "Changelog: ${{ inputs.version }}" \
-            --body "Auto-generated changelog for milestone \`${{ inputs.milestone }}\` from \`${{ inputs.server_repos }}\`." \
+            --title "Changelog: $VERSION" \
+            --body "Auto-generated changelog for milestone \`$MILESTONE\` from \`$SERVER_REPOS\`." \
             --base master \
-            --head "changelog/${{ inputs.version }}"
+            --head "changelog/$VERSION"
  
