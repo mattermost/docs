@@ -265,7 +265,8 @@ def prepend_to_changelog(entry: str, changelog_path: str = "CHANGELOG.md") -> No
             existing = f.read()
  
     # Preserve any intro block above the first release heading.
-    release_match = re.search(r"(?m)^##\s+Release\b", existing)
+    # Match either "## Release X.Y" or "## X.Y - DATE" format
+    release_match = re.search(r"(?m)^##\s+(?:Release\b|\d+\.\d+)", existing)
     if release_match:
         insert_at = release_match.start()
         new_content = existing[:insert_at].rstrip() + "\n\n" + entry.rstrip() + "\n\n" + existing[insert_at:].lstrip()
