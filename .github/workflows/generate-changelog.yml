@@ -17,6 +17,10 @@ on:
         default: 'mattermost/mattermost,mattermost/enterprise'
         type: string
  
+concurrency:
+  group: changelog-${{ inputs.version }}
+  cancel-in-progress: true
+
 jobs:
   generate-changelog:
     runs-on: ubuntu-latest
