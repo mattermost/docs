@@ -112,7 +112,7 @@ def get_merged_prs(repo: str, milestone_number: int) -> list:
             "per_page": 100,
             "page": page,
         }
-        resp = requests.get(url, headers=HEADERS, params=params)
+        resp = requests.get(url, headers=HEADERS, params=params, timeout=30)
         resp.raise_for_status()
         items = resp.json()
         if not items:
