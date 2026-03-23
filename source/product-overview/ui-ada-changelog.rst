@@ -12,6 +12,26 @@ Changelog
 
    * - Version
      - Change Description
+   * - v11.6
+     - (UI) Added support for Default Agent in suggestions and integrated Agents into the App Bar.
+   * - v11.6
+     - (UI) Improved the reliability of AI recap summarization by using structured JSON output from the LLM.
+   * - v11.6
+     - (UI) Added a new feature of creating teams and channels using anonymous URLs so the channel and team name are not revealed in the URL. Requires Enterprise Advanced license.
+   * - v11.6
+     - (UI) Added popouts for Recent Mentions, Saved Messages, and Search Results via the right-hand side `MM-65630 <https://mattermost.atlassian.net/browse/MM-65630>`__.
+   * - v11.6
+     - (UI) The emoji picker on web and Desktop now inserts unicode emoji characters into the message composer instead of shortcode text.
+   * - v11.6
+     - (UI) Renamed Enterprise Advanced feature Content Flagging to Data Spillage.
+   * - v11.6
+     - (UI) Added a contextual note in Security Settings that explains how Google SSO can synchronize usernames and emails, shown alongside the Sign-in Method details.
+   * - v11.6
+     - (UI) Renamed ``SlackAttachment`` and ``SlackAttachmentField`` types to ``MessageAttachment`` and ``MessageAttachmentField``. Old names are maintained as deprecated aliases for backward compatibility with plugins `MM-67739 <https://mattermost.atlassian.net/browse/MM-67739>`__.
+   * - v11.6
+     - (UI) Posts created by integrations using Slack-compatible attachments (webhooks, bots, plugins) are now fully searchable in Elasticsearch. Previously, only the attachment text field was indexed. Now title, pretext, fallback, and field content are also indexed. A bulk re-index is required after upgrade to apply this to existing posts `MM-45293 <https://mattermost.atlassian.net/browse/MM-45293>`__.
+   * - v11.6
+     - (UI) Added timezone support and manual time entry for Interactive Dialog ``datetime`` fields `MM-65082 <https://mattermost.atlassian.net/browse/MM-65082>`__.
    * - v11.5
      - (UI) Added support for `auto-translations <https://docs.mattermost.com/end-user-guide/collaborate/autotranslate-messages.html>`__. Initial Beta release. Requires Enterprise Advanced license `MM-64493 <https://mattermost.atlassian.net/browse/MM-64493>`__.
    * - v11.5
