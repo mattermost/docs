@@ -188,6 +188,8 @@ Mattermost Desktop App v6.0.0 contains low severity level security fixes. Upgrad
 - **v5.13.5, released **
 
   - Mattermost Desktop App v5.13.5 contains low to medium severity level security fixes. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue where the app threw an error on a malformed URL.
+  - Fixed an issue where content running inside a server view could close the view or cause the app to become unresponsive.
 
 - **v5.13.4, released 2026-01-29**
 
