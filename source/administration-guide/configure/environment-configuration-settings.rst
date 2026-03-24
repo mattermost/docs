@@ -1898,6 +1898,40 @@ Trace
 | - **not specified**: **(Default)** No error trace is created.       |                                                                          |
 +---------------------------------------------------------------------+--------------------------------------------------------------------------+
 
+.. config:setting:: enable-cjk-analyzers
+  :displayname: Enable CJK analyzers (Elasticsearch)
+  :systemconsole: N/A
+  :configjson: .Elasticsearchsettings.EnableCJKAnalyzers
+  :environment: MM_ELASTICSEARCHSETTINGS_ENABLECJKANALYZERS
+  :description: When set to true, enables language-specific analyzer plugins for Korean, Japanese, and Chinese search on the Elasticsearch or AWS OpenSearch server. Default is false.
+
+  - **true**: Enables CJK language-specific analyzer plugins on the Elasticsearch or AWS OpenSearch server.
+  - **false**: **(Default)** Standard analyzers are used for all languages.
+
+Enable CJK analyzers
+~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+| When enabled, Mattermost uses language-specific analyzer      | - System Config path: N/A                                                                  |
+| plugins to improve search results for Korean, Japanese, and   | - ``config.json`` setting: ``ElasticsearchSettings`` > ``EnableCJKAnalyzers`` > ``false``  |
+| Chinese content. The required analyzer plugins must be        | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_ENABLECJKANALYZERS``                    |
+| installed on the Elasticsearch or AWS OpenSearch server       |                                                                                            |
+| before enabling this setting.                                 |                                                                                            |
+|                                                               |                                                                                            |
+| Supported plugins:                                            |                                                                                            |
+|                                                               |                                                                                            |
+| - ``analysis-nori`` (Korean)                                  |                                                                                            |
+| - ``analysis-kuromoji`` (Japanese)                            |                                                                                            |
+| - ``analysis-smartcn`` (Chinese)                              |                                                                                            |
+|                                                               |                                                                                            |
+| - **true**: CJK language-specific analyzers are enabled.      |                                                                                            |
+| - **false**: **(Default)** Standard analyzers are used.       |                                                                                            |
++---------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+
+.. note::
+
+  Available from Mattermost v11.6. All required analyzer plugins must be installed on the Elasticsearch or AWS OpenSearch server before enabling this setting. See the :doc:`Elasticsearch setup </administration-guide/scale/elasticsearch-setup>` and :doc:`AWS OpenSearch setup </administration-guide/scale/opensearch-setup>` documentation for plugin installation instructions.
+
 ----
 
 File storage

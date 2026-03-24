@@ -98,6 +98,14 @@ We highly recommend that you set up an AWS OpenSearch server on a separate machi
 
       sudo /usr/share/opensearch/bin/opensearch-plugin install analysis-icu
 
+  **(Optional) CJK language analyzer plugins**: If you need improved search for Korean, Japanese, or Chinese content, install the required language-specific analyzer plugins and enable the :ref:`EnableCJKAnalyzers <administration-guide/configure/environment-configuration-settings:enable cjk analyzers>` configuration setting. The supported plugins are ``analysis-nori`` (Korean), ``analysis-kuromoji`` (Japanese), and ``analysis-smartcn`` (Chinese). Install them using the same ``opensearch-plugin install`` command, for example:
+
+    .. code-block:: sh
+
+      sudo /usr/share/opensearch/bin/opensearch-plugin install analysis-nori
+      sudo /usr/share/opensearch/bin/opensearch-plugin install analysis-kuromoji
+      sudo /usr/share/opensearch/bin/opensearch-plugin install analysis-smartcn
+
   Terraform (Docker) Example
   --------------------------
 
