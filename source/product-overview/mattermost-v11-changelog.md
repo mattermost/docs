@@ -21,7 +21,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - **Changes to all plans:**
    - Under ``ServiceSettings`` in ``config.json``, added a configuration setting ``MinimumDesktopAppVersion`` to enforce a minimum Desktop App version that shows a warning screen when a user is on an older version.
  - **Changes to Professional and Enterprise plans:**
-   - Under ``SSOSettings`` in ``config.json``, added a a configuration setting ``UsePreferredUsername`` to add support for OpenID Connect (OIDC) ``preferred_username`` profile field as the mapped Mattermost username for GitLab, OpenID and EntraID/M365. This feature can be enabled in the **OpenID Connect** tab in the System Console [MM-63393](https://mattermost.atlassian.net/browse/MM-63393).
+   - Under ``SSOSettings`` in ``config.json``, added a configuration setting ``UsePreferredUsername`` to add support for OpenID Connect (OIDC) ``preferred_username`` profile field as the mapped Mattermost username for GitLab, OpenID and EntraID/M365. This feature can be enabled in the **OpenID Connect** tab in the System Console [MM-63393](https://mattermost.atlassian.net/browse/MM-63393).
  - **Changes to Enterprise plans:**
    - Under ``ElasticsearchSettings`` in ``config.json``, added a configuration setting ``EnableCJKAnalyzers`` to enable using CJK analysis plugins when installed.
    - Under ``ElasticsearchSettings`` in ``config.json``, added a configuration setting ``EnableSearchPublicChannelsWithoutMembership`` to Elasticsearch [MM-67540](https://mattermost.atlassian.net/browse/MM-67540).
