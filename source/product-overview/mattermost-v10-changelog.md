@@ -76,6 +76,13 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 (release-v10.11-extended-support-release)=
 ## Release v10.11 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **10.11.13, released 2026-03-16**
+  - Mattermost v10.11.13 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Improved security hardening for the user authentication update API endpoint.
+  - Improved token handling in the guest magic link authentication flow.
+  - Pre-packaged Calls plugin version [v1.11.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.11.1).
+  - Fixed an issue where the configuration wasn't kept when the plugin system was re-enabled [MM-67629](https://mattermost.atlassian.net/browse/MM-67629).
+  - Mattermost v10.11.13 contains no database or functional changes.
 - **10.11.12, released 2026-02-23**
   - Mattermost v10.11.12 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Zoom plugin version [v1.12.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.12.0).

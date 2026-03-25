@@ -82,8 +82,6 @@ You can:
 
 To view your task inbox, access the **Playbooks** tab in Mattermost. In the header, next to your profile image, select the tasks list icon. A list of every task assigned to you from every run that's in progress is displayed.
 
-From Mattermost v11.0 and mobile app v2.23.0, mobile users can perform the following task management operations on playbook runs:
-
 Mobile playbooks task management
 ----------------------------------
 
@@ -103,10 +101,8 @@ Update tasks
 - **Modify due dates**: Adjust task deadlines to accommodate changing priorities and schedules.
 - **Edit task commands**: Update slash commands or instructions associated with tasks.
 - **Change run ownership**: Transfer run ownership between team members.
-
-Delete tasks
-~~~~~~~~~~~~~
-
-From Mattermost mobile v2.37.0, you can delete playbook tasks on mobile devices. Tap the task, select **Delete task**, and confirm. This action cannot be undone.
+- **Rename tasks**: Update a task's name to reflect evolving scope or priorities. (From Mattermost mobile v2.38.0)
+- **Add or edit task descriptions**: Add context to a task or update an existing description. (From Mattermost mobile v2.38.0)
+- **Delete a task**: This action cannot be undone. (From Mattermost mobile v2.37.0)
 
 These mobile capabilities provide full task management functionality for teams working with playbooks while on mobile devices, complementing your existing desktop and web browser experiences.
