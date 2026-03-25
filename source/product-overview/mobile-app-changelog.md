@@ -17,7 +17,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - iPhone 8+ devices and later with iOS 16.0+ are [required](https://support.apple.com/en-il/guide/iphone/iphe3fa5df43/16.0/ios/16.0).
 
 ### Bug Fixes
- - 
+ - Fixed an issue where Calls did not support TLS 1.3 on iOS.
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
