@@ -8,7 +8,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 
 (release-v2-38-1)=
 ## 2.38.1 Release
- - Release Date:   , 2026
+ - Release Date: March 25, 2026
  - Server Versions Supported: Server v10.11.0+ is required. Self-Signed SSL certificates are not supported unless the user installs the CA certificate on their device.
 
 ### Compatibility
@@ -17,7 +17,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - iPhone 8+ devices and later with iOS 16.0+ are [required](https://support.apple.com/en-il/guide/iphone/iphe3fa5df43/16.0/ios/16.0).
 
 ### Bug Fixes
- - Fixed an issue where Calls did not support TLS 1.3 on iOS.
+ - Fixed an issue where users were not able to attach the app's logs into a conversation to help troubleshoot issues.
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
