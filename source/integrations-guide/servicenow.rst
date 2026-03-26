@@ -80,6 +80,10 @@ ServiceNow tables accessible in Mattermost
 - ``x_830655_mm_std_servicenow_for_mattermost_subscriptions``
 - All the tables extending these tables above
 
+.. note::
+
+   Subscriptions are only supported for ``incident``, ``problem``, and ``change_request`` record types.
+
 Mattermost configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -100,7 +104,7 @@ Install the ServiceNow integration from the in-product App Marketplace:
   - **ServiceNow Webhook Secret**: Regenerate the webhook secret for ServiceNow. Regenerating this key will stop the subscription notifications. See the documentation on `creating an OAuth app in ServiceNow <#create-an-oauth-app-in-servicenow>`__ for details on updating the secret in the ServiceNow instance and start receiving notifications again.
   - **ServiceNow OAuth Client ID**: The clientID of your registered OAuth app in ServiceNow.
   - **ServiceNow OAuth Client Secret**: The client secret of your registered OAuth app in ServiceNow.
-  - **Encryption Secret**: Select **Regenerate** to generate a new encryption secret. This encryption secret is used to encrypt and decrypt the OAuth token.
+  - **Encryption Secret**: Select **Regenerate** to generate a new encryption secret. This encryption secret is used to encrypt and decrypt the OAuth token.Regenerating this secret will require all users to re-connect their ServiceNow accounts.
   - **Download ServiceNow Update Set**: Download the update set XML file to upload to ServiceNow.
 
 Enable
@@ -111,7 +115,7 @@ Notify your teams that they can `connect their ServiceNow accounts to Mattermost
 Upgrade
 -------
 
-We recommend updating this integration as new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost. Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-servicenow/releases>`__ for the latest release, available releases, and compatibiilty considerations.
+We recommend updating this integration as new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost. Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-servicenow/releases>`__ for the latest release, available releases, and compatibility considerations.
 
 Use
 -----
@@ -126,6 +130,8 @@ Connect a ServiceNow account to Mattermost
 1. In Mattermost, run the ``/servicenow connect`` slash command in any Mattermost channel to link your Mattermost account with your ServiceNow account. Follow the link into your ServiceNow instance, and select **Allow**. You can disconnect your accounts by running the ``/servicenow disconnect`` slash command. Alternatively, select the **ServiceNow** icon in the apps bar on the right to connect your ServiceNow account.
 
 2. Once connected, run the ``/servicenow help`` slash command to see what you can do.
+
+Available slash commands include ``/servicenow subscriptions`` to manage notification subscriptions, ``/servicenow share`` to search and share ServiceNow records in a channel, and ``/servicenow incident create`` to create a new incident directly from Mattermost.
 
 Customize
 ---------
@@ -143,7 +149,7 @@ Get help
 
 Mattermost customers can open a `Mattermost support case <https://support.mattermost.com/hc/en-us/requests/new>`_. To report a bug, please open a GitHub issue against the `Mattermost ServiceNow plugin repository <https://github.com/mattermost/mattermost-plugin-servicenow>`_.
 
-For questions, feedback, and assistance, join our pubic `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance.
+For questions, feedback, and assistance, join our public `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance.
 
 Mattermost Team Edition and Free customers can visit the Mattermost `peer-to-peer troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`_ to access the global Mattermost Community for assistance.
 
