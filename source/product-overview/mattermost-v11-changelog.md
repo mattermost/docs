@@ -108,6 +108,8 @@ If you upgrade from a release earlier than v11.5, please read the other [Importa
  - Fixed an issue where image proxies did not detect content-types accurately in certain cases.
  - Fixed an issue with edit post permissions.
  - Fixed text contrast issues with the marketplace modal when using dark themes.
+ - Fixed an issue with custom slash command response URL construction.
+ - Fixed an issue with file attachment processing for certain archive types.
 
 ### API Changes
  - Updated shared channel API endpoints to use the new Shared Channel Manager role's permission. Users assigned the Shared Channel Manager role can now share and unshare channels and browse available connections without needing the Secure Connection Manager role [MM-67684](https://mattermost.atlassian.net/browse/MM-67684).
