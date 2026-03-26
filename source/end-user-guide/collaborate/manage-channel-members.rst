@@ -15,17 +15,17 @@ When a channel has :doc:`attribute-based access controls </administration-guide/
 
   To add members to a channel:
 
-  1. Select the member count at the top of the center pane to open the channel members right-hand pane, then select **Add**.
+  1. Select the channel name at the top of the center pane to access the drop-down menu, then select **Add Members**.
 
      .. image:: ../../images/add-member-to-channel.png
-      :alt: Use the channel members right-hand pane to add people to a channel.
+      :alt: Use options available through the channel name to add a member to a channel.
 
   2. Search for users, select users, then select **Add** to add users to the current channel. Mattermost notifies you when a user is already a member of the channel.
 
      .. tip::
 
         - From Mattermost v7.8, people you've messaged directly are listed first, followed by all users in alphabetical order.
-        - Alternatively, to add members to a channel, select the channel name and choose **Members** from the channel menu to open the channel members right-hand pane, then select **Add**. If the channel has access control restrictions, you'll see details about required attributes at the top of the right pane.
+        - Alternatively, to add members to a channel, select the channel name, select the **View Info** |channel-info| icon, select **Members** in the right pane, and then select **Add**. If the channel has access control restrictions, you'll see details about required attributes at the top of the right pane.
 
 .. tab:: Mobile
 
@@ -118,10 +118,13 @@ Any member of a channel can remove other members from a channel.
 
 .. tab:: Web/Desktop
 
-  To remove members from a channel, select the member count at the top of the center pane to open the channel members right-hand pane. Then select **Manage**, select the member's :doc:`user role </end-user-guide/collaborate/learn-about-roles>`, and choose **Remove from Channel**.
+  You have two ways to remove members from a channel:
+
+  - Select the channel name at the top of the center pane to access the drop-down menu, then select **Manage Members**. Select the member's :doc:`user role </end-user-guide/collaborate/learn-about-roles>`, then select **Remove from Channel**.
+  - Select the channel's **View Info** |channel-info| icon, and select **Members** in the right pane. From there, select **Manage**, select a user's role, then select **Remove from Channel**.
 
   .. image:: ../../images/remove-member-from-channel.png
-    :alt: Use the channel members right-hand pane to remove a member from a channel.
+    :alt: Use options available through the channel name to remove a member from a channel.
 
 .. tab:: Mobile
 
