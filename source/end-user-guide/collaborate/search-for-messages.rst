@@ -193,6 +193,14 @@ To search for messages containing hashtags, select a hashtag in an existing post
   
   Hashtags don't link to channels. If you have a channel named “Marketing”, selecting a ``#marketing`` hashtag does not take you to the Marketing channel. To link to public channels, use the tilde ``~`` symbol followed by the channel name. For example ``~marketing``.
 
+Search public channels you haven't joined
+------------------------------------------
+
+.. include:: ../../_static/badges/ent-plus.rst
+  :start-after: :nosearch:
+
+From Mattermost v11.6, when your system admin :ref:`enables searching public channels without membership <administration-guide/configure/environment-configuration-settings:allow searching public channels without membership>`, search results can include messages from public channels you haven't joined. Results are scoped to teams you belong to, so you'll only see messages from public channels in your teams. This setting doesn't affect private channels — you can only search private channels you're a member of.
+
 Notes about performing Mattermost searches
 -------------------------------------------
 
