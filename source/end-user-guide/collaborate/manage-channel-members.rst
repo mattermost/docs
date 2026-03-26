@@ -75,6 +75,9 @@ Mention users
 
 You can also :doc:`@mention users </end-user-guide/collaborate/mention-people>` to add them to a channel. If they're not a channel member, Mattermost prompts you to add them.
 
+.. image:: ../../images/add-member-to-channel-by-mention.png
+    :alt: Mention a person who isn't a channel member to prompt Mattermost to offer adding them to the channel.
+
 .. image:: ../../images/mobile-add-user-to-a-channel-by-mentioning.jpg
     :alt: If a user mentioned in a channel is not a member already, then Mattermost prompts to add the user.
     :scale: 40
@@ -133,11 +136,15 @@ Any member of a channel can remove other members from a channel.
 
   You have two ways to remove members from a channel:
 
-  - Select the channel name at the top of the center pane to access the drop-down menu, then select **Manage Members**. Select the member's :doc:`user role </end-user-guide/collaborate/learn-about-roles>`, then select **Remove from Channel**.
-  - Select the channel's **View Info** |channel-info| icon, and select **Members** in the right pane. From there, select **Manage**, select a user's role, then select **Remove from Channel**.
+  - Select the channel name at the top of the center pane to access the drop-down menu, then select **Members**. In the right-hand pane, select **Manage**, select the member's :doc:`user role </end-user-guide/collaborate/learn-about-roles>`, then select **Remove from Channel**.
 
-  .. image:: ../../images/remove-member-from-channel.png
-    :alt: Use options available through the channel name to remove a member from a channel.
+    .. image:: ../../images/remove-member-from-channel-menu.png
+      :alt: Open the channel name menu, go to Members, then choose Remove from Channel from a member role menu.
+
+  - Select the channel's **View Info** |channel-info| icon, then select **Members** in the right pane. From there, select **Manage**, select a user's role, then select **Remove from Channel**.
+
+    .. image:: ../../images/remove-member-from-channel-view-info.png
+      :alt: Open View Info, go to Members, then choose Remove from Channel from a member role menu.
 
 .. tab:: Mobile
 
