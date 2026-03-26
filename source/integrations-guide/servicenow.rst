@@ -104,7 +104,7 @@ Install the ServiceNow integration from the in-product App Marketplace:
   - **ServiceNow Webhook Secret**: Regenerate the webhook secret for ServiceNow. Regenerating this key will stop the subscription notifications. See the documentation on `creating an OAuth app in ServiceNow <#create-an-oauth-app-in-servicenow>`__ for details on updating the secret in the ServiceNow instance and start receiving notifications again.
   - **ServiceNow OAuth Client ID**: The clientID of your registered OAuth app in ServiceNow.
   - **ServiceNow OAuth Client Secret**: The client secret of your registered OAuth app in ServiceNow.
-  - **Encryption Secret**: Select **Regenerate** to generate a new encryption secret. This encryption secret is used to encrypt and decrypt the OAuth token.Regenerating this secret will require all users to reconnect their ServiceNow accounts.
+  - **Encryption Secret**: Select **Regenerate** to generate a new encryption secret. This encryption secret is used to encrypt and decrypt the OAuth token. Regenerating this secret will require all users to reconnect their ServiceNow accounts.
   - **Download ServiceNow Update Set**: Download the update set XML file to upload to ServiceNow.
 
 Enable
