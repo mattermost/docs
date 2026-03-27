@@ -54,6 +54,7 @@ If you upgrade from a release earlier than v11.5, please read the other [Importa
  - Renamed ``SlackAttachment`` and ``SlackAttachmentField`` types to ``MessageAttachment`` and ``MessageAttachmentField``. Old names are maintained as deprecated aliases for backward compatibility with plugins [MM-67739](https://mattermost.atlassian.net/browse/MM-67739).
  - Posts created by integrations using Slack-compatible attachments (webhooks, bots, plugins) are now fully searchable in Elasticsearch. Previously, only the attachment text field was indexed. Now title, pretext, fallback, and field content are also indexed. A bulk re-index is required after upgrade to apply this to existing posts [MM-45293](https://mattermost.atlassian.net/browse/MM-45293).
  - Added timezone support and manual time entry for Interactive Dialog ``datetime`` fields [MM-65082](https://mattermost.atlassian.net/browse/MM-65082).
+ - Added sub-day relative date patterns (H/M/S) for datetime dialog fields, enabling min/max constraints with hour, minute, and second precision.
 
 #### Administration
  - Added "Guests in single channel" and "Guests in multiple channels" role filters and a "Channel count" column to the System Console Users report.
@@ -110,6 +111,7 @@ If you upgrade from a release earlier than v11.5, please read the other [Importa
  - Fixed text contrast issues with the marketplace modal when using dark themes.
  - Fixed an issue with custom slash command response URL construction.
  - Fixed an issue with file attachment processing for certain archive types.
+ - Fixed a server-side validation that was incorrectly rejecting valid datetime and relative patterns in ``MinDate``/``MaxDate`` fields.
 
 ### API Changes
  - Updated shared channel API endpoints to use the new Shared Channel Manager role's permission. Users assigned the Shared Channel Manager role can now share and unshare channels and browse available connections without needing the Secure Connection Manager role [MM-67684](https://mattermost.atlassian.net/browse/MM-67684).
