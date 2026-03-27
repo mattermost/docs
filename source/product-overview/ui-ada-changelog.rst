@@ -32,6 +32,8 @@ Changelog
      - (UI) Posts created by integrations using Slack-compatible attachments (webhooks, bots, plugins) are now fully searchable in Elasticsearch. Previously, only the attachment text field was indexed. Now title, pretext, fallback, and field content are also indexed. A bulk re-index is required after upgrade to apply this to existing posts `MM-45293 <https://mattermost.atlassian.net/browse/MM-45293>`__.
    * - v11.6
      - (UI) Added timezone support and manual time entry for Interactive Dialog ``datetime`` fields `MM-65082 <https://mattermost.atlassian.net/browse/MM-65082>`__.
+   * - v11.6
+     - (UI) Added sub-day relative date patterns (H/M/S) for datetime dialog fields, enabling min/max constraints with hour, minute, and second precision.
    * - v11.5
      - (UI) Added support for `auto-translations <https://docs.mattermost.com/end-user-guide/collaborate/autotranslate-messages.html>`__. Initial Beta release. Requires Enterprise Advanced license `MM-64493 <https://mattermost.atlassian.net/browse/MM-64493>`__.
    * - v11.5
