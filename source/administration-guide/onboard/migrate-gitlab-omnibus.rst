@@ -4,7 +4,7 @@ Migrating from GitLab Omnibus to Mattermost Standalone
 Overview
 --------
 
-GitLab has announced the deprecation of Mattermost from the GitLab Omnibus package in a future release (date to be determined). As part of this transition, GitLab will continue to support Mattermost **up to version 10.11 ESR** within the Omnibus installation until a final removal date is determined.  
+GitLab has announced the [deprecation of Mattermost from the GitLab Omnibus package](https://docs.gitlab.com/update/deprecations/#mattermost-bundled-with-linux-package) with GitLab 19.0. As part of this transition, GitLab will continue to support Mattermost **up to version 10.11 ESR** within the Omnibus installation until the final removal date.  
 
 To ensure continuity and long-term support, organizations using Mattermost within GitLab Omnibus should plan to migrate to a **standalone Mattermost installation**. This approach provides ongoing access to the latest Mattermost releases, security updates, and enterprise capabilities independent of GitLab’s release cycle.
 
