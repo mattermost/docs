@@ -28,6 +28,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Fixed an issue where the connection banner did not disappear if the user had no connection to the internet.
  - Fixed an error where changes in the channel level roles permissions were not visible in the mobile app.
  - Fixed an issue where collapsing the **Sources** citations panel in Agent responses could briefly overlap the content below it.
+ - Fixed an issue with inconsistent permalink error messages between desktop and mobile.
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
