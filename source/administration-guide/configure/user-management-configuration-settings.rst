@@ -277,7 +277,7 @@ Update the emails of users using the System Console.
 Update user's username
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Update the username of a user using the System Console.
+From Mattermost 11.6: Update the username of a user using the System Console.
 
 1. Go to **System Console > User Management > Users** to access all user accounts.
 2. Select the user, and enter a new username in the **Username** field.
@@ -286,7 +286,7 @@ Update the username of a user using the System Console.
 Update user's authentication data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-System admins can view and update the authentication data (AuthData) for a user directly in the System Console. AuthData is the external identifier associated with the user's authentication method, such as an LDAP Distinguished Name (DN), SAML NameID, or OAuth ID. Updating this field is useful when a user's external authentication identifier changes, for example after an identity provider migration.
+From Mattermost 11.6: System admins can view and update the authentication data (AuthData) for a user directly in the System Console. AuthData is the external identifier associated with the user's authentication method, such as an LDAP Distinguished Name (DN), SAML NameID, or OAuth ID. Updating this field is useful when a user's external authentication identifier changes, for example after an identity provider migration.
 
 1. Go to **System Console > User Management > Users** to access all user accounts.
 2. Select the user to open their User Configuration page.
