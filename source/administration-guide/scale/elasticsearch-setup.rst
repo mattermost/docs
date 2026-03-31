@@ -68,7 +68,7 @@ We highly recommend that you set up Elasticsearch server on a dedicated machine 
 
     sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-icu
 
-  **(Optional) CJK language analyzer plugins**: If you need improved search for Korean, Japanese, or Chinese content, install the required language-specific analyzer plugins and enable the :ref:`EnableCJKAnalyzers <administration-guide/configure/environment-configuration-settings:enable cjk analyzers>` configuration setting. The supported plugins are ``analysis-nori`` (Korean), ``analysis-kuromoji`` (Japanese), and ``analysis-smartcn`` (Chinese). Install them using the same ``elasticsearch-plugin install`` command, for example:
+  **(Optional) CJK language analyzer plugins**: If you need improved search for Korean, Japanese, or Chinese content, install the required language-specific analyzer plugins and enable the :ref:`EnableCJKAnalyzers <administration-guide/configure/environment-configuration-settings:enable cjk analyzers>` configuration setting. The supported plugins are ``analysis-nori`` (Korean), ``analysis-kuromoji`` (Japanese), and ``analysis-smartcn`` (Chinese). Install them using the same ``elasticsearch-plugin install`` command, for example. See also :doc:`Enabling Chinese, Japanese, and Korean Search </administration-guide/configure/enabling-chinese-japanese-korean-search>` for additional CJK search configuration options.
 
   .. code-block:: sh
 
