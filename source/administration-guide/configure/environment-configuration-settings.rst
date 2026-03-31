@@ -2082,6 +2082,7 @@ Enable searching content of documents within ZIP files
 
   - You can search for document content within ZIP files when using Mattermost in a web browser or the desktop app.
   - Searching document contents adds load to your server.
+  - This setting applies only to standard ZIP files. 7zip (``.7z``) files are blocked for security reasons and are not searchable.
   - For large deployments, or teams that share many large, text-heavy documents, we recommend you review our :ref:`hardware requirements <deployment-guide/software-hardware-requirements:hardware requirements>`, and test enabling this feature in a staging environment before enabling it in a production environment.
 
 .. config:setting:: amazon-s3-bucket
