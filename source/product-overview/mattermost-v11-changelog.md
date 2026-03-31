@@ -63,6 +63,7 @@ If you upgrade from a release earlier than v11.5, please read the other [Importa
  - Users assigned the Shared Channel Manager role can now share and unshare channels and browse available connections without needing the Secure Connection Manager role [MM-67684](https://mattermost.atlassian.net/browse/MM-67684).
  - Added two new built-in delegated administration roles: Shared Channel Manager and Secure Connection Manager. These roles allow System Admins to delegate Connected Workspaces management to specific users without granting full system administration access [MM-67647](https://mattermost.atlassian.net/browse/MM-67647).
  - System Admins are now allowed to view and update User **AuthData** and **Username** in the System Console [MM-64879](https://mattermost.atlassian.net/browse/MM-64879).
+ - Added single-channel guest count to the support packet stats for improved licensing visibility.
 
 #### Performance
  - Added Prometheus metrics support for plugin webapp performance measurements, enabling monitoring and load testing of plugin client-side operations [MM-65979](https://mattermost.atlassian.net/browse/MM-65979).
@@ -112,6 +113,7 @@ If you upgrade from a release earlier than v11.5, please read the other [Importa
  - Fixed an issue with custom slash command response URL construction.
  - Fixed an issue with file attachment processing for certain archive types.
  - Fixed a server-side validation that was incorrectly rejecting valid datetime and relative patterns in ``MinDate``/``MaxDate`` fields.
+ - Fixed an issue with the PostgreSQL query parameter overflow and added transactional atomicity for bulk inserts of channel members, team members, thread memberships, posts, statuses, and group members.
 
 ### API Changes
  - Updated shared channel API endpoints to use the new Shared Channel Manager role's permission. Users assigned the Shared Channel Manager role can now share and unshare channels and browse available connections without needing the Secure Connection Manager role [MM-67684](https://mattermost.atlassian.net/browse/MM-67684).
