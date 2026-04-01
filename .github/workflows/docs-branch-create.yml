@@ -39,8 +39,10 @@ jobs:
     steps:
       # ── 1. Log the merged branch for traceability ─────────────────────────
       - name: Log merged branch
+        env:
+          MERGED_BRANCH: ${{ github.event.pull_request.head.ref }}
         run: |
-          echo "Docs branch merged: ${{ github.event.pull_request.head.ref }}"
+          echo "Docs branch merged: ${MERGED_BRANCH}"
           echo "Looking for the next open milestone in mattermost/mattermost…"
  
       # ── 2. Find the earliest open milestone in mattermost/mattermost ──────
