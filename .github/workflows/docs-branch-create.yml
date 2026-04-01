@@ -1,0 +1,128 @@
+# .github/workflows/docs-branch-create.yml
+#
+# Place this file in:
+#   mattermost/docs → .github/workflows/docs-branch-create.yml
+#
+# Required secrets (set in mattermost/docs Settings → Secrets):
+#   DEV_REPOS_PAT  — Token with read access to mattermost/mattermost milestones
+#                    (already needed by docs-pr-sync.yml)
+#
+# Behaviour:
+#   When the current release docs branch (e.g. v11.6-documentation) is merged
+#   into master in mattermost/docs, this workflow:
+#     1. Queries mattermost/mattermost for the next open milestone
+#        (sorted by due date, earliest first)
+#     2. Derives the new branch name by extracting vMAJOR.MINOR from the
+#        milestone title (e.g. "v11.7.0" → "v11.7-documentation")
+#     3. Creates that branch in mattermost/docs from master if it doesn't exist
+#
+#   There is only one active docs branch at a time. This branch becomes the
+#   base target for all docs/needed PRs in the new cycle
+#   (see docs-needed.yml in the code repos).
+ 
+name: Create Next Version Docs Branch
+ 
+on:
+  pull_request:
+    types: [closed]
+    branches: [master]
+ 
+jobs:
+  create-next-version-branch:
+    name: Create docs branch for next milestone
+    runs-on: ubuntu-latest
+    # Only run when a docs release branch (v*-documentation pattern) is merged
+    if: |
+      github.event.pull_request.merged == true &&
+      contains(github.event.pull_request.head.ref, '-documentation')
+ 
+    steps:
+      # ── 1. Log the merged branch for traceability ─────────────────────────
+      - name: Log merged branch
+        run: |
+          echo "Docs branch merged: ${{ github.event.pull_request.head.ref }}"
+          echo "Looking for the next open milestone in mattermost/mattermost…"
+ 
+      # ── 2. Find the earliest open milestone in mattermost/mattermost ──────
+      #    Milestones with a due date sort before those without one.
+      #    If multiple milestones share the same due date, they sort by title.
+      - name: Find next open milestone
+        id: milestone
+        env:
+          GH_TOKEN: ${{ secrets.DEV_REPOS_PAT }}
+        run: |
+          # Fetch all open milestones, sort by due date (nulls last), take the first
+          NEXT_TITLE=$(gh api repos/mattermost/mattermost/milestones \
+            --paginate \
+            --jq '
+              [ .[] | select(.state == "open") |
+                { title: .title, due: (.due_on // "9999-12-31T00:00:00Z") }
+              ]
+              | sort_by(.due, .title)
+              | first
+              | .title
+            ')
+ 
+          if [ -z "$NEXT_TITLE" ] || [ "$NEXT_TITLE" == "null" ]; then
+            echo "::warning::No open milestones found in mattermost/mattermost — no branch created."
+            echo "found=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+ 
+          # Derive the docs branch name: extract vMAJOR.MINOR, append -documentation
+          # e.g. "v11.7.0" → "v11.7-documentation"
+          VERSION=$(echo "$NEXT_TITLE" | grep -oE 'v[0-9]+\.[0-9]+' | head -1)
+ 
+          if [ -z "$VERSION" ]; then
+            echo "::error::Could not parse a vMAJOR.MINOR version from milestone '${NEXT_TITLE}'."
+            exit 1
+          fi
+ 
+          DOCS_BRANCH="${VERSION}-documentation"
+ 
+          echo "found=true"              >> "$GITHUB_OUTPUT"
+          echo "title=$NEXT_TITLE"       >> "$GITHUB_OUTPUT"
+          echo "branch=$DOCS_BRANCH"     >> "$GITHUB_OUTPUT"
+          echo "Next milestone: $NEXT_TITLE → docs branch: $DOCS_BRANCH"
+ 
+      # ── 3. Create the branch in mattermost/docs ───────────────────────────
+      - name: Create docs branch
+        if: steps.milestone.outputs.found == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH:   ${{ steps.milestone.outputs.branch }}
+        run: |
+          # Check whether the branch already exists (idempotent)
+          EXISTS=$(gh api "repos/mattermost/docs/branches/${BRANCH}" \
+            --jq '.name' 2>/dev/null || echo "")
+ 
+          if [ -n "$EXISTS" ]; then
+            echo "::notice::Branch '${BRANCH}' already exists in mattermost/docs — nothing to do."
+            exit 0
+          fi
+ 
+          # Branch from the tip of master
+          SHA=$(gh api repos/mattermost/docs/branches/master --jq '.commit.sha')
+ 
+          gh api repos/mattermost/docs/git/refs \
+            --method POST \
+            -f "ref=refs/heads/${BRANCH}" \
+            -f "sha=${SHA}"
+ 
+          echo "✓ Created branch '${BRANCH}' in mattermost/docs from master (${SHA})"
+ 
+      # ── 4. Post a summary ─────────────────────────────────────────────────
+      - name: Summary
+        if: steps.milestone.outputs.found == 'true'
+        env:
+          MERGED_BRANCH: ${{ github.event.pull_request.head.ref }}
+          NEW_BRANCH:    ${{ steps.milestone.outputs.branch }}
+        run: |
+          echo "### Docs Branch Created" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| | |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|---|---|" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Merged branch | \`${MERGED_BRANCH}\` → \`master\` |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| New branch    | \`${NEW_BRANCH}\` |" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "Docs PRs with the \`docs/needed\` label will now target \`${NEW_BRANCH}\`." >> "$GITHUB_STEP_SUMMARY"
