@@ -78,6 +78,10 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 
 - **10.11.14, released **
   - Mattermost v10.11.14 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Calls plugin version [v1.11.4](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.11.4).
+  - Pre-packaged Playbooks plugin version [v2.4.4](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.4.4).
+  - Pre-packaged MS Teams Meetings plugin version [v2.4.1](https://github.com/mattermost/mattermost-plugin-msteams-meetings/releases/tag/v2.4.1).
+  - Pre-packaged GitLab plugin version [v1.12.1](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.12.1).
   - Fixed an issue where membership changes from remote clusters could operate on a different channel than the one validated in the sync message.
   - Fixed an issue where image proxies did not detect content-types accurately in certain cases.
   - Fixed an issue with edit post permissions.
