@@ -253,7 +253,7 @@ Report a Problem
 
 With self-hosted deployments, you can specify how the **Report a Problem** option behaves in the Mattermost app via the **Help** menu:
 
-- **Default link**: Uses the default Mattermost URL to report a problem. Customers with a Mattermost subscription are directed to the `Mattermost Support Portal <https://support.mattermost.com/hc/en-us/requests/new>`_. Community deployments are directed to `create a new issue on the Mattermost GitHub repository <https://github.com/mattermost/mattermost/issues/new>`_.
+- **Default**: Uses the default Mattermost method to report a problem. Customers with a Mattermost subscription are prompted to send an email to the Mattermost support team. Community deployments are directed to the `Mattermost troubleshooting forums <https://mattermost.com/pl/report_a_problem_unlicensed>`_.
 - **Email address**: Enables you to :ref:`enter an email address <administration-guide/configure/site-configuration-settings:report a problem email address>` that users will be prompted to send a message to when they choose **Report a Problem** in Mattermost.
 - **Custom link**: Enables you to :ref:`enter a URL <administration-guide/configure/site-configuration-settings:report a problem link>` that users will be directed to when they choose **Report a Problem** in Mattermost.
 - **Hide link**: Removes the **Report a Problem** option from Mattermost.
@@ -282,7 +282,7 @@ Report a Problem link
   :displayname: Report a Problem email (Customization)
   :systemconsole: Site Configuration > Customization
   :configjson: .SupportSettings.ReportAProblemMail
-  :environment: MM_SUPPORTSETTINGS_REPORTAPROBLMEMAIL
+  :environment: MM_SUPPORTSETTINGS_REPORTAPROBLEMMAIL
   :description: Enter the email address that users will be prompted to send a message to when they choose Report a Problem in Mattermost.
 
 Report a Problem email address
@@ -291,7 +291,7 @@ Report a Problem email address
 +---------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 | This field sets the email address for the **Report a Problem** link in the channel                | - System Config path: **Site Configuration > Customization**            |
 | header **Help** menu.                                                                             | - ``config.json`` setting: ``SupportSettings`` > ``ReportAProblemMail`` |
-|                                                                                                   | - Environment variable: ``MM_SUPPORTSETTINGS_REPORTAPROBLMEMAIL``       |
+|                                                                                                   | - Environment variable: ``MM_SUPPORTSETTINGS_REPORTAPROBLEMMAIL``       |
 | String input. Cannot be left blank.                                                               |                                                                         |
 +---------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
