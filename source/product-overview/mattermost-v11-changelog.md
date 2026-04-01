@@ -21,7 +21,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - **Changes to all plans:**
    - Under ``ServiceSettings`` in ``config.json``, added a configuration setting ``MinimumDesktopAppVersion`` to enforce a minimum Desktop App version that shows a warning screen when a user is on an older version.
  - **Changes to Professional and Enterprise plans:**
-   - Under ``SSOSettings`` in ``config.json``, added a configuration setting ``UsePreferredUsername`` to add support for OpenID Connect (OIDC) ``preferred_username`` profile field as the mapped Mattermost username for GitLab, OpenID and EntraID/M365. This feature can be enabled in the **OpenID Connect** tab in the System Console [MM-63393](https://mattermost.atlassian.net/browse/MM-63393).
+   - Under ``SSOSettings`` in ``config.json``, added a configuration setting ``UsePreferredUsername`` to add support for OpenID Connect (OIDC) [``preferred_username`` profile field](https://docs.mattermost.com/administration-guide/onboard/sso-openidconnect.html#step-2-configure-mattermost-for-an-openid-connect-sso) as the mapped Mattermost username for GitLab, OpenID and EntraID/M365. This feature can be enabled in the **OpenID Connect** tab in the System Console [MM-63393](https://mattermost.atlassian.net/browse/MM-63393).
  - **Changes to Enterprise plans:**
    - Under ``ElasticsearchSettings`` in ``config.json``, added a configuration setting ``EnableCJKAnalyzers`` to enable using CJK analysis plugins when installed.
    - Under ``ElasticsearchSettings`` in ``config.json``, added a configuration setting ``EnableSearchPublicChannelsWithoutMembership`` to allow searching public channel messages without channel membership [MM-67540](https://mattermost.atlassian.net/browse/MM-67540).
@@ -111,7 +111,7 @@ If you upgrade from a release earlier than v11.5, please read the other [Importa
  - Fixed an issue with edit post permissions.
  - Fixed text contrast issues with the marketplace modal when using dark themes.
  - Fixed an issue with custom slash command response URL construction.
- - Fixed an issue with file attachment processing for certain archive types.
+ - Fixed an issue with [file attachment processing](https://docs.mattermost.com/end-user-guide/collaborate/search-for-messages.html#search-for-files) for certain archive types.
  - Fixed a server-side validation that was incorrectly rejecting valid datetime and relative patterns in ``MinDate``/``MaxDate`` fields.
  - Fixed an issue with the PostgreSQL query parameter overflow and added transactional atomicity for bulk inserts of channel members, team members, thread memberships, posts, statuses, and group members.
 
