@@ -1,0 +1,113 @@
+# .github/workflows/docs-pr-sync.yml
+#
+# Place this file in:
+#   mattermost/docs → .github/workflows/docs-pr-sync.yml
+#
+# Required secrets (set in mattermost/docs Settings → Secrets):
+#   DEV_REPOS_PAT  — Classic PAT or fine-grained token with read/write access
+#                    to ALL of: mattermost/mattermost, mattermost/enterprise,
+#                    mattermost/mattermost-mobile, mattermost/desktop
+#                    (pull-requests: write, issues: write)
+#
+# Behaviour:
+#   When a docs/mattermost-pr-* or docs/enterprise-pr-* PR is closed
+#   (merged OR abandoned), parses the dev PR reference from the PR body
+#   and updates labels on the original dev PR:
+#     • Removes docs/needed
+#     • Adds    docs/done
+ 
+name: Docs PR Sync — Update Dev PR Labels on Close
+ 
+on:
+  pull_request:
+    types: [closed]
+ 
+jobs:
+  sync-labels:
+    name: Remove docs/needed · Add docs/done on dev PR
+    runs-on: ubuntu-latest
+    # Branch name encodes the source repo — only run for branches created by
+    # docs-needed.yml across all four source repos.
+    if: |
+      startsWith(github.event.pull_request.head.ref, 'docs/mattermost-pr-')        ||
+      startsWith(github.event.pull_request.head.ref, 'docs/enterprise-pr-')        ||
+      startsWith(github.event.pull_request.head.ref, 'docs/mattermost-mobile-pr-') ||
+      startsWith(github.event.pull_request.head.ref, 'docs/desktop-pr-')
+ 
+    steps:
+      # ── 1. Parse dev PR reference from branch name ────────────────────────
+      #    Branch format: docs/<repo-name>-pr-<number>
+      #    e.g. docs/mattermost-pr-1234        → mattermost/mattermost#1234
+      #         docs/enterprise-pr-42          → mattermost/enterprise#42
+      #         docs/mattermost-mobile-pr-99   → mattermost/mattermost-mobile#99
+      #         docs/desktop-pr-7              → mattermost/desktop#7
+      - name: Parse dev PR reference
+        id: parse
+        env:
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        run: |
+          # Strip the docs/ prefix → e.g. "mattermost-pr-1234", "mattermost-mobile-pr-99"
+          STRIPPED="${HEAD_REF#docs/}"
+ 
+          # Extract repo name (everything before -pr-)
+          REPO_NAME="${STRIPPED%%-pr-*}"
+ 
+          # Extract PR number (everything after the last -)
+          PR_NUMBER="${STRIPPED##*-pr-}"
+ 
+          # Validate both parts are non-empty and PR_NUMBER is numeric
+          if [ -z "$REPO_NAME" ] || [ -z "$PR_NUMBER" ] || ! [[ "$PR_NUMBER" =~ ^[0-9]+$ ]]; then
+            echo "::error::Could not parse repo name and PR number from branch '$HEAD_REF'."
+            exit 1
+          fi
+ 
+          FULL_REPO="mattermost/${REPO_NAME}"
+ 
+          echo "repo_name=$REPO_NAME"     >> "$GITHUB_OUTPUT"
+          echo "full_repo=$FULL_REPO"     >> "$GITHUB_OUTPUT"
+          echo "pr_number=$PR_NUMBER"     >> "$GITHUB_OUTPUT"
+ 
+          echo "Dev PR resolved to: ${FULL_REPO}#${PR_NUMBER}"
+ 
+      # ── 2. Update labels on the dev PR ────────────────────────────────────
+      - name: Update labels
+        env:
+          GH_TOKEN:        ${{ secrets.DEV_REPOS_PAT }}
+          DEV_REPO:        ${{ steps.parse.outputs.full_repo }}
+          DEV_PR:          ${{ steps.parse.outputs.pr_number }}
+          DOCS_PR_NUMBER:  ${{ github.event.pull_request.number }}
+          DOCS_PR_MERGED:  ${{ github.event.pull_request.merged }}
+        run: |
+          echo "Updating labels on ${DEV_REPO}#${DEV_PR}…"
+ 
+          # Remove docs/needed (soft-fail — label may already be absent)
+          if gh pr edit "$DEV_PR" --repo "$DEV_REPO" --remove-label "Docs/Needed" 2>/dev/null; then
+            echo "  ✓ Removed Docs/Needed"
+          else
+            echo "  ⚠ Docs/Needed not present or could not be removed — continuing"
+          fi
+ 
+          # Add Docs/Done (hard-fail — this must succeed)
+          gh pr edit "$DEV_PR" --repo "$DEV_REPO" --add-label "Docs/Done"
+          echo "  ✓ Added Docs/Done"
+ 
+      # ── 3. Comment on the dev PR ──────────────────────────────────────────
+      - name: Comment on dev PR
+        env:
+          GH_TOKEN:       ${{ secrets.DEV_REPOS_PAT }}
+          DEV_REPO:       ${{ steps.parse.outputs.full_repo }}
+          DEV_PR:         ${{ steps.parse.outputs.pr_number }}
+          DOCS_PR_NUMBER: ${{ github.event.pull_request.number }}
+          DOCS_PR_MERGED: ${{ github.event.pull_request.merged }}
+        run: |
+          if [ "$DOCS_PR_MERGED" == "true" ]; then
+            STATUS="merged"
+            ICON="✅"
+          else
+            STATUS="closed without merging"
+            ICON="🔒"
+          fi
+ 
+          gh pr comment "$DEV_PR" \
+            --repo "$DEV_REPO" \
+            --body "${ICON} The associated docs PR ([mattermost/docs#${DOCS_PR_NUMBER}](https://github.com/mattermost/docs/pull/${DOCS_PR_NUMBER})) has been **${STATUS}**. This PR's label has been updated from \`Docs/Needed\` → \`Docs/Done\`."
