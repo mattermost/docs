@@ -76,6 +76,16 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 (release-v10.11-extended-support-release)=
 ## Release v10.11 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **10.11.14, released **
+  - Mattermost v10.11.14 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue where membership changes from remote clusters could operate on a different channel than the one validated in the sync message.
+  - Fixed an issue where image proxies did not detect content-types accurately in certain cases.
+  - Fixed an issue with edit post permissions.
+  - Fixed an issue with file attachment processing for certain archive types.
+  - Fixed an issue where remote cluster invite confirmations could accept a ``RefreshedToken`` that matched the original invite token, preventing proper token rotation.
+  - Fixed an issue with custom slash command response URL construction.
+  - Fixed typing issues in the **Find Channels** modal caused by interference with IMEs [MM-66937](https://mattermost.atlassian.net/browse/MM-66937).
+  - Mattermost v10.11.14 contains no database or functional changes.
 - **10.11.13, released 2026-03-16**
   - Mattermost v10.11.13 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Improved security hardening for the user authentication update API endpoint.
