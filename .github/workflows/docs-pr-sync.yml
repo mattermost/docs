@@ -5,8 +5,8 @@
 #
 # Required secrets (set in mattermost/docs Settings → Secrets):
 #   DEV_REPOS_PAT  — Classic PAT or fine-grained token with read/write access
-#                    to ALL of: mattermost/mattermost, mattermost/enterprise,
-#                    mattermost/mattermost-mobile, mattermost/desktop
+#                    to ALL of: mattermost/mattermost, mattermost/mattermost-mobile,
+#                    mattermost/desktop
 #                    (pull-requests: write, issues: write)
 #
 # Behaviour:
@@ -27,10 +27,9 @@ jobs:
     name: Remove docs/needed · Add docs/done on dev PR
     runs-on: ubuntu-latest
     # Branch name encodes the source repo — only run for branches created by
-    # docs-needed.yml across all four source repos.
+    # docs-needed.yml across the three source repos.
     if: |
       startsWith(github.event.pull_request.head.ref, 'docs/mattermost-pr-')        ||
-      startsWith(github.event.pull_request.head.ref, 'docs/enterprise-pr-')        ||
       startsWith(github.event.pull_request.head.ref, 'docs/mattermost-mobile-pr-') ||
       startsWith(github.event.pull_request.head.ref, 'docs/desktop-pr-')
  
@@ -38,7 +37,6 @@ jobs:
       # ── 1. Parse dev PR reference from branch name ────────────────────────
       #    Branch format: docs/<repo-name>-pr-<number>
       #    e.g. docs/mattermost-pr-1234        → mattermost/mattermost#1234
-      #         docs/enterprise-pr-42          → mattermost/enterprise#42
       #         docs/mattermost-mobile-pr-99   → mattermost/mattermost-mobile#99
       #         docs/desktop-pr-7              → mattermost/desktop#7
       - name: Parse dev PR reference
@@ -46,7 +44,7 @@ jobs:
         env:
           HEAD_REF: ${{ github.event.pull_request.head.ref }}
         run: |
-          # Strip the docs/ prefix → e.g. "mattermost-pr-1234", "mattermost-mobile-pr-99"
+          # Strip the docs/ prefix → e.g. "mattermost-pr-1234", "mattermost-mobile-pr-99", "desktop-pr-7"
           STRIPPED="${HEAD_REF#docs/}"
  
           # Extract repo name (everything before -pr-)
