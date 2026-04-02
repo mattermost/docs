@@ -14,6 +14,7 @@ Expects these environment variables:
  
 import os
 import re
+import sys
 import requests
 from datetime import date
  
@@ -26,8 +27,6 @@ HEADERS = {
     "Authorization": f"token {GITHUB_TOKEN}",
     "Accept": "application/vnd.github.v3+json",
 }
-
-REQUEST_TIMEOUT_SECONDS = 30
  
 SYSTEM_PROMPT = """You are an expert technical writer and copyeditor for Mattermost software release notes. Your task is to transform raw, unstructured release notes from pull requests into a clean, categorized, and grammatically correct changelog entry that matches Mattermost's established changelog format exactly.
  
@@ -68,9 +67,7 @@ Here are your instructions:
  
 4.  **Markdown formatting:** Use `- ` bullet points for individual items within sections. Ensure correct and clean Markdown syntax throughout.
  
-5.  **Jira links:** If a note includes a line starting with `Jira:`, format each URL as a Markdown link using the ticket key as the label (e.g. `[MM-12345](https://mattermost.atlassian.net/browse/MM-12345)`), and place it inline at the end of the relevant bullet point — not on a separate line and not in parentheses.
- 
-6.  **License requirements:** When a feature requires a specific Mattermost license, note it inline at the end of the bullet point (e.g., "Requires Enterprise Advanced license" or "Requires Enterprise license").
+5.  **License requirements:** When a feature requires a specific Mattermost license, note it inline at the end of the bullet point (e.g., "Requires Enterprise Advanced license" or "Requires Enterprise license").
  
 7.  **Proofreading:** Correct any typos, grammatical errors, awkward phrasing, or inconsistencies. Aim for clear, concise, and professional language.
  
@@ -81,22 +78,16 @@ Here are your instructions:
  
 def get_milestone_number(repo: str, title: str) -> int | None:
     """Look up the numeric ID for a milestone by its title in the given repo."""
-    page = 1
-    available = []
-    while True:
-        url = f"https://api.github.com/repos/{repo}/milestones"
-        params = {"state": "all", "per_page": 100, "page": page}
-        resp = requests.get(url, headers=HEADERS, params=params, timeout=REQUEST_TIMEOUT_SECONDS)
-        resp.raise_for_status()
-        milestones = resp.json()
-        if not milestones:
-            break
-        for m in milestones:
-            available.append(m["title"])
-            if m["title"] == title:
-                return m["number"]
-        page += 1
+    url = f"https://api.github.com/repos/{repo}/milestones"
+    params = {"state": "all", "per_page": 100}
+    resp = requests.get(url, headers=HEADERS, params=params)
+    resp.raise_for_status()
+    milestones = resp.json()
+    for m in milestones:
+        if m["title"] == title:
+            return m["number"]
     print(f"  ⚠️  Milestone '{title}' not found in {repo} — skipping")
+    available = [m["title"] for m in milestones]
     if available:
         print(f"     Available milestones: {', '.join(available[:10])}")
     return None
@@ -114,51 +105,18 @@ def get_merged_prs(repo: str, milestone_number: int) -> list:
             "per_page": 100,
             "page": page,
         }
-        resp = requests.get(url, headers=HEADERS, params=params, timeout=REQUEST_TIMEOUT_SECONDS)
+        resp = requests.get(url, headers=HEADERS, params=params)
         resp.raise_for_status()
         items = resp.json()
         if not items:
             break
         for item in items:
             # Issues and PRs share the same endpoint; filter to merged PRs only
-            if "pull_request" in item and item["pull_request"]["merged_at"]:
+            if "pull_request" in item and item["pull_request"].get("merged_at"):
                 prs.append(item)
         page += 1
     return prs
  
- 
-def extract_jira_links(pr: dict) -> list[str]:
-    """
-    Extract Jira ticket links from a PR title and body.
- 
-    Looks for full Atlassian URLs (e.g. https://mattermost.atlassian.net/browse/MM-12345)
-    as well as bare ticket references in the PR title (e.g. MM-12345), constructing
-    a full URL from the ticket key if a bare reference is found.
-    """
-    text = (pr.get("title") or "") + "\n" + (pr.get("body") or "")
- 
-    # Collect full Atlassian URLs first
-    full_urls = re.findall(
-        r"https://[a-zA-Z0-9-]+\.atlassian\.net/browse/[A-Z]+-\d+",
-        text,
-    )
- 
-    # Also look for bare ticket keys in the PR title (e.g. "MM-12345 Fix login bug")
-    # and build a URL from any that aren't already covered by a full URL
-    bare_keys = re.findall(r"\b([A-Z]+-\d+)\b", text)
-    for key in bare_keys:
-        constructed = f"https://mattermost.atlassian.net/browse/{key}"
-        if constructed not in full_urls:
-            full_urls.append(constructed)
- 
-    # Deduplicate while preserving order
-    seen = set()
-    unique = []
-    for url in full_urls:
-        if url not in seen:
-            seen.add(url)
-            unique.append(url)
-    return unique
  
  
 def extract_release_notes(body: str) -> list[str] | None:
@@ -203,17 +161,7 @@ def extract_release_notes(body: str) -> list[str] | None:
  
     return notes if notes else None
  
-def format_raw_notes(raw_notes: list[str]) -> str:
-    """Render raw notes as valid Markdown bullets, preserving continuation lines."""
-    formatted = []
-    for note in raw_notes:
-        lines = [line.rstrip() for line in note.splitlines() if line.strip()]
-        if not lines:
-            continue
-        formatted.append(f"- {lines[0]}")
-        formatted.extend(f"  {line}" for line in lines[1:])
-    return "\n".join(formatted)
-
+ 
 def polish_with_ai(raw_notes: list[str]) -> str:
     """
     Send raw release notes to Claude for categorization, formatting, and proofreading.
@@ -222,13 +170,13 @@ def polish_with_ai(raw_notes: list[str]) -> str:
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     if not api_key:
         print("ℹ️  ANTHROPIC_API_KEY not set — skipping AI polish, using raw notes")
-        return format_raw_notes(raw_notes)
+        return "\n".join(f"- {note}" for note in raw_notes)
  
     try:
         import anthropic
     except ImportError:
         print("⚠️  anthropic package not installed — skipping AI polish")
-        return format_raw_notes(raw_notes)
+        return "\n".join(f"- {note}" for note in raw_notes)
  
     print("✨ Sending notes to Claude for categorization and proofreading...")
     client = anthropic.Anthropic(api_key=api_key)
@@ -236,25 +184,14 @@ def polish_with_ai(raw_notes: list[str]) -> str:
     raw_text = "\n\n---\n\n".join(raw_notes)
     user_message = f"Here are the raw release notes to process:\n\n{raw_text}"
  
-    try:
-        response = client.messages.create(
-            model="claude-sonnet-4-6",
-            max_tokens=4096,
-            system=SYSTEM_PROMPT,
-            messages=[{"role": "user", "content": user_message}],
-        )
-        text_blocks = [
-            block.text
-            for block in response.content
-            if getattr(block, "type", None) == "text" and getattr(block, "text", None)
-        ]
-        polished = "\n".join(text_blocks).strip()
-        if polished:
-            return polished
-    except Exception as exc:
-        print(f"⚠️  AI polish failed ({exc}) — using raw notes")
-
-    return format_raw_notes(raw_notes)
+    response = client.messages.create(
+        model="claude-sonnet-4-6",
+        max_tokens=4096,
+        system=SYSTEM_PROMPT,
+        messages=[{"role": "user", "content": user_message}],
+    )
+ 
+    return response.content[0].text.strip()
  
  
 def prepend_to_changelog(entry: str, changelog_path: str = "CHANGELOG.md") -> None:
@@ -264,12 +201,10 @@ def prepend_to_changelog(entry: str, changelog_path: str = "CHANGELOG.md") -> No
         with open(changelog_path, "r") as f:
             existing = f.read()
  
-    # Preserve any intro block above the first release heading.
-    # Match either "## Release X.Y" or "## X.Y - DATE" format
-    release_match = re.search(r"(?m)^##\s+(?:Release\b|\d+\.\d+)", existing)
-    if release_match:
-        insert_at = release_match.start()
-        new_content = existing[:insert_at].rstrip() + "\n\n" + entry.rstrip() + "\n\n" + existing[insert_at:].lstrip()
+    # If the file starts with a top-level heading, insert the new entry below it
+    if existing.startswith("# "):
+        parts = existing.split("\n", 2)
+        new_content = parts[0] + "\n\n" + entry + ("\n" + parts[2] if len(parts) > 2 else "")
     else:
         new_content = entry + "\n" + existing
  
@@ -297,13 +232,9 @@ def main():
         for pr in sorted(prs, key=lambda p: p["number"]):
             notes = extract_release_notes(pr.get("body") or "")
             if notes:
-                jira_links = extract_jira_links(pr)
-                jira_suffix = ""
-                if jira_links:
-                    jira_suffix = "\nJira: " + ", ".join(jira_links)
                 for note in notes:
-                    all_notes.append(note + jira_suffix)
-                print(f"   ✅ #{pr['number']}: {pr['title']}" + (f" ({len(jira_links)} Jira link(s))" if jira_links else ""))
+                    all_notes.append(note)
+                print(f"   ✅ #{pr['number']}: {pr['title']}")
             else:
                 no_notes_prs.append((repo, pr))
                 print(f"   ⏭️  #{pr['number']}: {pr['title']} (NONE / no notes)")
