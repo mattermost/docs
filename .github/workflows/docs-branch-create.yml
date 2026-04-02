@@ -31,10 +31,14 @@ jobs:
   create-next-version-branch:
     name: Create docs branch for next milestone
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: read
     # Only run when a docs release branch (v*-documentation pattern) is merged
     if: |
       github.event.pull_request.merged == true &&
-      contains(github.event.pull_request.head.ref, '-documentation')
+      startsWith(github.event.pull_request.head.ref, 'v') &&
+      endsWith(github.event.pull_request.head.ref, '-documentation')
  
     steps:
       # ── 1. Log the merged branch for traceability ─────────────────────────
