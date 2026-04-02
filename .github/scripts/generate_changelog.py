@@ -40,7 +40,7 @@ Here are your instructions:
         - `#### Database Schema Changes` — new tables, columns, indexes, or migrations
         - `#### config.json` — new or changed configuration settings; group by plan (e.g. "Changes to Enterprise plans")
         - `#### Compatibility` — browser, OS, or minimum version requirement changes
-    - `### Improvements` — for new features and enhancements, with subsections as applicable:
+    - `### Improvements` — for new features and enhancements. Begin this section with the line `See [this blog post](BLOG_POST_URL) on the highlights in our latest release.` (use the exact placeholder `BLOG_POST_URL` — it will be replaced automatically). Then add subsections as applicable:
         - `#### User Interface` — UI/UX changes, new visual features, pre-packaged plugin version updates
         - `#### Administration` — System Console features, mmctl additions, logging, support packet changes
         - `#### Performance` — performance improvements
@@ -245,6 +245,9 @@ def main():
  
     if all_notes:
         polished = polish_with_ai(all_notes)
+        blog_url = os.environ.get("BLOG_POST_URL", "")
+        if blog_url:
+            polished = polished.replace("BLOG_POST_URL", blog_url)
         entry += polished + "\n"
     else:
         entry += "_No release notes for this version._\n"
