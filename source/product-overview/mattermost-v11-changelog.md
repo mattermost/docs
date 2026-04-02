@@ -61,7 +61,6 @@ If you upgrade from a release earlier than v11.5, please read the other [Importa
  - Added reporting and soft-limit tracking for single-channel guests. Single-channel guests are no longer counted toward the primary licensed seat count and are permitted free up to a 1:1 ratio with licensed seats. A new stat card, license row, and admin banner provide visibility into single-channel guest usage and overage warnings.
  - Introduced authentication token generation for Hosted Push Notification Service.
  - Users assigned the Shared Channel Manager role can now share and unshare channels and browse available connections without needing the Secure Connection Manager role [MM-67684](https://mattermost.atlassian.net/browse/MM-67684).
- - Added two new built-in delegated administration roles: Shared Channel Manager and Secure Connection Manager. These roles allow System Admins to delegate Connected Workspaces management to specific users without granting full system administration access [MM-67647](https://mattermost.atlassian.net/browse/MM-67647).
  - System Admins are now allowed to view and update User **AuthData** and **Username** in the System Console [MM-64879](https://mattermost.atlassian.net/browse/MM-64879).
  - Added single-channel guest count to the support packet stats for improved licensing visibility.
 
