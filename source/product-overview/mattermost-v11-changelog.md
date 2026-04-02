@@ -49,6 +49,8 @@ If you upgrade from a release earlier than v11.4, please read the other [Importa
 
 ### Improvements
 
+See [this blog post](https://mattermost.com/blog/mattermost-v11-5-is-now-available/) on the highlights in our latest release.
+
 #### UI Changes
  - Pre-packaged GitLab plugin version [v1.12.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.12.0).
  - Pre-packaged MS Teams Meetings plugin version [v2.4.0](https://github.com/mattermost/mattermost-plugin-msteams-meetings/releases/tag/v2.4.0).
@@ -148,6 +150,8 @@ If you upgrade from a release earlier than v11.3, please read the other [Importa
 ```
 
 ### Improvements
+
+See [this blog post](https://mattermost.com/blog/mattermost-v11-4-is-now-available/) on the highlights in our latest release.
 
 #### User Interface
  - Pre-packaged Boards plugin version [v9.2.2](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.2.2).
@@ -259,6 +263,8 @@ If you upgrade from a release earlier than v11.2, please read the other [Importa
 ```
 
 ### Improvements
+
+See [this blog post](https://mattermost.com/blog/mattermost-v11-3-is-now-available/) on the highlights in our latest release.
 
 #### User Interface
  - Pre-packaged Microsoft Calendar plugin version [v1.5.0](https://github.com/mattermost/mattermost-plugin-mscalendar/releases/tag/v1.5.0).
@@ -380,6 +386,8 @@ If you upgrade from a release earlier than v11.1, please read the other [Importa
 
 ### Improvements
 
+See [this blog post](https://mattermost.com/blog/mattermost-v11-2-is-now-available/) on the highlights in our latest release.
+
 #### User Interface (UI)
  - Pre-packaged Playbooks plugin [v2.6.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.6.1).
  - Pre-packaged Zoom plugin [v1.10.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.10.0).
@@ -492,6 +500,8 @@ If you upgrade from a release earlier than v11.0, please read the other [Importa
 ```
 
 ### Improvements
+
+See [this blog post](https://mattermost.com/blog/mattermost-v11-1-is-now-available/) on the highlights in our latest release.
 
 #### User Interface (UI)
  - Pre-packaged Agents plugin version [v1.4.0](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.4.0).
@@ -623,6 +633,8 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 ```
 
 ### Improvements
+
+See [this blog post](https://mattermost.com/blog/mattermost-v11-powering-more-mission-critical-collaboration/) on the highlights in our latest release.
 
 #### User Interface (UI)
  - Pre-packaged Agents plugin [v1.3.1](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.3.1).
