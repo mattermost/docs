@@ -37,9 +37,17 @@ Supported paths
 
 Review the following support paths for enterprise search based on the version you're using:
 
+.. tab:: Elasticsearch v9
+
+    `Elasticsearch v9 <https://www.elastic.co/guide/en/elasticsearch/reference/current/elasticsearch-intro.html>`__ is supported from Mattermost v11.7. We recommend upgrading to Elasticsearch v9 for the latest features and security updates. See the `Elasticsearch upgrade <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ documentation for upgrade details, and see the :doc:`Elasticsearch setup </administration-guide/scale/elasticsearch-setup>` documentation for details on configuring your Mattermost deployment to use Elasticsearch.
+
 .. tab:: Elasticsearch v8
 
-    `Elasticsearch v8 <https://www.elastic.co/guide/en/elasticsearch/reference/current/elasticsearch-intro.html>`__ is supported from Mattermost v9.11. While Mattermost supports Elasticsearch v7.17+, we recommend upgrading your Elasticsearch v7 instance to v8.x. See the `Elasticsearch upgrade <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ documentation for upgrade details, and see the :doc:`Elasticsearch setup </administration-guide/scale/elasticsearch-setup>` documentation for details on configuring your Mattermost deployment to use Elasticsearch.
+    `Elasticsearch v8 <https://www.elastic.co/guide/en/elasticsearch/reference/8.19/elasticsearch-intro.html>`__ is supported from Mattermost v9.11. We recommend upgrading to Elasticsearch v9 for the latest features and security updates. See the `Elasticsearch upgrade <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ documentation for upgrade details, and see the :doc:`Elasticsearch setup </administration-guide/scale/elasticsearch-setup>` documentation for details on configuring your Mattermost deployment to use Elasticsearch.
+
+    .. note::
+
+        Elasticsearch v7.17 is no longer supported as of Mattermost v11.7. If you're still using Elasticsearch v7, you must upgrade to Elasticsearch v8 or v9.
 
 .. tab:: AWS OpenSearch Service
 
@@ -49,7 +57,7 @@ Review the following support paths for enterprise search based on the version yo
 
 .. tab:: AWS Elasticsearch v7.10.x
 
-    If you're using Elasticsearch v7.10.x under AWS’s managed services, you can't use newer Elasticsearch clients like the v8 client without changing backend infrastructure. If you're using AWS Elasticsearch v7.10.x, you must `upgrade to AWS OpenSearch <https://docs.aws.amazon.com/opensearch-service/latest/developerguide/version-migration.html>`_ for future compatibility.
+    If you're using Elasticsearch v7.10.x under AWS’s managed services, you can't use newer Elasticsearch clients like the v8 or v9 client without changing backend infrastructure. If you're using AWS Elasticsearch v7.10.x, you must `upgrade to AWS OpenSearch <https://docs.aws.amazon.com/opensearch-service/latest/developerguide/version-migration.html>`_ for future compatibility.
 
     The migration path from Elasticsearch v7.10.x to OpenSearch has been designed to be straightforward, minimizing effort:
 
