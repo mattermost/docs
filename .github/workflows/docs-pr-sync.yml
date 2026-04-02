@@ -10,8 +10,8 @@
 #                    (pull-requests: write, issues: write)
 #
 # Behaviour:
-#   When a docs/mattermost-pr-* or docs/enterprise-pr-* PR is closed
-#   (merged OR abandoned), parses the dev PR reference from the PR body
+#   When a docs/mattermost-pr-* or docs/desktop-pr-* PR is closed
+#   (merged OR abandoned), parses the dev PR reference from the branch name
 #   and updates labels on the original dev PR:
 #     • Removes docs/needed
 #     • Adds    docs/done
@@ -29,9 +29,7 @@ jobs:
     # Branch name encodes the source repo — only run for branches created by
     # docs-needed.yml across the three source repos.
     if: |
-      startsWith(github.event.pull_request.head.ref, 'docs/mattermost-pr-')        ||
-      startsWith(github.event.pull_request.head.ref, 'docs/mattermost-mobile-pr-') ||
-      startsWith(github.event.pull_request.head.ref, 'docs/desktop-pr-')
+      startsWith(github.event.pull_request.head.ref, 'docs/')
  
     steps:
       # ── 1. Parse dev PR reference from branch name ────────────────────────
@@ -44,17 +42,13 @@ jobs:
         env:
           HEAD_REF: ${{ github.event.pull_request.head.ref }}
         run: |
-          # Strip the docs/ prefix → e.g. "mattermost-pr-1234", "mattermost-mobile-pr-99", "desktop-pr-7"
-          STRIPPED="${HEAD_REF#docs/}"
- 
-          # Extract repo name (everything before -pr-)
-          REPO_NAME="${STRIPPED%%-pr-*}"
- 
-          # Extract PR number (everything after the last -)
-          PR_NUMBER="${STRIPPED##*-pr-}"
- 
-          # Validate both parts are non-empty and PR_NUMBER is numeric
-          if [ -z "$REPO_NAME" ] || [ -z "$PR_NUMBER" ] || ! [[ "$PR_NUMBER" =~ ^[0-9]+$ ]]; then
+          # Accept only: docs/(mattermost|mattermost-mobile|desktop)-pr-<number>
+          if ! [[ "$HEAD_REF" =~ ^docs/(mattermost|mattermost-mobile|desktop)-pr-([0-9]+)$ ]]; then
+             echo "::error::Could not parse repo name and PR number from branch '$HEAD_REF'."
+             exit 1
+           fi
+          REPO_NAME="${BASH_REMATCH[1]}"
+          PR_NUMBER="${BASH_REMATCH[2]}"
             echo "::error::Could not parse repo name and PR number from branch '$HEAD_REF'."
             exit 1
           fi
