@@ -7,13 +7,12 @@ This guide walks an IT administrator through deploying Mattermost Calls in four 
 
 | Section | Description |
 |---------|-------------|
-| [How to Use This Guide](#how-to-use-this-guide) | Step numbering system, support ticket reference, and how to contact support |
 | [Phase 0: Plan & Prepare](#phase-0-plan--prepare) | Architecture diagram, infrastructure checklist, deployment decisions (SFU mode, recording, network traversal), ports reference, and air-gapped considerations |
 | [Phase 1: Deploy](#phase-1-deploy) | Configure Calls for Integrated or RTCD mode, deploy the calls-offloader (optional), enable the plugin, and verify your setup |
 | [Phase 2: Pilot Testing](#phase-2-pilot-testing) | Admin-controlled test scenarios for 1:1 calls, group calls, screen sharing, recording, and live captions before widening access |
 | [Phase 3: Production Rollout](#phase-3-production-rollout) | Production configuration, incremental channel rollout, user announcement, monitoring, and rollback plan |
 | [Appendix A: Troubleshooting by Symptom](#appendix-a-troubleshooting-by-symptom) | Causes and fixes organized by error symptom, plus a diagnostic commands quick reference |
-| [Appendix B: Reference Information](#appendix-b-reference-information) | Encryption, STUN, UDP vs. TCP, monitoring endpoints, Grafana dashboard, and documentation links |
+| [Appendix B: Frequently Asked Questions](#appendix-b-reference-information) | Encryption, STUN, UDP vs. TCP, monitoring endpoints, Grafana dashboard, and documentation links |
 | [Appendix C: Performance and Sizing](#appendix-c-performance-and-sizing) | RTCD and recording server sizing benchmarks and Linux kernel tuning |
 | [Appendix D: Advanced Network Diagnostics](#appendix-d-advanced-network-diagnostics) | MTU path discovery, PMTUD verification, and bandwidth testing — for network teams |
 | [Appendix E: Glossary](#appendix-e-glossary) | Definitions for WebRTC, SFU, ICE, STUN, TURN, DTLS, SRTP, and other key terms |
@@ -28,13 +27,12 @@ This guide walks an IT administrator through deploying Mattermost Calls in four 
 
 ---
 
-### Reaching Mattermost Support
+#### Reaching Mattermost Support
 
 Every step in this guide is numbered hierarchically so you can track exactly where you are and reference precise steps when working with Mattermost Support.
 
-When [filing a support ticket](https://support.mattermost.com), please include:
-- Attach your Mattermost support packet. For instructions on generating this packet, see {doc}`Generating a support packet <../../administration-guide/manage/admin/generating-support-packet>`.
-    - **Note:** Before sending your support packet, review and sanitize any confidential information as needed. See {ref}`santitize-confidential-data` for details.
+When [filing a support ticket](https://support.mattermost.com), please:
+- Attach your Mattermost support packet. For instructions on generating this packet, see {doc}`Generating a support packet <../../administration-guide/manage/admin/generating-support-packet>`. Remember to review and sanitize any confidential information as required.
 - The exact step number where the issue occurred (e.g., "Failed at step 1.4 — UDP port unreachable from client network")
 - Logs if your security policy permits — see [Calls Log Collection](calls-log-collection.md) for how to gather them.
 
@@ -47,31 +45,26 @@ Before deploying anything, use this phase to understand the full architecture, m
 
 ### 0.1 Infrastructure Prerequisites
 
-#### Architecture Overview
-
-
 #### Infrastructure Checklist
 
 Confirm every item before proceeding to Section 0.2.
 
-| # | Requirement | Notes |
-|---|-------------|-------|
-| □ | Mattermost server v7.1+ running on HTTPS/TLS | Required by browsers to access microphone and screen sharing. See [Configure TLS](https://docs.mattermost.com/deploy/server/setup-tls.html). |
-| □ | System Admin access to System Console | Required to configure the Calls plugin |
-| □ | License level confirmed | See table below |
-| □ | Network firewall access to open required ports | See Section 0.3 |
-| □ | DNS entry or static IP for the Calls service endpoint | Required if configuring ICE Host Override |
-| □ | Dedicated dev/staging Mattermost instance available | Strongly recommended — do not configure Calls for the first time on a production instance |
+| Requirement | Notes |
+|-------------|-------|
+| Mattermost server v7.1+ running on HTTPS/TLS | Required by browsers to access microphone and screen sharing. See [Configure TLS](https://docs.mattermost.com/deploy/server/setup-tls.html). |
+| System Admin access to System Console | Required to configure the Calls plugin |
+| License level confirmed | See table below |
+| Network firewall access to open required ports | See Section 0.3 |
+| DNS entry or static IP for the Calls service endpoint | Required if configuring ICE Host Override |
+| Dedicated dev/staging Mattermost instance available | Strongly recommended — do not configure Calls for the first time on a production instance |
 
 **License requirements:**
 
-| License | What is included |
-|---------|-----------------|
-| Free (self-hosted) | 1:1 audio calls with optional screen sharing |
-| Professional or Enterprise (self-hosted) | Group calls up to 50 concurrent users |
-| Enterprise (self-hosted) | RTCD service, call recording, live captions, transcription |
-| Cloud Starter | Group calls capped at 8 participants |
-| Cloud paid plans | Group calls capped at 200 participants |
+| **License**        | **What is included**                                       |
+|--------------------|------------------------------------------------------------|
+| Entry+             | 1:1 audio calls with optional screen sharing               |
+| Professional+      | Group calls with up to 50 concurrent users                 |
+| Enterprise+        | RTCD service, call recording, live captions, transcription |
 
 ---
 
@@ -79,7 +72,7 @@ Confirm every item before proceeding to Section 0.2.
 
 Make these three decisions before configuring anything. Your answers determine what additional infrastructure to prepare.
 
-#### Decision 0.2.1: SFU Mode — Integrated or RTCD?
+#### Decision 0.2.1: SFU Mode
 
 ```{include} ../../_static/badges/ent-plus.md
 ```
@@ -117,7 +110,7 @@ For full RTCD setup, see {doc}`RTCD Setup and Configuration <calls-rtcd-setup>`.
 
 ---
 
-#### Decision 0.2.2: Recording & Transcription — Do You Need calls-offloader?
+#### Decision 0.2.2: Recording & Transcription
 
 Recording calls, generating live captions, and transcribing recordings are resource-intensive operations. They must run on a separate service — `calls-offloader` — to prevent degrading your Mattermost server or RTCD service. All three features require an Enterprise license.
 
@@ -135,7 +128,7 @@ For full offloader setup, see {doc}`Calls Offloader Setup and Configuration <cal
 
 ---
 
-#### Decision 0.2.3: Network Traversal — STUN, ICE Host Override, or TURN?
+#### Decision 0.2.3: Network Traversal
 
 The concepts below determine whether clients outside your local network can reach the Calls service.
 
@@ -169,7 +162,7 @@ The concepts below determine whether clients outside your local network can reac
 
 The diagram below shows all Mattermost Calls components and how they connect. Ensure these ports are open on all firewalls, security groups, and network appliances between clients and the Calls service before proceeding to Phase 1.
 
-```mermaid
+```{mermaid}
 flowchart TB
     clients["Clients
     (Web / Desktop / Mobile)"] -- 443 TCP — signaling & API --> mmServer["MM Server + Calls Plugin
@@ -270,7 +263,7 @@ Configure the following settings:
 **Common Pitfall — ICE Host Override not set behind NAT**: If your server is behind NAT and ICE Host Override is blank with no STUN server configured, clients outside the local network cannot discover the server's real IP and calls will fail to connect.
 ```
 
-Deployment mode reference:
+Integrated mode deployment reference:
 
 ![A diagram of the integrated configuration model of a single instance.](../../images/calls-deployment-image3.png)
 
@@ -304,20 +297,18 @@ Use this path if you chose RTCD mode in Decision 0.2.1.
 
 **1.1.3b:** Configure all other settings using the same table as Path A. Settings for RTC Server Port, ICE Host Override, Max Call Participants, Test Mode, and STUN/TURN apply equally in RTCD mode.
 
-Deployment mode references:
+Single-node rtcd deployment reference:
 
 ![A diagram of a Web RTC deployment configuration.](../../images/calls-deployment-image7.png)
 
-For high availability cluster deployments:
+High-availability cluster rtcd deployment reference:
 
-![A diagram of a clustered calls deployment.](../../images/calls-deployment-image5.png)
-
-![A diagram of an rtcd deployment.](../../images/calls-deployment-image2.png)
+![A diagram of an ha rtcd deployment.](../../images/calls-deployment-image2.png)
 
 
 ---
 
-### 1.2 Deploy the Calls Offloader (Optional)
+### 1.2 Deploy Calls Offloader (Optional)
 
 ```{include} ../../_static/badges/ent-plus.md
 ```
@@ -340,7 +331,7 @@ Once deployed, configure the following settings in **System Console > Plugins > 
 
 ---
 
-### 1.3 Enable the Calls Plugin
+### 1.3 Enable Calls Plugin
 
 In **System Console > Plugins > Calls**, set **Enable Plugin** to `true`.
 
@@ -415,7 +406,7 @@ Run each applicable scenario and record Pass or Fail.
 | 2.1.10 | User B views User A's screen | Screen share is visible and legible |
 | 2.1.11 | User A stops screen sharing | Stream ends cleanly; call continues |
 
-#### Recording + Transcription (Optional — requires calls-offloader)
+#### Recording + Transcription (Optional)
 
 | Step | Action | Pass criteria |
 |------|--------|---------------|
@@ -423,7 +414,7 @@ Run each applicable scenario and record Pass or Fail.
 | 2.1.13 | End the call or stop the recording | Recording stops; post-processing begins |
 | 2.1.14 | Wait for processing to complete | Recording file appears in the channel and is playable |
 
-#### Live Captions (Optional — requires calls-offloader)
+#### Live Captions (Optional)
 
 | Step | Action | Pass criteria |
 |------|--------|---------------|
