@@ -19,7 +19,7 @@ Changelog
    * - v11.6
      - (UI) Added a new feature of creating teams and channels using anonymous URLs so the channel and team name are not revealed in the URL. Requires Enterprise Advanced license.
    * - v11.6
-     - (UI) Added popouts for Recent Mentions, Saved Messages, and Search Results via the right-hand side `MM-65630 <https://mattermost.atlassian.net/browse/MM-65630>`__.
+     - (UI) Added popouts for Recent Mentions, Saved Messages, and Search Results via the right-hand side.
    * - v11.6
      - (UI) The emoji picker on web and Desktop now inserts unicode emoji characters into the message composer instead of shortcode text.
    * - v11.6
@@ -27,11 +27,11 @@ Changelog
    * - v11.6
      - (UI) Added a contextual note in Security Settings that explains how Google SSO can synchronize usernames and emails, shown alongside the Sign-in Method details.
    * - v11.6
-     - (UI) Renamed ``SlackAttachment`` and ``SlackAttachmentField`` types to ``MessageAttachment`` and ``MessageAttachmentField``. Old names are maintained as deprecated aliases for backward compatibility with plugins `MM-67739 <https://mattermost.atlassian.net/browse/MM-67739>`__.
+     - (UI) Renamed ``SlackAttachment`` and ``SlackAttachmentField`` types to ``MessageAttachment`` and ``MessageAttachmentField``. Old names are maintained as deprecated aliases for backward compatibility with plugins.
    * - v11.6
-     - (UI) Posts created by integrations using Slack-compatible attachments (webhooks, bots, plugins) are now fully searchable in Elasticsearch. Previously, only the attachment text field was indexed. Now title, pretext, fallback, and field content are also indexed. A bulk re-index is required after upgrade to apply this to existing posts `MM-45293 <https://mattermost.atlassian.net/browse/MM-45293>`__.
+     - (UI) Posts created by integrations using Slack-compatible attachments (webhooks, bots, plugins) are now fully searchable in Elasticsearch. Previously, only the attachment text field was indexed. Now title, pretext, fallback, and field content are also indexed. A bulk re-index is required after upgrade to apply this to existing posts.
    * - v11.6
-     - (UI) Added timezone support and manual time entry for Interactive Dialog ``datetime`` fields `MM-65082 <https://mattermost.atlassian.net/browse/MM-65082>`__.
+     - (UI) Added timezone support and manual time entry for Interactive Dialog ``datetime`` fields.
    * - v11.6
      - (UI) Added sub-day relative date patterns (H/M/S) for datetime dialog fields, enabling min/max constraints with hour, minute, and second precision.
    * - v11.5
