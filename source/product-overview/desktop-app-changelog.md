@@ -13,7 +13,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
   - Mattermost Desktop App v6.1.1 contains low to medium severity level security fixes. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Upgraded to Electron v40.8.4.
-  - Fixed additional issues around URL parsing with special characters [MM-65645](https://mattermost.atlassian.net/browse/MM-65645).
+  - Fixed additional issues around URL parsing with special characters.
   - Fixed an issue where new views would not load if the URL to open contained query parameters.
   - Fixed an issue where plugins other than Calls could not request desktop screen sharing sources.
   - Fixed an issue where content running inside a server view could close the view or cause the app to become unresponsive.
