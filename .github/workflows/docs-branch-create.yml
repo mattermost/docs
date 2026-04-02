@@ -131,4 +131,4 @@ jobs:
           echo "| Merged branch | \`${MERGED_BRANCH}\` → \`master\` |" >> "$GITHUB_STEP_SUMMARY"
           echo "| New branch    | \`${NEW_BRANCH}\` |" >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
-          echo "Docs PRs with the \`docs/needed\` label will now target \`${NEW_BRANCH}\`." >> "$GITHUB_STEP_SUMMARY"
+          echo "Docs PRs with the \`Docs/Needed\` label will now target \`${NEW_BRANCH}\`." >> "$GITHUB_STEP_SUMMARY"
