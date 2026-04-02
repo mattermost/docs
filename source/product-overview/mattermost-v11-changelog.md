@@ -21,12 +21,12 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - **Changes to all plans:**
    - Under ``ServiceSettings`` in ``config.json``, added a configuration setting ``MinimumDesktopAppVersion`` to enforce a minimum Desktop App version that shows a warning screen when a user is on an older version.
  - **Changes to Professional and Enterprise plans:**
-   - Under ``SSOSettings`` in ``config.json``, added a configuration setting ``UsePreferredUsername`` to add support for OpenID Connect (OIDC) [``preferred_username`` profile field](https://docs.mattermost.com/administration-guide/onboard/sso-openidconnect.html#step-2-configure-mattermost-for-an-openid-connect-sso) as the mapped Mattermost username for GitLab, OpenID and EntraID/M365. This feature can be enabled in the **OpenID Connect** tab in the System Console [MM-63393](https://mattermost.atlassian.net/browse/MM-63393).
+   - Under ``SSOSettings`` in ``config.json``, added a configuration setting ``UsePreferredUsername`` to add support for OpenID Connect (OIDC) [``preferred_username`` profile field](https://docs.mattermost.com/administration-guide/onboard/sso-openidconnect.html#step-2-configure-mattermost-for-an-openid-connect-sso) as the mapped Mattermost username for GitLab, OpenID and EntraID/M365. This feature can be enabled in the **OpenID Connect** tab in the System Console.
  - **Changes to Enterprise plans:**
    - Under ``ElasticsearchSettings`` in ``config.json``, added a configuration setting ``EnableCJKAnalyzers`` to enable using CJK analysis plugins when installed.
-   - Under ``ElasticsearchSettings`` in ``config.json``, added a configuration setting ``EnableSearchPublicChannelsWithoutMembership`` to allow searching public channel messages without channel membership [MM-67540](https://mattermost.atlassian.net/browse/MM-67540).
+   - Under ``ElasticsearchSettings`` in ``config.json``, added a configuration setting ``EnableSearchPublicChannelsWithoutMembership`` to allow searching public channel messages without channel membership.
    - Under ``PrivacySettings`` in ``config.json``, added ``UseAnonymousURLs`` to support creating teams and channels using anonymous URLs.
- - Removed redundant ``EnableChannelScopeAccessControl`` configuration setting; channel-level ABAC is now controlled by main toggle and permissions only [MM-66625](https://mattermost.atlassian.net/browse/MM-66625).
+ - Removed redundant ``EnableChannelScopeAccessControl`` configuration setting; channel-level ABAC is now controlled by main toggle and permissions only.
  - Removed unused configuration settings ``ExperimentalAuditSettings.FileMaxSizeMB``, ``FileMaxAgeDays``, ``FileMaxBackups``, ``FileCompress``, and ``FileMaxQueueSize``. These settings were never applied to the audit log file target. Use ``AdvancedLoggingJSON`` for fine-grained audit log configuration.
 
 #### Compatibility
