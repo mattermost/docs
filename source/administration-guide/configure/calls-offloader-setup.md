@@ -497,5 +497,5 @@ The `--image-registry` flag sets the registry prefix used when the offloader pul
 - [RTCD Setup and Configuration](calls-rtcd-setup.md): Comprehensive guide for setting up the dedicated RTCD service
 - [Calls Metrics and Monitoring](calls-metrics-monitoring.md): Guide to monitoring Calls performance using metrics and observability
 - [Calls Deployment on Kubernetes](calls-kubernetes.md): Detailed guide for deploying Calls in Kubernetes environments
-- [Calls Troubleshooting](calls-troubleshooting.md): Detailed troubleshooting steps and debugging techniques
+- [Calls Log Collection](calls-log-collection.md): How to gather logs for debugging and support
 - [calls-offloader performance documentation](https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md): Detailed performance tuning and monitoring recommendations

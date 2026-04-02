@@ -99,7 +99,7 @@ For Kubernetes-specific troubleshooting:
 3. Ensure UDP and TCP traffic is properly routed through your load balancer
 4. Verify network policies allow required communication paths
 
-For detailed troubleshooting steps, see the [Calls Troubleshooting](calls-troubleshooting.md) guide.
+For symptom-based troubleshooting, see [Appendix A of the Calls Deployment guide](calls-deployment.md#appendix-a-troubleshooting-by-symptom). For log collection guidance, see [Calls Log Collection](calls-log-collection.md).
 
 ## Other Calls Documentation
 
@@ -107,4 +107,4 @@ For detailed troubleshooting steps, see the [Calls Troubleshooting](calls-troubl
 - [RTCD Setup and Configuration](calls-rtcd-setup.md): Comprehensive guide for setting up the dedicated RTCD service
 - [Calls Offloader Setup and Configuration](calls-offloader-setup.md): Setup guide for call recording and transcription
 - [Calls Metrics and Monitoring](calls-metrics-monitoring.md): Guide to monitoring Calls performance using metrics and observability
-- [Calls Troubleshooting](calls-troubleshooting.md): Detailed troubleshooting steps and debugging techniques
+- [Calls Log Collection](calls-log-collection.md): How to gather logs for debugging and support
