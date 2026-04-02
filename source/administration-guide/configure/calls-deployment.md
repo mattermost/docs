@@ -9,7 +9,7 @@ This guide walks an IT administrator through deploying Mattermost Calls in four 
 | [Phase 2: Pilot Testing](#phase-2-pilot-testing) | Admin-controlled test scenarios for 1:1 calls, group calls, screen sharing, recording, and live captions before widening access |
 | [Phase 3: Production Rollout](#phase-3-production-rollout) | Production configuration, incremental channel rollout, user announcement, monitoring, and rollback plan |
 | [Appendix A: Troubleshooting by Symptom](#appendix-a-troubleshooting-by-symptom) | Causes and fixes organized by error symptom, plus a diagnostic commands quick reference |
-| [Appendix B: Frequently Asked Questions](#appendix-b-reference-information) | Encryption, STUN, UDP vs. TCP, monitoring endpoints, Grafana dashboard, and documentation links |
+| [Appendix B: Frequently Asked Questions](#appendix-b-frequently-asked-questions) | Encryption, STUN, UDP vs. TCP, monitoring endpoints, Grafana dashboard, and documentation links |
 | [Appendix C: Performance and Sizing](#appendix-c-performance-and-sizing) | RTCD and recording server sizing benchmarks and Linux kernel tuning |
 | [Appendix D: Advanced Network Diagnostics](#appendix-d-advanced-network-diagnostics) | MTU path discovery, PMTUD verification, and bandwidth testing — for network teams |
 | [Appendix E: Glossary](#appendix-e-glossary) | Definitions for WebRTC, SFU, ICE, STUN, TURN, DTLS, SRTP, and other key terms |
@@ -29,10 +29,9 @@ This guide walks an IT administrator through deploying Mattermost Calls in four 
 Every step in this guide is numbered hierarchically so you can track exactly where you are and reference precise steps if you need to work with Mattermost Support.
 
 When [filing a support ticket](https://support.mattermost.com), please:
-- Attach your Mattermost support packet. For instructions on generating this packet, see {doc}`Generating a support packet <../../administration-guide/manage/admin/generating-support-packet>`. Remember to review and sanitize any confidential information as required.
+- {doc}`Generate <../../administration-guide/manage/admin/generating-support-packet>` and attach your Mattermost support packet. Remember to review and sanitize any confidential information as required.
 - The exact step number where the issue occurred (e.g., "Failed at step 1.4 — UDP port unreachable from client network")
 - Logs if your security policy permits — see [Calls Log Collection](calls-log-collection.md) for how to gather them.
-
 
 ---
 
@@ -96,7 +95,7 @@ RTCD adds operational complexity, maintenance overhead, and requires an Enterpri
 - A dedicated server or container for the `rtcd` service
 - Port 8443 UDP/TCP open (RTC media — client-facing)
 - Port 8045 TCP open (API — internal, Mattermost to RTCD only; never expose publicly)
-- Enterprise license
+- Enterprise+ license
 
 For full RTCD setup, see {doc}`RTCD Setup and Configuration <calls-rtcd-setup>`.
 
@@ -114,7 +113,7 @@ Recording calls, generating live captions, and transcribing recordings are resou
 **If you choose calls-offloader, prepare:**
 - A dedicated server (recommended: 8 vCPU / 16 GB RAM — see [Appendix C](#appendix-c-performance-and-sizing) for detailed sizing by recording quality)
 - Port 4545 TCP open from Mattermost server to calls-offloader (internal only — never expose publicly)
-- Enterprise license
+- Enterprise+ license
 
 For full offloader setup, see {doc}`Calls Offloader Setup and Configuration <calls-offloader-setup>`.
 
@@ -215,6 +214,8 @@ For air-gapped environments, complete these steps before Phase 1:
 ---
 
 ## Phase 1: Deploy
+
+This phase covers deploying and configuring Calls on a dev or staging instance. The goal is to get a working Calls deployment that passes basic verification before moving to pilot testing in Phase 2.
 
 ### 1.0 Prerequisites
 
@@ -499,6 +500,8 @@ Before proceeding to Phase 3, confirm:
 
 ## Phase 3: Production Rollout
 
+This phase covers promoting a validated Calls configuration to production, enabling access for all users, and confirming the deployment is stable under real-world conditions.
+
 ### 3.0 Prerequisites
 
 - [ ] Phase 2 Verification Gate complete
@@ -560,8 +563,6 @@ Customize before posting:
 - Replace `[#calls-support]` with your designated support channel
 - Replace `[IT contact name]` with the appropriate contact
 - Add recording/transcription details if those features are enabled
-
----
 
 **Draft announcement post:**
 
