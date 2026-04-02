@@ -112,6 +112,7 @@ If you upgrade from a release earlier than v11.5, please read the other [Importa
  - Fixed an issue with [file attachment processing](https://docs.mattermost.com/end-user-guide/collaborate/search-for-messages.html#search-for-files) for certain archive types.
  - Fixed a server-side validation that was incorrectly rejecting valid datetime and relative patterns in ``MinDate``/``MaxDate`` fields.
  - Fixed an issue with the PostgreSQL query parameter overflow and added transactional atomicity for bulk inserts of channel members, team members, thread memberships, posts, statuses, and group members.
+ - Fixed an issue with source language detection for auto-translations.
 
 ### API Changes
  - Updated shared channel API endpoints to use the new Shared Channel Manager role's permission. Users assigned the Shared Channel Manager role can now share and unshare channels and browse available connections without needing the Secure Connection Manager role [MM-67684](https://mattermost.atlassian.net/browse/MM-67684).
