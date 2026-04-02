@@ -78,7 +78,6 @@ If you upgrade from a release earlier than v11.5, please read the other [Importa
  - Fixed Interactive Dialog datetime fields to respect user's 12-hour/24-hour time display preference. Also fixed inconsistent date formatting between date and datetime fields [MM-67121](https://mattermost.atlassian.net/browse/MM-67121).
  - Fixed an issue with Shared Channels where channel memberships would not sync after remote reconnect [MM-67615](https://mattermost.atlassian.net/browse/MM-67615).
  - Fixed an issue where Shared Channels related slash commands were failing in High Availability cluster environments [MM-67611](https://mattermost.atlassian.net/browse/MM-67611).
- - Fixed typing issues in the **Find Channels** modal caused by interference with IMEs [MM-66937](https://mattermost.atlassian.net/browse/MM-66937).
  - Fixed an issue with incorrectly displaying **Channel Mentions** as **Channel Links** [MM-66266](https://mattermost.atlassian.net/browse/MM-66266).
  - Fixed an issue with the right-hand side panel snapping to minimum width on resize [MM-66830](https://mattermost.atlassian.net/browse/MM-66830).
  - Fixed an issue where encoded special characters present in post attachment titles would be displayed as-is instead of decoding the characters [MM-67091](https://mattermost.atlassian.net/browse/MM-67091).
