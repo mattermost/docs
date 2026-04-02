@@ -1,8 +1,5 @@
 # Deploy Mattermost Calls
 
-```{include} ../../_static/badges/all-commercial.md
-```
-
 This guide walks an IT administrator through deploying Mattermost Calls in four phases: planning and preparing your infrastructure, deploying in a controlled environment, pilot testing, and rolling out to production. 
 
 | Section | Description |
@@ -29,7 +26,7 @@ This guide walks an IT administrator through deploying Mattermost Calls in four 
 
 #### Reaching Mattermost Support
 
-Every step in this guide is numbered hierarchically so you can track exactly where you are and reference precise steps when working with Mattermost Support.
+Every step in this guide is numbered hierarchically so you can track exactly where you are and reference precise steps if you need to work with Mattermost Support.
 
 When [filing a support ticket](https://support.mattermost.com), please:
 - Attach your Mattermost support packet. For instructions on generating this packet, see {doc}`Generating a support packet <../../administration-guide/manage/admin/generating-support-packet>`. Remember to review and sanitize any confidential information as required.
@@ -45,8 +42,6 @@ Before deploying anything, use this phase to understand the full architecture, m
 
 ### 0.1 Infrastructure Prerequisites
 
-#### Infrastructure Checklist
-
 Confirm every item before proceeding to Section 0.2.
 
 | Requirement | Notes |
@@ -60,7 +55,7 @@ Confirm every item before proceeding to Section 0.2.
 
 **License requirements:**
 
-| **License**        | **What is included**                                       |
+| License            | What is included                                           |
 |--------------------|------------------------------------------------------------|
 | Entry+             | 1:1 audio calls with optional screen sharing               |
 | Professional+      | Group calls with up to 50 concurrent users                 |
@@ -74,19 +69,16 @@ Make these three decisions before configuring anything. Your answers determine w
 
 #### Decision 0.2.1: SFU Mode
 
-```{include} ../../_static/badges/ent-plus.md
-```
-
 The SFU (Selective Forwarding Unit) is the engine that routes audio and video between call participants. It runs either inside the Calls plugin on your Mattermost server (Integrated mode) or on a separate dedicated service (RTCD mode).
 
-| | Integrated Mode | RTCD Mode |
-|---|---|---|
-| **What it is** | WebRTC runs inside the Calls plugin on the Mattermost server | Dedicated standalone service handles all media routing |
-| **Best for** | Evaluation, small teams (under 50 users), single-instance deployments | Production, 50+ concurrent users, HA clusters, Kubernetes |
-| **License required** | Free for 1:1; Professional/Enterprise for group calls | Enterprise |
-| **Impact on Mattermost server** | Calls traffic shares CPU and memory with Mattermost | None — calls fully isolated from Mattermost |
-| **Scalability** | Limited by Mattermost server resources | Horizontal: add RTCD nodes as needed |
-| **Kubernetes** | Not supported | Required — only officially supported option |
+| Feature                          | Integrated Mode                                                             | RTCD Mode                                                        |
+|-----------------------------------|----------------------------------------------------------------------------|------------------------------------------------------------------|
+| **What it is**                    | WebRTC runs inside the Calls plugin on the Mattermost server               | Dedicated standalone service handles all media routing            |
+| **Best for**                      | Evaluation, small teams (under 50 users), single-instance deployments      | Production, 50+ concurrent users, HA clusters, Kubernetes        |
+| **License required**              | Entry+                                                                     | Enterprise+                                                      |
+| **Impact on Mattermost server**    | Calls traffic shares CPU and memory with Mattermost                        | None — calls fully isolated from Mattermost                      |
+| **Scalability**                   | Limited by Mattermost server resources                                     | Horizontal: add RTCD nodes as needed                             |
+| **Kubernetes**                    | Not supported                                                              | Required — only officially supported option                      |
 
 **Choose RTCD if any of the following apply:**
 
@@ -165,17 +157,17 @@ The diagram below shows all Mattermost Calls components and how they connect. En
 ```{mermaid}
 flowchart TB
     clients["Clients
-    (Web / Desktop / Mobile)"] -- 443 TCP — signaling & API --> mmServer["MM Server + Calls Plugin
+    (Web / Desktop / Mobile)"] -->|"443 TCP - signaling and API"| mmServer["MM Server + Calls Plugin
     (required)"]
-    clients -- 8443 UDP/TCP — media --> mmServer
-    clients -. 8443 UDP/TCP — media .-> rtcdSvc
-    mmServer -- 8045 TCP (internal only) --> rtcdSvc
-    mmServer -- 4545 TCP (internal only) --> offloaderSvc
+    clients -->|"8443 UDP/TCP - media"| mmServer
+    clients -.->|"8443 UDP/TCP - media"| rtcdSvc
+    mmServer -->|"8045 TCP - internal only"| rtcdSvc
+    mmServer -->|"4545 TCP - internal only"| offloaderSvc
     
-    rtcdSvc["rtcd Service 
-    (optional — Enterprise)"]
+    rtcdSvc["rtcd Service
+    (optional - Enterprise)"]
     offloaderSvc["calls-offloader
-    (optional — Enterprise)"]
+    (optional - Enterprise)"]
     
     style rtcdSvc stroke-dasharray: 5 5
     style offloaderSvc stroke-dasharray: 5 5
@@ -238,11 +230,11 @@ Confirm the following before starting Phase 1:
 
 ### 1.1 Configure Calls
 
-Navigate to **System Console > Plugins > Calls** on your dev/staging instance.
+Choose your path depending on if you will use Integrated mode or RTCD mode as determined by Decision 0.2.1.
 
 #### Path A: Integrated Mode
 
-Use this path if you chose Integrated mode in Decision 0.2.1.
+Navigate to **System Console > Plugins > Calls** on your dev/staging instance.
 
 Configure the following settings:
 
@@ -382,8 +374,8 @@ Run each applicable scenario and record Pass or Fail.
 
 #### 1:1 Call
 
-| Step | Action | Pass criteria |
-|------|--------|---------------|
+| Check | Action | Pass criteria |
+|-------|--------|---------------|
 | 2.1.1 | User A starts a 1:1 call in a direct message channel | Call widget appears for both users |
 | 2.1.2 | User B joins the call | Both users show as connected |
 | 2.1.3 | Speak in both directions | Both users hear each other clearly |
@@ -391,8 +383,8 @@ Run each applicable scenario and record Pass or Fail.
 
 #### Group Call
 
-| Step | Action | Pass criteria |
-|------|--------|---------------|
+| Check | Action | Pass criteria |
+|-------|--------|---------------|
 | 2.1.5 | User A starts a call in a channel with 3 or more members | Call widget appears |
 | 2.1.6 | Users B and C join | All three show as connected |
 | 2.1.7 | All participants speak | All participants hear each other |
@@ -400,32 +392,32 @@ Run each applicable scenario and record Pass or Fail.
 
 #### Screen Sharing
 
-| Step | Action | Pass criteria |
-|------|--------|---------------|
+| Check | Action | Pass criteria |
+|-------|--------|---------------|
 | 2.1.9 | During an active call, User A starts screen sharing | Screen share stream appears for all participants |
 | 2.1.10 | User B views User A's screen | Screen share is visible and legible |
 | 2.1.11 | User A stops screen sharing | Stream ends cleanly; call continues |
 
 #### Recording + Transcription (Optional)
 
-| Step | Action | Pass criteria |
-|------|--------|---------------|
+| Check | Action | Pass criteria |
+|-------|--------|---------------|
 | 2.1.12 | During an active call, the host starts a recording | Recording indicator appears for all participants |
 | 2.1.13 | End the call or stop the recording | Recording stops; post-processing begins |
 | 2.1.14 | Wait for processing to complete | Recording file appears in the channel and is playable |
 
 #### Live Captions (Optional)
 
-| Step | Action | Pass criteria |
-|------|--------|---------------|
+| Check | Action | Pass criteria |
+|-------|--------|---------------|
 | 2.1.16 | Enable live captions during an active call | Caption overlay appears |
 | 2.1.17 | A participant speaks | Captions appear within 2–3 seconds |
 | 2.1.18 | Disable captions | Captions stop; call continues normally |
 
 #### Cross-Device Call
 
-| Step | Action | Pass criteria |
-|------|--------|---------------|
+| Check | Action | Pass criteria |
+|-------|--------|---------------|
 | 2.1.19 | User A joins a call from the Mattermost desktop app | User A shows as connected |
 | 2.1.20 | User B joins the same call from the Mattermost mobile app | Both users show as connected |
 | 2.1.21 | Speak in both directions | Both users hear each other clearly |
@@ -434,8 +426,8 @@ Run each applicable scenario and record Pass or Fail.
 
 #### Remote and VPN Call
 
-| Step | Action | Pass criteria |
-|------|--------|---------------|
+| Check | Action | Pass criteria |
+|-------|--------|---------------|
 | 2.1.24 | User A connects from outside the corporate network (e.g., home network or hotspot) | User A can start or join a call |
 | 2.1.25 | User B connects from inside the corporate network or VPN | Both users show as connected |
 | 2.1.26 | Speak in both directions | Both users hear each other clearly |
@@ -447,8 +439,8 @@ Remote and VPN scenarios are where ICE, STUN, and TURN configuration issues typi
 
 #### Long Duration Call
 
-| Step | Action | Pass criteria |
-|------|--------|---------------|
+| Check | Action | Pass criteria |
+|-------|--------|---------------|
 | 2.1.28 | Start a call with 2 or more participants | Call connects normally |
 | 2.1.29 | Leave the call running for at least 30 minutes with periodic voice activity | Call remains stable; no drops or reconnections |
 | 2.1.30 | Check server and RTCD logs at the 15-minute and 30-minute marks | No unexpected errors; ICE state remains `succeeded` |
