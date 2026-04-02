@@ -95,7 +95,7 @@ Non-production environments are provisioned with a dedicated license key separat
 Where can I find my new license key?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Once your payment is successfully processed your license key will be provided via email. 
+Once your payment is successfully processed, your license key will be provided via email.
 
 How will I know when to renew my subscription?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
