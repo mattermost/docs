@@ -11,21 +11,16 @@ on:
         description: 'Version label for changelog entry (e.g. 10.6)'
         required: true
         type: string
-      changelog_path:
-        description: 'Path to the changelog file to update'
-        required: true
-        default: 'source/product-overview/mattermost-v11-changelog.md'
-        type: string
       server_repos:
         description: 'Comma-separated repos to pull PRs from'
         required: true
         default: 'mattermost/mattermost,mattermost/enterprise'
         type: string
+      blog_post_url:
+        description: 'Blog post URL for the Improvements section (e.g. https://mattermost.com/blog/mattermost-v11-6-is-now-available/)'
+        required: false
+        type: string
  
-concurrency:
-  group: changelog-${{ inputs.version }}
-  cancel-in-progress: true
-
 jobs:
   generate-changelog:
     runs-on: ubuntu-latest
@@ -46,17 +41,17 @@ jobs:
           privateKey: ${{ secrets.UNIFIED_CI_PRIVATE_KEY }}
  
       - name: Checkout docs repo
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        uses: actions/checkout@v4
         with:
           token: ${{ steps.appToken.outputs.token }}
-
+ 
       - name: Set up Python
-        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
+ 
       - name: Install dependencies
-        run: pip install requests==2.32.5 anthropic==0.86.0
+        run: pip install requests anthropic
  
       - name: Generate changelog
         env:
@@ -65,28 +60,23 @@ jobs:
           MILESTONE: ${{ inputs.milestone }}
           VERSION: ${{ inputs.version }}
           REPOS: ${{ inputs.server_repos }} # Comma-separated repos to pull PRs from
-          CHANGELOG_PATH: ${{ inputs.changelog_path }}
+          BLOG_POST_URL: ${{ inputs.blog_post_url }}
+          CHANGELOG_PATH: source/product-overview/mattermost-v11-changelog.md
         run: python .github/scripts/generate_changelog.py
  
       - name: Create Pull Request
         env:
           GH_TOKEN: ${{ steps.appToken.outputs.token }}
-          CI_USERNAME: ${{ vars.UNIFIED_CI_USERNAME }}
-          CI_EMAIL: ${{ vars.UNIFIED_CI_EMAIL }}
-          VERSION: ${{ inputs.version }}
-          MILESTONE: ${{ inputs.milestone }}
-          SERVER_REPOS: ${{ inputs.server_repos }}
-          CHANGELOG_PATH: ${{ inputs.changelog_path }}
         run: |
-          git config user.name "$CI_USERNAME"
-          git config user.email "$CI_EMAIL"
-          git checkout -b "changelog/$VERSION"
-          git add "$CHANGELOG_PATH"
+          git config user.name "${{ vars.UNIFIED_CI_USERNAME }}"
+          git config user.email "${{ vars.UNIFIED_CI_EMAIL }}"
+          git checkout -b "changelog/${{ inputs.version }}"
+          git add source/product-overview/mattermost-v11-changelog.md
           git diff --staged --quiet && echo "No changes to commit" && exit 0
-          git commit -m "docs: add changelog for $VERSION"
-          git push origin "changelog/$VERSION" --force
+          git commit -m "docs: add changelog for ${{ inputs.version }}"
+          git push origin "changelog/${{ inputs.version }}" --force
           gh pr create \
-            --title "Changelog: $VERSION" \
-            --body "Auto-generated changelog for milestone \`$MILESTONE\` from \`$SERVER_REPOS\`." \
-            --base master \
-            --head "changelog/$VERSION"
+            --title "Changelog: ${{ inputs.version }}" \
+            --body "Auto-generated changelog for milestone \`${{ inputs.milestone }}\` from \`${{ inputs.server_repos }}\`." \
+            --base main \
+            --head "changelog/${{ inputs.version }}"
