@@ -38,6 +38,8 @@ If you upgrade from a release earlier than v11.5, please read the other [Importa
 
 ### Improvements
 
+See [this blog post](https://mattermost.com/blog/mattermost-v11-6-is-now-available/) on the highlights in our latest release.
+
 #### UI Changes
  - Pre-packaged Calls plugin version [v1.11.4](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.11.4).
  - Pre-packaged Playbooks plugin version [v2.8.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.8.0).
