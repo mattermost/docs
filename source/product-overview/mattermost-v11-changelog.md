@@ -9,9 +9,117 @@
 ```{include} common-esr-support-upgrade.md
 ```
 
+(release-v11.5-feature-release)=
+## Release v11.5 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
+
+- **11.5.1, released 2026-03-16**
+  - Mattermost v11.5.1 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Improved security hardening for the user authentication update API endpoint.
+  - Improved token handling in the guest magic link authentication flow.
+  - Increased maximum number of ``autotranslations`` workers per node to 64.
+  - Fixed an issue with the import process looking for the main json import file in subfolders of the export zip file.
+  - Mattermost v11.5.1 contains no database or functional changes.
+- **11.5.0, released 2026-03-16**
+  - Original 11.5.0 release.
+
+### Upgrade Impact
+
+#### Database Schema Changes
+ - The following schema changes are included in the v11.5 release. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
+   - Added a new column ``translations.state`` and a new index ``idx_translations_state`` to the ``translations`` table.
+   - Added a new column ``channelmembers.autotranslationdisabled`` to the ``channelmembers`` table.
+   - Modified the column ``translations.objectType`` and changed the primary key ``(objectId, dstLang)`` to ``(objectId, objectType, dstLang)`` in the ``translations`` table.
+   - Added a new column ``translations.channelid`` to the ``translations`` table.
+   - Added a new index ``idx_translations_channel_updateat`` to the ``translations`` table.
+   - Dropped the index ``idx_translations_updateat`` from the ``translations`` table.
+
+#### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+ - **Changes to Enterprise Advanced plan:**
+   - Added ``Autotranslation`` settings ``Enable``, ``RestrictDMAndGM``, ``Provider``, ``TargetLanguages``, ``Workers``, ``TimeoutMs``, ``LibreTranslate``, and ``Agents`` to support auto-translations.
+ - **Changes to Enterprise plan:**
+   - Added ``DCRRedirectURIAllowlist`` under ``ServiceSettings`` to restrict OAuth Dynamic Client Registration redirect URIs with glob patterns and to return ``invalid_redirect_uri`` when any redirect URI is not allowlisted.
+
+#### Compatibility
+ - Updated minimum Edge and Chrome versions to 144+.
+
+```{Important}
+If you upgrade from a release earlier than v11.4, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html). In case of an upgrade failure, please check the [Downgrade Guide](https://docs.mattermost.com/administration-guide/upgrade/downgrading-mattermost-server.html) and the [Recovery Guide](https://docs.mattermost.com/deployment-guide/backup-disaster-recovery.html) for rollback steps and interim mitigation strategy.
+```
+
+### Improvements
+
+See [this blog post](https://mattermost.com/blog/mattermost-v11-5-is-now-available/) on the highlights in our latest release.
+
+#### UI Changes
+ - Pre-packaged GitLab plugin version [v1.12.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.12.0).
+ - Pre-packaged MS Teams Meetings plugin version [v2.4.0](https://github.com/mattermost/mattermost-plugin-msteams-meetings/releases/tag/v2.4.0).
+ - Pre-packaged Zoom plugin version [v1.12.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.12.0).
+ - Pre-packaged Playbooks plugin version [v2.7.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.7.0).
+ - Pre-packaged GitHub plugin version [v2.6.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.6.0).
+ - Pre-packaged Calls plugin version [v1.11.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.11.1).
+ - Added support for [auto-translations](https://docs.mattermost.com/end-user-guide/collaborate/autotranslate-messages.html). Initial Beta release. Requires Enterprise Advanced license.
+ - Added the ability for web app plugin code to be loaded asynchronously.
+ - [AI Rewrites](https://docs.mattermost.com/end-user-guide/collaborate/send-messages.html#rewrite-messages-with-ai) now includes some context from the most recent messages in the thread to help provide better rewrites.
+ - Available AI Agents are now shown in the @-mention autocomplete menu, regardless of channel membership.
+ - Added the ability to access channel settings and rename a channel from the channel info right-hand sidebar.
+ - Added tooltips to action buttons, and action errors are now displayed.
+ - Updated the signup flow to replace the newsletter opt-in with a checkbox to agree to the **Acceptable Use Policy** and **Privacy Policy**.
+ - Added back [offline **Help** documentation](https://docs.mattermost.com/end-user-guide/collaborate/send-messages.html) accessible from the message composer.
+ - Added [new icons](https://docs.mattermost.com/end-user-guide/collaborate/channel-types.html#archived-channels) for archived and private channels.
+
+#### Administration
+ - Added a [``mmctl license get`` command](https://docs.mattermost.com/administration-guide/manage/mmctl-command-line-tool.html#mmctl-license-get) to retrieve and display current server license information.
+ - Introduced ``protected`` attribute on property fields to restrict write access to the managing plugin.
+ - Introduced ``access_mode`` attribute on property fields to manage read access.
+ - Configured the build system to natively build the server on FreeBSD.
+ - Upgraded to node 24 and main dependencies with ``babel``, ``webpack@5.103`` and ``jest@30``.
+ - Renamed **Self-Deleting Messages** to **Burn on Read** in the **System Console**.
+ - Added [CJK Post search support for PostgreSQL](https://docs.mattermost.com/administration-guide/configure/enabling-chinese-japanese-korean-search.html), which sits behind the new feature flag ``MM_FEATUREFLAGS_CJKSEARCH``.
+
+#### Performance
+ - Benchmarking test results showed no significant difference: a 4.28% increase in the number of supported users for the new release, which lies within the ``[-5%, +5%]`` prediction interval. View the full raw data and methodology in our [Performance Reports repository](https://github.com/mattermost/performance-reports/tree/main/performance-comparisons/v11.5).
+
+### Bug Fixes
+ - Fixed an issue with popout windows in subpath deployments.
+ - Fixed an issue where additional error details were missing from ``ElasticSearch`` test connection failures.
+ - Fixed an issue where several Shared Channels operations recorded failure into the audit log even when successful.
+ - Fixed an issue where the check-cws-connection endpoint returned 500 errors in self-hosted enterprise environments.
+ - Fixed a performance regression that caused the requests to populate the **Recent mentions** right-hand side (RHS) to timeout. This, in turn, re-introduces a known bug in searches with quoted strings, that may include results not exactly matching the quoted string.
+ - Fixed an issue where an un-needed **Cancel** button was shown for **User Attributes** in the **System Console**.
+ - Fixed an issue where plugin settings marked as ``secret: true`` inside ``settings_schema.sections[]`` were not sanitized, potentially exposing secret values through the API.
+ - Fixed an issue with link preview metadata processing and image validation.
+ - Fixed an issue with the usage of ``WebSocketClient`` from ``@mattermost/shared`` package being broken in Node.js environments.
+ - Fixed an issue where rate limiting was missing from the login endpoint (5 requests/second, 10 burst).
+ - Fixed an issue where the profile status menu disappeared at higher zoom levels or at resized window on mobile view.
+ - Fixed an issue where importing a guest user without team or channel memberships would cause the bulk import to fail with an error.
+
+### Audit Log Event Changes
+ - Updated audit/activity logging for Desktop App external authentication.
+ - Added [audit logs](https://docs.mattermost.com/administration-guide/comply/embedded-json-audit-log-schema.html) for when admins access posts on channels they are not a member of.
+ - Added new [audit events](https://docs.mattermost.com/administration-guide/comply/embedded-json-audit-log-schema.html#ai-recap-events) ``AuditEventCreateRecap``, ``AuditEventGetRecap``, ``AuditEventGetRecaps``, ``AuditEventMarkRecapAsRead``, ``AuditEventRegenerateRecap``, and ``AuditEventDeleteRecap``.
+ - Added a new audit event ``AuditEventUpdateChannelMemberAutotranslation``.
+ - Added a new audit event ``AuditEventLoginWithDesktopToken``.
+ - Added new audit events ``AuditEventListChannelBookmarksForChannel``, ``AuditEventGetPinnedPosts``, ``AuditEventGetFileThumbnail``, ``AuditEventGetFileInfosForPost``, ``AuditEventGetFileInfo``, ``AuditEventGetFilePreview``, ``AuditEventSearchFiles``, ``AuditEventCreateEphemeralPost``, ``AuditEventGetEditHistoryForPost``, ``AuditEventGetFlaggedPosts``, ``AuditEventGetPostsForChannel``, ``AuditEventGetPostsForChannelAroundLastUnread``, ``AuditEventGetPost``, ``AuditEventGetPostThread``, ``AuditEventGetPostsByIds``, ``AuditEventGetThreadForUser``, ``AuditEventNotificationAck``, and ``AuditEventWebsocketPost``.
+
+### Go Version
+ - v11.5 is built with Go ``v1.24.13``.
+
+### Open Source Components
+ - Added ``react-intl`` and ``x/sys``, and replaced ``avct/uasurfer`` with ``LumenResearch/uasurfer`` in https://github.com/mattermost/mattermost.
+
+### Contributors
+ - [adityadav1987](https://github.com/adityadav1987), [agarciamontoro](https://github.com/agarciamontoro), [amyblais](https://github.com/amyblais), [andrleite](https://github.com/andrleite), [asaadmahmood](https://github.com/asaadmahmood), [avasconcelos114](https://github.com/avasconcelos114), [BenCookie95](https://github.com/BenCookie95), [bgardner8008](https://github.com/bgardner8008), [bshumylo](https://translate.mattermost.com/user/bshumylo), [calebroseland](https://github.com/calebroseland), [carlisgg](https://github.com/carlisgg), [catalintomai](https://github.com/catalintomai), [Combs7th](https://github.com/Combs7th), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://translate.mattermost.com/user/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [davidkrauser](https://github.com/davidkrauser), [devinbinnie](https://github.com/devinbinnie), [DHaussermann](https://github.com/DHaussermann), [DSchalla](https://github.com/DSchalla), [enahum](https://github.com/enahum), [enzowritescode](https://github.com/enzowritescode), [esarafianou](https://github.com/esarafianou), [fmartingr](https://github.com/fmartingr), [frankps](https://translate.mattermost.com/user/frankps), [guenjun](https://translate.mattermost.com/user/guenjun), [hanzei](https://github.com/hanzei), [harshilsharma63](https://github.com/harshilsharma63), [hmhealey](https://github.com/hmhealey), [isacikgoz](https://github.com/isacikgoz), [jgheithcock](https://github.com/jgheithcock), [JOAO-Ethan](https://github.com/JOAO-Ethan), [jprusch](https://translate.mattermost.com/user/jprusch), [JulienTant](https://github.com/JulienTant), [kondo97](https://github.com/kondo97), [larkox](https://github.com/larkox), [lieut-data](https://github.com/lieut-data), [locnnil](https://github.com/locnnil), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [majo](https://translate.mattermost.com/user/majo), [marianunez](https://github.com/marianunez), [master7](https://translate.mattermost.com/user/master7), [matthew-w](https://translate.mattermost.com/user/matthew-w), [matthewbirtch](https://github.com/matthewbirtch), [mgdelacroix](https://github.com/mgdelacroix), [milotype](https://translate.mattermost.com/user/milotype), [NARSimoes](https://github.com/NARSimoes), [nevyangelova](https://github.com/nevyangelova), [nickmisasi](https://github.com/nickmisasi), [ogi-m](https://github.com/ogi-m), [pvev](https://github.com/pvev), [Rajat-Dabade](https://github.com/Rajat-Dabade), [Reinkard](https://translate.mattermost.com/user/Reinkard), [roman.belda](https://translate.mattermost.com/user/roman.belda), [Roy-Orbison](https://translate.mattermost.com/user/Roy-Orbison), [sadohert](https://github.com/sadohert), [salvatorearianna](https://translate.mattermost.com/user/salvatorearianna), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [SharpGoldHawk](https://translate.mattermost.com/user/SharpGoldHawk), [Sharuru](https://translate.mattermost.com/user/Sharuru), [svelle](https://github.com/svelle), [thePanz](https://translate.mattermost.com/user/thePanz), [ThrRip](https://translate.mattermost.com/user/ThrRip), [Umeaboy](https://translate.mattermost.com/user/Umeaboy), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [yasserfaraazkhan](https://github.com/yasserfaraazkhan), [ZeWaren](https://github.com/ZeWaren)
+
 (release-v11.4-feature-release)=
 ## Release v11.4 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **11.4.3, released 2026-03-16**
+  - Mattermost v11.4.3 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Improved security hardening for the user authentication update API endpoint.
+  - Improved token handling in the guest magic link authentication flow.
+  - Fixed a regression where the ``system_admin`` role on new installations or after certain updates was missing the ``manage_oauth`` permission, preventing access to OAuth application management API endpoints. This change restores the permission to the default ``system_admin`` role and includes a migration to backfill it on affected existing servers.
+  - Mattermost v11.4.3 contains no database or functional changes.
 - **11.4.2, released 2026-02-26**
   - Mattermost v11.4.2 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v11.4.2 contains no database or functional changes.
@@ -32,7 +140,7 @@
 ```
 
 #### Database Schema Changes
- - Added two new tables, ``Recaps`` and ``RecapChannels``. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details [MM-66359](https://mattermost.atlassian.net/browse/MM-66359).
+ - Added two new tables, ``Recaps`` and ``RecapChannels``. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
 
 #### Compatibility
  - Updated minimum Edge and Chrome versions to 142+.
@@ -43,29 +151,31 @@ If you upgrade from a release earlier than v11.3, please read the other [Importa
 
 ### Improvements
 
+See [this blog post](https://mattermost.com/blog/mattermost-v11-4-is-now-available/) on the highlights in our latest release.
+
 #### User Interface
- - Pre-packaged Boards plugin version [v9.2.2](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.2.2) ([MM-66985](https://mattermost.atlassian.net/browse/MM-66985)).
+ - Pre-packaged Boards plugin version [v9.2.2](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.2.2).
  - Pre-packaged Jira plugin version [v4.5.1](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.5.1).
  - Pre-packaged Playbooks plugin version [v2.6.2](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.6.2).
- - Updated illustrations and visual design for the initial loading screen, preparing workspace flow, IP filtering empty state, and admin console feature discovery panels [MM-67081](https://mattermost.atlassian.net/browse/MM-67081).
- - Added adjustments to thread and right-hand side plugin pop-out titles [MM-66898](https://mattermost.atlassian.net/browse/MM-66898).
- - MS Teams and Outlook on mobile no longer display a "Your browser does not support notifications" warning banner when running Mattermost embedded in those apps [MM-66769](https://mattermost.atlassian.net/browse/MM-66769).
+ - Updated illustrations and visual design for the initial loading screen, preparing workspace flow, IP filtering empty state, and admin console feature discovery panels.
+ - Added adjustments to thread and right-hand side plugin pop-out titles.
+ - MS Teams and Outlook on mobile no longer display a "Your browser does not support notifications" warning banner when running Mattermost embedded in those apps.
 
 #### Administration
- - Added [debug logs](https://docs.mattermost.com/administration-guide/manage/logging.html#cluster-job-execution-debug-messages) to indicate if the scheduled post job, Do Not Disturb status reset job, or the post reminder job is not running with the current node not being a leader node [MM-66861](https://mattermost.atlassian.net/browse/MM-66861).
- - Added CPU cores and total memory to the Support Packet [MM-66840](https://mattermost.atlassian.net/browse/MM-66840).
+ - Added [debug logs](https://docs.mattermost.com/administration-guide/manage/logging.html#cluster-job-execution-debug-messages) to indicate if the scheduled post job, Do Not Disturb status reset job, or the post reminder job is not running with the current node not being a leader node.
+ - Added CPU cores and total memory to the Support Packet.
  - Added a new ``MM_LOG_PATH`` environment variable to [restrict log file locations](https://docs.mattermost.com/administration-guide/manage/logging.html#log-path-restrictions). Log files must now be within a configured root directory.
 
 #### Performance
  - Benchmarking test results showed no significant difference: a 0.28% decrease in the number of supported users for the new release, which lies within the ``[-5%, +5%]`` prediction interval. View the full raw data and methodology in our [Performance Reports repository](https://github.com/mattermost/performance-reports/tree/main/performance-comparisons/v11.4).
 
 ### Bug Fixes
- - Fixed an issue with the behavior of the right‑hand sidebar (RHS) when navigating to global threads. The application now checks the current RHS state and suppresses the sidebar only if it is not showing mentions, search results, or flagged posts [MM-66871](https://mattermost.atlassian.net/browse/MM-66871). 
- - Fixed an issue where the post list automatically scrolled to the bottom when a user edited a message [MM-64810](https://mattermost.atlassian.net/browse/MM-64810). 
+ - Fixed an issue with the behavior of the right‑hand sidebar (RHS) when navigating to global threads. The application now checks the current RHS state and suppresses the sidebar only if it is not showing mentions, search results, or flagged posts. 
+ - Fixed an issue where the post list automatically scrolled to the bottom when a user edited a message. 
  - Fixed the misaligned design in posts in the thread view on mobile view.
- - Fixed **Add channels** menu getting cut off when the **Direct Messages** category was collapsed [MM-66800](https://mattermost.atlassian.net/browse/MM-66800).
- - Fixed an issue with the user's theme applying when it shouldn't, such as when creating a new team [MM-65828](https://mattermost.atlassian.net/browse/MM-65828).
- - Fixed an issue where the channel info right sidebar was not scrollable [MM-62503](https://mattermost.atlassian.net/browse/MM-62503).
+ - Fixed **Add channels** menu getting cut off when the **Direct Messages** category was collapsed.
+ - Fixed an issue with the user's theme applying when it shouldn't, such as when creating a new team.
+ - Fixed an issue where the channel info right sidebar was not scrollable.
  - Fixed an issue with PSD file previews.
  - Fixed an issue where users removed from a private team could still enumerate public channels in that team via the channel search API.
  - Fixed an issue with permalink embeds arriving from websocket messages.
@@ -93,6 +203,12 @@ If you upgrade from a release earlier than v11.3, please read the other [Importa
 (release-v11.3-feature-release)=
 ## Release v11.3 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **11.3.3, released 2026-03-16**
+  - Mattermost v11.3.3 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Improved security hardening for the user authentication update API endpoint.
+  - Improved token handling in the guest magic link authentication flow.
+  - Fixed a regression where the ``system_admin`` role on new installations or after certain updates was missing the ``manage_oauth`` permission, preventing access to OAuth application management API endpoints. This change restores the permission to the default ``system_admin`` role and includes a migration to backfill it on affected existing servers.
+  - Mattermost v11.3.3 contains no database or functional changes.
 - **11.3.2, released 2026-02-23**
   - Mattermost v11.3.2 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Zoom plugin version [v1.12.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.12.0).
@@ -127,20 +243,20 @@ If you upgrade from a release earlier than v11.3, please read the other [Importa
 ### Upgrade Impact
 
 #### Database Schema Changes
- - Added schema changes in the form of a new tables (``ReadReceipts`` and ``TemporaryPosts``) that aggregate user attributes into a separate table. Added ``Type`` field for both ``Drafts`` and ``ScheduledPosts``. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details [MM-61758](https://mattermost.atlassian.net/browse/MM-61758).
- - Added a new ``translations`` table and two new columns (``channels.autotranslation``, ``channelmembers.autotranslation)``. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details [MM-65756](https://mattermost.atlassian.net/browse/MM-65756).
+ - Added schema changes in the form of a new tables (``ReadReceipts`` and ``TemporaryPosts``) that aggregate user attributes into a separate table. Added ``Type`` field for both ``Drafts`` and ``ScheduledPosts``. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
+ - Added a new ``translations`` table and two new columns (``channels.autotranslation``, ``channelmembers.autotranslation)``. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
 
 #### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
  - **Changes to Enterprise Advanced plan:**
-   - Under ``ServiceSettings`` in ``config.json``, added ``EnableBurnOnRead``,  ``BurnOnReadDurationSeconds``, ``BurnOnReadMaximumTimeToLiveSeconds`` and ``BurnOnReadSchedulerFrequencySeconds`` [MM-61758](https://mattermost.atlassian.net/browse/MM-61758).
+   - Under ``ServiceSettings`` in ``config.json``, added ``EnableBurnOnRead``,  ``BurnOnReadDurationSeconds``, ``BurnOnReadMaximumTimeToLiveSeconds`` and ``BurnOnReadSchedulerFrequencySeconds``.
  - **Changes to Enterprise plans:**
-   - Under ``GuestAccountsSettings`` in ``config.json``, added ``EnableGuestMagicLink`` [MM-66445](https://mattermost.atlassian.net/browse/MM-66445).
-   - Under ``ServiceSettings`` in ``config.json``, added ``AWSMeteringTimeoutSeconds``.  This configuration value can be used to set the timeout in seconds when connecting to the AWS marketplace metering service [MM-66202](https://mattermost.atlassian.net/browse/MM-66202).
-   - Under ``NativeAppSettings`` in ``config.json``, added ``EnableIntuneMAM``, which can be edited in the **System Console** [MM-66736](https://mattermost.atlassian.net/browse/MM-66736).
+   - Under ``GuestAccountsSettings`` in ``config.json``, added ``EnableGuestMagicLink``.
+   - Under ``ServiceSettings`` in ``config.json``, added ``AWSMeteringTimeoutSeconds``.  This configuration value can be used to set the timeout in seconds when connecting to the AWS marketplace metering service.
+   - Under ``NativeAppSettings`` in ``config.json``, added ``EnableIntuneMAM``, which can be edited in the **System Console**.
 
 #### Important Upgrade Notes
- - Beginning in Mattermost v11.3, some plugins that register a Right Hand Sidebar (RHS) component using ``registerRightHandSidebarComponent`` will need to implement additional code to support RHS popouts if their RHS component relies on plugin-specific state. See [this forum post](https://forum.mattermost.com/t/rhs-popout-support-for-plugins/25626) for full details [MM-66875](https://mattermost.atlassian.net/browse/MM-66875).
+ - Beginning in Mattermost v11.3, some plugins that register a Right Hand Sidebar (RHS) component using ``registerRightHandSidebarComponent`` will need to implement additional code to support RHS popouts if their RHS component relies on plugin-specific state. See [this forum post](https://forum.mattermost.com/t/rhs-popout-support-for-plugins/25626) for full details.
 
 ```{Important}
 If you upgrade from a release earlier than v11.2, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html). In case of an upgrade failure, please check the [Downgrade Guide](https://docs.mattermost.com/administration-guide/upgrade/downgrading-mattermost-server.html) and the [Recovery Guide](https://docs.mattermost.com/deployment-guide/backup-disaster-recovery.html) for rollback steps and interim mitigation strategy.
@@ -148,57 +264,59 @@ If you upgrade from a release earlier than v11.2, please read the other [Importa
 
 ### Improvements
 
+See [this blog post](https://mattermost.com/blog/mattermost-v11-3-is-now-available/) on the highlights in our latest release.
+
 #### User Interface
  - Pre-packaged Microsoft Calendar plugin version [v1.5.0](https://github.com/mattermost/mattermost-plugin-mscalendar/releases/tag/v1.5.0).
- - Pre-packaged Agents plugin version [v1.7.2](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.7.2) ([MM-66650](https://mattermost.atlassian.net/browse/MM-66650)).
+ - Pre-packaged Agents plugin version [v1.7.2](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.7.2).
  - Pre-packaged Zoom plugin version [v1.11.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.11.0).
  - Pre-packaged Jira plugin version [v4.5.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.5.0).
  - Added Korean language support and upgraded Korean translations from Alpha to Official.
- - Added pop-outs for right-hand-side (RHS) plugins [MM-66875](https://mattermost.atlassian.net/browse/MM-66875).
- - Removed outdated system notices [MM-65785](https://mattermost.atlassian.net/browse/MM-65785).
- - Removed the Collapsed Reply Threads tutorial [MM-66470](https://mattermost.atlassian.net/browse/MM-66470).
+ - Added pop-outs for right-hand-side (RHS) plugins.
+ - Removed outdated system notices.
+ - Removed the Collapsed Reply Threads tutorial.
  - Added support for triggering user mentions using the full-width at-sign (＠) in addition to the standard half-width at-sign (@), improving the experience for users of Japanese input methods.
- - Added the ability to schedule posts in 15-minutes interval [MM-66859](https://mattermost.atlassian.net/browse/MM-66859).
- - Updated Giphy SDK from 8.1.0 to 10.1.0 [MM-66374](https://mattermost.atlassian.net/browse/MM-66374).
- - Custom Profile Attributes now always return a set of [default attributes](https://docs.mattermost.com/administration-guide/manage/admin/user-attributes.html#add-attributes) if they're not set [MM-66460](https://mattermost.atlassian.net/browse/MM-66460).
+ - Added the ability to schedule posts in 15-minutes interval.
+ - Updated Giphy SDK from 8.1.0 to 10.1.0.
+ - Custom Profile Attributes now always return a set of [default attributes](https://docs.mattermost.com/administration-guide/manage/admin/user-attributes.html#add-attributes) if they're not set.
  - Added a new webapp plugin component ``registerSidebarBrowseOrAddChannelMenuComponent``, which allows users to add options to the ``BrowseOrCreateChannel`` menu. 
 
 #### Administration
- - Added [Microsoft Intune MAM authentication support](https://docs.mattermost.com/deployment-guide/mobile/mobile-security-features.html#microsoft-intune-mobile-application-management-mam) (requires Enterprise Advanced license) [MM-66736](https://mattermost.atlassian.net/browse/MM-66736).
- - Added a [Burn-on-Read feature](https://docs.mattermost.com/end-user-guide/collaborate/send-messages.html#send-burn-on-read-messages) (requires Enterprise Advanced license) [MM-61758](https://mattermost.atlassian.net/browse/MM-61758).
- - Added support for passwordless authentication with [Magic Link for guest users](https://docs.mattermost.com/end-user-guide/access/access-your-workspace.html#magic-link-login-for-guests) (requires Enterprise license) [MM-66445](https://mattermost.atlassian.net/browse/MM-66445).
- - The channel ABAC auto-sync setting is now individually configurable through the **System Console** [MM-65956](https://mattermost.atlassian.net/browse/MM-65956).
- - Validated [log levels in ``AdvancedLoggingJSON``](https://docs.mattermost.com/administration-guide/manage/logging.html) [MM-62770](https://mattermost.atlassian.net/browse/MM-62770).
- - Changes to HTML templates now require a server restart to take effect [MM-66718](https://mattermost.atlassian.net/browse/MM-66718).
- - Updated the AWS SDK dependency [MM-66202](https://mattermost.atlassian.net/browse/MM-66202).
+ - Added [Microsoft Intune MAM authentication support](https://docs.mattermost.com/deployment-guide/mobile/mobile-security-features.html#microsoft-intune-mobile-application-management-mam) (requires Enterprise Advanced license).
+ - Added a [Burn-on-Read feature](https://docs.mattermost.com/end-user-guide/collaborate/send-messages.html#send-burn-on-read-messages) (requires Enterprise Advanced license).
+ - Added support for passwordless authentication with [Magic Link for guest users](https://docs.mattermost.com/end-user-guide/access/access-your-workspace.html#magic-link-login-for-guests) (requires Enterprise license).
+ - The channel ABAC auto-sync setting is now individually configurable through the **System Console**.
+ - Validated [log levels in ``AdvancedLoggingJSON``](https://docs.mattermost.com/administration-guide/manage/logging.html).
+ - Changes to HTML templates now require a server restart to take effect.
+ - Updated the AWS SDK dependency.
 
 #### Performance
  - Benchmarking test results showed no significant difference: a 1.61% decrease in the number of supported users for the new release, which lies within the ``[-5%, +5%]`` prediction interval. View the full raw data and methodology in our [Performance Reports repository](https://github.com/mattermost/performance-reports/tree/main/performance-comparisons/v11.3).
- - Improved the performance of the post textbox and fixed typing bugs in the thread popout [MM-66832](https://mattermost.atlassian.net/browse/MM-66832).
+ - Improved the performance of the post textbox and fixed typing bugs in the thread popout.
 
 ### Bug Fixes
  - Fixed a translation issue for invalid slash commands to ensure all locales display the correct message.
  - Fixed a desktop token infinite redirect when the wrong app was opened.
- - Fixed the session expired notification not showing the server name on Desktop App [MM-66361](https://mattermost.atlassian.net/browse/MM-66361).
+ - Fixed the session expired notification not showing the server name on Desktop App.
  - Fixed development Docker Compose files to work on SELinux-enabled hosts.
  - Fixed discrepancies with ``control_access_policies/search`` endpoint and its documentation.
  - Fixed an issue where channel memberships from exports were not properly validated.
  - Fixed an issue where pressing **Back** in the Desktop App after an external login would cause a weird state.
- - Fixed a server panic that occurred when a bot created a post with persistent notifications enabled [MM-65575](https://mattermost.atlassian.net/browse/MM-65575).
- - Fixed an issue where the Chrome/Desktop App spell check on Windows often couldn't correct typos [MM-66659](https://mattermost.atlassian.net/browse/MM-66659).
- - Fixed an issue where pressing ``Shift+Up`` in the channel textbox to reply to a thread could cause the right‑hand sidebar (RHS) reply textbox to not focus [MM-65186](https://mattermost.atlassian.net/browse/MM-65186).
- - Fixed an issue where the guest group mentions permission setting was not available in the **System Console** for Professional licenses [MM-66366](https://mattermost.atlassian.net/browse/MM-66366).
- - Fixed a minor UX issue in **Set custom status** modal after visiting the **System Console** [MM-66880](https://mattermost.atlassian.net/browse/MM-66880).
- - Fixed an issue where the ``TelemetryID`` could be temporarily missing on brand new High Availability clusters due to replica lag [MM-65960](https://mattermost.atlassian.net/browse/MM-65960).
+ - Fixed a server panic that occurred when a bot created a post with persistent notifications enabled.
+ - Fixed an issue where the Chrome/Desktop App spell check on Windows often couldn't correct typos.
+ - Fixed an issue where pressing ``Shift+Up`` in the channel textbox to reply to a thread could cause the right‑hand sidebar (RHS) reply textbox to not focus.
+ - Fixed an issue where the guest group mentions permission setting was not available in the **System Console** for Professional licenses.
+ - Fixed a minor UX issue in **Set custom status** modal after visiting the **System Console**.
+ - Fixed an issue where the ``TelemetryID`` could be temporarily missing on brand new High Availability clusters due to replica lag.
  - Fixed an issue where scheduling a post in the thread popout did not work.
 
 ### API Changes
- - Added a new ``LoginByEntraIdToken`` API endpoint for MSAL ``id_token`` authentication [MM-66733](https://mattermost.atlassian.net/browse/MM-66733).
- - Added a new ``report/posts`` API for retrieving posts for reporting [MM-66268](https://mattermost.atlassian.net/browse/MM-66268). 
+ - Added a new ``LoginByEntraIdToken`` API endpoint for MSAL ``id_token`` authentication.
+ - Added a new ``report/posts`` API for retrieving posts for reporting. 
 
 ### Audit Log Event Changes
- - Added new audit events ``AuditEventRevealPost`` and ``AuditEventBurnPost`` [MM-61758](https://mattermost.atlassian.net/browse/MM-61758).
- - Added a new audit event ``AuditEventSetActiveStatus`` [MM-65956](https://mattermost.atlassian.net/browse/MM-65956).
+ - Added new audit events ``AuditEventRevealPost`` and ``AuditEventBurnPost``.
+ - Added a new audit event ``AuditEventSetActiveStatus``.
 
 ### Go Version
  - v11.3 is built with Go ``v1.24.6``.
@@ -244,9 +362,9 @@ If you upgrade from a release earlier than v11.2, please read the other [Importa
   - Pre-packaged Jira plugin version [v4.5.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.5.0).
   - Mattermost v11.2.2 contains no database or functional changes.
 - **11.2.1, released 2025-12-16**
-  - Improved the performance of the post textbox and fixed typing bugs in the thread popout [MM-66832](https://mattermost.atlassian.net/browse/MM-66832).
-  - Fixed an issue where Chrome/Desktop App spell check on Windows often couldn't correct typos [MM-66659](https://mattermost.atlassian.net/browse/MM-66659).
-  - Fixed an issue where some plugin configurations were deleted when another plugin saved its configuration [MM-66943](https://mattermost.atlassian.net/browse/MM-66943).
+  - Improved the performance of the post textbox and fixed typing bugs in the thread popout.
+  - Fixed an issue where Chrome/Desktop App spell check on Windows often couldn't correct typos.
+  - Fixed an issue where some plugin configurations were deleted when another plugin saved its configuration.
   - Pre-packaged Agents plugin [v1.6.3](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.6.3).
   - Mattermost v11.2.1 contains no database or functional changes.
 - **11.2.0, released 2025-12-16**
@@ -267,6 +385,8 @@ If you upgrade from a release earlier than v11.1, please read the other [Importa
 ```
 
 ### Improvements
+
+See [this blog post](https://mattermost.com/blog/mattermost-v11-2-is-now-available/) on the highlights in our latest release.
 
 #### User Interface (UI)
  - Pre-packaged Playbooks plugin [v2.6.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.6.1).
@@ -341,8 +461,8 @@ If you upgrade from a release earlier than v11.1, please read the other [Importa
   - Mattermost v11.1.3 contains no database or functional changes.
 - **11.1.2, released 2025-12-17**
   - Mattermost v11.1.2 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Improved the performance of the post textbox and fixed typing bugs in the thread popout [MM-66832](https://mattermost.atlassian.net/browse/MM-66832).
-  - Fixed an issue where Chrome/Desktop App spell check on Windows often couldn't correct typos [MM-66659](https://mattermost.atlassian.net/browse/MM-66659).
+  - Improved the performance of the post textbox and fixed typing bugs in the thread popout.
+  - Fixed an issue where Chrome/Desktop App spell check on Windows often couldn't correct typos.
   - Mattermost v11.1.2 contains no database or functional changes.
 - **11.1.1, released 2025-11-21**
  ```{Attention}
@@ -350,9 +470,9 @@ If you upgrade from a release earlier than v11.1, please read the other [Importa
   - Mattermost v11.1.1 contains a Critical severity level security fix in the Jira plugin. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
  ```
   - Pre-packaged Jira plugin version [v4.4.1](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.4.1).
-  - Fixed an issue where thread popouts did not show the current user's status [MM-66586](https://mattermost.atlassian.net/browse/MM-66586).
-  - Fixed an issue where clicking on a permalink to a reply in another thread would not navigate the main window [MM-66614](https://mattermost.atlassian.net/browse/MM-66614).
-  - Fixed an issue where users could not add bots without an error message popping up [MM-66684](https://mattermost.atlassian.net/browse/MM-66684).
+  - Fixed an issue where thread popouts did not show the current user's status.
+  - Fixed an issue where clicking on a permalink to a reply in another thread would not navigate the main window.
+  - Fixed an issue where users could not add bots without an error message popping up.
   - Mattermost v11.1.1 contains no database or functional changes.
 - **11.1.0, released 2025-11-14**
   - Original 11.1.0 release.
@@ -380,6 +500,8 @@ If you upgrade from a release earlier than v11.0, please read the other [Importa
 ```
 
 ### Improvements
+
+See [this blog post](https://mattermost.com/blog/mattermost-v11-1-is-now-available/) on the highlights in our latest release.
 
 #### User Interface (UI)
  - Pre-packaged Agents plugin version [v1.4.0](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.4.0).
@@ -445,8 +567,8 @@ If you upgrade from a release earlier than v11.0, please read the other [Importa
   - Mattermost v11.0.5 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged MS Teams Meetings plugin version [v2.3.0](https://github.com/mattermost/mattermost-plugin-msteams-meetings/releases/tag/v2.3.0).
   - Pre-packaged Calls plugin version [v1.11.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.11.0).
-  - Fixed a configuration retention issue where even active configuration got deleted [MM-66216](https://mattermost.atlassian.net/browse/MM-66216).
-  - Fixed an issue where plugins could not receive 3rd-party authorization headers [MM-66335](https://mattermost.atlassian.net/browse/MM-66335).
+  - Fixed a configuration retention issue where even active configuration got deleted.
+  - Fixed an issue where plugins could not receive 3rd-party authorization headers.
   - Mattermost v11.0.5 contains no database or functional changes.
 - **11.0.4, released 2025-10-28**
  ```{Attention}
@@ -511,6 +633,8 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 ```
 
 ### Improvements
+
+See [this blog post](https://mattermost.com/blog/mattermost-v11-powering-more-mission-critical-collaboration/) on the highlights in our latest release.
 
 #### User Interface (UI)
  - Pre-packaged Agents plugin [v1.3.1](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.3.1).
