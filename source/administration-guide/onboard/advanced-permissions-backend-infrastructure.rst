@@ -477,11 +477,11 @@ The following built-in roles with default permissions are available:
 - manage members
 - restore
 
-*shared_channel_manager*
+*system_shared_channel_manager*
 
 - manage_shared_channels
 
-*secure_connection_manager*
+*system_secure_connection_manager*
 
 - manage_secure_connections
 
