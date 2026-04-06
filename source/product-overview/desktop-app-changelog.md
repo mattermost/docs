@@ -206,7 +206,7 @@ Mattermost Desktop App v6.0.0 contains low severity level security fixes. Upgrad
 
   - Original v5.13.0 release
 
-**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/v5.13.5)
+**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/v5.13.2)
 
 ### Compatibility
 
