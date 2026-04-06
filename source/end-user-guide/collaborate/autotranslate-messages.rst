@@ -9,7 +9,7 @@ From Mattermost v11.5, messages in channels with auto-translation enabled are au
 How auto-translation works
 --------------------------
 
-Your system admin must first enable auto-translation for your Mattermost instance. Then, a system admin or channel admin can enable it for individual channels. When autotranslation is enabled in a channel:
+Your system admin must first :doc:`enable auto-translation </administration-guide/manage/admin/autotranslation>` for your Mattermost instance. Then, a system admin or channel admin can enable it for individual channels. When autotranslation is enabled in a channel:
 
 - The language of each message is automatically detected.
 - Messages are translated into your preferred display language and shown in place of the original text.
