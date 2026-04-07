@@ -25,7 +25,7 @@ Changelog
    * - v11.6
      - (UI) Renamed Enterprise Advanced feature Content Flagging to Data Spillage.
    * - v11.6
-     - (UI) Added a contextual note in Security Settings that explains how Google SSO can synchronize usernames and emails, shown alongside the Sign-in Method details.
+     - (UI) Added `a contextual note <https://docs.mattermost.com/administration-guide/onboard/sso-google.html#step-3-configure-mattermost-for-google-apps-sso>`__ in Security Settings that explains how Google SSO can synchronize usernames and emails, shown alongside the Sign-in Method details.
    * - v11.6
      - (UI) Renamed ``SlackAttachment`` and ``SlackAttachmentField`` types to ``MessageAttachment`` and ``MessageAttachmentField``. Old names are maintained as deprecated aliases for backward compatibility with plugins.
    * - v11.6
