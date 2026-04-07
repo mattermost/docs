@@ -87,3 +87,14 @@ Invite code
 ~~~~~~~~~~~
 
 The **Invite Code** is used as part of the URL in team invitation links. Select **Regenerate** to create a new invitation link and invalidate any previous link.
+
+
+Membership Policies tab
+-----------------------
+
+.. include:: ../../_static/badges/entry-adv.rst
+  :start-after: :nosearch:
+
+The **Membership Policies** tab is available to Team Admins when :doc:`Attribute-Based Access Control (ABAC) </administration-guide/manage/admin/attribute-based-access-control>` is enabled by a System Admin. It allows Team Admins to create and manage attribute-based membership policies that control access to private channels within the team.
+
+See :doc:`Team-level channel membership policies </administration-guide/manage/admin/abac-team-channel-policies>` for full details.

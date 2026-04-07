@@ -1,0 +1,161 @@
+Team-level channel membership policies
+=======================================
+
+.. include:: ../../../_static/badges/entry-adv.rst
+  :start-after: :nosearch:
+
+Team Admins can create and manage attribute-based membership policies for private channels within their team, directly from Team Settings, without requiring System Admin involvement. For organization-wide policies managed by System Admins, see :doc:`System-wide attribute-based access policies </administration-guide/manage/admin/abac-system-wide-policies>`.
+
+With team-level channel membership policies, Team Admins can:
+
+- Create policies that apply attribute-based access rules to one or more private channels within their team.
+- Control which users can join or stay in those channels based on their profile attributes.
+- Manage auto-sync membership, so channels stay up to date as user attributes change.
+
+Prerequisites
+-------------
+
+- :doc:`Attribute-Based Access Control (ABAC) </administration-guide/manage/admin/attribute-based-access-control>` must be enabled by a System Admin in **System Console > System Attributes > Attribute-Based Access**.
+- You need Team Admin permissions for the team. The ``manage_team_access_rules`` permission is included in the Team Admin role by default.
+- Team-level membership policies apply only to private channels within the team.
+
+Access Team Settings
+~~~~~~~~~~~~~~~~~~~~
+
+1. Select the team name in the sidebar to open the team menu.
+2. Select **Team Settings**.
+3. Navigate to the **Membership Policies** tab. This tab is only visible when ABAC is enabled system-wide and you have Team Admin permissions.
+
+.. note::
+
+  System Admins also have access to the **Membership Policies** tab in Team Settings and can see all policies for the team, including those that span multiple teams.
+
+Manage membership policies
+--------------------------
+
+The **Membership Policies** tab shows all policies scoped to the team. Each policy displays its name and the number of private channels it applies to.
+
+- **Team Admins** see only policies that are exclusively scoped to their team (all assigned channels belong to the same team).
+- **System Admins** see all policies that include at least one channel in the team, including cross-team policies.
+
+Create a policy
+~~~~~~~~~~~~~~~
+
+1. In the **Membership Policies** tab, select **Add policy**.
+2. Enter a unique policy name.
+3. Define access rules under **Access rules**:
+
+   - Select **Add attribute** to add a condition.
+   - For each condition, choose the user attribute, the matching operator (**Is**, **Is not**, **In**, **Contains**), and the required value.
+   - Add multiple conditions as needed. All conditions are combined with a logical AND, so users must satisfy all of them.
+
+4. Assign channels under **Assigned channels**:
+
+   - Select **Add channels** to search for and select private channels within the team.
+   - Channels that are already assigned to another policy are not shown in the search results.
+
+5. Optionally, toggle **Auto-add members** per channel to control whether users matching the rules are automatically added to that channel.
+
+6. Select **Save** to apply the policy.
+
+.. important::
+
+  Self-exclusion prevention is enforced during save. If your defined rules would exclude your own user account, Mattermost will block the save and display an error. Adjust your rules to include your own attributes before saving.
+
+Edit a policy
+~~~~~~~~~~~~~
+
+Select a policy row in the list, or use the three-dot menu and select **Edit**, to open the policy editor. You can update the policy name, access rules, and channel assignments. Select **Save** to apply changes.
+
+When saving changes that affect existing channel membership, a confirmation dialog shows how many users will be added or removed. Confirm to proceed.
+
+Delete a policy
+~~~~~~~~~~~~~~~
+
+You can only delete a policy that has no channels assigned to it. To delete a policy:
+
+1. Open the policy editor and remove all assigned channels using the **Remove** link next to each channel.
+2. Once all channels are removed, select **Delete policy** at the bottom of the editor.
+3. Confirm the deletion.
+
+Auto-add members
+~~~~~~~~~~~~~~~~
+
+Each channel assigned to a policy has an independent **Auto-add members** toggle:
+
+- **Enabled**: Users matching the policy rules are automatically added to the channel. If a user loses the required attributes and later regains them, they are automatically re-added.
+- **Disabled** (default): The policy enforces rules as a gate, removing users who no longer qualify, but does not automatically add new qualifying users.
+
+Regardless of this setting, users who no longer satisfy the access rules are always removed during the next synchronization.
+
+.. note::
+
+  If a system-wide policy has auto-sync enabled for a channel, Team Admins cannot disable it for that channel. If a system-wide policy has auto-sync disabled, Team Admins can choose to enable it.
+
+Policy inheritance and combination
+-----------------------------------
+
+When both a system-wide policy and a team-level policy apply to the same channel, both must be satisfied. Team-level policies are **additive** and cannot relax or override restrictions set by System Admins.
+
+- System-wide policies are managed in the System Console.
+- Team-level policies are managed in Team Settings.
+- Users must meet the rules of all applicable policies to access the channel.
+
+Cross-team policies
+~~~~~~~~~~~~~~~~~~~
+
+A policy that has private channels from more than one team is considered a cross-team policy. Cross-team policies:
+
+- Are only visible to System Admins, not Team Admins.
+- Are created or modified by System Admins adding channels from different teams to the same policy.
+- Are automatically hidden from a team's **Membership Policies** tab once they include channels from multiple teams.
+
+If a System Admin adds a channel from another team to a policy that was previously scoped to one team, that policy will no longer appear in the original team's **Membership Policies** tab.
+
+Synchronization
+---------------
+
+When you save a policy or modify channel assignments, Mattermost creates a membership synchronization job. Changes are applied as soon as the job completes. Synchronization also runs automatically every 30 minutes to handle attribute changes from external systems such as LDAP or SAML.
+
+Use cases
+---------
+
+- **Team-wide project access**: Restrict all private project channels to members with a specific project attribute.
+- **Department isolation**: Ensure only users from a specific department can join the team's private channels.
+- **Clearance tiers**: Apply clearance-level requirements consistently across multiple channels in the team without System Admin involvement for each change.
+
+Troubleshooting and FAQs
+--------------------------
+
+Why can't I see the Membership Policies tab in Team Settings?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The **Membership Policies** tab is only visible when:
+
+- You have Team Admin permissions.
+- ABAC is enabled system-wide by a System Admin in **System Console > System Attributes > Attribute-Based Access**.
+
+Why can't I see a policy that I know exists?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If a policy includes private channels from more than one team, it is a cross-team policy and is not shown in Team Settings. Only System Admins can see and manage cross-team policies. As a Team Admin, you can only see policies that are exclusively scoped to your team.
+
+What happens when I save rules that would exclude me?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost validates your access rules against your own user attributes before saving. If the rules would remove you from any assigned channel, the save is blocked and an error is shown. Adjust the rules to include your own attributes, or reset them using the **Undo** option in the save panel.
+
+Can I assign a channel to more than one team-level policy?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+No. A private channel can only be assigned to one membership policy at a time. If a channel is already assigned to a policy, it will not appear in the channel search when creating or editing another policy.
+
+Can Team Admins override system-wide policies?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+No. Team-level policies are always additive. Users must satisfy both the system-wide policy and the team-level policy to access a channel. Team Admins cannot weaken or bypass restrictions set by System Admins.
+
+How are membership changes communicated to users?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Users receive standard Mattermost notifications when they are removed from or added to channels due to policy changes, consistent with other membership change notifications.
