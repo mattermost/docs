@@ -26,6 +26,7 @@
   - Fixed an issue with custom slash command response URL construction.
   - Fixed a regression where the ``system_admin`` role on new installations or after certain updates was missing the ``manage_oauth`` permission, preventing access to OAuth application management API endpoints. This change restores the permission to the default ``system_admin`` role and includes a migration to backfill it on affected existing servers.
   - Fixed an issue with bulk imports failing on PostgreSQL when channel, team, or thread membership batches exceeded the 65,535 query parameter limit by automatically chunking large INSERT statements.
+  - Fixed an issue where thread context for message rewrites could be assembled without applying the same channel read validation used for other post reads.
   - Mattermost v11.5.2 contains no database or functional changes.
 - **11.5.1, released 2026-03-16**
   - Mattermost v11.5.1 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
