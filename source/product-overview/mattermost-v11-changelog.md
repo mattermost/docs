@@ -115,6 +115,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-6-is-now-availab
  - Fixed a server-side validation that was incorrectly rejecting valid datetime and relative patterns in ``MinDate``/``MaxDate`` fields.
  - Fixed an issue with the PostgreSQL query parameter overflow and added transactional atomicity for bulk inserts of channel members, team members, thread memberships, posts, statuses, and group members.
  - Fixed an issue with source language detection for auto-translations.
+ - Fixed typing issues in the **Find Channels** modal caused by interference with IMEs.
 
 ### API Changes
  - Updated shared channel API endpoints to use the new Shared Channel Manager role's permission. Users assigned the Shared Channel Manager role can now share and unshare channels and browse available connections without needing the Secure Connection Manager role.
