@@ -26,8 +26,8 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
 #### macOS
 
-- Removed MAS (Mac App Store) migration logic [MM-66704](https://mattermost.atlassian.net/browse/MM-66704).
-- Changed the name of the macOS ARM64 DMG from ``m1`` to ``arm64`` [MM-54413](https://mattermost.atlassian.net/browse/MM-54413).
+- Removed MAS (Mac App Store) migration logic.
+- Changed the name of the macOS ARM64 DMG from ``m1`` to ``arm64``.
 
 #### Windows
 
@@ -39,7 +39,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
 #### All Platforms
 
-- Added support for servers with passwordless authentication with [Magic Link for guest users](https://docs.mattermost.com/end-user-guide/access/access-your-workspace.html#magic-link-login-for-guests) (requires Enterprise license) [MM-66445](https://mattermost.atlassian.net/browse/MM-66445).
+- Added support for servers with passwordless authentication with [Magic Link for guest users](https://docs.mattermost.com/end-user-guide/access/access-your-workspace.html#magic-link-login-for-guests) (requires Enterprise license).
 - Added [Sentry error tracking](https://docs.mattermost.com/deployment-guide/desktop/desktop-app-deployment.html#privacy-and-data-handling).
 - Added [in-app notifications for new versions](https://docs.mattermost.com/end-user-guide/access/install-desktop-app.html#upgrade-the-desktop-app), including for Mac App Store and the Windows MSI.
 
@@ -51,18 +51,18 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
 #### macOS
 
-- Fixed an issue where macOS permission dialogs were specifically referencing Jitsi instead of using general wording [MM-66775](https://mattermost.atlassian.net/browse/MM-66775).
+- Fixed an issue where macOS permission dialogs were specifically referencing Jitsi instead of using general wording.
 
 #### Windows
 
-- Fixed an issue where installing over top of an old Desktop App on Windows could break the shortcut. NOTE: You may need to [remake your shortcut](https://docs.mattermost.com/deployment-guide/desktop/desktop-troubleshooting.html) in the taskbar once after this change [MM-63779](https://mattermost.atlassian.net/browse/MM-63779).
+- Fixed an issue where installing over top of an old Desktop App on Windows could break the shortcut. NOTE: You may need to [remake your shortcut](https://docs.mattermost.com/deployment-guide/desktop/desktop-troubleshooting.html) in the taskbar once after this change.
 - Fixed an issue where the notification badge on Windows could get out of sync.
 
 #### All Platforms
 
-- Fixed a potential crash in the context menu [MM-66902](https://mattermost.atlassian.net/browse/MM-66902).
-- Fixed an unnecessary exception handler dialog box appearing when clicking **Clear All Data** [MM-64601](https://mattermost.atlassian.net/browse/MM-64601).
-- Fixed an issue where Microsoft Teams, SharePoint, and OneNote links were incorrectly rejected as "Invalid Link" due to special characters in their URLs [MM-65645](https://mattermost.atlassian.net/browse/MM-65645).
+- Fixed a potential crash in the context menu.
+- Fixed an unnecessary exception handler dialog box appearing when clicking **Clear All Data**.
+- Fixed an issue where Microsoft Teams, SharePoint, and OneNote links were incorrectly rejected as "Invalid Link" due to special characters in their URLs.
 - Fixed an issue where clicking the tray menu items would not open the main window.
 - Fixed an issue where clicking the tray menu items would not open the main window if it was occluded.
 - Fixed an issue where Sentry and anonymous server metrics were not enabled by default.
@@ -101,21 +101,21 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
 - **v6.0.2, released 2025-12-10**
 
-  - Fixed the missing Cmd/Ctrl+W shortcut for closing windows [MM-66686](https://mattermost.atlassian.net/browse/MM-66686).
-  - Fixed an issue where quitting the app while the last server set was a GPO server would corrupt the config file [MM-66719](https://mattermost.atlassian.net/browse/MM-66719).
-  - Fixed an issue where a global shortcuts window would pop up on every start of the app on Linux [MM-66831](https://mattermost.atlassian.net/browse/MM-66831).
-  - Fixed a visual issue with the **Settings** modal while scrolling [MM-66676](https://mattermost.atlassian.net/browse/MM-66676).
-  - Fixed an issue where the URL view could end up in the middle of the screen [MM-66807](https://mattermost.atlassian.net/browse/MM-66807).
-  - Fixed an issue where links in the Calls widget did not open in an external tab [MM-66759](https://mattermost.atlassian.net/browse/MM-66759).
-  - Fixed an issue where redirection would not focus the pop-out window when popping out a thread from a window [MM-66759](https://mattermost.atlassian.net/browse/MM-66759).
-  - Fixed an issue where the Windows tray icon theme would not respect the system theme [MM-66805](https://mattermost.atlassian.net/browse/MM-66805).
-  - Fixed an issue where the Calls Widget would not allow popouts [MM-66819](https://mattermost.atlassian.net/browse/MM-66819).
+  - Fixed the missing Cmd/Ctrl+W shortcut for closing windows.
+  - Fixed an issue where quitting the app while the last server set was a GPO server would corrupt the config file.
+  - Fixed an issue where a global shortcuts window would pop up on every start of the app on Linux.
+  - Fixed a visual issue with the **Settings** modal while scrolling.
+  - Fixed an issue where the URL view could end up in the middle of the screen.
+  - Fixed an issue where links in the Calls widget did not open in an external tab.
+  - Fixed an issue where redirection would not focus the pop-out window when popping out a thread from a window.
+  - Fixed an issue where the Windows tray icon theme would not respect the system theme.
+  - Fixed an issue where the Calls Widget would not allow popouts.
 
 - **v6.0.1, released 2025-11-18**
 
-  - Fixed a crash when hovering over an external URL in a re-docked pop-out window [MM-66638](https://mattermost.atlassian.net/browse/MM-66638).
-  - Fixed an issue where the app would crash on errored servers [MM-66655](https://mattermost.atlassian.net/browse/MM-66655).
-  - Fixed an issue upgrading configuration files on Windows [MM-66660](https://mattermost.atlassian.net/browse/MM-66660).
+  - Fixed a crash when hovering over an external URL in a re-docked pop-out window.
+  - Fixed an issue where the app would crash on errored servers.
+  - Fixed an issue upgrading configuration files on Windows.
   - Fixed a potential race condition when writing the JSON config file.
 
 - **v6.0.0, released 2025-11-14**
@@ -253,8 +253,8 @@ Mattermost Desktop App v6.0.0 contains low severity level security fixes. Upgrad
 
 - **v5.12.1, released 2025-05-31**
 
-  - Fixed an issue where focus was lost when tabbing to an external URL on Windows/Linux [MM-62005](https://mattermost.atlassian.net/browse/MM-62005).
-  - Disabled server management in the **Settings** modal when disabled via group policy [MM-64355](https://mattermost.atlassian.net/browse/MM-64355).
+  - Fixed an issue where focus was lost when tabbing to an external URL on Windows/Linux.
+  - Disabled server management in the **Settings** modal when disabled via group policy.
 
 - **v5.12.0, released 2025-05-16**
 
@@ -313,8 +313,8 @@ Mattermost Desktop App v5.12.0 contains a medium severity level security fix. Up
 
 - **v5.11.3, released 2025-05-23**
 
-  - Fixed an issue where focus was lost when tabbing to an external URL on Windows/Linux [MM-62005](https://mattermost.atlassian.net/browse/MM-62005).
-  - Fixed an issue where server loading was blocked on contact with each configured server [MM-63899](https://mattermost.atlassian.net/browse/MM-63899).
+  - Fixed an issue where focus was lost when tabbing to an external URL on Windows/Linux.
+  - Fixed an issue where server loading was blocked on contact with each configured server.
 
 - **v5.11.2, released 2025-03-12**
 
@@ -323,9 +323,9 @@ Mattermost Desktop App v5.12.0 contains a medium severity level security fix. Up
 - **v5.11.1, released 2025-03-01**
 
   - Mattermost Desktop App v5.11.1 contains a high severity level security fix. Upgrading is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Added a server incompatible version screen [MM-63224](https://mattermost.atlassian.net/browse/MM-63224). Users with servers running Mattermost v9.3 and earlier versions are not supported by this upgrade. Mattermost v9.4 or later is required.
-  - Fixed an issue where the server drop-down wouldn't render properly on first load [MM-62781](https://mattermost.atlassian.net/browse/MM-62781).
-  - Updated the error page with new visuals [MM-62724](https://mattermost.atlassian.net/browse/MM-62724).
+  - Added a server incompatible version screen. Users with servers running Mattermost v9.3 and earlier versions are not supported by this upgrade. Mattermost v9.4 or later is required.
+  - Fixed an issue where the server drop-down wouldn't render properly on first load.
+  - Updated the error page with new visuals.
 
 - **v5.11.0, released 2025-02-14**
 
@@ -387,7 +387,7 @@ Mattermost Desktop App v5.11.0 contains a low severity level security fix. Upgra
 ### Known Issues
 
 - Users with servers running Mattermost v9.3 and earlier versions are not supported by this upgrade. Mattermost v9.4 or later is required.
-- Boards is not using the new Desktop API, causing issues in v5.11+ [MM-61745](https://mattermost.atlassian.net/browse/MM-61745). Users of v5.11 will need to upgrade their Boards plugin version to v9.1.0+ avoid the issue.
+- Boards is not using the new Desktop API, causing issues in v5.11+. Users of v5.11 will need to upgrade their Boards plugin version to v9.1.0+ avoid the issue.
 - Sometimes the app will not restart after an auto-update. This is normal, and if this occurs the app can be safely launched manually.
 - Sometimes during installation you may see this message: ``Warning 1946. Property 'System.AppUserModel.ID' for shortcut 'Mattermost.Ink' could not be set``. This message can be safely ignored.
 - Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually delete their cache directory. For macOS it is located in `/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost`, for Windows in `Users/<username>/AppData/Roaming/Mattermost` and for Linux in `~/config/Mattermost` (where `~` is the home directory).
@@ -404,17 +404,17 @@ Mattermost Desktop App v5.11.0 contains a low severity level security fix. Upgra
 
 - **v5.10.2, released 2024-12-17**
 
-  - Fixed an issue where the new MSI installer would not uninstall versions before v5.9 installed via MSI [MM-61994](https://mattermost.atlassian.net/browse/MM-61994).
-  - Fixed an issue where the MSI kept auto-update on for per-machine installation [MM-62029](https://mattermost.atlassian.net/browse/MM-62029).
-  - Fixed a potential error thrown by the MSI when trying to uninstall the EXE [MM-60416](https://mattermost.atlassian.net/browse/MM-60416).
-  - Fixed an issue where minimizing on Linux would cause the window to re-appear immediately [MM-60233](https://mattermost.atlassian.net/browse/MM-60233).
-  - Added support for downgrading using the MSI installer [MM-62196](https://mattermost.atlassian.net/browse/MM-62196).
-  - Fixed an issue where the application would not focus the browser window when opening an external link [MM-61406](https://mattermost.atlassian.net/browse/MM-61406).
+  - Fixed an issue where the new MSI installer would not uninstall versions before v5.9 installed via MSI.
+  - Fixed an issue where the MSI kept auto-update on for per-machine installation.
+  - Fixed a potential error thrown by the MSI when trying to uninstall the EXE.
+  - Fixed an issue where minimizing on Linux would cause the window to re-appear immediately.
+  - Added support for downgrading using the MSI installer.
+  - Fixed an issue where the application would not focus the browser window when opening an external link.
   - Upgraded to Electron v33.2.0.
 
 - **v5.10.1, released 2024-11-20**
 
-  - Fixed an issue where the app would not restore when opened again from cold [MM-61864](https://mattermost.atlassian.net/browse/MM-61864).
+  - Fixed an issue where the app would not restore when opened again from cold.
   - Fixed an issue where deep linking from cold didn't work on Linux.
 
 - **v5.10.0, released 2024-11-15**
@@ -479,7 +479,7 @@ Mattermost Desktop App v5.10.0 contains a low severity level security fix. Upgra
 
 ### Known Issues
 
-- Clicking on links does not put the Desktop app in the background to show the external browser [MM-61406](https://mattermost.atlassian.net/browse/MM-61406).
+- Clicking on links does not put the Desktop app in the background to show the external browser.
 - Sometimes the app will not restart after an auto-update. This is normal, and if this occurs the app can be safely launched manually.
 - Sometimes during installation you may see this message: ``Warning 1946. Property 'System.AppUserModel.ID' for shortcut 'Mattermost.Ink' could not be set``. This message can be safely ignored.
 - Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually delete their cache directory. For macOS it is located in `/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost`, for Windows in `Users/<username>/AppData/Roaming/Mattermost` and for Linux in `~/config/Mattermost` (where `~` is the home directory).
@@ -496,16 +496,16 @@ Mattermost Desktop App v5.10.0 contains a low severity level security fix. Upgra
 
 - **v5.9.2, released 2024-12-17**
 
-  - Fixed an issue where the new MSI installer would not uninstall versions before v5.9 installed via MSI [MM-61994](https://mattermost.atlassian.net/browse/MM-61994).
-  - Fixed an issue where the MSI kept auto-update on for per-machine installation [MM-62029](https://mattermost.atlassian.net/browse/MM-62029).
-  - Fixed a potential error thrown by the MSI when trying to uninstall the EXE [MM-60416](https://mattermost.atlassian.net/browse/MM-60416).
-  - Fixed an issue where minimizing on Linux would cause the window to re-appear immediately [MM-60233](https://mattermost.atlassian.net/browse/MM-60233).
-  - Added support for downgrading using the MSI installer [MM-62196](https://mattermost.atlassian.net/browse/MM-62196).
+  - Fixed an issue where the new MSI installer would not uninstall versions before v5.9 installed via MSI.
+  - Fixed an issue where the MSI kept auto-update on for per-machine installation.
+  - Fixed a potential error thrown by the MSI when trying to uninstall the EXE.
+  - Fixed an issue where minimizing on Linux would cause the window to re-appear immediately.
+  - Added support for downgrading using the MSI installer.
 
 - **v5.9.1, released 2024-11-20**
 
-  - Fixed a crash in Linux when trying to create a thumbnail from an image [MM-60232](https://mattermost.atlassian.net/browse/MM-60232).
-  - Fixed an issue with the **Download** button being hidden on Windows/Linux [MM-60605](https://mattermost.atlassian.net/browse/MM-60605).
+  - Fixed a crash in Linux when trying to create a thumbnail from an image.
+  - Fixed an issue with the **Download** button being hidden on Windows/Linux.
 
 - **v5.9.0, released 2024-08-16**
 
@@ -629,7 +629,7 @@ Mattermost v5.8.0 contains low to medium severity level security fixes. Upgradin
 
 ### Known Issues
 
-- Desktop App Windows 10: The taskbar might not flash on receipt of a new message when the setting is enabled [MM-58087](https://mattermost.atlassian.net/browse/MM-58087).
+- Desktop App Windows 10: The taskbar might not flash on receipt of a new message when the setting is enabled.
 - Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually delete their cache directory. For macOS it is located in `/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost`, for Windows in `Users/<username>/AppData/Roaming/Mattermost` and for Linux in `~/config/Mattermost` (where `~` is the home directory).
 - On Linux, a left-click on the Mattermost tray icon doesn't open the app window but opens the tray menu.
 - Crashes might be be experienced in some Linux desktop clients due to an upstream bug in the `libnotifyapp` library. A recommended workaround is to disable the Mattermost system tray icon via Desktop Settings.
@@ -680,8 +680,8 @@ Mattermost v5.8.0 contains low to medium severity level security fixes. Upgradin
 
 ### Known Issues
 
-- Error might be experienced when quitting v5.7 desktop app on macOS Ventura [MM-57146](https://mattermost.atlassian.net/browse/MM-57146).
-- In the **Settings** modal, the search text in the **Check spelling** dropdown is not visible [MM-57089](https://mattermost.atlassian.net/browse/MM-57089).
+- Error might be experienced when quitting v5.7 desktop app on macOS Ventura.
+- In the **Settings** modal, the search text in the **Check spelling** dropdown is not visible.
 - Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually delete their cache directory. For macOS it is located in `/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost`, for Windows in `Users/<username>/AppData/Roaming/Mattermost` and for Linux in `~/config/Mattermost` (where `~` is the home directory).
 - On Linux, a left-click on the Mattermost tray icon doesn't open the app window but opens the tray menu.
 - Crashes might be be experienced in some Linux desktop clients due to an upstream bug in the `libnotifyapp` library. A recommended workaround is to disable the Mattermost system tray icon via Desktop Settings.
@@ -844,8 +844,8 @@ Mattermost v5.5.0 contains a medium severity level security fix. Upgrading is hi
 
 ### Known Issues
 
-- Mattermost is not detected in the **Add Server** screen if the server has plugins disabled [MM-53294](https://mattermost.atlassian.net/browse/MM-53294).
-- When running "Run Diagnostics" from the **Help** menu, the app crashes [MM-53295](https://mattermost.atlassian.net/browse/MM-53295).
+- Mattermost is not detected in the **Add Server** screen if the server has plugins disabled.
+- When running "Run Diagnostics" from the **Help** menu, the app crashes.
 - Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually remove their cache directory. For macOS it is located in `/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost` and for Windows it is located in `Users/<username>/AppData/Roaming/Mattermost`.
 - On Linux, a left-click on the Mattermost tray icon doesn't open the app window but opens the tray menu.
 - Crashes might be be experienced in some Linux desktop clients due to an upstream bug in the `libnotifyapp` library. A recommended workaround is to disable the Mattermost system tray icon via Desktop Settings.
@@ -937,20 +937,20 @@ Mattermost v5.3.0 contains a medium severity level security fix. Upgrading is hi
 - **v5.2.2, released 2022-12-06**
 
   - Added ARM64 build (beta) for Windows/Linux.
-  - Fixed an issue on Windows installers where the onboarding screen was displayed even when there was a preconfigured server list [MM-48079](https://mattermost.atlassian.net/browse/MM-48079).
-  - Fixed an issue where a crash could occur when a download list included corrupt data [MM-48483](https://mattermost.atlassian.net/browse/MM-48483).
-  - Fixed an issue where `AppImageLauncher` still created a bad shortcut that caused the app not to launch [MM-48557](https://mattermost.atlassian.net/browse/MM-48557).
-  - Fixed an issue where notifications were not displayed on Windows v8 and v8.1 [MM-48397](https://mattermost.atlassian.net/browse/MM-48397).
-  - Fixed an issue where users could get stuck after finished the Getting Started flow [MM-48682](https://mattermost.atlassian.net/browse/MM-48682).
-  - Fixed an issue where the window resize did not work on some Windows machines [MM-48574](https://mattermost.atlassian.net/browse/MM-48574).
-  - Fixed an issue on Windows where the three-dot menu remained focused after clicking elsewhere [MM-46424](https://mattermost.atlassian.net/browse/MM-46424).
+  - Fixed an issue on Windows installers where the onboarding screen was displayed even when there was a preconfigured server list.
+  - Fixed an issue where a crash could occur when a download list included corrupt data.
+  - Fixed an issue where `AppImageLauncher` still created a bad shortcut that caused the app not to launch.
+  - Fixed an issue where notifications were not displayed on Windows v8 and v8.1.
+  - Fixed an issue where users could get stuck after finished the Getting Started flow.
+  - Fixed an issue where the window resize did not work on some Windows machines.
+  - Fixed an issue on Windows where the three-dot menu remained focused after clicking elsewhere.
 
 - **v5.2.1, released 2022-11-15**
 
-  - Fixed an issue on `.exe` installers where the onboarding screen was still displayed even when there was a preconfigured server list [MM-48079](https://mattermost.atlassian.net/browse/MM-48079).
-  - Fixed an issue where the default downloads location was not set on macOS [MM-48167](https://mattermost.atlassian.net/browse/MM-48167).
-  - Fixed an issue where users were able to edit or remove a pre-configured server provided by GPO on Windows [MM-48184](https://mattermost.atlassian.net/browse/MM-48184).
-  - Fixed an issue where the tray icon colour on Windows didn't obey the setting [MM-48080](https://mattermost.atlassian.net/browse/MM-48080).
+  - Fixed an issue on `.exe` installers where the onboarding screen was still displayed even when there was a preconfigured server list.
+  - Fixed an issue where the default downloads location was not set on macOS.
+  - Fixed an issue where users were able to edit or remove a pre-configured server provided by GPO on Windows.
+  - Fixed an issue where the tray icon colour on Windows didn't obey the setting.
 
 - **v5.2.0, released 2022-10-31**
 
@@ -1110,7 +1110,7 @@ Mattermost v5.1.0 contains a low severity level security fix. Upgrading is highl
 
 - On Linux, a left click on the tray icon doesn't open the app window but opens the tray menu.
 - Mattermost Desktop App v5.1.0 cannot be launched twice on Windows servers with the role "Remote Desktop Session Host".
-- Desktop App may become unresponsive and crash when initiating a screen reader [MM-44058](https://mattermost.atlassian.net/browse/MM-44058).
+- Desktop App may become unresponsive and crash when initiating a screen reader.
 - Crashes might be experienced in some Linux desktop clients. This is an upstream bug in the `libnotifyapp` library. A recommended workaround is to disable the system tray icon in the Desktop settings.
 - On apps using GPO configurations, when adding a second server tab, it is possible to drag and drop tabs but they will jump back to the original position when releasing the mouse.
 
@@ -1213,7 +1213,7 @@ Mattermost v5.0.0 contains a low level security fix. Upgrading is highly recomme
 
 ### Known Issues
 
-- Unread messages icon may be missing from the taskbar on Windows following 4.7.0 upgrade [MM-37807](https://mattermost.atlassian.net/browse/MM-37807).
+- Unread messages icon may be missing from the taskbar on Windows following 4.7.0 upgrade.
 - Crashes might be be experienced in some Linux desktop clients. This is an upstream bug in the `libnotifyapp` library. A recommended workaround is to disable the system tray icon in the Desktop settings.
 - On some Linux distros, a sandbox setting is preventing apps from opening links in the browser (see https://github.com/electron/electron/issues/17972#issuecomment-486927073). While this is fixed for most installers, it is not on the tgz. In this case manual intervention is required via `$ chmod 4755 <installpath>/chrome-sandbox`.
 - Pressing Enter multiple times during Basic Authentication causes a crash.
@@ -1319,10 +1319,10 @@ Mattermost v4.7.0 contains low to medium level security fixes. Upgrading is high
 ### Known Issues
 
 - The new spellchecker connects to Google servers for downloading updated dictionaries.
-- Unread messages icon may be missing from the taskbar on Windows following 4.7.0 upgrade [MM-37807](https://mattermost.atlassian.net/browse/MM-37807).
-- Clicking on **View > Find** doesn't work [MM-36606](https://mattermost.atlassian.net/browse/MM-36606).
-- Right click menu is missing from the `jira connect` modal [MM-36032](https://mattermost.atlassian.net/browse/MM-36032).
-- Search field is focused on first start of the app [MM-35249](https://mattermost.atlassian.net/browse/MM-35249).
+- Unread messages icon may be missing from the taskbar on Windows following 4.7.0 upgrade.
+- Clicking on **View > Find** doesn't work.
+- Right click menu is missing from the `jira connect` modal.
+- Search field is focused on first start of the app.
 - The `create_desktop_file.sh` script is removed from the .tar.gz release. As a workaround, it can be downloaded from [GitHub here](https://github.com/mattermost/desktop/blob/master/src/assets/linux/create_desktop_file.sh).
 - An error may occur when installing the MSI Installer on any Windows version.
 - Crashes might be be experienced in some Linux desktop clients. This is an upstream bug in the `libnotifyapp` library. A recommended workaround is to disable the system tray icon in the Desktop settings.
@@ -1343,12 +1343,12 @@ Mattermost v4.7.0 contains low to medium level security fixes. Upgrading is high
 
 - **v4.6.2, released 2021-01-25**
 
-  - Fixed an issue where logging in to `gitlab.com` did not work on the Desktop App. [MM-31626](https://mattermost.atlassian.net/browse/MM-31626)
-  - Fixed an issue where macOS entitlements had not been enabled for using camera and microphone on the Desktop App for third-party plugins such as Jitsi. [MM-31987](https://mattermost.atlassian.net/browse/MM-31987)
+  - Fixed an issue where logging in to `gitlab.com` did not work on the Desktop App.
+  - Fixed an issue where macOS entitlements had not been enabled for using camera and microphone on the Desktop App for third-party plugins such as Jitsi.
 
 - **v4.6.1, released 2020-10-26**
 
-  - Fixed an issue where desktop app notification sounds did not work on Desktop App v4.6.0. [MM-29921](https://mattermost.atlassian.net/browse/MM-29921)
+  - Fixed an issue where desktop app notification sounds did not work on Desktop App v4.6.0.
 
 - **v4.6.0, released 2020-10-16**
 
@@ -1379,8 +1379,8 @@ Mattermost v4.7.0 contains low to medium level security fixes. Upgrading is high
 
 ### Known Issues
 
-- Unlocking the Desktop App on macOS marks the currently viewed channel as read. [MM-31429](https://mattermost.atlassian.net/browse/MM-31429)
-- On Ubuntu, auto-focus is lost when using ALT+TAB to switch between windows. [MM-29705](https://mattermost.atlassian.net/browse/MM-29705)
+- Unlocking the Desktop App on macOS marks the currently viewed channel as read.
+- On Ubuntu, auto-focus is lost when using ALT+TAB to switch between windows.
 - Crashes might be be experienced in some Linux desktop clients. This is an upstream bug in the `libnotifyapp` library and a recommended workaround is to disable the system tray icon in the Desktop settings.
 - On some Linux distros, a sandbox setting is preventing apps from opening links in the browser (see https://github.com/electron/electron/issues/17972#issuecomment-486927073). While this is fixed for most installers, it is not on the tgz. In this case manual intervention is required via `$ chmod 4755 <installpath>/chrome-sandbox`.
 - Pressing Enter multiple times during Basic Authentication causes a crash.
@@ -1401,15 +1401,15 @@ Many thanks to all our contributors. In alphabetical order:
 
 - **v4.5.4, released 2020-09-11**
 
-  - Fixed an issue where Help and Report a Problem website links configured to point to Mattermost channels didn't work. [MM-28595](https://mattermost.atlassian.net/browse/MM-28595)
+  - Fixed an issue where Help and Report a Problem website links configured to point to Mattermost channels didn't work.
 
 - **v4.5.3, released 2020-08-25**
 
-  - Fixed an issue where users were unable to log in to the desktop app when users had to select a certificate for authentication that requires a pin even when there was only one option to manage a certificate login. [MM-27331](https://mattermost.atlassian.net/browse/MM-27331)
+  - Fixed an issue where users were unable to log in to the desktop app when users had to select a certificate for authentication that requires a pin even when there was only one option to manage a certificate login.
 
 - **v4.5.2, released 2020-07-20**
 
-  - Fixed an issue on Linux app started as a blank screen when both “Show icon in the notification area" and "Start app on login" were enabled. [MM-26832](https://mattermost.atlassian.net/browse/MM-26832)
+  - Fixed an issue on Linux app started as a blank screen when both “Show icon in the notification area" and "Start app on login" were enabled.
 
 - **v4.5.1, released 2020-07-13**
 
@@ -1465,10 +1465,10 @@ Many thanks to all our contributors. In alphabetical order:
 
 ### Known Issues
 
-- A visible cursor focus is missing on the login screen directly after adding a new server via "+" to the right of the server tabs. [MM-25984](https://mattermost.atlassian.net/browse/MM-25984)
-- Right-click menu is missing on "Add server" modal fields. [MM-26017](https://mattermost.atlassian.net/browse/MM-26017)
-- Double notifications are received on Ubuntu for at-mentions. [MM-26012](https://mattermost.atlassian.net/browse/MM-26012)
-- The current window frame and server tabs are not styled consistently with the rest of the OS in Windows 7 or Linux. [MM-22751](https://mattermost.atlassian.net/browse/MM-22751)
+- A visible cursor focus is missing on the login screen directly after adding a new server via "+" to the right of the server tabs.
+- Right-click menu is missing on "Add server" modal fields.
+- Double notifications are received on Ubuntu for at-mentions.
+- The current window frame and server tabs are not styled consistently with the rest of the OS in Windows 7 or Linux.
 - Crashes might be be experienced in some linux desktop clients. This is an upstream bug in the `libnotifyapp` library and a recommended workaround is to disable the system tray icon in the Desktop settings.
 - On some Linux distros, a sandbox setting is preventing apps from opening links in the browser (see https://github.com/electron/electron/issues/17972#issuecomment-486927073). While this is fixed for most installers, it is not on the tgz. In this case manual intervention is required via `$ chmod 4755 <installpath>/chrome-sandbox`.
 - Pressing Enter multiple times during Basic Authentication causes a crash.
@@ -1489,16 +1489,16 @@ Many thanks to all our contributors. In alphabetical order:
 
 - **v4.4.2, released 2020-05-11**
 
-  - Fixed an issue on Windows where a channel was marked as read if the app was closed on a channel where the message was posted. [MM-23215](https://mattermost.atlassian.net/browse/MM-23215)
+  - Fixed an issue on Windows where a channel was marked as read if the app was closed on a channel where the message was posted.
 
 - **v4.4.1, released 2020-04-22**
 
-  - Fixed an issue where the Desktop client opened to a blank white Window when using GPO-set teams. [MM-23082](https://mattermost.atlassian.net/browse/MM-23082)
-  - Fixed an issue where Google oAuth with Gmail addresses did not work on the Desktop app for plugins. [MM-23057](https://mattermost.atlassian.net/browse/MM-23057)
-  - Fixed an issue where Windows Desktop notifications were delayed. [MM-22552](https://mattermost.atlassian.net/browse/MM-22552)
-  - Fixed an issue where the app sometimes didn't restore to the right position but "jumped" to a different place in the display when minimizing the app and then maximizing it. [MM-23195](https://mattermost.atlassian.net/browse/MM-23195)
-  - Fixed an issue where users were not able to paste text into the login screen. [MM-23784](https://mattermost.atlassian.net/browse/MM-23784)
-  - Fixed an issue where back/forward navigation on the OAuth window caused the app to crash. [MM-23153](https://mattermost.atlassian.net/browse/MM-23153)
+  - Fixed an issue where the Desktop client opened to a blank white Window when using GPO-set teams.
+  - Fixed an issue where Google oAuth with Gmail addresses did not work on the Desktop app for plugins.
+  - Fixed an issue where Windows Desktop notifications were delayed.
+  - Fixed an issue where the app sometimes didn't restore to the right position but "jumped" to a different place in the display when minimizing the app and then maximizing it.
+  - Fixed an issue where users were not able to paste text into the login screen.
+  - Fixed an issue where back/forward navigation on the OAuth window caused the app to crash.
 
 - **v4.4.0, released 2020-02-16**
 
@@ -1551,8 +1551,8 @@ Mattermost v4.4.0 contains low to medium level security fixes. [Upgrading](https
 
 ### Known Issues
 
-- The current window frame and server tabs are not styled consistently with the rest of the OS in Windows 7 or Linux. [MM-22751](https://mattermost.atlassian.net/browse/MM-22751)
-- No notification on Windows if the app is closed on the channel where the message is posted. [MM-23215](https://mattermost.atlassian.net/browse/MM-23215)
+- The current window frame and server tabs are not styled consistently with the rest of the OS in Windows 7 or Linux.
+- No notification on Windows if the app is closed on the channel where the message is posted.
 - Crashes might be be experienced in some linux desktop clients. This is an upstream bug in the `libnotifyapp` library and a recommended workaround is to disable the system tray icon in the Desktop settings.
 - On some Linux distros, a sandbox setting is preventing apps from opening links in the browser (see https://github.com/electron/electron/issues/17972#issuecomment-486927073). While this is fixed for most installers, it is not on the tgz. In this case manual intervention is required via `$ chmod 4755 <installpath>/chrome-sandbox`.
 - Pressing Enter multiple times during Basic Authentication causes a crash.
@@ -1575,15 +1575,15 @@ Many thanks to all our contributors. In alphabetical order:
 - **v4.3.2, released 2019-11-29**
 
 - Mattermost v4.3.0 contains a low level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-- Fixed an issue where the app started into white screen after a system reboot on Windows. [MM-19649](https://mattermost.atlassian.net/browse/MM-19649)
-- Fixed an issue where `CMD+Z` didn't undo on the Mac desktop app. [MM-19198](https://mattermost.atlassian.net/browse/MM-19198)
-- Fixed an issue where users were unable to zoom in/out except on the first server tab. [MM-19032](https://mattermost.atlassian.net/browse/MM-19032)
-- Fixed an issue where right-click + "Copy" did not work in some instances. [MM-19324](https://mattermost.atlassian.net/browse/MM-19324)
-- Fixed an issue where email links in profile popovers didn't work. [MM-19596](https://mattermost.atlassian.net/browse/MM-19596)
+- Fixed an issue where the app started into white screen after a system reboot on Windows.
+- Fixed an issue where `CMD+Z` didn't undo on the Mac desktop app.
+- Fixed an issue where users were unable to zoom in/out except on the first server tab.
+- Fixed an issue where right-click + "Copy" did not work in some instances.
+- Fixed an issue where email links in profile popovers didn't work.
 
 - **v4.3.1, released 2019-10-22**
 
-  - Fixed an issue where Mac desktop app was not notarized correctly for installing on macOS Catalina. [MM-19555](https://mattermost.atlassian.net/browse/MM-19555)
+  - Fixed an issue where Mac desktop app was not notarized correctly for installing on macOS Catalina.
 
 - **v4.3.0, released 2019-10-17**
 
