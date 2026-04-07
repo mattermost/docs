@@ -52,7 +52,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-6-is-now-availab
  - Added popouts for Recent Mentions, Saved Messages, and Search Results via the right-hand side.
  - The emoji picker on web and Desktop now inserts unicode emoji characters into the message composer instead of shortcode text.
  - Renamed Enterprise Advanced feature Content Flagging to Data Spillage.
- - Added a contextual note in Security Settings that explains how Google SSO can synchronize usernames and emails, shown alongside the Sign-in Method details.
+ - Added [a contextual note](https://docs.mattermost.com/administration-guide/onboard/sso-google.html#step-3-configure-mattermost-for-google-apps-sso) in Security Settings that explains how Google SSO can synchronize usernames and emails, shown alongside the Sign-in Method details.
  - Renamed ``SlackAttachment`` and ``SlackAttachmentField`` types to ``MessageAttachment`` and ``MessageAttachmentField``. Old names are maintained as deprecated aliases for backward compatibility with plugins.
  - Posts created by integrations using Slack-compatible attachments (webhooks, bots, plugins) are now fully searchable in Elasticsearch. Previously, only the attachment text field was indexed. Now title, pretext, fallback, and field content are also indexed. A bulk re-index is required after upgrade to apply this to existing posts.
  - Added timezone support and manual time entry for Interactive Dialog ``datetime`` fields.
