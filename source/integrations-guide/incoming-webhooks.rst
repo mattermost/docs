@@ -123,7 +123,7 @@ The JSON payload can contain the following parameters:
      - Overrides the ``icon_url`` with an emoji. Use the emoji name (e.g., ``:tada:``). The :ref:`Enable integrations to override profile picture icons <administration-guide/configure/integrations-configuration-settings:enable integrations to override profile picture icons>` setting must be enabled.
    * - ``attachments``
      - Yes (if ``text`` is not set)
-     - An array of `message attachment <https://developers.mattermost.com/integrate/reference/message-attachments/>`_ objects for richer formatting.
+     - An array of `message attachment <https://developers.mattermost.com/integrate/reference/message-attachments/>`_ objects for richer formatting. HTML entities in the ``title`` and ``author_name`` fields are automatically decoded to readable characters (e.g., ``&amp;`` becomes ``&``, ``&lt;`` becomes ``<``).
    * - ``type``
      - No
      - Sets the post type, mainly for use by plugins. If set, must begin with ``custom_``.
@@ -224,7 +224,7 @@ Do More with Incoming Webhooks
 
 Transform basic message posts into rich, interactive notifications by including buttons, menus, and other interactive elements in your webhook messages, making them more engaging and useful for your team.
 
-- `Message Attachments <https://developers.mattermost.com/integrate/reference/message-attachments/>`_: Present rich, structured summaries such as status, priority, fields, links, or images for faster triage and comprehension. (Slack‑compatible schema.)
+- `Message Attachments <https://developers.mattermost.com/integrate/reference/message-attachments/>`_: Present rich, structured summaries such as status, priority, fields, links, or images for faster triage and comprehension. (Slack‑compatible schema.) Attachment ``title`` and ``author_name`` fields support HTML entity decoding — both numeric entities (e.g., ``&#40;`` for ``(``) and named entities (e.g., ``&amp;``, ``&lt;``, ``&gt;``, ``&quot;``, ``&apos;``) are automatically converted to their readable characters. Avoid double-encoding these values, as decoding is applied automatically.
 - `Interactive Messages <https://developers.mattermost.com/integrate/plugins/interactive-messages>`_: Make notifications actionable with buttons or menus such as Acknowledge, Assign, or Escalate that enable an immediate user response without switching tools or context.
 - `Interactive Dialogs <https://developers.mattermost.com/integrate/plugins/interactive-dialogs/>`_: Guide users to successful outcomes when interactions need structured input or confirmation (for example, “Acknowledge with note” or “Assign to user”). Improve data quality with required fields, minimum/maximum input lengths, server‑driven user/channel pickers, validated defaults, inline field errors, placeholders, and help text that help users enter the right data the first time.
 - `Message Priority <https://developers.mattermost.com/integrate/reference/message-priority/>`_: Set ``priority`` to elevate critical posts and optionally request acknowledgements or persistent notifications.
