@@ -33,10 +33,9 @@ Access Team Settings
 Manage membership policies
 --------------------------
 
-The **Membership Policies** tab shows all policies scoped to the team. Each policy displays its name and the number of private channels it applies to.
+The **Membership Policies** tab shows policies scoped to the team. Each policy displays its name and the number of private channels it applies to.
 
-- **Team Admins** see only policies that are exclusively scoped to their team (all assigned channels belong to the same team).
-- **System Admins** see all policies that include at least one channel in the team, including cross-team policies.
+Team Admins only see policies whose access rules their own user attributes satisfy. If a policy has rules that exclude the Team Admin's attributes (for example, a policy requiring ``Department=Engineering`` and the Team Admin has ``Department=Finance``), that policy will not appear in their list. This is a self-inclusion safety mechanism to prevent admins from being locked out of policies they manage.
 
 Create a policy
 ~~~~~~~~~~~~~~~
@@ -52,7 +51,8 @@ Create a policy
 4. Assign channels under **Assigned channels**:
 
    - Select **Add channels** to search for and select private channels within the team.
-   - Channels that are already assigned to another policy are not shown in the search results.
+   - Channels already assigned to this policy are excluded from the search results to prevent duplicates.
+   - A channel can be assigned to multiple policies simultaneously; all policies are enforced independently.
 
 5. Optionally, toggle **Auto-add members** per channel to control whether users matching the rules are automatically added to that channel.
 
@@ -104,13 +104,9 @@ When both a system-wide policy and a team-level policy apply to the same channel
 Cross-team policies
 ~~~~~~~~~~~~~~~~~~~
 
-A policy that has private channels from more than one team is considered a cross-team policy. Cross-team policies:
+A policy that has private channels from more than one team is considered a cross-team policy. Cross-team policies are not visible in any team's **Membership Policies** tab — they are managed exclusively through the System Console.
 
-- Are only visible to System Admins, not Team Admins.
-- Are created or modified by System Admins adding channels from different teams to the same policy.
-- Are automatically hidden from a team's **Membership Policies** tab once they include channels from multiple teams.
-
-If a System Admin adds a channel from another team to a policy that was previously scoped to one team, that policy will no longer appear in the original team's **Membership Policies** tab.
+If a System Admin adds a channel from another team to a policy that was previously scoped to one team, that policy will no longer appear in any team's **Membership Policies** tab.
 
 Synchronization
 ---------------
@@ -138,7 +134,10 @@ The **Membership Policies** tab is only visible when:
 Why can't I see a policy that I know exists?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If a policy includes private channels from more than one team, it is a cross-team policy and is not shown in Team Settings. Only System Admins can see and manage cross-team policies. As a Team Admin, you can only see policies that are exclusively scoped to your team.
+There are two reasons a policy may not appear in your **Membership Policies** tab:
+
+- **Cross-team policy**: The policy includes private channels from more than one team. Cross-team policies are not visible in Team Settings for anyone and must be managed through the System Console.
+- **Self-inclusion filter**: Your own user attributes do not satisfy the policy's access rules. For example, if a policy requires ``Department=Engineering`` and your profile has ``Department=Finance``, you will not see that policy. A System Admin or another Team Admin whose attributes do satisfy the rules would need to manage it instead.
 
 What happens when I save rules that would exclude me?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -148,7 +147,7 @@ Mattermost validates your access rules against your own user attributes before s
 Can I assign a channel to more than one team-level policy?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-No. A private channel can only be assigned to one membership policy at a time. If a channel is already assigned to a policy, it will not appear in the channel search when creating or editing another policy.
+Yes. A private channel can be assigned to multiple membership policies. Each policy's rules are applied independently, and users must satisfy all of them to access the channel.
 
 Can Team Admins override system-wide policies?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
