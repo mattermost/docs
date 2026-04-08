@@ -4,6 +4,8 @@ receivers:
   filelog/mattermost:
     include: [ /opt/mattermost/logs/mattermost.log ]
     start_at: beginning
+    operators:
+      - type: json_parser
 
 processors:
   batch:
