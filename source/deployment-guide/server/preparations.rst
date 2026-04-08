@@ -32,6 +32,8 @@ Before installing Mattermost Server, review the following preparation requiremen
    single: database; PostgreSQL setup
    single: create database; PostgreSQL
 
+.. _database-preparation:
+
 PostgreSQL database setup
 --------------------------
 
