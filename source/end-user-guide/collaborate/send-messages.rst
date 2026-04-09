@@ -64,7 +64,22 @@ From Mattermost v11.5, when you use AI Rewrite while composing a reply in a thre
 
 .. tab:: Mobile
 
-  AI rewriting functionality is available in the mobile app with the same rewrite options as the desktop and web experience.
+  1. Type your message in the message compose field.
+  2. Tap the **Rewrite** |ai-rewrite| option from the message composer.
+  3. Select an agent from the list of available AI agents.
+  4. Select from available rewrite options:
+
+     - **Improve writing**: Enhance clarity and professionalism
+     - **Fix spelling**: Correct spelling and grammar errors
+     - **Shorten**: Make your message more concise
+     - **Elaborate**: Add more detail and context
+     - **Simplify**: Use clearer, easier-to-understand language
+     - **Summarize**: Condense your message to key points
+     - **Custom prompt**: Specify your own transformation instructions
+
+  5. Wait while the AI processes your message in the compose field.
+  6. Review the AI-generated suggestion. Tap **Regenerate** to try again or **Discard** to return to your original message.
+  7. Tap **Send** |send-icon|
 
 .. note::
 
