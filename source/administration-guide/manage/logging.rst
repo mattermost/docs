@@ -238,7 +238,6 @@ You can enable and customize advanced audit logging in Mattermost to record acti
         - Cloud-based deployments use the following self-hosted audit logging default values:
 
             - FileEnabled: false
-            - FileMaxQueueSize: 1000
 
         - Cloud deployments can't configure local file-based audit logging, and all file-related settings are hidden.
 

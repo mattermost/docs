@@ -3589,24 +3589,7 @@ Audit file name
 
 .. note::
 
-  The file name must be set to `enable <#auditlog-fileenabled>`__ audit logging.
-
-.. config:setting:: auditlog-filemaxqueuesize
-  :displayname: Audit log queue size (Audit Logging)
-  :systemconsole: Compliance > Audit Logging
-  :configjson: .ExperimentalAuditSettings.FileMaxQueueSize
-  :environment: MM_EXPERIMENTALAUDITSETTINGS_FILEMAXQUEUESIZE
-  :description: The maximum number of audit log entries that can be queued. Default is 1000.
-
-Audit log queue size
-^^^^^^^^^^^^^^^^^^^^
-
-+--------------------------------------------------+--------------------------------------------------------------------------------------------+
-| The maximum number of audit log entries that     | - System Config path: **Compliance > Audit Logging**                                       |
-| can be queued.                                   | - ``config.json`` setting: ``ExperimentalAuditSettings`` > ``FileMaxQueueSize`` > ``1000`` |
-|                                                  | - Environment variable: ``MM_EXPERIMENTALAUDITSETTINGS_FILEMAXQUEUESIZE``                  |
-| Numerical input. Default is **1000**.            |                                                                                            |
-+--------------------------------------------------+--------------------------------------------------------------------------------------------+
+  The file name must be set to `enable <#auditlog-fileenabled>`__ audit logging. To configure file rotation and advanced audit log output, use the :ref:`AdvancedLoggingJSON <administration-guide/configure/environment-configuration-settings:output audit logs to multiple targets>` setting.
 
 .. config:setting:: auditlog-certificate
   :displayname: Audit log certificate (Audit Logging)

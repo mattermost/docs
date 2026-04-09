@@ -767,7 +767,7 @@ Enable audit logging
 .. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
-When audit logging is enabled in a self-hosted instance, you can specify a file name and queue size for audit logging, as defined below. To configure file rotation for audit logs, use the :ref:`AdvancedLoggingJSON <administration-guide/configure/environment-configuration-settings:output audit logs to multiple targets>` setting. You can specify these settings independently for audit events and AD/LDAP events.
+When audit logging is enabled in a self-hosted instance, you can specify a file name for audit logging, as defined below. To configure file rotation and advanced audit log output, use the :ref:`AdvancedLoggingJSON <administration-guide/configure/environment-configuration-settings:output audit logs to multiple targets>` setting. You can specify these settings independently for audit events and AD/LDAP events.
 
 **True**: Audit logging files are enabled, and audit files are written locally to a file for a self-hosted deployment.
 
@@ -795,26 +795,6 @@ Specify the path to the audit file for a self-hosted deployment.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileName": ""`` with string input consisting of a user-defined path (e.g. ``/var/log/mattermost_audit.log``).         |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: maximum-file-queue
-  :displayname: File max queue size (Audit Logging > Self-Hosted)
-  :systemconsole: Experimental > Features
-  :configjson: FileMaxQueueSize
-  :environment: N/A
-  :description: This setting determines how many audit records can be queued/buffered at any point in time when writing to a file for a self-hosted deployment. Default is **1000** records.
-
-Maximum file queue 
-~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-plus.rst
-  :start-after: :nosearch:
-
-This setting determines how many audit records can be queued/buffered at any point in time when writing to a file for a self-hosted deployment. The default is ``1000`` records.
-This setting can be left as default unless you are seeing audit write failures in the server log and need to adjust the number accordingly.
-
-+-------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileMaxQueueSize": 1000`` with numerical input. |
-+-------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: audit-logging-certificate
   :displayname: Audit logging certificate upload (Audit Logging > Cloud Enterprise)
