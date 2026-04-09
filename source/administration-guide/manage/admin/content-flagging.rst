@@ -54,7 +54,7 @@ Configure
 
 3. Under **Additional Settings**, configure how the quarantine workflow behaves:
 
-   - **Reasons for quarantine**: Define the preset categories that appear in the quarantine dialog for users (for example: **Inappropriate content**, **Sensitive data**, **Security concern**, **Harassment or abuse**, **Spam or phishing**).
+   - **Reasons for quarantine**: Define the preset categories that appear in the quarantine dialog for users (for example: **Classification mismatch**, **Need-to-know violation**, **Personally identifiable information (PII) exposure**, **Operational security (OPSEC) concern**, **Controlled Unclassified Information (CUI) violation**).
    - **Require reporters to add comment**: Set to **True** to require users to add a short explanation when quarantining a message.
    - **Require reviewers to add comment**: Set to **True** to require reviewers to add a comment when resolving a quarantine.
    - **Hide message from channel while it is being reviewed**: Set to **True** to automatically hide quarantined messages from the channel until reviews are complete. If a root post is quarantined, the entire thread is hidden.
@@ -73,7 +73,7 @@ Each quarantined message appears as a card-formatted message that includes:
 
 - **Quarantined by**: The user who reported the message.
 - **Status**: The current state of the review. All quarantined content starts in **Pending** status.
-- **Reason**: The reason selected by the reporter (for example, **Sensitive data**, **Inappropriate content**).
+- **Reason**: The reason selected by the reporter (for example, **Classification mismatch**, **Need-to-know violation**).
 - **Message preview**: A snippet of the quarantined message, including the author, timestamp, and original channel.
 - **Reviewer**: The user currently assigned to review the message (initially **Unassigned**).
 - **Channel**: The name of the channel where the message was originally posted.
