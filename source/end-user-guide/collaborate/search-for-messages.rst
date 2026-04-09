@@ -82,7 +82,11 @@ From the **Search** field, select **Files** to search for files attached to mess
 File contents that match on file name, or contain matching text content within supported document types, are returned in the Search Results pane. Each search result includes file name, extension, and size details, as well as details about when and where the file was originally shared. You can adjust search results to show messages from the current team, a specific team, or all teams.
 
 - For Mattermost Cloud :doc:`workspaces </end-user-guide/end-user-guide-index>`, supported document file formats include PDF, PPTX, DOCX, ODT, HTML, and plain text documents. DOC and RTF file formats, as well as the contents of ZIP files, are not supported.
-- For Mattermost self-hosted deployments, supported document file formats include PDF, PPTX, DOCX, ODT, HTML, and plain text documents. 
+- For Mattermost self-hosted deployments, supported document file formats include PDF, PPTX, DOCX, ODT, HTML, and plain text documents.
+
+.. note::
+
+  7zip (``.7z``) files are not supported for file content search and are skipped during search indexing for security reasons. Only standard ZIP files are supported when ZIP file search is enabled.
 
 .. note::
 
@@ -192,6 +196,14 @@ To search for messages containing hashtags, select a hashtag in an existing post
 .. note::
   
   Hashtags don't link to channels. If you have a channel named “Marketing”, selecting a ``#marketing`` hashtag does not take you to the Marketing channel. To link to public channels, use the tilde ``~`` symbol followed by the channel name. For example ``~marketing``.
+
+Search public channels you haven't joined
+------------------------------------------
+
+.. include:: ../../_static/badges/ent-plus.rst
+  :start-after: :nosearch:
+
+From Mattermost v11.6, when your system admin :ref:`enables searching public channels without membership <administration-guide/configure/environment-configuration-settings:allow searching public channels without membership>`, search results can include messages from public channels you haven't joined. Results are scoped to teams you belong to, so you'll only see messages from public channels in your teams. This setting doesn't affect private channels — you can only search private channels you're a member of.
 
 Notes about performing Mattermost searches
 -------------------------------------------

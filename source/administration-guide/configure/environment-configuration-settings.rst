@@ -1559,6 +1559,38 @@ Enable Elasticsearch for autocomplete queries
 
 Autocompletion results may be incomplete until a bulk index of the existing users and channels database is finished.
 
+.. config:setting:: enable-search-public-channels-without-membership
+  :displayname: Allow searching public channels without membership (Elasticsearch)
+  :systemconsole: Environment > Elasticsearch
+  :configjson: .ElasticsearchSettings.EnableSearchPublicChannelsWithoutMembership
+  :environment: MM_ELASTICSEARCHSETTINGS_ENABLESEARCHPUBLICCHANNELSWITHOUTMEMBERSHIP
+  :description: Allow users to search for messages in public channels they have not joined.
+
+  - **true**: Users can find messages in public channels they haven't joined, scoped to teams they belong to.
+  - **false**: **(Default)** Users can only search messages in channels they are a member of.
+
+Allow searching public channels without membership
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
+| Allow users to search for messages in public channels they    | - System Config path: **Environment > Elasticsearch**                                                         |
+| have not joined.                                              | - ``config.json`` setting: ``ElasticsearchSettings`` > ``EnableSearchPublicChannelsWithoutMembership``        |
+|                                                               |   > ``false``                                                                                                 |
+| When enabled for the first time, existing posts are updated   | - Environment variable:                                                                                       |
+| in the background with channel type information. This         |   ``MM_ELASTICSEARCHSETTINGS_ENABLESEARCHPUBLICCHANNELSWITHOUTMEMBERSHIP``                                    |
+| backfill process is throttled to ~10,000 posts per second to  |                                                                                                               |
+| avoid impacting search performance.                           |                                                                                                               |
+|                                                               |                                                                                                               |
+| - **true**: Users can find messages in public channels they   |                                                                                                               |
+|   haven't joined, scoped to teams they belong to.             |                                                                                                               |
+| - **false**: **(Default)** Users can only search messages in  |                                                                                                               |
+|   channels they are a member of.                              |                                                                                                               |
++---------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+   This setting has no effect when :ref:`Compliance Mode <administration-guide/configure/compliance-configuration-settings:enable compliance reporting>` is enabled. When Compliance Mode is active, search results are always restricted to channels the user is a member of.
+
 .. config:setting:: post-index-replicas
   :displayname: Post index replicas (Elasticsearch)
   :systemconsole: N/A
@@ -2050,6 +2082,7 @@ Enable searching content of documents within ZIP files
 
   - You can search for document content within ZIP files when using Mattermost in a web browser or the desktop app.
   - Searching document contents adds load to your server.
+  - This setting applies only to standard ZIP files. 7zip (``.7z``) files are blocked for security reasons and are not searchable.
   - For large deployments, or teams that share many large, text-heavy documents, we recommend you review our :ref:`hardware requirements <deployment-guide/software-hardware-requirements:hardware requirements>`, and test enabling this feature in a staging environment before enabling it in a production environment.
 
 .. config:setting:: amazon-s3-bucket
