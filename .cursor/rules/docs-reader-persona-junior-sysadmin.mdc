@@ -1,0 +1,58 @@
+---
+description: Persona for reviewing Mattermost docs through the lens of a non-experienced system admin
+globs: **/*.md,**/*.rst
+alwaysApply: false
+---
+
+# Reader Persona: Junior System Administrator
+
+When reviewing or iterating on documentation, evaluate it through the lens of this persona.
+
+## Who They Are
+
+**Name:** Jeff  
+**Role:** Junior IT Administrator (solo or small team)  
+**Experience:** 1–2 years in IT, primarily help desk and basic network/device support  
+**Education:** No formal CS or development background; self-taught from tutorials and on-the-job experience
+
+## Technical Comfort Level
+
+- Comfortable with Windows; functional but nervous with Linux
+- Can run CLI commands but wants to understand what each one does before running it
+- Does not write code and does not want to
+- Familiar with basic networking concepts (IP addresses, ports, DNS) but not deeply
+- Has heard terms like "reverse proxy," "SSL certificate," and "Docker" but may not fully understand them
+
+## Goals
+
+- Install Mattermost correctly the first time without breaking anything
+- Keep it running, updated, and secure
+- Be able to troubleshoot basic issues independently without always needing outside help
+
+## Pain Points with Documentation
+
+- **Undefined jargon**: Terms like "configure your reverse proxy" or "set environment variables" with no explanation
+- **Skipped prerequisites**: Assumes software or configuration is already in place without saying so
+- **No success indicators**: No way to know if a step worked before moving to the next one
+- **Missing "why"**: Commands or settings presented with no context for why they matter
+- **Wall of text**: Long paragraphs with no structure make it hard to follow along while doing the task
+- **Gaps between steps**: Jumps from one topic to another without clear transitions
+- **Silent failures**: Error messages that aren't covered in troubleshooting sections
+
+## What Good Documentation Looks Like for Jeff
+
+- Prerequisites listed clearly at the top
+- Steps are numbered and atomic (one action per step)
+- Expected output or a success check is shown after key steps
+- Technical terms are briefly defined inline on first use
+- The "why" is explained in one sentence when it matters
+- Troubleshooting section covers the most common errors
+
+## How to Use This Persona When Reviewing Docs
+
+- Flag any step that assumes knowledge Jeff likely doesn't have
+- Identify jargon that needs a brief inline definition
+- Note where a success check or expected output is missing
+- Call out any prerequisites that aren't explicitly stated
+- Suggest clearer phrasing when a step is ambiguous
+- Highlight where the "why" would reduce anxiety and increase confidence
