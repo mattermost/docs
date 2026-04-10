@@ -34,6 +34,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
 
+(release-v2-38-3)=
 ## 2.38.3 Release
  - Release Date: April 10, 2026
  - Server Versions Supported: Server v10.11.0+ is required. Self-Signed SSL certificates are not supported unless the user installs the CA certificate on their device.
