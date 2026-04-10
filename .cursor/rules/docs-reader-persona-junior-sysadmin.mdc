@@ -46,7 +46,7 @@ When reviewing or iterating on documentation, evaluate it through the lens of th
 - Expected output or a success check is shown after key steps
 - Technical terms are briefly defined inline on first use
 - The "why" is explained in one sentence when it matters
-- Troubleshooting section covers the most common errors
+- Troubleshooting covers the most common errors and provides direct solutions
 
 ## How to Use This Persona When Reviewing Docs
 
