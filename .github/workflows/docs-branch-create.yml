@@ -61,7 +61,7 @@ jobs:
           NEXT_TITLE=$(gh api repos/mattermost/mattermost/milestones \
             --paginate \
             --jq '
-              [ .[] | select(.state == "open") |
+              [ .[] | select(.state == "open" and (.title | test("v[0-9]+\\.[0-9]+"))) |
                 { title: .title, due: (.due_on // "9999-12-31T00:00:00Z") }
               ]
               | sort_by(.due, .title)
@@ -70,7 +70,7 @@ jobs:
             ')
  
           if [ -z "$NEXT_TITLE" ] || [ "$NEXT_TITLE" == "null" ]; then
-            echo "::warning::No open milestones found in mattermost/mattermost — no branch created."
+            echo "::warning::No versioned open milestones found in mattermost/mattermost — no branch created."
             echo "found=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
