@@ -28,7 +28,7 @@ BUILDDIR        = build
 SPHINXOPTS      ?= -j auto
 SPHINXBUILD     ?= pipenv run sphinx-build
 SPHINXAUTOBUILD ?= pipenv run sphinx-autobuild
-AUTOBUILDOPTS   ?= -D=html_baseurl=http://127.0.0.1:8000
+AUTOBUILDOPTS   ?= -D=html_baseurl=http://127.0.0.1:8000 --ignore "*/_generated/*"
 
 # If we're using Windows, use CMD to run commands in the Makefile.
 ifeq ($(OS),Windows_NT)
