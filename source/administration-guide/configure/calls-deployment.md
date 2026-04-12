@@ -202,7 +202,7 @@ Do this before you install anything new.
 
 STUN is a protocol that helps the media server discover its public IP address automatically so remote clients can connect to Calls.
 
-Mattermost provides a default STUN server (`stun.global.calls.mattermost.com`) for public IP discovery. No user information, call metadata, or media traffic is sent to or shared with this STUN service; its sole purpose is to help media servers discover their public IP address. Use this decision tree to determine if you need to allow outbound access from your media server to the Mattermost global STUN service.
+Mattermost provides a default STUN server (`stun.global.calls.mattermost.com`). No call media or signaling traffic is sent through this service; it is used only for STUN lookups. Use this decision tree to determine if you need to allow outbound access from your media server to the Mattermost global STUN service for public IP discovery.
 
 ```{note}
 Your media server is the Mattermost server in the case of an **Integrated** Calls deployment, or it's the **RTCD server** in the case of an RTCD Calls deployment. 
@@ -211,14 +211,14 @@ Your media server is the Mattermost server in the case of an **Integrated** Call
 **STUN Decision Tree**
 
 1. **Are all users and your media server (Mattermost server or RTCD) in the same private network, VPN, or air-gapped environment, with no outside clients?**
-   - **Yes**: You do not need STUN. You will use the private address of your media server for configuration in Phase 2.
+   - **Yes**: You do not need STUN for public IP discovery. You will use the private address of your media server for configuration in Phase 2.
    - **No**: Continue to the next question. 
 
 2. **Does your media server (Mattermost server or RTCD) have a stable public IP address or DNS name that clients on the public internet can reach?**
-   - **Yes**: You do not need STUN. You will use the public address of your media server for configuration in Phase 2.
+   - **Yes**: You do not need STUN for public IP discovery. You will use the stable public address of your media server for configuration in Phase 2.
    - **No**: You will need STUN. You must open outbound UDP 3478 from your media server to `stun.global.calls.mattermost.com`.
 
-If your deployment requires STUN, note that now so you can include it when opening ports in Step 1.5.
+If your deployment requires STUN for public IP discovery, note that now so you can include it when opening ports in Step 1.5.
 
 
 #### 1.3.2 TURN Server
@@ -395,7 +395,9 @@ Run from a client machine on the same network as your users:
 
 ## Phase 2: Configure Integrated Calls
 
-You will start by deploying Calls using the Integrated architecture, even if you plan to use RTCD or `calls-offloader` services. This approach gives you a clean baseline: if Calls does not work using the simplest deployment method, the problem is usually networking, firewall rules, or plugin configuration. It is much easier to isolate those problems before you add RTCD or `calls-offloader` in later phases.
+For most deployments, start by deploying Calls using the Integrated architecture, even if you plan to use RTCD or `calls-offloader` services later. This approach gives you a clean baseline: if Calls does not work using the simplest deployment method, the problem is usually networking, firewall rules, or plugin configuration. It is much easier to isolate those problems before you add RTCD or `calls-offloader` in later phases.
+
+If you are deploying Mattermost on Kubernetes, skip this phase and deploy RTCD from the start. RTCD is the only officially supported Calls deployment path for Kubernetes environments.
 
 ### 2.1 Prerequisites
 
@@ -413,7 +415,7 @@ Set **Enable Plugin** to `true`. This enables editing for the rest of the config
 
 **2.2.2: Put the deployment in test mode**
 
-Set **Test mode** to `on`. This ensures System Admins must enable Calls in individual channels before end users can access the feature.
+Enable **Test mode** so Calls stays restricted during initial validation. In this mode, System Admins control where Calls is available and can enable it in specific channels for testing.
 
 **2.2.3: Configure the host media address**
 
@@ -462,6 +464,7 @@ Now smoke test your Calls deployment with your test accounts:
 | 2.3.3 | Share your screen from a desktop app or supported browser | Screen sharing is visible to the other user |
 | 2.3.4 | End the call | The call indicator disappears from the channel |
 
+
 ```{important}
 **Do not continue until all of the checks pass. If any check fails, go to [Appendix A: Troubleshooting](#appendix-a-troubleshooting).**
 ```
@@ -477,7 +480,7 @@ Now that you've verified a basic Integrated Calls deployment, you can add RTCD t
 ### 3.1 Prerequisites
 
 - [ ] RTCD server is provisioned (1.4) and RTCD networking checks passed (1.6.3-1.6.5)
-- [ ] Integrated Calls deployment checks passed (2.3.1-2.3.4)
+- [ ] Integrated Calls deployment checks passed (2.3.1-2.3.5) 
 - [ ] Mattermost Enterprise or Enterprise Advanced license is active on your server
 - [ ] System Admin permissions on your Mattermost server
 
@@ -834,6 +837,3 @@ Run `/call stats` in the Mattermost message area after a failed test for additio
 | calls-offloader is not running | Run `nmap -p 4545 YOUR_OFFLOADER_SERVER` from the Mattermost server — if the result is `closed`, the service is not running; check the systemd service logs |
 | Mattermost cannot reach the Job Service URL | Run `curl http://YOUR_OFFLOADER_SERVER:4545/version` from the Mattermost server and confirm it returns a version string |
 | The offloader service account cannot use Docker | Confirm the service account is in the `docker` group on the calls-offloader server |
-
-
----
