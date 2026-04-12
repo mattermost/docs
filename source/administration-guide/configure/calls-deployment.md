@@ -583,10 +583,10 @@ Now you can move to smoke testing your Calls deployment with recording using you
 
 | Check | Action | Pass criteria |
 |---|---|---|
-| 4.5.2 | During a call, start a recording as a call host | Recording starts without error. |
-| 4.5.3 | End the call or stop the recording | An MP4 file appears in the call thread after processing is complete. |
-| 4.5.4 | With transcription enabled, end a recorded call | A MP4 file and transcript file appear in the call thread after processing is complete. |
-| 4.5.5 | With live captions enabled, start a recorded call | Captions appear during the call within 1-3 seconds after participants speak. |
+| 4.4.1 | During a call, start a recording as a call host | Recording starts without error. |
+| 4.4.2 | End the call or stop the recording | An MP4 file appears in the call thread after processing is complete. |
+| 4.4.3 | With transcription enabled, end a recorded call | An MP4 file and transcript file appear in the call thread after processing is complete. |
+| 4.4.4 | With live captions enabled, start a recorded call | Captions appear during the call within 1-3 seconds after participants speak. |
 
 ```{important}
 **Do not continue until all of the checks pass. If any check fails, go to [Appendix A: Troubleshooting](#appendix-a-troubleshooting).**
@@ -600,71 +600,59 @@ Now that the technical configuration is complete and validated, run a small pilo
 
 ### 5.1 Prerequisites
 
-- [ ] Phase 2 passed
-- [ ] Phase 3 passed if using RTCD
-- [ ] Phase 4 passed if using calls-offloader
-- [ ] You have 5 to 10 pilot users from different locations
+- [ ] RTCD verification checks passed (3.6.1-3.6.4)
+- [ ] Recording verification checks passed (4.4.1-4.4.4)
+- [ ] 5 to 10 volunteer pilot users from different locations
 - [ ] Pilot users have current [Mattermost desktop and mobile apps](https://mattermost.com/apps/)
 
-### 5.2 Prepare the pilot channel
+### 5.2 User Preparation and Communication
 
-**5.2.1: Create the pilot channel**
+For a successful pilot, ensure your pilot users know how to use Calls features, what they should test, and how to report any issues they encounter.
 
-Create a channel such as `calls-pilot` and enable Calls in it. If test mode is still enabled, a system admin must start each call.
-
-**5.2.2: Post the pilot message**
-
-Send pilot users the following message so they know what to test and how to report issues.
+After inviting your pilot users into the `calls-test` channel, we recommend sharing some communication (as a message in the channel) to help direct their testing. A message template is provided below:
 
 <details>
-<summary>Click to expand the pilot message template</summary>
+<summary>Pilot user communication template</summary>
 
 ```markdown
 ## Mattermost Calls pilot
 
-We are testing Mattermost Calls before wider rollout.
-
-**What you are testing**
-
-- starting and joining an audio call
-- hearing other participants clearly
-- screen sharing from desktop or browser
-- joining from different clients or networks if possible
+Thank you for volunteering to testing Mattermost Calls before a wider rollout.
 
 **How to start**
 
-Select **Start call** in the channel header. Anyone in this channel can join.
+Calls is enabled in this channel only. You can select **Start call** in the channel header to begin, or join an existing call if one is already started.
 
-**Please try the following**
+**Please test the following**
 
-- [ ] Join a 1:1 test call
-- [ ] Join a group call with at least 3 participants
+- [ ] Start, join and leave calls
 - [ ] Share your screen from desktop or browser
-- [ ] Join from a second client if possible
-- [ ] Join from home, VPN, or mobile data if possible
+- [ ] Recording your calls
+- [ ] Use Live Captioning during a recorded call
+- [ ] Joining from various clients (desktop and mobile apps)
+- [ ] Join from various network locations
 
-**If something fails**
+**If you encounter issues**
 
-Reply in this channel with:
+Post a message in this channel with:
 
-- what step failed
-- what you expected to happen
-- what actually happened
-- your client type (desktop, browser, or mobile)
+- Reproduction steps
+- What you expected to happen
+- What actually happened (with screenshots if possible)
+- Your client type (desktop, browser, or mobile)
 ```
 
 </details>
 
-### 5.3 What to watch during the pilot
+### 5.3 Pilot Montitoring
 
 Monitor the following while pilot calls are running:
 
 - **Active sessions and participants**: Confirm calls are being counted in your Calls metrics.
-- **RTC errors**: Watch `rtcd_rtc_errors_total` (RTCD) or the equivalent Calls plugin metrics in integrated mode.
+- **RTCD errors**: Watch `rtcd_rtc_errors_total` (RTCD) or the equivalent Calls plugin metrics in integrated mode.
 - **CPU and memory**: Watch `rtcd_process_cpu_seconds_total` and `rtcd_process_resident_memory_bytes` (RTCD) or the equivalent plugin metrics in integrated mode.
 - **Service logs**: Watch Mattermost, RTCD, and calls-offloader logs for recurring `ERROR` or `WARN` lines.
 
-If you do not have Prometheus and Grafana set up yet, tail the service logs directly during pilot sessions.
 
 ### 5.4 Verification Checks
 
