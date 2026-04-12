@@ -95,6 +95,20 @@ flowchart TD
     clients -->|UDP/TCP 8443 media| mm
 ```
 
+```{mermaid}
+flowchart TD
+    clients["Clients\nWeb, Desktop, Mobile"]
+    mm["Mattermost Server\nCalls plugin"]
+    rtcd["RTCD Server"]
+
+    clients -->|TCP 443 signaling| mm
+    mm -->|TCP 8045 internal API| rtcd
+    clients -->|UDP 8443 media| rtcd
+    rtcd -->|UDP 8443 media| clients
+    clients -->|TCP 8443 media fallback| rtcd
+    rtcd -->|TCP 8443 media fallback| clients
+```
+
 **When to use it**
 
 - You are evaluating Calls for the first time.
@@ -221,11 +235,11 @@ Do this before you install anything new.
 
 STUN is a protocol used to automatically discover the public IP address of your media server so clients can connect to Calls.  
 
+Mattermost provides a default STUN server (`stun.global.calls.mattermost.com`) for public IP discovery. No user information, call metadata, or media traffic is sent to or shared with this STUN service; its sole purpose is to help media servers discover their public IP address. Use this decision tree to determine if you need to allow outbound access from your media server to the Mattermost global STUN service.
+
 ```{note}
 Your media server is the Mattermost server in the case of an **Integrated** Calls deployment, or it's the **RTCD server** in the case of an RTCD Calls deployment. 
 ```
-
-Mattermost provides a default STUN server (`stun.global.calls.mattermost.com`) for public IP discovery. No user information, call metadata, or media traffic is sent to or shared with this STUN service; its sole purpose is to help media servers discover their public IP address. Use this decision tree to determine if you need to allow outbound access from your media server to the Mattermost global STUN service:
 
 **STUN Decision Tree**
 
@@ -244,19 +258,37 @@ If your deployment requires STUN, note this requirement as you work through the 
 
 TURN is a protocol that relays media when users cannot reach the Calls media service directly.
 
-Provisioning a TURN server is only necessary if both of these conditions are true:
+Provisioning a TURN server is necessary if both of these conditions are true:
 
 - Clients connect from networks that cannot reliably use UDP on port `8443` for media traffic (preferred path).
 - Clients connect from networks that cannot reliably use TCP on port `8443` (fallback).
 
-Only plan to deploy TURN if your answers indicate that you cannot rely on UDP or TCP for media, and users need an alternative route. TURN is typically a last resort as it adds additional networking and infrastructure complexity.
+TURN is typically a last resort as it adds additional networking and infrastructure complexity. Only plan to deploy TURN if your answers indicate that you cannot rely on UDP or TCP for media, and users need an alternative route. 
 
 
-### 1.4 Infrastructure Provisioning
+### 1.4 Provision Infrastructure
 
-This step answers a simple question: **What infrastructure do I need to create before I start installing software?**
+Now you will provision the servers or VMs you'll need to support your Calls Deployment. You are only preparing infrastructure here; software installation and service configuration happen in later phases. This step is important because you'll need the IP addresses of these servers in order to configure networking in the next step.
 
-In this step, **provision** means creating the server or VM, assigning its IP address or DNS name, confirming you can administer it, and recording what that server will be used for. You are only preparing infrastructure here; software installation and service configuration happen in later phases.
+If you are operating in Integrated mode (Step 1.2) and you do not require a TURN server (Step 1.3.2), you can skip this step and proceed to network configuration. Otherwise, you will need to provision additional infrastructure:
+
+**RTCD Server**
+
+
+
+
+
+**Calls Offloader Server**
+
+
+
+
+**TURN Server**
+
+
+
+
+
 
 If you're unsure where to start, use these defaults:
 
@@ -289,7 +321,7 @@ Before moving to Step 1.5, confirm the following:
 - [ ] If you plan to use `calls-offloader`, Docker is available on that host before Phase 4.
 - [ ] You have chosen a starting size for each optional server based on Appendix B, even if you expect to adjust it after pilot testing.
 
-### 1.5 Open the required ports
+### 1.5 Network Configuration
 
 Open the following ports before continuing.
 
