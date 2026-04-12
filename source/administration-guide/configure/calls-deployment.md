@@ -120,6 +120,16 @@ Deploying RTCD is **highly recommended in production deployments** for performan
 ```{mermaid}
 flowchart TD
     clients["Clients\nWeb, Desktop, Mobile"]
+    mm["Mattermost Server\nCalls plugin + integrated media service"]
+
+    clients -->|TCP 443 signaling| mm
+    clients -->|UDP/TCP 8443 media| mm
+```
+
+
+```{mermaid}
+flowchart TD
+    clients["Clients\nWeb, Desktop, Mobile"]
     mm["Mattermost Server\nCalls plugin"]
     rtcd["RTCD Server"]
 
