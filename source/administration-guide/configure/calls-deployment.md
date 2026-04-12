@@ -395,8 +395,8 @@ You will start by deploying Calls using the Integrated architecture, even if you
 ### 2.1 Prerequisites
 
 - [ ] Phase 1 networking checks passed (1.6.1-1.6.14)
-- [ ] Two test accounts on your Mattermost instance
-- [ ] System Admin permissions on your Mattermost instance
+- [ ] Two test accounts on your Mattermost server
+- [ ] System Admin permissions on your Mattermost server
 
 ### 2.2 Configure the Calls plugin
 
@@ -474,6 +474,7 @@ Now that you've verified a basic Integrated Calls deployment, you can add RTCD t
 - [ ] RTCD server is provisioned (1.4) and networking checks passed (1.6.1-1.6.14)
 - [ ] Integrated Calls deployment checks passed (2.4.1-2.4.4)
 - [ ] Mattermost Enterprise or Enterprise Advanced license is active on your server
+- [ ] System Admin permissions on your Mattermost server
 
 
 ### 3.3 Install RTCD
@@ -549,6 +550,7 @@ Now you can move to smoke testing your RTCD Calls deployment with your test acco
 - [ ] `calls-offloader` server is provisioned (1.4) and networking checks passed (1.6.1-1.6.14)
 - [ ] RTCD verification checks passed (3.6.1-3.6.4)
 - [ ] Mattermost Enterprise or Enterprise Advanced license is active on your server
+- [ ] System Admin permissions on your Mattermost server
 
 ### 4.2 Install calls-offloader
 
@@ -603,175 +605,192 @@ Now that the technical configuration is complete and validated, run a small pilo
 - [ ] RTCD verification checks passed (3.6.1-3.6.4)
 - [ ] Recording verification checks passed (4.4.1-4.4.4)
 - [ ] 5 to 10 volunteer pilot users from different locations
+- [ ] Access to the metrics dashboard and logs on your Calls infrastructure
 - [ ] Pilot users have current [Mattermost desktop and mobile apps](https://mattermost.com/apps/)
 
-### 5.2 User Preparation and Communication
+### 5.2 Preparation and Communication
 
 For a successful pilot, ensure your pilot users know how to use Calls features, what they should test, and how to report any issues they encounter.
 
 After inviting your pilot users into the `calls-test` channel, we recommend sharing some communication (as a message in the channel) to help direct their testing. A message template is provided below:
 
-<details>
+<details open>
 <summary>Pilot user communication template</summary>
 
 ```markdown
 ## Mattermost Calls pilot
 
-Thank you for volunteering to testing Mattermost Calls before a wider rollout.
+Thank you for volunteering to testing Mattermost Calls before a wider rollout. After 3-5 days of pilot testing, we will ask everyone to share their findings and experiences. Please track any issues or feedback so you can provide a summary when requested.
 
 **How to start**
 
-Calls is enabled in this channel only. You can select **Start call** in the channel header to begin, or join an existing call if one is already started.
+Calls is enabled in this channel for pilot testing. You can select **Start call** in the channel header to begin, or join an existing call if one is already started.
 
-**Please test the following**
+**Test Cases**
 
-- [ ] Start, join and leave calls
-- [ ] Share your screen from desktop or browser
-- [ ] Recording your calls
-- [ ] Use Live Captioning during a recorded call
-- [ ] Joining from various clients (desktop and mobile apps)
-- [ ] Join from various network locations
+| Test | Action | Pass criteria | Client Types |
+|---|---|---|---|
+| T1 | Group call with 3-5 participants | All participants can hear each other clearly | Web, Desktop, Mobile |
+| T2 | Group call lasting 15 minutes or longer | No unexpected drops or audio degradation | Web, Desktop, Mobile |
+| T3 | Participants join calls from outside the main office network | Call quality is acceptable from that network | Web, Desktop, Mobile |
+| T4 | Participants share screen during a call | Screen sharing works and is visible to all participants | Desktop, Web |
+| T5 | Record a group call | MP4 and transcription file appear in the call thread after processing completes | Web, Desktop, Mobile |
+| T6 | Enable Live Captions during a group call | Captions appear during the call within 1-3 seconds after participants speak. | Web, Desktop |
 
-**If you encounter issues**
+**Reporting Issues**
 
-Post a message in this channel with:
+If you encounter an issues, please report them by making a post in this channel, including:
 
+- Test number
 - Reproduction steps
 - What you expected to happen
-- What actually happened (with screenshots if possible)
+- What actually happened (with screenshots)
 - Your client type (desktop, browser, or mobile)
 ```
 
 </details>
 
-### 5.3 Pilot Montitoring
-
-Monitor the following while pilot calls are running:
-
-- **Active sessions and participants**: Confirm calls are being counted in your Calls metrics.
-- **RTCD errors**: Watch `rtcd_rtc_errors_total` (RTCD) or the equivalent Calls plugin metrics in integrated mode.
-- **CPU and memory**: Watch `rtcd_process_cpu_seconds_total` and `rtcd_process_resident_memory_bytes` (RTCD) or the equivalent plugin metrics in integrated mode.
-- **Service logs**: Watch Mattermost, RTCD, and calls-offloader logs for recurring `ERROR` or `WARN` lines.
+### 5.3 Verification Checks
 
 
-### 5.4 Verification Checks
-
-Do not continue until all of the following pass. If any check fails, go to [Appendix A: Troubleshooting](#appendix-a-troubleshooting).
+**Monitoring**
 
 | Check | Action | Pass criteria |
 |---|---|---|
-| 5.4.1 | Two pilot users complete a 1:1 audio call | Both users can hear each other clearly for the duration of the call |
-| 5.4.2 | Run a group call with at least 3 pilot users | All participants can hear each other clearly |
-| 5.4.3 | Run a call lasting 15 minutes or longer | No unexpected drops or audio degradation |
-| 5.4.4 | Share your screen from a desktop app or browser during a pilot call | Screen sharing is visible to other participants |
-| 5.4.5 | Have at least one user join from outside the main office network (home, VPN, or mobile data) | Call quality is acceptable from that network |
-| 5.4.6 | Have at least one user join on mobile | Call joins and audio works on mobile |
-| 5.4.7 | If recording is enabled, start and stop a recording during a pilot call | MP4 file appears in the call thread |
-| 5.4.8 | If transcription is enabled, stop a recording | Transcript file appears after processing |
-| 5.4.9 | If live captions are enabled, run a recorded pilot call | Captions appear in real time for participants |
-| 5.4.10 | Run `/call stats` after a successful pilot call | Output is returned — save it for your deployment notes |
+| 5.3.1 | Check your metrics dashboard during a pilot call | Active sessions and participants are visible and counted correctly |
+| 5.3.2 | Check RTCD error metrics after pilot calls (`rtcd_rtc_errors_total`) | No elevated error counts |
+| 5.3.3 | Check CPU and memory metrics during a pilot call (`rtcd_process_cpu_seconds_total`, `rtcd_process_resident_memory_bytes`) | CPU and memory stay within expected bounds |
+| 5.3.4 | Review Mattermost, RTCD, and calls-offloader logs after pilot calls | No recurring `ERROR` or `WARN` lines |
 
 ```{important}
-**Do not continue until all checks pass.**
+**Do not continue to a production rollout until all relevant checks are passing. If any check fails, go to [Appendix A: Troubleshooting](#appendix-a-troubleshooting).**
 ```
+
+**Production readiness**
+
+Collect feedback from your pilot users after 3-5 business days and use it to evaluate your production readiness. Specifically:
+
+| Check | Requirement |
+|---|---|
+| 5.3.5 | Audio quality rated accepatable by 80%+ of pilot users |
+| 5.3.6 | No blocking feature functions from pilot user test cases (T1-T6) |
+| 5.3.7 | All pilot users confirm readiness for production rollout |
 
 ---
 
 ## Phase 6: Production rollout
 
-### 6.1 Overview
+Now you will execute a broader rollout to all users in production.
 
-Roll Calls out in waves instead of enabling it everywhere at once.
+### 6.1 Prerequisites
 
-That lets you watch real usage, catch problems early, and stop the rollout cleanly if needed.
+- [ ] Pilot verification checks passed (5.3.1-5.3.7)
+- [ ] Rollback plan documented and understood
+- [ ] System Admin permissions on your Mattermost server
+- [ ] Access to the metrics dashboard and logs on your Calls infrastructure
+- [ ] Recording verification checks passed (4.4.1-4.4.4)
+- [ ] 5 to 10 volunteer pilot users from different locations
+- [ ] Pilot users have current [Mattermost desktop and mobile apps](https://mattermost.com/apps/)
 
-### 6.2 Prepare user communication
+### 6.2 Rollback plan
 
-Create a support channel such as `calls-help` first, then send a short announcement.
+You should be faimilar with rollback options before you proceed with the staged production rollout. If something goes wrong, choose the smallest rollback that solves the problem.
 
-<details>
-<summary>Click to expand the user announcement template</summary>
+**Per-channel rollback**
+Disables Calls in specific channels.
+
+1. Navigate to the impacted channel.
+2. Select the **Channel menu**, then select **Disable calls**.
+
+**Test mode rollback**
+Restricts Calls to channels where it has been enabled by a System Admin.
+
+1. Go to **System Console > Plugins > Calls > Settings**.
+2. Set **Test Mode** to `on`.
+
+**Full rollback**
+Disables Calls completely for everyone.
+
+1. Go to **System Console > Plugins > Plugin Management**.
+2. **Disable** the Calls plugin.
+
+Additionally, if you have an existing conferencing tool, we recommend keep it available until Calls is stable in your production environment.
+
+### Preparation and Communication
+
+Before announcing Calls to users, create a `calls-support` public channel. This gives users a place to report issues and lets you track problems during rollout.
+
+Additionally, you should prepare a brief communication to users that get shared in an all-hands channel for broader awareness. A message template is provided below:
+
+<details open>
+<summary>Production rollout communication template</summary>
 
 ```markdown
-## Mattermost Calls is available
+## Mattermost Calls rollout
 
-You can now start audio calls directly from Mattermost and share your screen without leaving the platform.
+We're enabling Mattermost Calls across this server. Starting today, you can start audio calls in select channels directly within Mattermost — no need to switch to a separate tool.
+
+We're rolling out gradually, starting with a select set of channels before expanding to everyone.
+
+**Calls features**
+
+- Start or join 1:1 and group audio calls
+- Share your screen from the desktop app or browser
+- Record calls and generate transcripts
+- Use live captions during recorded calls
+
+You can learn more about Mattermost calls in their [documentation](https://docs.mattermost.com/end-user-guide/collaborate/make-calls.html).
 
 **How to start a call**
 
-Select **Start call** in the channel header. Anyone in that channel can join.
-
-**What is available**
-
-- audio calls
-- screen sharing
-- group calls, if enabled for your deployment
-- recording, transcription, and live captions, if enabled for your deployment
+Select **Start call** in the channel header. Anyone in the channel can join.
 
 **Things to know**
 
-- the first time you join, your browser or desktop app may ask for microphone permission
-- screen sharing may also require screen capture permission
-- if you need help, post in `#calls-help`
-```
+- We recommend updating your [desktop and mobile apps](https://mattermost.com/apps/) to the latest version
+- Your browser or desktop app may ask for microphone or camera permission the first time you join a call.
+- Screen sharing may also require a screen capture permission prompt.
 
+**Need help?**
+
+Post in `~calls-support` and include what you were trying to do, what happened, and a screenshot if possible.
+```
 </details>
 
-### 6.3 Roll out in waves
+### 6.4 Rollout Stages
 
-#### 6.3.1 Wave 1
+We recommend enabling Calls in stages instead of enabling it everywhere at once. This way you can watch real usage, catch problems early, and rollback cleanly if needed.
 
-Enable Calls in IT or admin channels first.
+| Stage | Channels / departments | Suggested timeline | Rollback approach |
+|---|---|---|---|---|
+| Wave 1 | IT and Admin channels | Days 1–3 | Per-channel rollback |
+| Wave 2 | Engineering or power user channels | Days 4–7 | Per-channel rollback |
+| Wave 3 | Full organization | Day 8+ | Test mode (if issues are isolated) or full rollback |
 
-Use this wave to confirm:
+Do not advance to the next stage until the current one is stable. If you stay on Integrated Calls and see sustained media load during rollout, plan a move to RTCD before expanding further.
 
-- support staff know how Calls works
-- internal admins know where to look when users report problems
+### 6.5 Monitor and optimize
 
-#### 6.3.2 Wave 2
+Once Calls is live, monitor it actively for the first two weeks and tune based on what you see.
 
-If the admin-only validation is stable, switch the deployment from **test mode** to **live mode**, then enable Calls in engineering or power-user channels.
+**6.5.1: Watch server health during peak call hours**
 
-Use this wave to gather broader feedback from users who are likely to try more edge cases.
+Monitor CPU and memory on the media server (RTCD or Mattermost server) daily during peak usage. If CPU utilization consistently exceeds 70%, consider increasing hardware specs, or adding RTCD nodes before the next rollout stage.
 
-#### 6.3.3 Wave 3
+**6.5.2: Review logs daily**
 
-When the earlier waves are stable, expand rollout to the rest of the organization.
+Check Mattermost, RTCD, and calls-offloader logs each day for recurring `ERROR` or `WARN` lines. Address any patterns before they become user-facing problems.
 
-### 6.4 Watch the rollout
+**6.5.3: Tune Max Call Participants**
 
-During each wave, watch:
+If you see resource pressure during large calls, lower **Max Call Participants** in **System Console > Plugins > Calls**. The default is unlimited (`0`); the recommended ceiling is `50`.
 
-- call volume
-- repeated user complaints about joining or audio quality
-- recurring RTC errors
-- CPU and memory on the media service
-- recording and transcription job failures, if enabled
+**6.5.4: Track user-reported issues**
 
-If you stay on integrated Calls and see sustained media load during rollout, plan a move to RTCD before you expand usage further.
+Monitor `#calls-support` for recurring complaints.
 
-Do not move to the next wave until the current one is stable.
+Check [Appendix A: Troubleshooting](#appendix-a-troubleshooting) for common issues and fixes.
 
-### 6.5 Rollback plan
-
-If something goes wrong, choose the smallest rollback that solves the problem.
-
-**Per-channel rollback**
-
-1. Open the affected channel menu.
-2. Select **Disable calls**.
-
-**Return to test mode**
-
-1. Go to **System Console > Plugins > Calls**.
-2. Switch the deployment back to test mode.
-
-**Full rollback**
-
-1. Go to **System Console > Plugins > Plugin Management**.
-2. Disable the Calls plugin.
-
-Keep your existing conferencing option available until Calls is stable in production for your environment.
 
 ---
 
