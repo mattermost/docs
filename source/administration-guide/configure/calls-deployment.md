@@ -210,7 +210,7 @@ Your media server is the Mattermost server in the case of an **Integrated** Call
 
 **STUN Decision Tree**
 
-1. **Are all users and your media server (Mattermost server or RTCD) in the same private network, VPN, or air-gapped environment (no outside clients)?**
+1. **Are all users and your media server (Mattermost server or RTCD) are in the same private network, VPN, or air-gapped environment (no outside clients)?**
    - **Yes**: You do not need STUN. You will use the private address of your media server for configuration in Phase 2.
    - **No**: Continue to the next question. 
 
@@ -326,8 +326,8 @@ First, you'll have to install `nmap` on each machine you'll run checks from usin
 When you excute each check below, `nmap` will return `open`, `closed` or `filtered`.
 
 **Pass**:
-- `open`: Port is reachable and the service is listeneing. Expected if you've already installed the RTCD or `calls-offloader` services)
-- `closed`: Port is reachable but the service has not yet been installed. Expected if you just provisioned the machines in Step 1.4)
+- `open`: Port is reachable and the service is running. Expected if you've already installed the RTCD or `calls-offloader` services (Phase 3-4).
+- `closed`: Port is reachable but the service is not running. Expected if you just provisioned the infrastructure in Step 1.4.
 **Fail**: 
 - `filtered`: Firewall is blocking the port. Revisit your networking configuration in Step 1.5 before continuing.
 
@@ -335,7 +335,7 @@ When you excute each check below, `nmap` will return `open`, `closed` or `filter
 
 Run from a client machine on the same network as your users:
 
-| Check | Command | Replace `TARGET_IP` with | Description |
+| Check | Command | `TARGET_IP` | Description |
 |---|---|---|---|
 | 1.6.2 | `sudo nmap -sU -p 8443 TARGET_IP` | Mattermost server IP | Clients can send UDP media to the Mattermost server |
 | 1.6.3 | `nmap -p 8443 TARGET_IP` | Mattermost server IP | Clients can reach the Mattermost server for TCP media fallback |
@@ -344,434 +344,277 @@ Run from a client machine on the same network as your users:
 
 Run from a client machine on the same network as your users:
 
-| Check | Command | Replace `TARGET_IP` with | Description |
+| Check | Command | `TARGET_IP` | Description |
 |---|---|---|---|
 | 1.6.4 | `sudo nmap -sU -p 8443 TARGET_IP` | RTCD server IP | Clients can send UDP media to the RTCD server |
 | 1.6.5 | `nmap -p 8443 TARGET_IP` | RTCD server IP | Clients can reach the RTCD server for TCP media fallback |
 
 Run from the Mattermost server:
 
-| Check | Command | Replace `TARGET_IP` with | Description |
+| Check | Command | `TARGET_IP` | Description |
 |---|---|---|---|
 | 1.6.6 | `nmap -p 8045 TARGET_IP` | RTCD server IP | Mattermost can reach the RTCD API |
 
-**Recording deployments** — run from the Mattermost server:
+**Recording deployments**
 
-| Check | Command | Replace `TARGET_IP` with | Description |
+Run from the Mattermost server:
+
+| Check | Command | `TARGET_IP` | Description |
 |---|---|---|---|
 | 1.6.7 | `nmap -p 4545 TARGET_IP` | calls-offloader server IP | Mattermost can reach the calls-offloader API |
 
-#### 1.6.8 Final checklist
+Run from the calls-offloader server:
 
-- [ ] Clients can reach the media service on UDP `8443`.
-- [ ] Clients can reach the media service on TCP `8443` if you plan to rely on TCP fallback.
-- [ ] Mattermost can reach RTCD on TCP `8045` — if using RTCD.
-- [ ] Mattermost can reach calls-offloader on TCP `4545` — if using calls-offloader.
-- [ ] If using STUN, confirm the media service can reach `stun.global.calls.mattermost.com` on UDP `3478` — validated in Phase 2 when you verify the plugin advertises the correct public IP.
+| Check | Command | `TARGET_IP` | Description |
+|---|---|---|---|
+| 1.6.8 | `sudo nmap -sU -p 8443 TARGET_IP` | RTCD server IP | `calls-offloader` can send UDP media to the media service to join calls for recording |
+| 1.6.9 | `nmap -p 8443 TARGET_IP` | RTCD server IP | `calls-offloader` can reach the media service for TCP media fallback |
+| 1.6.10 | `nmap -p 443 TARGET_IP` | Mattermost server IP | `calls-offloader` can post recordings back to Mattermost |
 
-Before you leave Phase 1, plan at least one **real client-side test** in Phase 2 or Phase 5 from the same type of network your users will actually use, such as office LAN, home internet, VPN, or mobile data.
+**TURN deployments**
 
-````{dropdown} If nmap is not available
-If you cannot install `nmap`, you can use `nc` instead. Unlike `nmap`, `nc` requires a temporary listener running on the target server before the check can work.
+Run from a client machine on the same network as your users:
 
-Install `nc`:
+| Check | Command | `TARGET_IP` | Description |
+|---|---|---|---|
+| 1.6.11 | `sudo nmap -sU -p 3478 TARGET_IP` | TURN server IP | Clients can reach the TURN server on UDP 3478 |
+| 1.6.12 | `nmap -p 3478 TARGET_IP` | TURN server IP | Clients can reach the TURN server on TCP 3478 |
+| 1.6.13 | `nmap -p 5349 TARGET_IP` | TURN server IP | Clients can reach the TURN server over TLS (only if you configured TLS on coturn) |
+| 1.6.14 | `sudo nmap -sU -p 49152 TARGET_IP` | TURN server IP | Spot check of the TURN relay port range |
 
-- Ubuntu or Debian: `sudo apt install netcat-openbsd`
-- RHEL or CentOS: `sudo dnf install nmap-ncat`
-
-**For TCP checks** (8443, 8045, 4545): On the target server, start a listener on the port you're testing:
-
-```bash
-nc -l -p PORT
+```{important}
+**Do not proceed to Phase 2 until all checks in this section relevant to your deployment architecture are passing. If any check fails, go to [Appendix A: Troubleshooting](#appendix-a-troubleshooting).**
 ```
-
-Then from the source machine:
-
-```bash
-nc -zv TARGET_IP PORT
-```
-
-Pass: `Connection to ... succeeded`
-
-Fail: `Connection refused` (nothing is listening — the firewall is open, start the listener first) or timeout (firewall is blocking — fix before proceeding).
-
-**For UDP 8443**: On the media server, start a UDP listener:
-
-```bash
-nc -lu 8443
-```
-
-Then from a client machine:
-
-```bash
-nc -u TARGET_IP 8443
-```
-
-Type a short message and press Enter. If it appears on the server, the port is open. Stop listeners with `Ctrl+C`.
-````
 
 ---
 
-## Phase 2: Configure and validate integrated Calls
+## Phase 2: Configure Integrated Calls
 
-### 2.1 Overview
+You will start by deploying Calls using the Integrated architecture, even if you plan to use RTCD or `calls-offloader` services. This approach gives you a clean baseline: if Calls does not work using the simplest deployment method, the problem is usually networking, firewall rules, or plugin configuration. It is much easier to isolate those problems before you add RTCD or `calls-offloader` in later phases.
 
-Start here even if you know you want RTCD later.
+### 2.1 Prerequisites
 
-That gives you a clean baseline: if Calls does not work in integrated mode, the problem is usually networking, NAT, firewall rules, or plugin configuration. It is much easier to isolate those problems before you add RTCD or calls-offloader.
+- [ ] Phase 1 networking checks passed (1.6.1-1.6.14)
+- [ ] Two test accounts on your Mattermost instance
+- [ ] System Admin permissions on your Mattermost instance
 
-### 2.2 Prerequisites
+### 2.2 Configure the Calls plugin
 
-- [ ] Phase 1 passed
-- [ ] You have at least two Mattermost test accounts
-- [ ] You have System Admin access
+The Calls plugin is prepackaged with Mattermost self-hosted deployments. Go to **System Console > Plugins > Calls > Settings** and complete the following steps:
 
-### 2.3 Configure the Calls plugin
+**2.2.1: Enable the plugin**
 
-The Calls plugin is prepackaged with Mattermost self-hosted deployments.
+Set **Enable Plugin** to `true`. This enables editing for the rest of the configuration settings on the page.
 
-#### 2.3.1 Enable the plugin
+**2.2.2: Put the deployment in test mode**
 
-Go to **System Console > Plugins > Calls** and confirm the plugin is enabled.
+Set **Test mode** to `on`. This ensures System Admins must enable Calls in individual channels before end users can access the feature.
 
-If it is disabled, go to **System Console > Plugins > Plugin Management**, find **Calls**, and enable it.
+**2.2.3: Configure the host media address**
 
-#### 2.3.2 Put the deployment in test mode
+Set **ICE Host Override** to the IP address clients will use to reach the media service. This is based on the STUN decision tree you completed in Step 1.3.1.
 
-Use the **Test mode** setting in **Plugins > Calls** so you can validate Calls before switching to live mode for all users.
+- If your users are in an private network, VPN, or air-gapped environment, set it to the private address of the Mattermost server they can reach.
+- If your Mattermost server has a stable public IP, set it to that IP.
+- Otherwise, leave it empty for automatic public address discovery using STUN.
 
-When the deployment is in test mode:
+**2.2.4: Configure TURN Servers**
 
-- system admins can validate Calls first
-- users are prompted to contact a system admin instead of starting calls broadly
-
-#### 2.3.3 Set the participant limit for testing
-
-Set **Max call participants** to `50`.
-
-Why this matters:
-
-- the default is `0`, which means unlimited
-- the recommended maximum is `50`
-- setting it now prevents accidental oversized tests while you validate the deployment
-
-#### 2.3.4 Configure the advertised media address
-
-If you are using integrated Calls, use the Calls plugin settings below to tell clients how to reach the media service.
-
-**ICE** is the part of WebRTC that helps clients discover which address and port to use for media traffic.
-
-- **ICE Host Override**: Use this when you want to advertise a specific IP address or hostname to clients instead of relying on automatic discovery through STUN.
-- **ICE Host Port Override**: Use this if clients must connect on a different external port than the one the service listens on locally.
-- **ICE server configurations**: Use this for STUN and TURN configuration.
-
-Use the following rules:
-
-- If your Mattermost server has a stable public IP that clients can reach, set **ICE Host Override** to that IP.
-- If your users are all on a private network or VPN, set **ICE Host Override** to the private address they can actually reach.
-- If you want the service to discover its own public address, leave **ICE Host Override** empty and use STUN.
-- If you use a hostname instead of an IP, verify that DNS resolution on the Mattermost host matches what clients will actually reach. When in doubt, use an IP address directly.
-
-```{note}
-`ICE Host Override` only applies when you are hosting media through the plugin itself. Once you move Calls media to RTCD in Phase 3, RTCD handles its own media address configuration.
-```
-
-#### 2.3.5 Configure STUN or TURN
-
-The default **ICE server configurations** value is:
-
-```json
-[{"urls":["stun:stun.global.calls.mattermost.com:3478"]}]
-```
-
-If you need TURN, use a JSON array such as:
+If TURN is being used, replace or extend the **ICE server configurations** array with your TURN server details:
 
 ```json
 [
   {
     "urls": ["turn:turn.example.com:3478"],
-    "username": "REPLACE_ME_USERNAME",
-    "credential": "REPLACE_ME_PASSWORD"
+    "username": "<USERNAME>",
+    "credential": "<PASSWORD>"
   }
 ]
 ```
 
-Use `credential` (singular) in the JSON. Replace the example values with your real TURN credentials.
+If your TURN deployment uses short-lived generated credentials, also set **TURN Static Auth Secret** and **TURN Credentials Expiration**.
 
-If your TURN deployment uses generated short-lived credentials, also configure:
+**2.3.5: Save configuration**
 
-- **TURN Static Auth Secret**
-- **TURN Credentials Expiration**
-
-#### 2.3.6 Save and restart the plugin if needed
-
-Some network-facing Calls settings require a plugin restart to take effect. After changing **ICE Host Override**, **ICE Host Port Override**, or similar media settings:
+Click **Save** on the Calls settings page. It is generally also recommended restart the plugin after changing media server settings:
 
 1. Go to **System Console > Plugins > Plugin Management**.
-2. Disable **Calls**.
-3. Wait a few seconds.
-4. Enable **Calls** again.
+2. Disable **Calls** and wait a few seconds.
+3. Enable **Calls** again.
 
-### 2.4 Create a small test channel
+### 2.4 Verification Checks
 
-#### 2.4.1 Create the channel
+Now you can move to smoke testing your Calls deployment with your test accounts. Specifically,
 
-Create a test channel such as `calls-test`.
+- Create a test channel such as `calls-test`. 
+- Open the **Channel menu**, then select **Enable calls**.
+- Invite your test users into the channel so you can validate a real call.
 
-#### 2.4.2 Enable Calls in that channel
+| Check | Action | Pass criteria |
+|---|---|---|
+| 2.4.1 | Start a call from the test channel with a second user | Both users are in the call |
+| 2.4.2 | Speak during the call | Both users can hear each other clearly |
+| 2.4.3 | Share your screen from a desktop app or supported browser | Screen sharing is visible to the other user |
+| 2.4.4 | End the call | The call indicator disappears from the channel |
 
-From the channel header:
-
-1. Open the channel menu.
-2. Select **Enable calls**.
-
-#### 2.4.3 Add your test users
-
-Add at least two users so you can validate a real call.
-
-### 2.5 Verification gate
-
-Do not continue until all of the following pass.
-
-- [ ] **2.V1** Start a call from the test channel and confirm that a second user can join.
-- [ ] **2.V2** Confirm both users can hear each other clearly.
-- [ ] **2.V3** Confirm screen sharing works from a desktop app or supported browser.
-- [ ] **2.V4** End the call cleanly and confirm the call indicator disappears.
-- [ ] **2.V5** Run `/call stats` immediately after the test call and save the output for your deployment notes.
-
-If any of these checks fail, stop here and go to [Appendix A: Troubleshooting](#appendix-a-troubleshooting).
+```{important}
+**Do not continue until all of the checks pass. If any check fails, go to [Appendix A: Troubleshooting](#appendix-a-troubleshooting).**
+```
 
 ---
 
-## Phase 3: Add RTCD
+## Phase 3: Install and Configure RTCD
 
-### 3.1 Overview
+Now that you've verified a basic Integrated Calls deployment, you can add RTCD to move media handling off the Mattermost server.
 
-RTCD moves media handling off the Mattermost server. That improves isolation and gives you a better path for production scaling.
+**You can skip this phase if you are using Integrated Calls only.**
 
-Skip this phase if you are staying with integrated Calls.
+### 3.1 Prerequisites
 
-### 3.2 Prerequisites
+- [ ] RTCD server is provisioned (1.4) and networking checks passed (1.6.1-1.6.14)
+- [ ] Integrated Calls deployment checks passed (2.4.1-2.4.4)
+- [ ] Mattermost Enterprise or Enterprise Advanced license is active on your server
 
-- [ ] Phase 2 passed
-- [ ] Mattermost Enterprise license is active
-- [ ] RTCD server is provisioned
-- [ ] Mattermost can reach RTCD on TCP `8045`
-- [ ] Clients can reach the RTCD media ports on `8443`
 
-### 3.3 Install and configure RTCD
+### 3.3 Install RTCD
 
-Follow the [RTCD Setup and Configuration](calls-rtcd-setup.md) guide for the actual installation.
+Follow the [RTCD Setup and Configuration](calls-rtcd-setup.md) guide for the actual installation. The guide covers:
 
-That guide covers:
-
-- binary or Docker installation
+- Binary or Docker installation
 - `rtcd.toml` configuration
-- service setup
-- TURN configuration
-- validation with `curl http://HOST:8045/version` (or `https://` if you enabled TLS)
-- horizontal scaling
+- Service setup
+- TURN configuration (if applicable)
 
-If RTCD is behind NAT or a load balancer, configure its advertised media address in `rtcd.toml` before continuing.
+Before proceeding, run these checks from the Mattermost server to verify your RTCD service is running and accessible:
 
-When you move media handling to RTCD, configure the **media-plane** address and TURN/STUN settings in `rtcd.toml`. The plugin's client-facing ICE settings still matter for what gets sent to clients, so keep the plugin and RTCD settings aligned.
+| Check | Command | Pass criteria |
+|---|---|---|
+| 3.3.1 | `nmap -p 8045 YOUR_RTCD_SERVER` | `open` — RTCD is running and accepting connections. |
+| 3.3.2 | `curl http://YOUR_RTCD_SERVER:8045/version` | Returns a JSON version string |
 
 ### 3.4 Connect Mattermost to RTCD
 
-From the Mattermost server, verify the RTCD API first. If you enabled TLS on the RTCD API, use `https://` instead of `http://`:
-
-```bash
-curl http://YOUR_RTCD_SERVER:8045/version
-```
-
-Pass:
-
-- you receive JSON version information
-
-Then configure Mattermost:
+Once you have completed installation, configuration and validation of your RTCD service, you will update the Calls plugin configuration settings to use it:
 
 1. Go to **System Console > Plugins > Calls**.
-2. Set **RTCD Service URL** to your RTCD address, for example `http://rtcd.internal:8045`.
-3. If RTCD credentials were generated during setup, include them in the URL or use `MM_CALLS_RTCD_CLIENT_ID` and `MM_CALLS_RTCD_AUTH_KEY` on the Mattermost server.
-4. Save the setting.
-5. Restart the Calls plugin so the change takes effect.
+2. Set **RTCD Service URL** to your RTCD address. If RTCD credentials were generated during setup, embed them directly in the URL:
 
-```{note}
-The `RTCD Service URL` setting supports credentials in the form `http://clientID:authKey@hostname`. The first connection self-registers the client and stores the authentication key in the database.
-```
+   ```
+   http://clientID:authKey@rtcd.internal:8045
+   ```
 
-### 3.5 Set up monitoring before the pilot
+   Replace `clientID` and `authKey` with the values generated during RTCD setup. The first connection to RTCD self-registers the client and stores the authentication key in the database.
+   
+   Alternatively, set credentials via environment variables on the Mattermost server: `MM_CALLS_RTCD_CLIENT_ID` and `MM_CALLS_RTCD_AUTH_KEY`.
+
+3. Click **Save** and restart the Calls plugin so the change takes effect.
+
+
+### 3.5 Configure Calls Monitoring
 
 Before your pilot, set up Calls monitoring so you can see sessions, errors, CPU, and memory while real users are testing.
 
 See [Calls Metrics and Monitoring](calls-metrics-monitoring.md) for:
 
-- Prometheus scrape configuration
+- Prometheus configuration
 - RTCD metrics on `http://RTCD_SERVER:8045/metrics`
 - Calls plugin metrics on `http://MATTERMOST_SERVER:8067/plugins/com.mattermost.calls/metrics`
-- Grafana dashboard ID `23225`
+- Grafana visualization using dashboard ID `23225`
 
-```{note}
-The Calls plugin metrics endpoint depends on Mattermost performance monitoring being enabled. Port `8067` is the default performance listener and may be different in your environment.
+### 3.6 Verification Checks
+
+Now you can move to smoke testing your RTCD Calls deployment with your test accounts. Specifically,
+
+| Check | Action | Pass criteria |
+|---|---|---|
+| 3.6.1 | Start a call from the test channel with a second user | Both users are in the call |
+| 3.6.2 | Speak during the call | Both users can hear each other clearly |
+| 3.6.3 | Share your screen from a desktop app or supported browser | Screen sharing is visible to the other user |
+| 3.6.4 | End the call | The call indicator disappears from the channel |
+
+```{important}
+**Do not continue until all of the checks pass. If any check fails, go to [Appendix A: Troubleshooting](#appendix-a-troubleshooting).**
 ```
-
-### 3.6 Verification gate
-
-**3.V0 — Confirm RTCD is listening on TCP 8045**
-
-Run this from the Mattermost server to confirm RTCD started successfully and is accepting connections:
-
-```bash
-nc -zv YOUR_RTCD_SERVER 8045
-```
-
-Pass: `Connection to ... succeeded`
-
-Fail: `Connection refused` — RTCD is not running or not listening. Check the RTCD service logs before proceeding. If you get a timeout instead of "Connection refused", the firewall path was not properly verified in Step 1.6.4 — go back and fix that first.
-
-- [ ] **3.V1** `curl http://YOUR_RTCD_SERVER:8045/version` returns a version string from the Mattermost server (or `https://` if you enabled TLS).
-- [ ] **3.V2** Two users can complete an audio call after `RTCD Service URL` is set.
-- [ ] **3.V3** Screen sharing works after `RTCD Service URL` is set.
-- [ ] **3.V4** `/call stats` after the test call shows a healthy negotiated connection.
-- [ ] **3.V5** RTCD logs or metrics show activity during the test call.
-
-If these checks fail:
-
-- confirm TCP `8045` from Mattermost to RTCD
-- confirm UDP and TCP `8443` from clients to RTCD
-- confirm the Calls plugin was restarted after the URL change
 
 ---
 
 ## Phase 4: Add calls-offloader for recording, transcription, and live captions
 
-### 4.1 Overview
+`calls-offloader` is the job service that handles call recording, transcription, and live captions. You can add it after Phase 2 on Integrated Calls or after Phase 3 on RTCD. For most production environments, pair it with RTCD.
 
-`calls-offloader` is the job service used for:
+**You can skip this phase if you do not need recording, transcription, or live captions.**
 
-- call recording
-- call transcription
-- live captions (experimental)
+### 4.1 Prerequisites
 
-You can add it after Phase 2 on integrated Calls or after Phase 3 on RTCD. For most production environments, pair it with RTCD.
+- [ ] `calls-offloader` server is provisioned (1.4) and networking checks passed (1.6.1-1.6.14)
+- [ ] RTCD verification checks passed (3.6.1-3.6.4)
+- [ ] Mattermost Enterprise or Enterprise Advanced license is active on your server
 
-### 4.2 Prerequisites
+### 4.2 Install calls-offloader
 
-- [ ] Phase 2 passed
-- [ ] If you are using RTCD, Phase 3 also passed
-- [ ] Mattermost Enterprise license is active
-- [ ] calls-offloader server is provisioned
-- [ ] Docker is installed and running on the calls-offloader server
-- [ ] The calls-offloader service account can use Docker
-- [ ] Mattermost can reach the job service on TCP `4545`
-- [ ] You have planned storage for recordings
+Follow the [Calls Offloader Setup and Configuration](calls-offloader-setup.md) guide for installation. The guide covers:
 
-Storage estimates from the offloader guide:
-
-| Recording quality | Approximate storage per hour | Approximate storage per minute |
-|---|---|---|
-| Low | 0.5 GB | 8 MB |
-| Medium | 0.7 GB | 12 MB |
-| High | 1.2 GB | 20 MB |
-
-Audio-only recordings consume approximately `1 MB` per minute per participant.
-
-```{note}
-Live captions require both recording and transcription to be enabled.
-```
-
-### 4.3 Install and configure calls-offloader
-
-Follow the [Calls Offloader Setup and Configuration](calls-offloader-setup.md) guide for installation.
-
-That guide covers:
-
-- binary installation
-- `config.toml`
-- systemd service setup
+- Binary installation
+- `config.toml` configuration
+- Systemd service setup
 - Docker-backed jobs
-- private network overrides
-- air-gapped installation
+- Private network overrides
+- Air-gapped installation
 
-### 4.4 Connect calls-offloader to Mattermost
+Before proceeding, run these checks from the Mattermost server to verify calls-offloader is running and accessible:
 
-From the Mattermost server, verify the API first. If you enabled TLS on the offloader API, use `https://` instead of `http://`:
+| Check | Command | Pass criteria |
+|---|---|---|
+| 4.2.1 | `nmap -p 4545 YOUR_OFFLOADER_SERVER` | `open` — calls-offloader is running and accepting connections. |
+| 4.2.2 | `curl http://YOUR_OFFLOADER_SERVER:4545/version` | Returns a JSON version string |
 
-```bash
-curl http://YOUR_OFFLOADER_SERVER:4545/version
-```
-
-Then configure Mattermost:
+### 4.3 Connect calls-offloader to Mattermost
 
 1. Go to **System Console > Plugins > Calls**.
 2. Set **Job Service URL** to the calls-offloader address, for example `http://calls-offloader.internal:4545`.
 3. Enable **Call Recordings** if needed.
-4. Enable **Call Transcriptions** if needed. Transcriptions require recordings.
-5. Enable **Live Captions** if needed. Live captions require both recordings and transcriptions.
-6. Save the settings.
-7. Restart the Calls plugin. This is required for `Job Service URL` and recording-related changes to take effect cleanly.
+4. Enable **Call Transcriptions** if needed. Transcriptions require recordings to be enabled.
+5. Enable **Live Captions** if needed. Live captions require both recordings and transcriptions to be enabled.
+6. Click **Save** and restart the Calls plugin so the change takes effect.
 
-If your recorder or transcriber jobs must reach Mattermost on a different internal address than users do, configure these on the **Mattermost server**:
+### 4.4 Verification Checks
 
-- `MM_CALLS_RECORDER_SITE_URL`
-- `MM_CALLS_TRANSCRIBER_SITE_URL`
+Now you can move to smoke testing your Calls deployment with recording using your test accounts. Specifically,
 
-See the offloader guide for that private network setup.
+| Check | Action | Pass criteria |
+|---|---|---|
+| 4.5.2 | During a call, start a recording as a call host | Recording starts without error. |
+| 4.5.3 | End the call or stop the recording | An MP4 file appears in the call thread after processing is complete. |
+| 4.5.4 | With transcription enabled, end a recorded call | A MP4 file and transcript file appear in the call thread after processing is complete. |
+| 4.5.5 | With live captions enabled, start a recorded call | Captions appear during the call within 1-3 seconds after participants speak. |
 
-### 4.5 AI meeting summaries
-
-If you want AI-generated meeting summaries from call transcripts, configure Mattermost AI separately. See [Enable Copilot](https://docs.mattermost.com/configure/enable-copilot.html).
-
-### 4.6 Verification gate
-
-**4.V0 — Confirm calls-offloader is listening on TCP 4545**
-
-Run this from the Mattermost server to confirm calls-offloader started successfully and is accepting connections:
-
-```bash
-nc -zv YOUR_OFFLOADER_SERVER 4545
+```{important}
+**Do not continue until all of the checks pass. If any check fails, go to [Appendix A: Troubleshooting](#appendix-a-troubleshooting).**
 ```
-
-Pass: `Connection to ... succeeded`
-
-Fail: `Connection refused` — calls-offloader is not running or not listening. Check the calls-offloader service logs before proceeding. If you get a timeout instead of "Connection refused", the firewall path was not properly verified in Step 1.6.5 — go back and fix that first.
-
-- [ ] **4.V1** `curl http://YOUR_OFFLOADER_SERVER:4545/version` returns a version string from the Mattermost server (or `https://` if you enabled TLS).
-- [ ] **4.V2** A test call still works normally after the job service is configured.
-- [ ] **4.V3** A host can start a recording.
-- [ ] **4.V4** The MP4 recording appears in the call thread after recording stops.
-- [ ] **4.V5** If transcription is enabled, the transcript file appears after the recording finishes.
-- [ ] **4.V6** If live captions are enabled, captions appear during a recorded call.
-
-If these checks fail, go to [A.5 Recording, transcription, or captions are failing](#a5-recording-transcription-or-captions-are-failing).
 
 ---
 
 ## Phase 5: Pilot rollout
 
-### 5.1 Overview
+Now that the technical configuration is complete and validated, run a small pilot with real users before broad rollout. The goal is to confirm Calls works reliably across the clients and locations your organization uses, and that your servers stay healthy under normal usage.
 
-Now that the technical configuration is validated, run a small pilot with real users before broad rollout.
-
-The goal of the pilot is to answer three questions:
-
-1. Does Calls work reliably for real users?
-2. Does it work across the clients and locations your organization uses?
-3. Do your servers and network stay healthy under normal usage?
-
-### 5.2 Prerequisites
+### 5.1 Prerequisites
 
 - [ ] Phase 2 passed
 - [ ] Phase 3 passed if using RTCD
 - [ ] Phase 4 passed if using calls-offloader
-- [ ] You have 5 to 10 pilot users from different locations and client types
-- [ ] Pilot users have current Mattermost desktop or mobile apps
+- [ ] You have 5 to 10 pilot users from different locations
+- [ ] Pilot users have current [Mattermost desktop and mobile apps](https://mattermost.com/apps/)
 
-### 5.3 Prepare the pilot channel and message
+### 5.2 Prepare the pilot channel
 
-Create a pilot channel such as `calls-pilot`, enable Calls in that channel, and post the following message.
+**5.2.1: Create the pilot channel**
 
-If test mode is still enabled, have a **system admin** start each pilot call.
+Create a channel such as `calls-pilot` and enable Calls in it. If test mode is still enabled, a system admin must start each call.
+
+**5.2.2: Post the pilot message**
+
+Send pilot users the following message so they know what to test and how to report issues.
 
 <details>
 <summary>Click to expand the pilot message template</summary>
@@ -812,29 +655,37 @@ Reply in this channel with:
 
 </details>
 
-### 5.4 What to watch during the pilot
+### 5.3 What to watch during the pilot
 
-Use your monitoring and logs to watch the following:
+Monitor the following while pilot calls are running:
 
-- **Active sessions and participants**: The Calls metrics guide exposes session and participant data so you can confirm calls are being counted.
-- **RTC errors**: Watch `rtcd_rtc_errors_total` or the equivalent Calls plugin metrics if you are using integrated mode.
-- **CPU and memory**: Use RTCD process metrics such as `rtcd_process_cpu_seconds_total` and `rtcd_process_resident_memory_bytes`, or the equivalent plugin metrics in integrated mode.
-- **Service logs**: Watch Mattermost, RTCD, and calls-offloader for recurring `ERROR` or `WARN` lines during pilot sessions.
+- **Active sessions and participants**: Confirm calls are being counted in your Calls metrics.
+- **RTC errors**: Watch `rtcd_rtc_errors_total` (RTCD) or the equivalent Calls plugin metrics in integrated mode.
+- **CPU and memory**: Watch `rtcd_process_cpu_seconds_total` and `rtcd_process_resident_memory_bytes` (RTCD) or the equivalent plugin metrics in integrated mode.
+- **Service logs**: Watch Mattermost, RTCD, and calls-offloader logs for recurring `ERROR` or `WARN` lines.
 
-If you do not have Prometheus and Grafana set up yet, monitor Mattermost, RTCD, and calls-offloader logs during the pilot instead.
+If you do not have Prometheus and Grafana set up yet, tail the service logs directly during pilot sessions.
 
-### 5.5 Verification gate
+### 5.4 Verification Checks
 
-- [ ] **5.V1** Two users complete a 1:1 audio call successfully.
-- [ ] **5.V2** At least one group call with 3 or more users completes successfully.
-- [ ] **5.V3** At least one pilot call lasts 15 minutes or longer without unexpected drops.
-- [ ] **5.V4** Screen sharing works from a desktop app or browser.
-- [ ] **5.V5** At least one user joins from outside the main office network, if that matches your deployment.
-- [ ] **5.V6** At least one user joins on mobile.
-- [ ] **5.V7** If recording is enabled, recording works during the pilot.
-- [ ] **5.V8** If transcription is enabled, transcription works during the pilot.
-- [ ] **5.V9** If live captions are enabled, captions work during the pilot.
-- [ ] **5.V10** The admin has saved at least one `/call stats` sample from a successful pilot call.
+Do not continue until all of the following pass. If any check fails, go to [Appendix A: Troubleshooting](#appendix-a-troubleshooting).
+
+| Check | Action | Pass criteria |
+|---|---|---|
+| 5.4.1 | Two pilot users complete a 1:1 audio call | Both users can hear each other clearly for the duration of the call |
+| 5.4.2 | Run a group call with at least 3 pilot users | All participants can hear each other clearly |
+| 5.4.3 | Run a call lasting 15 minutes or longer | No unexpected drops or audio degradation |
+| 5.4.4 | Share your screen from a desktop app or browser during a pilot call | Screen sharing is visible to other participants |
+| 5.4.5 | Have at least one user join from outside the main office network (home, VPN, or mobile data) | Call quality is acceptable from that network |
+| 5.4.6 | Have at least one user join on mobile | Call joins and audio works on mobile |
+| 5.4.7 | If recording is enabled, start and stop a recording during a pilot call | MP4 file appears in the call thread |
+| 5.4.8 | If transcription is enabled, stop a recording | Transcript file appears after processing |
+| 5.4.9 | If live captions are enabled, run a recorded pilot call | Captions appear in real time for participants |
+| 5.4.10 | Run `/call stats` after a successful pilot call | Output is returned — save it for your deployment notes |
+
+```{important}
+**Do not continue until all checks pass.**
+```
 
 ---
 
