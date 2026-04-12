@@ -1,4 +1,4 @@
-# Deploy Mattermost Calls
+# Mattermost Calls Deployment Guide
 
 ```{include} ../../_static/badges/all-commercial.md
 ```
@@ -129,6 +129,25 @@ flowchart TD
     rtcd -->|UDP 8443 media| clients
     clients -->|TCP 8443 media fallback| rtcd
     rtcd -->|TCP 8443 media fallback| clients
+```
+
+```{mermaid}
+flowchart TB
+    clients["Clients
+    (Web / Desktop / Mobile)"] -->|"443 TCP - signaling and API"| mmServer["MM Server + Calls Plugin
+    (required)"]
+    clients -->|"8443 UDP/TCP - media"| mmServer
+    clients -.->|"8443 UDP/TCP - media"| rtcdSvc
+    mmServer -->|"8045 TCP - internal only"| rtcdSvc
+    mmServer -->|"4545 TCP - internal only"| offloaderSvc
+    
+    rtcdSvc["rtcd Service
+    (optional - Enterprise)"]
+    offloaderSvc["calls-offloader
+    (optional - Enterprise)"]
+    
+    style rtcdSvc stroke-dasharray: 5 5
+    style offloaderSvc stroke-dasharray: 5 5
 ```
 
 **When to use it**
