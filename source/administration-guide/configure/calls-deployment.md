@@ -95,20 +95,6 @@ flowchart TD
     clients -->|UDP/TCP 8443 media| mm
 ```
 
-```{mermaid}
-flowchart TD
-    clients["Clients\nWeb, Desktop, Mobile"]
-    mm["Mattermost Server\nCalls plugin"]
-    rtcd["RTCD Server"]
-
-    clients -->|TCP 443 signaling| mm
-    mm -->|TCP 8045 internal API| rtcd
-    clients -->|UDP 8443 media| rtcd
-    rtcd -->|UDP 8443 media| clients
-    clients -->|TCP 8443 media fallback| rtcd
-    rtcd -->|TCP 8443 media fallback| clients
-```
-
 **When to use it**
 
 - You are evaluating Calls for the first time.
@@ -143,25 +129,6 @@ flowchart TD
     rtcd -->|UDP 8443 media| clients
     clients -->|TCP 8443 media fallback| rtcd
     rtcd -->|TCP 8443 media fallback| clients
-```
-
-```{mermaid}
-flowchart TB
-    clients["Clients
-    (Web / Desktop / Mobile)"] -->|"443 TCP - signaling and API"| mmServer["MM Server + Calls Plugin
-    (required)"]
-    clients -->|"8443 UDP/TCP - media"| mmServer
-    clients -.->|"8443 UDP/TCP - media"| rtcdSvc
-    mmServer -->|"8045 TCP - internal only"| rtcdSvc
-    mmServer -->|"4545 TCP - internal only"| offloaderSvc
-    
-    rtcdSvc["rtcd Service
-    (optional - Enterprise)"]
-    offloaderSvc["calls-offloader
-    (optional - Enterprise)"]
-    
-    style rtcdSvc stroke-dasharray: 5 5
-    style offloaderSvc stroke-dasharray: 5 5
 ```
 
 **When to use it**
@@ -214,7 +181,7 @@ flowchart TD
 
 - **Mattermost server**: Calls plugin is pre-installed.
 - **RTCD Server**: Dedicated media service. Clients connect to it directly for media traffic.
-- **Calls Offloader**: Job service that manages recording and transcription. Spawns recorder and transcriber Docker containers that join calls as participants to capture media.
+- **Calls Offloader**: Job service that manages recording and transcription.
 
 ```{note}
 `calls-offloader` can also be added to an integrated Calls deployment without RTCD. This guide uses RTCD as the base because it is the recommended production path for most deployments.
@@ -270,175 +237,178 @@ TURN is typically a last resort as it adds additional networking and infrastruct
 
 Now you will provision the servers or VMs you'll need to support your Calls Deployment. You are only preparing infrastructure here; software installation and service configuration happen in later phases. This step is important because you'll need the IP addresses of these servers in order to configure networking in the next step.
 
-If you are operating in Integrated mode (Step 1.2) and you do not require a TURN server (Step 1.3.2), you can skip this step and proceed to network configuration. Otherwise, you will need to provision additional infrastructure:
+Infrastructure requirements are based on your deployment architecture chosen in Step 1.2. If you need to provision additional hardware, you should note the IP addresses of these servers for networking configuration in the next step:
 
-**RTCD Server**
+**Integrated**
+Since the Mattermost server is handling all media processing, you can skip this step and proceed to network configuration in Step 1.5.
 
+**RTCD**
+You will need to provision a new server for RTCD. Use **Appendix B.1** for benchmark examples of hardware sizing. The RTCD service supports [horizontal scaling](https://docs.mattermost.com/administration-guide/configure/calls-rtcd-setup.html#horizontal-scaling), but we recommend starting with one server, and then scaling out if your pilot or expected workload requires it.
 
-
-
-
-**Calls Offloader Server**
-
-
-
+**Recording**
+You will need to provision a new server for the `calls-offloader` service. The recommended starting point is **8 vCPU / 16 GB RAM**, or you can use **Appendix B.2** to estimate recording capacity and transcription load.
 
 **TURN Server**
+If you've determined in Step 1.3.2 that your users cannot reliably reach the media server over UDP or TCP `8443`, you will need to provision your TURN server now.
 
+Mattermost recommends installing [coturn](https://github.com/coturn/coturn).
 
-
-
-
-
-If you're unsure where to start, use these defaults:
-
-- **Integrated only**: No additional server.
-- **RTCD**: Start with **1 RTCD server**.
-- **Recording, transcription, or live captions**: Start with **1 `calls-offloader` server**.
-- **TURN**: Start with **1 TURN server** only if Section 1.3.2 indicated that you need TURN.
-
-| Component | Provision it when | How many to start with | Starter sizing guidance | Extra prerequisites |
-|---|---|---|---|---|
-| Integrated media service | You are using **Integrated** Calls only | No additional server | Use your existing Mattermost server. Validate capacity during Phase 2 and the pilot in Phase 5. | None |
-| RTCD | You selected **RTCD** because you expect more than 50 participants, want media off the Mattermost server, or are deploying on Kubernetes | 1 RTCD server | See **Appendix B.1** for benchmark examples. Start with one server, then scale out only if your pilot or expected workload requires it. | Plan the IP address or DNS name clients and Mattermost will use to reach RTCD |
-| `calls-offloader` | You need **recording, transcription, or live captions** | 1 `calls-offloader` server | Start with **8 vCPU / 16 GB RAM**. Use **Appendix B.2** and **B.3** to estimate recording capacity, transcription load, and starting `max_concurrent_jobs`. | Docker is required on the offloader host |
-| TURN | Section **1.3.2 TURN Server** indicated direct media is not reliable enough | 1 TURN server | Size TURN primarily for **relay bandwidth**, not CPU. See **Appendix B.4**. | Mattermost recommends [coturn](https://github.com/coturn/coturn) |
-
-Use these common combinations as a quick check:
-
-- **Integrated only**: No additional servers.
-- **RTCD only**: 1 RTCD server.
-- **Integrated + Recording**: 1 `calls-offloader` server.
-- **RTCD + Recording**: 1 RTCD server and 1 `calls-offloader` server.
-- **Any of the above + TURN**: Add 1 TURN server.
 
 Before moving to Step 1.5, confirm the following:
 
 - [ ] Every required server or VM has been created.
 - [ ] Every required server has the IP address or DNS name you plan to use later in configuration.
-- [ ] You have administrative access to every required server.
-- [ ] You have written down which server will be used for Mattermost, RTCD, `calls-offloader`, and TURN.
-- [ ] If you plan to use `calls-offloader`, Docker is available on that host before Phase 4.
-- [ ] You have chosen a starting size for each optional server based on Appendix B, even if you expect to adjust it after pilot testing.
+- [ ] You have administrative access to every required server. (test with `ssh <user>@<SERVER_IP>`)
 
 ### 1.5 Network Configuration
 
-Open the following ports before continuing.
+Here you'll find which network ports need to be opened for each server involved in your Calls deployment. Open the ports in the tables below on each server in your deployment. Work through one server at a time — open every port listed for that server before moving to the next.
 
-```{important}
-NGINX does not proxy UDP. The media port must be exposed directly on the server running the integrated Calls service or RTCD.
-```
+**How you open ports depends on your environment:**
+
+- **Cloud deployments (AWS, Azure, GCP):** Configure inbound and outbound rules in your cloud provider's security group or network ACL for each instance. This is done in the cloud console, not on the server itself. The instance must exist before you can configure its rules, which is why provisioning in Step 1.4 comes first.
+- **On-premises or self-managed VMs:** Use `firewalld` (RHEL/CentOS) or `ufw` (Ubuntu/Debian) commands directly on each server. Examples:
+  - `sudo firewall-cmd --permanent --add-port=8443/udp && sudo firewall-cmd --reload`
+  - `sudo ufw allow 8443/udp`
+- **Centrally managed firewall:** If a network team manages your firewall, share the tables below with them and request the rules before proceeding.
 
 #### Mattermost server ports
 
-| Port | Protocol | Direction | Source | Purpose |
-|---|---|---|---|---|
-| 80, 443 | TCP | Inbound | Mattermost clients | HTTPS and WebSocket signaling |
-| 8443 | UDP | Inbound | Mattermost clients | Media traffic when using integrated Calls |
-| 8443 | TCP | Inbound | Mattermost clients | Media fallback when using integrated Calls |
-| 3478 | UDP | Outbound | STUN server | Public address discovery when using integrated Calls with STUN |
+| Port | Protocol | Direction | Source | Destination | Notes |
+|---|---|---|---|---|---|
+| 443 | TCP | Inbound | Mattermost clients | Mattermost server | HTTPS and WebSocket signaling. |
+| 8443 | UDP | Inbound | Mattermost clients | Mattermost server | Media traffic in Integrated mode. |
+| 8443 | TCP | Inbound | Mattermost clients | Mattermost server | Media traffic in Integrated mode. |
+| 3478 | UDP | Outbound | Mattermost server | `stun.global.calls.mattermost.com` | (Optional - Step 1.3.1) Public IP discovery using STUN. |
 
 #### RTCD server ports
 
-| Port | Protocol | Direction | Source | Purpose |
-|---|---|---|---|---|
-| 8443 | UDP | Inbound | Mattermost clients and offloader jobs | Media traffic |
-| 8443 | TCP | Inbound | Mattermost clients and offloader jobs | Media fallback |
-| 8045 | TCP | Inbound | Mattermost server only | RTCD API; keep internal |
-| 3478 | UDP | Outbound | STUN server | Public address discovery when using STUN |
+If you deployed an RTCD server in Step 1.4, open these ports:
 
-#### calls-offloader server ports
+| Port | Protocol | Direction | Source | Destination | Notes |
+|---|---|---|---|---|---|
+| 8443 | UDP | Inbound | Mattermost clients and calls-offloader server | RTCD server | Media traffic. |
+| 8443 | TCP | Inbound | Mattermost clients and calls-offloader server | RTCD server | Media fallback. |
+| 8045 | TCP | Inbound | Mattermost server | RTCD server | RTCD API. Internal only — do not expose publicly. |
+| 3478 | UDP | Outbound | RTCD server | `stun.global.calls.mattermost.com` | (Optional - Step 1.3.1) Public IP discovery using STUN. |
 
-| Port | Protocol | Direction | Source | Purpose |
-|---|---|---|---|---|
-| 4545 | TCP | Inbound | Mattermost server only | Job service API; keep internal |
-| 8443 | UDP and TCP | Outbound | Media service (Mattermost integrated or RTCD) | Recorder and transcriber job media connectivity |
-| 443 or internal Mattermost app port | TCP | Outbound | Mattermost Site URL or `MM_CALLS_*_SITE_URL` target | Recorder and transcriber job access back to Mattermost |
+```{important}
+If you use NGINX as a reverse proxy in front of Mattermost, note that NGINX cannot forward UDP traffic. Port 8443 must be opened directly on the server running the media service — not on NGINX. Port 443 is the only port NGINX handles for Calls.
+```
+
+#### Recording server ports
+
+If you deployed a calls-offloader server in Step 1.4, open these ports:
+
+| Port | Protocol | Direction | Source | Destination | Notes |
+|---|---|---|---|---|---|
+| 4545 | TCP | Inbound | Mattermost server | calls-offloader server | Job service API. Internal only — do not expose publicly. |
+| 8443 | UDP | Outbound | calls-offloader server | Mattermost server and RTCD server | Recorder and transcriber jobs connect to the media service as call participants. |
+| 8443 | TCP | Outbound | calls-offloader server | Mattermost server and RTCD server | Fallback if UDP is unavailable. |
+| 443 | TCP | Outbound | calls-offloader server | Mattermost server | Recorder and transcriber jobs post results back to Mattermost. |
 
 #### TURN server ports
 
-If you deploy `coturn`, open the ports required by your coturn configuration. Common defaults are:
+If you deployed a TURN server in Step 1.4, open these ports. If you are using `coturn`, these are the common defaults:
 
-| Port | Protocol | Direction | Source | Purpose |
-|---|---|---|---|---|
-| 3478 | UDP and TCP | Inbound | Mattermost clients | TURN relay |
-| 5349 | TCP | Inbound | Mattermost clients | TURN over TLS, if you deploy it |
+| Port | Protocol | Direction | Source | Destination | Notes |
+|---|---|---|---|---|---|
+| 3478 | UDP and TCP | Inbound | Mattermost clients | TURN server | STUN and TURN relay. |
+| 5349 | UDP and TCP | Inbound | Mattermost clients | TURN server | TURN over TLS. Optional — only if you configure TLS on coturn. |
+| 49152–65535 | UDP | Inbound | Mattermost clients | TURN server | TURN relay port range required for coturn to relay media. |
 
-### 1.6 Verification gate
+### 1.6 Verification Checks
 
-Do not proceed to Phase 2 until all of the following are true.
+These checks test firewall and network reachability only — they do not require Calls, RTCD or `calls-offloader` to be installed.
 
-#### 1.6.1 Confirm architecture and prerequisites
+First, you'll have to install `nmap` on each machine you'll run checks from using `sudo apt install nmap` (Ubuntu or Debian) or `sudo dnf install nmap` (RHEL or CentOS)
 
-- [ ] The Calls architecture is chosen.
-- [ ] The recording, transcription, and live captions decision is made.
-- [ ] The required servers are provisioned.
-- [ ] The required license is confirmed.
-- [ ] HTTPS is already working for Mattermost.
+When you excute each check below, `nmap` will return `open`, `closed` or `filtered`.
 
-#### 1.6.2 Confirm TCP connectivity
+**Pass**:
+- `open`: Port is reachable and the service is listeneing. Expected if you've already installed the RTCD or `calls-offloader` services)
+- `closed`: Port is reachable but the service has not yet been installed. Expected if you just provisioned the machines in Step 1.4)
+**Fail**: 
+- `filtered`: Firewall is blocking the port. Revisit your networking configuration in Step 1.5 before continuing.
 
-Install `nc` if needed:
+**All deployments**
+
+Run from a client machine on the same network as your users:
+
+| Check | Command | Replace `TARGET_IP` with | Description |
+|---|---|---|---|
+| 1.6.2 | `sudo nmap -sU -p 8443 TARGET_IP` | Mattermost server IP | Clients can send UDP media to the Mattermost server |
+| 1.6.3 | `nmap -p 8443 TARGET_IP` | Mattermost server IP | Clients can reach the Mattermost server for TCP media fallback |
+
+**RTCD deployments**
+
+Run from a client machine on the same network as your users:
+
+| Check | Command | Replace `TARGET_IP` with | Description |
+|---|---|---|---|
+| 1.6.4 | `sudo nmap -sU -p 8443 TARGET_IP` | RTCD server IP | Clients can send UDP media to the RTCD server |
+| 1.6.5 | `nmap -p 8443 TARGET_IP` | RTCD server IP | Clients can reach the RTCD server for TCP media fallback |
+
+Run from the Mattermost server:
+
+| Check | Command | Replace `TARGET_IP` with | Description |
+|---|---|---|---|
+| 1.6.6 | `nmap -p 8045 TARGET_IP` | RTCD server IP | Mattermost can reach the RTCD API |
+
+**Recording deployments** — run from the Mattermost server:
+
+| Check | Command | Replace `TARGET_IP` with | Description |
+|---|---|---|---|
+| 1.6.7 | `nmap -p 4545 TARGET_IP` | calls-offloader server IP | Mattermost can reach the calls-offloader API |
+
+#### 1.6.8 Final checklist
+
+- [ ] Clients can reach the media service on UDP `8443`.
+- [ ] Clients can reach the media service on TCP `8443` if you plan to rely on TCP fallback.
+- [ ] Mattermost can reach RTCD on TCP `8045` — if using RTCD.
+- [ ] Mattermost can reach calls-offloader on TCP `4545` — if using calls-offloader.
+- [ ] If using STUN, confirm the media service can reach `stun.global.calls.mattermost.com` on UDP `3478` — validated in Phase 2 when you verify the plugin advertises the correct public IP.
+
+Before you leave Phase 1, plan at least one **real client-side test** in Phase 2 or Phase 5 from the same type of network your users will actually use, such as office LAN, home internet, VPN, or mobile data.
+
+````{dropdown} If nmap is not available
+If you cannot install `nmap`, you can use `nc` instead. Unlike `nmap`, `nc` requires a temporary listener running on the target server before the check can work.
+
+Install `nc`:
 
 - Ubuntu or Debian: `sudo apt install netcat-openbsd`
 - RHEL or CentOS: `sudo dnf install nmap-ncat`
 
-Run the TCP test from the source server:
+**For TCP checks** (8443, 8045, 4545): On the target server, start a listener on the port you're testing:
+
+```bash
+nc -l -p PORT
+```
+
+Then from the source machine:
 
 ```bash
 nc -zv TARGET_IP PORT
 ```
 
-Examples:
+Pass: `Connection to ... succeeded`
 
-```bash
-# Mattermost server to RTCD API
-nc -zv YOUR_RTCD_SERVER 8045
+Fail: `Connection refused` (nothing is listening — the firewall is open, start the listener first) or timeout (firewall is blocking — fix before proceeding).
 
-# Mattermost server to calls-offloader API
-nc -zv YOUR_OFFLOADER_SERVER 4545
-```
-
-Pass:
-
-- `Connection to ... succeeded`
-
-Fail:
-
-- `Connection refused` or timeout. Stop here and fix firewall, routing, or service exposure before proceeding.
-
-#### 1.6.3 Confirm UDP connectivity
-
-On the target server, stop the service if it already owns port `8443`, then start a UDP listener:
-
-```bash
-nc -l -u -p 8443
-```
-
-If your `nc` version does not accept `-p`, try:
+**For UDP 8443**: On the media server, start a UDP listener:
 
 ```bash
 nc -lu 8443
 ```
 
-On the source machine:
+Then from a client machine:
 
 ```bash
 nc -u TARGET_IP 8443
 ```
 
-Type a short message and press Enter. If the message appears on the target server, UDP is working.
-
-#### 1.6.4 Final checklist
-
-- [ ] Clients can reach Mattermost on TCP `443`.
-- [ ] Clients can reach the media service on UDP `8443`.
-- [ ] Clients can reach the media service on TCP `8443` if you plan to rely on TCP fallback.
-- [ ] Mattermost can reach RTCD on TCP `8045` if using RTCD.
-- [ ] Mattermost can reach calls-offloader on TCP `4545` if using calls-offloader.
-- [ ] The media service can reach UDP `3478` if using STUN.
-
-Before you leave Phase 1, plan at least one **real client-side test** in Phase 2 or Phase 5 from the same type of network your users will actually use, such as office LAN, home internet, VPN, or mobile data.
+Type a short message and press Enter. If it appears on the server, the port is open. Stop listeners with `Ctrl+C`.
+````
 
 ---
 
@@ -647,7 +617,19 @@ The Calls plugin metrics endpoint depends on Mattermost performance monitoring b
 
 ### 3.6 Verification gate
 
-- [ ] **3.V1** `curl http://YOUR_RTCD_SERVER:8045/version` works from the Mattermost server (or `https://` if you enabled TLS).
+**3.V0 — Confirm RTCD is listening on TCP 8045**
+
+Run this from the Mattermost server to confirm RTCD started successfully and is accepting connections:
+
+```bash
+nc -zv YOUR_RTCD_SERVER 8045
+```
+
+Pass: `Connection to ... succeeded`
+
+Fail: `Connection refused` — RTCD is not running or not listening. Check the RTCD service logs before proceeding. If you get a timeout instead of "Connection refused", the firewall path was not properly verified in Step 1.6.4 — go back and fix that first.
+
+- [ ] **3.V1** `curl http://YOUR_RTCD_SERVER:8045/version` returns a version string from the Mattermost server (or `https://` if you enabled TLS).
 - [ ] **3.V2** Two users can complete an audio call after `RTCD Service URL` is set.
 - [ ] **3.V3** Screen sharing works after `RTCD Service URL` is set.
 - [ ] **3.V4** `/call stats` after the test call shows a healthy negotiated connection.
@@ -742,7 +724,19 @@ If you want AI-generated meeting summaries from call transcripts, configure Matt
 
 ### 4.6 Verification gate
 
-- [ ] **4.V1** `curl http://YOUR_OFFLOADER_SERVER:4545/version` works from the Mattermost server (or `https://` if you enabled TLS).
+**4.V0 — Confirm calls-offloader is listening on TCP 4545**
+
+Run this from the Mattermost server to confirm calls-offloader started successfully and is accepting connections:
+
+```bash
+nc -zv YOUR_OFFLOADER_SERVER 4545
+```
+
+Pass: `Connection to ... succeeded`
+
+Fail: `Connection refused` — calls-offloader is not running or not listening. Check the calls-offloader service logs before proceeding. If you get a timeout instead of "Connection refused", the firewall path was not properly verified in Step 1.6.5 — go back and fix that first.
+
+- [ ] **4.V1** `curl http://YOUR_OFFLOADER_SERVER:4545/version` returns a version string from the Mattermost server (or `https://` if you enabled TLS).
 - [ ] **4.V2** A test call still works normally after the job service is configured.
 - [ ] **4.V3** A host can start a recording.
 - [ ] **4.V4** The MP4 recording appears in the call thread after recording stops.
