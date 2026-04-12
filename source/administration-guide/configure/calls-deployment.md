@@ -29,14 +29,14 @@ This guide is organized into sequential deployment phases with heirarchical numb
 1. [**Preparation and Networking**](#phase-1-preparation-and-networking)  
    Plan your deployment architecture, gather prerequisites, provision any required servers, and confirm the required network ports and paths are open before deployment.
 
-2. [**Configure Integrated Calls**](#phase-2-integrated-calls-plugin-configuration)  
+2. [**Configure Integrated Calls**](#phase-2-configure-integrated-calls)  
    Regardless of the deployment architecture you choose, you'll start with simplest calls deployment (integrated mode) to verify connectivity and core audio and screen sharing functionality.
 
-3. [**Install and Configure RTCD**](#phase-3-add-rtcd) (Optional)  
-   RTCD (real-time communication daemon) is a service built to offload media processing tasks from the Mattermost server. This optional phase is where you'll deploy the RTCD service and verify that the Mattermost server and clients can reach it correctly.
+3. [**Install and Configure RTCD**](#phase-3-install-and-configure-rtcd) (Optional)  
+   RTCD (real-time communication daemon) is a service built to offload media processing tasks from the Mattermost server.
 
-4. [**Install and Configure Recording**](#phase-4-add-calls-offloader) (Optional)
-   Calls Offloader is a service required to deliver recording, transcription and live captions. This optional phase is where you'll deploy the `calls-offloader` service and confirm that recording, transcription, and live captions work as expected.
+4. [**Install and Configure Recording**](#phase-4-install-and-configure-recording) (Optional)
+   Calls Offloader is a service required to deliver recording, transcription and live captions.
 
 5. [**Pilot Rollout**](#phase-5-pilot-rollout)  
    Expand testing to a small group of pilot users to watch for client, network, and environment-specific issues under real usage.
@@ -108,7 +108,7 @@ flowchart TD
 **License**
 
 - Mattermost Entry: 1:1 Calls + Screen Sharing
-- Mattermost Professional, Enterprise, or Enterprise-Advanced: Group Calls + Screen Sharing up to 50 participants
+- Mattermost Professional, Enterprise, or Enterprise Advanced: Group Calls + Screen Sharing
 ````
 
 ````{tab} RTCD
@@ -148,7 +148,8 @@ Use RTCD if you need optimized performance, scalability, and the best possible u
 
 **License**
 
-- Mattermost Enterprise or Enterprise-Advanced: Required for RTCD.
+- Mattermost Enterprise or Enterprise Advanced
+
 ````
 
 ````{tab} RTCD + Recording
@@ -189,8 +190,7 @@ flowchart TD
 
 **License**
 
-- Mattermost Enterprise or Enterprise Advanced: Required for `calls-offloader` service.
-
+- Mattermost Enterprise or Enterprise Advanced
 
 ````
 
@@ -243,10 +243,10 @@ Infrastructure requirements are based on your deployment architecture chosen in 
 Since the Mattermost server is handling all media processing, you can skip this step and proceed to network configuration in Step 1.5.
 
 **RTCD**
-You will need to provision a new server for RTCD. Use **Appendix B.1** for benchmark examples of hardware sizing. The RTCD service supports [horizontal scaling](https://docs.mattermost.com/administration-guide/configure/calls-rtcd-setup.html#horizontal-scaling), but we recommend starting with one server, and then scaling out if your pilot or expected workload requires it.
+You will need to provision a new server for RTCD. Use the [performance baselines](http://mattermost-docs-preview-pulls.s3-website-us-east-1.amazonaws.com/8879/administration-guide/configure/calls-metrics-monitoring.html#performance-baselines) for benchmark examples of hardware sizing. The RTCD service supports [horizontal scaling](https://docs.mattermost.com/administration-guide/configure/calls-rtcd-setup.html#horizontal-scaling), but we recommend starting with one server and then scaling out if your expected workload requires it.
 
 **Recording**
-You will need to provision a new server for the `calls-offloader` service. The recommended starting point is **8 vCPU / 16 GB RAM**, or you can use **Appendix B.2** to estimate recording capacity and transcription load.
+You will need to provision a new server for the `calls-offloader` service. The recommended starting point is **8 vCPU / 16 GB RAM**, or you can use these [performance benchmarks](https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md) to estimate recording capacity and transcription load.
 
 **TURN Server**
 If you've determined in Step 1.3.2 that your users cannot reliably reach the media server over UDP or TCP `8443`, you will need to provision your TURN server now.
@@ -585,7 +585,7 @@ Now you can move to smoke testing your Calls deployment with recording using you
 
 | Check | Action | Pass criteria |
 |---|---|---|
-| 4.4.1 | During a call, start a recording as a call host | Recording starts without error. |
+| 4.4.1 | Start recording as a call host | Recording starts without error. |
 | 4.4.2 | End the call or stop the recording | An MP4 file appears in the call thread after processing is complete. |
 | 4.4.3 | With transcription enabled, end a recorded call | An MP4 file and transcript file appear in the call thread after processing is complete. |
 | 4.4.4 | With live captions enabled, start a recorded call | Captions appear during the call within 1-3 seconds after participants speak. |
@@ -796,174 +796,41 @@ Check [Appendix A: Troubleshooting](#appendix-a-troubleshooting) for common issu
 
 ## Appendix A: Troubleshooting
 
-For log collection details, see [Calls Troubleshooting](calls-troubleshooting.md).
+### A.1 The call button is missing
 
-### A.1 Collect the right evidence before asking for help
+| Cause | Fix |
+|---|---|
+| The Calls plugin is disabled | Go to **System Console > Plugins > Plugin Management** and enable Calls |
+| The deployment is in test mode | Go to **System Console > Plugins > Calls** and check the deployment state — only system admins can start calls in test mode |
+| Calls is not enabled for the channel | Open the channel menu and select **Enable calls** |
+| The user is on an older client | Ask the user to update to the current Mattermost desktop or mobile app |
 
-Before opening a support case, capture as many of these as you can:
+### A.2 Calls start but audio does not work
 
-- the phase and step where the failure happened
-- `/call stats` output from a recent failed or successful test
-- `/call logs` output from the most recent call
-- `curl` output from `RTCD` or `calls-offloader` version checks
-- relevant Mattermost, RTCD, or calls-offloader logs
+| Cause | Fix |
+|---|---|
+| UDP `8443` is blocked | Repeat the UDP connectivity check from Phase 1 (check 1.6.2 or 1.6.4) and confirm the firewall rule is applied |
+| TCP `8443` is also blocked and fallback is failing | Repeat the TCP check (1.6.3 or 1.6.5) — clients need at least one path to the media service |
+| The wrong media address is being advertised | Re-check `ICE Host Override` in Phase 2 (Integrated) or `ice_host_override` in `rtcd.toml` (RTCD) — the address must be reachable by clients |
+| Browser or desktop microphone permissions were denied | Ask the user to check browser or OS microphone permissions and reload the app |
 
-### A.2 The call button is missing
+Run `/call stats` in the Mattermost message area after a failed test for additional diagnostic clues.
 
-Common causes:
+### A.3 Remote users cannot join from outside the network
 
-- the Calls plugin is disabled
-- the deployment is still in test mode and the channel is not configured the way you expect
-- the user is on an older client
+| Cause | Fix |
+|---|---|
+| External firewall rules are blocking UDP `8443` | Confirm external reachability to UDP `8443` on the media server — cloud security groups and on-prem firewalls both need to allow inbound traffic from the internet |
+| The advertised media address is a private IP | Set `ICE Host Override` (Integrated) or `ice_host_override` in `rtcd.toml` to the correct public IP or use STUN (1.3.1) |
+| Client networks are too restrictive for direct UDP or TCP | Deploy a TURN server and add it to **ICE server configurations** |
 
-What to check:
+### A.4 Recording, transcription, or captions are failing
 
-1. **System Console > Plugins > Plugin Management** to confirm Calls is enabled.
-2. **System Console > Plugins > Calls** to confirm the deployment state.
-3. The channel menu to confirm Calls is enabled for that channel.
+| Cause | Fix |
+|---|---|
+| calls-offloader is not running | Run `nmap -p 4545 YOUR_OFFLOADER_SERVER` from the Mattermost server — if the result is `closed`, the service is not running; check the systemd service logs |
+| Mattermost cannot reach the Job Service URL | Run `curl http://YOUR_OFFLOADER_SERVER:4545/version` from the Mattermost server and confirm it returns a version string |
+| The offloader service account cannot use Docker | Confirm the service account is in the `docker` group on the calls-offloader server |
 
-### A.3 A call starts, but audio does not work
-
-Common causes:
-
-- UDP `8443` is blocked
-- clients are falling back poorly because TCP `8443` is also blocked
-- the wrong media address is being advertised
-- browser or desktop microphone permissions were denied
-
-What to do:
-
-1. Repeat the UDP and TCP connectivity checks from Phase 1.
-2. Re-check the integrated media address configuration in Phase 2, or RTCD address configuration in Phase 3.
-3. Run `/call stats` after the failed test and compare the negotiated connection details.
-
-### A.4 Remote users cannot join from outside the office
-
-Common causes:
-
-- external firewall rules do not allow media traffic to reach the media service
-- the advertised media address is private instead of public
-- the deployment needs TURN for restrictive client networks
-
-What to do:
-
-1. Confirm external reachability to UDP `8443`.
-2. Confirm the address being advertised to clients is the correct reachable address.
-3. If direct connectivity still fails for restrictive networks, add TURN.
-
-### A.5 Recording, transcription, or captions are failing
-
-Common causes:
-
-- calls-offloader is not running
-- Mattermost cannot reach `Job Service URL`
-- the offloader service account cannot use Docker
-- recorder or transcriber jobs cannot reach Mattermost on the expected internal URL
-
-What to do:
-
-1. Run `curl http://YOUR_OFFLOADER_SERVER:4545/version` from the Mattermost server.
-2. Confirm the calls-offloader service is running.
-3. Confirm the calls-offloader service account can access Docker.
-4. If using private network overrides, re-check `MM_CALLS_RECORDER_SITE_URL` and `MM_CALLS_TRANSCRIBER_SITE_URL`.
-
-### A.6 Calls work briefly, then drop
-
-Common causes:
-
-- unstable WebSocket connectivity between clients and Mattermost
-- Mattermost restarted during the call
-- a load balancer or network device is timing out long-lived connections
-
-What to do:
-
-1. Confirm the Mattermost server is stable and reachable.
-2. Review load balancer settings for WebSocket support and idle timeout behavior.
-3. Compare Mattermost logs with the call failure time.
-
-### A.7 RHEL deployments using firewalld or fapolicyd
-
-If you deploy on RHEL with `firewalld` or `fapolicyd` enabled, see the [RHEL deployment guide](https://docs.mattermost.com/deployment-guide/server/deploy-linux.html#itab--RHEL-CentOS--0_1-RHEL-CentOS).
-
-Key points:
-
-- the Calls plugin is covered by standard Mattermost `fapolicyd` rules
-- standalone `rtcd` requires its own `fapolicyd` configuration
-- you still need to open the required Calls and RTCD ports
 
 ---
-
-## Appendix B: Server sizing benchmarks
-
-Use this appendix as a starting point, then validate against your own traffic during Phase 5.
-
-### B.1 RTCD benchmark examples
-
-The [Calls Metrics and Monitoring](calls-metrics-monitoring.md) guide includes internal RTCD benchmark data. The examples below are taken directly from that guide and show why screen sharing and total egress bandwidth matter so much for sizing.
-
-| Workload example | RTCD instance | Average CPU | Average memory | Bandwidth in / out |
-|---|---|---|---|---|
-| 1 call, 1000 participants, 2 unmuted, no screen sharing | `c7i.xlarge` | 47% | 1.46 GB | 1 Mbps / 194 Mbps |
-| 1 call, 1000 participants, 1 unmuted, screen sharing enabled | `c7i.xlarge` | 79% | 1.54 GB | 2.9 Mbps / 1.68 Gbps |
-| 2 calls, 1000 participants each, screen sharing enabled | `c7i.2xlarge` | 73% | 2.38 GB | 5.7 Mbps / 3.06 Gbps |
-| 4 calls, 1000 participants each, screen sharing enabled | `c7i.4xlarge` | 83% | 4.40 GB | 14.5 Mbps / 7.17 Gbps |
-
-How to use this table:
-
-- If you expect large calls with screen sharing, plan around **egress bandwidth** first.
-- If you expect many medium-sized calls, use the metrics guide to compare similar benchmark patterns.
-- Validate your assumptions during the pilot instead of sizing only from theory.
-
-### B.2 calls-offloader sizing inputs
-
-The published `calls-offloader` performance guide uses an AWS `c6i.2xlarge` host (`8 vCPU / 16 GB RAM`) as the recommended starting point for recordings.
-
-| Recording quality | Recommended `max_concurrent_jobs` | Average CPU | Average memory | Average recording size |
-|---|---|---|---|---|
-| Low | 8 | 66% | 4 GB | 0.5 GB/hour |
-| Medium | 6 | 66% | 4 GB | 0.7 GB/hour |
-| High | 4 | 72% | 4 GB | 1.2 GB/hour |
-
-Audio-only recordings consume approximately `1 MB` per minute per participant.
-
-Use those numbers to estimate:
-
-- total storage needed
-- how many recordings can run at the same time
-- the `max_concurrent_jobs` setting you should start with
-- how aggressively you need retention and cleanup policies
-
-If recordings are large or long-lived, also review Mattermost `FileSettings.MaxFileSize` and any proxy upload/body-size limits in front of Mattermost.
-
-### B.3 Transcriptions and live captions
-
-Transcriptions and live captions increase load on the offloader host.
-
-Published offloader guidance highlights these planning points:
-
-- The `small` model is not recommended for live captions.
-- `base` live captions need at least `2` threads for real-time performance and work best with `3` or `4`.
-- If you expect more than 3 simultaneous live-captioned calls on one host, plan for horizontal scaling.
-
-For additional offloader performance guidance, see the [calls-offloader performance documentation](https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md).
-
-### B.4 TURN server planning
-
-TURN planning is mostly a bandwidth question.
-
-If you must use TURN:
-
-- estimate how many users are likely to need relay traffic
-- remember TURN relays all media for those users
-- place TURN where it is network-close to the users who need it
-
----
-
-## Related Documentation
-
-- [RTCD Setup and Configuration](calls-rtcd-setup.md)
-- [Calls Offloader Setup and Configuration](calls-offloader-setup.md)
-- [Calls Metrics and Monitoring](calls-metrics-monitoring.md)
-- [Calls Deployment on Kubernetes](calls-kubernetes.md)
-- [Calls Troubleshooting](calls-troubleshooting.md)
-- [Calls plugin configuration settings](https://docs.mattermost.com/configure/plugins-configuration-settings.html#calls)
