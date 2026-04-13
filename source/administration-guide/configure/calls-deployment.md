@@ -22,27 +22,33 @@ Functionality includes:
 
 ## Deployment Overview
 
-This guide is organized into sequential deployment phases with numbered steps. Each phase begins with prerequisites and ends with verification checks. Before you begin any phase, make sure the listed prerequisites are met, then move to the next phase only after the verification checks for the current phase pass. This structure helps you catch and fix issues early, when they are easiest to isolate.
+This guide is organized into sequential deployment phases with numbered steps. Each phase begins with prerequisites and ends with verification checks. Before you begin any phase, make sure the listed prerequisites are met, then move to the next phase only after the verification checks are passing. This structure helps you catch and fix issues early, when they are easiest to isolate.
 
 **Deployment Phases:**
 
 1. [**Preparation and Networking**](#phase-1-preparation-and-networking)  
-   Choose your deployment architecture, make networking decisions, provision required servers, and confirm the required network ports and paths are open before deployment.
+    
+    Choose your deployment architecture, make networking decisions, provision required servers, and confirm the required network ports and paths are open before deployment.
 
 2. [**Configure Integrated Calls**](#phase-2-configure-integrated-calls)
-   Regardless of the deployment architecture you choose, start with the simplest Calls deployment, Integrated mode, to verify connectivity plus basic audio and screen sharing.
+    
+    Regardless of the deployment architecture you choose, start with the simplest Calls deployment, Integrated mode, to verify connectivity plus basic audio and screen sharing.
 
 3. [**Install and Configure RTCD**](#phase-3-install-and-configure-rtcd) (Optional)  
-   RTCD (Real-Time Communication Daemon) is a service built to offload media processing tasks from the Mattermost server.
+    
+    RTCD (Real-Time Communication Daemon) is a service built to offload media processing tasks from the Mattermost server.
 
 4. [**Install and Configure Recording**](#phase-4-install-and-configure-recording) (Optional)
-   Calls Offloader is a service required to deliver recording, transcription and live captions.
+
+    Calls Offloader is a service required to deliver recording, transcription and live captions.
 
 5. [**Pilot Rollout**](#phase-5-pilot-rollout)  
-   Expand testing to a small group of pilot users to watch for client, network, and environment-specific issues under real usage.
+    
+    Expand testing to a small group of pilot users to watch for client, network, and environment-specific issues under real usage.
 
 6. [**Production Rollout**](#phase-6-production-rollout)  
-   Rollout to all users in controlled waves with appropriate communication and monitoring, and be ready to pause or roll back if needed.
+    
+    Rollout to all users in controlled waves with appropriate communication and monitoring, and be ready to pause or roll back if needed.
 
 
 ```{note}
@@ -51,7 +57,7 @@ If you need expert help deploying Calls, contact your Account Manager or [talk t
 
 ### Contacting Support
 
-If you encounter issues and need to open a [support case](https://support.mattermost.com), please include the exact **step number** (e.g. 2.2.1) that failed, along with your {doc}`Mattermost support packet <../../administration-guide/manage/admin/generating-support-packet>` and Calls logs (see [Calls Logging](calls-logging.md) for how to gather them.)
+If you encounter issues and need to open a [support case](https://support.mattermost.com), please include the exact **step number** (e.g. 2.2.1) that failed, along with your {doc}`Mattermost support packet <../../administration-guide/manage/admin/generating-support-packet>` and [Calls logs](calls-logging.md).
 
 ---
 
@@ -62,11 +68,12 @@ If you encounter issues and need to open a [support case](https://support.matter
 Before you start, confirm the following:
 
 - [ ] You have a running Mattermost server on v10.0+
-- [ ] Your Mattermost server is configured to use secure HTTPS.  
+- [ ] Your Mattermost server is configured to use HTTPS.  
       _Browsers block microphone and screen sharing on insecure HTTP connections. If you need to set up HTTPS, see [Configure TLS](https://docs.mattermost.com/deploy/server/setup-tls.html)._
 - [ ] You have System Admin access to your Mattermost server.
 - [ ] You can provision additional servers if your chosen architecture requires RTCD or Recording services.
-- [ ] You can open inbound and outbound network ports on the servers involved in your deployment. If a network or security team manages your firewalls, you'll need to involve them before continuing.
+- [ ] You can open inbound and outbound network ports on the servers involved in your deployment. 
+      _If a network or security team manages your firewalls, you'll need to involve them before continuing._
 
 
 ### 1.2 Deployment Infrastructure
