@@ -62,11 +62,12 @@ If you encounter issues and need to open a [support case](https://support.matter
 Before you start, confirm the following:
 
 - [ ] You have a running Mattermost server on v10.0+
-- [ ] Mattermost server is configured to use secure HTTPS.  
-      _Browsers block microphone and screen sharing on insecure HTTP connections. To enable Calls, you must run Mattermost over HTTPS. If you need to set up HTTPS, see [Configure TLS](https://docs.mattermost.com/deploy/server/setup-tls.html)._
+- [ ] Your Mattermost server is configured to use secure HTTPS.  
+      _Browsers block microphone and screen sharing on insecure HTTP connections. If you need to set up HTTPS, see [Configure TLS](https://docs.mattermost.com/deploy/server/setup-tls.html)._
 - [ ] You have System Admin access to your Mattermost server.
-- [ ] You can open inbound and outbound network ports on the servers involved in the deployment. If a network or security team manages your firewalls, you'll need to involve them before continuing.
-- [ ] You can provision additional servers if your chosen architecture requires RTCD or Calls Offloader services.
+- [ ] You can provision additional servers if your chosen architecture requires RTCD or Recording services.
+- [ ] You can open inbound and outbound network ports on the servers involved in your deployment. If a network or security team manages your firewalls, you'll need to involve them before continuing.
+
 
 ### 1.2 Deployment Infrastructure
 
@@ -88,7 +89,7 @@ In Integrated mode, the Calls plugin runs its built-in media service directly on
 
 ```{image} ../../images/calls-deployment-integrated.png
 :alt: Integrated Calls deployment
-:height: 627px
+:height: 400px
 ```
 
 **When to use it**
@@ -145,7 +146,6 @@ The `calls-offloader` service can be added to a Calls deployment to enable recor
 
 ```{image} ../../images/calls-deployment-rtcd-recording.png
 :alt: Calls deployment with RTCD and recording
-:height: 627px
 ```
 
 **When to use it**
