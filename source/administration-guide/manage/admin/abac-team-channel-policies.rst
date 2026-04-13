@@ -12,6 +12,13 @@ With team-level channel membership policies, Team Admins can:
 - Control which users can join or stay in those channels based on their profile attributes.
 - Manage auto-sync membership, so channels stay up to date as user attributes change.
 
+Use cases
+---------
+
+- **Team-wide project access**: Restrict all private project channels to members with a specific project attribute.
+- **Department isolation**: Ensure only users from a specific department can join the team's private channels.
+- **Clearance tiers**: Apply clearance-level requirements consistently across multiple channels in the team without System Admin involvement for each change.
+
 Prerequisites
 -------------
 
@@ -112,13 +119,6 @@ Synchronization
 ---------------
 
 When you save a policy or modify channel assignments, Mattermost creates a membership synchronization job. Changes are applied as soon as the job completes. Synchronization also runs automatically every 30 minutes to handle attribute changes from external systems such as LDAP or SAML.
-
-Use cases
----------
-
-- **Team-wide project access**: Restrict all private project channels to members with a specific project attribute.
-- **Department isolation**: Ensure only users from a specific department can join the team's private channels.
-- **Clearance tiers**: Apply clearance-level requirements consistently across multiple channels in the team without System Admin involvement for each change.
 
 Troubleshooting and FAQs
 --------------------------
