@@ -117,7 +117,8 @@ Subscribe a Mattermost channel to a recurring Zoom meeting with ``/zoom subscrip
 
 If you create a new meeting using the Zoom button in the Mattermost RHS, then the recording and transcript are similarly posted as replies to the initial message once they are available, if cloud recordings are enabled and the meeting was recorded.
 
-Additional slash commands:
+Additional slash commands:  
+
 - ``/zoom help`` - Display available commands
 - ``/zoom channel-settings`` - Set whether meetings in the current channel use your personal meeting ID or unique meeting ID
 - ``/zoom channel-settings list`` - List all channel preferences
