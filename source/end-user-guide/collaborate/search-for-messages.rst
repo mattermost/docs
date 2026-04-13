@@ -71,15 +71,7 @@ Search for message
 
     You can adjust search results to show messages from the current team, a specific team, or all teams.
 
-Open search results in a popout window
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-From Mattermost v11.6, when using Mattermost in a web browser or the desktop app, you can open your current search results in a separate popout window. Select the **Open in new window** |new-window-icon| icon in the search results header to open the search view in a popout window that preserves your query and search parameters.
-
-Within the popout window, you can:
-
-- Navigate thread replies, then select **Back** to return to your search results.
-- Select **Jump** next to any result to open the message in its source channel in the main Mattermost window.
+    From Mattermost v11.6, when using Mattermost in a web browser or the desktop app, you can open your current search results in a separate popout window by selecting the **Open in new window** |new-window-icon| icon in the search results header.
 
 Search for files
 ----------------
