@@ -86,14 +86,7 @@ Based on your answers, you can explore the associated deployment infrastructure 
 
 In Integrated mode, the Calls plugin runs its built-in media service directly on the Mattermost server. This is the simplest deployment model, since you do not need to provision a separate service to handle media processing.
 
-```{mermaid}
-flowchart TD
-    clients["Clients\nWeb, Desktop, Mobile"]
-    mm["Mattermost Server\nCalls plugin + integrated media service"]
-
-    clients -->|TCP 443 signaling| mm
-    clients -->|UDP/TCP 8443 media| mm
-```
+![Integrated Calls deployment](../../images/calls-deployment-integrated.png)
 
 **When to use it**
 
@@ -117,29 +110,7 @@ The RTCD can be added as a dedicated media service that processes all call audio
 
 Deploying RTCD is **highly recommended in production deployments** for performance, scalability, and stability of Mattermost Calls.
 
-```{mermaid}
-flowchart TD
-    clients["Clients\nWeb, Desktop, Mobile"]
-    mm["Mattermost Server\nCalls plugin + integrated media service"]
-
-    clients -->|TCP 443 signaling| mm
-    clients -->|UDP/TCP 8443 media| mm
-```
-
-
-```{mermaid}
-flowchart TD
-    clients["Clients\nWeb, Desktop, Mobile"]
-    mm["Mattermost Server\nCalls plugin"]
-    rtcd["RTCD Server"]
-
-    clients -->|TCP 443 signaling| mm
-    mm -->|TCP 8045 internal API| rtcd
-    clients -->|UDP 8443 media| rtcd
-    rtcd -->|UDP 8443 media| clients
-    clients -->|TCP 8443 media fallback| rtcd
-    rtcd -->|TCP 8443 media fallback| clients
-```
+![Calls deployment with RTCD](../../images/calls-deployment-rtcd.png)
 
 **When to use it**
 
@@ -166,23 +137,7 @@ Use RTCD if you need optimized performance, scalability, and the best possible u
 
 The `calls-offloader` service can be added to a Calls deployment to enable recording, transcription, and live captions.
 
-```{mermaid}
-flowchart TD
-    clients["Clients\nWeb, Desktop, Mobile"]
-    mm["Mattermost Server\nCalls plugin"]
-    rtcd["RTCD Server"]
-    offloader["calls-offloader Server"]
-    jobs["Recorder and transcriber jobs"]
-
-    clients -->|TCP 443 signaling| mm
-    mm -->|TCP 8045 internal API| rtcd
-    mm -->|TCP 4545 internal API| offloader
-    clients -->|UDP or TCP 8443 media| rtcd
-    rtcd -->|UDP or TCP 8443 media| clients
-    offloader -->|launches| jobs
-    jobs -->|UDP or TCP 8443 media| rtcd
-    rtcd -->|UDP or TCP 8443 media| jobs
-```
+![Calls deployment with RTCD and recording](../../images/calls-deployment-rtcd-recording.png)
 
 **When to use it**
 
