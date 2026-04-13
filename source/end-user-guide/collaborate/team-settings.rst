@@ -89,8 +89,8 @@ Invite code
 The **Invite Code** is used as part of the URL in team invitation links. Select **Regenerate** to create a new invitation link and invalidate any previous link.
 
 
-Membership Policies tab
------------------------
+Membership Policies
+-------------------
 
 .. include:: ../../_static/badges/entry-adv.rst
   :start-after: :nosearch:
