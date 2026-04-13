@@ -483,10 +483,6 @@ The following built-in roles with default permissions are available:
 
 - manage_shared_channels
 
-*system_secure_connection_manager*
-
-- manage_secure_connections
-
 *system_guest*
 
 - create_group_channel
