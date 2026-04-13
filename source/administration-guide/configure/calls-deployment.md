@@ -257,50 +257,50 @@ This section lists the network ports that must be opened for each server involve
 
 Work through one server at a time so you can verify nothing is missed before moving on:
 
-#### Mattermost server ports
+##### Mattermost server ports
 
 | Port | Protocol | Direction | Source | Destination | Notes |
 |---|---|---|---|---|---|
 | 443 | TCP | Inbound | Mattermost clients | Mattermost server | HTTPS and WebSocket signaling. |
-| 8443 | UDP | Inbound | Mattermost clients | Mattermost server | Media traffic in Integrated mode. |
-| 8443 | TCP | Inbound | Mattermost clients | Mattermost server | Media traffic in Integrated mode. |
+| 8443 | UDP | Inbound | Mattermost clients | Mattermost server | Media traffic (Integrated mode). |
+| 8443 | TCP | Inbound | Mattermost clients | Mattermost server | Media traffic fallback (Integrated mode). |
 | 3478 | UDP | Outbound | Mattermost server | `stun.global.calls.mattermost.com` | (Optional - Step 1.3.1) Public IP discovery using STUN. |
 
-#### RTCD server ports
+##### RTCD server ports
 
 If you deployed an RTCD server in Step 1.4, open these ports:
 
 | Port | Protocol | Direction | Source | Destination | Notes |
 |---|---|---|---|---|---|
 | 8443 | UDP | Inbound | Mattermost clients and calls-offloader server | RTCD server | Media traffic. |
-| 8443 | TCP | Inbound | Mattermost clients and calls-offloader server | RTCD server | Media fallback. |
-| 8045 | TCP | Inbound | Mattermost server | RTCD server | RTCD API. Internal only — do not expose publicly. |
+| 8443 | TCP | Inbound | Mattermost clients and calls-offloader server | RTCD server | Media traffic fallback. |
+| 8045 | TCP | Inbound | Mattermost server | RTCD server | RTCD API (Internal only) |
 | 3478 | UDP | Outbound | RTCD server | `stun.global.calls.mattermost.com` | (Optional - Step 1.3.1) Public IP discovery using STUN. |
 
 ```{important}
 If you use NGINX as a reverse proxy in front of Mattermost, note that NGINX cannot forward UDP traffic. Port 8443 must be opened directly on the server running the media service — not on NGINX. Port 443 is the only port NGINX handles for Calls.
 ```
 
-#### Recording server ports
+##### Recording server ports
 
 If you deployed a calls-offloader server in Step 1.4, open these ports:
 
 | Port | Protocol | Direction | Source | Destination | Notes |
 |---|---|---|---|---|---|
-| 4545 | TCP | Inbound | Mattermost server | calls-offloader server | Job service API. Internal only — do not expose publicly. |
+| 4545 | TCP | Inbound | Mattermost server | calls-offloader server | Job service API (Internal only) |
 | 8443 | UDP | Outbound | calls-offloader server | Mattermost server and RTCD server | Recorder and transcriber jobs connect to the media service as call participants. |
-| 8443 | TCP | Outbound | calls-offloader server | Mattermost server and RTCD server | Fallback if UDP is unavailable. |
+| 8443 | TCP | Outbound | calls-offloader server | Mattermost server and RTCD server | Media traffic fallback. |
 | 443 | TCP | Outbound | calls-offloader server | Mattermost server | Recorder and transcriber jobs post results back to Mattermost. |
 
-#### TURN server ports
+##### TURN server ports
 
 If you deployed a TURN server in Step 1.4, open these ports. If you are using `coturn`, these are the common defaults:
 
 | Port | Protocol | Direction | Source | Destination | Notes |
 |---|---|---|---|---|---|
-| 3478 | UDP and TCP | Inbound | Mattermost clients | TURN server | STUN and TURN relay. |
-| 5349 | UDP and TCP | Inbound | Mattermost clients | TURN server | TURN over TLS. Optional — only if you configure TLS on coturn. |
-| 49152–65535 | UDP | Inbound | Mattermost clients | TURN server | TURN relay port range required for coturn to relay media. |
+| 3478 | UDP / TCP | Inbound | Mattermost clients | TURN server | TURN relay. |
+| 5349 | UDP / TCP | Inbound | Mattermost clients | TURN server | (Optional) If you configure TLS on TURN. |
+| 49152–65535 | UDP | Inbound | Mattermost clients | TURN server | TURN relay port range required to relay media. |
 
 ### 1.6 Networking Checks
 
@@ -372,7 +372,7 @@ Run from a client machine on the same network as your users:
 |---|---|---|---|
 | 1.6.10 | `sudo nmap -sU -p 3478 TARGET_IP` | TURN server IP | Clients can reach the TURN server on UDP 3478 |
 | 1.6.11 | `nmap -p 3478 TARGET_IP` | TURN server IP | Clients can reach the TURN server on TCP 3478 |
-| 1.6.12 | `nmap -p 5349 TARGET_IP` | TURN server IP | Clients can reach the TURN server over TLS (only if you configured TLS on coturn) |
+| 1.6.12 | `nmap -p 5349 TARGET_IP` | TURN server IP | (Optional) Clients can reach the TURN server over TLS |
 | 1.6.13 | `sudo nmap -sU -p 49152 TARGET_IP` | TURN server IP | Spot check of the TURN relay port range |
 
 ### 1.7 Verification Checks
@@ -395,7 +395,7 @@ Before proceeding to Phase 2, confirm all of the following:
 
 For most deployments, start by deploying Calls using the Integrated architecture, even if you plan to use RTCD or `calls-offloader` services later. This approach gives you a clean baseline: if Calls does not work using the simplest deployment method, the problem is usually networking, firewall rules, or plugin configuration. It is much easier to isolate those problems before you add RTCD or `calls-offloader` in later phases.
 
-If you are deploying Mattermost on Kubernetes, skip this phase and deploy RTCD from the start. RTCD is the only officially supported Calls deployment path for Kubernetes environments.
+**Skip this phase if you are deploying on Kubernetes**. RTCD is the only officially supported Calls deployment path for Kubernetes environments.
 
 ### 2.1 Prerequisites
 
@@ -411,9 +411,9 @@ The Calls plugin is prepackaged with Mattermost self-hosted deployments. Go to *
 
 Set **Enable Plugin** to `true`. This enables editing for the rest of the configuration settings on the page.
 
-**2.2.2: Put the deployment in test mode**
+**2.2.2: Enable test mode**
 
-Enable **Test mode** so Calls stays restricted during initial validation. In this mode, System Admins control where Calls is available and can enable it in specific channels for testing.
+Set **Test mode** to `on`, so Calls stays restricted during initial validation. In this mode, System Admins control where Calls is available and can enable it in specific channels for testing.
 
 **2.2.3: Configure the host media address**
 
@@ -478,13 +478,14 @@ Now that you've verified a basic Integrated Calls deployment, you can add RTCD t
 
 - [ ] RTCD server is provisioned (1.4) and RTCD networking checks passed (1.6.3-1.6.5)
 - [ ] Integrated Calls deployment checks passed (2.3.1-2.3.4)
+     _Not applicable if you are deploying on Kubernetes_
 - [ ] Mattermost Enterprise or Enterprise Advanced license is active on your server
 - [ ] System Admin permissions on your Mattermost server
 
 
 ### 3.2 Install RTCD
 
-Follow the [RTCD Setup and Configuration](calls-rtcd-setup.md) guide for the actual installation. RTCD is the separate media service used to handle call audio and screen sharing at scale. The guide covers:
+Follow the [RTCD Setup and Configuration](calls-rtcd-setup.md) guide for the actual installation. The guide covers:
 
 - Binary installation
 - `rtcd.toml` configuration
@@ -560,7 +561,7 @@ Now we will install and configure the `calls-offloader` job service that handles
 
 ### 4.1 Prerequisites
 
-- [ ] `calls-offloader` server is provisioned (1.4) and relevant recording networking checks passed (1.6.6-1.6.9)
+- [ ] `calls-offloader` server is provisioned (1.4) and relevant networking checks passed (1.6.6-1.6.9)
 - [ ] If you are using RTCD: Phase 3 verification checks passed (3.5.1-3.5.4). 
 - [ ] If you are using Integrated mode: Phase 2 verification checks passed (2.3.1-2.3.4).
 - [ ] Mattermost Enterprise or Enterprise Advanced license is active on your server
@@ -647,6 +648,8 @@ Thank you for volunteering to test Mattermost Calls before a wider rollout. Afte
 
 Calls is enabled in this channel for pilot testing. You can select **Start call** in the channel header to begin, or join an existing call if one is already started.
 
+You can learn more about Mattermost Calls in the [documentation](https://docs.mattermost.com/end-user-guide/collaborate/make-calls.html).
+
 **Test Cases**
 
 | Test | Action | Pass criteria | Client Types |
@@ -679,12 +682,8 @@ If you encounter an issue, please report it by posting in this channel and inclu
 |---|---|---|
 | 5.3.1 | Check your metrics dashboard during a pilot call | Active sessions and participants are visible and counted correctly |
 | 5.3.2 | If using RTCD, check RTCD error metrics after pilot calls (`rtcd_rtc_errors_total`) | No elevated error counts |
-| 5.3.3 | If using RTCD, check CPU and memory metrics during a pilot call (`rtcd_process_cpu_seconds_total`, `rtcd_process_resident_memory_bytes`) | CPU and memory stay within expected bounds |
+| 5.3.3 | If using RTCD, check CPU and memory metrics during a pilot call (`rtcd_process_cpu_seconds_total`, `rtcd_process_resident_memory_bytes`) | No CPU or memory spikes observed |
 | 5.3.4 | Review Mattermost logs, plus RTCD and calls-offloader logs if those services are deployed | No recurring `ERROR` lines, and no unexpected `WARN` patterns |
-
-```{important}
-**Do not continue to a production rollout until all relevant checks are passing. If any check fails, go to [Appendix A: Troubleshooting](#appendix-a-troubleshooting).**
-```
 
 **Production readiness**
 
@@ -693,7 +692,7 @@ Collect feedback from your pilot users after 3-5 business days and use it to eva
 | Check | Requirement |
 |---|---|
 | 5.3.5 | Audio quality rated acceptable by 80%+ of pilot users |
-| 5.3.6 | No blocking issues found in the pilot test cases relevant to your deployment |
+| 5.3.6 | No blocking issues found in the pilot test cases |
 | 5.3.7 | All pilot users confirm readiness for production rollout |
 
 If the pilot users find issues, do not expand the rollout yet:
@@ -701,6 +700,12 @@ If the pilot users find issues, do not expand the rollout yet:
 - Fix the issue in the smallest possible scope.
 - Repeat the affected pilot test case.
 - Stay in pilot until the failing scenario is consistently passing.
+
+You can also run `/call stats` in the Mattermost message area after a failed test for additional diagnostic clues.
+
+```{important}
+**Do not continue to a production rollout until all relevant checks are passing. If any check fails, go to [Appendix A: Troubleshooting](#appendix-a-troubleshooting).**
+```
 
 ---
 
@@ -710,29 +715,31 @@ Now you will execute a broader rollout to all users in production.
 
 ### 6.1 Prerequisites
 
-- [ ] Phase 5 production readiness gate passed (5.3.1-5.3.7)
+- [ ] Phase 5 production readiness checks passed (5.3.1-5.3.7)
 - [ ] Rollback plan documented and understood
 - [ ] System Admin permissions on your Mattermost server
 - [ ] Access to the metrics dashboard and logs on your Calls infrastructure
-- [ ] Recording verification checks passed (4.4.1-4.4.4), if recording, transcription, or live captions are enabled
 
 ### 6.2 Rollback plan
 
-You should be familiar with your rollback options before you begin the staged production rollout. If something goes wrong, choose the smallest rollback that solves the problem.
+You should be familiar with your rollback options before you begin the staged production rollout. If something goes wrong, choose the smallest rollback that solves the problem:
 
 **Per-channel rollback**
+
 Disables Calls in specific channels.
 
 1. Navigate to the impacted channel.
 2. Select the **Channel menu**, then select **Disable calls**.
 
 **Test mode rollback**
+
 Restricts Calls to channels where it has been enabled by a System Admin.
 
 1. Go to **System Console > Plugins > Calls > Settings**.
 2. Set **Test Mode** to `on`.
 
 **Full rollback**
+
 Disables Calls completely for everyone.
 
 1. Go to **System Console > Plugins > Plugin Management**.
@@ -825,8 +832,8 @@ Check [Appendix A: Troubleshooting](#appendix-a-troubleshooting) for common issu
 | Cause | Fix |
 |---|---|
 | The Calls plugin is disabled | Go to **System Console > Plugins > Plugin Management** and enable Calls |
-| The deployment is in test mode | Go to **System Console > Plugins > Calls > Settings** and check the deployment state — only System Admins can start calls in test mode |
-| Calls is not enabled for the channel | Open the channel menu and select **Enable calls** |
+| The deployment is in test mode | Go to **System Console > Plugins > Calls > Settings** and check the deployment state — Calls must be enabled in specific channels by System Admins in test mode |
+| Calls is not enabled for the channel | When test mode is enabled, open the **channel menu** and select **Enable calls** |
 | The user is on an older client | Ask the user to update to the current Mattermost desktop or mobile app |
 
 ### A.2 Calls start but audio does not work
@@ -837,8 +844,6 @@ Check [Appendix A: Troubleshooting](#appendix-a-troubleshooting) for common issu
 | TCP `8443` is also blocked and fallback is failing | Repeat the TCP check (1.6.2 or 1.6.4) — clients need at least one path to the media service |
 | The wrong media address is being advertised | Re-check `ICE Host Override` in Phase 2 (Integrated) or `ice_host_override` in `rtcd.toml` (RTCD) — the address must be reachable by clients |
 | Browser or desktop microphone permissions were denied | Ask the user to check browser or OS microphone permissions and reload the app |
-
-Run `/call stats` in the Mattermost message area after a failed test for additional diagnostic clues.
 
 ### A.3 Remote users cannot join from outside the network
 
