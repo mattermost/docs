@@ -129,6 +129,35 @@ From Mattermost v11, :doc:`Support Packet generation </administration-guide/mana
 
 The enterprise search connection test results appear in the Support Packet and can help identify configuration issues such as network connectivity problems, authentication failures, or server availability issues. If connection errors are present, they will be clearly documented with specific error messages to aid in troubleshooting.
 
+How does Mattermost handle Elasticsearch or OpenSearch outages?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+From Mattermost v11.7, the server includes an automatic health monitor for Elasticsearch and OpenSearch connections. The health monitor runs periodic health checks and automatically manages the connection lifecycle:
+
+- **Health checks**: The server checks the health of the search engine cluster every 60 seconds. After 3 consecutive health check failures, the engine is stopped and search falls back to the database.
+- **Automatic retry**: When the search engine is unavailable, the server retries connecting with exponential backoff, starting at 15 seconds and doubling up to a maximum of 5 minutes between attempts.
+- **Automatic recovery**: When the search engine becomes available again, the server automatically reconnects and resumes using it for search queries. No manual intervention or server restart is required.
+- **Configuration changes**: Changes to Elasticsearch or OpenSearch configuration settings, or license changes, immediately trigger the health monitor to re-evaluate the connection state.
+
+During an outage, you may see the following log messages:
+
+.. list-table::
+   :widths: 50 50
+   :header-rows: 1
+
+   * - Log message
+     - Meaning
+   * - ``Search engine health check failed``
+     - An individual health check failed. Includes a ``consecutive_failures`` count.
+   * - ``Search engine health check failed repeatedly; stopping engine``
+     - The failure threshold was reached and the engine has been stopped. Search falls back to the database.
+   * - ``Search engine watcher: Start() failed, will retry``
+     - A reconnection attempt failed. Includes a ``next_backoff`` field indicating the time until the next retry.
+   * - ``Search engine watcher: engine started successfully``
+     - The engine has recovered and is active again.
+   * - ``Search engine watcher: engine disabled, parking``
+     - The health monitor is idle because the search engine is disabled in configuration.
+
 My search indexes won't complete, what should I do?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
