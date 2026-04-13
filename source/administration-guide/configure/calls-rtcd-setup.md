@@ -377,6 +377,6 @@ Once RTCD is properly set up and validated, configure Mattermost to use it:
 - [Calls Offloader Setup and Configuration](calls-offloader-setup.md): Setup guide for call recording and transcription
 - [Calls Metrics and Monitoring](calls-metrics-monitoring.md): Guide to monitoring Calls performance using metrics and observability
 - [Calls Deployment on Kubernetes](calls-kubernetes.md): Detailed guide for deploying Calls in Kubernetes environments
-- [Calls Troubleshooting](calls-troubleshooting.md): Detailed troubleshooting steps and debugging techniques
+- [Calls Logging](calls-logging.md): Detailed guidance for collecting Calls logs and client diagnostics
 
 For detailed Mattermost Calls configuration options, see the [Calls Plugin Configuration Settings](plugins-configuration-settings.rst#calls) documentation.

@@ -51,7 +51,7 @@ If you need expert help deploying Calls, contact your Account Manager or [talk t
 
 ### Contacting Support
 
-If you encounter issues and need to open a [support case](https://support.mattermost.com), please include the exact **step number** (e.g. 2.2.1) that failed, along with your {doc}`Mattermost support packet <../../administration-guide/manage/admin/generating-support-packet>` and Calls logs (see [Calls Log Collection](calls-log-collection.md) for how to gather them.)
+If you encounter issues and need to open a [support case](https://support.mattermost.com), please include the exact **step number** (e.g. 2.2.1) that failed, along with your {doc}`Mattermost support packet <../../administration-guide/manage/admin/generating-support-packet>` and Calls logs (see [Calls Logging](calls-logging.md) for how to gather them.)
 
 ---
 

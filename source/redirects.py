@@ -951,6 +951,10 @@ redirects_map = {
         "https://docs.mattermost.com/administration-guide/onboard/bulk-loading-data.html",
 "configure/calls-deployment.html":
         "https://docs.mattermost.com/administration-guide/configure/calls-deployment.html",
+"configure/calls-log-collection.html":
+        "https://docs.mattermost.com/administration-guide/configure/calls-logging.html",
+"configure/calls-troubleshooting.html":
+        "https://docs.mattermost.com/administration-guide/configure/calls-logging.html",
 "configure/cloud-billing-account-settings.html":
         "https://docs.mattermost.com/administration-guide/configure/cloud-billing-account-settings.html",
 "configure/common-config-settings-notation.html":
