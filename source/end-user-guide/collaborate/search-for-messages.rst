@@ -4,7 +4,7 @@ Search for messages
 .. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
-Use Mattermost search to find messages, replies, and the contents of files. You can also search by `hashtags <#hashtags>`__ and perform more advanced searches using `search modifiers <#search-modifiers>`__.
+Use Mattermost search to find messages, replies, and the contents of files. You can also search by `hashtags <#hashtags>`__, perform more advanced searches using `search modifiers <#search-modifiers>`__, or adjust search results to show messages from the current team, a specific team, or all teams.
 
 Search for message
 -------------------
@@ -69,9 +69,7 @@ Search for message
 
   .. tip::
 
-    You can adjust search results to show messages from the current team, a specific team, or all teams.
-
-    From Mattermost v11.6, when using Mattermost in a web browser or the desktop app, you can open your current search results in a separate popout window by selecting the **Open in new window** |new-window-icon| icon in the search results header.
+    When using Mattermost in a web browser or the desktop app, you can open your current search results in a separate popout window by selecting the **Open in new window** |new-window-icon| icon in the search results header.
 
 Search for files
 ----------------
