@@ -28,7 +28,7 @@ Access Team Settings
 
 .. note::
 
-  System Admins also have access to the **Membership Policies** tab in Team Settings and can see all policies for the team, including those that span multiple teams.
+  System Admins also have access to the **Membership Policies** tab in Team Settings and see the same policies as Team Admins.
 
 Manage membership policies
 --------------------------
