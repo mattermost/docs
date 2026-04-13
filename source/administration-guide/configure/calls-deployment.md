@@ -16,9 +16,9 @@ Calls is uniquely suited for mission-critical operations across defense, intelli
 
 Functionality includes:
 - **1:1 and Group Calling**: Initiate real-time voice communication between two or more participants.
-- **Screen Sharing**:  Share your screen during calls to collaborate visually on tasks, review documents, or troubleshoot live issues. 
-- **Call Recording and Transcription**: Record voice sessions for review, compliance, or distribution. *(Enterprise, Enterprise Advanced)*
-- **Live Captioning**: Provide real-time subtitles for inclusivity, accessibility, and support in noisy or multilingual environments. *(Enterprise, Enterprise Advanced)*
+- **Screen Sharing**:  Share your screen during calls to collaborate visually on tasks, review documents, or troubleshoot live issues.
+- **Call Recording and Transcription**: Record voice sessions for asynchronous review. *(Enterprise, Enterprise Advanced)*
+- **Live Captioning**: Generate real-time subtitles for accessibility. *(Enterprise, Enterprise Advanced)*
 
 ## Deployment Overview
 
@@ -170,8 +170,6 @@ The `calls-offloader` service can be added to a Calls deployment to enable recor
 
 ### 1.3 Networking Decisions
 
-Do this before you install anything new.
-
 #### 1.3.1 STUN for Public IP Discovery
 
 STUN is a protocol that helps the media server discover its public IP address automatically so remote clients can connect to Calls.
@@ -303,9 +301,8 @@ First, install `nmap` on each machine you will run checks from. For example:
 When you execute each check below, `nmap` returns `open`, `closed`, or `filtered`.
 
 **Pass**:
-- `open`: Port is reachable and the service is running. Expected if you've already installed the RTCD or `calls-offloader` services in Phases 3-4.
+- `open`: Port is reachable and the service is running. Expected if you've already installed the RTCD or Recording services in Phases 3-4.
 - `closed`: Port is reachable but the service is not running. Expected if you just provisioned the infrastructure in Step 1.4.
-- `open|filtered`: Common for UDP checks before the service is installed. Treat this as acceptable for these pre-installation firewall checks if the port is expected to be open.
 
 **Fail**: 
 - `filtered`: Firewall is blocking the port. Revisit your networking configuration in Step 1.5 before continuing.
