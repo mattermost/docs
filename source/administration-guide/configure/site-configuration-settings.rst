@@ -253,7 +253,7 @@ Report a Problem
 
 With self-hosted deployments, you can specify how the **Report a Problem** option behaves in the Mattermost app via the **Help** menu:
 
-- **Default**: Uses the default Mattermost method to report a problem. Customers with a Mattermost subscription are prompted to send an email to the Mattermost support team. Community deployments are directed to the `Mattermost troubleshooting forums <https://mattermost.com/pl/report_a_problem_unlicensed>`_.
+- **Default**: Customers with a Mattermost license can open a support case by email with the Mattermost support team. Unlicensed Mattermost deployments are directed to the `troubleshooting forums <https://mattermost.com/pl/report_a_problem_unlicensed>`_.
 - **Email address**: Enables you to :ref:`enter an email address <administration-guide/configure/site-configuration-settings:report a problem email address>` that users will be prompted to send a message to when they choose **Report a Problem** in Mattermost.
 - **Custom link**: Enables you to :ref:`enter a URL <administration-guide/configure/site-configuration-settings:report a problem link>` that users will be directed to when they choose **Report a Problem** in Mattermost.
 - **Hide link**: Removes the **Report a Problem** option from Mattermost.
