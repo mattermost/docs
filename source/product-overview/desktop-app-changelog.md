@@ -9,9 +9,20 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 (release-v6-1)=
 ## Release v6.1
 
-**v6.1.0 Release Day: 2026-03-02**
+- **v6.1.1, released 2026-04-08**
 
-**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/latest)
+  - Mattermost Desktop App v6.1.1 contains low to medium severity level security fixes. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Upgraded to Electron v40.8.4.
+  - Fixed additional issues around URL parsing with special characters.
+  - Fixed an issue where new views would not load if the URL to open contained query parameters.
+  - Fixed an issue where plugins other than Calls could not request desktop screen sharing sources.
+  - Fixed an issue where content running inside a server view could close the view or cause the app to become unresponsive.
+
+- **v6.1.0, released 2026-03-02**
+
+  - Original v6.1.0 release
+
+**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/v6.1.1)
 
 ### Important Upgrade Notes
 
