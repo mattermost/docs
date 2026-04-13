@@ -5,7 +5,7 @@ Connect Zoom to Mattermost
   :start-after: :nosearch:
 
 
-Reduce friction and time lost to coordinating meetings and switching between apps by integrating Zoom with Mattermost. Make it easy for your teams to start both spontaneous video calls directly from Mattermost channels. Receive Zoom cloud recordings and transcripts directly in Mattermost once they're available.
+Reduce friction and time lost to coordinating meetings and switching between apps by integrating Zoom with Mattermost. Make it easy for your teams to start spontaneous video calls directly from Mattermost channels. Receive Zoom cloud recordings and transcripts directly in Mattermost once they're available.
 
 Deploy
 ------
@@ -37,7 +37,7 @@ Zoom supports OAuth authentication, and there are 2 types of OAuth Zoom Apps you
   5. Choose **Admin-managed app** as the app type.
   6. Next you'll find your **Client ID** and **Client Secret**. Please copy this as these will be needed when you set up Mattermost to use the plugin.
   7. Enter a valid **Redirect URL for OAuth** \(`https://SITEURL/plugins/zoom/oauth2/complete`\) and add the same URL under **Add Allow List**. Note that `SITEURL` should be your Mattermost server URL.
-  8. To add user scopes to the app, select **Scopes**, and add the following scopes: ``meeting:read:meeting``, ``meeting:write:meeting``, ``user:read:user``, ``cloud_recording:read:recording``, ``archiving:read:list_archived_files``.
+  8. To add user scopes to the app, select **Scopes**, and add the following scopes: ``meeting:read:meeting`` (retrieve meeting details), ``meeting:write:meeting`` (create and update meetings), ``user:read:user`` (read user profile info), ``cloud_recording:read:recording`` (access cloud recording files), ``archiving:read:list_archived_files`` (list archived files).
 
 .. tab:: User-Managed
 
@@ -50,7 +50,7 @@ Zoom supports OAuth authentication, and there are 2 types of OAuth Zoom Apps you
   5. Choose **User-managed app** as the app type.
   6. Next you'll find your **Client ID** and **Client Secret**. Please copy this as these will be needed when you set up Mattermost to use the plugin.
   7. Enter a valid **Redirect URL for OAuth** \(`https://SITEURL/plugins/zoom/oauth2/complete`\) and add the same URL under **Add Allow List**. Note that `SITEURL` should be your Mattermost server URL.
-  8. To add user scopes to the app, select **Scopes**, and add the following scopes: ``meeting:read:meeting``, ``meeting:write:meeting``, ``user:read:user``, ``cloud_recording:read:recording``, ``archiving:read:list_archived_files``.
+  8. To add user scopes to the app, select **Scopes**, and add the following scopes: ``meeting:read:meeting`` (retrieve meeting details), ``meeting:write:meeting`` (create and update meetings), ``user:read:user`` (read user profile info), ``cloud_recording:read:recording`` (access cloud recording files), ``archiving:read:list_archived_files`` (list archived files).
 
 Configure webhook events
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -62,7 +62,8 @@ When a Zoom meeting ends, the original post shared in the channel can be automat
 3. Select the **Add Events** button and add: **All Recordings have completed**, **Recording Transcript files have completed**, **Start Meeting**, and **End Meeting**.
 4. Enter a valid **Event notification endpoint URL** ``https://SITEURL/plugins/zoom/webhook?secret=WEBHOOKSECRET``, replacing ``SITEURL`` with your Mattermost URL. ``WEBHOOKSECRET`` is generated during `Mattermost configuration <#mattermost-configuration>`__.
 5. Select **Save** to save the webhook configuration.
-6. Copy the **Secret Token** value at the top of the page for use in the next section.
+6. Verify the webhook is active by selecting **Test Event** in the Zoom webhook configuration. Confirm that Mattermost returns an HTTP 200 response or that the Mattermost plugin logs show a successful delivery. Also confirm that the **Secret Token** shown in the UI matches the ``WEBHOOKSECRET`` value used in the **Event notification endpoint URL** from step 4.
+7. Copy the **Secret Token** value at the top of the page for use in the next section.
 
 Mattermost configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -94,12 +95,12 @@ Enable
 
 Notify your teams that they can `connect their Zoom accounts to Mattermost <#usage>`__.
 
-To subscribe a channel to a recurring Zoom meeting, use the following slash command: ``/zoom subscription add [meeting ID]``. The channel will receive a notification when the meeting starts, along with an access link. If cloud recordings are enabled and the meeting was recorded, the recording and transcript are posted as replies to the initial message once they are available.
+To subscribe a channel to a recurring Zoom meeting (a meeting scheduled to repeat on a regular basis, such as daily or weekly, or with no fixed time using Zoom's **Recurrence** option), use the following slash command: ``/zoom subscription add [meeting ID]``. You can find the meeting ID in the Zoom desktop or web client by opening the meeting's details page, or from the meeting invitation email. The channel will receive a notification when the meeting starts, along with an access link. If cloud recordings are enabled and the meeting was recorded, the recording and transcript are posted as replies to the initial message once they are available.
 
 Upgrade
 -------
 
-We recommend updating this integration when new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost. Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-zoom/releases>`__ for information on the latest release, previous releases, and compatibiilty considerations.
+We recommend updating this integration when new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost. Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-zoom/releases>`__ for information on the latest release, previous releases, and compatibility considerations.
 
 Usage
 -----
@@ -112,7 +113,7 @@ Join the meeting by selecting the call invitation in the channel.
 
 Run the ``/zoom settings`` slash command to set your preference for using your Zoom personal meeting ID as a meeting host. You can choose to always use your personal meeting ID, always use a new unique meeting id, or set Mattermost to prompt you for your preference each time you start a call.
 
-Subscribe a Mattermost channel to a recurring Zoom meeting with ``/zoom subscription add [meeting ID]``. Cloud recordings and transcripts must be enabled in your paid Zoom account in order to receive them in Mattermost. Once enabled, you'll receive a notification in Mattermost when the recording and transcript are available for recorded meetings.
+Subscribe a Mattermost channel to a recurring Zoom meeting with ``/zoom subscription add [meeting ID]``. Cloud recordings and transcripts must be enabled in your paid Zoom account in order to receive them in Mattermost. To enable this, sign in to the `Zoom web portal <https://zoom.us/>`_ as an account owner or admin, go to **Account Management > Account Settings**, select the **Recording** tab, and enable **Allow hosts to record and save the session in the cloud**. Then, under **Advanced cloud recording settings**, select the **Audio Transcript** checkbox. Alternatively, enable these settings at the user level and assign recording permission to the meeting host. See `Zoom's cloud recording settings documentation <https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0064676>`_ and `audio transcription documentation <https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0065911>`_ for step-by-step guidance. Once enabled, you'll receive a notification in Mattermost when the recording and transcript are available for recorded meetings.
 
 If you create a new meeting using the Zoom button in the Mattermost RHS, then the recording and transcript are similarly posted as replies to the initial message once they are available, if cloud recordings are enabled and the meeting was recorded.
 
@@ -142,13 +143,13 @@ Visit the `Mattermost Developer Workflow <https://developers.mattermost.com/exte
 Upgrade
 -------
 
-We recommend updating this integration when new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost. Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-zoom/releases>`__ for information on the latest release, previous releases, and compatibiilty considerations.
+We recommend updating this integration when new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost. Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-zoom/releases>`__ for information on the latest release, previous releases, and compatibility considerations.
 
 Get help
 --------
 
 Mattermost customers can open a `Mattermost support case <https://support.mattermost.com/hc/en-us/requests/new>`_. To report a bug, please open a GitHub issue against the `Mattermost Zoom plugin repository <https://github.com/mattermost/mattermost-plugin-zoom>`_.
 
-For questions, feedback, and assistance, join our pubic `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance.
+For questions, feedback, and assistance, join our public `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance.
 
 Mattermost Team Edition and Free customers can visit the Mattermost `peer-to-peer troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`_ to access the global Mattermost Community for assistance.
