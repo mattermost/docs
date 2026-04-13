@@ -53,7 +53,7 @@ Deployment options
   Step 3: Virtual Machine Settings and Network Configuration
   ----------------------------------------------------------
 
-  On **Virtual Machine Settings** tag, configure the following:
+  On **Virtual Machine Settings** tab, configure the following:
 
   1. **Virtual machine size:** For trials, we recommend **Standard_F2s_v2** size but you can choose any other size available in your region.
   2. **Public IP address:** Typically **create new**. You must set a **DNS prefix** (label) that is **globally unique** in Azure; it forms part of your URL. This DNS will allow public access to your workspace. It is important that you do not already have a matching DNS name within your Azure subscription, or your deployment may fail later in the process.
@@ -81,7 +81,7 @@ Deployment options
   Step 5: Open Mattermost and create your administrator
   -----------------------------------------------------
 
-  In a browser, go to your **HTTPS** URL. Mattermost will prompt you to **create the first user**, which becomes the System Administrator**. That account is different from the **Linux** username and password (or SSH key) you configured in Step 3.
+  In a browser, go to your **HTTPS** URL. Mattermost will prompt you to **create the first user**, which becomes the **System Administrator**. That account is different from the **Linux** username and password (or SSH key) you configured in Step 3.
 
   Congratulations! You’ve successfully deployed Mattermost for evaluation.
 
