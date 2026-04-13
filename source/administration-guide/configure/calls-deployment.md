@@ -78,21 +78,21 @@ Before you start, confirm the following:
 
 ### 1.2 Deployment Infrastructure
 
-To determine your deployment infrastructure, answer the following questions:
+To determine your deployment infrastructure, start by answering the following questions:
 
 - **How many people do you expect to use Calls?**
   - **Up to 50:** You can use the **Integrated** deployment mode.
   - **More than 50:** You'll need to deploy an additional component called **RTCD** for handling media processing at scale.
 
 - **Do you require call recording, transcription, or live captions?**
-  - **Yes:** You'll need to deploy an additional component for the **Recording** service called Calls Offloader.
+  - **Yes:** You'll need to deploy an additional component for the **Recording** service.
   - **No:** You do not need the recording service.
 
 Based on your answers, you can explore the associated deployment infrastructure you'll need in the tabs below:
 
 ````{tab} Integrated
 
-In Integrated mode, the Calls plugin runs its built-in media service directly on the Mattermost server. This is the simplest deployment model, since you do not need to provision a separate service to handle media processing.
+In **Integrated** mode, the Calls plugin runs its built-in media service directly on the Mattermost server. This is the simplest deployment model, since you do not need to provision a separate service to handle media processing.
 
 ```{image} ../../images/calls-deployment-integrated.png
 :alt: Integrated Calls deployment
@@ -108,17 +108,17 @@ In Integrated mode, the Calls plugin runs its built-in media service directly on
 
 **Components**
 
-- **Mattermost server**: Calls plugin is pre-installed.
+- **Mattermost server**: Calls plugin is pre-installed, not additional infrastructure is needed.
 
 **License**
 
-- Mattermost Entry: 1:1 Calls + Screen Sharing
-- Mattermost Professional, Enterprise, or Enterprise Advanced: Group Calls + Screen Sharing
+- **Mattermost Entry**: 1:1 Calls + Screen Sharing
+- **Mattermost Professional, Enterprise, or Enterprise Advanced**: Group Calls + Screen Sharing
 ````
 
 ````{tab} RTCD
 
-The RTCD can be added as a dedicated media service that processes all call audio and screen sharing media. The Mattermost server is still responsible for signaling (setting up, managing, and ending calls) and channel state (who is joining or leaving, who has muted, and overall call status), but the call media itself flows directly between clients and the RTCD server, completely bypassing the Mattermost server.
+The **RTCD Server** can be added as a dedicated media service that processes all call audio and screen sharing media. The Mattermost server is still responsible for signaling (setting up, managing, and ending calls) and channel state (who is joining or leaving, who has muted, and overall call status), but the call media itself flows directly between clients and the RTCD server, completely bypassing the Mattermost server.
 
 Deploying RTCD is **highly recommended in production deployments** for performance, scalability, and stability of Mattermost Calls.
 
@@ -134,7 +134,6 @@ Use RTCD if you need optimized performance, scalability, and the best possible u
 
 - You want to keep call media traffic off your main Mattermost server to improve overall server performance and reduce CPU usage spikes.
 - You need your deployment to easily scale as call volume increases; additional RTCD servers can be added for load balancing.
-- You require ongoing calls to remain active even if the Mattermost server needs to be restarted (some features like reactions and muting may be temporarily unavailable during the restart).
 - You want the lowest possible media latency and highest reliability for Calls.
 - You are deploying Mattermost on Kubernetes, where RTCD is required.
 
@@ -145,13 +144,13 @@ Use RTCD if you need optimized performance, scalability, and the best possible u
 
 **License**
 
-- Mattermost Enterprise or Enterprise Advanced
+- **Mattermost Enterprise** or **Enterprise Advanced**
 
 ````
 
 ````{tab} RTCD + Recording
 
-The `calls-offloader` service can be added to a Calls deployment to enable recording, transcription, and live captions.
+The **Recording** service (`calls-offloader`) can be added to any Calls deployment to enable recording, transcription, and live captions.
 
 ```{image} ../../images/calls-deployment-rtcd-recording.png
 :alt: Calls deployment with RTCD and recording
@@ -166,7 +165,7 @@ The `calls-offloader` service can be added to a Calls deployment to enable recor
 
 - **Mattermost server**: Calls plugin is pre-installed.
 - **RTCD Server**: Dedicated media service. Clients connect to it directly for media traffic.
-- **Calls Offloader**: Job service that manages recording and transcription.
+- **Calls Offloader**: Job service that manages recording, transcription and live captions.
 
 ```{note}
 `calls-offloader` can also be added to an integrated Calls deployment without RTCD. This guide uses RTCD as the base because it is the recommended production path for most deployments.
@@ -174,7 +173,7 @@ The `calls-offloader` service can be added to a Calls deployment to enable recor
 
 **License**
 
-- Mattermost Enterprise or Enterprise Advanced
+- **Mattermost Enterprise** or **Enterprise Advanced**
 
 ````
 
@@ -192,11 +191,11 @@ Your media server is the Mattermost server in the case of an **Integrated** Call
 
 **STUN Decision Tree**
 
-1. **Are all users and your media server (Mattermost server or RTCD) in the same private network, VPN, or air-gapped environment, with no outside clients?**
+1. **Are all users and your media server in the same private network, VPN, or air-gapped environment, with no outside clients?**
    - **Yes**: You do not need STUN for public IP discovery. You will use the private address of your media server for configuration in Phase 2.
    - **No**: Continue to the next question. 
 
-2. **Does your media server (Mattermost server or RTCD) have a stable public IP address or DNS name that clients on the public internet can reach?**
+2. **Does your media server have a stable public IP address or DNS name that clients on the public internet can reach?**
    - **Yes**: You do not need STUN for public IP discovery. You will use the stable public address of your media server for configuration in Phase 2.
    - **No**: You will need STUN. You must open outbound UDP 3478 from your media server to `stun.global.calls.mattermost.com`.
 
@@ -209,28 +208,32 @@ TURN is a relay service used only when clients cannot reach the Calls media serv
 
 Provisioning a TURN server is necessary if both of these conditions are true:
 
-- Clients connect from networks that cannot reliably use UDP on port `8443` for media traffic (preferred path).
+- Clients connect from networks that cannot reliably use UDP on port `8443` for media traffic (preferred).
 - Clients connect from networks that cannot reliably use TCP on port `8443` (fallback).
 
-TURN is typically a last resort as it adds additional networking and infrastructure complexity. Only plan to deploy TURN if your answers indicate that you cannot rely on UDP or TCP for media, and users need an alternative route. 
+TURN is typically a last resort as it adds latency and infrastructure complexity. Only plan to deploy TURN if your answers indicate that you cannot rely on UDP or TCP for media, and users need an alternative route. 
 
 
 ### 1.4 Provision Infrastructure
 
-Now provision the servers or VMs you'll need to support your Calls deployment. You are only preparing infrastructure here; software installation and service configuration happen in later phases. This step matters because you need the IP addresses or DNS names of these servers before you can finish the networking work in the next step.
+Now you'll provision the servers or VMs required to support your Calls deployment. You are only preparing infrastructure here; software installation and service configuration happen in later phases. This step matters because you need the IP addresses or DNS names of these servers before you can finish the networking configurations in the next step.
 
 Infrastructure requirements depend on the deployment architecture you chose in Step 1.2. If you provision additional hardware, write down the IP addresses or DNS names now because you will use them in Step 1.5:
 
 **Integrated**
+
 Since the Mattermost server is handling all media processing, you can skip this step and proceed to network configuration in Step 1.5.
 
 **RTCD**
+
 You will need to provision a new server for RTCD. Use the [performance baselines](calls-metrics-monitoring.md#performance-baselines) for benchmark examples of hardware sizing. The RTCD service supports [horizontal scaling](https://docs.mattermost.com/administration-guide/configure/calls-rtcd-setup.html#horizontal-scaling), but we recommend starting with one server and then scaling out if your expected workload requires it.
 
 **Recording**
+
 You will need to provision a new server for the `calls-offloader` service. The recommended starting point is **8 vCPU / 16 GB RAM**, or you can use these [performance benchmarks](https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md) to estimate recording capacity and transcription load.
 
 **TURN Server**
+
 If you've determined in Step 1.3.2 that your users cannot reliably reach the media server over UDP or TCP `8443`, you will need to provision your TURN server now.
 
 Mattermost recommends installing [coturn](https://github.com/coturn/coturn).
@@ -240,7 +243,7 @@ Before moving to Step 1.5, confirm the following:
 
 - [ ] Every required server or VM has been created.
 - [ ] Every required server has the IP address or DNS name you plan to use later in configuration.
-- [ ] You have administrative access to every required server. (test with `ssh <user>@<SERVER_IP>`)
+- [ ] You have administrative access to every required server. (validate with `ssh <user>@<SERVER_IP>`)
 
 ### 1.5 Network Configuration
 
