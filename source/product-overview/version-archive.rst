@@ -11,6 +11,11 @@ If you want to check that the version of Mattermost you are installing is the of
 
 .. tab:: Mattermost Enterprise
 
+  Mattermost Enterprise Edition v11.6.0 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-6-feature-release>`__ - `Download <https://releases.mattermost.com/11.6.0/mattermost-11.6.0-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/11.6.0/mattermost-11.6.0-linux-amd64.tar.gz``
+    - SHA-256 Checksum: ``44fd580510f1971768c3eb650b37c549fa56ee93da50aaeb09ed4b6f721b96bb``
+    - GPG Signature: https://releases.mattermost.com/11.6.0/mattermost-11.6.0-linux-amd64.tar.gz.sig
+    - SBOM Download Link: https://releases.mattermost.com/11.5.1/sbom-enterprise-v11.5.1.json
   Mattermost Enterprise Edition v11.5.1 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-5-feature-release>`__ - `Download <https://releases.mattermost.com/11.5.1/mattermost-11.5.1-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/11.5.1/mattermost-11.5.1-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``fd8f2831d5b907a71488c9dac6e8b7fa12724ebb2dcec15ed21e67b3fee6cb3c``
@@ -474,6 +479,11 @@ If you want to check that the version of Mattermost you are installing is the of
 
   We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to seamlessly unlock Enterprise features should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
 
+  Mattermost Team Edition v11.6.0 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-6-feature-release>`__ - `Download <https://releases.mattermost.com/11.6.0/mattermost-team-11.6.0-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/11.6.0/mattermost-team-11.6.0-linux-amd64.tar.gz``
+    - SHA-256 Checksum: ``ae667a8ffa5d86585850c9a9d176dd4885569c80e668ee2f707c87256a05ee59``
+    - GPG Signature: https://releases.mattermost.com/11.6.0/mattermost-team-11.6.0-linux-amd64.tar.gz.sig
+    - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v11.6.0/sbom-mattermost-v11.6.0.json
   Mattermost Team Edition v11.5.1 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-5-feature-release>`__ - `Download <https://releases.mattermost.com/11.5.1/mattermost-team-11.5.1-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/11.5.1/mattermost-team-11.5.1-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``1af181d97270f196fb2792ee3d362fe0f10848dd130f186d3e05bc7277c7a94c``
