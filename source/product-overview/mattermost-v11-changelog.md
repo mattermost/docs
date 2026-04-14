@@ -26,7 +26,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
    - Under ``ElasticsearchSettings`` in ``config.json``, added a configuration setting ``EnableCJKAnalyzers`` to enable using CJK analysis plugins when installed.
    - Under ``ElasticsearchSettings`` in ``config.json``, added a configuration setting ``EnableSearchPublicChannelsWithoutMembership`` to allow searching public channel messages without channel membership.
    - Under ``PrivacySettings`` in ``config.json``, added ``UseAnonymousURLs`` to support creating teams and channels using anonymous URLs.
- - Removed redundant ``EnableChannelScopeAccessControl`` configuration setting; channel-level ABAC is now controlled by main toggle and permissions only.
+ - Removed redundant ``EnableChannelScopeAccessControl`` configuration setting; [channel-level ABAC](https://docs.mattermost.com/administration-guide/manage/admin/abac-channel-access-rules.html#troubleshooting-and-faqs) is now controlled by main toggle and permissions only.
  - Removed unused configuration settings ``ExperimentalAuditSettings.FileMaxSizeMB``, ``FileMaxAgeDays``, ``FileMaxBackups``, ``FileCompress``, and ``FileMaxQueueSize``. These settings were never applied to the audit log file target. Use ``AdvancedLoggingJSON`` for fine-grained audit log configuration.
 
 #### Compatibility
@@ -48,8 +48,8 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-6-is-now-availab
  - Pre-packaged GitLab plugin version [v1.12.1](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.12.1).
  - Added support for Default Agent in suggestions and integrated Agents into the App Bar.
  - Improved the reliability of AI recap summarization by using structured JSON output from the LLM.
- - Added a new feature of creating teams and channels using anonymous URLs so the channel and team name are not revealed in the URL. Requires Enterprise Advanced license.
- - Added popouts for Recent Mentions, Saved Messages, and Search Results via the right-hand side.
+ - Added a new feature of creating teams and channels using [anonymous URLs](https://docs.mattermost.com/end-user-guide/collaborate/share-links.html) so the channel and team name are not revealed in the URL. Requires Enterprise Advanced license.
+ - Added [popouts](https://docs.mattermost.com/end-user-guide/collaborate/search-for-messages.html#search-for-message) for Recent Mentions, Saved Messages, and Search Results via the right-hand side.
  - The emoji picker on web and Desktop now inserts unicode emoji characters into the message composer instead of shortcode text.
  - Renamed Enterprise Advanced feature Content Flagging to Data Spillage.
  - Added [a contextual note](https://docs.mattermost.com/administration-guide/onboard/sso-google.html#step-3-configure-mattermost-for-google-apps-sso) in Security Settings that explains how Google SSO can synchronize usernames and emails, shown alongside the Sign-in Method details.
@@ -59,11 +59,11 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-6-is-now-availab
  - Added sub-day relative date patterns (H/M/S) for datetime dialog fields, enabling min/max constraints with hour, minute, and second precision.
 
 #### Administration
- - Added "Guests in single channel" and "Guests in multiple channels" role filters and a "Channel count" column to the System Console Users report.
+ - Added "Guests in single channel" and "Guests in multiple channels" [role filters](https://docs.mattermost.com/administration-guide/onboard/guest-accounts.html) and a "Channel count" column to the System Console Users report.
  - Added reporting and soft-limit tracking for single-channel guests. Single-channel guests are no longer counted toward the primary licensed seat count and are permitted free up to a 1:1 ratio with licensed seats. A new stat card, license row, and admin banner provide visibility into single-channel guest usage and overage warnings.
  - Introduced authentication token generation for Hosted Push Notification Service.
  - Users assigned the Shared Channel Manager role can now share and unshare channels and browse available connections without needing the Secure Connection Manager role.
- - System Admins are now allowed to view and update User **AuthData** and **Username** in the System Console.
+ - System Admins are now allowed [to view and update](https://docs.mattermost.com/administration-guide/configure/user-management-configuration-settings.html#users) User **AuthData** and **Username** in the System Console.
  - Added single-channel guest count to the support packet stats for improved licensing visibility.
 
 #### Performance
