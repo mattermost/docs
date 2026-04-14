@@ -15,7 +15,7 @@ If you want to check that the version of Mattermost you are installing is the of
     - ``https://releases.mattermost.com/11.6.0/mattermost-11.6.0-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``44fd580510f1971768c3eb650b37c549fa56ee93da50aaeb09ed4b6f721b96bb``
     - GPG Signature: https://releases.mattermost.com/11.6.0/mattermost-11.6.0-linux-amd64.tar.gz.sig
-    - SBOM Download Link: https://releases.mattermost.com/11.5.1/sbom-enterprise-v11.5.1.json
+    - SBOM Download Link: https://releases.mattermost.com/11.6.0/sbom-enterprise-v11.6.0.json
   Mattermost Enterprise Edition v11.5.1 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-5-feature-release>`__ - `Download <https://releases.mattermost.com/11.5.1/mattermost-11.5.1-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/11.5.1/mattermost-11.5.1-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``fd8f2831d5b907a71488c9dac6e8b7fa12724ebb2dcec15ed21e67b3fee6cb3c``
