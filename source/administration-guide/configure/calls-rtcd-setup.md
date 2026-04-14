@@ -10,7 +10,7 @@ This guide provides detailed instructions for setting up, configuring, and valid
 Before deploying RTCD, ensure you have:
 
 - A Mattermost Enterprise license
-- A server or VM with sufficient CPU and network capacity (see the [Performance](calls-deployment.html#performance) section for sizing guidance)
+- A server or VM with sufficient CPU and network capacity (see the [Performance baselines](calls-metrics-monitoring.md#performance-baselines) section for sizing guidance)
 
 ## Network Requirements
 
@@ -373,7 +373,7 @@ Once RTCD is properly set up and validated, configure Mattermost to use it:
 
 ## Other Calls Documentation
 
-- [Calls Overview](calls-deployment.md): Overview of deployment options and architecture
+- [Calls Deployment Guide](calls-deployment-guide.md): Overview of deployment options and architecture
 - [Calls Offloader Setup and Configuration](calls-offloader-setup.md): Setup guide for call recording and transcription
 - [Calls Metrics and Monitoring](calls-metrics-monitoring.md): Guide to monitoring Calls performance using metrics and observability
 - [Calls Deployment on Kubernetes](calls-kubernetes.md): Detailed guide for deploying Calls in Kubernetes environments

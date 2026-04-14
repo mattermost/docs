@@ -103,7 +103,7 @@ For detailed logging guidance, see the [Calls Logging](calls-logging.md) guide.
 
 ## Other Calls Documentation
 
-- [Calls Overview](calls-deployment.md): Overview of deployment options and architecture
+- [Calls Deployment Guide](calls-deployment-guide.md): Overview of deployment options and architecture
 - [RTCD Setup and Configuration](calls-rtcd-setup.md): Comprehensive guide for setting up the dedicated RTCD service
 - [Calls Offloader Setup and Configuration](calls-offloader-setup.md): Setup guide for call recording and transcription
 - [Calls Metrics and Monitoring](calls-metrics-monitoring.md): Guide to monitoring Calls performance using metrics and observability

@@ -79,7 +79,7 @@ Audio and screenshare
 
 - Enables :ref:`1:1 and group audio calls <end-user-guide/collaborate/make-calls:join a call>` directly within channels and direct messages, maintaining contextual awareness and access control based on channel membership.
 - Supports secure :ref:`screen sharing <end-user-guide/collaborate/make-calls:share your screen>` for visual coordination and analysis.
-- Operates in :doc:`sovereign, air-gapped, or sensitive network </administration-guide/configure/calls-deployment>` environments.
+- Operates in :doc:`sovereign, air-gapped, or sensitive network </administration-guide/configure/calls-deployment-guide>` environments.
 - Offers optional :ref:`AI-based transcription <end-user-guide/collaborate/make-calls:transcribe recorded calls>` and :ref:`summarization <end-user-guide/agents:analyze threads and channels>` for meeting capture and follow ups.
 - Works across web, desktop, and mobile for flexible, secure access.
 
