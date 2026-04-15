@@ -1,0 +1,153 @@
+Upgrade PostgreSQL
+==================
+
+.. include:: ../../_static/badges/all-commercial.rst
+  :start-after: :nosearch:
+
+Mattermost follows the `PostgreSQL community versioning policy <https://www.postgresql.org/support/versioning/>`_, which provides 5 years of support per major version. When a PostgreSQL version reaches end-of-life, Mattermost drops support for it in a subsequent release. See the :doc:`software and hardware requirements </deployment-guide/software-hardware-requirements>` documentation for the currently supported PostgreSQL versions.
+
+When upgrading PostgreSQL, refer to the `official PostgreSQL upgrade documentation <https://www.postgresql.org/docs/current/upgrading.html>`_ for comprehensive guidance. This page covers the steps specific to Mattermost deployments.
+
+Before you begin
+----------------
+
+1. **Back up your database.** Always take a full database backup before upgrading. See the :doc:`backup and disaster recovery </deployment-guide/backup-disaster-recovery>` documentation.
+
+2. **Check supported versions.** Confirm the target PostgreSQL version is supported by your Mattermost release. See :doc:`software and hardware requirements </deployment-guide/software-hardware-requirements>`.
+
+3. **Stop Mattermost.** Shut down the Mattermost server before starting the database upgrade to prevent data writes during the process.
+
+   .. code-block:: sh
+
+      sudo systemctl stop mattermost
+
+Upgrade a bare-metal PostgreSQL server
+---------------------------------------
+
+There are two main approaches for upgrading PostgreSQL on a bare-metal or virtual machine:
+
+- **pg_upgrade** (in-place): Faster; upgrades the data directory without a full dump/restore cycle. Recommended for large databases.
+- **pg_dump / pg_restore** (logical): Simpler and safer for cross-machine migrations or when in-place upgrade is not possible.
+
+Using pg_upgrade
+~~~~~~~~~~~~~~~~
+
+``pg_upgrade`` allows you to upgrade between major PostgreSQL versions without a full export. Both the old and new PostgreSQL versions must be installed side-by-side.
+
+1. Install the new PostgreSQL version alongside the existing one using your package manager.
+
+2. Stop the existing PostgreSQL service:
+
+   .. code-block:: sh
+
+      sudo systemctl stop postgresql
+
+3. Run ``pg_upgrade`` as the ``postgres`` user, specifying the binary and data directories for both versions. Replace ``<old_version>`` and ``<new_version>`` with the appropriate version numbers (e.g. ``15`` and ``16``):
+
+   .. code-block:: sh
+
+      sudo -u postgres /usr/lib/postgresql/<new_version>/bin/pg_upgrade \
+        --old-datadir /var/lib/postgresql/<old_version>/main \
+        --new-datadir /var/lib/postgresql/<new_version>/main \
+        --old-bindir /usr/lib/postgresql/<old_version>/bin \
+        --new-bindir /usr/lib/postgresql/<new_version>/bin
+
+4. Update your system to start the new PostgreSQL version by default, then start the service:
+
+   .. code-block:: sh
+
+      sudo systemctl start postgresql
+
+For full ``pg_upgrade`` reference, see the `official pg_upgrade documentation <https://www.postgresql.org/docs/current/pgupgrade.html>`_.
+
+Using pg_dump and pg_restore
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This approach exports the entire database, installs the new PostgreSQL version, and restores the data. It is simpler but requires downtime proportional to database size.
+
+1. Export the Mattermost database (replace ``mattermost`` with your database name and ``mmuser`` with your database user):
+
+   .. code-block:: sh
+
+      pg_dump -U mmuser -Fc mattermost > mattermost_backup.dump
+
+2. Install the new PostgreSQL version and create the database user and database:
+
+   .. code-block:: sh
+
+      sudo -u postgres psql -c "CREATE USER mmuser WITH PASSWORD 'your_password';"
+      sudo -u postgres psql -c "CREATE DATABASE mattermost OWNER mmuser;"
+
+3. Restore the database into the new PostgreSQL instance:
+
+   .. code-block:: sh
+
+      pg_restore -U mmuser -d mattermost mattermost_backup.dump
+
+4. Update your ``config.json`` ``SqlSettings.DataSource`` if the PostgreSQL host, port, or version-specific connection string changed.
+
+Upgrade PostgreSQL in Docker
+-----------------------------
+
+When running PostgreSQL in Docker, ``pg_dump``/``pg_restore`` is the recommended upgrade approach. In-place ``pg_upgrade`` is complex in containers because it requires both old and new binaries in the same container.
+
+.. important::
+
+  Ensure your Postgres data is stored in a named Docker volume or bind mount before proceeding. Removing or recreating a container without a persistent volume will result in data loss.
+
+1. Stop the Mattermost container:
+
+   .. code-block:: sh
+
+      docker stop mattermost
+
+2. Dump the database from the running PostgreSQL container (replace ``mattermost``, ``mmuser``, and ``db`` with your database name, user, and container name):
+
+   .. code-block:: sh
+
+      docker exec db pg_dump -U mmuser -Fc mattermost > mattermost_backup.dump
+
+3. Stop the existing PostgreSQL container:
+
+   .. code-block:: sh
+
+      docker stop db
+
+4. Update the PostgreSQL image tag in your ``docker-compose.yml`` (or ``docker run`` command) to the new version. For example:
+
+   .. code-block:: yaml
+
+      image: postgres:16
+
+5. Start the new PostgreSQL container. The existing data volume is mounted but PostgreSQL will not be able to read data directory files from a different major version, so the volume should be empty or new:
+
+   .. code-block:: sh
+
+      docker start db
+
+   .. note::
+
+      If your volume already contains data from the old major version, PostgreSQL will refuse to start. In that case, create a new named volume for the new container, then restore from the dump in the next step.
+
+6. Recreate the database user and database in the new container, then restore:
+
+   .. code-block:: sh
+
+      docker exec -i db psql -U postgres -c "CREATE USER mmuser WITH PASSWORD 'your_password';"
+      docker exec -i db psql -U postgres -c "CREATE DATABASE mattermost OWNER mmuser;"
+      docker exec -i db pg_restore -U mmuser -d mattermost < mattermost_backup.dump
+
+After the upgrade
+------------------
+
+After upgrading PostgreSQL, run ``ANALYZE VERBOSE`` on the Mattermost database. This re-populates the ``pg_statistics`` table used by PostgreSQL to generate optimal query plans. Skipping this step can result in degraded database performance.
+
+.. code-block:: sh
+
+   sudo -u postgres psql -d mattermost -c "ANALYZE VERBOSE;"
+
+Once complete, restart Mattermost:
+
+.. code-block:: sh
+
+   sudo systemctl start mattermost
