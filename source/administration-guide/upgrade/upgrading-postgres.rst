@@ -106,19 +106,19 @@ When running PostgreSQL in Docker, ``pg_dump``/``pg_restore`` is the recommended
 
    .. code-block:: sh
 
-      docker stop db
+      docker stop postgres
 
-4. Update the PostgreSQL image tag in your ``docker-compose.yml`` (or ``docker run`` command) to the new version. For example:
+4. Update ``POSTGRES_IMAGE_TAG`` in your ``.env`` file to the new version. For example:
 
-   .. code-block:: yaml
+   .. code-block:: text
 
-      image: postgres:16
+      POSTGRES_IMAGE_TAG=16-alpine
 
 5. Start the new PostgreSQL container. The existing data volume is mounted but PostgreSQL will not be able to read data directory files from a different major version, so the volume should be empty or new:
 
    .. code-block:: sh
 
-      docker start db
+      docker start postgres
 
    .. note::
 
