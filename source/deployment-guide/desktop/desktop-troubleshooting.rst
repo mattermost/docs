@@ -52,6 +52,19 @@ If you're not seeing in-app update notifications when new versions are available
 
 5. **Version previously skipped**: If you selected **Skip This Version** for the current release, manually check for updates to see it again.
 
+Update required screen
+~~~~~~~~~~~~~~~~~~~~~~
+
+From Mattermost server v11.6.0, your server administrator can configure a minimum required Desktop App version in **System Console > Site Configuration > Customization > Minimum desktop app version**. If your Desktop App version is below the configured minimum, you'll see an update required screen when you launch the app, and you won't be able to use Mattermost until you update.
+
+To resolve this:
+
+1. Select the download button on the update required screen. This opens the apps download page configured by your system administrator.
+2. Download and install the latest Mattermost Desktop App for your platform.
+3. Restart the Desktop App.
+
+If the download button doesn't open the correct page, contact your system administrator. You can also update manually — see `How to manually update Mattermost Desktop <#how-to-manually-update-mattermost-desktop>`__ below.
+
 How to manually update Mattermost Desktop
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

@@ -427,6 +427,9 @@ Minimum desktop app version
 | String input. Default is empty (no minimum enforced).                                             |                                                                                                     |
 +---------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
 
+.. note::
+  Available from Mattermost server v11.6.0.
+
 .. config:setting:: app-custom-url-schemes
   :displayname: App custom URL schemes (Customization)
   :systemconsole: N/A
