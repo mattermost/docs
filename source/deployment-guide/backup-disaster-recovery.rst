@@ -29,10 +29,16 @@ To back up your Mattermost server:
 
 To restore a Mattermost instance from backup, restore your database, ``config.json`` file, and optionally the locally stored user files into the locations from which they were backed up.
 
-Disaster recovery 
+Disaster recovery
 -----------------
 
 An appropriate disaster recovery plan weighs the benefits of mitigating specific risks against the cost and complexity of setting up disaster recovery infrastructure and automation.
+
+**High availability (HA) vs. disaster recovery (DR)**
+
+HA and DR are distinct concepts that are often confused. HA refers to a clustered deployment within a single site that eliminates single points of failure and keeps Mattermost running through individual component outages (e.g., a failed app node or database replica). DR addresses the broader scenario of an entire site or region becoming unavailable, and typically requires a secondary deployment in a separate data center or cloud region.
+
+Mattermost supports active/passive DR, where a secondary site is kept in sync but only activated during a failover. Mattermost does not support active/active deployments, where both sites serve live traffic simultaneously.
 
 Automated backup
 ~~~~~~~~~~~~~~~~
@@ -46,12 +52,12 @@ Automating backups for a Mattermost server provides a copy of the server's state
 
 Recovering from a failure using a backup is typically a manual process and will incur downtime. The alternative is to automate recovery using a high availability deployment.
 
-High Availability deployment
+Active/passive DR deployment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Enterprise customers who use Mattermost for mission-critical operations must ensure continuous availability and operational resilience. A robust disaster recovery strategy is essential to mitigate risks associated with data center failures, ensuring that users can access Mattermost seamlessly, even in the event of unexpected outages.
 
-This section details the steps needed to set up Mattermost in a disaster recovery mode, and how to fail over from one data center to another.
+This section details the steps needed to set up Mattermost in an active/passive disaster recovery configuration, and how to fail over from one data center to another.
 
 .. tip::
 
