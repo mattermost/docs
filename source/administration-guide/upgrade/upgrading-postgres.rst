@@ -17,9 +17,6 @@ Before you begin
 
 3. **Stop Mattermost.** Shut down the Mattermost server before starting the database upgrade to prevent data writes during the process.
 
-   .. code-block:: sh
-
-      sudo systemctl stop mattermost
 
 Upgrade a bare-metal PostgreSQL server
 ---------------------------------------
@@ -84,16 +81,10 @@ This approach exports the entire database, installs the new PostgreSQL version, 
 
       pg_restore -U mmuser -d mattermost mattermost_backup.dump
 
-4. Update your ``config.json`` ``SqlSettings.DataSource`` if the PostgreSQL host, port, or version-specific connection string changed.
-
 Upgrade PostgreSQL in Docker
 -----------------------------
 
 When running PostgreSQL in Docker, ``pg_dump``/``pg_restore`` is the recommended upgrade approach. In-place ``pg_upgrade`` is complex in containers because it requires both old and new binaries in the same container.
-
-.. important::
-
-  Ensure your Postgres data is stored in a named Docker volume or bind mount before proceeding. Removing or recreating a container without a persistent volume will result in data loss.
 
 1. Stop the Mattermost container:
 
@@ -105,7 +96,7 @@ When running PostgreSQL in Docker, ``pg_dump``/``pg_restore`` is the recommended
 
    .. code-block:: sh
 
-      docker exec db pg_dump -U mmuser -Fc mattermost > mattermost_backup.dump
+      docker exec postgres pg_dump -U mmuser -Fc mattermost > mattermost_backup.dump
 
 3. Stop the existing PostgreSQL container:
 
@@ -133,9 +124,9 @@ When running PostgreSQL in Docker, ``pg_dump``/``pg_restore`` is the recommended
 
    .. code-block:: sh
 
-      docker exec -i db psql -U postgres -c "CREATE USER mmuser WITH PASSWORD 'your_password';"
-      docker exec -i db psql -U postgres -c "CREATE DATABASE mattermost OWNER mmuser;"
-      docker exec -i db pg_restore -U mmuser -d mattermost < mattermost_backup.dump
+      docker exec -i postgres psql -U postgres -c "CREATE USER mmuser WITH PASSWORD 'your_password';"
+      docker exec -i postgres psql -U postgres -c "CREATE DATABASE mattermost OWNER mmuser;"
+      docker exec -i postgres pg_restore -U mmuser -d mattermost < mattermost_backup.dump
 
 After the upgrade
 ------------------
