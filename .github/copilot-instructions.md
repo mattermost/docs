@@ -3,9 +3,9 @@ This repository contains the source for Mattermost product documentation at `doc
 ## Review Personas
 
 - For documentation reviews, evaluate changes through all three personas defined in this repo:
-  - `.cursor/rules/docs-reader-persona-novice-nate.mdc`
-  - `.cursor/rules/docs-reader-persona-veteran-vince.mdc`
-  - `.cursor/rules/docs-editor-persona-evie.mdc`
+  - `.cursor/rules/docs-reader-persona-novice-nate.mdc` (Novice Nate)
+  - `.cursor/rules/docs-reader-persona-veteran-vince.mdc` (Veteran Vince)
+  - `.cursor/rules/docs-editor-persona-evie.mdc` (Editor Evie)
 - Use the persona that adds the most signal to each finding. If multiple personas would raise the same issue, report it once and name the most relevant persona.
 - When you find an issue, include:
   - persona name
@@ -14,8 +14,8 @@ This repository contains the source for Mattermost product documentation at `doc
   - why it matters for the reader
   - either a minimal diff or a concrete suggestion
 - Use this severity scale consistently:
-  - `Blocker`: Likely to mislead the reader, cause failure, break rendering, or create a security, upgrade, or supportability risk.
-  - `Friction`: Correct in intent, but unclear, incomplete, imprecise, or inconsistent enough to slow readers down or reduce confidence.
+  - `Blocker`: Likely to cause failure, break rendering, or create a security, upgrade, or supportability risk.
+  - `Friction`: Correct in intent, but unclear, incomplete, misleading, imprecise, or inconsistent enough to slow readers down or reduce confidence.
   - `Polish`: Minor improvement to clarity, style, or consistency that is helpful but not required for correctness.
 
 ## Editor Checks
@@ -23,7 +23,6 @@ This repository contains the source for Mattermost product documentation at `doc
 - Match the local style and formatting conventions already used in the file and nearby docs.
 - Preserve existing Markdown and reStructuredText conventions, including headings, emphasis, admonitions, code blocks, tables, tabs, and link style.
 - Use syntax appropriate to the source format: prefer MyST/Markdown patterns in `.md` files and native Sphinx/reStructuredText patterns in `.rst` files.
-- Follow the detailed link, admonition, and formatting guidance in `.cursor/rules/docs-editor-persona-evie.mdc`.
 - Avoid unnecessary rewrites, tone changes, or marketing language in technical documentation.
 - When the correct fix is clear, offer the smallest possible diff.
 
@@ -53,6 +52,9 @@ This repository contains the source for Mattermost product documentation at `doc
 - Keep reviews concise and action-oriented.
 - Where more explaination is necessary use the `<details> <summary>` syntax to make the sections collapsible.
 - Lead with findings, ordered by severity.
-- Provide a minimal diff when the fix is straightforward and the correct target is clear.
+- Provide a minimal diff (suggested change) when the fix is straightforward.
 - If no issues are found, say so directly and mention any remaining uncertainty or verification gaps.
 
+## Link Formatting
+- Follow the acceptable link formatting detailed in `.cursor/rules/docs-editor-persona-evie.mdc` (Editor Evie). Provide a minimal diff (suggested change) when the fix is straightforward and the correct target is clear.
+- Internal links to Mattermost docs should use repo-appropriate internal link syntax instead of hardcoded `https://docs.mattermost.com/...` URLs
