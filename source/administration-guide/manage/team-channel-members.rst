@@ -157,39 +157,6 @@ A list of all members in a channel is visible to system admins. Members can be a
 Bulk set channel members via the API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*Available from Mattermost v11.7*
+.. note::
 
-System admins can set the complete membership of a channel in a single API call using ``PUT /api/v4/channels/{channel_id}/members``. The request body is a JSON array of user IDs representing the desired membership. The server computes the diff against the current membership and adds or removes users as needed, leaving existing members untouched.
-
-Results are streamed back as NDJSON (``application/x-ndjson``), one line per batch. Each line contains ``added``, ``removed``, and ``errors`` arrays for that batch. Query parameters ``batch_size`` (default 100) and ``batch_delay_ms`` (default 500) control the processing rate.
-
-**Example**
-
-Request (using ``batch_size=2`` and ``batch_delay_ms=200``):
-
-.. code-block:: bash
-
-   curl -X PUT \
-     'https://mattermost.example.com/api/v4/channels/channel123/members?batch_size=2&batch_delay_ms=200' \
-     -H 'Authorization: Bearer <token>' \
-     -H 'Content-Type: application/json' \
-     -d '["user_id_1", "user_id_2", "user_id_3", "user_id_4"]'
-
-Streamed NDJSON response (one JSON object per line, one line per batch):
-
-.. code-block:: text
-
-   {"added":[],"removed":["user_id_5","user_id_6"],"errors":[]}
-   {"added":["user_id_3","user_id_4"],"removed":[],"errors":[]}
-   {"added":[],"removed":[],"errors":[{"user_id":"user_id_7","error":"user is not a member of the team"}]}
-
-In this example, ``user_id_1`` and ``user_id_2`` were already members (no-op), ``user_id_5`` and ``user_id_6`` were removed, ``user_id_3`` and ``user_id_4`` were added, and ``user_id_7`` could not be added because the user is not on the team.
-
-Restrictions:
-
-- Requires ``manage_system`` permission (system admin only).
-- DM/GM and group-constrained channels are rejected.
-- Private channels cannot be emptied entirely.
-- Request body is limited to 12 MB.
-
-See the `API documentation <https://api.mattermost.com/#tag/channels/operation/SetChannelMembers>`__ for full details.
+   From Mattermost v11.7, system admins can set the complete membership of a channel in a single API call. The server computes the diff against the current membership and adds or removes users as needed. See the `API documentation <https://api.mattermost.com/#tag/channels/operation/SetChannelMembers>`__ for details.
