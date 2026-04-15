@@ -993,6 +993,35 @@ Show full name
 |                                                                                                                  | - Environment variable: ``MM_PRIVACYSETTINGS_SHOWFULLNAME``                  |
 +------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
 
+.. config:setting:: enable-anonymous-urls
+  :displayname: Enable anonymous team and channel URLs (Users and Teams)
+  :systemconsole: Site Configuration > Users and Teams
+  :configjson: .PrivacySettings.EnableAnonymousURLs
+  :environment: MM_PRIVACYSETTINGS_ENABLEANONYMOUSURLS
+  :description: Available in Mattermost Enterprise Advanced from v11.6.0. Controls whether team and channel URLs expose the team or channel name.
+
+  - **true**: Team and channel URLs are anonymized; the team or channel name is not visible in the URL.
+  - **false**: Team and channel URLs include the team or channel name.
+
+Enable anonymous team and channel URLs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../../_static/badges/ent-adv.rst
+  :start-after: :nosearch:
+
++------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| From Mattermost v11.6.0, when enabled, team and channel URLs are anonymized,                                     | - System Config path: **Site Configuration > Users and Teams**               |
+| meaning the URL no longer contains the team or channel name. This prevents                                       | - ``config.json`` setting: ``PrivacySettings`` > ``EnableAnonymousURLs``     |
+| team and channel names from being identified through web addresses.                                              | - Environment variable: ``MM_PRIVACYSETTINGS_ENABLEANONYMOUSURLS``           |
+|                                                                                                                  |                                                                              |
+| When this setting is enabled, the team creation workflow no longer includes a                                    |                                                                              |
+| step for users to define a team URL; teams are created with an automatically                                     |                                                                              |
+| generated anonymous URL.                                                                                         |                                                                              |
+|                                                                                                                  |                                                                              |
+| - **true**: Team and channel URLs are anonymized.                                                                |                                                                              |
+| - **false**: Team and channel URLs include the team or channel name.                                             |                                                                              |
++------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+
 .. config:setting:: enable-custom-user-statuses
   :displayname: Enable custom user statuses (Users and Teams)
   :systemconsole: Site Configuration > Users and Teams

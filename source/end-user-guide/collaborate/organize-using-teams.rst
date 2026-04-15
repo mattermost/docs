@@ -52,6 +52,10 @@ Team name and URL selection
 
 There are a few details and restrictions to consider when selecting a team name and team URL.
 
+.. note::
+
+  If your system admin has enabled anonymous team and channel URLs (available in Mattermost Enterprise Advanced from v11.6.0), team creation becomes a single-step flow and you will not be prompted to choose a team URL. The URL is assigned automatically.
+
 Team name
 ^^^^^^^^^
 
@@ -64,7 +68,7 @@ This is the display name of your team that appears in menus and headings.
 Team URL
 ^^^^^^^^
 
-The team URL is part of the web address that navigates to your team on the system domain, ``https://domain.com/teamurl/``.
+If your system admin has not enabled anonymous URLs, you choose a team URL during team creation. The team URL is part of the web address that navigates to your team on the system domain, ``https://domain.com/teamurl/``.
 
 - Teams may contain only lowercase letters, numbers, and dashes.
 - Teams must start with a letter and cannot end in a dash.
