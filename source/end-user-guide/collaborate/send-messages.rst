@@ -44,6 +44,8 @@ You can use AI to enhance your messages before sending them. This feature helps 
 
 From Mattermost v11.5, when you use AI Rewrite while composing a reply in a thread, the AI incorporates context from the thread to generate suggestions that better fit the ongoing conversation.
 
+From Mattermost v11.6, the ``POST /api/v4/posts/rewrite`` endpoint enforces channel read access when a thread root post ID (``root_id``) is provided. Callers without read access to the channel containing the root post receive a ``403 Forbidden`` response.
+
 .. tab:: Web/Desktop
 
   1. Type your message in the message compose field.
