@@ -84,6 +84,10 @@ This approach exports the entire database, installs the new PostgreSQL version, 
 Upgrade PostgreSQL in Docker
 -----------------------------
 
+.. note::
+
+  The steps below are written for the official `Mattermost Docker deployment <https://github.com/mattermost/docker>`_. If you are using a custom Docker setup, adapt the container and volume names accordingly.
+
 When running PostgreSQL in Docker, ``pg_dump``/``pg_restore`` is the recommended upgrade approach. In-place ``pg_upgrade`` is complex in containers because it requires both old and new binaries in the same container.
 
 1. Stop the Mattermost container:
