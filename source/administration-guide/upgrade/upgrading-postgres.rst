@@ -114,11 +114,11 @@ When running PostgreSQL in Docker, ``pg_dump``/``pg_restore`` is the recommended
 
       POSTGRES_IMAGE_TAG=16-alpine
 
-5. Start the new PostgreSQL container. The existing data volume is mounted but PostgreSQL will not be able to read data directory files from a different major version, so the volume should be empty or new:
+5. Recreate the PostgreSQL container so the new image tag from ``.env`` is applied:
 
    .. code-block:: sh
 
-      docker start postgres
+      docker compose up -d --force-recreate postgres
 
    .. note::
 

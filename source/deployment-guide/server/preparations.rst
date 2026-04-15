@@ -119,7 +119,7 @@ PostgreSQL v14+ is required for Mattermost server installations. :doc:`MySQL dat
 
          sudo systemctl restart postgresql
 
-.. note::
+.. important::
 
   If you are upgrading a major version of PostgreSQL, see :doc:`Upgrade PostgreSQL </administration-guide/upgrade/upgrading-postgres>` for the full upgrade procedure and post-upgrade steps.
 
