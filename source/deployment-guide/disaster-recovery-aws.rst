@@ -4,13 +4,23 @@ Active/passive DR deployment on AWS
 .. include:: ../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
+Before you begin, ensure the following are in place:
+
+- AWS account access with IAM permissions to manage RDS, S3, and OpenSearch resources in both regions
+- A chosen primary and secondary AWS region pair for failover
+- An existing, healthy Mattermost primary deployment
+- DNS control over the domain used to reach Mattermost, so you can redirect traffic during failover
+- Required RDS Aurora PostgreSQL global cluster permissions and a verified, restorable database backup
+- OpenSearch 2.x with fine-grained access control available in both regions
+- Network connectivity between the primary and secondary regions confirmed
+
 Enterprise customers who use Mattermost for mission-critical operations must ensure continuous availability and operational resilience. A robust disaster recovery strategy is essential to mitigate risks associated with data center failures, ensuring that users can access Mattermost seamlessly, even in the event of unexpected outages.
 
 This page details the steps needed to set up Mattermost in an active/passive disaster recovery configuration on AWS, and how to fail over from one data center to another.
 
 .. tip::
 
-  To learn how to safely upgrade your deployment in Kubernetes for High Availability and Active/Active support, see the :doc:`Upgrading Mattermost in Kubernetes and High Availability Environments </administration-guide/upgrade/upgrade-mattermost-kubernetes-ha>` documenation.
+  To learn how to safely upgrade your deployment in Kubernetes for High Availability and Active/Active support, see the :doc:`Upgrading Mattermost in Kubernetes and High Availability Environments </administration-guide/upgrade/upgrade-mattermost-kubernetes-ha>` documentation.
 
 Set up in one data center
 --------------------------
@@ -92,7 +102,7 @@ Replicate ES/OS storage
 
 2. You also need to add the ``CrossClusterGet`` permission on the IAM policy for the OS cluster set under the **Security Configuration** tab for your OS domain. We recommend the following as per AWS, but feel free to fine-tune as necessary:
 
-  .. code-block:: sh
+  .. code-block:: json
 
     {
       "Version": "2012-10-17",
@@ -172,7 +182,7 @@ To recap:
 
     .. code-block:: sh
 
-      curl -H 'Content-Type: application/json' -u 'username/password'  'https://<>/_plugins/_replication/autofollow_stats?pretty'
+      curl -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/autofollow_stats?pretty'
       {
         "num_success_start_replication" : 2,
         "num_failed_start_replication" : 0,
@@ -232,7 +242,6 @@ To recap:
       curl -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/channels/_status?pretty'
       curl -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/files/_status?pretty'
       curl -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/users/_status?pretty'
-      curl -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/posts_<DATE>/_status?pretty'
       curl -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/posts_<DATE>/_status?pretty'
       Sample output:
       {

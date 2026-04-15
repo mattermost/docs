@@ -34,11 +34,13 @@ Disaster recovery
 
 An appropriate disaster recovery plan weighs the benefits of mitigating specific risks against the cost and complexity of setting up disaster recovery infrastructure and automation.
 
-**High availability (HA) vs. disaster recovery (DR)**
+.. note::
 
-HA and DR are distinct concepts that are often confused. HA refers to a clustered deployment within a single site that eliminates single points of failure and keeps Mattermost running through individual component outages (e.g., a failed app node or database replica). DR addresses the broader scenario of an entire site or region becoming unavailable, and typically requires a secondary deployment in a separate data center or cloud region.
+  **High availability (HA) vs. disaster recovery (DR)**
 
-Mattermost supports active/passive DR, where a secondary site is kept in sync but only activated during a failover. Mattermost does not support active/active deployments, where both sites serve live traffic simultaneously.
+  HA and DR are distinct concepts that are often confused. HA refers to a clustered deployment within a single site that eliminates single points of failure and keeps Mattermost running through individual component outages (e.g., a failed app node or database replica). DR addresses the broader scenario of an entire site or region becoming unavailable, and typically requires a secondary deployment in a separate data center or cloud region.
+
+  Mattermost supports active/passive DR, where a secondary site is kept in sync but only activated during a failover. Mattermost does not support active/active deployments, where both sites serve live traffic simultaneously.
 
 Automated backup
 ~~~~~~~~~~~~~~~~
