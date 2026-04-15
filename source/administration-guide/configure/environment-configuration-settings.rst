@@ -3589,7 +3589,7 @@ Audit file name
 
 .. note::
 
-  The file name must be set to `enable <#auditlog-fileenabled>`__ audit logging. To configure file rotation and advanced audit log output, use the :ref:`AdvancedLoggingJSON <administration-guide/configure/environment-configuration-settings:output audit logs to multiple targets>` setting.
+When `output audit logs to file <#auditlog-fileenabled>`__ is enabled, the file name must be set. To configure file rotation and advanced audit log output, use the :ref:`AdvancedLoggingJSON <administration-guide/configure/environment-configuration-settings:output audit logs to multiple targets>` setting.
 
 .. config:setting:: auditlog-certificate
   :displayname: Audit log certificate (Audit Logging)
