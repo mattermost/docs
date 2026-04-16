@@ -17,10 +17,25 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - iPhone 8+ devices and later with iOS 16.0+ are [required](https://support.apple.com/en-il/guide/iphone/iphe3fa5df43/16.0/ios/16.0).
 
 ### Improvements
- - TBD.
+ - Added mobile support for AI agents including a dedicated agents menu, agent chat interface, threads list view, and bot selector with profile pictures.
+ - **Share feedback** from in-app prompts now opens the Mattermost community forum in the browser.
+ - Channel banners are now shown in thread views.
+ - Added the ability to set shared channels from the channel settings.
+ - The team sidebar now displays to the left of the channel sidebar if you belong to more than one team or if other teams are available to join.
+ - Mobile apps now support multiselect, dynamic search, multi-step dialogs, and dynamic field refresh for Interactive Dialogs, bringing feature parity with the web app.
+ - The pre-auth secret header name is now always retrieved in lowercase to support HTTP1.1.
 
 ### Bug Fixes
- - TBD.
+ - Fixed an issue where opening a permalink to a channel the user was not a member of showed an "Message not viewable" error instead of prompting to join the channel.
+ - Fixed native crashes during Hermes garbage collection in the gallery pager and lightbox components.
+ - Fixed the display height for file upload errors in low bandwidth settings.
+ - Fixed a crash on Android where React Native Navigation could attempt to bring a destroyed controller to the front during activity teardown (Sentry AX68, 9,150 crashes, 1,580 users).
+ - Fixed an issue where GIF file attachments did not animate for users other than the uploader.
+ - Fixed a crash in the iOS app caused by concurrent database access between the main app and push notification extension.
+ - Fixed an issue showing wrong search results on hashtag tapping.
+ - Fixed search results layout overlap on hashtag tapping.
+ - Fixed a race condition on websocket messages.
+ - Fixed an issue where permalink thread headers were so long that channel names truncated instead of overlapped the title on mobile.
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
