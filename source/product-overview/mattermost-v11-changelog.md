@@ -48,7 +48,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-6-is-now-availab
  - Pre-packaged GitLab plugin version [v1.12.1](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.12.1).
  - Added support for Default Agent in suggestions and integrated Agents into the App Bar.
  - Improved the reliability of AI recap summarization by using structured JSON output from the LLM.
- - Added a new feature of creating teams and channels using [anonymous URLs](https://docs.mattermost.com/end-user-guide/collaborate/share-links.html) so the channel and team name are not revealed in the URL. Requires Enterprise Advanced license.
+ - Added a new feature of creating teams and channels using [anonymous URLs](https://docs.mattermost.com/end-user-guide/collaborate/rename-channels.html) so the channel and team name are not revealed in the URL. Requires Enterprise Advanced license.
  - Added [popouts](https://docs.mattermost.com/end-user-guide/collaborate/search-for-messages.html#search-for-message) for Recent Mentions, Saved Messages, and Search Results via the right-hand side.
  - The emoji picker on web and Desktop now inserts unicode emoji characters into the message composer instead of shortcode text.
  - Renamed Enterprise Advanced feature Content Flagging to Data Spillage.
