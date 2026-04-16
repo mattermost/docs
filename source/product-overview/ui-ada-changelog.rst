@@ -12,6 +12,8 @@ Changelog
 
    * - Version
      - Change Description
+   * - v11.7
+     - Change Description
    * - v11.6
      - (UI) Added support for Default Agent in suggestions and integrated Agents into the App Bar.
    * - v11.6
