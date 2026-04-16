@@ -86,17 +86,20 @@ How do I renew my subscription if I don't have internet access?
 
 If you don't have access to the internet, please `create a support ticket <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=11184911962004>`_ for assistance.
 
-Can I use the same license key on multiple self-hosted servers?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Can I use my Mattermost license on more than one server?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-License keys for unlocking the advanced features in Mattermost can only be applied to a single deployment. A deployment consists of either a single Mattermost server or multiple linked Mattermost servers in a High Availability configuration with access to a single database.
+Each license covers one deployment — either a single server, or multiple nodes in a High Availability configuration that share a single database. If you need to run a second independent server, that requires its own license. Contact your account team for assistance.
 
-Customers who are eligible to purchase the `Premier Support add-on <https://mattermost.com/support/>`_ are licensed to run with a single deployment of Mattermost license key in production and up to four non-production deployments of Mattermost (for example: development, staging, user acceptance testing, etc.)
+Can I use my license in a non-production environment?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Is my license key available immediately?
+Non-production environments are provisioned with a dedicated license key separate from the production license. Customers with Premier Support are eligible for up to four non-production license keys. Customers without Premier Support should contact their account team for assistance. 
+
+Where can I find my new license key?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes, once your payment is successfully processed your license is available to download immediately.
+Once your payment is successfully processed, your license key will be provided via email.
 
 How will I know when to renew my subscription?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

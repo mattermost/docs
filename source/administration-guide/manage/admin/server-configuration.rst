@@ -14,6 +14,7 @@ Whether you’re setting up email notifications, optimizing search capabilities,
     Server configuration options </administration-guide/configure/configuration-settings>
     Set up attribute-based access controls </administration-guide/manage/admin/attribute-based-access-control>
     Set up Mattermost Agents </administration-guide/configure/agents-admin-guide>
+    Set up auto-translation </administration-guide/manage/admin/autotranslation>
     Install Mattermost Boards </administration-guide/configure/install-boards>
     Manage user attributes </administration-guide/manage/admin/user-attributes>
     Enable content flagging </administration-guide/manage/admin/content-flagging>
@@ -30,6 +31,7 @@ Whether you’re setting up email notifications, optimizing search capabilities,
 * :doc:`Server configuration options </administration-guide/configure/configuration-settings>` - Learn about server configuration options for Mattermost.
 * :doc:`Set up attribute-based access controls </administration-guide/manage/admin/attribute-based-access-control>` - Learn how to set up attribute-based access controls for your Mattermost instance for Zero Trust Security.
 * :doc:`Set up Mattermost Agents</administration-guide/configure/agents-admin-guide>` - Learn how to enable AI-powered Agents for your Mattermost instance.
+* :doc:`Set up auto-translation </administration-guide/manage/admin/autotranslation>` - Learn how to enable and configure automatic message translation for your Mattermost instance.
 * :doc:`Install Mattermost Boards </administration-guide/configure/install-boards>` - Learn how to install and configure the Boards plugin for your Mattermost instance.
 * :doc:`Manage custom user attributes </administration-guide/manage/admin/user-attributes>` - Learn how to manage custom user attributes in user profiles in Mattermost.
 * :doc:`Environment variables </administration-guide/configure/environment-variables>` - Learn how to use environment variables for Mattermost configuration.
