@@ -9,6 +9,7 @@ The following open source components are used to provide the full benefits of Ma
 Desktop
 --------
 
+- Mattermost Desktop v6.2.0 - `View Open Source Components <https://github.com/mattermost/desktop/blob/release-6.2/NOTICE.txt>`__.
 - Mattermost Desktop v6.1.0 - `View Open Source Components <https://github.com/mattermost/desktop/blob/release-6.1/NOTICE.txt>`__.
 - Mattermost Desktop v6.0.0 - `View Open Source Components <https://github.com/mattermost/desktop/blob/release-6.0/NOTICE.txt>`__.
 - Mattermost Desktop v5.13.0 - `View Open Source Components <https://github.com/mattermost/desktop/blob/release-5.13/NOTICE.txt>`__.
@@ -138,6 +139,7 @@ Mobile
 Server
 ------------------------------
 
+- Mattermost Enterprise Edition v11.7.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-11.7/NOTICE.txt>`__.
 - Mattermost Enterprise Edition v11.6.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-11.6/NOTICE.txt>`__.
 - Mattermost Enterprise Edition v11.5.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-11.5/NOTICE.txt>`__.
 - Mattermost Enterprise Edition v11.4.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-11.4/NOTICE.txt>`__.

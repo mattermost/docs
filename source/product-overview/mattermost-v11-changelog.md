@@ -9,6 +9,24 @@
 ```{include} common-esr-support-upgrade.md
 ```
 
+(release-v11.7-extended-support-release)=
+## Release v11.7 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
+
+- **11.7.0, released 2026-05-15**
+  - Original 11.7.0 release.
+
+```{Important}
+If you upgrade from a release earlier than v11.6, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html). In case of an upgrade failure, please check the [Downgrade Guide](https://docs.mattermost.com/administration-guide/upgrade/downgrading-mattermost-server.html) and the [Recovery Guide](https://docs.mattermost.com/deployment-guide/backup-disaster-recovery.html) for rollback steps and interim mitigation strategy.
+```
+
+### Improvements
+
+See [this blog post](https://mattermost.com/blog/mattermost-v11-7-is-now-available/) on the highlights in our latest release.
+
+### Bug Fixes
+
+### Contributors
+
 (release-v11.6-feature-release)=
 ## Release v11.6 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 

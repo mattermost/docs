@@ -6,7 +6,7 @@ This page describes features that are removed from support for Mattermost, or wi
 Upcoming deprecations
 -----------------------
 
-- There are no planned deprecations at this time.
+- Support for Mattermost Server v10.11 `Extended Support Release <https://docs.mattermost.com/product-overview/release-policy.html#extended-support-releases>`__ ends August 15, 2026. We strongly recommend upgrading to `Mattermost Server v11.7 <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-7-extended-support-release>`__ or later before that date.
 
 Removed features by Mattermost version
 ----------------------------------------
