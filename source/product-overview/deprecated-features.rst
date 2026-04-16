@@ -6,7 +6,7 @@ This page describes features that are removed from support for Mattermost, or wi
 Upcoming deprecations
 -----------------------
 
-There are no planned deprecations at this time.
+- There are no planned deprecations at this time.
 
 Removed features by Mattermost version
 ----------------------------------------
