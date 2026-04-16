@@ -56,7 +56,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-7-is-now-availab
  - Added the ability to open channels in a separate popout window, with full channel and right-hand side functionality.
  - Dropped support for JS features required by browsers over three years old.
  - Renamed user-visible references from "Custom Profile Attributes" to "User Attributes" across the admin console, error messages, and server translations.
- - Add the ability to handle from which remotes a channel is shared from the channel settings user interface.
+ - Added the ability to handle from which remotes a channel is shared from the channel settings user interface.
 
 #### Administration
  - Removed direct dependency on ``blang/semver/v4``.
