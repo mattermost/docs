@@ -1930,7 +1930,7 @@ Enable CJK analyzers
 
 .. note::
 
-  Available from Mattermost v11.6. All required analyzer plugins must be installed on the Elasticsearch or AWS OpenSearch server before enabling this setting. See the :doc:`Elasticsearch setup </administration-guide/scale/elasticsearch-setup>` and :doc:`AWS OpenSearch setup </administration-guide/scale/opensearch-setup>` documentation for plugin installation instructions.
+  Available from Mattermost v11.6. The required analyzer plugins should be installed on the Elasticsearch or AWS OpenSearch server before enabling this setting for full analysis support. If no plugin is detected, a warning will be logged. See the :doc:`Elasticsearch setup </administration-guide/scale/elasticsearch-setup>` and :doc:`AWS OpenSearch setup </administration-guide/scale/opensearch-setup>` documentation for plugin installation instructions.
 
   If you enable this setting on a server that was previously running Elasticsearch or AWS OpenSearch, you must purge and rebuild the search indexes for existing content to be properly searchable with the new analyzers. See the :doc:`Elasticsearch setup </administration-guide/scale/elasticsearch-setup>` documentation for instructions on purging and rebuilding indexes.
 
