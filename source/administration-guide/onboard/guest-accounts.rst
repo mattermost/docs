@@ -162,7 +162,7 @@ Mattermost now supports single-channel guests.
 
 Guests who belong to exactly one channel are counted separately from your primary paid seat count and are free up to a 1:1 ratio with licensed seats. Guests who belong to multiple channels continue to count as paid active users. Direct messages and group messages don't change whether a guest is treated as a single-channel guest.
 
-If the number of single-channel guests exceeds the 1:1 allowance, Mattermost shows dismissable warning indicators to system admins on the relevant reporting and license pages. Mattermost doesn't block adding guests or starting the server when this limit is exceeded.
+If the number of single-channel guests exceeds the 1:1 allowance, Mattermost shows dismissible warning indicators to system admins on the relevant reporting and license pages. Mattermost doesn't block adding guests or starting the server when this limit is exceeded.
 
 Can I set an expiration date for guests?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
