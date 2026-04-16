@@ -13,7 +13,29 @@ Changelog
    * - Version
      - Change Description
    * - v11.7
-     - Change Description
+     - (UI) Message attachment footers now support full Markdown rendering, including bold, italic, links, and emoji.
+   * - v11.7
+     - (UI) Changed the **Browse Channels** modal and ``~channel`` autocomplete to prioritize channels with a matching display name.
+   * - v11.7
+     - (UI) Channel membership changes are now reliably synchronized between connected workspaces, even when a remote server is temporarily offline. Previously, membership removals could be missed during outages.
+   * - v11.7
+     - (UI) Added an "Open in new tab" button to the **Product Switcher** menu.
+   * - v11.7
+     - (UI) Substring matching is now allowed when searching channel members in the member sub-panel in a channel.
+   * - v11.7
+     - (Accessibility) Improved accessibility of thread list menus.
+   * - v11.7
+     - (UI) Improved autocomplete while typing in Korean and using Firefox.
+   * - v11.7
+     - (UI) Updated license renewal and expiry notification emails with refreshed branding, copy, and layout.
+   * - v11.7
+     - (UI) Added the ability to open channels in a separate popout window, with full channel and right-hand side functionality.
+   * - v11.7
+     - (UI) Dropped support for JS features required by browsers over three years old.
+   * - v11.7
+     - (UI) Renamed user-visible references from "Custom Profile Attributes" to "User Attributes" across the admin console, error messages, and server translations.
+   * - v11.7
+     - (UI) Added the ability to handle from which remotes a channel is shared from the channel settings user interface.
    * - v11.6
      - (UI) Added support for Default Agent in suggestions and integrated Agents into the App Bar.
    * - v11.6
