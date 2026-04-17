@@ -156,4 +156,4 @@ A list of all members in a channel is visible to system admins. Members can be a
 
 .. note::
 
-   From Mattermost v11.7, system admins can set the complete membership of a channel in a single API call. The server computes the diff against the current membership and adds or removes users as needed. See the `API documentation <https://api.mattermost.com/#tag/channels/operation/SetChannelMembers>`__ for details.
+   From Mattermost v11.5.2, system admins can set the complete membership of a channel in a single API call. The server computes the diff against the current membership and adds or removes users as needed. See the `API documentation <https://api.mattermost.com/#tag/channels/operation/SetChannelMembers>`__ for details.
