@@ -67,7 +67,7 @@ This guide is organized into sequential deployment phases with numbered steps. E
 
 ## Deployment Prerequisites
 
-Use this checklist as your grocery list before you start deploying Calls. Confirm the skills, access, infrastructure, and approvals you need now so you do not discover missing dependencies partway through the deployment.
+Use this checklist to confirm you have the infrastructure, skills, and access required before you begin deploying Calls. Completing these prerequisites now helps prevent delays caused by missing dependencies later in the deployment process.
 
 #### Deployment Infrastructure Requirements
 
@@ -699,9 +699,13 @@ If these checks fail, try these troubleshooting techniques first:
 **Do not continue until all of the checks pass. If any check fails, go to [Appendix A: Troubleshooting](#appendix-a-troubleshooting).**
 ```
 
+````
+
 ---
 
+
 ## Phase 3: Install and Configure Recording
+
 
 Now we will install and configure the `calls-offloader` job service that handles call recording, transcription, and live captions.
 
