@@ -7,7 +7,7 @@ This guide provides detailed information for deploying Mattermost Calls on Kuber
 
 ## Overview
 
-Mattermost Calls has been designed to integrate well with Kubernetes to offer improved scalability and control over the deployment. For Kubernetes deployments, the RTCD service is strongly recommended and is the only officially supported approach.
+Mattermost Calls has been designed to integrate with Kubernetes for improved scalability and control over the deployment. Using the RTCD service is the only supported deployment model.
 
 ## Architecture
 
