@@ -27,7 +27,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - The pre-auth secret header name is now always retrieved in lowercase to support HTTP1.1.
 
 ### Bug Fixes
- - Fixed an issue where opening a permalink to a channel the user was not a member of showed an "Message not viewable" error instead of prompting to join the channel.
+ - Fixed an issue where opening a permalink to a channel the user was not a member of showed a "Message not viewable" error instead of prompting to join the channel.
  - Fixed native crashes during Hermes garbage collection in the gallery pager and lightbox components.
  - Fixed the display height for file upload errors in low bandwidth settings.
  - Fixed a crash on Android where React Native Navigation could attempt to bring a destroyed controller to the front during activity teardown (Sentry AX68, 9,150 crashes, 1,580 users).
