@@ -20,12 +20,10 @@ FIPS builds require a minimum of 14 characters for passwords, atmos/camo proxy c
 ```
 
 #### Database Schema Changes
- - 
+ - TBD
 
 #### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
- - **Changes to Enterprise Advanced plan:**
-   - Under ``PrivacySettings`` in ``config.json``, added ``UseAnonymousURLs`` configuration setting to support a new feature of creating teams and channels using anonymous URLs so the channel and team name are not revealed in the URL.
  - **Changes to Enterprise plans:**
    - Under ``PasswordSettings`` in ``config.json``, added ``​​PasswordFIPSMinimumLength`` configuration setting to require FIPS builds a minimum of 14 characters for passwords, atmos/camo proxy configuration, and shared channel secrets.
  - **Changes to all plans:**
@@ -82,8 +80,8 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-7-is-now-availab
  - Added a ``--workers`` flag to the mmctl import process to control concurrency.
  - Added support for listing user roles through mmctl.
  - Added new permissions to back Self Service Agent Creation in Mattermost Agents:
-``manage_own_agent``: Allows users to create and manage their own agents.
-``manage_others_agent``: Allows users to create and manage agents they didn't create, even if that user isn't one of the administrator users assigned to the agent by the creator.
+    - ``manage_own_agent``: Allows users to create and manage their own agents.
+    - ``manage_others_agent``: Allows users to create and manage agents they didn't create, even if that user isn't one of the administrator users assigned to the agent by the creator.
 
 #### Plugins
  - Added a pluggable AI Actions Menu to the text editor formatting bar with cascading submenus. Plugins can register custom action items via ``registerAIActionMenuItemComponent``. The existing Rewrite feature is now accessed through this menu.
@@ -132,7 +130,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-7-is-now-availab
  - v11.7 is built with Go ``v1.25.8``.
 
 ### Contributors
- - 
+ - TBD
 
 (release-v11.6-feature-release)=
 ## Release v11.6 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
