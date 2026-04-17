@@ -48,6 +48,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-7-is-now-availab
  - Pre-packaged GitHub plugin version [v2.7.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.7.0).
  - Pre-packaged Jira plugin version [v4.6.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.6.0).
  - Pre-packaged Zoom plugin version [v1.13.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.13.0).
+ - Pre-packaged Agents plugin version [v2.0.0](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v2.0.0).
  - Message attachment footers now support full Markdown rendering, including bold, italic, links, and emoji.
  - Changed the **Browse Channels** modal and ``~channel`` autocomplete to prioritize channels with a matching display name.
  - Channel membership changes are now reliably synchronized between connected workspaces, even when a remote server is temporarily offline. Previously, membership removals could be missed during outages.
