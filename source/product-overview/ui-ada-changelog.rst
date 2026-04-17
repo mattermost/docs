@@ -36,6 +36,8 @@ Changelog
      - (UI) Renamed user-visible references from "Custom Profile Attributes" to "User Attributes" across the admin console, error messages, and server translations.
    * - v11.7
      - (UI) Added the ability to handle from which remotes a channel is shared from the channel settings user interface.
+   * - v11.7
+     - (UI) Channel banners are now shown in thread views.
    * - v11.6
      - (UI) Added support for Default Agent in suggestions and integrated Agents into the App Bar.
    * - v11.6
