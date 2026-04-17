@@ -1415,6 +1415,10 @@ Server password
   - **true**: Sniffing finds and connects to all data nodes in your cluster automatically.
   - **false**: **(Default)** Cluster sniffing is disabled.
 
+  .. warning::
+
+    Do not enable cluster sniffing when using cloud-hosted search providers such as Amazon OpenSearch Service. Cloud providers typically hide search cluster nodes behind a proxy, so sniffed node addresses may be unreachable from your network. The provider handles connection pooling for you, making sniffing unnecessary and potentially disruptive.
+
 Enable cluster sniffing
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1425,6 +1429,9 @@ Enable cluster sniffing
 | - **true**: Sniffing finds and connects to all data nodes      |                                                                                 |
 |   in your cluster automatically.                               |                                                                                 |
 | - **false**: **(Default)** Cluster sniffing is disabled.       |                                                                                 |
+|                                                                |                                                                                 |
+| Do not enable cluster sniffing when using cloud-hosted         |                                                                                 |
+| search providers such as Amazon OpenSearch Service.            |                                                                                 |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 Select the **Test Connection** button in the System Console to validate the connection between Mattermost and the Elasticsearch or AWS OpenSearch server.
@@ -2082,6 +2089,7 @@ Enable searching content of documents within ZIP files
 
   - You can search for document content within ZIP files when using Mattermost in a web browser or the desktop app.
   - Searching document contents adds load to your server.
+  - This setting applies only to standard ZIP files. 7zip (``.7z``) files are blocked for security reasons and are not searchable.
   - For large deployments, or teams that share many large, text-heavy documents, we recommend you review our :ref:`hardware requirements <deployment-guide/software-hardware-requirements:hardware requirements>`, and test enabling this feature in a staging environment before enabling it in a production environment.
 
 .. config:setting:: amazon-s3-bucket
