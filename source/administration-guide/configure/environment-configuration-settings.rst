@@ -1937,6 +1937,42 @@ Trace
 | - **not specified**: **(Default)** No error trace is created.       |                                                                          |
 +---------------------------------------------------------------------+--------------------------------------------------------------------------+
 
+.. config:setting:: enable-cjk-analyzers
+  :displayname: Enable CJK analyzers (Elasticsearch)
+  :systemconsole: N/A
+  :configjson: .Elasticsearchsettings.EnableCJKAnalyzers
+  :environment: MM_ELASTICSEARCHSETTINGS_ENABLECJKANALYZERS
+  :description: When set to true, enables language-specific analyzer plugins for Korean, Japanese, and Chinese search on the Elasticsearch or AWS OpenSearch server. Default is false.
+
+  - **true**: Enables CJK language-specific analyzer plugins on the Elasticsearch or AWS OpenSearch server.
+  - **false**: **(Default)** Standard analyzers are used for all languages.
+
+Enable CJK analyzers
+~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+| When enabled, Mattermost uses language-specific analyzer      | - System Config path: N/A                                                                  |
+| plugins to improve search results for Korean, Japanese, and   | - ``config.json`` setting: ``ElasticsearchSettings`` > ``EnableCJKAnalyzers`` > ``false``  |
+| Chinese content. The required analyzer plugins must be        | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_ENABLECJKANALYZERS``                    |
+| installed on the Elasticsearch or AWS OpenSearch server       |                                                                                            |
+| before enabling this setting.                                 |                                                                                            |
+|                                                               |                                                                                            |
+| Supported plugins:                                            |                                                                                            |
+|                                                               |                                                                                            |
+| - ``analysis-nori`` (Korean)                                  |                                                                                            |
+| - ``analysis-kuromoji`` (Japanese)                            |                                                                                            |
+| - ``analysis-smartcn`` (Chinese)                              |                                                                                            |
+|                                                               |                                                                                            |
+| - **true**: CJK language-specific analyzers are enabled.      |                                                                                            |
+| - **false**: **(Default)** Standard analyzers are used.       |                                                                                            |
++---------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+
+.. note::
+
+  Available from Mattermost v11.6. The required analyzer plugins should be installed on the Elasticsearch or AWS OpenSearch server before enabling this setting for full analysis support. If no plugin is detected, a warning will be logged. See the :doc:`Elasticsearch setup </administration-guide/scale/elasticsearch-setup>` and :doc:`AWS OpenSearch setup </administration-guide/scale/opensearch-setup>` documentation for plugin installation instructions.
+
+  If you enable this setting on a server that was previously running Elasticsearch or AWS OpenSearch, you must purge and rebuild the search indexes for existing content to be properly searchable with the new analyzers. See the :doc:`Elasticsearch setup </administration-guide/scale/elasticsearch-setup>` documentation for instructions on purging and rebuilding indexes.
+
 ----
 
 File storage
