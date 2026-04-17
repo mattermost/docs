@@ -71,6 +71,8 @@ source/developer/localization.md
 *.crt
 .aider*
 
+**/.claude/settings.local.json
+
 # Sphinx build artifacts
 *.doctree
 _build/
@@ -78,4 +80,7 @@ build/
 
 # Cursor instructions
 *.cursor
+!.cursor/
+!.cursor/rules/
+!.cursor/rules/*.mdc
 eng.md

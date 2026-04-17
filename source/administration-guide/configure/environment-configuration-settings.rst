@@ -1415,6 +1415,10 @@ Server password
   - **true**: Sniffing finds and connects to all data nodes in your cluster automatically.
   - **false**: **(Default)** Cluster sniffing is disabled.
 
+  .. warning::
+
+    Do not enable cluster sniffing when using cloud-hosted search providers such as Amazon OpenSearch Service. Cloud providers typically hide search cluster nodes behind a proxy, so sniffed node addresses may be unreachable from your network. The provider handles connection pooling for you, making sniffing unnecessary and potentially disruptive.
+
 Enable cluster sniffing
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1425,6 +1429,9 @@ Enable cluster sniffing
 | - **true**: Sniffing finds and connects to all data nodes      |                                                                                 |
 |   in your cluster automatically.                               |                                                                                 |
 | - **false**: **(Default)** Cluster sniffing is disabled.       |                                                                                 |
+|                                                                |                                                                                 |
+| Do not enable cluster sniffing when using cloud-hosted         |                                                                                 |
+| search providers such as Amazon OpenSearch Service.            |                                                                                 |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 Select the **Test Connection** button in the System Console to validate the connection between Mattermost and the Elasticsearch or AWS OpenSearch server.
@@ -1558,6 +1565,38 @@ Enable Elasticsearch for autocomplete queries
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------------+
 
 Autocompletion results may be incomplete until a bulk index of the existing users and channels database is finished.
+
+.. config:setting:: enable-search-public-channels-without-membership
+  :displayname: Allow searching public channels without membership (Elasticsearch)
+  :systemconsole: Environment > Elasticsearch
+  :configjson: .ElasticsearchSettings.EnableSearchPublicChannelsWithoutMembership
+  :environment: MM_ELASTICSEARCHSETTINGS_ENABLESEARCHPUBLICCHANNELSWITHOUTMEMBERSHIP
+  :description: Allow users to search for messages in public channels they have not joined.
+
+  - **true**: Users can find messages in public channels they haven't joined, scoped to teams they belong to.
+  - **false**: **(Default)** Users can only search messages in channels they are a member of.
+
+Allow searching public channels without membership
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
+| Allow users to search for messages in public channels they    | - System Config path: **Environment > Elasticsearch**                                                         |
+| have not joined.                                              | - ``config.json`` setting: ``ElasticsearchSettings`` > ``EnableSearchPublicChannelsWithoutMembership``        |
+|                                                               |   > ``false``                                                                                                 |
+| When enabled for the first time, existing posts are updated   | - Environment variable:                                                                                       |
+| in the background with channel type information. This         |   ``MM_ELASTICSEARCHSETTINGS_ENABLESEARCHPUBLICCHANNELSWITHOUTMEMBERSHIP``                                    |
+| backfill process is throttled to ~10,000 posts per second to  |                                                                                                               |
+| avoid impacting search performance.                           |                                                                                                               |
+|                                                               |                                                                                                               |
+| - **true**: Users can find messages in public channels they   |                                                                                                               |
+|   haven't joined, scoped to teams they belong to.             |                                                                                                               |
+| - **false**: **(Default)** Users can only search messages in  |                                                                                                               |
+|   channels they are a member of.                              |                                                                                                               |
++---------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+   This setting has no effect when :ref:`Compliance Mode <administration-guide/configure/compliance-configuration-settings:enable compliance reporting>` is enabled. When Compliance Mode is active, search results are always restricted to channels the user is a member of.
 
 .. config:setting:: post-index-replicas
   :displayname: Post index replicas (Elasticsearch)
@@ -1898,6 +1937,42 @@ Trace
 | - **not specified**: **(Default)** No error trace is created.       |                                                                          |
 +---------------------------------------------------------------------+--------------------------------------------------------------------------+
 
+.. config:setting:: enable-cjk-analyzers
+  :displayname: Enable CJK analyzers (Elasticsearch)
+  :systemconsole: N/A
+  :configjson: .Elasticsearchsettings.EnableCJKAnalyzers
+  :environment: MM_ELASTICSEARCHSETTINGS_ENABLECJKANALYZERS
+  :description: When set to true, enables language-specific analyzer plugins for Korean, Japanese, and Chinese search on the Elasticsearch or AWS OpenSearch server. Default is false.
+
+  - **true**: Enables CJK language-specific analyzer plugins on the Elasticsearch or AWS OpenSearch server.
+  - **false**: **(Default)** Standard analyzers are used for all languages.
+
+Enable CJK analyzers
+~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+| When enabled, Mattermost uses language-specific analyzer      | - System Config path: N/A                                                                  |
+| plugins to improve search results for Korean, Japanese, and   | - ``config.json`` setting: ``ElasticsearchSettings`` > ``EnableCJKAnalyzers`` > ``false``  |
+| Chinese content. The required analyzer plugins must be        | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_ENABLECJKANALYZERS``                    |
+| installed on the Elasticsearch or AWS OpenSearch server       |                                                                                            |
+| before enabling this setting.                                 |                                                                                            |
+|                                                               |                                                                                            |
+| Supported plugins:                                            |                                                                                            |
+|                                                               |                                                                                            |
+| - ``analysis-nori`` (Korean)                                  |                                                                                            |
+| - ``analysis-kuromoji`` (Japanese)                            |                                                                                            |
+| - ``analysis-smartcn`` (Chinese)                              |                                                                                            |
+|                                                               |                                                                                            |
+| - **true**: CJK language-specific analyzers are enabled.      |                                                                                            |
+| - **false**: **(Default)** Standard analyzers are used.       |                                                                                            |
++---------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+
+.. note::
+
+  Available from Mattermost v11.6. The required analyzer plugins should be installed on the Elasticsearch or AWS OpenSearch server before enabling this setting for full analysis support. If no plugin is detected, a warning will be logged. See the :doc:`Elasticsearch setup </administration-guide/scale/elasticsearch-setup>` and :doc:`AWS OpenSearch setup </administration-guide/scale/opensearch-setup>` documentation for plugin installation instructions.
+
+  If you enable this setting on a server that was previously running Elasticsearch or AWS OpenSearch, you must purge and rebuild the search indexes for existing content to be properly searchable with the new analyzers. See the :doc:`Elasticsearch setup </administration-guide/scale/elasticsearch-setup>` documentation for instructions on purging and rebuilding indexes.
+
 ----
 
 File storage
@@ -2050,6 +2125,7 @@ Enable searching content of documents within ZIP files
 
   - You can search for document content within ZIP files when using Mattermost in a web browser or the desktop app.
   - Searching document contents adds load to your server.
+  - This setting applies only to standard ZIP files. 7zip (``.7z``) files are blocked for security reasons and are not searchable.
   - For large deployments, or teams that share many large, text-heavy documents, we recommend you review our :ref:`hardware requirements <deployment-guide/software-hardware-requirements:hardware requirements>`, and test enabling this feature in a staging environment before enabling it in a production environment.
 
 .. config:setting:: amazon-s3-bucket
