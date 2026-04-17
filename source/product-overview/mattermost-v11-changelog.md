@@ -24,6 +24,8 @@ FIPS builds require a minimum of 14 characters for passwords, atmos/camo proxy c
 
 #### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+ - **Changes to Enterprise Advanced plan:**
+   - Under ``ExperimentalSetting`` in ``config.json``, added ``EnableWatermark`` configuration setting to add watermarking toggle in the server.
  - **Changes to Enterprise plans:**
    - Under ``PasswordSettings`` in ``config.json``, added ``​​PasswordFIPSMinimumLength`` configuration setting to require FIPS builds a minimum of 14 characters for passwords, atmos/camo proxy configuration, and shared channel secrets.
  - **Changes to all plans:**
@@ -125,6 +127,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-7-is-now-availab
 ### Audit Log Event Changes
  - Added new audit logs ``AuditEventCreateView``, ``AuditEventGetView``, ``AuditEventUpdateView``, ``AuditEventDeleteView``, ``AuditEventListViewsForChannel``, ``AuditEventUpdateViewSortOrder``, ``AuditEventGetPostsForView``, ``AuditEventCreatePropertyField``, ``AuditEventDeletePropertyField``, ``AuditEventGetPropertyFields``, ``AuditEventPatchPropertyField``, ``AuditEventGetPropertyValues``, and ``AuditEventPatchPropertyValues`` for Integrated Boards.
  - Added a new audit log ``AuditEventSetChannelMembers`` for channel memberships.
+ - Added new audit logs ``AuditEventCreateTeamAccessPolicy``, ``AuditEventUpdateTeamAccessPolicy``, ``AuditEventDeleteTeamAccessPolicy``, ``AuditEventAssignTeamAccessPolicy``, ``AuditEventUnassignTeamAccessPolicy``, and ``AuditEventTriggerTeamPolicySync`` for team-level ABAC membership policies.
 
 ### Go Version
  - v11.7 is built with Go ``v1.25.8``.
