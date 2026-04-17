@@ -1417,7 +1417,7 @@ Server password
 
   .. warning::
 
-    Do not enable cluster sniffing when using cloud-hosted search providers such as Amazon OpenSearch Service. Cloud providers typically hide Elasticsearch behind a proxy, so sniffed node addresses may be unreachable from your network. The provider handles connection pooling for you, making sniffing unnecessary and potentially disruptive.
+    Do not enable cluster sniffing when using cloud-hosted search providers such as Amazon OpenSearch Service. Cloud providers typically hide search cluster nodes behind a proxy, so sniffed node addresses may be unreachable from your network. The provider handles connection pooling for you, making sniffing unnecessary and potentially disruptive.
 
 Enable cluster sniffing
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -1430,13 +1430,8 @@ Enable cluster sniffing
 |   in your cluster automatically.                               |                                                                                 |
 | - **false**: **(Default)** Cluster sniffing is disabled.       |                                                                                 |
 |                                                                |                                                                                 |
-| .. warning::                                                   |                                                                                 |
-|                                                                |                                                                                 |
-|   Do not enable cluster sniffing when using cloud-hosted       |                                                                                 |
-|   search providers such as Amazon OpenSearch Service.          |                                                                                 |
-|   Cloud providers hide Elasticsearch behind a proxy, so        |                                                                                 |
-|   sniffed node addresses are unreachable from your network.    |                                                                                 |
-|   The provider handles connection pooling automatically.       |                                                                                 |
+| Do not enable cluster sniffing when using cloud-hosted         |                                                                                 |
+| search providers such as Amazon OpenSearch Service.            |                                                                                 |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 Select the **Test Connection** button in the System Console to validate the connection between Mattermost and the Elasticsearch or AWS OpenSearch server.
