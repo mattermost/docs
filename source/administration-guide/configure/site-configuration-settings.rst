@@ -407,7 +407,7 @@ Enable desktop app landing page
   :systemconsole: Site Configuration > Customization
   :configjson: .ServiceSettings.MinimumDesktopAppVersion
   :environment: MM_SERVICESETTINGS_MINIMUMDESKTOPAPPVERSION
-  :description: Enforce a minimum Mattermost Desktop App version required to connect to the server.
+  :description: Available from Mattermost server v11.6.0. Enforce a minimum Mattermost Desktop App version required to connect to the server.
 
 Minimum desktop app version
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
