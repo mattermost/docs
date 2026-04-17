@@ -41,12 +41,15 @@ This guide is organized into sequential deployment phases with numbered steps. E
     Choose your deployment architecture, make networking decisions, provision required servers, and confirm the required network ports and paths are open before deployment.
 
 2. [**Configure Calls**](#phase-2-configure-your-calls-deployment-path)
+
     Complete the installation and configuration for the deployment architecture you selected in Phase 1.
 
     - [**Path A: Configure Integrated Calls**](#path-a-configure-integrated-calls)
+
       Use the built-in Calls service on the Mattermost server for simpler deployment at small scale.
 
-    - [**Path B: Install and Configure RTCD**](#path-b-install-and-configure-rtcd)
+    - [**Path B: Install and Configure RTCD**](#path-b-install-and-configure-rtcd) (Optional)
+
       RTCD (Real-Time Communication Daemon) is a service built to offload media processing tasks from the Mattermost server.
 
 3. [**Install and Configure Recording**](#phase-3-install-and-configure-recording) (Optional)
@@ -68,16 +71,21 @@ Use this checklist as your grocery list before you start deploying Calls. Confir
 
 ### Deployment Infrastrutcure Requirements
 
-- [ ] You have a running Mattermost server on v10.0+. 
+- [ ] You have a running Mattermost server on v10.0+.
+
       _See {doc}`View system information <../../end-user-guide/collaborate/view-system-information>` to check your Mattermost edition and version._
 - [ ] Your Mattermost server is configured to use HTTPS.
+
       _See [Configure TLS](https://docs.mattermost.com/deploy/server/setup-tls.html) if you need to set up HTTPS._
 - [ ] You know how many active users you have in your current Mattermost deployment
+
       _See {doc}`Site Statistics <../../administration-guide/manage/statistics>` to access usage metrics._
 - [ ] You can provision at least one dedicated Linux server or VM if you plan to use the RTCD service.
+
       _See [Infrasturucte Decisions](#infrastructure-decisions) (Step 1.2) if you're unsure if you need RTCD._
 - [ ] You can provision a dedicated Linux server or VM for the `calls-offloader` service if you need recording, transcription, or live captions.
 - [ ] You are prepared to deploy a TURN server if your users cannot reliably reach the media service on UDP or TCP `8443`.
+
       _See [Networking Decisions](#infrastructure-decisions) (Step 1.3) if you're unsure if you need a TURN server._
 - [ ] You have the appropriate {doc}`Mattermost edition and license <../../product-overview/editions-and-offerings>` for the features you need:
   - **Mattermost Entry or Team Edition**: 1-1 calling and screen sharing (Up to 40 minutes)
@@ -90,6 +98,7 @@ Use this checklist as your grocery list before you start deploying Calls. Confir
 
 - [ ] You are comfortable with basic Linux administration, or you have someone available who is. You will need to connect to servers over SSH, edit configuration files, manage systemd services, inspect logs, and run shell commands.
 - [ ] You have System Admin access to your Mattermost server.
+
     _See {doc}`Mattermost roles <../../end-user-guide/collaborate/learn-about-roles>`to learn about roles and permissions._
 
 ### Networking Requirements
@@ -106,6 +115,7 @@ Use this checklist as your grocery list before you start deploying Calls. Confir
 ### Contacting Support
 
 - [ ] You know how to open a [request](https://support.mattermost.com) with Mattermost support if you encounter issues.
+
     _Please include the exact **step number** (e.g. 2.2.1) that failed, along with your {doc}`Mattermost support packet <../../administration-guide/manage/admin/generating-support-packet>` and [Calls logs](calls-logging.md)._
 
 ```{note}
