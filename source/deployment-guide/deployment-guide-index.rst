@@ -14,6 +14,7 @@ Whether you're deploying the server application, desktop application, or mobile 
     Reference Architecture </deployment-guide/reference-architecture/reference-architecture-index>
     Server Deployment </deployment-guide/server/server-deployment-planning>
     Calls Deployment </administration-guide/configure/calls-deployment-guide>
+    Cloud Providers </deployment-guide/cloud-providers/cloud-providers-index>
     Desktop App Deployment </deployment-guide/desktop/desktop-app-deployment>
     Mobile App Deployment </deployment-guide/mobile/mobile-app-deployment>
     Deployment Troubleshooting </deployment-guide/deployment-troubleshooting>
