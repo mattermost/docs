@@ -98,7 +98,7 @@ We highly recommend that you set up an AWS OpenSearch server on a separate machi
 
       sudo /usr/share/opensearch/bin/opensearch-plugin install analysis-icu
 
-  **(Optional) CJK language analyzer plugins**: If you need improved search for Korean, Japanese, or Chinese content, install the required language-specific analyzer plugins and enable the :ref:`EnableCJKAnalyzers <administration-guide/configure/environment-configuration-settings:enable cjk analyzers>` configuration setting. The supported plugins are ``analysis-nori`` (Korean), ``analysis-kuromoji`` (Japanese), and ``analysis-smartcn`` (Chinese). Install them using the same ``opensearch-plugin install`` command, for example. See also :doc:`Enabling Chinese, Japanese, and Korean Search </administration-guide/configure/enabling-chinese-japanese-korean-search>` for additional CJK search configuration options.
+  **(Optional) CJK language analyzer plugins**: To improve search for Korean, Japanese, or Chinese content, install one or more of the following language-specific analyzer plugins using the same ``opensearch-plugin install`` command: ``analysis-nori`` (Korean), ``analysis-kuromoji`` (Japanese), and ``analysis-smartcn`` (Chinese). Then enable the :ref:`EnableCJKAnalyzers <administration-guide/configure/environment-configuration-settings:enable cjk analyzers>` configuration setting. See also :doc:`Enabling Chinese, Japanese, and Korean Search </administration-guide/configure/enabling-chinese-japanese-korean-search>` for additional CJK search configuration options.
 
     .. code-block:: sh
 
