@@ -69,7 +69,7 @@ This guide is organized into sequential deployment phases with numbered steps. E
 
 Use this checklist as your grocery list before you start deploying Calls. Confirm the skills, access, infrastructure, and approvals you need now so you do not discover missing dependencies partway through the deployment.
 
-### Deployment Infrastructure Requirements
+#### Deployment Infrastructure Requirements
 
 - [ ] You have a running Mattermost server on v10.0+.
 
@@ -99,14 +99,14 @@ Use this checklist as your grocery list before you start deploying Calls. Confir
       - RTCD service for scale (50+ users) and production reliability.
       - Recording, transcription, or live captions.
 
-### Skills and Access Requirements
+#### Skills and Access Requirements
 
 - [ ] You are comfortable with basic Linux administration, or you have someone available who is. You will need to connect to servers over SSH, edit configuration files, manage systemd services, inspect logs, and run shell commands.
 - [ ] You have System Admin access to your Mattermost server.
 
   _See {doc}`Mattermost roles <../../end-user-guide/collaborate/learn-about-roles>` to learn about roles and permissions._
 
-### Networking Requirements
+#### Networking Requirements
 
 - [ ] You know how end users will connect to Calls (From private networks, VPN, or from the public internet)
 
@@ -114,12 +114,12 @@ Use this checklist as your grocery list before you start deploying Calls. Confir
 
 - [ ] You can open the required inbound and outbound firewall rules, or you can engage the network or security team that manages them.
 
-### Validation Resources
+#### Validation Resources
 
 - [ ] You have two test accounts available for smoke testing during Calls installation and configuration.
 - [ ] You have a small pilot group (5-10 users) available for validation across the client types and networks you care about.
 
-### Contacting Support
+#### Contacting Support
 
 - [ ] You know how to open a [request](https://support.mattermost.com) with Mattermost support if you encounter issues.
 
@@ -146,13 +146,13 @@ Before you start, confirm the following:
 
 ### 1.2 Infrastructure Decisions
 
-Here you will make two important infrastructure decisions based on the requirements of your Calls deployment. First you'll choose your media processing architecture, then decide whether you need recording. Reference topology for each architecture is provided.
+Here you will make two important infrastructure decisions: First you'll choose your media processing architecture, then decide whether you need recording. Reference topology for each architecture is provided.
 
 #### 1.2.1 Media Service: RTCD or Integrated
 
 **Integrated**
 
-This is the simplest deployment model, since you do not need to provision a separate service to handle media processing. In **Integrated** mode, the Calls plugin runs its built-in media service directly on the Mattermost server. 
+This is the simplest deployment model, since you do not need to provision a separate service to handle media processing. In Integrated mode, the Calls plugin runs its built-in media service directly on the Mattermost server. 
 
 **RTCD**
 
@@ -235,6 +235,8 @@ Use the tabs below to view the reference architecture for each deployment model 
 
 ````{tab} Integrated + Recording
 
+Reference architecture when using the Recording service with Integrated Calls:
+
 ```{image} ../../images/calls-deployment-integrated-recording.png
 :alt: Calls deployment with Integrated Calls and recording
 :height: 400px
@@ -248,10 +250,11 @@ Use the tabs below to view the reference architecture for each deployment model 
 **License**
 
 - **Mattermost Enterprise** or **Enterprise Advanced**
-
 ````
 
 ````{tab} RTCD + Recording
+
+Reference architecture when using the Recording service with RTCD:
 
 ```{image} ../../images/calls-deployment-rtcd-recording.png
 :alt: Calls deployment with RTCD and recording
