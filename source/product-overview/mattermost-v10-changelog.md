@@ -23,7 +23,7 @@
   - Mattermost v10.12.3 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged MS Teams Meetings plugin version [v2.3.0](https://github.com/mattermost/mattermost-plugin-msteams-meetings/releases/tag/v2.3.0).
   - Pre-packaged Calls plugin version [v1.11.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.11.0).
-  - Fixed a configuration retention issue where even active configuration got deleted [MM-66216](https://mattermost.atlassian.net/browse/MM-66216).
+  - Fixed a configuration retention issue where even active configuration got deleted.
   - Mattermost v10.12.3 contains no database or functional changes.
 - **10.12.2, released 2025-10-28**
  ```{Attention}
@@ -76,12 +76,26 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 (release-v10.11-extended-support-release)=
 ## Release v10.11 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **10.11.14, released 2026-04-15**
+  - Mattermost v10.11.14 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Calls plugin version [v1.11.4](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.11.4).
+  - Pre-packaged Playbooks plugin version [v2.4.4](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.4.4).
+  - Pre-packaged MS Teams Meetings plugin version [v2.4.1](https://github.com/mattermost/mattermost-plugin-msteams-meetings/releases/tag/v2.4.1).
+  - Pre-packaged GitLab plugin version [v1.12.1](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.12.1).
+  - Fixed an issue where membership changes from remote clusters could operate on a different channel than the one validated in the sync message.
+  - Fixed an issue where image proxies did not detect content-types accurately in certain cases.
+  - Fixed an issue with edit post permissions.
+  - Fixed an issue with file attachment processing for certain archive types.
+  - Fixed an issue where remote cluster invite confirmations could accept a ``RefreshedToken`` that matched the original invite token, preventing proper token rotation.
+  - Fixed an issue with custom slash command response URL construction.
+  - Fixed typing issues in the **Find Channels** modal caused by interference with IMEs.
+  - Mattermost v10.11.14 contains no database or functional changes.
 - **10.11.13, released 2026-03-16**
   - Mattermost v10.11.13 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Improved security hardening for the user authentication update API endpoint.
   - Improved token handling in the guest magic link authentication flow.
   - Pre-packaged Calls plugin version [v1.11.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.11.1).
-  - Fixed an issue where the configuration wasn't kept when the plugin system was re-enabled [MM-67629](https://mattermost.atlassian.net/browse/MM-67629).
+  - Fixed an issue where the configuration wasn't kept when the plugin system was re-enabled.
   - Mattermost v10.11.13 contains no database or functional changes.
 - **10.11.12, released 2026-02-23**
   - Mattermost v10.11.12 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
@@ -97,9 +111,9 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 ```
   - Mattermost v10.11.11 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Boards plugin version [v9.2.2](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.2.2).
-  - Fixed an issue where the channel URL got updated when the channel display name was changed [MM-64725](https://mattermost.atlassian.net/browse/MM-64725).
-  - Added audit logs for when admins access posts on channels they are not a member of [MM-64460](https://mattermost.atlassian.net/browse/MM-64460).
-  - Fixed a performance regression that caused the requests to populate the **Recent mentions** right-hand side (RHS) to timeout. This, in turn, re-introduces a known bug in searches with quoted strings, that may include results not exactly matching the quoted string [MM-66782](https://mattermost.atlassian.net/browse/MM-66782).
+  - Fixed an issue where the channel URL got updated when the channel display name was changed.
+  - Added audit logs for when admins access posts on channels they are not a member of.
+  - Fixed a performance regression that caused the requests to populate the **Recent mentions** right-hand side (RHS) to timeout. This, in turn, re-introduces a known bug in searches with quoted strings, that may include results not exactly matching the quoted string.
   - Fixed an issue with PSD file previews.
   - Added a new ``MM_LOG_PATH`` environment variable to restrict log file locations. Log files must now be within a configured root directory.
   - Fixed an issue where the ``/mute`` slash command could be used to enumerate private channels.
@@ -116,13 +130,13 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
   - Mattermost v10.11.11 contains no database or functional changes.
 - **10.11.10, released 2026-01-15**
   - Mattermost v10.11.10 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Fixed a server panic that occurred when a bot created a post with persistent notifications enabled [MM-65575](https://mattermost.atlassian.net/browse/MM-65575).
+  - Fixed a server panic that occurred when a bot created a post with persistent notifications enabled.
   - Pre-packaged Zoom plugin version [v1.11.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.11.0).
   - Pre-packaged Jira plugin version [v4.5.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.5.0).
   - Mattermost v10.11.10 contains no database or functional changes.
 - **10.11.9, released 2025-12-17**
   - Mattermost v10.11.9 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Fixed an issue where pressing ``Shift+Up`` in the channel textbox to reply to a thread could cause the right‑hand sidebar (RHS) reply textbox to not focus [MM-65186](https://mattermost.atlassian.net/browse/MM-65186).
+  - Fixed an issue where pressing ``Shift+Up`` in the channel textbox to reply to a thread could cause the right‑hand sidebar (RHS) reply textbox to not focus.
   - Mattermost v10.11.9 contains no database or functional changes.
 - **10.11.8, released 2025-11-21**
  ```{Attention}
@@ -139,8 +153,8 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
   - Pre-packaged GitHub plugin version [v2.5.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.5.0).
   - Mattermost v10.11.7 contains no database or functional changes.
 - **10.11.6, released 2025-11-04**
-  - Fixed an issue where guest users could not log in via SAML when "Ignore Guest Users when Synchronizing with AD/LDAP" was enabled [MM-66186](https://mattermost.atlassian.net/browse/MM-66186).
-  - Fixed a configuration retention issue where even active configurations got deleted [MM-66216](https://mattermost.atlassian.net/browse/MM-66216).
+  - Fixed an issue where guest users could not log in via SAML when "Ignore Guest Users when Synchronizing with AD/LDAP" was enabled.
+  - Fixed a configuration retention issue where even active configurations got deleted.
   - Pre-packaged MS Teams Meeting plugin version [v2.3.0](https://github.com/mattermost/mattermost-plugin-msteams-meetings/releases/tag/v2.3.0).
   - Mattermost v10.11.6 contains no database or functional changes.
 - **10.11.5, released 2025-10-28**
@@ -154,19 +168,19 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
   - Mattermost v10.11.4 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged MS Teams plugin [v2.2.2](https://github.com/mattermost/mattermost-plugin-msteams/releases/tag/v2.2.2).
   - Upgraded to go version 1.24.6.
-  - Fixed an issue with the mmctl system status to return non-zero exit codes when health checks fail, ensuring proper integration with container orchestration health check systems [MM-65830](https://mattermost.atlassian.net/browse/MM-65830).
+  - Fixed an issue with the mmctl system status to return non-zero exit codes when health checks fail, ensuring proper integration with container orchestration health check systems.
   - Mattermost v10.11.4 contains no database or functional changes.
 - **10.11.3, released 2025-09-16**
   - Mattermost v10.11.3 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Fixed an issue where unread messages from muted channels were shown in the favicon/desktop app [MM-64883](https://mattermost.atlassian.net/browse/MM-64883).
+  - Fixed an issue where unread messages from muted channels were shown in the favicon/desktop app.
   - Mattermost v10.11.3 contains no database or functional changes.
 - **10.11.2, released 2025-08-22**
   - Mattermost v10.11.2 contains high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Fixed an issue where the content of webhook posts did not display [MM-64626](https://mattermost.atlassian.net/browse/MM-64626).
+  - Fixed an issue where the content of webhook posts did not display.
   - Mattermost v10.11.2 contains no database or functional changes.
 - **10.11.1, released 2025-08-15**
-  - Fixed an issue with login being kept in a web view instead of redirecting to the mobile app when using OAuth for login [MM-65015](https://mattermost.atlassian.net/browse/MM-65015).
-  - Upgraded to go1.24.5, and reverted to bullseye to maintain glibc <2.34 compatibility for older deployment environments [MM-64865](https://mattermost.atlassian.net/browse/MM-64865).
+  - Fixed an issue with login being kept in a web view instead of redirecting to the mobile app when using OAuth for login.
+  - Upgraded to go1.24.5, and reverted to bullseye to maintain glibc <2.34 compatibility for older deployment environments.
   - Mattermost v10.11.1 contains no database or functional changes.
 - **10.11.0, released 2025-08-15**
   - Original 10.11.0 release.
@@ -262,8 +276,8 @@ New setting options were added to ``config.json``. Below is a list of the additi
 - **10.10.2, released 2025-08-14**
   - Mattermost v10.10.2 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Boards plugin [v9.1.5](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.5).
-  - Fixed an issue with the onboarding checklist being cut off when on multiple teams [MM-64919](https://mattermost.atlassian.net/browse/MM-64919).
-  - Upgraded to go1.24.5, and reverted to bullseye to maintain glibc <2.34 compatibility for older deployment environments [MM-64865](https://mattermost.atlassian.net/browse/MM-64865).
+  - Fixed an issue with the onboarding checklist being cut off when on multiple teams.
+  - Upgraded to go1.24.5, and reverted to bullseye to maintain glibc <2.34 compatibility for older deployment environments.
   - Mattermost v10.10.2 contains no database or functional changes.
 - **10.10.1, released 2025-07-16**
   - Mattermost v10.10.1 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
@@ -380,14 +394,14 @@ New setting options were added to ``config.json``. Below is a list of the additi
 - **10.9.3, released 2025-07-08**
   - Mattermost v10.9.3 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Boards plugin version [v9.1.4](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.4).
-  - Fixed an issue with the keyboard navigation in the user settings sidebar [MM-64669](https://mattermost.atlassian.net/browse/MM-64669).
+  - Fixed an issue with the keyboard navigation in the user settings sidebar.
   - Mattermost v10.9.3 contains no database or functional changes.
 - **10.9.2, released 2025-06-19**
   - Mattermost v10.9.2 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v10.9.2 contains no database or functional changes.
 - **10.9.1, released 2025-06-17**
   - Mattermost v10.9.1 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Fixed an issue where Direct/Group Messages were missing on initial load [MM-64481](https://mattermost.atlassian.net/browse/MM-64481).
+  - Fixed an issue where Direct/Group Messages were missing on initial load.
   - Pre-packaged Boards plugin version [v9.1.3](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.3).
   - Mattermost v10.9.1 contains no database or functional changes.
 - **10.9.0, released 2025-06-16**
@@ -486,7 +500,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - v10.9 is built with Go ``v1.23.7``.
 
 ### Known Issues
- - Permissions lists exceed content area for **All Members** and **System Admins** in the System Console [MM-64417](https://mattermost.atlassian.net/browse/MM-64417).
+ - Permissions lists exceed content area for **All Members** and **System Admins** in the System Console.
  - Setting the license file location through an environment variable still gives the option to upload a new license through the System Console, resulting in the license being overwritten by the one set through the environment variable. See this [knowledge base article](https://support.mattermost.com/hc/en-us/articles/33911983851284-System-console-still-displays-old-license-after-uploading-a-new-one) on how to resolve this issue.
 
 ### Contributors
@@ -503,8 +517,8 @@ New setting options were added to ``config.json``. Below is a list of the additi
   - Mattermost v10.8.3 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Playbooks plugin [v1.41.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.41.1).
   - Pre-packaged Boards plugin version [v9.1.3](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.3).
-  - Fixed an issue where the ``icon_emoji`` property was not working for webhook posts [MM-64316](https://mattermost.atlassian.net/browse/MM-64316).
-  - Added support for SSO while Mattermost is embedded in an iframe [MM-63900](https://mattermost.atlassian.net/browse/MM-63900).
+  - Fixed an issue where the ``icon_emoji`` property was not working for webhook posts.
+  - Added support for SSO while Mattermost is embedded in an iframe.
   - Mattermost v10.8.3 contains no database or functional changes.
 - **10.8.2, released 2025-05-29**
   - Mattermost v10.8.2 contains high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
@@ -513,7 +527,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
 - **10.8.1, released 2025-05-21**
   - Mattermost v10.8.1 contains a Critical severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Playbooks plugin [v2.2.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.2.0).
-  - Fixed an issue where Team Admin permissions couldn't be changed if they were missing in **All members** section [MM-64157](https://mattermost.atlassian.net/browse/MM-64157).
+  - Fixed an issue where Team Admin permissions couldn't be changed if they were missing in **All members** section.
   - Updated ``golang.org/x/net`` version to v0.39.0.
   - Mattermost v10.8.1 contains no database or functional changes.
 - **10.8.0, released 2025-05-16**
@@ -583,7 +597,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - v10.8 is built with Go ``v1.23.7``.
 
 ### Known Issues
- - The ``icon_emoji`` property does not work for webhook posts [MM-64316](https://mattermost.atlassian.net/browse/MM-64316).
+ - The ``icon_emoji`` property does not work for webhook posts.
  - Setting the license file location through an environment variable still gives the option to upload a new license through the System Console, resulting in the license being overwritten by the one set through the environment variable. See this [knowledge base article](https://support.mattermost.com/hc/en-us/articles/33911983851284-System-console-still-displays-old-license-after-uploading-a-new-one) on how to resolve this issue.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
  - Slack import through the CLI fails if email notifications are enabled.
@@ -599,21 +613,21 @@ New setting options were added to ``config.json``. Below is a list of the additi
   - Pre-packaged MS Teams plugin [v2.2.1](https://github.com/mattermost/mattermost-plugin-msteams/releases/tag/v2.2.1).
   - Pre-packaged Playbooks plugin [v1.41.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.41.1).
   - Pre-packaged Boards plugin version [v9.1.3](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.3).
-  - Added support for SSO while Mattermost is embedded in an iframe [MM-63900](https://mattermost.atlassian.net/browse/MM-63900).
+  - Added support for SSO while Mattermost is embedded in an iframe.
   - Mattermost v10.7.4 contains no database or functional changes.
 - **10.7.3, released 2025-05-21**
   - Mattermost v10.7.3 contains a Critical severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Playbooks plugin [v2.2.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.2.0).
-  - Fixed an issue where Team Admin permissions couldn't be changed if they were missing in **All members** section [MM-64157](https://mattermost.atlassian.net/browse/MM-64157).
+  - Fixed an issue where Team Admin permissions couldn't be changed if they were missing in **All members** section.
   - Mattermost v10.7.3 contains no database or functional changes.
 - **10.7.2, released 2025-05-12**
   - Mattermost v10.7.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v10.7.2 contains no database or functional changes.
 - **10.7.1, released 2025-04-29**
   - Mattermost v10.7.1 contains a low severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Fixed an issue where plugins were disabled when Mattermost was embedded [MM-63507](https://mattermost.atlassian.net/browse/MM-63507).
-  - Fixed an issue with post links trapping focus when hovered or focused using the keyboard [MM-62005](https://mattermost.atlassian.net/browse/MM-62005).
-  - Stopped logging websocket PING events received by the server [MM-63693](https://mattermost.atlassian.net/browse/MM-63693).
+  - Fixed an issue where plugins were disabled when Mattermost was embedded.
+  - Fixed an issue with post links trapping focus when hovered or focused using the keyboard.
+  - Stopped logging websocket PING events received by the server.
   - Mattermost v10.7.1 contains no database or functional changes.
 - **10.7.0, released 2025-04-16**
   - Original 10.7.0 release.
@@ -692,8 +706,8 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - v10.7 is built with Go ``v1.22.6``.
 
 ### Known Issues
- - Tooltip and highlight of icon for sidebar expansion appear after pressing **Enter** on a search [MM-63640](https://mattermost.atlassian.net/browse/MM-63640).
- - Shortcut keys to open the right-hand side from the last post in a channel are causing blue borders to be shown in the right-hand side header [MM-63562](https://mattermost.atlassian.net/browse/MM-63562).
+ - Tooltip and highlight of icon for sidebar expansion appear after pressing **Enter** on a search.
+ - Shortcut keys to open the right-hand side from the last post in a channel are causing blue borders to be shown in the right-hand side header.
  - Setting the license file location through an environment variable still gives the option to upload a new license through the System Console, resulting in the license being overwritten by the one set through the environment variable. See this [knowledge base article](https://support.mattermost.com/hc/en-us/articles/33911983851284-System-console-still-displays-old-license-after-uploading-a-new-one) on how to resolve this issue.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
  - Slack import through the CLI fails if email notifications are enabled.
@@ -710,8 +724,8 @@ New setting options were added to ``config.json``. Below is a list of the additi
   - Pre-packaged Playbooks plugin [v2.2.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.2.0).
   - Mattermost v10.6.6 contains no database or functional changes.
 - **10.6.5, released 2025-05-15**
-  - Added support for AES-256-GCM encryption in SAML [MM-64222](https://mattermost.atlassian.net/browse/MM-64222).
-  - Fixed an issue where Team Admin permissions couldn't be changed if they were missing in "All members" section [MM-64157](https://mattermost.atlassian.net/browse/MM-64157).
+  - Added support for AES-256-GCM encryption in SAML.
+  - Fixed an issue where Team Admin permissions couldn't be changed if they were missing in "All members" section.
   - Mattermost v10.6.5 contains no database or functional changes.
 - **10.6.4, released 2025-05-12**
   - Mattermost v10.6.4 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
@@ -721,14 +735,14 @@ New setting options were added to ``config.json``. Below is a list of the additi
   - Mattermost v10.6.3 contains no database or functional changes.
 - **10.6.2, released 2025-04-15**
   - Mattermost v10.6.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Stopped logging websocket PING events received by the server [MM-63693](https://mattermost.atlassian.net/browse/MM-63693).
-  - Fixed an issue with post links trapping focus when hovered or focused using the keyboard [MM-62005](https://mattermost.atlassian.net/browse/MM-62005).
+  - Stopped logging websocket PING events received by the server.
+  - Fixed an issue with post links trapping focus when hovered or focused using the keyboard.
   - Mattermost v10.6.2 contains no database or functional changes.
 - **10.6.1, released 2025-03-17**
-  - Fixed an issue with jobs in an High Availability environment, where two job servers would take the same job [MM-63314](https://mattermost.atlassian.net/browse/MM-63314).
+  - Fixed an issue with jobs in an High Availability environment, where two job servers would take the same job.
   - Pre-packaged Calls plugin version [v1.5.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.5.2).
   - Mattermost v10.6.1 contains the following functional changes:
-      - Added a new System Console page called ``Embedding`` which allows frame ancestor domains to be specified when embedding Mattermost in other web sites. Note, ``teams.microsoft.com`` is no longer added automatically to the frame ancestors list. Added a new configuration setting ``FrameAncestors`` [MM-63327](https://mattermost.atlassian.net/browse/MM-63327).
+      - Added a new System Console page called ``Embedding`` which allows frame ancestor domains to be specified when embedding Mattermost in other web sites. Note, ``teams.microsoft.com`` is no longer added automatically to the frame ancestors list. Added a new configuration setting ``FrameAncestors``.
 - **10.6.0, released 2025-03-14**
   - Original 10.6.0 release.
 
@@ -799,7 +813,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
 ## Release v10.5 - [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
 - **10.5.14, released 2025-10-30**
-  - Fixed Go v1.23 incompatibility issues with plugins [MM-63345](https://mattermost.atlassian.net/browse/MM-63345).
+  - Fixed Go v1.23 incompatibility issues with plugins.
   - Mattermost v10.5.14 contains no database or functional changes.
 - **10.5.13, released 2025-10-28**
  ```{Attention}
@@ -815,8 +829,8 @@ New setting options were added to ``config.json``. Below is a list of the additi
   - Mattermost v10.5.12 contains no database or functional changes.
 - **10.5.11, released 2025-09-10**
   - Mattermost v10.5.11 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Fixed an issue where the content of webhook posts did not display [MM-64626](https://mattermost.atlassian.net/browse/MM-64626).
-  - Fixed an issue where unread messages from muted channels were shown in the favicon/desktop app [MM-64883](https://mattermost.atlassian.net/browse/MM-64883).
+  - Fixed an issue where the content of webhook posts did not display.
+  - Fixed an issue where unread messages from muted channels were shown in the favicon/desktop app.
   - Mattermost v10.5.11 contains no database or functional changes.
 - **10.5.10, released 2025-08-15**
   - Mattermost v10.5.10 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
@@ -826,25 +840,25 @@ New setting options were added to ``config.json``. Below is a list of the additi
   - Pre-packaged Boards plugin version [v9.1.5](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.5).
   - Pre-packaged Agents plugin [v1.2.4](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.2.4).
   - Pre-packaged Calls plugin [v1.9.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.9.2).
-  - Fixed an issue where overridden webhook usernames did not appear in replies when Threaded Discussions were disabled [MM-63564](https://mattermost.atlassian.net/browse/MM-63564).
-  - Removed redux selector's telemetry [MM-63794](https://mattermost.atlassian.net/browse/MM-63794).
+  - Fixed an issue where overridden webhook usernames did not appear in replies when Threaded Discussions were disabled.
+  - Removed redux selector's telemetry.
   - Mattermost v10.5.9 contains no database or functional changes.
 - **10.5.8, released 2025-06-18**
   - Mattermost v10.5.8 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Fixed an issue where unreads from deleted teams would display in the titlebar/Desktop App [MM-63933](https://mattermost.atlassian.net/browse/MM-63933).
+  - Fixed an issue where unreads from deleted teams would display in the titlebar/Desktop App.
   - Pre-packaged Playbooks plugin [v1.41.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.41.1).
   - Pre-packaged Boards plugin version [v9.1.3](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.3).
   - Mattermost v10.5.8 contains no database or functional changes.
 - **10.5.7, released 2025-05-27**
   - Mattermost v10.5.7 contains a high severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Fixed possible deadlocks when updating ``SidebarCategories`` and ``SidebarChannels`` tables [MM-63923](https://mattermost.atlassian.net/browse/MM-63923).
+  - Fixed possible deadlocks when updating ``SidebarCategories`` and ``SidebarChannels`` tables.
   - Pre-packaged MS Teams plugin [v2.2.1](https://github.com/mattermost/mattermost-plugin-msteams/releases/tag/v2.2.1).
   - Mattermost v10.5.7 contains no database or functional changes.
 - **10.5.6, released 2025-05-21**
   - Mattermost v10.5.6 contains a Critical severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Playbooks plugin [v2.2.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.2.0).
   - Pre-packaged Calls plugin [v1.7.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.7.1).
-  - Fixed an issue where Team Admin permissions couldn't be changed if they were missing in **All members** section [MM-64157](https://mattermost.atlassian.net/browse/MM-64157).
+  - Fixed an issue where Team Admin permissions couldn't be changed if they were missing in **All members** section.
   - Mattermost v10.5.6 contains no database or functional changes.
 - **10.5.5, released 2025-05-09**
   - Mattermost v10.5.5 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
@@ -852,13 +866,13 @@ New setting options were added to ``config.json``. Below is a list of the additi
     - A new index to the ``CategoryId`` column in ``SidebarChannels`` table was added to improve query performance. No database downtime is expected for this upgrade. It takes around 2s to add the index on a table with 1.2M rows for PostgreSQL, and it takes around 5s on MySQL on a table with 300K rows. The migrations are fully backwards-compatible and no table locks or existing operations on the table are impacted by this upgrade. Zero downtime is expected when upgrading to this release. The SQL queries included are ``CREATE INDEX idx_sidebarchannels_categoryid ON SidebarChannels(CategoryId);`` for MYSQL and ``CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_sidebarchannels_categoryid ON sidebarchannels(categoryid);`` for PostgreSQL. 
 - **10.5.4, released 2025-04-29**
   - Mattermost v10.5.4 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Fixed an issue where **Recent Mentions** showed incorrect results for custom notification keywords containing hyphens [MM-63582](https://mattermost.atlassian.net/browse/MM-63582).
-  - Fixed an issue with post links trapping focus when hovered or focused using the keyboard [MM-62005](https://mattermost.atlassian.net/browse/MM-62005).
+  - Fixed an issue where **Recent Mentions** showed incorrect results for custom notification keywords containing hyphens.
+  - Fixed an issue with post links trapping focus when hovered or focused using the keyboard.
   - Mattermost v10.5.4 contains no database or functional changes.
 - **10.5.3, released 2025-04-15**
   - Mattermost v10.5.3 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Metrics plugin version [v0.6.0](https://github.com/mattermost/mattermost-plugin-metrics/releases/tag/v0.6.0).
-  - Stopped logging websocket PING events received by the server [MM-63693](https://mattermost.atlassian.net/browse/MM-63693).
+  - Stopped logging websocket PING events received by the server.
   - Mattermost v10.5.3 contains no database or functional changes.
 - **10.5.2, released 2025-03-17**
   - Mattermost v10.5.2 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
@@ -870,7 +884,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
   - Mattermost v10.5.1 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Boards plugin version [v9.1.1](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.1).
   - Pre-packaged Playbooks plugin version [v2.1.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.1.1).
-  - Fixed an issue in Compliance Exports whereby a missing file attachment in S3 could prevent the export run from completing [MM-62527](https://mattermost.atlassian.net/browse/MM-62527).
+  - Fixed an issue in Compliance Exports whereby a missing file attachment in S3 could prevent the export run from completing.
   - Mattermost v10.5.1 contains the following functional changes:
       - A new configuration setting ``ServiceSettings.EnableWebHubChannelIteration`` was added which allows a user to control the performance of websocket broadcasting. By default, this setting is turned off. If it is turned on, it improves the websocket broadcasting performance at the expense of poor performance when users join/leave a channel. It is not recommended to turn it on unless you have atleast 200,000 concurrent users actively using Mattermost.
 - **10.5.0, released 2025-02-14**
@@ -959,7 +973,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
 
 - **10.4.5, released 2025-04-15**
   - Mattermost v10.4.5 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Stopped logging websocket PING events received by the server [MM-63693](https://mattermost.atlassian.net/browse/MM-63693).
+  - Stopped logging websocket PING events received by the server.
   - Mattermost v10.4.5 contains no database or functional changes.
 - **10.4.4, released 2025-03-17**
   - Mattermost v10.4.4 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
@@ -969,19 +983,19 @@ New setting options were added to ``config.json``. Below is a list of the additi
   - Mattermost v10.4.3 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Boards plugin version [v9.1.1](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.1).
   - Pre-packaged Playbooks plugin version [v2.1.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.1.1).
-  - Fixed an issue in Compliance Exports whereby a missing file attachment in S3 could prevent the export run from completing [MM-62527](https://mattermost.atlassian.net/browse/MM-62527).
-  - Fixed an issue where the bulk export retention job could accidentally delete non-bulk export files and directories [MM-62527](https://mattermost.atlassian.net/browse/MM-62527).
+  - Fixed an issue in Compliance Exports whereby a missing file attachment in S3 could prevent the export run from completing.
+  - Fixed an issue where the bulk export retention job could accidentally delete non-bulk export files and directories.
   - Mattermost v10.4.3 contains the following functional changes:
       - A new configuration setting ``ServiceSettings.EnableWebHubChannelIteration`` was added which allows a user to control the performance of websocket broadcasting. By default, this setting is turned off. If it is turned on, it improves the websocket broadcasting performance at the expense of poor performance when users join/leave a channel. It is not recommended to turn it on unless you have atleast 200,000 concurrent users actively using Mattermost.
 - **10.4.2, released 2025-01-22**
   - Mattermost v10.4.2 contains critical severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Boards plugin [v9.0.5](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.0.5).
   - Pre-packaged Channel Export plugin [v1.2.1](https://github.com/mattermost/mattermost-plugin-channel-export/releases/tag/v1.2.1).
-  - Fixed a panic during LDAP synchronization [MM-61239](https://mattermost.atlassian.net/browse/MM-61239).
-  - Fixed an issue with webhook attachment button styles [MM-62400](https://mattermost.atlassian.net/browse/MM-62400).
+  - Fixed a panic during LDAP synchronization.
+  - Fixed an issue with webhook attachment button styles.
   - Mattermost v10.4.2 contains no database or functional changes.
 - **10.4.1, released 2025-01-16**
-  - Fixed errors logged by performance telemetry due to certain browser extensions [MM-62371](https://mattermost.atlassian.net/browse/MM-62371).
+  - Fixed errors logged by performance telemetry due to certain browser extensions.
   - Fixed an issue with insertion errors to ``LinkMetadata`` table.
   - Mattermost v10.4.1 contains no database or functional changes.
 - **10.4.0, released 2025-01-16**
@@ -1063,24 +1077,24 @@ New setting options were added to ``config.json``. Below is a list of the additi
   - Mattermost v10.3.4 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Boards plugin version [v9.1.1](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.1).
   - Pre-packaged Playbooks plugin version [v2.1.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.1.1).
-  - Fixed an issue in Compliance Exports whereby a missing file attachment in S3 could prevent the export run from completing [MM-62527](https://mattermost.atlassian.net/browse/MM-62527).
+  - Fixed an issue in Compliance Exports whereby a missing file attachment in S3 could prevent the export run from completing.
   - Mattermost v10.3.4 contains the following functional changes:
       - A new configuration setting ``ServiceSettings.EnableWebHubChannelIteration`` was added which allows a user to control the performance of websocket broadcasting. By default, this setting is turned off. If it is turned on, it improves the websocket broadcasting performance at the expense of poor performance when users join/leave a channel. It is not recommended to turn it on unless you have atleast 200,000 concurrent users actively using Mattermost.
 - **10.3.3, released 2025-01-22**
   - Mattermost v10.3.3 contains critical severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Boards plugin [v9.0.5](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.0.5).
   - Pre-packaged Channel Export plugin [v1.2.1](https://github.com/mattermost/mattermost-plugin-channel-export/releases/tag/v1.2.1).
-  - Fixed a panic during LDAP synchronization [MM-61239](https://mattermost.atlassian.net/browse/MM-61239).
-  - Fixed an issue where the bulk export retention job would accidentally delete non-bulk export files and directories [MM-60888](https://mattermost.atlassian.net/browse/MM-60888).
+  - Fixed a panic during LDAP synchronization.
+  - Fixed an issue where the bulk export retention job would accidentally delete non-bulk export files and directories.
   - Mattermost v10.3.3 contains no database or functional changes.
 - **10.3.2, released 2025-01-15**
   - Mattermost v10.3.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Boards plugin [v9.0.2](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.0.2).
-  - Fixed an issue with the webhook attachment button style [MM-62400](https://mattermost.atlassian.net/browse/MM-62400).
+  - Fixed an issue with the webhook attachment button style.
   - Mattermost v10.3.2 contains no database or functional changes.
 - **10.3.1, released 2024-12-16**
-  - Fixed an issue where user statuses weren't synced properly between servers [MM-61438](https://mattermost.atlassian.net/browse/MM-61438).
-  - Fixed an accessibility problem in the new search input [MM-61234](https://mattermost.atlassian.net/browse/MM-61234).
+  - Fixed an issue where user statuses weren't synced properly between servers.
+  - Fixed an accessibility problem in the new search input.
   - Mattermost v10.3.1 contains no database or functional changes.
 - **10.3.0, released 2024-12-16**
   - Original 10.3.0 release.
@@ -1098,8 +1112,6 @@ If you upgrade from a release earlier than v10.2, please read the other [Importa
 ```
 
 ### Improvements
-
-See [this walkthrough video](https://mattermost.com/video/mattermost-v10-3-changelog/) on some of the highlights and improvements in our latest release below.
 
 #### User Interface (UI)
  - Pre-packaged Calls plugin [v1.3.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.3.0).
@@ -1144,12 +1156,12 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - Added ``opensearch-project/opensearch-go`` to https://github.com/mattermost/mattermost.
 
 ### Known Issues
- - The bottom padding is missing in the edit state of a scheduled messages [MM-61722](https://mattermost.atlassian.net/browse/MM-61722).
- - An incorrect count is displayed in channels for scheduled messages [MM-62197](https://mattermost.atlassian.net/browse/MM-62197).
- - The scheduled post channel indicator sometimes ends up in a bad state [MM-62222](https://mattermost.atlassian.net/browse/MM-62222).
- - Scheduled messages are not removed from queued list when sent while being disconnected [MM-62229](https://mattermost.atlassian.net/browse/MM-62229).
- - Scheduled message date displayed for Direct Message users is sometimes incorrect [MM-62244](https://mattermost.atlassian.net/browse/MM-62244).
- - The new search modal doesn't autocomplete after a space [MM-62199](https://mattermost.atlassian.net/browse/MM-62199).
+ - The bottom padding is missing in the edit state of a scheduled messages.
+ - An incorrect count is displayed in channels for scheduled messages.
+ - The scheduled post channel indicator sometimes ends up in a bad state.
+ - Scheduled messages are not removed from queued list when sent while being disconnected.
+ - Scheduled message date displayed for Direct Message users is sometimes incorrect.
+ - The new search modal doesn't autocomplete after a space.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
  - Slack import through the CLI fails if email notifications are enabled.
  - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
@@ -1165,8 +1177,8 @@ New setting options were added to ``config.json``. Below is a list of the additi
   - Mattermost v10.2.3 contains critical severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Boards plugin [v9.0.5](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.0.5).
   - Pre-packaged Channel Export plugin [v1.2.1](https://github.com/mattermost/mattermost-plugin-channel-export/releases/tag/v1.2.1).
-  - Fixed a panic during LDAP synchronization [MM-61239](https://mattermost.atlassian.net/browse/MM-61239).
-  - Fixed an issue where the bulk export retention job would accidentally delete non-bulk export files and directories [MM-60888](https://mattermost.atlassian.net/browse/MM-60888).
+  - Fixed a panic during LDAP synchronization.
+  - Fixed an issue where the bulk export retention job would accidentally delete non-bulk export files and directories.
   - Mattermost v10.2.3 contains no database or functional changes.
 - **10.2.2, released 2025-01-15**
   - Mattermost v10.2.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
@@ -1174,7 +1186,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
   - Mattermost v10.2.2 contains no database or functional changes.
 - **10.2.1, released 2024-12-10**
   - Mattermost v10.2.1 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Fixed an issue where plugin settings got wiped if the plugin declared some of its fields as secrets [MM-61441](https://mattermost.atlassian.net/browse/MM-61441).
+  - Fixed an issue where plugin settings got wiped if the plugin declared some of its fields as secrets.
   - Pre-packaged Calls plugin [v1.3.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.3.2).
   - Mattermost v10.2.1 contains no database or functional changes.
 - **10.2.0, released 2024-11-15**
@@ -1189,8 +1201,6 @@ If you upgrade from a release earlier than v10.0, please read the other [Importa
 ```
 
 ### Improvements
-
-See [this walkthrough video](https://mattermost.com/video/mattermost-v10-2-changelog/) on some of the highlights and improvements in our latest release below.
 
 #### User Interface (UI)
  - Pre-packaged Calls plugin [v1.2.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.2.1).
@@ -1246,7 +1256,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - v10.2 is built with Go ``v1.22.6``.
 
 ### Known Issues
- - The scrollbar is not clickable when there is a "Jump to recents" toaster [MM-61526](https://mattermost.atlassian.net/browse/MM-61526).
+ - The scrollbar is not clickable when there is a "Jump to recents" toaster.
  - Shared Channels: Direct Messages are not supported.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
  - Slack import through the CLI fails if email notifications are enabled.
@@ -1267,7 +1277,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
   - Fixed an issue by restoring System Administrator access to Direct and Group Messages without being a member.
   - Mattermost v10.1.6 contains no database or functional changes.
 - **10.1.5, released 2024-12-18**
-  - Fixed an issue where System Administrators could not pull posts in from Direct Message channels they were not in [MM-62092](https://mattermost.atlassian.net/browse/MM-62092).
+  - Fixed an issue where System Administrators could not pull posts in from Direct Message channels they were not in.
   - Mattermost v10.1.5 contains no database or functional changes.
 - **10.1.4, released 2024-12-10**
   - Mattermost v10.1.4 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
@@ -1275,16 +1285,16 @@ New setting options were added to ``config.json``. Below is a list of the additi
   - Mattermost v10.1.4 contains no database or functional changes.
 - **10.1.3, released 2024-11-14**
   - Mattermost v10.1.3 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Reverted a change enforcing usernames to start with alpha characters on the server [MM-61143](https://mattermost.atlassian.net/browse/MM-61143).
-  - Reverted a breaking change in ``registerSlashCommandWillBePostedHook`` that caused errors to surface in case an expected empty object was returned [MM-61233](https://mattermost.atlassian.net/browse/MM-61233).
+  - Reverted a change enforcing usernames to start with alpha characters on the server.
+  - Reverted a breaking change in ``registerSlashCommandWillBePostedHook`` that caused errors to surface in case an expected empty object was returned.
   - Mattermost v10.1.3 contains no database or functional changes.
 - **10.1.2, released 2024-10-28**
   - Mattermost v10.1.2 contains a high severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Fixed an issue with message export file attachments with a dedicated filestore [MM-60063](https://mattermost.atlassian.net/browse/MM-60063).
+  - Fixed an issue with message export file attachments with a dedicated filestore.
   - Mattermost v10.1.2 contains the following functional change:
-      - Added a configuration setting **NativeAppSettings > MobileExternalBrowser** that tells the Mobile app to perform SSO Authentication using the external default browser [MM-60332](https://mattermost.atlassian.net/browse/MM-60332).
+      - Added a configuration setting **NativeAppSettings > MobileExternalBrowser** that tells the Mobile app to perform SSO Authentication using the external default browser.
 - **10.1.1, released 2024-10-16**
-  - Fixed an issue where a shared indicator was shown in all Direct Messages, regardless of the user coming from a shared server [MM-60744](https://mattermost.atlassian.net/browse/MM-60744).
+  - Fixed an issue where a shared indicator was shown in all Direct Messages, regardless of the user coming from a shared server.
   - Mattermost v10.1.1 contains no database or functional changes.
 - **10.1.0, released 2024-10-16**
   - Original 10.1.0 release.
@@ -1369,12 +1379,12 @@ New setting options were added to ``config.json``. Below is a list of the additi
   - Mattermost v10.0.3 contains no database or functional changes.
 - **10.0.2, released 2024-10-28**
   - Mattermost v10.0.2 contains a high severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Reverted a change enforcing usernames to start with alpha characters on the server [MM-61143](https://mattermost.atlassian.net/browse/MM-61143).
-  - Reverted a breaking change in ``registerSlashCommandWillBePostedHook`` that caused errors to surface in case an expected empty object was returned [MM-61233](https://mattermost.atlassian.net/browse/MM-61233).
+  - Reverted a change enforcing usernames to start with alpha characters on the server.
+  - Reverted a breaking change in ``registerSlashCommandWillBePostedHook`` that caused errors to surface in case an expected empty object was returned.
   - Mattermost v10.0.2 contains no database or functional changes.
 - **10.0.1, released 2024-10-10**
   - Mattermost v10.0.1 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Fixed an issue enabling Professional customers and Team Edition users to upgrade to Playbooks v2 via the in-product marketplace, which fails to start without an Enterprise License. Additional details and discussion can be found on the [forums here](https://forum.mattermost.com/t/clarification-on-playbooks-in-mattermost-v10/20563) [MM-60679](https://mattermost.atlassian.net/browse/MM-60679).
+  - Fixed an issue enabling Professional customers and Team Edition users to upgrade to Playbooks v2 via the in-product marketplace, which fails to start without an Enterprise License. Additional details and discussion can be found on the [forums here](https://forum.mattermost.com/t/clarification-on-playbooks-in-mattermost-v10/20563).
   - Mattermost v10.0.1 contains no database or functional changes.
 - **10.0.0, released 2024-09-16**
   - Original 10.0.0 release.
@@ -1399,8 +1409,6 @@ If you upgrade from a release earlier than v9.11, please read the other [Importa
 ```
 
 ### Highlights
-
-See [this walkthrough video](https://mattermost.com/video/mattermost-v10-0-changelog/) on some of the highlights and improvements in our latest release below.
 
 #### Mattermost Microsoft Teams Plugin
  - Pre-packaged the Microsoft Teams plugin for Mattermost, [v2.0.3](https://github.com/mattermost/mattermost-plugin-msteams/releases/tag/v2.0.3).
@@ -1473,7 +1481,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - Added ``redis/rueidis`` to https://github.com/mattermost/mattermost.
 
 ### Known Issues
- - The cursor is not placed in the "Write to" field on login [MM-60275](https://mattermost.atlassian.net/browse/MM-60275).
+ - The cursor is not placed in the "Write to" field on login.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
  - Slack import through the CLI fails if email notifications are enabled.
  - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
