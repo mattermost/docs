@@ -26,7 +26,7 @@ Calls is uniquely suited for mission-critical operations across defense, intelli
 
 Functionality includes:
 - **1:1 and Group Calling**: Initiate real-time voice communication between two or more participants.
-- **Screen Sharing**:  Share your screen during calls to collaborate visually on tasks, review documents, or troubleshoot live issues.
+- **Screen Sharing**: Share your screen during calls to collaborate visually on tasks, review documents, or troubleshoot live issues.
 - **Call Recording and Transcription**: Record voice sessions for asynchronous review. *(Enterprise, Enterprise Advanced)*
 - **Live Captioning**: Generate real-time subtitles for accessibility. *(Enterprise, Enterprise Advanced)*
 
@@ -69,7 +69,7 @@ This guide is organized into sequential deployment phases with numbered steps. E
 
 Use this checklist as your grocery list before you start deploying Calls. Confirm the skills, access, infrastructure, and approvals you need now so you do not discover missing dependencies partway through the deployment.
 
-### Deployment Infrastrutcure Requirements
+### Deployment Infrastructure Requirements
 
 - [ ] You have a running Mattermost server on v10.0+.
 
@@ -85,17 +85,17 @@ Use this checklist as your grocery list before you start deploying Calls. Confir
 
 - [ ] You can provision at least one dedicated Linux server or VM if you plan to use the RTCD service.
 
-  _See [Infrasturucte Decisions](#infrastructure-decisions) (Step 1.2) if you're unsure if you need RTCD._
+  _See [Infrastructure Decisions](#infrastructure-decisions) (Step 1.2) if you're unsure if you need RTCD._
 
 - [ ] You can provision a dedicated Linux server or VM for the `calls-offloader` service if you need recording, transcription, or live captions.
 - [ ] You are prepared to deploy a TURN server if your users cannot reliably reach the media service on UDP or TCP `8443`.
 
-  _See [Networking Decisions](#infrastructure-decisions) (Step 1.3) if you're unsure if you need a TURN server._
+  _See [Networking Decisions](#networking-decisions) (Step 1.3) if you're unsure if you need a TURN server._
 
 - [ ] You have the appropriate {doc}`Mattermost edition and license <../../product-overview/editions-and-offerings>` for the features you need:
   - **Mattermost Entry or Team Edition**: 1-1 calling and screen sharing (Up to 40 minutes)
   - **Mattermost Professional**: Group calling and screen sharing (No time limit)
-  - **Mattermost Enterprise or Enterprise Advanced**: Required for,
+  - **Mattermost Enterprise or Enterprise Advanced**: Required for:
       - RTCD service for scale (50+ users) and production reliability.
       - Recording, transcription, or live captions.
 
@@ -104,12 +104,14 @@ Use this checklist as your grocery list before you start deploying Calls. Confir
 - [ ] You are comfortable with basic Linux administration, or you have someone available who is. You will need to connect to servers over SSH, edit configuration files, manage systemd services, inspect logs, and run shell commands.
 - [ ] You have System Admin access to your Mattermost server.
 
-  _See {doc}`Mattermost roles <../../end-user-guide/collaborate/learn-about-roles>`to learn about roles and permissions._
+  _See {doc}`Mattermost roles <../../end-user-guide/collaborate/learn-about-roles>` to learn about roles and permissions._
 
 ### Networking Requirements
 
 - [ ] You know how end users will connect to Calls (From private networks, VPN, or from the public internet)
-    _This affects your STUN and TURN decisions later in Phase 1.
+
+  _This impacts your [networking decisions](#networking-decisions) (Step 1.3)_
+
 - [ ] You can open the required inbound and outbound firewall rules, or you can engage the network or security team that manages them.
 
 ### Validation Resources
@@ -121,7 +123,7 @@ Use this checklist as your grocery list before you start deploying Calls. Confir
 
 - [ ] You know how to open a [request](https://support.mattermost.com) with Mattermost support if you encounter issues.
 
-  _Please include the exact **step number** (e.g. 2.2.1) that failed, along with your {doc}`Mattermost support packet <../../administration-guide/manage/admin/generating-support-packet>` and [Calls logs](calls-logging.md)._
+  _Please include the exact **step number** (e.g. 2A.2.1) that failed, along with your {doc}`Mattermost support packet <../../administration-guide/manage/admin/generating-support-packet>` and [Calls logs](calls-logging.md)._
 
 ```{note}
 If you need expert help deploying Calls, contact your Account Manager or [talk to a Mattermost expert](https://mattermost.com/contact-sales/) to learn about professional service offerings.
@@ -169,7 +171,7 @@ Use the tabs below to view the reference architecture for each deployment model:
 
 ````{tab} Integrated
 
-An **Integrated** deployment does not require any additional infrasrtucture:
+An **Integrated** deployment does not require any additional infrastructure:
 
 ```{image} ../../images/calls-deployment-integrated.png
 :alt: Integrated Calls deployment
