@@ -73,10 +73,12 @@ Use this checklist as your grocery list before you start deploying Calls. Confir
 
 - [ ] You have a running Mattermost server on v10.0+.
 
-      _See {doc}`View system information <../../end-user-guide/collaborate/view-system-information>` to check your Mattermost edition and version._
+  _See {doc}`System Information <../../end-user-guide/collaborate/view-system-information>` to check your Mattermost edition and version._
+
 - [ ] Your Mattermost server is configured to use HTTPS.
 
       _See [Configure TLS](https://docs.mattermost.com/deploy/server/setup-tls.html) if you need to set up HTTPS._
+      
 - [ ] You know how many active users you have in your current Mattermost deployment
 
       _See {doc}`Site Statistics <../../administration-guide/manage/statistics>` to access usage metrics._
@@ -134,6 +136,7 @@ Before you start, confirm the following:
 - [ ] You know whether recording, transcription, or live captions are required for your deployment.
 - [ ] You can provision additional servers if your chosen architecture requires RTCD or Recording services.
 - [ ] You can open inbound and outbound network ports on the servers involved in your deployment.
+
       _If a network or security team manages your firewalls, you'll need to involve them before continuing._
 
 ### 1.2 Infrastructure Decisions
@@ -143,9 +146,11 @@ Here you will make two important infrastructure decisions based on the requireme
 #### 1.2.1 Media Service: RTCD or Integrated
 
 **Integrated**
+
 This is the simplest deployment model, since you do not need to provision a separate service to handle media processing. In **Integrated** mode, the Calls plugin runs its built-in media service directly on the Mattermost server. 
 
 **RTCD**
+
 RTCD is a dedicated real-time communications service for Mattermost Calls that processes call media outside the main Mattermost server. In most production deployments, **RTCD is the recommended deployment model** because it improves performance, scalability, and stability by isolating call traffic and reducing load on the Mattermost server.
 
 To determine if you'll need RTCD, start by answering the following questions about your deployment:
@@ -160,6 +165,8 @@ To determine if you'll need RTCD, start by answering the following questions abo
 Use the tabs below to view the reference architecture for each deployment model:
 
 ````{tab} Integrated
+
+An **Integrated** deployment does not require any additional infrasrtucture:
 
 ```{image} ../../images/calls-deployment-integrated.png
 :alt: Integrated Calls deployment
@@ -187,13 +194,13 @@ Use the tabs below to view the reference architecture for each deployment model:
 
 An **RTCD Server** is added as a dedicated media service that processes all call audio and screen sharing media. The Mattermost server is still responsible for signaling (setting up, managing, and ending calls) and channel state (who is joining or leaving, who has muted, and overall call status), but the call media itself flows directly between clients and the RTCD server, completely bypassing the Mattermost server.
 
-Deploying RTCD is **highly recommended in production deployments** for performance, scalability, and stability of Mattermost Calls.
 
 ```{image} ../../images/calls-deployment-rtcd.png
 :alt: Calls deployment with RTCD
 :align: center
 :height: 450px
 ```
+
 
 **When to use it**
 
