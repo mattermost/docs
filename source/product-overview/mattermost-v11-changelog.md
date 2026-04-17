@@ -54,6 +54,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-7-is-now-availab
  - Added an "Open in new tab" button to the **Product Switcher** menu.
  - Substring matching is now allowed when searching channel members in the member sub-panel in a channel.
  - Improved accessibility of thread list menus.
+ - Channel banners are now shown in thread views.
  - Improved autocomplete while typing in Korean and using Firefox.
  - Updated license renewal and expiry notification emails with refreshed branding, copy, and layout.
  - Added the ability to open channels in a separate popout window, with full channel and right-hand side functionality.
