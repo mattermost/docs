@@ -241,6 +241,7 @@ Reference architecture when using the Recording service with Integrated Calls:
 :alt: Calls deployment with Integrated Calls and recording
 :height: 400px
 :align: center
+```
 
 **Components**
 
@@ -259,6 +260,7 @@ Reference architecture when using the Recording service with RTCD:
 ```{image} ../../images/calls-deployment-rtcd-recording.png
 :alt: Calls deployment with RTCD and recording
 :align: center
+```
 
 **Components**
 
