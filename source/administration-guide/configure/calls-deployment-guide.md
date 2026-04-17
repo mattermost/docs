@@ -40,7 +40,7 @@ This guide is organized into sequential deployment phases with numbered steps. E
 
     Choose your deployment architecture, make networking decisions, provision required servers, and confirm the required network ports and paths are open before deployment.
 
-2. [**Configure Calls**](#phase-2-configure-your-calls-deployment-path)
+2. [**Install and Configure Calls**](#phase-2-install-and-configure-calls)
 
     Complete the installation and configuration for the deployment architecture you selected in Phase 1.
 
@@ -77,22 +77,25 @@ Use this checklist as your grocery list before you start deploying Calls. Confir
 
 - [ ] Your Mattermost server is configured to use HTTPS.
 
-      _See [Configure TLS](https://docs.mattermost.com/deploy/server/setup-tls.html) if you need to set up HTTPS._
-      
+  _See [Configure TLS](https://docs.mattermost.com/deploy/server/setup-tls.html) if you need to set up HTTPS._
+
 - [ ] You know how many active users you have in your current Mattermost deployment
 
-      _See {doc}`Site Statistics <../../administration-guide/manage/statistics>` to access usage metrics._
+  _See {doc}`Site Statistics <../../administration-guide/manage/statistics>` to access usage metrics._
+
 - [ ] You can provision at least one dedicated Linux server or VM if you plan to use the RTCD service.
 
-      _See [Infrasturucte Decisions](#infrastructure-decisions) (Step 1.2) if you're unsure if you need RTCD._
+  _See [Infrasturucte Decisions](#infrastructure-decisions) (Step 1.2) if you're unsure if you need RTCD._
+
 - [ ] You can provision a dedicated Linux server or VM for the `calls-offloader` service if you need recording, transcription, or live captions.
 - [ ] You are prepared to deploy a TURN server if your users cannot reliably reach the media service on UDP or TCP `8443`.
 
-      _See [Networking Decisions](#infrastructure-decisions) (Step 1.3) if you're unsure if you need a TURN server._
+  _See [Networking Decisions](#infrastructure-decisions) (Step 1.3) if you're unsure if you need a TURN server._
+
 - [ ] You have the appropriate {doc}`Mattermost edition and license <../../product-overview/editions-and-offerings>` for the features you need:
   - **Mattermost Entry or Team Edition**: 1-1 calling and screen sharing (Up to 40 minutes)
   - **Mattermost Professional**: Group calling and screen sharing (No time limit)
-  - **Mattermost Enterprise or Enterprise Advanced**:
+  - **Mattermost Enterprise or Enterprise Advanced**: Required for,
       - RTCD service for scale (50+ users) and production reliability.
       - Recording, transcription, or live captions.
 
@@ -101,7 +104,7 @@ Use this checklist as your grocery list before you start deploying Calls. Confir
 - [ ] You are comfortable with basic Linux administration, or you have someone available who is. You will need to connect to servers over SSH, edit configuration files, manage systemd services, inspect logs, and run shell commands.
 - [ ] You have System Admin access to your Mattermost server.
 
-    _See {doc}`Mattermost roles <../../end-user-guide/collaborate/learn-about-roles>`to learn about roles and permissions._
+  _See {doc}`Mattermost roles <../../end-user-guide/collaborate/learn-about-roles>`to learn about roles and permissions._
 
 ### Networking Requirements
 
@@ -118,7 +121,7 @@ Use this checklist as your grocery list before you start deploying Calls. Confir
 
 - [ ] You know how to open a [request](https://support.mattermost.com) with Mattermost support if you encounter issues.
 
-    _Please include the exact **step number** (e.g. 2.2.1) that failed, along with your {doc}`Mattermost support packet <../../administration-guide/manage/admin/generating-support-packet>` and [Calls logs](calls-logging.md)._
+  _Please include the exact **step number** (e.g. 2.2.1) that failed, along with your {doc}`Mattermost support packet <../../administration-guide/manage/admin/generating-support-packet>` and [Calls logs](calls-logging.md)._
 
 ```{note}
 If you need expert help deploying Calls, contact your Account Manager or [talk to a Mattermost expert](https://mattermost.com/contact-sales/) to learn about professional service offerings.
@@ -137,7 +140,7 @@ Before you start, confirm the following:
 - [ ] You can provision additional servers if your chosen architecture requires RTCD or Recording services.
 - [ ] You can open inbound and outbound network ports on the servers involved in your deployment.
 
-      _If a network or security team manages your firewalls, you'll need to involve them before continuing._
+  _If a network or security team manages your firewalls, you'll need to involve them before continuing._
 
 ### 1.2 Infrastructure Decisions
 
@@ -519,7 +522,7 @@ Before proceeding to Phase 2, confirm all of the following:
 
 ---
 
-## Phase 2: Configure Calls
+## Phase 2: Install and Configure Calls
 
 Now you will configure Calls following the relevant path for your deployment architecture. Do not complete both paths for the same deployment.
 
@@ -608,9 +611,11 @@ Now smoke test your Calls deployment with your test accounts:
 
 #### 2B.1 Prerequisites
 
+- [ ] Phase 1 verification checks passed
 - [ ] RTCD is the base architecture you selected in Step 1.2
 - [ ] RTCD server is provisioned (1.4) and RTCD networking checks passed (1.6.3-1.6.5)
 - [ ] Mattermost Enterprise or Enterprise Advanced license is active on your server
+- [ ] Two test accounts on your Mattermost server
 - [ ] System Admin permissions on your Mattermost server
 
 #### 2B.2 Install RTCD
@@ -638,7 +643,9 @@ Before proceeding, run these checks from the Mattermost server to confirm RTCD i
 Once RTCD is installed, configured, and reachable, update the Calls plugin to use it:
 
 1. Go to **System Console > Plugins > Calls > Settings**.
-2. Set **RTCD Service URL** to your RTCD address. If RTCD credentials were generated during setup, embed them directly in the URL:
+2. Set **Enable Plugin** to `true`. This enables editing for the rest of the Calls settings on the page.
+3. Set **Test mode** to `on`, so Calls stays restricted during initial validation. In this mode, System Admins control where Calls is available and can enable it in specific channels for testing.
+4. Set **RTCD Service URL** to your RTCD address. If RTCD credentials were generated during setup, embed them directly in the URL:
 
    ```
    http://clientID:authKey@rtcd.internal:8045
@@ -648,7 +655,7 @@ Once RTCD is installed, configured, and reachable, update the Calls plugin to us
 
    Alternatively, set credentials via environment variables on the Mattermost server: `MM_CALLS_RTCD_CLIENT_ID` and `MM_CALLS_RTCD_AUTH_KEY`.
 
-3. Click **Save** and restart the Calls plugin so the change takes effect.
+5. Click **Save** and restart the Calls plugin so the change takes effect.
 
 #### 2B.4 Configure Calls Monitoring
 
@@ -665,6 +672,10 @@ See [Calls Metrics and Monitoring](calls-metrics-monitoring.md) for full configu
 #### 2B.5 Verification Checks
 
 Now smoke test your RTCD deployment with your test accounts:
+
+- Create a test channel such as `calls-test`.
+- Open the **Channel menu**, then select **Enable calls**.
+- Invite your test users into the channel so you can validate a real call.
 
 | Check | Action | Pass criteria |
 |---|---|---|
