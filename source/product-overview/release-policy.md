@@ -58,7 +58,7 @@ gantt
     v11.4                  :active, 2026-02-16, 2026-05-15
     v11.5                  :active, 2026-03-16, 2026-06-15
     v11.6                  :active, 2026-04-16, 2026-07-15
-    v11.7 & Desktop App v6.2 Extended Support :crit,    2026-05-16, 2027-05-15
+    v11.7 & Desktop App v6.2 Extended Support :crit,    2026-05-15, 2027-05-15
     v11.8                  :active, 2026-06-16, 2026-09-15
 ```
 
