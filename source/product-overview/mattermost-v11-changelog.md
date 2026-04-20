@@ -111,6 +111,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-7-is-now-availab
  - Fixed an issue where the Workspace Optimization page appeared in the System Console on Mattermost Cloud workspaces.
  - Fixed an issue where in compact mode, file attachment's name didn't display correctly when editing a post with attachments.
  - Fixed an issue where the textbox would appear focused but not accept keyboard shortcuts after editing a post.
+ - Fixed an issue where SAML login failed for users mapped via objectGUID when the IdP sent the value as a UUID string instead of base64-encoded raw bytes (affecting Keycloak 26.6.0 and later with user-attribute-ldap-mapper).
 
 ### API Changes
  - Added a new API endpoint ``GET /api/v4/channels/{channel_id}/views/{view_id}/posts`` to retrieve paginated posts for a specific view. Card posts are temporarily excluded from search results. Card posts now use collaborative permissions — any channel member can edit or delete any card without needing ``edit_others_posts/delete_others_posts`` permissions.
