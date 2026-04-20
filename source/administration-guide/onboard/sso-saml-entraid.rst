@@ -73,8 +73,8 @@ Set up an enterprise app for Mattermost SSO in Entra ID
            -
          * - Username Attribute
            - ``username``
-           - ``user.userprincipalname``
-           -
+           - ``user.mailnickname``
+           - See note below.
          * - First Name Attribute
            - ``firstname``
            - ``user.givenname``
@@ -83,6 +83,11 @@ Set up an enterprise app for Mattermost SSO in Entra ID
            - ``lastname``
            - ``user.surname``
            -
+
+      .. note::
+         Use ``user.mailnickname`` rather than ``user.userprincipalname`` as the source for the username claim. The user principal name is typically formatted as an email address (``user@domain.com``), but Mattermost usernames cannot contain the ``@`` character, so SAML logins using ``user.userprincipalname`` will fail. The mail nickname is the local part of the email address (the portion before ``@``) and maps cleanly to a valid Mattermost username.
+
+         If your organization doesn't populate ``mailnickname`` consistently, another option is a custom Entra attribute or a transformation that strips the domain from the UPN.
 
       After editing, your **Attributes & Claims** page should look similar to the screenshot below:
 
