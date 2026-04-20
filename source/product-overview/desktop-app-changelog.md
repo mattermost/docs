@@ -9,7 +9,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 (release-v6-1)=
 ## Release v6.1
 
-- **v6.1.2, released **
+- **v6.1.2, released 2026-04-21**
 
   - Fixed an issue where the desktop app failed to start on Linux when GPU hardware acceleration was disabled.
 
