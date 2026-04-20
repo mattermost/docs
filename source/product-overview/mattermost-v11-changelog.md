@@ -16,7 +16,7 @@
 
 ```{Attention}
 **Breaking Changes**
-FIPS builds require a minimum of 14 characters for passwords, atmos/camo proxy configuration, and shared channel secrets. Shorter passwords for existing users will no longer be valid and require a password reset. Non-FIPS builds are unaffected.
+ - FIPS builds require a minimum of 14 characters for passwords, atmos/camo proxy configuration, and shared channel secrets. Shorter passwords for existing users will no longer be valid and require a password reset. Non-FIPS builds are unaffected.
 ```
 
 #### Database Schema Changes
