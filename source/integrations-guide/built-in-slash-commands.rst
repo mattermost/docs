@@ -59,7 +59,7 @@ Manage channels
 Manage mobile app log attachments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use ``/mobile-logs`` to enable an attachment option in the Mattermost mobile client that lets users attach their mobile app logs as a file to the message being sent. This helps administrators and support engineers debug mobile-specific issues by providing device-side context that isn't available from server logs alone. The command updates the ``attach_app_logs`` advanced preference and always responds with an ephemeral message visible only to the invoking user.
+Use ``/mobile-logs`` to enable an attachment option in the Mattermost mobile client that lets users attach their mobile app logs as a file to any message they send. This helps administrators and support engineers debug mobile-specific issues by providing device-side context that isn't available from server logs alone. The command updates the ``attach_app_logs`` advanced preference and always responds with an ephemeral message visible only to the invoking user.
 
 .. note::
 
@@ -70,9 +70,9 @@ Use ``/mobile-logs`` to enable an attachment option in the Mattermost mobile cli
 - Check your current setting using ``/mobile-logs status``.
 - System admins can manage the setting for another user by appending a username, such as ``/mobile-logs on @username``, ``/mobile-logs off @username``, or ``/mobile-logs status @username``.
 
-.. note::
+.. important::
 
-    Non-admin users can only manage their own preference. Attempts to target another account return a neutral *Unable to change mobile log settings for that user* message to avoid username enumeration. Preference changes made through this command are recorded in the audit log.
+    Non-admin users can only manage their own preference. Attempts to target another account return a neutral **Unable to change mobile log settings for that user** message to avoid username enumeration. Preference changes made through this command are recorded in the audit log.
 
 More useful slash commands
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
