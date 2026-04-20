@@ -43,7 +43,7 @@ Changelog
    * - v11.6
      - (UI) Improved the reliability of AI recap summarization by using structured JSON output from the LLM.
    * - v11.6
-     - (UI) Added a new feature of creating teams and channels using `anonymous URLs <https://docs.mattermost.com/end-user-guide/collaborate/share-links.html>`__ so the channel and team name are not revealed in the URL. Requires Enterprise Advanced license.
+     - (UI) Added a new feature of creating teams and channels using `anonymous URLs <https://docs.mattermost.com/end-user-guide/collaborate/rename-channels.html>`__ so the channel and team name are not revealed in the URL. Requires Enterprise Advanced license.
    * - v11.6
      - (UI) Added `popouts <https://docs.mattermost.com/end-user-guide/collaborate/search-for-messages.html#search-for-message>`__ for Recent Mentions, Saved Messages, and Search Results via the right-hand side.
    * - v11.6
