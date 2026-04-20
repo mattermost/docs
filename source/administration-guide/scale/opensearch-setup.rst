@@ -98,6 +98,25 @@ We highly recommend that you set up an AWS OpenSearch server on a separate machi
 
       sudo /usr/share/opensearch/bin/opensearch-plugin install analysis-icu
 
+  **(Optional) CJK language analyzer plugins**: To improve search for Korean, Japanese, or Chinese content, install one or more of the following language-specific analyzer plugins: ``analysis-nori`` (Korean), ``analysis-kuromoji`` (Japanese), and ``analysis-smartcn`` (Chinese).
+
+    .. code-block:: sh
+
+      sudo /usr/share/opensearch/bin/opensearch-plugin install analysis-nori
+      sudo /usr/share/opensearch/bin/opensearch-plugin install analysis-kuromoji
+      sudo /usr/share/opensearch/bin/opensearch-plugin install analysis-smartcn
+
+  After installing the CJK plugins, restart OpenSearch to load them:
+
+    .. code-block:: sh
+
+      sudo systemctl restart opensearch
+
+  Then enable the :ref:`EnableCJKAnalyzers <administration-guide/configure/environment-configuration-settings:enable cjk analyzers>` configuration setting. See :doc:`Enabling Chinese, Japanese, and Korean Search </administration-guide/configure/enabling-chinese-japanese-korean-search>` for additional CJK search configuration options.
+
+  .. important::
+     If you enable CJK analyzers on a server with existing indexed content, you must purge and rebuild the search index in **System Console > Environment > Elasticsearch** for the CJK analyzers to take effect on existing posts.
+
   Terraform (Docker) Example
   --------------------------
 
