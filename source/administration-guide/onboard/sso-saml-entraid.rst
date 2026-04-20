@@ -37,10 +37,60 @@ Set up an enterprise app for Mattermost SSO in Entra ID
   - **Reply URL (Assertion Consumer Service URL)**: ``https://<your-mattermost-url>/login/sso/saml``
   - **Sign on URL**: ``https://<your-mattermost-url>/login``
 
-9. Select **Edit** in the **Attributes & Claims** section then set the below attributes:
+9. Select **Edit** in the **Attributes & Claims** section, then configure the required claim and additional claims as described below.
 
-  a. Set the the **Unique User Identifier (Name ID)** required claim **Name identifier format** and **Source attribute** values as required for your environment. Setting the **Source attribute** to an immutable value such as ``user.objectid`` is recommended.
-  b. Edit claim names and namespaces under **Additional claims** to match SAML attribute settings you wish to set in Mattermost. Configurable settings are Email, Username, Id, Guest, Admin, First Name, Last Name, Nickname, Position, and Preferred Language.
+   **How Entra claims map to Mattermost**
+
+   The SAML assertion Entra sends to Mattermost contains a set of *claims* — name/value pairs describing the user. Mattermost reads these claims based on the attribute names you configure in **System Console > Authentication > SAML 2.0 > Attributes** (for example, **Email Attribute**, **Username Attribute**, **First Name Attribute**).
+
+   The **Claim name** you set in Entra must match the value you enter in the corresponding Mattermost attribute field exactly, character for character. The **Value** (also called **Source attribute**) tells Entra which user property to send — for example, ``user.mail`` sends the user's email address.
+
+   a. **Required claim — Unique User Identifier (Name ID)**
+
+      Set the **Name identifier format** and **Source attribute** values as required for your environment. Setting the **Source attribute** to an immutable value such as ``user.objectid`` is recommended, because unlike email addresses or usernames, the object ID never changes even if the user is renamed. Mattermost uses the Name ID as the user's unique identifier by default, so you do not need to add a separate ``Id`` claim under **Additional claims**.
+
+   b. **Additional claims**
+
+      By default, Entra populates this section with four claims using the ``http://schemas.xmlsoap.org/ws/2005/05/identity/claims/...`` namespace. These work, but we recommend replacing them with short, readable names that match the attribute fields in Mattermost. To edit a claim, select it, update the **Name** field (and clear the **Namespace** field), then save.
+
+      The following claim configuration covers the most common Mattermost setup:
+
+      .. list-table::
+         :header-rows: 1
+         :widths: 25 20 25 30
+
+         * - Mattermost attribute field
+           - Entra claim name
+           - Entra source attribute
+           - Notes
+         * - Id Attribute
+           - *(leave blank)*
+           - ``user.objectid`` (via Name ID)
+           - Uses the required Name ID claim set above.
+         * - Email Attribute
+           - ``email``
+           - ``user.mail``
+           -
+         * - Username Attribute
+           - ``username``
+           - ``user.userprincipalname``
+           -
+         * - First Name Attribute
+           - ``firstname``
+           - ``user.givenname``
+           -
+         * - Last Name Attribute
+           - ``lastname``
+           - ``user.surname``
+           -
+
+      After editing, your **Attributes & Claims** page should look similar to the screenshot below:
+
+      .. image:: ../../images/entra-attributes-and-claims.png
+         :alt: Entra Attributes & Claims page showing simplified claim names
+         :width: 100%
+
+      Additional Mattermost SAML attributes — **Guest**, **Admin**, **Nickname**, **Position**, and **Preferred Language** — are optional. Add them only if you want to drive those fields from Entra (for example, mapping admin status from an Entra group or attribute). If you add them, use the same pattern: pick a short claim name in Entra, set its source attribute, and enter the matching claim name in the corresponding Mattermost attribute field.
 
 10. Select **Edit** in the **SAML Certificates** section. Select **Sign SAML response and assertion** for **Signing Option** and **SHA-256** for **Signing Algorithm** then select **Save**.
 11. Select the **Certificate (Base64)** Download link in the **SAML Certificates** section. This is the **Identity Provider Public Certificate** to be uploaded to Mattermost.
