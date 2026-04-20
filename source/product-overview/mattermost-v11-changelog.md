@@ -17,7 +17,7 @@
   - Pre-packaged Zoom plugin version [v1.13.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.13.0).
   - Pre-packaged GitHub plugin version [v2.7.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.7.0).
   - Pre-packaged Boards plugin [v9.2.4](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.2.4).
-  - Added a new API endpoint ``PUT /api/v4/channels/{channel_id}/members`` that sets the complete membership of a channel in a single call. The endpoint accepts a JSON object with ``members`` (desired user IDs) and an optional ``channel_admins`` (user IDs to designate as channel admins). The server computes the diff against current membership, adds or removes users as needed, and reconciles admin roles. When ``channel_admins`` is omitted, existing admin roles are preserved. Results are streamed back as NDJSON for progress tracking. Requires system admin permissions.
+  - Added a new API endpoint ``PUT /api/v4/channels/{channel_id}/members`` that sets the complete membership of a channel in a single call. The endpoint accepts a JSON object with ``members`` (desired user IDs) and an optional ``channel_admins`` (user IDs to designate as channel admins). The server computes the diff against current membership, adds or removes users as needed, and reconciles admin roles. Results are streamed back as NDJSON for progress tracking. Requires system admin permissions.
   - Updated URL validation in integration actions to make them more secure.
   - Improved response handling for outgoing webhook requests.
   - Upgraded Go to 1.25.8.
