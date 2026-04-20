@@ -64,7 +64,6 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-7-is-now-availab
  - Added the ability to handle from which remotes a channel is shared from the channel settings user interface.
 
 #### Administration
- - Removed direct dependency on ``blang/semver/v4``.
  - Updated dependency versions for server and public services.
  - Added managed channel categories for Channel Admins to enforce sidebar organization across teams.
  - Migrated access control policies from v0.2 to v0.3, replacing the wildcard action with explicit action types to support multi-action policies.
