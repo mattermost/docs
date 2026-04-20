@@ -36,7 +36,6 @@ ESRs don’t include changes to product functionality or new features. ESRs are 
 To install extended support releases, follow our [install and upgrade](/administration-guide/upgrade/enterprise-install-upgrade) documentation. To restore a previous ESR, restore the database and previous version if you need to revert an upgrade. Previous ESR versions continue remain subject to a [life cycle end date](/product-overview/mattermost-server-releases).
 
 ```{Important}
-- Support for Mattermost Server v10.11 [Extended Support Release](#extended-support-releases) is coming to the end of its life cycle on August 15, 2026. Upgrading to [Mattermost Server v11.7](https://docs.mattermost.com/product-overview/mattermost-server-releases.html) or later is recommended.
 - We strongly recommend reviewing [upgrade best practices](https://docs.mattermost.com/administration-guide/upgrade/prepare-to-upgrade-mattermost.html#upgrade-best-practices) for upgrading, and [important upgrade notes](/upgrade/important-upgrade-notes) for all the versions beyond the current ESR version you have currently installed. See the [Mattermost v9 changelog](https://docs.mattermost.com/product-overview/mattermost-v9-changelog.html) for a list of database, API, and `config.json` updates for all v9.x releases.
 - Your license key is decoupled from the Mattermost server version, so you can upgrade to the latest ESR using a legacy license.
 We highly recommend working with your Mattermost Account Team to plan for a migration to our new plans, and to access the latest features such as persistent notifications, advanced compliance features, call recordings, and more.
@@ -59,7 +58,7 @@ gantt
     v11.4                  :active, 2026-02-16, 2026-05-15
     v11.5                  :active, 2026-03-16, 2026-06-15
     v11.6                  :active, 2026-04-16, 2026-07-15
-    v11.7 & Desktop App v6.2 Extended Support :crit,    2026-05-16, 2027-05-15
+    v11.7 & Desktop App v6.2 Extended Support :crit,    2026-05-15, 2027-05-15
 ```
 
 **Timeline Legend:**
@@ -84,7 +83,7 @@ The following table lists all releases across Mattermost v7.0, v8.0, and v9.0, i
 
 ```{Important}
 - If you're on a legacy Mattermost release prior to v7.1, in order to take advantage of newer Mattermost releases, you must upgrade to [v7.1 ESR](https://docs.mattermost.com/product-overview/unsupported-legacy-releases.html#release-v7-1-extended-support-release) at a minimum.
-- Upgrading from one Extended Support Release (ESR) to the next ESR (``major`` -> ``major_next``) is fully supported and tested. However, upgrading across multiple ESR versions (``major`` to ``major+2``) is supported, but not tested. If you plan to skip versions, we strongly recommend upgrading only between ESR releases. For example, if you're upgrading from v8.1 ESR, upgrade to the v9.5 ESR or the v9.11 ESR before attempting to upgrade to the [v10.5 ESR](https://docs.mattermost.com/product-overview/mattermost-v10-changelog.html#release-v10-5-extended-support-release) or the [v10.11 ESR](https://docs.mattermost.com/product-overview/mattermost-v10-changelog.html#release-v10-11-extended-support-release) or the [v11.7 ESR](https://docs.mattermost.com/product-overview/mattermost-server-releases.html).
+- Upgrading from one Extended Support Release (ESR) to the next ESR (``major`` -> ``major_next``) is fully supported and tested. However, upgrading across multiple ESR versions (``major`` to ``major+2``) is supported, but not tested. If you plan to skip versions, we strongly recommend upgrading only between ESR releases. For example, if you're upgrading from v8.1 ESR, upgrade to the v9.5 ESR or the v9.11 ESR before attempting to upgrade to the [v10.11 ESR](https://docs.mattermost.com/product-overview/mattermost-v10-changelog.html#release-v10-11-extended-support-release) or the [v11.7 ESR](https://docs.mattermost.com/product-overview/mattermost-server-releases.html).
 ```
 
 | **Release** | **Release Type** | **Support ended** | 
