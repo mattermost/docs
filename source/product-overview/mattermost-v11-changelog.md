@@ -135,6 +135,9 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-6-is-now-availab
 (release-v11.5-feature-release)=
 ## Release v11.5 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **11.5.3, released 2026-04-16**
+  - Added a new API endpoint ``PUT /api/v4/channels/{channel_id}/members`` that sets the complete membership of a channel in a single call. The endpoint accepts a JSON object with ``members`` (desired user IDs) and an optional ``channel_admins`` (user IDs to designate as channel admins). The server computes the diff against current membership, adds or removes users as needed, and reconciles admin roles. Results are streamed back as NDJSON for progress tracking. Requires system admin permissions.
+  - Mattermost v11.5.3 contains no database or functional changes.
 - **11.5.2, released 2026-04-15**
   - Mattermost v11.5.2 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Calls plugin version [v1.11.4](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.11.4).
