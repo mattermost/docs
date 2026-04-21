@@ -83,9 +83,6 @@ Set up an enterprise app for Mattermost SSO in Entra ID
           * - Position Attribute
             - ``role``
             - ``user.jobtitle``
-          * - *(custom attribute, optional)*
-            - ``department``
-            - ``user.department``
 
        .. note::
           Use ``user.mailnickname`` rather than ``user.userprincipalname`` as the source for the username claim. The user principal name is typically formatted as an email address (``user@domain.com``), but Mattermost usernames cannot contain the ``@`` character, so SAML logins using ``user.userprincipalname`` will fail. The mail nickname is the local part of the email address (the portion before ``@``) and maps cleanly to a valid Mattermost username.
