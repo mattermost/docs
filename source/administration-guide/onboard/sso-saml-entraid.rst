@@ -78,7 +78,7 @@ Set up an enterprise app for Mattermost SSO in Entra ID
             - ``lastname``
             - ``user.surname``
           * - Position Attribute
-            - ``role``
+            - ``position``
             - ``user.jobtitle``
 
        .. note::
