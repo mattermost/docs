@@ -11,8 +11,117 @@ This page provides guidance on configuring SAML with Microsoft Entra ID for Matt
   - Need to configure Entra ID for **OpenID Connect** authentication instead? See the :doc:`Entra ID Single Sign-On </administration-guide/onboard/sso-entraid>` documentation for details.
   - See the encryption options documentation for details on what :ref:`encryption methods <deployment-guide/encryption-options:saml encryption support>` Mattermost supports for SAML.
 
-.. include:: sso-saml-before-you-begin.rst
-	:start-after: :nosearch:
+Before you begin
+----------------
+
+Before configuring SAML, you need to generate a private key and self-signed X.509 certificate. These are uploaded to Mattermost as the **Service Provider Private Key** and **Service Provider Public Certificate**, and the certificate is also uploaded to Entra ID for token encryption.
+
+You can generate these files with any tool that produces a 4096-bit RSA private key and a matching self-signed certificate. The Bash script below is provided as a reference; adapt the variables to your environment before running it.
+
+.. dropdown:: Reference: Bash script for generating a self-signed Service Provider certificate
+   :icon: code
+
+   This script generates a 4096-bit RSA private key (``mattermost-x509.key``) and a self-signed X.509 certificate (``mattermost-x509.crt``) valid for 10 years. Set the environment variables below before running it — the defaults are placeholders and should not be used in production.
+
+   .. list-table::
+      :header-rows: 1
+      :widths: 20 50 30
+
+      * - Variable
+        - Purpose
+        - Default
+      * - ``CRT_FILENAME``
+        - Base name for the generated files (``.key``, ``.crt``).
+        - ``mattermost-x509``
+      * - ``CRT_C``
+        - Country value (ISO 3166-1 alpha-2 country code).
+        - ``US``
+      * - ``CRT_L``
+        - Locality value (city).
+        - ``Palo Alto``
+      * - ``CRT_O``
+        - Organization value.
+        - ``Mattermost``
+      * - ``CRT_OU``
+        - Organizational Unit value.
+        - ``DevOps``
+      * - ``CRT_CN``
+        - Common Name value. Set this to the hostname of your Mattermost server.
+        - ``base.example.com``
+      * - ``CRT_SAN``
+        - Subject Alternative Name value. Comma-separated list of DNS names and/or IPs the certificate should cover. Most Mattermost SAML setups only need a single DNS entry matching the Mattermost hostname (e.g., ``DNS.1:mattermost.example.com``).
+        - ``DNS.1:logs.example.com,DNS.2:metrics.example.com,IP.1:192.168.0.1,IP.2:127.0.0.1``
+
+   **Example invocation** for a Mattermost server at ``mattermost.example.com``:
+
+   .. code-block:: bash
+
+      CRT_CN="mattermost.example.com" \
+      CRT_SAN="DNS.1:mattermost.example.com" \
+      CRT_O="Acme Corp" \
+      CRT_OU="IT" \
+      CRT_C="DE" \
+      CRT_L="Berlin" \
+      ./gencert.sh
+
+   **The script:**
+
+   .. code-block:: bash
+
+      #!/bin/bash
+
+      umask 007
+
+      FILE_NAME="${CRT_FILENAME:-"mattermost-x509"}"
+      CERT="${FILE_NAME}.crt"
+      KEY="${FILE_NAME}.key"
+      CSR="${FILE_NAME}.csr"
+
+      # generate key
+      openssl genrsa -out $KEY 4096
+
+      if [ $? -ne 0 ]; then
+          echo "Error generating key"
+          exit
+      fi
+
+      # generate certificate signing request
+      openssl req \
+          -new \
+          -key $KEY \
+          -out $CSR \
+          -subj "/C=${CRT_C:-"US"}/L=${CRT_L:-"Palo Alto"}/O=${CRT_O:-"Mattermost"}/OU=${CRT_OU:-"DevOps"}/CN=${CRT_CN:-"base.example.com"}"
+
+      if [ $? -ne 0 ]; then
+          echo "Error generating certificate signing request (csr)"
+          exit
+      fi
+
+      # generate self-signed certificate
+      openssl x509 \
+          -req \
+          -days 3650 \
+          -in $CSR \
+          -signkey $KEY \
+          -sha256 \
+          -out $CERT \
+          -extfile <(echo -e "basicConstraints=critical,CA:true,pathlen:0\nsubjectAltName=${CRT_SAN:-"DNS.1:logs.example.com,DNS.2:metrics.example.com,IP.1:192.168.0.1,IP.2:127.0.0.1"}")
+
+      if [ $? -ne 0 ]; then
+          echo "Error generating self-signed certificate"
+          exit
+      fi
+
+      rm $CSR
+      chmod 600 $CERT
+
+      echo -e "\nSuccess! $KEY and $CERT generated."
+
+   After the script completes, you'll have ``mattermost-x509.key`` and ``mattermost-x509.crt`` in the current directory. Keep the ``.key`` file secure — it's the private key for your SAML Service Provider identity.
+
+   For details on verifying the generated certificate or password-protecting the private key, see the :doc:`gencert.sh reference </scripts/generate-certificates/gencert>`.
+
+Save both files. The ``.key`` is the **Service Provider Private Key** and the ``.crt`` is the **Service Provider Public Certificate** referenced throughout the rest of this guide.
 
 Prerequisites
 -------------
