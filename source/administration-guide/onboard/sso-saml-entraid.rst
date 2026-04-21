@@ -43,10 +43,10 @@ The script generates a 4096-bit RSA private key (``mattermost-x509.key``) and a 
      - Organizational Unit value.
      - ``DevOps``
    * - ``CRT_CN``
-     - Common Name value. Set this to the hostname of your Mattermost server.
+     - Common Name value. You can use any descriptive value for this SAML encryption certificate; it doesn't need to match your Mattermost hostname, though you can use the hostname if you prefer.
      - ``base.example.com``
    * - ``CRT_SAN``
-     - Subject Alternative Name value. Comma-separated list of DNS names and/or IPs the certificate should cover. Most Mattermost SAML setups only need a single DNS entry matching the Mattermost hostname (e.g., ``DNS.1:mattermost.example.com``).
+     - Subject Alternative Name value. Comma-separated list of DNS names and/or IPs to include in the certificate. For SAML encryption, Mattermost and Entra ID don't require these values to match the Mattermost hostname, though using the hostname is a valid convention.
      - ``DNS.1:logs.example.com,DNS.2:metrics.example.com,IP.1:192.168.0.1,IP.2:127.0.0.1``
 
 **Example invocation** for a Mattermost server at ``mattermost.example.com``:
