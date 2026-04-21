@@ -111,6 +111,10 @@ Set up an enterprise app for Mattermost SSO in Entra ID
 
     To find the Tenant ID, select **Entra ID** from the admin center home, then locate the **Tenant ID** value in the **Basic information** panel on the **Overview** page.
 
+	.. image:: ../../images/entra-tenant-id.png
+		:alt: Where to find the Tenant ID
+        :width: 100%
+
 17. Copy the **Application ID** for use in the **Identity Provider Metadata URL** setting in the Mattermost **SAML 2.0** settings.
 
     To find the Application ID, select **Entra ID > Enterprise applications** from the left navigation menu, select the **Mattermost** application, then copy the **Application ID** from the **Properties** page (shown alongside the Object ID, which is not needed).
