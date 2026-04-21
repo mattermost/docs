@@ -114,6 +114,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-7-is-now-availab
  - Fixed an issue where SAML login failed for users mapped via objectGUID when the IdP sent the value as a UUID string instead of base64-encoded raw bytes (affecting Keycloak 26.6.0 and later with user-attribute-ldap-mapper).
  - Fixed an issue with clipped emoticons and letters in channel banners.
  - Fixed an issue where removing a remote could leave channels in a "shared" state, even if not shared with any remote.
+ - Fixed an issue where OpenSearch/Elasticsearch reindex jobs could report success even when bulk writes were silently rejected by the search backend, causing silent data loss in the search index.
 
 ### API Changes
  - Added a new API endpoint ``GET /api/v4/channels/{channel_id}/views/{view_id}/posts`` to retrieve paginated posts for a specific view. Card posts are temporarily excluded from search results. Card posts now use collaborative permissions — any channel member can edit or delete any card without needing ``edit_others_posts/delete_others_posts`` permissions.
