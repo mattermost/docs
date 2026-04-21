@@ -176,7 +176,6 @@ An **Integrated** deployment does not require any additional infrastructure:
 ```{image} ../../images/calls-deployment-integrated.png
 :alt: Integrated Calls deployment
 :align: center
-:height: 300px
 ```
 
 **When to use it**
@@ -203,7 +202,6 @@ An **RTCD Server** is added as a dedicated media service that processes all call
 ```{image} ../../images/calls-deployment-rtcd.png
 :alt: Calls deployment with RTCD
 :align: center
-:height: 450px
 ```
 
 
@@ -424,8 +422,8 @@ If you deployed a calls-offloader server in Step 1.4, open these ports:
 | Port | Protocol | Direction | Source | Destination | Notes |
 |---|---|---|---|---|---|
 | 4545 | TCP | Inbound | Mattermost server | calls-offloader server | Job service API (Internal only) |
-| 8443 | UDP | Outbound | calls-offloader server | Mattermost server and RTCD server | Recorder and transcriber jobs connect to the media service as call participants. |
-| 8443 | TCP | Outbound | calls-offloader server | Mattermost server and RTCD server | Media traffic fallback. |
+| 8443 | UDP | Outbound | calls-offloader server | RTCD server | Recorder and transcriber jobs connect to the media service as call participants. |
+| 8443 | TCP | Outbound | calls-offloader server | RTCD server | Media traffic fallback. |
 | 443 | TCP | Outbound | calls-offloader server | Mattermost server | Recorder and transcriber jobs post results back to Mattermost. |
 
 ##### TURN server ports
