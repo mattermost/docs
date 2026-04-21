@@ -50,7 +50,7 @@ Set up an enterprise app for Mattermost SSO in Entra ID
 
     a. **Required claim — Unique User Identifier (Name ID)**
 
-       Set the **Name identifier format** and **Source attribute** values as required for your environment. Setting the **Source attribute** to an immutable value such as ``user.objectid`` is recommended, because unlike email addresses or usernames, the object ID never changes even if the user is renamed. ``user.userprincipalname`` is also a common choice when a human-readable identifier is preferred, with the trade-off that renames in Entra can orphan the corresponding Mattermost account. Mattermost uses the Name ID as the user's unique identifier by default, so you do not need to add a separate ``Id`` claim under **Additional claims**.
+       Set the **Name identifier format** and **Source attribute** values as required for your environment. The Name ID is part of the SAML assertion, but Mattermost account binding is controlled by the **Id Attribute (SAML)** setting if you configure it, or by email otherwise. If you want immutable user binding in Mattermost, add a separate ``Id`` claim under **Additional claims** and set its **Value** (source attribute) to an immutable Entra attribute such as ``user.objectid``. ``user.userprincipalname`` is also a common choice for Name ID when a human-readable identifier is preferred, with the trade-off that renames in Entra can orphan the corresponding Mattermost account if you rely on it for identity matching.
 
     b. **Additional claims**
 
