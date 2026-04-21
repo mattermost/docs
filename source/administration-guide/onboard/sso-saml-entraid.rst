@@ -65,9 +65,6 @@ Set up an enterprise app for Mattermost SSO in Entra ID
           * - Mattermost attribute field
             - Entra claim name
             - Entra source attribute
-          * - Id Attribute
-            - *(leave blank)*
-            - ``user.objectid`` (via Name ID)
           * - Email Attribute
             - ``email``
             - ``user.mail``
