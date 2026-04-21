@@ -83,6 +83,7 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
   - Pre-packaged Boards plugin [v9.2.4](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.2.4).
   - Updated URL validation in integration actions to make them more secure.
   - Improved response handling for outgoing webhook requests.
+  - Added support for Elasticsearch v9 alongside v8.
   - Upgraded Go to 1.25.8.
   - Mattermost v10.11.15 contains no database or functional changes.
 - **10.11.14, released 2026-04-15**
