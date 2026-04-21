@@ -23,7 +23,7 @@ The desktop v6.1 app includes in-app update notifications that check the Matterm
 Upgrading to v6.1.0 with MSI installer
 ---------------------------------------
 
-Users upgrading from earlier Desktop app versions using the MSI installer may need to recreate taskbar shortcuts once after the upgrade. The v6.1.0 installer uses a more reliable method for shortcut icons that prevents shortcuts from breaking during future upgrades. This fixes a long-standing issue where shortcuts could break during MSI upgrades. This is a one-time action for the upgrade to v6.1.0. Future upgrades to v6.1.1 and later won't require shortcut recreation. Windows Store deployments aren't affected by this change.
+Users upgrading from earlier Desktop app versions using the MSI installer may need to recreate taskbar shortcuts once after the upgrade. The v6.1.0 installer uses a more reliable method for shortcut icons that prevents shortcuts from breaking during future upgrades. This fixes a long-standing issue where shortcuts could break during MSI upgrades. This is a one-time action for the upgrade to v6.1.0. Future upgrades to v6.1.2 and later won't require shortcut recreation. Windows Store deployments aren't affected by this change.
 
 We recommend telling your users in advance that they may need to re-pin the taskbar shortcut after upgrading to desktop app v6.1. Desktop shortcuts are typically unaffected while taskbar shortcuts are most commonly impacted.
 
