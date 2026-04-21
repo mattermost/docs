@@ -375,20 +375,24 @@ If you deployed a calls-offloader server in Step 1.4, open these ports:
 
 | Port | Protocol | Direction | Source | Destination | Notes |
 |---|---|---|---|---|---|
-| 4545 | TCP | Inbound | Mattermost server | calls-offloader server | Job service API (Internal only) |
+| 4545 | TCP | Inbound | Mattermost server | calls-offloader server | Job service API (Internal only. Restrict this rule to the Mattermost server or approved application subnet only.) |
 | 8443 | UDP | Outbound | calls-offloader server | Mattermost server | Recorder and transcriber jobs connect to the media service as call participants. |
 | 8443 | TCP | Outbound | calls-offloader server | Mattermost server | Media traffic fallback. |
 | 443 | TCP | Outbound | calls-offloader server | Mattermost server | Recorder and transcriber jobs post results back to Mattermost. |
 
 ##### TURN server ports
 
-If you deployed a TURN server in Step 1.4, open these ports. If you are using `coturn`, these are the common defaults:
+If you deployed a TURN server in Step 1.4, open only the ports required by the transports you actually configure. If you are using `coturn`, these are common defaults:
 
 | Port | Protocol | Direction | Source | Destination | Notes |
 |---|---|---|---|---|---|
 | 3478 | UDP / TCP | Inbound | Mattermost clients | TURN server | TURN relay. |
-| 5349 | UDP / TCP | Inbound | Mattermost clients | TURN server | (Optional) If you configure TLS on TURN. |
+| 5349 | TCP | Inbound | Mattermost clients | TURN server | (Optional) If you configure TURN over TLS. Do not open this port unless you are explicitly using it. |
 | 49152-65535 | UDP | Inbound | Mattermost clients | TURN server | TURN relay port range required to relay media. |
+
+```{important}
+TURN is a fallback service, not a default requirement. If clients can reliably reach the media service over UDP or TCP `8443`, do not deploy TURN. If you do deploy TURN, only open the TURN listener ports and transports you actually use, and scope client access according to your organization's network policy.
+```
 
 ````
 
@@ -407,7 +411,7 @@ If you deployed a TURN server in Step 1.4, open these ports. If you are using `c
 |---|---|---|---|---|---|
 | 8443 | UDP | Inbound | Mattermost clients and calls-offloader server | RTCD server | Media traffic. |
 | 8443 | TCP | Inbound | Mattermost clients and calls-offloader server | RTCD server | Media traffic fallback. |
-| 8045 | TCP | Inbound | Mattermost server | RTCD server | RTCD API (Internal only) |
+| 8045 | TCP | Inbound | Mattermost server | RTCD server | RTCD API (Internal only. Restrict this rule to the Mattermost server or approved application subnet only.) |
 | 3478 | UDP | Outbound | RTCD server | `stun.global.calls.mattermost.com` | (Optional - Step 1.3.1) Public IP discovery using STUN. |
 
 ```{important}
@@ -420,7 +424,7 @@ If you deployed a calls-offloader server in Step 1.4, open these ports:
 
 | Port | Protocol | Direction | Source | Destination | Notes |
 |---|---|---|---|---|---|
-| 4545 | TCP | Inbound | Mattermost server | calls-offloader server | Job service API (Internal only) |
+| 4545 | TCP | Inbound | Mattermost server | calls-offloader server | Job service API (Internal only. Restrict this rule to the Mattermost server or approved application subnet only.) |
 | 8443 | UDP | Outbound | calls-offloader server | RTCD server | Recorder and transcriber jobs connect to the media service as call participants. |
 | 8443 | TCP | Outbound | calls-offloader server | RTCD server | Media traffic fallback. |
 | 443 | TCP | Outbound | calls-offloader server | Mattermost server | Recorder and transcriber jobs post results back to Mattermost. |
@@ -432,8 +436,12 @@ If you deployed a TURN server in Step 1.4, open these ports. If you are using `c
 | Port | Protocol | Direction | Source | Destination | Notes |
 |---|---|---|---|---|---|
 | 3478 | UDP / TCP | Inbound | Mattermost clients | TURN server | TURN relay. |
-| 5349 | UDP / TCP | Inbound | Mattermost clients | TURN server | (Optional) If you configure TLS on TURN. |
+| 5349 | TCP | Inbound | Mattermost clients | TURN server | (Optional) If you configure TURN over TLS. Do not open this port unless you are explicitly using it. |
 | 49152-65535 | UDP | Inbound | Mattermost clients | TURN server | TURN relay port range required to relay media. |
+
+```{important}
+TURN is a fallback service, not a default requirement. If clients can reliably reach the media service over UDP or TCP `8443`, do not deploy TURN. If you do deploy TURN, only open the TURN listener ports and transports you actually use, and scope client access according to your organization's network policy.
+```
 
 ````
 
