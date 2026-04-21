@@ -175,7 +175,7 @@ An **Integrated** deployment does not require any additional infrastructure:
 
 ```{image} ../../images/calls-deployment-integrated.png
 :alt: Integrated Calls deployment
-:align: center
+:height: 300px
 ```
 
 **When to use it**
@@ -201,7 +201,7 @@ An **RTCD Server** is added as a dedicated media service that processes all call
 
 ```{image} ../../images/calls-deployment-rtcd.png
 :alt: Calls deployment with RTCD
-:align: center
+:height: 300px
 ```
 
 
@@ -235,10 +235,9 @@ Use the tabs below to view the reference architecture for each deployment model 
 
 Reference architecture when using the Recording service with Integrated Calls:
 
-```{image} ../../images/calls-deployment-integrated-recording.png
+```{image} ../../images/calls-deployment-integrated-recording-v2.png
 :alt: Calls deployment with Integrated Calls and recording
-:height: 400px
-:align: center
+:height: 450px
 ```
 
 **Components**
@@ -257,7 +256,7 @@ Reference architecture when using the Recording service with RTCD:
 
 ```{image} ../../images/calls-deployment-rtcd-recording.png
 :alt: Calls deployment with RTCD and recording
-:align: center
+:height: 450px
 ```
 
 **Components**
