@@ -155,7 +155,7 @@ Privileges
 | About                  |  - PERMISSION_SYSCONSOLE_READ_ABOUT_EDITION_AND_LICENSE                  |
 |                        |  - PERMISSION_SYSCONSOLE_WRITE_ABOUT_EDITION_AND_LICENSE                 |
 +------------------------+--------------------------------------------------------------------------+
-| Reporting              | **Site Statistics**                                                      |
+| Reporting              | **System Statistics**                                                    |
 |                        |  - PERMISSION_SYSCONSOLE_READ_REPORTING_SITE_STATISTICS                  |
 |                        |  - PERMISSION_SYSCONSOLE_WRITE_REPORTING_SITE_STATISTICS                 |
 |                        |                                                                          |

@@ -47,7 +47,7 @@ We'll send you an email notice around the end of the quarter reminding you to se
 
 If you have more total activated users than you purchased in your annual subscription, your Customer Success Manager will provide you with a true-up quote for the new users added. The additional invoice will be pro-rated based on the number of months left in your subscription term, including the months for the calendar quarter for the time you pull the report. Mattermost won't provide downward adjustments. Mattermost will invoice based on Mattermost’s `current list prices <https://mattermost.com/pricing/>`_.
 
-A system admin must take a screenshot of the **System Console > Reporting > Site Statistics** page and send it to Mattermost in an email.
+A system admin must take a screenshot of the **System Console > Reporting > System Statistics** page and send it to Mattermost in an email.
 
 - Please ensure your screenshot is taken from the top of the page and includes **Total Activated Users**, **Single-channel Guests**, and **Monthly Active Users**. 
 - Please include the date of the screenshot in the file name.
