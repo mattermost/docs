@@ -42,7 +42,7 @@ This guide is organized into sequential deployment phases with numbered steps. E
 
 2. [**Install and Configure Calls**](#phase-2-install-and-configure-calls)
 
-    Complete the installation and configuration for the deployment architecture you selected in Phase 1. You will only choose one path:
+    Complete the installation and configuration for the deployment architecture you selected in Phase 1. You will only follow one path:
 
     - [**Path A: Configure Integrated Calls**](#path-a-configure-integrated-calls)
 
@@ -192,12 +192,32 @@ An **Integrated** deployment does not require any additional infrastructure:
 
 - **Mattermost Entry**: 1:1 Calls + Screen Sharing (Up to 40 minutes)
 - **Mattermost Professional, Enterprise, or Enterprise Advanced**: Group Calls + Screen Sharing (No time limit)
+
+#### 1.2.2 Integrated + Recording
+
+The **Recording** service (`calls-offloader`) can be added to an **Integrated** or **RTCD** Calls deployment to enable recording, transcription, and live captions.
+
+Reference architecture when using the Recording service with Integrated Calls:
+
+```{image} ../../images/calls-deployment-integrated-recording-v2.png
+:alt: Calls deployment with Integrated Calls and recording
+:height: 450px
+```
+
+**Components**
+
+- **Mattermost server**: Calls plugin is pre-installed.
+- **Calls Offloader**: Job service that manages recording, transcription and live captions.
+
+**License**
+
+- **Mattermost Enterprise** or **Enterprise Advanced**
+
 ````
 
 ````{tab} RTCD
 
 An **RTCD Server** is added as a dedicated media service that processes all call audio and screen sharing media.
-
 
 ```{image} ../../images/calls-deployment-rtcd.png
 :alt: Calls deployment with RTCD
@@ -224,34 +244,9 @@ Use RTCD if you need optimized performance, scalability, and the best possible u
 
 - **Mattermost Enterprise** or **Enterprise Advanced**
 
-````
-
-#### 1.2.2 Recording
+#### 1.2.2 RTCD + Recording
 
 The **Recording** service (`calls-offloader`) can be added to an **Integrated** or **RTCD** Calls deployment to enable recording, transcription, and live captions.
-
-Use the tabs below to view the reference architecture for each deployment model when the recording service is added:
-
-````{tab} Integrated + Recording
-
-Reference architecture when using the Recording service with Integrated Calls:
-
-```{image} ../../images/calls-deployment-integrated-recording-v2.png
-:alt: Calls deployment with Integrated Calls and recording
-:height: 450px
-```
-
-**Components**
-
-- **Mattermost server**: Calls plugin is pre-installed.
-- **Calls Offloader**: Job service that manages recording, transcription and live captions.
-
-**License**
-
-- **Mattermost Enterprise** or **Enterprise Advanced**
-````
-
-````{tab} RTCD + Recording
 
 Reference architecture when using the Recording service with RTCD:
 
@@ -311,6 +306,10 @@ Provisioning a TURN server is necessary if both of these conditions are true:
 
 TURN is typically a last resort as it adds latency and infrastructure complexity. Only plan to deploy TURN if your answers indicate that you cannot rely on UDP or TCP for media, and users need an alternative route.
 
+```{important}
+TURN is a fallback service, not a default requirement. If clients can reliably reach the media service over UDP or TCP `8443`, do not deploy TURN. If you do deploy TURN, only open the TURN listener ports and transports you actually use, and scope client access according to your organization's network policy.
+```
+
 ### 1.4 Provision Infrastructure
 
 Now you'll provision the servers or VMs required to support your Calls deployment. You are only preparing infrastructure here; software installation and service configuration happen in later phases. This step matters because you need the IP addresses or DNS names of these servers before you can finish the networking configurations in the next step.
@@ -351,7 +350,9 @@ This section lists the network ports that must be opened for each server involve
 - **On-premises or self-managed VMs:** Use `firewalld` (RHEL, Rocky Linux, AlmaLinux) or `ufw` (Ubuntu/Debian) commands directly on each server.
 - **Centrally managed firewall:** If a network team manages your firewall, share the tables below with them and request the rules before proceeding.
 
-Work through one server at a time so you can verify nothing is missed before moving on. Use only the tables that apply to your chosen deployment architecture (Integrated or RTCD):
+Work through one server at a time so you can verify nothing is missed before moving on. 
+
+**Only open the ports relevant for your chosen deployment architecture (Integrated or RTCD):**
 
 
 ````{tab} Integrated
@@ -391,9 +392,6 @@ If you deployed a TURN server in Step 1.4, open only the ports required by the t
 | 5349 | TCP | Inbound | Mattermost clients | TURN server | (Optional) If you configure TURN over TLS. Do not open this port unless you are explicitly using it. |
 | 49152-65535 | UDP | Inbound | Mattermost clients | TURN server | TURN relay port range required to relay media. |
 
-```{important}
-TURN is a fallback service, not a default requirement. If clients can reliably reach the media service over UDP or TCP `8443`, do not deploy TURN. If you do deploy TURN, only open the TURN listener ports and transports you actually use, and scope client access according to your organization's network policy.
-```
 
 ````
 
@@ -439,10 +437,6 @@ If you deployed a TURN server in Step 1.4, open these ports. If you are using `c
 | 3478 | UDP / TCP | Inbound | Mattermost clients | TURN server | TURN relay. |
 | 5349 | TCP | Inbound | Mattermost clients | TURN server | (Optional) If you configure TURN over TLS. Do not open this port unless you are explicitly using it. |
 | 49152-65535 | UDP | Inbound | Mattermost clients | TURN server | TURN relay port range required to relay media. |
-
-```{important}
-TURN is a fallback service, not a default requirement. If clients can reliably reach the media service over UDP or TCP `8443`, do not deploy TURN. If you do deploy TURN, only open the TURN listener ports and transports you actually use, and scope client access according to your organization's network policy.
-```
 
 ````
 
