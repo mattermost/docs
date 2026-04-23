@@ -4469,12 +4469,12 @@ The following configuration settings are only accessible through ``config.json``
 
 This self-hosted deployment setting isn't available in the System Console and can only be set in ``config.json``.
 
-+---------------------------------------------------------------+-------------------------------------------------------------------------------+
-| Enable or disable local mode for mmctl.                       | - System Config path: N/A                                                     |
-|                                                               | - ``config.json`` setting: ``ServiceSettings`` > ``EnableLocalMode`` >``false``|
-| - **true**: Enables local mode for mmctl.                     | - Environment variable: ``MM_SERVICESETTINGS_ENABLELOCALMODE``                |
-| - **false**: **(Default)** Prevents local mode for mmctl.     |                                                                               |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------+
++---------------------------------------------------------------+-----------------------------------------------------------------------------------+
+| Enable or disable local mode for mmctl.                       | - System Config path: N/A                                                        |
+|                                                               | - ``config.json`` setting: ``ServiceSettings`` > ``EnableLocalMode`` > ``false`` |
+| - **true**: Enables local mode for mmctl.                     | - Environment variable: ``MM_SERVICESETTINGS_ENABLELOCALMODE``                   |
+| - **false**: **(Default)** Prevents local mode for mmctl.     |                                                                                  |
++---------------------------------------------------------------+-----------------------------------------------------------------------------------+
 
 .. tip::
 
@@ -4495,7 +4495,7 @@ This self-hosted deployment setting isn't available in the System Console and ca
 | The path for the socket that the server will create for      | - System Config path: N/A                                                                   |
 | mmctl to connect and communicate through local mode.          | - ``config.json`` setting: ``ServiceSettings`` > ``LocalModeSocketLocation``                |
 |                                                               | - Environment variable: ``MM_SERVICESETTINGS_LOCALMODESOCKETLOCATION``                      |
-| String input. Default is **/var/tmp/mattermost_local.socket**|                                                                                             |
+| String input. Default is **/var/tmp/mattermost_local.socket** |                                                                                             |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 
 If the default value for this key is changed, you will need to point mmctl to the new socket path when in local mode, using the ``--local-socket-path /new/path/to/socket`` flag in addition to the ``--local`` flag.
