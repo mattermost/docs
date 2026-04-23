@@ -29,21 +29,38 @@ jobs:
       pull-requests: write
  
     steps:
-      # A GitHub App token is required so the workflow can read PRs from the
-      # server repo AND push/create PRs in this docs repo.
-      # The default GITHUB_TOKEN only works within the repo the workflow runs in.
-      - name: Get GitHub App token
+      # App 1: Read-only access to mattermost/mattermost and mattermost/enterprise.
+      # Used by the Python script to fetch merged PRs and their release notes.
+      # Credentials: Settings → Secrets and variables → Actions in mattermost/docs
+      #   CHANGELOG_READ_APP_ID        (variable)
+      #   CHANGELOG_READ_INSTALL_ID    (variable)
+      #   CHANGELOG_READ_PRIVATE_KEY   (secret)
+      - name: Get read token (source repos)
         uses: mattermost/github-app-installation-token-action@4d4c8c09a49df5b54e1eafd372d1a1e44fdcab13
-        id: appToken
+        id: readToken
         with:
-          appId: "${{ vars.UNIFIED_CI_APP_ID }}"
-          installationId: "${{ vars.UNIFIED_CI_INSTALLATION_ID }}"
-          privateKey: ${{ secrets.UNIFIED_CI_PRIVATE_KEY }}
+          appId: "${{ vars.CHANGELOG_READ_APP_ID }}"
+          installationId: "${{ vars.CHANGELOG_READ_INSTALL_ID }}"
+          privateKey: ${{ secrets.CHANGELOG_READ_PRIVATE_KEY }}
+ 
+      # App 2: Read/write access to mattermost/docs.
+      # Used to check out this repo, push the changelog branch, and open the PR.
+      # Credentials: Settings → Secrets and variables → Actions in mattermost/docs
+      #   CHANGELOG_WRITE_APP_ID       (variable)
+      #   CHANGELOG_WRITE_INSTALL_ID   (variable)
+      #   CHANGELOG_WRITE_PRIVATE_KEY  (secret)
+      - name: Get write token (docs repo)
+        uses: mattermost/github-app-installation-token-action@4d4c8c09a49df5b54e1eafd372d1a1e44fdcab13
+        id: writeToken
+        with:
+          appId: "${{ vars.CHANGELOG_WRITE_APP_ID }}"
+          installationId: "${{ vars.CHANGELOG_WRITE_INSTALL_ID }}"
+          privateKey: ${{ secrets.CHANGELOG_WRITE_PRIVATE_KEY }}
  
       - name: Checkout docs repo
         uses: actions/checkout@v4
         with:
-          token: ${{ steps.appToken.outputs.token }}
+          token: ${{ steps.writeToken.outputs.token }}
  
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -55,7 +72,7 @@ jobs:
  
       - name: Generate changelog
         env:
-          GITHUB_TOKEN: ${{ steps.appToken.outputs.token }} # App token has read access to the server repo
+          GITHUB_TOKEN: ${{ steps.readToken.outputs.token }} # Read-only token for fetching PRs from source repos
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }} # Add this secret under Settings → Secrets and variables → Actions to enable AI categorization and proofreading
           MILESTONE: ${{ inputs.milestone }}
           VERSION: ${{ inputs.version }}
@@ -66,10 +83,10 @@ jobs:
  
       - name: Create Pull Request
         env:
-          GH_TOKEN: ${{ steps.appToken.outputs.token }}
+          GH_TOKEN: ${{ steps.writeToken.outputs.token }}
         run: |
-          git config user.name "${{ vars.UNIFIED_CI_USERNAME }}"
-          git config user.email "${{ vars.UNIFIED_CI_EMAIL }}"
+          git config user.name "${{ vars.CHANGELOG_GIT_USERNAME }}"
+          git config user.email "${{ vars.CHANGELOG_GIT_EMAIL }}"
           git checkout -b "changelog/${{ inputs.version }}"
           git add source/product-overview/mattermost-v11-changelog.md
           git diff --staged --quiet && echo "No changes to commit" && exit 0
