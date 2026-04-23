@@ -42,7 +42,7 @@ This guide is organized into sequential deployment phases with numbered steps. E
 
 2. [**Install and Configure Calls**](#phase-2-install-and-configure-calls)
 
-    Complete the installation and configuration for the deployment architecture you selected in Phase 1.
+    Complete the installation and configuration for the deployment architecture you selected in Phase 1. You will only choose one path:
 
     - [**Path A: Configure Integrated Calls**](#path-a-configure-integrated-calls)
 
@@ -50,7 +50,7 @@ This guide is organized into sequential deployment phases with numbered steps. E
 
     - [**Path B: Install and Configure RTCD**](#path-b-install-and-configure-rtcd) (Optional)
 
-      RTCD (Real-Time Communication Daemon) is a service built to offload media processing tasks from the Mattermost server.
+      Use the RTCD (Real-Time Communication Daemon) service for larger scale production deployments. RTCD offloads media processing tasks from the Mattermost server for optimized performance and scalability.
 
 3. [**Install and Configure Recording**](#phase-3-install-and-configure-recording) (Optional)
 
@@ -196,7 +196,7 @@ An **Integrated** deployment does not require any additional infrastructure:
 
 ````{tab} RTCD
 
-An **RTCD Server** is added as a dedicated media service that processes all call audio and screen sharing media. The Mattermost server is still responsible for signaling (setting up, managing, and ending calls) and channel state (who is joining or leaving, who has muted, and overall call status), but the call media itself flows directly between clients and the RTCD server, completely bypassing the Mattermost server.
+An **RTCD Server** is added as a dedicated media service that processes all call audio and screen sharing media.
 
 
 ```{image} ../../images/calls-deployment-rtcd.png
@@ -204,6 +204,7 @@ An **RTCD Server** is added as a dedicated media service that processes all call
 :height: 300px
 ```
 
+The Mattermost server is still responsible for signaling (setting up, managing, and ending calls) and channel state (who is joining or leaving, who has muted, and overall call status), but the call media itself flows directly between clients and the RTCD server, completely bypassing the Mattermost server.
 
 **When to use it**
 
