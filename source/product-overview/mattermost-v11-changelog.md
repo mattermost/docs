@@ -81,6 +81,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-7-is-now-availab
  - Added protected fields and field specific permissions to the property fields.
  - Added a ``--workers`` flag to the mmctl import process to control concurrency.
  - Added support for listing user roles through mmctl.
+ - Added support for collecting plugin metrics, namespacing them, and serving on the standarad ``/metrics`` endpoint.
  - Added new permissions to back Self Service Agent Creation in Mattermost Agents:
     - ``manage_own_agent``: Allows users to create and manage their own agents.
     - ``manage_others_agent``: Allows users to create and manage agents they didn't create, even if that user isn't one of the administrator users assigned to the agent by the creator.
