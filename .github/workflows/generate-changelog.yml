@@ -29,7 +29,7 @@ jobs:
       pull-requests: write
  
     steps:
-      # App 1: Read-only access to mattermost/mattermost and mattermost/enterprise.
+      # App 1: Read-only access to source repos (default: mattermost/mattermost and mattermost/enterprise).
       # Used by the Python script to fetch merged PRs and their release notes.
       # Credentials: Settings → Secrets and variables → Actions in mattermost/docs
       #   CHANGELOG_READ_APP_ID        (variable)
