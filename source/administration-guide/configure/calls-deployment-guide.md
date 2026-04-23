@@ -148,7 +148,7 @@ Before you start, confirm the following:
 
 Here you will make two important infrastructure decisions: First you'll choose your media processing architecture, then decide whether you need recording. Reference topology for each architecture is provided.
 
-#### 1.2.1 Media Service: RTCD or Integrated
+#### Media Service: RTCD or Integrated
 
 **Integrated**
 
@@ -193,9 +193,9 @@ An **Integrated** deployment does not require any additional infrastructure:
 - **Mattermost Entry**: 1:1 Calls + Screen Sharing (Up to 40 minutes)
 - **Mattermost Professional, Enterprise, or Enterprise Advanced**: Group Calls + Screen Sharing (No time limit)
 
-#### 1.2.2 Integrated + Recording
+#### Recording
 
-The **Recording** service (`calls-offloader`) can be added to an **Integrated** or **RTCD** Calls deployment to enable recording, transcription, and live captions.
+The **Recording** service (`calls-offloader`) can optionally be added to an **Integrated** Calls deployment if you need to enable recording, transcription, and live captions.
 
 Reference architecture when using the Recording service with Integrated Calls:
 
@@ -244,9 +244,9 @@ Use RTCD if you need optimized performance, scalability, and the best possible u
 
 - **Mattermost Enterprise** or **Enterprise Advanced**
 
-#### 1.2.2 RTCD + Recording
+#### Recording
 
-The **Recording** service (`calls-offloader`) can be added to an **Integrated** or **RTCD** Calls deployment to enable recording, transcription, and live captions.
+The **Recording** service (`calls-offloader`) can optionally be added to an **RTCD** Calls deployment if you need to enable recording, transcription, and live captions.
 
 Reference architecture when using the Recording service with RTCD:
 
@@ -535,6 +535,8 @@ Now you will configure Calls following the relevant path for your deployment arc
 
 - **Path A** if you are using the **Integrated** Calls deployment model.
 - **Path B** if you are using the **RTCD** Calls deployment model.
+
+Select your path in the tab below to follow the appropriate installation and configuration instructions:
 
 ````{tab} Path A: Integrated
 
