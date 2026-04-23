@@ -77,7 +77,7 @@ Use this checklist to confirm you have the infrastructure, skills, and access re
 
 - [ ] Your Mattermost server is configured to use HTTPS.
 
-  _See [Configure TLS](https://docs.mattermost.com/deploy/server/setup-tls.html) if you need to set up HTTPS._
+  _See {doc}`Configure TLS <../../deployment-guide/server/setup-tls>` if you need to set up HTTPS._
 
 - [ ] You know how many active users you have in your current Mattermost deployment
 
@@ -322,7 +322,7 @@ Since the Mattermost server is handling all media processing, you can skip this 
 
 **RTCD**
 
-You will need to provision a new server for RTCD. Use the [performance baselines](calls-metrics-monitoring.md#performance-baselines) for benchmark examples of hardware sizing. The RTCD service supports [horizontal scaling](https://docs.mattermost.com/administration-guide/configure/calls-rtcd-setup.html#horizontal-scaling), but we recommend starting with one server and then scaling out if your expected workload requires it.
+You will need to provision a new server for RTCD. Use the [performance baselines](calls-metrics-monitoring.md#performance-baselines) for benchmark examples of hardware sizing. The RTCD service supports [horizontal scaling](calls-rtcd-setup.md#horizontal-scaling), but we recommend starting with one server and then scaling out if your expected workload requires it.
 
 **Recording**
 
@@ -804,7 +804,7 @@ Thank you for volunteering to test Mattermost Calls before a wider rollout. Afte
 
 Calls is enabled in this channel for pilot testing. You can select **Start call** in the channel header to begin, or join an existing call if one is already started.
 
-You can learn more about Mattermost Calls in the [documentation](https://docs.mattermost.com/end-user-guide/collaborate/make-calls.html).
+You can learn more about Mattermost Calls in the {doc}`documentation <../../end-user-guide/collaborate/make-calls>`.
 
 **Test Cases**
 
