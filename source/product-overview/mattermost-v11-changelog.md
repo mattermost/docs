@@ -82,6 +82,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-7-is-now-availab
  - Added a ``--workers`` flag to the mmctl import process to control concurrency.
  - Added support for listing user roles through mmctl.
  - Added support for collecting plugin metrics, namespacing them, and serving on the standarad ``/metrics`` endpoint.
+ - In the access control table editor, multi-select user attributes can now only use the "in" operator; changing the attribute on a row no longer resets the operator when both attributes are non-multi-select.
  - Added new permissions to back Self Service Agent Creation in Mattermost Agents:
     - ``manage_own_agent``: Allows users to create and manage their own agents.
     - ``manage_others_agent``: Allows users to create and manage agents they didn't create, even if that user isn't one of the administrator users assigned to the agent by the creator.
