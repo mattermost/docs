@@ -6,6 +6,51 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 ```{include} common-esr-support.md
 ```
 
+(release-v2-39-0)=
+## 2.39.0 Release
+ - Release Date: April 16, 2026
+ - Server Versions Supported: Server v10.11.0+ is required. Self-Signed SSL certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v10.11.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#extended-support-releases) (ESR) v10.5.0 has ended and upgrading to server ESR v10.11.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
+ - iPhone 8+ devices and later with iOS 16.0+ are [required](https://support.apple.com/en-il/guide/iphone/iphe3fa5df43/16.0/ios/16.0).
+
+### Improvements
+ - Added support for [AI rewrites](https://docs.mattermost.com/end-user-guide/collaborate/send-messages.html#rewrite-messages-with-ai) when Agents is enabled on the server.
+ - Permalink previews are now properly automatically translated.
+ - Added support for ``filewillbedownloaded`` and ``sendtoastmessage`` plugin APIs.
+
+### Bug Fixes
+ - Fixed an issue where option descriptions were not readable due to spacing.
+ - Fixed an issue where profile popovers did not show message/mention actions in Direct Message contexts when viewing someone other than the current Direct Message teammate (e.g., from an at-mention).
+ - Fixed an issue where updates in the roles would not be reflected in the mobile app.
+ - Fixed an issue where the connection banner did not disappear if the user had no connection to the internet.
+ - Fixed an error where changes in the channel level roles permissions were not visible in the mobile app.
+ - Fixed an issue where collapsing the **Sources** citations panel in Agent responses could briefly overlap the content below it.
+ - Fixed an issue with inconsistent permalink error messages between desktop and mobile.
+
+### Known Issues
+ - Users are unable to adjust the font size via the OS font size setting.
+ - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
+
+(release-v2-38-3)=
+## 2.38.3 Release
+ - Release Date: April 10, 2026
+ - Server Versions Supported: Server v10.11.0+ is required. Self-Signed SSL certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v10.11.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#extended-support-releases) (ESR) v10.5.0 has ended and upgrading to server ESR v10.11.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
+ - iPhone 8+ devices and later with iOS 16.0+ are [required](https://support.apple.com/en-il/guide/iphone/iphe3fa5df43/16.0/ios/16.0).
+
+### Bug Fixes
+ - Added Intune Conditional Access support.
+
+### Known Issues
+ - Users are unable to adjust the font size via the OS font size setting.
+ - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
+
 (release-v2-38-2)=
 ## 2.38.2 Release
  - Release Date: April 1, 2026
@@ -52,16 +97,16 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 
 ### Improvements
  - Added auto-translation support. Initial Beta release. Requires Enterprise Advanced license.
- - Added ability to send [Burn on Read posts](https://docs.mattermost.com/end-user-guide/collaborate/send-messages.html#send-burn-on-read-messages) from mobile app [MM-66969](https://mattermost.atlassian.net/browse/MM-66969).
+ - Added ability to send [Burn on Read posts](https://docs.mattermost.com/end-user-guide/collaborate/send-messages.html#send-burn-on-read-messages) from mobile app.
  - Updated the splash screen background graphic.
- - Added ability to edit Playbook runs and Checklist summaries [MM-66995](https://mattermost.atlassian.net/browse/MM-66995).
- - Allowed task item [renaming and editing](https://docs.mattermost.com/end-user-guide/workflow-automation/work-with-tasks.html#update-tasks) descriptions [MM-67007](https://mattermost.atlassian.net/browse/MM-67007).
- - Updated the Interactive Dialog to use Apps Form Framework [MM-64700](https://mattermost.atlassian.net/browse/MM-64700).
+ - Added ability to edit Playbook runs and Checklist summaries.
+ - Allowed task item [renaming and editing](https://docs.mattermost.com/end-user-guide/workflow-automation/work-with-tasks.html#update-tasks) descriptions.
+ - Updated the Interactive Dialog to use Apps Form Framework.
 
 ### Bug Fixes
  - Fixed an issue where the playbook menu item was not hidden when there were no runs.
  - Fixed an issue where the pre-auth secret was removed on logout.
- - Fixed an issue where Playbooks view didn’t only show the playbooks for the current team [MM-66753](https://mattermost.atlassian.net/browse/MM-66753).
+ - Fixed an issue where Playbooks view didn’t only show the playbooks for the current team.
  - Fixed an issue where the "invite to team" menu did not appear in all cases it should.
 
 ### Open Source Components
@@ -115,13 +160,13 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - iPhone 8+ devices and later with iOS 16.0+ are [required](https://support.apple.com/en-il/guide/iphone/iphe3fa5df43/16.0/ios/16.0).
 
 ### Improvements
- - Added support for [emoji picker](https://docs.mattermost.com/end-user-guide/collaborate/react-with-emojis-gifs.html#manage-emojis) on mobile [MM-53959](https://mattermost.atlassian.net/browse/MM-53959).
- - Added an option to rename playbook runs/checklists on mobile [MM-66610](https://mattermost.atlassian.net/browse/MM-66610).
- - Added support for [viewing and editing playbook run attributes](https://docs.mattermost.com/end-user-guide/workflow-automation/work-with-playbooks.html#playbook-attributes) [MM-65768](https://mattermost.atlassian.net/browse/MM-65768).
- - Added support for [deleting Playbook tasks](https://docs.mattermost.com/end-user-guide/workflow-automation/work-with-tasks.html#mobile-playbooks-task-management) from mobile [MM-67006](https://mattermost.atlassian.net/browse/MM-67006).
+ - Added support for [emoji picker](https://docs.mattermost.com/end-user-guide/collaborate/react-with-emojis-gifs.html#manage-emojis) on mobile.
+ - Added an option to rename playbook runs/checklists on mobile.
+ - Added support for [viewing and editing playbook run attributes](https://docs.mattermost.com/end-user-guide/workflow-automation/work-with-playbooks.html#playbook-attributes).
+ - Added support for [deleting Playbook tasks](https://docs.mattermost.com/end-user-guide/workflow-automation/work-with-tasks.html#mobile-playbooks-task-management) from mobile.
 
 ### Bug Fixes
- - Fixed an issue with the notification settings screen sometimes not showing updates when changing the email notifications [MM-66858](https://mattermost.atlassian.net/browse/MM-66858).
+ - Fixed an issue with the notification settings screen sometimes not showing updates when changing the email notifications.
  - Fixed an issue where the server was pinged on edit even if the pre-auth secret didn't change.
 
 ### Open Source Components
@@ -197,7 +242,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 
 ### Bug Fixes
  - Disabled Intune for Mobile v2.36.1 so that it does not crash on iOS v15 and v16.
- - Fixed an access issue to gallery tools [MM-67056](https://mattermost.atlassian.net/browse/MM-67056).
+ - Fixed an access issue to gallery tools.
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
@@ -214,20 +259,20 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - iPhone 6s devices and later with iOS 15.1+ are required.
 
 ### Improvements
- - Added [Microsoft Intune MAM integration](https://docs.mattermost.com/deployment-guide/mobile/mobile-security-features.html#microsoft-intune-mobile-application-management-mam) for iOS with multi-server support (requires Enterprise Advanced license) [MM-66736](https://mattermost.atlassian.net/browse/MM-66736).
- - Added the ability to [invite guests to a team](https://docs.mattermost.com/end-user-guide/collaborate/invite-people.html) from mobile [MM-66449](https://mattermost.atlassian.net/browse/MM-66449).
- - Added support for servers with passwordless authentication with [Magic Link for guest users](https://docs.mattermost.com/end-user-guide/access/access-your-workspace.html#magic-link-login-for-guests) (requires Enterprise license) [MM-66445](https://mattermost.atlassian.net/browse/MM-66445).
- - Added a new [Burn-on-Read message feature](https://docs.mattermost.com/end-user-guide/collaborate/send-messages.html#send-burn-on-read-messages) (requires Enterprise Advanced license) [MM-61758](https://mattermost.atlassian.net/browse/MM-61758).
- - Added AI agent streaming support with real-time message updates, reasoning summaries, tool call approval UI, citations display, and generation controls (stop/regenerate) [MM-66762](https://mattermost.atlassian.net/browse/MM-66762).
+ - Added [Microsoft Intune MAM integration](https://docs.mattermost.com/deployment-guide/mobile/mobile-security-features.html#microsoft-intune-mobile-application-management-mam) for iOS with multi-server support (requires Enterprise Advanced license).
+ - Added the ability to [invite guests to a team](https://docs.mattermost.com/end-user-guide/collaborate/invite-people.html) from mobile.
+ - Added support for servers with passwordless authentication with [Magic Link for guest users](https://docs.mattermost.com/end-user-guide/access/access-your-workspace.html#magic-link-login-for-guests) (requires Enterprise license).
+ - Added a new [Burn-on-Read message feature](https://docs.mattermost.com/end-user-guide/collaborate/send-messages.html#send-burn-on-read-messages) (requires Enterprise Advanced license).
+ - Added AI agent streaming support with real-time message updates, reasoning summaries, tool call approval UI, citations display, and generation controls (stop/regenerate).
  - Added an authentication secret field to the **Edit server** screen with validation and a show/hide toggle.
- - Updated illustrations and background styles for onboarding and authentication flows [MM-62240](https://mattermost.atlassian.net/browse/MM-62240).
- - Reduced channel banner height to provide a more compact interface and to optimize screen space usage [MM-66509](https://mattermost.atlassian.net/browse/MM-66509).
- - Added a minor visual tweak to the **Start a new run** button [MM-66485](https://mattermost.atlassian.net/browse/MM-66485). 
+ - Updated illustrations and background styles for onboarding and authentication flows.
+ - Reduced channel banner height to provide a more compact interface and to optimize screen space usage.
+ - Added a minor visual tweak to the **Start a new run** button. 
 
 ### Bug Fixes
- - Fixed an issue where a message stated that there are zero pending tasks when completing a Playbook run [MM-66695](https://mattermost.atlassian.net/browse/MM-66695).
- - Fixed an issue where users could not manage their own roles and memberships on the **Manage channel members** screen [MM-66375](https://mattermost.atlassian.net/browse/MM-66375).
- - Fixed an issue with a WebSocket event when a user burns a Burn-on-Read message for themselves [MM-66911](https://mattermost.atlassian.net/browse/MM-66911).
+ - Fixed an issue where a message stated that there are zero pending tasks when completing a Playbook run.
+ - Fixed an issue where users could not manage their own roles and memberships on the **Manage channel members** screen.
+ - Fixed an issue with a WebSocket event when a user burns a Burn-on-Read message for themselves.
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
@@ -419,8 +464,8 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - iPhone 6s devices and later with iOS 15.1+ are required.
 
 ### Bug Fixes
- - Fixed an issue where an unread thread on a Direct/Group Message would mark all teams as unread [MM-64335](https://mattermost.atlassian.net/browse/MM-64335).
- - Fixed an issue with the **Report a Problem** screen not showing all the buttons on small screens [MM-64457](https://mattermost.atlassian.net/browse/MM-64457).
+ - Fixed an issue where an unread thread on a Direct/Group Message would mark all teams as unread.
+ - Fixed an issue with the **Report a Problem** screen not showing all the buttons on small screens.
 
 (release-v2-29-0)=
 ## 2.29.0 Release
@@ -453,7 +498,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Added ``prismjs`` to https://github.com/mattermost/mattermost-mobile.
 
 ### Known Issues
- - "Report a problem" page sometimes gets cut off at the bottom [MM-64457](https://mattermost.atlassian.net/browse/MM-64457).
+ - "Report a problem" page sometimes gets cut off at the bottom.
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
 
@@ -495,8 +540,8 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Added ``@shopify/flash-list`` to https://github.com/mattermost/mattermost-mobile.
 
 ### Known Issues
- - Animation delay when clearing textbox after post is sent [MM-64243](https://mattermost.atlassian.net/browse/MM-64243).
- - iOS: Inline images with size specified fail to post [MM-63927](https://mattermost.atlassian.net/browse/MM-63927).
+ - Animation delay when clearing textbox after post is sent.
+ - iOS: Inline images with size specified fail to post.
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
 
@@ -511,7 +556,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - iPhone 6s devices and later with iOS 15.1+ are required.
 
 ### Bug Fixes
- - Calls: fixed a regression that caused unmuting to fail when running the latest app against an older plugin version (earlier than v1.7.0) [MM-63889](https://mattermost.atlassian.net/browse/MM-63889).
+ - Calls: fixed a regression that caused unmuting to fail when running the latest app against an older plugin version (earlier than v1.7.0).
 
 (release-v2-27-0)=
 ## 2.27.0 Release
@@ -535,9 +580,9 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Fixed an issue with scrolling lists inside the bottom menu.
 
 ### Known Issues
- - (Android) Autocomplete suggestions are not available for at-mentions for out of channel members (as well as in-channel members) [MM-63594](https://mattermost.atlassian.net/browse/MM-63594).
- - (Android) Autocomplete does not show up when typing ``+:taco`` in "write to" input box [MM-63592](https://mattermost.atlassian.net/browse/MM-63592).
- - Custom themes cannot be applied on mobile [MM-63596](https://mattermost.atlassian.net/browse/MM-63596).
+ - (Android) Autocomplete suggestions are not available for at-mentions for out of channel members (as well as in-channel members).
+ - (Android) Autocomplete does not show up when typing ``+:taco`` in "write to" input box.
+ - Custom themes cannot be applied on mobile.
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
 
@@ -962,7 +1007,7 @@ Note: Mattermost Mobile App v2.17.0 contains low to medium level security fixes.
  - Removed ``@formatjs/intl-relativetimeformat``, ``@tsconfig/react-native``, ``react-native-android-open-settings``, ``readable-stream``, ``serialize-error``, and ``shallow-equals`` from https://github.com/mattermost/mattermost-mobile.
 
 ### Known Issues
- - "Not in channel" section was unexpectedly removed from the user autocomplete results [MM-58508](https://mattermost.atlassian.net/browse/MM-58508).
+ - "Not in channel" section was unexpectedly removed from the user autocomplete results.
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
 
@@ -1124,7 +1169,7 @@ Note: Mattermost Mobile App v2.12.1 contains a medium level security fix. Updati
  - Added ``@formatjs/intl-listformat`` and ``path-to-regexp``, and removed ``@nozbe/with-observables``, ``@react-native/eslint-config`` and ``@react-native/metro-config`` from https://github.com/mattermost/mattermost-mobile.
 
 ### Known Issues
- - Popovers, such as emoji selectors and the channel context menu, may be non-functional in the mobile app [MM-56582](https://mattermost.atlassian.net/browse/MM-56582). A workaround is to disable the **Reduce Motion** accessibility option in your device settings and then re-launch the app.
+ - Popovers, such as emoji selectors and the channel context menu, may be non-functional in the mobile app. A workaround is to disable the **Reduce Motion** accessibility option in your device settings and then re-launch the app.
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
 
@@ -1240,7 +1285,7 @@ Note: Mattermost Mobile App v2.10.1 contains a high level security fix. Updating
  - Removed ``@rudderstack/rudder-sdk-react-native`` from https://github.com/mattermost/mattermost-mobile/.
 
 ### Known Issues
- - "Removed from channel" message is shown when a Direct Message channel is converted to a private channel [MM-54525](https://mattermost.atlassian.net/browse/MM-54525).
+ - "Removed from channel" message is shown when a Direct Message channel is converted to a private channel.
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
 
@@ -1314,7 +1359,7 @@ Mattermost Mobile App v2.8.0 contains a medium level security fix. Updating is r
  - Fixed a potential issue causing Calls sessions to be stuck.
 
 ### Known Issues
- - The **Following** button in the Thread view wraps incorrectly [MM-54499](https://mattermost.atlassian.net/browse/MM-54499).
+ - The **Following** button in the Thread view wraps incorrectly.
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
 
@@ -1557,7 +1602,7 @@ Mattermost Mobile App v2.8.0 contains a medium level security fix. Updating is r
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
- - Moving posts with the Wrangler plugin causes database "Unique key" errors [MM-44960](https://mattermost.atlassian.net/browse/MM-44960).
+ - Moving posts with the Wrangler plugin causes database "Unique key" errors.
  - Some pixel phones on Android 12+ might not go past the login screen. This is a known issue with the OS and the current workaround is to restart the device.
 
 ----
@@ -1593,10 +1638,10 @@ Mattermost Mobile App v2.8.0 contains a medium level security fix. Updating is r
  - Added ``@gorhom/bottom-sheet`` and ``react-native-walkthrough-tooltip`` https://github.com/mattermost/mattermost-mobile.
 
 ### Known Issues
- - Selecting an item from autocomplete doubles tilde and slash characters [MM-50351](https://mattermost.atlassian.net/browse/MM-50351).
+ - Selecting an item from autocomplete doubles tilde and slash characters.
  - Users are unable to adjust the font size via the OS font size setting.
- - Drafts are lost when following a notification [MM-47373](https://mattermost.atlassian.net/browse/MM-47373).
- - Moving posts with the Wrangler plugin causes database "Unique key" errors [MM-44960](https://mattermost.atlassian.net/browse/MM-44960).
+ - Drafts are lost when following a notification.
+ - Moving posts with the Wrangler plugin causes database "Unique key" errors.
  - Some pixel phones on Android 12+ might not go past the login screen. This is a known issue with the OS and the current workaround is to restart the device.
 
 ----
@@ -1635,12 +1680,12 @@ Mattermost Mobile App v2.8.0 contains a medium level security fix. Updating is r
  - Fixed an issue where a crash occurred when attempting to download a profile image.
  
 ### Known Issues
- - Selecting an item from autocomplete doubles tilde and slash characters [MM-50351](https://mattermost.atlassian.net/browse/MM-50351).
+ - Selecting an item from autocomplete doubles tilde and slash characters.
  - Users are unable to adjust the font size via the OS font size setting.
- - **Manage Members** modal is not yet added [MM-48489](https://mattermost.atlassian.net/browse/MM-48489).
- - Posts may remain in the local device database after data retention job has been run [MM-47548](https://mattermost.atlassian.net/browse/MM-47548).
- - Drafts are lost when following a notification [MM-47373](https://mattermost.atlassian.net/browse/MM-47373).
- - Moving posts with the Wrangler plugin causes database "Unique key" errors [MM-44960](https://mattermost.atlassian.net/browse/MM-44960).
+ - **Manage Members** modal is not yet added.
+ - Posts may remain in the local device database after data retention job has been run.
+ - Drafts are lost when following a notification.
+ - Moving posts with the Wrangler plugin causes database "Unique key" errors.
  - Some pixel phones on Android 12+ might not go past the login screen. This is a known issue with the OS and the current workaround is to restart the device.
 
 ----
@@ -1669,13 +1714,13 @@ Users now gain a more reliable and feature-rich application, improving their exp
 ### Known Issues
  - Landscape mode doesn't work on Android tablets.
  - Users are unable to adjust the font size via the OS font size setting.
- - **Add Members** and **Manage Members** modals are not yet added [MM-48489](https://mattermost.atlassian.net/browse/MM-48489).
- - Posts may remain in the local device database after data retention job has been run [MM-47548](https://mattermost.atlassian.net/browse/MM-47548).
- - Drafts are lost when following a notification [MM-47373](https://mattermost.atlassian.net/browse/MM-47373).
- - Moving posts with the Wrangler plugin causes database "Unique key" errors [MM-44960](https://mattermost.atlassian.net/browse/MM-44960).
+ - **Add Members** and **Manage Members** modals are not yet added.
+ - Posts may remain in the local device database after data retention job has been run.
+ - Drafts are lost when following a notification.
+ - Moving posts with the Wrangler plugin causes database "Unique key" errors.
  - Some pixel phones on Android 12+ might not go past the login screen. This is a known issue with the OS and the current workaround is to restart the device.
- - The app crashes when uploading a PDF file [MM-49707](https://mattermost.atlassian.net/browse/MM-49707).
- - The ``timeoutVPN`` values are not converted from milliseconds to seconds in v2 [MM-49722](https://mattermost.atlassian.net/browse/MM-49722).
+ - The app crashes when uploading a PDF file.
+ - The ``timeoutVPN`` values are not converted from milliseconds to seconds in v2.
 
 ----
 
@@ -1947,7 +1992,7 @@ Users now gain a more reliable and feature-rich application, improving their exp
  - Fixed an issue with Collapsed Reply Threads where link previews disappeared when a thread was created.
 
 ### Known Issues
- - Some files (such as PDFs) fail to open/download on v1.49.0 [MM-41968](https://mattermost.atlassian.net/browse/MM-41968).
+ - Some files (such as PDFs) fail to open/download on v1.49.0.
  - Channel sidebar disappears sometimes when the channel categories are not fetched from the server.
  - Posts sometimes get stuck behind the post textbox on iPad.
  - Various known issues with Collapsed Reply Threads (Beta) feature:
@@ -2290,7 +2335,7 @@ Due to the upgrade to Emoji 13.0, some emojis may be missing on Android older th
  - Fixed an animation transition when displaying the options menu on iOS.
 
 ### Known Issues
- - Android app doesn't group notifications properly [MM-37134](https://mattermost.atlassian.net/browse/MM-37134).
+ - Android app doesn't group notifications properly.
 
 ----
 
@@ -3235,7 +3280,7 @@ Mattermost Mobile App v1.30.0 contains a high level security fix. [Upgrading](ht
  - Fixed an issue where system message mentions were not at 100% opacity compared to non-system messages.
  
 ### Known Issues
- - Text box obstructs bottom part of messages in Direct Message channels when opened from a notification banner. [MM-21276](https://mattermost.atlassian.net/browse/MM-21276)
+ - Text box obstructs bottom part of messages in Direct Message channels when opened from a notification banner.
 
 ----
 
@@ -3372,7 +3417,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
  - Fixed an issue where ``mobile.message_length.message`` did not match webapp's ``create_post.error_message``.
  
 ### Known Issues
- - App slows down when opening a channel with large number of animated emoji. [MM-15792](https://mattermost.atlassian.net/browse/MM-15792)
+ - App slows down when opening a channel with large number of animated emoji.
 
 ----
 
@@ -3428,7 +3473,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
  - Fixed an issue where a themed "Delete Documents & Data" action flashed a white screen.
 
 ### Known Issues
- - App slows down when opening a channel with large number of animated emoji. [MM-15792](https://mattermost.atlassian.net/browse/MM-15792)
+ - App slows down when opening a channel with large number of animated emoji.
 
 ----
 
@@ -3475,8 +3520,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
  - Fixed an issue with an incorrect UI text for location of touch ID setting.
  
 ### Known Issues
-  - App slows down when opening a channel with large number of animated emoji. [MM-15792](https://mattermost.atlassian.net/browse/MM-15792)
-  - When users are deactivated, they are not immediately removed from the mention auto-complete. [MM-17953](https://mattermost.atlassian.net/browse/MM-17953)
+  - App slows down when opening a channel with large number of animated emoji.
+  - When users are deactivated, they are not immediately removed from the mention auto-complete.
 
 ----
 
@@ -3536,8 +3581,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
  - Fixed an issue where users' profile picture and name did not get updated after websocket disconnect.
  
 ### Known Issues
-  - App slows down when opening a channel with large number of animated emoji. [MM-15792](https://mattermost.atlassian.net/browse/MM-15792)
-  - Some Giphy actions do not work in ephemeral posts. [MM-17842](https://mattermost.atlassian.net/browse/MM-17842)
+  - App slows down when opening a channel with large number of animated emoji.
+  - Some Giphy actions do not work in ephemeral posts.
 
 ----
 
@@ -3595,9 +3640,9 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
  - Fixed an issue on Android where users could not reply to a push notification if the mention was in a thread message.
 
 ### Known Issues
-  - (Android) On subpath server, logging in using GitLab or OneLogin fails to display Mattermost. [MM-16829](https://mattermost.atlassian.net/browse/MM-16829)
-  - Buttons inside ephemeral posts are not clickable / functional on the mobile app. [MM-15084](https://mattermost.atlassian.net/browse/MM-15084)
-  - Android apps slow down when opening a channel with large number of animated emoji. [MM-15792](https://mattermost.atlassian.net/browse/MM-15792)
+  - (Android) On subpath server, logging in using GitLab or OneLogin fails to display Mattermost.
+  - Buttons inside ephemeral posts are not clickable / functional on the mobile app.
+  - Android apps slow down when opening a channel with large number of animated emoji.
 
 ----
 
@@ -3676,8 +3721,8 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
  - Fixed an issue where "Show More" was not removed after the post was edited to a single line.
  
 ### Known Issues
-  - Buttons inside ephemeral posts are not clickable / functional on the mobile app. [MM-15084](https://mattermost.atlassian.net/browse/MM-15084)
-  - App slows down when opening a channel with large number of animated emoji. [MM-15792](https://mattermost.atlassian.net/browse/MM-15792)
+  - Buttons inside ephemeral posts are not clickable / functional on the mobile app.
+  - App slows down when opening a channel with large number of animated emoji.
  
  ----
 
@@ -4578,7 +4623,7 @@ Server Versions Supported: Server v4.0+ is required, Self-Signed SSL Certificate
 - Updated navigation to have smoother transitions 
 
 ### Known Issues
-- [Android: Swipe to close in-app notifications does not work](https://mattermost.atlassian.net/browse/RN-45)
+- Android: Swipe to close in-app notifications does not work
 - Apps are not yet at feature parity for desktop, so features not mentioned in the changelog are not yet supported
 
 ### Contributors
