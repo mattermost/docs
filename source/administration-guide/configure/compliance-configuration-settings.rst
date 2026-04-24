@@ -152,7 +152,7 @@ Time between batches
 
 The time in milliseconds between batches processed during data retention job execution. This setting helps control the rate at which data is deleted to reduce database load during retention operations.
 
-Default is 100 milliseconds. Possible values are any positive integer (≥ 0).
+Default is 100 milliseconds. Possible values are any non-negative integer (≥ 0).
 
 +--------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"TimeBetweenBatchesMilliseconds": 100`` with numerical input.                |
@@ -170,7 +170,7 @@ Retention IDs batch size
 
 The number of retention IDs to process in a single batch during data retention job execution. This setting controls how many items are processed together for optimal performance.
 
-Default is 100. Possible values are any positive integer (≥ 0).
+Default is 100. Possible values are any non-negative integer (≥ 0).
 
 +-----------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RetentionIdsBatchSize": 100`` with numerical input.          |
@@ -186,7 +186,7 @@ Default is 100. Possible values are any positive integer (≥ 0).
 Boards retention days
 ~~~~~~~~~~~~~~~~~~~~~
 
-Set how long Mattermost keeps boards data. When set to a value greater than 0, boards data older than the specified number of days will be deleted during retention job execution.
+Set how long Mattermost keeps boards data. When set to a value greater than 0, boards data older than the specified number of days will be deleted during retention job execution only when boards deletion is enabled via ``EnableBoardsDeletion``.
 
 Default is 365 days. Possible values are any non-negative integer (≥ 0).
 
@@ -278,7 +278,7 @@ Batch size
 
 The number of records to process in a single batch during data retention job execution. This setting controls how many records are processed together for optimal performance.
 
-Default is 3000. Possible values are any positive integer (≥ 0).
+Default is 3000. Possible values are any non-negative integer (≥ 0).
 
 +-------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"BatchSize": 3000`` with numerical input.           |
