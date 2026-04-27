@@ -9,7 +9,9 @@
 ```{include} common-esr-support-upgrade.md
 ```
 
-**Note:** Platform and OS scope reflects reported and tested environments and may not represent all affected configurations.
+```{note}
+Platform and OS scope reflects reported and tested environments and may not represent all affected configurations.
+```
 
 (release-v11.6-feature-release)=
 ## Release v11.6 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
