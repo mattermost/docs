@@ -628,7 +628,77 @@ Then on any node:
 Day-2 operations
 ----------------
 
-[stub]
+Check cluster status
+~~~~~~~~~~~~~~~~~~~~
+
+Run on any node:
+
+.. code-block:: bash
+
+   sudo -u postgres repmgr -f /etc/repmgr.conf cluster show
+
+Expected healthy output shows one ``* running`` primary and two ``running`` standbys.
+
+Check replication lag
+~~~~~~~~~~~~~~~~~~~~~
+
+Run on the primary:
+
+.. code-block:: bash
+
+   sudo -u postgres psql -c "
+   SELECT client_addr, application_name, state,
+          pg_size_pretty(pg_wal_lsn_diff(pg_current_wal_lsn(), replay_lsn)) AS lag
+   FROM pg_stat_replication;"
+
+Normal lag is under 1 MB during steady state. Lag growing continuously
+indicates a replication problem — check network connectivity and standby
+PostgreSQL logs.
+
+Controlled switchover (planned maintenance)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To move the primary role to a standby with zero data loss:
+
+.. code-block:: bash
+
+   # Run on the TARGET standby (e.g. pg2)
+   sudo -u postgres repmgr -f /etc/repmgr.conf standby switchover
+
+repmgr will demote the old primary and promote this node. The VIP and HAProxy
+will follow automatically.
+
+Add a standby node
+~~~~~~~~~~~~~~~~~~
+
+1. Provision a new server and complete Phases 1–2 of the setup guide.
+2. Create ``/etc/repmgr.conf`` with the next available ``node_id``.
+3. On the new node:
+
+   .. code-block:: bash
+
+      sudo systemctl stop postgresql
+      sudo -u postgres repmgr -h <PRIMARY_IP> -U repmgr -d repmgr \
+          -f /etc/repmgr.conf standby clone --delete-existing-pgdata
+      sudo systemctl start postgresql
+      sudo -u postgres repmgr -f /etc/repmgr.conf standby register
+
+4. Add the new node to ``/etc/haproxy/haproxy.cfg`` on all existing nodes and
+   reload HAProxy: ``sudo systemctl reload haproxy``.
+
+Rejoin a failed node
+~~~~~~~~~~~~~~~~~~~~
+
+After recovering a failed standby:
+
+.. code-block:: bash
+
+   sudo -u postgres repmgr -f /etc/repmgr.conf node rejoin \
+       --force-rewind --config-files=postgresql.conf,pg_hba.conf
+
+After rejoining a failed primary (after automatic failover has already promoted
+a new primary), run the same command on the old primary to re-register it as a
+standby.
 
 Troubleshooting
 ---------------
