@@ -74,7 +74,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-7-is-now-availab
  - Added support for Elasticsearch v9 alongside v8. Elasticsearch v7 is no longer supported.
  - Fail-fast requests are now done to the Elasticsearch/Opensearch cluster when it is down.
  - Added a new ``mattermost_search_engine_status`` metric that reports whether the Elasticsearch/Opensearch cluster is healthy (value = 1) or not (value = 0). If the cluster is not enabled, its value is reported as 1.
- - Added logic to monitor the health of Elasticsearch/Opensearch clusters to implement a retry mechanism.
+ - Added [logic](https://docs.mattermost.com/administration-guide/scale/common-configure-mattermost-for-enterprise-search.html) to monitor the health of Elasticsearch/Opensearch clusters to implement a retry mechanism.
  - Updated URL validation in integration actions to make them more secure.
  - Added a new built-in delegated administration role: Shared Channel Manager. This role allows System Admins to delegate Connected Workspaces management to specific users without granting full system administration access.
  - Shared Channels related errors now appear in the main log file by default.
