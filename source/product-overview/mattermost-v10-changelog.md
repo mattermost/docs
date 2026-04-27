@@ -9,7 +9,9 @@
 ```{include} common-esr-support-upgrade.md
 ```
 
-**Note:** Platform and OS scope reflects reported and tested environments and may not represent all affected configurations.
+```{note}
+Platform and OS scope reflects reported and tested environments and may not represent all affected configurations.
+```
 
 (release-v10.12-feature-release)=
 ## Release v10.12 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
@@ -191,7 +193,7 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
   - Fixed an issue where the content of webhook posts did not display.
   - Mattermost v10.11.2 contains no database or functional changes.
 - **10.11.1, released 2025-08-15**
-  - Fixed an issue with login being kept in a web view instead of redirecting to the mobile app when using OAuth for login (reported on iOS / Android).
+  - Fixed an issue with login being kept in a web view instead of redirecting to the mobile app when using OAuth for login (reported on iOS and Android).
   - Upgraded to go1.24.5, and reverted to bullseye to maintain glibc <2.34 compatibility for older deployment environments.
   - Mattermost v10.11.1 contains no database or functional changes.
 - **10.11.0, released 2025-08-15**
@@ -363,7 +365,7 @@ If you upgrade from a release earlier than v10.9, please read the other [Importa
  - Fixed an issue where the emoji picker focus did not return to button when not selecting an emoji.
  - Fixed the label in notification settings for the notification sound combo box.
  - Fixed an issue where an incorrect username and email were shown for remote users.
- - Fixed an issue with the keyboard navigation in the user settings sidebar (reported on Firefox / MacOS).
+ - Fixed an issue with the keyboard navigation in the user settings sidebar (reported on Firefox / macOS).
 
 ### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
@@ -475,7 +477,7 @@ If you upgrade from a release earlier than v10.8, please read the other [Importa
  - Fixed several accessibility issues across the login process, account creation, and MFA setup.
  - Fixed an issue where horizontal rule (HR) elements were not visible in preview mode in the right-hand sidebar (RHS).
  - Fixed an issue with inconsistent sizing of markdown images in preview mode.
- - Fixed a keyboard navigation issue within thread items (reported on Firefox / MacOS).
+ - Fixed a keyboard navigation issue within thread items (reported on Firefox / macOS).
  - Fixed layout issues with the emoji picker on mobile browsers.
  - Fixed an issue with the positioning of **Edited** text and tooltips in certain scenarios.
  - Fixed the accessibility of the search box.
