@@ -293,16 +293,26 @@ Append to ``/etc/postgresql/17/main/pg_hba.conf``:
 .. code-block:: text
 
    # repmgr access
-   host    repmgr      repmgr      <SUBNET>/24     trust
-   host    repmgr      repmgr      127.0.0.1/32    trust
+   host    repmgr      repmgr      <SUBNET>/24     scram-sha-256
+   host    repmgr      repmgr      127.0.0.1/32    scram-sha-256
    # Replication connections
-   host    replication repmgr      <SUBNET>/24     trust
-   host    replication repmgr      127.0.0.1/32    trust
+   host    replication repmgr      <SUBNET>/24     scram-sha-256
+   host    replication repmgr      127.0.0.1/32    scram-sha-256
 
-.. note::
+Create a ``.pgpass`` file on each node so repmgr can authenticate without
+an interactive password prompt:
 
-   For production, replace ``trust`` with ``scram-sha-256`` and configure
-   ``.pgpass`` files on each node.
+.. code-block:: bash
+
+   echo "*:*:repmgr:repmgr:<YOUR_REPMGR_PASSWORD>" >> ~/.pgpass
+   chmod 600 ~/.pgpass
+
+.. warning::
+
+   **Lab and testing only:** If you want to skip password authentication for
+   initial setup, you can temporarily use ``trust`` instead of
+   ``scram-sha-256``. Do not use ``trust`` in production — it allows
+   passwordless connections from any host on the subnet.
 
 **Step 2.3 — Restart PostgreSQL**
 
@@ -326,11 +336,21 @@ Phase 3: repmgr configuration and cluster initialisation
 
 **Step 3.1 — Create repmgr user and database (pg1 only)**
 
+.. note::
+
+   repmgr requires superuser privileges to perform certain cluster operations
+   including ``pg_rewind`` (used to resync a failed primary as a standby) and
+   event notifications. If your security policy prohibits superuser accounts,
+   refer to the `repmgr documentation on permissions
+   <https://repmgr.org/docs/repmgr.html#CONFIGURATION-PERMISSIONS>`__ for the
+   minimum required grants.
+
 .. code-block:: bash
 
    sudo -u postgres createuser --superuser repmgr
    sudo -u postgres createdb --owner=repmgr repmgr
    sudo -u postgres psql -c "ALTER USER repmgr SET search_path TO repmgr, public;"
+   sudo -u postgres psql -c "ALTER USER repmgr PASSWORD '<YOUR_REPMGR_PASSWORD>';"
 
 **Step 3.2 — Create /etc/repmgr.conf (all nodes)**
 
@@ -480,9 +500,87 @@ Replace ``/etc/haproxy/haproxy.cfg``:
 node is the primary and ``503`` otherwise. HAProxy queries port 8008 on each
 node to determine where to route connections.
 
-Copy ``pgchk.py`` from the
-`ha-postgres-reprmgr-haproxy repository <https://github.com/sadohert/ha-postgres-reprmgr-haproxy>`__
-to ``/usr/local/bin/pgchk.py`` on each node and make it executable:
+On each node, create ``/usr/local/bin/pgchk.py`` with the following content:
+
+.. code-block:: python
+
+   #!/usr/bin/env python3
+   import subprocess
+   from http.server import BaseHTTPRequestHandler, HTTPServer
+   import argparse
+
+   DEFAULT_PORT = 8008
+   PG_USER = "postgres"
+   PG_DB = "postgres"
+   PG_PORT = "5432"
+
+   class PostgresHealthCheckHandler(BaseHTTPRequestHandler):
+       def safe_write(self, data):
+           try:
+               self.wfile.write(data)
+           except (BrokenPipeError, ConnectionResetError):
+               pass
+
+       def check_postgres_status(self):
+           try:
+               cmd = ["psql", "-U", PG_USER, "-d", PG_DB, "-p", PG_PORT,
+                      "-t", "-c", "SELECT pg_is_in_recovery();"]
+               result = subprocess.run(cmd, capture_output=True, text=True, timeout=5)
+               if result.returncode != 0:
+                   return None
+               output = result.stdout.strip()
+               if output == 't':
+                   return True   # Standby
+               elif output == 'f':
+                   return False  # Primary
+               return None
+           except Exception:
+               return None
+
+       def do_GET(self):
+           status = self.check_postgres_status()
+           if status is None:
+               self.send_response(503)
+               self.end_headers()
+               self.safe_write(b"PostgreSQL Unreachable\n")
+               return
+           if self.path in ('/', '/master'):
+               if not status:
+                   self.send_response(200); self.end_headers()
+                   self.safe_write(b"OK - Primary\n")
+               else:
+                   self.send_response(503); self.end_headers()
+                   self.safe_write(b"Service Unavailable - Not Primary\n")
+           elif self.path == '/replica':
+               if status:
+                   self.send_response(200); self.end_headers()
+                   self.safe_write(b"OK - Replica\n")
+               else:
+                   self.send_response(503); self.end_headers()
+                   self.safe_write(b"Service Unavailable - Not Replica\n")
+           else:
+               self.send_response(404); self.end_headers()
+               self.safe_write(b"Not Found\n")
+
+       def log_message(self, format, *args):
+           pass
+
+   def run(port=DEFAULT_PORT):
+       httpd = HTTPServer(('', port), PostgresHealthCheckHandler)
+       print(f"Starting PostgreSQL Health Check on port {port}...")
+       try:
+           httpd.serve_forever()
+       except KeyboardInterrupt:
+           pass
+       httpd.server_close()
+
+   if __name__ == '__main__':
+       parser = argparse.ArgumentParser(description='PostgreSQL Health Check for HAProxy')
+       parser.add_argument('--port', type=int, default=DEFAULT_PORT)
+       args = parser.parse_args()
+       run(port=args.port)
+
+Make the script executable:
 
 .. code-block:: bash
 
@@ -517,14 +615,24 @@ Create ``/etc/systemd/system/pgchk.service``:
 
    sudo apt install -y keepalived
 
-Create ``/etc/keepalived/keepalived.conf``. Set the ``priority`` field: pg1 gets
-``101``, pg2 gets ``100``, pg3 gets ``99``. Set ``virtual_ipaddress`` to your VIP:
+First, identify the name of the network interface that carries your node's IP address:
+
+.. code-block:: bash
+
+   ip -o link show | awk '{print $2, $9}' | grep UP
+
+Note the interface name (e.g. ``ens3``, ``enp3s0``, ``eth0``). You will use it in
+the next step.
+
+Create ``/etc/keepalived/keepalived.conf``. Replace ``<INTERFACE>`` with the
+interface name from the previous step. Set ``priority``: pg1 gets ``101``,
+pg2 gets ``100``, pg3 gets ``99``. Set ``virtual_ipaddress`` to your VIP:
 
 .. code-block:: text
 
    vrrp_instance VI_1 {
        state BACKUP
-       interface eth0
+       interface <INTERFACE>
        virtual_router_id 51
        priority 101
        advert_int 1

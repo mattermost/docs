@@ -30,8 +30,8 @@ Moreover, search replicas are also supported to handle search queries.
 Deployment guide
 ----------------
 
-Set up and maintain a high availability cluster-based deployment on your Mattermost servers. This document doesn't cover the configuration of databases in terms of
-disaster recovery. For self-hosted deployments requiring database-level HA,
+Set up and maintain a high availability cluster-based deployment on your Mattermost servers. Database-level HA and disaster recovery design are out of scope for this document.
+For self-hosted deployments requiring database-level HA,
 see :doc:`PostgreSQL high availability cluster </administration-guide/scale/postgres-ha-cluster>`.
 
 To ensure your instance and configuration are compatible with a high availability cluster-based deployment, please review the `configuration and compatibility`_ section.
