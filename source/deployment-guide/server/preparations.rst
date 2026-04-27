@@ -109,7 +109,7 @@ PostgreSQL v14+ is required for Mattermost server installations. :doc:`MySQL dat
 
 .. important::
 
-  If you are upgrading a major version of Postgres, ensure that ``ANALYZE VERBOSE`` is run on the database post upgrade. This is required to re-populate the ``pg_statistics`` table used to generate optimal query plans. Database performance may suffer if this step is skipped.
+  If you are upgrading a major version of PostgreSQL, see :doc:`Upgrade PostgreSQL </administration-guide/upgrade/upgrading-postgres>` for the full upgrade procedure and post-upgrade steps.
 
 Once you've completed the database preparation, return to the :doc:`Linux deployment </deployment-guide/server/deploy-linux>` documentation to continue with your Mattermost server installation.
 
