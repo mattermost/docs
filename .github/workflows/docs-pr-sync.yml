@@ -27,9 +27,10 @@ jobs:
     name: Remove docs/needed · Add docs/done on dev PR
     runs-on: ubuntu-latest
     # Branch name encodes the source repo — only run for branches created by
-    # docs-needed.yml across the three source repos.
+    # docs-needed.yml across the three source repos in this repository.
     if: |
-      startsWith(github.event.pull_request.head.ref, 'docs/')
+      startsWith(github.event.pull_request.head.ref, 'docs/') &&
+      github.event.pull_request.head.repo.full_name == github.repository
  
     steps:
       # ── 1. Parse dev PR reference from branch name ────────────────────────
