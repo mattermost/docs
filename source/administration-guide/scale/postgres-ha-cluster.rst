@@ -321,6 +321,110 @@ Append to ``/etc/postgresql/17/main/pg_hba.conf``:
 
 **Fail:** If PostgreSQL did not restart, check ``journalctl -u postgresql``.
 
+Phase 3: repmgr configuration and cluster initialisation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Step 3.1 — Create repmgr user and database (pg1 only)**
+
+.. code-block:: bash
+
+   sudo -u postgres createuser --superuser repmgr
+   sudo -u postgres createdb --owner=repmgr repmgr
+   sudo -u postgres psql -c "ALTER USER repmgr SET search_path TO repmgr, public;"
+
+**Step 3.2 — Create /etc/repmgr.conf (all nodes)**
+
+Create ``/etc/repmgr.conf`` on each node. Adjust ``node_id``, ``node_name``,
+and ``host`` for each node:
+
+**pg1:**
+
+.. code-block:: ini
+
+   node_id=1
+   node_name='pg1'
+   conninfo='host=<PG1_IP> user=repmgr dbname=repmgr connect_timeout=2'
+   data_directory='/var/lib/postgresql/17/main'
+   use_replication_slots=yes
+   monitoring_history=yes
+   log_level=INFO
+   pg_bindir='/usr/lib/postgresql/17/bin'
+   service_start_command='sudo /usr/bin/pg_ctlcluster 17 main start'
+   service_stop_command='sudo /usr/bin/pg_ctlcluster 17 main stop'
+   service_restart_command='sudo /usr/bin/pg_ctlcluster 17 main restart'
+   service_reload_command='sudo /usr/bin/pg_ctlcluster 17 main reload'
+   service_promote_command='sudo /usr/bin/pg_ctlcluster 17 main promote'
+   failover=automatic
+   promote_command='repmgr standby promote -f /etc/repmgr.conf --log-to-file'
+   follow_command='repmgr standby follow -f /etc/repmgr.conf --log-to-file --upstream-node-id=%n'
+   reconnect_attempts=3
+   reconnect_interval=5
+   monitor_interval_secs=2
+
+**pg2:** Same as above with ``node_id=2``, ``node_name='pg2'``, ``host=<PG2_IP>``.
+
+**pg3:** Same as above with ``node_id=3``, ``node_name='pg3'``, ``host=<PG3_IP>``.
+
+**Step 3.3 — Register primary (pg1 only)**
+
+.. code-block:: bash
+
+   sudo -u postgres repmgr -f /etc/repmgr.conf primary register
+
+**Step 3.4 — Clone standbys (pg2 and pg3)**
+
+Run on **pg2**, then **pg3**:
+
+.. code-block:: bash
+
+   sudo systemctl stop postgresql
+   sudo -u postgres repmgr -h <PG1_IP> -U repmgr -d repmgr \
+       -f /etc/repmgr.conf standby clone --delete-existing-pgdata
+   sudo systemctl start postgresql
+   sudo -u postgres repmgr -f /etc/repmgr.conf standby register
+
+**Step 3.5 — Start repmgrd (all nodes)**
+
+Create ``/etc/systemd/system/repmgrd.service``:
+
+.. code-block:: ini
+
+   [Unit]
+   Description=repmgr daemon
+   After=postgresql.service
+   Requires=postgresql.service
+
+   [Service]
+   User=postgres
+   ExecStart=/usr/lib/postgresql/17/bin/repmgrd -f /etc/repmgr.conf --no-daemonize
+   Restart=on-failure
+
+   [Install]
+   WantedBy=multi-user.target
+
+.. code-block:: bash
+
+   sudo systemctl daemon-reload
+   sudo systemctl enable repmgrd
+   sudo systemctl start repmgrd
+
+✅ **Phase 3 checkpoint** — run on any node:
+
+.. code-block:: bash
+
+   sudo -u postgres repmgr -f /etc/repmgr.conf cluster show
+
+**Pass:** Output shows all three nodes — pg1 as ``* running`` (primary), pg2 and
+pg3 as ``running`` (standby). On pg1, the following query returns 2 rows:
+
+.. code-block:: bash
+
+   sudo -u postgres psql -c "SELECT client_addr, state FROM pg_stat_replication;"
+
+**Fail:** A standby showing ``! running`` means replication did not establish.
+Check ``journalctl -u postgresql`` on the failed standby. Common cause: firewall
+blocking port 5432 between nodes.
+
 Day-2 operations
 ----------------
 
