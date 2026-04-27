@@ -50,6 +50,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 - Fixed a crash that could occur when the main window was closed while server views were still sending status updates.
 - Fixed an issue where clicking custom protocol links could open the target application with a malformed URL.
 - Fixed an issue where the **Settings** modal could not be opened when no servers were configured.
+- Fixed an issue where overly long URLs were not handled correctly.
 
 ### Open Source Components
 
