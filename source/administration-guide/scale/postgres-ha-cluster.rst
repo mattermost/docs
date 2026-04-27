@@ -425,6 +425,142 @@ pg3 as ``running`` (standby). On pg1, the following query returns 2 rows:
 Check ``journalctl -u postgresql`` on the failed standby. Common cause: firewall
 blocking port 5432 between nodes.
 
+Phase 4: HAProxy, health check, and VIP (all nodes)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Run all steps in Phase 4 on **pg1, pg2, and pg3**.
+
+**Step 4.1 — Install HAProxy**
+
+.. code-block:: bash
+
+   sudo apt install -y haproxy
+
+**Step 4.2 — Configure HAProxy**
+
+Replace ``/etc/haproxy/haproxy.cfg``:
+
+.. code-block:: text
+
+   global
+       log /dev/log local0
+       maxconn 4000
+
+   defaults
+       log global
+       mode tcp
+       timeout connect 5s
+       timeout client 30s
+       timeout server 30s
+
+   frontend pg_write
+       bind *:5000
+       default_backend pg_primary
+
+   frontend pg_read
+       bind *:5001
+       default_backend pg_replicas
+
+   backend pg_primary
+       option tcp-check
+       server pg1 <PG1_IP>:5432 check port 8008
+       server pg2 <PG2_IP>:5432 check port 8008 backup
+       server pg3 <PG3_IP>:5432 check port 8008 backup
+
+   backend pg_replicas
+       balance roundrobin
+       option tcp-check
+       server pg2 <PG2_IP>:5432 check port 8008
+       server pg3 <PG3_IP>:5432 check port 8008
+       server pg1 <PG1_IP>:5432 check port 8008 backup
+
+**Step 4.3 — Deploy pgchk.py**
+
+``pgchk.py`` is a lightweight HTTP server that returns ``200 OK`` when the local
+node is the primary and ``503`` otherwise. HAProxy queries port 8008 on each
+node to determine where to route connections.
+
+Copy ``pgchk.py`` from the
+`ha-postgres-reprmgr-haproxy repository <https://github.com/sadohert/ha-postgres-reprmgr-haproxy>`__
+to ``/usr/local/bin/pgchk.py`` on each node and make it executable:
+
+.. code-block:: bash
+
+   sudo chmod +x /usr/local/bin/pgchk.py
+
+Create ``/etc/systemd/system/pgchk.service``:
+
+.. code-block:: ini
+
+   [Unit]
+   Description=PostgreSQL Health Check for HAProxy
+   After=postgresql.service
+
+   [Service]
+   ExecStart=/usr/bin/python3 /usr/local/bin/pgchk.py --port 8008
+   Restart=always
+
+   [Install]
+   WantedBy=multi-user.target
+
+.. code-block:: bash
+
+   sudo systemctl daemon-reload
+   sudo systemctl enable pgchk
+   sudo systemctl start pgchk
+   sudo systemctl enable haproxy
+   sudo systemctl start haproxy
+
+**Step 4.4 — Install and configure Keepalived**
+
+.. code-block:: bash
+
+   sudo apt install -y keepalived
+
+Create ``/etc/keepalived/keepalived.conf``. Set the ``priority`` field: pg1 gets
+``101``, pg2 gets ``100``, pg3 gets ``99``. Set ``virtual_ipaddress`` to your VIP:
+
+.. code-block:: text
+
+   vrrp_instance VI_1 {
+       state BACKUP
+       interface eth0
+       virtual_router_id 51
+       priority 101
+       advert_int 1
+       nopreempt
+       virtual_ipaddress {
+           <CLUSTER_VIP>/24
+       }
+   }
+
+.. code-block:: bash
+
+   sudo systemctl enable keepalived
+   sudo systemctl start keepalived
+
+✅ **Phase 4 checkpoint** — run on any node:
+
+.. code-block:: bash
+
+   # VIP should be active on the primary node (pg1)
+   ip addr show | grep <CLUSTER_VIP>
+
+   # Port 5000 should connect to primary
+   psql -h <CLUSTER_VIP> -p 5000 -U repmgr -d repmgr \
+       -c "SELECT inet_server_addr(), pg_is_in_recovery();"
+
+   # Port 5001 should connect to a standby
+   psql -h <CLUSTER_VIP> -p 5001 -U repmgr -d repmgr \
+       -c "SELECT inet_server_addr(), pg_is_in_recovery();"
+
+**Pass:** VIP visible on pg1. Port 5000 returns ``pg_is_in_recovery = f`` (primary).
+Port 5001 returns ``pg_is_in_recovery = t`` (standby).
+
+**Fail:** If the VIP is not on pg1, check ``journalctl -u keepalived``. If HAProxy
+is not routing correctly, check ``journalctl -u haproxy`` and verify pgchk.py
+is responding: ``curl http://<PG1_IP>:8008`` should return HTTP 200.
+
 Day-2 operations
 ----------------
 
