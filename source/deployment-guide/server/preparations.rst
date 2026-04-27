@@ -1,10 +1,7 @@
-.. meta::
-   :keywords: PostgreSQL, postgres, database setup, database preparation, create database, database configuration
-
 Prepare your Mattermost Server environment
 ===========================================
 
-This guide outlines the key preparation steps required before installing the Mattermost Server, focusing on setting up the PostgreSQL database and file storage systems.
+This guide outlines the key preparation steps required before installing the Mattermost Server, focusing on setting up the database and file storage systems.
 
 .. toctree::
     :maxdepth: 1
@@ -25,17 +22,8 @@ Before installing Mattermost Server, review the following preparation requiremen
 * :doc:`Set up TLS </deployment-guide/server/setup-tls>` - Enable secure communication with SSL/TLS encryption.
 * :doc:`Use an image proxy </deployment-guide/server/image-proxy>` - Configure image proxy for enhanced privacy and security.
 
-.. index::
-   ! PostgreSQL setup
-   single: PostgreSQL; database preparation
-   single: postgres setup
-   single: database; PostgreSQL setup
-   single: create database; PostgreSQL
-
-.. _database-preparation:
-
-PostgreSQL database setup
---------------------------
+Database preparation
+--------------------
 
 PostgreSQL v14+ is required for Mattermost server installations. :doc:`MySQL database support </deployment-guide/server/prepare-mattermost-mysql-database>` is being deprecated starting with Mattermost v11. See the :doc:`PostgreSQL migration </deployment-guide/postgres-migration>` documentation for guidance on migrating from MySQL to PostgreSQL.
 
@@ -121,7 +109,7 @@ PostgreSQL v14+ is required for Mattermost server installations. :doc:`MySQL dat
 
 .. important::
 
-  If you are upgrading a major version of Postgres, ensure that ``ANALYZE VERBOSE`` is run on the database post upgrade. This is required to re-populate the ``pg_statistics`` table used to generate optimal query plans. Database performance may suffer if this step is skipped.
+  If you are upgrading a major version of PostgreSQL, see :doc:`Upgrade PostgreSQL </administration-guide/upgrade/upgrading-postgres>` for the full upgrade procedure and post-upgrade steps.
 
 Once you've completed the database preparation, return to the :doc:`Linux deployment </deployment-guide/server/deploy-linux>` documentation to continue with your Mattermost server installation.
 

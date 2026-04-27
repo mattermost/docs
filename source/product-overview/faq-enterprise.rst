@@ -25,12 +25,16 @@ How are Mattermost licenses sold?
 
 Mattermost Enterprise and Mattermost Professional licenses are sold as prepaid annual subscriptions based on the number of annual seat licenses purchased, or “seats”. Each seat license purchased entitles a customer to an “activated user”, which is a user registered on a specific Mattermost server and not deactivated. Administrators can view user status in the System Console and activate and deactivate registered users at any time. Deactivated users have history and preferences saved. 
 
+Guests in exactly one channel are tracked separately as single-channel guests and are free up to a 1:1 ratio with licensed seats. Guests in multiple channels continue to count as activated users. Direct messages and group messages don't affect whether a guest is counted as a single-channel guest.
+
 What happens when activated users exceed the number of licensed seats?
 -----------------------------------------------------------------------
 
 During the period of the annual license, when the number of activated users exceeds the number of seat licenses purchased, additional seats should be purchased on a quarterly “true forward” basis. 
 
 For example, if activated users exceed licensed seats in the first quarter since annual licenses were purchased, then additional seat licenses should be purchased for the remaining three quarters until renewal, with an invoice amount prorated for the annual cost of the license. 
+
+Single-channel guests are counted separately from activated users. If the single-channel guest count exceeds the 1:1 allowance, system admins see warnings in reporting and on the **Edition and License** page, but Mattermost doesn't enforce a hard block.
 
 Where can I find more information on subscriptions and billing?
 ---------------------------------------------------------------

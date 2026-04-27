@@ -2246,6 +2246,24 @@ GitLab OpenID Client secret
 .. note::
   See **Step 2** of the :doc:`GitLab Single Sign-On </administration-guide/onboard/sso-gitlab>` documentation for details.
 
+.. config:setting:: oidc-gitlabusepreferredusername
+  :displayname: Use preferred username (OpenID Connect - GitLab)
+  :systemconsole: Authentication > OpenID Connect
+  :configjson: .GitLabSettings.UsePreferredUsername
+  :environment: MM_GITLABSETTINGS_USEPREFERREDUSERNAME
+
+  - **true**: Mattermost uses the ``preferred_username`` claim from the GitLab OpenID token as the Mattermost username.
+  - **false**: **(Default)** Mattermost does not use the ``preferred_username`` claim for username assignment.
+
+GitLab OpenID use preferred username
+'''''''''''''''''''''''''''''''''''''
+
++-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| - **true**: Mattermost uses the ``preferred_username`` claim from the GitLab OpenID token as the Mattermost      | - System Config path: **Authentication > OpenID Connect**                              |
+|   username.                                                                                                       | - ``config.json`` setting: ``GitLabSettings`` > ``UsePreferredUsername`` > ``false``   |
+| - **false**: **(Default)** Mattermost does not use the ``preferred_username`` claim for username assignment.      | - Environment variable: ``MM_GITLABSETTINGS_USEPREFERREDUSERNAME``                     |
++-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+
 Google OpenID settings
 ^^^^^^^^^^^^^^^^^^^^^^
 
@@ -2322,6 +2340,24 @@ Google OpenID Client secret
 |                                                                                                                   |                                                           |
 | String input.                                                                                                     |                                                           |
 +-------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+
+.. config:setting:: oidc-googleusepreferredusername
+  :displayname: Use preferred username (OpenID Connect - Google)
+  :systemconsole: Authentication > OpenID Connect
+  :configjson: .GoogleSettings.UsePreferredUsername
+  :environment: MM_GOOGLESETTINGS_USEPREFERREDUSERNAME
+
+  - **true**: Mattermost uses the ``preferred_username`` claim from the Google OpenID token as the Mattermost username.
+  - **false**: **(Default)** Mattermost does not use the ``preferred_username`` claim for username assignment.
+
+Google OpenID use preferred username
+'''''''''''''''''''''''''''''''''''''
+
++-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| - **true**: Mattermost uses the ``preferred_username`` claim from the Google OpenID token as the Mattermost      | - System Config path: **Authentication > OpenID Connect**                              |
+|   username.                                                                                                       | - ``config.json`` setting: ``GoogleSettings`` > ``UsePreferredUsername`` > ``false``   |
+| - **false**: **(Default)** Mattermost does not use the ``preferred_username`` claim for username assignment.      | - Environment variable: ``MM_GOOGLESETTINGS_USEPREFERREDUSERNAME``                     |
++-------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
 Entra ID OpenID settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2419,6 +2455,27 @@ Entra ID Client secret
 |                                                                                                                      |                                                                |
 | String input.                                                                                                        |                                                                |
 +----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
+
+.. config:setting:: oidc-entraidusepreferredusername
+  :displayname: Use preferred username (OpenID Connect - Entra ID)
+  :systemconsole: Authentication > OpenID Connect
+  :configjson: .Office365Settings.UsePreferredUsername
+  :environment: MM_OFFICE365SETTINGS_USEPREFERREDUSERNAME
+
+  - **true**: Mattermost uses the ``preferred_username`` claim from the Entra ID OpenID token as the Mattermost username.
+  - **false**: **(Default)** Mattermost does not use the ``preferred_username`` claim for username assignment.
+
+Entra ID use preferred username
+''''''''''''''''''''''''''''''''
+
++----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+| - **true**: Mattermost uses the ``preferred_username`` claim from the Entra ID OpenID token as the Mattermost username.   | - System Config path: **Authentication > OpenID Connect**                                  |
+| - **false**: **(Default)** Mattermost does not use the ``preferred_username`` claim for username assignment.               | - ``config.json`` setting: ``Office365Settings`` > ``UsePreferredUsername`` > ``false``    |
+|                                                                                                                            | - Environment variable: ``MM_OFFICE365SETTINGS_USEPREFERREDUSERNAME``                      |
++----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+
+.. note::
+  To make the ``preferred_username`` claim available, add it as an optional claim in the Azure Portal under **App registrations > Token configuration**. See :doc:`Entra ID Single Sign-On </administration-guide/onboard/sso-entraid>` for setup details.
 
 OpenID Connect (other) settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2536,6 +2593,26 @@ OpenID Connect (other) Client secret
 | String input.                                                                                                                   |                                                           |
 +---------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 
+.. config:setting:: oidc-usepreferredusername
+  :displayname: Use preferred username (OpenID Connect)
+  :systemconsole: Authentication > OpenID Connect
+  :configjson: .OpenIdSettings.UsePreferredUsername
+  :environment: MM_OPENIDSETTINGS_USEPREFERREDUSERNAME
+
+  - **true**: Mattermost uses the ``preferred_username`` claim from the OpenID token as the Mattermost username.
+  - **false**: **(Default)** Mattermost does not use the ``preferred_username`` claim for username assignment.
+
+OpenID Connect (other) use preferred username
+''''''''''''''''''''''''''''''''''''''''''''''
+
++---------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+| - **true**: Mattermost uses the ``preferred_username`` claim from the provider's OpenID token as the Mattermost username.       | - System Config path: **Authentication > OpenID Connect** |
+| - **false**: **(Default)** Mattermost does not use the ``preferred_username`` claim for username assignment.                    | - ``config.json`` setting: ``OpenIdSettings`` >           |
+|                                                                                                                                 |   ``UsePreferredUsername`` > ``false``                    |
+|                                                                                                                                 | - Environment variable:                                   |
+|                                                                                                                                 |   ``MM_OPENIDSETTINGS_USEPREFERREDUSERNAME``               |
++---------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+
 ----
 
 Guest access
@@ -2562,8 +2639,7 @@ Enable guest access
 +----------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 .. note::
-  For billing purposes, activated guest accounts do consume a licensed seat, which is returned when the guest account is
-  deactivated.This means that guest accounts count as a paid user in your Mattermost :doc:`workspace </end-user-guide/end-user-guide-index>`.
+  Guest billing depends on channel access. Guests in exactly one channel are treated as single-channel guests and don't count toward the primary paid seat count. They're free up to a 1:1 ratio with licensed seats. Guests in multiple channels continue to count as paid active users. Direct messages and group messages don't affect whether a guest is counted as a single-channel guest. See the :doc:`guest accounts </administration-guide/onboard/guest-accounts>` documentation for full details.
 
 .. config:setting:: whitelisted-guest-domains
   :displayname: Whitelisted guest domains (Guest Access)
