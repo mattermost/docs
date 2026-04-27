@@ -92,7 +92,114 @@ approximately 2,000 concurrent users. For larger deployments, see
 Before you begin
 ----------------
 
-[stub]
+Is this the right architecture for you?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+   :widths: 30 35 35
+   :header-rows: 1
+
+   * - Scenario
+     - Recommendation
+     - Why
+   * - Cloud-hosted on AWS/GCP/Azure
+     - Use managed RDS/Cloud SQL with Multi-AZ
+     - Managed failover, no infrastructure to operate
+   * - On-premises or private cloud, single site
+     - **This guide** — single-DC HA cluster
+     - Automatic failover within the datacenter, no cloud dependency
+   * - On-premises, two or more sites, DR required
+     - Single-DC HA (this guide) + Multi-DC DR guide (coming soon)
+     - Active/warm-standby across datacenters
+
+Requirements
+~~~~~~~~~~~~
+
+**Hardware (per node — minimum):**
+
+- Operating system: Ubuntu 24.04 LTS
+- CPU: 2 cores
+- RAM: 4 GB
+- Disk: 50 GB
+
+**You need 3 nodes** and one spare IP address on the same subnet for the VIP.
+
+**Network — ports that must be open between all three nodes:**
+
+.. list-table::
+   :widths: 15 85
+   :header-rows: 1
+
+   * - Port
+     - Purpose
+   * - 22
+     - SSH (administration)
+   * - 5432
+     - PostgreSQL (replication, repmgr)
+   * - 8008
+     - pgchk.py health check (HAProxy → database nodes)
+   * - VRRP (112)
+     - Keepalived VIP election between nodes
+
+**Ports that Mattermost application servers must reach:**
+
+.. list-table::
+   :widths: 15 85
+   :header-rows: 1
+
+   * - Port
+     - Purpose
+   * - 5000
+     - Write connections (primary)
+   * - 5001
+     - Read connections (standbys)
+
+**Software:** The following packages will be installed during setup. No
+pre-installation is required.
+
+- ``postgresql-17``
+- ``postgresql-17-repmgr``
+- ``haproxy``
+- ``keepalived``
+- ``python3`` (for pgchk.py)
+
+Node planning worksheet
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Complete this before starting. You will substitute these values throughout
+the guide.
+
+.. list-table::
+   :widths: 15 25 25 35
+   :header-rows: 1
+
+   * - Node
+     - Hostname
+     - IP address
+     - Initial role
+   * - 1
+     - pg1
+     - _______________
+     - Primary
+   * - 2
+     - pg2
+     - _______________
+     - Standby
+   * - 3
+     - pg3
+     - _______________
+     - Standby
+   * - VIP
+     - —
+     - _______________
+     - Floating (always points to primary)
+
+**Subnet:** ``_______________`` (e.g. ``10.0.1.0``)
+
+Time estimate
+~~~~~~~~~~~~~
+
+Allow **2–3 hours** for a first-time setup on pre-provisioned servers.
 
 Setup guide
 -----------
