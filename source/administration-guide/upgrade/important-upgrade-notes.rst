@@ -93,47 +93,47 @@ We recommend reviewing the `additional upgrade notes <#additional-upgrade-notes>
 |                                                    | --- 164                                                                                                                                                          |
 |                                                    | CREATE UNIQUE INDEX CONCURRENTLY IF NOT EXISTS idx_propertyfields_unique_typed                                                                                   |
 |                                                    |     ON PropertyFields (ObjectType, GroupID, TargetType, TargetID, Name)                                                                                          |
-|                                                    |     WHERE DeleteAt = 0 AND ObjectType != '';
-|                                                    | 
-|                                                    | --- 165
-|                                                    | DO $$
-|                                                    | BEGIN
-|                                                    |   IF NOT EXISTS (SELECT * FROM pg_type typ
+|                                                    |     WHERE DeleteAt = 0 AND ObjectType != '';                                                                                                                     |
+|                                                    |                                                                                                                                                                  |
+|                                                    | --- 165                                                                                                                                                          |
+|                                                    | DO $$                                                                                                                                                            |
+|                                                    | BEGIN                                                                                                                                                            |
+|                                                    |   IF NOT EXISTS (SELECT * FROM pg_type typ                                                                                                                       |
 |                                                    |                             INNER JOIN pg_namespace nsp ON nsp.oid = typ.typnamespace                                                                            |
-|                                                    |                         WHERE nsp.nspname = current_schema()
-|                                                    |                             AND typ.typname = 'permission_level') THEN
-|                                                    |     CREATE TYPE permission_level AS ENUM ('none', 'sysadmin', 'member');
-|                                                    |   END IF;
-|                                                    | END;
-|                                                    | $$
-|                                                    | LANGUAGE plpgsql;
-|                                                    | 
-|                                                    | ALTER TABLE PropertyFields
-|                                                    | ADD COLUMN IF NOT EXISTS Protected BOOLEAN NOT NULL DEFAULT FALSE,
-|                                                    | ADD COLUMN IF NOT EXISTS PermissionField permission_level,
-|                                                    | ADD COLUMN IF NOT EXISTS PermissionValues permission_level,
-|                                                    | ADD COLUMN IF NOT EXISTS PermissionOptions permission_level;
-|                                                    | 
-|                                                    | --- 166
-|                                                    | CREATE TABLE IF NOT EXISTS Views (
-|                                                    |     Id          VARCHAR(26)  PRIMARY KEY,
-|                                                    |     ChannelId   VARCHAR(26)  NOT NULL,
-|                                                    |     Type        VARCHAR(32)  NOT NULL,
-|                                                    |     CreatorId   VARCHAR(26)  NOT NULL,
-|                                                    |     Title       VARCHAR(256) NOT NULL,
-|                                                    |     Description TEXT,
-|                                                    |     SortOrder   INTEGER      NOT NULL DEFAULT 0,
-|                                                    |     Props       jsonb,
-|                                                    |     CreateAt    BIGINT       NOT NULL,
-|                                                    |     UpdateAt    BIGINT       NOT NULL,
-|                                                    |     DeleteAt    BIGINT       NOT NULL DEFAULT 0
-|                                                    | );
-|                                                    | 
-|                                                    | --- 167
-|                                                    | CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_views_channel_id_delete_at ON Views(ChannelId, DeleteAt);
-|                                                    | 
-|                                                    | --- 171
-|                                                    | DROP INDEX CONCURRENTLY IF EXISTS idx_propertyfields_protected;
+|                                                    |                         WHERE nsp.nspname = current_schema()                                                                                                     |
+|                                                    |                             AND typ.typname = 'permission_level') THEN                                                                                           |
+|                                                    |     CREATE TYPE permission_level AS ENUM ('none', 'sysadmin', 'member');                                                                                         |
+|                                                    |   END IF;                                                                                                                                                        |
+|                                                    | END;                                                                                                                                                             |
+|                                                    | $$                                                                                                                                                               |
+|                                                    | LANGUAGE plpgsql;                                                                                                                                                |
+|                                                    |                                                                                                                                                                  |
+|                                                    | ALTER TABLE PropertyFields                                                                                                                                       |
+|                                                    | ADD COLUMN IF NOT EXISTS Protected BOOLEAN NOT NULL DEFAULT FALSE,                                                                                               |
+|                                                    | ADD COLUMN IF NOT EXISTS PermissionField permission_level,                                                                                                       |
+|                                                    | ADD COLUMN IF NOT EXISTS PermissionValues permission_level,                                                                                                      |
+|                                                    | ADD COLUMN IF NOT EXISTS PermissionOptions permission_level;                                                                                                     |
+|                                                    |                                                                                                                                                                  |
+|                                                    | --- 166                                                                                                                                                          |
+|                                                    | CREATE TABLE IF NOT EXISTS Views (                                                                                                                               |
+|                                                    |     Id          VARCHAR(26)  PRIMARY KEY,                                                                                                                        |
+|                                                    |     ChannelId   VARCHAR(26)  NOT NULL,                                                                                                                           |
+|                                                    |     Type        VARCHAR(32)  NOT NULL,                                                                                                                           |
+|                                                    |     CreatorId   VARCHAR(26)  NOT NULL,                                                                                                                           |
+|                                                    |     Title       VARCHAR(256) NOT NULL,                                                                                                                           |
+|                                                    |     Description TEXT,                                                                                                                                            |
+|                                                    |     SortOrder   INTEGER      NOT NULL DEFAULT 0,                                                                                                                 |
+|                                                    |     Props       jsonb,                                                                                                                                           |
+|                                                    |     CreateAt    BIGINT       NOT NULL,                                                                                                                           |
+|                                                    |     UpdateAt    BIGINT       NOT NULL,                                                                                                                           |
+|                                                    |     DeleteAt    BIGINT       NOT NULL DEFAULT 0                                                                                                                  |
+|                                                    | );                                                                                                                                                               |
+|                                                    |                                                                                                                                                                  |
+|                                                    | --- 167                                                                                                                                                          |
+|                                                    | CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_views_channel_id_delete_at ON Views(ChannelId, DeleteAt);                                                            |
+|                                                    |                                                                                                                                                                  |
+|                                                    | --- 171                                                                                                                                                          |
+|                                                    | DROP INDEX CONCURRENTLY IF EXISTS idx_propertyfields_protected;                                                                                                  |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v11.6                                              | Single-channel guests are no longer counted toward the primary licensed seat count and are permitted free up to a 1:1 ratio with licensed seats. A new stat card,| 
 |                                                    | license row, and admin banner provide visibility into single-channel guest usage and overage warnings.                                                           |
