@@ -204,7 +204,64 @@ Allow **2–3 hours** for a first-time setup on pre-provisioned servers.
 Setup guide
 -----------
 
-[stub]
+.. note::
+
+   Throughout this guide, substitute the IP addresses and subnet you recorded
+   in the node planning worksheet above.
+
+.. warning::
+
+   Complete each phase in order. The checkpoint at the end of each phase must
+   pass before you proceed.
+
+Phase 1: Base installation (all nodes)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Run all steps in Phase 1 on **pg1, pg2, and pg3**.
+
+**Step 1.1 — Configure /etc/hosts**
+
+On each node, append to ``/etc/hosts``:
+
+.. code-block:: text
+
+   <PG1_IP>  pg1
+   <PG2_IP>  pg2
+   <PG3_IP>  pg3
+
+Verify hostname resolution on each node:
+
+.. code-block:: bash
+
+   ping -c 1 pg1 && ping -c 1 pg2 && ping -c 1 pg3
+
+Expected: 3 successful pings.
+
+**Step 1.2 — Install PostgreSQL 17 and repmgr 5.5**
+
+.. code-block:: bash
+
+   sudo apt update
+   sudo apt install -y curl ca-certificates
+   sudo install -d /usr/share/postgresql-common/pgdg
+   sudo curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc \
+       --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc
+   sudo sh -c 'echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] \
+       https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" \
+       > /etc/apt/sources.list.d/pgdg.list'
+   sudo apt update
+   sudo apt install -y postgresql-17 postgresql-17-repmgr
+
+✅ **Phase 1 checkpoint** — run on every node:
+
+.. code-block:: bash
+
+   sudo systemctl status postgresql | grep "active (running)"
+   /usr/lib/postgresql/17/bin/repmgr --version
+
+**Pass:** PostgreSQL shows ``active (running)``; repmgr prints ``repmgr 5.5.x``.
+
+**Fail:** If PostgreSQL did not start, check ``journalctl -u postgresql`` for errors.
 
 Day-2 operations
 ----------------
