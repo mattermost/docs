@@ -833,13 +833,31 @@ Maximum idle connections
 Query timeout
 ~~~~~~~~~~~~~
 
-+--------------------------------------------------------+-------------------------------------------------------------------------+
-| The amount of time to wait, in seconds, for a response | - System Config path: **Environment > Database**                        |
++--------------------------------------------------------+----------------------------------------------------------------------------------+
+| The amount of time to wait, in seconds, for a response | - System Config path: **Environment > Database**                                 |
 | from the database after opening a connection and       | - ``config.json`` setting: ``SqlSettings`` > ``QueryTimeout`` > ``30``  |
-| sending the query.                                     | - Environment variable: ``MM_SQLSETTINGS_QUERYTIMEOUT``                 |
-|                                                        |                                                                         |
-| Numerical input in seconds. Default is **30** seconds. |                                                                         |
-+--------------------------------------------------------+-------------------------------------------------------------------------+
+| sending the query.                                     | - Environment variable: ``MM_SQLSETTINGS_QUERYTIMEOUT``                          |
+|                                                        |                                                                                  |
+| Numerical input in seconds. Default is **30** seconds. |                                                                                  |
++--------------------------------------------------------+----------------------------------------------------------------------------------+
+
+.. config:setting:: analytics-query-timeout
+  :displayname: Analytics Query timeout (Database)
+  :systemconsole: Environment > Database
+  :configjson: .SqlSettings.AnalyticsQueryTimeout
+  :environment: MM_SQLSETTINGS_ANALYTICSQUERYTIMEOUT
+  :description: The number of seconds to wait for a response from the database after opening a connection and sending certain analytics queries. This setting only applies to long queries which are run in the background to populate some information in the Team and Site Statistics pages. Default is **300** seconds.
+
+Analytics query timeout
+~~~~~~~~~~~~~~~~~~~~~~~
+
++--------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| The number of seconds to wait for a response from the database after opening a connection  | - ``config.json`` setting: ``SqlSettings`` > ``AnalyticsQueryTimeout`` > ``300`` |
+| and sending certain analytics queries. This setting only applies to long queries which are | - System Config path: **Environment > Database**                                 |
+| run in the background to populate some information in the Team and Site Statistics pages.  | - Environment variable: ``MM_SQLSETTINGS_ANALYTICSQUERYTIMEOUT``                 |
+|                                                                                            |                                                                                  |
+| Numerical input in seconds. Default is **300** seconds.                                    |                                                                                  |
++--------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 .. config:setting:: maximum-connection-lifetime
   :displayname: Maximum connection lifetime (Database)
