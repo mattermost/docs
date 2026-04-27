@@ -263,6 +263,64 @@ Expected: 3 successful pings.
 
 **Fail:** If PostgreSQL did not start, check ``journalctl -u postgresql`` for errors.
 
+Phase 2: PostgreSQL configuration (all nodes)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Run all steps in Phase 2 on **pg1, pg2, and pg3**.
+
+**Step 2.1 — Configure postgresql.conf**
+
+Append to ``/etc/postgresql/17/main/postgresql.conf``:
+
+.. code-block:: ini
+
+   # Replication settings
+   listen_addresses = '*'
+   max_wal_senders = 10
+   max_replication_slots = 10
+   wal_level = replica
+   hot_standby = on
+   archive_mode = on
+   archive_command = '/bin/true'
+   shared_preload_libraries = 'repmgr'
+   wal_log_hints = on
+   wal_keep_size = 1024
+
+**Step 2.2 — Configure pg_hba.conf**
+
+Append to ``/etc/postgresql/17/main/pg_hba.conf``:
+
+.. code-block:: text
+
+   # repmgr access
+   host    repmgr      repmgr      <SUBNET>/24     trust
+   host    repmgr      repmgr      127.0.0.1/32    trust
+   # Replication connections
+   host    replication repmgr      <SUBNET>/24     trust
+   host    replication repmgr      127.0.0.1/32    trust
+
+.. note::
+
+   For production, replace ``trust`` with ``scram-sha-256`` and configure
+   ``.pgpass`` files on each node.
+
+**Step 2.3 — Restart PostgreSQL**
+
+.. code-block:: bash
+
+   sudo systemctl restart postgresql
+
+✅ **Phase 2 checkpoint** — run on every node:
+
+.. code-block:: bash
+
+   sudo -u postgres psql -c "SHOW wal_level;"
+   sudo -u postgres psql -c "SHOW shared_preload_libraries;"
+
+**Pass:** ``wal_level`` is ``replica``; ``shared_preload_libraries`` contains ``repmgr``.
+
+**Fail:** If PostgreSQL did not restart, check ``journalctl -u postgresql``.
+
 Day-2 operations
 ----------------
 
