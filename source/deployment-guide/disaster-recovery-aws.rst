@@ -266,7 +266,15 @@ To recap:
 Replicate job servers
 ----------------------
 
-If the job scheduler is left running in the secondary region, it will pick up jobs and start running them. Therefore, set ``JobSettings.RunScheduler`` to ``false`` on all nodes in the secondary region. When a failover happens, you need to enable it for the new primary region, and deactivate it for the new secondary region. See the :ref:`RunScheduler configuration setting <administration-guide/configure/environment-configuration-settings:run scheduler>` documentation for details.
+If the job scheduler is left running in the secondary region, it will pick up jobs and start running them. Follow these steps to manage it correctly. See the :ref:`RunScheduler configuration setting <administration-guide/configure/environment-configuration-settings:run scheduler>` documentation for details.
+
+1. **Precondition:** Set ``JobSettings.RunScheduler`` to ``false`` on all nodes in the secondary region before enabling that region.
+
+2. **On failover:** Set ``JobSettings.RunScheduler`` to ``true`` on all nodes in the new primary region.
+
+3. **Immediately after:** Set ``JobSettings.RunScheduler`` to ``false`` on all nodes in the new secondary region.
+
+4. **Verify:** Confirm that jobs execute only in the active region. Submit a test job (for example, trigger an index rebuild) and check the job logs to ensure it runs on the new primary, not the secondary.
 
 Test the secondary region
 --------------------------
