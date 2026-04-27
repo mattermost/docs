@@ -134,7 +134,7 @@ jobs:
             echo "### Docs Branch Already Exists" >> "$GITHUB_STEP_SUMMARY"
           fi
           echo "" >> "$GITHUB_STEP_SUMMARY"
-          echo "| | |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Item | Value |" >> "$GITHUB_STEP_SUMMARY"
           echo "|---|---|" >> "$GITHUB_STEP_SUMMARY"
           echo "| Merged branch | \`${MERGED_BRANCH}\` → \`master\` |" >> "$GITHUB_STEP_SUMMARY"
           echo "| New branch    | \`${NEW_BRANCH}\` |" >> "$GITHUB_STEP_SUMMARY"
