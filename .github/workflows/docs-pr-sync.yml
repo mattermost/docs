@@ -13,8 +13,8 @@
 #   When a docs/mattermost-pr-* or docs/desktop-pr-* PR is closed
 #   (merged OR abandoned), parses the dev PR reference from the branch name
 #   and updates labels on the original dev PR:
-#     • Removes docs/needed
-#     • Adds    docs/done
+#     • Removes Docs/Needed
+#     • Adds    Docs/Done
  
 name: Docs PR Sync — Update Dev PR Labels on Close
  
