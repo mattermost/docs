@@ -76,6 +76,30 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 (release-v10.11-extended-support-release)=
 ## Release v10.11 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **10.11.15, released 2026-04-22**
+  - Mattermost v10.11.15 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Zoom plugin version [v1.13.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.13.0).
+  - Pre-packaged GitHub plugin version [v2.7.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.7.0).
+  - Pre-packaged Boards plugin [v9.2.4](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.2.4).
+  - Updated URL validation in integration actions to make them more secure.
+  - Improved response handling for outgoing webhook requests.
+  - Added support for Elasticsearch v9 alongside v8.
+  - Upgraded Go to 1.25.8.
+  - Mattermost v10.11.15 contains no database or functional changes.
+- **10.11.14, released 2026-04-15**
+  - Mattermost v10.11.14 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Calls plugin version [v1.11.4](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.11.4).
+  - Pre-packaged Playbooks plugin version [v2.4.4](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.4.4).
+  - Pre-packaged MS Teams Meetings plugin version [v2.4.1](https://github.com/mattermost/mattermost-plugin-msteams-meetings/releases/tag/v2.4.1).
+  - Pre-packaged GitLab plugin version [v1.12.1](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.12.1).
+  - Fixed an issue where membership changes from remote clusters could operate on a different channel than the one validated in the sync message.
+  - Fixed an issue where image proxies did not detect content-types accurately in certain cases.
+  - Fixed an issue with edit post permissions.
+  - Fixed an issue with file attachment processing for certain archive types.
+  - Fixed an issue where remote cluster invite confirmations could accept a ``RefreshedToken`` that matched the original invite token, preventing proper token rotation.
+  - Fixed an issue with custom slash command response URL construction.
+  - Fixed typing issues in the **Find Channels** modal caused by interference with IMEs.
+  - Mattermost v10.11.14 contains no database or functional changes.
 - **10.11.13, released 2026-03-16**
   - Mattermost v10.11.13 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Improved security hardening for the user authentication update API endpoint.
@@ -1099,8 +1123,6 @@ If you upgrade from a release earlier than v10.2, please read the other [Importa
 
 ### Improvements
 
-See [this walkthrough video](https://mattermost.com/video/mattermost-v10-3-changelog/) on some of the highlights and improvements in our latest release below.
-
 #### User Interface (UI)
  - Pre-packaged Calls plugin [v1.3.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.3.0).
  - Downgraded Traditional Chinese language to Beta.
@@ -1189,8 +1211,6 @@ If you upgrade from a release earlier than v10.0, please read the other [Importa
 ```
 
 ### Improvements
-
-See [this walkthrough video](https://mattermost.com/video/mattermost-v10-2-changelog/) on some of the highlights and improvements in our latest release below.
 
 #### User Interface (UI)
  - Pre-packaged Calls plugin [v1.2.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.2.1).
@@ -1399,8 +1419,6 @@ If you upgrade from a release earlier than v9.11, please read the other [Importa
 ```
 
 ### Highlights
-
-See [this walkthrough video](https://mattermost.com/video/mattermost-v10-0-changelog/) on some of the highlights and improvements in our latest release below.
 
 #### Mattermost Microsoft Teams Plugin
  - Pre-packaged the Microsoft Teams plugin for Mattermost, [v2.0.3](https://github.com/mattermost/mattermost-plugin-msteams/releases/tag/v2.0.3).
