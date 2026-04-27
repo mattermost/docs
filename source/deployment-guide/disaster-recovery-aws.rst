@@ -25,7 +25,7 @@ This page details the steps needed to set up Mattermost in an active/passive dis
 Set up in one data center
 --------------------------
 
-As a first step, set up Mattermost in a single data center. At a very basic high level, this would be something like below:
+As a first step, set up Mattermost in a single data center. The following diagram illustrates a basic single data center architecture:
 
 .. image:: ../images/dr1.png
    :alt: An architecture diagram showing a single proxy that's forwarding traffic to 2 nodes, a database with single writer + n readers, and an S3 bucket and ES/OS using AWS OpenSearch service.
@@ -98,7 +98,7 @@ Replicate ES/OS storage
 
 .. tip::
 
-  All you need is a recent OpenSearch version with fine-grained access control enabled. Node-to-node encryption is automatically enabled once you enable fine-grained access control.
+  If you are already running OpenSearch 2.x, all you need to do is enable fine-grained access control — node-to-node encryption is enabled automatically once fine-grained access control is turned on.
 
 2. You also need to add the ``CrossClusterGet`` permission on the IAM policy for the OS cluster set under the **Security Configuration** tab for your OS domain. We recommend the following as per AWS, but feel free to fine-tune as necessary:
 
@@ -266,7 +266,7 @@ To recap:
 Replicate job servers
 ----------------------
 
-If the job scheduler is left running in the secondary region, it will pick up jobs and start running them. Therefore, set ``JobSettings.RunScheduler`` to ``false`` on all nodes in the secondary region. When a failover happens, you need to enable it for the new primary region, and deactivate it for the new secondary region.
+If the job scheduler is left running in the secondary region, it will pick up jobs and start running them. Therefore, set ``JobSettings.RunScheduler`` to ``false`` on all nodes in the secondary region. When a failover happens, you need to enable it for the new primary region, and deactivate it for the new secondary region. See the :ref:`RunScheduler configuration setting <administration-guide/configure/environment-configuration-settings:run scheduler>` documentation for details.
 
 Test the secondary region
 --------------------------
@@ -291,7 +291,7 @@ ES/OS does not allow multi-writer for a single index. You can only write to 1 in
 
 For simplicity, let's say ``site1`` is primary, and ``site2`` is secondary. Therefore, OS in ``site1`` is the leader domain, and in ``site2`` is the follower. The follower pulls from the leader. To switch the direction where ``site2`` becomes leader, and ``site1`` becomes follower.
 
-1. Remove the rule from ``site1`` > ``site 2`` in AWS Console. This will auto-pause the replication, but the indices in ``site2`` will still be read-only. Remove the replication rules for that.
+1. Remove the rule from ``site1`` > ``site2`` in AWS Console. This will auto-pause the replication, but the indices in ``site2`` will still be read-only. Remove the replication rules for that.
 
 2. Remove auto-follow rule:
 
@@ -344,10 +344,9 @@ For simplicity, let's say ``site1`` is primary, and ``site2`` is secondary. Ther
 
 12. List the indices again to confirm that replication has started and indices are available.
 
-S3 bucket is auto-replicated both ways
-----------------------------------------
+.. note::
 
-There's nothing you need to do to ensure the S3 bucket is auto-replicating both ways.
+  There's nothing you need to do to ensure the S3 bucket is auto-replicating both ways.
 
 Testing end to end
 -------------------
@@ -365,3 +364,18 @@ You can use DNS to easily switch between PRIMARY to SECONDARY during a failover.
   Websockets will still point to the old data center even if you have switched DNS. You need to roll over each app node gradually to move those connections to the new data center. If all your nodes are down, no action is necessary and the clients will automatically re-connect to the new data center.
 
 The S3 bucket is replicated bi-directionally while the database and ES/OS is replicated uni-directionally.
+
+Restore to primary data center
+--------------------------------
+
+When the disaster event is resolved and you are ready to restore normal operations, perform the same failover steps in reverse to return traffic to the original primary data center:
+
+1. Perform an RDS switchover back to the original primary region using the **Switchover or Failover global database** option in the RDS console.
+
+2. Reverse the ES/OS replication direction by following the same steps in the `Failover ES/OS to secondary`_ section, swapping the roles of ``site1`` and ``site2``.
+
+3. Update DNS to redirect traffic back to the original primary data center.
+
+4. Re-enable ``JobSettings.RunScheduler`` on the original primary nodes and disable it on the secondary nodes.
+
+5. Roll over app nodes gradually to move websocket connections back to the primary data center.
