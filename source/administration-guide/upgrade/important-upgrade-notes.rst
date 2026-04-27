@@ -47,6 +47,93 @@ We recommend reviewing the `additional upgrade notes <#additional-upgrade-notes>
 |                                                    |      CREATE UNIQUE INDEX IF NOT EXISTS idx_accesscontrolpolicies_name_type                                                                                       |
 |                                                    |        ON AccessControlPolicies (Name, Type)                                                                                                                     |                                                   
 |                                                    |        WHERE Type = 'parent';                                                                                                                                    |
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | The ``PropertyFields`` table is modified. Two new nullable columns, ``CreatedBy`` and ``UpdatedBy``, are added to track which user created and last modified     |
+|                                                    | each field. A new ``ObjectType`` column is added with a ``NOT NULL`` constraint and an empty string default, to discriminate between legacy and typed property   |
+|                                                    | fields. A new ``Protected`` boolean column is added with a default of ``FALSE``, along with three new columns (``PermissionField``, ``PermissionValues``,        |
+|                                                    | ``PermissionOptions``) using a new ``permission_level`` enum type with values none, sysadmin, and member. The existing unique index ``idx_propertyfields_unique``| 
+|                                                    | on (GroupID, TargetID, Name) is dropped and replaced by two new partial unique indexes: ``idx_propertyfields_unique_legacy`` which covers legacy rows where      |
+|                                                    | ``ObjectType = ''`` and ``idx_propertyfields_unique_typed`` which covers typed rows where ``ObjectType != ''``, indexing (``ObjectType``, ``GroupID``,           |
+|                                                    | ``TargetType``, ``TargetID``, ``Name``).                                                                                                                         |
+|                                                    |                                                                                                                                                                  |
+|                                                    | The ``PropertyValues`` table is modified. Two new nullable columns, ``CreatedBy`` and ``UpdatedBy``, are added, matching                                         |
+|                                                    | the same tracking columns on ``PropertyFields``.                                                                                                                 |
+|                                                    |                                                                                                                                                                  |
+|                                                    | A new ``Views`` table is created. A new index ``idx_views_channel_id_delete_at`` on (``ChannelId``, ``DeleteAt``) is created for this table.                     |
+|                                                    |                                                                                                                                                                  |
+|                                                    | Migrations 160, 161, and 165 use ``ALTER TABLE ADD COLUMN``, which briefly acquires a lock, but this is instant                                                  |
+|                                                    | (metadata-only) on PostgreSQL 11+. All other migrations, including index creation and deletion, use CONCURRENTLY and are lock-free. All locks are instant        |
+|                                                    | metadata operations and all index operations use CONCURRENTLY. These eight migrations are safe for zero-downtime deployment. They only affect low-row-count      | 
+|                                                    | tables (``PropertyFields``, ``PropertyValues``) and create a new empty table (``Views``), with no full-table data modifications, no column type changes, and     |
+|                                                    | minimal I/O from concurrent index operations. The migrations are fully backwards-compatible and no database downtime is expected for this upgrade. The SQL       |
+|                                                    | queries included are:                                                                                                                                            |
+|                                                    |                                                                                                                                                                  |
+|                                                    | .. code-block:: sql                                                                                                                                              |
+|                                                    |                                                                                                                                                                  |
+|                                                    | --- 160                                                                                                                                                          |
+|                                                    | ALTER TABLE PropertyFields                                                                                                                                       |
+|                                                    | ADD COLUMN IF NOT EXISTS CreatedBy varchar(26),                                                                                                                  |
+|                                                    | ADD COLUMN IF NOT EXISTS UpdatedBy varchar(26);                                                                                                                  |
+|                                                    |                                                                                                                                                                  |
+|                                                    | ALTER TABLE PropertyValues                                                                                                                                       |
+|                                                    | ADD COLUMN IF NOT EXISTS CreatedBy varchar(26),                                                                                                                  |
+|                                                    | ADD COLUMN IF NOT EXISTS UpdatedBy varchar(26);                                                                                                                  |
+|                                                    |                                                                                                                                                                  |
+|                                                    | --- 161                                                                                                                                                          |
+|                                                    | ALTER TABLE PropertyFields ADD COLUMN IF NOT EXISTS ObjectType varchar(255) NOT NULL DEFAULT '';                                                                 |
+|                                                    |                                                                                                                                                                  |
+|                                                    | --- 162                                                                                                                                                          |
+|                                                    | DROP INDEX CONCURRENTLY IF EXISTS idx_propertyfields_unique;                                                                                                     |
+|                                                    |                                                                                                                                                                  |
+|                                                    | --- 163                                                                                                                                                          |
+|                                                    | CREATE UNIQUE INDEX CONCURRENTLY IF NOT EXISTS idx_propertyfields_unique_legacy                                                                                  |
+|                                                    |     ON PropertyFields (GroupID, TargetID, Name)                                                                                                                  |
+|                                                    |     WHERE DeleteAt = 0 AND ObjectType = '';                                                                                                                      |
+|                                                    |                                                                                                                                                                  |
+|                                                    | --- 164                                                                                                                                                          |
+|                                                    | CREATE UNIQUE INDEX CONCURRENTLY IF NOT EXISTS idx_propertyfields_unique_typed                                                                                   |
+|                                                    |     ON PropertyFields (ObjectType, GroupID, TargetType, TargetID, Name)                                                                                          |
+|                                                    |     WHERE DeleteAt = 0 AND ObjectType != '';
+|                                                    | 
+|                                                    | --- 165
+|                                                    | DO $$
+|                                                    | BEGIN
+|                                                    |   IF NOT EXISTS (SELECT * FROM pg_type typ
+|                                                    |                             INNER JOIN pg_namespace nsp ON nsp.oid = typ.typnamespace                                                                            |
+|                                                    |                         WHERE nsp.nspname = current_schema()
+|                                                    |                             AND typ.typname = 'permission_level') THEN
+|                                                    |     CREATE TYPE permission_level AS ENUM ('none', 'sysadmin', 'member');
+|                                                    |   END IF;
+|                                                    | END;
+|                                                    | $$
+|                                                    | LANGUAGE plpgsql;
+|                                                    | 
+|                                                    | ALTER TABLE PropertyFields
+|                                                    | ADD COLUMN IF NOT EXISTS Protected BOOLEAN NOT NULL DEFAULT FALSE,
+|                                                    | ADD COLUMN IF NOT EXISTS PermissionField permission_level,
+|                                                    | ADD COLUMN IF NOT EXISTS PermissionValues permission_level,
+|                                                    | ADD COLUMN IF NOT EXISTS PermissionOptions permission_level;
+|                                                    | 
+|                                                    | --- 166
+|                                                    | CREATE TABLE IF NOT EXISTS Views (
+|                                                    |     Id          VARCHAR(26)  PRIMARY KEY,
+|                                                    |     ChannelId   VARCHAR(26)  NOT NULL,
+|                                                    |     Type        VARCHAR(32)  NOT NULL,
+|                                                    |     CreatorId   VARCHAR(26)  NOT NULL,
+|                                                    |     Title       VARCHAR(256) NOT NULL,
+|                                                    |     Description TEXT,
+|                                                    |     SortOrder   INTEGER      NOT NULL DEFAULT 0,
+|                                                    |     Props       jsonb,
+|                                                    |     CreateAt    BIGINT       NOT NULL,
+|                                                    |     UpdateAt    BIGINT       NOT NULL,
+|                                                    |     DeleteAt    BIGINT       NOT NULL DEFAULT 0
+|                                                    | );
+|                                                    | 
+|                                                    | --- 167
+|                                                    | CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_views_channel_id_delete_at ON Views(ChannelId, DeleteAt);
+|                                                    | 
+|                                                    | --- 171
+|                                                    | DROP INDEX CONCURRENTLY IF EXISTS idx_propertyfields_protected;
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v11.6                                              | Single-channel guests are no longer counted toward the primary licensed seat count and are permitted free up to a 1:1 ratio with licensed seats. A new stat card,| 
 |                                                    | license row, and admin banner provide visibility into single-channel guest usage and overage warnings.                                                           |
