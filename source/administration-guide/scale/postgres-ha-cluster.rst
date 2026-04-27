@@ -703,4 +703,92 @@ standby.
 Troubleshooting
 ---------------
 
-[stub]
+repmgrd is not starting
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Symptom:** ``systemctl status repmgrd`` shows ``failed`` or ``activating``.
+
+**Likely cause:** PostgreSQL has not fully started yet, or the repmgr database
+is not accessible.
+
+**Resolution:**
+
+.. code-block:: bash
+
+   # Verify PostgreSQL is running first
+   sudo systemctl status postgresql
+
+   # Check repmgrd logs
+   journalctl -u repmgrd -n 50
+
+   # Test repmgr connection manually
+   sudo -u postgres repmgr -f /etc/repmgr.conf cluster show
+
+Standby not replicating
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Symptom:** ``repmgr cluster show`` shows a standby as ``! running``, or
+``pg_stat_replication`` on the primary shows fewer than expected rows.
+
+**Likely cause:** Network connectivity issue on port 5432, or ``pg_hba.conf``
+not permitting the replication connection.
+
+**Resolution:**
+
+.. code-block:: bash
+
+   # From the standby, test connectivity to the primary
+   pg_isready -h <PRIMARY_IP> -p 5432 -U repmgr
+
+   # Check PostgreSQL logs on the standby
+   sudo -u postgres tail -50 /var/log/postgresql/postgresql-17-main.log
+
+VIP not moving after failover
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Symptom:** After a primary failure and successful repmgr promotion, the VIP
+remains on the failed node or does not appear on the new primary.
+
+**Likely cause:** Keepalived is not running, or VRRP traffic is blocked by a
+firewall.
+
+**Resolution:**
+
+.. code-block:: bash
+
+   sudo systemctl status keepalived
+   journalctl -u keepalived -n 50
+
+   # Verify VRRP traffic is not blocked — check cloud security groups or
+   # iptables rules for protocol 112 (VRRP)
+
+HAProxy routing to wrong node
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Symptom:** Connections on port 5000 land on a standby (writes fail), or
+port 5001 routes to the primary.
+
+**Likely cause:** pgchk.py is not running or returning incorrect status.
+
+**Resolution:**
+
+.. code-block:: bash
+
+   # Check health check response on each node
+   curl -v http://<NODE_IP>:8008
+
+   # Primary should return HTTP 200; standbys should return HTTP 503
+   sudo systemctl status pgchk
+   journalctl -u pgchk -n 30
+
+Split-brain prevention
+~~~~~~~~~~~~~~~~~~~~~~
+
+repmgr's ``failover=automatic`` setting and ``reconnect_attempts=3`` with
+``reconnect_interval=5`` provide a brief delay before promoting a standby.
+This prevents promotion during transient network blips.
+
+If you suspect a split-brain scenario (two nodes both believing they are
+primary), **do not write to either node**. Check cluster status from a
+third node and use ``repmgr node service --action=stop`` to fence the
+unintended primary before recovering.
