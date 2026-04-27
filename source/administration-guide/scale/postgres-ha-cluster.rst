@@ -561,6 +561,70 @@ Port 5001 returns ``pg_is_in_recovery = t`` (standby).
 is not routing correctly, check ``journalctl -u haproxy`` and verify pgchk.py
 is responding: ``curl http://<PG1_IP>:8008`` should return HTTP 200.
 
+Phase 5: End-to-end validation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Run this phase after all four previous phases pass on all nodes. This confirms
+the cluster behaves correctly under failure before you connect Mattermost.
+
+**Step 5.1 — Confirm healthy starting state**
+
+.. code-block:: bash
+
+   sudo -u postgres repmgr -f /etc/repmgr.conf cluster show
+
+**Pass:** pg1 is ``* running`` (primary); pg2 and pg3 are ``running`` (standby).
+
+**Step 5.2 — Simulate primary failure**
+
+On **pg1**:
+
+.. code-block:: bash
+
+   sudo systemctl stop postgresql
+
+Wait 30 seconds, then on **pg2** or **pg3**:
+
+.. code-block:: bash
+
+   sudo -u postgres repmgr -f /etc/repmgr.conf cluster show
+
+**Pass:** One of pg2 or pg3 is now ``* running`` (primary). pg1 shows as ``! running``
+(unreachable — expected).
+
+**Step 5.3 — Verify HAProxy and VIP followed the new primary**
+
+.. code-block:: bash
+
+   psql -h <CLUSTER_VIP> -p 5000 -U repmgr -d repmgr \
+       -c "SELECT inet_server_addr(), pg_is_in_recovery();"
+
+**Pass:** Returns the IP of the newly promoted node with ``pg_is_in_recovery = f``.
+
+**Step 5.4 — Recover the old primary as a standby**
+
+On **pg1**:
+
+.. code-block:: bash
+
+   sudo systemctl start postgresql
+   sudo -u postgres repmgr -f /etc/repmgr.conf node rejoin \
+       --force-rewind --config-files=postgresql.conf,pg_hba.conf
+
+Then on any node:
+
+.. code-block:: bash
+
+   sudo -u postgres repmgr -f /etc/repmgr.conf cluster show
+
+**Pass:** All three nodes show ``running``; pg1 is now a standby.
+
+.. note::
+
+   Your cluster is ready for production. Connect Mattermost using the VIP
+   address and port 5000 as the primary datasource. Optionally configure
+   port 5001 as a read replica in ``config.json``.
+
 Day-2 operations
 ----------------
 
