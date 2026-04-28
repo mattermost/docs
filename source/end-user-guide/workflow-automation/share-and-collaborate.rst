@@ -19,18 +19,17 @@ For more information about System and Team Override Schemes, refer to the :doc:`
 
 In the context of collaborative playbooks, members are assigned a role and based on the selected permissions, this determines how they interact with playbooks. A member can be a member of one playbook, and an admin of another. This allows for granular permissions across teams and departments. For example, setting playbook visibility so only certain teams can view it, or setting permissions to allow an organization to view a playbook but only designated team members can make edits.
 
-Permissions are applied only to playbooks - there are no permissions that are specific to runs.
+Permissions are applied only to playbooks. There are no permissions that are specific to runs.
+
+.. important::
+
+  From Playbooks v2.6.0, channel checklists use :doc:`channel-based permissions </administration-guide/manage/team-channel-members>` rather than playbook-specific permissions. This means that users with appropriate channel permissions can create, manage, and interact with checklists directly within channels without requiring separate playbook access permissions.
 
 Playbook roles
 ---------------
 
-**Member**
-
-In the context of collaborative playbooks, members are users of Mattermost who are added to a playbook.
-
-**Playbook Admin**
-
-Playbook Admins are also members, and may have elevated permissions to change playbook and run visibility as well as functional settings. They do not have access to the System Console and their privileges are managed by the system admin. Members need to be promoted to the role from within playbooks. The Playbook Admin role is applied per playbook.
+- **Member**: In the context of collaborative playbooks, members are users of Mattermost who are added to a playbook.
+- **Playbook Admin**: Playbook Admins are also members, and may have elevated permissions to change playbook and run visibility as well as functional settings. They do not have access to the System Console and their privileges are managed by the system admin. Members need to be promoted to the role from within playbooks. The Playbook Admin role is applied per playbook.
 
 .. note::
 
@@ -97,6 +96,41 @@ Playbooks are repeatable workflows and sometimes it’s easier to copy and impro
 You can do this by duplicating a playbook in the Playbooks screen. Select the **...** under **Actions** and then select **Duplicate**. The copied playbook will have **Copy of** appended to its original name which you can edit.
 
 To import a playbook, go to the Playbooks screen, and select **Import**. Choose the team you’re importing to, then select the JSON file. You can also export any playbook to JSON to easily share with other Mattermost servers.
+
+Archive a playbook
+------------------
+
+.. note::
+
+  To archive a playbook, you must be a member of the playbook or playbook admin and have applicable **Manage Playbook Configurations** permission granted by a system administrator.
+
+To archive a playbook:
+
+1. Go to the **Product** |product-list| icon and select **Playbooks**.
+2. Select **View all...** under the **Playbooks** section in the left menu.
+3. Select the **...** in the **Actions** column for the playbook you would like to archive.
+4. Select the **Archive** menu option then the **Archive** button to confirm you would like to archive the playbook.
+
+.. image:: ../../images/archive-a-playbook.gif
+   :alt: Archive a playbook
+
+Restore an archived playbook
+-----------------------------
+
+.. note::
+
+  To restore an archived playbook, you must have applicable **Manage Playbook Configurations** permission granted by a system administrator.
+
+To restore an archived playbook:
+
+1. Go to the **Product** |product-list| icon and select **Playbooks**.
+2. Select **View all...** under the **Playbooks** section in the left menu.
+3. Verify the **With archived** checkbox next to the playbook search bar is selected.
+4. Select the **...** in the **Actions** column for the playbook you would like to restore.
+5. Select the **Restore** menu option then the **Restore** button to confirm you would like to restore the playbook.
+
+.. image:: ../../images/restore-an-archived-playbook.gif
+   :alt: Restore an archived playbook
 
 Export channel data
 --------------------

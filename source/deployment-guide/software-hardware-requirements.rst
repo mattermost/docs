@@ -21,15 +21,27 @@ Desktop apps
     :header: "Operating System", "Self-Hosted Technical Requirement", "Cloud Technical Requirement"
 
     "Windows", "Windows 11+", "Windows 11+"
-    "Mac", "macOS 12+", "macOS 12+"
+    "Mac", "macOS 14+", "macOS 14+"
     "Linux", "Ubuntu LTS releases 22.04 or later", "Ubuntu LTS releases 22.04 or later"
 
 Though not officially supported, the Linux desktop app also runs on RHEL/CentOS 7+.
 
+Flatpak package requirements (Linux)
+:::::::::::::::::::::::::::::::::::::
+
+From Mattermost Desktop v6.1, Flatpak packages are available for Linux (currently in beta). The Flatpak version requires:
+
+- Flatpak runtime installed on the system
+- Freedesktop Platform/SDK 25.08
+- Electron BaseApp 25.08
+- Access to Flathub or compatible Flatpak repository for dependencies
+
+Flatpak packages are available for x86_64 (Intel/AMD) and aarch64 (ARM) architectures. The Flatpak version includes Wayland display server support enabled by default.
+
 .. note::
 
     - `*` Integrated Windows Authentication is not supported by Mattermost desktop apps. If you use ADFS we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
-
+    - From Windows Desktop v6.1.0, the MSI installer installs per-machine (system-wide) by default and requires administrator privileges for installation. This meets enterprise compliance requirements.
     - The minimum content size is 800 x 600 pixels.
 
 PC web
@@ -38,10 +50,10 @@ PC web
 .. csv-table::
     :header: "Browser", "Self-Hosted Technical Requirement", "Cloud Technical Requirement"
 
-    "Chrome", "v140+", "v140+"
+    "Chrome", "v144+", "v144+"
     "Firefox", "v140+", "v140+"
-    "Safari", "v17.4+", "v17.4+"
-    "Edge", "v140+", "v140+"
+    "Safari", "v26.2+", "v26.2+"
+    "Edge", "v144+", "v144+"
 
 `*` Internet Explorer (IE11) is no longer supported. We recommend using the `Mattermost desktop app <https://mattermost.com/apps/>`_ or another supported browser. See `this forum post <https://forum.mattermost.com/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`__ to learn more.
 
@@ -66,8 +78,8 @@ Mobile web
 .. csv-table::
     :header: "Browser", "Technical Requirement"
 
-    "iOS", "iOS 16.0+ with Safari 17.4+ or Chrome 140+"
-    "Android", "Android 7+ with Chrome 140+"
+    "iOS", "iOS 16.0+ with Safari 26.2+ or Chrome 144+"
+    "Android", "Android 7+ with Chrome 144+"
 
 Email client
 ^^^^^^^^^^^^
@@ -97,7 +109,7 @@ Amazon Aurora equivalents of PostgreSQL is also supported. Our `Migration Guide 
 .. important::
 
     - MariaDB v10+ no longer functions as a MySQL drop-in replacement, and it's not supported for Mattermost due to the requirement of MySQL 5.7.12. Prior versions of MariaDB were not officially supported but may have functioned in older Mattermost releases. If you are running MariaDB now, migrating from MariaDB to the MySQL equivalent is recommended.
-    - Deployments requiring searching in Chinese, Japanese, and Korean languages require MySQL 5.7.6+ and the configuration of `ngram Full-Text parser <https://dev.mysql.com/doc/refman/5.7/en/fulltext-search-ngram.html>`__. For searching two characters, you will also need to set ``ft_min_word_len`` and ``innodb_ft_min_token_size`` to ``2`` and restart MySQL. See `CJK discussion <https://github.com/mattermost/mattermost/issues/2033#issuecomment-183872616>`__ for details.
+    - MySQL deployments requiring searching in Chinese, Japanese, and Korean languages require the configuration of `ngram Full-Text parser <https://dev.mysql.com/doc/refman/8.4/en/fulltext-search-ngram.html>`__. For searching two characters, you will also need to set ``ft_min_word_len`` and ``innodb_ft_min_token_size`` to ``2`` and restart MySQL. See `CJK discussion <https://github.com/mattermost/mattermost/issues/2033#issuecomment-183872616>`__ for details.
 
 Minimum PostgreSQL database support policy
 ::::::::::::::::::::::::::::::::::::::::::

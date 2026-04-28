@@ -10,8 +10,11 @@ Using a web browser, the desktop app, or the mobile app, you can `join a call <#
 
   - All Mattermost customers can start, join, and participate in 1:1 audio calls with optional screen sharing.
   - For group calls up to 50 concurrent users, Mattermost Enterprise, Professional, or Mattermost Cloud is required.
-  - Enterprise customers can also `record calls <#record-a-call>`__, enable :ref:`live text captions <end-user-guide/collaborate/make-calls:live captions during calls>` during calls, and `transcribe recorded calls <#transcribe-recorded-calls>`__. We recommend that Enterprise self-hosted customers looking for group calls beyond 50 concurrent users consider using the :ref:`dedicated rtcd service <administration-guide/configure/calls-deployment:rtcd>`.
+  - Enterprise customers can also `record calls <#record-a-call>`__, enable :ref:`live text captions <end-user-guide/collaborate/make-calls:live captions during calls>` during calls, and `transcribe recorded calls <#transcribe-recorded-calls>`__. We recommend that Enterprise self-hosted customers looking for group calls beyond 50 concurrent users consider using the :doc:`dedicated RTCD service </administration-guide/configure/calls-deployment>`.
   - Mattermost Cloud users can start calling right out of the box. For Mattermost self-hosted deployments, System admins need to enable and configure the plugin :ref:`using the System Console <administration-guide/configure/plugins-configuration-settings:calls>`.
+
+.. include:: ../../_static/badges/academy-calls.rst
+  :start-after: :nosearch:
 
 Join a call
 -----------

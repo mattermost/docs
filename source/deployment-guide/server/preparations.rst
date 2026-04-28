@@ -10,7 +10,7 @@ This guide outlines the key preparation steps required before installing the Mat
 
     Review software and hardware requirements </deployment-guide/software-hardware-requirements>
     Set up an NGINX proxy </deployment-guide/server/setup-nginx-proxy>
-    Configure Mattermost Calls </administration-guide/configure/calls-deployment>
+    Configure Mattermost Calls </administration-guide/configure/calls-overview>
     Set up TLS </deployment-guide/server/setup-tls>
     Use an image proxy </deployment-guide/server/image-proxy>
 
@@ -18,7 +18,7 @@ Before installing Mattermost Server, review the following preparation requiremen
 
 * :doc:`Review software and hardware requirements </deployment-guide/software-hardware-requirements>` - Ensure your system meets the minimum requirements for Mattermost deployment.
 * :doc:`Set up an NGINX proxy </deployment-guide/server/setup-nginx-proxy>` - Configure NGINX as a reverse proxy for enhanced security and performance.
-* :doc:`Configure Mattermost Calls </administration-guide/configure/calls-deployment>` - Set up real-time communication capabilities for voice and video calls.
+* :doc:`Configure Mattermost Calls </administration-guide/configure/calls-overview>` - Set up real-time communication capabilities for voice and video calls.
 * :doc:`Set up TLS </deployment-guide/server/setup-tls>` - Enable secure communication with SSL/TLS encryption.
 * :doc:`Use an image proxy </deployment-guide/server/image-proxy>` - Configure image proxy for enhanced privacy and security.
 
@@ -59,9 +59,11 @@ PostgreSQL v14+ is required for Mattermost server installations. :doc:`MySQL dat
 
    e. If using PostgreSQL v15.x or later, additional grants are required:
 
-      .. code-block:: sql
+      .. code-block:: text
 
          ALTER DATABASE mattermost OWNER TO mmuser;
+         -- Connect to the mattermost database so the schema grants below apply to the right schema
+         \c mattermost
          ALTER SCHEMA public OWNER TO mmuser;
          GRANT USAGE, CREATE ON SCHEMA public TO mmuser;
 
@@ -109,7 +111,7 @@ PostgreSQL v14+ is required for Mattermost server installations. :doc:`MySQL dat
 
 .. important::
 
-  If you are upgrading a major version of Postgres, ensure that ``ANALYZE VERBOSE`` is run on the database post upgrade. This is required to re-populate the ``pg_statistics`` table used to generate optimal query plans. Database performance may suffer if this step is skipped.
+  If you are upgrading a major version of PostgreSQL, see :doc:`Upgrade PostgreSQL </administration-guide/upgrade/upgrading-postgres>` for the full upgrade procedure and post-upgrade steps.
 
 Once you've completed the database preparation, return to the :doc:`Linux deployment </deployment-guide/server/deploy-linux>` documentation to continue with your Mattermost server installation.
 

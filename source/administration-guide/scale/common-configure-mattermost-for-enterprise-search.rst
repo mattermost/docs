@@ -9,6 +9,11 @@ Set server connection details
 1. (Optional) Enter **Server Username** used to access the enterprise search server.
 2. (Optional) Enter **Server Password** associated with the username.
 3. Set **Enable Cluster Sniffing** (Optional). Sniffing finds and connects to all data nodes in your cluster automatically.
+
+.. warning::
+
+   Do not enable cluster sniffing when using cloud-hosted search providers such as Elastic Cloud or Amazon OpenSearch Service. Cloud providers typically hide search cluster nodes behind a proxy, so sniffed node addresses may be unreachable from your network. The provider handles connection pooling for you, making sniffing unnecessary and potentially disruptive.
+
 4. Optional CA and client certificate configuration settings are available for use with basic authentication credentials or to replace them. See the :ref:`Enterprise search configuration settings <administration-guide/configure/environment-configuration-settings:enterprise search>` documentation for details.
 5. Select **Test Connection** and then select **Save**. If the server connection is unsuccessful you won't be able to save the configuration or enable searching with Elasticsearch or AWS OpenSearch.
 
@@ -44,4 +49,4 @@ Enterprise search limitations
 
 1. Elasticsearch and AWS OpenSearch uses a standard selection of "stop words" to keep search results relevant. Results for the following words will not be returned: "a", "an", "and", "are", "as", "at", "be", "but", "by", "for", "if", "in", "into", "is", "it", "no", "not", "of", "on", "or", "such", "that", "the", "their", "then", "there", "these", "they", "this", "to", "was", "will", and "with".
 2. Searching stop words in quotes returns more results than just the searched terms (`ticket <https://mattermost.atlassian.net/browse/MM-7216>`__).
-3. Search results are limited to a user's team and channel membership. This is enforced by the Mattermost server. The entities are indexed in Elasticsearch or AWS OpenSearch in a way that allows Mattermost to filter them when querying, so the Mattermost server narrows down the results on every Elasticsearch or AWS OpenSearch request applying those filters.
+3. By default, search results are limited to a user's team and channel membership. This is enforced by the Mattermost server. The entities are indexed in Elasticsearch or AWS OpenSearch in a way that allows Mattermost to filter them when querying, so the Mattermost server narrows down the results on every Elasticsearch or AWS OpenSearch request applying those filters. From Mattermost v11.6, admins can :ref:`allow searching public channels without membership <administration-guide/configure/environment-configuration-settings:allow searching public channels without membership>` so that users can find messages in public channels they haven't joined, scoped to teams they belong to.

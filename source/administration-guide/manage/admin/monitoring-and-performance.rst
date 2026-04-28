@@ -14,6 +14,7 @@ From collecting performance metrics and deploying monitoring tools to configurin
     Collect performance metrics </administration-guide/scale/collect-performance-metrics>
     Deploy Prometheus and Grafana for performance monitoring </administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring>
     Performance monitoring metrics </administration-guide/scale/performance-monitoring-metrics>
+    Deploy Grafana Loki for centralized logging </administration-guide/scale/deploy-grafana-loki-for-centralized-logging>
     Push notification health targets </administration-guide/scale/push-notification-health-targets>
     Performance alerting guide </administration-guide/scale/performance-alerting>
     Ensuring releases perform at scale </administration-guide/scale/ensuring-releases-perform-at-scale>
@@ -31,6 +32,7 @@ From collecting performance metrics and deploying monitoring tools to configurin
 * :doc:`Collect performance metrics </administration-guide/scale/collect-performance-metrics>` - Learn about collecting performance metrics for Mattermost.
 * :doc:`Deploy Prometheus and Grafana for performance monitoring </administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring>` - Learn how to deploy Prometheus and Grafana for performance monitoring.
 * :doc:`Performance monitoring metrics </administration-guide/scale/performance-monitoring-metrics>` - Learn about performance monitoring metrics for Mattermost.
+* :doc:`Deploy Grafana Loki for centralized logging </administration-guide/scale/deploy-grafana-loki-for-centralized-logging>` - Learn how to deploy Grafana Loki for centralized logging.
 * :doc:`Push notification health targets </administration-guide/scale/push-notification-health-targets>` - Learn about push notification health targets for Mattermost.
 * :doc:`Performance alerting guide </administration-guide/scale/performance-alerting>` - Learn about performance alerting for Mattermost.
 * :doc:`Ensuring releases perform at scale </administration-guide/scale/ensuring-releases-perform-at-scale>` - Learn how to ensure releases perform at scale for Mattermost.

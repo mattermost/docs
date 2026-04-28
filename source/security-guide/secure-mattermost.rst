@@ -31,3 +31,4 @@ Mattermost ships with several security features that can help organizations safe
 * :doc:`SAML SSO technical documentation </administration-guide/onboard/sso-saml-technical>` - Technical details on SAML SSO.
 * :doc:`Certificate-based authentication </administration-guide/onboard/certificate-based-authentication>` - Identify a user or a device before granting access to Mattermost.
 * :ref:`Manage file sharing and downloads <administration-guide/configure/site-configuration-settings:file sharing and downloads>` - Control file sharing and downloads in Mattermost.
+* :ref:`Log path restrictions <administration-guide/manage/logging:log path restrictions>` - Restrict log file locations to authorized directories for enhanced access control and configuration integrity.

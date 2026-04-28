@@ -10,7 +10,7 @@ All user responses are stored in and remain within your self-hosted deployment, 
 
 .. important::
 
-The User Satisfaction Survey Plugin is the recommended approach for gathering user feedback, replacing the deprecated :doc:`User Satisfaction Survey Plugin </administration-guide/manage/user-satisfaction-surveys>` for new deployments. 
+  The User Satisfaction Survey Plugin is the recommended approach for gathering user feedback, replacing the deprecated :doc:`User Satisfaction Survey Plugin </administration-guide/manage/user-satisfaction-surveys>` for new deployments. 
 
 Setup
 ------
@@ -22,11 +22,7 @@ The User Survey integration is compatible with Mattermost v9.11.2 or later.
 Install
 --------
 
-
-
-.. note::
-
-  From Mattermost v9.11.2 (ESR) and Mattermost Cloud v10, this plugin is pre-packaged with the Mattermost Server. If your Mattermost deployment is on a release prior to v9.11.2, download the `latest plugin binary release <https://github.com/mattermost/mattermost-plugin-user-survey/releases>`_, and upload it to your server via **System Console > Plugin Management**.
+From Mattermost v9.11.2 (ESR) and Mattermost Cloud v10, this plugin is pre-packaged with the Mattermost Server. If your Mattermost deployment is on a prior release, download the `latest plugin binary release <https://github.com/mattermost/mattermost-plugin-user-survey/releases>`_, and upload it to your server via **System Console > Plugin Management**.
 
 Upgrade
 ~~~~~~~

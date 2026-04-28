@@ -10,11 +10,17 @@ Mattermost Agents Admin Guide
    :titlesonly:
 
    LLM provider configuration guide </agents/docs/providers.md>
+   Configure Agents with AWS Bedrock </agents/docs/aws_bedrock_setup.md>
    Implementing Sovereign AI </agents/docs/sovereign_ai.md>
 
 .. include:: /agents/docs/admin_guide.md
   :parser: myst
   :start-after: # Mattermost Agents Admin Guide
+
+Additional configuration guides
+-------------------------------
+
+- :doc:`Configure Agents with AWS Bedrock </agents/docs/aws_bedrock_setup>`
 
 .. tip::
 
