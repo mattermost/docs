@@ -62,6 +62,7 @@ PostgreSQL v14+ is required for Mattermost server installations. :doc:`MySQL dat
       .. code-block:: sql
 
          ALTER DATABASE mattermost OWNER TO mmuser;
+         -- Connect to the mattermost database so the schema grants below apply to the right schema
          \c mattermost
          ALTER SCHEMA public OWNER TO mmuser;
          GRANT USAGE, CREATE ON SCHEMA public TO mmuser;
