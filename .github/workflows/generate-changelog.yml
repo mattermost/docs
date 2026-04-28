@@ -35,13 +35,12 @@ jobs:
       #   CHANGELOG_READ_CLIENT_ID   (variable)  — Client ID from the mattermost+enterprise GitHub App
       #   CHANGELOG_READ_PRIVATE_KEY (secret)    — Private key from the mattermost+enterprise GitHub App
       - name: Get read token (source repos)
-        uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a # v2.1.0
+        uses: actions/create-github-app-token@v1
         id: readToken
         with:
-          app_id: "${{ vars.CHANGELOG_READ_CLIENT_ID }}"
-          private_key: ${{ secrets.CHANGELOG_READ_PRIVATE_KEY }}
-          installation_retrieval_mode: organization
-          installation_retrieval_payload: mattermost
+          app-id: ${{ vars.CHANGELOG_READ_CLIENT_ID }}
+          private-key: ${{ secrets.CHANGELOG_READ_PRIVATE_KEY }}
+          owner: mattermost
  
       # App 2: Read/write access to mattermost/docs.
       # Used to check out this repo, push the changelog branch, and open the PR.
@@ -49,13 +48,12 @@ jobs:
       #   CHANGELOG_WRITE_CLIENT_ID   (variable) — Client ID from the docs GitHub App
       #   CHANGELOG_WRITE_PRIVATE_KEY (secret)   — Private key from the docs GitHub App
       - name: Get write token (docs repo)
-        uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a # v2.1.0
+        uses: actions/create-github-app-token@v1
         id: writeToken
         with:
-          app_id: "${{ vars.CHANGELOG_WRITE_CLIENT_ID }}"
-          private_key: ${{ secrets.CHANGELOG_WRITE_PRIVATE_KEY }}
-          installation_retrieval_mode: organization
-          installation_retrieval_payload: mattermost
+          app-id: ${{ vars.CHANGELOG_WRITE_CLIENT_ID }}
+          private-key: ${{ secrets.CHANGELOG_WRITE_PRIVATE_KEY }}
+          owner: mattermost
  
       - name: Checkout docs repo
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
