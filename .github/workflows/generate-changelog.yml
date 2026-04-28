@@ -32,26 +32,26 @@ jobs:
       # App 1: Read-only access to mattermost/mattermost and mattermost/enterprise.
       # Used by the Python script to fetch merged PRs and their release notes.
       # Credentials needed in Settings → Secrets and variables → Actions:
-      #   CHANGELOG_READ_CLIENT_ID   (variable)  — Client ID from the mattermost+enterprise GitHub App
+      #   CHANGELOG_READ_APP_ID      (variable)  — App ID from the mattermost+enterprise GitHub App
       #   CHANGELOG_READ_PRIVATE_KEY (secret)    — Private key from the mattermost+enterprise GitHub App
       - name: Get read token (source repos)
         uses: actions/create-github-app-token@v1
         id: readToken
         with:
-          app-id: ${{ vars.CHANGELOG_READ_CLIENT_ID }}
+          app-id: ${{ vars.CHANGELOG_READ_APP_ID }}
           private-key: ${{ secrets.CHANGELOG_READ_PRIVATE_KEY }}
           owner: mattermost
  
       # App 2: Read/write access to mattermost/docs.
       # Used to check out this repo, push the changelog branch, and open the PR.
       # Credentials needed in Settings → Secrets and variables → Actions:
-      #   CHANGELOG_WRITE_CLIENT_ID   (variable) — Client ID from the docs GitHub App
+      #   CHANGELOG_WRITE_APP_ID      (variable) — App ID from the docs GitHub App
       #   CHANGELOG_WRITE_PRIVATE_KEY (secret)   — Private key from the docs GitHub App
       - name: Get write token (docs repo)
         uses: actions/create-github-app-token@v1
         id: writeToken
         with:
-          app-id: ${{ vars.CHANGELOG_WRITE_CLIENT_ID }}
+          app-id: ${{ vars.CHANGELOG_WRITE_APP_ID }}
           private-key: ${{ secrets.CHANGELOG_WRITE_PRIVATE_KEY }}
           owner: mattermost
  
