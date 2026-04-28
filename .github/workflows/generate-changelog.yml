@@ -29,31 +29,36 @@ jobs:
       pull-requests: write
  
     steps:
-      # App 1: Read-only access to mattermost/mattermost and mattermost/enterprise.
-      # Used by the Python script to fetch merged PRs and their release notes.
-      # Credentials needed in Settings → Secrets and variables → Actions:
-      #   CHANGELOG_READ_APP_ID      (variable)  — App ID from the mattermost+enterprise GitHub App
-      #   CHANGELOG_READ_PRIVATE_KEY (secret)    — Private key from the mattermost+enterprise GitHub App
+      # Single GitHub App with access to mattermost/mattermost, mattermost/enterprise, and mattermost/docs.
+      # Two tokens are generated with different repo scopes to preserve least privilege.
+      # Credentials are stored as org-level secrets/variables in the mattermost organization,
+      # with access explicitly granted to mattermost/docs.
+      #
+      # Required org-level secrets/variables (Organization Settings → Secrets and variables → Actions):
+      #   CHANGELOG_APP_ID      (org variable) — Client ID of the GitHub App
+      #   CHANGELOG_PRIVATE_KEY (org secret)   — Private key of the GitHub App
+ 
+      # Read-only token scoped to the source repos only.
+      # Used by the Python script to fetch merged PRs and release notes.
       - name: Get read token (source repos)
-        uses: actions/create-github-app-token@v1
+        uses: actions/create-github-app-token@1b10c78c7865c340bc4f6099eb2f838309f1e8c3 # v3.1.1
         id: readToken
         with:
-          app-id: ${{ vars.CHANGELOG_READ_APP_ID }}
-          private-key: ${{ secrets.CHANGELOG_READ_PRIVATE_KEY }}
+          app-id: ${{ vars.CHANGELOG_APP_ID }}
+          private-key: ${{ secrets.CHANGELOG_PRIVATE_KEY }}
           owner: mattermost
+          repositories: mattermost,enterprise
  
-      # App 2: Read/write access to mattermost/docs.
+      # Write token scoped to the docs repo only.
       # Used to check out this repo, push the changelog branch, and open the PR.
-      # Credentials needed in Settings → Secrets and variables → Actions:
-      #   CHANGELOG_WRITE_APP_ID      (variable) — App ID from the docs GitHub App
-      #   CHANGELOG_WRITE_PRIVATE_KEY (secret)   — Private key from the docs GitHub App
       - name: Get write token (docs repo)
-        uses: actions/create-github-app-token@v1
+        uses: actions/create-github-app-token@1b10c78c7865c340bc4f6099eb2f838309f1e8c3 # v3.1.1
         id: writeToken
         with:
-          app-id: ${{ vars.CHANGELOG_WRITE_APP_ID }}
-          private-key: ${{ secrets.CHANGELOG_WRITE_PRIVATE_KEY }}
+          app-id: ${{ vars.CHANGELOG_APP_ID }}
+          private-key: ${{ secrets.CHANGELOG_PRIVATE_KEY }}
           owner: mattermost
+          repositories: docs
  
       - name: Checkout docs repo
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -70,7 +75,7 @@ jobs:
  
       - name: Generate changelog
         env:
-          GITHUB_TOKEN: ${{ steps.readToken.outputs.token }} # Read-only token for fetching PRs from source repos
+          GITHUB_TOKEN: ${{ steps.readToken.outputs.token }} # Read-only token scoped to source repos
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }} # Enables AI categorization and formatting — add under Settings → Secrets and variables → Actions
           MILESTONE: ${{ inputs.milestone }}
           VERSION: ${{ inputs.version }}
