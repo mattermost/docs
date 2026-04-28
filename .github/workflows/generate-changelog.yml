@@ -29,33 +29,33 @@ jobs:
       pull-requests: write
  
     steps:
-      # App 1: Read-only access to source repos (default: mattermost/mattermost and mattermost/enterprise).
+      # App 1: Read-only access to mattermost/mattermost and mattermost/enterprise.
       # Used by the Python script to fetch merged PRs and their release notes.
-      # Credentials: Settings → Secrets and variables → Actions in mattermost/docs
-      #   CHANGELOG_READ_APP_ID        (variable)
-      #   CHANGELOG_READ_INSTALL_ID    (variable)
-      #   CHANGELOG_READ_PRIVATE_KEY   (secret)
+      # Credentials needed in Settings → Secrets and variables → Actions:
+      #   CHANGELOG_READ_CLIENT_ID   (variable)  — Client ID from the mattermost+enterprise GitHub App
+      #   CHANGELOG_READ_PRIVATE_KEY (secret)    — Private key from the mattermost+enterprise GitHub App
       - name: Get read token (source repos)
-        uses: mattermost/github-app-installation-token-action@4d4c8c09a49df5b54e1eafd372d1a1e44fdcab13
+        uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a # v2.1.0
         id: readToken
         with:
-          appId: "${{ vars.CHANGELOG_READ_APP_ID }}"
-          installationId: "${{ vars.CHANGELOG_READ_INSTALL_ID }}"
-          privateKey: ${{ secrets.CHANGELOG_READ_PRIVATE_KEY }}
+          app_id: "${{ vars.CHANGELOG_READ_CLIENT_ID }}"
+          private_key: ${{ secrets.CHANGELOG_READ_PRIVATE_KEY }}
+          installation_retrieval_mode: organization
+          installation_retrieval_payload: mattermost
  
       # App 2: Read/write access to mattermost/docs.
       # Used to check out this repo, push the changelog branch, and open the PR.
-      # Credentials: Settings → Secrets and variables → Actions in mattermost/docs
-      #   CHANGELOG_WRITE_APP_ID       (variable)
-      #   CHANGELOG_WRITE_INSTALL_ID   (variable)
-      #   CHANGELOG_WRITE_PRIVATE_KEY  (secret)
+      # Credentials needed in Settings → Secrets and variables → Actions:
+      #   CHANGELOG_WRITE_CLIENT_ID   (variable) — Client ID from the docs GitHub App
+      #   CHANGELOG_WRITE_PRIVATE_KEY (secret)   — Private key from the docs GitHub App
       - name: Get write token (docs repo)
-        uses: mattermost/github-app-installation-token-action@4d4c8c09a49df5b54e1eafd372d1a1e44fdcab13
+        uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a # v2.1.0
         id: writeToken
         with:
-          appId: "${{ vars.CHANGELOG_WRITE_APP_ID }}"
-          installationId: "${{ vars.CHANGELOG_WRITE_INSTALL_ID }}"
-          privateKey: ${{ secrets.CHANGELOG_WRITE_PRIVATE_KEY }}
+          app_id: "${{ vars.CHANGELOG_WRITE_CLIENT_ID }}"
+          private_key: ${{ secrets.CHANGELOG_WRITE_PRIVATE_KEY }}
+          installation_retrieval_mode: organization
+          installation_retrieval_payload: mattermost
  
       - name: Checkout docs repo
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -73,10 +73,10 @@ jobs:
       - name: Generate changelog
         env:
           GITHUB_TOKEN: ${{ steps.readToken.outputs.token }} # Read-only token for fetching PRs from source repos
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }} # Add this secret under Settings → Secrets and variables → Actions to enable AI categorization and proofreading
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }} # Enables AI categorization and formatting — add under Settings → Secrets and variables → Actions
           MILESTONE: ${{ inputs.milestone }}
           VERSION: ${{ inputs.version }}
-          REPOS: ${{ inputs.server_repos }} # Comma-separated repos to pull PRs from
+          REPOS: ${{ inputs.server_repos }}
           BLOG_POST_URL: ${{ inputs.blog_post_url }}
           CHANGELOG_PATH: source/product-overview/mattermost-v11-changelog.md
         run: python .github/scripts/generate_changelog.py
