@@ -23,6 +23,7 @@
  - The following schema changes are included in the v11.7 release. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
    - Added a new partial unique index (``idx_accesscontrolpolicies_name_type``) to the ``AccessControlPolicies`` table on (Name, Type) filtered to ``WHERE Type = 'parent'``.
    - The ``PropertyFields`` and ``PropertyValues`` tables were modified, and a new ``Views`` table was created.
+   - Scoped the ``role_updated`` WebSocket events to the affected team/channel instead of broadcasting globally.
 
 #### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
