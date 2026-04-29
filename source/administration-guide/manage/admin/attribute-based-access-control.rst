@@ -21,6 +21,13 @@ Attribute-based access control (ABAC) provides 2 levels of control:
 - **System-wide policies** (managed by System Admins): Centralized policies that can be applied across multiple channels in the System Console. See :doc:`System-wide attribute-based access policies </administration-guide/manage/admin/abac-system-wide-policies>`.
 - **Channel-specific rules** (managed by Channel Admins): Self-service access rules that Channel Admins can configure directly in Channel Settings for individual channels. See :doc:`Channel-specific access rules </administration-guide/manage/admin/abac-channel-access-rules>`.
 
+From Mattermost v11.8, ABAC policies can be applied to **both private and public channels**, with deliberately different semantics for each:
+
+- **Private channels** are hard-gated by the policy. Non-matching members are removed during synchronization and only matching users can be added or invited.
+- **Public channels** are advisory. Anyone can still join freely, no member is ever removed by ABAC, and the policy is used either to **auto-add** matching users (when enabled) or to **recommend** the channel under **Browse Channels > Recommended channels** (when auto-add is disabled).
+
+Default channels (Town Square, Off-Topic), shared channels, and group-synced channels remain ineligible.
+
 Before you begin
 ------------------
 

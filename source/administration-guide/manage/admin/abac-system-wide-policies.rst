@@ -72,14 +72,23 @@ Manage rules
 
 You can apply changes to existing rules or remove rules at any time using either Simple Mode or Advanced Mode. Select **Save** to save your changes.
 
-Assign policies to private channels
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Assign policies to channels
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Specify the private channel that your access control policy applies to by selecting **Add channels** to search for and select the channels you want. You can assign the policy to multiple channels at once, or you can `assign it to individual channels <#define-access-controls-per-channel>`__ later. Select **Save** to save your changes.
+From Mattermost v11.8, parent policies can be assigned to **both private and public channels**. Select **Add channels** to search for and select the channels you want. You can assign the policy to multiple channels at once, or you can `assign it to individual channels <#define-access-controls-per-channel>`__ later. Select **Save** to save your changes.
+
+The two channel types behave differently under the same policy:
+
+- **Private channels** are hard-gated. The policy adds matching users (when auto-add is enabled), removes non-matching members at sync time, and prevents non-matching users from being added or invited.
+- **Public channels** are advisory. The policy never removes members and never blocks anyone from joining. With auto-add enabled it pulls matching users in; with auto-add disabled the channel appears under **Browse Channels > Recommended channels** for matching users.
+
+The save confirmation dialog explicitly calls out the channel mix and the consequences for each type so the impact of the save is clear before you commit.
+
+Default channels (such as Town Square and Off-Topic), shared channels, and group-synced channels remain ineligible — they are excluded from the channel selector.
 
 .. note::
 
-  Private channels with attribute-based access control policies can't have guest users invited to them. Only users who match the defined attribute criteria can be added to ABAC-controlled channels, ensuring strict adherence to access control policies.
+  Private channels with attribute-based access control policies can't have guest users invited to them. Only users who match the defined attribute criteria can be added to ABAC-controlled private channels, ensuring strict adherence to access control policies. Public channels remain joinable by anyone regardless of the policy.
 
 Delete policies
 ~~~~~~~~~~~~~~~
@@ -89,11 +98,13 @@ To delete a policy, select the **Delete** button next to the policy you want to 
 Define access controls per channel
 ----------------------------------
 
-You can assign an existing access control policy to a private channels for more granular control over channel membership. This is useful when you need to apply different rules for different channels.
+You can assign an existing access control policy to a private or public channel for more granular control over channel membership. This is useful when you need to apply different rules for different channels.
 
-1. In the System Console, go to **User Management > Channels** to select the private channel you want to configure, and select **Edit**.
+1. In the System Console, go to **User Management > Channels** to select the private or public channel you want to configure, and select **Edit**.
 2. In the **Channel Management** section, enable the **Enable attribute-based channel access** option.
 3. Under **Access policy**, select **Link to a policy** to select an existing policy.
+
+Once a policy is attached, the channel's privacy can no longer be flipped between public and private until the policy is removed — see :ref:`Channel-specific access rules <administration-guide/manage/admin/abac-channel-access-rules:validation and safety>`.
 
 .. tip::
 
