@@ -39,11 +39,13 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
 ### Bug Fixes
 
+#### Windows
+- Fixed an issue where the loading screen could get stuck over the top of the app.
+
 #### All Platforms
 
 - Fixed issues related to default preferences not applying to local configuration.
 - Fixed a misleading error message in the **Developer Tools** for the main window.
-- Fixed an issue where the loading screen could get stuck over the top of the app.
 - Fixed an issue where invalid server URLs were not preserved in the **Add Server** textbox.
 - Fixed an issue where removing a server with unreads or mentions caused the badge indicator to become stuck until the app was restarted.
 - Fixed an issue where renaming a server while not logged in did not update the tab title.
