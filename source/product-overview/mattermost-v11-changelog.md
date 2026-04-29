@@ -66,7 +66,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-7-is-now-availab
  - Improved autocomplete while typing in Korean and using Firefox.
  - Updated license renewal and expiry notification emails with refreshed branding, copy, and layout.
  - Added the ability to open channels in a separate popout window, with full channel and right-hand side functionality.
- - Dropped support for JS features required by browsers over three years old.
+ - Dropped support for JS features required by browsers over three years old (reported on webapp and Safari browser).
  - Renamed user-visible references from "Custom Profile Attributes" to "User Attributes" across the admin console, error messages, and server translations.
  - Added the ability to handle from which remotes a channel is shared from the channel settings user interface.
 
@@ -98,10 +98,10 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-7-is-now-availab
  - Improved response handling for outgoing webhook requests.
 
 ### Bug Fixes
- - Fixed a crash when native app download links were malformed.
+ - Fixed a crash when native app download links were malformed (reported on web browser).
  - Fixed an issue where premade themes were hidden when custom themes were disabled.
  - Fixed an issue where importing files with Japanese dakuten/handakuten characters (e.g., ガ, パ, べ) failed on macOS due to Unicode normalization mismatch (NFC/NFD).
- - Fixed an issue that caused profile pictures to be incorrectly rotated on upload, as their EXIF rotation tag was ignored.
+ - Fixed an issue that caused profile pictures to be incorrectly rotated on upload, as their EXIF rotation tag was ignored (reported on iOS).
  - Fixed a nil pointer dereference in ``UpdateUser`` when the user update operation returned an unexpected nil result (Sentry VF, 14 events).
  - Fixed an issue with the date picker not being able to overflow interactive dialogs properly.
  - Fixed an issue where fetching a newly created channel could fail with "channel not found" on deployments with database read replicas.
