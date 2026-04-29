@@ -51,6 +51,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 - Fixed an issue where clicking custom protocol links could open the target application with a malformed URL.
 - Fixed an issue where the **Settings** modal could not be opened when no servers were configured.
 - Fixed an issue where overly long URLs were not handled correctly.
+- Fixed an issue related to authentication on non-configured domains.
 
 ### Open Source Components
 
