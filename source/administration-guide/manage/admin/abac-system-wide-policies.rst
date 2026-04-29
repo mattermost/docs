@@ -104,7 +104,7 @@ You can assign an existing access control policy to a private or public channel 
 2. In the **Channel Management** section, enable the **Enable attribute-based channel access** option.
 3. Under **Access policy**, select **Link to a policy** to select an existing policy.
 
-Once a policy is attached, the channel's privacy can no longer be flipped between public and private until the policy is removed — see :ref:`Channel-specific access rules <administration-guide/manage/admin/abac-channel-access-rules:validation and safety>`.
+Once a policy is attached, the channel's privacy can no longer be flipped between public and private until the policy is removed — see :ref:`Channel-specific access rules <administration-guide/manage/admin/abac-channel-access-rules:validation-and-safety>`.
 
 .. tip::
 
