@@ -118,6 +118,7 @@ Search metrics
 - ``mattermost_search_post_index_total``: The total number of posts indexes carried out.
 - ``mattermost_search_posts_searches_total``: The total number of post searches carried out.
 - ``mattermost_search_user_index_total``: The total number of user indexes carried out.
+- ``mattermost_search_engine_status``: Status of the configured search engine: ``1`` = healthy or not configured, ``0`` = configured but unavailable. Use this metric to set up alerts for search engine outages.
 
 WebSocket metrics
 ~~~~~~~~~~~~~~~~~

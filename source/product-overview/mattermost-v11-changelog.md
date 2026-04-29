@@ -9,6 +9,10 @@
 ```{include} common-esr-support-upgrade.md
 ```
 
+```{note}
+Platform and OS scope reflects reported and tested environments and may not represent all affected configurations.
+```
+
 (release-v11.7-extended-support-release)=
 ## Release v11.7 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
