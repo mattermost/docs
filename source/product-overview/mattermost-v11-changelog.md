@@ -63,7 +63,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-7-is-now-availab
  - Substring matching is now allowed when searching channel members in the member sub-panel in a channel.
  - Improved accessibility of thread list menus.
  - Channel banners are now shown in thread views.
- - Improved autocomplete while typing in Korean and using Firefox (reported on desktop app and web browser).
+ - Improved autocomplete while typing in Korean and using Firefox (reported on Desktop App and web browser).
  - Updated license renewal and expiry notification emails with refreshed branding, copy, and layout.
  - Added the ability to open channels in a separate popout window, with full channel and right-hand side functionality.
  - Dropped support for JS features required by browsers over three years old (reported on webapp and Safari browser).
@@ -111,10 +111,10 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-7-is-now-availab
  - Fixed styling issues in the **Browse Channels** modal when there were long channel purpose values present.
  - Fixed an issue where shared channel invites were silently dropped in High Availability clusters when the API request landed on a non-leader node.
  - Fixed an issue where message attachment titles would render encoded special characters as-is.
- - Fixed an issue with the **Invite to Team** modal ignoring the most recent key pressed when suggesting users (reported on desktop app and web browser).
+ - Fixed an issue with the **Invite to Team** modal ignoring the most recent key pressed when suggesting users (reported on Desktop App and web browser).
  - Fixed an issue where a "Don't have an account" link showed up on the login page even when signups were disabled.
  - Fixed issues with interactive dialogs - dynamic select lookups, radio values, and field refresh.
- - Fixed an issue where desktop notifications still triggered for a channel or thread that was focused in a popout window (reported on desktop app).
+ - Fixed an issue where desktop notifications still triggered for a channel or thread that was focused in a popout window (reported on Desktop App).
  - Fixed an issue where the ``remote_id`` field on user objects could be set via the user patch API.
  - Fixed an issue where keyboard navigation didn't work in the channel header and sidebar channel menus.
  - Fixed an issue where the Workspace Optimization page appeared in the System Console on Mattermost Cloud workspaces.
