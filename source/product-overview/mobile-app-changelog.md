@@ -6,6 +6,10 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 ```{include} common-esr-support.md
 ```
 
+```{note}
+Platform and OS scope reflects reported and tested environments and may not represent all affected configurations.
+```
+
 (release-v2-40-0)=
 ## 2.40.0 Release
  - Release Date: May 15, 2026
