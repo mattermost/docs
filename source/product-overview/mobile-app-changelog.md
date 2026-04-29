@@ -29,14 +29,14 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 ### Bug Fixes
  - Fixed an issue where opening a permalink to a channel the user was not a member of showed a "Message not viewable" error instead of prompting to join the channel.
  - Fixed native crashes during Hermes garbage collection in the gallery pager and lightbox components.
- - Fixed the display height for file upload errors in low bandwidth settings.
+ - Fixed the display height for file upload errors in low bandwidth settings on iOS.
  - Fixed a crash on Android where React Native Navigation could attempt to bring a destroyed controller to the front during activity teardown (Sentry AX68, 9,150 crashes, 1,580 users).
- - Fixed an issue where GIF file attachments did not animate for users other than the uploader.
+ - Fixed an issue on Android where GIF file attachments did not animate for users other than the uploader.
  - Fixed a crash in the iOS app caused by concurrent database access between the main app and push notification extension.
  - Fixed an issue showing wrong search results on hashtag tapping.
- - Fixed search results layout overlap on hashtag tapping.
- - Fixed a race condition on websocket messages.
- - Fixed an issue where permalink thread headers were so long that channel names truncated instead of overlapped the title on mobile.
+ - Fixed search results layout overlap on hashtag tapping on Android.
+ - Fixed a race condition on websocket messages on iOS.
+ - Fixed an issue on iOS where permalink thread headers were so long that channel names truncated instead of overlapped the title on mobile.
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
