@@ -16,7 +16,7 @@ Each ABAC channel access policy has an explicit active state that determines whe
 With channel access rules, Channel and Team Admins can:
 
 - Create channel-specific access rules using a simple interface.
-- Rules are **additive** to any system policies (both must be satisfied).
+- Use rules that are **additive** to any system policies. For private channels, both must be satisfied for adds and invites. For public channels, the combined rules affect auto-add and recommendations only, and don't block joins or remove members.
 - Automatic member synchronization with immediate feedback.
 - Self-exclusion prevention to avoid locking yourself out (private channels only).
 
@@ -146,7 +146,7 @@ Visual indicators
 
 **Channel Members panel:**
 
-- Information banner at the top explains that attribute-based access is enabled. The wording differs by channel type: private channels say *"Channel access is restricted by user attributes"*; public channels say *"This channel has recommended members based on user attributes"*.
+- Information banner at the top explains that attribute-based access is enabled. The message differs by channel type: private channels indicate that access is restricted by user attributes, while public channels indicate that member recommendations are based on user attributes.
 - Displays required attribute values as tags (e.g., "Engineering", "Confidential").
 - Tooltip on hover shows the attribute name for each value.
 

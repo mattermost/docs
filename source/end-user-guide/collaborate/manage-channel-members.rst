@@ -11,8 +11,8 @@ Any member of a channel can add other members to public or private channels, unl
 
 When a channel has :doc:`attribute-based access controls </administration-guide/manage/admin/attribute-based-access-control>` enabled, you'll see details about which user attributes are permitted access to the channel. Behavior differs by channel type:
 
-- **Private channels**: Only users who meet the requirements appear in search results when adding members. The channel is hard-gated by the policy.
-- **Public channels**: All eligible team members appear in search results, and matching users carry a **Recommended** tag at the top of the list. Anyone can still be added because public-channel access controls are advisory and never remove existing members.
+- **Private channels**: Only users who meet the requirements appear in search results when adding members, and only those users can be added.
+- **Public channels**: All eligible team members appear in search results, and users who meet the recommended attributes are labeled **Recommended**. Anyone can still be added because public-channel access controls are advisory and never remove existing members.
 
 .. tab:: Web/Desktop
 

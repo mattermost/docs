@@ -75,14 +75,14 @@ You can apply changes to existing rules or remove rules at any time using either
 Assign policies to channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-From Mattermost v11.8, parent policies can be assigned to **both private and public channels**. Select **Add channels** to search for and select the channels you want. You can assign the policy to multiple channels at once, or you can `assign it to individual channels <#define-access-controls-per-channel>`__ later. Select **Save** to save your changes.
+From Mattermost v11.8, system-wide policies can be assigned to **both private and public channels**. Select **Add channels** to search for and select the channels you want. You can assign the policy to multiple channels at once, or you can `assign it to individual channels <#define-access-controls-per-channel>`__ later. Select **Save** to save your changes.
 
 The two channel types behave differently under the same policy:
 
-- **Private channels** are hard-gated. The policy adds matching users (when auto-add is enabled), removes non-matching members at sync time, and prevents non-matching users from being added or invited.
-- **Public channels** are advisory. The policy never removes members and never blocks anyone from joining. With auto-add enabled it pulls matching users in; with auto-add disabled the channel appears under **Browse Channels > Recommended channels** for matching users.
+- **Private channels** are hard-gated. The policy adds matching users (when auto-add is enabled), removes non-matching members during synchronization, and prevents non-matching users from being added or invited.
+- **Public channels** are advisory. The policy never removes members and never blocks anyone from joining. With auto-add enabled it automatically adds matching users; with auto-add disabled the channel appears under **Browse Channels > Recommended channels** for matching users.
 
-The save confirmation dialog explicitly calls out the channel mix and the consequences for each type so the impact of the save is clear before you commit.
+Before saving, you'll be prompted to confirm the impact of the change so you can review how it affects each channel type.
 
 Default channels (such as Town Square and Off-Topic), shared channels, and group-synced channels remain ineligible — they are excluded from the channel selector.
 
