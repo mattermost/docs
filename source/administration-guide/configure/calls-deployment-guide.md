@@ -973,7 +973,7 @@ Check Mattermost, RTCD, and calls-offloader logs each day for recurring `ERROR` 
 
 **5.5.3: Tune Max Call Participants**
 
-If you see resource pressure during large calls, lower **Max Call Participants** in **System Console > Plugins > Calls**. By default there is no participant limit (configured as `0`, which means unlimited). A practical ceiling for most deployments is `50`.
+If you see resource pressure during large calls, lower **Max Call Participants** in **System Console > Plugins > Calls**. By default, there is no participant limit (configured as `0`, which means unlimited). A practical ceiling for most deployments is `50`.
 
 **5.5.4: Track user-reported issues**
 
