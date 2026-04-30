@@ -304,16 +304,16 @@ After deploying RTCD, validate the installation:
    On the RTCD server:
    
    ```bash
-   nc -l -u -p 8443
+   sudo ncat -u -l -k -p 8443 -c '/bin/cat'
    ```
 
    On a client machine:
    
    ```bash
-   nc -v -u YOUR_RTCD_SERVER 8443
+  sudo nmap -sU -p 8443 RTCD_SERVER_IP
    ```
       
-   Type a message and hit Enter on either side. If messages are received on both ends, UDP connectivity is working.
+   If UDP connectivity is working, `nmap` reports as `open`.
 
    Restart RTCD after the test:
 
@@ -323,7 +323,13 @@ After deploying RTCD, validate the installation:
 
 3. **Test TCP connectivity** (if enabled):
 
-   Similar to the UDP test, but remove the `-u` flag from both commands.
+   Run this check from a client machine:
+
+   ```bash
+   nmap -p 8443 RTCD_SERVER_IP
+   ```
+
+   If TCP fallback is enabled and reachable, `nmap` reports as `open`.
 
 4. **Monitor metrics**:
 

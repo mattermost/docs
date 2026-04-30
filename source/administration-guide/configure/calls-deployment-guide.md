@@ -301,8 +301,8 @@ TURN is a relay service used only when clients cannot reach the Calls media serv
 
 Provisioning a TURN server is necessary if both of these conditions are true:
 
-- Clients connect from networks that cannot reliably use UDP on port `8443` for media traffic (preferred).
-- Clients connect from networks that cannot reliably use TCP on port `8443` (fallback).
+- Clients are on networks that cannot directly reach the RTCD Server or Calls plugin over UDP (preferred) on port `8443` for media traffic.
+- Clients are on networks that cannot directly reach the RTCD Server or Calls plugin over TCP (fallback) on port `8443` for media traffic.
 
 TURN is typically a last resort as it adds latency and infrastructure complexity. Only plan to deploy TURN if your answers indicate that you cannot rely on UDP or TCP for media, and users need an alternative route.
 
@@ -368,7 +368,7 @@ Work through one server at a time so you can verify nothing is missed before mov
 
 
 ```{important}
-If you use NGINX as a reverse proxy in front of Mattermost, note that NGINX cannot forward UDP traffic. Port 8443 must be opened directly on the server running the media service - not on NGINX. Port 443 is the only port NGINX handles for Calls.
+If you use NGINX as a reverse proxy in front of Mattermost, it should not be used to forward UDP traffic. Port 8443 must be opened directly on the server running the media service (RTCD or Integrated) - not on NGINX. Port 443 is the only port NGINX needs to handle for Calls.
 ```
 
 ##### Recording server ports
@@ -414,7 +414,7 @@ If you deployed a TURN server in Step 1.4, open only the ports required by the t
 | 3478 | UDP | Outbound | RTCD server | `stun.global.calls.mattermost.com` | (Optional - Step 1.3.1) Public IP discovery using STUN. |
 
 ```{important}
-If you use NGINX as a reverse proxy in front of Mattermost, note that NGINX cannot forward UDP traffic. Port 8443 must be opened directly on the server running the media service - not on NGINX. Port 443 is the only port NGINX handles for Calls.
+If you use NGINX as a reverse proxy in front of Mattermost, it should not be used to forward UDP traffic. Port 8443 must be opened directly on the server running the media service (RTCD or Integrated) - not on NGINX. Port 443 is the only port NGINX needs to handle for Calls.
 ```
 
 ##### Recording server ports
@@ -442,76 +442,80 @@ If you deployed a TURN server in Step 1.4, open these ports. If you are using `c
 
 ### 1.6 Networking Checks
 
-These checks test firewall rules and network reachability only. They do not require Calls, RTCD, or `calls-offloader` to be installed yet.
+These checks validate firewall rules and network reachability. They do not require the production Calls, RTCD, or `calls-offloader` services to be installed yet. To get reliable results before those services exist, start a temporary listener on the target host before each applicable scan below. This is especially important for UDP checks, where a blocked port and an allowed-but-idle port can otherwise look the same.
 
-First, install `nmap` on each machine you will run checks from. For example:
+First, install `nmap` on each source machine or client you will run checks from, and install `ncat` on each target host where you will start a temporary listener. For example:
 
-- Ubuntu or Debian: `sudo apt install nmap`
-- RHEL, Rocky Linux, or AlmaLinux: `sudo dnf install nmap`
+- Ubuntu or Debian: `sudo apt install nmap ncat`
+- RHEL, Rocky Linux, or AlmaLinux: `sudo dnf install nmap nmap-ncat`
 
 When you execute each check below, `nmap` returns `open`, `closed`, or `filtered`.
 
 **Pass**:
-- `open`: Port is reachable and the service is running. Expected if you've already installed the RTCD or Recording services in Phases 2-3.
-- `closed`: Port is reachable but the service is not running. Expected if you just provisioned the infrastructure in Step 1.4.
+- `open`: Port is reachable, and the target host was able to bind a temporary listener on that port.
 
 **Fail**:
+- `closed`: Traffic reached the target host, but nothing is listening on that port. Confirm the temporary listener is still running, the port is correct, and the port was not already in use by another process.
 - `filtered`: Firewall is blocking the port. Revisit your networking configuration in Step 1.5 before continuing.
 
 ```{note}
-In the commands below, replace `TARGET_IP` with the actual IP address of the server you are testing. For example, if your Mattermost server IP is `10.0.1.50`, run `sudo nmap -sU -p 8443 10.0.1.50`.
+In the commands below, replace `TARGET_IP` with the actual IP address of the server you are testing. Start the server-side `ncat` listener on the target host first, then run the client-side `nmap` command from the source machine. Stop the temporary listener with `Ctrl+C` after the check completes.
 ```
 
 **Integrated deployments**
 
-Run from a client machine on the same network as your users:
+Start the temporary listeners on the Mattermost Server, then run `nmap` from any client machine on the same network as your users:
 
 | Check | Command | `TARGET_IP` | Description |
 |---|---|---|---|
-| 1.6.1 | `sudo nmap -sU -p 8443 TARGET_IP` | Mattermost server IP | Clients can send UDP media to the Mattermost server |
-| 1.6.2 | `nmap -p 8443 TARGET_IP` | Mattermost server IP | Clients can reach the Mattermost server for TCP media fallback |
+| 1.6.1 | Mattermost Server: `sudo ncat -u -l -k -p 8443 -c '/bin/cat'`<br>Client: `sudo nmap -sU -p 8443 TARGET_IP` | Mattermost server IP | Clients can send UDP media to the Mattermost server |
+| 1.6.2 | Mattermost Server: `sudo ncat -l -k -p 8443`<br>Client: `nmap -p 8443 TARGET_IP` | Mattermost server IP | Clients can reach the Mattermost server for TCP media fallback |
 
 **RTCD deployments**
 
-Run from a client machine on the same network as your users:
+Start the temporary listeners on the RTCD Server, then run `nmap` from any client machine on the same network as your users:
 
 | Check | Command | `TARGET_IP` | Description |
 |---|---|---|---|
-| 1.6.3 | `sudo nmap -sU -p 8443 TARGET_IP` | RTCD server IP | Clients can send UDP media to the RTCD server |
-| 1.6.4 | `nmap -p 8443 TARGET_IP` | RTCD server IP | Clients can reach the RTCD server for TCP media fallback |
+| 1.6.3 | RTCD Server: `sudo ncat -u -l -k -p 8443 -c '/bin/cat'`<br>Client: `sudo nmap -sU -p 8443 TARGET_IP` | RTCD server IP | Clients can send UDP media to the RTCD server |
+| 1.6.4 | RTCD Server: `sudo ncat -l -k -p 8443`<br>Client: `nmap -p 8443 TARGET_IP` | RTCD server IP | Clients can reach the RTCD server for TCP media fallback |
 
-Run from the Mattermost server:
+Start the temporary listener on the RTCD Server, then run `nmap` from the Mattermsot server:
 
 | Check | Command | `TARGET_IP` | Description |
 |---|---|---|---|
-| 1.6.5 | `nmap -p 8045 TARGET_IP` | RTCD server IP | Mattermost can reach the RTCD API |
+| 1.6.5 | RTCD Server: `sudo ncat -l -k -p 8045`<br>Mattermost Server: `nmap -p 8045 TARGET_IP` | RTCD server IP | Mattermost can reach the RTCD API |
 
 **Recording deployments**
 
-Run from the Mattermost server:
+Start the temporary listener on the Recording Server (`calls-offloader`), then run `nmap` from the Mattermost server:
 
 | Check | Command | `TARGET_IP` | Description |
 |---|---|---|---|
-| 1.6.6 | `nmap -p 4545 TARGET_IP` | calls-offloader server IP | Mattermost can reach the calls-offloader API |
+| 1.6.6 | Recording Server: `sudo ncat -l -k -p 4545`<br>Mattermost Server: `nmap -p 4545 TARGET_IP` | calls-offloader server IP | Mattermost can reach the calls-offloader API |
 
-Run from the calls-offloader server:
+Start the temporary listeners on the media server (RTCD or Mattermost server if using Integrated mode), then run `nmap` from the Recording server (`calls-offloader`):
 
 | Check | Command | `TARGET_IP` | Description |
 |---|---|---|---|
-| 1.6.7 | `sudo nmap -sU -p 8443 TARGET_IP` | RTCD server IP (or Mattermost server IP if using Integrated mode) | Calls Offloader can send UDP media to the media service to join calls for recording |
-| 1.6.8 | `nmap -p 8443 TARGET_IP` | RTCD server IP (or Mattermost server IP if using Integrated mode) | Calls Offloader can reach the media service for TCP media fallback |
-| 1.6.9 | `nmap -p 443 TARGET_IP` | Mattermost server IP | Calls Offloader can post recordings back to Mattermost |
+| 1.6.7 | RTCD or Mattermost Server: `sudo ncat -u -l -k -p 8443 -c '/bin/cat'`<br>Recording Server: `sudo nmap -sU -p 8443 TARGET_IP` | RTCD server IP (or Mattermost server IP if using Integrated mode) | Calls Offloader can send UDP media to the media service to join calls for recording |
+| 1.6.8 | RTCD or Mattermost Server: `sudo ncat -l -k -p 8443`<br>Recording Server: `nmap -p 8443 TARGET_IP` | RTCD server IP (or Mattermost server IP if using Integrated mode) | Calls Offloader can reach the media service for TCP media fallback |
+
+Start the temporary listener on the Mattermost server, then run `nmap` from the Recording server (`calls-offloader`):
+
+| Check | Command | `TARGET_IP` | Description |
+|---|---|---|---|
+| 1.6.9 | Mattermost Server: `sudo ncat -l -k -p 443`<br>Recording Server: `nmap -p 443 TARGET_IP` | Mattermost server IP | Calls Offloader can post recordings back to Mattermost |
 
 **TURN deployments**
 
-Run from a client machine on the same network as your users:
+Start the temporary listeners on the TURN Server, then run `nmap` from any client machine on the same network as your users:
 
 | Check | Command | `TARGET_IP` | Description |
 |---|---|---|---|
-| 1.6.10 | `sudo nmap -sU -p 3478 TARGET_IP` | TURN server IP | Clients can reach the TURN server on UDP 3478 |
-| 1.6.11 | `nmap -p 3478 TARGET_IP` | TURN server IP | Clients can reach the TURN server on TCP 3478 |
-| 1.6.12 | `nmap -p 5349 TARGET_IP` | TURN server IP | (Optional) Clients can reach the TURN server over TLS |
-| 1.6.13 | `sudo nmap -sU -p 49152 TARGET_IP` | TURN server IP | Spot check of the TURN relay port range |
+| 1.6.10 | TURN Server: `sudo ncat -u -l -k -p 3478 -c '/bin/cat'`<br>Client: `sudo nmap -sU -p 3478 TARGET_IP` | TURN server IP | Clients can reach the TURN server on UDP 3478 |
+| 1.6.11 | TURN Server: `sudo ncat -l -k -p 3478`<br>Client: `nmap -p 3478 TARGET_IP` | TURN server IP | Clients can reach the TURN server on TCP 3478 |
+| 1.6.12 | TURN Server: `sudo ncat -u -l -k -p 49152 -c '/bin/cat'`<br>Client: `sudo nmap -sU -p 49152 TARGET_IP` | TURN server IP | Spot check of the TURN relay port range |
 
 ### 1.7 Verification Checks
 
@@ -520,7 +524,7 @@ Before proceeding to Phase 2, confirm all of the following:
 - [ ] You have chosen your deployment architecture and provisioned the required servers.
 - [ ] You have confirmed your Mattermost license supports the architecture and features you plan to deploy.
 - [ ] Every required firewall rule and network path for your chosen architecture has been opened.
-- [ ] Every relevant network check in Step 1.6 returned the expected result (`open` or `closed`, but not `filtered`).
+- [ ] Every relevant network check in Step 1.6 returned the expected result (`open`, but not `closed` or `filtered`).
 - [ ] If you need STUN, outbound UDP `3478` is allowed to `stun.global.calls.mattermost.com`.
 
 ```{important}
