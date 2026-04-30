@@ -26,7 +26,7 @@ Platform and OS scope reflects reported and tested environments and may not repr
  - **Share feedback** from in-app prompts now opens the Mattermost community forum in the browser.
  - Channel banners are now shown in thread views.
  - Added the ability to set shared channels from the channel settings.
- - The team sidebar now displays to the left of the channel sidebar if you belong to more than one team or if other teams are available to join.
+ - Tapping the team name in the channel list header now opens a bottom-sheet menu where users can join another team or leave the current team.
  - Mobile apps now support multiselect, dynamic search, multi-step dialogs, and dynamic field refresh for Interactive Dialogs, bringing feature parity with the web app.
  - The pre-auth secret header name is now always retrieved in lowercase to support HTTP1.1.
 
