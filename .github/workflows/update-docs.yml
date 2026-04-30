@@ -69,7 +69,7 @@ jobs:
         run: python .github/scripts/update_docs.py
  
       - name: Create pull request
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@f230e4b8d3f1f2f2c8f2a9a0d6c1f3f3b7e3d1a0 # v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: docs/${{ inputs.component }}-v${{ inputs.version }}
