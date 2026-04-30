@@ -480,7 +480,7 @@ Start the temporary listeners on the RTCD Server, then run `nmap` from any clien
 | 1.6.3 | RTCD Server: `sudo ncat -u -l -k -p 8443 -c '/bin/cat'`<br>Client: `sudo nmap -sU -p 8443 TARGET_IP` | RTCD server IP | Clients can send UDP media to the RTCD server |
 | 1.6.4 | RTCD Server: `sudo ncat -l -k -p 8443`<br>Client: `nmap -p 8443 TARGET_IP` | RTCD server IP | Clients can reach the RTCD server for TCP media fallback |
 
-Start the temporary listener on the RTCD Server, then run `nmap` from the Mattermsot server:
+Start the temporary listener on the RTCD Server, then run `nmap` from the Mattermost server:
 
 | Check | Command | `TARGET_IP` | Description |
 |---|---|---|---|
@@ -748,7 +748,7 @@ Before proceeding, run these checks from the Mattermost server to confirm `calls
 ### 3.3 Connect calls-offloader to Mattermost
 
 1. Go to **System Console > Plugins > Calls > Settings**.
-2. Set **Job Service URL** to the calls-offloader address, for example `http://calls-offloader.internal:4545`.
+2. Set **Job Service URL** to the calls-offloader address, for example `http://calls-offloader.internal:4545` on a trusted internal network.
 3. Enable **Call Recordings** if needed.
 4. Enable **Call Transcriptions** if needed. Transcriptions require recordings to be enabled.
 5. Enable **Live Captions** if needed. Live captions require both recordings and transcriptions to be enabled.
@@ -808,7 +808,7 @@ Thank you for volunteering to test Mattermost Calls before a wider rollout. Afte
 
 Calls is enabled in this channel for pilot testing. You can select **Start call** in the channel header to begin, or join an existing call if one is already started.
 
-You can learn more about Mattermost Calls in the {doc}`documentation <../../end-user-guide/collaborate/make-calls>`.
+You can learn more about Mattermost Calls in the [documentation](https://docs.mattermost.com/end-user-guide/collaborate/make-calls.html).
 
 **Test Cases**
 
