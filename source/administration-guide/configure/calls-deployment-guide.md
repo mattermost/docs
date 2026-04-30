@@ -402,7 +402,6 @@ If you deployed a TURN server in Step 1.4, open only the ports required by the t
 | Port | Protocol | Direction | Source | Destination | Notes |
 |---|---|---|---|---|---|
 | 443 | TCP | Inbound | Mattermost clients | Mattermost server | HTTPS and WebSocket signaling. |
-| 3478 | UDP | Outbound | Mattermost server | `stun.global.calls.mattermost.com` | (Optional - Step 1.3.1) Public IP discovery using STUN. |
 
 ##### RTCD server ports
 
@@ -501,11 +500,11 @@ Start the temporary listeners on the media server (RTCD or Mattermost server if 
 | 1.6.7 | RTCD or Mattermost Server: `sudo ncat -u -l -k -p 8443 -c '/bin/cat'`<br>Recording Server: `sudo nmap -sU -p 8443 TARGET_IP` | RTCD server IP (or Mattermost server IP if using Integrated mode) | Calls Offloader can send UDP media to the media service to join calls for recording |
 | 1.6.8 | RTCD or Mattermost Server: `sudo ncat -l -k -p 8443`<br>Recording Server: `nmap -p 8443 TARGET_IP` | RTCD server IP (or Mattermost server IP if using Integrated mode) | Calls Offloader can reach the media service for TCP media fallback |
 
-Start the temporary listener on the Mattermost server, then run `nmap` from the Recording server (`calls-offloader`):
+For the next check, use the existing HTTPS listener on your running Mattermost server instead of starting a temporary `ncat` listener:
 
 | Check | Command | `TARGET_IP` | Description |
 |---|---|---|---|
-| 1.6.9 | Mattermost Server: `sudo ncat -l -k -p 443`<br>Recording Server: `nmap -p 443 TARGET_IP` | Mattermost server IP | Calls Offloader can post recordings back to Mattermost |
+| 1.6.9 | Recording Server: `nmap -p 443 TARGET_IP` | Mattermost server IP | Calls Offloader can post recordings back to Mattermost |
 
 **TURN deployments**
 
