@@ -122,10 +122,9 @@ class TabDirective(SphinxDirective):
         if generated_tab_ids is None:
             generated_tab_ids = set()
         for parsed_node in parsed_nodes:
-            has_ids = True if hasattr(parsed_node, 'attributes') and parsed_node.attributes.get("ids") else False
             node_info: str = (
                 f"type(parsed_node)={type(parsed_node)}; "
-                f"has_ids={has_ids}; "
+                f"has_ids={True if hasattr(parsed_node, 'attributes') and parsed_node.attributes["ids"] else False}; "
                 f"parent={parsed_node.parent!r}"
             )
             logger.debug(
@@ -134,14 +133,11 @@ class TabDirective(SphinxDirective):
 
             if isinstance(parsed_node, TabContainer):
                 tab_container_name: str = parsed_node.next_node(nodes.label).astext()
-                tab_ids = parsed_node.attributes.get("ids", [])
-                has_ids = True if tab_ids else False
-                first_id = tab_ids[0] if tab_ids else 'None'
                 logger.debug(
                     f"{LOG_PREFIX} walk_parsed_nodes({docname}|{tab_name}): [{level}/{tab_counter}] "
                     f"TabContainer({tab_container_name}); node.tab_counter={parsed_node.tab_counter} "
-                    f"is_parsed={parsed_node.is_parsed}; has_ids={has_ids}; "
-                    f"first_id={first_id}; "
+                    f"is_parsed={parsed_node.is_parsed}; has_ids={True if parsed_node.attributes["ids"] else False}; "
+                    f"first_id={parsed_node.attributes['ids'][0] if parsed_node.attributes['ids'] else 'None'}; "
                     f"increment tab_counter to {tab_counter + 1}"
                 )
                 sub_tab_name: str = tab_name
@@ -165,20 +161,17 @@ class TabDirective(SphinxDirective):
 
             elif isinstance(parsed_node, nodes.section):
                 section_title: str = parsed_node.next_node(nodes.title).astext()
-                section_ids = parsed_node.attributes.get("ids", [])
-                has_ids = True if section_ids else False
-                first_id = section_ids[0] if section_ids else 'None'
                 logger.debug(
                     f"{LOG_PREFIX} walk_parsed_nodes({docname}|{tab_name}): [{level}/{tab_counter}] section({section_title}); "
-                    f"has_ids={has_ids}; "
-                    f"first_id={first_id}; "
+                    f"has_ids={True if parsed_node.attributes["ids"] else False}; "
+                    f"first_id={parsed_node.attributes['ids'][0] if parsed_node.attributes['ids'] else 'None'}; "
                 )
                 # If the node has at least one `id` attribute
-                if section_ids:
+                if parsed_node.attributes["ids"]:
                     # Get the first `id` for the node
                     node_id: str = parsed_node.attributes["ids"][0]
                     # Create a new `id` value that includes the tab name, subsection level, and first node `id`
-                    new_id: TabId = TabId(
+
                         tab_name=tab_name,
                         level=level,
                         tab_count=tab_counter,
