@@ -7,7 +7,7 @@ This guide provides detailed information for deploying Mattermost Calls on Kuber
 
 ## Overview
 
-Mattermost Calls has been designed to integrate well with Kubernetes to offer improved scalability and control over the deployment. For Kubernetes deployments, the RTCD service is strongly recommended and is the only officially supported approach.
+Mattermost Calls has been designed to integrate with Kubernetes for improved scalability and control over the deployment. Using the RTCD service is the only supported deployment model.
 
 ## Architecture
 
@@ -99,12 +99,12 @@ For Kubernetes-specific troubleshooting:
 3. Ensure UDP and TCP traffic is properly routed through your load balancer
 4. Verify network policies allow required communication paths
 
-For detailed troubleshooting steps, see the [Calls Troubleshooting](calls-troubleshooting.md) guide.
+For detailed logging guidance, see the [Calls Logging](calls-logging.md) guide.
 
 ## Other Calls Documentation
 
-- [Calls Overview](calls-deployment.md): Overview of deployment options and architecture
+- [Calls Deployment Guide](calls-deployment-guide.md): Overview of deployment options and architecture
 - [RTCD Setup and Configuration](calls-rtcd-setup.md): Comprehensive guide for setting up the dedicated RTCD service
 - [Calls Offloader Setup and Configuration](calls-offloader-setup.md): Setup guide for call recording and transcription
 - [Calls Metrics and Monitoring](calls-metrics-monitoring.md): Guide to monitoring Calls performance using metrics and observability
-- [Calls Troubleshooting](calls-troubleshooting.md): Detailed troubleshooting steps and debugging techniques
+- [Calls Logging](calls-logging.md): Detailed guidance for collecting Calls logs and client diagnostics
