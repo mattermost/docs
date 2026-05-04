@@ -81,7 +81,7 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 ## Release v10.11 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
 - **10.11.16, released **
-  - Mattermost v10.11.16 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v10.11.16 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Playbooks plugin version [v2.4.5](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.4.5).
   - Pre-packaged Agents plugin version [v2.0.2](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v2.0.2).
   - Upgraded Go to ``v1.25.9``.
