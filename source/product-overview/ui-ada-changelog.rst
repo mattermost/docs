@@ -17,8 +17,6 @@ Changelog
    * - v11.7
      - (UI) Changed the **Browse Channels** modal and ``~channel`` autocomplete to prioritize channels with a matching display name.
    * - v11.7
-     - (UI) Channel membership changes are now reliably synchronized between connected workspaces, even when a remote server is temporarily offline. Previously, membership removals could be missed during outages.
-   * - v11.7
      - (UI) Added an "Open in new tab" button to the **Product Switcher** menu.
    * - v11.7
      - (UI) Substring matching is now allowed when searching channel members in the member sub-panel in a channel.
