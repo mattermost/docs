@@ -37,7 +37,6 @@ New setting options were added to ``config.json``. Below is a list of the additi
    - Under ``PasswordSettings`` in ``config.json``, added ``​​PasswordFIPSMinimumLength`` configuration setting to require a minimum of 14 characters for passwords and for atmos/camo proxy and shared channel secrets.
  - **Changes to all plans:**
    - Under ``DatabaseSettings`` in ``config.json``, added ``AnalyticsQueryTimeout`` configuration [setting](https://docs.mattermost.com/administration-guide/configure/environment-configuration-settings.html#query-timeout) for use when running long analytics queries in the background.
-   - Under ``TeamSettings`` in ``config.json``, added ``EnableManagedChannelCategories`` configuration setting to enable managed channel categories for Channel Admins to enforce sidebar organization across teams.
 
 ### Compatibility
  - Updated minimum Edge and Chrome versions to 146+.
