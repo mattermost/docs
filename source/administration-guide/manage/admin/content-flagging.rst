@@ -93,16 +93,49 @@ Once an action is taken, the **Status** field updates automatically. The **Data 
 Deleted messages
 ~~~~~~~~~~~~~~~~
 
-When a reviewer permanently removes a quarantined message, the message and all associated data are deleted from the database and can't be recovered, including:
+When a reviewer permanently removes a quarantined message, the message and all associated data are deleted from the database and can't be recovered. The deletion covers:
 
-- Message content and properties: The text of the message and any associated post properties.
-- File metadata: Information about files attached to the message (e.g., file names, IDs, and links to storage).
-- File metadata from edit history: Information about files attached to earlier versions of the message.
-- Edit history: All previous versions of the message and their timestamps.
-- Uploaded files: The actual files stored in Mattermost’s file storage (local, S3, etc.).
-- Priority data: Any message priority or importance settings.
-- Acknowledgements: Records of users who acknowledged the message.
-- Reminders: Any reminders created for the message.
+- **Post record**: The text of the message and any associated post properties. The content is scrubbed before the post is deleted.
+- **File attachments**: The files stored in Mattermost's file storage (local, S3, etc.).
+- **File attachment records**: The file info database rows for the message, including file names, IDs, and links to storage.
+- **Edit history**: Every prior revision of the message, along with file metadata from each revision.
+- **Priority metadata**: Any message priority or importance settings.
+- **Persistent notifications**: Any recurring notifications attached to the message.
+- **Acknowledgements**: Records of users who acknowledged the message.
+- **Reminders**: Any reminders created for the message.
+- **Thread, replies, and reactions**: The thread record, replies, and reaction data associated with the message.
+
+Post deletion report
+~~~~~~~~~~~~~~~~~~~~
+
+When a reviewer selects **Remove message**, the **Data Spillage Bot** posts a **Post Deletion Report** into the reviewer's content review thread for that quarantined message. The report is delivered to every reviewer who received the original quarantine notification, and is localized to each reviewer's language. Each post includes a short summary rendered inline, and a full report attached as a Markdown file named ``deletion_report_<postId>.md``.
+
+The report records every cleanup step performed against the message and its associated data. The steps map directly to the data scope listed in :ref:`administration-guide/manage/admin/content-flagging:deleted messages`:
+
+- **File attachments**: Files removed from file storage.
+- **File attachment records**: File info database rows for the message.
+- **Edit history**: Every prior revision of the message. Each revision is reported as its own sub-step so that reviewers can see exactly which revisions were cleared.
+- **Priority metadata**: Message priority and importance settings.
+- **Persistent notifications**: Recurring notifications attached to the message.
+- **Acknowledgements**: Records of users who acknowledged the message.
+- **Reminders**: Reminders set on the message.
+- **Thread, replies, and reactions**: The thread record, replies, and reaction data associated with the message.
+- **Post record**: The post itself. The content is scrubbed before the post is deleted.
+
+Each step is assigned one of the following statuses:
+
+- **Removed** ✅: The data was successfully deleted.
+- **Not applicable** ➖: There was no data of this type to delete.
+- **Partial** ⚠️: Some items of this type were deleted, but at least one failed. This status most often appears under **Edit history** when one revision can't be deleted.
+- **Failed** ❌: The step didn't complete. The report includes an error log so reviewers and System Administrators can inspect what went wrong.
+
+When every step is **Removed** or **Not applicable**, no further action is required. The report serves as the auditable record of the deletion.
+
+When any step reports **Partial** or **Failed**, the report displays an *incomplete* warning. Reviewers should escalate to a System Administrator, who can use the attached ``deletion_report_<postId>.md`` file - including the full per-step error log - to perform manual remediation and confirm that the data is fully removed.
+
+.. note::
+
+   The post deletion report is the single source of truth for post-removal auditing. It isn't stored elsewhere in the System Console, so the reviewer thread containing the report should be retained in line with your organization's audit retention policy.
 
 Best practice recommendations
 -----------------------------
