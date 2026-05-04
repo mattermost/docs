@@ -17,7 +17,7 @@ To back up your Mattermost server:
 
 2. Back up your server settings stored in ``config/config.json``. If you are using SAML configuration for Mattermost, your SAML certificate files will be saved in the ``config`` directory. Therefore, we recommend backing up the entire directory.
    
-3. Back up files stored by your users with 1 of the following options: 
+3. Back up files stored by your users with one of the following options:
 
   - If you use local storage using the default ``./data`` directory, back up this directory.
   - If you use local storage using a non-default directory specified in the ``Directory`` setting in ``config.json``, back up files in that location.
@@ -77,7 +77,7 @@ When using Single Sign-on with Mattermost Enterprise Edition, an outage to your 
   * Users whose session token expires during the outage.
   * Users trying to log in to new devices.
 
-In each case, the user cannot reach the SSO provider, and cannot log in. In this case, there are several potential mitigations:
+In each case, the user cannot reach the SSO provider, and cannot log in. In either case, several mitigations are available:
 
 Configure your SSO provider for High Availability
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -98,6 +98,6 @@ Set up a manual failover plan for SSO outages
 
 When users are unable to reach your organization's SSO provider during an outage, an error message directing them to contact your support link (defined in your System Console settings) is displayed.
 
-Once IT is contacted about an SSO outage issue, they can temporarily change a user's account from SSO to email-password using the System Console, and the end user can use password to claim the account, until the SSO outage is over and the account can be converted back to SSO.
+Once IT is contacted about an SSO outage, they can temporarily change a user's account from SSO to email-password using the System Console, and the end user can use their email and password to claim the account until the SSO outage is over and the account can be converted back to SSO.
 
 When the outage is over, it's critical to switch everyone back to SSO from email-password to maintain consistency and security.
