@@ -22,7 +22,6 @@ Platform and OS scope reflects reported and tested environments and may not repr
 
 ### Improvements
  - Added mobile support for AI agents including a dedicated agents menu, agent chat interface, threads list view, and bot selector with profile pictures.
- - Added mobile support for admin-managed sidebar channel categories.
  - **Share feedback** from in-app prompts now opens the Mattermost community forum in the browser.
  - Channel banners are now shown in thread views.
  - Added the ability to set shared channels from the channel settings.
