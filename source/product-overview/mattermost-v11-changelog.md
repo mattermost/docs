@@ -58,7 +58,6 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-7-is-now-availab
  - Pre-packaged Playbooks plugin version [v2.8.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.8.1).
  - Message attachment footers now support full Markdown rendering, including bold, italic, links, and emoji.
  - Changed the **Browse Channels** modal and ``~channel`` autocomplete to prioritize channels with a matching display name.
- - Channel membership changes are now reliably synchronized between connected workspaces, even when a remote server is temporarily offline. Previously, membership removals could be missed during outages.
  - Added an "Open in new tab" button to the **Product Switcher** menu.
  - Substring matching is now allowed when searching channel members in the member sub-panel in a channel.
  - Improved accessibility of thread list menus.
