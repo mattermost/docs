@@ -61,7 +61,7 @@ This hybrid deployment architecture provides optimal collaboration in both conne
 
     - :doc:`AI Agents </administration-guide/configure/agents-admin-guide>`: AI Agents run against a local LLM hosted within your tactical network.
 
-    - :doc:`Audio & Screenshare </administration-guide/configure/calls-deployment>`: Calls offers native real-time self-hosted audio calls and screen sharing within your tactical network.
+    - :doc:`Audio & Screenshare </administration-guide/configure/calls-deployment-guide>`: Calls offers native real-time self-hosted audio calls and screen sharing within your tactical network.
 
   - **Proxy Server:** The :doc:`proxy server </deployment-guide/server/setup-nginx-proxy>` handles HTTP(S) routing within the cluster, directing traffic between the server and clients accessing Mattermost services. NGINX is recommended for load balancing with support for WebSocket connections, health check endpoints, and sticky sessions. The proxy layer provides SSL termination and distributes client traffic across application servers.
 
@@ -69,7 +69,7 @@ This hybrid deployment architecture provides optimal collaboration in both conne
 
   - **Object Storage:** File uploads, images, and attachments are stored outside the application node on an :doc:`S3-compatible store </deployment-guide/server/preparations>` or network/local storage, hosted locally within your tactical network.
 
-  - **Recording Instance:** ``calls-offloader`` :ref:`job service <administration-guide/configure/calls-deployment:call recording and transcription>` to offload heavy processing tasks from Mattermost Calls to self-hosted infrastructure within your tactical network, such as recordings, transcriptions, and live captioning. *(Optional)*
+  - **Recording Instance:** ``calls-offloader`` job service, configured using the :doc:`Calls Offloader Setup and Configuration </administration-guide/configure/calls-offloader-setup>` guide, to offload heavy processing tasks from Mattermost Calls to self-hosted infrastructure within your tactical network, such as recordings, transcriptions, and live captioning. *(Optional)*
 
 - **Self-hosted integrations:** :doc:`Custom apps, plugins, and webhooks </integrations-guide/integrations-guide-index>` can be deployed within your tactical network. *(Optional - not shown)*
 
@@ -101,10 +101,10 @@ Deploy an :doc:`OpenAI compatible LLM </administration-guide/configure/agents-ad
 Self-hosted audio & screensharing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Effective collaboration at the tactical edge requires all voice and screen sharing capabilities remain operational without reliance on the internet or third-party services. Deploy :doc:`Mattermost Calls </administration-guide/configure/calls-deployment>` in a self-hosted configuration, including:
+Effective collaboration at the tactical edge requires all voice and screen sharing capabilities remain operational without reliance on the internet or third-party services. Deploy :doc:`Mattermost Calls </administration-guide/configure/calls-deployment-guide>` in a self-hosted configuration, including:
 
-- The :ref:`rtcd service <administration-guide/configure/calls-deployment:when to use rtcd>` for scalable, low-latency media routing hosted on-premises. Run multiple ``rtcd`` nodes for redundancy.
-- The :ref:`calls offloader <administration-guide/configure/calls-deployment:call recording and transcription>` service offloads heavy processing tasks like recording, transcription and live captioning to a locally hosted compliance-approved job server.
+- The ``rtcd`` service, configured using the :doc:`RTCD Setup and Configuration </administration-guide/configure/calls-rtcd-setup>` guide, provides scalable, low-latency media routing hosted on-premises. Run multiple ``rtcd`` nodes for redundancy.
+- The ``calls-offloader`` service, configured using the :doc:`Calls Offloader Setup and Configuration </administration-guide/configure/calls-offloader-setup>` guide, offloads heavy processing tasks like recording, transcription and live captioning to a locally hosted compliance-approved job server.
 
 High availability and fault tolerance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
