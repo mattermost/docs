@@ -551,6 +551,10 @@ redirects_map = {
         "https://docs.mattermost.com/end-user-guide/upgrade-mattermost.html",
 "administration/release-lifecycle.html":
         "https://docs.mattermost.com/product-overview/releases-lifecycle.html",
+"administration-guide/configure/calls-deployment.html":
+        "https://docs.mattermost.com/administration-guide/configure/calls-deployment-guide.html",
+"administration-guide/configure/calls-overview.html":
+        "https://docs.mattermost.com/administration-guide/configure/calls-deployment-guide.html",
 "administration-guide/configure/site-configuration-settings.html#enable-secure-file-preview-on-mobile":
         "https://docs.mattermost.com/administration-guide/configure/environment-configuration-settings.html#enable-secure-file-preview-on-mobile",
 "administration-guide/configure/site-configuration-settings.html#allow-pdf-link-navigation-on-mobile":
@@ -950,7 +954,13 @@ redirects_map = {
 "configure/bulk-loading-troubleshooting.html":
         "https://docs.mattermost.com/administration-guide/onboard/bulk-loading-data.html",
 "configure/calls-deployment.html":
-        "https://docs.mattermost.com/administration-guide/configure/calls-deployment.html",
+        "https://docs.mattermost.com/administration-guide/configure/calls-deployment-guide.html",
+"configure/calls-log-collection.html":
+        "https://docs.mattermost.com/administration-guide/configure/calls-logging.html",
+"configure/calls-overview.html":
+        "https://docs.mattermost.com/administration-guide/configure/calls-deployment-guide.html",
+"configure/calls-troubleshooting.html":
+        "https://docs.mattermost.com/administration-guide/configure/calls-logging.html",
 "configure/cloud-billing-account-settings.html":
         "https://docs.mattermost.com/administration-guide/configure/cloud-billing-account-settings.html",
 "configure/common-config-settings-notation.html":
