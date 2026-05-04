@@ -72,7 +72,6 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-7-is-now-availab
 
 #### Administration
  - Updated dependency versions for server and public services.
- - Added managed channel categories for Channel Admins to enforce sidebar organization across teams.
  - Migrated access control policies from v0.2 to v0.3, replacing the wildcard action with explicit action types to support multi-action policies.
  - Added team-level ABAC membership policies, allowing Team Admins to create and manage attribute-based access policies for private channels within their team directly from a new Membership Policies tab in the Team Settings Modal.
  - Added permission policies to manage file attachment download/upload actions.
