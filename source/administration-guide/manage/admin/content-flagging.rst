@@ -87,8 +87,59 @@ Reviewers can select **View details** to take action as follows:
 - **Remove message**: Permanently delete the quarantined message from its original channel for all users. The status of the quarantined message changes to **Removed**.
 - **Keep message**: Dismiss the quarantine and restore the message if it was hidden. The status of the quarantined message changes to **Retained**.
 - **Add a comment**: Record the reason for the decision when required.
+- **Generate a report**: Download a report of the quarantined message and review activity for record-keeping or incident response. See :ref:`administration-guide/manage/admin/content-flagging:generate a quarantined message report` for details.
 
 Once an action is taken, the **Status** field updates automatically. The **Data Spillage Bot** sends follow-up notifications to the reporter, author, and other reviewers based on how Data Spillage Handling is configured.
+
+Generate a quarantined message report
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Reviewers can generate a downloadable report that captures the full context of a quarantined message and the associated review activity. Reports are useful for record-keeping, incident response, and preserving evidence before a message is permanently removed.
+
+A report can be generated from any of the following entry points:
+
+- **From the quarantined message details**: Select **Download report** from the message details panel. This option is available regardless of the quarantine's status, including **Pending**, **Reviewer Assigned**, **Removed**, or **Retained**.
+- **From the Remove message flow**: When you select **Remove message**, the confirmation dialog includes a **Download quarantined message report** checkbox, selected by default. With the checkbox selected, Mattermost generates and downloads the report before you can permanently remove the message. This safeguard ensures the record is preserved on your device before the message contents are deleted.
+- **From the Keep message flow**: When you select **Keep message**, the confirmation dialog includes the same checkbox. With the checkbox selected, Mattermost generates and downloads the report in the background while the keep action completes.
+
+If you choose to skip the report download from the **Remove message** or **Keep message** flow, Mattermost asks you to confirm that you're proceeding without a report. The skip decision is recorded in the audit log.
+
+If report generation fails (for example, due to a network interruption or session timeout), the dialog displays an error and offers a retry option. You can also skip the report and proceed with the action, or cancel and download the report later from the message details.
+
+Each time a reviewer generates a report, the **Data Spillage Bot** notifies all content reviewers so an auditable record exists whenever a copy of the potentially spilled data is obtained.
+
+.. tip::
+   We recommend generating a report before removing a message. Once a message is removed, its content, attachments, and edit history are permanently deleted and can't be recovered.
+
+Report contents and format
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Each report is a ZIP archive containing YAML metadata files and the original file attachments. YAML is used because it's both human-readable and machine-parseable, which makes the report suitable for manual review and for ingestion by downstream compliance or incident-response tooling.
+
+The archive has the following structure:
+
+.. code-block:: text
+
+   /
+   ├── report_metadata.yaml
+   ├── content_review.yaml
+   ├── post/
+   │   ├── post.yaml
+   │   └── attachments/
+   │       └── <original attachment files>
+   └── edit_history/
+       └── <edit_post_id>/
+           ├── post.yaml
+           └── attachments/
+               └── <original attachment files>
+
+- **report_metadata.yaml**: Identifies the report itself, including the user ID and username of the reviewer who generated the report, the generation timestamp, and the report format version (used for forward compatibility if the report format changes in future releases).
+- **content_review.yaml**: Captures the data spillage event, including the reporter's user ID, username, selected reason, and comment; the report timestamp; whether the message was hidden during review; and, once the quarantine is resolved, the reviewer's user ID, username, comment, and action timestamp. For unresolved quarantines, reviewer fields are omitted.
+- **post/post.yaml**: Describes the quarantined message, including the post ID, author ID, author name, author email, message content, channel ID, channel display name, team ID, team display name, creation and update timestamps, pinned status, root ID, post properties, post metadata, reply count (for root posts), and the ordered list of edit history post IDs.
+- **post/attachments/**: The original files attached to the quarantined message, included verbatim.
+- **edit_history/<edit_post_id>/**: One subdirectory per previous version of the message, each containing a ``post.yaml`` and an ``attachments/`` directory in the same format as the base post directory.
+
+To avoid duplication, attachment files are deduplicated across the entire archive by their file ID. Each unique attachment appears exactly once — under the base post if it exists in the current version of the message, or under the earliest edit-history entry that referenced it.
 
 Deleted messages
 ~~~~~~~~~~~~~~~~
