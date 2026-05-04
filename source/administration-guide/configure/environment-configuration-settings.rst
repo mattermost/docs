@@ -4185,7 +4185,7 @@ With self-hosted deployments, you can configure developer mode by going to **Sys
   :environment: MM_SERVICESETTINGS_ENABLETESTING
   :description: Enable or disable the ``/test`` slash command.
 
-  - **true**: **(Default)** The ``/test`` slash command is enabled to load test accounts and test data.
+  - **true**: **(Default)** The ``/test`` slash command is enabled to load test accounts and test data. Use this setting only in isolated non-production environments and never in production.
   - **false**:  The ``/test`` slash command is disabled.
 
 Enable testing commands
@@ -4196,7 +4196,9 @@ Enable testing commands
 |                                                   | - ``config.json`` setting: ``ServiceSettings`` > ``EnableTesting`` > ``true``  |
 | - **true**: **(Default)** The ``/test`` slash     | - Environment variable: ``MM_SERVICESETTINGS_ENABLETESTING``                   |
 |   command is enabled to load test accounts        |                                                                                |
-|   and test data.                                  |                                                                                |
+|   and test data. Use this setting only in         |                                                                                |
+|   isolated non-production environments and        |                                                                                |
+|   never in production.                            |                                                                                |
 | - **false**:  The ``/test`` slash command is      |                                                                                |
 |   disabled.                                       |                                                                                |
 +---------------------------------------------------+--------------------------------------------------------------------------------+
