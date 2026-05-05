@@ -408,11 +408,11 @@ Each target should show status "UP" in green. If a target shows "DOWN" or errors
 
 ## Other Calls Documentation
 
-- [Calls Overview](calls-deployment.md): Overview of deployment options and architecture
+- [Calls Deployment Guide](calls-deployment-guide.md): Overview of deployment options and architecture
 - [RTCD Setup and Configuration](calls-rtcd-setup.md): Comprehensive guide for setting up the dedicated RTCD service
 - [Calls Offloader Setup and Configuration](calls-offloader-setup.md): Setup guide for call recording and transcription
 - [Calls Deployment on Kubernetes](calls-kubernetes.md): Detailed guide for deploying Calls in Kubernetes environments
-- [Calls Troubleshooting](calls-troubleshooting.md): Detailed troubleshooting steps and debugging techniques
+- [Calls Logging](calls-logging.md): Detailed guidance for collecting Calls logs and client diagnostics
 
 **Note:**
 Configure Prometheus storage accordingly to balance disk usage with retention needs. If you need to be tight on storage, you can use a short retention period. If you have lots of storage you can keep the retention length longer.
