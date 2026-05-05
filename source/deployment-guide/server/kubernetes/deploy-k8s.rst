@@ -210,7 +210,7 @@ Step 5: Configure the Mattermost Installation Manifest
             mode: builtin
             timeout: 5m   # optional; default is 5m
 
-    Using ``builtin`` mode requires a Mattermost release that ships the ``mattermost db ping`` command (see the `Mattermost server release notes <https://github.com/mattermost/mattermost/pull/36406>`__ for availability).
+    Using ``builtin`` mode requires a Mattermost release that ships the ``mattermost db ping`` command (see the `Mattermost server pull request <https://github.com/mattermost/mattermost/pull/36406>`__ for availability).
 
     Omitting ``readinessCheck`` (or setting ``mode: external``) preserves the legacy ``postgres:13`` + ``pg_isready`` behavior. The legacy mode is the current default for backward compatibility and will be deprecated in a future operator release. See the `Mattermost CRD reference <https://github.com/mattermost/mattermost-operator/blob/master/docs/mattermost_v1beta1_crd.md>`__ for the full ``readinessCheck`` field schema.
 

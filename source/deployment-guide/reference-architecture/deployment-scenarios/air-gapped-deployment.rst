@@ -80,9 +80,9 @@ On an internet connected machine, you must gather all required packages, contain
 
       **Database readiness check (air-gapped recommendation)**
 
-      Recent versions of the Mattermost Operator can run the database-readiness init container from the same Mattermost image as the main container by setting ``spec.database.readinessCheck.mode: builtin`` on the ``Mattermost`` custom resource. The init container then invokes the in-image ``mattermost db ping`` command instead of pulling ``postgres:13`` and running ``pg_isready``.
+      If your installed Mattermost Operator supports ``spec.database.readinessCheck.mode``, it can run the database-readiness init container from the same Mattermost image as the main container by setting ``spec.database.readinessCheck.mode: builtin`` on the ``Mattermost`` custom resource. The init container then invokes the in-image ``mattermost db ping`` command instead of pulling ``postgres:13`` and running ``pg_isready``.
 
-      We recommend this mode for air-gapped clusters: it removes the requirement to mirror ``postgres:13`` into your private registry, since the only image needed for the readiness check is the Mattermost image you're already mirroring. Using ``builtin`` mode requires a Mattermost release that ships the ``mattermost db ping`` command (see the `Mattermost server release notes <https://github.com/mattermost/mattermost/pull/36406>`__ for availability).
+      We recommend this mode for air-gapped clusters because it removes the requirement to mirror ``postgres:13`` into your private registry; the only image needed for the readiness check is the Mattermost image you're already mirroring. Before using ``builtin`` mode, confirm that your installed operator version includes the ``readinessCheck.mode`` field in the Mattermost CRD or in the operator release notes. ``builtin`` mode also requires a Mattermost release that ships the ``mattermost db ping`` command (see the `Mattermost server release notes <https://github.com/mattermost/mattermost/pull/36406>`__ for availability).
 
       Example:
 
