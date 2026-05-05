@@ -310,7 +310,7 @@ When deploying Mattermost on hardened RHEL systems, additional security configur
   Configure firewalld for Mattermost Calls (optional)
   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-  If you're deploying the Mattermost Calls plugin or the standalone rtcd service, additional ports need to be opened. See the :doc:`Calls deployment </administration-guide/configure/calls-deployment>` documentation for details on Calls architecture and deployment modes.
+  If you're deploying the Mattermost Calls plugin or the standalone rtcd service, additional ports need to be opened. See the :doc:`Calls deployment guide </administration-guide/configure/calls-deployment-guide>` documentation for details on Calls architecture and deployment modes.
 
   For integrated Calls plugin (running alongside Mattermost):
 
@@ -434,7 +434,7 @@ When deploying Mattermost on hardened RHEL systems, additional security configur
   Configure fapolicyd for rtcd service (optional)
   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-  If you're deploying the standalone rtcd service for Mattermost Calls, you'll need separate fapolicyd rules for the rtcd binary. The rtcd service is deployed separately from Mattermost and runs its own binary. See the :doc:`Calls deployment </administration-guide/configure/calls-deployment>` documentation for details on when and why to use rtcd.
+  If you're deploying the standalone rtcd service for Mattermost Calls, you'll need separate fapolicyd rules for the rtcd binary. The rtcd service is deployed separately from Mattermost and runs its own binary. See the :doc:`Calls deployment guide </administration-guide/configure/calls-deployment-guide>` documentation for details on when and why to use rtcd.
 
   1. Create a rule file for rtcd. The naming convention is critical - it must come before the deny rule (typically 80 works):
 
@@ -487,7 +487,7 @@ When deploying Mattermost on hardened RHEL systems, additional security configur
 
     - The paths shown above assume rtcd is installed in ``/opt/rtcd/``. Adjust these paths based on your actual rtcd installation directory.
     - If you continue to see denials after following these steps, run ``sudo fapolicyd --debug`` to identify the specific paths being denied and adjust your rules accordingly.
-    - See the :doc:`rtcd deployment documentation </administration-guide/configure/calls-deployment>` for installation and configuration details.
+    - See the :doc:`RTCD setup and configuration </administration-guide/configure/calls-rtcd-setup>` documentation for installation and configuration details.
 
   Additional resources
   ^^^^^^^^^^^^^^^^^^^^^^

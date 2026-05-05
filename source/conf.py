@@ -423,7 +423,7 @@ window.addEventListener('load', () => {
 
 sphinx_tabs_disable_tab_closing = True
 sphinx_tabs_disable_css_loading = False
-myst_enable_extensions = ["colon_fence"]
+myst_enable_extensions = ["colon_fence", "tasklist"]
 myst_heading_anchors = 3
 
 # Suppress particular classes of warnings
