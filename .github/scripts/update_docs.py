@@ -135,11 +135,10 @@ def update_file(client: anthropic.Anthropic, filepath: str) -> None:
     try:
         with open(filepath, "r", encoding="utf-8") as f:
             original = f.read()
-    except FileNotFoundError:
-        print(f"  WARNING: {filepath} not found — skipping.")
-        return
+    except FileNotFoundError as exc:
+        raise FileNotFoundError(f"{filepath} not found") from exc
  
-    print(f"  Sending to Claude...")
+    print("  Sending to Claude...")
     response = client.messages.create(
         model="claude-sonnet-4-6",
         max_tokens=16000,
@@ -151,16 +150,13 @@ def update_file(client: anthropic.Anthropic, filepath: str) -> None:
  
     # Safety: don't write empty content
     if not updated.strip():
-        print(f"  ERROR: Claude returned empty content for {filepath} — skipping.")
-        return
+        raise RuntimeError(f"Claude returned empty content for {filepath}")
  
     # Safety: skip if response is dramatically shorter (possible truncation)
     if len(updated) < len(original) * 0.5:
-        print(
-            f"  WARNING: Updated content for {filepath} is less than 50% of original "
-            "length. Skipping to avoid data loss."
+        raise RuntimeError(
+            f"Updated content for {filepath} is <50% of original length; refusing write."
         )
-        return
  
     # No-op: file is unchanged
     if updated.strip() == original.strip():
@@ -180,7 +176,7 @@ def update_file(client: anthropic.Anthropic, filepath: str) -> None:
 def main():
     files = get_files()
  
-    print(f"\nMattermost Docs Update")
+    print("\nMattermost Docs Update")
     print(f"  Component:    {COMPONENT}")
     print(f"  Release type: {RELEASE_TYPE}")
     print(f"  Version:      {VERSION}")
