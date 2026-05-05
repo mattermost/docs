@@ -93,7 +93,7 @@ Once an action is taken, the **Status** field updates automatically. The **Data 
 Deleted messages
 ~~~~~~~~~~~~~~~~
 
-When a reviewer permanently removes a quarantined message, the message and all associated data are deleted from the database and can't be recovered. The deletion covers:
+When a reviewer permanently removes a quarantined message, the message and all associated data are deleted from the database and file system and can't be recovered. The deletion covers:
 
 - **Post record**: The text of the message and any associated post properties. The content is scrubbed before the post is deleted.
 - **File attachments**: The files stored in Mattermost's file storage (local, S3, etc.).
@@ -103,12 +103,12 @@ When a reviewer permanently removes a quarantined message, the message and all a
 - **Persistent notifications**: Any recurring notifications attached to the message.
 - **Acknowledgements**: Records of users who acknowledged the message.
 - **Reminders**: Any reminders created for the message.
-- **Thread, replies, and reactions**: The thread record, replies, and reaction data associated with the message.
+- **Thread, replies, and reactions**: The thread record, replies, and reaction data, if any, associated with the message.
 
 Post deletion report
 ~~~~~~~~~~~~~~~~~~~~
 
-When a reviewer selects **Remove message**, the **Data Spillage Bot** posts a **Post Deletion Report** into the reviewer's content review thread for that quarantined message. The report is delivered to every reviewer who received the original quarantine notification, and is localized to each reviewer's language. Each post includes a short summary rendered inline, and a full report attached as a Markdown file named ``deletion_report_<postId>.md``.
+When a reviewer selects **Remove message**, the **Data Spillage Bot** posts a **Post Deletion Report** into the reviewer's content review thread for that quarantined message. The report is delivered to every reviewer who received the original quarantine notification, and is localized to each reviewer's language. Each post includes a short summary rendered inline, and a full report attached as a Markdown file named ``deletion_report_<post_id>.md``.
 
 The report records every cleanup step performed against the message and its associated data. The steps map directly to the data scope listed in :ref:`administration-guide/manage/admin/content-flagging:deleted messages`:
 
