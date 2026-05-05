@@ -67,12 +67,20 @@ jobs:
           RELEASE_DATE: ${{ inputs.release_date }}
           INSTRUCTIONS: ${{ inputs.instructions }}
         run: python .github/scripts/update_docs.py
+
+      - name: Normalize version for branch naming
+        id: vars
+        shell: bash
+        run: |
+          safe_version="$(printf '%s' "${{ inputs.version }}" | tr ' /' '--' | tr -cd '[:alnum:]._-')"
+          test -n "$safe_version"
+          echo "safe_version=$safe_version" >> "$GITHUB_OUTPUT"
  
       - name: Create pull request
         uses: peter-evans/create-pull-request@f230e4b8d3f1f2f2c8f2a9a0d6c1f3f3b7e3d1a0 # v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          branch: docs/${{ inputs.component }}-v${{ inputs.version }}
+          branch: docs/${{ inputs.component }}-v${{ steps.vars.outputs.safe_version }}
           title: '${{ inputs.component }} v${{ inputs.version }} ${{ inputs.release_type }} Docs'
           body: |
             ## ${{ inputs.component }} v${{ inputs.version }} ${{ inputs.release_type }} Documentation Update
