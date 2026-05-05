@@ -138,6 +138,10 @@ Step 3: Deploy Mattermost
       name: my-postgres-connection
     type: Opaque
 
+  .. note::
+
+    The ``DB_CONNECTION_CHECK_URL`` value is consumed by the operator's legacy ``postgres:13`` + ``pg_isready`` readiness init container (the default ``external`` mode of ``spec.database.readinessCheck``). New deployments are encouraged to set ``spec.database.readinessCheck.mode: builtin`` (see Step 5 below), in which case the readiness init container runs the in-image ``mattermost db ping`` command and the ``DB_CONNECTION_CHECK_URL`` field is no longer required. The legacy ``external`` mode remains the default for backward compatibility but is slated for deprecation in a future operator release.
+
 Step 4: Create the Filestore Secret
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -193,6 +197,22 @@ Step 5: Configure the Mattermost Installation Manifest
         database:
           external:
             secret: <database-secret-name>  # The name of the database secret (e.g., my-postgres-connection)
+
+  b. **(Recommended)** Configure the database-readiness init container to use the in-image ``mattermost db ping`` command instead of the legacy ``postgres:13`` + ``pg_isready`` flow. This avoids the need to pull a separate ``postgres:13`` image (the primary motivation for air-gapped clusters that can't mirror it) and keeps your readiness check in sync with the Mattermost release you're running.
+
+    .. code-block:: yaml
+
+      spec:
+        database:
+          external:
+            secret: <database-secret-name>
+          readinessCheck:
+            mode: builtin
+            timeout: 5m   # optional; default is 5m
+
+    Using ``builtin`` mode requires a Mattermost release that ships the ``mattermost db ping`` command (see the `Mattermost server release notes <https://github.com/mattermost/mattermost/pull/36406>`__ for availability).
+
+    Omitting ``readinessCheck`` (or setting ``mode: external``) preserves the legacy ``postgres:13`` + ``pg_isready`` behavior. The legacy mode is the current default for backward compatibility and will be deprecated in a future operator release. See the `Mattermost CRD reference <https://github.com/mattermost/mattermost-operator/blob/master/docs/mattermost_v1beta1_crd.md>`__ for the full ``readinessCheck`` field schema.
 
 3. Connect to Object Storage:
 
