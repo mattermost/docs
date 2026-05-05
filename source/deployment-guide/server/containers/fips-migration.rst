@@ -1,7 +1,7 @@
 Migrate an existing deployment to FIPS-compliant containers
 ============================================================
 
-.. include:: ../../../_static/badges/all-commercial.rst
+.. include:: ../../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 From Mattermost v11, each release ships in two image variants: a standard Enterprise build (``mattermost/mattermost-enterprise-edition``) and a FIPS-compliant build (``mattermost/mattermost-enterprise-fips-edition``). Migrating an existing deployment to the FIPS image is primarily a matter of replacing the image and restarting Mattermost. No data migration is required, and rollback is symmetric.
