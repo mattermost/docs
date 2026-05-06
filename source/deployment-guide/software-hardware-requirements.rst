@@ -21,7 +21,7 @@ Desktop apps
     :header: "Operating System", "Self-Hosted Technical Requirement", "Cloud Technical Requirement"
 
     "Windows", "Windows 11+", "Windows 11+"
-    "Mac", "macOS 12+", "macOS 12+"
+    "Mac", "macOS 14+", "macOS 14+"
     "Linux", "Ubuntu LTS releases 22.04 or later", "Ubuntu LTS releases 22.04 or later"
 
 Though not officially supported, the Linux desktop app also runs on RHEL/CentOS 7+.
@@ -52,7 +52,7 @@ PC web
 
     "Chrome", "v144+", "v144+"
     "Firefox", "v140+", "v140+"
-    "Safari", "v17.4+", "v17.4+"
+    "Safari", "v26.2+", "v26.2+"
     "Edge", "v144+", "v144+"
 
 `*` Internet Explorer (IE11) is no longer supported. We recommend using the `Mattermost desktop app <https://mattermost.com/apps/>`_ or another supported browser. See `this forum post <https://forum.mattermost.com/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`__ to learn more.
@@ -78,7 +78,7 @@ Mobile web
 .. csv-table::
     :header: "Browser", "Technical Requirement"
 
-    "iOS", "iOS 16.0+ with Safari 17.4+ or Chrome 144+"
+    "iOS", "iOS 16.0+ with Safari 26.2+ or Chrome 144+"
     "Android", "Android 7+ with Chrome 144+"
 
 Email client

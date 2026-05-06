@@ -9,6 +9,11 @@ Set server connection details
 1. (Optional) Enter **Server Username** used to access the enterprise search server.
 2. (Optional) Enter **Server Password** associated with the username.
 3. Set **Enable Cluster Sniffing** (Optional). Sniffing finds and connects to all data nodes in your cluster automatically.
+
+.. warning::
+
+   Do not enable cluster sniffing when using cloud-hosted search providers such as Elastic Cloud or Amazon OpenSearch Service. Cloud providers typically hide search cluster nodes behind a proxy, so sniffed node addresses may be unreachable from your network. The provider handles connection pooling for you, making sniffing unnecessary and potentially disruptive.
+
 4. Optional CA and client certificate configuration settings are available for use with basic authentication credentials or to replace them. See the :ref:`Enterprise search configuration settings <administration-guide/configure/environment-configuration-settings:enterprise search>` documentation for details.
 5. Select **Test Connection** and then select **Save**. If the server connection is unsuccessful you won't be able to save the configuration or enable searching with Elasticsearch or AWS OpenSearch.
 

@@ -407,7 +407,7 @@ Enable desktop app landing page
   :systemconsole: Site Configuration > Customization
   :configjson: .ServiceSettings.MinimumDesktopAppVersion
   :environment: MM_SERVICESETTINGS_MINIMUMDESKTOPAPPVERSION
-  :description: Enforce a minimum Mattermost Desktop App version required to connect to the server.
+  :description: Available from Mattermost server v11.6.0. Enforce a minimum Mattermost Desktop App version required to connect to the server.
 
 Minimum desktop app version
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -991,6 +991,36 @@ Show full name
 | - **true**: **(Default)** Full names are visible to all users in the client user interface.                      | - System Config path: **Site Configuration > Users and Teams**               |
 | - **false**: Hides full names from all users, except system admins. Username is shown in place of the full name. | - ``config.json`` setting: ``PrivacySettings`` > ``ShowFullName`` > ``true`` |
 |                                                                                                                  | - Environment variable: ``MM_PRIVACYSETTINGS_SHOWFULLNAME``                  |
++------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+
+.. config:setting:: enable-anonymous-urls
+  :displayname: Enable anonymous team and channel URLs (Users and Teams)
+  :systemconsole: Site Configuration > Users and Teams
+  :configjson: .PrivacySettings.UseAnonymousURLs
+  :environment: MM_PRIVACYSETTINGS_USEANONYMOUSURLS
+  :description: Available in Mattermost Enterprise Advanced from v11.6.0. Controls whether team and channel URLs expose the team or channel name.
+
+  - **true**: Team and channel URLs are anonymized; the team or channel name is not visible in the URL.
+  - **false**: Team and channel URLs include the team or channel name.
+
+Enable anonymous team and channel URLs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../../_static/badges/ent-adv.rst
+  :start-after: :nosearch:
+
++------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| From Mattermost v11.6.0, when enabled, team and channel URLs are anonymized,                                     | - System Config path: **Site Configuration > Users and Teams**               |
+| meaning the URL no longer contains the team or channel name. This prevents                                       | - ``config.json`` setting: ``PrivacySettings`` > ``UseAnonymousURLs``        |
+| team and channel names from being identified through web addresses.                                              | - Environment variable: ``MM_PRIVACYSETTINGS_USEANONYMOUSURLS``              |
+|                                                                                                                  |                                                                              |
+| When this setting is enabled, the team and channel creation workflows no longer                                  |                                                                              |
+| include a step for users to define a URL; teams and channels are created with                                    |                                                                              |
+| an automatically generated anonymous URL. This applies only to newly created                                     |                                                                              |
+| teams and channels; existing teams and channels are not affected.                                                |                                                                              |
+|                                                                                                                  |                                                                              |
+| - **true**: Team and channel URLs are anonymized.                                                                |                                                                              |
+| - **false**: Team and channel URLs include the team or channel name.                                             |                                                                              |
 +------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
 
 .. config:setting:: enable-custom-user-statuses

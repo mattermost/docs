@@ -1,17 +1,17 @@
 ---
-description: Persona for reviewing Mattermost docs through the lens of a non-experienced system admin
+description: Persona for reviewing Mattermost docs through the lens of a novice system admin
 globs: **/*.md,**/*.rst
 alwaysApply: false
 ---
 
-# Reader Persona: Junior System Administrator
+# Reader Persona: Novice Nate
 
 When reviewing or iterating on documentation, evaluate it through the lens of this persona.
 
 ## Who They Are
 
-**Name:** Jeff  
-**Role:** Junior IT Administrator (solo or small team)  
+**Name:** Novice Nate  
+**Role:** Novice IT Administrator (solo or small team)  
 **Experience:** 1–2 years in IT, primarily help desk and basic network/device support  
 **Education:** No formal CS or development background; self-taught from tutorials and on-the-job experience
 
@@ -39,7 +39,7 @@ When reviewing or iterating on documentation, evaluate it through the lens of th
 - **Gaps between steps**: Jumps from one topic to another without clear transitions
 - **Silent failures**: Error messages that aren't covered in troubleshooting sections
 
-## What Good Documentation Looks Like for Jeff
+## What Good Documentation Looks Like for Novice Nate
 
 - Prerequisites listed clearly at the top
 - Steps are numbered and atomic (one action per step)
@@ -50,7 +50,7 @@ When reviewing or iterating on documentation, evaluate it through the lens of th
 
 ## How to Use This Persona When Reviewing Docs
 
-- Flag any step that assumes knowledge Jeff likely doesn't have
+- Flag any step that assumes knowledge Novice Nate likely doesn't have
 - Identify jargon that needs a brief inline definition
 - Note where a success check or expected output is missing
 - Call out any prerequisites that aren't explicitly stated

@@ -9,6 +9,10 @@
 ```{include} common-esr-support-upgrade.md
 ```
 
+```{note}
+Platform and OS scope reflects reported and tested environments and may not represent all affected configurations.
+```
+
 (release-v10.12-feature-release)=
 ## Release v10.12 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
@@ -76,6 +80,30 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 (release-v10.11-extended-support-release)=
 ## Release v10.11 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **10.11.15, released 2026-04-22**
+  - Mattermost v10.11.15 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Zoom plugin version [v1.13.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.13.0).
+  - Pre-packaged GitHub plugin version [v2.7.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.7.0).
+  - Pre-packaged Boards plugin [v9.2.4](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.2.4).
+  - Updated URL validation in integration actions to make them more secure.
+  - Improved response handling for outgoing webhook requests.
+  - Added support for Elasticsearch v9 alongside v8.
+  - Upgraded Go to 1.25.8.
+  - Mattermost v10.11.15 contains no database or functional changes.
+- **10.11.14, released 2026-04-15**
+  - Mattermost v10.11.14 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Calls plugin version [v1.11.4](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.11.4).
+  - Pre-packaged Playbooks plugin version [v2.4.4](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.4.4).
+  - Pre-packaged MS Teams Meetings plugin version [v2.4.1](https://github.com/mattermost/mattermost-plugin-msteams-meetings/releases/tag/v2.4.1).
+  - Pre-packaged GitLab plugin version [v1.12.1](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.12.1).
+  - Fixed an issue where membership changes from remote clusters could operate on a different channel than the one validated in the sync message.
+  - Fixed an issue where image proxies did not detect content-types accurately in certain cases.
+  - Fixed an issue with edit post permissions.
+  - Fixed an issue with file attachment processing for certain archive types.
+  - Fixed an issue where remote cluster invite confirmations could accept a ``RefreshedToken`` that matched the original invite token, preventing proper token rotation.
+  - Fixed an issue with custom slash command response URL construction.
+  - Fixed typing issues in the **Find Channels** modal caused by interference with IMEs.
+  - Mattermost v10.11.14 contains no database or functional changes.
 - **10.11.13, released 2026-03-16**
   - Mattermost v10.11.13 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Improved security hardening for the user authentication update API endpoint.
@@ -98,8 +126,8 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
   - Mattermost v10.11.11 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Boards plugin version [v9.2.2](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.2.2).
   - Fixed an issue where the channel URL got updated when the channel display name was changed.
-  - Added audit logs for when admins access posts on channels they are not a member of.
-  - Fixed a performance regression that caused the requests to populate the **Recent mentions** right-hand side (RHS) to timeout. This, in turn, re-introduces a known bug in searches with quoted strings, that may include results not exactly matching the quoted string.
+  - Added [audit logs](https://docs.mattermost.com/administration-guide/comply/embedded-json-audit-log-schema.html) for when admins access posts on channels they are not a member of.
+  - Fixed a performance regression that caused the requests to populate the **Recent mentions** right-hand side (RHS) to timeout. This, in turn, re-introduces a known bug in searches with quoted strings, that may include results not exactly matching the quoted string (reported on web and desktop clients and all server systems).
   - Fixed an issue with PSD file previews.
   - Added a new ``MM_LOG_PATH`` environment variable to restrict log file locations. Log files must now be within a configured root directory.
   - Fixed an issue where the ``/mute`` slash command could be used to enumerate private channels.
@@ -165,7 +193,7 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
   - Fixed an issue where the content of webhook posts did not display.
   - Mattermost v10.11.2 contains no database or functional changes.
 - **10.11.1, released 2025-08-15**
-  - Fixed an issue with login being kept in a web view instead of redirecting to the mobile app when using OAuth for login.
+  - Fixed an issue with login being kept in a web view instead of redirecting to the mobile app when using OAuth for login (reported on iOS and Android).
   - Upgraded to go1.24.5, and reverted to bullseye to maintain glibc <2.34 compatibility for older deployment environments.
   - Mattermost v10.11.1 contains no database or functional changes.
 - **10.11.0, released 2025-08-15**
@@ -337,7 +365,7 @@ If you upgrade from a release earlier than v10.9, please read the other [Importa
  - Fixed an issue where the emoji picker focus did not return to button when not selecting an emoji.
  - Fixed the label in notification settings for the notification sound combo box.
  - Fixed an issue where an incorrect username and email were shown for remote users.
- - Fixed an issue with the keyboard navigation in the user settings sidebar.
+ - Fixed an issue with the keyboard navigation in the user settings sidebar (reported on Firefox / macOS).
 
 ### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
@@ -449,7 +477,7 @@ If you upgrade from a release earlier than v10.8, please read the other [Importa
  - Fixed several accessibility issues across the login process, account creation, and MFA setup.
  - Fixed an issue where horizontal rule (HR) elements were not visible in preview mode in the right-hand sidebar (RHS).
  - Fixed an issue with inconsistent sizing of markdown images in preview mode.
- - Fixed a keyboard navigation issue within thread items.
+ - Fixed a keyboard navigation issue within thread items (reported on Firefox / macOS).
  - Fixed layout issues with the emoji picker on mobile browsers.
  - Fixed an issue with the positioning of **Edited** text and tooltips in certain scenarios.
  - Fixed the accessibility of the search box.
