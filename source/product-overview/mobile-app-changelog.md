@@ -21,7 +21,7 @@ Platform and OS scope reflects reported and tested environments and may not repr
  - iPhone 8+ devices and later with iOS 16.0+ are [required](https://support.apple.com/en-il/guide/iphone/iphe3fa5df43/16.0/ios/16.0).
 
 ### Improvements
- - Added mobile support for AI agents including a dedicated agents menu, agent chat interface, threads list view, and bot selector with profile pictures.
+ - Added mobile support for AI agents including a dedicated agent chat interface, threads list view, and bot selector with profile pictures.
  - **Share feedback** from in-app prompts now opens the Mattermost community forum in the browser.
  - Channel banners are now shown in thread views.
  - Added the ability to set shared channels from the channel settings.
@@ -40,6 +40,7 @@ Platform and OS scope reflects reported and tested environments and may not repr
  - Fixed search results layout overlap on hashtag tapping on Android.
  - Fixed a race condition on websocket messages on iOS.
  - Fixed an issue on iOS where permalink thread headers were so long that channel names truncated instead of overlapped the title on mobile.
+ - Fixed issue with keyboard stuck after opening from a push notification on iOS.
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
