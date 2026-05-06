@@ -1,5 +1,15 @@
 # v11 Changelog
 
+## 11.4 - 2026-05-06
+
+### Improvements
+
+See [this blog post](BLOG_POST_URL) on the highlights in our latest release.
+
+#### User Interface
+
+- Updated the pre-packaged Playbooks plugin to v2.8.1.
+
 ```{eval-rst}
 .. meta::
   :page_title: Mattermost Server v11 Release Notes
