@@ -21,6 +21,7 @@ Platform and OS scope reflects reported and tested environments and may not repr
 ```{Attention}
 **Breaking Changes**
  - FIPS builds require a minimum of 14 characters for passwords, atmos/camo proxy configuration, and shared channel secrets. Shorter passwords for existing users will no longer be valid and require a password reset. Non-FIPS builds are unaffected.
+ - v11.7 includes Agents plugin v2. Please see [this guide](https://github.com/mattermost/mattermost-plugin-agents/blob/master/docs/upgrading_to_2.0.md‎.md) on how to upgrade the Mattermost Agents plugin from a v1.x release to v2.0.0. It covers the supported version path, the migrations that run automatically on first start of v2.0.0, the breaking changes and default-behavior flips that admins should know about before the upgrade window, and the verification steps to confirm the upgrade succeeded.  
 ```
 
 #### Database Schema Changes
