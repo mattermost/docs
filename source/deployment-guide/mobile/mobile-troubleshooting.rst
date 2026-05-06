@@ -23,15 +23,15 @@ In line with Microsoft guidance we recommend `configuring intranet forms-based a
 How do I attach mobile app logs to a message?
 ---------------------------------------------
 
-Use ``/mobile-logs`` to enable an attachment option in the Mattermost mobile app that lets users attach their mobile app logs as a file to any message they send. This helps administrators and support engineers debug mobile-specific issues by providing device-side context that isn't available from server logs alone. The command updates the ``attach_app_logs`` advanced preference and always responds with an ephemeral message visible only to the invoking user.
+Use ``/mobile-logs`` during mobile troubleshooting to let users attach Mattermost mobile app logs to messages. Running ``/mobile-logs on`` shows the **Attach app logs** option in the attachment menu of the message composer, so users can include device-side logs when messaging an administrator or support engineer. Users can also turn this option on or off from the **Report a problem** screen in the mobile app. The command responds with an ephemeral message visible only to the user who ran it.
 
 .. important::
 
     This command requires Mattermost mobile app v2.38 or later.
 
-- Enable log attachment for yourself using ``/mobile-logs on``.
-- Disable log attachment for yourself using ``/mobile-logs off``.
-- Check your current setting using ``/mobile-logs status``.
+- Enable **Attach app logs** for yourself using ``/mobile-logs on``.
+- Disable **Attach app logs** for yourself using ``/mobile-logs off``.
+- Check whether **Attach app logs** is enabled using ``/mobile-logs status``.
 - System admins can manage the setting for another user by appending a username, such as ``/mobile-logs on @username``, ``/mobile-logs off @username``, or ``/mobile-logs status @username``.
 
 .. important::
