@@ -25,7 +25,7 @@ How do I attach mobile app logs to a message?
 
 Use ``/mobile-logs`` to enable an attachment option in the Mattermost mobile app that lets users attach their mobile app logs as a file to any message they send. This helps administrators and support engineers debug mobile-specific issues by providing device-side context that isn't available from server logs alone. The command updates the ``attach_app_logs`` advanced preference and always responds with an ephemeral message visible only to the invoking user.
 
-.. note::
+.. important::
 
     This command requires Mattermost mobile app v2.38 or later.
 
@@ -165,4 +165,4 @@ If you did not receive a push notification when testing push notifications, use 
 
   To conserve disk space, once your push notification issue is resolved, go to  **System Console > Environment > Logging > File Log Level**, then select **ERROR** to switch your logging detail level from **DEBUG** to **Errors Only**.
 
-If push notifications are not being delivered on the mobile device, confirm that you're logged in to the **Native** mobile app session through **Profile > Security > View and Log Out of Active Sessions**. Otherwise, the `DeviceId` won't get registered in the `Sessions` table and notifications won't be delivered.
+If push notifications are not being delivered on the mobile device, confirm that you're logged in to the **Native** mobile app session through **Profile > Security > View and Log Out of Active Sessions**. Otherwise, the ``DeviceId`` won't get registered in the ``Sessions`` table and notifications won't be delivered.
