@@ -23,7 +23,17 @@ Before you begin
 
 4. **Plan for additional plugins.** The FIPS image includes Boards, Playbooks, and Agents prepackaged and running in FIPS mode. Any additional plugins you've installed will continue to run inside the FIPS image, but they run in non-FIPS mode. This is expected behavior, not a configuration error.
 
-5. **PostgreSQL password length.** Beginning with Mattermost v11.7, the Postgres password used by the Mattermost server must be at least 14 characters when running the FIPS image. If your current password is shorter, rotate it in PostgreSQL first, then update wherever your deployment stores the password before migrating: in the official Docker deployment, the ``POSTGRES_PASSWORD`` value in ``.env``; in Operator-managed Kubernetes deployments, the database Secret referenced by your ``Mattermost`` custom resource (commonly under ``spec.database.external.secret``). Restart Mattermost so the new credentials take effect — the migration itself recreates the container, so this can happen as part of the image swap rather than as a separate restart.
+5. **PostgreSQL password length.** Beginning with Mattermost v11.7, the Postgres password used by the Mattermost server must be at least 14 characters when running the FIPS image. If your current password is shorter, complete these steps before swapping the image:
+
+   a. Rotate the password in PostgreSQL. For example, connecting as a Postgres superuser and replacing ``mmuser`` and ``<new password>`` to match your deployment:
+
+      .. code-block:: sql
+
+         ALTER USER mmuser WITH PASSWORD '<new password>';
+
+   b. Update the password where your deployment stores it: in the official Docker deployment, the ``POSTGRES_PASSWORD`` value in ``.env``; in Operator-managed Kubernetes deployments, the database Secret referenced by your ``Mattermost`` custom resource (commonly under ``spec.database.external.secret``).
+
+   c. Proceed to the image swap procedure for your deployment type below. Recreating the container as part of the migration applies the new credentials — no separate restart is required.
 
 6. **Plan for downtime.** The migration requires pulling the new image and restarting the Mattermost container or pod.
 
