@@ -130,9 +130,12 @@ def extract_release_notes(body: str) -> list[str] | None:
     if not body:
         return None
  
-    # Capture everything after '#### Release Note' up to the next #### header or EOF
+    # Normalize line endings (GitHub API may return \r\n on some PR bodies)
+    body = body.replace("\r\n", "\n").replace("\r", "\n")
+ 
+    # Capture everything after '#### Release Note(s)' up to the next #### header or EOF
     section_match = re.search(
-        r"####\s+Release\s+Note\s*\n(.*?)(?=\n####|\Z)",
+        r"####\s+Release\s+Notes?\s*\n(.*?)(?=\n####|\Z)",
         body,
         re.DOTALL | re.IGNORECASE,
     )
