@@ -29,6 +29,13 @@ Platform and OS scope reflects reported and tested environments and may not repr
    - Added a new partial unique index (``idx_accesscontrolpolicies_name_type``) to the ``AccessControlPolicies`` table on (Name, Type) filtered to ``WHERE Type = 'parent'``.
    - The ``PropertyFields`` and ``PropertyValues`` tables were modified, and a new ``Views`` table was created.
    - Scoped the ``role_updated`` WebSocket events to the affected team/channel instead of broadcasting globally.
+   - Created a new ``Agents_System`` key/value configuration table for the plugin.
+   - Created a new ``LLM_PostMeta`` table for post metadata, and removed the legacy ``llm_threads_rootpostid_fkey`` foreign key constraint from ``LLM_Threads`` if present.
+   - Created a new ``Agents_ConfigHistory`` table for tracking configuration snapshots, with a partial unique index enforcing at most one active config row at a time.
+   - Created two new tables, ``LLM_CustomPrompts`` and ``LLM_CustomPromptPins``, for user-authored prompts and per-user pin relationships.
+   - Created a new ``Agents_UserAgents`` table for admin-configured agent definitions, with three secondary indexes including a partial unique index enforcing one active agent per bot user.
+   - Added eight new columns (``Model``, ``EnableVision``, ``DisableTools``, ``EnabledNativeTools``, ``ReasoningEnabled``, ``ReasoningEffort``, ``ThinkingBudget``, ``StructuredOutputEnabled``) to the ``Agents_UserAgents`` table.
+   - Created two new tables, ``LLM_Conversations`` and ``LLM_Turns``, for storing AI conversation records and their individual turns, and dropped the transitional ``LLM_PostMeta`` table.
 
 #### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
