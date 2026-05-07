@@ -189,12 +189,12 @@ This setting applies only when :ref:`Enable dynamic client registration <adminis
   :systemconsole: Integrations > Integration Management
   :configjson: .ServiceSettings.OutgoingIntegrationRequestsTimeout
   :environment: MM_SERVICESETTINGS_OUTGOINGINTEGRATIONREQUESTSTIMEOUT
-  :description: The number of seconds to wait for external integration HTTP requests, before timing out. Default value is **30 seconds**.
+  :description: The number of seconds to wait for external integration HTTP requests before timing out. Default value is **30 seconds**.
 
 Integration request timeout
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The number of seconds to wait for external integration HTTP requests, before timing out, including `custom slash commands <https://developers.mattermost.com/integrate/slash-commands/custom/>`_, `outgoing webhooks <https://developers.mattermost.com/integrate/webhooks/outgoing/>`_, `interactive messages <https://developers.mattermost.com/integrate/plugins/interactive-messages/>`_, and `interactive dialogs <https://developers.mattermost.com/integrate/plugins/interactive-dialogs/>`_. Increase this value if you have external integrations that can take some time to generate an HTTP response, or experience delayed responses due to latency.
+The number of seconds to wait for external integration HTTP requests before timing out, including `custom slash commands <https://developers.mattermost.com/integrate/slash-commands/custom/>`_, `outgoing webhooks <https://developers.mattermost.com/integrate/webhooks/outgoing/>`_, `interactive messages <https://developers.mattermost.com/integrate/plugins/interactive-messages/>`_, and `interactive dialogs <https://developers.mattermost.com/integrate/plugins/interactive-dialogs/>`_. Increase this value if you have external integrations that can take some time to generate an HTTP response, or experience delayed responses due to latency.
 
 +---------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"OutgoingIntegrationRequestsTimeout": 30``.    |
