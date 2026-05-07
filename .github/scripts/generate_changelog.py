@@ -248,9 +248,13 @@ def main():
  
     if all_notes:
         polished = polish_with_ai(all_notes)
-        blog_url = os.environ.get("BLOG_POST_URL", "")
-        if blog_url:
-            polished = polished.replace("BLOG_POST_URL", blog_url)
+        blog_url = os.environ.get("BLOG_POST_URL", "").strip()
+        if not blog_url:
+            # Auto-construct from version: v11.7.0 → https://mattermost.com/blog/mattermost-v11-7-0-is-now-available/
+            version_slug = VERSION.lstrip("v").replace(".", "-")
+            blog_url = f"https://mattermost.com/blog/mattermost-v{version_slug}-is-now-available/"
+            print(f"ℹ️  No blog post URL provided — using auto-constructed URL: {blog_url}")
+        polished = polished.replace("BLOG_POST_URL", blog_url)
         entry += polished + "\n"
     else:
         entry += "_No release notes for this version._\n"
