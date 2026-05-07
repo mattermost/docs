@@ -195,7 +195,7 @@ We recommend reviewing the `additional upgrade notes <#additional-upgrade-notes>
 |                                                    |   CREATE TABLE IF NOT EXISTS Agents_System (                                                                                                                     |
 |                                                    |       SKey VARCHAR(64) PRIMARY KEY,                                                                                                                              |
 |                                                    |       SValue TEXT                                                                                                                                                |
-|                                                    |   );
+|                                                    |   );                                                                                                                                                             |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Migration 000002 introduces a new plugin-owned table, `LLM_PostMeta` (`RootPostID TEXT PRIMARY KEY`, `Title TEXT NOT NULL`), to store post metadata. This is a   |
 |                                                    | brand-new table created from scratch with no existing rows. Additionally, this migration defensively drops the legacy FK constraint `llm_threads_rootpostid_fkey`| 
