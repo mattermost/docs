@@ -1,5 +1,9 @@
 # v11 Changelog
 
+## 11.7 - 2026-05-07
+
+_No release notes for this version._
+
 ```{eval-rst}
 .. meta::
   :page_title: Mattermost Server v11 Release Notes
