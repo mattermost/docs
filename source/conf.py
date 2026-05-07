@@ -578,6 +578,8 @@ exclude_patterns = [
     "agents/CLAUDE.md",
     "agents/README.md",
     "agents/interpluginclient/README.md",
+    # Plugin-internal schema migration reviews (submodule); not customer-facing docs
+    "agents/store/migrations/reviews/*.md",
     "agents/notice.txt", 
     "agents/license.txt"
 ]
