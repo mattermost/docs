@@ -16,6 +16,10 @@ on:
         required: true
         default: 'mattermost/mattermost,mattermost/enterprise'
         type: string
+      release_date:
+        description: 'Release day date (e.g. 2026-05-15) — defaults to today if omitted'
+        required: false
+        type: string
       blog_post_url:
         description: 'Blog post URL for the Improvements section — if omitted, auto-constructed from version (e.g. https://mattermost.com/blog/mattermost-v11-6-0-is-now-available/)'
         required: false
@@ -75,6 +79,7 @@ jobs:
           MILESTONE: ${{ inputs.milestone }}
           VERSION: ${{ inputs.version }}
           REPOS: ${{ inputs.server_repos }}
+          RELEASE_DATE: ${{ inputs.release_date }}
           BLOG_POST_URL: ${{ inputs.blog_post_url }}
           CHANGELOG_PATH: source/product-overview/mattermost-v11-changelog.md
         run: python .github/scripts/generate_changelog.py
@@ -91,7 +96,7 @@ jobs:
           git commit -m "docs: add changelog for ${{ inputs.version }}"
           git push origin "changelog/${{ inputs.version }}" --force
           gh pr create \
-            --title "Changelog: ${{ inputs.version }}" \
+            --title "${{ inputs.version }} Changelog" \
             --body "Auto-generated changelog for milestone \`${{ inputs.milestone }}\` from \`${{ inputs.server_repos }}\`." \
             --base master \
             --head "changelog/${{ inputs.version }}"
