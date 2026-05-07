@@ -8,5 +8,5 @@ This guide walks you through the **Mattermost - Azure-Native (VM-based)** offer,
 .. tab:: Azure Marketplace
   :parse-titles:
 
-  .. include:: azure/mattermost-vm-image-offer.rst
+  .. include:: azure/mattermost-azure-native-app.rst
     :start-after: :nosearch:
