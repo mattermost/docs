@@ -243,8 +243,19 @@ def main():
                 print(f"   ⏭️  #{pr['number']}: {pr['title']} (NONE / no notes)")
         print()
  
-    today = date.today().strftime("%Y-%m-%d")
-    entry = f"## {VERSION} - {today}\n\n"
+    # Derive short version for heading/anchor: "v11.7.0" → "v11.7", "11.7.0" → "v11.7"
+    version_short = "v" + re.sub(r"\.0$", "", VERSION.lstrip("v"))
+ 
+    release_date = os.environ.get("RELEASE_DATE", "").strip() or date.today().strftime("%Y-%m-%d")
+ 
+    # e.g. (release-v11.7-extended-support-release)=
+    anchor = f"(release-{version_short}-extended-support-release)="
+    heading = (
+        f"## Release {version_short} - "
+        f"[Extended Support Release]"
+        f"(https://docs.mattermost.com/product-overview/release-policy.html#release-types)"
+    )
+    entry = f"{anchor}\n{heading}\n\n**Release day: {release_date}**\n\n"
  
     if all_notes:
         polished = polish_with_ai(all_notes)
