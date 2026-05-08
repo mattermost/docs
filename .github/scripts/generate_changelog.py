@@ -86,9 +86,10 @@ def get_milestone_number(repo: str, title: str) -> int | None:
             "state": "all",
             "per_page": 100,
             "page": page,
-            "direction": "desc",  # most recent first so we find it quickly
+            "sort": "due_on",       # sort by due date
+            "direction": "desc",    # most recently due first, so active milestones are found quickly
         }
-        resp = requests.get(url, headers=HEADERS, params=params)
+        resp = requests.get(url, headers=HEADERS, params=params, timeout=30)
         resp.raise_for_status()
         milestones = resp.json()
         if not milestones:
@@ -101,7 +102,7 @@ def get_milestone_number(repo: str, title: str) -> int | None:
         page += 1
     print(f"  ⚠️  Milestone '{title}' not found in {repo} — skipping")
     if recent_titles:
-        print(f"     Most recent milestones: {', '.join(recent_titles)}")
+        print(f"     Most recently due milestones: {', '.join(recent_titles)}")
     return None
  
  
