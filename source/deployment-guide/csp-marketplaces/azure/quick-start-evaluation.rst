@@ -1,17 +1,16 @@
-
 :orphan:
 :nosearch:
 
 Mattermost is published as an **Azure Marketplace** solution that deploys a single Ubuntu virtual machine with Mattermost, PostgreSQL, network configurations, and the necessary Azure resources. This quick start evaluation option is preferred for customers already using Azure, as it integrates seamlessly within their existing infrastructure.
 
 Prerequisites
--------------
+~~~~~~~~~~~~~
 
 * An active **Azure subscription** with permission to create resources and accept **Azure Marketplace** billing terms for the offer.
 * Familiarity with the **Azure portal** (resource groups, networking, and virtual machines).
 
 What gets deployed
-------------------
+~~~~~~~~~~~~~~~~~~
 
 The template provisions a small, self-contained stack in the resource group you select, including:
 
@@ -24,13 +23,13 @@ The template provisions a small, self-contained stack in the resource group you 
 
 
 Step 1: Select a plan and start creation
-----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Go to the `Mattermost - Quick Start Evaluation (VM) <https://azuremarketplace.microsoft.com/en-us/marketplace/apps/mattermost.mattermost-all-in-one>`_ Azure Marketplace application to begin. Click **Get it now**, then select the **Mattermost - Quick Start Evaluation (VM)** plan, and click **Create** to open the deployment wizard.
 
 
 Step 2: Basic Configuration
----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 On the **Basics** tab, configure the following:
 
@@ -44,18 +43,18 @@ On the **Basics** tab, configure the following:
 8. **Authentication type:** **Password** or **SSH public key** only for Linux sign-in to the VM. Password is often simpler for a quick trial; SSH key is appropriate if your organization requires key-based Linux access.
 
 Step 3: Virtual Machine Settings and Network Configuration
-----------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 On **Virtual Machine Settings** tab, configure the following:
 
 1. **Virtual machine size:** For trials, we recommend **Standard_F2s_v2** size but you can choose any other size available in your region.
-2. **Public IP address:** Typically **create new**. You must set a **DNS prefix** (label) that is **globally unique** in Azure; it forms part of your URL. This DNS will allow public access to your workspace. It is important that you do not already have a matching DNS name within your Azure subscription, or your deployment may fail later in the process.
+2. **Public IP address:** Typically **create new**. You must set a **DNS prefix** (label) that is **globally unique** in Azure for that cloud/region scope; it forms part of your URL. This DNS will allow public access to your workspace. If the label is already taken, deployment can fail.
 3. **Virtual network:** **Create new** with the suggested address space, or attach an existing VNet and subnet that meet the constraints. Using a new virtual network avoids collisions with overlapping address spaces in the same subscription.
 
 The portal may show a preview of your URL in the form ``https://<dns-label>.<region>.cloudapp.azure.com``. That is the address you will use once TLS and Mattermost are ready.
 
 Step 4: Review and create
--------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Review settings, accept any **Marketplace** terms if prompted, then select **Create**. Provisioning usually takes a few minutes, and the first-boot configuration may take more time before HTTPS works reliably.
 
@@ -72,8 +71,8 @@ Example: ``https://myorg.eastus.cloudapp.azure.com``
 Use **https**; the deployment is intended to serve Mattermost over TLS.
 
 Step 5: Open Mattermost and create your administrator
------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In a browser, go to your **HTTPS** URL. Mattermost will prompt you to **create the first user**, which becomes the **System Administrator**. That account is different from the **Linux** username and password (or SSH key) you configured in Step 3.
+In a browser, go to your **HTTPS** URL. Mattermost will prompt you to **create the first user**, which becomes the **System Administrator**. That account is different from the **Linux** username and password (or SSH key) you configured in Step 2.
 
 Congratulations! You’ve successfully deployed Mattermost for evaluation.

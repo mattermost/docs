@@ -59,7 +59,7 @@ On the **Application** tab, configure how the Mattermost application is sized an
 4. **VM SKU:** Size of each VMSS instance. The wizard surfaces recommended Linux sizes first; you can select any supported Linux size available in your region.
 5. **Admin username:** Linux administrator account used to sign in to the VM instances.
 6. **Authentication type:** Choose **Password** or **SSH public key** for Linux sign-in. **SSH public key** is recommended for production deployments.
-7. **Mattermost Version:** The Mattermost version to install (for example, ``11.6.0``). See `the Mattermost release policy <https://docs.mattermost.com/product-overview/release-policy.html>`_ for supported versions.
+7. **Mattermost Version:** The Mattermost version to install (for example, ``11.6.0``). See the :doc:`Mattermost release policy </product-overview/release-policy>` for supported versions.
 
 Step 4: Database
 ----------------
@@ -88,7 +88,7 @@ Step 5: Networking
 On the **Networking** tab, configure the virtual network and how Mattermost is exposed to users.
 
 1. **VNet address space (CIDR):** The address space for the virtual network created by the template. Defaults to ``10.0.0.0/22``. Pick a range that does not overlap with other VNets you plan to peer with.
-2. **Public IP DNS label:** DNS label for the Application Gateway public IP. The wizard generates a default; you can override it. The label must be **globally unique** in the region. Once deployed, your Azure-assigned URL will be in the form ``<dns-label>.<region>.cloudapp.azure.com``.
+2. **Public IP address:** Typically **create new**. You must set a **DNS prefix** (label) that is **globally unique** across Azure public cloud; it forms part of your URL and allows public access to your workspace. If the label is already taken, deployment will fail.
 3. **Enable HTTPS on Application Gateway:** When enabled, the Application Gateway terminates TLS using your PFX certificate and HTTP traffic is redirected to HTTPS. When disabled, Mattermost is served over HTTP on the Azure-assigned hostname (suitable for testing, **not recommended for production**).
 4. **PFX certificate** and **PFX password:** Shown when HTTPS is enabled. Upload your PKCS#12 bundle and provide the password used to protect it.
 5. **Custom domain (FQDN):** Shown when HTTPS is enabled. The public hostname Mattermost will use (for example, ``mattermost.example.com``). After deployment, you must create a **CNAME** record pointing this hostname to the Azure-assigned DNS name of the Application Gateway public IP.

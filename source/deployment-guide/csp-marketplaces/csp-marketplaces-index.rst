@@ -11,5 +11,5 @@ This section provides instructions for deploying Mattermost from cloud service p
     Quick Start Evaluation </deployment-guide/csp-marketplaces/quick-start-evaluation>
     Mattermost - Azure-Native (VM-based) </deployment-guide/csp-marketplaces/mattermost-azure-native-app>
 
-* :doc:`Quick Start Evaluation </deployment-guide/csp-marketplaces/quick-start-evaluation>` - Quickly evaluate Mattermost from your CSP marketplace.
+* :doc:`Quick Start Evaluation </deployment-guide/csp-marketplaces/quick-start-evaluation>` - Evaluate Mattermost from CSP marketplaces (Azure today; more providers coming).
 * :doc:`Mattermost - Azure-Native (VM-based) </deployment-guide/csp-marketplaces/mattermost-azure-native-app>` - Deploy a production-style Mattermost stack on Azure from the Azure Marketplace.
