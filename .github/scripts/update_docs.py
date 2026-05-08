@@ -154,6 +154,16 @@ def update_file(client: anthropic.Anthropic, filepath: str) -> None:
         )
     if response.stop_reason == "max_tokens":
         raise RuntimeError(
+            f"Claude hit max_tokens (16000) for {filepath}; output is truncated. "
+            "Increase max_tokens or split the file."
+        )
+    if not response.content or response.content[0].type != "text":
+        raise RuntimeError(
+            f"Unexpected API response structure for {filepath}: "
+            f"content={response.content!r}"
+        )
+    if response.stop_reason == "max_tokens":
+        raise RuntimeError(
             f"Claude hit max_tokens ({max_tokens}) for {filepath}; output is truncated. "
             "Increase max_tokens or split the file."
         )
