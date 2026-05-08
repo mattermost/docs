@@ -67,7 +67,7 @@ jobs:
           RELEASE_DATE: ${{ inputs.release_date }}
           INSTRUCTIONS: ${{ inputs.instructions }}
         run: python .github/scripts/update_docs.py
-
+ 
       - name: Normalize version for branch naming
         id: vars
         shell: bash
@@ -98,4 +98,3 @@ jobs:
           commit-message: 'docs: update ${{ inputs.component }} files for v${{ inputs.version }} ${{ inputs.release_type }}'
           labels: 'release-docs'
           draft: ${{ inputs.pr_draft }}
-  
