@@ -1,5 +1,12 @@
 # v11 Changelog
 
+(release-v11.7-extended-support-release)=
+## Release v11.7 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
+
+**Release day: 2026-05-15**
+
+_No release notes for this version._
+
 ```{eval-rst}
 .. meta::
   :page_title: Mattermost Server v11 Release Notes
