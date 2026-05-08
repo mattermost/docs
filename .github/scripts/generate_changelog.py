@@ -130,9 +130,12 @@ def extract_release_notes(body: str) -> list[str] | None:
     if not body:
         return None
  
-    # Capture everything after '#### Release Note' up to the next #### header or EOF
+    # Normalize line endings (GitHub API may return \r\n on some PR bodies)
+    body = body.replace("\r\n", "\n").replace("\r", "\n")
+ 
+    # Capture everything after '#### Release Note(s)' up to the next #### header or EOF
     section_match = re.search(
-        r"####\s+Release\s+Note\s*\n(.*?)(?=\n####|\Z)",
+        r"####\s+Release\s+Notes?\s*\n(.*?)(?=\n####|\Z)",
         body,
         re.DOTALL | re.IGNORECASE,
     )
@@ -240,14 +243,29 @@ def main():
                 print(f"   ⏭️  #{pr['number']}: {pr['title']} (NONE / no notes)")
         print()
  
-    today = date.today().strftime("%Y-%m-%d")
-    entry = f"## {VERSION} - {today}\n\n"
+    # Derive short version for heading/anchor: "v11.7.0" → "v11.7", "11.7.0" → "v11.7"
+    version_short = "v" + re.sub(r"\.0$", "", VERSION.lstrip("v"))
+ 
+    release_date = os.environ.get("RELEASE_DATE", "").strip() or date.today().strftime("%Y-%m-%d")
+ 
+    # e.g. (release-v11.7-extended-support-release)=
+    anchor = f"(release-{version_short}-extended-support-release)="
+    heading = (
+        f"## Release {version_short} - "
+        f"[Extended Support Release]"
+        f"(https://docs.mattermost.com/product-overview/release-policy.html#release-types)"
+    )
+    entry = f"{anchor}\n{heading}\n\n**Release day: {release_date}**\n\n"
  
     if all_notes:
         polished = polish_with_ai(all_notes)
-        blog_url = os.environ.get("BLOG_POST_URL", "")
-        if blog_url:
-            polished = polished.replace("BLOG_POST_URL", blog_url)
+        blog_url = os.environ.get("BLOG_POST_URL", "").strip()
+        if not blog_url:
+            # Auto-construct from version: v11.7.0 → https://mattermost.com/blog/mattermost-v11-7-0-is-now-available/
+            version_slug = VERSION.lstrip("v").replace(".", "-")
+            blog_url = f"https://mattermost.com/blog/mattermost-v{version_slug}-is-now-available/"
+            print(f"ℹ️  No blog post URL provided — using auto-constructed URL: {blog_url}")
+        polished = polished.replace("BLOG_POST_URL", blog_url)
         entry += polished + "\n"
     else:
         entry += "_No release notes for this version._\n"
