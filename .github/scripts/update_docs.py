@@ -135,10 +135,11 @@ def update_file(client: anthropic.Anthropic, filepath: str) -> None:
     try:
         with open(filepath, "r", encoding="utf-8") as f:
             original = f.read()
-    except FileNotFoundError as exc:
-        raise FileNotFoundError(f"{filepath} not found") from exc
+    except FileNotFoundError:
+        print(f"  WARNING: {filepath} not found — skipping.")
+        return
  
-    print("  Sending to Claude...")
+    print(f"  Sending to Claude...")
     response = client.messages.create(
         model="claude-sonnet-4-6",
         max_tokens=16000,
@@ -146,17 +147,30 @@ def update_file(client: anthropic.Anthropic, filepath: str) -> None:
         messages=[{"role": "user", "content": build_user_prompt(filepath, original)}],
     )
  
+    if not response.content or response.content[0].type != "text":
+        raise RuntimeError(
+            f"Unexpected API response structure for {filepath}: "
+            f"content={response.content!r}"
+        )
+    if response.stop_reason == "max_tokens":
+        raise RuntimeError(
+            f"Claude hit max_tokens ({max_tokens}) for {filepath}; output is truncated. "
+            "Increase max_tokens or split the file."
+        )
     updated = response.content[0].text
  
     # Safety: don't write empty content
     if not updated.strip():
-        raise RuntimeError(f"Claude returned empty content for {filepath}")
+        print(f"  ERROR: Claude returned empty content for {filepath} — skipping.")
+        return
  
     # Safety: skip if response is dramatically shorter (possible truncation)
     if len(updated) < len(original) * 0.5:
-        raise RuntimeError(
-            f"Updated content for {filepath} is <50% of original length; refusing write."
+        print(
+            f"  WARNING: Updated content for {filepath} is less than 50% of original "
+            "length. Skipping to avoid data loss."
         )
+        return
  
     # No-op: file is unchanged
     if updated.strip() == original.strip():
@@ -176,7 +190,7 @@ def update_file(client: anthropic.Anthropic, filepath: str) -> None:
 def main():
     files = get_files()
  
-    print("\nMattermost Docs Update")
+    print(f"\nMattermost Docs Update")
     print(f"  Component:    {COMPONENT}")
     print(f"  Release type: {RELEASE_TYPE}")
     print(f"  Version:      {VERSION}")
@@ -195,9 +209,9 @@ def main():
         print(f"Processing: {filepath}")
         try:
             update_file(client, filepath)
-        except Exception as e:
-            print(f"  ERROR processing {filepath}: {e}")
-            errors.append((filepath, str(e)))
+        except (OSError, anthropic.APIStatusError, anthropic.APIConnectionError, RuntimeError) as e:
+            print(f"  ERROR [{type(e).__name__}] processing {filepath}: {e}")
+            errors.append((filepath, f"{type(e).__name__}: {e}"))
         print()
  
     if errors:
