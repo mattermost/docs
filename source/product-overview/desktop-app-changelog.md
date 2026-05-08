@@ -21,6 +21,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
   - Fixed an issue where new views would not load if the URL to open contained query parameters.
   - Fixed an issue where plugins other than Calls could not request desktop screen sharing sources.
   - Fixed an issue where content running inside a server view could close the view or cause the app to become unresponsive.
+  - Improved robustness of the downloads handler when handling unexpected network responses.
 
 - **v6.1.0, released 2026-03-02**
 
