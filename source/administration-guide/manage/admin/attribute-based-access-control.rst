@@ -47,7 +47,7 @@ Once enabled, you have multiple ways to configure access policies in Mattermost:
 
 **Team Admins can:**
 
-- Create, edit, and delete :ref:`team-scoped channel membership policies <administration-guide/manage/admin/abac-channel-access-rules:manage team-scoped membership policies in team settings>` for private channels in their team directly from Team Settings, when granted the appropriate permission.
+- Create, edit, and delete :ref:`team-scoped channel membership policies <administration-guide/manage/admin/abac-channel-access-rules:manage team-scoped membership policies in team settings>` for private channels in their team directly from Team Settings, when granted the ``manage_team_access_rules`` permission.
 
 **Channel Admins can:**
 
