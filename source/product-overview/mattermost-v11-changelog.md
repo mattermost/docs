@@ -1,5 +1,116 @@
 # v11 Changelog
 
+(release-v11.7-extended-support-release)=
+## Release v11.7 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
+
+**Release day: 2026-05-15**
+
+### Upgrade Impact
+
+#### Database Schema Changes
+
+- Migrated access control policies from v0.2 to v0.3, replacing the wildcard action with explicit action types to support multi-action policies.
+
+#### config.json
+
+- Added ``DatabaseSettings.AnalyticsQueryTimeout`` setting for use when running long analytics queries in the background.
+
+#### Compatibility
+
+- Dropped support for JavaScript features required by browsers over 3 years old.
+- Added support for Elasticsearch v9 alongside v8. Elasticsearch v7 is no longer supported.
+- FIPS builds now require a minimum of 14 characters for passwords, atmos/camo proxy configuration, and shared channel secrets. Shorter passwords for existing users will no longer be valid and will require a password reset. Non-FIPS builds are unaffected.
+
+---
+
+### Improvements
+
+See [this blog post](https://mattermost.com/blog/mattermost-v11-7-0-is-now-available/) on the highlights in our latest release.
+
+#### User Interface
+
+- Added an "Open in new tab" button to the Product Switcher menu.
+- Added the ability to open channels in a separate popout window, with full channel and RHS functionality.
+- Added a pluggable AI Actions Menu to the text editor formatting bar with cascading submenus. Plugins can register custom action items via ``registerAIActionMenuItemComponent``. The existing Rewrite feature is now accessed through this menu.
+- Added the ability to handle to which remotes a channel is shared from the channel settings UI.
+- Message attachment footers now support full Markdown rendering, including bold, italic, links, and emoji.
+- Changed the Browse Channels modal and ``~``channel autocomplete to prioritize channels with a matching display name.
+- Allowed substring matching when searching channel members in the member sub-panel in a channel.
+- Improved accessibility of thread list menus.
+- Improved autocomplete while typing in Korean and using Firefox.
+- Fixed visual glitches with misaligned text and icon in image attachments in compact mode.
+- Fixed an issue where message attachment titles would render encoded special characters as-is.
+- Prepackaged Jira plugin version [v4.6.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.6.0).
+- Prepackaged Zoom plugin version [v1.13.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.13.0).
+- Updated prepackaged Agents plugin to v2.0.3.
+- Updated prepackaged Playbooks plugin to v2.8.1.
+- Prepackaged GitHub plugin version [v2.7.0](https://github.com/mattermost/mattermost-plugin-github/releases/latest).
+
+#### Administration
+
+- Added support for listing user roles through ``mmctl``.
+- Added the ``--workers`` flag to ``mmctl import process`` to control concurrency.
+- Renamed user-visible references from "Custom Profile Attributes" to "User Attributes" across the Admin Console, error messages, and server translations.
+- Added team-level ABAC membership policies, allowing Team Admins to create and manage attribute-based access policies for private channels within their team directly from a new Membership Policies tab in the Team Settings modal. Requires Enterprise license.
+- Added three new plugin APIs for shared channel sync: ``ReceiveSharedChannelSyncMsg``, ``ReceiveSharedChannelAttachmentSyncMsg``, and ``ReceiveSharedChannelProfileImageSyncMsg``. These allow plugins acting as shared channel remotes to sync posts, reactions, users, file attachments, and profile images into Mattermost, complementing the existing outbound ``OnSharedChannels*`` hooks.
+- Added new plugin pre-hooks for channel membership, team membership, and channel archiving. Plugins can now intercept operations before they are persisted using three new hooks: ``ChannelMemberWillBeAdded`` (modify or reject a channel member addition), ``TeamMemberWillBeAdded`` (modify or reject a team member addition), and ``ChannelWillBeArchived`` (reject a channel archive).
+- Added a new ``mattermost_search_engine_status`` metric that reports whether the Elasticsearch/OpenSearch cluster is healthy (value = 1) or not (value = 0). If the cluster is not enabled, its value is reported as 1.
+- Added logic to monitor the health of Elasticsearch/OpenSearch clusters and implement a retry mechanism.
+- Implemented fail-fast behavior for requests made to the Elasticsearch/OpenSearch cluster when it is down.
+- Shared Channels related errors now appear in the main log file by default.
+- Updated license renewal and expiry notification emails with refreshed branding, copy, and layout.
+- Updated URL validation in integration actions to make them more secure.
+- Improved response handling for outgoing webhook requests.
+
+#### Performance
+
+- Fixed a bug where OpenSearch/Elasticsearch reindex jobs could report success even when bulk writes were silently rejected by the search backend, causing silent data loss in the search index.
+
+---
+
+### Bug Fixes
+
+- Fixed an issue where importing files with Japanese dakuten/handakuten characters (e.g., ガ, パ, べ) failed on macOS due to Unicode normalization mismatch (NFC/NFD).
+- Fixed a crash when native app download links are malformed.
+- Fixed an issue where the textbox would appear focused but not accept keyboard shortcuts after editing a post.
+- Fixed a bug where premade themes were hidden when custom themes are disabled.
+- Fixed a bug where a "Don't have an account" link appeared on the login page even when signups are disabled.
+- Fixed styling issues in the Browse Channels modal when long channel purpose values were present.
+- Fixed a bug where an attachment-only post would send on Enter when the setting was configured to only send on Ctrl/Cmd+Enter.
+- Fixed a bug where in compact mode, a file attachment's name did not display correctly when editing a post with attachments.
+- Fixed an issue where shared channels would intermittently display "Shared with trusted organizations" instead of showing the actual connection name.
+- Fixed an issue where shared channel invites were silently dropped in HA clusters when the API request landed on a non-leader node.
+- Fixed the Invite to Team modal ignoring the most recently pressed key when suggesting users.
+- Fixed an issue where desktop notifications still triggered for a channel or thread that was focused in a popout window.
+- Fixed a case where removing a remote could leave channels in a "shared" state even when not shared with any remote.
+- Fixed an issue where the ``remote_id`` field on user objects could be set via the user patch API.
+- Fixed clipped emoticons and letters in channel banners.
+- Fixed an issue where the Workspace Optimization page appeared in the System Console on Mattermost Cloud workspaces.
+- Fixed a bug where fetching a newly created channel could fail with "channel not found" on deployments with database read replicas.
+- Fixed a bug where SAML login failed for users mapped via ``objectGUID`` when the IdP sent the value as a UUID string instead of base64-encoded raw bytes (affecting Keycloak 26.6.0 and later with ``user-attribute-ldap-mapper``).
+- Fixed issues with interactive dialogs including dynamic select lookups, radio values, and field refresh.
+- Channel membership changes are now reliably synchronized between connected workspaces, even when a remote server is temporarily offline. Previously, membership removals could be missed during outages.
+
+---
+
+### API Changes
+
+- Added new API endpoint ``PUT /api/v4/channels/{channel_id}/members`` to set the complete membership of a channel in a single call. The endpoint accepts a JSON object with ``members`` (desired user IDs) and an optional ``channel_admins`` (user IDs to designate as channel admins). The server computes the diff against current membership, adds or removes users as needed, and reconciles admin roles. Results are streamed back as NDJSON for progress tracking. Requires system admin permissions.
+- Added new API endpoint ``GET /api/v4/channels/{channel_id}/views/{view_id}/posts`` to retrieve paginated posts for a specific view.
+- Added new API endpoints ``PUT /api/v4/system/e2e/ai_bridge``, ``GET /api/v4/system/e2e/ai_bridge``, and ``DELETE /api/v4/system/e2e/ai_bridge`` for E2E testing of AI features. These endpoints are only accessible when ``EnableTesting`` is true.
+- Added endpoints for the Property System Architecture v2.
+- Added WebSocket events for the Property System Architecture v2.
+- Added protected fields and field-specific permissions to property fields.
+- Added permission policies.
+- Added the ``IntegratedBoards`` feature flag.
+- Removed direct dependency on ``blang/semver/v4``.
+
+---
+
+### Go Version
+
+- Updated Go version to 1.25.9.
+
 ```{eval-rst}
 .. meta::
   :page_title: Mattermost Server v11 Release Notes
