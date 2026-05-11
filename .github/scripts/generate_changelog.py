@@ -28,6 +28,10 @@ HEADERS = {
     "Accept": "application/vnd.github.v3+json",
 }
  
+# Shared timeout for all GitHub API requests (seconds).
+# Prevents the workflow from hanging indefinitely if the API stalls.
+API_TIMEOUT = 30
+ 
 SYSTEM_PROMPT = """You are an expert technical writer and copyeditor for Mattermost software release notes. Your task is to transform raw, unstructured release notes from pull requests into a clean, categorized, and grammatically correct changelog entry that matches Mattermost's established changelog format exactly.
  
 Here are your instructions:
@@ -57,8 +61,8 @@ Here are your instructions:
     - `### API Changes` — API additions, changes, or deprecations
     - `### WebSocket Event Changes` — new or changed WebSocket events, if applicable
     - `### Audit Log Event Changes` — new or changed audit log events
-    - `### Open Source Components` — open source component additions or removals, if applicable
     - `### Go Version` — Go version updates
+    - `### Open Source Components` — open source component additions or removals, if applicable
     - `### Security` — security-related fixes not already covered under Bug Fixes
  
 2.  **Sentence patterns:** Follow these conventions consistently:
@@ -100,7 +104,7 @@ def get_milestone_number(repo: str, title: str) -> int | None:
             "sort": "due_on",       # sort by due date
             "direction": "desc",    # most recently due first, so active milestones are found quickly
         }
-        resp = requests.get(url, headers=HEADERS, params=params)
+        resp = requests.get(url, headers=HEADERS, params=params, timeout=API_TIMEOUT)
         resp.raise_for_status()
         milestones = resp.json()
         if not milestones:
@@ -129,7 +133,7 @@ def get_merged_prs(repo: str, milestone_number: int) -> list:
             "per_page": 100,
             "page": page,
         }
-        resp = requests.get(url, headers=HEADERS, params=params)
+        resp = requests.get(url, headers=HEADERS, params=params, timeout=API_TIMEOUT)
         resp.raise_for_status()
         items = resp.json()
         if not items:
@@ -221,7 +225,7 @@ def polish_with_ai(raw_notes: list[str]) -> str:
     return response.content[0].text.strip()
  
  
-def prepend_to_changelog(entry: str, changelog_path: str = "CHANGELOG.md") -> None:
+def insert_changelog_entry(entry: str, changelog_path: str = "CHANGELOG.md") -> None:
     """Insert a new version entry into the changelog after the static file header block."""
     existing = ""
     if os.path.exists(changelog_path):
@@ -302,7 +306,7 @@ def main():
         entry += "_No release notes for this version._\n"
  
     changelog_path = os.environ.get("CHANGELOG_PATH", "CHANGELOG.md")
-    prepend_to_changelog(entry, changelog_path)
+    insert_changelog_entry(entry, changelog_path)
  
     prs_with_notes = total_prs - len(no_notes_prs)
     print(f"✅ CHANGELOG.md updated with notes from {prs_with_notes} PR(s) across {len(REPOS)} repo(s)")
