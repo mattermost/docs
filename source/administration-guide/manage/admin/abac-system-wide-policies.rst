@@ -20,7 +20,7 @@ Define access control policies
 You can add multiple rules to a single policy, and each rule can include multiple attribute values.
 
 1. In the System Console, go to **System Attributes > Attribute-Based Access** and select **Add Policy**.
-2. Enter a unique policy name.
+2. Enter a unique policy name. From Mattermost v11.7, parent access control policy names must be unique. If you enter a name that's already in use, Mattermost displays an error message and prevents you from saving until you choose a different name.
 3. Choose whether to automatically add users who match your configured attribute values as new members. Automatic synchronization is disabled by default. 
 
    * **True**: Automatically maintains channel membership according to the defined rules as user attributes change.
@@ -85,6 +85,20 @@ Delete policies
 ~~~~~~~~~~~~~~~
 
 To delete a policy, select the **Delete** button next to the policy you want to remove. You can only delete policies that are not currently assigned to any channels. If a policy is assigned to channels, you must first remove it from those channels before you can delete it.
+
+Permission policies
+-------------------
+
+From Mattermost v11.7, System Admins can use attribute-based **permission policies** to restrict specific user actions based on user attributes, in addition to controlling channel membership. Permission policies extend ABAC beyond who can join a channel to what permitted members can do once they have access.
+
+Permission policies can restrict:
+
+- **File upload**: Whether matching users are permitted to attach or upload files to messages.
+- **File download**: Whether matching users are permitted to download files shared in messages.
+
+When a permission policy denies file upload or file download for a given user, that user sees the affected file attachments as unavailable or redacted in the Mattermost client. For end-user-facing behavior, see :ref:`Restricted file attachments <end-user-guide/collaborate/share-files-in-messages:restricted file attachments>`.
+
+Permission policies are configured in the System Console alongside system-wide access policies and follow the same attribute-rule model. Like access policies, permission policies require a unique policy name.
 
 Define access controls per channel
 ----------------------------------

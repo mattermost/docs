@@ -76,6 +76,13 @@ With file attachments, you can share additional information that helps your team
       :alt: You can also use more options to download ot view the file in the channel.
       :scale: 30
 
+Restricted file attachments
+---------------------------
+
+From Mattermost v11.7, system admins can apply attribute-based **permission policies** that restrict file upload or file download for specific users. If a permission policy applies to you, you may be unable to upload file attachments to messages, or you may see file attachments shared by other users as unavailable or redacted.
+
+If you're unexpectedly unable to attach or download files, contact your system admin to confirm which permission policies apply to your account. See :ref:`Permission policies <administration-guide/manage/admin/abac-system-wide-policies:permission policies>` for admin-facing details.
+
 Attachment limits and sizes
 ---------------------------
 
