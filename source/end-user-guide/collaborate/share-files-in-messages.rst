@@ -105,3 +105,10 @@ The following media formats are supported on most browsers:
 -  Files: PDF, TXT
 
 Other document previews (such as Word, Excel, or PPT) are not yet supported.
+
+Restricted file attachments
+---------------------------
+
+If your administrator has configured attribute-based permission policies on your Mattermost instance, file uploads or file downloads may be restricted based on your user attributes. When a policy applies, you may see file attachments as unavailable or redacted in messages, or you may be prevented from uploading a file attachment.
+
+If you expect to have access to a restricted file and don't, contact your Mattermost administrator. For administrator-facing details, see :ref:`Permission policies <administration-guide/manage/admin/abac-system-wide-policies:permission policies>`.
