@@ -6,8 +6,11 @@ Expects these environment variables:
   GITHUB_TOKEN      - GitHub personal access token or Actions token
   REPOS             - Comma-separated list of repositories in "owner/repo" format
                       (e.g. "mattermost/mattermost,mattermost/enterprise")
-  MILESTONE         - Milestone title (e.g. "v10.6")
-  VERSION           - Version label for the changelog entry (e.g. "10.6")
+  MILESTONE         - Milestone title (e.g. "v11.7.0")
+  VERSION           - Version label for the changelog entry (e.g. "v11.7.0")
+  RELEASE_DATE      - (optional) Release day date (e.g. "2026-05-15"). Defaults to today.
+  BLOG_POST_URL     - (optional) Blog post URL for the Improvements section.
+                      Auto-constructed from VERSION if not provided.
   ANTHROPIC_API_KEY - (optional) If set, release notes are polished by Claude
                       before being written to the changelog.
 """
@@ -144,7 +147,6 @@ def get_merged_prs(repo: str, milestone_number: int) -> list:
                 prs.append(item)
         page += 1
     return prs
- 
  
  
 def extract_release_notes(body: str) -> list[str] | None:
@@ -309,7 +311,7 @@ def main():
     insert_changelog_entry(entry, changelog_path)
  
     prs_with_notes = total_prs - len(no_notes_prs)
-    print(f"✅ CHANGELOG.md updated with notes from {prs_with_notes} PR(s) across {len(REPOS)} repo(s)")
+    print(f"✅ Changelog updated with notes from {prs_with_notes} PR(s) across {len(REPOS)} repo(s)")
  
     if no_notes_prs:
         print(f"\n⚠️  {len(no_notes_prs)} PR(s) had no release notes (marked NONE or section missing):")
