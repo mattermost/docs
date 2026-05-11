@@ -93,6 +93,9 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-7-is-now-availab
     - ``manage_own_agent``: Allows users to create and manage their own agents.
     - ``manage_others_agent``: Allows users to create and manage agents they didn't create, even if that user isn't one of the administrator users assigned to the agent by the creator.
 
+#### Performance
+ - Benchmarking test results showed no significant difference: a -0.90% decrease in the number of supported users for the new release, which lies within the ``[-5%, +5%]`` prediction interval. View the full raw data and methodology in our [Performance Reports repository](https://github.com/mattermost/performance-reports/tree/main/performance-comparisons/v11.7).
+
 #### Plugins
  - Added a pluggable AI Actions Menu to the text editor formatting bar with cascading submenus. Plugins can register custom action items via ``registerAIActionMenuItemComponent``. The existing Rewrite feature is now accessed through this menu.
  - Improved response handling for outgoing webhook requests.
@@ -124,9 +127,6 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-7-is-now-availab
  - Fixed an issue with clipped emoticons and letters in channel banners.
  - Fixed an issue where removing a remote could leave channels in a "shared" state, even if not shared with any remote.
  - Fixed an issue where OpenSearch/Elasticsearch reindex jobs could report success even when bulk writes were silently rejected by the search backend, causing silent data loss in the search index.
-
-#### Performance
- - Benchmarking test results showed no significant difference: a -0.90% decrease in the number of supported users for the new release, which lies within the ``[-5%, +5%]`` prediction interval. View the full raw data and methodology in our [Performance Reports repository](https://github.com/mattermost/performance-reports/tree/main/performance-comparisons/v11.7).
 
 ### API Changes
  - Added a new API endpoint ``GET /api/v4/channels/{channel_id}/views/{view_id}/posts`` to retrieve paginated posts for a specific view. Card posts are temporarily excluded from search results. Card posts now use collaborative permissions — any channel member can edit or delete any card without needing ``edit_others_posts/delete_others_posts`` permissions.
