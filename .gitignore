@@ -80,4 +80,7 @@ build/
 
 # Cursor instructions
 *.cursor
+!.cursor/
+!.cursor/rules/
+!.cursor/rules/*.mdc
 eng.md

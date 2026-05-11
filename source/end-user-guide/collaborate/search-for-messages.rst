@@ -4,7 +4,7 @@ Search for messages
 .. include:: ../../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
-Use Mattermost search to find messages, replies, and the contents of files. You can also search by `hashtags <#hashtags>`__ and perform more advanced searches using `search modifiers <#search-modifiers>`__.
+Use Mattermost search to find messages, replies, and the contents of files. You can also search by `hashtags <#hashtags>`__, perform more advanced searches using `search modifiers <#search-modifiers>`__, or adjust search results to show messages from the current team, a specific team, or all teams.
 
 Search for message
 -------------------
@@ -69,7 +69,7 @@ Search for message
 
   .. tip::
 
-    You can adjust search results to show messages from the current team, a specific team, or all teams.
+    When using Mattermost in a web browser or the desktop app, you can open your current search results in a separate popout window by selecting the **Open in new window** |new-window-icon| icon in the search results header.
 
 Search for files
 ----------------
@@ -82,7 +82,11 @@ From the **Search** field, select **Files** to search for files attached to mess
 File contents that match on file name, or contain matching text content within supported document types, are returned in the Search Results pane. Each search result includes file name, extension, and size details, as well as details about when and where the file was originally shared. You can adjust search results to show messages from the current team, a specific team, or all teams.
 
 - For Mattermost Cloud :doc:`workspaces </end-user-guide/end-user-guide-index>`, supported document file formats include PDF, PPTX, DOCX, ODT, HTML, and plain text documents. DOC and RTF file formats, as well as the contents of ZIP files, are not supported.
-- For Mattermost self-hosted deployments, supported document file formats include PDF, PPTX, DOCX, ODT, HTML, and plain text documents. 
+- For Mattermost self-hosted deployments, supported document file formats include PDF, PPTX, DOCX, ODT, HTML, and plain text documents.
+
+.. note::
+
+  7zip (``.7z``) files are not supported for file content search and are skipped during search indexing for security reasons. Only standard ZIP files are supported when ZIP file search is enabled.
 
 .. note::
 

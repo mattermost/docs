@@ -20,7 +20,6 @@ A system admin can configure the following delegated granular administration rol
 - **User Manager:** This role can be configured to have read/write to all the user management areas and to authentication
 - **Custom Group Manager** This role has permissions to :doc:`create, edit, restore, and delete custom user groups </end-user-guide/collaborate/organize-using-custom-user-groups>`. This role can be used to assign individual users the ability to manage custom groups when **Custom Groups** permissions are removed for **All Members** via **System Console > Permissions > Edit Scheme > Custom Groups**.
 - **Shared Channel Manager** This role has the ``manage_shared_channels`` permission, allowing assigned users to share and unshare channels with existing connections to remote servers.
-- **Secure Connection Manager** This role has the ``manage_secure_connections`` permission, allowing assigned users to create, manage, and remove secure connections to remote servers.
 - **Viewer:** The Viewer role can view all areas of the System Console, and can be configured with write access where needed.
 
 When a user is assigned a system role, they have role-based access to the System Console and the underlying API endpoints. Each role has a different set of default permissions, and what users can access or view depends on the role they've been assigned.
@@ -47,9 +46,6 @@ The table below lists the default permissions for each role. Admins should caref
 | Custom Group Manager | Custom User Groups    | N/A                                   |
 +----------------------+-----------------------+---------------------------------------+
 | Shared Channel       | Shared Channels       | N/A                                   |
-| Manager              |                       |                                       |
-+----------------------+-----------------------+---------------------------------------+
-| Secure Connection    | Secure Connections    | N/A                                   |
 | Manager              |                       |                                       |
 +----------------------+-----------------------+---------------------------------------+
 | Viewer               | N/A                   | - All pages within the System Console |
@@ -95,11 +91,6 @@ There are two ways to assign roles:
 |                                                   | 2. Under **Assigned People**, select **Add People**.                                                                               |                                                                                     |
 |                                                   | 3. Search for and select the user name, then select **Add** to grant the Shared Channel Manager role to that user.                 |                                                                                     |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| Grant the Secure Connection Manager               | 1. Go to **System Console > User Management > Delegated Granular Administration**, then select the **Secure Connection Manager**   | ``mmctl permissions role assign system_secure_connection_manager user-name``               |
-| role to a user                                    |    role.                                                                                                                           |                                                                                     |
-|                                                   | 2. Under **Assigned People**, select **Add People**.                                                                               |                                                                                     |
-|                                                   | 3. Search for and select the user name, then select **Add** to grant the Secure Connection Manager role to that user.              |                                                                                     |
-+---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | Remove the System Manager role from a single user | 1. Go to **System Console > User Management > Delegated Granular Administration**, then select the **System Manager** role.        | ``mmctl permissions role unassign system_manager bob-smith``                        |
 |                                                   | 2. Under **Assigned People**, search for the user, then select **Remove**.                                                         |                                                                                     |
 +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
@@ -107,7 +98,7 @@ There are two ways to assign roles:
 Edit privileges of admin roles (advanced)
 ------------------------------------------
 
-System admins can grant read/write access to other areas of the System Console, as well as remove read/write access (including default access), for all system roles except the Custom Group Manager, Shared Channel Manager, and Secure Connection Manager roles.
+System admins can grant read/write access to other areas of the System Console, as well as remove read/write access (including default access), for all system roles except the Custom Group Manager and Shared Channel Manager roles.
 
 There are two ways to assign roles:
 
@@ -153,7 +144,6 @@ Roles
 - ``system_user_manager``
 - ``system_custom_group_admin``
 - ``system_shared_channel_manager``
-- ``system_secure_connection_manager``
 - ``system_read_only_admin``
 
 Privileges

@@ -171,8 +171,7 @@ The **Access Control** tab is only visible when all of these conditions are met:
 
 - You have Channel Admin role or higher for the channel
 - The channel is a private channel (not public, group message, or direct message)
-- ABAC is enabled system-wide by a System Admin
-- The Channel Admin ABAC is enabled via the configuration setting ``AccessControlSettings.EnableUserManagedAttributes``
+- ABAC is enabled system-wide by a System Admin in **System Console > System Attributes > Attribute-Based Access**
 - Your user role includes the ``manage_channel_access_rules`` permission
 
 Can Channel and Team Admins override system policies?

@@ -44,7 +44,7 @@ You can use AI to enhance your messages before sending them. This feature helps 
 
 From Mattermost v11.5, when you use AI Rewrite while composing a reply in a thread, the AI incorporates context from the thread to generate suggestions that better fit the ongoing conversation.
 
-.. tab:: Web/Desktop
+On Web/Desktop or Mobile:
 
   1. Type your message in the message compose field.
   2. Select the **Rewrite** |ai-rewrite| option from the message actions.
@@ -61,10 +61,6 @@ From Mattermost v11.5, when you use AI Rewrite while composing a reply in a thre
 
   5. Review the AI-generated suggestion. Select **Regenerate** to try again or **Discard** to return to your original message.
   6. Select **Send** |send-icon|
-
-.. tab:: Mobile
-
-  AI rewriting functionality is available in the mobile app with the same rewrite options as the desktop and web experience.
 
 .. note::
 

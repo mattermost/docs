@@ -201,11 +201,11 @@ The OpenTelemetry (OTel) Collector runs on each Mattermost application server an
 
 2. Download and edit the OpenTelemetry Collector configuration:
 
-   * :download:`Download otel-collector-config.yaml </samples/loki/otel-collector-config.yaml>`
+   * :download:`Download otel-collector-config-mattermost.yaml </samples/loki/otel-collector-config-mattermost.yaml>`
 
    .. code-block:: bash
 
-      sudo cp otel-collector-config.yaml /etc/otelcol-contrib/config.yaml
+      sudo cp otel-collector-config-mattermost.yaml /etc/otelcol-contrib/config.yaml
 
    Edit ``/etc/otelcol-contrib/config.yaml`` and replace the placeholders:
 
@@ -228,9 +228,6 @@ The OpenTelemetry (OTel) Collector runs on each Mattermost application server an
       # Ensure logs are group-readable
       sudo chmod 640 /opt/mattermost/logs/mattermost.log
       sudo chmod g+rx /opt/mattermost/logs
-
-      # Grant access to PostgreSQL logs (if applicable)
-      sudo usermod -aG postgres otelcol-contrib
 
 4. Restart the service:
 
@@ -353,13 +350,19 @@ Optional: Add PostgreSQL log collection
 
 If your PostgreSQL database runs on a dedicated server (not RDS), you can ship its logs to Loki as well. This is useful for correlating slow queries or database errors with Mattermost application events.
 
-1. Install the OpenTelemetry Collector on the PostgreSQL server using the same steps from **Step 3**.
-2. Documentation for PostgreSQL log location varies by installation, but the provided config handles common Ubuntu/Debian JSON log paths.
-3. Once running, PostgreSQL logs appear in Grafana under the label ``{service_name="postgres"}``:
+.. note::
 
-   .. code-block:: text
+   A separate configuration file is provided for PostgreSQL log collection. Install the OpenTelemetry Collector on the PostgreSQL server using the same steps from **Step 3**, then use this configuration file instead of the Mattermost one:
 
-      {service_name="postgres"} | json | detected_level="error"
+   * :download:`Download otel-collector-config-postgres.yaml </samples/loki/otel-collector-config-postgres.yaml>`
+
+   The PostgreSQL configuration handles common Ubuntu/Debian JSON log paths (``/var/log/postgresql/*.json``). Replace the same ``<LOKI_HOST>``, ``<HOSTNAME>``, and ``<SERVICE_NAME>`` placeholders as described in Step 3.
+
+Once running, PostgreSQL logs appear in Grafana under the label ``{service_name="postgres"}``:
+
+.. code-block:: text
+
+   {service_name="postgres"} | json | detected_level="error"
 
 Verification and troubleshooting
 ----------------------------------
