@@ -16,10 +16,12 @@ From Mattermost v10.9, system admins in large or complex organizations who requi
 
 Enforcing strict access controls based on user attributes eliminates manual role adjustment processes that can lead to security risks, inefficiencies, or inappropriate access, while maintaining security and compliance by ensuring that only authorized users can access specific Mattermost channels.
 
-Attribute-based access control (ABAC) provides 2 levels of control:
+Attribute-based access control (ABAC) provides the following levels of control:
 
-- **System-wide policies** (managed by System Admins): Centralized policies that can be applied across multiple channels in the System Console. See :doc:`System-wide attribute-based access policies </administration-guide/manage/admin/abac-system-wide-policies>`.
-- **Channel-specific rules** (managed by Channel Admins): Self-service access rules that Channel Admins can configure directly in Channel Settings for individual channels. See :doc:`Channel-specific access rules </administration-guide/manage/admin/abac-channel-access-rules>`.
+- **System-wide membership policies** (managed by System Admins): Centralized policies that can be applied across multiple channels in the System Console. See :doc:`System-wide attribute-based access policies </administration-guide/manage/admin/abac-system-wide-policies>`.
+- **Permission policies** (managed by System Admins): From Mattermost v11.7, attribute-based policies that restrict specific user-visible behaviors such as file upload and file download. See :ref:`Permission policies <administration-guide/manage/admin/abac-system-wide-policies:permission policies>`.
+- **Team-scoped membership policies** (managed by Team Admins): From Mattermost v11.7, self-service channel membership policies that Team Admins can configure directly in Team Settings for private channels within their team. See :ref:`Manage team-scoped membership policies in Team Settings <administration-guide/manage/admin/abac-channel-access-rules:manage team-scoped membership policies in team settings>`.
+- **Channel-specific access rules** (managed by Channel Admins): Self-service access rules that Channel Admins can configure directly in Channel Settings for individual channels. See :doc:`Channel-specific access rules </administration-guide/manage/admin/abac-channel-access-rules>`.
 
 Before you begin
 ------------------
@@ -41,7 +43,12 @@ Once enabled, you have multiple ways to configure access policies in Mattermost:
 
 - Create :doc:`system-wide access policies </administration-guide/manage/admin/abac-system-wide-policies>` that can be assigned across multiple channels in the System Console.
 - Assign :ref:`individual channel policies <administration-guide/manage/admin/abac-system-wide-policies:define access controls per channel>` to specific channels in the System Console.
+- From Mattermost v11.7, create :ref:`permission policies <administration-guide/manage/admin/abac-system-wide-policies:permission policies>` that restrict user-visible behaviors such as file upload and file download.
+
+**Team Admins can:**
+
+- From Mattermost v11.7, create, edit, and delete :ref:`team-scoped channel membership policies <administration-guide/manage/admin/abac-channel-access-rules:manage team-scoped membership policies in team settings>` directly in Team Settings for private channels within their team, when granted the ``manage_team_access_rules`` permission.
 
 **Channel Admins can:**
 
-- Configure :doc:`channel-specific access rules </administration-guide/manage/admin/abac-channel-access-rules>` directly in Channel Settings without requiring a system admin.
+- Configure :doc:`channel-specific access rules </administration-guide/manage/admin/abac-channel-access-rules>` directly in Channel Settings without requiring a System Admin.

@@ -21,6 +21,11 @@ You can add multiple rules to a single policy, and each rule can include multipl
 
 1. In the System Console, go to **System Attributes > Attribute-Based Access** and select **Add Policy**.
 2. Enter a unique policy name.
+
+   .. note::
+
+     From Mattermost v11.7, parent access control policy names must be unique. If you try to save a policy with a name that's already in use, Mattermost displays a user-friendly error and blocks saving until you choose a unique name.
+
 3. Choose whether to automatically add users who match your configured attribute values as new members. Automatic synchronization is disabled by default. 
 
    * **True**: Automatically maintains channel membership according to the defined rules as user attributes change.
@@ -103,3 +108,17 @@ Remove channel policies
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 Disable the policy for the channel by selecting **Remove Policy**. You can then link the channel to a different policy if preferred.
+
+Permission policies
+-------------------
+
+From Mattermost v11.7, System Admins can create permission policies that use attribute-based rules to restrict specific user-visible behaviors, in addition to controlling channel membership. Permission policies are managed by System Admins in the System Console, alongside membership policies.
+
+Permission policies can restrict the following behaviors based on user attributes:
+
+- **File upload**: Prevent users who don't match the configured attribute rules from attaching files to messages.
+- **File download**: Prevent users who don't match the configured attribute rules from downloading file attachments shared in channels.
+
+When a permission policy restricts file upload or file download, affected users see those actions blocked in the Mattermost interface. For details on the end-user experience, see :ref:`how restricted file attachments appear to users <end-user-guide/collaborate/share-files-in-messages:restricted file attachments>`.
+
+Permission policies use the same attribute rule definitions and the same unique-name requirement as membership policies described above.

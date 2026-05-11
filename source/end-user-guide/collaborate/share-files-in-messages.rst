@@ -105,3 +105,13 @@ The following media formats are supported on most browsers:
 -  Files: PDF, TXT
 
 Other document previews (such as Word, Excel, or PPT) are not yet supported.
+
+Restricted file attachments
+---------------------------
+
+From Mattermost v11.7, if your organization uses :doc:`attribute-based access control </administration-guide/manage/admin/attribute-based-access-control>` permission policies to restrict file upload or file download, you may see file attachments unavailable or redacted in channels you have access to:
+
+- When a permission policy restricts **file upload** for your user attributes, you can't attach files to messages.
+- When a permission policy restricts **file download** for your user attributes, file attachments shared by others appear unavailable or redacted, and you can't download them.
+
+If you expect to be able to upload or download a file but can't, contact your System Admin to confirm the permission policies that apply to your user attributes.
