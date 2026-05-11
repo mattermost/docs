@@ -21,7 +21,6 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
   - Fixed an issue where new views would not load if the URL to open contained query parameters.
   - Fixed an issue where plugins other than Calls could not request desktop screen sharing sources.
   - Fixed an issue where content running inside a server view could close the view or cause the app to become unresponsive.
-  - Improved robustness of the downloads handler when handling unexpected network responses.
 
 - **v6.1.0, released 2026-03-02**
 
@@ -206,6 +205,7 @@ Mattermost Desktop App v6.0.0 contains low severity level security fixes. Upgrad
   - Mattermost Desktop App v5.13.6 contains medium severity level security fixes. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue where overly long URLs were not handled correctly.
   - Fixed an issue related to authentication on non-configured domains.
+  - Improved robustness of the downloads handler when handling unexpected network responses.
 
 - **v5.13.5, released 2026-03-24**
 
