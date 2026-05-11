@@ -55,7 +55,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-7-is-now-availab
  - Pre-packaged GitHub plugin version [v2.7.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.7.0).
  - Pre-packaged Jira plugin version [v4.6.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.6.0).
  - Pre-packaged Zoom plugin version [v1.13.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.13.0).
- - Pre-packaged Agents plugin version [v2.0.3](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v2.0.3).
+ - Pre-packaged [Agents](https://docs.mattermost.com/end-user-guide/agents.html) plugin version [v2.0.3](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v2.0.3).
  - Pre-packaged Playbooks plugin version [v2.8.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.8.1).
  - Message attachment footers now support full Markdown rendering, including bold, italic, links, and emoji.
  - Changed the **Browse Channels** modal and ``~channel`` autocomplete to prioritize channels with a matching display name.
@@ -68,15 +68,15 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-7-is-now-availab
  - Added the ability to open channels in a separate popout window, with full channel and right-hand side functionality.
  - Dropped support for JS features required by browsers over three years old (reported on webapp and Safari browser).
  - Renamed user-visible references from "Custom Profile Attributes" to "User Attributes" across the admin console, error messages, and server translations.
- - Added the ability to handle from which remotes a channel is shared from the channel settings user interface.
+ - Added the [ability to handle](https://docs.mattermost.com/administration-guide/onboard/connected-workspaces.html) from which remotes a channel is shared from the channel settings user interface.
 
 #### Administration
  - Updated dependency versions for server and public services.
  - Migrated access control policies from v0.2 to v0.3, replacing the wildcard action with explicit action types to support multi-action policies.
- - Added team-level ABAC membership policies, allowing Team Admins to create and manage attribute-based access policies for private channels within their team directly from a new Membership Policies tab in the Team Settings Modal.
- - Added permission policies to manage file attachment download/upload actions.
+ - Added [team-level](https://docs.mattermost.com/administration-guide/manage/admin/attribute-based-access-control.html) ABAC membership policies, allowing Team Admins to create and manage attribute-based access policies for private channels within their team directly from a new Membership Policies tab in the Team Settings Modal.
+ - Added [permission policies](https://docs.mattermost.com/administration-guide/manage/admin/attribute-based-access-control.html) to manage file attachment download/upload actions.
  - Policy editor is improved for "Multi Select" attribute types to use more intuitive operators.
- - Added support for Elasticsearch v9 alongside v8. Elasticsearch v7 is no longer supported.
+ - Added support for [Elasticsearch v9](https://docs.mattermost.com/administration-guide/scale/enterprise-search.html#elasticsearch) alongside v8. Elasticsearch v7 is no longer supported.
  - Fail-fast requests are now done to the Elasticsearch/Opensearch cluster when it is down.
  - Added a new ``mattermost_search_engine_status`` metric that reports whether the Elasticsearch/Opensearch cluster is healthy (value = 1) or not (value = 0). If the cluster is not enabled, its value is reported as 1.
  - Added [logic](https://docs.mattermost.com/administration-guide/scale/common-configure-mattermost-for-enterprise-search.html) to monitor the health of Elasticsearch/Opensearch clusters to implement a retry mechanism.
