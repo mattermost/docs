@@ -32,21 +32,32 @@ SYSTEM_PROMPT = """You are an expert technical writer and copyeditor for Matterm
  
 Here are your instructions:
  
-1.  **Section structure:** Use `###` for top-level sections and `####` for subsections. Only include sections that have relevant content — do not output empty sections.
+1.  **Section structure:** Use `###` for top-level sections and `####` for subsections. Only include sections that have relevant content — do not output empty sections. Do NOT add horizontal rules or line separators between sections.
  
-    Top-level sections and their subsections:
+    Top-level sections and their subsections, in this order:
  
     - `### Upgrade Impact` — for changes that affect upgrading, with subsections as applicable:
-        - `#### Database Schema Changes` — new tables, columns, indexes, or migrations
-        - `#### config.json` — new or changed configuration settings; group by plan (e.g. "Changes to Enterprise plans")
-        - `#### Compatibility` — browser, OS, or minimum version requirement changes
-    - `### Improvements` — for new features and enhancements. Begin this section with the line `See [this blog post](BLOG_POST_URL) on the highlights in our latest release.` (use the exact placeholder `BLOG_POST_URL` — it will be replaced automatically). Then add subsections as applicable:
-        - `#### User Interface` — UI/UX changes, new visual features, pre-packaged plugin version updates
-        - `#### Administration` — System Console features, mmctl additions, logging, support packet changes
+        - `#### Database Schema Changes` — schema migrations such as new tables, new columns, changed columns, or new indexes. Example items: "Added a new ``Watermarks`` table.", "Added a new column ``DeleteAt`` to the ``ChannelMembers`` table."
+        - `#### config.json` — new or changed configuration settings. Use this exact block format for each plan grouping:
+ 
+          New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+ 
+          - **Changes to Enterprise Advanced plan:**
+            - Under ``ExperimentalSettings`` in ``config.json``, added ``EnableWatermark`` configuration setting to add watermarking toggle in the server.
+ 
+          Adapt the plan name (e.g. "Changes to All plans:", "Changes to Enterprise plan:", "Changes to Enterprise Advanced plan:") and list each setting change as a bullet under the appropriate plan heading.
+        - `#### Compatibility` — minimum version requirement changes for browsers, OS, or clients. Example: "Updated minimum Edge and Chrome versions to 146+."
+    - `### Improvements` — for new features and enhancements only. Do NOT place items beginning with "Fixed..." here — those belong in Bug Fixes. Begin this section with the line `See [this blog post](BLOG_POST_URL) on the highlights in our latest release.` (use the exact placeholder `BLOG_POST_URL` — it will be replaced automatically). Then add subsections as applicable:
+        - `#### User Interface` — UI/UX changes and new visual features. Pre-packaged plugin version updates go at the TOP of this subsection, before other items.
+        - `#### Plugins/Integrations` — plugin and integration improvements (use as a separate subsection when there are enough items to warrant it)
+        - `#### Administration` — System Console features, logging, support packet changes
+        - `#### mmctl` — mmctl command additions or changes (use as a separate subsection when there are enough items to warrant it)
         - `#### Performance` — performance improvements
-    - `### Bug Fixes` — corrections to defects
+    - `### Bug Fixes` — corrections to defects. All items starting with "Fixed an issue..." go here, even if the raw note appeared in an Improvements context.
     - `### API Changes` — API additions, changes, or deprecations
+    - `### WebSocket Event Changes` — new or changed WebSocket events, if applicable
     - `### Audit Log Event Changes` — new or changed audit log events
+    - `### Open Source Components` — open source component additions or removals, if applicable
     - `### Go Version` — Go version updates
     - `### Security` — security-related fixes not already covered under Bug Fixes
  
@@ -65,15 +76,15 @@ Here are your instructions:
     - File names (e.g., ``config.json``)
     - Feature flags (e.g., ``MM_FEATUREFLAGS_CJKSEARCH``)
  
-4.  **Markdown formatting:** Use `- ` bullet points for individual items within sections. Ensure correct and clean Markdown syntax throughout.
+4.  **Markdown formatting:** Use `- ` bullet points for individual items within sections. Ensure correct and clean Markdown syntax throughout. Do not insert horizontal rules (`---`) or any other separators between sections.
  
 5.  **License requirements:** When a feature requires a specific Mattermost license, note it inline at the end of the bullet point (e.g., "Requires Enterprise Advanced license" or "Requires Enterprise license").
  
-7.  **Proofreading:** Correct any typos, grammatical errors, awkward phrasing, or inconsistencies. Aim for clear, concise, and professional language.
+6.  **Proofreading:** Correct any typos, grammatical errors, awkward phrasing, or inconsistencies. Aim for clear, concise, and professional language.
  
-8.  **Tone:** Maintain a neutral, informative, and professional tone consistent with technical documentation.
+7.  **Tone:** Maintain a neutral, informative, and professional tone consistent with technical documentation.
  
-9.  **Focus:** Output only the section content (headings and bullet points). Do not include the release version header line or any introductory or concluding remarks from yourself."""
+8.  **Focus:** Output only the section content (headings and bullet points). Do not include the release version header line or any introductory or concluding remarks from yourself."""
  
  
 def get_milestone_number(repo: str, title: str) -> int | None:
@@ -89,7 +100,7 @@ def get_milestone_number(repo: str, title: str) -> int | None:
             "sort": "due_on",       # sort by due date
             "direction": "desc",    # most recently due first, so active milestones are found quickly
         }
-        resp = requests.get(url, headers=HEADERS, params=params, timeout=30)
+        resp = requests.get(url, headers=HEADERS, params=params)
         resp.raise_for_status()
         milestones = resp.json()
         if not milestones:
@@ -211,14 +222,21 @@ def polish_with_ai(raw_notes: list[str]) -> str:
  
  
 def prepend_to_changelog(entry: str, changelog_path: str = "CHANGELOG.md") -> None:
-    """Prepend a new version entry to the changelog file."""
+    """Insert a new version entry into the changelog after the static file header block."""
     existing = ""
     if os.path.exists(changelog_path):
         with open(changelog_path, "r") as f:
             existing = f.read()
  
-    # If the file starts with a top-level heading, insert the new entry below it
-    if existing.startswith("# "):
+    # The v11 changelog file has a static header block ending with the platform scope note.
+    # New entries are inserted immediately after this block so the header is preserved.
+    HEADER_END_MARKER = "may not represent all affected configurations.\n```"
+ 
+    if HEADER_END_MARKER in existing:
+        idx = existing.index(HEADER_END_MARKER) + len(HEADER_END_MARKER)
+        new_content = existing[:idx] + "\n\n\n" + entry + existing[idx:]
+    elif existing.startswith("# "):
+        # Fallback: insert after the first top-level heading line
         parts = existing.split("\n", 2)
         new_content = parts[0] + "\n\n" + entry + ("\n" + parts[2] if len(parts) > 2 else "")
     else:
