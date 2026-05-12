@@ -79,7 +79,7 @@ Here are your instructions:
 def get_milestone_number(repo: str, title: str) -> int | None:
     """Look up the numeric ID for a milestone by its title in the given repo."""
     url = f"https://api.github.com/repos/{repo}/milestones"
-        params = {"state": "all", "per_page": 100}
+    params = {"state": "all", "per_page": 100}
     resp = requests.get(url, headers=HEADERS, params=params)
     resp.raise_for_status()
     milestones = resp.json()
