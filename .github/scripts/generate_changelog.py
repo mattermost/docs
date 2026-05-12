@@ -79,27 +79,13 @@ Here are your instructions:
 def get_milestone_number(repo: str, title: str) -> int | None:
     """Look up the numeric ID for a milestone by its title in the given repo."""
     url = f"https://api.github.com/repos/{repo}/milestones"
-    page = 1
-    recent_titles = []
-    while True:
-        params = {
-            "state": "all",
-            "per_page": 100,
-            "page": page,
-            "sort": "due_on",       # sort by due date
-            "direction": "desc",    # most recently due first, so active milestones are found quickly
-        }
-        resp = requests.get(url, headers=HEADERS, params=params, timeout=30)
-        resp.raise_for_status()
-        milestones = resp.json()
-        if not milestones:
-            break
-        for m in milestones:
-            if m["title"] == title:
-                return m["number"]
-        if page == 1:
-            recent_titles = [m["title"] for m in milestones[:10]]
-        page += 1
+        params = {"state": "all", "per_page": 100}
+    resp = requests.get(url, headers=HEADERS, params=params)
+    resp.raise_for_status()
+    milestones = resp.json()
+    for m in milestones:
+        if m["title"] == title:
+            return m["number"]
     print(f"  ⚠️  Milestone '{title}' not found in {repo} — skipping")
     if recent_titles:
         print(f"     Most recently due milestones: {', '.join(recent_titles)}")
