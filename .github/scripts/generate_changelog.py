@@ -87,8 +87,9 @@ def get_milestone_number(repo: str, title: str) -> int | None:
         if m["title"] == title:
             return m["number"]
     print(f"  ⚠️  Milestone '{title}' not found in {repo} — skipping")
-    if recent_titles:
-        print(f"     Most recently due milestones: {', '.join(recent_titles)}")
+     available = [m["title"] for m in milestones]
+    if available:
+        print(f"     Available milestones: {', '.join(available[:10])}")
     return None
  
  
