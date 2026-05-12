@@ -74,6 +74,7 @@ You can customize your desktop app further with additional settings. Select the 
   - **Open app in full screen**: Configure the desktop app to open in fullscreen. Disable this setting to open the app in a windowed view.
   - **Synchronize Desktop App theme with server**: The desktop app theme automatically matches the theme set on your primary Mattermost server. Disable this setting to manage desktop app themes independently.
   - **Maximum number of open views**: From Desktop v6.0, set the maximum number of open tabs and windows per workspace. When a limit is set, Mattermost prompts you to close tabs or windows when the limit is exceeded. Leave this field blank for no maximum limit.
+  - **Use native window decorations** (Linux only): From Mattermost Desktop v[NOT PRESENT IN PR — REQUIRES HUMAN JUDGMENT], render the desktop app with your Linux desktop environment's native title bar and window controls instead of the custom Mattermost title bar. Restart the desktop app to apply changes to this setting.
 
   Notifications
   ~~~~~~~~~~~~~~
@@ -105,3 +106,8 @@ You can customize your desktop app further with additional settings. Select the 
   - **Send anonymous usage data to your configured servers**: Send desktop app usage and performance data to your configured Mattermost servers set up to accept it.
   - **Send error reports to help improve the app**: From Mattermost Desktop v6.1.0, error reports and crash information are automatically sent to Sentry (a third-party error tracking service) to help identify and fix issues. This setting is enabled by default. Error reports include crash information, app version, and platform details (OS, architecture, memory stats), but no personally identifiable information (PII) is included. You can disable error reporting if preferred. Restart the desktop app to apply changes to this setting.
   - **Use GPU hardware acceleration**: GPU hardware acceleration renders the desktop app interface more efficiently. If you encounter decreased stability, disable GPU hardware acceleration. Restart the desktop app to apply changes to this setting.
+
+Right-click context menu actions
+--------------------------------
+
+- **Copy Email Address**: From Mattermost Desktop v[NOT PRESENT IN PR — REQUIRES HUMAN JUDGMENT], right-click a ``mailto:`` link in any message and select **Copy Email Address** to copy just the email address to your clipboard, without the ``mailto:`` prefix or any query parameters.
