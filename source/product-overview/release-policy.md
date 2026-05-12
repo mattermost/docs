@@ -55,10 +55,11 @@ gantt
     v11.1                  :done, 2025-11-14, 2026-02-15
     v11.2                  :done, 2025-12-16, 2026-03-15
     v11.3                  :done, 2026-01-16, 2026-04-15
-    v11.4                  :active, 2026-02-16, 2026-05-15
+    v11.4                  :done, 2026-02-16, 2026-05-15
     v11.5                  :active, 2026-03-16, 2026-06-15
     v11.6                  :active, 2026-04-16, 2026-07-15
-    v11.7 & Desktop App v6.2 Extended Support :crit,    2026-05-16, 2027-05-15
+    v11.7 & Desktop App v6.2 Extended Support :crit,    2026-05-15, 2027-05-15
+    v11.8                  :active, 2026-06-16, 2026-09-15
 ```
 
 **Timeline Legend:**
@@ -85,7 +86,7 @@ The following table lists all releases across Mattermost v7.0, v8.0, and v9.0, i
 
 ```{Important}
 - If you're on a legacy Mattermost release prior to v7.1, in order to take advantage of newer Mattermost releases, you must upgrade to [v7.1 ESR](https://docs.mattermost.com/product-overview/unsupported-legacy-releases.html#release-v7-1-extended-support-release) at a minimum.
-- Upgrading from one Extended Support Release (ESR) to the next ESR (``major`` -> ``major_next``) is fully supported and tested. However, upgrading across multiple ESR versions (``major`` to ``major+2``) is supported, but not tested. If you plan to skip versions, we strongly recommend upgrading only between ESR releases. For example, if you're upgrading from v8.1 ESR, upgrade to the v9.5 ESR or the v9.11 ESR before attempting to upgrade to the [v10.5 ESR](https://docs.mattermost.com/product-overview/mattermost-v10-changelog.html#release-v10-5-extended-support-release) or the [v10.11 ESR](https://docs.mattermost.com/product-overview/mattermost-v10-changelog.html#release-v10-11-extended-support-release).
+- Upgrading from one Extended Support Release (ESR) to the next ESR (``major`` -> ``major_next``) is fully supported and tested. However, upgrading across multiple ESR versions (``major`` to ``major+2``) is supported, but not tested. If you plan to skip versions, we strongly recommend upgrading only between ESR releases. For example, if you're upgrading from v8.1 ESR, upgrade to the v9.5 ESR or the v9.11 ESR before attempting to upgrade to the [v10.11 ESR](https://docs.mattermost.com/product-overview/mattermost-v10-changelog.html#release-v10-11-extended-support-release) or the [v11.7 ESR](https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-7-extended-support-release).
 ```
 
 | **Release** | **Release Type** | **Support ended** | 
