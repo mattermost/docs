@@ -65,6 +65,8 @@ gantt
 The chart above shows both release dates and end-of-life dates for each version. ESRs provide longer-term stability for organizations preferring less frequent updates.
 - 🔵 **Blue bars**: Regular feature releases (monthly releases with standard support lifecycle)
 - 🔴 **Red bars**: Extended Support Releases (ESRs), released every 9 months with 12 months of support
+  - v10.11 & Desktop App v5.13: Supported until August 15, 2026
+  - v11.7 & Desktop App v6.2: Supported until May 15, 2027
 
 (esr-notifications)=
 ### ESR Notifications
