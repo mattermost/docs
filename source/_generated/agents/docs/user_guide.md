@@ -10,16 +10,26 @@ You can access AI features in Mattermost in the following ways:
 
 ### Web and desktop
 
-Access AI features through the right pane in one of the following ways:
+From Mattermost v11.7.0, Mattermost Agents v2.0 introduces a refreshed end-user experience on web and desktop. You can access AI features through the right pane in one of the following ways:
 
 - Select the **Agents** icon in the apps sidebar.
 - @mention an AI bot in any channel where you have access (such as `@copilot`).
-- Use the **AI Actions** menu by hovering over the first message in any conversation thread (see [license requirements](https://docs.mattermost.com/administration-guide/configure/agents-admin-guide.html#license-requirements))
-- Use the **Ask AI** option in channels with unread messages (see [license requirements](https://docs.mattermost.com/administration-guide/configure/agents-admin-guide.html#license-requirements))
+- Open the **AI Actions** menu when hovering over the first message in any conversation thread (see [license requirements](https://docs.mattermost.com/administration-guide/configure/agents-admin-guide.html#license-requirements)).
+- Use the **Ask AI** option in channels with unread messages (see [license requirements](https://docs.mattermost.com/administration-guide/configure/agents-admin-guide.html#license-requirements)).
+
+The **AI Actions** menu is the entry point for message-composition and per-message AI features such as Rewrite, thread summarization, action items, and open questions. If custom prompts have been made available to you, you can also access them from the **AI Actions** menu.
 
 ### Mobile
 
-Start or open a direct message with the Agent bot. If your system admin has configured multiple bots, switch between them by starting or opening each bot by name.
+From Mattermost mobile v2.37.0, you can use Agents directly from the mobile app through a dedicated Agents entry point, instead of having to start a direct message with each bot manually.
+
+From the mobile Agents entry point, you can:
+
+- Open the **agent threads list** to see your existing conversations with agents.
+- Open the **agent chat screen** to start a new conversation or continue an existing thread.
+- Use the **bot/agent selector** to switch between agents when your system admin has configured more than one.
+
+After you send a message that starts a new agent conversation, the mobile app automatically navigates to the resulting agent thread so you can continue the conversation in place.
 
 ## Conversational AI features
 

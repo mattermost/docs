@@ -227,6 +227,17 @@ Run the initial indexing process after configuration.
 
 Configure who can access AI features by setting team-level, channel-level, and user-level permissions for each agent.
 
+#### Managing agents (v11.7.0)
+
+From Mattermost v11.7.0, Agents v2.0 introduces dedicated permissions that control who can create and manage agents in your Mattermost instance. These permissions are managed through your standard Mattermost permission schemes alongside other Advanced Permissions:
+
+| Permission | Description |
+|------------|-------------|
+| `manage_own_agent` | Allows a user to create and manage agents that they own. |
+| `manage_others_agent` | Allows a user to manage agents that are owned by other users. |
+
+Assign these permissions to roles in the System Console under **User Management > Permissions**, or with [mmctl](https://docs.mattermost.com/administration-guide/manage/mmctl-command-line-tool.html) commands. See the [Advanced Permissions documentation](https://docs.mattermost.com/administration-guide/onboard/advanced-permissions.html) for general guidance on assigning permissions.
+
 ## Management tasks
 
 ### Plugin metrics
