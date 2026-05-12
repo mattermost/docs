@@ -6,6 +6,8 @@ Desktop MSI installer and group policy guide
 
 This page provides guidance on installing the desktop app MSI and use Group Policies in Windows for Mattermost Enterprise or Professional. The MSI installer package can be downloaded `here <https://github.com/mattermost/desktop/releases/latest>`_.
 
+From Mattermost Desktop v6.2.0, admins can also manage supported Desktop App organization-level configuration on macOS using MDM preference files, in addition to Windows group policy support. See the `macOS MDM-managed configuration <#macos-mdm-managed-configuration>`__ section below for details.
+
 .. important::
 
    **Per-machine installation from v6.1.0**: From Mattermost Desktop v6.1.0, the Windows MSI installer defaults to per-machine (system-wide) installation to meet enterprise compliance requirements. This changes deployment strategies and upgrade paths. See the `Deployment considerations for v6.1.0+ <#deployment-considerations-for-v6-1-0>`__ section below for details.
@@ -229,3 +231,16 @@ Use the ``APPLICATIONFOLDER`` parameter to specify an installation directory for
 - **PowerShell:** ``Start-Process -FilePath "$env:systemroot\system32\msiexec.exe" -ArgumentList '/i mattermost-desktop-v6.1.2-x64.msi APPLICATIONFOLDER="<install directory>"'``
 
 Change this command as new versions of the Mattermost Desktop App are released.
+
+macOS MDM-managed configuration
+-------------------------------
+
+From Mattermost Desktop v6.2.0, admins can manage supported Desktop App organization-level configuration on macOS using MDM preference files, in addition to Windows group policy support.
+
+To apply managed configuration on macOS, deploy a configuration profile for the Mattermost Desktop App through your MDM solution (for example, Jamf, Intune, Kandji, or Workspace ONE). The Desktop App reads the managed values on launch; restart the app for changes to take effect.
+
+Supported settings mirror the Windows group policies listed earlier on this page, including:
+
+- ``EnableServerManagement``
+- ``DefaultServerList``
+- ``EnableAutoUpdates``
