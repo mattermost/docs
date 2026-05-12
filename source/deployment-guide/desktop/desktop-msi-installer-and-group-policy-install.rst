@@ -229,3 +229,10 @@ Use the ``APPLICATIONFOLDER`` parameter to specify an installation directory for
 - **PowerShell:** ``Start-Process -FilePath "$env:systemroot\system32\msiexec.exe" -ArgumentList '/i mattermost-desktop-v6.1.2-x64.msi APPLICATIONFOLDER="<install directory>"'``
 
 Change this command as new versions of the Mattermost Desktop App are released.
+
+macOS managed configuration (MDM)
+---------------------------------
+
+From Mattermost Desktop v6.2.0, admins can manage supported Desktop App configuration on macOS using managed preferences delivered through an MDM solution, in addition to the Windows group policy support described above. macOS managed preferences support the same configuration items as the Windows group policies listed in the `Install group policy files locally <#install-group-policy-files-locally>`__ section, including predefined server lists, server management controls, and update notification controls.
+
+To apply managed configuration on macOS, deploy a configuration profile that sets the supported keys to client Macs through your MDM solution. The Mattermost Desktop App reads managed preference values on launch; restart the app after changing managed configuration for new values to take effect.
