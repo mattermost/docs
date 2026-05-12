@@ -64,7 +64,7 @@ gantt
 **Timeline Legend:**
 The chart above shows both release dates and end-of-life dates for each version. ESRs provide longer-term stability for organizations preferring less frequent updates.
 - 🔵 **Blue bars**: Regular feature releases (monthly releases with standard support lifecycle)
-- 🔴 **Red bars**: Extended Support Releases (ESRs) - Released every 9 months with extended 12 month support
+- 🔴 **Red bars**: Extended Support Releases (ESRs), released every 9 months with 12 months of support
 
 (esr-notifications)=
 ### ESR Notifications
