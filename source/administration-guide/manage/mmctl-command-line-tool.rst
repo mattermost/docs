@@ -4159,6 +4159,9 @@ Start an import job.
    -h, --help          help for status
    --bypass-upload     File is read directly from the filesystem, instead of being processed from the server. Supported in --local mode only.
    --extract-content   Document attachments will be extracted and indexed during the import process. We recommend disabling this to improve performance.
+   --workers int       The number of concurrent import worker goroutines. Controls database load during import. When set to ``0`` (default), uses the number of CPUs available. Maximum allowed is 4x the CPU count.
+
+Use ``--workers`` to reduce concurrency, for example ``--workers 1``, when running imports against a live server to minimize database load at the cost of longer import duration.
 
 **Options inherited from parent commands**
 
