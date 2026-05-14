@@ -89,14 +89,14 @@ When you save changes that affect membership, a confirmation dialog shows you:
 Manage team-scoped membership policies in Team Settings
 -------------------------------------------------------
 
-From Mattermost v11.7, Team Admins can create, edit, and delete channel membership policies directly from Team Settings, scoped to private channels within their team. This lets teams self-manage attribute-based membership for their own channels without requiring a System Admin to create or modify a system-wide policy.
+From Mattermost v11.7, Team Admins can create, edit, and delete channel membership policies directly from Team Settings, scoped to channels within their team. This lets teams self-manage attribute-based membership for their own channels without requiring a System Admin to create or modify a system-wide policy.
 
 Prerequisites
 ~~~~~~~~~~~~~
 
 - :doc:`Attribute-Based Access Control (ABAC) </administration-guide/manage/admin/attribute-based-access-control>` must be enabled by a System Admin in **System Console > System Attributes > Attribute-Based Access**.
 - You need Team Admin permissions for the team and the ``manage_team_access_rules`` permission.
-- Team-scoped membership policies apply only to private channels within the team.
+- Team-scoped membership policies can be assigned to both public and private channels within the team.
 
 Team Admin workflow
 ~~~~~~~~~~~~~~~~~~~
@@ -117,10 +117,18 @@ The **Membership Policies** tab includes a sync status footer that shows:
 
 Team-scoped sync is limited to the team admin's team scope. Triggering **Sync now** from Team Settings does not affect channels or policies outside the current team.
 
-Auto-run sync on team admin policy creation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Sync behavior by channel type
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When a Team Admin creates a new team-scoped membership policy that has auto-add or sync behavior enabled, Mattermost automatically runs a sync job to apply the policy's rules to the assigned channels. Team Admins don't need to manually trigger **Sync now** for newly created policies in this case; the sync runs as part of policy creation.
+Sync behavior for team-scoped membership policies depends on the type of channel the policy is assigned to:
+
+- **Public channels**: Sync is advisory and add-only. Users who match the policy's rules are added to the channel, but no users are removed if their attributes change.
+- **Private channels**: Sync is enforced. Users who match the policy's rules are added to the channel, and users who no longer match the rules are removed during the next synchronization.
+
+Automatic sync on policy changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost automatically runs a sync job whenever a team-scoped membership policy is created, or its rules, assigned channels, or active state change. Team Admins don't need to manually trigger **Sync now** for these updates; the sync runs as part of the change.
 
 Policy inheritance
 --------------------
