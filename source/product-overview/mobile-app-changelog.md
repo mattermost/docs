@@ -21,11 +21,11 @@ Platform and OS scope reflects reported and tested environments and may not repr
  - iPhone 8+ devices and later with iOS 16.0+ are [required](https://support.apple.com/en-il/guide/iphone/iphe3fa5df43/16.0/ios/16.0).
 
 ### Improvements
- - Added mobile support for AI agents including a dedicated agent chat interface, threads list view, and bot selector with profile pictures.
+ - Added [mobile support](https://docs.mattermost.com/end-user-guide/collaborate/send-messages.html) for AI agents including a dedicated agent chat interface, threads list view, and bot selector with profile pictures.
  - **Share feedback** from in-app prompts now opens the Mattermost community forum in the browser.
  - Channel banners are now shown in thread views.
  - Added the ability to set shared channels from the channel settings.
- - Tapping the team name in the channel list header now opens a bottom-sheet menu where users can join another team or leave the current team.
+ - Tapping the [team name](https://docs.mattermost.com/end-user-guide/collaborate/organize-using-teams.html) in the channel list header now opens a bottom-sheet menu where users can join another team or leave the current team.
  - Mobile apps now support multiselect, dynamic search, multi-step dialogs, and dynamic field refresh for Interactive Dialogs, bringing feature parity with the web app.
  - The pre-auth secret header name is now always retrieved in lowercase to support HTTP1.1.
 
