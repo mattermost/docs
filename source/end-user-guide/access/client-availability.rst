@@ -94,7 +94,7 @@ Teams
 +----------------------------------------------------------------------------------------------+-------------+-------------+-------------+
 | :ref:`Manage team members <administration-guide/manage/team-channel-members:teams>`          | |checkmark| | |checkmark| |             |
 +----------------------------------------------------------------------------------------------+-------------+-------------+-------------+
-| :ref:`Leave team <end-user-guide/collaborate/organize-using-teams:leave a team>`             | |checkmark| | |checkmark| |             |
+| :ref:`Leave team <end-user-guide/collaborate/organize-using-teams:leave a team>`             | |checkmark| | |checkmark| | |checkmark| |
 +----------------------------------------------------------------------------------------------+-------------+-------------+-------------+
 
 Collaborative playbooks
