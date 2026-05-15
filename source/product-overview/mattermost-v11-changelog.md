@@ -97,7 +97,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-7-is-now-availab
  - Benchmarking test results showed no significant difference: a -0.90% decrease in the number of supported users for the new release, which lies within the ``[-5%, +5%]`` prediction interval. View the full raw data and methodology in our [Performance Reports repository](https://github.com/mattermost/performance-reports/tree/main/performance-comparisons/v11.7).
 
 #### Plugins
- - Added a pluggable AI Actions Menu to the text editor formatting bar with cascading submenus. Plugins can register custom action items via ``registerAIActionMenuItemComponent``. The existing Rewrite feature is now accessed through this menu.
+ - Added a pluggable [AI Actions Menu](https://docs.mattermost.com/end-user-guide/collaborate/send-messages.html) to the text editor formatting bar with cascading submenus. Plugins can register custom action items via ``registerAIActionMenuItemComponent``. The existing Rewrite feature is now accessed through this menu.
  - Improved response handling for outgoing webhook requests.
 
 ### Bug Fixes
