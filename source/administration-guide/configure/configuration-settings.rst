@@ -22,6 +22,7 @@ System admins for both self-hosted and Cloud Mattermost deployments can manage M
     User management configuration settings </administration-guide/configure/user-management-configuration-settings>
     System attributes </administration-guide/configure/system-attributes>
     Environment configuration settings </administration-guide/configure/environment-configuration-settings>
+    Configure Azure Blob Storage as the Mattermost file store </administration-guide/configure/azure-blob-storage>
     Site configuration settings </administration-guide/configure/site-configuration-settings>
     Authentication configuration settings </administration-guide/configure/authentication-configuration-settings>
     Plugins configuration settings </administration-guide/configure/plugins-configuration-settings>
@@ -39,6 +40,7 @@ Mattermost configuration settings are organized into the following categories wi
 - :doc:`User management configuration settings </administration-guide/configure/user-management-configuration-settings>`
 - :doc:`System attributes </administration-guide/configure/system-attributes>`
 - :doc:`Environment configuration settings </administration-guide/configure/environment-configuration-settings>`
+- :doc:`Configure Azure Blob Storage as the Mattermost file store </administration-guide/configure/azure-blob-storage>`
 - :doc:`Site configuration settings </administration-guide/configure/site-configuration-settings>`
 - :doc:`Authentication configuration settings </administration-guide/configure/authentication-configuration-settings>`
 - :doc:`Plugins configuration settings </administration-guide/configure/plugins-configuration-settings>`

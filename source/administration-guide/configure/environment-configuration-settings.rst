@@ -2000,7 +2000,11 @@ With self-hosted deployments, you can configure file storage settings by going t
 
 .. note::
 
-  Mattermost currently supports storing files on the local filesystem and Amazon S3 or S3-compatible containers. We have tested Mattermost with `Digital Ocean Spaces <https://docs.digitalocean.com/products/spaces/>`__, but not all S3-compatible containers on the market. If you are looking to use other S3-compatible containers, we recommend completing your own testing. You can also use local storage or a network drive using NFS.
+  Mattermost supports storing files on the local filesystem, Amazon S3 or S3-compatible containers, and Azure Blob Storage. We have tested Mattermost with `Digital Ocean Spaces <https://docs.digitalocean.com/products/spaces/>`__, but not all S3-compatible containers on the market. If you are looking to use other S3-compatible containers, we recommend completing your own testing. You can also use local storage or a network drive using NFS.
+
+.. seealso::
+
+  For a step-by-step walk-through covering Azure resource provisioning, System Console configuration, and verification, see :doc:`Configure Azure Blob Storage as the Mattermost file store </administration-guide/configure/azure-blob-storage>`.
 
 .. config:setting:: file-storage-system
   :displayname: File storage system (File Storage)
@@ -2559,18 +2563,19 @@ Azure Storage account key
   :systemconsole: Environment > File Storage
   :configjson: .FileSettings.AzureEndpoint
   :environment: MM_FILESETTINGS_AZUREENDPOINT
-  :description: An optional host[:port] override for non-production endpoints. Leave empty to use the production Azure commercial cloud.
+  :description: An optional host[:port] override for non-default endpoints. Leave empty to use the default ``{account}.blob.core.windows.net`` host.
 
 Azure endpoint
 ~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| An optional host[:port] override for non-production Azure     | - System Config path: **Environment > File Storage**                     |
+| An optional host[:port] override for non-default Azure        | - System Config path: **Environment > File Storage**                     |
 | endpoints such as an Azurite emulator or a reverse proxy in   | - ``config.json`` setting: ``FileSettings`` > ``AzureEndpoint``          |
 | front of Azure Blob Storage.                                  | - Environment variable: ``MM_FILESETTINGS_AZUREENDPOINT``                |
 |                                                               |                                                                          |
-| Leave empty for the production Azure commercial cloud, which  |                                                                          |
-| uses ``<account>.blob.core.windows.net``. Sovereign clouds    |                                                                          |
+| Leave empty to use the default                                |                                                                          |
+| ``{account}.blob.core.windows.net`` host, where ``{account}`` |                                                                          |
+| is the configured **Azure Storage account**. Sovereign clouds |                                                                          |
 | such as Azure Government and Azure China are not supported    |                                                                          |
 | through this field -- they use account-style hosts that       |                                                                          |
 | Mattermost selects automatically when the endpoint is empty.  |                                                                          |
