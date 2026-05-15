@@ -44,10 +44,12 @@ You can use AI to enhance your messages before sending them. This feature helps 
 
 From Mattermost v11.5, when you use AI Rewrite while composing a reply in a thread, the AI incorporates context from the thread to generate suggestions that better fit the ongoing conversation.
 
+From Mattermost v11.7, Rewrite is accessed through the **AI Actions** |ai-actions-icon| menu, alongside any custom prompts your system admin has made available.
+
 On Web/Desktop or Mobile:
 
   1. Type your message in the message compose field.
-  2. Select the **Rewrite** |ai-rewrite| option from the message actions.
+  2. Open the **AI Actions** |ai-actions-icon| menu from the message actions, then select **Rewrite**.
   3. Select a bot from the list of available AI agents.
   4. Choose from available rewrite options:
 
@@ -61,6 +63,10 @@ On Web/Desktop or Mobile:
 
   5. Review the AI-generated suggestion. Select **Regenerate** to try again or **Discard** to return to your original message.
   6. Select **Send** |send-icon|
+
+.. tip::
+
+  From Mattermost v11.7, system admins can publish custom prompts that appear alongside Rewrite in the **AI Actions** |ai-actions-icon| menu. If you don't see a custom prompt you expect, check with your system admin.
 
 .. note::
 
