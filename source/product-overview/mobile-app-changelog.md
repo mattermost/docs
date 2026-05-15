@@ -21,7 +21,7 @@ Platform and OS scope reflects reported and tested environments and may not repr
  - iPhone 8+ devices and later with iOS 16.0+ are [required](https://support.apple.com/en-il/guide/iphone/iphe3fa5df43/16.0/ios/16.0).
 
 ### Improvements
- - Added mobile support for AI agents including a dedicated agent chat interface, threads list view, and bot selector with profile pictures.
+ - Added [mobile support](https://docs.mattermost.com/end-user-guide/collaborate/send-messages.html) for AI agents including a dedicated agent chat interface, threads list view, and bot selector with profile pictures.
  - **Share feedback** from in-app prompts now opens the Mattermost community forum in the browser.
  - Channel banners are now shown in thread views.
  - Added the ability to set shared channels from the channel settings.
