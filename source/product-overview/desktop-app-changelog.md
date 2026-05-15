@@ -6,6 +6,70 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 ```{include} common-esr-support.md
 ```
 
+(release-v6-2)=
+## Release v6.2 (Extended Support Release)
+
+**Release Day: 2026-05-15**
+
+**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/latest)
+
+### Compatibility
+
+- Desktop App is supported on any currently supported [Mattermost server version](https://docs.mattermost.com/product-overview/mattermost-desktop-releases.html#latest-releases).
+- Updated Chromium minimum supported version to 146+.
+
+### Improvements
+
+#### macOS
+
+- Added support for macOS MDM.
+
+#### Linux
+
+- Added a setting to enable native window decorations on Linux.
+
+#### All Platforms
+
+- Added a "Copy Email Address" option to the right-click context menu for mailto links.
+- Enabled drag-and-drop re-ordering for predefined servers.
+
+### Architectural Changes
+
+- Major version upgrade of Electron to v41.2.0. Electron is the underlying technology used to build the Desktop App.
+
+### Bug Fixes
+
+#### Windows
+- Fixed an issue where the loading screen could get stuck over the top of the app.
+
+#### All Platforms
+
+- Fixed issues related to default preferences not applying to local configuration.
+- Fixed a misleading error message in the **Developer Tools** for the main window.
+- Fixed an issue where invalid server URLs were not preserved in the **Add Server** textbox.
+- Fixed an issue where removing a server with unreads or mentions caused the badge indicator to become stuck until the app was restarted.
+- Fixed an issue where renaming a server while not logged in did not update the tab title.
+- Fixed a crash that could occur when the main window was closed while server views were still sending status updates.
+- Fixed an issue where clicking custom protocol links could open the target application with a malformed URL.
+- Fixed an issue where the **Settings** modal could not be opened when no servers were configured.
+- Fixed an issue where overly long URLs were not handled correctly.
+- Fixed an issue related to authentication on non-configured domains.
+
+### Open Source Components
+
+- Added ``cf-prefs`` to https://github.com/mattermost/desktop.
+
+### Known Issues
+
+- Sometimes during installation you may see this message: ``Warning 1946. Property 'System.AppUserModel.ID' for shortcut 'Mattermost.Ink' could not be set``. This message can be safely ignored.
+- Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually delete their cache directory. For macOS it is located in `/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost`, for Windows in `Users/<username>/AppData/Roaming/Mattermost` and for Linux in `~/config/Mattermost` (where `~` is the home directory).
+- On Linux, a left-click on the Mattermost tray icon doesn't open the app window but opens the tray menu.
+- Crashes might be experienced in some Linux desktop clients due to an upstream bug in the `libnotifyapp` library. A recommended workaround is to disable the Mattermost system tray icon via Desktop Settings.
+
+### Contributors
+
+- [davidpaquin](https://github.com/davidpaquin), [devinbinnie](https://github.com/devinbinnie).
+
 (release-v6-1)=
 ## Release v6.1
 
