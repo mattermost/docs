@@ -98,7 +98,7 @@ Mobile Ephemeral Mode defines three distinct data operations, each triggered ind
 
    * - Operation
      - Trigger
-     - What happensoption
+     - What happens
    * - **Delete**
      - Auto Cache Cleanup expiry
      - Data older than the configured age threshold is removed. Authentication credentials and tokens are preserved. Users do not need to re-authenticate.
