@@ -10,15 +10,17 @@ Attribute-Based Access Control
   :titlesonly:
 
   /administration-guide/manage/admin/abac-system-wide-policies
+  /administration-guide/manage/admin/abac-team-channel-policies
   /administration-guide/manage/admin/abac-channel-access-rules
 
 From Mattermost v10.9, system admins in large or complex organizations who require Zero Trust Security when handling with sensitive information can prevent unauthorized access through attribute-based access controls.
 
 Enforcing strict access controls based on user attributes eliminates manual role adjustment processes that can lead to security risks, inefficiencies, or inappropriate access, while maintaining security and compliance by ensuring that only authorized users can access specific Mattermost channels.
 
-Attribute-based access control (ABAC) provides 2 levels of control:
+Attribute-based access control (ABAC) provides 3 levels of control:
 
 - **System-wide policies** (managed by System Admins): Centralized policies that can be applied across multiple channels in the System Console. See :doc:`System-wide attribute-based access policies </administration-guide/manage/admin/abac-system-wide-policies>`.
+- **Team-level channel policies** (managed by Team Admins): Policies scoped to a team that can be applied to one or more private channels within the team, managed from Team Settings without System Admin involvement. See :doc:`Team-level channel membership policies </administration-guide/manage/admin/abac-team-channel-policies>`.
 - **Channel-specific rules** (managed by Channel Admins): Self-service access rules that Channel Admins can configure directly in Channel Settings for individual channels. See :doc:`Channel-specific access rules </administration-guide/manage/admin/abac-channel-access-rules>`.
 
 Before you begin
@@ -41,6 +43,10 @@ Once enabled, you have multiple ways to configure access policies in Mattermost:
 
 - Create :doc:`system-wide access policies </administration-guide/manage/admin/abac-system-wide-policies>` that can be assigned across multiple channels in the System Console.
 - Assign :ref:`individual channel policies <administration-guide/manage/admin/abac-system-wide-policies:define access controls per channel>` to specific channels in the System Console.
+
+**Team Admins can:**
+
+- Create and manage :doc:`team-level channel membership policies </administration-guide/manage/admin/abac-team-channel-policies>` in Team Settings, scoping attribute-based rules to one or more private channels within their team.
 
 **Channel Admins can:**
 
