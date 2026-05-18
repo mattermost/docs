@@ -30,7 +30,7 @@ mmctl commands
 - `mmctl bot`_ - Bot Management
 - `mmctl channel`_ - Channel Management
 - `mmctl command`_ - Command Management
-- `mmctl cpa`_ - Custom Profile Attribute Management
+- `mmctl cpa`_ - User Attribute Management
 - `mmctl completion`_ - Generate autocompletion scripts for bash, fish, powershell, and zsh
 - `mmctl compliance-export`_ - Compliance Export Management
 - `mmctl config`_ - Configuration Management
@@ -2013,7 +2013,7 @@ mmctl cpa
 Manage User Attributes for extended user profile information.
 
    Child Commands
-      - `mmctl cpa field`_ - Manage CPA fields
+      - `mmctl cpa field`_ - Manage User Attribute fields
 
 **Options**
 
@@ -2026,13 +2026,13 @@ mmctl cpa field
 
 **Description**
 
-Manage Custom Profile Attribute fields.
+Manage User Attribute fields.
 
    Child Commands
-      - `mmctl cpa field create`_ - Create a new CPA field
-      - `mmctl cpa field delete`_ - Delete a CPA field
-      - `mmctl cpa field edit`_ - Edit a CPA field
-      - `mmctl cpa field list`_ - List CPA fields
+      - `mmctl cpa field create`_ - Create a new User Attribute field
+      - `mmctl cpa field delete`_ - Delete a User Attribute field
+      - `mmctl cpa field edit`_ - Edit a User Attribute field
+      - `mmctl cpa field list`_ - List User Attribute fields
 
 **Options**
 
@@ -2045,7 +2045,7 @@ mmctl cpa field create
 
 **Description**
 
-Create a new Custom Profile Attribute field.
+Create a new User Attribute field.
 
 **Format**
 
@@ -2088,7 +2088,7 @@ mmctl cpa field delete
 
 **Description**
 
-Delete an existing Custom Profile Attribute field.
+Delete an existing User Attribute field.
 
 **Format**
 
@@ -2129,7 +2129,7 @@ mmctl cpa field edit
 
 **Description**
 
-Edit an existing Custom Profile Attribute field.
+Edit an existing User Attribute field.
 
 **Format**
 
@@ -2174,7 +2174,7 @@ mmctl cpa field list
 
 **Description**
 
-List all Custom Profile Attribute fields.
+List all User Attribute fields.
 
 **Format**
 
@@ -4159,6 +4159,9 @@ Start an import job.
    -h, --help          help for status
    --bypass-upload     File is read directly from the filesystem, instead of being processed from the server. Supported in --local mode only.
    --extract-content   Document attachments will be extracted and indexed during the import process. We recommend disabling this to improve performance.
+   --workers int       The number of concurrent import worker goroutines. Controls database load during import. When set to ``0`` (default), uses the number of CPUs available. Maximum allowed is 4x the CPU count.
+
+Use ``--workers`` to reduce concurrency, for example ``--workers 1``, when running imports against a live server to minimize database load at the cost of longer import duration.
 
 **Options inherited from parent commands**
 
