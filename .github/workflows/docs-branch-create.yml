@@ -40,7 +40,8 @@ jobs:
     if: |
       github.event.pull_request.merged == true &&
       github.event.pull_request.head.repo.full_name == github.repository &&
-      contains(github.event.pull_request.head.ref, '-documentation')
+      startsWith(github.event.pull_request.head.ref, 'v') &&
+      endsWith(github.event.pull_request.head.ref, '-documentation')
  
     steps:
       # 1. Log the merged branch for traceability
@@ -59,10 +60,11 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.DEV_REPOS_PAT }}
         run: |
+          # Fetch all open milestones, sort by due date (nulls last), take the first
           NEXT_TITLE=$(gh api repos/mattermost/mattermost/milestones \
             --paginate \
             --jq '
-              [ .[] | select(.state == "open") |
+              [ .[] | select(.state == "open" and (.title | test("v[0-9]+\\.[0-9]+"))) |
                 { title: .title, due: (.due_on // "9999-12-31T00:00:00Z") }
               ]
               | sort_by(.due, .title)
@@ -71,7 +73,7 @@ jobs:
             ')
  
           if [ -z "$NEXT_TITLE" ] || [ "$NEXT_TITLE" == "null" ]; then
-            echo "::warning::No open milestones found in mattermost/mattermost - no branch created."
+            echo "::warning::No versioned open milestones found in mattermost/mattermost - no branch created."
             echo "found=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
@@ -94,19 +96,23 @@ jobs:
  
       # 3. Create the branch in mattermost/docs
       - name: Create docs branch
+        id: create_branch
         if: steps.milestone.outputs.found == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: ${{ steps.milestone.outputs.branch }}
         run: |
+          # Check whether the branch already exists (idempotent)
           EXISTS=$(gh api "repos/mattermost/docs/branches/${BRANCH}" \
             --jq '.name' 2>/dev/null || echo "")
  
           if [ -n "$EXISTS" ]; then
+            echo "created=false" >> "$GITHUB_OUTPUT"
             echo "::notice::Branch '${BRANCH}' already exists in mattermost/docs - nothing to do."
             exit 0
           fi
  
+          # Branch from the tip of master
           SHA=$(gh api repos/mattermost/docs/branches/master --jq '.commit.sha')
  
           gh api repos/mattermost/docs/git/refs \
@@ -114,6 +120,7 @@ jobs:
             -f "ref=refs/heads/${BRANCH}" \
             -f "sha=${SHA}"
  
+          echo "created=true" >> "$GITHUB_OUTPUT"
           echo "Created branch '${BRANCH}' in mattermost/docs from master (${SHA})"
  
       # 4. Post a summary
@@ -122,12 +129,18 @@ jobs:
         env:
           MERGED_BRANCH: ${{ github.event.pull_request.head.ref }}
           NEW_BRANCH: ${{ steps.milestone.outputs.branch }}
+          BRANCH_CREATED: ${{ steps.create_branch.outputs.created }}
         run: |
-          echo "### Docs Branch Created" >> "$GITHUB_STEP_SUMMARY"
+          if [ "$BRANCH_CREATED" = "true" ]; then
+            echo "### Docs Branch Created" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "### Docs Branch Already Exists" >> "$GITHUB_STEP_SUMMARY"
+          fi
           echo "" >> "$GITHUB_STEP_SUMMARY"
-          echo "| | |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Item | Value |" >> "$GITHUB_STEP_SUMMARY"
           echo "|---|---|" >> "$GITHUB_STEP_SUMMARY"
-          echo "| Merged branch | \`${MERGED_BRANCH}\` -> \`master\` |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Merged branch | \`${MERGED_BRANCH}\` -> \`master\` |" \
+            >> "$GITHUB_STEP_SUMMARY"
           echo "| New branch | \`${NEW_BRANCH}\` |" >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
           echo "Docs PRs with the \`Docs/Needed\` label will now target \`${NEW_BRANCH}\`." \
