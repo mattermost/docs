@@ -85,7 +85,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-7-is-now-availab
  - Shared Channels related errors now appear in the main log file by default.
  - Added a new Integrated Boards feature flag.
  - Added protected fields and field specific permissions to the property fields.
- - Added a ``--workers`` flag to the mmctl import process to control concurrency.
+ - Added a ``--workers`` flag to the [mmctl import process](https://docs.mattermost.com/administration-guide/manage/mmctl-command-line-tool.html) to control concurrency.
  - Added support for listing user roles through mmctl.
  - In the access control table editor, multi-select user attributes can now only use the "in" operator; changing the attribute on a row no longer resets the operator when both attributes are non-multi-select.
  - Tightened authorization on the group syncable link and patch endpoints.
