@@ -104,7 +104,7 @@ Mobile Ephemeral Mode defines three distinct data operations, each triggered ind
      - Data older than the configured age threshold is removed. Authentication credentials and tokens are preserved. Users do not need to re-authenticate.
    * - **Purge**
      - Offline Persistence Timer expiry
-     - All persisted content, metadata, and files are removed. Authentication credentials and tokens are preserved in the keychain, so users can reconnect without re-authenticating.
+     - All persisted content, metadata, and files are removed. Authentication credentials and tokens are preserved in secure storage, so users can reconnect without re-authenticating.
    * - **Wipe**
      - Server-initiated revocation event
      - All persisted data is removed, including authentication credentials and tokens. Users must re-authenticate after a wipe.
@@ -114,6 +114,8 @@ The Disconnection Timeout is a grace period before the device is considered offl
 **Timer state persists across app and device restarts.** If a device is powered back on after a threshold has passed, the purge or delete executes before any content is displayed.
 
 Setting **Auto Cache Cleanup** to ``0`` activates zero-persistence mode: no content is ever written to disk. In this mode the Offline Persistence Timer is irrelevant — there is no local cached data written to disk to purge.
+
+Mobile Ephemeral Mode generates an :ref:`audit log <administration-guide/manage/logging:audit logging>` event for each delete, purge, and wipe operation. Because these operations can execute on a device that is unreachable — where no administrator has direct visibility — audit logging provides verifiable proof that ephemeral policies were enforced. This supports compliance requirements for data lifecycle management and destruction accountability. Events that occur while the device is offline are reported to the server on reconnection.
 
 See the :ref:`Mobile Ephemeral Mode configuration settings <administration-guide/configure/environment-configuration-settings:mobile ephemeral mode>` to configure these controls.
 
