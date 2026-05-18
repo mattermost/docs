@@ -23,6 +23,12 @@ This page covers deployment options for major Linux distributions and installati
   .. include:: linux/deploy-rhel.rst
     :start-after: :nosearch:
 
+.. tab:: Azure-Native (VM-based)
+  :parse-titles:
+
+  .. include:: linux/deploy-azure-native-vm.rst
+    :start-after: :nosearch:
+
 Secure your Mattermost deployment
 ---------------------------------
 
