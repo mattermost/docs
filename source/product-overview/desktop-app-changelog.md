@@ -22,7 +22,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
 #### macOS
 
-- Added support for macOS MDM.
+- Added support for [macOS MDM](https://docs.mattermost.com/deployment-guide/desktop/desktop-msi-installer-and-group-policy-install.html).
 
 #### Linux
 
