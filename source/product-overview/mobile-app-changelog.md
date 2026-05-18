@@ -6,6 +6,46 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 ```{include} common-esr-support.md
 ```
 
+```{note}
+Platform and OS scope reflects reported and tested environments and may not represent all affected configurations.
+```
+
+(release-v2-40-0)=
+## 2.40.0 Release
+ - Release Date: May 15, 2026
+ - Server Versions Supported: Server v10.11.0+ is required. Self-Signed SSL certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v10.11.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#extended-support-releases) (ESR) v10.5.0 has ended and upgrading to server ESR v10.11.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
+ - iPhone 8+ devices and later with iOS 16.0+ are [required](https://support.apple.com/en-il/guide/iphone/iphe3fa5df43/16.0/ios/16.0).
+
+### Improvements
+ - Added [mobile support](https://docs.mattermost.com/end-user-guide/collaborate/send-messages.html) for AI agents including a dedicated agent chat interface, threads list view, and bot selector with profile pictures.
+ - **Share feedback** from in-app prompts now opens the Mattermost community forum in the browser.
+ - Channel banners are now shown in thread views.
+ - Added the ability to set shared channels from the channel settings.
+ - Tapping the [team name](https://docs.mattermost.com/end-user-guide/collaborate/organize-using-teams.html) in the channel list header now opens a bottom-sheet menu where users can join another team or leave the current team.
+ - Mobile apps now support multiselect, dynamic search, multi-step dialogs, and dynamic field refresh for Interactive Dialogs, bringing feature parity with the web app.
+ - The pre-auth secret header name is now always retrieved in lowercase to support HTTP1.1.
+
+### Bug Fixes
+ - Fixed an issue where opening a permalink to a channel the user was not a member of showed a "Message not viewable" error instead of prompting to join the channel.
+ - Fixed native crashes during Hermes garbage collection in the gallery pager and lightbox components.
+ - Fixed the display height for file upload errors in low bandwidth settings on iOS.
+ - Fixed a crash on Android where React Native Navigation could attempt to bring a destroyed controller to the front during activity teardown (Sentry AX68, 9,150 crashes, 1,580 users).
+ - Fixed an issue on Android where GIF file attachments did not animate for users other than the uploader.
+ - Fixed a crash in the iOS app caused by concurrent database access between the main app and push notification extension.
+ - Fixed an issue showing wrong search results on hashtag tapping.
+ - Fixed search results layout overlap on hashtag tapping on Android.
+ - Fixed a race condition on websocket messages on iOS.
+ - Fixed an issue on iOS where permalink thread headers were so long that channel names truncated instead of overlapped the title on mobile.
+ - Fixed issue with keyboard stuck after opening from a push notification on iOS.
+
+### Known Issues
+ - Users are unable to adjust the font size via the OS font size setting.
+ - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
+
 (release-v2-39-0)=
 ## 2.39.0 Release
  - Release Date: April 16, 2026
