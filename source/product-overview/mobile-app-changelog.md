@@ -21,10 +21,16 @@ Platform and OS scope reflects reported and tested environments and may not repr
  - iPhone 8+ devices and later with iOS 16.0+ are [required](https://support.apple.com/en-il/guide/iphone/iphe3fa5df43/16.0/ios/16.0).
 
 ### Improvements
- - Added various improvements.
+ - Added support for system messages for shared and unshared channels.
+ - Added mobile support for admin-managed sidebar channel categories.
+ - Updated the **About Mattermost** screen to show the correct edition or license name (including Enterprise Advanced and Entry).
 
 ### Bug Fixes
- - Added various bug fixes.
+ - Fixed an issue on mobile where AI agents/bots flooded the at-mention and ``/invite`` autocomplete results regardless of the typed username.
+ - Fixed several iOS-specific issues in the Mobile Agents View: the input-box buttons no longer get cut off by the home indicator, typed text is no longer hidden by the keyboard, the back arrow now matches the standard iOS chevron used on other subpages, and the keyboard can now be dismissed with the standard swipe-down gesture.
+ - Fixed an issue with realtime UI updates when changing the settings for attaching logs for debugging functionality.
+ - Fixed an Android crash in push notification handling when the server returned an unexpected error response format.
+ - Fixed an issue where system admins could briefly see a join-team affordance when there were no additional teams to join, due to local team membership lagging behind server state.
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
