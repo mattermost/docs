@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 """
 Generate a changelog from merged PR release notes for a given milestone.
