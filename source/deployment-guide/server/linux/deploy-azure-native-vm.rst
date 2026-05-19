@@ -56,7 +56,7 @@ On the **Application** tab, configure how the Mattermost application is sized an
 4. **VM SKU:** Size of each VMSS instance. The wizard surfaces recommended Linux sizes first; you can select any supported Linux size available in your region.
 5. **Admin username:** Linux administrator account used to sign in to the VM instances.
 6. **Authentication type:** Choose **Password** or **SSH public key** for Linux sign-in. **SSH public key** is recommended for production deployments.
-7. **Mattermost Version:** The Mattermost version to install (for example, ``11.6.0``). See the :doc:`Mattermost release policy </product-overview/release-policy>` for supported versions.
+7. **Mattermost Version:** The Mattermost version to install (for example, ``11.6.2``). See the :doc:`Mattermost release policy </product-overview/release-policy>` for supported versions.
 
 .. image:: /_static/images/azure/azure-native-application.png
   :alt: An example of the Azure Native Application setup screen.
@@ -66,10 +66,10 @@ Step 4: Database
 
 On the **Database** tab, configure the managed PostgreSQL service and the shared NFS file share.
 
-1. **PostgreSQL compute SKU:** Memory-optimized Flexible Server SKU. Defaults to the SKU recommended for your scaling tier; pick a SKU that is supported in your region. Available choices include ``Standard_E2ds_v5``, ``Standard_E4ds_v5``, and ``Standard_E8ds_v5``.
+1. **PostgreSQL compute SKU:** Memory-optimized Flexible Server SKU. Defaults to the SKU recommended for your scaling tier; pick a SKU that is supported in your region. Available choices are ``Standard_E2ds_v5``, ``Standard_E4ds_v5``, and ``Standard_E8ds_v5``.
 2. **PostgreSQL high availability:** Choose how PostgreSQL is made resilient:
 
-   * **Disabled:** Single primary instance. Suitable for small deployments and lower-cost evaluations.
+   * **Disabled:** Single primary instance. Suitable for small deployments.
    * **Same zone:** Primary and standby in the same availability zone.
    * **Zone redundant:** Primary and standby in different availability zones; recommended for production HA.
 
@@ -77,9 +77,9 @@ On the **Database** tab, configure the managed PostgreSQL service and the shared
 
 3. **Primary availability zone** and **standby availability zone:** Shown when HA is enabled. For zone-redundant HA, the primary and standby zones must be different. Pick zones supported in your region for the PostgreSQL SKU you chose.
 4. **PostgreSQL admin username and password:** Administrator credentials for the Flexible Server. Avoid reserved names such as ``azure_superuser``. The password must meet `Azure Flexible Server password complexity requirements <https://learn.microsoft.com/azure/postgresql/flexible-server/concepts-security#password>`_.
-5. **NFS share size (GiB):** Size of the Azure Files (NFS) share used by Mattermost for shared application data. Minimum 100 GiB.
-6. **Mattermost database user password:** In the **Mattermost database connection** section, set the password for the dedicated Mattermost database user that the application nodes use to connect to PostgreSQL. This is separate from the PostgreSQL administrator credentials. The password must meet the same complexity rules as the admin password.
-7. **Geo-redundant backup:** Replicates PostgreSQL backups to Azure's paired region for cross-region disaster recovery. **This setting cannot be changed after deployment.**
+5. **Mattermost database user password:** In the **Mattermost database connection** section, set the password for the dedicated Mattermost database user that the application nodes use to connect to PostgreSQL. This is separate from the PostgreSQL administrator credentials. The password must meet the same complexity rules as the admin password.
+6. **Geo-redundant backup:** Replicates PostgreSQL backups to Azure's paired region for cross-region disaster recovery. **This setting cannot be changed after deployment.**
+7. **NFS share size (GiB):** Size of the Azure Files (NFS) share used by Mattermost for shared application data. Minimum 100 GiB.
 
 .. note::
 
@@ -119,11 +119,6 @@ Review your settings, accept any **Marketplace** terms if prompted, then select 
 
   ``https://<your-custom-domain>``
 
-Step 7: Open Mattermost and create your administrator
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-In a browser, go to your Mattermost URL. Mattermost will prompt you to **create the first user**, which becomes the **System Administrator**. That account is different from the **Linux** username and password (or SSH key) you configured in Step 3.
-
 Congratulations! You've successfully deployed a production-style Mattermost stack on Azure.
 
 Next steps
@@ -138,13 +133,29 @@ Runbooks
 Upgrade Mattermost server
 ------------------------
 
-The VMSS is using a Mattermost based image matching the Mattermost version you selected in Step 3. This image is updated periodically by Mattermost and to upgrade the Mattermost server you need to update the image version.
+The VM scale set runs a Mattermost **Marketplace VM image** matching the version you selected in Step 3. Mattermost publishes new image versions for each supported release. To upgrade, point the VMSS at a newer image version in your deployment region. Application data stays in **PostgreSQL** and on the **Azure Files** share; the upgrade rolls application instances to VMs built from the updated image.
 
-To upgrade the Mattermost server image version verify the changelog for the new version, make sure the backups are working and then you can run the following command using the Azure CLI:
+Before you upgrade
+^^^^^^^^^^^^^^^^^^
 
-  .. code-block:: sh
+* Review the :doc:`important upgrade notes </administration-guide/upgrade/important-upgrade-notes>`, and :doc:`prepare to upgrade </administration-guide/upgrade/prepare-to-upgrade-mattermost>` for the target version.
+* Confirm **PostgreSQL** backups are current and that you can restore if needed.
+* Pick a target version from the :doc:`Mattermost release policy </product-overview/release-policy>`.
 
-    az vmss update \
-      --resource-group <resource-group> \
-      --name <vmss-name> \
-      --set virtualMachineProfile.storageProfile.imageReference.version=<new-version>
+Upgrade steps
+^^^^^^^^^^^^^
+
+1. **Update the VMSS** to the new image version:
+
+   .. code-block:: sh
+
+     az vmss update \
+       --resource-group <resource-group> \
+       --name <resource-name-prefix>-vmss \
+       --set virtualMachineProfile.storageProfile.imageReference.version=<new-version>
+
+   The VMSS uses a **rolling** upgrade policy and an application health probe on ``/api/v4/system/ping``, so instances are replaced in batches while the Application Gateway keeps serving traffic to healthy nodes.
+
+2. **Monitor the rollout** in the Azure portal: open your VMSS → **Instances** (or **Rolling upgrades**) and wait until all instances are healthy and running the new model.
+
+3. **Verify Mattermost**: open your site, confirm users can sign in, and check **System Console → About** for the expected server version.
