@@ -5746,6 +5746,47 @@ Remove system admin privileges from multiple users:
    --strict                       will only run commands if the mmctl version matches the server one
    --suppress-warnings            disables printing warning messages
 
+mmctl roles list
+~~~~~~~~~~~~~~~~
+
+**Description**
+
+From Mattermost v11.7.0, you can list all available roles and discover role names, such as ``system_admin`` or ``system_user``.
+
+.. note::
+
+   This command requires system admin privileges, or `local mode <#local-mode>`__.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl roles list [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   # List all available role names
+   $ mmctl roles list
+
+   # List all available role objects in JSON format
+   $ mmctl roles list --json
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
 mmctl saml
 ----------
 
