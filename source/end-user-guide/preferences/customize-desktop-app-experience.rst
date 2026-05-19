@@ -106,8 +106,3 @@ You can customize your desktop app further with additional settings. Select the 
   - **Send anonymous usage data to your configured servers**: Send desktop app usage and performance data to your configured Mattermost servers set up to accept it.
   - **Send error reports to help improve the app**: From Mattermost Desktop v6.1.0, error reports and crash information are automatically sent to Sentry (a third-party error tracking service) to help identify and fix issues. This setting is enabled by default. Error reports include crash information, app version, and platform details (OS, architecture, memory stats), but no personally identifiable information (PII) is included. You can disable error reporting if preferred. Restart the desktop app to apply changes to this setting.
   - **Use GPU hardware acceleration**: GPU hardware acceleration renders the desktop app interface more efficiently. If you encounter decreased stability, disable GPU hardware acceleration. Restart the desktop app to apply changes to this setting.
-
-Right-click context menu actions
---------------------------------
-
-- **Copy Email Address**: From Mattermost Desktop v6.2.0, right-click a ``mailto:`` link in any message and select **Copy Email Address** to copy just the email address to your clipboard, without the ``mailto:`` prefix or any query parameters.
