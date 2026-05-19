@@ -40,7 +40,7 @@ Set **Enable Elasticsearch for search queries** to ``true``, and setting **Enabl
 
 .. warning::
 
-   For high post volume deployments, we also strongly recommend *disabling* Database Search once Elasticsearch or AWS OpenSearch is fully configured and running. The Mattermost Server will fall back on Database search if ElasticSearch or OpenSearch are unavailable which can lead to performance degradation on high post volume deployments.
+   For high post volume deployments, we also strongly recommend *disabling* Database Search once Elasticsearch or AWS OpenSearch is fully configured and running. The Mattermost Server will fall back on Database search if Elasticsearch or OpenSearch are unavailable, which can lead to performance degradation on high post volume deployments. From Mattermost v11.7, the server proactively detects outages through periodic health checks and falls back to database search on the first health check failure, rather than waiting for requests to time out. See the :ref:`outage handling FAQ <administration-guide/scale/enterprise-search:how does mattermost handle elasticsearch or opensearch outages?>` for details.
 
 Once the configuration is saved, new posts made to the database are automatically indexed on the Elasticsearch or AWS OpenSearch server.
 
