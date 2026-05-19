@@ -27,6 +27,8 @@ Platform and OS scope reflects reported and tested environments and may not repr
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
  - **Changes to Enterprise Advanced plan:**
    - Under ``MobileEphemeralMode`` in ``config.json``, added a Mobile Ephemeral Mode configuration section under **System Console > Environment > Mobile Security**, allowing admins to configure data persistence and cache management policies for mobile devices. Requires Enterprise Advanced license and ``MobileEphemeralMode`` feature flag.
+ - **Changes to all plans:**
+   - Under ``FileSettings`` in ``config.json``, added ``AzureStorageAccount``, ``AzureAccessKey``, ``AzureContainer``, ``AzurePathPrefix``, ``AzureEndpoint``, ``AzureSSL``, ``AzureRequestTimeoutMilliseconds`` configuration settings for Azure Blob Storage filestore backend support.
 
 ### Improvements
 
