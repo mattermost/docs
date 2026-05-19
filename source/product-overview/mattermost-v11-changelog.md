@@ -21,7 +21,7 @@ Platform and OS scope reflects reported and tested environments and may not repr
 ```{Attention}
 **Breaking Changes**
  - FIPS builds require a minimum of 14 characters for passwords, atmos/camo proxy configuration, and shared channel secrets. Shorter passwords for existing users will no longer be valid and require a password reset. Non-FIPS builds are unaffected.
- - v11.7 includes Agents plugin v2. Please see [this guide](https://github.com/mattermost/mattermost-plugin-agents/blob/master/docs/upgrading_to_2.0.md‎.md) on how to upgrade the Mattermost Agents plugin from a v1.x release to v2.0.0. It covers the supported version path, the migrations that run automatically on first start of v2.0.0, the breaking changes and default-behavior flips that admins should know about before the upgrade window, and the verification steps to confirm the upgrade succeeded.  
+ - v11.7 includes Agents plugin v2. Please see [this guide](https://github.com/mattermost/mattermost-plugin-agents/blob/master/docs/upgrading_to_2.0.md‎) on how to upgrade the Mattermost Agents plugin from a v1.x release to v2.0.0. It covers the supported version path, the migrations that run automatically on first start of v2.0.0, the breaking changes and default-behavior flips that admins should know about before the upgrade window, and the verification steps to confirm the upgrade succeeded.  
 ```
 
 #### Database Schema Changes
@@ -85,7 +85,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-7-is-now-availab
  - Shared Channels related errors now appear in the main log file by default.
  - Added a new Integrated Boards feature flag.
  - Added protected fields and field specific permissions to the property fields.
- - Added a ``--workers`` flag to the mmctl import process to control concurrency.
+ - Added a ``--workers`` flag to the [mmctl import process](https://docs.mattermost.com/administration-guide/manage/mmctl-command-line-tool.html) to control concurrency.
  - Added support for listing user roles through mmctl.
  - In the access control table editor, multi-select user attributes can now only use the "in" operator; changing the attribute on a row no longer resets the operator when both attributes are non-multi-select.
  - Tightened authorization on the group syncable link and patch endpoints.
