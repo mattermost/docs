@@ -21,8 +21,7 @@ Platform and OS scope reflects reported and tested environments and may not repr
 ### Upgrade Impact
 
 #### Database Schema Changes
-
-- TBD
+ - TBD
 
 #### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
@@ -34,79 +33,80 @@ New setting options were added to ``config.json``. Below is a list of the additi
 See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-available/) on the highlights in our latest release.
 
 #### User Interface
-- Pre-packaged MS Calendar plugin version [v1.6.1](https://github.com/mattermost/mattermost-plugin-mscalendar/releases/tag/v1.6.1).
-- Pre-packaged GitLab plugin version [v1.12.2](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.12.2).
-- Pre-packaged GitHub plugin version [v2.7.1](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.7.1).
-- Updated Playbooks plugin to v2.9.0.
-- update Jira version to 4.7.0
-- Updated Mattermost Calls to v1.11.5, adding support for self-signed/private CA certificates with offloader, recorder, and transcriber.
-- Added a new keyboard shortcut, ``Shift`` + ``ESC``, that marks all channels, threads, and direct messages as read for a team.
-- Added an overflow menu for channel bookmarks when the bookmark bar runs out of space. Bookmarks can be reordered via drag-and-drop between the bar and the overflow menu, or via keyboard (Space to select, arrow keys to move). Replaced ``react-beautiful-dnd`` with ``@atlaskit/pragmatic-drag-and-drop``.
-- Added an unread badge to Recaps, displayed in red if the recap failed.
-- Added managed channel categories for **Channel Admins** to enforce sidebar organization across teams.
-- Added per-channel classification assignment and banner integration.
-- Added support for **CPA Display Name** for user-facing labels of user attributes.
-- Changed the **Invite People** modal to allow pasting any text, not only valid email formats.
-- Standardized many buttons throughout the app, which may result in minor UX changes.
-- Updated the **Enable Testing Commands** user interface to explicitly warn that ``EnableTesting`` must never be used in production.
-- Changed the mobile view search box to only autofocus when the search button is pressed.
-- Improved the **Default "Report a Problem"** behavior to open a support ticket via email with metadata for licensed servers, and redirect to the Mattermost forums for free edition.
-- Added support for system-scoped properties — property fields and values that attach to the Mattermost instance itself.
-- Added the ability to define a property attribute once and reuse it across different object types (e.g., users, channels).
-- Exposed the ``DefaultCategoryName`` to the user interface so admins can add, edit, and remove it easily.
-- Moved interactive dialog date/datetime properties into ``datetime_config``.
-- When a channel is shared or unshared with a remote, a system message will now be shown.
-- On new installations using Elasticsearch or OpenSearch, search now includes public channels the user is not a member of by default.
-- Added support for incoming webhooks to define a ``root_id`` to create posts in a thread.
-- Updated membership policy user interface copy in the System Console and public channel settings to clarify qualifying-user requirements and auto-add behavior.
+ - Pre-packaged MS Calendar plugin version [v1.6.1](https://github.com/mattermost/mattermost-plugin-mscalendar/releases/tag/v1.6.1).
+ - Pre-packaged GitLab plugin version [v1.12.2](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.12.2).
+ - Pre-packaged GitHub plugin version [v2.7.1](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.7.1).
+ - Pre-packaged Playbooks plugin version [v2.9.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.9.0).
+ - Pre-packaged Jira plugin version [v4.7.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.7.0).
+ - Pre-packaged Calls plugin version [v1.11.5](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.11.5).
+ - Added a new keyboard shortcut, ``Shift`` + ``ESC``, that marks all channels, threads, and direct messages as read for a team.
+ - Added an overflow menu for channel bookmarks when the bookmark bar runs out of space. Bookmarks can be reordered via drag-and-drop between the bar and the overflow menu, or via keyboard (Space to select, arrow keys to move). Replaced ``react-beautiful-dnd`` with ``@atlaskit/pragmatic-drag-and-drop``.
+ - Added an unread badge to Recaps, displayed in red if the recap failed.
+ - Added managed channel categories for **Channel Admins** to enforce sidebar organization across teams.
+ - Added per-channel classification assignment and banner integration.
+ - Added support for **CPA Display Name** for user-facing labels of user attributes.
+ - Changed the **Invite People** modal to allow pasting any text, not only valid email formats.
+ - Standardized many buttons throughout the app, which may result in minor UX changes.
+ - Updated the **Enable Testing Commands** user interface to explicitly warn that ``EnableTesting`` must never be used in production.
+ - Changed the mobile view search box to only autofocus when the search button is pressed.
+ - Improved the **Default "Report a Problem"** behavior to open a support ticket via email with metadata for licensed servers, and redirect to the Mattermost forums for free edition.
+ - Added support for system-scoped properties — property fields and values that attach to the Mattermost instance itself.
+ - Added the ability to define a property attribute once and reuse it across different object types (e.g., users, channels).
+ - Exposed the ``DefaultCategoryName`` to the user interface so admins can add, edit, and remove it easily.
+ - Moved interactive dialog date/datetime properties into ``datetime_config``.
+ - When a channel is shared or unshared with a remote, a system message will now be shown.
+ - On new installations using Elasticsearch or OpenSearch, search now includes public channels the user is not a member of by default.
+ - Added support for incoming webhooks to define a ``root_id`` to create posts in a thread.
+ - Updated membership policy user interface copy in the System Console and public channel settings to clarify qualifying-user requirements and auto-add behavior.
 
 #### Plugins/Integrations
-- Added plugin metrics collection, namespacing, and serving on the standard ``/metrics`` endpoint.
-- Added support for plugins using the Shared Channels APIs to register multiple remote connections by calling ``RegisterPluginForSharedChannels`` with different ``SiteURL`` values, enabling use cases such as multiple outbound transports or bridging to multiple external servers. A new ``UnregisterPluginRemoteForSharedChannels`` method allows removing a single remote without affecting others. Existing single-remote plugins continue to work without changes.
-- Added ``client.Audit`` on ``pluginapi.Client`` for plugins to emit audit records via the server audit pipeline (server 10.10+).
-- Introduced a new ``Edit Attachments`` permission for controlling who can edit post attachments when editing a post. By default, the permission is granted to users who have the edit post permission.
-- Added new CEL functions ``inCIDR`` and ``versionGT``/``versionGTE``/``versionLT``/``versionLTE``/``versionEQ`` for use in access control policies.
+ - Added plugin metrics collection, namespacing, and serving on the standard ``/metrics`` endpoint.
+ - Added support for plugins using the Shared Channels APIs to register multiple remote connections by calling ``RegisterPluginForSharedChannels`` with different ``SiteURL`` values, enabling use cases such as multiple outbound transports or bridging to multiple external servers. A new ``UnregisterPluginRemoteForSharedChannels`` method allows removing a single remote without affecting others. Existing single-remote plugins continue to work without changes.
+ - Added ``client.Audit`` on ``pluginapi.Client`` for plugins to emit audit records via the server audit pipeline (server 10.10+).
+ - Introduced a new ``Edit Attachments`` permission for controlling who can edit post attachments when editing a post. By default, the permission is granted to users who have the edit post permission.
+ - Added new CEL functions ``inCIDR`` and ``versionGT``/``versionGTE``/``versionLT``/``versionLTE``/``versionEQ`` for use in access control policies.
+ - Added ``client.Audit`` support on ``pluginapi.Client``, allowing plugins to emit audit records via the server audit pipeline (server 10.10+).
 
 #### Administration
-- Added managed channel categories support requiring schema updates for Channel Admin enforcement of sidebar organization.
-- Removed remaining support for Internet Explorer and pre-Chromium versions of Edge.
-- Added ``server.process_id`` to support packet diagnostics to help correlate support data with OS-level logs and process monitoring tools such as ``ps``, ``top``, and systemd journal.
-- Added ``go_version`` to support packet diagnostics, showing the Go runtime version the server binary was compiled with.
-- Added ``open_file_descriptors`` and ``max_file_descriptors`` fields to the ``server`` section of the support packet ``diagnostics.yaml`` to help diagnose file descriptor exhaustion on Linux and macOS.
-- Added ``container_cpu_limit`` and ``container_memory_limit_mb`` fields to support packet diagnostics to report cgroup v2 CPU and memory limits on Linux. Fields are omitted for non-containerized or non-Linux deployments.
-- Added SMTP and push proxy connectivity probe results to ``diagnostics.yaml`` in the support packet under ``notifications.email`` and ``notifications.push``.
-- Added ``started_at`` and ``host_started_at`` (Linux only) fields to the support packet diagnostics to help diagnose server restart loops and container reboots.
-- Added a simplified option allowing users to enable attaching logs to support packets.
-- Added Membership Policies (formerly Access Control Policies) support for public channels with advisory semantics: matching users are auto-added when enabled and surfaced in a new "Recommended" filter in Browse Channels and as a "Recommended" tag in the channel invite modal; non-matching members are never removed. Private channels retain the existing strict gate. The admin UI has been renamed throughout from "Access Control" to "Membership Policy". Requires Enterprise Advanced license.
-- Added a new feature allowing content reviewers to generate a downloadable report for a post quarantined for review as part of Data Spillage handling.
-- Tightened session invalidation on the global session revocation path.
-- Downgraded Hungarian translations from Beta to Alpha.
+ - Added managed channel categories support requiring schema updates for Channel Admin enforcement of sidebar organization.
+ - Removed remaining support for Internet Explorer and pre-Chromium versions of Edge.
+ - Added ``server.process_id`` to support packet diagnostics to help correlate support data with OS-level logs and process monitoring tools such as ``ps``, ``top``, and systemd journal.
+ - Added ``go_version`` to support packet diagnostics, showing the Go runtime version the server binary was compiled with.
+ - Added ``open_file_descriptors`` and ``max_file_descriptors`` fields to the ``server`` section of the support packet ``diagnostics.yaml`` to help diagnose file descriptor exhaustion on Linux and macOS.
+ - Added ``container_cpu_limit`` and ``container_memory_limit_mb`` fields to support packet diagnostics to report cgroup v2 CPU and memory limits on Linux. Fields are omitted for non-containerized or non-Linux deployments.
+ - Added SMTP and push proxy connectivity probe results to ``diagnostics.yaml`` in the support packet under ``notifications.email`` and ``notifications.push``.
+ - Added ``started_at`` and ``host_started_at`` (Linux only) fields to the support packet diagnostics to help diagnose server restart loops and container reboots.
+ - Added a simplified option allowing users to enable attaching logs to support packets.
+ - Added Membership Policies (formerly Access Control Policies) support for public channels with advisory semantics: matching users are auto-added when enabled and surfaced in a new "Recommended" filter in Browse Channels and as a "Recommended" tag in the channel invite modal; non-matching members are never removed. Private channels retain the existing strict gate. The admin UI has been renamed throughout from "Access Control" to "Membership Policy". Requires Enterprise Advanced license.
+ - Added a new feature allowing content reviewers to generate a downloadable report for a post quarantined for review as part of Data Spillage handling.
+ - Tightened session invalidation on the global session revocation path.
+ - Downgraded Hungarian translations from Beta to Alpha.
 
 #### Performance
-- Improved memory usage and performance when processing images (resizing, thumbnails, and orientation correction).
-- Improved authorization checks for post info lookups.
+ - Improved memory usage and performance when processing images (resizing, thumbnails, and orientation correction).
+ - Improved authorization checks for post info lookups.
 
 ### Bug Fixes
-- Fixed an issue where read recaps no longer showed the "Mark all channels as read" menu action.
-- Fixed an issue where the user profile popover closed automatically when opened for the first time from the channel member list in the RHS.
-- Fixed an issue where the sidebar channel icon did not update when a channel's privacy was changed via ``mmctl`` or the API. The ``channel_converted`` WebSocket event now includes the channel type.
-- Fixed a webapp issue where clicking composer formatting controls could jump a long scrolled draft back to the top.
-- Fixed an issue where ``LoadPluginConfiguration`` did not apply default values for plugin settings declared inside sections in the plugin manifest.
-- Fixed an issue where clicking a custom user group mention would sometimes fail to load the group members list in the popover.
-- Fixed an issue where the reminder confirmation did not appear when setting a reminder on a reply from the thread view.
-- Fixed a panic in the ``mmctl`` websocket command when the WebSocket connection failed on startup.
-- Fixed an issue where the System Console Reporting sidebar label for the system analytics page so it now consistently reads "System Statistics".
-- Fixed a white flash that appeared in the global header and left sidebar when switching between products (Playbooks/Boards) and Channels.
-- Fixed an issue with the invite modal text input clipping and modal width overflow when typing long text in the "To" field.
-- Fixed an issue where the post autocomplete menu could be clipped when the right-hand sidebar was open.
-- Fixed an issue with the themed text colors in the Invite Guest modal channel picker so the "Add to channels" section, the typed input text, and the channel suggestion rows follow the active theme.
-- Fixed an issue in the Find Channels modal where long channel names could overlap and obscure the team name on the same row.
-- Fixed issues with channel bookmarks drag-and-drop edge cases: reordering is now disabled when a bar has only one bookmark, and the trailing add-bookmark button no longer auto-opens the menu when dragging over it without any items in overflow.
-- Fixed an issue where the search results "Messages" tab counter was inflated by one for each date group, causing a single matching post to be shown as "2".
-- Fixed an issue where consecutive bot replies in the RHS thread view displayed with the message header incorrectly floating inline with the message body when using compact display mode.
-- Fixed an issue where the Reviewer field pill on the Data Spillage review card rendered with a white background in dark themes.
-- Fixed an issue with the group channels in the Direct Messages modal sometimes displaying incorrectly.
-- Fixed a spurious "prop must be a valid URL" warning that was logged when handling slash command responses that had no icon URL configured.
+ - Fixed an issue where read recaps no longer showed the "Mark all channels as read" menu action.
+ - Fixed an issue where the user profile popover closed automatically when opened for the first time from the channel member list in the RHS.
+ - Fixed an issue where the sidebar channel icon did not update when a channel's privacy was changed via ``mmctl`` or the API. The ``channel_converted`` WebSocket event now includes the channel type.
+ - Fixed a webapp issue where clicking composer formatting controls could jump a long scrolled draft back to the top.
+ - Fixed an issue where ``LoadPluginConfiguration`` did not apply default values for plugin settings declared inside sections in the plugin manifest.
+ - Fixed an issue where clicking a custom user group mention would sometimes fail to load the group members list in the popover.
+ - Fixed an issue where the reminder confirmation did not appear when setting a reminder on a reply from the thread view.
+ - Fixed a panic in the ``mmctl`` websocket command when the WebSocket connection failed on startup.
+ - Fixed an issue where the System Console Reporting sidebar label for the system analytics page so it now consistently reads "System Statistics".
+ - Fixed a white flash that appeared in the global header and left sidebar when switching between products (Playbooks/Boards) and Channels.
+ - Fixed an issue with the invite modal text input clipping and modal width overflow when typing long text in the "To" field.
+ - Fixed an issue where the post autocomplete menu could be clipped when the right-hand sidebar was open.
+ - Fixed an issue with the themed text colors in the Invite Guest modal channel picker so the "Add to channels" section, the typed input text, and the channel suggestion rows follow the active theme.
+ - Fixed an issue in the Find Channels modal where long channel names could overlap and obscure the team name on the same row.
+ - Fixed issues with channel bookmarks drag-and-drop edge cases: reordering is now disabled when a bar has only one bookmark, and the trailing add-bookmark button no longer auto-opens the menu when dragging over it without any items in overflow.
+ - Fixed an issue where the search results "Messages" tab counter was inflated by one for each date group, causing a single matching post to be shown as "2".
+ - Fixed an issue where consecutive bot replies in the RHS thread view displayed with the message header incorrectly floating inline with the message body when using compact display mode.
+ - Fixed an issue where the Reviewer field pill on the Data Spillage review card rendered with a white background in dark themes.
+ - Fixed an issue with the group channels in the Direct Messages modal sometimes displaying incorrectly.
+ - Fixed a spurious "prop must be a valid URL" warning that was logged when handling slash command responses that had no icon URL configured.
 
 ### API Changes
  - Added a new ``GET /api/v4/content_flagging/post/<post_id>/report`` endpoint for generating and downloading a content flagging report for a flagged post.
@@ -114,19 +114,22 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Updated ``POST /api/v4/users/{user_id}/demote`` to return ``400`` when ``user_id`` is a bot account; bot accounts cannot be converted to guests.
 
 ### WebSocket Event Changes
-- The ``channel_converted`` WebSocket event now includes the channel type, enabling clients to update the sidebar channel icon when a channel's privacy changes.
+ - The ``channel_converted`` WebSocket event now includes the channel type, enabling clients to update the sidebar channel icon when a channel's privacy changes.
 
 ### Audit Log Event Changes
-- Added ``client.Audit`` support on ``pluginapi.Client``, allowing plugins to emit audit records via the server audit pipeline (server 10.10+).
+ - Added a new audit log ``AuditEventGenerateFlaggedPostReport`` for generating and downloading content flagging report for a flagged post.
+ - Added a new audit log ``AuditEventMarkRecapsAsViewed`` for adding an unread badge to Recaps.
+ - Added new audit logs ``AuditEventMarkMessagesRead and AuditEventMarkTeamRead`` for adding a new shortcut to mark all channels as read.
+ - Added a new audit log ``AuditEventCreateBoard`` for integrated boards.
 
 ### Go Version
  - v11.8 is built with Go ``v1.26.2``.
 
 ### Open Source Components
-- Added ``x/text``, ``@atlaskit/pragmatic-drag-and-drop``, ``@atlaskit/pragmatic-drag-and-drop-hitbox``, ``@atlaskit/pragmatic-drag-and-drop-react-drop-indicator``, ``prometheus/common``, ``Azure/azure-sdk-for-go``, ``boxes-ltd/imaging`` and ``google/uuid``, and removed ``anthonynsimon/bild`` from https://github.com/mattermost/mattermost/.
+ - Added ``x/text``, ``@atlaskit/pragmatic-drag-and-drop``, ``@atlaskit/pragmatic-drag-and-drop-hitbox``, ``@atlaskit/pragmatic-drag-and-drop-react-drop-indicator``, ``prometheus/common``, ``Azure/azure-sdk-for-go``, ``boxes-ltd/imaging`` and ``google/uuid``, and removed ``anthonynsimon/bild`` from https://github.com/mattermost/mattermost/.
 
 ### Contributors
-- TBD
+ - TBD
 
 (release-v11.7-extended-support-release)=
 ## Release v11.7 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
