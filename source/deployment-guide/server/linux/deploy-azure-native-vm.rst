@@ -42,18 +42,24 @@ On the **Basics** tab, configure the following:
 3. **Region:** Select the deployment region. Choose a region that supports the PostgreSQL Flexible Server SKUs you plan to use, and that has the **availability zones** you need if you intend to enable PostgreSQL high availability.
 4. **Resource name prefix:** Short prefix (2–12 lowercase letters, digits, or hyphens) used to name the Azure resources created by the template (for example, ``mm-prod``).
 
+  .. image:: /_static/images/azure/azure-native-basics.png
+    :alt: An example of the Azure Native Basics setup screen.
+
 Step 3: Application
 ~~~~~~~~~~~~~~~~~~~
 
 On the **Application** tab, configure how the Mattermost application is sized and how administrators access the VMs.
 
-1. **Scaling tier:** Pick the user scale you are planning for. The wizard uses this to suggest sensible defaults for the **VMSS instance count**, **VM size**, and **PostgreSQL SKU**, and to determine whether **read replicas** are created for the database. "The dropdown shows the recommended node count and VM SKU for each tier. For the underlying sizing rationale, see ::ref:`available reference architectures <administration-guide/scale/scaling-for-enterprise:available reference architectures>`.
+1. **Scaling tier:** Pick the user scale you are planning for. The wizard uses this to suggest sensible defaults for the **VMSS instance count**, **VM size**, and **PostgreSQL SKU**, and to determine whether **read replicas** are created for the database. "The dropdown shows the recommended node count and VM SKU for each tier. For the underlying sizing rationale, see :ref:`available reference architectures <administration-guide/scale/scaling-for-enterprise:available reference architectures>`.
 2. **VMSS instance count:** Number of Mattermost application nodes (1–5). Defaults to the suggested value for your scaling tier; adjust if needed.
 3. **Enterprise license file:** Required when the instance count is greater than 1 (multi-node high-availability clustering). Upload your Mattermost Enterprise license file. The license is optional for single-node deployments.
 4. **VM SKU:** Size of each VMSS instance. The wizard surfaces recommended Linux sizes first; you can select any supported Linux size available in your region.
 5. **Admin username:** Linux administrator account used to sign in to the VM instances.
 6. **Authentication type:** Choose **Password** or **SSH public key** for Linux sign-in. **SSH public key** is recommended for production deployments.
 7. **Mattermost Version:** The Mattermost version to install (for example, ``11.6.0``). See the :doc:`Mattermost release policy </product-overview/release-policy>` for supported versions.
+
+.. image:: /_static/images/azure/azure-native-application.png
+  :alt: An example of the Azure Native Application setup screen.
 
 Step 4: Database
 ~~~~~~~~~~~~~~~~
@@ -79,6 +85,9 @@ On the **Database** tab, configure the managed PostgreSQL service and the shared
 
   Backup retention for PostgreSQL is set to 35 days at deployment time. You can change retention from the Azure portal after the deployment completes.
 
+.. image:: /_static/images/azure/azure-native-database.png
+  :alt: An example of the Azure Native Database setup screen.
+
 Step 5: Networking
 ~~~~~~~~~~~~~~~~~~
 
@@ -89,6 +98,9 @@ On the **Networking** tab, configure the virtual network and how Mattermost is e
 3. **Enable HTTPS on Application Gateway:** When enabled, the Application Gateway terminates TLS using your PFX certificate and HTTP traffic is redirected to HTTPS. When disabled, Mattermost is served over HTTP on the Azure-assigned hostname (suitable for testing, **not recommended for production**).
 4. **PFX certificate** and **PFX password:** Shown when HTTPS is enabled. Upload your PKCS#12 bundle and provide the password used to protect it.
 5. **Custom domain (FQDN):** Shown when HTTPS is enabled. The public hostname Mattermost will use (for example, ``mattermost.example.com``). After deployment, point this hostname to the Azure-assigned DNS name of the Application Gateway public IP (typically using a **CNAME** record for subdomains).
+
+.. image:: /_static/images/azure/azure-native-networking.png
+  :alt: An example of the Azure Native Networking setup screen.
 
 Step 6: Review and create
 ~~~~~~~~~~~~~~~~~~~~~~~~~
