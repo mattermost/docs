@@ -1,9 +1,11 @@
 Deploy Mattermost on Linux
 ==========================
 
-Mattermost Server can be deployed on various Linux distributions, providing a flexible and robust platform for smaller teams and community deployments. We don't recommend deploying Mattermost Server and database on a single system for production use, but it is a good option for development and testing purposes.
+Mattermost Server can be deployed on Linux in two broad ways: as a package-based install on a host you manage, or as a managed cloud marketplace deployment that provisions a production-ready stack in your own cloud account.
 
-This page covers deployment options for major Linux distributions and installation methods. Choose your preferred platform below for specific deployment instructions:
+For package-based installs (Manual Install, Ubuntu, RHEL/CentOS), we don't recommend deploying Mattermost Server and the database on the same system in production. These options are best suited to development and testing. The cloud marketplace options provision a separated production stack designed to scale.
+
+Choose your preferred option below for specific deployment instructions:
 
 .. tab:: Manual Install
   :parse-titles:
@@ -23,7 +25,7 @@ This page covers deployment options for major Linux distributions and installati
   .. include:: linux/deploy-rhel.rst
     :start-after: :nosearch:
 
-.. tab:: Azure-Native (VM-based)
+.. tab:: Azure
   :parse-titles:
 
   .. include:: linux/deploy-azure-native-vm.rst

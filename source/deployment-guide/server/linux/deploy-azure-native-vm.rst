@@ -4,18 +4,18 @@
 Mattermost is published as an **Azure Marketplace** solution that provisions a production-style Mattermost stack in your own subscription using Azure-managed services for compute, database, shared file storage, and load balancing. This option is intended for organizations that want a resilient Mattermost deployment they can scale and operate within their existing Azure tenant.
 
 Prerequisites
--------------
+~~~~~~~~~~~~~
 
-* An active **Azure subscription** with permission to create resource groups and accept **Azure Marketplace** billing terms for the offer.
+* An active **Azure subscription** with the **Owner** or **Contributor** role on the subscription (required to purchase and deploy Azure Marketplace solutions), permission to create resource groups, and permission to accept **Azure Marketplace** billing terms for the offer.
 * Familiarity with the **Azure portal** (resource groups, networking, virtual machines, and Application Gateway).
-* For multi-node deployments (more than one application instance), a valid **Mattermost Enterprise license** file. Single-node deployments do not require a license.
+* For multi-node deployments (more than one application instance), a valid **Mattermost Enterprise license** file. The license is optional for single-node deployments.
 * If you plan to enable **HTTPS** at deployment time:
 
   * A **PFX (PKCS#12)** certificate bundle and its password.
   * A **custom domain (FQDN)** that you will point to the Application Gateway after deployment.
 
 What gets deployed
-------------------
+~~~~~~~~~~~~~~~~~~
 
 The template provisions a self-contained, production-style stack in the resource group you select, including:
 
@@ -28,12 +28,12 @@ The template provisions a self-contained, production-style stack in the resource
 7. **Private DNS zones:** Used to resolve the PostgreSQL Flexible Server and Azure Files private endpoint from inside the VNet.
 
 Step 1: Select a plan and start creation
-----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Open the **Mattermost - Azure-Native (VM-based)** offer in the Azure Marketplace, click **Get it now**, select the plan, and then click **Create** to open the deployment wizard.
 
 Step 2: Basics
---------------
+~~~~~~~~~~~~~~
 
 On the **Basics** tab, configure the following:
 
@@ -43,26 +43,20 @@ On the **Basics** tab, configure the following:
 4. **Resource name prefix:** Short prefix (2–12 lowercase letters, digits, or hyphens) used to name the Azure resources created by the template (for example, ``mm-prod``).
 
 Step 3: Application
--------------------
+~~~~~~~~~~~~~~~~~~~
 
 On the **Application** tab, configure how the Mattermost application is sized and how administrators access the VMs.
 
-1. **Scaling tier:** Pick the user scale you are planning for. The wizard uses this to suggest sensible defaults for the **VMSS instance count**, **VM size**, and **PostgreSQL SKU**, and to determine whether **read replicas** are created for the database. Suggested tiers:
-
-   * **Up to 200 users:** 1 node, ``Standard_F2s_v2``.
-   * **Up to 2,000 users:** 2 nodes, ``Standard_F2s_v2``.
-   * **Up to 15,000 users:** 2 nodes, ``Standard_F4s_v2``.
-   * **Up to 30,000 users:** 2 nodes, ``Standard_F8s_v2``.
-
-2. **VMSS instance count:** Number of Mattermost application nodes (1–20). Defaults to the suggested value for your scaling tier; adjust if needed.
-3. **Enterprise license file:** Required when the instance count is greater than 1 (multi-node high-availability clustering). Upload your Mattermost Enterprise license file. Single-node deployments don't require a license.
+1. **Scaling tier:** Pick the user scale you are planning for. The wizard uses this to suggest sensible defaults for the **VMSS instance count**, **VM size**, and **PostgreSQL SKU**, and to determine whether **read replicas** are created for the database. "The dropdown shows the recommended node count and VM SKU for each tier. For the underlying sizing rationale, see ::ref:`available reference architectures <administration-guide/scale/scaling-for-enterprise:available reference architectures>`.
+2. **VMSS instance count:** Number of Mattermost application nodes (1–5). Defaults to the suggested value for your scaling tier; adjust if needed.
+3. **Enterprise license file:** Required when the instance count is greater than 1 (multi-node high-availability clustering). Upload your Mattermost Enterprise license file. The license is optional for single-node deployments.
 4. **VM SKU:** Size of each VMSS instance. The wizard surfaces recommended Linux sizes first; you can select any supported Linux size available in your region.
 5. **Admin username:** Linux administrator account used to sign in to the VM instances.
 6. **Authentication type:** Choose **Password** or **SSH public key** for Linux sign-in. **SSH public key** is recommended for production deployments.
 7. **Mattermost Version:** The Mattermost version to install (for example, ``11.6.0``). See the :doc:`Mattermost release policy </product-overview/release-policy>` for supported versions.
 
 Step 4: Database
-----------------
+~~~~~~~~~~~~~~~~
 
 On the **Database** tab, configure the managed PostgreSQL service and the shared NFS file share.
 
@@ -73,30 +67,33 @@ On the **Database** tab, configure the managed PostgreSQL service and the shared
    * **Same zone:** Primary and standby in the same availability zone.
    * **Zone redundant:** Primary and standby in different availability zones; recommended for production HA.
 
+   For regional support of Flexible Server SKUs and HA modes, see `Azure regions for PostgreSQL Flexible Server <https://learn.microsoft.com/en-us/azure/postgresql/overview#azure-regions>`_.
+
 3. **Primary availability zone** and **standby availability zone:** Shown when HA is enabled. For zone-redundant HA, the primary and standby zones must be different. Pick zones supported in your region for the PostgreSQL SKU you chose.
 4. **PostgreSQL admin username and password:** Administrator credentials for the Flexible Server. Avoid reserved names such as ``azure_superuser``. The password must meet `Azure Flexible Server password complexity requirements <https://learn.microsoft.com/azure/postgresql/flexible-server/concepts-security#password>`_.
 5. **NFS share size (GiB):** Size of the Azure Files (NFS) share used by Mattermost for shared application data. Minimum 100 GiB.
-6. **Geo-redundant backup:** Replicates PostgreSQL backups to Azure's paired region for cross-region disaster recovery. Recommended for production. **This setting cannot be changed after deployment.**
+6. **Mattermost database user password:** In the **Mattermost database connection** section, set the password for the dedicated Mattermost database user that the application nodes use to connect to PostgreSQL. This is separate from the PostgreSQL administrator credentials. The password must meet the same complexity rules as the admin password.
+7. **Geo-redundant backup:** Replicates PostgreSQL backups to Azure's paired region for cross-region disaster recovery. **This setting cannot be changed after deployment.**
 
 .. note::
 
   Backup retention for PostgreSQL is set to 35 days at deployment time. You can change retention from the Azure portal after the deployment completes.
 
 Step 5: Networking
-------------------
+~~~~~~~~~~~~~~~~~~
 
 On the **Networking** tab, configure the virtual network and how Mattermost is exposed to users.
 
 1. **VNet address space (CIDR):** The address space for the virtual network created by the template. Defaults to ``10.0.0.0/22``. Pick a range that does not overlap with other VNets you plan to peer with.
-2. **Public IP address:** Typically **create new**. You must set a **DNS prefix** (label) that is **globally unique** across Azure public cloud; it forms part of your URL and allows public access to your workspace. If the label is already taken, deployment will fail.
+2. **Public IP DNS label:**  You must set a **DNS prefix** (label) that is **globally unique** across Azure public cloud; it forms part of your URL and allows public access to your workspace. If the label is already taken, deployment will fail.
 3. **Enable HTTPS on Application Gateway:** When enabled, the Application Gateway terminates TLS using your PFX certificate and HTTP traffic is redirected to HTTPS. When disabled, Mattermost is served over HTTP on the Azure-assigned hostname (suitable for testing, **not recommended for production**).
 4. **PFX certificate** and **PFX password:** Shown when HTTPS is enabled. Upload your PKCS#12 bundle and provide the password used to protect it.
 5. **Custom domain (FQDN):** Shown when HTTPS is enabled. The public hostname Mattermost will use (for example, ``mattermost.example.com``). After deployment, point this hostname to the Azure-assigned DNS name of the Application Gateway public IP (typically using a **CNAME** record for subdomains).
 
 Step 6: Review and create
--------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Review your settings, accept any **Marketplace** terms if prompted, then select **Create**. Provisioning the full stack typically takes longer than a single-VM deployment because of the database, storage, and Application Gateway resources. First-boot configuration on the Mattermost instances may take additional time before the application is reachable.
+Review your settings, accept any **Marketplace** terms if prompted, then select **Create**. Provisioning typically takes 20–50 minutes, depending on your PostgreSQL configuration. Allow a few additional minutes after Azure reports the deployment as Succeeded before the application is reachable.
 
 **After deployment completes:**
 
@@ -111,14 +108,31 @@ Review your settings, accept any **Marketplace** terms if prompted, then select 
   ``https://<your-custom-domain>``
 
 Step 7: Open Mattermost and create your administrator
------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In a browser, go to your Mattermost URL. Mattermost will prompt you to **create the first user**, which becomes the **System Administrator**. That account is different from the **Linux** username and password (or SSH key) you configured in Step 3.
 
 Congratulations! You've successfully deployed a production-style Mattermost stack on Azure.
 
 Next steps
-----------
+~~~~~~~~~~
 
 * For sizing guidance and reference architectures, see :doc:`high-availability-cluster-based-deployment </administration-guide/scale/high-availability-cluster-based-deployment>` and :doc:`server architecture </administration-guide/scale/server-architecture>`.
 * For ongoing operations (upgrades, backups, monitoring), follow the standard Mattermost server administration documentation.
+
+Runbooks
+~~~~~~~~
+
+Upgrade Mattermost server
+------------------------
+
+The VMSS is using a Mattermost based image matching the Mattermost version you selected in Step 3. This image is updated periodically by Mattermost and to upgrade the Mattermost server you need to update the image version.
+
+To upgrade the Mattermost server image version verify the changelog for the new version, make sure the backups are working and then you can run the following command using the Azure CLI:
+
+  .. code-block:: sh
+
+    az vmss update \
+      --resource-group <resource-group> \
+      --name <vmss-name> \
+      --set virtualMachineProfile.storageProfile.imageReference.version=<new-version>
