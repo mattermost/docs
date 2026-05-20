@@ -10,6 +10,32 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 Platform and OS scope reflects reported and tested environments and may not represent all affected configurations.
 ```
 
+(release-v2-41-0)=
+## 2.41.0 Release
+ - Release Date: June 16, 2026
+ - Server Versions Supported: Server v10.11.0+ is required. Self-Signed SSL certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v10.11.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#extended-support-releases) (ESR) v10.5.0 has ended and upgrading to server ESR v10.11.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
+ - iPhone 8+ devices and later with iOS 16.0+ are [required](https://support.apple.com/en-il/guide/iphone/iphe3fa5df43/16.0/ios/16.0).
+
+### Improvements
+ - Added support for system messages for shared and unshared channels.
+ - Added mobile support for admin-managed sidebar channel categories.
+ - Updated the **About Mattermost** screen to show the correct edition or license name (including Enterprise Advanced and Entry).
+
+### Bug Fixes
+ - Fixed an issue on mobile where AI agents/bots flooded the at-mention and ``/invite`` autocomplete results regardless of the typed username.
+ - Fixed several iOS-specific issues in the Mobile Agents View: the input-box buttons no longer get cut off by the home indicator, typed text is no longer hidden by the keyboard, the back arrow now matches the standard iOS chevron used on other subpages, and the keyboard can now be dismissed with the standard swipe-down gesture.
+ - Fixed an issue with realtime UI updates when changing the settings for attaching logs for debugging functionality.
+ - Fixed an Android crash in push notification handling when the server returned an unexpected error response format.
+ - Fixed an issue where system admins could briefly see a join-team affordance when there were no additional teams to join, due to local team membership lagging behind server state.
+
+### Known Issues
+ - Users are unable to adjust the font size via the OS font size setting.
+ - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
+
 (release-v2-40-0)=
 ## 2.40.0 Release
  - Release Date: May 15, 2026
