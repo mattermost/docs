@@ -18,6 +18,10 @@ Platform and OS scope reflects reported and tested environments and may not repr
 
 - **11.7.1, released 2026-05-20**
   - Mattermost v11.7.1 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Improved memory usage and performance when processing images (resizing, thumbnails, and orientation correction).
+  - Plugins using the Shared Channels APIs can now register multiple remote connections by calling `RegisterPluginForSharedChannels` with different `SiteURL` values, enabling use cases like multiple outbound transports or bridging to multiple external servers. A new `UnregisterPluginRemoteForSharedChannels` method allows removing a single remote without affecting others. Existing single-remote plugins continue to work without changes.
+  - Fixed an issue where file attachments synced over a shared channel through a plugin (using the OnSharedChannelsAttachmentSyncMsg / ReceiveSharedChannelAttachmentSyncMsg plugin API pair) were stored on the receiving server but did not appear in the corresponding post, because the saved FileInfo was given a new ID instead of preserving the sender's file ID referenced by the post.
+  - Plugin API's for Shared Channel sync (`ReceiveSharedChannelSyncMsg` and `ReceiveSharedChannelAttachmentSyncMsg`) are now order-tolerant and idempotent: plugin remotes can now deliver a post and its file attachments in either order or concurrently, and at-least-once redeliveries no longer produce duplicate FileInfo rows.
   - Mattermost v11.7.1 contains no database or functional changes.
 - **11.7.0, released 2026-05-15**
   - Original 11.7.0 release.
