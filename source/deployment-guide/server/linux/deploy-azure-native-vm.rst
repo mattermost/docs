@@ -1,7 +1,7 @@
 :orphan:
 :nosearch:
 
-Mattermost is published as an **Azure Marketplace** solution that provisions a production-style Mattermost stack in your own subscription using Azure-managed services for compute, database, shared file storage, and load balancing. This option is intended for organizations that want a resilient Mattermost deployment they can scale and operate within their existing Azure tenant.
+Mattermost is published as an **Azure Marketplace** solution that provisions a production-ready Mattermost stack in your own subscription using Azure-managed services for compute, database, shared file storage, and load balancing. This option is intended for organizations that want a resilient Mattermost deployment they can scale and operate within their existing Azure tenant.
 
 Prerequisites
 ~~~~~~~~~~~~~
@@ -17,11 +17,11 @@ Prerequisites
 What gets deployed
 ~~~~~~~~~~~~~~~~~~
 
-The template provisions a self-contained, production-style stack in the resource group you select, including:
+The template provisions a self-contained, production-ready stack in the resource group you select, including:
 
 1. **Virtual Machine Scale Set (Linux):** Runs Mattermost on Ubuntu Pro 24.04 LTS images published by Mattermost. Instance count and VM size are driven by the scaling tier you choose.
 2. **Application Gateway with public IP:** Acts as the entry point for Mattermost traffic, with optional **HTTPS listener** (using your PFX certificate) and HTTP-to-HTTPS redirection when HTTPS is enabled.
-3. **Azure Database for PostgreSQL Flexible Server:** Managed PostgreSQL service that stores Mattermost data, with optional **same-zone** or **zone-redundant** high availability and configurable backup retention and geo-redundancy.
+3. **Azure Database for PostgreSQL Flexible Server:** Managed PostgreSQL service that stores Mattermost data, with optional **same-zone** or **zone-redundant** high availability, backup retention and geo-redundancy.
 4. **Azure Files (NFS) with private endpoint:** Shared storage for Mattermost data (uploads, plugins, and other shared files), reachable only from inside the virtual network.
 5. **Virtual network and subnets:** A dedicated VNet for the deployment, with separate subnets for the Application Gateway, the Mattermost application instances, the database, and the storage private endpoint.
 6. **NAT gateway:** Provides controlled outbound internet access for the application instances (for example, to fetch packages and the Mattermost configuration scripts).
@@ -50,13 +50,13 @@ Step 3: Application
 
 On the **Application** tab, configure how the Mattermost application is sized and how administrators access the VMs.
 
-1. **Scaling tier:** Pick the user scale you are planning for. The wizard uses this to suggest sensible defaults for the **VMSS instance count**, **VM size**, and **PostgreSQL SKU**, and to determine whether **read replicas** are created for the database. "The dropdown shows the recommended node count and VM SKU for each tier. For the underlying sizing rationale, see :ref:`available reference architectures <administration-guide/scale/scaling-for-enterprise:available reference architectures>`.
+1. **Scaling tier:** Pick the user scale you are planning for. The wizard uses this to suggest sensible defaults for the **VMSS instance count**, **VM size**, and **PostgreSQL SKU**, and to determine whether **read replicas** are created for the database. The dropdown shows the recommended node count and VM SKU for each tier. For the underlying sizing rationale, see :ref:`available reference architectures <administration-guide/scale/scaling-for-enterprise:available reference architectures>`.
 2. **VMSS instance count:** Number of Mattermost application nodes (1–5). Defaults to the suggested value for your scaling tier; adjust if needed.
 3. **Enterprise license file:** Required when the instance count is greater than 1 (multi-node high-availability clustering). Upload your Mattermost Enterprise license file. The license is optional for single-node deployments.
 4. **VM SKU:** Size of each VMSS instance. The wizard surfaces recommended Linux sizes first; you can select any supported Linux size available in your region.
 5. **Admin username:** Linux administrator account used to sign in to the VM instances.
 6. **Authentication type:** Choose **Password** or **SSH public key** for Linux sign-in. **SSH public key** is recommended for production deployments.
-7. **Mattermost Version:** The Mattermost version to install (for example, ``11.6.2``). See the :doc:`Mattermost release policy </product-overview/release-policy>` for supported versions.
+7. **Mattermost version:** The Mattermost version to install (for example, ``11.6.2``). See the :doc:`Mattermost release policy </product-overview/release-policy>` for supported versions.
 
 .. image:: /_static/images/azure/azure-native-application.png
   :alt: An example of the Azure Native Application setup screen.
@@ -71,7 +71,7 @@ On the **Database** tab, configure the managed PostgreSQL service and the shared
 
    * **Disabled:** Single primary instance. Suitable for small deployments.
    * **Same zone:** Primary and standby in the same availability zone.
-   * **Zone redundant:** Primary and standby in different availability zones; recommended for production HA.
+   * **Zone redundant:** Primary and standby in different availability zones.
 
    For regional support of Flexible Server SKUs and HA modes, see `Azure regions for PostgreSQL Flexible Server <https://learn.microsoft.com/en-us/azure/postgresql/overview#azure-regions>`_.
 
@@ -119,7 +119,7 @@ Review your settings, accept any **Marketplace** terms if prompted, then select 
 
   ``https://<your-custom-domain>``
 
-Congratulations! You've successfully deployed a production-style Mattermost stack on Azure.
+Congratulations! You've successfully deployed a production-ready Mattermost stack on Azure.
 
 Next steps
 ~~~~~~~~~~
@@ -158,4 +158,4 @@ Upgrade steps
 
 2. **Monitor the rollout** in the Azure portal: open your VMSS → **Instances** (or **Rolling upgrades**) and wait until all instances are healthy and running the new model.
 
-3. **Verify Mattermost**: open your site, confirm users can sign in, and check **System Console → About** for the expected server version.
+3. **Verify Mattermost**: Verify Mattermost uses the new version via **System Console → About**.
