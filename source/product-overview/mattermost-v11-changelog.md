@@ -21,7 +21,10 @@ Platform and OS scope reflects reported and tested environments and may not repr
 ### Upgrade Impact
 
 #### Database Schema Changes
- - TBD
+ - The following schema changes are included in the v11.8 release. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
+   - Added a ``Version`` column (default 1) to the ``PropertyGroups`` table to differentiate PSAv1 legacy groups from PSAv2 groups, with no downtime or table rewrite required.
+   - Increased the PostgreSQL statistics-sampling target for ``posts.rootid`` and ``posts.channelid`` to 5000 and refreshes planner statistics, improving query plan accuracy for queries that filter or join on those columns with no table rewrite or downtime required.
+   - Added two new values, ``'BO'`` and ``'BP'``, to the ``channel_type`` enum with no table rewrite or downtime required.
 
 #### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
