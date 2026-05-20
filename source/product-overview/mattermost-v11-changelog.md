@@ -163,8 +163,9 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-7-is-now-availab
 (release-v11.6-feature-release)=
 ## Release v11.6 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
-- **11.6.3, released 2026-05-20**
-  - Mattermost v11.6.3 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+- **11.6.3, released 2026-05-21**
+  - Mattermost v11.6.3 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Tightened session invalidation on the global session revocation path.
   - Mattermost v11.6.3 contains no database or functional changes.
 - **11.6.2, released 2026-05-13**
   - Mattermost v11.6.2 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
@@ -306,8 +307,9 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-6-is-now-availab
 (release-v11.5-feature-release)=
 ## Release v11.5 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
-- **11.5.6, released 2026-05-20**
-  - Mattermost v11.5.6 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+- **11.5.6, released 2026-05-21**
+  - Mattermost v11.5.6 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Tightened session invalidation on the global session revocation path.
   - Mattermost v11.5.6 contains no database or functional changes.
 - **11.5.5, released 2026-05-13**
   - Mattermost v11.5.5 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
