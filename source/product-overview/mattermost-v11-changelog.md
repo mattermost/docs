@@ -51,7 +51,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Standardized many buttons throughout the app, which may result in minor UX changes.
  - Updated the **Enable Testing Commands** user interface to explicitly warn that ``EnableTesting`` must never be used in production.
  - Changed the mobile view search box to only autofocus when the search button is pressed.
- - Improved the **Default "Report a Problem"** behavior to open a support ticket via email with metadata for licensed servers, and redirect to the Mattermost forums for free edition.
+ - Improved the **Default "Report a Problem"** [behavior](https://docs.mattermost.com/administration-guide/configure/site-configuration-settings.html) to open a support ticket via email with metadata for licensed servers, and redirect to the Mattermost forums for free edition.
  - Added support for system-scoped properties — property fields and values that attach to the Mattermost instance itself.
  - Added the ability to define a property attribute once and reuse it across different object types (e.g., users, channels).
  - Exposed the ``DefaultCategoryName`` to the user interface so admins can add, edit, and remove it easily.
@@ -79,7 +79,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Added ``container_cpu_limit`` and ``container_memory_limit_mb`` fields to support packet diagnostics to report cgroup v2 CPU and memory limits on Linux. Fields are omitted for non-containerized or non-Linux deployments.
  - Added SMTP and push proxy connectivity probe results to ``diagnostics.yaml`` in the support packet under ``notifications.email`` and ``notifications.push``.
  - Added ``started_at`` and ``host_started_at`` (Linux only) fields to the support packet diagnostics to help diagnose server restart loops and container reboots.
- - Added a simplified option allowing users to enable attaching logs to support packets.
+ - Added [a simplified option](https://docs.mattermost.com/deployment-guide/mobile/mobile-troubleshooting.html) allowing users to enable attaching logs to support packets.
  - Added Membership Policies (formerly Access Control Policies) support for public channels with advisory semantics: matching users are auto-added when enabled and surfaced in a new "Recommended" filter in Browse Channels and as a "Recommended" tag in the channel invite modal; non-matching members are never removed. Private channels retain the existing strict gate. The admin UI has been renamed throughout from "Access Control" to "Membership Policy". Requires Enterprise Advanced license.
  - Added a new feature allowing content reviewers to generate a downloadable report for a post quarantined for review as part of Data Spillage handling.
  - Tightened session invalidation on the global session revocation path.
