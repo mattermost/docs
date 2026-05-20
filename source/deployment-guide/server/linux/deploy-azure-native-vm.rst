@@ -30,7 +30,7 @@ The template provisions a self-contained, production-ready stack in the resource
 Step 1: Select a plan and start creation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Open the **Mattermost - Azure-Native (VM-based)** offer in the Azure Marketplace, click **Get it now**, select the plan, and then click **Create** to open the deployment wizard.
+Open the `Mattermost - Azure-Native (VM-based) <https://marketplace.microsoft.com/en-us/product/azure-application/mattermost.mattermost-app-vm>`_ offer in the Azure Marketplace, click **Get it now**, select the plan, and then click **Create** to open the deployment wizard.
 
 Step 2: Basics
 ~~~~~~~~~~~~~~
