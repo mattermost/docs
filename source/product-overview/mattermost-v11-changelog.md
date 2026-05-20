@@ -68,7 +68,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Added ``client.Audit`` on ``pluginapi.Client`` for plugins to emit audit records via the server audit pipeline (server 10.10+).
  - Introduced a new ``Edit Attachments`` permission for controlling who can edit post attachments when editing a post. By default, the permission is granted to users who have the edit post permission.
  - Added new CEL functions ``inCIDR`` and ``versionGT``/``versionGTE``/``versionLT``/``versionLTE``/``versionEQ`` for use in access control policies.
- - Added ``client.Audit`` support on ``pluginapi.Client``, allowing plugins to emit audit records via the server audit pipeline (server 10.10+).
+ - Included the connection ID in the plugin context.
 
 #### Administration
  - Added managed channel categories support requiring schema updates for Channel Admin enforcement of sidebar organization.
@@ -84,10 +84,13 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Added a new feature allowing content reviewers to generate a downloadable report for a post quarantined for review as part of Data Spillage handling.
  - Tightened session invalidation on the global session revocation path.
  - Downgraded Hungarian translations from Beta to Alpha.
+ - The Custom Profile Attributes property group is renamed from ``custom_profile_attributes`` to ``access_control``, and CPA fields and values are migrated from the legacy property model to the v2 model. The functionality of the CPA feature is unchanged. Plugin developers that use CPA will need to register against the new group name.
+ - Clarified error messages on potential permission migrations.
 
 #### Performance
  - Improved memory usage and performance when processing images (resizing, thumbnails, and orientation correction).
  - Improved authorization checks for post info lookups.
+ - Increased the PostgreSQL column statistics target on ``Posts.rootid`` and ``Posts.channelid`` to 5000, preventing query planner to choose the wrong index, which could cause full-table scans during bulk imports and other thread-heavy operations on large Posts tables.
 
 ### Bug Fixes
  - Fixed an issue where read recaps no longer showed the "Mark all channels as read" menu action.
@@ -110,11 +113,14 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Fixed an issue where the Reviewer field pill on the Data Spillage review card rendered with a white background in dark themes.
  - Fixed an issue with the group channels in the Direct Messages modal sometimes displaying incorrectly.
  - Fixed a spurious "prop must be a valid URL" warning that was logged when handling slash command responses that had no icon URL configured.
+ - Fixed a bot import panic when user exists without bot record.
+ - Fixed an issue where file attachments synced over a shared channel through a plugin (using the ``OnSharedChannelsAttachmentSyncMsg`` / ``ReceiveSharedChannelAttachmentSyncMsg`` plugin API pair) were stored on the receiving server but did not appear in the corresponding post, because the saved FileInfo was given a new ID instead of preserving the sender's file ID referenced by the post.
 
 ### API Changes
  - Added a new ``GET /api/v4/content_flagging/post/<post_id>/report`` endpoint for generating and downloading a content flagging report for a flagged post.
  - Added ``GET /api/v4/teams/{team_id}/channels/recommended`` endpoint and an ``abac_match_only`` query parameter on ``GET /api/v4/users`` to support Membership Policy advisory semantics for public channels.
  - Updated ``POST /api/v4/users/{user_id}/demote`` to return ``400`` when ``user_id`` is a bot account; bot accounts cannot be converted to guests.
+ - Added a new endpoint to fetch users by their auth_data GET ``/api/v4/users/auth_data?value={auth_data}``. Only available to sysadmins.
 
 ### WebSocket Event Changes
  - The ``channel_converted`` WebSocket event now includes the channel type, enabling clients to update the sidebar channel icon when a channel's privacy changes.
