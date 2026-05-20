@@ -2000,7 +2000,11 @@ With self-hosted deployments, you can configure file storage settings by going t
 
 .. note::
 
-  Mattermost currently supports storing files on the local filesystem and Amazon S3 or S3-compatible containers. We have tested Mattermost with `Digital Ocean Spaces <https://docs.digitalocean.com/products/spaces/>`__, but not all S3-compatible containers on the market. If you are looking to use other S3-compatible containers, we recommend completing your own testing. You can also use local storage or a network drive using NFS.
+  Mattermost supports storing files on the local filesystem, Amazon S3 or S3-compatible containers, and Azure Blob Storage. We have tested Mattermost with `Digital Ocean Spaces <https://docs.digitalocean.com/products/spaces/>`__, but not all S3-compatible containers on the market. If you are looking to use other S3-compatible containers, we recommend completing your own testing. You can also use local storage or a network drive using NFS.
+
+.. seealso::
+
+  For a step-by-step walk-through covering Azure resource provisioning, System Console configuration, and verification, see :doc:`Configure Azure Blob Storage as the Mattermost file store </administration-guide/configure/azure-blob-storage>`.
 
 .. config:setting:: file-storage-system
   :displayname: File storage system (File Storage)
@@ -2011,13 +2015,14 @@ With self-hosted deployments, you can configure file storage settings by going t
 
   - **local**: **(Default)** Files and images are stored in the specified local file directory.
   - **amazons3**: Files and images are stored on Amazon S3 based on the access key, bucket, and region fields provided.
+  - **azureblob**: Files and images are stored on Azure Blob Storage based on the storage account, key, and container fields provided.
 
 File storage system
 ~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------+-----------------------------------------------------------------------------+
 | The type of file storage system used.                         | - System Config path: **Environment > File Storage**                        |
-| Can be either Local File System or Amazon S3.                 | - ``config.json`` setting: ``FileSettings`` > ``DriverName`` > ``"local"``  |
+| Can be Local File System, Amazon S3, or Azure Blob Storage.   | - ``config.json`` setting: ``FileSettings`` > ``DriverName`` > ``"local"``  |
 |                                                               | - Environment variable: ``MM_FILESETTINGS_DRIVERNAME``                      |
 | - **local**: **(Default)** Files and images are stored in     |                                                                             |
 |   the specified local file directory.                         |                                                                             |
@@ -2025,7 +2030,14 @@ File storage system
 |   based on the access key, bucket, and region fields          |                                                                             |
 |   provided. The driver is compatible with other S3-compatible |                                                                             |
 |   services, such as Digital Ocean Spaces.                     |                                                                             |
+| - **azureblob**: Files and images are stored on Azure Blob    |                                                                             |
+|   Storage based on the storage account name, shared key, and  |                                                                             |
+|   container fields provided.                                  |                                                                             |
 +---------------------------------------------------------------+-----------------------------------------------------------------------------+
+
+.. note::
+
+  After saving a new file storage system, restart every Mattermost server in the deployment for the change to take effect. The file storage backend is initialized at startup and isn't rebuilt automatically when ``FileSettings`` change at runtime. ``Test Connection`` validates the form values before save and works without a restart.
 
 .. config:setting:: local-storage-directory
   :displayname: Local storage directory (File Storage)
@@ -2473,6 +2485,138 @@ Amazon S3 request timeout
 |                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3REQUESTTIMEOUTMILLISECONDS``                   |
 | Default is 30000 (30 seconds).                                |                                                                                                  |
 +---------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+
+.. config:setting:: azure-storage-account
+  :displayname: Azure Storage account (File Storage)
+  :systemconsole: Environment > File Storage
+  :configjson: .FileSettings.AzureStorageAccount
+  :environment: MM_FILESETTINGS_AZURESTORAGEACCOUNT
+  :description: The name of your Azure Storage account.
+
+Azure Storage account
+~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+--------------------------------------------------------------------------+
+| The name of your Azure Storage account.                       | - System Config path: **Environment > File Storage**                     |
+|                                                               | - ``config.json`` setting: ``FileSettings`` > ``AzureStorageAccount``    |
+| A string with the storage account name as it appears in the   | - Environment variable: ``MM_FILESETTINGS_AZURESTORAGEACCOUNT``          |
+| Azure portal. Must be 3-24 lowercase letters and numbers.     |                                                                          |
++---------------------------------------------------------------+--------------------------------------------------------------------------+
+
+.. config:setting:: azure-container
+  :displayname: Azure container (File Storage)
+  :systemconsole: Environment > File Storage
+  :configjson: .FileSettings.AzureContainer
+  :environment: MM_FILESETTINGS_AZURECONTAINER
+  :description: The name of the container in your Azure Storage account.
+
+Azure container
+~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+--------------------------------------------------------------------------+
+| The name of the container in your Azure Storage account       | - System Config path: **Environment > File Storage**                     |
+| where Mattermost stores uploads.                              | - ``config.json`` setting: ``FileSettings`` > ``AzureContainer``         |
+|                                                               | - Environment variable: ``MM_FILESETTINGS_AZURECONTAINER``               |
+| A string with the container name.                             |                                                                          |
++---------------------------------------------------------------+--------------------------------------------------------------------------+
+
+.. config:setting:: azure-path-prefix
+  :displayname: Azure path prefix (File Storage)
+  :systemconsole: Environment > File Storage
+  :configjson: .FileSettings.AzurePathPrefix
+  :environment: MM_FILESETTINGS_AZUREPATHPREFIX
+  :description: An optional path prefix to use for blobs in your Azure container. Leave empty to write at the container root.
+
+Azure path prefix
+~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+--------------------------------------------------------------------------+
+| An optional path prefix to use for blobs in your Azure        | - System Config path: **Environment > File Storage**                     |
+| container.                                                    | - ``config.json`` setting: ``FileSettings`` > ``AzurePathPrefix``        |
+|                                                               | - Environment variable: ``MM_FILESETTINGS_AZUREPATHPREFIX``              |
+| A string containing the path prefix. Leave empty to write at  |                                                                          |
+| the container root.                                           |                                                                          |
++---------------------------------------------------------------+--------------------------------------------------------------------------+
+
+.. config:setting:: azure-storage-account-key
+  :displayname: Azure Storage account key (File Storage)
+  :systemconsole: Environment > File Storage
+  :configjson: .FileSettings.AzureAccessKey
+  :environment: MM_FILESETTINGS_AZUREACCESSKEY
+  :description: The shared key for your Azure Storage account.
+
+Azure Storage account key
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+--------------------------------------------------------------------------+
+| The shared key for your Azure Storage account.                | - System Config path: **Environment > File Storage**                     |
+| Find this value in the Azure portal under your storage        | - ``config.json`` setting: ``FileSettings`` > ``AzureAccessKey``         |
+| account's **Security + networking > Access keys** blade.      | - Environment variable: ``MM_FILESETTINGS_AZUREACCESSKEY``               |
++---------------------------------------------------------------+--------------------------------------------------------------------------+
+
+.. note::
+
+  Treat the shared key as a secret. Azure provides two keys to support rotation without downtime: update Mattermost to one key, regenerate the other, then swap on the next rotation cycle.
+
+.. config:setting:: azure-endpoint
+  :displayname: Azure endpoint (File Storage)
+  :systemconsole: Environment > File Storage
+  :configjson: .FileSettings.AzureEndpoint
+  :environment: MM_FILESETTINGS_AZUREENDPOINT
+  :description: An optional host[:port] override for non-default endpoints. Leave empty to use the default ``{account}.blob.core.windows.net`` host.
+
+Azure endpoint
+~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+--------------------------------------------------------------------------+
+| An optional host[:port] override for non-default Azure        | - System Config path: **Environment > File Storage**                     |
+| endpoints such as an Azurite emulator or a reverse proxy in   | - ``config.json`` setting: ``FileSettings`` > ``AzureEndpoint``          |
+| front of Azure Blob Storage.                                  | - Environment variable: ``MM_FILESETTINGS_AZUREENDPOINT``                |
+|                                                               |                                                                          |
+| Leave empty to use the default                                |                                                                          |
+| ``{account}.blob.core.windows.net`` host, where ``{account}`` |                                                                          |
+| is the configured **Azure Storage account**. Sovereign clouds |                                                                          |
+| such as Azure Government and Azure China are not supported    |                                                                          |
+| through this field -- they use account-style hosts that       |                                                                          |
+| Mattermost selects automatically when the endpoint is empty.  |                                                                          |
++---------------------------------------------------------------+--------------------------------------------------------------------------+
+
+.. config:setting:: enable-secure-azure-blob-storage-connections
+  :displayname: Enable secure Azure Blob Storage connections (File Storage)
+  :systemconsole: Environment > File Storage
+  :configjson: .FileSettings.AzureSSL
+  :environment: MM_FILESETTINGS_AZURESSL
+  :description: Enable or disable secure Azure Blob Storage connections. Default value is **true**.
+
+Enable secure Azure Blob Storage connections
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+--------------------------------------------------------------------------+
+| Enable or disable secure connections to Azure Blob Storage.   | - System Config path: **Environment > File Storage**                     |
+|                                                               | - ``config.json`` setting: ``FileSettings`` > ``AzureSSL`` > ``true``    |
+| - **true**: **(Default)** Enables only secure Azure Blob      | - Environment variable: ``MM_FILESETTINGS_AZURESSL``                     |
+|   Storage connections.                                        |                                                                          |
+| - **false**: Allows insecure connections. Only set to         |                                                                          |
+|   **false** when pointing at a local emulator without TLS.    |                                                                          |
++---------------------------------------------------------------+--------------------------------------------------------------------------+
+
+.. config:setting:: azure-request-timeout
+  :displayname: Azure request timeout (File Storage)
+  :systemconsole: Environment > File Storage
+  :configjson: .FileSettings.AzureRequestTimeoutMilliseconds
+  :environment: MM_FILESETTINGS_AZUREREQUESTTIMEOUTMILLISECONDS
+  :description: Amount of time, in milliseconds, before requests to Azure Blob Storage time out. Default value is 30000 (30 seconds).
+
+Azure request timeout
+~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+| The amount of time, in milliseconds, before requests to       | - System Config path: **Environment > File Storage**                                       |
+| Azure Blob Storage time out.                                  | - ``config.json`` setting: ``FileSettings`` > ``AzureRequestTimeoutMilliseconds`` > ``30000`` |
+|                                                               | - Environment variable: ``MM_FILESETTINGS_AZUREREQUESTTIMEOUTMILLISECONDS``                |
+| Default is 30000 (30 seconds). Increase only if your network  |                                                                                            |
+| needs more time for large objects.                            |                                                                                            |
++---------------------------------------------------------------+--------------------------------------------------------------------------------------------+
 
 .. config:setting:: initial-font
   :displayname: Initial font (File Storage)
@@ -4788,6 +4932,13 @@ Enable dedicated export filestore target
 |  - ``ExportAmazonS3Trace``                                                           |                                                                         |
 |  - ``ExportAmazonS3RequestTimeoutMilliseconds``                                      |                                                                         |
 |  - ``ExportAmazonS3PresignExpiresSeconds``                                           |                                                                         |
+|  - ``ExportAzureStorageAccount``                                                     |                                                                         |
+|  - ``ExportAzureAccessKey``                                                          |                                                                         |
+|  - ``ExportAzureContainer``                                                          |                                                                         |
+|  - ``ExportAzurePathPrefix``                                                         |                                                                         |
+|  - ``ExportAzureEndpoint``                                                           |                                                                         |
+|  - ``ExportAzureSSL``                                                                |                                                                         |
+|  - ``ExportAzureRequestTimeoutMilliseconds``                                         |                                                                         |
 |                                                                                      |                                                                         |
 | - **False**: (**Default**) Standard                                                  |                                                                         |
 |   :ref:`file storage                                                                 |                                                                         |
