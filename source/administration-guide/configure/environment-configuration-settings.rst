@@ -4402,6 +4402,100 @@ Prevent screen capture
 
   Changing this configuration setting takes effect when mobile users restart their Mattermost mobile app or log out and log back in.
 
+Mobile ephemeral mode
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../../_static/badges/ent-adv.rst
+  :start-after: :nosearch:
+
+See :ref:`Mobile Ephemeral Mode in mobile security features <deployment-guide/mobile/mobile-security-features:mobile ephemeral mode>` for a full description of how the timers and operations interact.
+
+These settings apply globally to all mobile users. Changes are delivered to connected devices in real time; offline devices continue operating under their last-known configuration until they reconnect. Timer state persists across app and device restarts.
+
+When a timer expires, active cached content such as posts and file previews is purged, and the app notifies the user that data was removed due to policy enforcement. After a purge, users re-sync from the server on reconnection — server URLs are recoverable from keychain entries so server access is not lost.
+
+.. config:setting:: mobile-enable-ephemeral-mode
+  :displayname: Enable Mobile Ephemeral Mode (Mobile Security)
+  :systemconsole: Environment > Mobile Security
+  :configjson: .NativeAppSettings.MobileEnableEphemeralMode
+  :environment: MM_NATIVEAPPSETTINGS_MOBILEENABLEEPHEMERALMODE
+  :description: Controls whether mobile clients enforce server-configured ephemeral data policies. Default is **true**.
+
+    - **true**: **(Default)** Mobile clients enforce the server-configured ephemeral data policies.
+    - **false**: Ephemeral data policies are not enforced on mobile clients.
+
+Enable Mobile Ephemeral Mode
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| Controls whether mobile clients enforce the          | - System Config path: **Environment > Mobile Security**                                          |
+| server-configured ephemeral data policies.           | - ``config.json`` setting: ``NativeAppSettings`` > ``MobileEnableEphemeralMode`` > ``true``      |
+|                                                      | - Environment variable: ``MM_NATIVEAPPSETTINGS_MOBILEENABLEEPHEMERALMODE``                       |
+| - **true**: **(Default)** Ephemeral data policies    |                                                                                                  |
+|   are enforced.                                      |                                                                                                  |
+| - **false**: Ephemeral data policies are not         |                                                                                                  |
+|   enforced on mobile clients.                        |                                                                                                  |
++------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+
+.. config:setting:: mobile-disconnection-timeout-seconds
+  :displayname: Disconnection Timeout (Mobile Security)
+  :systemconsole: Environment > Mobile Security
+  :configjson: .NativeAppSettings.MobileDisconnectionTimeoutSeconds
+  :environment: MM_NATIVEAPPSETTINGS_MOBILEDISCONNECTIONTIMEOUTSECONDS
+
+  Grace period after the WebSocket drops before the device is considered offline. Default is **60** seconds. Values below 5 are not recommended.
+
+Disconnection timeout
+^^^^^^^^^^^^^^^^^^^^^
+
++------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+
+| Grace period in seconds after the WebSocket drops    | - System Config path: **Environment > Mobile Security**                                                          |
+| before the device is considered offline. Once        | - ``config.json`` setting: ``NativeAppSettings`` > ``MobileDisconnectionTimeoutSeconds`` > ``60``                |
+| elapsed, the Offline Persistence Timer begins        | - Environment variable: ``MM_NATIVEAPPSETTINGS_MOBILEDISCONNECTIONTIMEOUTSECONDS``                               |
+| counting down.                                       |                                                                                                                  |
+|                                                      |                                                                                                                  |
+| Numerical input in seconds. Default is **60**.       |                                                                                                                  |
+| Values below 5 are not recommended.                  |                                                                                                                  |
++------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: mobile-offline-persistence-timer-hours
+  :displayname: Offline Persistence Timer (Mobile Security)
+  :systemconsole: Environment > Mobile Security
+  :configjson: .NativeAppSettings.MobileOfflinePersistenceTimerHours
+  :environment: MM_NATIVEAPPSETTINGS_MOBILEOFFLINEPERSISTENCETIMERHOURS
+
+  How long cached content is retained after the device goes offline. Default is **2** hours. Set to **0** for immediate purge when the Disconnection Timeout elapses.
+
+Offline persistence timer
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
++------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| How long cached content is retained after the        | - System Config path: **Environment > Mobile Security**                                                             |
+| device is considered offline, in hours.              | - ``config.json`` setting: ``NativeAppSettings`` > ``MobileOfflinePersistenceTimerHours`` > ``2``                   |
+|                                                      | - Environment variable: ``MM_NATIVEAPPSETTINGS_MOBILEOFFLINEPERSISTENCETIMERHOURS``                                 |
+| Numerical input in hours. Default is **2**.          |                                                                                                                     |
+| Set to **0** for immediate purge on disconnect.      |                                                                                                                     |
++------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: mobile-auto-cache-cleanup-days
+  :displayname: Auto Cache Cleanup (Mobile Security)
+  :systemconsole: Environment > Mobile Security
+  :configjson: .NativeAppSettings.MobileAutoCacheCleanupDays
+  :environment: MM_NATIVEAPPSETTINGS_MOBILEAUTOCACHECLEANUPDAYS
+
+  Maximum age for content cached on the device, regardless of connection status. Default is **7** days. Set to **0** for zero-persistence mode.
+
+Auto cache cleanup
+^^^^^^^^^^^^^^^^^^
+
++------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
+| Maximum age in days for content cached on the        | - System Config path: **Environment > Mobile Security**                                                  |
+| device, regardless of connection status.             | - ``config.json`` setting: ``NativeAppSettings`` > ``MobileAutoCacheCleanupDays`` > ``7``                |
+|                                                      | - Environment variable: ``MM_NATIVEAPPSETTINGS_MOBILEAUTOCACHECLEANUPDAYS``                              |
+| Numerical input in days. Default is **7**.           |                                                                                                          |
+| Set to **0** for zero-persistence mode.              |                                                                                                          |
++------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
+
 .. config:setting:: mobile-enable-secure-file-preview
   :displayname: Enable secure file preview on mobile (File sharing)
   :systemconsole: Site Configuration > File sharing and downloads
