@@ -43,17 +43,17 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Pre-packaged Playbooks plugin version [v2.9.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.9.0).
  - Pre-packaged Jira plugin version [v4.7.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.7.0).
  - Pre-packaged Calls plugin version [v1.11.5](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.11.5).
- - Added a new keyboard shortcut, ``Shift`` + ``ESC``, that marks all channels, threads, and direct messages as read for a team.
- - Added an overflow menu for channel bookmarks when the bookmark bar runs out of space. Bookmarks can be reordered via drag-and-drop between the bar and the overflow menu, or via keyboard (Space to select, arrow keys to move). Replaced ``react-beautiful-dnd`` with ``@atlaskit/pragmatic-drag-and-drop``.
+ - Added a new keyboard shortcut, ``Shift`` + ``ESC``, that marks all channels, threads, and direct messages as read for a team on webapp / desktop app.
+ - Added an overflow menu for channel bookmarks when the bookmark bar runs out of space. Bookmarks can be reordered via drag-and-drop between the bar and the overflow menu, or via keyboard (Space to select, arrow keys to move) on webapp. Replaced ``react-beautiful-dnd`` with ``@atlaskit/pragmatic-drag-and-drop``.
  - Added an unread badge to Recaps, displayed in red if the recap failed.
  - Added managed channel categories for **Channel Admins** to enforce sidebar organization across teams.
- - Added per-channel classification assignment and banner integration.
+ - Added per-channel classification assignment and banner integration for webapp/desktop app.
  - Added support for **CPA Display Name** for user-facing labels of user attributes.
  - Changed the **Invite People** modal to allow pasting any text, not only valid email formats.
  - Standardized many buttons throughout the app, which may result in minor UX changes.
  - Updated the **Enable Testing Commands** user interface to explicitly warn that ``EnableTesting`` must never be used in production.
- - Changed the mobile view search box to only autofocus when the search button is pressed.
- - Improved the **Default "Report a Problem"** [behavior](https://docs.mattermost.com/administration-guide/configure/site-configuration-settings.html) to open a support ticket via email with metadata for licensed servers, and redirect to the Mattermost forums for free edition.
+ - Changed the mobile view search box to only autofocus when the search button is pressed (reported on mobile browser).
+ - Improved the **Default "Report a Problem"** [behavior](https://docs.mattermost.com/administration-guide/configure/site-configuration-settings.html) to open a support ticket via email with metadata for licensed servers, and redirect to the Mattermost forums for free edition in webapp / desktop apps.
  - Added support for system-scoped properties — property fields and values that attach to the Mattermost instance itself.
  - Added the ability to define a property attribute once and reuse it across different object types (e.g., users, channels).
  - Exposed the ``DefaultCategoryName`` to the user interface so admins can add, edit, and remove it easily.
@@ -67,21 +67,21 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
 #### Plugins/Integrations
  - Added plugin metrics collection, namespacing, and serving on the standard ``/metrics`` endpoint.
  - Added support for plugins using the Shared Channels APIs to register multiple remote connections by calling ``RegisterPluginForSharedChannels`` with different ``SiteURL`` values, enabling use cases such as multiple outbound transports or bridging to multiple external servers. A new ``UnregisterPluginRemoteForSharedChannels`` method allows removing a single remote without affecting others. Existing single-remote plugins continue to work without changes.
- - Added ``client.Audit`` on ``pluginapi.Client`` for plugins to emit audit records via the server audit pipeline (server 10.10+).
+ - Added ``client.Audit`` on ``pluginapi.Client`` for plugins to emit audit records via the server audit pipeline (server 10.10+) on Linux, macOS and Windows.
  - Introduced a new ``Edit Attachments`` permission for controlling who can edit post attachments when editing a post. By default, the permission is granted to users who have the edit post permission.
  - Added new CEL functions ``inCIDR`` and ``versionGT``/``versionGTE``/``versionLT``/``versionLTE``/``versionEQ`` for use in access control policies.
  - Included the connection ID in the plugin context.
 
 #### Administration
  - Added managed channel categories support requiring schema updates for Channel Admin enforcement of sidebar organization.
- - Removed remaining support for Internet Explorer and pre-Chromium versions of Edge.
+ - Removed remaining support for Internet Explorer and pre-Chromium versions of Edge on webapp.
  - Added ``server.process_id`` to support packet diagnostics to help correlate support data with OS-level logs and process monitoring tools such as ``ps``, ``top``, and systemd journal.
- - Added ``go_version`` to support packet diagnostics, showing the Go runtime version the server binary was compiled with.
+ - Added ``go_version`` to support packet diagnostics, showing the Go runtime version the server binary was compiled with on Linux.
  - Added ``open_file_descriptors`` and ``max_file_descriptors`` fields to the ``server`` section of the support packet ``diagnostics.yaml`` to help diagnose file descriptor exhaustion on Linux and macOS.
  - Added ``container_cpu_limit`` and ``container_memory_limit_mb`` fields to support packet diagnostics to report cgroup v2 CPU and memory limits on Linux. Fields are omitted for non-containerized or non-Linux deployments.
- - Added SMTP and push proxy connectivity probe results to ``diagnostics.yaml`` in the support packet under ``notifications.email`` and ``notifications.push``.
+ - Added SMTP and push proxy connectivity probe results to ``diagnostics.yaml`` in the support packet under ``notifications.email`` and ``notifications.push`` for mobile app.
  - Added ``started_at`` and ``host_started_at`` (Linux only) fields to the support packet diagnostics to help diagnose server restart loops and container reboots.
- - Added [a simplified option](https://docs.mattermost.com/deployment-guide/mobile/mobile-troubleshooting.html) allowing users to enable attaching logs to support packets.
+ - Added [a simplified option](https://docs.mattermost.com/deployment-guide/mobile/mobile-troubleshooting.html) allowing users to enable attaching logs to support packets on mobile apps.
  - Added Membership Policies (formerly Access Control Policies) support for public channels with advisory semantics: matching users are auto-added when enabled and surfaced in a new "Recommended" filter in Browse Channels and as a "Recommended" tag in the channel invite modal; non-matching members are never removed. Private channels retain the existing strict gate. The admin UI has been renamed throughout from "Access Control" to "Membership Policy". Requires Enterprise Advanced license.
  - Added a new feature allowing content reviewers to generate a downloadable report for a post quarantined for review as part of Data Spillage handling.
  - Tightened session invalidation on the global session revocation path.
@@ -98,13 +98,13 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Fixed an issue where read recaps no longer showed the "Mark all channels as read" menu action.
  - Fixed an issue where the user profile popover closed automatically when opened for the first time from the channel member list in the RHS.
  - Fixed an issue where the sidebar channel icon did not update when a channel's privacy was changed via ``mmctl`` or the API. The ``channel_converted`` WebSocket event now includes the channel type.
- - Fixed a webapp issue where clicking composer formatting controls could jump a long scrolled draft back to the top.
+ - Fixed a webapp issue where clicking composer formatting controls could jump a long scrolled draft back to the top (reported on webapp and desktop app / Chrome).
  - Fixed an issue where ``LoadPluginConfiguration`` did not apply default values for plugin settings declared inside sections in the plugin manifest.
  - Fixed an issue where clicking a custom user group mention would sometimes fail to load the group members list in the popover.
  - Fixed an issue where the reminder confirmation did not appear when setting a reminder on a reply from the thread view.
  - Fixed a panic in the ``mmctl`` websocket command when the WebSocket connection failed on startup.
  - Fixed an issue where the System Console Reporting sidebar label for the system analytics page so it now consistently reads "System Statistics".
- - Fixed a white flash that appeared in the global header and left sidebar when switching between products (Playbooks/Boards) and Channels.
+ - Fixed a white flash that appeared in the global header and left sidebar when switching between products (Playbooks/Boards) and Channels (reported on desktop app).
  - Fixed an issue with the invite modal text input clipping and modal width overflow when typing long text in the "To" field.
  - Fixed an issue where the post autocomplete menu could be clipped when the right-hand sidebar was open.
  - Fixed an issue with the themed text colors in the Invite Guest modal channel picker so the "Add to channels" section, the typed input text, and the channel suggestion rows follow the active theme.
