@@ -60,6 +60,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - On new installations using Elasticsearch or OpenSearch, search now includes public channels the user is not a member of by default.
  - Added support for incoming webhooks to define a ``root_id`` to create posts in a thread.
  - Updated membership policy user interface copy in the System Console and public channel settings to clarify qualifying-user requirements and auto-add behavior.
+ - Hid redundant "Download Apps" links and onboarding download reminders when Mattermost runs inside the Desktop app.
 
 #### Plugins/Integrations
  - Added plugin metrics collection, namespacing, and serving on the standard ``/metrics`` endpoint.
