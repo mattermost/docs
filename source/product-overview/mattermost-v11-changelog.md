@@ -18,6 +18,8 @@ Platform and OS scope reflects reported and tested environments and may not repr
 
 - **11.7.1, released 2026-05-21**
   - Mattermost v11.7.1 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged GitLab plugin version [v1.12.2](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.12.2).
+  - Pre-packaged Jira plugin version [v4.7.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.7.0).
   - Tightened session invalidation on the global session revocation path.
   - POST ``/api/v4/users/{user_id}/demote`` now returns 400 when ``user_id`` is a bot account; bot accounts cannot be converted to guests.
   - Improved memory usage and performance when processing images (resizing, thumbnails, and orientation correction).
@@ -165,6 +167,9 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-7-is-now-availab
 
 - **11.6.3, released 2026-05-21**
   - Mattermost v11.6.3 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged GitLab plugin version [v1.12.2](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.12.2).
+  - Pre-packaged Jira plugin version [v4.7.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.7.0).
+  - Fixed a regression with saving various masked fields from the System Console.
   - Tightened session invalidation on the global session revocation path.
   - Mattermost v11.6.3 contains no database or functional changes.
 - **11.6.2, released 2026-05-13**
@@ -309,6 +314,9 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-6-is-now-availab
 
 - **11.5.6, released 2026-05-21**
   - Mattermost v11.5.6 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged GitLab plugin version [v1.12.2](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.12.2).
+  - Pre-packaged Jira plugin version [v4.7.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.7.0).
+  - Fixed a regression with saving various masked fields from the System Console.
   - Tightened session invalidation on the global session revocation path.
   - Mattermost v11.5.6 contains no database or functional changes.
 - **11.5.5, released 2026-05-13**
