@@ -26,7 +26,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
 #### Linux
 
-- Added a setting to enable native window decorations on Linux.
+- Added [a setting](https://docs.mattermost.com/end-user-guide/preferences/customize-desktop-app-experience.html) to enable native window decorations on Linux.
 
 #### All Platforms
 
