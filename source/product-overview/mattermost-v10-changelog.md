@@ -82,6 +82,9 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 
 - **10.11.18, released 2026-05-21**
   - Mattermost v10.11.18 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged GitLab plugin version [v1.12.2](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.12.2).
+  - Pre-packaged Jira plugin version [v4.7.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.7.0).
+  - Fixed a regression with saving various masked fields from the System Console.
   - Tightened session invalidation on the global session revocation path.
   - POST ``/api/v4/users/{user_id}/demote`` now returns 400 when ``user_id`` is a bot account; bot accounts cannot be converted to guests.
   - Mattermost v10.11.18 contains no database or functional changes.
