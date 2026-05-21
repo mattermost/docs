@@ -4,18 +4,30 @@
 # Place this file in:
 #   mattermost/docs -> .github/workflows/docs-branch-create.yml
 #
-# Required secrets (set in mattermost/docs Settings -> Secrets):
-#   DEV_REPOS_PAT - Token with read access to mattermost/mattermost milestones
-#                   (already needed by docs-pr-sync.yml)
+# Cross-repo authentication (choose one):
+#
+#   Option A - GitHub App (recommended for production):
+#     vars.DOCS_APP_ID             - GitHub App ID (repository variable)
+#     secrets.DOCS_APP_PRIVATE_KEY - GitHub App private key
+#     The app must be installed on and granted read access to
+#     mattermost/mattermost milestones (contents: read is sufficient).
+#     Short-lived installation tokens are generated automatically per run.
+#
+#   Option B - Fine-grained PAT (simpler setup, ties to a user account):
+#     secrets.DEV_REPOS_PAT - Fine-grained PAT with read access to
+#                             mattermost/mattermost milestones.
+#     To use: replace steps.token.outputs.token with secrets.DEV_REPOS_PAT
+#             and remove the "Generate token" step.
 #
 # Behaviour:
 #   When the current release docs branch (e.g. v11.6-documentation) is merged
 #   into master in mattermost/docs, this workflow:
-#     1. Queries mattermost/mattermost for the next open milestone
+#     1. Validates the merged branch name matches ^v[0-9]+\.[0-9]+-documentation$
+#     2. Queries mattermost/mattermost for the next open milestone
 #        (sorted by due date, earliest first)
-#     2. Derives the new branch name by extracting vMAJOR.MINOR from the
+#     3. Derives the new branch name by extracting vMAJOR.MINOR from the
 #        milestone title (e.g. "v11.7.0" -> "v11.7-documentation")
-#     3. Creates that branch in mattermost/docs from master if it doesn't exist
+#     4. Creates that branch in mattermost/docs from master if it doesn't exist
 #
 #   There is only one active docs branch at a time. This branch becomes the
 #   base target for all Docs/Needed PRs in the new cycle
@@ -35,8 +47,10 @@ jobs:
     permissions:
       contents: write
       pull-requests: read
-    # Only run when a docs release branch (v*-documentation pattern) is merged
-    # from within this repository (fork guard matches docs-pr-sync.yml).
+    # Broad pre-filter: only run when a docs release branch is merged from
+    # within this repository. The step below enforces the exact regex pattern
+    # because GitHub Actions expressions do not support regex matching.
+    # Fork guard prevents runs on PRs from external forks.
     if: |
       github.event.pull_request.merged == true &&
       github.event.pull_request.head.repo.full_name == github.repository &&
@@ -44,12 +58,34 @@ jobs:
       endsWith(github.event.pull_request.head.ref, '-documentation')
  
     steps:
-      # 1. Log the merged branch for traceability
-      - name: Log merged branch
+      # 0. Generate a short-lived installation token scoped to
+      #    mattermost/mattermost for milestone reads.
+      #    Uses a GitHub App so the token is not tied to any individual user
+      #    account and expires automatically after 1 hour.
+      #    See Option B in the header comment if you prefer a PAT instead.
+      - name: Generate token
+        id: token
+        uses: actions/create-github-app-token@d72941d797fd3113feb6b93fd0dec494b13a2547 # v1
+        with:
+          app-id: ${{ vars.DOCS_APP_ID }}
+          private-key: ${{ secrets.DOCS_APP_PRIVATE_KEY }}
+          repositories: mattermost
+ 
+      # 1. Strict branch name validation
+      #    The job-level if: is a broad pre-filter (GitHub Actions expressions
+      #    do not support regex). This step enforces the exact pattern
+      #    ^v[0-9]+\.[0-9]+-documentation$ so that branches like
+      #    vTEST-documentation or v1-documentation are rejected early.
+      - name: Validate branch name
         env:
           MERGED_BRANCH: ${{ github.event.pull_request.head.ref }}
         run: |
-          echo "Docs branch merged: ${MERGED_BRANCH}"
+          if ! [[ "$MERGED_BRANCH" =~ ^v[0-9]+\.[0-9]+-documentation$ ]]; then
+            echo "::error::Branch '${MERGED_BRANCH}' does not match the" \
+              "required pattern ^v[0-9]+\\.[0-9]+-documentation$ - skipping."
+            exit 1
+          fi
+          echo "Branch validated: ${MERGED_BRANCH}"
           echo "Looking for the next open milestone in mattermost/mattermost..."
  
       # 2. Find the earliest open milestone in mattermost/mattermost
@@ -58,7 +94,7 @@ jobs:
       - name: Find next open milestone
         id: milestone
         env:
-          GH_TOKEN: ${{ secrets.DEV_REPOS_PAT }}
+          GH_TOKEN: ${{ steps.token.outputs.token }}
         run: |
           # Fetch all open milestones, sort by due date (nulls last), take the first
           NEXT_TITLE=$(gh api repos/mattermost/mattermost/milestones \
