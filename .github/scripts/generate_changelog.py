@@ -342,7 +342,7 @@ def main():
     if go_version:
         go_section = f"### Go Version\n  - Updated to ``{go_version}``."
     else:
-        go_section = f"### Go Version\n  - Go version is the same as in the previous release."
+        go_section = "### Go Version\n  - Go version is the same as in the previous release."
  
     if all_notes:
         polished = polish_with_ai(all_notes)
@@ -356,8 +356,13 @@ def main():
         # Inject the Go Version section: replace the placeholder heading the AI outputs,
         # or append it before ### Security / ### Open Source Components if present,
         # or append at the end if no Go Version heading exists in the output.
-        if "### Go Version" in polished:
-            polished = re.sub(r"### Go Version\s*\n?", go_section + "\n", polished)
+        if re.search(r"(?m)^### Go Version\b", polished):
+            polished = re.sub(
+                r"(?ms)^### Go Version\b.*?(?=^### \S|\Z)",
+                go_section + "\n\n",
+                polished,
+                count=1,
+            )
         else:
             polished = polished.rstrip() + "\n\n" + go_section + "\n"
         entry += polished + "\n"
