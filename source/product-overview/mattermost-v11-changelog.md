@@ -121,7 +121,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Fixed a spurious "prop must be a valid URL" warning that was logged when handling slash command responses that had no icon URL configured.
  - Fixed a bot import panic when user exists without bot record.
  - Fixed an issue where file attachments synced over a shared channel through a plugin (using the ``OnSharedChannelsAttachmentSyncMsg`` / ``ReceiveSharedChannelAttachmentSyncMsg`` plugin API pair) were stored on the receiving server but did not appear in the corresponding post, because the saved FileInfo was given a new ID instead of preserving the sender's file ID referenced by the post.
- - Fixed a regression saving various masked fields from the System Console.
+ - Fixed a regression saving various [masked fields](https://docs.mattermost.com/administration-guide/manage/admin/generating-support-packet.html) from the System Console.
 
 ### API Changes
  - Added a new ``GET /api/v4/content_flagging/post/<post_id>/report`` endpoint for generating and downloading a content flagging report for a flagged post.
