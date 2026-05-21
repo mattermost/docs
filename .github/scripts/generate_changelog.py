@@ -21,9 +21,10 @@ Expects these environment variables:
 import os
 import re
 import sys
-import time
 import requests
 from datetime import date
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
  
 GITHUB_TOKEN = os.environ["GITHUB_TOKEN"]
 REPOS = [r.strip() for r in os.environ["REPOS"].split(",") if r.strip()]
@@ -39,31 +40,21 @@ HEADERS = {
 # Prevents the workflow from hanging indefinitely if the API stalls.
 API_TIMEOUT = 30
  
- 
-def make_github_request(url: str, params: dict = None) -> requests.Response:
-    """
-    Make a GitHub API GET request with rate-limit awareness and retry.
- 
-    If the API returns a 429 or a 403 rate-limit response, waits until the
-    rate-limit window resets (X-RateLimit-Reset header) then retries.
-    Raises on any other non-2xx response.
-    """
-    for attempt in range(4):
-        resp = requests.get(url, headers=HEADERS, params=params, timeout=API_TIMEOUT)
-        if resp.status_code in (429, 403) and (
-            resp.status_code == 429
-            or "rate limit" in resp.text.lower()
-            or int(resp.headers.get("X-RateLimit-Remaining", "1")) == 0
-        ):
-            reset_at = int(resp.headers.get("X-RateLimit-Reset", time.time() + 60))
-            wait = max(reset_at - int(time.time()), 1)
-            print(f"  ⏳ Rate limited — waiting {wait}s before retry (attempt {attempt + 1}/3)...")
-            time.sleep(wait)
-            continue
-        resp.raise_for_status()
-        return resp
-    resp.raise_for_status()  # final raise if all retries exhausted
-    return resp
+# Standard requests retry strategy using urllib3 — handles transient failures
+# (rate limits, server errors) with exponential back-off and respects Retry-After.
+GITHUB_RETRY = Retry(
+    total=5,
+    connect=5,
+    read=5,
+    backoff_factor=1,
+    status_forcelist=(429, 500, 502, 503, 504),
+    allowed_methods=frozenset(["GET"]),
+    respect_retry_after_header=True,
+)
+GITHUB_ADAPTER = HTTPAdapter(max_retries=GITHUB_RETRY)
+SESSION = requests.Session()
+SESSION.headers.update(HEADERS)
+SESSION.mount("https://", GITHUB_ADAPTER)
  
 SYSTEM_PROMPT = """You are an expert technical writer and copyeditor for Mattermost software release notes. Your task is to transform raw, unstructured release notes from pull requests into a clean, categorized, and grammatically correct changelog entry that matches Mattermost's established changelog format exactly.
  
@@ -140,7 +131,8 @@ def get_milestone_number(repo: str, title: str) -> int | None:
             "sort": "due_on",       # sort by due date
             "direction": "desc",    # most recently due first, so active milestones are found quickly
         }
-        resp = make_github_request(url, params=params)
+        resp = SESSION.get(url, params=params, timeout=API_TIMEOUT)
+        resp.raise_for_status()
         milestones = resp.json()
         if not milestones:
             break
@@ -168,7 +160,8 @@ def get_merged_prs(repo: str, milestone_number: int) -> list:
             "per_page": 100,
             "page": page,
         }
-        resp = make_github_request(url, params=params)
+        resp = SESSION.get(url, params=params, timeout=API_TIMEOUT)
+        resp.raise_for_status()
         items = resp.json()
         if not items:
             break
@@ -181,7 +174,8 @@ def get_merged_prs(repo: str, milestone_number: int) -> list:
                 # merged_at can be null for very recently merged PRs due to an API
                 # propagation delay. Verify directly against the Pulls API.
                 pr_url = f"https://api.github.com/repos/{repo}/pulls/{item['number']}"
-                pr_resp = make_github_request(pr_url)
+                pr_resp = SESSION.get(pr_url, timeout=API_TIMEOUT)
+                pr_resp.raise_for_status()
                 if pr_resp.json().get("merged"):
                     prs.append(item)
         page += 1
