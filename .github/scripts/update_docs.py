@@ -31,6 +31,11 @@ VERSION = os.environ["VERSION"]
 RELEASE_DATE = os.environ["RELEASE_DATE"]
 INSTRUCTIONS = os.environ.get("INSTRUCTIONS", "").strip()
  
+# Upper bound on Claude's output per file. Most docs files are a few thousand
+# tokens; 32 000 provides ample headroom without approaching the model's 64 k
+# output limit. Raise this if a truncation error is ever hit.
+MAX_TOKENS = 32000
+ 
 # ---------------------------------------------------------------------------
 # File lists per component / release type
 #
@@ -44,6 +49,8 @@ SERVER_FILES = [
     "source/product-overview/mattermost-server-releases.md",
     "source/deployment-guide/server/linux/deploy-rhel.rst",
     "source/deployment-guide/server/linux/deploy-tar.rst",
+    # Included because server ESR releases update the compatible desktop version
+    # reference on this page. Remove if that is no longer the case.
     "source/product-overview/mattermost-desktop-releases.md",
     "source/product-overview/release-policy.md",
     "source/administration-guide/upgrade/open-source-components.rst",
@@ -142,11 +149,15 @@ def update_file(client: anthropic.Anthropic, filepath: str) -> None:
     print(f"  Sending to Claude...")
     response = client.messages.create(
         model="claude-sonnet-4-6",
-        max_tokens=16000,
+        max_tokens=MAX_TOKENS,
         system=SYSTEM_PROMPT,
         messages=[{"role": "user", "content": build_user_prompt(filepath, original)}],
     )
  
+    # --- API response integrity checks (raise → file marked as failed) ---
+    # These guard against malformed or truncated API responses before we touch
+    # the file. They are distinct from the content-quality guards below, which
+    # are softer checks that skip a file with a warning rather than failing it.
     if not response.content or response.content[0].type != "text":
         raise RuntimeError(
             f"Unexpected API response structure for {filepath}: "
@@ -154,21 +165,13 @@ def update_file(client: anthropic.Anthropic, filepath: str) -> None:
         )
     if response.stop_reason == "max_tokens":
         raise RuntimeError(
-            f"Claude hit max_tokens (16000) for {filepath}; output is truncated. "
-            "Increase max_tokens or split the file."
+            f"Claude hit max_tokens ({MAX_TOKENS}) for {filepath}; output is truncated. "
+            "Increase MAX_TOKENS or split the file."
         )
-    if not response.content or response.content[0].type != "text":
-        raise RuntimeError(
-            f"Unexpected API response structure for {filepath}: "
-            f"content={response.content!r}"
-        )
-    if response.stop_reason == "max_tokens":
-        raise RuntimeError(
-            f"Claude hit max_tokens ({max_tokens}) for {filepath}; output is truncated. "
-            "Increase max_tokens or split the file."
-        )
+ 
     updated = response.content[0].text
  
+    # --- Content quality guards (skip with warning, file not marked failed) ---
     # Safety: don't write empty content
     if not updated.strip():
         print(f"  ERROR: Claude returned empty content for {filepath} — skipping.")
@@ -212,7 +215,11 @@ def main():
         print(f"    {f}")
     print()
  
-    client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+    client = anthropic.Anthropic(
+        api_key=os.environ["ANTHROPIC_API_KEY"],
+        timeout=120.0,   # seconds per request; prevents hung runs on slow responses
+        max_retries=2,   # default is 2; made explicit for clarity
+    )
  
     errors = []
     for filepath in files:
