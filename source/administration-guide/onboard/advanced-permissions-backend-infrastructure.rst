@@ -244,7 +244,7 @@ Permissions in Mattermost are a property of the server code base and are not cre
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | manage_channel_access_rules                  | channel | Manage attribute-based access control rules for channels.                                                                                                                                             |
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| manage_team_access_rules                     | team    | Manage attribute-based access control membership policies for private channels within a team.                                                                                                         |
+| manage_team_access_rules                     | team    | Manage attribute-based channel membership policies for a team from Team Settings.                                                                                                                     |
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ``Roles`` field
