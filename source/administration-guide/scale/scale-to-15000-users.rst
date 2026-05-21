@@ -94,14 +94,14 @@ Requirements
    <td>1</td>
    <td>4/32</td>
    <td>db.r7g.xlarge</td>
-   <td>E4as v6</td>
+   <td>E4ds v5</td>
    </tr>
    <tr>
    <td>RDS Reader</td>
    <td>1</td>
    <td>4/32</td>
    <td>db.r7g.xlarge</td>
-   <td>E4as v6</td>
+   <td>E4ds v5</td>
    </tr>
    <tr>
    <td>Elasticsearch Node</td>

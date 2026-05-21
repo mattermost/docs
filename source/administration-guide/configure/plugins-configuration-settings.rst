@@ -72,17 +72,17 @@ Enable plugins
   :configjson: .PluginSettings.RequirePluginSignature
   :environment: MM_PLUGINSETTINGS_REQUIREPLUGINSIGNATURE
 
-  - **true**: **(Default)** Enables plugin signature validation for managed and unmanaged plugins.
-  - **false**: Disables plugin signature validation for managed and unmanaged plugins.
+  - **true**: Enables plugin signature validation for managed and unmanaged plugins.
+  - **false**: **(Default)** Disables plugin signature validation for managed and unmanaged plugins.
 
 Require plugin signature
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| - **true**: **(Default)** Enables plugin signature validation for managed and unmanaged plugins.                                                                                      | - System Config path: **Plugins > Plugin Management**                                  |
-| - **false**: Disables plugin signature validation for managed and unmanaged plugins.                                                                                                  | -  ``config.json`` setting: ``PluginSettings`` > ``RequirePluginSignature`` > ``true`` |
-|                                                                                                                                                                                       | - Environment variable: ``MM_PLUGINSETTINGS_REQUIREPLUGINSIGNATURE``                   |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| - **true**: Enables plugin signature validation for managed and unmanaged plugins.                                                                                                    | - System Config path: **Plugins > Plugin Management**                                   |
+| - **false**: **(Default)** Disables plugin signature validation for managed and unmanaged plugins.                                                                                    | -  ``config.json`` setting: ``PluginSettings`` > ``RequirePluginSignature`` > ``false`` |
+|                                                                                                                                                                                       | - Environment variable: ``MM_PLUGINSETTINGS_REQUIREPLUGINSIGNATURE``                    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 
 .. note::
   - This setting is applicable to self-hosted deployments only.
