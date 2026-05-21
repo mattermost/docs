@@ -50,7 +50,6 @@ SERVER_FILES = [
     "source/deployment-guide/server/linux/deploy-rhel.rst",
     "source/deployment-guide/server/linux/deploy-tar.rst",
     # Included because server ESR releases update the compatible desktop version
-    # reference on this page. Remove if that is no longer the case.
     "source/product-overview/mattermost-desktop-releases.md",
     "source/product-overview/release-policy.md",
     "source/administration-guide/upgrade/open-source-components.rst",
