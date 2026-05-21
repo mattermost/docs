@@ -92,6 +92,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Downgraded Hungarian translations from Beta to Alpha.
  - The Custom Profile Attributes property group is renamed from ``custom_profile_attributes`` to ``access_control``, and CPA fields and values are migrated from the legacy property model to the v2 model. The functionality of the CPA feature is unchanged. Plugin developers that use CPA will need to register against the new group name.
  - Clarified error messages on potential permission migrations.
+ - Added support for permission-action rules (file upload, file download) on channel-scope access control policies, with a new "Simulate access" modal in System Console and Channel Settings that previews per-user, per-action decisions before saving. Gated by the existing ``PermissionPolicies`` feature flag and the Enterprise Advanced license.
 
 #### Performance
  - Improved memory usage and performance when processing images (resizing, thumbnails, and orientation correction).
@@ -128,6 +129,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Added ``GET /api/v4/teams/{team_id}/channels/recommended`` endpoint and an ``abac_match_only`` query parameter on ``GET /api/v4/users`` to support Membership Policy advisory semantics for public channels.
  - Updated ``POST /api/v4/users/{user_id}/demote`` to return ``400`` when ``user_id`` is a bot account; bot accounts cannot be converted to guests.
  - Added a new endpoint to fetch users by their auth_data GET ``/api/v4/users/auth_data?value={auth_data}``. Only available to sysadmins.
+ - Added ``POST /cel/simulate_users`` (``simulatePolicyForUsers``) API endpoint.
 
 ### WebSocket Event Changes
  - The ``channel_converted`` WebSocket event now includes the channel type, enabling clients to update the sidebar channel icon when a channel's privacy changes.
