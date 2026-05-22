@@ -60,7 +60,7 @@ On an internet connected machine, you must gather all required packages, contain
     **(Optional) Supporting Services**
     Consider downloading these additional resources if you plan to enable these optional components:
 
-    - :doc:`Mattermost Calls </administration-guide/configure/calls-deployment>`: `mattermost-calls-offloader <https://github.com/mattermost/calls-offloader/releases>`__ (required for recording, transcription and live captions) and `mattermost-rtcd <https://github.com/mattermost/rtcd/releases>`__ (required for performance and scalability).
+    - :doc:`Mattermost Calls </administration-guide/configure/calls-deployment-guide>`: `mattermost-calls-offloader <https://github.com/mattermost/calls-offloader/releases>`__ (required for recording, transcription and live captions) and `mattermost-rtcd <https://github.com/mattermost/rtcd/releases>`__ (required for performance and scalability).
     - `Elasticsearch <https://www.elastic.co/downloads/elasticsearch>`__ can be `deployed <https://www.elastic.co/docs/deploy-manage/deploy/self-managed/installing-elasticsearch>`__ for enhanced search performance at scale.
     - `Prometheus <https://prometheus.io/download/>`_ and `Grafana <https://grafana.com/grafana/download>`__ for monitoring and observability
 
@@ -79,7 +79,7 @@ On an internet connected machine, you must gather all required packages, contain
     **(Optional) Supporting Services**
     Consider downloading these additional resources if you plan to enable these optional components:
 
-    - :doc:`Mattermost Calls </administration-guide/configure/calls-deployment>` helm charts: `mattermost-calls-offloader <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-calls-offloader>`__ and `values <https://github.com/mattermost/mattermost-helm/blob/master/charts/mattermost-calls-offloader/values.yaml>`__ (required for recording, transcription and live captions), `mattermost-rtcd <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-rtcd>`__ and `values <https://github.com/mattermost/mattermost-helm/blob/master/charts/mattermost-rtcd/values.yaml>`__ (required for performance and scalability).
+    - :doc:`Mattermost Calls </administration-guide/configure/calls-deployment-guide>` helm charts: `mattermost-calls-offloader <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-calls-offloader>`__ and `values <https://github.com/mattermost/mattermost-helm/blob/master/charts/mattermost-calls-offloader/values.yaml>`__ (required for recording, transcription and live captions), `mattermost-rtcd <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-rtcd>`__ and `values <https://github.com/mattermost/mattermost-helm/blob/master/charts/mattermost-rtcd/values.yaml>`__ (required for performance and scalability).
     - `Elasticsearch <https://www.elastic.co/docs/deploy-manage/deploy/cloud-on-k8s>`__ can be `deployed in air-gapped k8 environments <https://www.elastic.co/guide/en/cloud-on-k8s/2.8/k8s-air-gapped.html>`__ for enhanced search performance at scale.
     - `Prometheus <https://github.com/prometheus-operator/prometheus-operator>`__ and `Grafana <https://github.com/grafana/grafana-operator>`__ operators for monitoring and observability
 
@@ -97,7 +97,7 @@ On an internet connected machine, you must gather all required packages, contain
     **(Optional) Supporting Services**
     Consider downloading these additional resources if you plan to enable these optional components:
 
-    - :doc:`Mattermost Calls </administration-guide/configure/calls-deployment>` images: `calls-offloader <https://hub.docker.com/r/mattermost/calls-offloader>`__ (required for recording, transcription and live captions) and `rtcd <https://hub.docker.com/r/mattermost/rtcd>`__ (required for performance and scalability).
+    - :doc:`Mattermost Calls </administration-guide/configure/calls-deployment-guide>` images: `calls-offloader <https://hub.docker.com/r/mattermost/calls-offloader>`__ (required for recording, transcription and live captions) and `rtcd <https://hub.docker.com/r/mattermost/rtcd>`__ (required for performance and scalability).
     - `Elasticsearch <https://hub.docker.com/_/elasticsearch>`__ image for enhanced search performance at scale.
     - `Prometheus <https://hub.docker.com/r/prom/prometheus>`__ and `Grafana <https://hub.docker.com/r/grafana/grafana>`__ images for monitoring and observability.
 
