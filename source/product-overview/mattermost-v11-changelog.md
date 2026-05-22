@@ -139,6 +139,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Added a new audit log ``AuditEventMarkRecapsAsViewed`` for adding an unread badge to Recaps.
  - Added new audit logs ``AuditEventMarkMessagesRead and AuditEventMarkTeamRead`` for adding a new shortcut to mark all channels as read.
  - Added a new audit log ``AuditEventCreateBoard`` for integrated boards.
+ - ``AuditEventCreateChannelJoinRequest``, ``AuditEventUpdateChannelJoinRequest`` and ``AuditEventWithdrawChannelJoinRequest`` for discoverable private channels.
 
 ### Go Version
  - v11.8 is built with Go ``v1.26.3``.
