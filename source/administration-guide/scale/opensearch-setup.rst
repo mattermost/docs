@@ -191,7 +191,7 @@ We highly recommend that you set up an AWS OpenSearch server on a separate machi
         "Statement": [{
           "Effect": "Allow",
           "Principal": { "AWS": "*" },
-          "Action": "es:*",
+          "Action": "es:ESHttp*",
           "Resource": "arn:aws:es:us-east-1:123456789012:domain/mattermost-os/*" }]
       }
 
@@ -279,7 +279,7 @@ We highly recommend that you set up an AWS OpenSearch server on a separate machi
           "Principal": {
             "AWS": "*"
           },
-            "Action": "es:*",
+            "Action": "es:ESHttp*",
             "Resource": "arn:aws:es:us-east-1:123456789012:domain/mattermost-os/*"
           }]
         }
