@@ -182,19 +182,21 @@ We highly recommend that you set up an AWS OpenSearch server on a separate machi
   .. note::
      Port 9200 is commonly used for local or on-premise OpenSearch. The AWS OpenSearch domain only supports HTTPS over port 443.
 
-  5. Configure the access policy (JSON):
+  5. Configure the access policy (JSON). Mattermost doesn't sign OpenSearch requests with AWS SigV4, so restrict access at the network layer with the VPC and security group from step 4, and use an open principal in the domain access policy:
 
     .. code-block:: sh
 
       {
-        "Version": "2012-10-17", 
-        "Statement": [{ 
-          "Effect": "Allow", 
-          "Principal": { "AWS": 
-      "arn:aws:iam::123456789012:role/MattermostAppRole" }, 
-          "Action": "es:*", 
-          "Resource": "arn:aws:es:us-east-1:123456789012:domain/mattermost-os/*" }] 
+        "Version": "2012-10-17",
+        "Statement": [{
+          "Effect": "Allow",
+          "Principal": { "AWS": "*" },
+          "Action": "es:*",
+          "Resource": "arn:aws:es:us-east-1:123456789012:domain/mattermost-os/*" }]
       }
+
+  .. warning::
+     IAM principal-based access policies (for example, ``"Principal": { "AWS": "arn:aws:iam::<account-id>:role/<role-name>" }``) are not supported. Mattermost's OpenSearch client doesn't sign requests with AWS SigV4, so AWS treats the requests as anonymous and an IAM-restricted policy will reject them with ``User: anonymous is not authorized to perform: es:ESHttpGet``. If you need authentication enforced at the OpenSearch layer rather than the network layer, enable `fine-grained access control <https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html>`_ on the domain with an internal master user, and enter those credentials as the **Server Username** and **Server Password** in the Mattermost Elasticsearch configuration.
 
   6. Configure the following advanced settings (JSON):
 
@@ -269,16 +271,16 @@ We highly recommend that you set up an AWS OpenSearch server on a separate machi
           "action.destructive_requires_name" = "false" 
         }
 
-        access_policies = <<POLICY 
+        access_policies = <<POLICY
       {
-        "Version": "2012-10-17", 
-        "Statement": [{ 
-          "Effect": "Allow", 
-          "Principal": { 
-            "AWS": "arn:aws:iam::123456789012:role/MattermostAppRole" 
+        "Version": "2012-10-17",
+        "Statement": [{
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "*"
           },
-            "Action": "es:*", 
-            "Resource": "arn:aws:es:us-east-1:123456789012:domain/mattermost-os/*" 
+            "Action": "es:*",
+            "Resource": "arn:aws:es:us-east-1:123456789012:domain/mattermost-os/*"
           }]
         }
         POLICY
