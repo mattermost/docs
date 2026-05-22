@@ -14,7 +14,7 @@ Required environment variables:
   RELEASE_DATE       — Human-readable release date, e.g. "May 15, 2026"
  
 Optional:
-  INSTRUCTIONS       — Free-form additional context passed through to Claude
+  ESR_END_DATE       — ESR end-of-support date, e.g. "November 15, 2026"
 """
  
 import os
@@ -29,12 +29,18 @@ COMPONENT = os.environ["COMPONENT"]          # Server | Mobile | Desktop
 RELEASE_TYPE = os.environ["RELEASE_TYPE"]    # ESR | Feature Release | etc.
 VERSION = os.environ["VERSION"]
 RELEASE_DATE = os.environ["RELEASE_DATE"]
-INSTRUCTIONS = os.environ.get("INSTRUCTIONS", "").strip()
+ESR_END_DATE = os.environ.get("ESR_END_DATE", "").strip()
  
 # Upper bound on Claude's output per file. Most docs files are a few thousand
 # tokens; 32 000 provides ample headroom without approaching the model's 64 k
 # output limit. Raise this if a truncation error is ever hit.
 MAX_TOKENS = 32000
+ 
+# Maximum characters to send to Claude per file. Changelog files can grow very
+# large over time, but new entries always go near the top so only the head is
+# needed for context. The tail is preserved and re-appended after Claude's edit.
+# Increase if Claude needs more history; decrease to reduce token usage.
+MAX_SEND_CHARS = 50_000
  
 # ---------------------------------------------------------------------------
 # File lists per component / release type
@@ -45,11 +51,11 @@ MAX_TOKENS = 32000
 # ---------------------------------------------------------------------------
  
 SERVER_FILES = [
-    "source/product-overview/mattermost-v11-changelog.md",
     "source/product-overview/mattermost-server-releases.md",
     "source/deployment-guide/server/linux/deploy-rhel.rst",
     "source/deployment-guide/server/linux/deploy-tar.rst",
     # Included because server ESR releases update the compatible desktop version
+    # reference on this page. Remove if that is no longer the case.
     "source/product-overview/mattermost-desktop-releases.md",
     "source/product-overview/release-policy.md",
     "source/administration-guide/upgrade/open-source-components.rst",
@@ -109,7 +115,7 @@ Rules:
  
  
 def build_user_prompt(filepath: str, content: str) -> str:
-    extra = f"\n\nAdditional instructions:\n{INSTRUCTIONS}" if INSTRUCTIONS else ""
+    esr_note = f"\n- ESR end-of-support date: {ESR_END_DATE}" if ESR_END_DATE else ""
  
     return f"""Update the following Mattermost documentation file for a new release.
  
@@ -117,7 +123,7 @@ Release details:
 - Component: {COMPONENT}
 - Version: {VERSION}
 - Release type: {RELEASE_TYPE}
-- Release date: {RELEASE_DATE}{extra}
+- Release date: {RELEASE_DATE}{esr_note}
  
 Use the release details and your knowledge of Mattermost documentation conventions \
 to determine what changes are needed. If this release type does not affect this file, \
@@ -136,21 +142,38 @@ Return the complete file content only."""
 # File update logic
 # ---------------------------------------------------------------------------
  
-def update_file(client: anthropic.Anthropic, filepath: str) -> None:
+def update_file(client: anthropic.Anthropic, filepath: str) -> str:
+    """Update a single documentation file via the Claude API.
+ 
+    Returns one of: "updated", "unchanged", "skipped", "not_found".
+    Raises on hard failures (I/O errors, API errors) so the caller can track them.
+    """
     print(f"  Reading {filepath}...")
     try:
         with open(filepath, "r", encoding="utf-8") as f:
             original = f.read()
     except FileNotFoundError:
         print(f"  WARNING: {filepath} not found — skipping.")
-        return
+        return "not_found"
+ 
+    # Large changelogs only need recent context; new entries go near the top.
+    # Send only the head and reconstruct the full file afterward.
+    truncated = len(original) > MAX_SEND_CHARS
+    send_content = original[:MAX_SEND_CHARS] if truncated else original
+    tail = original[MAX_SEND_CHARS:] if truncated else ""
+ 
+    if truncated:
+        print(
+            f"  NOTE: File is {len(original):,} chars; "
+            f"sending first {MAX_SEND_CHARS:,} chars to Claude."
+        )
  
     print(f"  Sending to Claude...")
     response = client.messages.create(
         model="claude-sonnet-4-6",
         max_tokens=MAX_TOKENS,
         system=SYSTEM_PROMPT,
-        messages=[{"role": "user", "content": build_user_prompt(filepath, original)}],
+        messages=[{"role": "user", "content": build_user_prompt(filepath, send_content)}],
     )
  
     # --- API response integrity checks (raise → file marked as failed) ---
@@ -170,29 +193,33 @@ def update_file(client: anthropic.Anthropic, filepath: str) -> None:
  
     updated = response.content[0].text
  
-    # --- Content quality guards (skip with warning, file not marked failed) ---
+    # --- Content quality guards (return "skipped", file not marked failed) ---
     # Safety: don't write empty content
     if not updated.strip():
-        print(f"  ERROR: Claude returned empty content for {filepath} — skipping.")
-        return
+        print(f"  WARNING: Claude returned empty content for {filepath} — skipping.")
+        return "skipped"
  
-    # Safety: skip if response is dramatically shorter (possible truncation)
-    if len(updated) < len(original) * 0.5:
+    # Safety: skip if response is dramatically shorter than what was sent
+    if len(updated) < len(send_content) * 0.5:
         print(
-            f"  WARNING: Updated content for {filepath} is less than 50% of original "
-            "length. Skipping to avoid data loss."
+            f"  WARNING: Updated content for {filepath} is less than 50% of sent "
+            "content length. Skipping to avoid data loss."
         )
-        return
+        return "skipped"
  
-    # No-op: file is unchanged
-    if updated.strip() == original.strip():
+    # No-op: the sent portion is unchanged (compare against what was sent, not full file)
+    if updated.strip() == send_content.strip():
         print(f"  No changes needed — {filepath} left as-is.")
-        return
+        return "unchanged"
+ 
+    # Reconstruct: Claude's updated head + the untouched tail (if file was truncated)
+    final_content = updated + tail if truncated else updated
  
     with open(filepath, "w", encoding="utf-8") as f:
-        f.write(updated)
+        f.write(final_content)
  
     print(f"  Done — {filepath} updated.")
+    return "updated"
  
  
 # ---------------------------------------------------------------------------
@@ -207,8 +234,8 @@ def main():
     print(f"  Release type: {RELEASE_TYPE}")
     print(f"  Version:      {VERSION}")
     print(f"  Release date: {RELEASE_DATE}")
-    if INSTRUCTIONS:
-        print(f"  Instructions: {INSTRUCTIONS}")
+    if ESR_END_DATE:
+        print(f"  ESR end date: {ESR_END_DATE}")
     print(f"  Files ({len(files)}):")
     for f in files:
         print(f"    {f}")
@@ -220,23 +247,41 @@ def main():
         max_retries=2,   # default is 2; made explicit for clarity
     )
  
-    errors = []
+    results: dict[str, list[str]] = {
+        "updated": [],
+        "unchanged": [],
+        "skipped": [],
+        "not_found": [],
+    }
+    errors: list[tuple[str, str]] = []
+ 
     for filepath in files:
         print(f"Processing: {filepath}")
         try:
-            update_file(client, filepath)
+            status = update_file(client, filepath)
+            results[status].append(filepath)
         except (OSError, anthropic.APIStatusError, anthropic.APIConnectionError, RuntimeError) as e:
             print(f"  ERROR [{type(e).__name__}] processing {filepath}: {e}")
             errors.append((filepath, f"{type(e).__name__}: {e}"))
         print()
+ 
+    # Summary — always printed so operators can see what actually happened
+    print("--- Summary ---")
+    print(f"  Updated:   {len(results['updated'])}")
+    print(f"  Unchanged: {len(results['unchanged'])}")
+    print(f"  Skipped:   {len(results['skipped'])}  (warnings above)")
+    print(f"  Not found: {len(results['not_found'])}")
+    print(f"  Errors:    {len(errors)}")
  
     if errors:
         print(f"\n{len(errors)} file(s) failed:")
         for fp, err in errors:
             print(f"  {fp}: {err}")
         sys.exit(1)
+    elif results["skipped"] or results["not_found"]:
+        print("\nCompleted with warnings — review skipped/not-found files above.")
     else:
-        print("All files processed successfully.")
+        print("\nAll files processed successfully.")
  
  
 if __name__ == "__main__":
