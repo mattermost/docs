@@ -353,8 +353,8 @@ def main():
             print(f"ℹ️  No blog post URL provided — using auto-constructed URL: {blog_url}")
         polished = polished.replace("BLOG_POST_URL", blog_url)
         # Inject the Go Version section: replace the placeholder heading the AI outputs,
-        # or append it before ### Security / ### Open Source Components if present,
-        # or append at the end if no Go Version heading exists in the output.
+        # or insert it before ### Open Source Components / ### Security to preserve
+        # section order, or append at the end if neither anchor exists.
         if re.search(r"(?m)^### Go Version\b", polished):
             polished = re.sub(
                 r"(?ms)^### Go Version\b.*?(?=^### \S|\Z)",
@@ -363,7 +363,14 @@ def main():
                 count=1,
             )
         else:
-            polished = polished.rstrip() + "\n\n" + go_section + "\n"
+            anchor = re.search(
+                r"(?m)^### (?:Open Source Components|Security)\b", polished
+            )
+            if anchor:
+                idx = anchor.start()
+                polished = polished[:idx].rstrip() + "\n\n" + go_section + "\n\n" + polished[idx:]
+            else:
+                polished = polished.rstrip() + "\n\n" + go_section + "\n"
         entry += polished + "\n"
     else:
         entry += go_section + "\n"
