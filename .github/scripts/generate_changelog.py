@@ -20,7 +20,6 @@ Expects these environment variables:
  
 import os
 import re
-import sys
 import requests
 from datetime import date
 from requests.adapters import HTTPAdapter
