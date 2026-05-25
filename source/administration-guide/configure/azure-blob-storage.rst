@@ -95,21 +95,23 @@ Step 4: Configure Mattermost
 Sign in as a System Admin and open **System Console > Environment > File Storage**.
 
 1. **File storage system**: select **Azure Blob Storage**. The Azure-specific fields appear and the S3/local fields are hidden.
-2. **Azure Storage account**: the storage account name from step 1 (for example, ``acmemattermost``).
-3. **Azure container**: the container name from step 2 (for example, ``mattermost``).
-4. **Azure path prefix**: optional. Set this if you want Mattermost to write under a sub-path inside the container, for example ``prod/``. Leave empty to use the container root.
-5. **Azure Storage account key**: paste the shared key from step 3.
-6. **Azure endpoint**: leave empty to use the default ``{account}.blob.core.windows.net`` host, where ``{account}`` is the configured **Azure Storage account**. Set this only if you need a non-default host, for example ``azurite:10000`` for an Azurite emulator or a reverse-proxy ``host[:port]`` in front of Blob Storage.
-7. **Enable secure Azure Blob Storage connections**: keep this enabled (the default). Only disable it when pointing at a local emulator without TLS.
-8. **Azure request timeout (milliseconds)**: default is ``30000`` (30 seconds). Increase only if your network needs more time for large objects.
+2. **Azure cloud**: select the Azure cloud that hosts the storage account:
 
-Select **Test Connection**. Mattermost issues a no-op write/read/delete against the configured container using the credentials submitted in the form. A green ``Connection was successful`` message confirms the credentials, container name, and endpoint all work. A red error message includes the underlying reason -- common ones are listed in `Troubleshooting`_.
+   - **Azure Commercial** (default): the global Azure cloud (``{account}.blob.core.windows.net``). Only the storage account name is required.
+   - **Azure Government**: the US Government cloud (``{account}.blob.core.usgovcloudapi.net``). Only the storage account name is required.
+   - **Custom Endpoint**: any other Azure cloud (for example, Azure China), an Azurite emulator, or a reverse proxy. Provide the full Blob service URL via **Azure endpoint** below.
+
+3. **Azure Storage account**: the storage account name from step 1 (for example, ``acmemattermost``).
+4. **Azure container**: the container name from step 2 (for example, ``mattermost``).
+5. **Azure path prefix**: optional. Set this if you want Mattermost to write under a sub-path inside the container, for example ``prod/``. Leave empty to use the container root.
+6. **Azure Storage account key**: paste the shared key from step 3.
+7. **Azure endpoint** (visible only when **Azure cloud** is set to **Custom Endpoint**): the full Blob service URL, including scheme and storage account. Mattermost passes this URL to the Azure SDK unchanged, so the storage account must already be embedded in the hostname (vhost-style, for example ``https://acmemattermost.blob.core.chinacloudapi.cn/``) or in the path (path-style, for example ``http://localhost:10000/devstoreaccount1/`` for Azurite). Shared-key auth signs against the host this URL points at, so the host must serve the storage account named above.
+8. **Enable secure Azure Blob Storage connections** (visible only when **Azure cloud** is **Azure Commercial** or **Azure Government**): keep this enabled (the default). The Custom Endpoint cloud determines the scheme from the **Azure endpoint** URL, so this toggle is hidden for that mode.
+9. **Azure request timeout (milliseconds)**: default is ``30000`` (30 seconds). Increase only if your network needs more time for large objects.
+
+Select **Test Connection**. Mattermost issues a no-op write/read/delete against the configured container using the credentials submitted in the form. A green ``Connection was successful`` message confirms the credentials, container name, and endpoint all work. A red error message includes the underlying reason; common ones are listed in `Troubleshooting`_.
 
 Once the test succeeds, select **Save**.
-
-.. note::
-
-  Sovereign clouds (Azure Government, Azure China) use account-style hosts that Mattermost selects automatically when the **Azure endpoint** field is left empty. They are not configured through the endpoint override.
 
 .. warning::
 
@@ -296,7 +298,7 @@ Troubleshooting
   * - ``ContainerNotFound``
     - Container name is wrong or was created under a different storage account.
   * - ``connection refused`` or TLS errors
-    - **Azure endpoint** is set to a host that isn't reachable, or **Enable secure Azure Blob Storage connections** is disabled when the destination requires TLS.
+    - When **Azure cloud** is **Custom Endpoint**, the **Azure endpoint** URL points at a host that isn't reachable or uses the wrong scheme. When **Azure cloud** is **Azure Commercial** or **Azure Government**, **Enable secure Azure Blob Storage connections** is disabled in front of a TLS-only destination.
   * - **Test Connection** succeeds but uploads in channels fail
     - Check **System Console > Reporting > Server Logs** for the Azure error returned by the SDK. The most common cause is a forgotten server restart after **Save**.
   * - Files uploaded before the switch are no longer visible
@@ -312,6 +314,7 @@ Each Azure setting is documented in detail in :ref:`Environment configuration se
 - :ref:`Azure container <administration-guide/configure/environment-configuration-settings:azure container>` (``FileSettings.AzureContainer``)
 - :ref:`Azure path prefix <administration-guide/configure/environment-configuration-settings:azure path prefix>` (``FileSettings.AzurePathPrefix``)
 - :ref:`Azure Storage account key <administration-guide/configure/environment-configuration-settings:azure storage account key>` (``FileSettings.AzureAccessKey``)
+- :ref:`Azure cloud <administration-guide/configure/environment-configuration-settings:azure cloud>` (``FileSettings.AzureCloud``)
 - :ref:`Azure endpoint <administration-guide/configure/environment-configuration-settings:azure endpoint>` (``FileSettings.AzureEndpoint``)
 - :ref:`Enable secure Azure Blob Storage connections <administration-guide/configure/environment-configuration-settings:enable secure azure blob storage connections>` (``FileSettings.AzureSSL``)
 - :ref:`Azure request timeout <administration-guide/configure/environment-configuration-settings:azure request timeout>` (``FileSettings.AzureRequestTimeoutMilliseconds``)

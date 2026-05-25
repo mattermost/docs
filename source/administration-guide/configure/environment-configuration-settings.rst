@@ -2558,27 +2558,57 @@ Azure Storage account key
 
   Treat the shared key as a secret. Azure provides two keys to support rotation without downtime: update Mattermost to one key, regenerate the other, then swap on the next rotation cycle.
 
+.. config:setting:: azure-cloud
+  :displayname: Azure cloud (File Storage)
+  :systemconsole: Environment > File Storage
+  :configjson: .FileSettings.AzureCloud
+  :environment: MM_FILESETTINGS_AZURECLOUD
+  :description: Selects which Azure cloud hosts the storage account. One of ``commercial`` (default), ``government``, or ``custom``.
+
+Azure cloud
+~~~~~~~~~~~
+
++---------------------------------------------------------------+--------------------------------------------------------------------------+
+| Selects which Azure cloud Mattermost connects to. The choice  | - System Config path: **Environment > File Storage**                     |
+| determines which host the Azure SDK signs requests against.   | - ``config.json`` setting: ``FileSettings`` > ``AzureCloud``             |
+|                                                               | - Environment variable: ``MM_FILESETTINGS_AZURECLOUD``                   |
+| - ``commercial``: **(Default)** Vhost-style against           |                                                                          |
+|   ``{account}.blob.core.windows.net``. Only the storage       |                                                                          |
+|   account name is required.                                   |                                                                          |
+| - ``government``: Vhost-style against                         |                                                                          |
+|   ``{account}.blob.core.usgovcloudapi.net`` (Azure            |                                                                          |
+|   Government). Only the storage account name is required.     |                                                                          |
+| - ``custom``: Mattermost uses the value of                    |                                                                          |
+|   ``FileSettings.AzureEndpoint`` as the full Blob service     |                                                                          |
+|   URL. Use this for Azurite, reverse proxies, Azure China, or |                                                                          |
+|   any other Azure cloud that doesn't have a built-in preset.  |                                                                          |
++---------------------------------------------------------------+--------------------------------------------------------------------------+
+
 .. config:setting:: azure-endpoint
   :displayname: Azure endpoint (File Storage)
   :systemconsole: Environment > File Storage
   :configjson: .FileSettings.AzureEndpoint
   :environment: MM_FILESETTINGS_AZUREENDPOINT
-  :description: An optional host[:port] override for non-default endpoints. Leave empty to use the default ``{account}.blob.core.windows.net`` host.
+  :description: Full Blob service URL used when ``FileSettings.AzureCloud`` is ``custom``. Ignored for the ``commercial`` and ``government`` clouds.
 
 Azure endpoint
 ~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| An optional host[:port] override for non-default Azure        | - System Config path: **Environment > File Storage**                     |
-| endpoints such as an Azurite emulator or a reverse proxy in   | - ``config.json`` setting: ``FileSettings`` > ``AzureEndpoint``          |
-| front of Azure Blob Storage.                                  | - Environment variable: ``MM_FILESETTINGS_AZUREENDPOINT``                |
+| Full Blob service URL, including scheme and storage account.  | - System Config path: **Environment > File Storage**                     |
+| Used only when ``FileSettings.AzureCloud`` is ``custom``;     | - ``config.json`` setting: ``FileSettings`` > ``AzureEndpoint``          |
+| ignored for the ``commercial`` and ``government`` clouds      | - Environment variable: ``MM_FILESETTINGS_AZUREENDPOINT``                |
+| (which derive the URL from the storage account name).         |                                                                          |
 |                                                               |                                                                          |
-| Leave empty to use the default                                |                                                                          |
-| ``{account}.blob.core.windows.net`` host, where ``{account}`` |                                                                          |
-| is the configured **Azure Storage account**. Sovereign clouds |                                                                          |
-| such as Azure Government and Azure China are not supported    |                                                                          |
-| through this field -- they use account-style hosts that       |                                                                          |
-| Mattermost selects automatically when the endpoint is empty.  |                                                                          |
+| Mattermost passes this URL to the Azure SDK unchanged, so     |                                                                          |
+| the storage account must already be embedded in the hostname  |                                                                          |
+| (vhost-style, for example                                     |                                                                          |
+| ``https://acmemattermost.blob.core.chinacloudapi.cn/``) or in |                                                                          |
+| the path (path-style, for example                             |                                                                          |
+| ``http://localhost:10000/devstoreaccount1/`` for Azurite).    |                                                                          |
+| Shared-key auth signs against the host this URL points at, so |                                                                          |
+| make sure it actually serves the storage account configured   |                                                                          |
+| in ``FileSettings.AzureStorageAccount``.                      |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: enable-secure-azure-blob-storage-connections
@@ -4936,6 +4966,7 @@ Enable dedicated export filestore target
 |  - ``ExportAzureAccessKey``                                                          |                                                                         |
 |  - ``ExportAzureContainer``                                                          |                                                                         |
 |  - ``ExportAzurePathPrefix``                                                         |                                                                         |
+|  - ``ExportAzureCloud``                                                              |                                                                         |
 |  - ``ExportAzureEndpoint``                                                           |                                                                         |
 |  - ``ExportAzureSSL``                                                                |                                                                         |
 |  - ``ExportAzureRequestTimeoutMilliseconds``                                         |                                                                         |
