@@ -4,21 +4,14 @@
 # Place this file in:
 #   mattermost/docs -> .github/workflows/docs-pr-sync.yml
 #
-# Cross-repo authentication (choose one):
+# Authentication — reuses the write app from changelog automation:
 #
-#   Option A - GitHub App (recommended for production):
-#     vars.DOCS_APP_ID             - GitHub App ID (repository variable)
-#     secrets.DOCS_APP_PRIVATE_KEY - GitHub App private key
-#     The app must be installed on and granted pull-requests: write +
-#     issues: write for: mattermost/mattermost, mattermost/mattermost-mobile,
-#     mattermost/desktop.
+#   Write app (vars.CHANGELOG_WRITE_CLIENT_ID / secrets.CHANGELOG_WRITE_PRIVATE_KEY)
+#     Must be installed on mattermost/mattermost, mattermost/mattermost-mobile,
+#     and mattermost/desktop with pull-requests: write permission on each.
+#     This allows the bot to remove Docs/Needed and add Docs/Done on the
+#     original dev PR when a docs PR is closed.
 #     Short-lived installation tokens are generated automatically per run.
-#
-#   Option B - Fine-grained PAT (simpler setup, ties to a user account):
-#     secrets.DEV_REPOS_PAT - Fine-grained PAT with pull-requests: write +
-#                             issues: write on the three repos above.
-#     To use: replace steps.token.outputs.token with secrets.DEV_REPOS_PAT
-#             and remove the "Generate token" step.
 #
 # Behaviour:
 #   When a docs/mattermost-pr-* or docs/desktop-pr-* PR is closed
@@ -46,16 +39,15 @@ jobs:
       github.event.pull_request.head.repo.full_name == github.repository
  
     steps:
-      # 0. Generate a short-lived installation token scoped to the three
-      #    engineering repos. Uses a GitHub App so the token is not tied to any
-      #    individual user account and expires automatically after 1 hour.
-      #    See Option B in the header comment if you prefer a PAT instead.
-      - name: Generate token
+      # 0. Generate a short-lived write token scoped to the three engineering
+      #    repos. Uses the shared changelog write app so the token is not tied
+      #    to any individual user account and expires automatically after 1 hour.
+      - name: Generate write token
         id: token
         uses: actions/create-github-app-token@d72941d797fd3113feb6b93fd0dec494b13a2547 # v1
         with:
-          app-id: ${{ vars.DOCS_APP_ID }}
-          private-key: ${{ secrets.DOCS_APP_PRIVATE_KEY }}
+          app-id: ${{ vars.CHANGELOG_WRITE_CLIENT_ID }}
+          private-key: ${{ secrets.CHANGELOG_WRITE_PRIVATE_KEY }}
           repositories: >-
             mattermost,
             mattermost-mobile,
