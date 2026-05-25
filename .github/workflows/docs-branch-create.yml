@@ -4,20 +4,13 @@
 # Place this file in:
 #   mattermost/docs -> .github/workflows/docs-branch-create.yml
 #
-# Cross-repo authentication (choose one):
+# Authentication — reuses the read app from changelog automation:
 #
-#   Option A - GitHub App (recommended for production):
-#     vars.DOCS_APP_ID             - GitHub App ID (repository variable)
-#     secrets.DOCS_APP_PRIVATE_KEY - GitHub App private key
-#     The app must be installed on and granted read access to
-#     mattermost/mattermost milestones (contents: read is sufficient).
-#     Short-lived installation tokens are generated automatically per run.
-#
-#   Option B - Fine-grained PAT (simpler setup, ties to a user account):
-#     secrets.DEV_REPOS_PAT - Fine-grained PAT with read access to
-#                             mattermost/mattermost milestones.
-#     To use: replace steps.token.outputs.token with secrets.DEV_REPOS_PAT
-#             and remove the "Generate token" step.
+#   Read app (vars.CHANGELOG_READ_CLIENT_ID / secrets.CHANGELOG_READ_PRIVATE_KEY)
+#     Installed on mattermost/mattermost with contents: read.
+#     Used only to query open milestones (step 2).
+#     Branch creation in mattermost/docs uses the built-in GITHUB_TOKEN
+#     (the job already declares contents: write on that repo).
 #
 # Behaviour:
 #   When the current release docs branch (e.g. v11.6-documentation) is merged
@@ -58,17 +51,15 @@ jobs:
       endsWith(github.event.pull_request.head.ref, '-documentation')
  
     steps:
-      # 0. Generate a short-lived installation token scoped to
-      #    mattermost/mattermost for milestone reads.
-      #    Uses a GitHub App so the token is not tied to any individual user
-      #    account and expires automatically after 1 hour.
-      #    See Option B in the header comment if you prefer a PAT instead.
-      - name: Generate token
+      # 0. Generate a short-lived read token scoped to mattermost/mattermost
+      #    for milestone reads. Uses the shared changelog read app so the token
+      #    is not tied to any individual user account and expires after 1 hour.
+      - name: Generate read token
         id: token
         uses: actions/create-github-app-token@d72941d797fd3113feb6b93fd0dec494b13a2547 # v1
         with:
-          app-id: ${{ vars.DOCS_APP_ID }}
-          private-key: ${{ secrets.DOCS_APP_PRIVATE_KEY }}
+          app-id: ${{ vars.CHANGELOG_READ_CLIENT_ID }}
+          private-key: ${{ secrets.CHANGELOG_READ_PRIVATE_KEY }}
           repositories: mattermost
  
       # 1. Strict branch name validation
