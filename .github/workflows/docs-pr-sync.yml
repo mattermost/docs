@@ -44,7 +44,7 @@ jobs:
       #    to any individual user account and expires automatically after 1 hour.
       - name: Generate write token
         id: token
-        uses: actions/create-github-app-token@d72941d797fd3113feb6b93fd0dec494b13a2547 # v1
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
         with:
           app-id: ${{ vars.CHANGELOG_WRITE_CLIENT_ID }}
           private-key: ${{ secrets.CHANGELOG_WRITE_PRIVATE_KEY }}
@@ -80,6 +80,11 @@ jobs:
           echo "Dev PR resolved to: ${FULL_REPO}#${PR_NUMBER}"
  
       # 2. Update labels on the dev PR
+      #    Docs/Done is applied whether the docs PR was merged OR closed without
+      #    merging. An abandoned docs PR means the developer is handling docs
+      #    another way, or the feature was reverted; leaving Docs/Needed on the
+      #    dev PR indefinitely is worse. Docs/Needed can be re-applied if new
+      #    documentation is still required.
       - name: Update labels
         env:
           GH_TOKEN: ${{ steps.token.outputs.token }}
@@ -98,6 +103,7 @@ jobs:
           fi
  
           # Add Docs/Done (hard-fail - this must succeed)
+          # Applied for both merged and closed-without-merging; see comment above.
           gh pr edit "$DEV_PR" --repo "$DEV_REPO" --add-label "Docs/Done"
           echo "  Added Docs/Done"
  
