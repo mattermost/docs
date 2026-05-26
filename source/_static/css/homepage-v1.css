@@ -358,6 +358,34 @@ section#important-upgrade-notes table.align-default th:last-child {
   width: 75% !important;
 }
 
+/* Let short columns in Calls deployment tables shrink naturally. */
+section#mattermost-calls-deployment-guide table.align-default {
+  width: 100% !important;
+  min-width: unset !important;
+  table-layout: auto !important;
+}
+
+section#mattermost-calls-deployment-guide table.align-default td,
+section#mattermost-calls-deployment-guide table.align-default th {
+  min-width: 0 !important;
+  vertical-align: top !important;
+  overflow-wrap: break-word !important;
+}
+
+/* The first column is short across the checklist and verification tables. */
+section#mattermost-calls-deployment-guide table.align-default tr > :first-child {
+  width: 1% !important;
+  white-space: nowrap !important;
+}
+
+/* Port tables use 6 columns; the first 3 columns are consistently short. */
+section#mattermost-calls-deployment-guide table.align-default tr > :nth-child(1):nth-last-child(6),
+section#mattermost-calls-deployment-guide table.align-default tr > :nth-child(2):nth-last-child(5),
+section#mattermost-calls-deployment-guide table.align-default tr > :nth-child(3):nth-last-child(4) {
+  width: 1% !important;
+  white-space: nowrap !important;
+}
+
 ::-moz-selection {
   /* Code for Firefox */
   background: rgba(255, 188, 31, 0.2);
