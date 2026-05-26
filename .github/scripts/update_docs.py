@@ -114,8 +114,13 @@ Rules:
 """
  
  
-def build_user_prompt(filepath: str, content: str) -> str:
+def build_user_prompt(filepath: str, content: str, truncated: bool = False) -> str:
     esr_note = f"\n- ESR end-of-support date: {ESR_END_DATE}" if ESR_END_DATE else ""
+    truncation_note = (
+        "\nNOTE: This file was too large to send in full. You are seeing only the first "
+        f"{MAX_SEND_CHARS:,} characters. Return only this portion (updated as needed) — "
+        "do NOT attempt to reconstruct or append the rest of the file."
+    ) if truncated else ""
  
     return f"""Update the following Mattermost documentation file for a new release.
  
@@ -129,7 +134,7 @@ Use the release details and your knowledge of Mattermost documentation conventio
 to determine what changes are needed. If this release type does not affect this file, \
 return it unchanged.
  
-File path: {filepath}
+File path: {filepath}{truncation_note}
  
 --- BEGIN FILE CONTENT ---
 {content}
@@ -173,7 +178,7 @@ def update_file(client: anthropic.Anthropic, filepath: str) -> str:
         model="claude-sonnet-4-6",
         max_tokens=MAX_TOKENS,
         system=SYSTEM_PROMPT,
-        messages=[{"role": "user", "content": build_user_prompt(filepath, send_content)}],
+        messages=[{"role": "user", "content": build_user_prompt(filepath, send_content, truncated)}],
     )
  
     # --- API response integrity checks (raise → file marked as failed) ---
