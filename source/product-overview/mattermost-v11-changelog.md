@@ -26,6 +26,7 @@ Platform and OS scope reflects reported and tested environments and may not repr
    - Increased the PostgreSQL statistics-sampling target for ``posts.rootid`` and ``posts.channelid`` to 5000 and refreshes planner statistics, improving query plan accuracy for queries that filter or join on those columns with no table rewrite or downtime required.
    - Added two new values, ``'BO'`` and ``'BP'``, to the ``channel_type`` enum with no table rewrite or downtime required.
    - Added a ``LinkedFieldID`` column and index to ``PropertyFields``, renamed the CPA property group to ``access_control``, and narrowed the ``AttributeView`` materialized view to user-scoped attributes, with no large-table impact or downtime required.
+   - Added a ``ViewedAt`` column and ``idx_recaps_user_id_viewed_at`` index to ``Recaps`` via metadata-only ``ADD COLUMN`` and ``CREATE INDEX CONCURRENTLY``, with no table locks or downtime required.
 
 #### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
