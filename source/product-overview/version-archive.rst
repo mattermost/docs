@@ -11,11 +11,11 @@ If you want to check that the version of Mattermost you are installing is the of
 
 .. tab:: Mattermost Enterprise
 
-  Mattermost Enterprise Edition v11.7.1 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-7-extended-support-release>`__ - `Download <https://releases.mattermost.com/11.7.1/mattermost-11.7.1-linux-amd64.tar.gz?src=arc>`__
-    - ``https://releases.mattermost.com/11.7.1/mattermost-11.7.1-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``12e7b905ec9b8b789b31f0376786ce6f65179f5682e73b7a81721a8cbe1803c5``
-    - GPG Signature: https://releases.mattermost.com/11.7.1/mattermost-11.7.1-linux-amd64.tar.gz.sig
-    - SBOM Download Link: https://releases.mattermost.com/11.7.1/sbom-enterprise-v11.7.1.json
+  Mattermost Enterprise Edition v11.7.2 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-7-extended-support-release>`__ - `Download <https://releases.mattermost.com/11.7.2/mattermost-11.7.2-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/11.7.2/mattermost-11.7.2-linux-amd64.tar.gz``
+    - SHA-256 Checksum: ``TBD``
+    - GPG Signature: https://releases.mattermost.com/11.7.2/mattermost-11.7.2-linux-amd64.tar.gz.sig
+    - SBOM Download Link: https://releases.mattermost.com/11.7.2/sbom-enterprise-v11.7.2.json
   Mattermost Enterprise Edition v11.6.3 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-6-feature-release>`__ - `Download <https://releases.mattermost.com/11.6.3/mattermost-11.6.3-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/11.6.3/mattermost-11.6.3-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``b88fbcbbe919bf5a7e9add92f851cd119a65a69f4ac04f3e2583fc5ab6bb8aa6``
@@ -484,11 +484,11 @@ If you want to check that the version of Mattermost you are installing is the of
 
   We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to seamlessly unlock Enterprise features should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
 
-  Mattermost Team Edition v11.7.1 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-7-extended-support-release>`__ - `Download <https://releases.mattermost.com/11.7.1/mattermost-team-11.7.1-linux-amd64.tar.gz?src=arc>`__
-    - ``https://releases.mattermost.com/11.7.1/mattermost-team-11.7.1-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``a08c65869c94162ad506305801bddd31cfbd73fd597a20973eba2018d2deef05``
-    - GPG Signature: https://releases.mattermost.com/11.7.1/mattermost-team-11.7.1-linux-amd64.tar.gz.sig
-    - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v11.7.1/sbom-mattermost-v11.7.1.json
+  Mattermost Team Edition v11.7.2 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-7-extended-support-release>`__ - `Download <https://releases.mattermost.com/11.7.2/mattermost-team-11.7.2-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/11.7.2/mattermost-team-11.7.2-linux-amd64.tar.gz``
+    - SHA-256 Checksum: ``TBD``
+    - GPG Signature: https://releases.mattermost.com/11.7.2/mattermost-team-11.7.2-linux-amd64.tar.gz.sig
+    - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v11.7.2/sbom-mattermost-v11.7.2.json
   Mattermost Team Edition v11.6.3 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-6-feature-release>`__ - `Download <https://releases.mattermost.com/11.6.3/mattermost-team-11.6.3-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/11.6.3/mattermost-team-11.6.3-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``bfaaa7f479aadb9e1d38dc8c3e7f8b1ed1df065fd571c7c0372460c429961a86``
