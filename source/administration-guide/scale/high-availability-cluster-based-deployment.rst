@@ -57,7 +57,7 @@ Mattermost servers
 
    - **Kubernetes deployments:** Update the ``replicas`` field in the ``spec`` section of your ``mattermost-installation.yaml`` file to the desired number of servers (e.g., ``replicas: 2`` for a two-server cluster), then apply the updated manifest with ``kubectl apply -f mattermost-installation.yaml``.
 
-   - **Non-Kubernetes deployments:** Follow the :doc:`Deploy Mattermost on Linux </deployment-guide/server/deploy-mattermost-on-linux>` instructions to install the same version of Mattermost on each additional server.
+   - **Non-Kubernetes deployments:** Follow the :doc:`Deploy Mattermost on Linux </deployment-guide/server/deploy-linux>` instructions to install the same version of Mattermost on each additional server.
 
    If configuration is stored in the database, ensure the ``MM_CONFIG`` environment variable on each server points to the same database connection string. If using ``config.json`` files, ensure each server has an identical copy.
 
@@ -382,7 +382,7 @@ This section provides configuration instructions for NGINX, which is the most co
 
 5. **Configure TLS:** For production deployments, configure TLS on your NGINX proxy. See :doc:`Set up TLS </deployment-guide/server/setup-tls>` for detailed instructions on configuring TLS with NGINX. You can either use Let's Encrypt for automatic certificate management or provide your own TLS certificates.
 
-6. **Configure health checks:** NGINX automatically stops routing traffic to backend servers that fail to respond. You can monitor server health using the Mattermost API endpoint ``http://SERVER_IP:8065/api/v4/system/ping`` which returns ``Status 200`` for healthy servers.
+6. **Configure health checks:** The upstream block above sets ``max_fails=0``, which disables NGINX's passive quarantining - backends are not marked unavailable based on failed-request counts. Individual failed requests are still retried against other backends via NGINX's default ``proxy_next_upstream`` behavior. To detect failed servers and remove them from rotation, monitor the Mattermost API endpoint ``http://SERVER_IP:8065/api/v4/system/ping`` (which returns ``Status 200`` for healthy servers) using an active health check at your load balancer or monitoring system.
 
 7. **Verify proxy functionality:** Test access through the proxy using your configured domain name and verify traffic is distributed across backend servers by checking Mattermost server logs.
 
@@ -539,7 +539,7 @@ As an alternative to Amazon S3 or S3-compatible storage, network-attached storag
       sudo apt update
       sudo apt install nfs-common
       sudo mkdir -p /opt/mattermost/data
-      sudo mount -t nfs -o rw,soft,intr NFS_SERVER_IP:/mnt/mattermost-data /opt/mattermost/data
+      sudo mount -t nfs -o rw,hard NFS_SERVER_IP:/mnt/mattermost-data /opt/mattermost/data
 
    **RHEL/CentOS/Rocky Linux:**
 
@@ -547,7 +547,7 @@ As an alternative to Amazon S3 or S3-compatible storage, network-attached storag
 
       sudo dnf install nfs-utils
       sudo mkdir -p /opt/mattermost/data
-      sudo mount -t nfs -o rw,soft,intr NFS_SERVER_IP:/mnt/mattermost-data /opt/mattermost/data
+      sudo mount -t nfs -o rw,hard NFS_SERVER_IP:/mnt/mattermost-data /opt/mattermost/data
 
    Replace ``NFS_SERVER_IP`` with your NFS server's IP address.
 
@@ -562,17 +562,17 @@ As an alternative to Amazon S3 or S3-compatible storage, network-attached storag
 
    .. code-block:: text
 
-      NFS_SERVER_IP:/mnt/mattermost-data /opt/mattermost/data nfs rw,soft,intr 0 0
+      NFS_SERVER_IP:/mnt/mattermost-data /opt/mattermost/data nfs rw,hard 0 0
 
    Example:
 
    .. code-block:: text
 
-      192.168.1.100:/mnt/mattermost-data /opt/mattermost/data nfs rw,soft,intr 0 0
+      192.168.1.100:/mnt/mattermost-data /opt/mattermost/data nfs rw,hard 0 0
 
    .. note::
 
-      The ``soft`` option allows operations to timeout rather than hang indefinitely. For stricter consistency requirements, use ``hard,intr`` instead, but this may cause the application to hang if NFS becomes unavailable.
+      The ``hard`` option causes I/O operations to block until NFS recovers, which protects against partial writes and file corruption during transient network or NFS server outages. If availability is more important than data integrity for your deployment, you can use ``soft`` to let operations time out instead, but this can return I/O errors to Mattermost during transient issues and risks file corruption, so it's not recommended for shared application data.
 
 5. **Test file access:** Verify write permissions from each server:
 
@@ -708,7 +708,7 @@ Amazon Aurora PostgreSQL provides managed database service with built-in high av
       # Check logs for database connection messages
       sudo journalctl -u mattermost -n 100
 
-Amazon RDS does not expose direct PostgreSQL configuration access, but Aurora's default settings are generally well-tuned for most workloads. Monitor performance using Amazon CloudWatch and the RDS Performance Insights feature.
+Amazon RDS and Aurora expose PostgreSQL configuration through DB parameter groups (RDS) and DB cluster parameter groups (Aurora), which let you tune memory, replication, and other settings. Aurora's defaults are generally well-tuned for most workloads. Monitor performance using Amazon CloudWatch and the RDS Performance Insights feature.
 
 Self-managed PostgreSQL
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -758,12 +758,15 @@ For self-managed PostgreSQL deployments, you have full control over database con
 
       CREATE ROLE replication_user WITH REPLICATION LOGIN PASSWORD 'secure_password';
 
-4. **Create the replica** using ``pg_basebackup``:
+4. **Create the replica** using ``pg_basebackup``. Stop PostgreSQL on the replica and ensure the data directory is empty before running this command.
 
    .. code-block:: bash
 
-      # On the replica server, create base backup from primary
-      sudo -u postgres pg_basebackup -h PRIMARY_IP -D /var/lib/postgresql/data -U replication_user -P -v -R -X stream
+      # On the replica server, create base backup from primary.
+      # Replace DATA_DIR with the platform-specific data directory:
+      #   Ubuntu/Debian: /var/lib/postgresql/{version}/main
+      #   RHEL/CentOS: /var/lib/pgsql/{version}/data
+      sudo -u postgres pg_basebackup -h PRIMARY_IP -D DATA_DIR -U replication_user -P -v -R -X stream
 
    The ``-R`` flag automatically creates the ``standby.signal`` file and configures replication settings.
 
@@ -984,8 +987,11 @@ If you need to manually promote a read replica to primary (for maintenance, disa
 
    .. code-block:: bash
 
-      # On the replica server
-      sudo -u postgres pg_ctl promote -D /var/lib/postgresql/data
+      # On the replica server.
+      # Replace DATA_DIR with the platform-specific data directory:
+      #   Ubuntu/Debian: /var/lib/postgresql/{version}/main
+      #   RHEL/CentOS: /var/lib/pgsql/{version}/data
+      sudo -u postgres pg_ctl promote -D DATA_DIR
 
    For Amazon RDS:
 
@@ -1047,7 +1053,7 @@ Cluster discovery
 
 If you have non-standard (i.e. complex) network configurations, then you may need to use the :ref:`Override Hostname <administration-guide/configure/environment-configuration-settings:override hostname>` setting to help the cluster nodes discover each other. The cluster settings in the config are removed from the config file hash for this reason, meaning you can have slightly different cluster configuration settings in high availability mode. The Override Hostname is intended to be different for each clustered node if you need to force discovery.
 
-If ``UseIpAddress`` is set to ``true``, it attempts to obtain the IP address by searching for the first non-local IP address (non-loop-back, non-localunicast, non-localmulticast network interface). It enumerates the network interfaces using the built-in go function `net.InterfaceAddrs() <https://pkg.go.dev/net#InterfaceAddrs>`_. Otherwise it tries to get the hostname using the `os.Hostname() <https://pkg.go.dev/os#Hostname>`_ built-in go function.
+If ``UseIPAddress`` is set to ``true``, it attempts to obtain the IP address by searching for the first non-local IP address (non-loop-back, non-localunicast, non-localmulticast network interface). It enumerates the network interfaces using the built-in go function `net.InterfaceAddrs() <https://pkg.go.dev/net#InterfaceAddrs>`_. Otherwise it tries to get the hostname using the `os.Hostname() <https://pkg.go.dev/os#Hostname>`_ built-in go function.
 
 You can also run ``SELECT * FROM ClusterDiscovery`` against your database to see how it has filled in the **Hostname** field. That field will be the hostname or IP address the server will use to attempt contact with other nodes in the cluster. We attempt to make a connection to the ``url Hostname:Port`` and ``Hostname:PortGossipPort``. You must also make sure you have all the correct ports open so the cluster can gossip correctly. These ports are under ``ClusterSettings`` in your configuration.
 

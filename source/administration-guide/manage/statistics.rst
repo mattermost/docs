@@ -74,7 +74,7 @@ Master DB Conns
     The number of active connections currently on your master database.
 
 Replica DB Conns
-    The number of active connections currently on one or more of :ref:`your read replica databases <administration-guide/scale/high-availability-cluster-based-deployment:database configuration>`.
+    The number of active connections currently on one or more of :ref:`your read replica databases <administration-guide/scale/high-availability-cluster-based-deployment:database>`.
 
 Total Playbooks
     The total number of collaborative playbooks on this server.
