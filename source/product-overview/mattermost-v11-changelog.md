@@ -125,7 +125,8 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Fixed an issue where file attachments synced over a shared channel through a plugin (using the ``OnSharedChannelsAttachmentSyncMsg`` / ``ReceiveSharedChannelAttachmentSyncMsg`` plugin API pair) were stored on the receiving server but did not appear in the corresponding post, because the saved FileInfo was given a new ID instead of preserving the sender's file ID referenced by the post.
  - Fixed a regression saving various [masked fields](https://docs.mattermost.com/administration-guide/manage/admin/generating-support-packet.html) from the System Console.
  - Prevented non-interactive team icons from showing click highlight feedback.
- - Fixed missing spacing in data spillage report card UI when opened in Threads view.
+ - Fixed an issue with a missing spacing in data spillage report card user interface when opened in the **Threads** view.
+ - Fixed an issue with misleading cursor and dropdown indicator affordances in data spillage report previews.
 
 ### API Changes
  - Added a new ``GET /api/v4/content_flagging/post/<post_id>/report`` endpoint for generating and downloading a content flagging report for a flagged post.
