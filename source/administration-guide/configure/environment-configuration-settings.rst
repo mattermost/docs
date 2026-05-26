@@ -2538,20 +2538,52 @@ Azure path prefix
 | the container root.                                           |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
+.. config:setting:: azure-authentication
+  :displayname: Azure authentication (File Storage)
+  :systemconsole: Environment > File Storage
+  :configjson: .FileSettings.AzureAuthMode
+  :environment: MM_FILESETTINGS_AZUREAUTHMODE
+  :description: Selects how Mattermost authenticates to Azure. One of ``shared_key`` (default) or ``default_credential``.
+
+Azure authentication
+~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+--------------------------------------------------------------------------+
+| Selects how Mattermost authenticates to the Azure Storage     | - System Config path: **Environment > File Storage**                     |
+| account.                                                      | - ``config.json`` setting: ``FileSettings`` > ``AzureAuthMode``          |
+|                                                               | - Environment variable: ``MM_FILESETTINGS_AZUREAUTHMODE``                |
+| - ``shared_key``: **(Default)** Mattermost signs requests     |                                                                          |
+|   with the Storage Account access key in                      |                                                                          |
+|   ``FileSettings.AzureAccessKey``. Works for any deployment   |                                                                          |
+|   (on-premises, non-Azure cloud, local development).          |                                                                          |
+| - ``default_credential``: Mattermost obtains an Entra ID      |                                                                          |
+|   token via the Azure SDK's ``DefaultAzureCredential`` chain  |                                                                          |
+|   (managed identity, workload identity, service-principal    |                                                                          |
+|   environment variables, or ``az login`` -- in that order)    |                                                                          |
+|   and signs requests with it. ``FileSettings.AzureAccessKey`` |                                                                          |
+|   is ignored. Recommended for deployments on Azure where the  |                                                                          |
+|   host already provides a managed identity.                   |                                                                          |
+|                                                               |                                                                          |
+|   The identity the SDK selects must hold **Storage Blob       |                                                                          |
+|   Data Contributor** (or equivalent) on the storage account   |                                                                          |
+|   or container.                                               |                                                                          |
++---------------------------------------------------------------+--------------------------------------------------------------------------+
+
 .. config:setting:: azure-storage-account-key
   :displayname: Azure Storage account key (File Storage)
   :systemconsole: Environment > File Storage
   :configjson: .FileSettings.AzureAccessKey
   :environment: MM_FILESETTINGS_AZUREACCESSKEY
-  :description: The shared key for your Azure Storage account.
+  :description: The shared key for your Azure Storage account. Used only when ``FileSettings.AzureAuthMode`` is ``shared_key``.
 
 Azure Storage account key
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| The shared key for your Azure Storage account.                | - System Config path: **Environment > File Storage**                     |
-| Find this value in the Azure portal under your storage        | - ``config.json`` setting: ``FileSettings`` > ``AzureAccessKey``         |
-| account's **Security + networking > Access keys** blade.      | - Environment variable: ``MM_FILESETTINGS_AZUREACCESSKEY``               |
+| The shared key for your Azure Storage account. Used only      | - System Config path: **Environment > File Storage**                     |
+| when ``FileSettings.AzureAuthMode`` is ``shared_key``.        | - ``config.json`` setting: ``FileSettings`` > ``AzureAccessKey``         |
+| Find this value in the Azure portal under your storage        | - Environment variable: ``MM_FILESETTINGS_AZUREACCESSKEY``               |
+| account's **Security + networking > Access keys** blade.      |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. note::
@@ -4963,6 +4995,7 @@ Enable dedicated export filestore target
 |  - ``ExportAmazonS3RequestTimeoutMilliseconds``                                      |                                                                         |
 |  - ``ExportAmazonS3PresignExpiresSeconds``                                           |                                                                         |
 |  - ``ExportAzureStorageAccount``                                                     |                                                                         |
+|  - ``ExportAzureAuthMode``                                                           |                                                                         |
 |  - ``ExportAzureAccessKey``                                                          |                                                                         |
 |  - ``ExportAzureContainer``                                                          |                                                                         |
 |  - ``ExportAzurePathPrefix``                                                         |                                                                         |

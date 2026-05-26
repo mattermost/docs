@@ -66,10 +66,20 @@ All Mattermost uploads land in a single container. The container name must be lo
       --account-name acmemattermost \
       --auth-mode login
 
-Step 3: Retrieve a shared key
------------------------------
+Step 3: Choose an authentication mode
+-------------------------------------
 
-Mattermost authenticates to Azure with a Storage Account shared key (account name + key).
+Mattermost supports two ways for the server to authenticate to Azure. Pick the one that fits how the server runs:
+
+- **Shared key**: the server signs each request with the Storage Account access key. Works anywhere Mattermost runs (on-premises, non-Azure cloud, local development) because it does not depend on the host having an Azure identity. The trade-off is that the key is a long-lived secret stored in ``config.json``.
+- **Default credential (Microsoft Entra ID)**: the server obtains a token from Microsoft Entra ID and signs requests with it. No long-lived secret in Mattermost configuration. This is the recommended mode for deployments running on Azure, where the host environment already provides an identity (managed identity on Azure VM / App Service / AKS, workload identity for federated workloads, or a service principal).
+
+The Azure-side setup differs slightly between the two modes. Follow the subsection that matches your choice; you can switch modes later by changing the **Azure authentication** setting in the System Console.
+
+Option A: Shared key
+~~~~~~~~~~~~~~~~~~~~
+
+Retrieve the Storage Account access key.
 
 **Azure portal**
 
@@ -89,6 +99,60 @@ Mattermost authenticates to Azure with a Storage Account shared key (account nam
 
   Treat the shared key as a secret -- anyone with it has full access to the account. Azure provides two keys so you can rotate without downtime: update Mattermost to ``key2``, regenerate ``key1``, then swap on the next rotation cycle. Plan a rotation cadence that matches your organisation's policy.
 
+Option B: Default credential (Microsoft Entra ID)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The server uses ``DefaultAzureCredential`` from the Azure SDK, which discovers a working identity at runtime in this order: ``EnvironmentCredential`` (service-principal environment variables), ``WorkloadIdentityCredential`` (federated workload identity), ``ManagedIdentityCredential`` (the platform-provided managed identity), then ``AzureCLICredential`` (the signed-in ``az`` session, useful for local development). The first source that returns a token is used.
+
+Whichever identity the SDK selects, **that** identity needs **Storage Blob Data Contributor** (or a custom role with the equivalent ``read/write/list/delete`` data-plane actions) on the storage account or container. Without it, ``TestConnection`` returns ``AuthorizationPermissionMismatch``.
+
+Pick the identity source that matches the host:
+
+.. list-table::
+  :header-rows: 1
+  :widths: 25 75
+
+  * - Host
+    - Identity source
+  * - Azure VM, App Service, AKS, Container Apps
+    - Assign a **system-assigned** or **user-assigned managed identity** to the compute resource. ``DefaultAzureCredential`` resolves to ``ManagedIdentityCredential`` with no extra configuration. For user-assigned identities, set ``AZURE_CLIENT_ID`` in the server's environment so the SDK picks the right one.
+  * - AKS with workload-identity federation
+    - Annotate the Mattermost ``ServiceAccount`` with the client ID and configure the OIDC issuer per the `AKS workload identity guide <https://learn.microsoft.com/en-us/azure/aks/workload-identity-overview>`__. ``DefaultAzureCredential`` resolves to ``WorkloadIdentityCredential``.
+  * - Non-Azure host or container
+    - Create a service principal and set ``AZURE_TENANT_ID``, ``AZURE_CLIENT_ID``, and ``AZURE_CLIENT_SECRET`` (or ``AZURE_CLIENT_CERTIFICATE_PATH``) in the server's environment. ``DefaultAzureCredential`` resolves to ``EnvironmentCredential``.
+  * - Local development on an admin's workstation
+    - Sign in with ``az login``. ``DefaultAzureCredential`` resolves to ``AzureCLICredential``.
+
+Assign the role with the Azure CLI (substituting the principal of the identity Mattermost will authenticate as):
+
+.. code-block:: bash
+
+  STORAGE_ACCOUNT_ID=$(az storage account show \
+      --name acmemattermost \
+      --resource-group mm-prod-files \
+      --query id -o tsv)
+
+  # For a managed identity (system-assigned on a VM/App Service/AKS pod):
+  az role assignment create \
+      --assignee-object-id "<principalId-of-the-managed-identity>" \
+      --assignee-principal-type ServicePrincipal \
+      --role "Storage Blob Data Contributor" \
+      --scope "$STORAGE_ACCOUNT_ID"
+
+  # For a service principal:
+  az role assignment create \
+      --assignee "<appId-of-the-service-principal>" \
+      --role "Storage Blob Data Contributor" \
+      --scope "$STORAGE_ACCOUNT_ID"
+
+.. note::
+
+  Granting the role requires **User Access Administrator** or **Owner** on the storage account; ``Contributor`` is not enough. Plan to have an administrator with that role run the ``az role assignment create`` step. If you scope the role to a single container instead of the whole storage account, replace ``--scope "$STORAGE_ACCOUNT_ID"`` with ``--scope "$STORAGE_ACCOUNT_ID/blobServices/default/containers/<container>"``. Functionally equivalent for Mattermost, narrower in blast radius.
+
+.. tip::
+
+  Azure RBAC role assignments can take 30-120 seconds to propagate. If the first ``TestConnection`` returns ``AuthorizationPermissionMismatch`` immediately after the role assignment, wait a minute and retry before assuming a misconfiguration.
+
 Step 4: Configure Mattermost
 ----------------------------
 
@@ -104,10 +168,15 @@ Sign in as a System Admin and open **System Console > Environment > File Storage
 3. **Azure Storage account**: the storage account name from step 1 (for example, ``acmemattermost``).
 4. **Azure container**: the container name from step 2 (for example, ``mattermost``).
 5. **Azure path prefix**: optional. Set this if you want Mattermost to write under a sub-path inside the container, for example ``prod/``. Leave empty to use the container root.
-6. **Azure Storage account key**: paste the shared key from step 3.
-7. **Azure endpoint** (visible only when **Azure cloud** is set to **Custom Endpoint**): the full Blob service URL, including scheme and storage account. Mattermost passes this URL to the Azure SDK unchanged, so the storage account must already be embedded in the hostname (vhost-style, for example ``https://acmemattermost.blob.core.chinacloudapi.cn/``) or in the path (path-style, for example ``http://localhost:10000/devstoreaccount1/`` for Azurite). Shared-key auth signs against the host this URL points at, so the host must serve the storage account named above.
-8. **Enable secure Azure Blob Storage connections** (visible only when **Azure cloud** is **Azure Commercial** or **Azure Government**): keep this enabled (the default). The Custom Endpoint cloud determines the scheme from the **Azure endpoint** URL, so this toggle is hidden for that mode.
-9. **Azure request timeout (milliseconds)**: default is ``30000`` (30 seconds). Increase only if your network needs more time for large objects.
+6. **Azure authentication**: select the mode you set up in step 3:
+
+   - **Shared key** (default): Mattermost signs each request with the Storage Account access key. Choose this if you completed `Option A: Shared key`_.
+   - **Default credential (Microsoft Entra ID)**: Mattermost authenticates as the identity provided by the host environment. Choose this if you completed `Option B: Default credential (Microsoft Entra ID)`_. The **Azure Storage account key** field below is hidden because the access key is not used in this mode.
+
+7. **Azure Storage account key** (visible only when **Azure authentication** is **Shared key**): paste the shared key from `Option A: Shared key`_.
+8. **Azure endpoint** (visible only when **Azure cloud** is set to **Custom Endpoint**): the full Blob service URL, including scheme and storage account. Mattermost passes this URL to the Azure SDK unchanged, so the storage account must already be embedded in the hostname (vhost-style, for example ``https://acmemattermost.blob.core.chinacloudapi.cn/``) or in the path (path-style, for example ``http://localhost:10000/devstoreaccount1/`` for Azurite). The chosen authentication mode signs against the host this URL points at, so the host must serve the storage account named above.
+9. **Enable secure Azure Blob Storage connections** (visible only when **Azure cloud** is **Azure Commercial** or **Azure Government**): keep this enabled (the default). The Custom Endpoint cloud determines the scheme from the **Azure endpoint** URL, so this toggle is hidden for that mode.
+10. **Azure request timeout (milliseconds)**: default is ``30000`` (30 seconds). Increase only if your network needs more time for large objects.
 
 Select **Test Connection**. Mattermost issues a no-op write/read/delete against the configured container using the credentials submitted in the form. A green ``Connection was successful`` message confirms the credentials, container name, and endpoint all work. A red error message includes the underlying reason; common ones are listed in `Troubleshooting`_.
 
@@ -294,7 +363,9 @@ Troubleshooting
   * - Symptom
     - Likely cause
   * - ``AuthenticationFailed`` on **Test Connection**
-    - Wrong account name or shared key. Confirm both in the **Access keys** blade of the Azure portal.
+    - When **Azure authentication** is **Shared key**: wrong account name or shared key. Confirm both in the **Access keys** blade of the Azure portal. When **Azure authentication** is **Default credential**: no identity source was available -- the host has no managed identity, the workload-identity federation is not set up, and no ``AZURE_TENANT_ID`` / ``AZURE_CLIENT_ID`` / ``AZURE_CLIENT_SECRET`` environment variables are set.
+  * - ``AuthorizationPermissionMismatch`` on **Test Connection**
+    - Only applies when **Azure authentication** is **Default credential**. The identity the SDK selected does not hold a data-plane role on the storage account. Grant **Storage Blob Data Contributor** to that identity per `Option B: Default credential (Microsoft Entra ID)`_, then wait 30-120 seconds for the role assignment to propagate.
   * - ``ContainerNotFound``
     - Container name is wrong or was created under a different storage account.
   * - ``connection refused`` or TLS errors
@@ -313,6 +384,7 @@ Each Azure setting is documented in detail in :ref:`Environment configuration se
 - :ref:`Azure Storage account <administration-guide/configure/environment-configuration-settings:azure storage account>` (``FileSettings.AzureStorageAccount``)
 - :ref:`Azure container <administration-guide/configure/environment-configuration-settings:azure container>` (``FileSettings.AzureContainer``)
 - :ref:`Azure path prefix <administration-guide/configure/environment-configuration-settings:azure path prefix>` (``FileSettings.AzurePathPrefix``)
+- :ref:`Azure authentication <administration-guide/configure/environment-configuration-settings:azure authentication>` (``FileSettings.AzureAuthMode``)
 - :ref:`Azure Storage account key <administration-guide/configure/environment-configuration-settings:azure storage account key>` (``FileSettings.AzureAccessKey``)
 - :ref:`Azure cloud <administration-guide/configure/environment-configuration-settings:azure cloud>` (``FileSettings.AzureCloud``)
 - :ref:`Azure endpoint <administration-guide/configure/environment-configuration-settings:azure endpoint>` (``FileSettings.AzureEndpoint``)
