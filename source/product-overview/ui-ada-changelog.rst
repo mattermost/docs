@@ -17,7 +17,7 @@ Changelog
    * - v11.8
      - (UI) Added an overflow menu for channel bookmarks when the bookmark bar runs out of space. Bookmarks can be reordered via drag-and-drop between the bar and the overflow menu, or via keyboard (Space to select, arrow keys to move) on webapp. Replaced ``react-beautiful-dnd`` with ``@atlaskit/pragmatic-drag-and-drop``.
    * - v11.8
-     - (UI) Added an unread badge to Recaps, displayed in red if the recap failed.
+     - (UI) Added an unread badge to Recaps.
    * - v11.8
      - (UI) Added managed channel categories for **Channel Admins** to enforce sidebar organization across teams.
    * - v11.8
