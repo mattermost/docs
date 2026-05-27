@@ -28,6 +28,7 @@ Platform and OS scope reflects reported and tested environments and may not repr
    - Added a ``LinkedFieldID`` column and index to ``PropertyFields``, renamed the CPA property group to ``access_control``, and narrowed the ``AttributeView`` materialized view to user-scoped attributes, with no large-table impact or downtime required.
    - Added a ``ViewedAt`` column and ``idx_recaps_user_id_viewed_at`` index to ``Recaps`` via metadata-only ``ADD COLUMN`` and ``CREATE INDEX CONCURRENTLY``, with no table locks or downtime required.
    - Added a ``Discoverable`` column to ``Channels``, a new ``ChannelJoinRequests`` table, and four concurrent partial/composite indexes to support channel join request workflows, with no downtime required.
+   - Extended the ``permission_level`` enum to add an ``admin`` value via a non-blocking catalog-only change, with no table locks, no data migration, and no downtime required.
 
 #### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
