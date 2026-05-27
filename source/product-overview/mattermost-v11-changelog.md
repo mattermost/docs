@@ -53,7 +53,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Pre-packaged Boards plugin version [v9.2.5](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.2.5).
  - Added a new keyboard shortcut, ``Shift`` + ``ESC``, that marks all channels, threads, and direct messages as read for a team on webapp / desktop app.
  - Added an overflow menu for channel bookmarks when the bookmark bar runs out of space. Bookmarks can be reordered via drag-and-drop between the bar and the overflow menu, or via keyboard (Space to select, arrow keys to move) on webapp. Replaced ``react-beautiful-dnd`` with ``@atlaskit/pragmatic-drag-and-drop``.
- - Added an unread badge to Recaps, displayed in red if the recap failed.
+ - Added an unread badge to Recaps.
  - Added managed channel categories for **Channel Admins** to enforce sidebar organization across teams.
  - Added per-channel classification assignment and banner integration for webapp/desktop app.
  - Added support for **CPA Display Name** for user-facing labels of user attributes.
