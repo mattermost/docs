@@ -16,6 +16,13 @@ Platform and OS scope reflects reported and tested environments and may not repr
 (release-v11.7-extended-support-release)=
 ## Release v11.7 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **11.7.2, released 2026-05-27**
+  - Mattermost v11.7.2 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Playbooks plugin version [v2.9.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.9.0).
+  - Updated Go to v1.25.10.
+  - Fixed a regression saving various masked fields from the System Console.
+  - Introduced a new permission ``Edit Attachments`` for controlling who can edit post attachments when editing a post. By default the permission is granted to whoever has edit post permission.
+  - Mattermost v11.7.2 contains no database or functional changes.
 - **11.7.1, released 2026-05-21**
   - Mattermost v11.7.1 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged GitLab plugin version [v1.12.2](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.12.2).
@@ -165,6 +172,11 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-7-is-now-availab
 (release-v11.6-feature-release)=
 ## Release v11.6 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **11.6.4, released 2026-05-27**
+  - Mattermost v11.6.4 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Agents plugin version [v1.14.2](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.14.2).
+  - Introduced a new permission ``Edit Attachments`` for controlling who can edit post attachments when editing a post. By default the permission is granted to whoever has edit post permission.
+  - Mattermost v11.6.4 contains no database or functional changes.
 - **11.6.3, released 2026-05-21**
   - Mattermost v11.6.3 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged GitLab plugin version [v1.12.2](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.12.2).
@@ -312,6 +324,11 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-6-is-now-availab
 (release-v11.5-feature-release)=
 ## Release v11.5 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **11.5.7, released 2026-05-27**
+  - Mattermost v11.5.7 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Agents plugin version [v1.14.2](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.14.2).
+  - Introduced a new permission ``Edit Attachments`` for controlling who can edit post attachments when editing a post. By default the permission is granted to whoever has edit post permission.
+  - Mattermost v11.5.7 contains no database or functional changes.
 - **11.5.6, released 2026-05-21**
   - Mattermost v11.5.6 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged GitLab plugin version [v1.12.2](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.12.2).
