@@ -254,6 +254,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Downgraded Hungarian translations from Beta to Alpha.
  - Clarified error messages on potential permission migrations.
  - Added support for permission-action rules (file upload, file download) on channel-scope access control policies, with a new "Simulate access" modal in System Console and Channel Settings that previews per-user, per-action decisions before saving. Gated by the existing ``PermissionPolicies`` feature flag and the Enterprise Advanced license.
+ - Added attribute value masking for access control policies: admins who don't hold specific attribute values see a masked placeholder (``--------``) instead of the raw value, with affected rule rows set to read-only and save/delete actions disabled. Applies to the table editor, CEL editor, and team settings modal. Requires Enterprise Advanced license and ``AttributeValueMasking`` feature flag.
  - Added support for request-provided session attributes (IP address, user agent details) in ABAC permission policy expressions via ``user.session``.
  - Added a user setting to experimentally enable concurrent React.
  - Added debug logging when a user has experimental support for concurrent React enabled.
