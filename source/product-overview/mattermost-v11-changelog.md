@@ -95,6 +95,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - The Custom Profile Attributes property group is renamed from ``custom_profile_attributes`` to ``access_control``, and CPA fields and values are migrated from the legacy property model to the v2 model. The functionality of the CPA feature is unchanged. Plugin developers that use CPA will need to register against the new group name.
  - Clarified error messages on potential permission migrations.
  - Added support for permission-action rules (file upload, file download) on channel-scope access control policies, with a new "Simulate access" modal in System Console and Channel Settings that previews per-user, per-action decisions before saving. Gated by the existing ``PermissionPolicies`` feature flag and the Enterprise Advanced license.
+ - Added support for request-provided session attributes (IP address, user agent details) in ABAC permission policy expressions via ``user.session``.
 
 #### Performance
  - Improved memory usage and performance when processing images (resizing, thumbnails, and orientation correction).
@@ -128,6 +129,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Prevented non-interactive team icons from showing click highlight feedback.
  - Fixed an issue with a missing spacing in data spillage report card user interface when opened in the **Threads** view.
  - Fixed an issue with misleading cursor and dropdown indicator affordances in data spillage report previews.
+ - Fixed an issue with the data spillage report right-hand side action buttons overflowing the panel instead of wrapping.
 
 ### API Changes
  - Added a new ``GET /api/v4/content_flagging/post/<post_id>/report`` endpoint for generating and downloading a content flagging report for a flagged post.
