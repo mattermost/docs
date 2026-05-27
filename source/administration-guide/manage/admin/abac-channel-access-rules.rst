@@ -71,6 +71,10 @@ The **Auto-add members based on access rules** toggle controls automatic members
   - When no rules are configured, this toggle is automatically disabled.
   - Regardless of the auto-sync setting, users who no longer meet required attribute rules are always removed during synchronization.
 
+.. note::
+
+  If a policy rule references attribute values you don't hold, those values appear as ``--------`` and the row is read-only. Test and Delete actions are also disabled for those rows. See :ref:`Attribute value masking <administration-guide/manage/admin/abac-system-wide-policies:attribute value masking>` for details.
+
 Validation and safety
 ~~~~~~~~~~~~~~~~~~~~~
 

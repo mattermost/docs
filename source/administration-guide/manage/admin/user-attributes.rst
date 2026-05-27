@@ -134,6 +134,17 @@ Manage attributes
 
 In cases where multiple system admins manage system attributes, refresh your web browser instance to see real-time updates to system attributes made by other admins.
 
+Attribute access modes
+-----------------------
+
+Each user attribute has an **access mode** that controls who can see its values when those values appear in access control policies. The access mode is set per attribute and determines whether an admin editing a policy can see the raw attribute values referenced in its rules.
+
+- **Public**: The attribute value is visible to all admins editing policies that reference it. No masking is applied.
+- **Shared only**: The attribute value is only visible to admins who personally hold that same value. Admins who don't hold the value see it masked (``--------``) in the policy editor.
+- **Source only**: The attribute value is only visible to the system source that set it (for example, the identity provider). All admins see it masked in the policy editor regardless of their own attribute values.
+
+Masking in the policy editor only applies to attributes with ``shared_only`` or ``source_only`` access mode. See :ref:`Attribute value masking <administration-guide/manage/admin/abac-system-wide-policies:attribute value masking>` for the editor behavior when masked values are present.
+
 Sync attributes with your identity provider
 --------------------------------------------
 
