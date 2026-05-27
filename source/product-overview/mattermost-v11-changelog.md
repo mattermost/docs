@@ -133,6 +133,8 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Fixed an issue with a missing spacing in data spillage report card user interface when opened in the **Threads** view.
  - Fixed an issue with misleading cursor and dropdown indicator affordances in data spillage report previews.
  - Fixed an issue with the data spillage report right-hand side action buttons overflowing the panel instead of wrapping.
+ - Fixed an issue with clipped tooltips in the advanced data masking policy expression editor.
+ - Fixed an issue where retained flagged posts did not re-appear in the channel for other members until they refreshed the browser or clicked the hidden-post banner.
 
 ### API Changes
  - Added a new ``GET /api/v4/content_flagging/post/<post_id>/report`` endpoint for generating and downloading a content flagging report for a flagged post.
