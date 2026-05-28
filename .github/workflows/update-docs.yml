@@ -2,7 +2,7 @@ name: Update Docs
  
 # Only members with write access to this repo can trigger workflow_dispatch.
 # To further restrict (e.g. require a specific team), protect the branch or
-# add an environment with required reviewers in repo Settings → Environments.
+# add an environment with required reviewers in repo Settings -> Environments.
 on:
   workflow_dispatch:
     inputs:
@@ -45,23 +45,27 @@ on:
 jobs:
   update-docs:
     runs-on: ubuntu-latest
-    # All git and gh operations authenticate via DOCS_PAT (a fine-grained PAT scoped
-    # to this repo with Contents and Pull requests write access). The org-level policy
-    # prevents GITHUB_TOKEN from pushing branches or opening PRs, so GITHUB_TOKEN is
-    # explicitly locked to read-only below to avoid granting unused token scopes.
-    # If DOCS_PAT is ever rotated or the owning account offboarded, update the secret
-    # under Settings → Secrets and variables → Actions.
-    # Alternative: use a GitHub App installation token (as in generate-changelog.yml)
-    # for finer-grained, expiring credentials that don't depend on a user account.
+    # GITHUB_TOKEN is locked to read-only; all git and gh operations authenticate
+    # via a short-lived GitHub App installation token (generated in the first step).
+    # This matches the pattern used in generate-changelog.yml and avoids the
+    # org-level restriction that prevents GITHUB_TOKEN from pushing branches or
+    # opening PRs.
     permissions:
       contents: read
  
     steps:
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.DOCS_APP_ID }}
+          private-key: ${{ secrets.DOCS_APP_PRIVATE_KEY }}
+ 
       - name: Checkout repo
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
-          # Pass the PAT so that subsequent git push and gh pr create calls are authenticated.
-          token: ${{ secrets.DOCS_PAT }}
+          # Use the App token so that subsequent git push calls are authenticated.
+          token: ${{ steps.app-token.outputs.token }}
  
       - name: Set up Python
         uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
@@ -98,7 +102,7 @@ jobs:
           git add source/
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
-            echo "No files were modified — skipping PR creation."
+            echo "No files were modified -- skipping PR creation."
           else
             git commit -m "docs: update ${{ inputs.component }} files for v${{ inputs.version }} ${{ inputs.release_type }}"
             # --force-with-lease safely overwrites the remote branch on re-runs
@@ -110,7 +114,7 @@ jobs:
       - name: Create pull request
         if: steps.commit.outputs.changed == 'true'
         env:
-          GH_TOKEN: ${{ secrets.DOCS_PAT }}
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
           COMPONENT: ${{ inputs.component }}
           VERSION: ${{ inputs.version }}
           RELEASE_TYPE: ${{ inputs.release_type }}
@@ -127,7 +131,7 @@ jobs:
           # Check before creating to avoid a duplicate-PR error.
           existing_pr="$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')"
           if [ -n "$existing_pr" ]; then
-            echo "PR #${existing_pr} already exists for ${BRANCH} — skipping creation."
+            echo "PR #${existing_pr} already exists for ${BRANCH} -- skipping creation."
           else
             {
               echo "## ${COMPONENT} v${VERSION} ${RELEASE_TYPE} Documentation Update"
