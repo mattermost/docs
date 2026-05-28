@@ -32,6 +32,12 @@ on:
   pull_request:
     types: [closed]
     branches: [master]
+  workflow_dispatch:
+    inputs:
+      merged_branch:
+        description: 'Branch name to simulate merging (e.g. v11.6-documentation)'
+        required: true
+        type: string
  
 jobs:
   create-next-version-branch:
@@ -44,11 +50,13 @@ jobs:
     # within this repository. The step below enforces the exact regex pattern
     # because GitHub Actions expressions do not support regex matching.
     # Fork guard prevents runs on PRs from external forks.
+    # workflow_dispatch bypasses both guards for manual testing.
     if: |
-      github.event.pull_request.merged == true &&
-      github.event.pull_request.head.repo.full_name == github.repository &&
-      startsWith(github.event.pull_request.head.ref, 'v') &&
-      endsWith(github.event.pull_request.head.ref, '-documentation')
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.pull_request.merged == true &&
+       github.event.pull_request.head.repo.full_name == github.repository &&
+       startsWith(github.event.pull_request.head.ref, 'v') &&
+       endsWith(github.event.pull_request.head.ref, '-documentation'))
  
     steps:
       # 0. Generate a short-lived read token scoped to mattermost/mattermost
@@ -69,7 +77,7 @@ jobs:
       #    vTEST-documentation or v1-documentation are rejected early.
       - name: Validate branch name
         env:
-          MERGED_BRANCH: ${{ github.event.pull_request.head.ref }}
+          MERGED_BRANCH: ${{ github.event_name == 'workflow_dispatch' && inputs.merged_branch || github.event.pull_request.head.ref }}
         run: |
           if ! [[ "$MERGED_BRANCH" =~ ^v[0-9]+\.[0-9]+-documentation$ ]]; then
             echo "::error::Branch '${MERGED_BRANCH}' does not match the" \
@@ -87,7 +95,7 @@ jobs:
         id: milestone
         env:
           GH_TOKEN: ${{ steps.token.outputs.token }}
-          MERGED_BRANCH: ${{ github.event.pull_request.head.ref }}
+          MERGED_BRANCH: ${{ github.event_name == 'workflow_dispatch' && inputs.merged_branch || github.event.pull_request.head.ref }}
         run: |
           # Re-parse the merged branch to establish the version floor.
           # Step 1 already validated the pattern; this extracts the numbers.
@@ -186,7 +194,7 @@ jobs:
       - name: Summary
         if: steps.milestone.outputs.found == 'true'
         env:
-          MERGED_BRANCH: ${{ github.event.pull_request.head.ref }}
+          MERGED_BRANCH: ${{ github.event_name == 'workflow_dispatch' && inputs.merged_branch || github.event.pull_request.head.ref }}
           NEW_BRANCH: ${{ steps.milestone.outputs.branch }}
           BRANCH_CREATED: ${{ steps.create_branch.outputs.created }}
         run: |
