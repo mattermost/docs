@@ -65,10 +65,9 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           # Use the App token so that subsequent git push calls are authenticated.
+          # Credentials are persisted in the git config (default behaviour) so that
+          # the "Commit and push changes" step can push without extra auth setup.
           token: ${{ steps.app-token.outputs.token }}
-          # Prevent the checkout action from persisting the token in the git config,
-          # since all authenticated operations use the explicit App token above.
-          persist-credentials: false
  
       - name: Set up Python
         uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
