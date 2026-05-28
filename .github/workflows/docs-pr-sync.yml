@@ -4,14 +4,17 @@
 # Place this file in:
 #   mattermost/docs -> .github/workflows/docs-pr-sync.yml
 #
-# Authentication — reuses the write app from changelog automation:
+# Authentication — dedicated "Changelog Automation PRs r+w" GitHub App:
 #
-#   Write app (vars.CHANGELOG_WRITE_CLIENT_ID / secrets.CHANGELOG_WRITE_PRIVATE_KEY)
-#     Must be installed on mattermost/mattermost, mattermost/mattermost-mobile,
-#     and mattermost/desktop with pull-requests: write permission on each.
-#     This allows the bot to remove Docs/Needed and add Docs/Done on the
-#     original dev PR when a docs PR is closed.
-#     Short-lived installation tokens are generated automatically per run.
+#   vars.CHANGELOG_PR_CLIENT_ID    - Client ID of the PR sync GitHub App
+#   secrets.CHANGELOG_PR_PRIVATE_KEY - Private key of the PR sync GitHub App
+#
+#   The app has pull-requests: write and is installed on:
+#     mattermost/mattermost, mattermost/mattermost-mobile,
+#     mattermost/desktop, mattermost/docs
+#   This allows the bot to remove Docs/Needed and add Docs/Done on the
+#   original dev PR when a docs PR is closed.
+#   Short-lived installation tokens are generated automatically per run.
 #
 # Behaviour:
 #   When a docs/mattermost-pr-* or docs/desktop-pr-* PR is closed
@@ -46,8 +49,8 @@ jobs:
         id: token
         uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
         with:
-          app-id: ${{ vars.CHANGELOG_WRITE_CLIENT_ID }}
-          private-key: ${{ secrets.CHANGELOG_WRITE_PRIVATE_KEY }}
+          app-id: ${{ vars.CHANGELOG_PR_CLIENT_ID }}
+          private-key: ${{ secrets.CHANGELOG_PR_PRIVATE_KEY }}
           repositories: >-
             mattermost,
             mattermost-mobile,
