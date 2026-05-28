@@ -73,7 +73,7 @@ The **Auto-add members based on access rules** toggle controls automatic members
 
 .. note::
 
-  If a policy rule references attribute values you don't hold, those values appear as ``--------`` and the row is read-only. Test and Delete actions are also disabled for those rows. See :ref:`Attribute value masking <administration-guide/manage/admin/abac-system-wide-policies:attribute value masking>` for details.
+  If a policy rule references attribute values from a ``shared_only`` or ``source_only`` attribute that you don't personally hold, those values appear as ``--------`` and the row is read-only. Test and Delete actions are also disabled for those rows. See :ref:`Attribute value masking <administration-guide/manage/admin/abac-system-wide-policies:attribute value masking>` for details.
 
 Validation and safety
 ~~~~~~~~~~~~~~~~~~~~~
