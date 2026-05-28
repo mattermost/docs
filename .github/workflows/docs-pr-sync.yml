@@ -1,3 +1,4 @@
+
 ---
 # .github/workflows/docs-pr-sync.yml
 #
@@ -28,6 +29,12 @@ name: "Docs PR Sync - Update Dev PR Labels on Close"
 on:
   pull_request:
     types: [closed]
+  workflow_dispatch:
+    inputs:
+      branch_name:
+        description: 'Docs branch name to simulate closing (e.g. docs/mattermost-pr-1234)'
+        required: true
+        type: string
  
 jobs:
   sync-labels:
@@ -37,9 +44,11 @@ jobs:
       pull-requests: read
     # Branch name encodes the source repo - only run for branches created by
     # docs-needed.yml. Fork guard prevents runs on PRs from external forks.
+    # workflow_dispatch bypasses both guards for manual testing.
     if: |
-      startsWith(github.event.pull_request.head.ref, 'docs/') &&
-      github.event.pull_request.head.repo.full_name == github.repository
+      github.event_name == 'workflow_dispatch' ||
+      (startsWith(github.event.pull_request.head.ref, 'docs/') &&
+       github.event.pull_request.head.repo.full_name == github.repository)
  
     steps:
       # 0. Generate a short-lived write token scoped to the three engineering
@@ -64,7 +73,7 @@ jobs:
       - name: Parse dev PR reference
         id: parse
         env:
-          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+          HEAD_REF: ${{ github.event_name == 'workflow_dispatch' && inputs.branch_name || github.event.pull_request.head.ref }}
         run: |
           # Accept only: docs/(mattermost|mattermost-mobile|desktop)-pr-<number>
           if ! [[ "$HEAD_REF" =~ ^docs/(mattermost|mattermost-mobile|desktop)-pr-([0-9]+)$ ]]; then
@@ -117,7 +126,7 @@ jobs:
           DEV_REPO: ${{ steps.parse.outputs.full_repo }}
           DEV_PR: ${{ steps.parse.outputs.pr_number }}
           DOCS_PR_NUMBER: ${{ github.event.pull_request.number }}
-          DOCS_PR_MERGED: ${{ github.event.pull_request.merged }}
+          DOCS_PR_MERGED: ${{ github.event.pull_request.merged || 'false' }}
         run: |
           if [ "$DOCS_PR_MERGED" == "true" ]; then
             STATUS="merged"
