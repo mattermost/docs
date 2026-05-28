@@ -1,4 +1,3 @@
-
 ---
 # .github/workflows/docs-pr-sync.yml
 #
@@ -120,7 +119,10 @@ jobs:
           echo "  Added Docs/Done"
  
       # 3. Comment on the dev PR
+      #    Skipped for workflow_dispatch: there is no real docs PR being closed,
+      #    so github.event.pull_request.number is empty and the link would be broken.
       - name: Comment on dev PR
+        if: github.event_name != 'workflow_dispatch'
         env:
           GH_TOKEN: ${{ steps.token.outputs.token }}
           DEV_REPO: ${{ steps.parse.outputs.full_repo }}
