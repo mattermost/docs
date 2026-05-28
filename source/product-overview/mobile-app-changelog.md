@@ -31,6 +31,7 @@ Platform and OS scope reflects reported and tested environments and may not repr
  - Fixed an issue with realtime UI updates when changing the settings for attaching logs for debugging functionality.
  - Fixed an Android crash in push notification handling when the server returned an unexpected error response format.
  - Fixed an issue where system admins could briefly see a join-team affordance when there were no additional teams to join, due to local team membership lagging behind server state.
+ - Fixed an issue with ``@mentions`` rendering incorrect font sizes when written as part of a heading in the **Threads** screen.
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
