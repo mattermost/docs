@@ -45,15 +45,22 @@ on:
 jobs:
   update-docs:
     runs-on: ubuntu-latest
-    # No GITHUB_TOKEN permissions needed — all git and gh operations use DOCS_PAT,
-    # which authenticates as a user and is not subject to the org-level restriction
-    # that prevents GITHUB_TOKEN from pushing branches or opening PRs.
+    # All git and gh operations authenticate via DOCS_PAT (a fine-grained PAT scoped
+    # to this repo with Contents and Pull requests write access). The org-level policy
+    # prevents GITHUB_TOKEN from pushing branches or opening PRs, so GITHUB_TOKEN is
+    # explicitly locked to read-only below to avoid granting unused token scopes.
+    # If DOCS_PAT is ever rotated or the owning account offboarded, update the secret
+    # under Settings → Secrets and variables → Actions.
+    # Alternative: use a GitHub App installation token (as in generate-changelog.yml)
+    # for finer-grained, expiring credentials that don't depend on a user account.
+    permissions:
+      contents: read
  
     steps:
       - name: Checkout repo
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
-          # Pass the PAT so that subsequent git push calls are authenticated.
+          # Pass the PAT so that subsequent git push and gh pr create calls are authenticated.
           token: ${{ secrets.DOCS_PAT }}
  
       - name: Set up Python
