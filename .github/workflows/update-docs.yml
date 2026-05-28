@@ -54,12 +54,18 @@ jobs:
       contents: read
  
     steps:
-      - name: Generate GitHub App token
+      # Changelog Automation (docs) app -- read/write access to mattermost/docs.
+      # Reuses the same app and credentials as generate-changelog.yml.
+      # Credentials are already present in Settings -> Secrets and variables -> Actions:
+      #   CHANGELOG_WRITE_CLIENT_ID   (variable) -- Client ID from the docs GitHub App
+      #   CHANGELOG_WRITE_PRIVATE_KEY (secret)   -- Private key from the docs GitHub App
+      - name: Get write token (docs repo)
         id: app-token
         uses: actions/create-github-app-token@1b10c78c7865c340bc4f6099eb2f838309f1e8c3 # v3.1.1
         with:
-          app-id: ${{ secrets.DOCS_APP_ID }}
-          private-key: ${{ secrets.DOCS_APP_PRIVATE_KEY }}
+          client-id: ${{ vars.CHANGELOG_WRITE_CLIENT_ID }}
+          private-key: ${{ secrets.CHANGELOG_WRITE_PRIVATE_KEY }}
+          owner: mattermost
  
       - name: Checkout repo
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
