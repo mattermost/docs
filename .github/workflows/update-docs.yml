@@ -45,13 +45,16 @@ on:
 jobs:
   update-docs:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
+    # No GITHUB_TOKEN permissions needed — all git and gh operations use DOCS_PAT,
+    # which authenticates as a user and is not subject to the org-level restriction
+    # that prevents GITHUB_TOKEN from pushing branches or opening PRs.
  
     steps:
       - name: Checkout repo
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          # Pass the PAT so that subsequent git push calls are authenticated.
+          token: ${{ secrets.DOCS_PAT }}
  
       - name: Set up Python
         uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
@@ -100,7 +103,7 @@ jobs:
       - name: Create pull request
         if: steps.commit.outputs.changed == 'true'
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.DOCS_PAT }}
           COMPONENT: ${{ inputs.component }}
           VERSION: ${{ inputs.version }}
           RELEASE_TYPE: ${{ inputs.release_type }}
