@@ -81,7 +81,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Included the connection ID in the plugin context.
 
 #### Administration
- - Added managed channel categories support requiring schema updates for Channel Admin enforcement of sidebar organization.
+ - Added support for classification markings for channel banners.
  - Removed remaining support for Internet Explorer and pre-Chromium versions of Edge on webapp.
  - Added ``server.process_id`` to support packet diagnostics to help correlate support data with OS-level logs and process monitoring tools such as ``ps``, ``top``, and systemd journal.
  - Added ``go_version`` to support packet diagnostics, showing the Go runtime version the server binary was compiled with on Linux.
