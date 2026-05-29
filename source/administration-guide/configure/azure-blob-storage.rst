@@ -138,10 +138,9 @@ Save the settings and click **Test Connection**. Mattermost issues a no-op write
 
   **Restart required.** The Mattermost server caches the file storage backend at startup and does not re-create it when the file storage configuration changes. After saving, restart every Mattermost server in the deployment (``systemctl restart mattermost``, recycle the container, or roll the deployment in your cluster) for the new driver to take effect. **Test Connection** works before the restart because it builds a temporary backend from the submitted form values.
 
-.. note::
+.. warning::
 
   Switching the file driver does **not** migrate existing files. If you are moving an existing deployment from Amazon S3, see `Migrate existing files from Amazon S3`_ below before changing the driver. For migrations from local disk, copy the directory contents into the Azure container using ``azcopy`` (`docs <https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10>`__). In either case, files uploaded before the switch are unreachable once the driver changes unless they are present at the same key in the destination.
-
 Step 3: Verify
 --------------
 
