@@ -2037,7 +2037,7 @@ File storage system
 
 .. note::
 
-  After saving a new file storage system, restart every Mattermost server in the deployment for the change to take effect. The file storage backend is initialized at startup and isn't rebuilt automatically when ``FileSettings`` change at runtime. ``Test Connection`` validates the form values before save and works without a restart.
+  After saving a new file storage system, restart every Mattermost server in the deployment for the change to take effect. The file storage backend is initialized at startup and isn't rebuilt automatically when ``FileSettings`` change at runtime.
 
 .. config:setting:: local-storage-directory
   :displayname: Local storage directory (File Storage)
@@ -2558,7 +2558,7 @@ Azure authentication
 |   (on-premises, non-Azure cloud, local development).          |                                                                          |
 | - ``default_credential``: Mattermost obtains an Entra ID      |                                                                          |
 |   token via the Azure SDK's ``DefaultAzureCredential`` chain  |                                                                          |
-|   (managed identity, workload identity, service-principal    |                                                                          |
+|   (managed identity, workload identity, service-principal     |                                                                          |
 |   environment variables, or ``az login`` -- in that order)    |                                                                          |
 |   and signs requests with it. ``FileSettings.AzureAccessKey`` |                                                                          |
 |   is ignored. Recommended for deployments on Azure where the  |                                                                          |
@@ -2672,13 +2672,13 @@ Enable secure Azure Blob Storage connections
 Azure request timeout
 ~~~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+--------------------------------------------------------------------------------------------+
-| The amount of time, in milliseconds, before requests to       | - System Config path: **Environment > File Storage**                                       |
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+| The amount of time, in milliseconds, before requests to       | - System Config path: **Environment > File Storage**                                          |
 | Azure Blob Storage time out.                                  | - ``config.json`` setting: ``FileSettings`` > ``AzureRequestTimeoutMilliseconds`` > ``30000`` |
-|                                                               | - Environment variable: ``MM_FILESETTINGS_AZUREREQUESTTIMEOUTMILLISECONDS``                |
-| Default is 30000 (30 seconds). Increase only if your network  |                                                                                            |
-| needs more time for large objects.                            |                                                                                            |
-+---------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+|                                                               | - Environment variable: ``MM_FILESETTINGS_AZUREREQUESTTIMEOUTMILLISECONDS``                   |
+| Default is 30000 (30 seconds). Increase only if your network  |                                                                                               |
+| needs more time for large objects.                            |                                                                                               |
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
 
 .. config:setting:: initial-font
   :displayname: Initial font (File Storage)
