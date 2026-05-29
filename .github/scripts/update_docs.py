@@ -1,3 +1,4 @@
+
 """
 update_docs.py
  
@@ -94,9 +95,14 @@ DESKTOP_ESR_EXTRA_FILES = [
 def get_files() -> list[str]:
     if COMPONENT == "Server":
         if RELEASE_TYPE in ("Patch / Dot Release", "Security Release"):
+            # Changelog included — no dedicated automation for these release types.
             return SERVER_BASE_FILES + SERVER_CHANGELOG_FILES
+        elif RELEASE_TYPE in ("Feature Release", "ESR"):
+            # Changelog excluded — generate-changelog.yml handles it for these types.
+            return SERVER_BASE_FILES
         else:
-            # Feature Release, ESR, Other — changelog handled by generate-changelog.yml
+            # "Other" and any future types — skip the changelog to avoid unintended edits.
+            # Add an explicit branch above if a new release type needs changelog updates.
             return SERVER_BASE_FILES
     elif COMPONENT == "Mobile":
         return MOBILE_FILES
