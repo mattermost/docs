@@ -161,9 +161,6 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
 ### Open Source Components
  - Added ``x/text``, ``@atlaskit/pragmatic-drag-and-drop``, ``@atlaskit/pragmatic-drag-and-drop-hitbox``, ``@atlaskit/pragmatic-drag-and-drop-react-drop-indicator``, ``prometheus/common``, ``Azure/azure-sdk-for-go``, ``boxes-ltd/imaging`` and ``google/uuid``, and removed ``anthonynsimon/bild`` from https://github.com/mattermost/mattermost/.
 
-### Contributors
- - TBD
-
 (release-v11.7-extended-support-release)=
 ## Release v11.7 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
