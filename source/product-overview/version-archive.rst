@@ -13,7 +13,7 @@ If you want to check that the version of Mattermost you are installing is the of
 
   Mattermost Enterprise Edition v11.7.3 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-7-extended-support-release>`__ - `Download <https://releases.mattermost.com/11.7.3/mattermost-11.7.3-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/11.7.3/mattermost-11.7.3-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``TBD``
+    - SHA-256 Checksum: ``TB``
     - GPG Signature: https://releases.mattermost.com/11.7.3/mattermost-11.7.3-linux-amd64.tar.gz.sig
     - SBOM Download Link: https://releases.mattermost.com/11.7.3/sbom-enterprise-v11.7.3.json
   Mattermost Enterprise Edition v11.6.5 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-6-feature-release>`__ - `Download <https://releases.mattermost.com/11.6.5/mattermost-11.6.5-linux-amd64.tar.gz?src=arc>`__
