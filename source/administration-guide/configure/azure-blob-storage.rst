@@ -164,7 +164,7 @@ This means a straight key-for-key copy from the S3 bucket to the Azure container
 
 There are multiple ways to accomplish this. The recommended way is using the `Azure Storage Mover service <https://learn.microsoft.com/en-us/azure/storage-mover/cloud-to-cloud-migration>`__, which provides a cloud-to-cloud migration from Amazon S3 to Azure Blob Storage.
 
-There are alternative tools that can also help, like `rclone <https://rclone.org/azureblob/>`__ and `AzCopy <https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-s3>`__
+There are alternative tools that can also help, like `rclone <https://rclone.org/azureblob/>`__ and `AzCopy <https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-s3>`__.
 
 (Optional) Configure the export backend
 ---------------------------------------
