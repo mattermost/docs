@@ -100,6 +100,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Added attribute value masking for access control policies: admins who don't hold specific attribute values see a masked placeholder (``--------``) instead of the raw value, with affected rule rows set to read-only and save/delete actions disabled. Applies to the table editor, CEL editor, and team settings modal. Requires Enterprise Advanced license and ``AttributeValueMasking`` feature flag.
  - Added support for request-provided session attributes (IP address, user agent details) in ABAC permission policy expressions via ``user.session``.
  - Added a user setting to experimentally enable concurrent React.
+ - Added debug logging when a user has experimental support for concurrent React enabled.
 
 #### Performance
  - Improved memory usage and performance when processing images (resizing, thumbnails, and orientation correction).
@@ -137,6 +138,8 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Fixed an issue with clipped tooltips in the advanced data masking policy expression editor.
  - Fixed an issue where retained flagged posts did not re-appear in the channel for other members until they refreshed the browser or clicked the hidden-post banner.
  - Fixed an issue where the **Save** button could disappear in **Channel Settings** after switching **Classification Markings** off and back on.
+ - Guest magic-link ``REST`` login now applies the same authentication criteria checks as the web one-time-link handler and password login.
+ - Hardened the OAuth server provider's handling of deactivated users.
 
 ### API Changes
  - Added a new ``GET /api/v4/content_flagging/post/<post_id>/report`` endpoint for generating and downloading a content flagging report for a flagged post.
