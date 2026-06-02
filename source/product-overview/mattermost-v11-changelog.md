@@ -103,6 +103,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Added debug logging when a user has experimental support for concurrent React enabled.
 
 #### Performance
+ - Benchmarking test results showed no significant difference: a +5.30% increase in the number of supported users for the new release, which lies within the ``[-5%, +5%]`` prediction interval. View the full raw data and methodology in our [Performance Reports repository](https://github.com/mattermost/performance-reports/tree/main/performance-comparisons/v11.8).
  - Improved memory usage and performance when processing images (resizing, thumbnails, and orientation correction).
  - Improved authorization checks for post info lookups.
  - Increased the PostgreSQL column statistics target on ``Posts.rootid`` and ``Posts.channelid`` to 5000, preventing query planner to choose the wrong index, which could cause full-table scans during bulk imports and other thread-heavy operations on large Posts tables.
