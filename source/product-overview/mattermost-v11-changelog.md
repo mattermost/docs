@@ -16,12 +16,31 @@ Platform and OS scope reflects reported and tested environments and may not repr
 (release-v11.7-extended-support-release)=
 ## Release v11.7 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
-**Release day 2026-05-15**
+- **11.7.2, released 2026-05-27**
+  - Mattermost v11.7.2 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Playbooks plugin version [v2.9.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.9.0).
+  - Updated Go to v1.25.10.
+  - Fixed a regression saving various masked fields from the System Console.
+  - Introduced a new permission ``Edit Attachments`` for controlling who can edit post attachments when editing a post. By default the permission is granted to whoever has edit post permission.
+  - Mattermost v11.7.2 contains no database or functional changes.
+- **11.7.1, released 2026-05-21**
+  - Mattermost v11.7.1 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged GitLab plugin version [v1.12.2](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.12.2).
+  - Pre-packaged Jira plugin version [v4.7.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.7.0).
+  - Tightened session invalidation on the global session revocation path.
+  - POST ``/api/v4/users/{user_id}/demote`` now returns 400 when ``user_id`` is a bot account; bot accounts cannot be converted to guests.
+  - Improved memory usage and performance when processing images (resizing, thumbnails, and orientation correction).
+  - Plugins using the Shared Channels APIs can now register multiple remote connections by calling ``RegisterPluginForSharedChannels`` with different ``SiteURL`` values, enabling use cases like multiple outbound transports or bridging to multiple external servers. A new ``UnregisterPluginRemoteForSharedChannels`` method allows removing a single remote without affecting others. Existing single-remote plugins continue to work without changes.
+  - Fixed an issue where file attachments synced over a shared channel through a plugin (using the ``OnSharedChannelsAttachmentSyncMsg`` / ``ReceiveSharedChannelAttachmentSyncMsg`` plugin API pair) were stored on the receiving server but did not appear in the corresponding post, because the saved FileInfo was given a new ID instead of preserving the sender's file ID referenced by the post.
+  - Plugin API's for Shared Channel sync (``ReceiveSharedChannelSyncMsg`` and ``ReceiveSharedChannelAttachmentSyncMsg``) are now order-tolerant and idempotent: plugin remotes can now deliver a post and its file attachments in either order or concurrently, and at-least-once redeliveries no longer produce duplicate FileInfo rows.
+  - Mattermost v11.7.1 contains no database or functional changes.
+- **11.7.0, released 2026-05-15**
+  - Original 11.7.0 release.
 
 ```{Attention}
 **Breaking Changes**
  - FIPS builds require a minimum of 14 characters for passwords, atmos/camo proxy configuration, and shared channel secrets. Shorter passwords for existing users will no longer be valid and require a password reset. Non-FIPS builds are unaffected.
- - v11.7 includes Agents plugin v2. Please see [this guide](https://github.com/mattermost/mattermost-plugin-agents/blob/master/docs/upgrading_to_2.0.md‎.md) on how to upgrade the Mattermost Agents plugin from a v1.x release to v2.0.0. It covers the supported version path, the migrations that run automatically on first start of v2.0.0, the breaking changes and default-behavior flips that admins should know about before the upgrade window, and the verification steps to confirm the upgrade succeeded.  
+ - v11.7 includes Agents plugin v2. Please see [this guide](https://github.com/mattermost/mattermost-plugin-agents/blob/master/docs/upgrading_to_2.0.md‎) on how to upgrade the Mattermost Agents plugin from a v1.x release to v2.0.0. It covers the supported version path, the migrations that run automatically on first start of v2.0.0, the breaking changes and default-behavior flips that admins should know about before the upgrade window, and the verification steps to confirm the upgrade succeeded.  
 ```
 
 #### Database Schema Changes
@@ -85,7 +104,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-7-is-now-availab
  - Shared Channels related errors now appear in the main log file by default.
  - Added a new Integrated Boards feature flag.
  - Added protected fields and field specific permissions to the property fields.
- - Added a ``--workers`` flag to the mmctl import process to control concurrency.
+ - Added a ``--workers`` flag to the [mmctl import process](https://docs.mattermost.com/administration-guide/manage/mmctl-command-line-tool.html) to control concurrency.
  - Added support for listing user roles through mmctl.
  - In the access control table editor, multi-select user attributes can now only use the "in" operator; changing the attribute on a row no longer resets the operator when both attributes are non-multi-select.
  - Tightened authorization on the group syncable link and patch endpoints.
@@ -153,6 +172,18 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-7-is-now-availab
 (release-v11.6-feature-release)=
 ## Release v11.6 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **11.6.4, released 2026-05-27**
+  - Mattermost v11.6.4 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Agents plugin version [v1.14.2](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.14.2).
+  - Introduced a new permission ``Edit Attachments`` for controlling who can edit post attachments when editing a post. By default the permission is granted to whoever has edit post permission.
+  - Mattermost v11.6.4 contains no database or functional changes.
+- **11.6.3, released 2026-05-21**
+  - Mattermost v11.6.3 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged GitLab plugin version [v1.12.2](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.12.2).
+  - Pre-packaged Jira plugin version [v4.7.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.7.0).
+  - Fixed a regression with saving various masked fields from the System Console.
+  - Tightened session invalidation on the global session revocation path.
+  - Mattermost v11.6.3 contains no database or functional changes.
 - **11.6.2, released 2026-05-13**
   - Mattermost v11.6.2 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Playbooks plugin version [v2.8.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.8.1).
@@ -293,6 +324,18 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-6-is-now-availab
 (release-v11.5-feature-release)=
 ## Release v11.5 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **11.5.7, released 2026-05-27**
+  - Mattermost v11.5.7 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Agents plugin version [v1.14.2](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.14.2).
+  - Introduced a new permission ``Edit Attachments`` for controlling who can edit post attachments when editing a post. By default the permission is granted to whoever has edit post permission.
+  - Mattermost v11.5.7 contains no database or functional changes.
+- **11.5.6, released 2026-05-21**
+  - Mattermost v11.5.6 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged GitLab plugin version [v1.12.2](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.12.2).
+  - Pre-packaged Jira plugin version [v4.7.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.7.0).
+  - Fixed a regression with saving various masked fields from the System Console.
+  - Tightened session invalidation on the global session revocation path.
+  - Mattermost v11.5.6 contains no database or functional changes.
 - **11.5.5, released 2026-05-13**
   - Mattermost v11.5.5 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Playbooks plugin version [v2.8.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.8.1).

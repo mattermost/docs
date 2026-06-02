@@ -16,8 +16,20 @@ on:
         required: true
         default: 'mattermost/mattermost,mattermost/enterprise'
         type: string
+      release_type:
+        description: 'Release type: "feature" (default) or "esr" (Extended Support Release)'
+        required: false
+        default: 'feature'
+        type: choice
+        options:
+          - feature
+          - esr
       release_date:
         description: 'Release day date (e.g. 2026-05-15) — defaults to today if omitted'
+        required: false
+        type: string
+      go_version:
+        description: 'Go version used in this release (e.g. go1.22.5) — if omitted, noted as unchanged from previous release'
         required: false
         type: string
       blog_post_url:
@@ -79,7 +91,9 @@ jobs:
           MILESTONE: ${{ inputs.milestone }}
           VERSION: ${{ inputs.version }}
           REPOS: ${{ inputs.server_repos }}
+          RELEASE_TYPE: ${{ inputs.release_type }}
           RELEASE_DATE: ${{ inputs.release_date }}
+          GO_VERSION: ${{ inputs.go_version }}
           BLOG_POST_URL: ${{ inputs.blog_post_url }}
           CHANGELOG_PATH: source/product-overview/mattermost-v11-changelog.md
         run: python .github/scripts/generate_changelog.py

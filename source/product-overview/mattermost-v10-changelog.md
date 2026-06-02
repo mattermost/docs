@@ -80,11 +80,25 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 (release-v10.11-extended-support-release)=
 ## Release v10.11 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
-- **10.11.17, released 2026-05-13**
-  - Mattermost v10.11.17 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+- **10.11.19, released 2026-05-27**
+  - Mattermost v10.11.19 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Agents plugin version [v1.14.2](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.14.2).
+  - Introduced a new permission ``Edit Attachments`` for controlling who can edit post attachments when editing a post. By default the permission is granted to whoever has edit post permission.
+  - Mattermost v10.11.19 contains no database or functional changes.
+- **10.11.18, released 2026-05-21**
+  - Mattermost v10.11.18 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged GitLab plugin version [v1.12.2](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.12.2).
+  - Pre-packaged Jira plugin version [v4.7.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.7.0).
+  - Fixed a regression with saving various masked fields from the System Console.
+  - Tightened session invalidation on the global session revocation path.
+  - POST ``/api/v4/users/{user_id}/demote`` now returns 400 when ``user_id`` is a bot account; bot accounts cannot be converted to guests.
+  - Mattermost v10.11.18 contains no database or functional changes.
+- **10.11.16 / 10.11.17, released 2026-05-13**
+  - Due to an unforeseen build issue, versions 10.11.16 and 10.11.17 were unintentionally created as identical releases.
+  - Mattermost v10.11.16 / v10.11.17 contain medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Playbooks plugin version [v2.4.5](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.4.5).
   - Tightened authorization on the group syncable link and patch endpoints.
-  - Mattermost v10.11.17 contains the following database changes:
+  - Mattermost v10.11.16 & v10.11.17 contain the following database changes:
     - Scoped the ``role_updated`` WebSocket events to the affected team/channel instead of broadcasting globally. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
 - **10.11.15, released 2026-04-22**
   - Mattermost v10.11.15 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
