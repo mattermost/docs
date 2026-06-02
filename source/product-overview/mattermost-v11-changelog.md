@@ -20,6 +20,7 @@ Platform and OS scope reflects reported and tested environments and may not repr
   - Mattermost v11.7.3 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Hardened the OAuth server provider's handling of deactivated users.
   - Guest magic-link ``REST`` login now applies the same authentication criteria checks as the web one-time-link handler and password login.
+  - Fixed an issue that caused a flagged post to continue being visible for content reviewers until a refresh after deletion.
   - Mattermost v11.7.3 contains no database or functional changes.
 - **11.7.2, released 2026-05-27**
   - Mattermost v11.7.2 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
