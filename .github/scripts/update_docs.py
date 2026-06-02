@@ -1,3 +1,4 @@
+
 """
 update_docs.py
  
@@ -141,7 +142,7 @@ Rules:
 - Never remove or alter existing content unless it is explicitly outdated by this release.
 - Do not add placeholder text, commentary, or notes -- only real documentation content.
 - If a file does not need changes for this release type, return it exactly as-is.
-- Return ONLY the complete file content. No explanations, no markdown code fences, no preamble.
+- Return ONLY the content you were given (the full file, or the provided portion if the user prompt says the file is truncated). No explanations, no markdown code fences, no preamble.
 """
  
  
@@ -186,7 +187,9 @@ def update_file(client: anthropic.Anthropic, filepath: str) -> str:
     This keeps each Claude call small and well-defined, and ensures changelog
     entries accumulate correctly across versions.
  
-    Returns one of: "updated", "unchanged", "skipped", "not_found".
+    Returns one of: "updated", "unchanged", "not_found".
+    Version-level quality failures (empty response, too-short response) are logged
+    and skipped via continue -- they do not surface as a file-level "skipped" status.
     Raises on hard failures (I/O errors, API errors) so the caller can track them.
     """
     print(f"  Reading {filepath}...")
@@ -236,6 +239,16 @@ def update_file(client: anthropic.Anthropic, filepath: str) -> str:
             )
  
         updated = response.content[0].text
+ 
+        # For truncated files, Claude should return only the head portion, but it may
+        # occasionally return slightly more. Cap the result at MAX_SEND_CHARS so that
+        # subsequent version passes don't receive an ever-growing prompt.
+        if truncated and len(updated) > MAX_SEND_CHARS:
+            print(
+                f"  WARNING: Claude returned {len(updated):,} chars for {filepath} "
+                f"(version {version}); truncating to first {MAX_SEND_CHARS:,} chars."
+            )
+            updated = updated[:MAX_SEND_CHARS]
  
         # --- Content quality guards (warn and skip this version, not the whole file) ---
         if not updated.strip():
