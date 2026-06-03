@@ -268,7 +268,7 @@
     </tr>
     <tr>
       <td><strong>Microsoft Intune MAM Support</strong>: Enhanced mobile security through <a href="https://docs.mattermost.com/deployment-guide/mobile/configure-microsoft-intune-mam.html">Microsoft Intune Mobile Application Management (MAM)</a>, enabling organizations to secure and manage Mattermost mobile deployments with Intune's enterprise mobility management capabilities.</td>
-      <td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v11.3+</td>
+      <td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v11.3+</td>
     </tr>
     <!-- Workflow automation -->
     <tr class="section"><td colspan="7"><strong>Workflow automation</strong></td></tr>

@@ -2,7 +2,7 @@ name: Update Docs
  
 # Only members with write access to this repo can trigger workflow_dispatch.
 # To further restrict (e.g. require a specific team), protect the branch or
-# add an environment with required reviewers in repo Settings → Environments.
+# add an environment with required reviewers in repo Settings -> Environments.
 on:
   workflow_dispatch:
     inputs:
@@ -45,13 +45,36 @@ on:
 jobs:
   update-docs:
     runs-on: ubuntu-latest
+    # GITHUB_TOKEN is locked to read-only; all git and gh operations authenticate
+    # via a short-lived GitHub App installation token (generated in the first step).
+    # This matches the pattern used in generate-changelog.yml and avoids the
+    # org-level restriction that prevents GITHUB_TOKEN from pushing branches or
+    # opening PRs.
     permissions:
-      contents: write
-      pull-requests: write
+      contents: read
  
     steps:
+      # Changelog Automation (docs) app -- read/write access to mattermost/docs.
+      # Reuses the same app and credentials as generate-changelog.yml.
+      # Credentials are already present in Settings -> Secrets and variables -> Actions:
+      #   CHANGELOG_WRITE_CLIENT_ID   (variable) -- Client ID from the docs GitHub App
+      #   CHANGELOG_WRITE_PRIVATE_KEY (secret)   -- Private key from the docs GitHub App
+      - name: Get write token (docs repo)
+        id: app-token
+        uses: actions/create-github-app-token@1b10c78c7865c340bc4f6099eb2f838309f1e8c3 # v3.1.1
+        with:
+          client-id: ${{ vars.CHANGELOG_WRITE_CLIENT_ID }}
+          private-key: ${{ secrets.CHANGELOG_WRITE_PRIVATE_KEY }}
+          owner: mattermost
+          repositories: docs
+ 
       - name: Checkout repo
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          # Use the App token so that subsequent git push calls are authenticated.
+          # Credentials are persisted in the git config (default behaviour) so that
+          # the "Commit and push changes" step can push without extra auth setup.
+          token: ${{ steps.app-token.outputs.token }}
  
       - name: Set up Python
         uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
@@ -88,7 +111,7 @@ jobs:
           git add source/
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
-            echo "No files were modified — skipping PR creation."
+            echo "No files were modified -- skipping PR creation."
           else
             git commit -m "docs: update ${{ inputs.component }} files for v${{ inputs.version }} ${{ inputs.release_type }}"
             # --force-with-lease safely overwrites the remote branch on re-runs
@@ -100,7 +123,7 @@ jobs:
       - name: Create pull request
         if: steps.commit.outputs.changed == 'true'
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
           COMPONENT: ${{ inputs.component }}
           VERSION: ${{ inputs.version }}
           RELEASE_TYPE: ${{ inputs.release_type }}
@@ -117,7 +140,7 @@ jobs:
           # Check before creating to avoid a duplicate-PR error.
           existing_pr="$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')"
           if [ -n "$existing_pr" ]; then
-            echo "PR #${existing_pr} already exists for ${BRANCH} — skipping creation."
+            echo "PR #${existing_pr} already exists for ${BRANCH} -- skipping creation."
           else
             {
               echo "## ${COMPONENT} v${VERSION} ${RELEASE_TYPE} Documentation Update"
