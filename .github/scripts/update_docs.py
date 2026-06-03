@@ -50,7 +50,8 @@ MAX_SEND_CHARS = 50_000
 #   - Patch/Dot: releases page + changelog only
 # ---------------------------------------------------------------------------
  
-SERVER_FILES = [
+# Files updated for every server release type.
+SERVER_BASE_FILES = [
     "source/product-overview/mattermost-server-releases.md",
     "source/deployment-guide/server/linux/deploy-rhel.rst",
     "source/deployment-guide/server/linux/deploy-tar.rst",
@@ -63,6 +64,15 @@ SERVER_FILES = [
     "source/deployment-guide/software-hardware-requirements.rst",
     "source/administration-guide/upgrade/important-upgrade-notes.rst",
     "source/product-overview/ui-ada-changelog.rst",
+]
+ 
+# The v11 changelog is only updated for Patch / Dot releases and Security releases.
+# Feature and ESR releases have a dedicated changelog automation (generate-changelog.yml)
+# that handles this file separately.
+# Note: this file can be very large; MAX_SEND_CHARS already limits what is sent to
+# Claude to the most-recent portion where new dot-release entries are added.
+SERVER_CHANGELOG_FILES = [
+    "source/product-overview/mattermost-v11-changelog.md",
 ]
  
 MOBILE_FILES = [
@@ -83,7 +93,16 @@ DESKTOP_ESR_EXTRA_FILES = [
  
 def get_files() -> list[str]:
     if COMPONENT == "Server":
-        return SERVER_FILES
+        if RELEASE_TYPE in ("Patch / Dot Release", "Security Release"):
+            # Changelog included — no dedicated automation for these release types.
+            return SERVER_BASE_FILES + SERVER_CHANGELOG_FILES
+        elif RELEASE_TYPE in ("Feature Release", "ESR"):
+            # Changelog excluded — generate-changelog.yml handles it for these types.
+            return SERVER_BASE_FILES
+        else:
+            # "Other" and any future types — skip the changelog to avoid unintended edits.
+            # Add an explicit branch above if a new release type needs changelog updates.
+            return SERVER_BASE_FILES
     elif COMPONENT == "Mobile":
         return MOBILE_FILES
     elif COMPONENT == "Desktop":
