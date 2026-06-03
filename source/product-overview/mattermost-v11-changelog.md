@@ -18,6 +18,11 @@ Platform and OS scope reflects reported and tested environments and may not repr
 
 **Release day: 2026-06-16**
 
+```{Attention}
+**Breaking Changes**
+ - The Custom Profile Attributes property group is renamed from ``custom_profile_attributes`` to ``access_control``, and CPA fields and values are migrated from the legacy property model to the v2 model. The functionality of the CPA feature is unchanged. Plugin developers that use CPA will need to register against the new group name.
+```
+
 ### Upgrade Impact
 
 #### Database Schema Changes
@@ -94,7 +99,6 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Added a new feature allowing content reviewers to generate a downloadable report for a post quarantined for review as part of Data Spillage handling.
  - Tightened session invalidation on the global session revocation path.
  - Downgraded Hungarian translations from Beta to Alpha.
- - The Custom Profile Attributes property group is renamed from ``custom_profile_attributes`` to ``access_control``, and CPA fields and values are migrated from the legacy property model to the v2 model. The functionality of the CPA feature is unchanged. Plugin developers that use CPA will need to register against the new group name.
  - Clarified error messages on potential permission migrations.
  - Added support for permission-action rules (file upload, file download) on channel-scope access control policies, with a new "Simulate access" modal in System Console and Channel Settings that previews per-user, per-action decisions before saving. Gated by the existing ``PermissionPolicies`` feature flag and the Enterprise Advanced license.
  - Added attribute value masking for access control policies: admins who don't hold specific attribute values see a masked placeholder (``--------``) instead of the raw value, with affected rule rows set to read-only and save/delete actions disabled. Applies to the table editor, CEL editor, and team settings modal. Requires Enterprise Advanced license and ``AttributeValueMasking`` feature flag.
