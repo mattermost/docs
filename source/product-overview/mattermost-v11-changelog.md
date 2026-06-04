@@ -145,6 +145,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Guest magic-link ``REST`` login now applies the same authentication criteria checks as the web one-time-link handler and password login.
  - Hardened the OAuth server provider's handling of deactivated users.
  - Fixed an issue that caused a flagged post to continue being visible for content reviewers until a refresh after deletion.
+ - Fixed an issue where public channel mention links were shown as an unresolved channel slug instead of the channel name (and were not clickable) for users who were not members of the referenced channel when **Compliance Monitoring** was enabled.
 
 ### API Changes
  - Added a new ``GET /api/v4/content_flagging/post/<post_id>/report`` endpoint for generating and downloading a content flagging report for a flagged post.
