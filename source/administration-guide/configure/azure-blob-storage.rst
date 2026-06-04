@@ -46,7 +46,7 @@ Retrieve the Storage Account access key.
 
 .. note::
 
-  Treat the shared key as a secret -- anyone with it has full access to the account. Azure provides two keys so you can rotate without downtime: update Mattermost to ``key2``, regenerate ``key1``, then swap on the next rotation cycle. Plan a rotation cadence that matches your organisation's policy.
+  Treat the shared key as a secret -- anyone with it has full access to the storage account (every container and all data it holds). A shared key can't be scoped to a single container, to specific operations, or to a resource group; if you need least-privilege access, use `Option B: Default credential (Microsoft Entra ID)`_ with a container-scoped **Storage Blob Data Contributor** role instead. Azure provides two keys so you can rotate without downtime: update Mattermost to ``key2``, regenerate ``key1``, then swap on the next rotation cycle. Plan a rotation cadence that matches your organisation's policy.
 
 Option B: Default credential (Microsoft Entra ID)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -106,6 +106,10 @@ To prepare the account you're going to use, you'll need to assign the role from 
 .. tip::
 
   Azure RBAC role assignments can take 30-120 seconds to propagate. If the first ``TestConnection`` returns ``AuthorizationPermissionMismatch`` immediately after the role assignment, wait a minute and retry before assuming a misconfiguration.
+
+.. note::
+
+  Mattermost holds the credential, not the token. Microsoft Entra ID access tokens are short-lived, but the Azure SDK caches each token and refreshes it automatically before it expires, so routine token rotation never interrupts file access while the server is running. Access stops only if the underlying identity or its authorization changes or is removed.
 
 Step 2: Configure Mattermost
 ----------------------------
@@ -169,7 +173,7 @@ There are alternative tools that can also help, like `rclone <https://rclone.org
 (Optional) Configure the export backend
 ---------------------------------------
 
-Compliance and data exports can be stored separately from regular file uploads. The **File Storage (Exports)** section directly below **File Storage** in the System Console mirrors the fields above and accepts the same Azure credentials. Customers typically point exports at a different container (or a different account) so the export retention policy can differ from regular uploads.
+Compliance and data exports can be stored separately from regular file uploads. The **File Storage (Exports)** section directly below **File Storage** in the System Console mirrors the fields above and accepts the same Azure credentials. Customers typically point exports at a different container (or a different account) so the export retention policy can differ from regular uploads. The export target is an independent backend with its own driver and credentials, so it doesn't have to use the same provider as regular uploads; e.g., you can keep uploads on Amazon S3 and send exports to Azure Blob Storage, or the reverse.
 
 See :ref:`Enable dedicated export filestore target <administration-guide/configure/environment-configuration-settings:enable dedicated export filestore target>` for the full list of ``ExportAzure*`` keys.
 
