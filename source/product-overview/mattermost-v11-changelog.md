@@ -144,6 +144,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Fixed an issue where the **Save** button could disappear in **Channel Settings** after switching **Classification Markings** off and back on.
  - Guest magic-link ``REST`` login now applies the same authentication criteria checks as the web one-time-link handler and password login.
  - Hardened the OAuth server provider's handling of deactivated users.
+ - Fixed an issue that caused a flagged post to continue being visible for content reviewers until a refresh after deletion.
 
 ### API Changes
  - Added a new ``GET /api/v4/content_flagging/post/<post_id>/report`` endpoint for generating and downloading a content flagging report for a flagged post.
