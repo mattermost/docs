@@ -81,7 +81,7 @@ Enable auto-translation
 
 .. note::
 
-   The languages available in the **Languages allowed** list are controlled by the **Available languages** setting (``AvailableLocales``) under **Site Configuration > Localization**. If that field is blank, all supported languages are available; otherwise only listed languages appear as selectable auto-translation targets. The ``EnableExperimentalLocales`` setting can make additional locale codes available. Note that some locales (such as ``zh-CN``) are in beta — portions of the Mattermost UI may still display in English, which is a UI localization limitation and does not affect message translation.
+   The languages available in the **Languages allowed** list are controlled by the **Available languages** setting (``AvailableLocales``) under **Site Configuration > Localization**. If that field is blank, all supported languages are available; otherwise only listed languages appear as selectable auto-translation targets. The ``EnableExperimentalLocales`` setting can make additional locale codes available. Note that some locales (such as ``zh-Hans``) are in beta — portions of the Mattermost UI may still display in English, which is a UI localization limitation and does not affect message translation.
 
 Use the :ref:`Restrict autotranslation in direct and group messages <administration-guide/configure/site-configuration-settings:restrict autotranslation in direct and group messages>` setting to control whether auto-translation can be enabled in direct and group messages.
 
