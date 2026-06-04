@@ -10,7 +10,11 @@ Required environment variables:
   ANTHROPIC_API_KEY  -- Anthropic API key (stored as a GitHub secret)
   COMPONENT          -- "Server", "Mobile", or "Desktop"
   RELEASE_TYPE       -- e.g. "ESR", "Feature Release", "Patch / Dot Release"
-  VERSION            -- Version number, e.g. "11.7", "2.40", "6.2", "5.13.6"
+  VERSION            -- One or more version numbers, comma-separated.
+                        e.g. "11.7" or "10.11.20, 11.6.5, 11.7.3"
+                        When multiple versions are given, each file is updated
+                        once per version in sequence. Enter oldest-to-newest so
+                        the newest entry ends up at the top of changelogs.
   RELEASE_DATE       -- Human-readable release date, e.g. "May 15, 2026"
  
 Optional:
@@ -27,9 +31,17 @@ import anthropic
  
 COMPONENT = os.environ["COMPONENT"]          # Server | Mobile | Desktop
 RELEASE_TYPE = os.environ["RELEASE_TYPE"]    # ESR | Feature Release | etc.
-VERSION = os.environ["VERSION"]
 RELEASE_DATE = os.environ["RELEASE_DATE"]
 ESR_END_DATE = os.environ.get("ESR_END_DATE", "").strip()
+ 
+# Parse VERSION as a comma-separated list so the workflow can be triggered once
+# for multi-version releases (e.g. security patches across several branches).
+# Each version is applied to every file in sequence; the output of one version
+# becomes the input for the next, so entries accumulate correctly in changelogs.
+VERSIONS: list[str] = [v.strip() for v in os.environ["VERSION"].split(",") if v.strip()]
+if not VERSIONS:
+    print("ERROR: VERSION environment variable is empty.")
+    sys.exit(1)
  
 # Upper bound on Claude's output per file. Most docs files are a few thousand
 # tokens; 32 000 provides ample headroom without approaching the model's 64 k
@@ -133,7 +145,7 @@ Rules:
 """
  
  
-def build_user_prompt(filepath: str, content: str, truncated: bool = False) -> str:
+def build_user_prompt(filepath: str, content: str, version: str, truncated: bool = False) -> str:
     esr_note = f"\n- ESR end-of-support date: {ESR_END_DATE}" if ESR_END_DATE else ""
     truncation_note = (
         "\nNOTE: This file was too large to send in full. You are seeing only the first "
@@ -145,7 +157,7 @@ def build_user_prompt(filepath: str, content: str, truncated: bool = False) -> s
  
 Release details:
 - Component: {COMPONENT}
-- Version: {VERSION}
+- Version: {version}
 - Release type: {RELEASE_TYPE}
 - Release date: {RELEASE_DATE}{esr_note}
  
@@ -169,7 +181,14 @@ Return the complete file content only."""
 def update_file(client: anthropic.Anthropic, filepath: str) -> str:
     """Update a single documentation file via the Claude API.
  
-    Returns one of: "updated", "unchanged", "skipped", "not_found".
+    When VERSIONS contains multiple entries, the file is updated once per version
+    in sequence: the output of version N becomes the input for version N+1.
+    This keeps each Claude call small and well-defined, and ensures changelog
+    entries accumulate correctly across versions.
+ 
+    Returns one of: "updated", "unchanged", "not_found".
+    Version-level quality failures (empty response, too-short response) are logged
+    and skipped via continue -- they do not surface as a file-level status.
     Raises on hard failures (I/O errors, API errors) so the caller can track them.
     """
     print(f"  Reading {filepath}...")
@@ -181,63 +200,82 @@ def update_file(client: anthropic.Anthropic, filepath: str) -> str:
         return "not_found"
  
     # Large changelogs only need recent context; new entries go near the top.
-    # Send only the head and reconstruct the full file afterward.
+    # Capture the tail once from the original; it stays untouched across all versions.
     truncated = len(original) > MAX_SEND_CHARS
-    send_content = original[:MAX_SEND_CHARS] if truncated else original
     tail = original[MAX_SEND_CHARS:] if truncated else ""
- 
     if truncated:
         print(
             f"  NOTE: File is {len(original):,} chars; "
             f"sending first {MAX_SEND_CHARS:,} chars to Claude."
         )
  
-    print(f"  Sending to Claude...")
-    response = client.messages.create(
-        model="claude-sonnet-4-6",
-        max_tokens=MAX_TOKENS,
-        system=SYSTEM_PROMPT,
-        messages=[{"role": "user", "content": build_user_prompt(filepath, send_content, truncated)}],
-    )
+    # current holds the working head (without tail) updated after each version pass.
+    current = original[:MAX_SEND_CHARS] if truncated else original
+    any_changed = False
  
-    # --- API response integrity checks (raise -> file marked as failed) ---
-    # These guard against malformed or truncated API responses before we touch
-    # the file. They are distinct from the content-quality guards below, which
-    # are softer checks that skip a file with a warning rather than failing it.
-    if not response.content or response.content[0].type != "text":
-        raise RuntimeError(
-            f"Unexpected API response structure for {filepath}: "
-            f"content={response.content!r}"
-        )
-    if response.stop_reason == "max_tokens":
-        raise RuntimeError(
-            f"Claude hit max_tokens ({MAX_TOKENS}) for {filepath}; output is truncated. "
-            "Increase MAX_TOKENS or split the file."
+    for version in VERSIONS:
+        print(f"  Sending to Claude (version {version})...")
+        response = client.messages.create(
+            model="claude-sonnet-4-6",
+            max_tokens=MAX_TOKENS,
+            system=SYSTEM_PROMPT,
+            messages=[{"role": "user", "content": build_user_prompt(filepath, current, version, truncated)}],
         )
  
-    updated = response.content[0].text
+        # --- API response integrity checks (raise -> file marked as failed) ---
+        # These guard against malformed or truncated API responses before we touch
+        # the file. They are distinct from the content-quality guards below, which
+        # are softer checks that skip a version with a warning rather than failing it.
+        if not response.content or response.content[0].type != "text":
+            raise RuntimeError(
+                f"Unexpected API response structure for {filepath} (version {version}): "
+                f"content={response.content!r}"
+            )
+        if response.stop_reason == "max_tokens":
+            raise RuntimeError(
+                f"Claude hit max_tokens ({MAX_TOKENS}) for {filepath} (version {version}); "
+                "output is truncated. Increase MAX_TOKENS or split the file."
+            )
  
-    # --- Content quality guards (return "skipped", file not marked failed) ---
-    # Safety: don't write empty content
-    if not updated.strip():
-        print(f"  WARNING: Claude returned empty content for {filepath} -- skipping.")
-        return "skipped"
+        updated = response.content[0].text
  
-    # Safety: skip if response is dramatically shorter than what was sent
-    if len(updated) < len(send_content) * 0.5:
-        print(
-            f"  WARNING: Updated content for {filepath} is less than 50% of sent "
-            "content length. Skipping to avoid data loss."
-        )
-        return "skipped"
+        # For truncated files, Claude should return only the head portion, but it may
+        # occasionally return slightly more. Cap the result at MAX_SEND_CHARS so that
+        # subsequent version passes don't receive an ever-growing prompt.
+        if truncated and len(updated) > MAX_SEND_CHARS:
+            print(
+                f"  WARNING: Claude returned {len(updated):,} chars for {filepath} "
+                f"(version {version}); truncating to first {MAX_SEND_CHARS:,} chars."
+            )
+            updated = updated[:MAX_SEND_CHARS]
  
-    # No-op: the sent portion is unchanged (compare against what was sent, not full file)
-    if updated.strip() == send_content.strip():
+        # --- Content quality guards (warn and skip this version, not the whole file) ---
+        if not updated.strip():
+            print(f"  WARNING: Claude returned empty content for {filepath} (version {version}) -- skipping this version.")
+            continue
+ 
+        if len(updated) < len(current) * 0.5:
+            print(
+                f"  WARNING: Updated content for {filepath} (version {version}) is less than "
+                "50% of sent content length -- skipping this version to avoid data loss."
+            )
+            continue
+ 
+        if updated.strip() == current.strip():
+            print(f"  No changes needed for version {version}.")
+            continue
+ 
+        # This version changed the file -- chain its output as input to the next version.
+        current = updated
+        any_changed = True
+        print(f"  Version {version} applied.")
+ 
+    if not any_changed:
         print(f"  No changes needed -- {filepath} left as-is.")
         return "unchanged"
  
-    # Reconstruct: Claude's updated head + the untouched tail (if file was truncated)
-    final_content = updated + tail if truncated else updated
+    # Reconstruct: updated head + the untouched tail (if file was truncated)
+    final_content = current + tail if truncated else current
  
     with open(filepath, "w", encoding="utf-8") as f:
         f.write(final_content)
@@ -256,7 +294,7 @@ def main():
     print(f"\nMattermost Docs Update")
     print(f"  Component:    {COMPONENT}")
     print(f"  Release type: {RELEASE_TYPE}")
-    print(f"  Version:      {VERSION}")
+    print(f"  Version(s):   {', '.join(VERSIONS)}")
     print(f"  Release date: {RELEASE_DATE}")
     if ESR_END_DATE:
         print(f"  ESR end date: {ESR_END_DATE}")
