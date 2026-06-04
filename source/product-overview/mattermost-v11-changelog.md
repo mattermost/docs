@@ -55,7 +55,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Pre-packaged Playbooks plugin version [v2.9.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.9.0).
  - Pre-packaged Jira plugin version [v4.7.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.7.0).
  - Pre-packaged Calls plugin version [v1.11.5](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.11.5).
- - Pre-packaged Boards plugin version [v9.2.5](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.2.5).
+ - Pre-packaged Boards plugin version [v9.2.4](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.2.4).
  - Added a new keyboard shortcut, ``Shift`` + ``ESC``, that marks all channels, threads, and direct messages as read for a team on webapp / desktop app.
  - Added an overflow menu for channel bookmarks when the bookmark bar runs out of space. Bookmarks can be reordered via drag-and-drop between the bar and the overflow menu, or via keyboard (Space to select, arrow keys to move) on webapp. Replaced ``react-beautiful-dnd`` with ``@atlaskit/pragmatic-drag-and-drop``.
  - Added an unread badge to Recaps.
@@ -121,7 +121,6 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Fixed an issue where the reminder confirmation did not appear when setting a reminder on a reply from the thread view.
  - Fixed a panic in the ``mmctl`` websocket command when the WebSocket connection failed on startup.
  - Fixed an issue where the System Console Reporting sidebar label for the system analytics page so it now consistently reads "System Statistics".
- - Fixed a white flash that appeared in the global header and left sidebar when switching between products (Playbooks/Boards) and Channels (reported on desktop app).
  - Fixed an issue with the invite modal text input clipping and modal width overflow when typing long text in the "To" field.
  - Fixed an issue where the post autocomplete menu could be clipped when the right-hand sidebar was open.
  - Fixed an issue with the themed text colors in the Invite Guest modal channel picker so the "Add to channels" section, the typed input text, and the channel suggestion rows follow the active theme.
