@@ -1,7 +1,11 @@
+:orphan:
+
+.. _autotranslation:
+
 Set up Auto-translation (Beta)
 ==============================
 
-.. include:: ../../../_static/badges/ent-adv.rst
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 From Mattermost v11.5, auto-translation automatically translates channel messages into each user's preferred display language. This enables multilingual teams to collaborate without language barriers.
@@ -10,59 +14,8 @@ Auto-translation uses an asynchronous queue-based architecture. When a message i
 
 Two translation provider options are available:
 
-- **LibreTranslate**: A self-hosted, open-source machine translation engine.
-- **Agents**: Uses the :doc:`Mattermost Agents plugin </administration-guide/configure/agents-admin-guide>` with a configured LLM backend.
-
-Before you begin
-----------------
-
-- A Mattermost **Enterprise Advanced** license is required.
-- Choose a translation provider and ensure its infrastructure is available:
-
-  - **LibreTranslate**: A running LibreTranslate server reachable from the Mattermost server.
-  - **Agents**: The :doc:`Mattermost Agents plugin </administration-guide/configure/agents-admin-guide>` installed and configured with at least one LLM service.
-
-Set up Auto-translation
------------------------
-
-Configure a translation provider
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Choose one of the following translation providers and follow the setup instructions for your choice.
-
-Set up LibreTranslate
-^^^^^^^^^^^^^^^^^^^^^
-
-`LibreTranslate <https://libretranslate.com/>`__ is a self-hosted, open-source machine translation engine. See the `LibreTranslate installation guide <https://docs.libretranslate.com/guides/installation/>`__ for deployment instructions.
-
-Once your LibreTranslate server is running:
-
-1. Go to **System Console > Site Configuration > Localization**.
-2. Set **Translation provider** to ``libretranslate``.
-3. Enter the :ref:`LibreTranslate URL <administration-guide/configure/site-configuration-settings:libretranslate url>` (for example, ``http://libretranslate.internal:5000``).
-4. If your LibreTranslate instance requires authentication, enter the :ref:`LibreTranslate API key <administration-guide/configure/site-configuration-settings:libretranslate api key>`.
-5. Select **Save**.
-
-.. important::
-
-   The Mattermost server must be able to reach the LibreTranslate URL over the network. Ensure firewall rules and DNS resolution allow connectivity between the Mattermost server and the LibreTranslate instance.
-
-Set up the Agents provider
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The Agents provider uses the Mattermost Agents plugin to translate messages via a configured LLM service.
-
-Prerequisites:
-
-- The :doc:`Mattermost Agents plugin </administration-guide/configure/agents-admin-guide>` is installed and enabled.
-- At least one LLM service is configured in the Agents plugin.
-
-To configure:
-
-1. Go to **System Console > Site Configuration > Localization**.
-2. Set **Translation provider** to ``agents``.
-3. Enter the :ref:`Agents LLM service ID <administration-guide/configure/site-configuration-settings:agents llm service id>` matching the LLM service configured in the Agents plugin.
-4. Select **Save**.
+- **LibreTranslate**: An open-source, self-hosted translation engine.
+- **Agents**: The Mattermost Agents plugin, which uses an LLM backend for translation.
 
 .. tip::
 
@@ -73,19 +26,6 @@ To configure:
 Enable auto-translation
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Go to **System Console > Site Configuration > Localization**.
-2. Set :ref:`Enable autotranslation <administration-guide/configure/site-configuration-settings:enable autotranslation>` to **True**.
-3. Select a :ref:`Translation provider <administration-guide/configure/site-configuration-settings:translation provider>` (``libretranslate`` or ``agents``).
-4. Configure :ref:`Languages allowed <administration-guide/configure/site-configuration-settings:languages allowed>` — every message in auto-translation-enabled channels is translated into each language in this list.
-5. Select **Save**.
-
-Use the :ref:`Restrict autotranslation in direct and group messages <administration-guide/configure/site-configuration-settings:restrict autotranslation in direct and group messages>` setting to control whether auto-translation can be enabled in direct and group messages.
-
-See the :ref:`auto-translation configuration reference <administration-guide/configure/site-configuration-settings:autotranslation>` for all available settings.
-
-Enable auto-translation in a channel
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 Auto-translation is managed on a per-channel basis and is disabled by default for all channels. System admins and channel admins can enable or disable auto-translation for individual channels.
 
 - When auto-translation is enabled or disabled in a channel, a system post notifies channel members of the change.
@@ -94,121 +34,71 @@ Auto-translation is managed on a per-channel basis and is disabled by default fo
 
    Enabling auto-translation in a channel only translates new messages going forward. Existing message history is not retroactively translated.
 
-Tune worker performance
+Set up Auto-translation
 -----------------------
 
-For most deployments the default worker settings are sufficient. If your deployment has a high message volume, many configured target languages, or you observe growing translation queue depth, you may need to increase the worker count. This section explains how to calculate and monitor the right values.
+Prerequisites:
 
-How the translation queue works
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- **LibreTranslate**: A running LibreTranslate server reachable from the Mattermost server.
+- **Agents**: The :doc:`Mattermost Agents plugin </administration-guide/configure/agents-admin-guide>` installed and configured with at least one LLM service.
 
-When a message is posted in a channel with auto-translation enabled, it's added to a per-node translation queue. A worker picks up the post and translates it sequentially into each configured target language. Each completed language translation triggers a websocket broadcast to the channel so users see translations arrive in real time.
+Configure a translation provider
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In a high availability deployment, each node runs its own pool of workers and processes its own queue independently.
+1. Go to **System Console > Site Configuration > Localization**.
+2. Set :ref:`Enable autotranslation <administration-guide/configure/site-configuration-settings:enable autotranslation>` to **True**.
+3. Select a :ref:`Translation provider <administration-guide/configure/site-configuration-settings:translation provider>` (``libretranslate`` or ``agents``).
+4. Configure :ref:`Languages allowed <administration-guide/configure/site-configuration-settings:languages allowed>` — every message in auto-translation-enabled channels is translated into each language in this list.
+5. Select **Save**.
 
-Calculate your worker count
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Use the :ref:`Restrict autotranslation in direct and group messages <administration-guide/configure/site-configuration-settings:restrict autotranslation in direct and group messages>` setting to control whether auto-translation can be enabled in direct and group messages.
 
-Use the following formula to estimate how many workers each node needs:
+.. important::
 
-.. code-block:: text
+   The languages available for selection in the **Languages allowed** list are controlled by two System Console settings under **Site Configuration > Localization**:
 
-   required_workers = ceil(
-     (posts_per_sec × pct_autotranslated × num_languages × avg_provider_latency_ms / 1000)
-     / num_app_nodes
-     × 1.2
-   )
+   - :ref:`Available languages <administration-guide/configure/site-configuration-settings:available languages>` (``AvailableLocales``): Defines the set of languages users can select as their display language. Only languages included here appear as selectable target languages for auto-translation. If left blank, all supported languages are available.
+   - **Enable experimental locales** (``EnableExperimentalLocales``): When enabled, additional locale codes that are not yet fully supported in the Mattermost UI become available for selection.
 
-Where:
+   For example, to make Chinese Simplified available as a target language for auto-translation, add ``zh-CN`` to the **Available languages** field. If this field is left blank, all supported languages — including Chinese — are available without any additional configuration.
 
-- **posts_per_sec** — average message rate across the server.
-- **pct_autotranslated** — fraction of posts in auto-translation-enabled channels (0.0–1.0).
-- **num_languages** — number of configured target languages.
-- **avg_provider_latency_ms** — mean response time from the translation provider in milliseconds.
-- **num_app_nodes** — number of Mattermost application nodes.
-- **1.2** — headroom factor (20%) to absorb traffic bursts.
+   **Note on beta and experimental locales**: Some languages, such as Chinese, may have a beta or incomplete UI localization. This means a portion of the Mattermost interface may still display in English even after switching to that locale. This is a known limitation of the UI localization status and is separate from the quality of the message translation itself.
 
-The following table shows results from load tests with 6,500 concurrent users, 2 app nodes, ~5 posts/sec, and ~2 s mean provider latency. The provider latency distribution used in testing was realistic, with buckets ranging from 500 ms to 10 s weighted toward the 500 ms–1.5 s range, producing a ~2 s mean.
+Configure LibreTranslate
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. list-table::
-   :header-rows: 1
-   :widths: 30 30 40
+The LibreTranslate provider uses a self-hosted LibreTranslate instance to translate messages.
 
-   * - Target languages
-     - % autotranslated
-     - Workers per node
-   * - 7
-     - 100%
-     - 38
-   * - 6
-     - 100%
-     - 32
-   * - 3
-     - 75%
-     - 8
+Prerequisites:
+
+- A running LibreTranslate server reachable from the Mattermost server.
+
+1. Go to **System Console > Site Configuration > Localization**.
+2. Set **Translation provider** to ``libretranslate``.
+3. Enter the :ref:`LibreTranslate URL <administration-guide/configure/site-configuration-settings:libretranslate url>` (for example, ``http://libretranslate.internal:5000``).
+4. If your LibreTranslate instance requires authentication, enter the :ref:`LibreTranslate API key <administration-guide/configure/site-configuration-settings:libretranslate api key>`.
 
 .. note::
 
-   In the 6-language test the formula yields 33, but workers were capped at 32 due to the configured maximum. Adjust the :ref:`Translation workers <administration-guide/configure/site-configuration-settings:translation workers>` setting to match your calculated value.
+   LibreTranslate does not support direct translation between all language pairs. For language combinations without a direct translation model, LibreTranslate performs a pivot translation through an intermediate language (typically English). For example, a message may be translated from Chinese to English, and then from English to Japanese. This intermediary step can reduce translation accuracy for affected language pairs.
 
-Scaling considerations
-~~~~~~~~~~~~~~~~~~~~~~
+Configure the Agents provider
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- **Target languages are the biggest multiplier.** Each additional language increases both worker time per post and the number of websocket broadcasts per post. Reducing the number of target languages is the most effective way to reduce load.
-- **Websocket traffic scales with languages.** Each target language produces one channel-wide websocket broadcast per translated post. Under high load, the main symptom of saturation is websocket disconnects caused by per-connection send queues filling up.
-- **Provider latency shapes traffic patterns.** Lower latency means translations complete in quicker bursts, concentrating websocket traffic. Higher latency spreads events over time. Monitor provider response times and factor them into your capacity planning.
+The Agents provider uses the Mattermost Agents plugin to translate messages via a configured LLM service.
 
-Monitor with Prometheus
-~~~~~~~~~~~~~~~~~~~~~~~
+Prerequisites:
 
-Mattermost exposes the following Prometheus metrics for auto-translation:
+- The :doc:`Mattermost Agents plugin </administration-guide/configure/agents-admin-guide>` is installed and enabled.
+- At least one LLM service is configured in the Agents plugin.
 
-- ``mattermost_autotranslation_queue_depth_total`` *(Gauge)* — current tasks waiting in the queue. A steadily rising value means workers can't keep up with incoming posts.
-- ``mattermost_autotranslation_provider_call_duration_seconds`` *(Histogram; labels: provider, result)* — translation provider latency. This is the ``avg_provider_latency_ms`` value used in the formula above. Calculate the average with the following PromQL query:
+See the :ref:`auto-translation configuration reference <administration-guide/configure/site-configuration-settings:autotranslation>` for all available settings.
 
-  .. code-block:: promql
+Translation language and user display language
+----------------------------------------------
 
-     rate(mattermost_autotranslation_provider_call_duration_seconds_sum{result="success"}[10m])
-     /
-     rate(mattermost_autotranslation_provider_call_duration_seconds_count{result="success"}[10m])
+Auto-translation currently uses each user's Mattermost **display language** (set via **Settings > Display > Language**) to determine which translation to show. A translated version of a message is shown to a user only if their display language matches one of the configured **Languages allowed** target languages.
 
-- ``mattermost_autotranslation_worker_task_duration_seconds`` *(Histogram)* — total time for a worker to process one post across all target languages.
+.. note::
 
-Configuration reference
-~~~~~~~~~~~~~~~~~~~~~~~
-
-- :ref:`Translation workers <administration-guide/configure/site-configuration-settings:translation workers>`: The number of concurrent workers per node. Default is **6**. Increase this value for high-traffic deployments or decrease it to reduce resource consumption.
-- :ref:`Translation timeout <administration-guide/configure/site-configuration-settings:translation timeout>`: The maximum time in milliseconds for a single translation request. Default is **5000** ms (5 seconds). Increase this value if your translation provider is experiencing timeouts due to network latency or high load.
-
-You can also update the worker count from the command line using mmctl:
-
-.. code-block:: shell
-
-   mmctl config set AutoTranslationSettings.Workers <number>
-
-Frequently asked questions
---------------------------
-
-Why aren't messages being translated?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-- Verify auto-translation is enabled globally in **System Console > Site Configuration > Localization**.
-- Verify auto-translation is enabled for the specific channel.
-- Confirm a translation provider is selected and properly configured.
-- Check that the Mattermost server can reach the translation provider (LibreTranslate URL or Agents plugin).
-- Review Mattermost server logs for translation errors.
-
-What happens when the translation provider is unavailable?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Messages are still posted normally. Translations that fail due to provider downtime are skipped, and users see the original untranslated message. When the provider recovers, new messages are translated as expected.
-
-What languages are supported?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Supported languages depend on the translation provider:
-
-- **LibreTranslate**: Supports the languages available in your LibreTranslate deployment. See the `LibreTranslate language list <https://libretranslate.com/languages>`__ for details.
-- **Agents**: Language support depends on the capabilities of the configured LLM. Most modern LLMs support a wide range of languages.
-
-Configure the :ref:`Languages allowed <administration-guide/configure/site-configuration-settings:languages allowed>` setting to specify which languages all messages are translated into.
+   Because auto-translation target languages are tied to the Mattermost UI display language, users must set their display language to the desired translation language to receive translated messages. Decoupling the auto-translation target language from the UI display language is not currently supported.
