@@ -5,7 +5,7 @@
 Set up Auto-translation (Beta)
 ==============================
 
-.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-adv.rst
   :start-after: :nosearch:
 
 From Mattermost v11.5, auto-translation automatically translates channel messages into each user's preferred display language. This enables multilingual teams to collaborate without language barriers.
