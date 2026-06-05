@@ -52,7 +52,8 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Pre-packaged MS Calendar plugin version [v1.6.1](https://github.com/mattermost/mattermost-plugin-mscalendar/releases/tag/v1.6.1).
  - Pre-packaged GitLab plugin version [v1.12.2](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.12.2).
  - Pre-packaged GitHub plugin version [v2.7.1](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.7.1).
- - Pre-packaged Playbooks plugin version [v2.9.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.9.0).
+ - Pre-packaged Playbooks plugin version [v2.9.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.9.1).
+ - Pre-packaged Agents plugin version [v2.0.4](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v2.0.4).
  - Pre-packaged Jira plugin version [v4.7.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.7.0).
  - Pre-packaged Calls plugin version [v1.11.5](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.11.5).
  - Pre-packaged Boards plugin version [v9.2.4](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.2.4).
