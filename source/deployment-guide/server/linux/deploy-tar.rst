@@ -182,7 +182,7 @@ To remove the Mattermost Server for any reason, you must stop the Mattermost Ser
 
 .. code-block:: sh
 
-  sudo rm - rf /opt/mattermost
+  sudo rm -rf /opt/mattermost
 
 .. note::
 
