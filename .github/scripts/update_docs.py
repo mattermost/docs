@@ -86,13 +86,10 @@ SERVER_BASE_FILES = [
     "source/product-overview/ui-ada-changelog.rst",
 ]
  
-# The v11 changelog is only updated for Patch / Dot releases and Security releases.
+# These changelog files are only updated for Patch / Dot releases and Security releases.
 # Feature and ESR releases have a dedicated changelog automation (generate-changelog.yml)
-# that handles this file separately.
-# Note: this list only covers v11. If a security release patches an older major version
-# (e.g. v10), the corresponding changelog file (e.g. mattermost-v10-changelog.md) would
-# need to be added here. Update this list when the active major version changes.
-# The file can be very large; MAX_SEND_CHARS limits what is sent to Claude per version
+# that handles them separately.
+# The files can be very large; MAX_SEND_CHARS limits what is sent to Claude per version
 # pass to the most-recent portion where new entries are added.
 SERVER_CHANGELOG_FILES = [
     "source/product-overview/mattermost-v10-changelog.md",
