@@ -43,6 +43,14 @@ if not VERSIONS:
     print("ERROR: VERSION environment variable is empty.")
     sys.exit(1)
  
+# Guard against accidental long lists (e.g. a typo that produces many tokens).
+# Each version multiplies API calls (one per file per version), so cap this early.
+MAX_VERSIONS = 5
+if len(VERSIONS) > MAX_VERSIONS:
+    print(f"ERROR: {len(VERSIONS)} versions given; maximum is {MAX_VERSIONS}.")
+    print("Split into multiple workflow runs or fix the version list.")
+    sys.exit(1)
+ 
 # Upper bound on Claude's output per file. Most docs files are a few thousand
 # tokens; 32 000 provides ample headroom without approaching the model's 64 k
 # output limit. Raise this if a truncation error is ever hit.
@@ -81,8 +89,11 @@ SERVER_BASE_FILES = [
 # The v11 changelog is only updated for Patch / Dot releases and Security releases.
 # Feature and ESR releases have a dedicated changelog automation (generate-changelog.yml)
 # that handles this file separately.
-# Note: this file can be very large; MAX_SEND_CHARS already limits what is sent to
-# Claude to the most-recent portion where new dot-release entries are added.
+# Note: this list only covers v11. If a security release patches an older major version
+# (e.g. v10), the corresponding changelog file (e.g. mattermost-v10-changelog.md) would
+# need to be added here. Update this list when the active major version changes.
+# The file can be very large; MAX_SEND_CHARS limits what is sent to Claude per version
+# pass to the most-recent portion where new entries are added.
 SERVER_CHANGELOG_FILES = [
     "source/product-overview/mattermost-v11-changelog.md",
 ]
@@ -249,17 +260,21 @@ def update_file(client: anthropic.Anthropic, filepath: str) -> str:
             )
             updated = updated[:MAX_SEND_CHARS]
  
-        # --- Content quality guards (warn and skip this version, not the whole file) ---
+        # --- Content quality guards ---
+        # These raise rather than continue so that a partial application (some versions
+        # applied, some not) is surfaced as a hard failure. A PR opened with only some
+        # versions applied is harder to detect than a failed run.
         if not updated.strip():
-            print(f"  WARNING: Claude returned empty content for {filepath} (version {version}) -- skipping this version.")
-            continue
+            raise RuntimeError(
+                f"Claude returned empty content for {filepath} (version {version}). "
+                "Aborting to prevent partial version application."
+            )
  
         if len(updated) < len(current) * 0.5:
-            print(
-                f"  WARNING: Updated content for {filepath} (version {version}) is less than "
-                "50% of sent content length -- skipping this version to avoid data loss."
+            raise RuntimeError(
+                f"Updated content for {filepath} (version {version}) is less than 50% of "
+                "sent content length. Aborting to prevent partial version application or data loss."
             )
-            continue
  
         if updated.strip() == current.strip():
             print(f"  No changes needed for version {version}.")
