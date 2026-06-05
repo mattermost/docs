@@ -18,6 +18,8 @@ Platform and OS scope reflects reported and tested environments and may not repr
 
 - **11.7.3, released 2026-06-15**
   - Mattermost v11.7.3 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Playbooks plugin version [v2.9.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.9.1).
+  - Pre-packaged Agents plugin version [v2.0.4](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v2.0.4).
   - Hardened the OAuth server provider's handling of deactivated users.
   - Guest magic-link ``REST`` login now applies the same authentication criteria checks as the web one-time-link handler and password login.
   - Fixed an issue that caused a flagged post to continue being visible for content reviewers until a refresh after deletion.
