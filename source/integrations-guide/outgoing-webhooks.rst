@@ -143,7 +143,7 @@ The JSON response can contain the following parameters:
    * - Parameter
      - Description
    * - ``text``
-     - (Required if ``attachments`` is not set) :doc:`Markdown-formatted </end-user-guide/collaborate/format-messages>` message.
+     - (Required if ``attachments`` and ``props.mm_blocks`` are not set) :doc:`Markdown-formatted </end-user-guide/collaborate/format-messages>` message.
    * - ``response_type``
      - Set to ``comment`` to reply to the message that triggered the webhook. Defaults to ``post``, which creates a new message.
    * - ``username``
@@ -151,11 +151,11 @@ The JSON response can contain the following parameters:
    * - ``icon_url``
      - Overrides the default profile picture. Requires :ref:`Enable integrations to override profile picture icons <administration-guide/configure/integrations-configuration-settings:enable integrations to override profile picture icons>` to be enabled.
    * - ``attachments``
-     - (Required if ``text`` is not set) An array of `message attachment <https://developers.mattermost.com/integrate/reference/message-attachments/>`_ objects.
+     - (Required if ``text`` and ``props.mm_blocks`` are not set) An array of `message attachment <https://developers.mattermost.com/integrate/reference/message-attachments/>`_ objects. Legacy format; prefer ``props.mm_blocks`` for new integrations. See :doc:`MM Blocks </integrations-guide/mm-blocks>`.
    * - ``type``
      - Sets the post type, mainly for plugins. If set, must begin with ``custom_``.
    * - ``props``
-     - A JSON object for storing metadata.
+     - A JSON object for storing metadata. Use ``mm_blocks`` and ``mm_blocks_actions`` for rich, interactive content (see :doc:`MM Blocks </integrations-guide/mm-blocks>`).
    * - ``priority``
      - Sets the priority of the message. See `message priorities <https://developers.mattermost.com/integrate/reference/message-priority/>`_.
 
@@ -184,21 +184,22 @@ This response would produce a threaded reply to the original message that trigge
   :alt: Example of a full response from an outgoing webhook.
   :width: 400
 
-You can also include `message attachments <https://developers.mattermost.com/integrate/reference/message-attachments/>`_ and `interactive messages <https://developers.mattermost.com/integrate/plugins/interactive-messages/>`_ in your response to create more advanced workflows.
+You can also include :doc:`MM Blocks </integrations-guide/mm-blocks>`, `message attachments <https://developers.mattermost.com/integrate/reference/message-attachments/>`_, and `interactive messages <https://developers.mattermost.com/integrate/plugins/interactive-messages/>`_ in your response to create more advanced workflows.
 
 Do More with Outgoing Webhooks
 ------------------------------
 
 Turn keyword-triggered callbacks into guided, in-channel workflows by returning buttons, menus, and other interactive elements in your webhook responses so users can act immediately.
 
-- `Message Attachments <https://developers.mattermost.com/integrate/reference/message-attachments/>`_: Return rich, structured results (IDs, statuses, fields, links, images) for quick confirmation and follow-up.
+- :doc:`MM Blocks </integrations-guide/mm-blocks>`: **Recommended.** Return structured, interactive content with ``props.mm_blocks`` and ``props.mm_blocks_actions``.
+- `Message Attachments <https://developers.mattermost.com/integrate/reference/message-attachments/>`_: Legacy format for rich, structured results. Existing payloads are translated to MM Blocks at render time; use MM Blocks for new integrations.
 - `Interactive Messages <https://developers.mattermost.com/integrate/plugins/interactive-messages/>`_: Present next-step actions (Acknowledge, Assign, Escalate) as buttons/menus directly in your response—no context switching.
 - `Interactive Dialogs <https://developers.mattermost.com/integrate/plugins/interactive-dialogs/>`_: When a button/menu click requires more info (e.g., “Acknowledge with note”, “Assign to user”), open a dialog to collect structured inputs with required fields, min/max lengths, server-driven user/channel pickers, validated defaults, inline field errors, placeholders, and help text.
 - `Message Priority <https://developers.mattermost.com/integrate/reference/message-priority/>`_: Include ``priority`` in your response to mark critical updates and optionally request acknowledgements or persistent notifications.
 
 .. note::
 
-  - Outgoing webhook responses support attachments and interactive actions. When a user clicks an action, your integration receives a signed trigger ID and can open an interactive dialog via the dialog API. You can also control visibility with the response type (in-channel vs ephemeral).
+  - Outgoing webhook responses support MM Blocks, attachments, and interactive actions. When a user clicks an action, your integration receives a signed trigger ID and can open an interactive dialog via the dialog API. You can also control visibility with the response type (in-channel vs ephemeral).
   - Need a dedicated identity, permissions scoping, or need to post outside of webhook/command flows? Use a `bot account <https://developers.mattermost.com/integrate/reference/bot-accounts/>`_ if you need a more permanent solution than using overrides for simple branding.
   - If your command backend needs to call Mattermost APIs (e.g., posting messages, ephemeral posts, opening interactive dialogs, etc.), authenticate with a bot user `personal access token <https://developers.mattermost.com/integrate/reference/personal-access-token/>`_. We recommend avoiding human/System Admin personal access tokens for automations and rotating and storing tokens securely.
   - Looking to support private channels, direct messages, and autocomplete? Use a :doc:`built-in slash command </integrations-guide/built-in-slash-commands>`, or create a `custom slash command <https://developers.mattermost.com/integrate/slash-commands/custom/>`_. You can additionally tegrate Mattermost with custom integrations hosted within your internal OAuth infrastructure `using the Client Credentials OAuth 2.0 grant type <https://developers.mattermost.com/integrate/slash-commands/outgoing-oauth-connections/>`_. Mattermost also makes it easy to `migrate integrations written for Slack to Mattermost <https://developers.mattermost.com/integrate/slash-commands/slack/>`_.

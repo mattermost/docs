@@ -147,6 +147,8 @@ Integrations
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 | `Outgoing webhooks <https://developers.mattermost.com/integrate/webhooks/outgoing/>`_                           | |checkmark| | |checkmark| | |checkmark|     |
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
+| :doc:`MM Blocks </integrations-guide/mm-blocks>`                                                                | |checkmark| | |checkmark| | |checkmark|     |
++-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 | `Message attachments <https://developers.mattermost.com/integrate/reference/message-attachments/>`_             | |checkmark| | |checkmark| | |checkmark|     |
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 | `Message buttons <https://developers.mattermost.com/integrate/plugins/interactive-messages/#message-buttons>`_  | |checkmark| | |checkmark| | |checkmark|     |

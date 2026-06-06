@@ -9,6 +9,7 @@ Training and Support
    /get-help/community-chat.rst
    /get-help/community-for-mattermost.rst
    /get-help/contribute-to-documentation.rst
+   /get-help/mm-blocks-troubleshooting.rst
 
 Get the help you need with Mattermost via robust documentation, extensive community support, and professional support services. If you're struggling with something on your Mattermost journey, take a look at the following learning resources:
 
@@ -30,6 +31,8 @@ Help Center
 -----------
 
 Visit the `Mattermost Help Center <https://support.mattermost.com/hc/en-us>`_ to access frequently asked questions and common troubleshooting tips.
+
+- :doc:`Troubleshoot MM Blocks </get-help/mm-blocks-troubleshooting>` — Resolve rendering and interaction issues with integration posts that use MM Blocks, including expandable content on mobile.
 
 Commercial Customer Support
 ---------------------------
