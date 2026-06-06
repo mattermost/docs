@@ -16,11 +16,11 @@ Overview
 Interactive posts combine:
 
 - **Content blocks** in ``props.mm_blocks`` — text, images, dividers, containers, columns, collapsible sections, buttons, and static selects.
-- **Action definitions** in ``props.mm_blocks_actions`` — maps each ``action_id`` to an integration URL or in-app navigation target.
+- **Action definitions** in ``props.mm_blocks_actions`` — map each ``action_id`` to an integration URL or in-app navigation target.
 
-When a post is created, the server encrypts ``mm_blocks_actions`` into a single cookie string before the post is sent to clients. Users interact with buttons and menus in the channel; Mattermost calls your integration and can update the post or return an ephemeral reply.
+When a post is created, the server encrypts ``props.mm_blocks_actions`` into a single cookie string before the post is sent to clients. Users interact with buttons and menus in the channel; Mattermost calls your integration and can update the post or return an ephemeral reply.
 
-MM Blocks are supported on web, desktop, and mobile clients. Availability is controlled by the ``MmBlocksEnabled`` `feature flag <https://developers.mattermost.com/contribute/more-info/server/feature-flags/>`_ (enabled by default in current Mattermost releases). Self-hosted deployments can set ``MM_FEATUREFLAGS_MMBLOCKSENABLED=false`` to disable rendering and action dispatch for MM Blocks payloads.
+MM Blocks are supported on web, desktop, and mobile clients. Availability is controlled by the ``MmBlocksEnabled`` `feature flag <https://developers.mattermost.com/contribute/more-info/server/feature-flags/>`_, which defaults to ``true``. Self-hosted deployments can set ``MM_FEATUREFLAGS_MMBLOCKSENABLED=false`` to disable rendering and action dispatch for MM Blocks payloads.
 
 Quick start
 -----------
@@ -73,7 +73,7 @@ Post properties
    * - ``props.mm_blocks_actions``
      - Object keyed by ``action_id``. Each value defines how Mattermost handles a button press or menu selection. Replaced on the wire by an encrypted cookie after the post is saved.
 
-You can include ``mm_blocks`` in any post payload that supports ``props``, including :doc:`incoming webhooks </integrations-guide/incoming-webhooks>`, :doc:`outgoing webhook </integrations-guide/outgoing-webhooks>` responses, slash command responses, bot posts, and ephemeral posts created through the API.
+You can include ``props.mm_blocks`` and ``props.mm_blocks_actions`` in any payload that supports a ``props`` object, including :doc:`incoming webhooks </integrations-guide/incoming-webhooks>`, :doc:`outgoing webhook </integrations-guide/outgoing-webhooks>` responses, slash command responses, bot posts, and ephemeral posts created through the API.
 
 Block types
 -----------
@@ -143,7 +143,7 @@ Container example
 Interactive actions
 -------------------
 
-Define one entry in ``mm_blocks_actions`` for each ``action_id`` used by a ``button`` or ``static_select`` block.
+Define one entry in ``props.mm_blocks_actions`` for each ``action_id`` used by a ``button`` or ``static_select`` block.
 
 .. list-table::
    :widths: 20 80
@@ -196,16 +196,16 @@ Mattermost clients still accept older interactive payload shapes and translate t
 1. ``props.mm_blocks`` (native)
 2. ``props.blocks`` (Slack Block Kit)
 3. ``props.cards`` (Adaptive Cards)
-4. ``props.attachments`` (Slack-compatible message attachments)
+4. ``attachments`` in webhook and slash command payloads (stored as ``props.attachments`` on the post; Slack-compatible message attachments)
 
 .. note::
 
-   Message attachments remain supported for backward compatibility. New integrations should use ``mm_blocks`` and ``mm_blocks_actions`` instead of nesting interactive controls under ``attachments``.
+   Message attachments remain supported for backward compatibility. New integrations should use ``props.mm_blocks`` and ``props.mm_blocks_actions`` instead of nesting interactive controls under top-level ``attachments``.
 
 Attachment actions map to MM Blocks as follows:
 
 - Attachment ``actions[].id`` becomes ``action_id`` on buttons and selects.
-- Attachment ``actions[].integration.url`` is used for external dispatch (equivalent to ``mm_blocks_actions`` entries).
+- Attachment ``actions[].integration.url`` is used for external dispatch (equivalent to ``props.mm_blocks_actions`` entries).
 - Button ``style`` values (``primary``, ``good``, ``danger``, hex colors, and so on) are preserved.
 
 Migrating from attachments
@@ -213,8 +213,8 @@ Migrating from attachments
 
 1. Move visual content (text, fields, images) into typed MM Blocks—use ``container`` blocks with ``accent_color`` instead of attachment ``color``, and ``text`` blocks instead of ``pretext`` / ``text`` / field values.
 2. Replace ``actions`` arrays with ``button`` and ``static_select`` blocks that reference ``action_id`` values.
-3. Add an ``mm_blocks_actions`` map keyed by those IDs with ``type``, ``url``, and ``context`` (previously ``integration.url`` and ``integration.context``).
-4. Optionally add ``text`` (or ``message``) above the blocks for notifications and search when the block content alone is not enough context.
+3. Add a ``props.mm_blocks_actions`` map keyed by those IDs with ``type``, ``url``, and ``context`` (previously ``integration.url`` and ``integration.context``).
+4. Optionally add ``text`` above the blocks for notifications and search when the block content alone is not enough context.
 
 Example migration — attachment button:
 

@@ -51,4 +51,4 @@ Using ``/pagerduty trigger`` can open a form to start a new incident, notify on-
 
 **Knowledge retrieval**  
 
-A command like ``/docs search authentication`` queries your documentation system and returns a list of relevant articles as :doc:`MM Blocks </integrations-guide/mm-blocks>` or message attachments with links.
+A command like ``/docs search authentication`` queries your documentation system and returns a list of relevant articles as :doc:`MM Blocks </integrations-guide/mm-blocks>` or legacy `message attachments <https://developers.mattermost.com/integrate/reference/message-attachments/>`_ with links.

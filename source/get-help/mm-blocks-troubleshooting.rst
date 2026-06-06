@@ -27,7 +27,7 @@ Buttons or menus do not respond
 
 1. **Wait for the action to finish.** Some integrations show a loading state while Mattermost calls an external service. Slow integrations may time out based on your server's :ref:`integration request timeout <administration-guide/configure/integrations-configuration-settings:integration request timeout>` setting.
 2. **Check whether the control is disabled.** Integrations can send buttons and menus in a disabled state. Disabled controls cannot be activated.
-3. **Verify network connectivity.** External actions require Mattermost to reach the integration URL configured by the post author. Connectivity issues on the server or integration host can prevent responses.
+3. **Verify outbound server connectivity.** External actions require Mattermost **server nodes** (not end-user devices) to make **outbound** requests to each integration action endpoint URL configured in the post. These endpoints typically use **HTTPS on TCP port 443**; if a URL uses another scheme or port, that destination must be reachable outbound from the server. Allow only the specific integration endpoints your organization uses—this is not an inbound connection requirement.
 4. **Look for follow-up messages.** Successful actions may update the original post or return an ephemeral reply visible only to you. Check the thread panel if the post is part of a thread.
 
 Scrollable content issues on mobile

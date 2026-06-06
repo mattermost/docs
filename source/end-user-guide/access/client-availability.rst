@@ -147,7 +147,7 @@ Integrations
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 | `Outgoing webhooks <https://developers.mattermost.com/integrate/webhooks/outgoing/>`_                           | |checkmark| | |checkmark| | |checkmark|     |
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
-| :doc:`MM Blocks </integrations-guide/mm-blocks>`                                                                | |checkmark| | |checkmark| | |checkmark|     |
+| :doc:`MM Blocks </integrations-guide/mm-blocks>` [1]_                                                          | Conditional | Conditional | Conditional     |
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 | `Message attachments <https://developers.mattermost.com/integrate/reference/message-attachments/>`_             | |checkmark| | |checkmark| | |checkmark|     |
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
@@ -159,6 +159,8 @@ Integrations
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 | `Right-hand sidebar <https://developers.mattermost.com/integrate/reference/server/server-reference/>`_          | |checkmark| | |checkmark| |                 |
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
+
+.. [1] Requires the ``MmBlocksEnabled`` feature flag on the Mattermost server. When disabled, clients do not render native ``mm_blocks`` payloads and the server rejects MM Blocks action requests. Self-hosted deployments can set ``MM_FEATUREFLAGS_MMBLOCKSENABLED=false`` to turn the feature off. See :doc:`MM Blocks </integrations-guide/mm-blocks>` for details.
 
 Authentication
 ~~~~~~~~~~~~~~
