@@ -150,6 +150,6 @@ If push notifications are not being delivered on the mobile device, confirm that
   To conserve disk space, once your push notification issue is resolved, go to  **System Console > Environment > Logging > File Log Level**, then select **ERROR** to switch your logging detail level from **DEBUG** to **Errors Only**.
 
 Integration posts (MM Blocks) do not render or respond
-----------------------------------------------------
+-------------------------------------------------------
 
 If buttons, menus, or structured layout content from an integration post is missing or unresponsive on mobile, see :doc:`Troubleshoot MM Blocks </get-help/mm-blocks-troubleshooting>`.
