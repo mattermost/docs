@@ -160,7 +160,7 @@ Integrations
 | `Right-hand sidebar <https://developers.mattermost.com/integrate/reference/server/server-reference/>`_          | |checkmark| | |checkmark| |                 |
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 
-.. [1] Requires the ``MmBlocksEnabled`` feature flag on the Mattermost server. When disabled, clients do not render native ``mm_blocks`` payloads and the server rejects MM Blocks action requests. Self-hosted deployments can set ``MM_FEATUREFLAGS_MMBLOCKSENABLED=false`` to turn the feature off. See :doc:`MM Blocks </integrations-guide/mm-blocks>` for details.
+.. [1] Requires ``MM_FEATUREFLAGS_MMBLOCKSENABLED`` to be enabled on the Mattermost server (defaults to ``true``). When set to ``false``, clients do not render native ``mm_blocks`` payloads and the server rejects MM Blocks action requests. See :doc:`MM Blocks </integrations-guide/mm-blocks>` for details.
 
 Authentication
 ~~~~~~~~~~~~~~

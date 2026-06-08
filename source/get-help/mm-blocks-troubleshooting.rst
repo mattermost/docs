@@ -15,7 +15,7 @@ MM Blocks content does not appear
 
 1. **Update your client.** MM Blocks require a current Mattermost web, desktop, or mobile app. See :doc:`client availability </end-user-guide/access/client-availability>` for platform support.
 2. **Confirm the integration payload.** The post must include a non-empty ``props.mm_blocks`` array (or a legacy format such as message attachments that the client translates). Ask your integration owner or system admin to verify the webhook or bot payload.
-3. **Check the feature flag (system admins).** Self-hosted deployments can disable MM Blocks with the ``MmBlocksEnabled`` feature flag. When disabled, native MM Blocks payloads are not rendered and their actions are rejected. See :doc:`MM Blocks </integrations-guide/mm-blocks>` for details.
+3. **Check the feature flag (system admins).** Self-hosted deployments can disable MM Blocks by setting ``MM_FEATUREFLAGS_MMBLOCKSENABLED=false``. When disabled, native MM Blocks payloads are not rendered and their actions are rejected. See :doc:`MM Blocks </integrations-guide/mm-blocks>` for details.
 4. **Reload the channel.** Pull to refresh on mobile, or switch channels and return, to fetch the latest post data.
 
 Buttons or menus do not respond

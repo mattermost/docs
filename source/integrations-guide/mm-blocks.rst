@@ -20,7 +20,7 @@ Interactive posts combine:
 
 When a post is created, the server encrypts ``props.mm_blocks_actions`` into a single cookie string before the post is sent to clients. Users interact with buttons and menus in the channel; Mattermost calls your integration and can update the post or return an ephemeral reply.
 
-MM Blocks are supported on web, desktop, and mobile clients. Availability is controlled by the ``MmBlocksEnabled`` `feature flag <https://developers.mattermost.com/contribute/more-info/server/feature-flags/>`_, which defaults to ``true``. Self-hosted deployments can set ``MM_FEATUREFLAGS_MMBLOCKSENABLED=false`` to disable rendering and action dispatch for MM Blocks payloads.
+MM Blocks are supported on web, desktop, and mobile clients. Availability is controlled by the ``MM_FEATUREFLAGS_MMBLOCKSENABLED`` `feature flag <https://developers.mattermost.com/contribute/more-info/server/feature-flags/>`_ (defaults to ``true``). Set ``MM_FEATUREFLAGS_MMBLOCKSENABLED=false`` on self-hosted deployments to disable rendering and action dispatch for MM Blocks payloads.
 
 Quick start
 -----------
@@ -73,7 +73,7 @@ Post properties
    * - ``props.mm_blocks_actions``
      - Object keyed by ``action_id``. Each value defines how Mattermost handles a button press or menu selection. Replaced on the wire by an encrypted cookie after the post is saved.
 
-You can include ``props.mm_blocks`` and ``props.mm_blocks_actions`` in any payload that supports a ``props`` object, including :doc:`incoming webhooks </integrations-guide/incoming-webhooks>`, :doc:`outgoing webhook </integrations-guide/outgoing-webhooks>` responses, slash command responses, bot posts, and ephemeral posts created through the API.
+You can include ``props.mm_blocks`` and ``props.mm_blocks_actions`` in any payload that supports a ``props`` object, including :doc:`incoming webhooks </integrations-guide/incoming-webhooks>`, :doc:`outgoing webhooks </integrations-guide/outgoing-webhooks>` responses, slash command responses, bot posts, and ephemeral posts created through the API.
 
 Block types
 -----------
