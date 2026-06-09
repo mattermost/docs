@@ -77,7 +77,7 @@ Mattermost Enterprise supports large-scale, mission-critical **secure collaborat
 Mattermost Professional 
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Professional best serves technical and operational teams of up to 500 users looking to run **Sovereign ChatOps workflows**, with advanced collaboration and security controls. This offering provides robust collaboration and administration tools including:  
+Professional best serves technical and operational teams of up to 250 users looking to run **Sovereign ChatOps workflows**, with advanced collaboration and security controls. This offering provides robust collaboration and administration tools including:  
 
 - Teams and channels for one-to-one and group messaging, file sharing, and unlimited search history with threaded messaging, emoji, and custom emoji.
 - Native apps for iOS, Android, Windows, macOS, and Linux.

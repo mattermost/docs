@@ -40,7 +40,20 @@ Set up an enterprise app for Mattermost SSO in Entra ID
 9. Select **Edit** in the **Attributes & Claims** section then set the below attributes:
 
   a. Set the the **Unique User Identifier (Name ID)** required claim **Name identifier format** and **Source attribute** values as required for your environment. Setting the **Source attribute** to an immutable value such as ``user.objectid`` is recommended.
-  b. Edit claim names and namespaces under **Additional claims** to match SAML attribute settings you wish to set in Mattermost. Configurable settings are Email, Username, Id, Guest, Admin, First Name, Last Name, Nickname, Position, and Preferred Language.
+  b. Edit claim names **and namespaces** under **Additional claims** to match SAML attribute settings you wish to set in Mattermost. Configurable settings are Email, Username, Id, Guest, Admin, First Name, Last Name, Nickname, Position, and Preferred Language.
+
+.. important::
+
+  Mattermost matches each attribute by its **full claim name**, including the namespace, exactly as it appears in the SAML assertion. By default, Entra ID emits its built-in claims under the namespace ``http://schemas.xmlsoap.org/ws/2005/05/identity/claims/`` — so the claim that appears in the **Claim name** column as ``emailaddress`` is actually sent in the assertion as ``http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress``.
+
+  This means the value you enter in each Mattermost attribute field (step 15 of **Configure SAML Sign-On for Mattermost**, below) must be the **fully-qualified** claim name. Entering only the short name (for example, ``email`` or ``name``) will **not** match, and login will fail with an error such as ``SAML login was unsuccessful because one of the attributes is incorrect... <attribute> attribute is missing``.
+
+  You have two options:
+
+  - **Clear the namespace** on each claim in Entra ID under **Additional claims** so the claim name becomes the short value (for example, ``email``), then enter that same short value in Mattermost; **or**
+  - **Leave the default namespace** in Entra ID and enter the fully-qualified claim name in Mattermost (for example, ``http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress``).
+
+  Whichever option you choose, the value in Mattermost must match the assertion **character-for-character**. If a login fails, the safest way to confirm the exact claim names being sent is to capture and decode the SAML response from the browser (for example, with the `SAML-tracer <https://addons.mozilla.org/firefox/addon/saml-tracer/>`__ browser extension) and read the ``Name`` attribute of each ``<Attribute>`` element.
 
 10. Select **Edit** in the **SAML Certificates** section. Select **Sign SAML response and assertion** for **Signing Option** and **SHA-256** for **Signing Algorithm** then select **Save**.
 11. Select the **Certificate (Base64)** Download link in the **SAML Certificates** section. This is the **Identity Provider Public Certificate** to be uploaded to Mattermost.
@@ -71,7 +84,7 @@ Configure SAML Sign-On for Mattermost
 
   The **Test single sign-on with Mattermost SAML** tool in Microsoft Entra ID does not sign the request even if **Sign Request** is set to **True** in Mattermost. Depending on your security settings and key length, the Entra ID testing tool may successfully sign in while an actual sign in request from your Mattermost login page results in the error **AADSTS90015: Requested query string is too long.** since Entra ID handles the initial request with an HTTP GET redirect rather than HTTP POST.
 
-15. Set attribute settings to match attributes configured in step 9 of the **Set up an enterprise app for Mattermost SSO in Entra ID** section.
+15. Set attribute settings to match attributes configured in step 9 of the **Set up an enterprise app for Mattermost SSO in Entra ID** section. Each value must match the **full claim name** sent in the assertion, including the namespace, exactly. See the **important** note under step 9 for details and a common failure mode.
 16. Set the **Login Button Text** to suit your environment.
 17. Select the **Save** button.
 

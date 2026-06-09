@@ -11,7 +11,7 @@ System attributes enable you to customize user profile attributes to match your 
 From Mattermost v11, you have enhanced control over these user attributes through admin-managed vs user-editable settings. By default, attributes are admin-managed for security, but you can explicitly allow user editing for specific attributes that don't impact access control or sensitive organizational data. These user attributes supplement existing user details visible from the user's profile picture.
 
 .. image:: ../../../images/cpa-properties.png
-  :alt: Mobile examples of a user profile with custom user attributes added as system attributes.
+  :alt: Mobile examples of a user profile with user attributes added as system attributes.
 
 Before you begin
 -----------------
@@ -126,11 +126,11 @@ Manage attributes
 - **Delete**: Delete attributes you no longer need or want by selecting **More** |more-icon| and selecting **Delete property**.
 
 .. note::
-  When updating custom profile attributes via API or automation, the ``attrs`` object replaces existing attribute settings rather than merging. If you send only visibility, the sort order resets to ``0`` unless you include ``sort_order`` in the same request. If a patch fails, the API may return the error string "Unable to patch Custom Profile Attribute field".
+  When updating user attributes via API or automation, the ``attrs`` object replaces existing attribute settings rather than merging. If you send only visibility, the sort order resets to ``0`` unless you include ``sort_order`` in the same request. If a patch fails, the API may return the error string "Unable to patch User Attribute field".
 
 - **User Edit Permissions**: From Mattermost v11, all user attributes are admin-managed by default for enhanced security. To allow user editing for specific attributes, administrators can enable this through the **More** |more-icon| menu and selecting **Allow user editing**. This should only be enabled for attributes that do not impact security access controls or organizational policies. Attributes used in ABAC policies should remain admin-managed unless there's a specific business need and the security implications are fully understood.
 
-- **Edit User Attribute Values**: From Mattermost v11.1, you can view and update custom profile attribute values for individual users through the System Console. See the :ref:`Manage user attributes <administration-guide/configure/user-management-configuration-settings:manage user attributes>` documentation for details.
+- **Edit User Attribute Values**: From Mattermost v11.1, you can view and update user attribute values for individual users through the System Console. See the :ref:`Manage user attributes <administration-guide/configure/user-management-configuration-settings:manage user attributes>` documentation for details.
 
 In cases where multiple system admins manage system attributes, refresh your web browser instance to see real-time updates to system attributes made by other admins.
 

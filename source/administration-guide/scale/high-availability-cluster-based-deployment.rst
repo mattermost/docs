@@ -136,13 +136,15 @@ Configuration settings
 
     # TCP buffer sizes are tuned for 10Gbit/s bandwidth and 0.5ms RTT (as measured intra EC2 cluster).
     # This gives a BDP (bandwidth-delay-product) of 625000 bytes.
-    net.ipv4.tcp_rmem = 4096 156250 625000
-    net.ipv4.tcp_wmem = 4096 156250 625000
-    net.core.rmem_max = 312500
-    net.core.wmem_max = 312500
-    net.core.rmem_default = 312500
-    net.core.wmem_default = 312500
-    net.ipv4.tcp_mem = 1638400 1638400 1638400
+    # The maximum socket buffer size for kernel autotuning is set to be 4x the BDP (2500000).
+    # The default socket buffer size is set to 1/4 BDP (156250).
+    net.ipv4.tcp_rmem = 4096 156250 2500000
+    net.ipv4.tcp_wmem = 4096 156250 2500000
+
+    # Bumping the theoretical maximum buffer size of receiving/sending sockets,
+    # either UDP, or TCP not using autotuning (i.e. using SO_RCVBUF)
+    net.core.rmem_max = 16777216
+    net.core.wmem_max = 16777216
 
 You can do the same for the proxy server.
 
