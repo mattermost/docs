@@ -37,7 +37,7 @@ Run this command on the GitLab server:
 
 .. code-block:: bash
 
-   sudo gitlab-psql -- /opt/gitlab/embedded/bin/pg_dump -h /var/opt/gitlab/postgresql --no-owner mattermost_production | gzip > mattermost_dbdump_$(date --rfc-3339=date).sql.gz
+   sudo -u gitlab-psql -- /opt/gitlab/embedded/bin/pg_dump -h /var/opt/gitlab/postgresql --no-owner mattermost_production | gzip > mattermost_dbdump_$(date --rfc-3339=date).sql.gz
 
 This will create a compressed SQL dump file of your Mattermost database.
 
