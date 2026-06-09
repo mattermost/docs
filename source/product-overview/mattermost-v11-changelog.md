@@ -97,7 +97,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Added ``started_at`` and ``host_started_at`` fields to the support packet diagnostics to help diagnose server restart loops and container reboots.
  - Added [a simplified option](https://docs.mattermost.com/deployment-guide/mobile/mobile-troubleshooting.html) allowing users to enable attaching logs to support packets on mobile apps.
  - Added Membership Policies (formerly Access Control Policies) support for public channels with advisory semantics: matching users are auto-added when enabled and surfaced in a new "Recommended" filter in Browse Channels and as a "Recommended" tag in the channel invite modal; non-matching members are never removed. Private channels retain the existing strict gate. The admin UI has been renamed throughout from "Access Control" to "Membership Policy". Requires Enterprise Advanced license.
- - Added a new feature allowing content reviewers to generate a downloadable report for a post quarantined for review as part of Data Spillage handling.
+ - Added a [new feature](https://docs.mattermost.com/administration-guide/manage/admin/content-flagging.html) allowing content reviewers to generate a downloadable report for a post quarantined for review as part of Data Spillage handling.
  - Tightened session invalidation on the global session revocation path.
  - Downgraded Hungarian translations from Beta to Alpha.
  - Clarified error messages on potential permission migrations.
