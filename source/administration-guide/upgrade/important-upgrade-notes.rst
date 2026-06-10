@@ -2076,7 +2076,7 @@ We recommend reviewing the `additional upgrade notes <#additional-upgrade-notes>
 
 .. _000141_add_remoteid_channelid_to_post_acknowledgements.down.sql: https://github.com/mattermost/mattermost/blob/release-10.10/server/channels/db/migrations/postgres/000141_add_remoteid_channelid_to_post_acknowledgements.down.sql
 .. _000141_add_remoteid_channelid_to_post_acknowledgements.up.sql: https://github.com/mattermost/mattermost/blob/release-10.10/server/channels/db/migrations/postgres/000141_add_remoteid_channelid_to_post_acknowledgements.up.sql
-.. _this guide: https://github.com/mattermost/mattermost-plugin-agents/blob/master/docs/upgrading_to_2.0.md‎.md
+.. _this guide: https://github.com/mattermost/mattermost-plugin-agents/blob/master/docs/upgrading_to_2.0.md
 
 Additional upgrade notes
 ------------------------
