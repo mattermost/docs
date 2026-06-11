@@ -126,7 +126,7 @@ We recommend updating this integration as new versions are released. Generally, 
 Get help
 --------
 
-Mattermost commercial customers can open a `Mattermost support case <https://support.mattermost.com/hc/en-us/requests/new>`_. To report a bug, please open a GitHub issue against the `Microsoft Teams Notifications plugin <https://github.com/mattermost/mattermost-plugin-msteams-meetings>`_.
+Customers with a Mattermost subscription can open a `Mattermost support case <https://support.mattermost.com/hc/en-us/requests/new>`_. Community deployments can report a bug by opening a GitHub issue against the `Microsoft Teams Notifications plugin <https://github.com/mattermost/mattermost-plugin-msteams-meetings>`_.
 
 For questions, feedback, and assistance, join our pubic `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance.
 

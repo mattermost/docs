@@ -13,14 +13,15 @@ Whether you're deploying the server application, desktop application, or mobile 
     Quick Start Evaluation </deployment-guide/quick-start-evaluation>
     Reference Architecture </deployment-guide/reference-architecture/reference-architecture-index>
     Server Deployment </deployment-guide/server/server-deployment-planning>
+    Calls Deployment </administration-guide/configure/calls-deployment-guide>
     Desktop App Deployment </deployment-guide/desktop/desktop-app-deployment>
     Mobile App Deployment </deployment-guide/mobile/mobile-app-deployment>
     Deployment Troubleshooting </deployment-guide/deployment-troubleshooting>
 
-
 * :doc:`Quick Start Evaluation </deployment-guide/quick-start-evaluation>` - A quick start guide to help you get started with Mattermost.
 * :doc:`Reference Architecture </deployment-guide/reference-architecture/reference-architecture-index>` - Reference architectures for scaling Mattermost and specialized deployment scenarios.
 * :doc:`Server deployment </deployment-guide/server/server-deployment-planning>` - Pre-deployment checks, security considerations, hardware recommendations, software prerequisites, and step-by-step guidance to deploying Mattermost server.
+* :doc:`Calls Deployment Guide </administration-guide/configure/calls-deployment-guide>` - Deploy and operate Mattermost Calls infrastructure, including RTCD, recording services, and supporting network configuration.
 * :doc:`Desktop deployment </deployment-guide/desktop/desktop-app-deployment>` - Installation procedures for Mattermost's desktop applications across Windows, macOS, and Linux, and large-scale, enterprise-wide deployments.
 * :doc:`Mobile deployment </deployment-guide/mobile/mobile-app-deployment>` - How to set up push notifications using Mattermost's notification service and troubleshooting tips.
 * :doc:`Deployment troubleshooting </deployment-guide/deployment-troubleshooting>` - Best practices for diagnosing and resolving common deployment issues.
@@ -36,8 +37,8 @@ If you are new to Mattermost, we recommend starting with the Application Archite
 
   - If you encounter issues that aren't covered in this documentation:
 
-    - Non-commercial customers: Reference the `Mattermost community forums <https://forum.mattermost.com/>`_
-    - Commercial customers: See the `Mattermost Support Knowledge Base <https://support.mattermost.com/hc/en-us>`_, or `contact Mattermost Support <https://support.mattermost.com/hc/en-us/requests/new>`_ for assistance. 
+    - Customers with a Mattermost subscription: See the `Mattermost Support Knowledge Base <https://support.mattermost.com/hc/en-us>`_, or `contact Mattermost Support <https://support.mattermost.com/hc/en-us/requests/new>`_ for assistance. 
+    - Community deployments: Reference the `Mattermost community forums <https://forum.mattermost.com/>`_
     - For advanced customization or integrations, refer to the :doc:`Open source components </administration-guide/upgrade/open-source-components>` documentation for details about extending Mattermost functionality.
 
 Enjoy deploying Mattermost with confidence!

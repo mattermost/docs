@@ -6,19 +6,14 @@ Learn about collaborative playbooks
 
 A collaborative playbook is a repeatable process that is measured and refined over time. For example, the steps you follow when dealing with an outage, a software release, or welcoming a new member of your team can all be made into a playbook. 
 
-.. tip::
-
-  Looking to optimize team productivity? Learn how to automate repeatable workflows with `this on-demand webinar <https://mattermost.com/webinar/4-strategies-to-improve-technical-teams-productivity/>`_, then download our `Mattermost Playbooks datasheet <https://mattermost.com/mattermost-playbooks-datasheet/>`_.
-
-
-Using collaborative playbooks, development teams can orchestrate prescribed workflows and define, streamline, and document complex, recurring operations.
+Using collaborative playbooks, teams can orchestrate prescribed workflows and define, streamline, and document complex, recurring operations.
 
 Each playbook represents a recurring outcome or specific goal that your teams collaborate on to achieve, such as service outage recovery or customer onboarding. Collaborative playbooks are made up of:
 
-- :ref:`Checklists <end-user-guide/workflow-automation/work-with-playbooks:make checklists>`: The list of tasks to be completed for the run. Can be edited ad-hoc during a run.
+- :ref:`Checklists <end-user-guide/workflow-automation/work-with-playbooks:make checklists>`: The list of tasks to be completed for the run. Can be edited during a run. From Playbooks v2.6.0, checklists can also be created and managed directly within public and private channels.
 - :ref:`Templates <end-user-guide/workflow-automation/work-with-playbooks:templates>`: Used for frequently-used actions such as updates and reminders. You can create your own templates or use default ones.
 - :ref:`Automation actions <end-user-guide/workflow-automation/work-with-tasks:task actions>`: Used for inviting members, creating webhooks, editing welcome messages, and more.
-- :doc:`Permissions</end-user-guide/workflow-automation/share-and-collaborate>`: Manage permissions at the channel and at the playbook level.
+- :doc:`Permissions </end-user-guide/workflow-automation/share-and-collaborate>`: Manage permissions at the channel and at the playbook level.
 
 Teams run a playbook every time they want to orchestrate people, tools, and data to achieve that outcome as quickly as possible while providing visibility to stakeholders. 
 
@@ -63,3 +58,7 @@ Retrospective
 -------------
 
 When an incident is over, create a retrospective that captures the impact of the event. You can also add metrics, such as how long it took to resolve the incident, which you can apply to other, similar incidents to see where you can improve and refine your workflows.
+
+.. tip::
+
+  Looking to optimize team productivity? Learn how to automate repeatable workflows with `this on-demand webinar <https://mattermost.com/webinar/4-strategies-to-improve-technical-teams-productivity/>`_, then download our `Mattermost Playbooks datasheet <https://mattermost.com/mattermost-playbooks-datasheet/>`_.

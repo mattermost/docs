@@ -10,7 +10,6 @@ This guide outlines the key preparation steps required before installing the Mat
 
     Review software and hardware requirements </deployment-guide/software-hardware-requirements>
     Set up an NGINX proxy </deployment-guide/server/setup-nginx-proxy>
-    Configure Mattermost Calls </administration-guide/configure/calls-deployment>
     Set up TLS </deployment-guide/server/setup-tls>
     Use an image proxy </deployment-guide/server/image-proxy>
 
@@ -18,7 +17,6 @@ Before installing Mattermost Server, review the following preparation requiremen
 
 * :doc:`Review software and hardware requirements </deployment-guide/software-hardware-requirements>` - Ensure your system meets the minimum requirements for Mattermost deployment.
 * :doc:`Set up an NGINX proxy </deployment-guide/server/setup-nginx-proxy>` - Configure NGINX as a reverse proxy for enhanced security and performance.
-* :doc:`Configure Mattermost Calls </administration-guide/configure/calls-deployment>` - Set up real-time communication capabilities for voice and video calls.
 * :doc:`Set up TLS </deployment-guide/server/setup-tls>` - Enable secure communication with SSL/TLS encryption.
 * :doc:`Use an image proxy </deployment-guide/server/image-proxy>` - Configure image proxy for enhanced privacy and security.
 
@@ -59,9 +57,11 @@ PostgreSQL v14+ is required for Mattermost server installations. :doc:`MySQL dat
 
    e. If using PostgreSQL v15.x or later, additional grants are required:
 
-      .. code-block:: sql
+      .. code-block:: text
 
          ALTER DATABASE mattermost OWNER TO mmuser;
+         -- Connect to the mattermost database so the schema grants below apply to the right schema
+         \c mattermost
          ALTER SCHEMA public OWNER TO mmuser;
          GRANT USAGE, CREATE ON SCHEMA public TO mmuser;
 
@@ -109,7 +109,7 @@ PostgreSQL v14+ is required for Mattermost server installations. :doc:`MySQL dat
 
 .. important::
 
-  If you are upgrading a major version of Postgres, ensure that ``ANALYZE VERBOSE`` is run on the database post upgrade. This is required to re-populate the ``pg_statistics`` table used to generate optimal query plans. Database performance may suffer if this step is skipped.
+  If you are upgrading a major version of PostgreSQL, see :doc:`Upgrade PostgreSQL </administration-guide/upgrade/upgrading-postgres>` for the full upgrade procedure and post-upgrade steps.
 
 Once you've completed the database preparation, return to the :doc:`Linux deployment </deployment-guide/server/deploy-linux>` documentation to continue with your Mattermost server installation.
 
@@ -119,7 +119,8 @@ File storage preparation
 Mattermost requires a file storage system for storing user files, images, and attachments. You have several options, including:
 
 - S3-compatibile object storage (recommended)
-- local file storage
+- Network file storage
+- Local file storage
 
 S3-compatible object storage (Recommended)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -127,7 +128,6 @@ S3-compatible object storage (Recommended)
 For production environments, we recommend using S3-compatible object storage such as:
 
 - Amazon S3
-- MinIO
 - Digital Ocean Spaces
 - Other S3-compatible services
 
@@ -143,6 +143,14 @@ When using S3 storage, you'll need:
    - Access Key
    - Secret Key
    - Endpoint URL (for non-AWS S3 services)
+
+Network file storage
+~~~~~~~~~~~~~~~~~~~~~
+
+For production environments that cannot use S3-compatible object storage, we recommend using a Network Addressable Storage (NAS) solution with Network File System (NFS).
+
+You'll need to prepare an NFS server with a dedicated share for Mattermost (e.g. `/mnt/mattermost_data`) and mount it on all servers that will be running Mattermost.
+
 
 Local file storage
 ~~~~~~~~~~~~~~~~~~
@@ -196,10 +204,10 @@ The following table outlines the network ports and protocols required for Matter
 +-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+---------------------------------------------------------------+
 
 .. note::
-   
+
    - All outbound ports may vary based on your specific configuration
    - Mattermost can be configured to use an outbound proxy for any HTTP/HTTPS traffic (see below)
-   - Calls service may require additional ports 
+   - Calls service may require additional ports
 
 Outbound proxy configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

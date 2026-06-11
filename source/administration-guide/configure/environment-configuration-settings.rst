@@ -19,7 +19,7 @@ Review and manage the following environmental configuration options in the Syste
 - `Session lengths <#session-lengths>`__
 - `Performance monitoring <#performance-monitoring>`__
 - `Developer <#developer>`__
-- `Mobile security <#mobile-security>`__ 
+- `Mobile security <#mobile-security>`__
 - `config.json-only settings <#config-json-only-settings>`__
 
 .. tip::
@@ -343,7 +343,7 @@ Enable insecure outgoing connections
 
 .. warning::
 
-  Enabling this feature makes these connections susceptible to man-in-the-middle attacks. 
+  Enabling this feature makes these connections susceptible to man-in-the-middle attacks.
 
 .. config:setting:: managed-resource-paths
   :displayname: Managed resource paths (Web Server)
@@ -702,7 +702,7 @@ The parameter to encrypt connection against a PostgreSQL server is sslmode. The 
 
 Your database admin must configure the functionality according to the supported values described below.
 
-+----------------------------------------+-----------------+---------------------------------------------------------------------------+ 
++----------------------------------------+-----------------+---------------------------------------------------------------------------+
 | Short description of the ``sslmode``   | Value           | Example of a data source name                                             |
 | parameter                              |                 |                                                                           |
 +========================================+=================+===========================================================================+
@@ -729,7 +729,7 @@ MySQL Databases
 
 When Driver Name is set to mysql, we recommend using collation over using charset.
 
-To specify collation:  
+To specify collation:
 
 .. code-block:: text
 
@@ -823,24 +823,6 @@ Maximum idle connections
 | A 2:1 ratio with MaxOpenConns is recommended.          |                                                                         |
 +--------------------------------------------------------+-------------------------------------------------------------------------+
 
-.. config:setting:: maximum-idle-connections
-  :displayname: Maximum idle connections (Database)
-  :systemconsole: Environment > Database
-  :configjson: .SqlSettings.MaxIdleConns
-  :environment: MM_SQLSETTINGS_MAXIDLECONNS
-  :description: The maximum number of idle connections held open to the database. Default is **50**.
-
-Maximum idle connections
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-+-------------------------------------------------------+-------------------------------------------------------------------+
-| The maximum number of idle connections held open      | - System Config path: **Environment > Database**                  |
-| to the database.                                      | - ``config.json`` setting: ``".SqlSettings.MaxIdleConns": 50,``   |
-|                                                       | - Environment variable: ``MM_SQLSETTINGS_MAXIDLECONNS``           |
-| Numerical input. Default is **50**.                   |                                                                   |
-|                                                       |                                                                   |
-+-------------------------------------------------------+-------------------------------------------------------------------+
-
 .. config:setting:: query-timeout
   :displayname: Query timeout (Database)
   :systemconsole: Environment > Database
@@ -851,13 +833,31 @@ Maximum idle connections
 Query timeout
 ~~~~~~~~~~~~~
 
-+--------------------------------------------------------+-------------------------------------------------------------------------+
-| The amount of time to wait, in seconds, for a response | - System Config path: **Environment > Database**                        |
++--------------------------------------------------------+----------------------------------------------------------------------------------+
+| The amount of time to wait, in seconds, for a response | - System Config path: **Environment > Database**                                 |
 | from the database after opening a connection and       | - ``config.json`` setting: ``SqlSettings`` > ``QueryTimeout`` > ``30``  |
-| sending the query.                                     | - Environment variable: ``MM_SQLSETTINGS_QUERYTIMEOUT``                 |
-|                                                        |                                                                         |
-| Numerical input in seconds. Default is **30** seconds. |                                                                         |
-+--------------------------------------------------------+-------------------------------------------------------------------------+
+| sending the query.                                     | - Environment variable: ``MM_SQLSETTINGS_QUERYTIMEOUT``                          |
+|                                                        |                                                                                  |
+| Numerical input in seconds. Default is **30** seconds. |                                                                                  |
++--------------------------------------------------------+----------------------------------------------------------------------------------+
+
+.. config:setting:: analytics-query-timeout
+  :displayname: Analytics Query timeout (Database)
+  :systemconsole: Environment > Database
+  :configjson: .SqlSettings.AnalyticsQueryTimeout
+  :environment: MM_SQLSETTINGS_ANALYTICSQUERYTIMEOUT
+  :description: The number of seconds to wait for a response from the database after opening a connection and sending certain analytics queries. This setting only applies to long queries which are run in the background to populate some information in the Team and Site Statistics pages. Default is **300** seconds.
+
+Analytics query timeout
+~~~~~~~~~~~~~~~~~~~~~~~
+
++--------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| The number of seconds to wait for a response from the database after opening a connection  | - ``config.json`` setting: ``SqlSettings`` > ``AnalyticsQueryTimeout`` > ``300`` |
+| and sending certain analytics queries. This setting only applies to long queries which are | - System Config path: **Environment > Database**                                 |
+| run in the background to populate some information in the Team and Site Statistics pages.  | - Environment variable: ``MM_SQLSETTINGS_ANALYTICSQUERYTIMEOUT``                 |
+|                                                                                            |                                                                                  |
+| Numerical input in seconds. Default is **300** seconds.                                    |                                                                                  |
++--------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 .. config:setting:: maximum-connection-lifetime
   :displayname: Maximum connection lifetime (Database)
@@ -1119,7 +1119,7 @@ Replica lag settings
 
   .. tab:: AWS Aurora
 
-    Add the configuration highlighted below to your ``SqlSettings.ReplicaLagSettings`` array. You only need to add this once because replication statistics for AWS Aurora nodes are visible across all server instances that are members of the cluster. Be sure to change the ``DataSource`` to point to a single node in the group. 
+    Add the configuration highlighted below to your ``SqlSettings.ReplicaLagSettings`` array. You only need to add this once because replication statistics for AWS Aurora nodes are visible across all server instances that are members of the cluster. Be sure to change the ``DataSource`` to point to a single node in the group.
 
     For more information on Aurora replication stats, see the `AWS Aurora documentaion <https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora_global_db_instance_status.html>`__.
 
@@ -1142,7 +1142,7 @@ Replica lag settings
 
   .. tab:: MySQL Group Replication
 
-    Add the configuration highlighted below to your ``SqlSettings.ReplicaLagSettings`` array. You only need to add this once because replication statistics for all nodes are shared across all server instances that are members of the MySQL replication group. Be sure to change the ``DataSource`` to point to a single node in the group. 
+    Add the configuration highlighted below to your ``SqlSettings.ReplicaLagSettings`` array. You only need to add this once because replication statistics for all nodes are shared across all server instances that are members of the MySQL replication group. Be sure to change the ``DataSource`` to point to a single node in the group.
 
     For more information on group replication stats, see the `MySQL documentation <https://dev.mysql.com/doc/refman/8.0/en/group-replication-replication-group-member-stats.html>`__.
 
@@ -1165,7 +1165,7 @@ Replica lag settings
 
   .. tab:: PostgreSQL replication slots
 
-    1. Add the configuration highlighted below to your ``SqlSettings.ReplicaLagSettings`` array. This query should run against the **primary** node in your cluster, to do this change the ``DataSource`` to match the `SqlSettings.DataSource <#data-source>`__ setting you have configured. 
+    1. Add the configuration highlighted below to your ``SqlSettings.ReplicaLagSettings`` array. This query should run against the **primary** node in your cluster, to do this change the ``DataSource`` to match the `SqlSettings.DataSource <#data-source>`__ setting you have configured.
 
     For more information on pg_stat_replication, see the `PostgreSQL documentation <https://www.postgresql.org/docs/current/monitoring-stats.html#MONITORING-PG-STAT-REPLICATION-VIEW>`__.
 
@@ -1433,6 +1433,10 @@ Server password
   - **true**: Sniffing finds and connects to all data nodes in your cluster automatically.
   - **false**: **(Default)** Cluster sniffing is disabled.
 
+  .. warning::
+
+    Do not enable cluster sniffing when using cloud-hosted search providers such as Amazon OpenSearch Service. Cloud providers typically hide search cluster nodes behind a proxy, so sniffed node addresses may be unreachable from your network. The provider handles connection pooling for you, making sniffing unnecessary and potentially disruptive.
+
 Enable cluster sniffing
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1443,6 +1447,9 @@ Enable cluster sniffing
 | - **true**: Sniffing finds and connects to all data nodes      |                                                                                 |
 |   in your cluster automatically.                               |                                                                                 |
 | - **false**: **(Default)** Cluster sniffing is disabled.       |                                                                                 |
+|                                                                |                                                                                 |
+| Do not enable cluster sniffing when using cloud-hosted         |                                                                                 |
+| search providers such as Amazon OpenSearch Service.            |                                                                                 |
 +----------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 Select the **Test Connection** button in the System Console to validate the connection between Mattermost and the Elasticsearch or AWS OpenSearch server.
@@ -1577,6 +1584,38 @@ Enable Elasticsearch for autocomplete queries
 
 Autocompletion results may be incomplete until a bulk index of the existing users and channels database is finished.
 
+.. config:setting:: enable-search-public-channels-without-membership
+  :displayname: Allow searching public channels without membership (Elasticsearch)
+  :systemconsole: Environment > Elasticsearch
+  :configjson: .ElasticsearchSettings.EnableSearchPublicChannelsWithoutMembership
+  :environment: MM_ELASTICSEARCHSETTINGS_ENABLESEARCHPUBLICCHANNELSWITHOUTMEMBERSHIP
+  :description: Allow users to search for messages in public channels they have not joined.
+
+  - **true**: Users can find messages in public channels they haven't joined, scoped to teams they belong to.
+  - **false**: **(Default)** Users can only search messages in channels they are a member of.
+
+Allow searching public channels without membership
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
+| Allow users to search for messages in public channels they    | - System Config path: **Environment > Elasticsearch**                                                         |
+| have not joined.                                              | - ``config.json`` setting: ``ElasticsearchSettings`` > ``EnableSearchPublicChannelsWithoutMembership``        |
+|                                                               |   > ``false``                                                                                                 |
+| When enabled for the first time, existing posts are updated   | - Environment variable:                                                                                       |
+| in the background with channel type information. This         |   ``MM_ELASTICSEARCHSETTINGS_ENABLESEARCHPUBLICCHANNELSWITHOUTMEMBERSHIP``                                    |
+| backfill process is throttled to ~10,000 posts per second to  |                                                                                                               |
+| avoid impacting search performance.                           |                                                                                                               |
+|                                                               |                                                                                                               |
+| - **true**: Users can find messages in public channels they   |                                                                                                               |
+|   haven't joined, scoped to teams they belong to.             |                                                                                                               |
+| - **false**: **(Default)** Users can only search messages in  |                                                                                                               |
+|   channels they are a member of.                              |                                                                                                               |
++---------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+   This setting has no effect when :ref:`Compliance Mode <administration-guide/configure/compliance-configuration-settings:enable compliance reporting>` is enabled. When Compliance Mode is active, search results are always restricted to channels the user is a member of.
+
 .. config:setting:: post-index-replicas
   :displayname: Post index replicas (Elasticsearch)
   :systemconsole: N/A
@@ -1637,7 +1676,7 @@ Channel index replicas
 
 .. note::
 
-  If there are ``n`` data nodes, the number of replicas per shard for each index should be ``n-1``. If the number of nodes in an Elasticsearch or AWS OpenSearch cluster changes, this configuration setting, as well as `Post Index Replicas <#post-index-shards>`__ and `User Index Replicas <#user-index-replicas>`__ must also be updated accordingly. 
+  If there are ``n`` data nodes, the number of replicas per shard for each index should be ``n-1``. If the number of nodes in an Elasticsearch or AWS OpenSearch cluster changes, this configuration setting, as well as `Post Index Replicas <#post-index-shards>`__ and `User Index Replicas <#user-index-replicas>`__ must also be updated accordingly.
 
 .. config:setting:: channel-index-shards
   :displayname: Channel index shards (Elasticsearch)
@@ -1673,7 +1712,7 @@ User index replicas
 
 .. note::
 
-  If there are ``n`` data nodes, the number of replicas per shard for each index should be ``n-1``. If the number of nodes in an Elasticsearch or AWS OpenSearch cluster changes, this configuration setting, as well as `Post Index Replicas <#post-index-shards>`__ and `User Index Replicas <#user-index-replicas>`__ must also be updated accordingly. 
+  If there are ``n`` data nodes, the number of replicas per shard for each index should be ``n-1``. If the number of nodes in an Elasticsearch or AWS OpenSearch cluster changes, this configuration setting, as well as `Post Index Replicas <#post-index-shards>`__ and `User Index Replicas <#user-index-replicas>`__ must also be updated accordingly.
 
 .. config:setting:: user-index-shards
   :displayname: User index shards (Elasticsearch)
@@ -1812,15 +1851,15 @@ During busy periods, this delay will be faster as more traffic is occurring, cau
 1. You must understand how many posts your server makes every minute. Run the query below to calculate your server's average posts per minute.
 
     Note that this query can be heavy, so we recommend that you run it during non-peak hours.
-    Additionally, you can adjust the ``WHERE`` clause to see the posts per minute over a different time period. Right now ``31536000000`` represents the number of milliseconds in a year. 
+    Additionally, you can adjust the ``WHERE`` clause to see the posts per minute over a different time period. Right now ``31536000000`` represents the number of milliseconds in a year.
 
     .. code-block:: SQL
 
       SELECT
         AVG(postsPerMinute) as averagePostsPerMinute
       FROM (
-        SELECT 
-          count(*) as postsPerMinute, 
+        SELECT
+          count(*) as postsPerMinute,
           date_trunc('minute', to_timestamp(createat/1000))
         FROM posts
         WHERE createAt > ( (extract(epoch from now()) * 1000 )  - 31536000000)
@@ -1916,6 +1955,42 @@ Trace
 | - **not specified**: **(Default)** No error trace is created.       |                                                                          |
 +---------------------------------------------------------------------+--------------------------------------------------------------------------+
 
+.. config:setting:: enable-cjk-analyzers
+  :displayname: Enable CJK analyzers (Elasticsearch)
+  :systemconsole: N/A
+  :configjson: .Elasticsearchsettings.EnableCJKAnalyzers
+  :environment: MM_ELASTICSEARCHSETTINGS_ENABLECJKANALYZERS
+  :description: When set to true, enables language-specific analyzer plugins for Korean, Japanese, and Chinese search on the Elasticsearch or AWS OpenSearch server. Default is false.
+
+  - **true**: Enables CJK language-specific analyzer plugins on the Elasticsearch or AWS OpenSearch server.
+  - **false**: **(Default)** Standard analyzers are used for all languages.
+
+Enable CJK analyzers
+~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+| When enabled, Mattermost uses language-specific analyzer      | - System Config path: N/A                                                                  |
+| plugins to improve search results for Korean, Japanese, and   | - ``config.json`` setting: ``ElasticsearchSettings`` > ``EnableCJKAnalyzers`` > ``false``  |
+| Chinese content. The required analyzer plugins must be        | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_ENABLECJKANALYZERS``                    |
+| installed on the Elasticsearch or AWS OpenSearch server       |                                                                                            |
+| before enabling this setting.                                 |                                                                                            |
+|                                                               |                                                                                            |
+| Supported plugins:                                            |                                                                                            |
+|                                                               |                                                                                            |
+| - ``analysis-nori`` (Korean)                                  |                                                                                            |
+| - ``analysis-kuromoji`` (Japanese)                            |                                                                                            |
+| - ``analysis-smartcn`` (Chinese)                              |                                                                                            |
+|                                                               |                                                                                            |
+| - **true**: CJK language-specific analyzers are enabled.      |                                                                                            |
+| - **false**: **(Default)** Standard analyzers are used.       |                                                                                            |
++---------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+
+.. note::
+
+  Available from Mattermost v11.6. The required analyzer plugins should be installed on the Elasticsearch or AWS OpenSearch server before enabling this setting for full analysis support. If no plugin is detected, a warning will be logged. See the :doc:`Elasticsearch setup </administration-guide/scale/elasticsearch-setup>` and :doc:`AWS OpenSearch setup </administration-guide/scale/opensearch-setup>` documentation for plugin installation instructions.
+
+  If you enable this setting on a server that was previously running Elasticsearch or AWS OpenSearch, you must purge and rebuild the search indexes for existing content to be properly searchable with the new analyzers. See the :doc:`Elasticsearch setup </administration-guide/scale/elasticsearch-setup>` documentation for instructions on purging and rebuilding indexes.
+
 ----
 
 File storage
@@ -1925,7 +2000,7 @@ With self-hosted deployments, you can configure file storage settings by going t
 
 .. note::
 
-  Mattermost currently supports storing files on the local filesystem and Amazon S3 or S3-compatible containers. We have tested Mattermost with `MinIO <https://min.io/>`__ and `Digital Ocean Spaces <https://docs.digitalocean.com/products/spaces/>`__ products, but not all S3-compatible containers on the market. If you are looking to use other S3-compatible containers, we recommend completing your own testing.
+  Mattermost currently supports storing files on the local filesystem and Amazon S3 or S3-compatible containers. We have tested Mattermost with `Digital Ocean Spaces <https://docs.digitalocean.com/products/spaces/>`__, but not all S3-compatible containers on the market. If you are looking to use other S3-compatible containers, we recommend completing your own testing. You can also use local storage or a network drive using NFS.
 
 .. config:setting:: file-storage-system
   :displayname: File storage system (File Storage)
@@ -1948,8 +2023,8 @@ File storage system
 |   the specified local file directory.                         |                                                                             |
 | - **amazons3**: Files and images are stored on Amazon S3      |                                                                             |
 |   based on the access key, bucket, and region fields          |                                                                             |
-|   provided. The driver is compatible with MinIO (Beta)        |                                                                             |
-|   and Digital Ocean Spaces.                                   |                                                                             |
+|   provided. The driver is compatible with other S3-compatible |                                                                             |
+|   services, such as Digital Ocean Spaces.                     |                                                                             |
 +---------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 .. config:setting:: local-storage-directory
@@ -2067,7 +2142,8 @@ Enable searching content of documents within ZIP files
 .. note::
 
   - You can search for document content within ZIP files when using Mattermost in a web browser or the desktop app.
-  - Searching document contents adds load to your server. 
+  - Searching document contents adds load to your server.
+  - This setting applies only to standard ZIP files. 7zip (``.7z``) files are blocked for security reasons and are not searchable.
   - For large deployments, or teams that share many large, text-heavy documents, we recommend you review our :ref:`hardware requirements <deployment-guide/software-hardware-requirements:hardware requirements>`, and test enabling this feature in a staging environment before enabling it in a production environment.
 
 .. config:setting:: amazon-s3-bucket
@@ -2108,7 +2184,7 @@ Amazon S3 path prefix
   :systemconsole: Environment > File Storage
   :configjson: .FileSettings.AmazonS3Region
   :environment: MM_FILESETTINGS_AMAZONS3REGION
-  :description: The AWS region you selected when creating your **Amazon S3 bucket** in AWS. For MinIO or Digital Ocean Spaces, leave this setting empty.
+  :description: The AWS region you selected when creating your **Amazon S3 bucket** in AWS. For Digital Ocean Spaces or other S3-compatible services, leave this setting empty.
 
 Amazon S3 region
 ~~~~~~~~~~~~~~~~
@@ -2123,7 +2199,7 @@ Amazon S3 region
 | if none found.                                                |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
-For MinIO or Digital Ocean Spaces, leave this setting empty.
+For Digital Ocean Spaces or other S3-compatible services, leave this setting empty.
 
 .. config:setting:: amazon-s3-access-key-id
   :displayname: Amazon S3 access key ID (File Storage)
@@ -2329,7 +2405,7 @@ Export Amazon S3 storage class
   :environment: MM_FILESETTINGS_AMAZONS3REQUESTTIMEOUTMILLISECONDS
   :description: Amount of time, in milliseconds, before requests to Amazon S3 time out. Default value is 30000 (30 seconds).
 
-Amazon S3 request timeout 
+Amazon S3 request timeout
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -2388,7 +2464,7 @@ Amazon S3 exported upload part size
   :environment: MM_FILESETTINGS_AMAZONS3REQUESTTIMEOUTMILLISECONDS
   :description: Amount of time, in milliseconds, before requests to Amazon S3 time out. Default value is 30000 (30 seconds).
 
-Amazon S3 request timeout 
+Amazon S3 request timeout
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -2812,7 +2888,7 @@ Enable gossip encryption
 .. note::
 
   - The Gossip protocol is based on principles outlined in the `SWIM protocol developed by researchers at Cornell University <https://www.cs.cornell.edu/projects/Quicksilver/public_pdfs/SWIM.pdf>`_. The gossip protocol is a communication mechanism in distributed systems where nodes randomly exchange information to ensure data consistency across the network. It is decentralized, scalable, and fault-tolerant, making it ideal for systems with numerous nodes. Information is spread in a manner similar to social gossip, with nodes periodically "gossiping" updates to random peers until the network converges to a consistent state. Widely used in distributed databases, blockchain networks, and peer-to-peer systems, the protocol is simple to implement and resilient to node failures. However, it can suffer from redundancy and propagation delays in large networks.
-  - Alternatively, you can manually set the ``ClusterEncryptionKey`` row value in the **Systems** table. A key is a byte array converted to base64. Set this value to either 16, 24, or 32 bytes to select AES-128, AES-192, or AES-256 respectively. 
+  - Alternatively, you can manually set the ``ClusterEncryptionKey`` row value in the **Systems** table. A key is a byte array converted to base64. Set this value to either 16, 24, or 32 bytes to select AES-128, AES-192, or AES-256 respectively.
   - From Mattermost v10.11, gossip encryption is enabled by default for all new deployments. For existing deployments, all communication using the gossip protocol remains unencrypted unless you manually enable encryption. Prior to v10.11, gossip encryption is enabled by default for Cloud deployments and disabled by default for self-hosted deployments.
 
 .. config:setting:: enable-gossip-compression
@@ -3113,7 +3189,10 @@ File log directory
 
 .. note::
 
-  The path you configure must exist, and Mattermost must have write permissions for this directory.
+  - The path you configure must exist, and Mattermost must have write permissions for this directory.
+  - From Mattermost v11.4, you can use the ``MM_LOG_PATH`` environment variable to restrict log file locations to a designated root directory. This security enhancement ensures that all log files configured via ``LogSettings.FileLocation`` or ``LogSettings.AdvancedLoggingJSON`` remain within an authorized logging directory. 
+
+    - If ``MM_LOG_PATH`` isn't set, the default ``logs`` directory is used. Paths outside the root directory generate error logs and are excluded from :doc:`support packet </administration-guide/manage/admin/generating-support-packet>` downloads. See the :ref:`log path restrictions <administration-guide/manage/logging:log path restrictions>` documentation for details.
 
 .. config:setting:: file-log-level
   :displayname: General file log level (General Logging)
@@ -3221,6 +3300,7 @@ Output logs to multiple targets
   - See the :doc:`Mattermost logging </administration-guide/manage/logging>` documentation for details. These targets have been chosen as they support the vast majority of log aggregators, and other log analysis tools, without needing additional software installed.
   - Logs are recorded asynchronously to reduce latency to the caller.
   - Advanced logging supports hot-reloading of logger configuration.
+  - From Mattermost v11.4, file paths specified in ``AdvancedLoggingJSON`` configurations should be within the directory specified by the ``MM_LOG_PATH`` environment variable. See :ref:`log path restrictions <administration-guide/manage/logging:log path restrictions>` for details.
 
 .. config:setting:: maximum-field-size
   :displayname: Maximum general log field size (General Logging)
@@ -3921,7 +4001,7 @@ Performance monitoring
 .. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
-With self-hosted deployments, you can configure performance monitoring by going to **System Console > Environment > Performance Monitoring**, or by editing the ``config.json`` file as described in the following tables. 
+With self-hosted deployments, you can configure performance monitoring by going to **System Console > Environment > Performance Monitoring**, or by editing the ``config.json`` file as described in the following tables.
 
 .. code-block:: json
 
@@ -4088,7 +4168,7 @@ Enable notification monitoring
   - ``MetricsSettings.Enable`` must be set to ``true``
   - The ``NotificationMonitoring`` feature flag must be set to ``true``
 
-See the :ref:`performance monitoring <administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring:getting started>` documentation 
+See the :ref:`performance monitoring <administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring:getting started>` documentation
 to learn more about Mattermost Notification Health metrics.
 
 ----
@@ -4105,7 +4185,7 @@ With self-hosted deployments, you can configure developer mode by going to **Sys
   :environment: MM_SERVICESETTINGS_ENABLETESTING
   :description: Enable or disable the ``/test`` slash command.
 
-  - **true**: **(Default)** The ``/test`` slash command is enabled to load test accounts and test data.
+  - **true**: **(Default)** The ``/test`` slash command is enabled to load test accounts and test data. Use this setting only in isolated non-production environments and never in production.
   - **false**:  The ``/test`` slash command is disabled.
 
 Enable testing commands
@@ -4116,7 +4196,9 @@ Enable testing commands
 |                                                   | - ``config.json`` setting: ``ServiceSettings`` > ``EnableTesting`` > ``true``  |
 | - **true**: **(Default)** The ``/test`` slash     | - Environment variable: ``MM_SERVICESETTINGS_ENABLETESTING``                   |
 |   command is enabled to load test accounts        |                                                                                |
-|   and test data.                                  |                                                                                |
+|   and test data. Use this setting only in         |                                                                                |
+|   isolated non-production environments and        |                                                                                |
+|   never in production.                            |                                                                                |
 | - **false**:  The ``/test`` slash command is      |                                                                                |
 |   disabled.                                       |                                                                                |
 +---------------------------------------------------+--------------------------------------------------------------------------------+
@@ -4332,7 +4414,7 @@ Prevent screen capture
 Enable secure file preview on mobile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This setting improves an organization's mobile security posture by restricting file access while still allowing essential file viewing capabilities. 
+This setting improves an organization's mobile security posture by restricting file access while still allowing essential file viewing capabilities.
 
 +---------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
 | - **true**: Prevents file downloads, previews, and sharing for most file types,                                                       | - System Config path: **Site Configuration > File sharing and downloads**                         |
@@ -4406,7 +4488,7 @@ Disable Customer Portal requests
 
 .. note::
 
-  Cloud admins can’t modify this configuration setting. 
+  Cloud admins can’t modify this configuration setting.
 
 .. config:setting:: enable-api-team-deletion
   :displayname: Enable API team deletion (ServiceSettings)

@@ -13,7 +13,7 @@ Set up Elasticsearch
 
 We highly recommend that you set up Elasticsearch server on a dedicated machine separate from the Mattermost Server. 
 
-1. Download and install the latest release of `Elasticsearch v8 <https://www.elastic.co/guide/en/elasticsearch/reference/8.15/install-elasticsearch.html>`_, or `Elasticsearch v7.17+ <https://www.elastic.co/guide/en/elasticsearch/reference/7.17/install-elasticsearch.html>`_. See the Elasticsearch documentation for installation details.
+1. Download and install the latest release of `Elasticsearch v9 <https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html>`_ or `Elasticsearch v8 <https://www.elastic.co/guide/en/elasticsearch/reference/8.19/install-elasticsearch.html>`_. See the Elasticsearch documentation for installation details.
 
 2. Set up Elasticsearch with ``systemd`` by running the following commands:
 
@@ -43,7 +43,7 @@ We highly recommend that you set up Elasticsearch server on a dedicated machine 
 
 6. In this file, replace the ``network.host`` value of ``_eth0_`` with your network interface name, and save your changes.
 
-7. When using Elasticsearch v8, ensure you set ``action.destructive_requires_name`` to ``false`` in ``elasticsearch.yml`` to allow for wildcard operations to work.
+7. Ensure you set ``action.destructive_requires_name`` to ``false`` in ``elasticsearch.yml`` to allow for wildcard operations to work.
 
 8. Restart Elasticsearch by running the following commands:
 
@@ -67,6 +67,25 @@ We highly recommend that you set up Elasticsearch server on a dedicated machine 
   .. code-block:: sh
 
     sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-icu
+
+  **(Optional) CJK language analyzer plugins**: To improve search for Korean, Japanese, or Chinese content, install one or more of the following language-specific analyzer plugins: ``analysis-nori`` (Korean), ``analysis-kuromoji`` (Japanese), and ``analysis-smartcn`` (Chinese).
+
+  .. code-block:: sh
+
+    sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-nori
+    sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-kuromoji
+    sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-smartcn
+
+  After installing the CJK plugins, restart Elasticsearch to load them:
+
+  .. code-block:: sh
+
+    sudo systemctl restart elasticsearch
+
+  Then enable the :ref:`EnableCJKAnalyzers <administration-guide/configure/environment-configuration-settings:enable cjk analyzers>` configuration setting. See :doc:`Enabling Chinese, Japanese, and Korean Search </administration-guide/configure/enabling-chinese-japanese-korean-search>` for additional CJK search configuration options.
+
+  .. important::
+     If you enable CJK analyzers on a server with existing indexed content, you must purge and rebuild the search index in **System Console > Environment > Elasticsearch** for the CJK analyzers to take effect on existing posts.
 
 12. Test the connection from Mattermost to Elasticsearch by running the following command:
 

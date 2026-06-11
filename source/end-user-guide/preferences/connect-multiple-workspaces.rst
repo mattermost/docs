@@ -29,11 +29,7 @@ Add a server
       Can't find your Mattermost server URL? Ask your company’s IT department or your Mattermost system admin for your organization’s **Mattermost Site URL**. It’ll look something like ``https://example.com/company/mattermost``, ``mattermost.yourcompanydomain.com``, or ``chat.yourcompanydomain.com``. These URLs could also end in ``.net``.
 
   3. Enter the server's Display Name.
-  4. Optionally toggle the **Advanced** section to enter a **Pre-authentication Secret**. This is an additional security measure that some organizations use to control access to the Mattermost server. Your system admin can provide you with the **Pre-authentication Secret** value if required.
-
-    .. image:: ../../images/desktop-server-add-2.jpg
-      :alt: Desktop app server setup dialog showing the optional pre-authentication secret field.
-
+  4. [Desktop only] If your server requires an authentication secret, you'll be prompted to enter it when you connect. Enter the secret provided by your administrator and select **OK**.
   5. Select **Add**.
 
 .. tab:: Mobile
@@ -48,10 +44,10 @@ Add a server
       Can't find your Mattermost server URL? Ask your company’s IT department or your Mattermost system admin for your organization’s **Mattermost Site URL**. It’ll look something like ``https://example.com/company/mattermost``, ``mattermost.yourcompanydomain.com``, or ``chat.yourcompanydomain.com``. These URLs could also end in ``.net``.
 
   3. Enter the server's Display Name.
-  4. Optionally toggle the **Advanced Options** section to enter a **Pre-authentication secret**. This is an additional security measure that some organizations use to control access to the Mattermost server. Your system admin can provide you with the **Pre-authentication Secret** value if required.
+  4. Optionally toggle the **Advanced Options** section to enter an **Authentication secret**. This is an additional security measure that some organizations use. Your system admin can provide you with the secret if required.
 
     .. image:: ../../images/mobile-server-add-psk.jpg
-      :alt: Mobile app server setup screen showing the optional pre-authentication secret field.
+      :alt: Mobile app server setup screen showing the optional authentication secret field.
       :width: 300px
 
   5. Tap **Done**.
@@ -66,10 +62,9 @@ Edit a server
       .. image:: ../../images/desktop-edit-server.png
         :alt: Edit an existing Mattermost server connection using options located in the top right corner of the Mattermost screen.
 
-  2. Modify the server's display name, URL, or pre-authentication secret, then select **Save**.
+  2. Modify the server's display name or URL, then select **Save**.
 
-    .. image:: ../../images/desktop-edit-server-2.jpg
-      :alt: Edit server dialog showing display name, URL, and pre-authentication secret fields.
+    [Desktop only] To update an authentication secret, connect to the server. If the secret has changed, you'll be prompted to enter the new one provided by your system admin.
 
 .. tab:: Mobile
 
@@ -79,11 +74,13 @@ Edit a server
       :width: 300px
       :alt: In the Mattermost mobile app, swipe left on an existing server connection entry to edit the connection.
 
-  2. Modify the server's display name or pre-authentication secret, and then tap **Save**.
+  2. Modify the server's display name or authentication secret, and then tap **Save**.
 
     .. image:: ../../images/mobile-edit-server.jpg
       :alt: Mobile app edit server screen showing display name fields.
       :width: 300px
+
+    To view or update the authentication secret, expand the **Advanced Options** section. If a secret is currently configured, it will be pre-filled in the field.
 
 Remove a server
 ----------------

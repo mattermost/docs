@@ -97,7 +97,7 @@ Mattermost Agents are designed to ensure that only necessary information is sent
 Audit Logs and Monitoring
 -------------------------
 
-Mattermost writes logs to both the console and to a log file in a machine-readable JSON format. Commercial customers can additionally log directly to syslog and TCP socket destination targets. Learn more about :doc:`Mattermost logging </administration-guide/manage/logging>`.
+Mattermost writes logs to both the console and to a log file in a machine-readable JSON format. Customers with a Mattermost subscription can additionally log directly to syslog and TCP socket destination targets. Learn more about :doc:`Mattermost logging </administration-guide/manage/logging>`.
 
 Activity Monitoring
 ~~~~~~~~~~~~~~~~~~~~

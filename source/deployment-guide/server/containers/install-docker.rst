@@ -28,6 +28,7 @@ This section provides a quick start guide for deploying Mattermost on Docker by 
    - The deployment configuration results in two separate containers: a container for the database and a container for the application. An optional third container results when using NGINX for reverse proxy.
    - Encountering issues with your Docker deployment? See the :doc:`Docker deployment troubleshooting </deployment-guide/server/docker-troubleshooting>` documentation for details.
 
+
 1. In a terminal window, clone the repository and enter the directory.
 
    .. code-block:: sh
@@ -54,6 +55,10 @@ This section provides a quick start guide for deploying Mattermost on Docker by 
       sudo chown -R 2000:2000 ./volumes/app/mattermost
 
 4. *(Optional)* Configure TLS for NGINX. If you're not using the included NGINX reverse proxy, you can skip this step.
+
+.. note::
+
+   **Resource limits:** If you're using a custom ``docker-compose.yml`` file that sets `pids_limit`, we recommend using ``mem_limit`` instead to constrain resources while allowing normal connection scaling. Low ``pids_limit`` values can prevent the container from creating enough processes or threads, which may lead to unstable behavior under load. The current default in ``docker-compose.yml`` is set to ``mem_limit: 4G``.
 
 Create a new certificate and key
 ---------------------------------
@@ -202,7 +207,7 @@ Looking for a way to evaluate Mattermost on a single local machine using Docker?
 
    - This local image is self-contained (i.e., it has an internal database and works out of the box). Dropping a container using this image removes data and configuration as expected. You can see the :doc:`configuration settings </administration-guide/configure/configuration-settings>` documentation to learn more about customizing your trial deployment.
    - **Preview Mode** shouldn't be used in a production environment, as it uses a known password string, contains other non-production configuration settings, has email disabled, keeps no persistent data (all data lives inside the container), and doesn't support upgrades. 
-   - If you are planning to use the calling functionality in **Preview Mode** on a non-local environment, you should ensure that the server is running on a secure (HTTPs) connection and that the :ref:`network requirements <administration-guide/configure/calls-deployment:network>` to run calls are met.
+   - If you are planning to use the calling functionality in **Preview Mode** on a non-local environment, you should ensure that the server is running on a secure (HTTPs) connection and that the :ref:`network requirements <administration-guide/configure/calls-rtcd-setup:network requirements>` to run calls are met.
 
 1. Install `Docker <https://www.docker.com/get-started/>`__.
 

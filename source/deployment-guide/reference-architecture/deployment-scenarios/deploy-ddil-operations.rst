@@ -8,7 +8,7 @@ Disconnected, Denied, Intermittent, and Limited (DDIL) network conditions presen
 
 Mattermost enables resilient collaboration by remaining fully operational in DDIL environments. Mission users continue to access self-hosted messaging collaboration, workflow automation, and mission planning within their mobile tactical network. No internet connectivity is required for enhanced collaboration functions, including mission tuned AI agents powered by self-hosted LLMs, and audio and screen sharing services.
 
-When connectivity is restored, mission users regain access to M365 enterprise systems in addition to collaboration continuity with enterprise users through the :doc:`embedded Mattermost experience </integrations-guide/mattermost-mission-collaboration-for-m365>` inside their Microsoft Teams and Outlook applications. All mission activity during the period of disconnection becomes available across enterprise and tactical environments when connectivity returns. 
+When connectivity is restored, mission users regain access to M365 enterprise systems in addition to collaboration continuity with enterprise users through the :doc:`embedded Mattermost experience </integrations-guide/mattermost-mission-collaboration-for-m365>` inside their Microsoft Teams and Outlook applications. All mission activity during the period of disconnection becomes available across enterprise and tactical environments when connectivity returns.
 
 Traditional cloud-only solutions fail in these scenarios, while fully disconnected systems don't integrate with enterprise tools during normal operations. This deployment architecture :doc:`extends sovereign collaboration with Microsoft Teams and Outlook </deployment-guide/reference-architecture/deployment-scenarios/deploy-sovereign-collaboration>` to the tactical edge, providing a hybrid solution that enables enterprise integration and fully disconnected tactical collaboration.
 
@@ -35,7 +35,7 @@ This hybrid deployment architecture provides optimal collaboration in both conne
 
   - **Microsoft Entra ID:** Enterprise users authenticate to M365 applications and Mattermost using :doc:`single sign-on Entra ID </administration-guide/onboard/sso-entraid>` via OpenID Connect (OIDC) or SAML. This provider only works with functioning internet access.
 
-  - **Alternative Local Identity Provider:** Deployed within the tactical network to provide authentication services for mission users during disconnected periods when M365 is unreachable. The local IdP serves as the primary authentication source for Mattermost and maintains an independent user directory that operates without internet connectivity. 
+  - **Alternative Local Identity Provider:** Deployed within the tactical network to provide authentication services for mission users during disconnected periods when M365 is unreachable. The local IdP serves as the primary authentication source for Mattermost and maintains an independent user directory that operates without internet connectivity.
 
 - **Client Applications:**
 
@@ -59,23 +59,23 @@ This hybrid deployment architecture provides optimal collaboration in both conne
 
     - :doc:`Project Tracking </end-user-guide/project-task-management>`: Boards enables project management capabilities built-in to your local Mattermost deployment.
 
-    - :doc:`AI Agents </administration-guide/configure/agents-admin-guide>`: AI Agents run against a local LLM hosted within your tactical network. 
+    - :doc:`AI Agents </administration-guide/configure/agents-admin-guide>`: AI Agents run against a local LLM hosted within your tactical network.
 
-    - :doc:`Audio & Screenshare </administration-guide/configure/calls-deployment>`: Calls offers native real-time self-hosted audio calls and screen sharing within your tactical network.
+    - :doc:`Audio & Screenshare </administration-guide/configure/calls-deployment-guide>`: Calls offers native real-time self-hosted audio calls and screen sharing within your tactical network.
 
   - **Proxy Server:** The :doc:`proxy server </deployment-guide/server/setup-nginx-proxy>` handles HTTP(S) routing within the cluster, directing traffic between the server and clients accessing Mattermost services. NGINX is recommended for load balancing with support for WebSocket connections, health check endpoints, and sticky sessions. The proxy layer provides SSL termination and distributes client traffic across application servers.
 
   - **PostgreSQL Database:** Stores persistent application data on a :doc:`PostgreSQL v13+ database </deployment-guide/server/preparations>` hosted locally within your tactical network.
 
-  - **Object Storage:** File uploads, images, and attachments are stored outside the application node on an :doc:`S3-compatible store </deployment-guide/server/preparations>`, such as MinIO, hosted locally within your tactical network.
+  - **Object Storage:** File uploads, images, and attachments are stored outside the application node on an :doc:`S3-compatible store </deployment-guide/server/preparations>` or network/local storage, hosted locally within your tactical network.
 
-  - **Recording Instance:** ``calls-offloader`` :ref:`job service <administration-guide/configure/calls-deployment:configure recording, transcriptions, and live captions>` to offload heavy processing tasks from Mattermost Calls to self-hosted infrastructure within your tactical network, such as recordings, transcriptions, and live captioning. *(Optional)*
+  - **Recording Instance:** ``calls-offloader`` job service, configured using the :doc:`Calls Offloader Setup and Configuration </administration-guide/configure/calls-offloader-setup>` guide, to offload heavy processing tasks from Mattermost Calls to self-hosted infrastructure within your tactical network, such as recordings, transcriptions, and live captioning. *(Optional)*
 
 - **Self-hosted integrations:** :doc:`Custom apps, plugins, and webhooks </integrations-guide/integrations-guide-index>` can be deployed within your tactical network. *(Optional - not shown)*
 
 - **Self-hosted LLM:** Locally hosted :doc:`OpenAI compatible LLM </agents/docs/providers>` for agentic powered collaboration within your tactical network. *(Optional)*
 
-- **Microsoft Global Network:** `World-wide network <https://learn.microsoft.com/en-us/azure/networking/microsoft-global-network>`_ of Microsoft data centers, delivering public cloud services when internet connectivity permits. 
+- **Microsoft Global Network:** `World-wide network <https://learn.microsoft.com/en-us/azure/networking/microsoft-global-network>`_ of Microsoft data centers, delivering public cloud services when internet connectivity permits.
 
 Operational Best Practices
 --------------------------
@@ -91,7 +91,7 @@ DDIL environments require authentication infrastructure that remains fully opera
 
 - **Mission users:** Authenticate to Mattermost using a local IdP, such as :doc:`Keycloak </administration-guide/onboard/sso-saml-keycloak>` (open-source IdP with OIDC/SAML support), Active Directory with ADFS, or OpenLDAP with an OIDC bridge. When internet connected, the local IdP can optionally federate with Microsoft Entra ID to synchronize user accounts, credentials, and group memberships to enable access to Microsoft applications.
 
-User accounts must be provisioned in the local IdP before disconnection occurs to ensure authentication services remain available throughout DDIL conditions. 
+User accounts must be provisioned in the local IdP before disconnection occurs to ensure authentication services remain available throughout DDIL conditions.
 
 Sovereign AI
 ~~~~~~~~~~~~
@@ -101,10 +101,10 @@ Deploy an :doc:`OpenAI compatible LLM </administration-guide/configure/agents-ad
 Self-hosted audio & screensharing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Effective collaboration at the tactical edge requires all voice and screen sharing capabilities remain operational without reliance on the internet or third-party services. Deploy :doc:`Mattermost Calls </administration-guide/configure/calls-deployment>` in a self-hosted configuration, including:
+Effective collaboration at the tactical edge requires all voice and screen sharing capabilities remain operational without reliance on the internet or third-party services. Deploy :doc:`Mattermost Calls </administration-guide/configure/calls-deployment-guide>` in a self-hosted configuration, including:
 
-- The :ref:`rtcd service <administration-guide/configure/calls-deployment:the rtcd service>` for scalable, low-latency media routing hosted on-premises. Run multiple ``rtcd`` nodes for redundancy.
-- The :ref:`calls offloader <administration-guide/configure/calls-deployment:configure recording, transcriptions, and live captions>` service offloads heavy processing tasks like recording, transcription and live captioning to a locally hosted compliance-approved job server.
+- The ``rtcd`` service, configured using the :doc:`RTCD Setup and Configuration </administration-guide/configure/calls-rtcd-setup>` guide, provides scalable, low-latency media routing hosted on-premises. Run multiple ``rtcd`` nodes for redundancy.
+- The ``calls-offloader`` service, configured using the :doc:`Calls Offloader Setup and Configuration </administration-guide/configure/calls-offloader-setup>` guide, offloads heavy processing tasks like recording, transcription and live captioning to a locally hosted compliance-approved job server.
 
 High availability and fault tolerance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

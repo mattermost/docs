@@ -4,7 +4,9 @@ Channel-specific access rules
 .. include:: ../../../_static/badges/entry-adv.rst
   :start-after: :nosearch:
 
-Channel and Team Admins can self-manage access controls for their private channels directly through the Channel Settings modal, without requiring System Admin intervention. For organization-wide policies created by System Admins, see :doc:`System-wide attribute-based access policies </administration-guide/manage/admin/abac-system-wide-policies>`.
+Channel and Team Admins can self-manage access controls for their private channels directly through the Channel Settings modal, without requiring System Admin intervention. For organization-wide policies created by System Admins, see :doc:`System-wide attribute-based access policies </administration-guide/manage/admin/abac-system-wide-policies>`. For team-scoped policies that apply rules across multiple private channels within a team, see :doc:`Team-level channel membership policies </administration-guide/manage/admin/abac-team-channel-policies>`.
+
+Each ABAC channel access policy has an explicit active state that determines whether the policy will automatically add users who meet the policy's criteria but are not yet channel members. When a policy is applied to a channel, the policy's rules are always enforced to remove members who no longer meet the required attribute rules, regardless of the active state.
 
 With channel access rules, Channel and Team Admins can:
 
@@ -56,16 +58,18 @@ Channel access rules use the same simple interface as system policies, allowing 
 Auto-sync membership
 ~~~~~~~~~~~~~~~~~~~~
 
-The **Auto-add members based on access rules** toggle controls automatic membership management:
+The **Auto-add members based on access rules** toggle controls automatic membership management. This setting ensures that channel membership stays consistently aligned with the defined attribute rules, similar to how LDAP group channels work:
 
-- **Enabled**: Users matching the rules are automatically added to the channel, and users who no longer match are removed
+- **Enabled**: Users matching the rules are automatically added to the channel. If users temporarily lose attributes and later regain them, they will be automatically re-added
 - **Disabled**: Rules act as a gate (preventing unauthorized joins) but don't automatically add qualifying users
 
 .. important::
 
+  - Auto-add/auto-sync is checked on a per-channel policy basis, not inherited from parent system-wide policies.
   - If a system policy has auto-sync enabled, Channel and Team Admins cannot disable it at the channel level.
   - If a system policy has auto-sync disabled, Channel and Team Admins can choose to enable it for their channel.
   - When no rules are configured, this toggle is automatically disabled.
+  - Regardless of the auto-sync setting, users who no longer meet required attribute rules are always removed during synchronization.
 
 Validation and safety
 ~~~~~~~~~~~~~~~~~~~~~
@@ -82,8 +86,54 @@ When you save changes that affect membership, a confirmation dialog shows you:
 - Option to view the specific users affected
 - Confirmation required before applying changes
 
+Manage team-scoped membership policies in Team Settings
+-------------------------------------------------------
+
+From Mattermost v11.7, Team Admins can create, edit, and delete channel membership policies directly from Team Settings, scoped to channels within their team. This lets teams self-manage attribute-based membership for their own channels without requiring a System Admin to create or modify a system-wide policy.
+
+Prerequisites
+~~~~~~~~~~~~~
+
+- :doc:`Attribute-Based Access Control (ABAC) </administration-guide/manage/admin/attribute-based-access-control>` must be enabled by a System Admin in **System Console > System Attributes > Attribute-Based Access**.
+- You need Team Admin permissions for the team and the ``manage_team_access_rules`` permission.
+- Team-scoped membership policies can be assigned to both public and private channels within the team.
+
+Team Admin workflow
+~~~~~~~~~~~~~~~~~~~
+
+1. Open **Team Settings** from the team menu, and go to the **Membership Policies** tab. This tab is only visible to Team Admins with the ``manage_team_access_rules`` permission when ABAC is enabled system-wide.
+2. Select **Add Policy** and enter a name for the policy. Parent policy names must be unique; if you enter a name that's already in use, Mattermost displays a user-friendly error and prevents the policy from being saved.
+3. Define the attribute rules that determine which users can be members of channels assigned to this policy. Rules use the same attribute conditions available for channel-specific access rules.
+4. Assign the applicable private channels in the team to the policy.
+5. Select **Save** to create or update the policy. Team-scoped policies can be edited or deleted from the same tab at any time.
+
+Team Settings sync status footer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The **Membership Policies** tab includes a sync status footer that shows:
+
+- **Last sync time**: The time of the most recent membership synchronization for policies in this team.
+- **Sync now**: An on-demand action that triggers an immediate synchronization for the team's policies.
+
+Team-scoped sync is limited to the team admin's team scope. Triggering **Sync now** from Team Settings does not affect channels or policies outside the current team.
+
+Sync behavior by channel type
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Sync behavior for team-scoped membership policies depends on the type of channel the policy is assigned to:
+
+- **Public channels**: Sync is advisory and add-only. Users who match the policy's rules are added to the channel, but no users are removed if their attributes change.
+- **Private channels**: Sync is enforced. Users who match the policy's rules are added to the channel, and users who no longer match the rules are removed during the next synchronization.
+
+Automatic sync on policy changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost automatically runs a sync job whenever a team-scoped membership policy is created, or its rules, assigned channels, or active state change. Team Admins don't need to manually trigger **Sync now** for these updates; the sync runs as part of the change.
+
 Policy inheritance
 --------------------
+
+Channel-level (child) ABAC policies now behave independently and consistently, even when parent system-wide policies exist. Each policy maintains its own active state and configuration.
 
 When both :doc:`system policies </administration-guide/manage/admin/abac-system-wide-policies>` and channel rules are configured:
 
@@ -91,6 +141,7 @@ When both :doc:`system policies </administration-guide/manage/admin/abac-system-
 2. **Channel rules** are managed in the access rules section below
 3. **Users must satisfy BOTH** system policies and channel rules to access the channel
 4. Channel rules **add restrictions** but cannot weaken system policies
+5. **Auto-add behavior** is determined by the individual channel policy, not inherited from parent system-wide policies. System-wide policies can pass down their rules, but auto-add/auto-sync is evaluated per channel.
 
 Use cases and recommendations
 -----------------------------
@@ -164,8 +215,7 @@ The **Access Control** tab is only visible when all of these conditions are met:
 
 - You have Channel Admin role or higher for the channel
 - The channel is a private channel (not public, group message, or direct message)
-- ABAC is enabled system-wide by a System Admin
-- The Channel Admin ABAC is enabled via the configuration setting ``AccessControlSettings.EnableUserManagedAttributes``
+- ABAC is enabled system-wide by a System Admin in **System Console > System Attributes > Attribute-Based Access**
 - Your user role includes the ``manage_channel_access_rules`` permission
 
 Can Channel and Team Admins override system policies?
@@ -199,6 +249,11 @@ The auto-sync toggle is automatically disabled when:
 - No access rules are configured
 - A system policy with auto-sync enabled is applied (Channel and Team Admins cannot disable it)
 - There are validation errors in the current rules
+- The channel's access control policy is not in an active state
+
+.. note::
+
+  **Troubleshooting auto-sync issues**: If auto-sync functionality (automatic adding/re-adding of members) is not working as expected, verify that the channel's access control policy is in an active state. An inactive policy will prevent automatic member additions from occurring. Note that enforcement of rules (removal of members who no longer meet requirements) happens regardless of the policy's active state.
 
 Synchronization and membership 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

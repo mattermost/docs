@@ -737,7 +737,7 @@ Enable the following settings to output audit events in the System Console by go
 
 .. note::
 
-  The ability to enable and configure audit logging is currently in :ref:`Beta <administration-guide/manage/feature-labels:beta>`. 
+  The ability to enable and configure audit logging is currently in :ref:`Beta <administration-guide/manage/feature-labels:beta>`.
 
 .. config:setting:: advanced-logging
   :displayname: Advanced Logging (Audit Logging > Cloud)
@@ -942,8 +942,6 @@ Select the themes that can be chosen by users when ``EnableThemeSelection`` is s
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AllowedThemes": []`` with string array input consisting of the options ``"default"``, ``"organization"``, ``"mattermostDark"``, and ``"windows10"``, such as ``["mattermostDark", "windows10"]``.     |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
 
 .. config:setting:: file-location
   :displayname: File location (Experimental)
@@ -1813,6 +1811,10 @@ When running Mattermost in :doc:`High Availablity mode </administration-guide/sc
 
    We strongly recommend that you not change this setting from the default setting of ``true`` as this prevents the ``ClusterLeader`` from being able to run the scheduler. As a result, recurring jobs such as LDAP sync, Compliance Export, and data retention will no longer be scheduled. In previous Mattermost Server versions, and this documentation, the instructions stated to run the Job Server with ``RunScheduler: false``. The cluster design has evolved and this is no longer the case.
 
+.. tip::
+
+   From Mattermost v11.4, debug-level log messages are available to help verify that specific Recurring Tasks (Scheduled Posts, Post Reminders, and DND Status Reset) are executing correctly in a cluster. Non-leader nodes log messages when they skip execution of these Recurring Tasks, confirming that leader election is functioning as expected. These debug messages do not apply to other job types such as Elasticsearch indexing, SAML sync, or LDAP sync. See :ref:`Cluster job execution debug messages <administration-guide/manage/logging:cluster job execution debug messages>` for details.
+
 +-----------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RunScheduler": true`` with options ``true`` and ``false``.                                 |
 +-----------------------------------------------------------------------------------------------------------------------------------------+
@@ -1852,3 +1854,4 @@ Defines the threshold in days beyond which outdated configurations are removed f
 +--------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"JobSettings.CleanupConfigThresholdDays": 30`` with numerical input.   |
 +--------------------------------------------------------------------------------------------------------------------+
+

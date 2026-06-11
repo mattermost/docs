@@ -38,6 +38,8 @@ Quarterly true-up reports
 
 When you buy an annual Mattermost subscription, you agree to provide Mattermost with quarterly reports of the actual number of activated users within your system. An activated user is a user who has a Mattermost account and doesn't show as **Deactivated** in **System Console > User Management > Users**.
 
+Single-channel guests are tracked separately from activated users. Guests in exactly one channel are free up to a 1:1 ratio with licensed seats, while guests in multiple channels continue to count as activated users. Direct messages and group messages don't affect whether a guest is counted as a single-channel guest.
+
 We'll send you an email notice around the end of the quarter reminding you to send us your report.
 
 .. image:: ../images/true-up-schedule.png
@@ -45,9 +47,9 @@ We'll send you an email notice around the end of the quarter reminding you to se
 
 If you have more total activated users than you purchased in your annual subscription, your Customer Success Manager will provide you with a true-up quote for the new users added. The additional invoice will be pro-rated based on the number of months left in your subscription term, including the months for the calendar quarter for the time you pull the report. Mattermost won't provide downward adjustments. Mattermost will invoice based on Mattermost’s `current list prices <https://mattermost.com/pricing/>`_.
 
-A system admin must take a screenshot of the **System Console > Site Statistics** page and send it to Mattermost in an email.
+A system admin must take a screenshot of the **System Console > Reporting > Site Statistics** page and send it to Mattermost in an email.
 
-- Please ensure your screenshot is taken from the top of the page and includes both **Total Activated Users** and the **Monthly Active Users** metrics. 
+- Please ensure your screenshot is taken from the top of the page and includes **Total Activated Users**, **Single-channel Guests**, and **Monthly Active Users**. 
 - Please include the date of the screenshot in the file name.
 - We don't need your server address, so if it appears on your screenshot, you can redact it from the image.
 
@@ -73,7 +75,9 @@ What is a true-up report and why is the true-up notice necessary?
 
 A true-up report is our quarterly request for you to provide us with the actual number of activated users within your system to determine if you have more activated users now than when you bought your subscription.
 
-As your organization grows, you may need to add additional users during your subscription period. Mattermost needs to have insight into changes in your activated user count so that we can charge you appropriately for your self-hosted license usage. Additionally, we don’t want to over estimate/charge activated users at your renewal time. 
+As your organization grows, you may need to add additional users during your subscription period. Mattermost needs to have insight into changes in your activated user count so that we can charge you appropriately for your self-hosted license usage. Additionally, we don’t want to over estimate/charge activated users at your renewal time.
+
+Single-channel guests are visible separately in reporting and on the **Edition and License** page. They don't count toward the primary paid seat count up to a 1:1 ratio with licensed seats, and exceeding that allowance generates system-admin warnings rather than hard limits.
 
 When you receive the quarterly true-up notice from Mattermost, please share your activated user count with us.
 
@@ -82,17 +86,20 @@ How do I renew my subscription if I don't have internet access?
 
 If you don't have access to the internet, please `create a support ticket <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=11184911962004>`_ for assistance.
 
-Can I use the same license key on multiple self-hosted servers?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Can I use my Mattermost license on more than one server?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-License keys for unlocking the advanced features in Mattermost can only be applied to a single deployment. A deployment consists of either a single Mattermost server or multiple linked Mattermost servers in a High Availability configuration with access to a single database.
+Each license covers one deployment — either a single server, or multiple nodes in a High Availability configuration that share a single database. If you need to run a second independent server, that requires its own license. Contact your account team for assistance.
 
-Customers who are eligible to purchase the `Premier Support add-on <https://mattermost.com/support/>`_ are licensed to run with a single deployment of Mattermost license key in production and up to four non-production deployments of Mattermost (for example: development, staging, user acceptance testing, etc.)
+Can I use my license in a non-production environment?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Is my license key available immediately?
+Non-production environments are provisioned with a dedicated license key separate from the production license. Customers with Premier Support are eligible for up to four non-production license keys. Customers without Premier Support should contact their account team for assistance. 
+
+Where can I find my new license key?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes, once your payment is successfully processed your license is available to download immediately.
+Once your payment is successfully processed, your license key will be provided via email.
 
 How will I know when to renew my subscription?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -65,15 +65,23 @@ We highly recommend that you set up an AWS OpenSearch server on a separate machi
 
   6. Edit ``opensearch.yml`` to include the following:
 
-    .. code-block:: sh
+    .. code-block:: yaml
 
-      cluster.name: mattermost-cluster node.name: 
-      node-1 
-      path.data: /var/lib/opensearch 
+      cluster.name: mattermost-cluster
+      node.name: node-1
+      path.data: /var/lib/opensearch
       path.logs: /var/log/opensearch
-      network.host: 0.0.0.0 
-      discovery.seed_hosts: ["<other-node-ip>"] 
+      network.host: 0.0.0.0
+      discovery.seed_hosts: ["<other-node-ip>"]
       cluster.initial_master_nodes: ["node-1", "node-2"]
+
+    .. note::
+       Ensure ``path.data`` and ``path.logs`` directories exist and are owned by the ``opensearch`` user before starting the service:
+
+       .. code-block:: sh
+
+          sudo mkdir -p /var/lib/opensearch /var/log/opensearch
+          sudo chown -R opensearch:opensearch /var/lib/opensearch /var/log/opensearch
 
   7. Enable & start OpenSearch:
 
@@ -83,6 +91,31 @@ We highly recommend that you set up an AWS OpenSearch server on a separate machi
       sudo systemctl enable opensearch 
       sudo systemctl start opensearch 
       sudo systemctl status opensearch
+
+  8. Install the `icu-analyzer plugin <https://docs.opensearch.org/latest/install-and-configure/additional-plugins/index/>`__ to the ``/usr/share/opensearch/plugins`` directory by running the following command:
+
+    .. code-block:: sh
+
+      sudo /usr/share/opensearch/bin/opensearch-plugin install analysis-icu
+
+  **(Optional) CJK language analyzer plugins**: To improve search for Korean, Japanese, or Chinese content, install one or more of the following language-specific analyzer plugins: ``analysis-nori`` (Korean), ``analysis-kuromoji`` (Japanese), and ``analysis-smartcn`` (Chinese).
+
+    .. code-block:: sh
+
+      sudo /usr/share/opensearch/bin/opensearch-plugin install analysis-nori
+      sudo /usr/share/opensearch/bin/opensearch-plugin install analysis-kuromoji
+      sudo /usr/share/opensearch/bin/opensearch-plugin install analysis-smartcn
+
+  After installing the CJK plugins, restart OpenSearch to load them:
+
+    .. code-block:: sh
+
+      sudo systemctl restart opensearch
+
+  Then enable the :ref:`EnableCJKAnalyzers <administration-guide/configure/environment-configuration-settings:enable cjk analyzers>` configuration setting. See :doc:`Enabling Chinese, Japanese, and Korean Search </administration-guide/configure/enabling-chinese-japanese-korean-search>` for additional CJK search configuration options.
+
+  .. important::
+     If you enable CJK analyzers on a server with existing indexed content, you must purge and rebuild the search index in **System Console > Environment > Elasticsearch** for the CJK analyzers to take effect on existing posts.
 
   Terraform (Docker) Example
   --------------------------
@@ -119,6 +152,14 @@ We highly recommend that you set up an AWS OpenSearch server on a separate machi
       restart = "unless-stopped" 
     }
 
+    resource "null_resource" "install_icu_plugin" {
+      depends_on = [docker_container.opensearch]
+
+      provisioner "local-exec" {
+        command = "docker exec opensearch /usr/share/opensearch/bin/opensearch-plugin install analysis-icu && docker restart opensearch"
+      }
+    }
+
 .. tab:: AWS OpenSearch Console Setup
   :parse-titles:
 
@@ -138,22 +179,24 @@ We highly recommend that you set up an AWS OpenSearch server on a separate machi
 
   4. Specify the network for: VPC with 2 subnets, and a security group allowing Mattermost IPs on port ``443``.
 
-.. note::
-   Port 9200 is commonly used for local or on-premise OpenSearch. The AWS OpenSearch domain only supports HTTPS over port 443.
+  .. note::
+     Port 9200 is commonly used for local or on-premise OpenSearch. The AWS OpenSearch domain only supports HTTPS over port 443.
 
-  5. Configure the access policy (JSON):
+  5. Configure the access policy (JSON). Mattermost doesn't sign OpenSearch requests with AWS SigV4, so restrict access at the network layer with the VPC and security group from step 4, and use an open principal in the domain access policy:
 
     .. code-block:: sh
 
       {
-        "Version": "2012-10-17", 
-        "Statement": [{ 
-          "Effect": "Allow", 
-          "Principal": { "AWS": 
-      "arn:aws:iam::123456789012:role/MattermostAppRole" }, 
-          "Action": "es:*", 
-          "Resource": "arn:aws:es:us-east-1:123456789012:domain/mattermost-os/*" }] 
+        "Version": "2012-10-17",
+        "Statement": [{
+          "Effect": "Allow",
+          "Principal": { "AWS": "*" },
+          "Action": "es:ESHttp*",
+          "Resource": "arn:aws:es:us-east-1:123456789012:domain/mattermost-os/*" }]
       }
+
+  .. warning::
+     IAM principal-based access policies (for example, ``"Principal": { "AWS": "arn:aws:iam::<account-id>:role/<role-name>" }``) are not supported. Mattermost's OpenSearch client doesn't sign requests with AWS SigV4, so AWS treats the requests as anonymous and an IAM-restricted policy will reject them with ``User: anonymous is not authorized to perform: es:ESHttpGet``. If you need authentication enforced at the OpenSearch layer rather than the network layer, enable `fine-grained access control <https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html>`_ on the domain with an internal master user, and enter those credentials as the **Server Username** and **Server Password** in the Mattermost Elasticsearch configuration.
 
   6. Configure the following advanced settings (JSON):
 
@@ -174,81 +217,81 @@ We highly recommend that you set up an AWS OpenSearch server on a separate machi
 
       curl https://mattermost-os-xxxxxxxxxxx.us-east-1.es.amazonaws.com
 
-AWS Terraform Example
-----------------------
+  AWS Terraform Example
+  ----------------------
 
-  .. code-block:: sh
+    .. code-block:: sh
 
-    provider "aws" { 
-      region = "us-east-1" 
-    }
-
-    resource "aws_iam_role" "os_service_role" { 
-      name = "OSServiceRole" 
-      assume_role_policy = <<EOF 
-    {
-      "Version": "2012-10-17", 
-      "Statement": [{ 
-        "Action": "sts:AssumeRole", 
-        "Effect": "Allow", 
-        "Principal": { "Service": "es.amazonaws.com" } 
-      }]
-    }
-    EOF
-    }
-
-    resource "aws_opensearch_domain" "mattermost" { 
-      domain_name = "mattermost-os" 
-      engine_version = "OpenSearch_2.9"
-      cluster_config { 
-        instance_type = "r6g.xlarge.search" 
-        instance_count = 2 
-        dedicated_master_enabled = true 
-        dedicated_master_type = "r6g.xlarge.search" 
-        dedicated_master_count = 2 
-        zone_awareness_enabled = true 
+      provider "aws" { 
+        region = "us-east-1" 
       }
 
-      ebs_options { 
-        ebs_enabled = true 
-          volume_type = "gp3" 
-          volume_size = 1536 
-          iops = 4608 
-      }
-
-      vpc_options { 
-        subnet_ids = ["subnet-blah1", "subnet-blah2"] 
-        security_group_ids = ["sg-1234567890"] 
-      }
-
-      advanced_options = { 
-        "rest.action.multi.allow_explicit_index" = "true" 
-        "indices.query.bool.max_clause_count" = "1024" 
-        "indices.fielddata.cache.size" = "20" 
-        "action.destructive_requires_name" = "false" 
-      }
-
-      access_policies = <<POLICY 
-    {
-      "Version": "2012-10-17", 
-      "Statement": [{ 
-        "Effect": "Allow", 
-        "Principal": { 
-          "AWS": "arn:aws:iam::123456789012:role/MattermostAppRole" 
-        },
-          "Action": "es:*", 
-          "Resource": "arn:aws:es:us-east-1:123456789012:domain/mattermost-os/*" 
+      resource "aws_iam_role" "os_service_role" { 
+        name = "OSServiceRole" 
+        assume_role_policy = <<EOF 
+      {
+        "Version": "2012-10-17", 
+        "Statement": [{ 
+          "Action": "sts:AssumeRole", 
+          "Effect": "Allow", 
+          "Principal": { "Service": "es.amazonaws.com" } 
         }]
       }
-      POLICY
-        service_software_options { 
-          automated_snapshot_start_hour = 23 
+      EOF
+      }
+
+      resource "aws_opensearch_domain" "mattermost" { 
+        domain_name = "mattermost-os" 
+        engine_version = "OpenSearch_2.9"
+        cluster_config { 
+          instance_type = "r6g.xlarge.search" 
+          instance_count = 2 
+          dedicated_master_enabled = true 
+          dedicated_master_type = "r6g.xlarge.search" 
+          dedicated_master_count = 2 
+          zone_awareness_enabled = true 
         }
 
-        domain_endpoint_options { 
-          enforce_https = true 
+        ebs_options { 
+          ebs_enabled = true 
+            volume_type = "gp3" 
+            volume_size = 1536 
+            iops = 4608 
         }
-    }
+
+        vpc_options { 
+          subnet_ids = ["subnet-blah1", "subnet-blah2"] 
+          security_group_ids = ["sg-1234567890"] 
+        }
+
+        advanced_options = { 
+          "rest.action.multi.allow_explicit_index" = "true" 
+          "indices.query.bool.max_clause_count" = "1024" 
+          "indices.fielddata.cache.size" = "20" 
+          "action.destructive_requires_name" = "false" 
+        }
+
+        access_policies = <<POLICY
+      {
+        "Version": "2012-10-17",
+        "Statement": [{
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "*"
+          },
+            "Action": "es:ESHttp*",
+            "Resource": "arn:aws:es:us-east-1:123456789012:domain/mattermost-os/*"
+          }]
+        }
+        POLICY
+          service_software_options { 
+            automated_snapshot_start_hour = 23 
+          }
+
+          domain_endpoint_options { 
+            enforce_https = true 
+          }
+      }
 
 Configure Mattermost
 ---------------------

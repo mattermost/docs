@@ -160,6 +160,30 @@ Enable dynamic client registration
 
   Cloud admins can't modify this configuration setting.
 
+.. config:setting:: dcr-redirect-uri-allowlist
+  :displayname: DCR redirect URI allowlist (Integrations)
+  :systemconsole: Integrations > Integration Management
+  :configjson: .ServiceSettings.DCRRedirectURIAllowlist
+  :environment: MM_SERVICESETTINGS_DCRREDIRECTURIALLOWLIST
+  :description: A comma-separated list of permitted redirect URIs for OAuth Dynamic Client Registration (DCR). When configured, only OAuth clients that register with a redirect URI matching an entry in this list are accepted. Leave blank to allow any redirect URI.
+
+DCR redirect URI allowlist
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A comma-separated list of permitted redirect URIs for OAuth Dynamic Client Registration (DCR). When configured, only OAuth clients that register via the DCR endpoint (``POST /api/v4/oauth/apps/register``) with a redirect URI matching an entry in this list will be accepted. Leave blank to allow any redirect URI.
+
+In the System Console, enter URIs as a comma-separated list. When setting this value directly in ``config.json`` or via environment variable, provide URIs as a JSON string array (for example, ``["https://example.com/callback", "https://app.example.com/oauth"]``).
+
+This setting applies only when :ref:`Enable dynamic client registration <administration-guide/configure/integrations-configuration-settings:enable dynamic client registration>` is enabled.
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DCRRedirectURIAllowlist": []`` with string array input, such as ``["https://example.com/callback", "https://app.example.com/oauth"]``.                 |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  Cloud admins can't modify this configuration setting.
+
 .. config:setting:: integration-request-timeout
   :displayname: Integration request timeout (Integrations)
   :systemconsole: Integrations > Integration Management
@@ -237,6 +261,28 @@ To manage who can create personal access tokens or to search users by token ID, 
 +--------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableUserAccessTokens": false`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: enforce-incoming-webhook-channel-locking
+  :displayname: Enforce incoming webhook channel locking (Integrations)
+  :systemconsole: Integrations > Integration Management
+  :configjson: .ServiceSettings.EnforceIncomingWebhookChannelLocking
+  :environment: MM_SERVICESETTINGS_ENFORCEINCOMINGWEBHOOKCHANNELLOCKING
+
+  - **true**: Incoming webhooks are required to be locked to their specific channel and cannot post to other channels.
+  - **false**: **(Default)** Incoming webhook creators can choose whether to lock webhooks to a specific channel or allow posting to any channel they have access to.
+
+Enforce incoming webhook channel locking
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When enabled, this setting enforces that all incoming webhooks must be locked to their designated channel and cannot post messages to other channels. This provides administrators with greater control over webhook security and ensures that webhooks can only post to their intended channels.
+
+**True**: Incoming webhooks are required to be locked to their specific channel. The **Lock to this channel** option is automatically enabled and cannot be disabled when creating or editing webhooks.
+
+**False**: **(Default)** Incoming webhook creators can choose whether to lock webhooks to a specific channel by selecting **Lock to this channel**, or allow the webhook to post to any public channel or private channel the webhook creator is a member of.
+
++----------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnforceIncomingWebhookChannelLocking": false`` with options ``true`` and ``false``. |
++----------------------------------------------------------------------------------------------------------------------------------+
 
 ----
 

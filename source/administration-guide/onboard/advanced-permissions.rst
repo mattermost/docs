@@ -206,6 +206,8 @@ Example: As the default for the entire system, only allow users to edit their ow
 Integration management
 ~~~~~~~~~~~~~~~~~~~~~~
 
+From Mattermost v11.2, the System Console provides enhanced controls for managing integrations (webhooks, slash commands, OAuth apps), including separate permissions for managing your own integrations versus other users' integrations.
+
 Restrict who can manage webhooks and slash commands
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

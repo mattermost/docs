@@ -52,6 +52,10 @@ Team name and URL selection
 
 There are a few details and restrictions to consider when selecting a team name and team URL.
 
+.. note::
+
+  If your system admin has enabled anonymous team and channel URLs (available in Mattermost Enterprise Advanced from v11.6.0), team creation becomes a single-step flow and you will not be prompted to choose a team URL. The URL is assigned automatically.
+
 Team name
 ^^^^^^^^^
 
@@ -64,7 +68,7 @@ This is the display name of your team that appears in menus and headings.
 Team URL
 ^^^^^^^^
 
-The team URL is part of the web address that navigates to your team on the system domain, ``https://domain.com/teamurl/``.
+If your system admin has not enabled anonymous URLs, you choose a team URL during team creation. The team URL is part of the web address that navigates to your team on the system domain, ``https://domain.com/teamurl/``.
 
 - Teams may contain only lowercase letters, numbers, and dashes.
 - Teams must start with a letter and cannot end in a dash.
@@ -83,10 +87,14 @@ You can be a member of multiple teams at the same time. To join additional teams
 .. image:: ../../images/join-team.png
   :alt: Select a team name to join another team.
 
+From Mattermost Mobile v2.40.0, you can join another team from the mobile app by tapping the team name in the channel list header, then tapping **Join Another Team**.
+
 Leave a team
 ------------
 
 Users can also choose to remove themselves from a team, from **Team menu > Leave Team**. This will remove the user from the team, and from all public channels and private channels on the team.
+
+From Mattermost Mobile v2.40.0, you can leave a team from the mobile app when you belong to more than one team. In the channel list, tap the team name, tap **Leave team**, then confirm.
 
 They will only be able to rejoin the team if it's open, or if they receive a new invitation. If they do rejoin, they will no longer be a part of their old channels.
 

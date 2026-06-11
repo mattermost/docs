@@ -75,6 +75,8 @@ Each provider has specific configuration requirements:
 
 For AWS Bedrock, authentication can be configured using AWS credentials in the API Key/Secret fields, or by using IAM roles when running Mattermost on AWS infrastructure.
 
+**Important for Anthropic Claude models**: Before using Claude models via AWS Bedrock, you must submit a one-time First Time Use (FTU) form in the AWS Bedrock Model Catalog, and attach Bedrock API permissions to your Mattermost servers' IAM role. See the [AWS Bedrock setup guide](https://docs.mattermost.com/agents/docs/aws_bedrock_setup.html) for detailed instructions.
+
 See the [Provider Guide](https://docs.mattermost.com/agents/docs/providers.html) for detailed provider-specific configuration.
 
 ### Agent configuration
@@ -111,6 +113,100 @@ Select **Save** to create the agent.
 Text input in the custom instructions field is included in the prompt for every request. Use this to give your agents extra context or instructions. 
 
 For example, you could list your organization's specific acronyms so the agent knows your vernacular and users can ask for definitions. Or you could give it specialized instructions like adopting a specific personality or following a certain workflow. By customizing the instructions for each individual agent, you can create a more tailored AI experience for your specific needs.
+
+### Built-in web search configuration
+
+The built-in web search tool allows agents to retrieve current information from the internet when answering user questions. This feature is designed for deployments using LLM models that don't provide their own native web search capabilities.
+
+#### When to use built-in web search
+
+Built-in web search is intended for LLM models that lack native web search functionality. If your chosen model already provides native web search (such as OpenAI with the Responses API or Anthropic's native search tool), it's strongly recommended to use the provider's native implementation instead. Native web search tools typically offer:
+
+- Better integration with the model
+- More reliable search results
+- Optimized performance
+
+For configuration details on native web search with supported providers, see the [LLM Specific Settings](#llm-specific-settings) section above.
+
+#### Provider comparison
+
+Mattermost supports two web search providers, each with varying capabilities:
+
+##### Brave Search (Recommended)
+
+Brave Search offers a superior experience for AI-powered search:
+
+- **Purpose-built for AI**: Brave's Search API is specifically designed and optimized for LLM integrations
+- **Better content extraction**: Returns pre-processed, LLM-ready summaries with citations
+- **Fewer tool calls**: Often provides complete answers without requiring follow-up web page fetches or scraping
+
+**Important**: Administrators must ensure they subscribe to Brave's **Pro AI plan** when using this feature. Using Brave's regular Search API (non-AI tier) violates Brave's Terms of Service and may result in account suspension. The Pro AI plan is specifically licensed for AI/LLM use cases.
+
+##### Google Custom Search
+
+Google Custom Search provides access to Google's search index but has several important limitations:
+
+- **Not a first-party integration**: Mattermost uses Google's Custom Search API, which doesn't provide the same quality of results as searching directly on google.com
+- **Relies on web scraping**: After receiving search results, Mattermost must scrape web pages to extract content for the agent. Many websites block automated scraping or return limited content to bots
+- **Rate limits**: Google Custom Search has strict daily quota limits
+
+Due to these limitations, Google Custom Search may not always provide optimal results for agent queries.
+
+#### Configuration
+
+To enable built-in web search:
+
+1. Navigate to **System Console > Plugins > Agents > Web Search**
+2. Set **Enable Web Search** to **True**
+3. Select your preferred provider from the **Provider** dropdown
+4. Configure provider-specific settings
+
+##### Brave Search configuration
+
+| Setting | Description | Required |
+|---------|-------------|----------|
+| **Brave API Key** | Your Brave Search API key (Pro AI plan) | Yes |
+| **Result Limit** | Maximum number of results to return (1-10) | No (default: 5) |
+| **API URL** | Override the default Brave endpoint if needed | No |
+
+To obtain a Brave Search API key:
+
+1. Visit [Brave Search API](https://brave.com/search/api/)
+2. Sign up for an account
+3. **Subscribe to the Pro AI plan** (required for LLM usage)
+4. Generate an API key from your dashboard
+
+**Warning**: Ensure you subscribe to the Pro AI plan. Using other Brave Search plans for AI/LLM integrations violates their Terms of Service.
+
+##### Google Custom Search configuration
+
+| Setting | Description | Required |
+|---------|-------------|----------|
+| **Google API Key** | Your Google Custom Search API key | Yes |
+| **Search Engine ID** | Custom search engine identifier (cx parameter) | Yes |
+| **Result Limit** | Maximum number of results to return (1-10) | No (default: 5) |
+| **API URL** | Override the default Google endpoint if needed | No |
+
+To obtain Google Custom Search credentials:
+
+1. Create a project in [Google Cloud Console](https://console.cloud.google.com)
+2. Enable the Custom Search API
+3. Create API credentials (API key)
+4. Set up a custom search engine at [Google Programmable Search Engine](https://programmablesearchengine.google.com)
+5. Note the Search Engine ID (cx parameter)
+
+##### Shared configuration
+
+| Setting | Description |
+|---------|-------------|
+| **Domain Denylist** | Comma-separated list of domains to exclude from all search results (e.g., `example.com, spam-site.org`). Results from these domains are filtered out before being sent to the agent. |
+
+#### Usage and limitations
+
+- Agents are limited to **3 web searches per conversation** to manage API costs and prevent LLMs from looping indefinitely
+- Agents cannot repeat the same search query within a conversation
+- Search results include clickable citations that link back to source websites
+- Domain denylisting applies to all providers and is enforced for _web page fetching only_. 
 
 ### Embed search configuration
 
@@ -279,7 +375,7 @@ Currently integrations are limited to direct messages between users and the agen
 
 ## Model Context Protocol (MCP) Integration
 
-The Model Context Protocol (MCP) integration allows Agents to connect to external tools and services through standardized MCP servers. This [experimental](https://docs.mattermost.com/manage/feature-labels.html#experimental) feature enables expanding AI capabilities with custom integrations.
+The Model Context Protocol (MCP) integration allows Agents to connect to external tools and services through standardized MCP servers. This feature enables expanding AI capabilities with custom integrations.
 
 ### Configuration
 
@@ -336,7 +432,7 @@ For more information, see [Atlassian's documentation on MCP server settings](htt
 
 ## Mattermost MCP Server
 
-The Mattermost MCP Server enables AI agents and external applications to interact with your Mattermost instance through the Model Context Protocol (MCP). This [experimental](https://docs.mattermost.com/manage/feature-labels.html#experimental) feature is a standardized protocol that allows AI assistants to read messages, search content, create posts, and manage channels and teams programmatically. 
+The Mattermost MCP Server enables AI agents and external applications to interact with your Mattermost instance through the Model Context Protocol (MCP). This is a standardized protocol that allows AI assistants to read messages, search content, create posts, and manage channels and teams programmatically. 
 
 ### Overview
 
@@ -375,7 +471,7 @@ The MCP server provides the following tools to AI agents and external clients:
 
 ### Deployment
 
-![MCP Server Configuration](img/system-console-mcp.PNG)
+![MCP Server Configuration](/agents/docs/img/system-console-mcp.png)
 
 #### For AI Agents
 

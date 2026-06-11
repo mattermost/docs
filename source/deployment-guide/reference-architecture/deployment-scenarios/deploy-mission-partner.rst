@@ -15,7 +15,7 @@ Collaboration challenges
 
 Multi-agency collaborations face complex communication challenges:
 
-- **Platform diversity:** Organizations often use different platforms, including Microsoft 365, Mattermost, and Matrix - with some using Teams for enterprise productivity :doc:`supplemented with Mattermost </deployment-guide/reference-architecture/deployment-scenarios/deploy-sovereign-collaboration>` for sovereign collaboration, data residency, and offline resilience. 
+- **Platform diversity:** Organizations often use different platforms, including Microsoft 365, Mattermost, and Matrix - with some using Teams for enterprise productivity :doc:`supplemented with Mattermost </deployment-guide/reference-architecture/deployment-scenarios/deploy-sovereign-collaboration>` for sovereign collaboration, data residency, and offline resilience.
 - **External access:** External partners need controlled access without full organizational membership.
 - **Language barriers:** Organizations may speak different languages.
 - **Compliance:** Data residency and compliance requirements vary across organizations.
@@ -23,7 +23,7 @@ Multi-agency collaborations face complex communication challenges:
 Solution Architecture
 ---------------------
 
-Traditional solutions require everyone to adopt the same platform or use insecure external tools. Mattermost powers a multi-layer approach addressing these collaboration challenges and diverse organizational needs, including: 
+Traditional solutions require everyone to adopt the same platform or use insecure external tools. Mattermost powers a multi-layer approach addressing these collaboration challenges and diverse organizational needs, including:
 
 - **Mattermost ↔ Mattermost Collaboration:** Organizations with Mattermost deployments establish secure connections and share specific channels using :doc:`connected workspaces </administration-guide/onboard/connected-workspaces>` over standard HTTPS/VPN.
 
@@ -64,7 +64,7 @@ The deployment architecture includes the following components:
 
   - **Mattermost Desktop Apps:** Access Mattermost directly by deploying :doc:`desktop </deployment-guide/desktop/desktop-app-deployment>` or web apps in your organization.
   - **Mattermost Mobile Apps:** Access Mattermost via :doc:`iPhone and Android apps </deployment-guide/mobile/mobile-app-deployment>`, with support for :doc:`ID-only push notifications </deployment-guide/mobile/host-your-own-push-proxy-service>` to ensure compliance with data sovereignty requirements. *(Optional - not shown)*
-  - **Microsoft 365 Desktop Apps:** For partnered organizations using Microsoft 365 services, Teams and Outlook can be deployed with the :doc:`embedded Mattermost application </integrations-guide/mattermost-mission-collaboration-for-m365>` for cross-domain partner collaboration within a familiar interface. *(Optional)* 
+  - **Microsoft 365 Desktop Apps:** For partnered organizations using Microsoft 365 services, Teams and Outlook can be deployed with the :doc:`embedded Mattermost application </integrations-guide/mattermost-mission-collaboration-for-m365>` for cross-domain partner collaboration within a familiar interface. *(Optional)*
 
 - **Mattermost Deployments:** Mattermost deployed for sovereign collaboration on private cloud or local infrastructure, such as :doc:`Azure </deployment-guide/server/deploy-kubernetes>` or `Azure Local <https://learn.microsoft.com/en-us/azure/azure-local/manage/disconnected-operations-overview>`_, to maintain compliance with STIG, FedRAMP, and NIST 800-53 standards. See :doc:`reference architecture </administration-guide/scale/server-architecture>` documentation for Mattermost deployment configurations based on expected scale.
 
@@ -74,21 +74,21 @@ The deployment architecture includes the following components:
     - :doc:`Workflow Automation </end-user-guide/workflow-automation>`: Playbooks provide structure, monitoring and automation for repeatable processes built-in to your sovereign Mattermost deployment.
     - :doc:`Project Tracking </end-user-guide/project-task-management>`: Boards enables project management capabilities built-in to your local Mattermost deployment. Boards enables project management capabilities built-in to your sovereign Mattermost deployment.
     - :doc:`AI Agents </administration-guide/configure/agents-admin-guide>`: AI Agents run against Azure OpenAI endpoints or a self-hosted LLM that is OpenAI-compatible.
-    - :doc:`Audio & Screenshare </administration-guide/configure/calls-deployment>`: Calls offers native real-time self-hosted audio calls and screen sharing within your own network.
+    - :doc:`Audio & Screenshare </administration-guide/configure/calls-deployment-guide>`: Calls offers native real-time self-hosted audio calls and screen sharing within your own network.
 
   - **Proxy Server:** The :doc:`proxy server </deployment-guide/server/setup-nginx-proxy>` handles HTTP(S) routing within the cluster, directing traffic between the server and clients accessing Mattermost services, including requests from users in :doc:`connected organizations </administration-guide/onboard/connected-workspaces>`. NGINX is recommended for load balancing with support for WebSocket connections, health check endpoints, and sticky sessions. The proxy layer provides SSL termination and distributes client traffic across application servers.
 
   - **PostgreSQL Database:** Stores persistent application data on a :doc:`PostgreSQL v13+ database </deployment-guide/server/preparations>`, such as `Azure Database for PostgreSQL <https://azure.microsoft.com/en-us/products/postgresql>`_.
 
-  - **Object Storage:** File uploads, images, and attachments are stored outside the application node on an :doc:`S3-compatible store </deployment-guide/server/preparations>`, such as MinIO. `Azure Blob Storage <https://azure.microsoft.com/en-us/products/storage/blobs>`_ can be used, but needs an S3-compatible proxy for Mattermost to interface with.
+  - **Object Storage:** File uploads, images, and attachments are stored outside the application node on an :doc:`S3-compatible store </deployment-guide/server/preparations>` or an NFS (Network File System) server. `Azure Blob Storage <https://azure.microsoft.com/en-us/products/storage/blobs>`_ can be used, but needs an S3-compatible proxy for Mattermost to interface with.
 
-  - **Recording Instance:** ``calls-offloader`` :ref:`job service <administration-guide/configure/calls-deployment:configure recording, transcriptions, and live captions>` to offload heavy processing tasks from Mattermost Calls, such as recordings, transcriptions, and live captioning, to local infrastructure or private cloud. *(Optional)*
+  - **Recording Instance:** ``calls-offloader`` job service, configured using the :doc:`Calls Offloader Setup and Configuration </administration-guide/configure/calls-offloader-setup>` guide, to offload heavy processing tasks from Mattermost Calls, such as recordings, transcriptions, and live captioning, to local infrastructure or private cloud. *(Optional)*
 
 - **Integration framework:** :doc:`Custom apps, plugins, and webhooks </integrations-guide/integrations-guide-index>` can be deployed for real-time data integrations and alerting. *(Optional - not shown)*
 
 - **Self-hosted LLM:** Locally hosted :doc:`OpenAI compatible LLM </agents/docs/providers>` for agentic powered collaboration. *(Optional)*
 
-- **Microsoft Global Network:** `World-wide network <https://learn.microsoft.com/en-us/azure/networking/microsoft-global-network>`_ of Microsoft data centers, delivering public cloud services including M365 and Azure OpenAI. *(Optional)* 
+- **Microsoft Global Network:** `World-wide network <https://learn.microsoft.com/en-us/azure/networking/microsoft-global-network>`_ of Microsoft data centers, delivering public cloud services including M365 and Azure OpenAI. *(Optional)*
 
 Operational Best Practices
 --------------------------
@@ -159,10 +159,10 @@ Deploy Mattermost in a :doc:`cluster-based architecture </administration-guide/s
 Sovereign audio & screensharing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Deploy :doc:`Mattermost Calls </administration-guide/configure/calls-deployment>` in a self-hosted configuration to ensure voice and screen sharing capabilities remain operational without reliance on the internet, and that media traffic does not traverse non-compliant third-party services.
+Deploy :doc:`Mattermost Calls </administration-guide/configure/calls-deployment-guide>` in a self-hosted configuration to ensure voice and screen sharing capabilities remain operational without reliance on the internet, and that media traffic does not traverse non-compliant third-party services.
 
-- The :ref:`rtcd service <administration-guide/configure/calls-deployment:the rtcd service>` for scalable, low-latency media routing hosted on-premises. Run multiple ``rtcd`` nodes for redundancy.
-- The :ref:`calls offloader <administration-guide/configure/calls-deployment:configure recording, transcriptions, and live captions>` service offloads heavy processing tasks like recording, transcription and live captioning to a compliance-approved job server.
+- The ``rtcd`` service, configured using the :doc:`RTCD Setup and Configuration </administration-guide/configure/calls-rtcd-setup>` guide, provides scalable, low-latency media routing hosted on-premises. Run multiple ``rtcd`` nodes for redundancy.
+- The ``calls-offloader`` service, configured using the :doc:`Calls Offloader Setup and Configuration </administration-guide/configure/calls-offloader-setup>` guide, offloads heavy processing tasks like recording, transcription and live captioning to a compliance-approved job server.
 
 Compliance and retention
 ~~~~~~~~~~~~~~~~~~~~~~~~
