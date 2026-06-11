@@ -20,11 +20,13 @@ Platform and OS scope reflects reported and tested environments and may not repr
   - Mattermost v11.7.3 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Playbooks plugin version [v2.9.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.9.1).
   - Pre-packaged Agents plugin version [v2.0.4](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v2.0.4).
+  - Added a pre-migration setup to fix the incorrect database migration numbers that prevented upgrading Mattermost from v10.11 to v11.7.
   - Hardened the OAuth server provider's handling of deactivated users.
   - Guest magic-link ``REST`` login now applies the same authentication criteria checks as the web one-time-link handler and password login.
   - Fixed an issue that caused a flagged post to continue being visible for content reviewers until a refresh after deletion.
   - Fixed an issue where public channel mention links were shown as an unresolved channel slug instead of the channel name (and were not clickable) for users who were not members of the referenced channel when Compliance Monitoring was enabled.
   - Fixed an issue that caused a flagged post to continue being visible for content reviewers until a refresh after deletion.
+  - Preserved unknown permissions during migrations on downgrade.
   - Mattermost v11.7.3 contains no database or functional changes.
 - **11.7.2, released 2026-05-27**
   - Mattermost v11.7.2 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
@@ -185,6 +187,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-7-is-now-availab
 - **11.6.5, released 2026-06-15**
   - Mattermost v11.6.5 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Playbooks plugin version [v2.9.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.9.0).
+  - Added a pre-migration setup to fix the incorrect database migration numbers that prevented upgrading Mattermost from v10.11 to v11.7.
   - Hardened the OAuth server provider's handling of deactivated users.
   - Guest magic-link ``REST`` login now applies the same authentication criteria checks as the web one-time-link handler and password login.
   - Mattermost v11.6.5 contains no database or functional changes.
