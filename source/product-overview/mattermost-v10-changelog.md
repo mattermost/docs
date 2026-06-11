@@ -82,7 +82,7 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 
  ```{Attention}
  **Known Issue**
-  - Customers should not upgrade from ``>=10.11.17`` to ``<=11.7.2`` due to a bug that causes an issue with database migration numbers. The bug is scheduled to be fixed in v11.7.3.
+  - Customers should not upgrade from ``>=10.11.17`` to ``<=11.7.2`` due to a bug that causes an issue with database migration numbers. The bug is fixed in v11.7.3.
  ```
 
 - **10.11.20, released 2026-06-15**
