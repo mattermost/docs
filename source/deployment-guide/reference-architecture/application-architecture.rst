@@ -185,7 +185,7 @@ The following tables list the Mattermost services ports for Mattermost Server, p
      - Notes
    * - Database
      - ``SqlSettings.DataSource``
-     - 5432 (PostgreSQL) / 3306 (MySQL)
+     - 5432 (PostgreSQL)
      - TCP
      - Usually internal (recommended).
    * - LDAP
