@@ -51,7 +51,7 @@ In a terminal window, ssh onto the system that will host the Mattermost Server. 
 
   .. code-block:: sh
 
-    wget https://releases.mattermost.com/11.7.2/mattermost-11.7.2-linux-amd64.tar.gz
+    wget https://releases.mattermost.com/11.7.3/mattermost-11.7.3-linux-amd64.tar.gz
 
 .. tab:: Older releases
 
