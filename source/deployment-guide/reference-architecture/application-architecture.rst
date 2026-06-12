@@ -165,7 +165,7 @@ The following tables list the Mattermost services ports for Mattermost Server, p
      - ``ClusterSettings.GossipPort``
      - 8074
      - TCP/UDP
-     - Internal only. Must be reachable between all Mattermost Server nodes. Both TCP and UDP must be open. Enterprise only.
+     - Internal only. Must be reachable between all Mattermost Server nodes. Both TCP and UDP must be open. HA only.
    * - Metrics
      - ``MetricsSettings.ListenAddress``
      - 8067
