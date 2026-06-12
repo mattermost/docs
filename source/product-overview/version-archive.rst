@@ -11,6 +11,11 @@ If you want to check that the version of Mattermost you are installing is the of
 
 .. tab:: Mattermost Enterprise
 
+  Mattermost Enterprise Edition v11.8.0 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-8-feature-release>`__ - `Download <https://releases.mattermost.com/11.8.0/mattermost-11.8.0-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/11.8.0/mattermost-11.8.0-linux-amd64.tar.gz``
+    - SHA-256 Checksum: ``42b2a83aa57f710b4289ba6e3c7f0305aaec814f8763a1b2dc22a50e6a0e4201``
+    - GPG Signature: https://releases.mattermost.com/11.8.0/mattermost-11.8.0-linux-amd64.tar.gz.sig
+    - SBOM Download Link: https://releases.mattermost.com/11.8.0/sbom-enterprise-v11.8.0.json
   Mattermost Enterprise Edition v11.7.2 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-7-extended-support-release>`__ - `Download <https://releases.mattermost.com/11.7.2/mattermost-11.7.2-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/11.7.2/mattermost-11.7.2-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``8882f3a26f0e324c5f4dc253a3388b4772d907e345c99286f35fd0aa5be9c125``
@@ -484,6 +489,11 @@ If you want to check that the version of Mattermost you are installing is the of
 
   We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to seamlessly unlock Enterprise features should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
 
+  Mattermost Team Edition v11.8.0 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-8-feature-release>`__ - `Download <https://releases.mattermost.com/11.8.0/mattermost-team-11.8.0-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/11.8.0/mattermost-team-11.8.0-linux-amd64.tar.gz``
+    - SHA-256 Checksum: ``5b1c9b16a78a62e6f34c240d206d30ee6aa319b4fe4abdc8edb50ffeca841368``
+    - GPG Signature: https://releases.mattermost.com/11.8.0/mattermost-team-11.8.0-linux-amd64.tar.gz.sig
+    - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v11.8.0/sbom-mattermost-v11.8.0.json
   Mattermost Team Edition v11.7.2 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-7-extended-support-release>`__ - `Download <https://releases.mattermost.com/11.7.2/mattermost-team-11.7.2-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/11.7.2/mattermost-team-11.7.2-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``8769f620403563c46d4c54781465199314f361973bd87ee87a5f91e198a5caae``
