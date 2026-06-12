@@ -38,7 +38,7 @@ Platform and OS scope reflects reported and tested environments and may not repr
 #### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
  - **Changes to Enterprise Advanced plan:**
-   - Under ``MobileEphemeralMode`` in ``config.json``, added a Mobile Ephemeral Mode configuration section under **System Console > Environment > Mobile Security**, allowing admins to configure data persistence and cache management policies for mobile devices. Requires Enterprise Advanced license and ``MobileEphemeralMode`` feature flag.
+   - Under ``MobileEphemeralMode`` in ``config.json``, added a [Mobile Ephemeral Mode](https://docs.mattermost.com/security-guide/mobile-security.html#app-sandboxing-and-secure-data-storage) configuration section under **System Console > Environment > Mobile Security**, allowing admins to configure data persistence and cache management policies for mobile devices. Requires Enterprise Advanced license and ``MobileEphemeralMode`` feature flag.
  - **Changes to Enterprise plans:**
    - Under ``FileSettings`` in ``config.json``, added ``AzureStorageAccount``, ``AzureAccessKey``, ``AzureContainer``, ``AzurePathPrefix``, ``AzureEndpoint``, ``AzureSSL``, and ``AzureRequestTimeoutMilliseconds`` configuration settings for Azure Blob Storage filestore backend support.
    - Under ``ElasticsearchSettings`` in ``config.json``, added ``EnableSearchPublicChannelsWithoutMembership`` configuration setting to allow searching in public channels the user isn't a member of.
@@ -60,7 +60,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Added a new keyboard shortcut, ``Shift`` + ``ESC``, that marks all channels, threads, and direct messages as read for a team on webapp / desktop app.
  - Added an overflow menu for channel bookmarks when the bookmark bar runs out of space. Bookmarks can be reordered via drag-and-drop between the bar and the overflow menu, or via keyboard (Space to select, arrow keys to move) on webapp. Replaced ``react-beautiful-dnd`` with ``@atlaskit/pragmatic-drag-and-drop``.
  - Added an unread badge to Recaps.
- - Added managed channel categories for **Channel Admins** to enforce sidebar organization across teams.
+ - Added managed [channel categories](https://docs.mattermost.com/end-user-guide/preferences/customize-your-channel-sidebar.html) for **Channel Admins** to enforce sidebar organization across teams.
  - Added per-channel classification assignment and banner integration for webapp/desktop app.
  - Added support for **CPA Display Name** for user-facing labels of user attributes.
  - Changed the **Invite People** modal to allow pasting any text, not only valid email formats.
@@ -87,7 +87,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Included the connection ID in the plugin context.
 
 #### Administration
- - Added support for classification markings for system-wide and channel banners. Enterprise Advanced license is required.
+ - Added support for [classification markings](https://docs.mattermost.com/end-user-guide/collaborate/display-channel-banners.html) for system-wide and channel banners. Enterprise Advanced license is required.
  - Removed remaining support for Internet Explorer and pre-Chromium versions of Edge on webapp.
  - Added ``server.process_id`` to support packet diagnostics to help correlate support data with OS-level logs and process monitoring tools such as ``ps``, ``top``, and systemd journal.
  - Added ``go_version`` to support packet diagnostics, showing the Go runtime version the server binary was compiled with on Linux.
