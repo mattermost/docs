@@ -19,7 +19,7 @@ Changelog
    * - v11.8
      - (UI) Added an unread badge to Recaps.
    * - v11.8
-     - (UI) Added managed channel categories for **Channel Admins** to enforce sidebar organization across teams.
+     - (UI) Added `managed channel categories <https://docs.mattermost.com/end-user-guide/preferences/customize-your-channel-sidebar.html>`__ for **Channel Admins** to enforce sidebar organization across teams.
    * - v11.8
      - (UI) Added per-channel classification assignment and banner integration for webapp/desktop app.
    * - v11.8
