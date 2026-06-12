@@ -2708,4 +2708,4 @@ Enable guest magic link authentication
 +-------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 
 .. note::
- See the :ref:`guest accounts <administration-guide/onboard/guest-accounts:configure magic links for guests>` documentation for guest user setup details.
+  See the :ref:`guest accounts <administration-guide/onboard/guest-accounts:configure magic links for guests>` documentation for guest user setup details.
