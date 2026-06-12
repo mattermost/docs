@@ -165,12 +165,12 @@ The following tables list the Mattermost services ports for Mattermost Server, p
      - ``ClusterSettings.GossipPort``
      - 8074
      - TCP/UDP
-     - Internal. Both TCP and UDP must be open.
+     - Internal only. Must be reachable between all Mattermost Server nodes. Both TCP and UDP must be open. Enterprise only.
    * - Metrics
      - ``MetricsSettings.ListenAddress``
      - 8067
      - TCP
-     - External (no proxy) / Internal (with proxy).
+     - Internal only. Restrict access to trusted monitoring hosts (e.g., Prometheus). Must not be exposed to the public internet. Only required when metrics collection is enabled.
 
 *Outbound ports*
 
@@ -226,7 +226,7 @@ The following tables list the Mattermost services ports for Mattermost Server, p
      - ``ListenAddress``
      - 8066
      - TCP
-     - External (no proxy) / Internal (with proxy).
+     - Internal only. Must be reachable only from Mattermost Server nodes. Required when running a self-hosted push proxy.
 
 **Mobile Clients**
 
