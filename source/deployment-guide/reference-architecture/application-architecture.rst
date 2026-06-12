@@ -72,7 +72,7 @@ To ensure high availability, database systems can leverage clustering, replicati
 
 **File Storage**: Manages all multimedia assets (e.g., file uploads, images, videos) shared across channels. Storage solutions include the following options:
 
-- **Local Storage**: Files stored directly on the server’s filesystem. For high availability, redundancy can be achieved using RAID configurations or backups to recover from disk failures.
+- **Local Storage**: Files stored directly on the server's filesystem. For high availability, redundancy can be achieved using RAID configurations or backups to recover from disk failures.
 - **Network Attached Storage (NAS)**: Common for enterprises centralizing file storage within their network. NAS setups can include fault-tolerant configurations like distributed systems or replication for uninterrupted access.
 - **S3**: Offers cloud-based scalable storage for larger environments or organizations with distributed deployments. The database and file storage handle scalability, ensuring efficient support for millions of messages and files while guaranteeing data consistency. S3 inherently supports high availability by distributing data across multiple availability zones, ensuring no single point of failure.
 
@@ -141,37 +141,92 @@ If Mattermost is accessible from the open internet with no VPN or MFA set up, we
 Mattermost services ports
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following table lists the Mattermost services ports for Mattermost Server, push proxy, and mobile app clients. System admins with clients that need to speak to the Mattermost server without a proxy can open specific firewall ports as needed.
+The following tables list the Mattermost services ports for Mattermost Server, push proxy, and mobile app clients. System admins with clients that need to speak to the Mattermost server without a proxy can open specific firewall ports as needed.
 
 **Mattermost Server**
 
-+-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+---------------------------------------------------------------+
-| Service Name                                                | Config Setting                        | Port (default)                    | Protocol  | Direction  | Info                                                          |
-+=============================================================+=======================================+===================================+===========+============+===============================================================+
-| HTTP/Websocket                                              | ServiceSettings.ListenAddress         | 8065/80/443 (TLS)                 | TCP       | Inbound    | External (no proxy) / Internal (with proxy)                   |
-+-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+ Usually this requires port 80 and 443 when running HTTPS.     |
-| Cluster                                                     | ClusterSettings.GossipPort            | 8074                              | TCP/UDP   | Inbound    | Internal                                                      |
-+-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+---------------------------------------------------------------+
-| Metrics                                                     | MetricsSettings.ListenAddress         | 8067                              | TCP       | Inbound    | External (no proxy) / Internal (with proxy)                   |
-+-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+---------------------------------------------------------------+
-| Database                                                    | SqlSettings.DataSource                | 5432 (PostgreSQL) / 3306 (MySQL)  | TCP       | Outbound   | Usually internal (recommended)                                |
-+-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+---------------------------------------------------------------+
-| LDAP                                                        | LdapSettings.LdapPort                 | 389                               | TCP/UDP   | Outbound   |                                                               |
-+-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+---------------------------------------------------------------+
-| S3 Storage                                                  | FileSettings.AmazonS3Endpoint         | 443 (TLS)                         | TCP       | Outbound   |                                                               |
-+-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+---------------------------------------------------------------+
-| SMTP                                                        | EmailSettings.SMTPPort                | 10025                             | TCP/UDP   | Outbound   |                                                               |
-+-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+---------------------------------------------------------------+
-| Push Notifications                                          | EmailSettings.PushNotificationServer  | 443 (TLS)                         | TCP       | Outbound   |                                                               |
-+-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+---------------------------------------------------------------+
+*Inbound ports*
+
+.. list-table::
+   :header-rows: 1
+   :widths: auto
+
+   * - Service
+     - Config Setting
+     - Port (default)
+     - Protocol
+     - Notes
+   * - HTTP/WebSocket
+     - ``ServiceSettings.ListenAddress``
+     - 8065 / 80 / 443 (TLS)
+     - TCP
+     - External (no proxy) / Internal (with proxy). Ports 80 and 443 are typically used when running HTTPS.
+   * - Cluster (HA)
+     - ``ClusterSettings.GossipPort``
+     - 8074
+     - TCP/UDP
+     - Internal. Both TCP and UDP must be open.
+   * - Metrics
+     - ``MetricsSettings.ListenAddress``
+     - 8067
+     - TCP
+     - External (no proxy) / Internal (with proxy).
+
+*Outbound ports*
+
+.. list-table::
+   :header-rows: 1
+   :widths: auto
+
+   * - Service
+     - Config Setting
+     - Port (default)
+     - Protocol
+     - Notes
+   * - Database
+     - ``SqlSettings.DataSource``
+     - 5432 (PostgreSQL) / 3306 (MySQL)
+     - TCP
+     - Usually internal (recommended).
+   * - LDAP
+     - ``LdapSettings.LdapPort``
+     - 389
+     - TCP/UDP
+     -
+   * - S3 Storage
+     - ``FileSettings.AmazonS3Endpoint``
+     - 443 (TLS)
+     - TCP
+     -
+   * - SMTP
+     - ``EmailSettings.SMTPPort``
+     - 10025
+     - TCP/UDP
+     -
+   * - Push Notifications
+     - ``EmailSettings.PushNotificationServer``
+     - 443 (TLS)
+     - TCP
+     -
 
 **Push Proxy**
 
-+---------------+-----------------+-----------------+-----------+------------+----------------------------------------------+
-| Service Name  | Config Setting  | Port (default)  | Protocol  | Direction  | Info                                         |
-+===============+=================+=================+===========+============+==============================================+
-| Push Proxy    | ListenAddress   | 8066            | TCP       | Inbound    | External (no proxy) / Internal (with proxy)  |
-+---------------+-----------------+-----------------+-----------+------------+----------------------------------------------+
+*Inbound ports*
+
+.. list-table::
+   :header-rows: 1
+   :widths: auto
+
+   * - Service
+     - Config Setting
+     - Port (default)
+     - Protocol
+     - Notes
+   * - Push Proxy
+     - ``ListenAddress``
+     - 8066
+     - TCP
+     - External (no proxy) / Internal (with proxy).
 
 **Mobile Clients**
 
