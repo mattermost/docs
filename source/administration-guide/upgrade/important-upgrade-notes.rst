@@ -467,7 +467,10 @@ We recommend reviewing the `additional upgrade notes <#additional-upgrade-notes>
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v10.12                                             | There are no important upgrade notes in v10.12 release.                                                                                                          |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| v10.11                                             | Starting in v10.11.11, photoshop Document (PSD) files are now no longer inline previewed, they are treated as regular file attachments.                          |
+| v10.11                                             | Customers should not upgrade from ``>=10.11.17`` to ``<=11.7.2`` due to a bug that causes an issue with database migration numbers. The bug is scheduled to be   |
+|                                                    | fixed in v11.7.3.                                                                                                                                                |
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | Starting in v10.11.11, photoshop Document (PSD) files are now no longer inline previewed, they are treated as regular file attachments.                          |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Mattermost v10.11.4 introduces a new API endpoint ``/api/v4/users/login/sso/code-exchange`` as part of security enhancements to the SSO authentication flow.     |
 |                                                    | Customer using SSO (e.g. with SAML) should ensure network configurations allow traffic to this endpoint.                                                         |
@@ -2076,7 +2079,7 @@ We recommend reviewing the `additional upgrade notes <#additional-upgrade-notes>
 
 .. _000141_add_remoteid_channelid_to_post_acknowledgements.down.sql: https://github.com/mattermost/mattermost/blob/release-10.10/server/channels/db/migrations/postgres/000141_add_remoteid_channelid_to_post_acknowledgements.down.sql
 .. _000141_add_remoteid_channelid_to_post_acknowledgements.up.sql: https://github.com/mattermost/mattermost/blob/release-10.10/server/channels/db/migrations/postgres/000141_add_remoteid_channelid_to_post_acknowledgements.up.sql
-.. _this guide: https://github.com/mattermost/mattermost-plugin-agents/blob/master/docs/upgrading_to_2.0.md‎.md
+.. _this guide: https://github.com/mattermost/mattermost-plugin-agents/blob/master/docs/upgrading_to_2.0.md
 
 Additional upgrade notes
 ------------------------
