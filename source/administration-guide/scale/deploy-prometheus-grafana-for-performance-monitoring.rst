@@ -120,7 +120,7 @@ To help you get started, you can download three sample dashboards shared in Graf
 What's collected?
 -----------------
 
-Mattermost provides :ref:`custom metrics <administration-guide/scale/performance-monitoring-metrics:custom Mattermost metrics>` and :ref:`standard Go metrics <administration-guide/scale/performance-monitoring-metrics:standard go metrics>` that can be used to monitor your system's performance.
+Mattermost provides :ref:`custom metrics <administration-guide/scale/performance-monitoring-metrics:custom Mattermost metrics>` and :ref:`standard Go metrics <administration-guide/scale/performance-monitoring-metrics:standard go metrics>` that can be used to monitor your system's performance. From Mattermost v11.8, :ref:`plugin-provided metrics <administration-guide/scale/performance-monitoring-metrics:plugin-provided metrics>` are also served through the same ``/metrics`` endpoint, so no additional scrape targets are needed for plugins that expose metrics.
 
 Next steps
 ----------

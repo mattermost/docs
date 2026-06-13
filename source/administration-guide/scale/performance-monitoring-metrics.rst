@@ -176,6 +176,8 @@ Plugin metrics
 - ``mattermost_plugin_multi_hook_server_time``: Time for the server to execute multiple plugin hook handlers in seconds.
 - ``mattermost_plugin_multi_hook_time``: Time to execute multiple plugin hook handler in seconds.
 
+These metrics are measured by the Mattermost server. Metrics published by the plugins themselves are also served through the standard ``/metrics`` endpoint - see :ref:`Plugin-provided metrics <administration-guide/scale/performance-monitoring-metrics:plugin-provided metrics>` below.
+
 Shared metrics
 ~~~~~~~~~~~~~~
 
@@ -228,6 +230,19 @@ Web app metrics
 - ``mattermost_webapp_rhs_load``: Duration of the time taken from when a user clicks to open a thread in the RHS until when posts in that thread become visible (seconds).
 - ``mattermost_webapp_team_switch``: Duration of the time taken from when a user clicks on a team in the LHS to when posts in that team become visible (seconds).
 - ``mattermost_webapp_time_to_first_byte``: Duration from when a browser starts to request a page from a server until when it starts to receive data in response (seconds).
+
+Plugin-provided metrics
+-----------------------
+
+.. include:: ../../_static/badges/entry-ent.rst
+  :start-after: :nosearch:
+
+From Mattermost v11.8, Prometheus metrics provided by plugins are served through the same standard Mattermost ``/metrics`` endpoint as Mattermost's own performance metrics. Once :ref:`performance monitoring <administration-guide/configure/environment-configuration-settings:performance monitoring>` is enabled, plugin-provided metrics are exposed on the listen address you configure and are scraped together with Mattermost metrics, so admins don't need to add separate Prometheus scrape targets or ports for each plugin that exposes metrics.
+
+Plugin-provided metrics are published under their own metric names alongside Mattermost metrics, so you can query and chart them in Prometheus and Grafana the same way you do core Mattermost metrics. The specific metrics that are available depend on the plugins you have installed and enabled; refer to each plugin's documentation for the metrics it exposes.
+
+.. note::
+   A Mattermost Enterprise license is required to connect to ``/metrics`` using HTTP. This requirement applies to plugin-provided metrics served through this endpoint.
 
 Standard Go metrics
 --------------------
