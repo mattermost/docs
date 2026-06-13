@@ -122,6 +122,8 @@ What's collected?
 
 Mattermost provides :ref:`custom metrics <administration-guide/scale/performance-monitoring-metrics:custom Mattermost metrics>` and :ref:`standard Go metrics <administration-guide/scale/performance-monitoring-metrics:standard go metrics>` that can be used to monitor your system's performance.
 
+When the ``AggregatePluginMetrics`` feature flag is enabled, plugin-provided metrics are included in the same ``/metrics`` scrape target and can be filtered by the ``plugin_id`` label.
+
 Next steps
 ----------
 
