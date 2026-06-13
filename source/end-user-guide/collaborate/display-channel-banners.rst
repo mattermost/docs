@@ -36,3 +36,10 @@ Disable the **Channel Banner** option in the channel settings to remove the bann
 .. tip::
 
   System admins can grant any user the ability to create and manage channel banners by assigning the **Manage Channel Banners** permission in the System Console. See the :doc:`advanced permissions </administration-guide/onboard/advanced-permissions>` documentation for details.
+
+Global classification markings
+------------------------------
+
+From Mattermost v11.8, system admins can configure global classification markings in addition to per-channel banners. Global classification banners display the workspace's classification level consistently across Mattermost, and are visible in the web and desktop apps. This helps end users and risk assessors immediately identify the classification level of the environment they're working in, supporting compliance in classified and sensitive environments.
+
+System admins configure global classification markings in the System Console. Unlike per-channel banners, which apply only to the channels where they're enabled, global classification markings apply across the workspace.
