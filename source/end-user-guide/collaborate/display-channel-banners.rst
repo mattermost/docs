@@ -36,3 +36,12 @@ Disable the **Channel Banner** option in the channel settings to remove the bann
 .. tip::
 
   System admins can grant any user the ability to create and manage channel banners by assigning the **Manage Channel Banners** permission in the System Console. See the :doc:`advanced permissions </administration-guide/onboard/advanced-permissions>` documentation for details.
+
+Classification markings
+-----------------------
+
+From Mattermost v11.8, system admins can configure classification markings that display as global or channel-level banners in the web and desktop apps. See the :ref:`Classification Markings <administration-guide/configure/site-configuration-settings:classification markings>` configuration documentation for setup details.
+
+Classification markings use predefined or custom classification levels, including the classification name and banner color. These markings are informational only and don't control access to channels, messages, files, or other Mattermost resources.
+
+When a channel classification is applied, Mattermost displays the selected classification as the channel banner. Classification markings take priority over a custom channel banner when both are configured for the same channel.
