@@ -1520,6 +1520,25 @@ From Mattermost v10.10, when this :ref:`experimental <administration-guide/manag
 | This feature's ``config.json`` setting is ``"ExperimentalEnableChannelCategorySorting": false`` with options ``true`` and ``false``.     |
 +------------------------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: default-category-name
+  :displayname: Default category name (Experimental)
+  :systemconsole: Experimental > Features
+  :configjson: ExperimentalChannelCategorySortingDefaultCategoryName
+  :environment: N/A
+
+  - **string**: Sets the default channel category name used when channels are organized in the sidebar. When set, newly created channels are grouped under this named category by default. When empty, channels use the standard **Channels** category.
+
+Default category name
+~~~~~~~~~~~~~~~~~~~~~~~
+
+From Mattermost v11.8, system admins can configure a default category name for channels through the System Console. This setting works together with :ref:`channel category sorting <administration-guide/configure/experimental-configuration-settings:enable channel category sorting>`: when a default category name is set, newly created channels are placed under that named category in users' channel sidebars by default, instead of the standard **Channels** category.
+
+This affects where channels appear in the sidebar for channel creation and channel settings. Users can still move channels into other categories and otherwise :doc:`customize their channel sidebar </end-user-guide/preferences/customize-your-channel-sidebar>`.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalChannelCategorySortingDefaultCategoryName": ""`` with string input.                        |
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. config:setting:: strict-csrf-token-enforcement
   :displayname: Strict CSRF token enforcement (Experimental)
   :systemconsole: N/A

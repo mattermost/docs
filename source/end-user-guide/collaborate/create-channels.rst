@@ -21,7 +21,7 @@ Anyone can create public channels, private channels, direct messages, and group 
   2. Enter a channel name.
   3. Choose whether this is a public or private channel. See the :doc:`channel types </end-user-guide/collaborate/channel-types>` documentation to learn more about public and private channels.
   4. (Optional) Describe the channel's focus or purpose. This text is visible to all channel members in the channel header.
-  5. (Optional) Assign the channel to a category. If your system admin has enabled :ref:`channel category sorting <administration-guide/configure/experimental-configuration-settings:enable channel category sorting>`, you can assign the new channel to a new or existing channel category. If this option isn't available, you can `customize your channel sidebar </end-user-guide/preferences/customize-your-channel-sidebar>`.
+  5. (Optional) Assign the channel to a category. If your system admin has enabled :ref:`channel category sorting <administration-guide/configure/experimental-configuration-settings:enable channel category sorting>`, you can assign the new channel to a new or existing channel category. If your system admin has also configured a :ref:`default category name <administration-guide/configure/experimental-configuration-settings:default category name>`, new channels are grouped under that category in your sidebar by default. If this option isn't available, you can `customize your channel sidebar </end-user-guide/preferences/customize-your-channel-sidebar>`.
 
   Start a direct or group message
   --------------------------------
