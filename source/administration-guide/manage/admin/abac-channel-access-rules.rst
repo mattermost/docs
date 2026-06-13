@@ -122,8 +122,12 @@ Sync behavior by channel type
 
 Sync behavior for team-scoped membership policies depends on the type of channel the policy is assigned to:
 
-- **Public channels**: Sync is advisory and add-only. Users who match the policy's rules are added to the channel, but no users are removed if their attributes change.
+- **Public channels**: Sync is advisory and add-only. Users who match the policy's rules are added to the channel, but no users are removed if their attributes change. Because membership is advisory, users can still choose to leave a public channel a policy added them to.
 - **Private channels**: Sync is enforced. Users who match the policy's rules are added to the channel, and users who no longer match the rules are removed during the next synchronization.
+
+.. note::
+
+  On public channels, advisory membership means the policy recommends and adds matching users without forcing them to stay. From Mattermost v11.8, when a user leaves a public channel that a policy added them to, Mattermost shows a confirmation that lets them either leave the channel (which may remove the recommendation so they aren't added back on the next sync) or mute the channel instead of leaving. See :ref:`Leave a public channel added by a membership policy <end-user-guide/collaborate/join-leave-channels:leave a public channel added by a membership policy>` for the end-user experience. Private channels remain fully enforced and don't offer this choice.
 
 Automatic sync on policy changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

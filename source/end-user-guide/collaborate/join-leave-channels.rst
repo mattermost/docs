@@ -108,3 +108,15 @@ When you leave a private channel, you must be re-added by another channel member
   .. image:: ../../images/mobile-confirm-leave-a-channel.jpg
       :alt: Tap on Leave to confirm your choice.
       :scale: 30
+
+Leave a public channel added by a membership policy
+---------------------------------------------------
+
+From Mattermost v11.8, an administrator can use a :doc:`membership policy </administration-guide/manage/admin/attribute-based-access-control>` to add you to a **public** channel that matches your user attributes. On public channels, policy membership is *advisory*: the policy recommends and adds you to relevant channels, but you can still leave a channel that isn't useful to you.
+
+When you leave a public channel that a membership policy added for you, Mattermost shows a confirmation that explains the impact before you go:
+
+- **Leave channel**: You're removed from the channel. Because the channel was recommended based on your attributes, leaving may remove that recommendation so you aren't automatically added back during the next policy sync.
+- **Mute instead**: You stay a member of the channel but :doc:`mute it </end-user-guide/preferences/manage-your-channel-specific-notifications>`, so it stops generating notifications and moves to the bottom of your channel sidebar. Choose this if you want to remain reachable in the channel without the distraction.
+
+This confirmation applies to public channels managed by an advisory membership policy. Leaving a private channel still requires another member to re-add you.

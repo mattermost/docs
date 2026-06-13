@@ -62,10 +62,12 @@ You can add multiple rules to a single policy, and each rule can include multipl
 
      Select the **Validate syntax** bar to check the syntax of your rule. If the syntax is valid, the bar will turn green and display a message indicating that the syntax is valid. If there are any issues, the bar will turn red and display an error message.
 
-Test rules
-~~~~~~~~~~
+Test and simulate rules
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-Select **Test access rule** to test the rule against your user base to return how many users would be granted access to the channel based on the current rule. Test your rules to ensure the intended scope and avoid unexpected access changes.
+Select **Test access rule** to simulate the rule against your user base before you apply it, and return how many users would be granted access to the channel based on the current rule. Test your rules to ensure the intended scope and avoid unexpected access changes.
+
+Simulating a policy before saving lets System Admins and risk assessors preview the membership impact — who would gain or lose access — without making any changes to live channels. Use simulation to validate rule scope and confirm the policy behaves as intended before applying it.
 
 Manage rules
 ~~~~~~~~~~~~
