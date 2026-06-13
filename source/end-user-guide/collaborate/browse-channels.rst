@@ -15,6 +15,10 @@ Browse channels
 
     From Mattermost v9.1, you can filter the list of channels by public, private, or archived channels, and you can hide all channels you're already a member of.
 
+  .. note::
+
+    From Mattermost v11.8.0, if your organization uses membership policies, **Browse Channels** may include a **Recommended** filter. Recommended channels are public channels your attributes match. You can still browse and join public channels according to your organization's normal channel permissions.
+
 .. tab:: Mobile
 
   1. Tap the **Plus** |plus| icon located in the top right corner of the app.

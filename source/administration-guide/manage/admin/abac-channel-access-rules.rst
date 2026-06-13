@@ -20,7 +20,7 @@ Prerequisites
 
 - :doc:`Attribute-Based Access Control (ABAC) </administration-guide/manage/admin/attribute-based-access-control>` must be enabled by a System Admin in **System Console > System Attributes > Attribute-Based Access**.
 - You need Channel Admin permissions and the ``manage_channel_access_rules`` permission.
-- Channel access rules are available only for private channels.
+- Self-service channel access rules in the **Access Control** tab in Channel Settings are configured for private channels. Membership policies apply to both public and private channels, with different behavior by channel type. See :ref:`Public and private channel behavior <administration-guide/manage/admin/abac-channel-access-rules:public and private channel behavior>`.
 
 Access Channel Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -85,6 +85,36 @@ When you save changes that affect membership, a confirmation dialog shows you:
 - How many users will be added or removed
 - Option to view the specific users affected
 - Confirmation required before applying changes
+
+Public and private channel behavior
+-----------------------------------
+
+Membership policies behave differently depending on the type of channel they're applied to:
+
+- **Private channels**: Membership policies are enforced. Users who match the policy's rules are added, and users who don't match the rules are removed during synchronization.
+- **Public channels**: Membership policies are advisory. Matching users may be automatically added when auto-add is enabled, but non-matching members are not removed.
+- When auto-add is disabled for a public channel, matching channels are surfaced as **recommended** rather than enforcing membership.
+- Direct messages and group messages aren't eligible for membership policies.
+- Default channels such as **Town Square** and **Off-Topic** are excluded.
+
+.. note::
+
+  Public channels with membership policies may appear in **Browse Channels** under **Recommended**, and matching users may be marked **Recommended** in the channel invite flow. See :doc:`Browse channels </end-user-guide/collaborate/browse-channels>` and :doc:`Manage channel members </end-user-guide/collaborate/manage-channel-members>` for the end-user experience.
+
+Channel-level permission policies
+---------------------------------
+
+From Mattermost v11.8.0, admins can define channel-level permission rules for file upload and file download based on user attributes and channel role. Applicable roles include **channel admin**, **channel member**, and **channel guest**.
+
+For system-wide permission policies that restrict file upload and download actions, see :ref:`Permission policies <administration-guide/manage/admin/abac-system-wide-policies:permission policies>`.
+
+Simulate access
+----------------
+
+From Mattermost v11.8.0, admins can use **Simulate access** in Channel Settings to preview whether selected users can perform actions such as joining a channel, uploading files, or downloading files before saving policy changes.
+
+- Simulation can evaluate draft rules before they're saved, so you can confirm the intended scope without affecting live channel access.
+- Some denied results may indicate that the decision came from another policy. In that case, Mattermost shows that access was denied by another policy without exposing policy details you aren't authorized to see.
 
 Manage team-scoped membership policies in Team Settings
 -------------------------------------------------------

@@ -62,10 +62,20 @@ You can add multiple rules to a single policy, and each rule can include multipl
 
      Select the **Validate syntax** bar to check the syntax of your rule. If the syntax is valid, the bar will turn green and display a message indicating that the syntax is valid. If there are any issues, the bar will turn red and display an error message.
 
-Test rules
-~~~~~~~~~~
+Simulate access
+~~~~~~~~~~~~~~~~
 
 Select **Test access rule** to test the rule against your user base to return how many users would be granted access to the channel based on the current rule. Test your rules to ensure the intended scope and avoid unexpected access changes.
+
+From Mattermost v11.8.0, you can use **Simulate access** to preview allowed and denied outcomes for specific users before saving policy changes:
+
+1. Open the policy editor in the System Console.
+2. Select **Simulate access**.
+3. Choose the users you want to test.
+4. Review the allowed and denied outcomes by action, such as joining a channel or uploading and downloading files.
+5. Adjust the rules before saving.
+
+Simulation can test draft policy changes before they affect live channel access or file permissions. Detailed rule and attribute information is shown only when the denial comes from the policy or scope you're editing; otherwise, Mattermost may show that access was denied by another policy.
 
 Manage rules
 ~~~~~~~~~~~~
