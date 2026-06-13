@@ -1098,6 +1098,31 @@ User statistics update time
 | Default is **00:00**.                                                                      |                                                                                          |
 +--------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
 
+.. config:setting:: channel-category-sorting
+  :displayname: Channel category sorting (Users and Teams)
+  :systemconsole: Site Configuration > Users and Teams
+  :configjson: .TeamSettings.EnableChannelCategorySorting
+  :environment: MM_TEAMSETTINGS_ENABLECHANNELCATEGORYSORTING
+  :description: This setting controls whether channel admins can choose a default sidebar category when creating or editing a channel. Default is **true**.
+
+  - **true**: **(Default)** When creating or editing supported channels, channel admins see a **Default category (optional)** field. Members who join the channel see it under that category in their sidebar.
+  - **false**: The default category selector is hidden.
+
+Channel category sorting
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+From Mattermost v11.8, channel category sorting is enabled by default. When enabled, channel admins can choose a default sidebar category when creating or editing a channel. Channel admins can select an existing category, type a new category name, or clear the default category from channel settings. Members who join the channel see it under that category in their sidebar. When disabled, the default category selector is hidden.
+
+.. list-table::
+  :widths: 55 45
+  :header-rows: 0
+
+  * - - **true**: **(Default)** When creating or editing supported channels, channel admins see a **Default category (optional)** field. They can select an existing category, enter a new category name, or clear the default category from channel settings. Members who join the channel see it under that category in their sidebar.
+      - **false**: The default category selector is hidden when creating or editing channels.
+    - - System Config path: **Site Configuration > Users and Teams**
+      - ``config.json`` setting: ``TeamSettings`` > ``EnableChannelCategorySorting`` > ``true``
+      - Environment variable: ``MM_TEAMSETTINGS_ENABLECHANNELCATEGORYSORTING``
+
 ----
 
 Notifications
