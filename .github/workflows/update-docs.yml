@@ -25,7 +25,7 @@ on:
           - Patch / Dot Release
           - Other
       version:
-        description: 'Version number (e.g., 11.7, 2.40, 6.2, 5.13.6)'
+        description: 'Version number(s), comma-separated (e.g., 11.7 or 10.11.20, 11.6.5, 11.7.3). For multi-version security releases enter oldest-to-newest.'
         required: true
         type: string
       release_date:
@@ -97,8 +97,15 @@ jobs:
       - name: Normalize version for branch naming
         id: vars
         shell: bash
+        env:
+          VERSION_INPUT: ${{ inputs.version }}
         run: |
-          safe_version="$(printf '%s' "${{ inputs.version }}" | tr ' /' '--' | tr -cd '[:alnum:]._-')"
+          # Pass the version via an environment variable rather than direct template
+          # interpolation to prevent shell injection from crafted input values.
+          # Replace commas and spaces with hyphens, strip remaining special chars,
+          # then squeeze any consecutive hyphens to one.
+          # e.g. "10.11.20, 11.6.5, 11.7.3" -> "10.11.20-11.6.5-11.7.3"
+          safe_version="$(printf '%s' "$VERSION_INPUT" | tr ', ' '-' | tr -cd '[:alnum:]._-' | tr -s '-')"
           test -n "$safe_version"
           echo "safe_version=$safe_version" >> "$GITHUB_OUTPUT"
  
