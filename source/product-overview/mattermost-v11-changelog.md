@@ -82,7 +82,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Added plugin metrics collection, namespacing, and serving on the standard ``/metrics`` endpoint.
  - Added support for plugins using the Shared Channels APIs to register multiple remote connections by calling ``RegisterPluginForSharedChannels`` with different ``SiteURL`` values, enabling use cases such as multiple outbound transports or bridging to multiple external servers. A new ``UnregisterPluginRemoteForSharedChannels`` method allows removing a single remote without affecting others. Existing single-remote plugins continue to work without changes.
  - Added ``client.Audit`` on ``pluginapi.Client`` for plugins to emit audit records via the server audit pipeline (server 10.10+) on Linux, macOS and Windows.
- - Introduced a new ``Edit Attachments`` permission for controlling who can edit post attachments when editing a post. By default, the permission is granted to users who have the edit post permission.
+ - Introduced a new ``Edit Attachments`` [permission](https://docs.mattermost.com/administration-guide/onboard/advanced-permissions.html#restrict-who-can-edit-post-attachments) for controlling who can edit post attachments when editing a post. By default, the permission is granted to users who have the edit post permission.
  - Added new CEL functions ``inCIDR`` and ``versionGT``/``versionGTE``/``versionLT``/``versionLTE``/``versionEQ`` for use in access control policies.
  - Included the connection ID in the plugin context.
 
