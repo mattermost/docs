@@ -503,17 +503,23 @@ Replace ``/etc/haproxy/haproxy.cfg``:
        default_backend pg_replicas
 
    backend pg_primary
-       option tcp-check
+       # pgchk.py returns HTTP 200 on /master only for the current primary,
+       # so write traffic follows the primary automatically after a failover.
+       option httpchk GET /master
+       http-check expect status 200
        server pg1 <PG1_IP>:5432 check port 8008
-       server pg2 <PG2_IP>:5432 check port 8008 backup
-       server pg3 <PG3_IP>:5432 check port 8008 backup
-
-   backend pg_replicas
-       balance roundrobin
-       option tcp-check
        server pg2 <PG2_IP>:5432 check port 8008
        server pg3 <PG3_IP>:5432 check port 8008
-       server pg1 <PG1_IP>:5432 check port 8008 backup
+
+   backend pg_replicas
+       # pgchk.py returns HTTP 200 on /replica only for standbys,
+       # so read traffic is load-balanced across the current standbys.
+       balance roundrobin
+       option httpchk GET /replica
+       http-check expect status 200
+       server pg2 <PG2_IP>:5432 check port 8008
+       server pg3 <PG3_IP>:5432 check port 8008
+       server pg1 <PG1_IP>:5432 check port 8008
 
 **Step 4.3 — Deploy pgchk.py**
 
