@@ -20,7 +20,7 @@ Prerequisites
 
 - :doc:`Attribute-Based Access Control (ABAC) </administration-guide/manage/admin/attribute-based-access-control>` must be enabled by a System Admin in **System Console > System Attributes > Attribute-Based Access**.
 - You need Channel Admin permissions and the ``manage_channel_access_rules`` permission.
-- Self-service channel access rules in the **Access Control** tab in Channel Settings are configured for private channels. Membership policies apply to both public and private channels, with different behavior by channel type. See :ref:`Public and private channel behavior <administration-guide/manage/admin/abac-channel-access-rules:public and private channel behavior>`.
+- Self-service access rules in the **Access Control** tab of Channel Settings apply only to private channels. Membership policies apply to both public and private channels, with behavior that varies by channel type. See :ref:`Public and private channel behavior <administration-guide/manage/admin/abac-channel-access-rules:public and private channel behavior>`.
 
 Access Channel Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~
