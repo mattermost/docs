@@ -1,4 +1,4 @@
-Auto-translate messages (Beta)
+Auto-translate messages
 ==============================
 
 .. include:: ../../_static/badges/ent-adv.rst
