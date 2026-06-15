@@ -18,6 +18,7 @@ Review and manage the following site configuration options in the System Console
 - `Public Links <#public-links>`__
 - `Notices <#notices>`__
 - `Connected Workspaces <#connected-workspaces>`__
+- `Classification Markings <#classification-markings>`__
 
 .. tip::
 
@@ -2586,6 +2587,34 @@ Member sync batch size
 .. note::
 
   Enabling these features can increase the load on your Mattermost server’s CPU, memory, and database due to frequent updates, database queries, and API communication. Excessive sync frequency and retries can overwhelm system resources, potentially causing performance degradation or instability. Monitor your system carefully when enabling these features.
+
+----
+
+Classification Markings
+-----------------------
+
+From Mattermost v11.8, system admins can configure classification markings in the System Console by going to **Site Configuration > Classification Markings**.
+
+Classification markings define reusable classification levels that can be displayed as global or channel-level banners in the web and desktop apps. Each classification level includes a name, color, and rank order. You can select a preset, such as US DoD, NATO, UK GSCP, Canada, or Australia PSPF, or define custom classification levels.
+
+.. note::
+
+  Classification markings are informational only and aren't tied to access control decisions at this time.
+
+Configure classification markings:
+
+1. Go to **System Console > Site Configuration > Classification Markings**.
+2. Enable **Enable classification markings**.
+3. Select a **Classification preset**, or create custom classification levels.
+4. Configure classification level names, colors, and rank order.
+5. Optionally enable the **Global Classification Banner** under **Global Classification Indicators**.
+6. Select the **Banner visibility**:
+
+   - **Top only**
+   - **Top and bottom**
+
+7. Select the **Global classification level** to display.
+8. Select **Save**.
 
 ----
 
