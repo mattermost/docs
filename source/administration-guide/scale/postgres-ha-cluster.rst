@@ -15,7 +15,7 @@ edition. It is compatible with any self-hosted Mattermost deployment.
 .. note::
 
    This guide has been validated on: **Ubuntu 24.04 LTS**, **PostgreSQL 17**,
-   **repmgr 5.5**, **HAProxy 2.8**, **Keepalived**.
+   **repmgr 5.5**, **HAProxy 2.8**, **Keepalived 2.2.8**.
 
 Architecture overview
 ---------------------
@@ -24,6 +24,13 @@ A PostgreSQL HA cluster for Mattermost consists of three nodes running in
 parallel. Each node runs the full stack: PostgreSQL, repmgr daemon (repmgrd),
 HAProxy, Keepalived, and a health-check service. A Virtual IP (VIP) floats
 across nodes and always points to the current primary.
+
+.. note::
+
+   Three nodes is the recommended minimum: after a single node fails, a primary
+   and at least one standby remain, so the cluster stays redundant. You can
+   scale out later by adding more standbys — see the *Add a standby node*
+   section. Use an odd number of nodes.
 
 .. code-block:: text
 
@@ -64,7 +71,7 @@ across nodes and always points to the current primary.
      - TCP load balancer. Routes write traffic to the primary and read traffic
        to standbys via two ports.
    * - Keepalived
-     - —
+     - 2.2.8
      - Manages the VIP using VRRP. Moves the VIP to the new primary after
        failover.
    * - pgchk.py
@@ -229,6 +236,13 @@ On each node, append to ``/etc/hosts``:
    <PG2_IP>  pg2
    <PG3_IP>  pg3
 
+.. note::
+
+   Use the real IP address for all three entries on every node — including each
+   node's own entry. Do not substitute ``127.0.0.1`` or ``localhost`` for a
+   node's own hostname: repmgr and streaming replication advertise these
+   hostnames to the other nodes, which must resolve them to routable addresses.
+
 Verify hostname resolution on each node:
 
 .. code-block:: bash
@@ -307,6 +321,13 @@ an interactive password prompt:
    echo "*:*:repmgr:repmgr:<YOUR_REPMGR_PASSWORD>" >> ~/.pgpass
    chmod 600 ~/.pgpass
 
+.. note::
+
+   Choose your repmgr password now and use the same value everywhere
+   ``<YOUR_REPMGR_PASSWORD>`` appears. Writing it to ``.pgpass`` here only
+   pre-stages the credential; the password is actually set on the database
+   later, in Step 3.1, when you run ``ALTER USER repmgr PASSWORD``.
+
 .. warning::
 
    **Lab and testing only:** If you want to skip password authentication for
@@ -355,7 +376,7 @@ Phase 3: repmgr configuration and cluster initialisation
 **Step 3.2 — Create /etc/repmgr.conf (all nodes)**
 
 Create ``/etc/repmgr.conf`` on each node. Adjust ``node_id``, ``node_name``,
-and ``host`` for each node:
+and ``host`` (in ``conninfo``) for each node:
 
 **pg1:**
 
@@ -563,6 +584,8 @@ On each node, create ``/usr/local/bin/pgchk.py`` with the following content:
                self.safe_write(b"Not Found\n")
 
        def log_message(self, format, *args):
+           # Override BaseHTTPRequestHandler's logger to silence the per-request
+           # line HAProxy health checks would otherwise write every few seconds.
            pass
 
    def run(port=DEFAULT_PORT):
@@ -780,8 +803,10 @@ Add a standby node
 ~~~~~~~~~~~~~~~~~~
 
 1. Provision a new server and complete Phases 1–2 of the setup guide.
-2. Create ``/etc/repmgr.conf`` with the next available ``node_id``.
-3. On the new node:
+2. Add the new node's hostname and IP address to ``/etc/hosts`` on the new node
+   **and on every existing node**, so all nodes can resolve the new hostname.
+3. Create ``/etc/repmgr.conf`` with the next available ``node_id``.
+4. On the new node:
 
    .. code-block:: bash
 
@@ -791,7 +816,7 @@ Add a standby node
       sudo systemctl start postgresql
       sudo -u postgres repmgr -f /etc/repmgr.conf standby register
 
-4. Add the new node to ``/etc/haproxy/haproxy.cfg`` on all existing nodes and
+5. Add the new node to ``/etc/haproxy/haproxy.cfg`` on all existing nodes and
    reload HAProxy: ``sudo systemctl reload haproxy``.
 
 Rejoin a failed node
