@@ -79,7 +79,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Hid redundant "Download Apps" links and onboarding download reminders when Mattermost runs inside the Desktop app.
 
 #### Plugins/Integrations
- - Added plugin metrics collection, namespacing, and serving on the standard ``/metrics`` endpoint.
+ - Added [plugin metrics collection](https://docs.mattermost.com/administration-guide/scale/performance-monitoring-metrics.html), namespacing, and serving on the standard ``/metrics`` endpoint.
  - Added support for plugins using the Shared Channels APIs to register multiple remote connections by calling ``RegisterPluginForSharedChannels`` with different ``SiteURL`` values, enabling use cases such as multiple outbound transports or bridging to multiple external servers. A new ``UnregisterPluginRemoteForSharedChannels`` method allows removing a single remote without affecting others. Existing single-remote plugins continue to work without changes.
  - Added ``client.Audit`` on ``pluginapi.Client`` for plugins to emit audit records via the server audit pipeline (server 10.10+) on Linux, macOS and Windows.
  - Introduced a new ``Edit Attachments`` [permission](https://docs.mattermost.com/administration-guide/onboard/advanced-permissions.html#restrict-who-can-edit-post-attachments) for controlling who can edit post attachments when editing a post. By default, the permission is granted to users who have the edit post permission.
@@ -121,7 +121,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Fixed an issue where clicking a custom user group mention would sometimes fail to load the group members list in the popover.
  - Fixed an issue where the reminder confirmation did not appear when setting a reminder on a reply from the thread view.
  - Fixed a panic in the ``mmctl`` websocket command when the WebSocket connection failed on startup.
- - Fixed an issue where the System Console Reporting sidebar label for the system analytics page so it now consistently reads "System Statistics".
+ - Fixed [an issue](https://docs.mattermost.com/administration-guide/manage/statistics.html) with the System Console Reporting sidebar label for the system analytics page so it now consistently reads "System Statistics".
  - Fixed an issue with the invite modal text input clipping and modal width overflow when typing long text in the "To" field.
  - Fixed an issue where the post autocomplete menu could be clipped when the right-hand sidebar was open.
  - Fixed an issue with the themed text colors in the Invite Guest modal channel picker so the "Add to channels" section, the typed input text, and the channel suggestion rows follow the active theme.
