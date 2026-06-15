@@ -79,7 +79,7 @@ You can configure the GitHub integration using either the built-in setup wizard 
 
   .. note::
 
-    When you subscribe a channel to a specific repository using ``/github subscribe owner/repository`` while relying on an **organization-level** webhook, the plugin may report ``No webhook was found for this repository or organization`` even though the organization-level webhook is delivering events correctly. This check currently only looks for repository-level webhooks; the message is informational and doesn't mean events are missing. To avoid the message, add a repository-level webhook for that repository.
+    When you subscribe a channel to a specific repository using ``/github subscribe owner/repository`` while relying on an **organization-level** webhook, the plugin may report ``No webhook was found for this repository or organization`` even though the organization-level webhook is delivering events correctly. This check currently only looks for repository-level webhooks; the message is informational and doesn't mean events are missing, so it's safe to ignore. If you prefer to avoid it, deliver that repository's events through a repository-level webhook *instead of* the organization-level webhook. Don't add a repository-level webhook in addition to the organization-level one, or that repository will receive duplicate notifications, as described above.
 
   1. In GitHub, go to the **Settings** page (for your organization or a specific repository) where you want to send notifications from, then select **Webhooks** in the sidebar.
   2. Select **Add Webhook**.
