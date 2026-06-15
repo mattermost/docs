@@ -92,7 +92,9 @@ From Mattermost v11.8, user attributes include both a **Display Name** and a **N
 1. In the System Console, go to **Site Configuration > System Attributes > User Attributes** and select **Add Attribute**.
 2. Enter the following details:
 
-    - **Attribute name**: Enter a unique name for the attribute. Attribute names can be up to 40 characters long.
+    
+    -- **Display Name**: Enter a display name for the attribute that will be shown...  
+    - **Attribute name**: The attribute name is automatically generated as a snake case name from the Display Name. This can be modified to any unique name CEL-safe, that should not include 
     - **Type**: Specify the type of attribute as one of the following:
 
       - **Text** for text-based profile attributes.
