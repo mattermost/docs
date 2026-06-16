@@ -23,7 +23,7 @@ Changelog
    * - v11.8
      - (UI) Added per-channel classification assignment and banner integration for webapp/desktop app.
    * - v11.8
-     - (UI) Added support for **CPA Display Name** for user-facing labels of user attributes.
+     - (UI) Added `support <https://docs.mattermost.com/administration-guide/manage/admin/user-attributes.html>`__ for **CPA Display Name** for user-facing labels of user attributes.
    * - v11.8
      - (UI) Changed the **Invite People** modal to allow pasting any text, not only valid email formats.
    * - v11.8
@@ -39,7 +39,7 @@ Changelog
    * - v11.8
      - (UI) Added the ability to define a property attribute once and reuse it across different object types (e.g., users, channels).
    * - v11.8
-     - (UI) Exposed the ``DefaultCategoryName`` to the user interface so admins can add, edit, and remove it easily.
+     - (UI) Exposed the ``DefaultCategoryName`` to the `user interface <https://docs.mattermost.com/administration-guide/configure/site-configuration-settings.html>`__ so admins can add, edit, and remove it easily.
    * - v11.8
      - (UI) Moved interactive dialog date/datetime properties into ``datetime_config``.
    * - v11.8
