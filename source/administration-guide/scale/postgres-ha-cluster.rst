@@ -466,6 +466,14 @@ pg3 as ``running`` (standby). On pg1, the following query returns 2 rows:
 Check ``journalctl -u postgresql`` on the failed standby. Common cause: firewall
 blocking port 5432 between nodes.
 
+.. note::
+
+   ``repmgr cluster show`` reports the cluster from the perspective of the node
+   you run it on, so one node is normally enough. If it lists **fewer than three
+   nodes**, run it on **every** node and compare the output — the views can
+   diverge when a node is isolated. Collect the output from all three nodes when
+   raising a support request.
+
 Phase 4: HAProxy, health check, and VIP (all nodes)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
