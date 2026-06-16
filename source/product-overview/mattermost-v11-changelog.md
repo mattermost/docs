@@ -62,7 +62,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Added an unread badge to Recaps.
  - Added managed [channel categories](https://docs.mattermost.com/end-user-guide/preferences/customize-your-channel-sidebar.html) for **Channel Admins** to enforce sidebar organization across teams.
  - Added per-channel classification assignment and banner integration for webapp/desktop app.
- - Added support for **CPA Display Name** for user-facing labels of user attributes.
+ - Added [support](https://docs.mattermost.com/administration-guide/manage/admin/user-attributes.html) for **CPA Display Name** for user-facing labels of user attributes.
  - Changed the **Invite People** modal to allow pasting any text, not only valid email formats.
  - Standardized many buttons throughout the app, which may result in minor UX changes.
  - Updated the **Enable Testing Commands** user interface to explicitly warn that ``EnableTesting`` must never be used in production.
@@ -70,7 +70,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Improved the **Default "Report a Problem"** [behavior](https://docs.mattermost.com/administration-guide/configure/site-configuration-settings.html) to open a support ticket via email with metadata for licensed servers, and redirect to the Mattermost forums for free edition in webapp / desktop apps.
  - Added support for system-scoped properties — property fields and values that attach to the Mattermost instance itself.
  - Added the ability to define a property attribute once and reuse it across different object types (e.g., users, channels).
- - Exposed the ``DefaultCategoryName`` to the user interface so admins can add, edit, and remove it easily.
+ - Exposed the [``DefaultCategoryName``](https://docs.mattermost.com/administration-guide/configure/site-configuration-settings.html) to the user interface so admins can add, edit, and remove it easily.
  - Moved interactive dialog date/datetime properties into ``datetime_config``.
  - When a channel is shared or unshared with a remote, a system message will now be shown.
  - On new installations using Elasticsearch or OpenSearch, search now includes public channels the user is not a member of by default.
