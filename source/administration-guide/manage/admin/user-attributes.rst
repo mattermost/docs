@@ -92,7 +92,6 @@ From Mattermost v11.8, user attributes include both a **Display Name** and a **N
 1. In the System Console, go to **Site Configuration > System Attributes > User Attributes** and select **Add Attribute**.
 2. Enter the following details:
 
-    
     - **Display Name**: Enter a display name for the attribute that will be shown in any user facing UI.  
     - **Attribute name**: Attribute name will be automatically generated from the provided Display Name. It can be overriden and with a preferred unique name for the attribute. Attribute names can be up to 40 characters long. The attribute name is used as the Common Expression Language (CEL) identifier in access control policies. It must start with a letter or underscore, and can contain only letters, numbers, and underscores. Reserved CEL words aren't allowed, including ``true``, ``false``, ``null``, ``in``, ``as``, ``break``, ``const``, ``continue``, ``else``, ``for``, ``function``, ``if``, ``import``, ``let``, ``loop``, ``package``, ``namespace``, ``return``, ``var``, ``void``, and ``while``. 
     - **Type**: Specify the type of attribute as one of the following:
