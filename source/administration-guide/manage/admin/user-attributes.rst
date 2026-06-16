@@ -93,8 +93,8 @@ From Mattermost v11.8, user attributes include both a **Display Name** and a **N
 2. Enter the following details:
 
     
-    -- **Display Name**: Enter a display name for the attribute that will be shown...  
-    - **Attribute name**: The attribute name is automatically generated as a snake case name from the Display Name. This can be modified to any unique name CEL-safe, that should not include 
+    -- **Display Name**: Enter a display name for the attribute that will be shown.  
+    - **Attribute name**: Enter a unique name for the attribute. Attribute names can be up to 40 characters long. The attribute name is used as the Common Expression Language (CEL) identifier in access control policies. It must start with a letter or underscore, and can contain only letters, numbers, and underscores. Reserved CEL words aren't allowed, including ``true``, ``false``, ``null``, ``in``, ``as``, ``break``, ``const``, ``continue``, ``else``, ``for``, ``function``, ``if``, ``import``, ``let``, ``loop``, ``package``, ``namespace``, ``return``, ``var``, ``void``, and ``while``. 
     - **Type**: Specify the type of attribute as one of the following:
 
       - **Text** for text-based profile attributes.
