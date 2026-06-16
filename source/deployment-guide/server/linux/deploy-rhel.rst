@@ -44,13 +44,13 @@ In a terminal window, ssh onto the system that will host the Mattermost Server. 
 
   .. code-block:: sh
 
-    wget https://releases.mattermost.com/11.8.0/mattermost-11.8.0-linux-amd64.tar.gz
+    wget https://releases.mattermost.com/11.8.1/mattermost-11.8.1-linux-amd64.tar.gz
 
 .. tab:: Current ESR
 
   .. code-block:: sh
 
-    wget https://releases.mattermost.com/11.7.3/mattermost-11.7.3-linux-amd64.tar.gz
+    wget https://releases.mattermost.com/11.7.4/mattermost-11.7.4-linux-amd64.tar.gz
 
 .. tab:: Older releases
 
@@ -170,7 +170,7 @@ After modifying the ``config.json`` configuration file, you can now start the Ma
 
   sudo systemctl start mattermost
 
-Verify that Mattermost is running: curl ``http://localhost:8065``. You should see the HTML that’s returned by the Mattermost Server.
+Verify that Mattermost is running: curl ``http://localhost:8065``. You should see the HTML that's returned by the Mattermost Server.
 
 The final step, depending on your requirements, is to run sudo ``systemctl enable mattermost.service`` so that Mattermost will start on system boot. If you don't receive an error when starting Mattermost after the previous step, you are good to go. If you did receive an error, continue on.
 

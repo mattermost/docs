@@ -141,7 +141,9 @@ Mobile
 Server
 ------------------------------
 
+- Mattermost Enterprise Edition v11.8.1 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-11.8/NOTICE.txt>`__.
 - Mattermost Enterprise Edition v11.8.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-11.8/NOTICE.txt>`__.
+- Mattermost Enterprise Edition v11.7.4 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-11.7/NOTICE.txt>`__.
 - Mattermost Enterprise Edition v11.7.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-11.7/NOTICE.txt>`__.
 - Mattermost Enterprise Edition v11.6.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-11.6/NOTICE.txt>`__.
 - Mattermost Enterprise Edition v11.5.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-11.5/NOTICE.txt>`__.

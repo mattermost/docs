@@ -1,3 +1,5 @@
+This is a Server security release (v11.7.4), not a Desktop release. This file tracks Desktop app releases and does not need to be updated for a Server security release.
+
 # Desktop Releases
 
 ```{Important}

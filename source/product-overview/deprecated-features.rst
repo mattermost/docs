@@ -39,7 +39,7 @@ Mattermost Server v11.0 (October 2025)
 - Playbooks has stopped working for Team Edition. Entry, Professional, Enterprise, and Enterprise Advanced plans are automatically upgraded to Playbooks v2 with no expected downtime. See more details in `this forum post <https://forum.mattermost.com/t/clarification-and-update-on-the-playbooks-plugin-v11/25192>`__.
 - Experimental Bleve Search functionality has been retired. If Bleve is enabled, search will not work until ``DisableDatabaseSearch`` is set to ``false``. See more details in `this forum post <https://forum.mattermost.com/t/transitioning-from-bleve-search-in-mattermost-v11/22982>`__.
 - Support for MySQL has ended. Our `Migration Guide <https://docs.mattermost.com/deployment-guide/postgres-migration.html>`__ outlines the steps, tools and support available for migrating to PostgreSQL. See more details in `this forum post <https://forum.mattermost.com/t/transition-to-postgresql/19551>`__.
-- The ``registerPostDropdownMenuComponent`` hook in the web app’s plugin API has been removed in favour of ``registerPostDropdownMenuAction``. See more details in `this forum post <https://forum.mattermost.com/t/deprecating-a-post-dropdown-menu-component-plugin-api-v11/25001>`__.
+- The ``registerPostDropdownMenuComponent`` hook in the web app's plugin API has been removed in favour of ``registerPostDropdownMenuAction``. See more details in `this forum post <https://forum.mattermost.com/t/deprecating-a-post-dropdown-menu-component-plugin-api-v11/25001>`__.
 - The web app is no longer exposing the `Styled Components <https://styled-components.com/>`__ dependency for use by web app plugins. See more details in `this forum post <https://forum.mattermost.com/t/removing-styled-components-export-for-web-app-plugins-v11/25002>`__.
 - Omnibus support has been deprecated. The last ``mattermost-omnibus`` release was v10.12. See more details in `this forum post <https://forum.mattermost.com/t/mattermost-omnibus-to-reach-end-of-life-v11/25175>`__.
 - Deprecated ``include_removed_members`` option in ``api/v4/ldap/sync`` has been removed. Admins can use the LDAP setting ``ReAddRemovedMembers``.
@@ -186,18 +186,18 @@ Mattermost Server v6.0.0
   - :ref:`ExperimentalChannelOrganization <administration-guide/configure/deprecated-configuration-settings:sidebar organization>`
   - :ref:`ExperimentalChannelSidebarOrganization <administration-guide/configure/deprecated-configuration-settings:experimental sidebar features>`
 
-- :ref:`All configuration settings previously marked as “Deprecated” <administration-guide/configure/configuration-settings:deprecated configuration settings>`.
+- :ref:`All configuration settings previously marked as "Deprecated" <administration-guide/configure/configuration-settings:deprecated configuration settings>`.
 - Changes to mattermost-server/model for naming consistency.
 
 Mattermost Server v5.38.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- In the v5.38 release (August 16, 2021), the “config watcher” (the mechanism that automatically reloads the “config.json“ file), has been removed in favor of the “mmctl config“ command that will need to be run to apply configuration changes after they are made. This change will improve configuration performance and robustness.
+- In the v5.38 release (August 16, 2021), the "config watcher" (the mechanism that automatically reloads the "config.json" file), has been removed in favor of the "mmctl config" command that will need to be run to apply configuration changes after they are made. This change will improve configuration performance and robustness.
 
 Mattermost Server v5.37.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- The “platform“ binary and “–platform” flag have been removed. If you are using the “–platform” flag or are using the “platform“ binary directly to run the Mattermost server application via a systemd file or custom script, you will be required to use only the “mattermost“ binary.
+- The "platform" binary and "–platform" flag have been removed. If you are using the "–platform" flag or are using the "platform" binary directly to run the Mattermost server application via a systemd file or custom script, you will be required to use only the "mattermost" binary.
 
 Mattermost Server v5.32.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -230,7 +230,7 @@ Mattermost Server v5.0.0
 
 - All API v3 endpoints removed. API v3 endpoints are no longer supported as of Mattermost v4.6 release on January 16th, 2018, and are replaced by API v4 endpoints which were released on July 16th, 2017. See `https://api.mattermost.com <https://api.mattermost.com>`_ to learn more.
 - Desktop Notification Duration in Account Settings removed due to inconsistencies on various browsers and operating systems.
-- An unused “ExtraUpdateAt” field removed from the channel model.
+- An unused "ExtraUpdateAt" field removed from the channel model.
 - ``platform`` binary renamed to mattermost for a clearer install and upgrade experience. All command line tools, including the bulk loading tool and developer tools, also renamed from platform to mattermost.
 - Slash commands configured to receive a GET request now have the payload encoded in the query string instead of receiving it in the body of the request, consistent with standard HTTP requests. Although unlikely, this could break custom slash commands that use GET requests incorrectly.
 - A new ``config.json`` setting to whitelist types of protocols for auto-linking added.
@@ -259,12 +259,12 @@ Mattermost Server v3.8.0
 - Old CLI tool (replaced by :doc:`an upgraded CLI tool </administration-guide/manage/command-line-tools>`)
 - APIv3 endpoints:
   
-  - “GET at /channels/more” (replaced by “/channels/more/{offset}/{limit}”)
-  - “POST at /channels/update_last_viewed_at” (replaced by “/channels/view”)
-  - “POST at /channels/set_last_viewed_at” (replaced by “/channels/view”)
-  - “POST at /users/status/set_active_channel” (replaced by “/channels/view”)
+  - "GET at /channels/more" (replaced by "/channels/more/{offset}/{limit}")
+  - "POST at /channels/update_last_viewed_at" (replaced by "/channels/view")
+  - "POST at /channels/set_last_viewed_at" (replaced by "/channels/view")
+  - "POST at /users/status/set_active_channel" (replaced by "/channels/view")
 
 Mattermost Server v3.7.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- “ServiceSettings: SegmentDeveloperKey” setting in ``config.json``
+- "ServiceSettings: SegmentDeveloperKey" setting in ``config.json``

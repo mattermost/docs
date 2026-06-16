@@ -1,6 +1,6 @@
 # Release Policy
 
-This page describes Mattermost’s release policy, and our recommended practices around releases, including extended support releases, so that you can allocate your IT resources effectively.
+This page describes Mattermost's release policy, and our recommended practices around releases, including extended support releases, so that you can allocate your IT resources effectively.
 
 To ensure a secure, functional, performant, and efficient Mattermost deployment, system admins managing a self-hosted deployment need to be proactive in:
 - monitoring Mattermost release cycles and planning upgrades before life cycles end,
@@ -31,7 +31,7 @@ Starting with the August 2025 Mattermost server and desktop app releases (server
 
 We strongly recommend planning ahead for upgrades before the end of an ESR's life cycle to ensure continuity in receiving security updates.
 
-ESRs don’t include changes to product functionality or new features. ESRs are intended for organizations who value stability over having the newest features and improvements, or who have a long internal testing and certification process to undergo when upgrading. Consider using ESRs for more stable and long-term deployments, especially in environments where frequent updates are challenging. If your organization prefers to have the newest features and improvements, Extended Support Releases may not be the best fit for you.
+ESRs don't include changes to product functionality or new features. ESRs are intended for organizations who value stability over having the newest features and improvements, or who have a long internal testing and certification process to undergo when upgrading. Consider using ESRs for more stable and long-term deployments, especially in environments where frequent updates are challenging. If your organization prefers to have the newest features and improvements, Extended Support Releases may not be the best fit for you.
 
 To install extended support releases, follow our [install and upgrade](/administration-guide/upgrade/enterprise-install-upgrade) documentation. To restore a previous ESR, restore the database and previous version if you need to revert an upgrade. Previous ESR versions continue remain subject to a [life cycle end date](/product-overview/mattermost-server-releases).
 
