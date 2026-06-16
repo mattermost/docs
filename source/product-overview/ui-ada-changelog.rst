@@ -12,6 +12,46 @@ Changelog
 
    * - Version
      - Change Description
+   * - v11.8
+     - (UI) Added a new keyboard shortcut, ``Shift`` + ``ESC``, that marks all channels, threads, and direct messages as read for a team on webapp / desktop app.
+   * - v11.8
+     - (UI) Added an overflow menu for channel bookmarks when the bookmark bar runs out of space. Bookmarks can be reordered via drag-and-drop between the bar and the overflow menu, or via keyboard (Space to select, arrow keys to move) on webapp. Replaced ``react-beautiful-dnd`` with ``@atlaskit/pragmatic-drag-and-drop``.
+   * - v11.8
+     - (UI) Added an unread badge to Recaps.
+   * - v11.8
+     - (UI) Added `managed channel categories <https://docs.mattermost.com/end-user-guide/preferences/customize-your-channel-sidebar.html>`__ for **Channel Admins** to enforce sidebar organization across teams.
+   * - v11.8
+     - (UI) Added per-channel classification assignment and banner integration for webapp/desktop app.
+   * - v11.8
+     - (UI) Added `support <https://docs.mattermost.com/administration-guide/manage/admin/user-attributes.html>`__ for **CPA Display Name** for user-facing labels of user attributes.
+   * - v11.8
+     - (UI) Changed the **Invite People** modal to allow pasting any text, not only valid email formats.
+   * - v11.8
+     - (UI) Standardized many buttons throughout the app, which may result in minor UX changes.
+   * - v11.8
+     - (UI) Updated the **Enable Testing Commands** user interface to explicitly warn that ``EnableTesting`` must never be used in production.
+   * - v11.8
+     - (UI) Changed the mobile view search box to only autofocus when the search button is pressed (reported on mobile browser).
+   * - v11.8
+     - (UI) Improved the **Default "Report a Problem"** `behavior <https://docs.mattermost.com/administration-guide/configure/site-configuration-settings.html>`__ to open a support ticket via email with metadata for licensed servers, and redirect to the Mattermost forums for free edition in webapp / desktop apps.
+   * - v11.8
+     - (UI) Added support for system-scoped properties — property fields and values that attach to the Mattermost instance itself.
+   * - v11.8
+     - (UI) Added the ability to define a property attribute once and reuse it across different object types (e.g., users, channels).
+   * - v11.8
+     - (UI) Exposed the ``DefaultCategoryName`` to the `user interface <https://docs.mattermost.com/administration-guide/configure/site-configuration-settings.html>`__ so admins can add, edit, and remove it easily.
+   * - v11.8
+     - (UI) Moved interactive dialog date/datetime properties into ``datetime_config``.
+   * - v11.8
+     - (UI) When a channel is shared or unshared with a remote, a system message will now be shown.
+   * - v11.8
+     - (UI) On new installations using Elasticsearch or OpenSearch, search now includes public channels the user is not a member of by default.
+   * - v11.8
+     - (UI) Added support for incoming webhooks to define a ``root_id`` to create posts in a thread.
+   * - v11.8
+     - (UI) Updated membership policy user interface copy in the System Console and public channel settings to clarify qualifying-user requirements and auto-add behavior.
+   * - v11.8
+     - (UI) Hid redundant "Download Apps" links and onboarding download reminders when Mattermost runs inside the Desktop app.
    * - v11.7
      - (UI) Message attachment footers now support full Markdown rendering, including bold, italic, links, and emoji.
    * - v11.7
