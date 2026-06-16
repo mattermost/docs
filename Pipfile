@@ -30,7 +30,7 @@ docutils-stubs = "==0.0.22"
 sphinx = "==8.2.3"
 #
 # Furo Theme (https://github.com/pradyunsg/furo)
-furo = "==2024.8.6"
+furo = "==2025.12.19"
 #
 # MyST Parser (https://myst-parser.readthedocs.io/en/latest/)
 # Release notes: https://myst-parser.readthedocs.io/en/latest/develop/_changelog.html

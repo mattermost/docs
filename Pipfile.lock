@@ -178,12 +178,12 @@
         },
         "furo": {
             "hashes": [
-                "sha256:6cd97c58b47813d3619e63e9081169880fbe331f0ca883c871ff1f3f11814f5c",
+                "sha256:bb0ead5309f9500130665a26bee87693c41ce4dbdff864dbfb6b0dae4673d24f",
                 "sha256:b63e4cee8abfc3136d3bc03a3d45a76a850bada4d6374d24c1716b0e01394a01"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.8'",
-            "version": "==2024.8.6"
+            "version": "==2025.12.19"
         },
         "h11": {
             "hashes": [
