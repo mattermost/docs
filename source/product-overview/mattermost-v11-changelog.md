@@ -62,7 +62,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
   - Added validation of the Azure file storage account name and routed Azure custom-endpoint requests through the standard outbound HTTP transport.
   - Added SAML connectivity status and error diagnostics to support packet output.
   - Added OAuth2/OpenID Connect provider connectivity status (GitLab, Google, Office365, OpenID) to the support packet diagnostics.
-  - Added database diagnostics to the support packet, covering connection pool stats on every supported driver and PostgreSQL aggregate performance indicators (cache hit ratio, deadlocks, temp files, lock wait/idle activity, longest running query, and Posts autovacuum/dead tuples).
+  - Added database diagnostics to the support packet, covering connection pool stats on every supported driver and PostgreSQL aggregate performance indicators (cache hit ratio, deadlocks, temp files, lock wait/idle activity, longest running query, and Posts autovacuum/dead tuples). Per-query timeouts and partial-failure handling keep packet generation resilient when individual pg_stat queries fail.
   - Added personal access token expiry support. Tokens can now be required to expire within a configured maximum lifetime via the new ``ServiceSettings.MaximumPersonalAccessTokenLifetimeDays`` System Console setting. The policy applies only to newly created tokens; bot tokens are exempt.
   - Added an ``ExpiresAt`` column to the ``UserAccessTokens`` table; expired personal access tokens are rejected with HTTP 401 and reaped hourly by a new background job (``cleanup_expired_access_tokens``).
   - Added a pre-migration setup to fix incorrect database migration numbers that prevented upgrading Mattermost from v10.11 to v11.7.
@@ -75,6 +75,8 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
   - Expanded session attribute collection to include values provided by Desktop App and Mobile clients.
   - Removed legacy interactive dialog code path.
   - Added a new column ``board`` type to channel bookmarks, including a nontransactional concurrent index migration on Postgres.
+  - Preserved unknown permissions during migrations on downgrade.
+  - Added a channel-guard enforcement for scheduled posts and drafts.
 
 #### mmctl
   - Added a ``mattermost db ping`` subcommand that waits for the database to become reachable, with configurable ``--timeout`` and ``--retry-interval`` flags.
@@ -110,6 +112,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
   - Fixed an issue where a bot user created by a plugin could become the first system admin on a fresh install.
   - Fixed an issue where a custom classification selection was lost if a user selected a preset from the classification preset options.
   - Fixed validation for ``PUT /api/v4/users/{user_id}/auth`` to reject unknown auth services and prevent auth data on email/password users.
+  - Fixed an issue that caused a flagged post to continue being visible for content reviewers until a refresh after deletion.
 
 ### API Changes
   - Added ``POST /file/test`` (``testFileStore``) API endpoint for backend-agnostic file store connection testing.
