@@ -13,6 +13,124 @@
 Platform and OS scope reflects reported and tested environments and may not represent all affected configurations.
 ```
 
+
+(release-v11.9)=
+## Release v11.9
+
+**Release day: 2026-07-16**
+
+### Upgrade Impact
+#### Database Schema Changes
+  - Added a new ``ExpiresAt`` column to the ``UserAccessTokens`` table.
+  - Added a new column ``board`` type to channel bookmarks, including a nontransactional concurrent index migration on Postgres.
+
+#### config.json
+
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+  - **Changes to All plans:**
+    - Under ``FileSettings`` in ``config.json``, added ``AzureCloud`` configuration setting to select the Azure cloud environment for Blob Storage.
+    - Under ``FileSettings`` in ``config.json``, added ``ExportAzureCloud`` configuration setting to select the Azure cloud environment for Export Storage.
+    - Under ``FileSettings`` in ``config.json``, added ``AzureAuthMode`` configuration setting to select the authentication mode for Azure Blob Storage.
+    - Under ``FileSettings`` in ``config.json``, added ``ExportAzureAuthMode`` configuration setting to select the authentication mode for Azure Export Blob Storage.
+    - Under ``FileSettings`` in ``config.json``, added ``ExportAzurePresignExpiresSeconds`` configuration setting to control the Shared Access Signature lifetime for Azure export direct downloads (defaults to 6 hours, capped at Azure's 7-day limit).
+    - Under ``FileSettings`` in ``config.json``, added ``ExtractContentTimeout`` configuration setting to limit how long a single uploaded document's content extraction occupies a worker (default 10 seconds).
+    - Under ``ServiceSettings`` in ``config.json``, added ``MaximumPersonalAccessTokenLifetimeDays`` configuration setting to require personal access tokens to expire within a configured maximum lifetime (``0`` imposes no policy).
+    - Under ``AccessControlSettings`` in ``config.json``, added ``EnforceDeviceIDConsistency`` configuration setting to enforce device ID consistency across sessions.
+    - Under ``AccessControlSettings`` in ``config.json``, added ``TrustProxyDeviceIdentityHeader`` configuration setting to trust a proxy-supplied device identity header for session attribute collection.
+
+### Improvements
+See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-available/) on the highlights in our latest release.
+#### User Interface
+  - Added zoom and pan support to the image file preview: use the scroll wheel to zoom at the cursor, click-and-drag to pan, and +/-/0 keyboard shortcuts.
+  - Added a license preview and diff view when uploading a new license in the System Console, allowing administrators to compare the new license's features with the current license before applying.
+  - Added a toast notification for plugin-rejected file uploads, consistent with the existing notification for rejected downloads.
+  - Added a Data Spillage Handling feature discovery page in the System Console for lower-tier licenses.
+  - Added clearer validation messaging for invalid user attribute names in the System Console.
+  - Incoming webhooks now show information about the last time they were triggered.
+  - Threads started by a webhook are no longer highlighted for the user who owns the webhook.
+  - Added user setting "Auto-follow threads on channel-wide mentions" (Settings → Notifications). When disabled, @channel/@all/@here mentions no longer force thread membership; users still receive mention notifications but must manually follow the thread.
+  - Added a webapp hook ``registerChannelTypeOption``.
+  - Hardened the web app against crashes caused by components rendered by a plugin.
+
+#### Plugins/Integrations
+  - Implemented clickable action buttons inside post markdown for bots, webhooks, and plugins. Integrations bind ``mmaction://`` markdown links to actions defined in a new ``mm_blocks_actions`` post property.
+  - Added channel bookmark type ``board`` with an optional ``target_id``. The bookmarks API rejects creating, updating, or deleting board bookmarks but allows reordering them when the caller has bookmark order permission.
+
+#### Administration
+  - Added Azure Blob Storage as a selectable backend in the File Storage and Export Storage admin console panels. The S3 Test Connection control is now backend-agnostic and validates the active driver.
+  - Added an Azure Cloud selector to the Azure Blob Storage admin panels with built-in support for Azure Commercial and Azure Government endpoints. Choose "Custom Endpoint" to point at Azurite, a reverse proxy, or any other Azure cloud by providing the full Blob service URL.
+  - Added a Microsoft Entra ID / DefaultAzureCredential authentication mode to the Azure Blob Storage admin panels alongside the existing shared-key path. Select "Default credential (Microsoft Entra ID)" to authenticate via managed identity, workload identity, service principal environment variables, or ``az login`` — whichever the host environment provides — with no access key required.
+  - Added Azure Blob Storage support for the optional presigned export-download feature (``EnableExportDirectDownload``). Bulk-export downloads now generate a time-limited Shared Access Signature when the export backend is Azure, matching the existing S3 behavior.
+  - Added validation of the Azure file storage account name and routed Azure custom-endpoint requests through the standard outbound HTTP transport.
+  - Added SAML connectivity status and error diagnostics to support packet output.
+  - Added OAuth2/OpenID Connect provider connectivity status (GitLab, Google, Office365, OpenID) to the support packet diagnostics.
+  - Added database diagnostics to the support packet, covering connection pool stats on every supported driver and PostgreSQL aggregate performance indicators (cache hit ratio, deadlocks, temp files, lock wait/idle activity, longest running query, and Posts autovacuum/dead tuples).
+  - Added personal access token expiry support. Tokens can now be required to expire within a configured maximum lifetime via the new ``ServiceSettings.MaximumPersonalAccessTokenLifetimeDays`` System Console setting. The policy applies only to newly created tokens; bot tokens are exempt.
+  - Added an ``ExpiresAt`` column to the ``UserAccessTokens`` table; expired personal access tokens are rejected with HTTP 401 and reaped hourly by a new background job (``cleanup_expired_access_tokens``).
+  - Added a pre-migration setup to fix incorrect database migration numbers that prevented upgrading Mattermost from v10.11 to v11.7.
+  - Added a new ``FileSettings.ExtractContentTimeout`` setting (default 10 seconds) that limits how long a single uploaded document's content extraction occupies a worker, and moved document content extraction to a dedicated, non-blocking worker pool so it no longer delays file uploads for other users.
+  - Stopped logging the email subject in the "sending mail" server log to prevent potential exposure of PII such as sender names from DM and mention notifications.
+  - Enabled CJK (Chinese, Japanese, Korean) search by default for PostgreSQL.
+  - Added support for OpenSearch v3, while continuing to support OpenSearch v2.
+  - User attributes can now be synced with AD/LDAP or SAML whether they are user-editable or admin-managed. When an attribute is synced, the "Editable by users" toggle is disabled; remove the sync link to change it again.
+  - Added support for iOS Calls ring for DM/GM channels.
+  - Expanded session attribute collection to include values provided by Desktop App and Mobile clients.
+  - Removed legacy interactive dialog code path.
+
+#### mmctl
+  - Added a ``mattermost db ping`` subcommand that waits for the database to become reachable, with configurable ``--timeout`` and ``--retry-interval`` flags.
+  - Added an ``--expires-in`` flag (e.g. ``--expires-in 90d``) to ``mmctl user token generate`` for creating expiring personal access tokens via CLI.
+
+#### Performance
+  - Improved the performance of concurrent logins by removing a global mutex in favor of database serialization for computing login attempts. This also corrects the semantics of the ``MaximumLoginAttempts`` setting, which is now honored across all nodes in the cluster: instead of allowing ``n*MaximumLoginAttempts`` attempts (where ``n`` is the number of nodes), exactly ``MaximumLoginAttempts`` attempts are now allowed regardless of cluster size.
+  - Reduced cluster send error logs from oversized ``plugin_statuses_changed`` WebSocket events.
+
+### Bug Fixes
+  - Fixed display of long usernames in the user account menu.
+  - Fixed a white flash that appeared in the global header and left sidebar when switching between products (Playbooks/Boards) and Channels.
+  - Fixed an issue where the AI actions toolbar separator was shown when no AI actions button was available.
+  - Fixed an issue where the Incoming Webhooks list reordered entries between page navigations.
+  - Fixed a JavaScript error when reviewers received content review updates for permanently removed flagged posts.
+  - Fixed an issue where the Global Threads view showed only 1 quick reaction emoji in the post hover toolbar instead of 3.
+  - Fixed IPv6 addresses containing hex segments (e.g. ``:beef:``) being incorrectly rendered as custom emoji in the web app.
+  - Fixed a bulk-import failure ("ChannelMember not found") when a group-channel hash already existed but its membership was incomplete — for example with concurrent import workers, a prior import that crashed mid-loop, or a pre-existing group channel whose membership had drifted.
+  - Fixed an issue where the content review bot DM displayed an empty ``""`` block under "With comment" when the reporter or reviewer did not enter a comment.
+  - Fixed incorrect encoding of image URLs containing query parameters when using an image proxy.
+  - Fixed an issue where the SAML metadata endpoint did not correctly pull the IDP public certificate.
+  - Fixed an issue where selecting a new role for a team or channel linked to a group in the System Console would not update the role dropdown in the user interface.
+  - Fixed an issue where importing direct or group message channels without scheme flags in the payload (notably from mmetl Slack exports) produced channel members with no effective role, breaking the message input for those channels on the web client.
+  - Fixed the Membership Policies row action Edit option to open the membership policy editor.
+  - Fixed the onboarding checklist button positioning when a bottom classification banner is visible.
+  - Fixed a regression that made the Integrations and Custom Emoji pages illegible when using a dark theme.
+  - Fixed an issue where the Role and Permissions column values in the System Console Permission Policies (and Membership Policies) list ran together without a separator and were truncated mid-word instead of showing an ellipsis.
+  - Fixed an issue where a channel member removed by an attribute-based access control (ABAC) access-rule change could still appear in the Channel Info Members list until a full page reload, even though the member count was correct.
+  - Fixed an issue where "Mark as Unread" from the channel sidebar did nothing when the most recent message in the channel was a system join/leave message.
+  - Fixed an issue where channel admins saw "Failed to load this channel's permission policy" on the Permissions Policy tab when the channel had no access control policy configured.
+  - Fixed custom emoji upload size and GIF frame limits.
+  - Fixed file moves and copies on S3 file stores failing for files larger than 5 GiB (for example, finalizing an ``mmctl`` import upload of an import archive over 5 GiB) by using a server-side multipart copy.
+  - Fixed an issue where a bot user created by a plugin could become the first system admin on a fresh install.
+  - Fixed an issue where a custom classification selection was lost if a user selected a preset from the classification preset options.
+  - Fixed validation for ``PUT /api/v4/users/{user_id}/auth`` to reject unknown auth services and prevent auth data on email/password users.
+
+### API Changes
+  - Added ``POST /file/test`` (``testFileStore``) API endpoint for backend-agnostic file store connection testing.
+  - Removed ``POST /file/s3_test`` (``testS3``) API endpoint.
+  - Added ``GET /access_control/policy`` (``getTeamAccessControlPolicy``) API endpoint.
+  - Added ``GET /sessions/attributes/manifest`` (``getSessionAttributesManifest``) API endpoint.
+  - The ``POST /users/{id}/tokens`` endpoint now accepts a client-supplied ``expires_at`` (Unix milliseconds) for creating expiring personal access tokens.
+
+### Audit Log Event Changes
+  - Added ``AuditEventRejectExpiredUserAccessToken`` audit log event, emitted when an expired personal access token is rejected.
+  - Added ``expireUserAccessToken`` audit log event, emitted when expired personal access tokens are reaped by the background cleanup job.
+
+### Go Version
+  - Go version is the same as in the previous release.
+
+### Open Source Components
+  - Upgraded ``github.com/bep/imagemeta`` from v0.12.0 to v0.17.2 in https://github.com/mattermost/mattermost/.
+
+
 (release-v11.8-feature-release)=
 ## Release v11.8 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
