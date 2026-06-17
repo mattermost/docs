@@ -104,7 +104,7 @@ Membership policies behave differently depending on the type of channel they're 
 Channel-level permission policies
 ---------------------------------
 
-From Mattermost v11.8.0, admins can define channel-level permission rules for file upload and file download based on user attributes and channel role. Applicable roles include **channel admin**, **channel member**, and **channel guest**.
+From Mattermost v11.8.0, channel admins can define channel-level permission rules for file upload and file download based on user attributes and channel role. Applicable roles include **channel admin**, **channel member**, and **channel guest**.
 
 For system-wide permission policies that restrict file upload and download actions, see :ref:`Permission policies <administration-guide/manage/admin/abac-system-wide-policies:permission policies>`.
 
