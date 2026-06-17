@@ -55,7 +55,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
   - Added channel bookmark type ``board`` with an optional ``target_id``. The bookmarks API rejects creating, updating, or deleting board bookmarks but allows reordering them when the caller has bookmark order permission.
 
 #### Administration
-  - Added Azure Blob Storage as a selectable backend in the File Storage and Export Storage admin console panels. The S3 Test Connection control is now backend-agnostic and validates the active driver.
+  - Added [Azure Blob Storage](ocs.mattermost.com/administration-guide/configure/azure-blob-storage.html) as a selectable backend in the File Storage and Export Storage admin console panels. The S3 Test Connection control is now backend-agnostic and validates the active driver.
   - Added an Azure Cloud selector to the Azure Blob Storage admin panels with built-in support for Azure Commercial and Azure Government endpoints. Choose "Custom Endpoint" to point at Azurite, a reverse proxy, or any other Azure cloud by providing the full Blob service URL.
   - Added a Microsoft Entra ID / DefaultAzureCredential authentication mode to the Azure Blob Storage admin panels alongside the existing shared-key path. Select "Default credential (Microsoft Entra ID)" to authenticate via managed identity, workload identity, service principal environment variables, or ``az login`` — whichever the host environment provides — with no access key required.
   - Added Azure Blob Storage support for the optional presigned export-download feature (``EnableExportDirectDownload``). Bulk-export downloads now generate a time-limited Shared Access Signature when the export backend is Azure, matching the existing S3 behavior.
