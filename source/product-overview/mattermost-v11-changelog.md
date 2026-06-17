@@ -25,11 +25,7 @@ Platform and OS scope reflects reported and tested environments and may not repr
 #### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
   - **Changes to All plans:**
-    - Under ``FileSettings`` in ``config.json``, added ``AzureCloud`` configuration setting to select the Azure cloud environment for Blob Storage.
-    - Under ``FileSettings`` in ``config.json``, added ``ExportAzureCloud`` configuration setting to select the Azure cloud environment for Export Storage.
-    - Under ``FileSettings`` in ``config.json``, added ``AzureAuthMode`` configuration setting to select the authentication mode for Azure Blob Storage.
-    - Under ``FileSettings`` in ``config.json``, added ``ExportAzureAuthMode`` configuration setting to select the authentication mode for Azure Export Blob Storage.
-    - Under ``FileSettings`` in ``config.json``, added ``ExportAzurePresignExpiresSeconds`` configuration setting to control the Shared Access Signature lifetime for Azure export direct downloads (defaults to 6 hours, capped at Azure's 7-day limit).
+    - Under ``FileSettings`` in ``config.json``, added ``AzureCloud``, ``ExportAzureCloud``, ``AzureAuthMode``, ``ExportAzureAuthMode``, and ``ExportAzurePresignExpiresSeconds`` configuration settings for Azure Blob Storage support.
     - Under ``FileSettings`` in ``config.json``, added ``ExtractContentTimeout`` configuration setting to limit how long a single uploaded document's content extraction occupies a worker (default 10 seconds).
     - Under ``ServiceSettings`` in ``config.json``, added ``MaximumPersonalAccessTokenLifetimeDays`` configuration setting to require personal access tokens to expire within a configured maximum lifetime (``0`` imposes no policy).
     - Under ``AccessControlSettings`` in ``config.json``, added ``EnforceDeviceIDConsistency`` configuration setting to enforce device ID consistency across sessions.
