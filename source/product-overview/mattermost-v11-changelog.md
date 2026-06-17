@@ -13,21 +13,17 @@
 Platform and OS scope reflects reported and tested environments and may not represent all affected configurations.
 ```
 
-
-(release-v11.9)=
-## Release v11.9
+(release-v11.9-feature-release)=
+## Release v11.9 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
 **Release day: 2026-07-16**
 
 ### Upgrade Impact
 #### Database Schema Changes
-  - Added a new ``ExpiresAt`` column to the ``UserAccessTokens`` table.
-  - Added a new column ``board`` type to channel bookmarks, including a nontransactional concurrent index migration on Postgres.
+ - 
 
 #### config.json
-
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
-
   - **Changes to All plans:**
     - Under ``FileSettings`` in ``config.json``, added ``AzureCloud`` configuration setting to select the Azure cloud environment for Blob Storage.
     - Under ``FileSettings`` in ``config.json``, added ``ExportAzureCloud`` configuration setting to select the Azure cloud environment for Export Storage.
@@ -41,6 +37,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
 
 ### Improvements
 See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-available/) on the highlights in our latest release.
+
 #### User Interface
   - Added zoom and pan support to the image file preview: use the scroll wheel to zoom at the cursor, click-and-drag to pan, and +/-/0 keyboard shortcuts.
   - Added a license preview and diff view when uploading a new license in the System Console, allowing administrators to compare the new license's features with the current license before applying.
@@ -74,9 +71,10 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
   - Enabled CJK (Chinese, Japanese, Korean) search by default for PostgreSQL.
   - Added support for OpenSearch v3, while continuing to support OpenSearch v2.
   - User attributes can now be synced with AD/LDAP or SAML whether they are user-editable or admin-managed. When an attribute is synced, the "Editable by users" toggle is disabled; remove the sync link to change it again.
-  - Added support for iOS Calls ring for DM/GM channels.
+  - Added support for iOS Calls ring for Direct/Group Message channels.
   - Expanded session attribute collection to include values provided by Desktop App and Mobile clients.
   - Removed legacy interactive dialog code path.
+  - Added a new column ``board`` type to channel bookmarks, including a nontransactional concurrent index migration on Postgres.
 
 #### mmctl
   - Added a ``mattermost db ping`` subcommand that waits for the database to become reachable, with configurable ``--timeout`` and ``--retry-interval`` flags.
@@ -125,11 +123,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
   - Added ``expireUserAccessToken`` audit log event, emitted when expired personal access tokens are reaped by the background cleanup job.
 
 ### Go Version
-  - Go version is the same as in the previous release.
-
-### Open Source Components
-  - Upgraded ``github.com/bep/imagemeta`` from v0.12.0 to v0.17.2 in https://github.com/mattermost/mattermost/.
-
+ - v11.9 is built with Go ``v1.26.3``.
 
 (release-v11.8-feature-release)=
 ## Release v11.8 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
