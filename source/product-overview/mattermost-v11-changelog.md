@@ -26,7 +26,8 @@ Platform and OS scope reflects reported and tested environments and may not repr
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
   - **Changes to All plans:**
     - Under ``FileSettings`` in ``config.json``, added ``AzureCloud``, ``ExportAzureCloud``, ``AzureAuthMode``, ``ExportAzureAuthMode``, and ``ExportAzurePresignExpiresSeconds`` configuration settings for Azure Blob Storage support.
-    - Under ``FileSettings`` in ``config.json``, added ``ExtractContentTimeout`` configuration setting to limit how long a single uploaded document's content extraction occupies a worker (default 10 seconds).
+    - Under ``FileSettings`` in ``config.json``, ad
+    - ded ``ExtractContentTimeout`` configuration setting to limit how long a single uploaded document's content extraction occupies a worker (default 10 seconds).
     - Under ``ServiceSettings`` in ``config.json``, added ``MaximumPersonalAccessTokenLifetimeDays`` configuration setting to require personal access tokens to expire within a configured maximum lifetime (``0`` imposes no policy).
     - Under ``AccessControlSettings`` in ``config.json``, added ``EnforceDeviceIDConsistency`` configuration setting to enforce device ID consistency across sessions.
     - Under ``AccessControlSettings`` in ``config.json``, added ``TrustProxyDeviceIdentityHeader`` configuration setting to trust a proxy-supplied device identity header for session attribute collection.
@@ -35,7 +36,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
 See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-available/) on the highlights in our latest release.
 
 #### User Interface
-  - Added zoom and pan support to the image file preview: use the scroll wheel to zoom at the cursor, click-and-drag to pan, and +/-/0 keyboard shortcuts.
+  - Added zoom and pan support to the image file preview: use the scroll wheel to zoom at the cursor, click-and-drag to pan, and +/-/0 keyboard shortcuts (reported on webapp).
   - Added a license preview and diff view when uploading a new license in the System Console, allowing administrators to compare the new license's features with the current license before applying.
   - Added a toast notification for plugin-rejected file uploads, consistent with the existing notification for rejected downloads.
   - Added a Data Spillage Handling feature discovery page in the System Console for lower-tier licenses.
@@ -69,10 +70,11 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
   - User attributes can now be synced with AD/LDAP or SAML whether they are user-editable or admin-managed. When an attribute is synced, the "Editable by users" toggle is disabled; remove the sync link to change it again.
   - Added support for iOS Calls ring for Direct/Group Message channels.
   - Expanded session attribute collection to include values provided by Desktop App and Mobile clients.
-  - Removed legacy interactive dialog code path.
+  - Removed legacy interactive dialog code path (reported on webapp).
   - Added a new column ``board`` type to channel bookmarks, including a nontransactional concurrent index migration on Postgres.
   - Preserved unknown permissions during migrations on downgrade.
   - Added a channel-guard enforcement for scheduled posts and drafts.
+  - Expanded Session Attribute collection to values provided by our Desktop App/Mobile clients.
 
 #### mmctl
   - Added a ``mattermost db ping`` subcommand that waits for the database to become reachable, with configurable ``--timeout`` and ``--retry-interval`` flags.
@@ -88,24 +90,24 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
   - Fixed an issue where the AI actions toolbar separator was shown when no AI actions button was available.
   - Fixed an issue where the Incoming Webhooks list reordered entries between page navigations.
   - Fixed a JavaScript error when reviewers received content review updates for permanently removed flagged posts.
-  - Fixed an issue where the Global Threads view showed only 1 quick reaction emoji in the post hover toolbar instead of 3.
+  - Fixed an issue where the Global Threads view showed only 1 quick reaction emoji in the post hover toolbar instead of 3 (reported on webapp).
   - Fixed IPv6 addresses containing hex segments (e.g. ``:beef:``) being incorrectly rendered as custom emoji in the web app.
   - Fixed a bulk-import failure ("ChannelMember not found") when a group-channel hash already existed but its membership was incomplete — for example with concurrent import workers, a prior import that crashed mid-loop, or a pre-existing group channel whose membership had drifted.
   - Fixed an issue where the content review bot DM displayed an empty ``""`` block under "With comment" when the reporter or reviewer did not enter a comment.
-  - Fixed incorrect encoding of image URLs containing query parameters when using an image proxy.
+  - Fixed incorrect encoding of image URLs containing query parameters when using an image proxy (reported on webapp).
   - Fixed an issue where the SAML metadata endpoint did not correctly pull the IDP public certificate.
   - Fixed an issue where selecting a new role for a team or channel linked to a group in the System Console would not update the role dropdown in the user interface.
   - Fixed an issue where importing direct or group message channels without scheme flags in the payload (notably from mmetl Slack exports) produced channel members with no effective role, breaking the message input for those channels on the web client.
   - Fixed the Membership Policies row action Edit option to open the membership policy editor.
   - Fixed the onboarding checklist button positioning when a bottom classification banner is visible.
-  - Fixed a regression that made the Integrations and Custom Emoji pages illegible when using a dark theme.
+  - Fixed a regression that made the Integrations and Custom Emoji pages illegible when using a dark theme (reported on webapp).
   - Fixed an issue where the Role and Permissions column values in the System Console Permission Policies (and Membership Policies) list ran together without a separator and were truncated mid-word instead of showing an ellipsis.
   - Fixed an issue where a channel member removed by an attribute-based access control (ABAC) access-rule change could still appear in the Channel Info Members list until a full page reload, even though the member count was correct.
-  - Fixed an issue where "Mark as Unread" from the channel sidebar did nothing when the most recent message in the channel was a system join/leave message.
+  - Fixed an issue where "Mark as Unread" from the channel sidebar did nothing when the most recent message in the channel was a system join/leave message (reported on MacOS / Desktop App).
   - Fixed an issue where channel admins saw "Failed to load this channel's permission policy" on the Permissions Policy tab when the channel had no access control policy configured.
   - Fixed custom emoji upload size and GIF frame limits.
   - Fixed file moves and copies on S3 file stores failing for files larger than 5 GiB (for example, finalizing an ``mmctl`` import upload of an import archive over 5 GiB) by using a server-side multipart copy.
-  - Fixed an issue where a bot user created by a plugin could become the first system admin on a fresh install.
+  - Fixed an issue where a bot user created by a plugin could become the first system admin on a fresh install (reported on webapp and browser).
   - Fixed an issue where a custom classification selection was lost if a user selected a preset from the classification preset options.
   - Fixed validation for ``PUT /api/v4/users/{user_id}/auth`` to reject unknown auth services and prevent auth data on email/password users.
   - Fixed an issue that caused a flagged post to continue being visible for content reviewers until a refresh after deletion.
