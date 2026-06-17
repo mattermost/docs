@@ -21,10 +21,20 @@ Platform and OS scope reflects reported and tested environments and may not repr
  - iPhone 8+ devices and later with iOS 16.0+ are [required](https://support.apple.com/en-il/guide/iphone/iphe3fa5df43/16.0/ios/16.0).
 
 ### Improvements
- - Coming soon.
+ - Added iOS PushKit + CallKit support for Mattermost Calls. The native iOS incoming-call UI now appears when a call is received while the app is backgrounded, locked, or closed; users can answer or decline from the lock screen, get lock-screen / control-center controls during an active call, and the system handles audio routing. The Android microphone foreground service was reimplemented as part of ``@mattermost/calls-native``, replacing the ``@voximplant/react-native-foreground-service`` dependency (no user-visible change on Android).
+ - Added support for inline action buttons in markdown messages on mobile via the ``mmaction://`` link scheme. Buttons render in posts from bots, webhooks and server plugins, and trigger the same interactive dialog flow as the webapp.
+ - Added Offline Persistence Timer support for Mobile Ephemeral Mode. Added settings for monitoring offline usage and honoring organizations to purge the mattermost app data when needed.
+ - Added support for conversation-entity backed agent posts (mattermost-plugin-agents v2.0), including server-computed approval state and per-requester tool call scoping.
 
 ### Bug Fixes
- - Coming soon.
+ - Fixed a user interface issue where custom status appeared misaligned in the channel header.
+ - Fixed an issue with the copy code button color with header button theming across Sapphire and Denim themes.
+ - Fixed an issue where an unsaved post could briefly reappear in Saved Messages.
+ - Fixed an issue where pinned messages were displayed in the wrong order.
+ - Fixed an issue where opening an archived channel could hang, and joining an archived channel failed on iOS.
+ - Fixed an issue where scheduled messages with an invalid time displayed "Invalid Date".
+ - Fixed an issue where an archived-channel banner could briefly flicker when dismissing dialogs.
+ - Fixed an issue where archiving a channel redirected users to the channel list instead of keeping users in the archived channel (reported on iOS and Android).
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
