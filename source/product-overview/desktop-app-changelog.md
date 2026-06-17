@@ -9,7 +9,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 (release-v6-2)=
 ## Release v6.2 (Extended Support Release)
 
-- **v6.2.1, released 2026-06-04**
+- **v6.2.1, released 2026-06-17**
 
   - Mattermost Desktop App v6.2.1 contains medium severity level security fixes. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Improved robustness of the downloads handler when handling unexpected network responses.
@@ -271,7 +271,7 @@ Mattermost Desktop App v6.0.0 contains low severity level security fixes. Upgrad
 (release-v5-13)=
 ## Release v5.13 (Extended Support Release)
 
-- **v5.13.7, released 2026-06-04**
+- **v5.13.7, released 2026-06-17**
 
   - Mattermost Desktop App v5.13.7 contains a medium severity level security fix. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 
