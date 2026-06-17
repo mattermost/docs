@@ -64,7 +64,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
   - Added OAuth2/OpenID Connect provider connectivity status (GitLab, Google, Office365, OpenID) to the support packet diagnostics.
   - Added database diagnostics to the support packet, covering connection pool stats on every supported driver and PostgreSQL aggregate performance indicators (cache hit ratio, deadlocks, temp files, lock wait/idle activity, longest running query, and Posts autovacuum/dead tuples). Per-query timeouts and partial-failure handling keep packet generation resilient when individual pg_stat queries fail.
   - Added personal access token expiry support. Tokens can now be required to expire within a configured maximum lifetime via the new ``ServiceSettings.MaximumPersonalAccessTokenLifetimeDays`` System Console setting. The policy applies only to newly created tokens; bot tokens are exempt.
-  - Added an ``ExpiresAt`` column to the ``UserAccessTokens`` table; expired personal access tokens are rejected with HTTP 401 and reaped hourly by a new background job (``cleanup_expired_access_tokens``).
+  - Added an ``ExpiresAt`` column to the ``UserAccessTokens`` table; expired personal access tokens are rejected with HTTP 401 and reaped hourly by a new background job (``cleanup_expired_access_tokens``). Tokens with ``ExpiresAt = 0`` remain non-expiring, preserving behavior for all pre-existing tokens.
   - Added a pre-migration setup to fix incorrect database migration numbers that prevented upgrading Mattermost from v10.11 to v11.7.
   - Added a new ``FileSettings.ExtractContentTimeout`` setting (default 10 seconds) that limits how long a single uploaded document's content extraction occupies a worker, and moved document content extraction to a dedicated, non-blocking worker pool so it no longer delays file uploads for other users.
   - Stopped logging the email subject in the "sending mail" server log to prevent potential exposure of PII such as sender names from DM and mention notifications.
@@ -122,8 +122,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
   - The ``POST /users/{id}/tokens`` endpoint now accepts a client-supplied ``expires_at`` (Unix milliseconds) for creating expiring personal access tokens.
 
 ### Audit Log Event Changes
-  - Added ``AuditEventRejectExpiredUserAccessToken`` audit log event, emitted when an expired personal access token is rejected.
-  - Added ``expireUserAccessToken`` audit log event, emitted when expired personal access tokens are reaped by the background cleanup job.
+  - Added ``AuditEventRejectExpiredUserAccessToken`` audit log event, emitted when an expired personal access token is rejected and reap ``expireUserAccessToken``.
 
 ### Go Version
  - v11.9 is built with Go ``v1.26.3``.
