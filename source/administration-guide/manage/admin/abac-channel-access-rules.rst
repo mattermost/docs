@@ -116,6 +116,10 @@ From Mattermost v11.8.0, admins can use **Simulate access** in Channel Settings 
 - Simulation can evaluate draft rules before they're saved, so you can confirm the intended scope without affecting live channel access.
 - Some denied results may indicate that the decision came from another policy. In that case, Mattermost shows that access was denied by another policy without exposing policy details you aren't authorized to see.
 
+.. note::
+
+  Channel-level permission policies and **Simulate access** are gated by the ``PermissionPolicies`` feature flag (``MM_FEATUREFLAGS_PERMISSIONPOLICIES``) and require a Mattermost Enterprise Advanced license. See the Mattermost developer documentation for details on `enabling feature flags in a self-hosted deployment <https://developers.mattermost.com/contribute/more-info/server/feature-flags/#self-hosted-and-local-development>`_. Mattermost Cloud customers can request this feature flag be enabled by contacting their Mattermost Account Manager or by `creating a support ticket <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=11184911962004>`_.
+
 Manage team-scoped membership policies in Team Settings
 -------------------------------------------------------
 

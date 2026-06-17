@@ -77,6 +77,10 @@ From Mattermost v11.8.0, you can use **Simulate access** to preview allowed and 
 
 Simulation can test draft policy changes before they affect live channel access or file permissions. Detailed rule and attribute information is shown only when the denial comes from the policy or scope you're editing; otherwise, Mattermost may show that access was denied by another policy.
 
+.. note::
+
+  **Simulate access** and channel-level permission policies for file upload and file download are gated by the ``PermissionPolicies`` feature flag (``MM_FEATUREFLAGS_PERMISSIONPOLICIES``) and require a Mattermost Enterprise Advanced license. See the Mattermost developer documentation for details on `enabling feature flags in a self-hosted deployment <https://developers.mattermost.com/contribute/more-info/server/feature-flags/#self-hosted-and-local-development>`_. Mattermost Cloud customers can request this feature flag be enabled by contacting their Mattermost Account Manager or by `creating a support ticket <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=11184911962004>`_.
+
 Manage rules
 ~~~~~~~~~~~~
 
