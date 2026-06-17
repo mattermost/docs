@@ -111,7 +111,7 @@ For system-wide permission policies that restrict file upload and download actio
 Simulate access
 ----------------
 
-From Mattermost v11.8.0, admins can use **Simulate access** in Channel Settings to preview whether selected users can perform actions such as joining a channel, uploading files, or downloading files before saving policy changes.
+From Mattermost v11.8.0, admins can use **Simulate access** in Channel Settings to preview whether selected users can perform actions such as uploading files or downloading files before saving policy changes.
 
 - Simulation can evaluate draft rules before they're saved, so you can confirm the intended scope without affecting live channel access.
 - Some denied results may indicate that the decision came from another policy. In that case, Mattermost shows that access was denied by another policy without exposing policy details you aren't authorized to see.
