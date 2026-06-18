@@ -25,12 +25,13 @@ Platform and OS scope reflects reported and tested environments and may not repr
 #### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
   - **Changes to All plans:**
+    - Under ``AccessControlSettings`` in ``config.json``, added ``EnforceDeviceIDConsistency`` configuration setting to enforce device ID consistency across sessions.
+    - Under ``AccessControlSettings`` in ``config.json``, added ``TrustProxyDeviceIdentityHeader`` configuration setting to trust a proxy-supplied device identity header for session attribute collection.
+  - **Changes to All plans:**
     - Under ``FileSettings`` in ``config.json``, added ``AzureStorageAccount``, ``AzureAccessKey``, ``AzureContainer``, ``AzurePathPrefix``, ``AzureEndpoint``, ``AzureSSL``, and ``AzureRequestTimeoutMilliseconds`` configuration settings for Azure Blob Storage filestore backend support.
     - Under ``FileSettings`` in ``config.json``, added ``AzureCloud``, ``ExportAzureCloud``, ``AzureAuthMode``, ``ExportAzureAuthMode``, and ``ExportAzurePresignExpiresSeconds`` configuration settings for Azure Blob Storage support.
     - Under ``FileSettings`` in ``config.json``, added ``ExtractContentTimeout`` configuration setting to limit how long a single uploaded document's content extraction occupies a worker (default 10 seconds).
     - Under ``ServiceSettings`` in ``config.json``, added ``MaximumPersonalAccessTokenLifetimeDays`` configuration setting to require personal access tokens to expire within a configured maximum lifetime (``0`` imposes no policy).
-    - Under ``AccessControlSettings`` in ``config.json``, added ``EnforceDeviceIDConsistency`` configuration setting to enforce device ID consistency across sessions.
-    - Under ``AccessControlSettings`` in ``config.json``, added ``TrustProxyDeviceIdentityHeader`` configuration setting to trust a proxy-supplied device identity header for session attribute collection.
 
 ### Improvements
 See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-available/) on the highlights in our latest release.
