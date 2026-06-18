@@ -9,9 +9,16 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 (release-v6-2)=
 ## Release v6.2 (Extended Support Release)
 
-**Release Day: 2026-05-15**
+- **v6.2.1, released 2026-06-17**
 
-**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/latest)
+  - Mattermost Desktop App v6.2.1 contains medium severity level security fixes. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Improved robustness of the downloads handler when handling unexpected network responses.
+
+- **v6.2.0, released 2026-05-15**
+
+  - Original v6.2.0 release
+
+**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/v6.2.1)
 
 ### Compatibility
 
@@ -264,6 +271,10 @@ Mattermost Desktop App v6.0.0 contains low severity level security fixes. Upgrad
 (release-v5-13)=
 ## Release v5.13 (Extended Support Release)
 
+- **v5.13.7, released 2026-06-17**
+
+  - Mattermost Desktop App v5.13.7 contains a medium severity level security fix. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+
 - **v5.13.6, released 2026-05-13**
 
   - Mattermost Desktop App v5.13.6 contains medium severity level security fixes. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
@@ -298,7 +309,7 @@ Mattermost Desktop App v6.0.0 contains low severity level security fixes. Upgrad
 
   - Original v5.13.0 release
 
-**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/v5.13.6)
+**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/v5.13.7)
 
 ### Compatibility
 
