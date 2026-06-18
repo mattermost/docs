@@ -25,6 +25,7 @@ Platform and OS scope reflects reported and tested environments and may not repr
  - Added support for inline action buttons in markdown messages on mobile via the ``mmaction://`` link scheme. Buttons render in posts from bots, webhooks and server plugins, and trigger the same interactive dialog flow as the webapp.
  - Added Offline Persistence Timer support for Mobile Ephemeral Mode. Added settings for monitoring offline usage and honoring organizations to purge the mattermost app data when needed.
  - Added support for conversation-entity backed agent posts (mattermost-plugin-agents v2.0), including server-computed approval state and per-requester tool call scoping.
+ - Removed legacy interactive dialog code path.
 
 ### Bug Fixes
  - Fixed a user interface issue where custom status appeared misaligned in the channel header.
