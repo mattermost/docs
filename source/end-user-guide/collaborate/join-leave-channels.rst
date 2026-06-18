@@ -108,3 +108,13 @@ When you leave a private channel, you must be re-added by another channel member
   .. image:: ../../images/mobile-confirm-leave-a-channel.jpg
       :alt: Tap on Leave to confirm your choice.
       :scale: 30
+
+Leave a public channel added by a membership policy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+From Mattermost v11.8.0, when you leave a public channel you were added to by a membership policy, Mattermost asks you to confirm:
+
+- Choosing **Leave channel** removes you from the channel.
+- Choosing **Mute instead** keeps you in the channel and mutes its notifications.
+
+If the channel is already muted, Mattermost shows **Cancel** and **Leave channel** instead of **Mute instead**.

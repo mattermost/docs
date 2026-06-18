@@ -40,11 +40,14 @@ Configure access policies
 
 Once enabled, you have multiple ways to configure access policies in Mattermost:
 
+From Mattermost v11.8.0, admins can configure membership policies for both public and private channels, permission policies for file upload and file download, and simulate policy outcomes before saving.
+
 **System Admins can:**
 
-- Create :doc:`system-wide access policies </administration-guide/manage/admin/abac-system-wide-policies>` that can be assigned across multiple channels in the System Console.
+- Create :doc:`system-wide access policies </administration-guide/manage/admin/abac-system-wide-policies>` that can be assigned across multiple channels in the System Console. Membership policies can be applied to both public and private channels, with :ref:`advisory behavior on public channels <administration-guide/manage/admin/abac-channel-access-rules:public and private channel behavior>`.
 - Assign :ref:`individual channel policies <administration-guide/manage/admin/abac-system-wide-policies:define access controls per channel>` to specific channels in the System Console.
 - Define :ref:`permission policies <administration-guide/manage/admin/abac-system-wide-policies:permission policies>` that restrict actions such as file upload and file download based on user attributes.
+- :ref:`Simulate policy outcomes <administration-guide/manage/admin/abac-system-wide-policies:simulate access>` to preview whether selected users can perform actions such as joining a channel or uploading and downloading files before saving policy changes.
 
 **Team Admins can:**
 
