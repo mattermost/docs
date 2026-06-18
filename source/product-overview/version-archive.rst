@@ -18,7 +18,7 @@ If you want to check that the version of Mattermost you are installing is the of
     - SBOM Download Link: https://releases.mattermost.com/11.8.1/sbom-enterprise-v11.8.1.json
   Mattermost Enterprise Edition v11.7.5 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-7-extended-support-release>`__ - `Download <https://releases.mattermost.com/11.7.5/mattermost-11.7.5-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/11.7.5/mattermost-11.7.5-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``<TBD - add Enterprise v11.7.5 SHA-256 checksum>``
+    - SHA-256 Checksum: ``7a2490baad197f43f2a1fe5f9ef3b7355c0754f450a158ab63409f30205cfceb``
     - GPG Signature: https://releases.mattermost.com/11.7.5/mattermost-11.7.5-linux-amd64.tar.gz.sig
     - SBOM Download Link: https://releases.mattermost.com/11.7.5/sbom-enterprise-v11.7.5.json
   Mattermost Enterprise Edition v11.6.5 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-6-feature-release>`__ - `Download <https://releases.mattermost.com/11.6.5/mattermost-11.6.5-linux-amd64.tar.gz?src=arc>`__
@@ -496,7 +496,7 @@ If you want to check that the version of Mattermost you are installing is the of
     - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v11.8.1/sbom-mattermost-v11.8.1.json
   Mattermost Team Edition v11.7.5 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-7-extended-support-release>`__ - `Download <https://releases.mattermost.com/11.7.5/mattermost-team-11.7.5-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/11.7.5/mattermost-team-11.7.5-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``<TBD - add Team Edition v11.7.5 SHA-256 checksum>``
+    - SHA-256 Checksum: ``dae515358366a2ac610ae1c424bd40752a0898b971d1517a499898965aaf527d``
     - GPG Signature: https://releases.mattermost.com/11.7.5/mattermost-team-11.7.5-linux-amd64.tar.gz.sig
     - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v11.7.5/sbom-mattermost-v11.7.5.json
   Mattermost Team Edition v11.6.5 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-6-feature-release>`__ - `Download <https://releases.mattermost.com/11.6.5/mattermost-team-11.6.5-linux-amd64.tar.gz?src=arc>`__
