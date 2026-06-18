@@ -19,8 +19,12 @@ Platform and OS scope reflects reported and tested environments and may not repr
 **Release day: 2026-07-16**
 
 ### Upgrade Impact
+
 #### Database Schema Changes
- - 
+ - The following schema changes are included in the v11.8 release. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
+   - Added the ``voipdeviceid`` column to the ``sessions`` table to support VoIP device tracking; metadata-only DDL on PostgreSQL 11+, minimal performance impact expected.
+   - Added composite index ``idx_access_control_policies_type_id`` on ``AccessControlPolicies(Type, Id)`` to improve policy lookup performance with no downtime or blocking impact.
+   - Removed orphaned ``threadmemberships`` rows where the user is no longer a channel member; irreversible data-only migration that may run slowly on large instances.
 
 #### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
