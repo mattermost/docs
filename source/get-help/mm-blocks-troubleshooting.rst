@@ -4,18 +4,18 @@ Troubleshoot MM Blocks
 .. include:: ../_static/badges/all-commercial.rst
   :start-after: :nosearch:
 
-Integration posts that use :doc:`MM Blocks </integrations-guide/mm-blocks>` show structured content—text, images, buttons, menus, and layouts—directly in a channel. This page covers common issues when MM Blocks do not render or respond as expected, with emphasis on mobile clients.
+Integration posts that use MM Blocks show structured content—including text, images, buttons, and menus—directly in a channel. This page covers common issues when MM Blocks do not render or respond as expected, with emphasis on mobile clients.
 
 MM Blocks content does not appear
 ---------------------------------
 
-**Symptoms:** A post shows only plain text (or no content) and the expected buttons, images, or layout blocks are missing.
+**Symptoms:** A post shows only plain text (or no content) and the expected buttons, images, or content blocks are missing.
 
 **Try the following:**
 
 1. **Update your client.** MM Blocks require a current Mattermost web, desktop, or mobile app. See :doc:`client availability </end-user-guide/access/client-availability>` for platform support.
 2. **Confirm the integration payload.** The post must include a non-empty ``props.mm_blocks`` array (or a legacy format such as message attachments that the client translates). Ask your integration owner or system admin to verify the webhook or bot payload.
-3. **Check the feature flag (system admins).** Self-hosted deployments can disable MM Blocks by setting ``MM_FEATUREFLAGS_MMBLOCKSENABLED=false``. When disabled, native MM Blocks payloads are not rendered and their actions are rejected. See :doc:`MM Blocks </integrations-guide/mm-blocks>` for details.
+3. **Check the feature flag (system admins).** Self-hosted deployments can disable MM Blocks by setting ``MM_FEATUREFLAGS_MMBLOCKSENABLED=false``. When disabled, native MM Blocks payloads are not rendered and their actions are rejected.
 4. **Reload the channel.** Pull to refresh on mobile, or switch channels and return, to fetch the latest post data.
 
 Buttons or menus do not respond
@@ -71,7 +71,7 @@ Get more help
 -------------
 
 - **End users:** See :doc:`Extend Mattermost with integrations </end-user-guide/collaborate/extend-mattermost-with-integrations>` for how to use buttons, menus, and expandable content in channels.
-- **Developers:** See :doc:`MM Blocks </integrations-guide/mm-blocks>` for payload format, action APIs, and migration guidance.
+- **Developers:** See the `MM Blocks reference <https://developers.mattermost.com/integrate/reference/mm-blocks/>`_ for payload format, action APIs, and migration guidance.
 - **Mobile deployment issues:** See :doc:`Mobile deployment troubleshooting </deployment-guide/mobile/mobile-troubleshooting>` for connectivity, push notification, and app install problems unrelated to MM Blocks content.
 
 If you continue to experience issues, visit the `Mattermost Troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`_ or contact your system administrator.

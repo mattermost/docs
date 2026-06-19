@@ -53,9 +53,9 @@ Mattermost doesn't currently support the ability to attach files to a post made 
 What are MM Blocks?
 --------------------
 
-:doc:`MM Blocks </integrations-guide/mm-blocks>` are Mattermost's structured format for rich, interactive posts. Integrations set ``props.mm_blocks`` (content and controls) and ``props.mm_blocks_actions`` (integration URLs and navigation targets) on a post.
+MM Blocks are Mattermost's structured format for rich, interactive integration posts. They are the recommended way to create richly formatted interactive messages with text, images, buttons, and menus.
 
-MM Blocks are the recommended way to build interactive messages with buttons, menus, images, and layouts. Legacy `message attachments <https://developers.mattermost.com/integrate/reference/message-attachments/>`_ and other formats (Slack Block Kit ``blocks``, Adaptive Cards ``cards``) are still accepted and translated into MM Blocks at render time.
+See the `MM Blocks reference <https://developers.mattermost.com/integrate/reference/mm-blocks/>`_ in the developer documentation for integration details. If content does not render as expected, see :doc:`Troubleshoot MM Blocks </get-help/mm-blocks-troubleshooting>`.
 
 Where can I find existing integrations?
 ---------------------------------------

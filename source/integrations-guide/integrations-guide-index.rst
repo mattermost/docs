@@ -88,7 +88,7 @@ Incoming Webhooks
 
 :doc:`Incoming webhooks </integrations-guide/incoming-webhooks>` allow external applications to post messages into Mattermost channels and direct messages. They are a simple way to receive notifications and data from other services in real-time and require only basic setup.
 
-Additionally, Mattermost webhook payloads are :ref:`fully compatible <integrations-guide/incoming-webhooks:slack compatibility>` with Slack’s webhook format to make migration easier. For new interactive content, use :doc:`MM Blocks </integrations-guide/mm-blocks>` instead of message attachments.
+Additionally, Mattermost webhook payloads are :ref:`fully compatible <integrations-guide/incoming-webhooks:slack compatibility>` with Slack’s webhook format to make migration easier. For new interactive content, use `MM Blocks <https://developers.mattermost.com/integrate/reference/mm-blocks/>`_ instead of message attachments.
 
 Outgoing Webhooks
 ^^^^^^^^^^^^^^^^^^

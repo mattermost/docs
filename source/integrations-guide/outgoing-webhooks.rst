@@ -151,11 +151,11 @@ The JSON response can contain the following parameters:
    * - ``icon_url``
      - Overrides the default profile picture. Requires :ref:`Enable integrations to override profile picture icons <administration-guide/configure/integrations-configuration-settings:enable integrations to override profile picture icons>` to be enabled.
    * - ``attachments``
-     - (Required if ``text`` and ``props.mm_blocks`` are not set) An array of `message attachment <https://developers.mattermost.com/integrate/reference/message-attachments/>`_ objects. Legacy format; prefer ``props.mm_blocks`` for new integrations. See :doc:`MM Blocks </integrations-guide/mm-blocks>`.
+     - (Required if ``text`` and ``props.mm_blocks`` are not set) An array of `message attachment <https://developers.mattermost.com/integrate/reference/message-attachments/>`_ objects. Legacy format; use `MM Blocks <https://developers.mattermost.com/integrate/reference/mm-blocks/>`_ for new integrations.
    * - ``type``
      - Sets the post type, mainly for plugins. If set, must begin with ``custom_``.
    * - ``props``
-     - A JSON object for storing metadata. Use ``props.mm_blocks`` and ``props.mm_blocks_actions`` for rich, interactive content (see :doc:`MM Blocks </integrations-guide/mm-blocks>`).
+     - A JSON object for storing metadata. Use `MM Blocks <https://developers.mattermost.com/integrate/reference/mm-blocks/>`_ for rich, interactive content.
    * - ``priority``
      - Sets the priority of the message. See `message priorities <https://developers.mattermost.com/integrate/reference/message-priority/>`_.
 
@@ -184,14 +184,14 @@ This response would produce a threaded reply to the original message that trigge
   :alt: Example of a full response from an outgoing webhook.
   :width: 400
 
-You can also include :doc:`MM Blocks </integrations-guide/mm-blocks>`, `message attachments <https://developers.mattermost.com/integrate/reference/message-attachments/>`_, and `interactive messages <https://developers.mattermost.com/integrate/plugins/interactive-messages/>`_ in your response to create more advanced workflows.
+You can also include `MM Blocks <https://developers.mattermost.com/integrate/reference/mm-blocks/>`_, `message attachments <https://developers.mattermost.com/integrate/reference/message-attachments/>`_, and `interactive messages <https://developers.mattermost.com/integrate/plugins/interactive-messages/>`_ in your response to create more advanced workflows.
 
 Do More with Outgoing Webhooks
 ------------------------------
 
 Turn keyword-triggered callbacks into guided, in-channel workflows by returning buttons, menus, and other interactive elements in your webhook responses so users can act immediately.
 
-- :doc:`MM Blocks </integrations-guide/mm-blocks>`: **Recommended.** Return structured, interactive content with ``props.mm_blocks`` and ``props.mm_blocks_actions``.
+- `MM Blocks <https://developers.mattermost.com/integrate/reference/mm-blocks/>`_: **Recommended.** Return structured, interactive content with text, buttons, and menus.
 - `Message Attachments <https://developers.mattermost.com/integrate/reference/message-attachments/>`_: Legacy format for rich, structured results. Existing payloads are translated to MM Blocks at render time; use MM Blocks for new integrations.
 - `Interactive Messages <https://developers.mattermost.com/integrate/plugins/interactive-messages/>`_: Present next-step actions (Acknowledge, Assign, Escalate) as buttons/menus directly in your response—no context switching.
 - `Interactive Dialogs <https://developers.mattermost.com/integrate/plugins/interactive-dialogs/>`_: When a button/menu click requires more info (e.g., “Acknowledge with note”, “Assign to user”), open a dialog to collect structured inputs with required fields, min/max lengths, server-driven user/channel pickers, validated defaults, inline field errors, placeholders, and help text.
