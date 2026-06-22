@@ -29,6 +29,7 @@ Platform and OS scope reflects reported and tested environments and may not repr
    - Added ``'rank'`` to the ``property_field_type`` enum via a catalog-only ``ALTER TYPE`` statement; no user-table locks are acquired and no downtime is required for the upgrade.
    - Converted up to three classification-marking ``PropertyFields`` from type ``'select'`` to ``'rank'`` and backfilled rank ordering into their options; negligible performance impact.
    - Added ``rank``-type support to the ``AttributeView`` materialized view so ABAC policies can evaluate ranked property options; no performance impact expected on feature-flagged deployments.
+   - Renamed ``system_classification`` and ``channel_classification`` entries in ``PropertyFields`` to the canonical name ``classification``; affects at most two rows with no performance impact.
 
 #### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
