@@ -63,7 +63,7 @@ Review the following support paths for enterprise search based on the version yo
 
     1. Disable "compatibility mode" in OpenSearch.
     2. Upgrade Mattermost server.
-    3. Update the Mattermost ``ElasticsearchSettings.Backend`` configuration setting value from ``elasticsearch`` to ```opensearch``` manually or using :ref:`mmctl <administration-guide/manage/mmctl-command-line-tool:mmctl config set>`. This value cannot be changed using the System Console. See the Mattermost search :ref:`backend type <administration-guide/configure/environment-configuration-settings:backend type>` configuration setting documentation for additional details.
+    3. Update the Mattermost ``ElasticsearchSettings.Backend`` configuration setting value from ``elasticsearch`` to ``opensearch`` manually or using :ref:`mmctl <administration-guide/manage/mmctl-command-line-tool:mmctl config set>`. This value cannot be changed using the System Console. See the Mattermost search :ref:`backend type <administration-guide/configure/environment-configuration-settings:backend type>` configuration setting documentation for additional details.
     4. Restart the Mattermost server.
 
 Frequently asked questions (FAQ)
