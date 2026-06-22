@@ -11,7 +11,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
 - **v6.2.2, released 2026-06-22**
 
-  - Mattermost Desktop App v6.2.2 contains medium severity level security fixes. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue where notifications were dropped when the web app sent empty fields for Direct Messages, Group Messages, or system notifications.
 
 - **v6.2.1, released 2026-06-17**
 
