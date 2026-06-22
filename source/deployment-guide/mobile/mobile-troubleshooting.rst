@@ -20,6 +20,24 @@ Login with ADFS/Office365 is not working
 
 In line with Microsoft guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_. 
 
+How do I attach mobile app logs to a message?
+---------------------------------------------
+
+Use ``/mobile-logs`` during mobile troubleshooting to let users attach Mattermost mobile app logs to messages. Running ``/mobile-logs on`` shows the **Attach app logs** option in the attachment menu of the message composer, so users can include device-side logs when messaging an administrator or support engineer. Users can also turn this option on or off from the **Report a problem** screen in the mobile app. The command responds with an ephemeral message visible only to the user who ran it.
+
+.. important::
+
+    This command requires Mattermost mobile app v2.38 or later.
+
+- Enable **Attach app logs** for yourself using ``/mobile-logs on``.
+- Disable **Attach app logs** for yourself using ``/mobile-logs off``.
+- Check whether **Attach app logs** is enabled using ``/mobile-logs status``.
+- System admins can manage the setting for another user by appending a username, such as ``/mobile-logs on @username``, ``/mobile-logs off @username``, or ``/mobile-logs status @username``.
+
+.. important::
+
+    Non-admin users can only manage their own preference. Attempts to target another account return a neutral **Unable to change mobile log settings for that user** message to avoid username enumeration. Preference changes made through this command are recorded in the audit log.
+
 I see a “Connecting…” bar that does not go away
 -----------------------------------------------
 
@@ -147,4 +165,4 @@ If you did not receive a push notification when testing push notifications, use 
 
   To conserve disk space, once your push notification issue is resolved, go to  **System Console > Environment > Logging > File Log Level**, then select **ERROR** to switch your logging detail level from **DEBUG** to **Errors Only**.
 
-If push notifications are not being delivered on the mobile device, confirm that you're logged in to the **Native** mobile app session through **Profile > Security > View and Log Out of Active Sessions**. Otherwise, the `DeviceId` won't get registered in the `Sessions` table and notifications won't be delivered.
+If push notifications are not being delivered on the mobile device, confirm that you're logged in to the **Native** mobile app session through **Profile > Security > View and Log Out of Active Sessions**. Otherwise, the ``DeviceId`` won't get registered in the ``Sessions`` table and notifications won't be delivered.
