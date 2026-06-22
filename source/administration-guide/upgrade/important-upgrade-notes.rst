@@ -57,31 +57,31 @@ We recommend reviewing the `additional upgrade notes <#additional-upgrade-notes>
 |                                                    |    -- Down migration (PostgreSQL)                                                                                                                                |
 |                                                    |    DROP INDEX CONCURRENTLY IF EXISTS idx_access_control_policies_type_id;                                                                                        |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                    | This migration removes orphaned rows from the ``threadmemberships`` table — specifically, rows where the associated user is no longer a member of the channel 
-|                                                    | that the thread belongs to. The cleanup is performed via a filtered ``DELETE`` using a three-way join across ``threadmemberships``, ```threads``, and 
-|                                                    | ``channelmembers``. No schema objects (tables, columns, or indexes) are added or removed; only data rows are affected. Note for large instances: this migration 
-|                                                    | issues a single unbatched delete that scans the entirety of ``threadmemberships`` with a join against ``threads`` and ``channelmembers``. On databases with tens 
-|                                                    | of millions of rows or significant historical channel-membership churn, this query may run for an extended period, block autovacuum on ``threadmemberships``, 
-|                                                    | increase WAL pressure, and contribute to replication lag. Administrators of large deployments should test execution time on a representative dataset before 
-|                                                    | upgrading and consider scheduling the upgrade during a low-traffic window. The down migration contains no rollback SQL because the deleted rows cannot be 
-|                                                    | recovered; this migration is irreversible. The migrations are fully backwards-compatible and no database downtime is expected for this upgrade. The SQL queries 
-|                                                    | included are:
-|                                                    | 
-|                                                    | .. code-block:: sql
-|                                                    | 
-|                                                    |    -- Drop ThreadMembership rows whose user is no longer a member of the thread's channel.
-|                                                    |    DELETE FROM threadmemberships WHERE (postid, userid) IN (
-|                                                    |        SELECT
-|                                                    |            threadmemberships.postid,
-|                                                    |            threadmemberships.userid
-|                                                    |        FROM
-|                                                    |            threadmemberships
-|                                                    |            JOIN threads ON threads.postid = threadmemberships.postid
-|                                                    |            LEFT JOIN channelmembers ON channelmembers.userid = threadmemberships.userid
-|                                                    |                AND threads.channelid = channelmembers.channelid
-|                                                    |        WHERE
-|                                                    |            channelmembers.channelid IS NULL
-|                                                    |    );
+|                                                    | This migration removes orphaned rows from the ``threadmemberships`` table — specifically, rows where the associated user is no longer a member of the channel    |
+|                                                    | that the thread belongs to. The cleanup is performed via a filtered ``DELETE`` using a three-way join across ``threadmemberships``, ```threads``, and            |
+|                                                    | ``channelmembers``. No schema objects (tables, columns, or indexes) are added or removed; only data rows are affected. Note for large instances: this migration  |
+|                                                    | issues a single unbatched delete that scans the entirety of ``threadmemberships`` with a join against ``threads`` and ``channelmembers``. On databases with tens |
+|                                                    | of millions of rows or significant historical channel-membership churn, this query may run for an extended period, block autovacuum on ``threadmemberships``,    |
+|                                                    | increase WAL pressure, and contribute to replication lag. Administrators of large deployments should test execution time on a representative dataset before      |
+|                                                    | upgrading and consider scheduling the upgrade during a low-traffic window. The down migration contains no rollback SQL because the deleted rows cannot be        |
+|                                                    | recovered; this migration is irreversible. The migrations are fully backwards-compatible and no database downtime is expected for this upgrade. The SQL queries  |
+|                                                    | included are:                                                                                                                                                    |
+|                                                    |                                                                                                                                                                  |
+|                                                    | .. code-block:: sql                                                                                                                                              |
+|                                                    |                                                                                                                                                                  |
+|                                                    |    -- Drop ThreadMembership rows whose user is no longer a member of the thread's channel.                                                                       |
+|                                                    |    DELETE FROM threadmemberships WHERE (postid, userid) IN (                                                                                                     |
+|                                                    |        SELECT                                                                                                                                                    |
+|                                                    |            threadmemberships.postid,                                                                                                                             |
+|                                                    |            threadmemberships.userid                                                                                                                              |
+|                                                    |        FROM                                                                                                                                                      |
+|                                                    |            threadmemberships                                                                                                                                     |
+|                                                    |            JOIN threads ON threads.postid = threadmemberships.postid                                                                                             |
+|                                                    |            LEFT JOIN channelmembers ON channelmembers.userid = threadmemberships.userid                                                                          |
+|                                                    |                AND threads.channelid = channelmembers.channelid                                                                                                  |
+|                                                    |        WHERE                                                                                                                                                     |
+|                                                    |            channelmembers.channelid IS NULL                                                                                                                      |
+|                                                    |    );                                                                                                                                                            |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v11.8                                              | The Custom Profile Attributes property group is renamed from ``custom_profile_attributes`` to ``access_control``, and CPA fields and values are migrated from    |
 |                                                    | the legacy property model to the v2 model. The functionality of the CPA feature is unchanged. Plugin developers that use CPA will need to register against the   |
