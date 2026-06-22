@@ -9,8 +9,7 @@ Chinese, Japanese and Korean search
 
 .. attention::
 
-   Starting in Mattermost v11.9, CJK post search is enabled by default on PostgreSQL.
-   In Mattermost v11.5 through v11.8, enable the `feature flag <https://developers.mattermost.com/contribute/more-info/server/feature-flags/#changing-feature-flag-values>`_ ``MM_FEATUREFLAGS_CJKSEARCH``.
+   Starting on Mattermost v11.5, searching for Chinese, Japanese or Korean (CJK) characters can be enabled with the `feature flag <https://developers.mattermost.com/contribute/more-info/server/feature-flags/#changing-feature-flag-values>`_ ``MM_FEATUREFLAGS_CJKSEARCH``.
 
    The general recommendation of `using either Elasticsearch or Opensearch once the server reaches 2.5 million posts <https://docs.mattermost.com/administration-guide/scale/enterprise-search.html#do-i-need-to-use-elasticsearch-or-aws-opensearch>`_ still applies.
 
