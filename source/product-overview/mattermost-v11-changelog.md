@@ -45,6 +45,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
   - Pre-packaged Agents plugin version [v2.4.0](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v2.4.0).
   - Pre-packaged Calls plugin version [v1.12.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.12.0).
   - Pre-packaged Boards plugin version [v9.3.0](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.3.0).
+  - Pre-packaged GitLab plugin version [v1.13.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.13.0).
   - Added zoom and pan support to the image file preview: use the scroll wheel to zoom at the cursor, click-and-drag to pan, and +/-/0 keyboard shortcuts (reported on webapp).
   - Added a license preview and diff view when uploading a new license in the System Console, allowing administrators to compare the new license's features with the current license before applying.
   - Added a toast notification for plugin-rejected file uploads, consistent with the existing notification for rejected downloads.
