@@ -1058,6 +1058,10 @@ Enable video calls in DMs (Experimental)
 
   The ability to enable video calls in DMs is currently :ref:`Experimental <administration-guide/manage/feature-labels:experimental>`.
 
+.. note::
+
+  If your deployment offloads calls to the :doc:`RTCD service </administration-guide/configure/calls-rtcd-setup>`, video in DM calls requires **rtcd v1.2.2 or later**. We recommend running the rtcd version that ships with your Calls plugin release (rtcd v1.2.5 for Calls v1.12.0) and keeping rtcd updated alongside the plugin. Deployments that use the plugin's built-in RTC server (no RTCD) support video without additional configuration.
+
 .. config:setting:: enable-pluginsdcsignaling
   :displayname: Use data channels for signaling media tracks (Plugins - Calls)
   :systemconsole: Plugins > Calls
