@@ -23,7 +23,7 @@ Platform and OS scope reflects reported and tested environments and may not repr
 ### Improvements
  - Added iOS PushKit + CallKit support for Mattermost Calls. The native iOS incoming-call UI now appears when a call is received while the app is backgrounded, locked, or closed; users can answer or decline from the lock screen, get lock-screen / control-center controls during an active call, and the system handles audio routing. The Android microphone foreground service was reimplemented as part of ``@mattermost/calls-native``, replacing the ``@voximplant/react-native-foreground-service`` dependency (no user-visible change on Android).
  - Added support for inline action buttons in markdown messages on mobile via the ``mmaction://`` link scheme. Buttons render in posts from bots, webhooks and server plugins, and trigger the same interactive dialog flow as the webapp.
- - Added Offline Persistence Timer support for Mobile Ephemeral Mode. Added settings for monitoring offline usage and honoring organizations to purge the mattermost app data when needed.
+ - Added Offline Persistence Timer support for Mobile Ephemeral Mode. Added settings for monitoring offline usage and honoring organizations to purge the mattermost app data when needed. Ephemeral mode on mobile depends on the feature flag turned on for the server side.
  - Added support for conversation-entity backed agent posts (mattermost-plugin-agents v2.0), including server-computed approval state and per-requester tool call scoping.
  - Removed legacy interactive dialog code path.
 
