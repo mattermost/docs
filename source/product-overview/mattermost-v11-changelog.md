@@ -25,6 +25,7 @@ Platform and OS scope reflects reported and tested environments and may not repr
    - Added the ``voipdeviceid`` column to the ``sessions`` table to support VoIP device tracking; metadata-only DDL on PostgreSQL 11+, minimal performance impact expected.
    - Added composite index ``idx_access_control_policies_type_id`` on ``AccessControlPolicies(Type, Id)`` to improve policy lookup performance with no downtime or blocking impact.
    - Removed orphaned ``threadmemberships`` rows where the user is no longer a channel member; irreversible data-only migration that may run slowly on large instances.
+   - Added a ``lastused`` column to ``incomingwebhooks`` with a negligible-duration catalog-only lock and no downtime required.
 
 #### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
