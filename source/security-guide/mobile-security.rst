@@ -90,7 +90,7 @@ Learn more about :ref:`enabling secure file preview on mobile <administration-gu
 Mobile watermarking
 -------------------
 
-Mobile watermarking is an experimental Enterprise capability available from Mattermost v11.7 onward that helps organizations identify the source and timing of mobile screenshots or shared screen captures. When enabled by a system admin, authenticated Mattermost mobile sessions display a visible watermark overlay that includes the user's username, the server domain, and the current date and time. This supports data loss prevention (DLP) workflows by attributing any image taken of the Mattermost mobile app to a specific user, server, and point in time.
+Mobile watermarking is an experimental Enterprise Advanced capability available from Mattermost v11.7 onward that helps organizations identify the source and timing of mobile screenshots or shared screen captures. When enabled by a system admin, authenticated Mattermost mobile sessions display a visible watermark overlay that includes the user's username, the server domain, and the current date and time. This supports data loss prevention (DLP) workflows by attributing any image taken of the Mattermost mobile app to a specific user, server, and point in time.
 
 The mobile watermark is a visual overlay only. It does not prevent screenshots, screen recordings, file exports, or content sharing through other means, and it is not a substitute for screen capture prevention or other mobile security controls. Mobile watermarking is disabled by default.
 
