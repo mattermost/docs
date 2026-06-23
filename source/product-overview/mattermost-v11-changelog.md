@@ -21,7 +21,7 @@ Platform and OS scope reflects reported and tested environments and may not repr
 ### Upgrade Impact
 
 #### Database Schema Changes
- - The following schema changes are included in the v11.8 release. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
+ - The following schema changes are included in the v11.9 release. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
    - Added the ``voipdeviceid`` column to the ``sessions`` table to support VoIP device tracking; metadata-only DDL on PostgreSQL 11+, minimal performance impact expected.
    - Added composite index ``idx_access_control_policies_type_id`` on ``AccessControlPolicies(Type, Id)`` to improve policy lookup performance with no downtime or blocking impact.
    - Removed orphaned ``threadmemberships`` rows where the user is no longer a channel member; irreversible data-only migration that may run slowly on large instances.
@@ -92,6 +92,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
   - Added a ``mattermost db ping`` subcommand that waits for the database to become reachable, with configurable ``--timeout`` and ``--retry-interval`` flags.
   - Added an expiry chooser to the **Personal Access Token** creation user interface in **Account Settings**, backed by the new ``ServiceSettings.MaximumPersonalAccessTokenLifetimeDays`` admin policy, which is now also configurable in the ``System Console`` under ``Integrations > Integration Management``. The token list (user and admin) shows each token's expiry and status (active / expired / disabled) with a warning when a token is within 7 days of expiry.
   - Added a new "rank" custom profile attribute type whose options carry an explicit ordering. System Admins can create and manage ranked attributes in the **System Console** and assign ranked values to users, enabling attribute-based access control policies that compare clearance- or classification-style attributes with ordinal operators (for example, "is at least Secret") instead of enumerating every qualifying value.
+  - Added a new ``ClusterReliableFallbackLength`` metric with the total length in bytes of the ``SendBestEffort`` calls (UDP) that had to fallback to TCP because of the message length.
 
 #### Performance
   - Improved the performance of concurrent logins by removing a global mutex in favour of database serialization for computing login attempts. This, in turn, fixed the semantics of the ``MaximumLoginAttempts`` setting, which is now honored across all nodes in the cluster: instead of allowing ``n*MaximumLoginAttempts`` attempts, with ``n`` the number of nodes, we now allow ``MaximumLoginAttempts`` attempts regardless of the number of nodes.
