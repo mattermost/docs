@@ -15,8 +15,6 @@ Changelog
    * - v11.9
      - (UI) Added zoom and pan support to the image file preview: use the scroll wheel to zoom at the cursor, click-and-drag to pan, and +/-/0 keyboard shortcuts (reported on webapp).
    * - v11.9
-     - (UI) Added a license preview and diff view when uploading a new license in the System Console, allowing administrators to compare the new license's features with the current license before applying.
-   * - v11.9
      - (UI) Added a toast notification for plugin-rejected file uploads, consistent with the existing notification for rejected downloads.
    * - v11.9
      - (UI) Added a Data Spillage Handling feature discovery page in the System Console for lower-tier licenses.
