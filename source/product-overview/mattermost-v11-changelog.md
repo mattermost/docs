@@ -66,6 +66,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
 #### Plugins/Integrations
   - Implemented clickable action buttons inside post markdown for bots, webhooks, and plugins. Integrations bind ``mmaction://`` markdown links to actions defined in a new ``mm_blocks_actions`` post property.
   - Added channel bookmark type ``board`` with an optional ``target_id``, PostgreSQL migrations (including a nontransactional concurrent index migration), OpenAPI v4 schema updates, and webapp handling. The bookmarks API rejects creating, updating, or deleting board bookmarks but allows reordering them when the caller has bookmark order permission.
+  - Plugin registry's ``registerRightHandSidebarComponent`` now accepts an optional ``showPopout`` boolean (default ``true``) to hide the "Open in new window" button from the plugin right-hand side header.
 
 #### Administration
   - Added [Azure Blob Storage](ocs.mattermost.com/administration-guide/configure/azure-blob-storage.html) as a selectable backend in the File Storage and Export Storage admin console panels. The S3 Test Connection control is now backend-agnostic and validates the active driver.
