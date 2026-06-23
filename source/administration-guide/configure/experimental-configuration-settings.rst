@@ -327,7 +327,7 @@ Changes made when hardened mode is enabled:
 Enable Mobile Watermark
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Available on `Enterprise and Enterprise Advanced plans <https://mattermost.com/pricing/>`__ from Mattermost v11.7 onward.
+Available on `Enterprise Advanced <https://mattermost.com/pricing/>`__ from Mattermost v11.7 onward.
 
 **True**: Authenticated Mattermost mobile sessions display a watermark overlay showing the user's username, the server domain, the current date (YYYY-MM-DD), and the current time (HH:mm). This experimental capability is intended to support data loss prevention (DLP) workflows by helping identify the user, server, and time associated with mobile screenshots or shared screen captures.
 
