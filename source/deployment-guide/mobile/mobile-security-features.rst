@@ -56,7 +56,7 @@ See the :ref:`secure file preview <administration-guide/configure/environment-co
 Mobile watermarking
 -------------------
 
-Mobile watermarking is an experimental Enterprise capability, available on `Enterprise and Enterprise Advanced plans <https://mattermost.com/pricing/>`__ from Mattermost v11.7 onward, that helps organizations attribute mobile screenshots and shared screen captures to a specific user, server, and point in time. When this setting is enabled by a system admin, authenticated Mattermost mobile sessions display a visible watermark overlay on top of the app interface that includes:
+Mobile watermarking is an experimental Enterprise Advanced capability <https://mattermost.com/pricing/>`__ from Mattermost v11.7 onward, that helps organizations attribute mobile screenshots and shared screen captures to a specific user, server, and point in time. When this setting is enabled by a system admin, authenticated Mattermost mobile sessions display a visible watermark overlay on top of the app interface that includes:
 
 - The user's username.
 - The server domain.
