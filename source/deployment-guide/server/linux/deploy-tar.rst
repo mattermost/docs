@@ -51,7 +51,7 @@ In a terminal window, ssh onto the system that will host the Mattermost Server. 
 
   .. code-block:: sh
 
-    wget https://releases.mattermost.com/11.7.4/mattermost-11.7.4-linux-amd64.tar.gz
+    wget https://releases.mattermost.com/11.7.5/mattermost-11.7.5-linux-amd64.tar.gz
 
 .. tab:: Older releases
 
@@ -182,7 +182,7 @@ To remove the Mattermost Server for any reason, you must stop the Mattermost Ser
 
 .. code-block:: sh
 
-  sudo rm - rf /opt/mattermost
+  sudo rm -rf /opt/mattermost
 
 .. note::
 

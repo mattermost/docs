@@ -62,10 +62,24 @@ You can add multiple rules to a single policy, and each rule can include multipl
 
      Select the **Validate syntax** bar to check the syntax of your rule. If the syntax is valid, the bar will turn green and display a message indicating that the syntax is valid. If there are any issues, the bar will turn red and display an error message.
 
-Test rules
-~~~~~~~~~~
+Simulate access
+~~~~~~~~~~~~~~~~
 
 Select **Test access rule** to test the rule against your user base to return how many users would be granted access to the channel based on the current rule. Test your rules to ensure the intended scope and avoid unexpected access changes.
+
+From Mattermost v11.8.0, you can use **Simulate access** to preview allowed and denied outcomes for specific users before saving policy changes:
+
+1. Open the policy editor in the System Console.
+2. Select **Simulate access**.
+3. Choose the users you want to test.
+4. Review the allowed and denied outcomes by action, such as joining a channel or uploading and downloading files.
+5. Adjust the rules before saving.
+
+Simulation can test draft policy changes before they affect live channel access or file permissions. Detailed rule and attribute information is shown only when the denial comes from the policy or scope you're editing; otherwise, Mattermost may show that access was denied by another policy.
+
+.. note::
+
+  **Simulate access** and channel-level permission policies for file upload and file download are gated by the ``PermissionPolicies`` feature flag (``MM_FEATUREFLAGS_PERMISSIONPOLICIES``) and require a Mattermost Enterprise Advanced license. See the Mattermost developer documentation for details on `enabling feature flags in a self-hosted deployment <https://developers.mattermost.com/contribute/more-info/server/feature-flags/#self-hosted-and-local-development>`_. Mattermost Cloud customers can request this feature flag be enabled by contacting their Mattermost Account Manager or by `creating a support ticket <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=11184911962004>`_.
 
 Manage rules
 ~~~~~~~~~~~~
@@ -117,3 +131,22 @@ Permission policies can be used to restrict the following actions based on user 
 When a permission policy applies, users who don't match the configured attribute values can't perform the restricted action. Users may see file attachments as unavailable or redacted in messages they would otherwise have access to. See :ref:`Restricted file attachments <end-user-guide/collaborate/share-files-in-messages:restricted file attachments>` for the end-user-facing behavior.
 
 Permission policies follow the same unique-name requirement as access policies: each parent permission policy must have a unique name, and Mattermost surfaces a user-friendly error if a duplicate name is entered.
+
+Attribute value masking
+-----------------------
+
+From Mattermost v11.8, when a policy references attribute values that the editing admin doesn't personally hold, those values are hidden in the policy editor. This prevents admins from reading or copying sensitive attribute values they're not authorized to see, while still allowing the policy to enforce access control normally.
+
+Masking only applies to attributes configured with a ``shared_only`` or ``source_only`` access mode. Attributes with a ``public`` access mode are always visible to all admins. See :ref:`Attribute access modes <administration-guide/manage/admin/user-attributes:attribute access modes>` for details on how each mode controls value visibility.
+
+**What you'll see:**
+
+- Masked values appear as ``--------`` in the rule editor instead of the raw value.
+- Rows containing masked values are **read-only** and cannot be modified.
+- **Test rule** and **Delete** actions are disabled for rules that contain masked values.
+
+**Enforcement is unaffected:** masking applies to the editing UI only. The underlying rules continue to control channel access and permissions as configured.
+
+**To edit a masked rule**, ask the policy owner or another System Admin who holds the relevant attribute values to make the change.
+
+This behavior applies to both the table editor and the CEL editor, and also to Team Admin and Channel Admin policy editors in Team Settings and Channel Settings. Requires Enterprise Advanced license and the ``AttributeValueMasking`` feature flag.
