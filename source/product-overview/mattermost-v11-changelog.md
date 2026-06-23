@@ -16,7 +16,15 @@ Platform and OS scope reflects reported and tested environments and may not repr
 (release-v11.8-feature-release)=
 ## Release v11.8 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
-**Release day: 2026-06-16**
+- **11.8.1, released 2026-06-17**
+  - Mattermost v11.8.1 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed file moves and copies on S3 file stores failing for files larger than 5GiB (for example, finalizing an mmctl import upload of an import archive over 5GiB), by using a server-side multipart copy.
+  - Preserved unknown permissions during migrations on downgrade.
+  - Added a pre-migration setup to fix the incorrect database migration numbers that prevented upgrading Mattermost from v10.11 to v11.7.
+  - Mattermost v11.8.1 contains the following functional changes:
+     - Added a new ``FileSettings.ExtractContentTimeout`` setting (default 10 seconds) that limits how long a single uploaded document's content extraction occupies a worker, and moved document content extraction to a dedicated, non-blocking worker pool so it no longer delays file uploads for other users. Added ``FileSettings.ExtractContentTimeout`` configuration setting.
+- **11.8.0, released 2026-06-16**
+  - Original 11.8.0 release.
 
 ```{Attention}
 **Breaking Changes**
@@ -40,7 +48,6 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - **Changes to Enterprise Advanced plan:**
    - Under ``MobileEphemeralMode`` in ``config.json``, added a [Mobile Ephemeral Mode](https://docs.mattermost.com/security-guide/mobile-security.html#app-sandboxing-and-secure-data-storage) configuration section under **System Console > Environment > Mobile Security**, allowing admins to configure data persistence and cache management policies for mobile devices. Requires Enterprise Advanced license and ``MobileEphemeralMode`` feature flag.
  - **Changes to Enterprise plans:**
-   - Under ``FileSettings`` in ``config.json``, added ``AzureStorageAccount``, ``AzureAccessKey``, ``AzureContainer``, ``AzurePathPrefix``, ``AzureEndpoint``, ``AzureSSL``, and ``AzureRequestTimeoutMilliseconds`` configuration settings for Azure Blob Storage filestore backend support.
    - Under ``ElasticsearchSettings`` in ``config.json``, added ``EnableSearchPublicChannelsWithoutMembership`` configuration setting to allow searching in public channels the user isn't a member of.
    - Under ``TeamSettings`` in ``config.json``, added ``EnableChannelCategorySorting`` configuration setting to add, edit, and remove managed categories.
 
@@ -96,7 +103,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Added SMTP and push proxy connectivity probe results to ``diagnostics.yaml`` in the support packet under ``notifications.email`` and ``notifications.push`` for mobile app.
  - Added ``started_at`` and ``host_started_at`` fields to the support packet diagnostics to help diagnose server restart loops and container reboots.
  - Added [a simplified option](https://docs.mattermost.com/deployment-guide/mobile/mobile-troubleshooting.html) allowing users to enable attaching logs to support packets on mobile apps.
- - Added Membership Policies (formerly Access Control Policies) support for public channels with advisory semantics: matching users are auto-added when enabled and surfaced in a new "Recommended" filter in Browse Channels and as a "Recommended" tag in the channel invite modal; non-matching members are never removed. Private channels retain the existing strict gate. The admin UI has been renamed throughout from "Access Control" to "Membership Policy". Requires Enterprise Advanced license.
+ - Added [Membership Policies](https://docs.mattermost.com/administration-guide/manage/admin/abac-channel-access-rules.html) (formerly Access Control Policies) support for public channels with advisory semantics: matching users are auto-added when enabled and surfaced in a new "Recommended" filter in Browse Channels and as a "Recommended" tag in the channel invite modal; non-matching members are never removed. Private channels retain the existing strict gate. The admin UI has been renamed throughout from "Access Control" to "Membership Policy". Requires Enterprise Advanced license.
  - Added a [new feature](https://docs.mattermost.com/administration-guide/manage/admin/content-flagging.html) allowing content reviewers to generate a downloadable report for a post quarantined for review as part of Data Spillage handling.
  - Tightened session invalidation on the global session revocation path.
  - Downgraded Hungarian translations from Beta to Alpha.
@@ -174,6 +181,14 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
 (release-v11.7-extended-support-release)=
 ## Release v11.7 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **11.7.5, released 2026-06-18**
+  - Fixed custom emoji upload size and GIF frame limits.
+  - Mattermost v11.7.5 contains no database or functional changes.
+- **11.7.4, released 2026-06-17**
+  - Mattermost v11.7.4 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed file moves and copies on S3 file stores failing for files larger than 5GiB (for example, finalizing an mmctl import upload of an import archive over 5GiB), by using a server-side multipart copy.
+  - Mattermost v11.7.4 contains the following functional changes:
+     - Added a new ``FileSettings.ExtractContentTimeout`` setting (default 10 seconds) that limits how long a single uploaded document's content extraction occupies a worker, and moved document content extraction to a dedicated, non-blocking worker pool so it no longer delays file uploads for other users. Added ``FileSettings.ExtractContentTimeout`` configuration setting.
 - **11.7.3, released 2026-06-12**
   - Mattermost v11.7.3 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Playbooks plugin version [v2.9.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.9.1).
