@@ -71,7 +71,7 @@ This page describes how to install the Mattermost desktop app on Linux.
 
     .. code-block:: sh
 
-      sudo rpm -u mattermost-desktop-6.2.1-linux-x86_64.rpm
+      sudo rpm -U mattermost-desktop-6.2.1-linux-x86_64.rpm
 
   .. tip:: 
     You can review the current version of your desktop app by selecting the **More** |more-icon-vertical| icon located in the top left corner of the desktop app, then selecting **Help > Version...**.
