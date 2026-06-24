@@ -27,10 +27,6 @@ Changelog
    * - v11.9
      - (UI) Added user setting "Auto-follow threads on channel-wide mentions" (Settings → Notifications). When disabled, @channel/@all/@here mentions no longer force thread membership; users still receive mention notifications but must manually follow the thread.
    * - v11.9
-     - (UI) Added a webapp hook ``registerChannelTypeOption``.
-   * - v11.9
-     - (UI) Added a ``MessagesWillBeConsumedWithContext`` plugin hook.
-   * - v11.9
      - (UI) Hardened the web app against crashes caused by components rendered by a plugin.
    * - v11.8
      - (UI) Added a new keyboard shortcut, ``Shift`` + ``ESC``, that marks all channels, threads, and direct messages as read for a team on webapp / desktop app.
