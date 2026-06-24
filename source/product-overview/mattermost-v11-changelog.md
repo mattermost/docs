@@ -17,7 +17,12 @@ Platform and OS scope reflects reported and tested environments and may not repr
 ## Release v11.8 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
 - **11.8.2, released TBD**
-  - TBD: Add release notes for Mattermost v11.8.2.
+  - Mattermost v11.8.2 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed custom emoji upload size and GIF frame limits.
+  - Pre-packaged Agents plugin version [v2.0.5](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v2.0.5).
+  - User Attributes can now be synced with AD/LDAP or SAML whether they are user-editable or admin-managed. When an attribute is synced, the "Editable by users" toggle is disabled; remove the link to change it again.
+  - Added a new ``ClusterReliableFallbackLength`` metric with the total length in bytes of the ``SendBestEffort`` calls (UDP) that had to fallback to TCP because of the message length.
+  - Mattermost v11.8.2 contains no database or functional changes.
 - **11.8.1, released 2026-06-17**
   - Mattermost v11.8.1 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed file moves and copies on S3 file stores failing for files larger than 5GiB (for example, finalizing an mmctl import upload of an import archive over 5GiB), by using a server-side multipart copy.
