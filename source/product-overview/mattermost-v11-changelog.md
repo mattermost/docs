@@ -59,13 +59,13 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
   - Incoming webhooks now show information about the last time they were triggered.
   - Threads started by a webhook are no longer highlighted for the user who owns the webhook.
   - Added user setting "Auto-follow threads on channel-wide mentions" (Settings → Notifications). When disabled, @channel/@all/@here mentions no longer force thread membership; users still receive mention notifications but must manually follow the thread.
-  - Added a webapp hook ``registerChannelTypeOption``.
-  - Added a ``MessagesWillBeConsumedWithContext`` plugin hook.
   - Hardened the web app against crashes caused by components rendered by a plugin.
 
 #### Plugins/Integrations
   - Implemented clickable action buttons inside post markdown for bots, webhooks, and plugins. Integrations bind ``mmaction://`` markdown links to actions defined in a new ``mm_blocks_actions`` post property.
   - Added channel bookmark type ``board`` with an optional ``target_id``. The bookmarks API rejects creating, updating, or deleting board bookmarks but allows reordering them when the caller has bookmark order permission.
+  - Added a webapp hook ``registerChannelTypeOption``.
+  - Added a ``MessagesWillBeConsumedWithContext`` plugin hook.
   - Added a ``ChannelWillBeUpdated`` plugin hook.
   - Added a ``ChannelWillBeRestored`` plugin hook.
   - Added a ``ScheduledPostWillBeCreated`` plugin hook.
@@ -75,6 +75,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
   - Added a webapp hook ``registerPostHeaderComponent``.
   - Added a webapp hook ``registerComposerPlaceholder``.
   - Added a webapp hook ``registerProductSwitcherMenuItem``.
+
 #### Administration
   - Added [Azure Blob Storage](ocs.mattermost.com/administration-guide/configure/azure-blob-storage.html) support.
      - Added Azure Blob Storage as a selectable backend in the File Storage and Export Storage admin console panels. The S3 Test Connection control is now backend-agnostic and validates the active driver.
