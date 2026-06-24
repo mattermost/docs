@@ -16,6 +16,8 @@ Platform and OS scope reflects reported and tested environments and may not repr
 (release-v11.8-feature-release)=
 ## Release v11.8 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **11.8.2, released TBD**
+  - TBD: Add release notes for Mattermost v11.8.2.
 - **11.8.1, released 2026-06-17**
   - Mattermost v11.8.1 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed file moves and copies on S3 file stores failing for files larger than 5GiB (for example, finalizing an mmctl import upload of an import archive over 5GiB), by using a server-side multipart copy.
@@ -181,6 +183,8 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
 (release-v11.7-extended-support-release)=
 ## Release v11.7 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **11.7.6, released TBD**
+  - TBD: Add release notes for Mattermost v11.7.6.
 - **11.7.5, released 2026-06-18**
   - Fixed custom emoji upload size and GIF frame limits.
   - Mattermost v11.7.5 contains no database or functional changes.
