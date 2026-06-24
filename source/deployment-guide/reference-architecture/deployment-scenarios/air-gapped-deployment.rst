@@ -76,6 +76,28 @@ On an internet connected machine, you must gather all required packages, contain
     - Load balancer: If you already have a load balancer running in your air-gapped environment you can skip this resource, otherwise we recommend deploying :doc:`NGINX </deployment-guide/server/setup-nginx-proxy>`, using the `NGINX Ingress Controller operator <https://docs.nginx.com/nginx-ingress-controller/installation/installing-nic/installation-with-operator/>`__.
     - Desktop app: Download the `required package <https://github.com/mattermost/desktop/releases>`_ based on your deployment method.
 
+    .. note::
+
+      **Database readiness check (air-gapped recommendation)**
+
+      If your installed Mattermost Operator supports ``spec.database.readinessCheck.mode``, it can run the database-readiness init container from the same Mattermost image as the main container by setting ``spec.database.readinessCheck.mode: builtin`` on the ``Mattermost`` custom resource. The init container then invokes the in-image ``mattermost db ping`` command instead of pulling ``postgres:13`` and running ``pg_isready``.
+
+      We recommend this mode for air-gapped clusters because it removes the requirement to mirror ``postgres:13`` into your private registry; the only image needed for the readiness check is the Mattermost image you're already mirroring. Before using ``builtin`` mode, confirm that your installed operator version includes the ``readinessCheck.mode`` field in the Mattermost CRD or in the operator release notes. ``builtin`` mode also requires a Mattermost release that ships the ``mattermost db ping`` command (see the `Mattermost server release notes <https://github.com/mattermost/mattermost/pull/36406>`__ for availability).
+
+      Example:
+
+      .. code-block:: yaml
+
+        spec:
+          database:
+            external:
+              secret: <my-db-secret>
+            readinessCheck:
+              mode: builtin
+              timeout: 5m   # optional; default is 5m
+
+      The legacy ``external`` mode (which uses ``postgres:13`` + ``pg_isready``) remains the default for backward compatibility and is still selectable for users on older Mattermost versions, but it is slated for deprecation in a future operator release. See the `Mattermost CRD reference <https://github.com/mattermost/mattermost-operator/blob/master/docs/mattermost_v1beta1_crd.md>`__ for the full ``readinessCheck`` field schema.
+
     **(Optional) Supporting Services**
     Consider downloading these additional resources if you plan to enable these optional components:
 
