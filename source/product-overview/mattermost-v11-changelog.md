@@ -16,6 +16,8 @@ Platform and OS scope reflects reported and tested environments and may not repr
 (release-v11.8-feature-release)=
 ## Release v11.8 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **11.8.2, released 2026-06-24**
+  - Mattermost v11.8.2 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 - **11.8.1, released 2026-06-17**
   - Mattermost v11.8.1 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed file moves and copies on S3 file stores failing for files larger than 5GiB (for example, finalizing an mmctl import upload of an import archive over 5GiB), by using a server-side multipart copy.
