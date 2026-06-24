@@ -189,7 +189,11 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
 ## Release v11.7 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
 - **11.7.6, released TBD**
-  - TBD: Add release notes for Mattermost v11.7.6.
+  - Mattermost v11.7.4 contains a low severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - User Attributes can now be synced with AD/LDAP or SAML whether they are user-editable or admin-managed. When an attribute is synced, the "Editable by users" toggle is disabled; remove the link to change it again.
+  - Added a new ``ClusterReliableFallbackLength`` metric with the total length in bytes of the ``SendBestEffort`` calls (UDP) that had to fallback to TCP because of the message length.
+  - Added an expiry chooser to the Personal Access Token creation user interface in **Account Settings**, backed by the new ``ServiceSettings.MaximumPersonalAccessTokenLifetimeDays`` admin policy, which is now also configurable in the **System Console** under **Integrations > Integration Management**. The token list (user and admin) shows each token's expiry and status (active / expired / disabled) with a warning when a token is within 7 days of expiry.
+  - Mattermost v11.7.6 contains no database or functional changes.
 - **11.7.5, released 2026-06-18**
   - Fixed custom emoji upload size and GIF frame limits.
   - Mattermost v11.7.5 contains no database or functional changes.
