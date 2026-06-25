@@ -11,7 +11,7 @@ Anyone can rename the channels they belong to, unless the system admin has :doc:
   Select the channel name at the top of the center pane to access the drop-down menu, then select **Channel Settings**. You'll be prompted to provide two pieces of information:
 
   - **Channel name:** The channel name that displays in the Mattermost user interface for all users. Enter a different channel name if needed or preferred.
-  - **Channel URL:** The web URL used to access the channel in a web browser. Select **Edit** to change the URL, and select **Done** to save your changes. If your system admin has enabled anonymous team and channel URLs (available in Mattermost Enterprise Advanced from v11.6.0), channel URLs are assigned automatically and do not reflect the channel name.
+  - **Channel URL:** The web URL used to access the channel in a web browser. Select **Edit** to change the URL, and select **Done** to save your changes. If your system admin has enabled anonymous URLs (available in Mattermost from v11.6.0), channel and team URLs are assigned automatically and do not reflect the channel or team name.
 
   When :ref:`channel category sorting <administration-guide/configure/site-configuration-settings:channel category sorting>` is enabled (the default from Mattermost v11.8), channel admins can set a **Default category (optional)** for the channel. You can select an existing category, type a new category name, or clear the default category. Members who join the channel see it under that category in their sidebar.
 
