@@ -205,17 +205,23 @@ def update_file(client: anthropic.Anthropic, filepath: str) -> str:
     This keeps each Claude call small and well-defined, and ensures changelog
     entries accumulate correctly across versions.
 
-    Returns one of: "updated", "unchanged", "not_found".
-    Raises on failures (I/O errors, API errors, or response/content validation errors)
-    so the caller can track them and fail the workflow rather than writing partial output.
+    Returns one of: "updated", "unchanged".
+    Raises on all failures (missing file, I/O errors, API errors, or response/content
+    validation errors) so the caller can track them and fail the workflow rather than
+    writing partial output.
     """
     tprint(f"[{filepath}] Reading...")
     try:
         with open(filepath, "r", encoding="utf-8") as f:
             original = f.read()
     except FileNotFoundError:
-        tprint(f"[{filepath}] WARNING: not found -- skipping.")
-        return "not_found"
+        # File paths come from fixed, curated lists -- a missing file means the
+        # repo layout has changed or the list is out of date. Raise so the run
+        # fails rather than opening a PR with incomplete release docs.
+        raise FileNotFoundError(
+            f"{filepath} not found. Update the file list in update_docs.py "
+            "if the path has changed, or check that the repo was checked out correctly."
+        )
 
     # Large changelogs only need recent context; new entries go near the top.
     # Capture the tail once from the original; it stays untouched across all versions.
@@ -257,15 +263,17 @@ def update_file(client: anthropic.Anthropic, filepath: str) -> str:
 
         updated = response.content[0].text
 
-        # For truncated files, Claude should return only the head portion, but it may
-        # occasionally return slightly more. Cap the result at MAX_SEND_CHARS so that
-        # subsequent version passes don't receive an ever-growing prompt.
+        # For truncated files, Claude should return only the head portion.
+        # If it returns more than MAX_SEND_CHARS, slicing before reattaching the
+        # original tail could silently drop content -- fail hard instead so the
+        # operator can investigate (e.g. raise MAX_SEND_CHARS or MAX_TOKENS).
         if truncated and len(updated) > MAX_SEND_CHARS:
-            tprint(
-                f"[{filepath}] WARNING: Claude returned {len(updated):,} chars "
-                f"(version {version}); truncating to first {MAX_SEND_CHARS:,} chars."
+            raise RuntimeError(
+                f"Claude returned {len(updated):,} chars for {filepath} (version {version}), "
+                f"which exceeds the {MAX_SEND_CHARS:,}-char head limit. "
+                "Slicing would risk dropping content when the tail is reattached. "
+                "Increase MAX_SEND_CHARS or MAX_TOKENS and re-run."
             )
-            updated = updated[:MAX_SEND_CHARS]
 
         # --- Content quality guards ---
         # These raise rather than continue so that a partial application (some versions
@@ -337,7 +345,6 @@ def main():
     results: dict[str, list[str]] = {
         "updated": [],
         "unchanged": [],
-        "not_found": [],
     }
     errors: list[tuple[str, str]] = []
 
@@ -368,7 +375,6 @@ def main():
     print("--- Summary ---")
     print(f"  Updated:   {len(results['updated'])}")
     print(f"  Unchanged: {len(results['unchanged'])}")
-    print(f"  Not found: {len(results['not_found'])}")
     print(f"  Errors:    {len(errors)}")
 
     if errors:
@@ -376,8 +382,6 @@ def main():
         for fp, err in errors:
             print(f"  {fp}: {err}")
         sys.exit(1)
-    elif results["not_found"]:
-        print("\nCompleted with warnings -- review not-found files above.")
     else:
         print("\nAll files processed successfully.")
 
