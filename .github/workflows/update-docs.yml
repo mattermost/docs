@@ -145,10 +145,13 @@ jobs:
 
           # On re-runs the branch is force-pushed but the PR may already exist.
           # Check before creating to avoid a duplicate-PR error.
-          # Ensure the label exists (creates it if absent; no-ops if already present).
-          gh label create "release-docs" \
-            --color "0075ca" \
-            --description "Release documentation update" 2>/dev/null || true
+          # Ensure the label exists (create it if absent).
+          # Checking first means a real failure in gh label create (auth, network, etc.)
+          # is not silently swallowed the way "|| true" would hide it.
+          gh label view "release-docs" >/dev/null 2>&1 || \
+            gh label create "release-docs" \
+              --color "0075ca" \
+              --description "Release documentation update"
 
           existing_pr="$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')"
           if [ -n "$existing_pr" ]; then

@@ -206,9 +206,8 @@ def update_file(client: anthropic.Anthropic, filepath: str) -> str:
     entries accumulate correctly across versions.
 
     Returns one of: "updated", "unchanged", "not_found".
-    Version-level quality failures (empty response, too-short response) are logged
-    and skipped via continue -- they do not surface as a file-level status.
-    Raises on hard failures (I/O errors, API errors) so the caller can track them.
+    Raises on failures (I/O errors, API errors, or response/content validation errors)
+    so the caller can track them and fail the workflow rather than writing partial output.
     """
     tprint(f"[{filepath}] Reading...")
     try:
@@ -338,7 +337,6 @@ def main():
     results: dict[str, list[str]] = {
         "updated": [],
         "unchanged": [],
-        "skipped": [],
         "not_found": [],
     }
     errors: list[tuple[str, str]] = []
@@ -370,7 +368,6 @@ def main():
     print("--- Summary ---")
     print(f"  Updated:   {len(results['updated'])}")
     print(f"  Unchanged: {len(results['unchanged'])}")
-    print(f"  Skipped:   {len(results['skipped'])}  (warnings above)")
     print(f"  Not found: {len(results['not_found'])}")
     print(f"  Errors:    {len(errors)}")
 
@@ -379,8 +376,8 @@ def main():
         for fp, err in errors:
             print(f"  {fp}: {err}")
         sys.exit(1)
-    elif results["skipped"] or results["not_found"]:
-        print("\nCompleted with warnings -- review skipped/not-found files above.")
+    elif results["not_found"]:
+        print("\nCompleted with warnings -- review not-found files above.")
     else:
         print("\nAll files processed successfully.")
 
