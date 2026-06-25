@@ -22,17 +22,33 @@
         console.error("invalid fragment: " + fragment);
         fragment = "";
     }
-    if (fragment !== "" && fragment in fragment_redirects) {
-        let redirecturl = fragment_redirects[fragment];
+    function redirectTo(redirecturl) {
         if (redirecturl.startsWith("/")) {
             redirecturl = window.location.origin + redirecturl;
         }
         window.location = redirecturl;
+    }
+    if (fragment !== "" && fragment in fragment_redirects) {
+        redirectTo(fragment_redirects[fragment]);
+    } else if (DEFAULT_PAGE in fragment_redirects) {
+        // Fall back to the base-page redirect. Section anchors aren't always
+        // explicitly mapped, but anchor names are generally preserved across a
+        // page move, so carry the original fragment over to the new page rather
+        // than leaving the user on a blank stub.
+        let redirecturl = fragment_redirects[DEFAULT_PAGE];
+        if (fragment !== "" && fragment !== DEFAULT_PAGE) {
+            console.warn("unmapped fragment, falling back to base page: " + fragment);
+            if (redirecturl.indexOf("#") === -1) {
+                redirecturl += "#" + fragment;
+            }
+        }
+        redirectTo(redirecturl);
     } else {
         if (fragment !== "") {
             console.error("unknown redirect: " + fragment);
         }
-        // TODO: redirect the user to a 404 page or some other page
+        // No redirect could be resolved for this page; send the user to the 404 page.
+        redirectTo("/404.html");
     }
 </script>
 </body>
