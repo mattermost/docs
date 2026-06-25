@@ -48,7 +48,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
 
 #### User Interface
   - Pre-packaged Playbooks plugin version [v2.10.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.10.0).
-  - Pre-packaged Agents plugin version [v2.4.0](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v2.4.0).
+  - Pre-packaged Agents plugin version [v2.4.1](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v2.4.1).
   - Pre-packaged [Calls plugin](https://docs.mattermost.com/end-user-guide/collaborate/make-calls.html) version [v1.12.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.12.0).
   - Pre-packaged Boards plugin version [v9.3.0](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.3.0).
   - Pre-packaged GitLab plugin version [v1.13.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.13.0).
@@ -103,6 +103,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
   - Added a new ``ClusterReliableFallbackLength`` metric with the total length in bytes of the ``SendBestEffort`` calls (UDP) that had to fallback to TCP because of the message length.
   - Made ``SendBestEffort`` cluster messages fall back to using TCP when their length is larger than a UDP datagram.
   - Added a license preview and diff view when uploading a new license in the System Console, allowing administrators to compare the new license's features with the current license before applying.
+  - Added a new ``mattermost_system_server_info`` Prometheus metric that exposes the server version and build hash as labels.
 
 #### Performance
   - Improved the performance of concurrent logins by removing a global mutex in favour of database serialization for computing login attempts. This, in turn, fixed the semantics of the ``MaximumLoginAttempts`` setting, which is now honored across all nodes in the cluster: instead of allowing ``n*MaximumLoginAttempts`` attempts, with ``n`` the number of nodes, we now allow ``MaximumLoginAttempts`` attempts regardless of the number of nodes.
