@@ -130,7 +130,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
   - Fixed an issue where a channel member removed by an attribute-based access control (ABAC) access-rule change could still appear in the Channel Info Members list until a full page reload, even though the member count was correct.
   - Fixed an issue where "Mark as Unread" from the channel sidebar did nothing when the most recent message in the channel was a system join/leave message (reported on MacOS / Desktop App).
   - Fixed an issue where channel admins saw "Failed to load this channel's permission policy" on the Permissions Policy tab when the channel had no access control policy configured.
-  - Fixed custom emoji upload size and GIF frame limits.
+  - [Fixed](https://docs.mattermost.com/end-user-guide/collaborate/react-with-emojis-gifs.html) custom emoji upload size and GIF frame limits.
   - Fixed file moves and copies on S3 file stores failing for files larger than 5 GiB (for example, finalizing an ``mmctl`` import upload of an import archive over 5 GiB) by using a server-side multipart copy.
   - Fixed an issue where a bot user created by a plugin could become the first system admin on a fresh install (reported on webapp and browser).
   - Fixed an issue where a custom classification selection was lost if a user selected a preset from the classification preset options.
