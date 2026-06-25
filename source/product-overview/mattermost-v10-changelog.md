@@ -85,6 +85,14 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
   - Customers should not upgrade from ``>=10.11.17`` to ``<=11.7.2`` due to a bug that causes an issue with database migration numbers. The bug is fixed in v11.7.3.
  ```
 
+- **10.11.21, released 2026-06-26**
+  - Mattermost v10.11.21 contains medium to low severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged GitLab plugin version [v1.12.3](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.12.3).
+  - Fixed custom emoji upload size and GIF frame limits.
+  - Fixed an issue where a transient file read failure while building a Global Relay compliance export could crash the server.
+  - Mattermost v10.11.21 contains the following functional and database changes:
+     - Added a new ``FileSettings.ExtractContentTimeout`` setting (default 10 seconds) that limits how long a single uploaded document's content extraction occupies a worker, and moved document content extraction to a dedicated, non-blocking worker pool so it no longer delays file uploads for other users. Added ``FileSettings.ExtractContentTimeout`` configuration setting.
+     - Removed orphaned ``threadmemberships`` rows where the user is no longer a channel member; irreversible data-only migration that may run slowly on large instances.
 - **10.11.20, released 2026-06-12**
   - Mattermost v10.11.20 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Playbooks plugin version [v2.4.6](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.4.6).
