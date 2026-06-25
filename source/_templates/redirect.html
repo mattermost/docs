@@ -28,9 +28,10 @@
         }
         window.location = redirecturl;
     }
-    if (fragment !== "" && fragment in fragment_redirects) {
+    const hasRedirect = (key) => Object.prototype.hasOwnProperty.call(fragment_redirects, key);
+    if (fragment !== "" && hasRedirect(fragment)) {
         redirectTo(fragment_redirects[fragment]);
-    } else if (DEFAULT_PAGE in fragment_redirects) {
+    } else if (hasRedirect(DEFAULT_PAGE)) {
         // Fall back to the base-page redirect. Section anchors aren't always
         // explicitly mapped, but anchor names are generally preserved across a
         // page move, so carry the original fragment over to the new page rather
