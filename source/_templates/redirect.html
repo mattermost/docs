@@ -38,7 +38,7 @@
         // than leaving the user on a blank stub.
         let redirecturl = fragment_redirects[DEFAULT_PAGE];
         if (fragment !== "" && fragment !== DEFAULT_PAGE) {
-            console.warn("unmapped fragment, falling back to base page: " + fragment);
+            console.debug("unmapped fragment, falling back to base page: " + fragment);
             if (redirecturl.indexOf("#") === -1) {
                 redirecturl += "#" + fragment;
             }
