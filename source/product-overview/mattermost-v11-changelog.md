@@ -377,6 +377,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-7-is-now-availab
   - Mattermost v11.6.6 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed custom emoji upload size and GIF frame limits.
   - Mattermost v11.6.6 contains the following functional changes:
+    - Modified the ``SendBestEffort`` cluster messages logic to fall back to using TCP when their length is larger than a UDP datagram.
     - Added a new ``FileSettings.ExtractContentTimeout`` setting (default 10 seconds) that limits how long a single uploaded document's content extraction occupies a worker, and moved document content extraction to a dedicated, non-blocking worker pool so it no longer delays file uploads for other users. Added ``FileSettings.ExtractContentTimeout`` configuration setting.
 - **11.6.5, released 2026-06-12**
   - Mattermost v11.6.5 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
