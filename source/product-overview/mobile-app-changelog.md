@@ -37,6 +37,9 @@ Platform and OS scope reflects reported and tested environments and may not repr
  - Fixed an issue where an archived-channel banner could briefly flicker when dismissing dialogs.
  - Fixed an issue where archiving a channel redirected users to the channel list instead of keeping users in the archived channel (reported on iOS and Android).
 
+### Open Source Components
+ - Removed ``@voximplant/react-native-foreground-service`` from https://github.com/mattermost/mattermost-mobile/.
+
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
