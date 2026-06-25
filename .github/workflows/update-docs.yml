@@ -1,5 +1,5 @@
 name: Update Docs
- 
+
 # Only members with write access to this repo can trigger workflow_dispatch.
 # To further restrict (e.g. require a specific team), protect the branch or
 # add an environment with required reviewers in repo Settings -> Environments.
@@ -41,7 +41,7 @@ on:
         required: false
         type: boolean
         default: false
- 
+
 jobs:
   update-docs:
     runs-on: ubuntu-latest
@@ -52,7 +52,7 @@ jobs:
     # opening PRs.
     permissions:
       contents: read
- 
+
     steps:
       # Changelog Automation (docs) app -- read/write access to mattermost/docs.
       # Reuses the same app and credentials as generate-changelog.yml.
@@ -67,7 +67,7 @@ jobs:
           private-key: ${{ secrets.CHANGELOG_WRITE_PRIVATE_KEY }}
           owner: mattermost
           repositories: docs
- 
+
       - name: Checkout repo
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
@@ -75,15 +75,15 @@ jobs:
           # Credentials are persisted in the git config (default behaviour) so that
           # the "Commit and push changes" step can push without extra auth setup.
           token: ${{ steps.app-token.outputs.token }}
- 
+
       - name: Set up Python
         uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
         with:
           python-version: '3.11'
- 
+
       - name: Install dependencies
         run: pip install "anthropic==0.101.0"
- 
+
       - name: Run docs update script
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -93,7 +93,7 @@ jobs:
           RELEASE_DATE: ${{ inputs.release_date }}
           ESR_END_DATE: ${{ inputs.esr_end_date }}
         run: python .github/scripts/update_docs.py
- 
+
       - name: Normalize version for branch naming
         id: vars
         shell: bash
@@ -108,7 +108,7 @@ jobs:
           safe_version="$(printf '%s' "$VERSION_INPUT" | tr ', ' '-' | tr -cd '[:alnum:]._-' | tr -s '-')"
           test -n "$safe_version"
           echo "safe_version=$safe_version" >> "$GITHUB_OUTPUT"
- 
+
       - name: Commit and push changes
         id: commit
         run: |
@@ -126,7 +126,7 @@ jobs:
             git push --force-with-lease origin "docs/${{ inputs.component }}-v${{ steps.vars.outputs.safe_version }}"
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
- 
+
       - name: Create pull request
         if: steps.commit.outputs.changed == 'true'
         env:
@@ -140,11 +140,16 @@ jobs:
         run: |
           DRAFT_FLAG=""
           [ "$PR_DRAFT" = "true" ] && DRAFT_FLAG="--draft"
- 
+
           BRANCH="docs/${{ inputs.component }}-v${{ steps.vars.outputs.safe_version }}"
- 
+
           # On re-runs the branch is force-pushed but the PR may already exist.
           # Check before creating to avoid a duplicate-PR error.
+          # Ensure the label exists (creates it if absent; no-ops if already present).
+          gh label create "release-docs" \
+            --color "0075ca" \
+            --description "Release documentation update" 2>/dev/null || true
+
           existing_pr="$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')"
           if [ -n "$existing_pr" ]; then
             echo "PR #${existing_pr} already exists for ${BRANCH} -- skipping creation."
@@ -163,7 +168,7 @@ jobs:
               echo ""
               echo "Please review all changes carefully before merging."
             } > pr_body.md
- 
+
             gh pr create \
               --title "${COMPONENT} v${VERSION} ${RELEASE_TYPE} Docs" \
               --body-file pr_body.md \
