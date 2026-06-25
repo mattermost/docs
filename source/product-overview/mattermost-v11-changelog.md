@@ -16,10 +16,10 @@ Platform and OS scope reflects reported and tested environments and may not repr
 (release-v11.8-feature-release)=
 ## Release v11.8 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
-- **11.8.2, released TBD**
+- **11.8.2, released 2026-06-26**
   - Mattermost v11.8.2 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Fixed custom emoji upload size and GIF frame limits.
   - Pre-packaged Agents plugin version [v2.0.5](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v2.0.5).
+  - Fixed custom emoji upload size and GIF frame limits.
   - User Attributes can now be synced with AD/LDAP or SAML whether they are user-editable or admin-managed. When an attribute is synced, the "Editable by users" toggle is disabled; remove the link to change it again.
   - Added a new ``ClusterReliableFallbackLength`` metric with the total length in bytes of the ``SendBestEffort`` calls (UDP) that had to fallback to TCP because of the message length.
   - Mattermost v11.8.2 contains no database or functional changes.
@@ -188,14 +188,15 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
 (release-v11.7-extended-support-release)=
 ## Release v11.7 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
-- **11.7.6, released TBD**
-  - Mattermost v11.7.4 contains a low severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+- **11.7.6, released 2026-06-26**
+  - Mattermost v11.7.4 contains low severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged GitLab plugin version [v1.12.3](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.12.3).
   - User Attributes can now be synced with AD/LDAP or SAML whether they are user-editable or admin-managed. When an attribute is synced, the "Editable by users" toggle is disabled; remove the link to change it again.
   - Added a new ``ClusterReliableFallbackLength`` metric with the total length in bytes of the ``SendBestEffort`` calls (UDP) that had to fallback to TCP because of the message length.
-  - Added an expiry chooser to the Personal Access Token creation user interface in **Account Settings**, backed by the new ``ServiceSettings.MaximumPersonalAccessTokenLifetimeDays`` admin policy, which is now also configurable in the **System Console** under **Integrations > Integration Management**. The token list (user and admin) shows each token's expiry and status (active / expired / disabled) with a warning when a token is within 7 days of expiry.
   - Mattermost v11.7.6 contains the following database changes:
      - Removed orphaned ``threadmemberships`` rows where the user is no longer a channel member; irreversible data-only migration that may run slowly on large instances.
 - **11.7.5, released 2026-06-18**
+  - Mattermost v11.7.5 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed custom emoji upload size and GIF frame limits.
   - Mattermost v11.7.5 contains no database or functional changes.
 - **11.7.4, released 2026-06-17**
