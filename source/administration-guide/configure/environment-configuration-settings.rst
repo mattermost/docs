@@ -3331,7 +3331,7 @@ Enable diagnostics and error reporting
 
 +----------------------------------------------+--------------------------------------------------------------------------------+
 | Controls whether server errors and crashes   | - System Config path: **Environment > Logging**                                |
-| are reported to Mattermost via Sentry.       | - ``config.json`` setting: ``LogSettings`` > ``EnableDiagnostics`` > ``""``    |
+| are reported to Mattermost via Sentry.       | - ``config.json`` setting: ``LogSettings`` > ``EnableDiagnostics`` > ``true``  |
 |                                              | - Environment variable: ``MM_LOGSETTINGS_ENABLEDIAGNOSTICS``                   |
 | - **true**: **(Default)** Error and crash    |                                                                                |
 |   reports are sent to Mattermost's Sentry    |                                                                                |
