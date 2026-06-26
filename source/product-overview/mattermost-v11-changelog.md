@@ -137,6 +137,9 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
   - Fixed validation for ``PUT /api/v4/users/{user_id}/auth`` to reject unknown auth services and prevent auth data on email/password users.
   - Fixed an issue that caused a flagged post to continue being visible for content reviewers until a refresh after deletion.
   - Preserved unknown permissions during migrations on downgrade.
+  - Fixed an issue where channels with a permission-only access control policy (and no membership policy) were incorrectly hidden from the channel picker in the Invite People → Invite as Guest flow.
+  - Tightened authorization on the OAuth deauthorization and personal access token management endpoints.
+  - Tightened validation when updating channel member roles via the API.
 
 ### API Changes
   - Added ``POST /file/test`` (``testFileStore``) API endpoint for backend-agnostic file store connection testing.
