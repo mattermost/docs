@@ -62,6 +62,24 @@ Collapsible sections or images look wrong
 2. **Images:** External images require a valid URL and may be blocked by your server's image proxy or SVG settings. Contact your system admin if images from other integrations load but MM Blocks images do not.
 3. **Partial content:** Clients skip individual malformed blocks and still render valid ones in the same post. If only some elements are missing, the integration payload likely contains invalid block entries.
 
+Not all blocks appear or text is cut off
+-----------------------------------------
+
+**Symptoms:** Only part of an integration post renders, blocks at the end of the post are missing, or text in a block or on a button label ends abruptly.
+
+Mattermost enforces size limits on MM Blocks payloads. Content that exceeds a limit is truncated when the post is rendered.
+
+**Try the following:**
+
+1. **Review payload limits (integration owners).** A single post is limited to:
+   
+   - **100 blocks** in the ``props.mm_blocks`` array
+   - **32 levels** of nesting depth across nested block structures
+   - **16,000 characters** total across all text in the payload, including text blocks and button labels
+
+2. **Reduce payload size.** Split long content across multiple posts, shorten labels, flatten deeply nested structures, or remove optional blocks.
+3. **Validate after content changes.** If truncation appears only for certain posts or started after an integration update, compare the payload against these limits.
+
 Legacy message attachments
 --------------------------
 

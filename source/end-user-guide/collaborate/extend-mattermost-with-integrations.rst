@@ -26,13 +26,6 @@ Mattermost interoperability
 - :ref:`ServiceNow <integrations-guide/servicenow:use>`
 - :ref:`Zoom <integrations-guide/zoom:use>`
 
-Interact with integration messages
-----------------------------------
-
-Many integrations post rich, actionable content into channels—such as status updates with **Approve** or **Acknowledge** buttons, option menus, images, and grouped content. When you select a button or choose an option from a menu, Mattermost sends your selection to the integration. The integration may update the post in the channel or reply with a message visible only to you.
-
-If content does not render or respond as expected, see :doc:`Troubleshoot MM Blocks </get-help/mm-blocks-troubleshooting>`.
-
 .. tip::
 
    - `Visit the Mattermost Marketplace <https://mattermost.com/marketplace/>`__ to find open source, community-supported integrations to common developer tools like `CircleCI <https://mattermost.com/marketplace/circleci/>`__, `Opsgenie <https://mattermost.com/marketplace/opsgenie/>`__, `PagerDuty Notifier <https://mattermost.com/marketplace/pagerduty/>`__; productivity tools like `Autolink <https://mattermost.com/marketplace/autolink-plugin/>`__, `ToDo <https://mattermost.com/marketplace/todo/>`__, and `WelcomeBot <https://mattermost.com/marketplace/welcomebot-plugin/>`__; as well as social tools like `Memes <https://mattermost.com/marketplace/memes-plugin/>`__ and `GIFs <https://mattermost.com/marketplace/giphy-plugin/>`__ that are freely available for use and customization.
