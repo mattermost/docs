@@ -75,6 +75,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
   - Added a webapp hook ``registerPostHeaderComponent``.
   - Added a webapp hook ``registerComposerPlaceholder``.
   - Added a webapp hook ``registerProductSwitcherMenuItem``.
+  - Added `RegisterChannelGuard` and `UnregisterChannelGuard` plugin api methods.
 
 #### Administration
   - Added [Azure Blob Storage](ocs.mattermost.com/administration-guide/configure/azure-blob-storage.html) support.
