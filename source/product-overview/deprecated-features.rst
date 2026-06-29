@@ -6,7 +6,10 @@ This page describes features that are removed from support for Mattermost, or wi
 Upcoming deprecations
 -----------------------
 
-- There are no planned deprecations at this time.
+Mattermost Server v12.0 (October 2026): RHEL 7 and RHEL 8
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Starting with v12.0 (October 2026), RHEL 7 and RHEL 8 will no longer be supported deployment targets. This is due to Debian Bullseye reaching end-of-life in August 2026, which requires Mattermost to switch to a build environment with glibc 2.36 — incompatible with RHEL 7 (glibc 2.17) and RHEL 8 (glibc 2.28). Mattermost v11.11 (September 2026) is the last release to support RHEL 7 and RHEL 8. RHEL 9, Ubuntu 22.04/24.04 LTS, Debian Bookworm, and container-based deployments remain fully supported. Admins running RHEL 7 or RHEL 8 should plan to upgrade to RHEL 9 or migrate to another supported platform before the v12.0 release. See the forum post for full details and migration options.
 
 Removed features by Mattermost version
 ----------------------------------------
