@@ -95,7 +95,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
   - Enabled CJK (Chinese, Japanese, Korean) search by default for PostgreSQL.
   - Added support for OpenSearch v3, while continuing to support OpenSearch v2.
   - User attributes can now be synced with AD/LDAP or SAML whether they are user-editable or admin-managed. When an attribute is synced, the "Editable by users" toggle is disabled; remove the sync link to change it again.
-  - Added attribute value masking for access control policies: admins who don't hold specific attribute values see a masked placeholder (``--------``) instead of the raw value, with affected rule rows set to read-only and save/delete actions disabled. Applies to the table editor, CEL editor, and team settings modal. Requires Enterprise Advanced license and ``AttributeValueMasking`` feature flag.
+  - Added [attribute value masking](http://docs.mattermost.com/administration-guide/manage/admin/abac-system-wide-policies.html) for access control policies: admins who don't hold specific attribute values see a masked placeholder (``--------``) instead of the raw value, with affected rule rows set to read-only and save/delete actions disabled. Applies to the table editor, CEL editor, and team settings modal. Requires Enterprise Advanced license and ``AttributeValueMasking`` feature flag.
   - Added support for iOS Calls ring for Direct/Group Message channels.
   - Expanded session attribute collection to include values provided by Desktop App and Mobile clients.
   - Removed legacy interactive dialog code path on webapp.
