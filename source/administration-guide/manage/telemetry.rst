@@ -47,16 +47,14 @@ To opt out, you can disable this security update check feature for self-hosted d
 Error and diagnostics reporting feature
 ----------------------------------------
 
+When enabled, server errors and panics are automatically sent to the Mattermost-hosted `Sentry <https://sentry.io/welcome/>`_ endpoint for diagnosis. No message content or personally identifiable information is included.
+
 Mattermost error and diagnostic data is collected for the following purposes:
 
 - To add improvements that are specific to your usage, upgrade, and deployment patterns, including identifying security and reliability issues.
 - To analyze and fix software problems.
 - To help improve the quality of Mattermost software and related services.
 - To make design decisions for future releases.
-
-.. note::
-
-  When this feature is enabled, server errors and panics are automatically sent to the Mattermost-hosted `Sentry <https://sentry.io/welcome/>`_ endpoint for diagnosis. No message content or personally identifiable information is included.
 
 Opt out
 ~~~~~~~
