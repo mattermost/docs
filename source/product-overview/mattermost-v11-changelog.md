@@ -95,6 +95,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
   - Enabled CJK (Chinese, Japanese, Korean) search by default for PostgreSQL.
   - Added support for OpenSearch v3, while continuing to support OpenSearch v2.
   - User attributes can now be synced with AD/LDAP or SAML whether they are user-editable or admin-managed. When an attribute is synced, the "Editable by users" toggle is disabled; remove the sync link to change it again.
+  - Added attribute value masking for access control policies: admins who don't hold specific attribute values see a masked placeholder (``--------``) instead of the raw value, with affected rule rows set to read-only and save/delete actions disabled. Applies to the table editor, CEL editor, and team settings modal. Requires Enterprise Advanced license and ``AttributeValueMasking`` feature flag.
   - Added support for iOS Calls ring for Direct/Group Message channels.
   - Expanded session attribute collection to include values provided by Desktop App and Mobile clients.
   - Removed legacy interactive dialog code path on webapp.
@@ -254,7 +255,6 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
  - Downgraded Hungarian translations from Beta to Alpha.
  - Clarified error messages on potential permission migrations.
  - Added support for permission-action rules (file upload, file download) on channel-scope access control policies, with a new "Simulate access" modal in System Console and Channel Settings that previews per-user, per-action decisions before saving. Gated by the existing ``PermissionPolicies`` feature flag and the Enterprise Advanced license.
- - Added attribute value masking for access control policies: admins who don't hold specific attribute values see a masked placeholder (``--------``) instead of the raw value, with affected rule rows set to read-only and save/delete actions disabled. Applies to the table editor, CEL editor, and team settings modal. Requires Enterprise Advanced license and ``AttributeValueMasking`` feature flag.
  - Added support for request-provided session attributes (IP address, user agent details) in ABAC permission policy expressions via ``user.session``.
  - Added a user setting to experimentally enable concurrent React.
  - Added debug logging when a user has experimental support for concurrent React enabled.
