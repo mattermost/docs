@@ -1424,6 +1424,9 @@ From Mattermost v10.10, when this :ref:`experimental <administration-guide/manag
 | This feature's ``config.json`` setting is ``"ExperimentalEnableChannelCategorySorting": false`` with options ``true`` and ``false``.     |
 +------------------------------------------------------------------------------------------------------------------------------------------+
 
+.. note::
+  From Mattermost v11.8, channel category sorting is generally available and enabled by default. Configure it from **System Console > Site Configuration > Users and Teams** using the :ref:`Channel category sorting <administration-guide/configure/site-configuration-settings:channel category sorting>` setting (``TeamSettings.EnableChannelCategorySorting``).
+
 .. config:setting:: strict-csrf-token-enforcement
   :displayname: Strict CSRF token enforcement (Experimental)
   :systemconsole: N/A

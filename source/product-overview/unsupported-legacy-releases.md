@@ -2346,7 +2346,7 @@ If you upgrade from a release earlier than v7.5, please read the other [Importan
 ### Highlights
 
 #### Calls
- - [Audio calling and screen sharing](https://docs.mattermost.com/configure/calls-deployment.html) in channels is now generally available to all Mattermost customers.
+- [Audio calling and screen sharing](https://docs.mattermost.com/configure/calls-deployment-guide.html) in channels is now generally available to all Mattermost customers.
  - Updated [the keyboard shortcut](https://docs.mattermost.com/channels/keyboard-shortcuts-for-channels.html#calls-shortcuts) to start and join calls.
  - Please see [the docs](https://docs.mattermost.com/configure/plugins-configuration-settings.html#calls) for additional details on configuration setting updates.
 

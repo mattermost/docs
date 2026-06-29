@@ -50,10 +50,10 @@ PC web
 .. csv-table::
     :header: "Browser", "Self-Hosted Technical Requirement", "Cloud Technical Requirement"
 
-    "Chrome", "v144+", "v144+"
+    "Chrome", "v146+", "v146+"
     "Firefox", "v140+", "v140+"
     "Safari", "v26.2+", "v26.2+"
-    "Edge", "v144+", "v144+"
+    "Edge", "v146+", "v146+"
 
 `*` Internet Explorer (IE11) is no longer supported. We recommend using the `Mattermost desktop app <https://mattermost.com/apps/>`_ or another supported browser. See `this forum post <https://forum.mattermost.com/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`__ to learn more.
 
@@ -78,8 +78,8 @@ Mobile web
 .. csv-table::
     :header: "Browser", "Technical Requirement"
 
-    "iOS", "iOS 16.0+ with Safari 26.2+ or Chrome 144+"
-    "Android", "Android 7+ with Chrome 144+"
+    "iOS", "iOS 16.0+ with Safari 26.2+ or Chrome 146+"
+    "Android", "Android 7+ with Chrome 146+"
 
 Email client
 ^^^^^^^^^^^^
@@ -135,10 +135,8 @@ When a PostgreSQL version reaches its end of life (EOL), Mattermost will require
 +------------------------------------------------------------+------------------+--------------------------------+
 | :ref:`v10.11 ESR <release-v10.11-extended-support-release>`| 2025-8-15        | 13.x                           |
 +------------------------------------------------------------+------------------+--------------------------------+
-| v11.7 ESR ``*``                                            | 2026-5-15        | 14.x (EOL 2026-11-12)          |
+| :ref:`v11.7 ESR <release-v11.7-extended-support-release>`  | 2026-5-15        | 14.x (EOL 2026-11-12)          |
 +------------------------------------------------------------+------------------+--------------------------------+
-
-``*`` Forcasted release version and date.
 
 Customers will have 9 months to plan, test, and upgrade their PostgreSQL version before the new requirement takes effect. This policy aims to provide clarity and transparency so you can align database upgrades with the Mattermost release schedule. Contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_. to discuss your options.
 
@@ -232,5 +230,5 @@ For Enterprise Edition deployments with a multi-server setup, we highly recommen
 
 - Prometheus to track system health of your Mattermost deployment, through :doc:`performance monitoring feature </administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring>` available in Mattermost Enterprise.
 - Grafana to visualize the system health metrics collected by Prometheus with the :doc:`performance monitoring feature </administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring>`. Grafana 5.0.0 and later is recommended.
-- Elasticsearch to support highly efficient database searches in a cluster environment. Elasticsearch v7.17+ is supported, and Elasticsearch v8.x or AWS OpenSearch is recommended from Mattermost v9.11. :doc:`Learn more </administration-guide/scale/enterprise-search>`.
+- Elasticsearch to support highly efficient database searches in a cluster environment. Elasticsearch v8.x and v9.x are supported, and Elasticsearch v9.x or AWS OpenSearch is recommended. :doc:`Learn more </administration-guide/scale/enterprise-search>`.
 - AWS S3 or any S3-compatible service. Mattermost is compatible with object storage systems which implement the S3 API. You can also use local storage or a network drive using NFS. Learn more about file storage configuration options :ref:`in our documentation <administration-guide/configure/environment-configuration-settings:file storage>`.
