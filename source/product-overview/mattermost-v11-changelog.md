@@ -47,7 +47,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
 See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-available/) on the highlights in our latest release.
 
 #### User Interface
-  - Prepackage Jira plugin version [v4.7.1](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.7.1).
+  - Pre-packaged Jira plugin version [v4.7.1](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.7.1).
   - Pre-packaged Playbooks plugin version [v2.10.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.10.0).
   - Pre-packaged Agents plugin version [v2.4.1](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v2.4.1).
   - Pre-packaged [Calls plugin](https://docs.mattermost.com/end-user-guide/collaborate/make-calls.html) version [v1.12.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.12.0).
