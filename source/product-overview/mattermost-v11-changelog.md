@@ -49,7 +49,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
 #### User Interface
   - Pre-packaged Jira plugin version [v4.7.1](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.7.1).
   - Pre-packaged Playbooks plugin version [v2.10.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.10.0).
-  - Pre-packaged Agents plugin version [v2.4.1](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v2.4.1).
+  - Pre-packaged Agents plugin version [v2.4.2](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v2.4.2).
   - Pre-packaged [Calls plugin](https://docs.mattermost.com/end-user-guide/collaborate/make-calls.html) version [v1.12.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.12.0).
   - Pre-packaged Boards plugin version [v9.3.0](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.3.0).
   - Pre-packaged GitLab plugin version [v1.13.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.13.0).
