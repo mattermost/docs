@@ -103,7 +103,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
   - Added Phase 8b, 8c, 8d, 8e, 8f, 8h, 12, and 12e of the ``mbe-tech-preview``.
   - Added a ``mattermost db ping`` [subcommand](https://docs.mattermost.com/deployment-guide/reference-architecture/deployment-scenarios/air-gapped-deployment.html) that waits for the database to become reachable, with configurable ``--timeout`` and ``--retry-interval`` flags.
   - Added a new "rank" custom profile attribute type whose options carry an explicit ordering. System Admins can create and manage ranked attributes in the **System Console** and assign ranked values to users, enabling attribute-based access control policies that compare clearance- or classification-style attributes with ordinal operators (for example, "is at least Secret") instead of enumerating every qualifying value.
-  - Added a new ``ClusterReliableFallbackLength`` metric with the total length in bytes of the ``SendBestEffort`` calls (UDP) that had to fallback to TCP because of the message length.
+  - Added a new ``ClusterReliableFallbackLength`` [metric](https://docs.mattermost.com/administration-guide/scale/performance-monitoring-metrics.html) with the total length in bytes of the ``SendBestEffort`` calls (UDP) that had to fallback to TCP because of the message length.
   - Made ``SendBestEffort`` cluster messages fall back to using TCP when their length is larger than a UDP datagram.
   - Added a license preview and diff view when uploading a new license in the System Console, allowing administrators to compare the new license's features with the current license before applying.
   - Added a new ``mattermost_system_server_info`` Prometheus metric that exposes the server version and build hash as labels.
