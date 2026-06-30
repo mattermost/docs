@@ -97,9 +97,9 @@ Mattermost server operating system
 - Ubuntu, Debian Buster, CentOS 6+, CentOS 7+, RedHat Enterprise Linux 7+, Oracle Linux 6+, Oracle Linux 7+.
 - Using the Mattermost `Docker deployment <https://github.com/mattermost/docker>`__ on a Docker-compatible operating system (Linux-based OS) is still recommended.
 
-.. note::
+.. important::
 
-  Starting with Mattermost Server v12.0 (October 2026), RHEL 7 and RHEL 8 are no longer supported deployment targets. Mattermost v11.11 (September 2026) is the last release to support RHEL 7 and RHEL 8. RHEL 9, Ubuntu 22.04/24.04 LTS, Debian Bookworm, and container-based deployments remain fully supported. If you're running RHEL 7 or RHEL 8, plan to upgrade to RHEL 9 or migrate to another supported platform before the v12.0 release. See the `forum post <https://forum.mattermost.com/t/starting-with-mattermost-v12-0-october-2026-rhel-7-and-rhel-8-are-no-longer-supported-deployment-targets/25974>`__ for full details and migration options.
+  Starting with Mattermost Server v12.0 (October 2026), RHEL 7 and RHEL 8 will no longer be supported deployment targets. Mattermost v11.11 (September 2026) will be the last release to support RHEL 7 and RHEL 8. RHEL 9, Ubuntu 22.04/24.04 LTS, Debian Bookworm, and container-based deployments will remain fully supported. If you're running RHEL 7 or RHEL 8, plan to upgrade to RHEL 9 or migrate to another supported platform before the v12.0 release. See the `forum post <https://forum.mattermost.com/t/starting-with-mattermost-v12-0-october-2026-rhel-7-and-rhel-8-are-no-longer-supported-deployment-targets/25974>`__ for full details and migration options.
 
 While community support exists for Fedora, FreeBSD, and Arch Linux, Mattermost does not currently include production support for these platforms.
 
