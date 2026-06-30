@@ -19,7 +19,7 @@ Plugin availability and the actions you can take depend on a few configuration s
 - **Enable plugins** must be set to **true** (the default) for the plugin system to work. When disabled, all plugins are turned off.
 - **Enable Marketplace** must be set to **true** (the default) to install plugins from the in-product Marketplace.
 - **Enable remote Marketplace** must be set to **true** (the default) for the Marketplace to connect to the remote endpoint and list community and Mattermost-provided plugins. Set this to **false** for servers that can't reach the internet; the Marketplace then shows only pre-packaged and installed plugins.
-- **Upload Plugin** (``EnableUploads``) must be set to **true** to upload plugin bundles from your local computer. This setting applies to self-hosted deployments only.
+- **Upload Plugin** (``PluginSettings.EnableUploads``) must be set to **true** to upload plugin bundles from your local computer. This setting applies to self-hosted deployments only.
 - **Require plugin signature**, when enabled, validates plugin signatures and **disables plugin file uploads** in the System Console. With this setting enabled, install plugins from the Marketplace or as pre-packaged plugins instead.
 
 .. note::
@@ -106,7 +106,7 @@ To enable or disable a plugin with mmctl:
 
 .. note::
 
-  Disabling a plugin immediately removes it from the user interface and logs it out of all sessions. The plugin remains installed and can be re-enabled at any time.
+  Disabling a plugin immediately removes it from the user interface and stops the plugin from running. The plugin remains installed and can be re-enabled at any time.
 
 Configure a plugin
 ------------------
@@ -152,6 +152,16 @@ To remove a plugin with mmctl:
 .. code-block:: sh
 
    mmctl plugin delete <id>
+
+.. note::
+
+  Removing a plugin uninstalls it from the server and stops it from running, but Mattermost preserves the plugin's associated data:
+
+  - **Configuration**: The plugin's configuration is retained and marked as disabled rather than deleted. Reinstalling the same plugin restores its previous settings.
+  - **Key-value store data**: Data the plugin saved to the key-value (KV) store is preserved. It's cleared only by the plugin itself through the plugin API, not by removing the plugin.
+  - **Bot accounts**: Bot accounts the plugin created remain on the server and stay active. To remove them, deactivate the bot accounts manually in **System Console > Integrations > Bot Accounts**.
+
+  Because the configuration and KV store data persist, removal is effectively reversible: reinstalling the plugin restores its prior configuration and data.
 
 Air-gapped and restricted environments
 ---------------------------------------
