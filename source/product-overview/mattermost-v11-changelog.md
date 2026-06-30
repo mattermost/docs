@@ -113,7 +113,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
   - Reduced cluster send error logs from oversized ``plugin_statuses_changed`` WebSocket events.
 
 ### Bug Fixes
-  - Fixed a bug where a file read failure while building a Global Relay compliance export could crash the server.
+  - Fixed an issue where a file read failure while building a Global Relay compliance export could crash the server.
   - Fixed display of long usernames in the user account menu.
   - Fixed a white flash that appeared in the global header and left sidebar when switching between products (Playbooks/Boards) and Channels.
   - Fixed an issue where the AI actions toolbar separator was shown when no AI actions button was available.
