@@ -50,7 +50,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
   - Pre-packaged Jira plugin version [v4.7.1](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.7.1).
   - Pre-packaged Playbooks plugin version [v2.10.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.10.0).
   - Pre-packaged Agents plugin version [v2.4.2](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v2.4.2).
-  - Pre-packaged [Calls plugin](https://docs.mattermost.com/end-user-guide/collaborate/make-calls.html) version [v1.12.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.12.0).
+  - Pre-packaged [Calls plugin](https://docs.mattermost.com/end-user-guide/collaborate/make-calls.html) version [v1.12.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.12.1).
   - Pre-packaged Boards plugin version [v9.3.0](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.3.0).
   - Pre-packaged GitLab plugin version [v1.13.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.13.0).
   - Added zoom and pan support to the image file preview: use the scroll wheel to zoom at the cursor, click-and-drag to pan, and +/-/0 keyboard shortcuts (reported on webapp).
@@ -107,6 +107,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
   - Made ``SendBestEffort`` cluster messages fall back to using TCP when their length is larger than a UDP datagram.
   - Added a license preview and diff view when uploading a new license in the System Console, allowing administrators to compare the new license's features with the current license before applying.
   - Added a new ``mattermost_system_server_info`` Prometheus metric that exposes the server version and build hash as labels.
+  - Enabled the AttributeValueMasking, PermissionPolicies, ChannelPermissionPolicies, PolicySimulation and PropertyFieldRank feature flags by default.
 
 #### Performance
   - Improved the performance of concurrent logins by removing a global mutex in favour of database serialization for computing login attempts. This, in turn, fixed the semantics of the ``MaximumLoginAttempts`` setting, which is now honored across all nodes in the cluster: instead of allowing ``n*MaximumLoginAttempts`` attempts, with ``n`` the number of nodes, we now allow ``MaximumLoginAttempts`` attempts regardless of the number of nodes.
@@ -144,6 +145,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
   - Fixed an issue where channels with a permission-only access control policy (and no membership policy) were incorrectly hidden from the channel picker in the Invite People → Invite as Guest flow.
   - Tightened authorization on the OAuth deauthorization and personal access token management endpoints.
   - Tightened validation when updating channel member roles via the API.
+  - Fixed an issue where the Channel Settings Permissions Policy rule editor cleared all entered fields (role, conditions, and permissions) when a validation error was shown on save.
 
 ### API Changes
   - Added ``POST /file/test`` (``testFileStore``) API endpoint for backend-agnostic file store connection testing.
