@@ -15,6 +15,10 @@ From Mattermost v9.11, beta support is available for `AWS OpenSearch v1.x and v2
 
 We highly recommend that you set up an AWS OpenSearch server on a separate machine from the Mattermost server.
 
+.. important::
+
+   Starting in Mattermost v12.0, OpenSearch v1.x is no longer supported. Upgrading to OpenSearch v2.x or later is required.
+
 .. tab:: On-Premises OpenSearch
   :parse-titles:
 
