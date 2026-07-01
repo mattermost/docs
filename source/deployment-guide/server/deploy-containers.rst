@@ -103,3 +103,10 @@ Additionally, consider:
 - Set up proper firewall rules to restrict unauthorized access and monitor traffic using tools like Fail2Ban or Wazuh.
 
 By following these steps, your Mattermost deployment using Docker containers will be accessible securely over HTTPS with efficient proxying through NGINX. Implementing the additional security recommendations will further protect your environment against evolving threats.
+
+.. toctree::
+    :maxdepth: 1
+    :hidden:
+    :titlesonly:
+
+    Migrate an existing deployment to FIPS-compliant containers </deployment-guide/server/containers/fips-migration>
