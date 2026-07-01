@@ -17,7 +17,7 @@ We highly recommend that you set up an AWS OpenSearch server on a separate machi
 
 .. important::
 
-   Starting in Mattermost v12.0, OpenSearch v1.x is no longer supported. Upgrading to OpenSearch v2.x or later is required.
+   Starting in Mattermost v12.0 (October 2026), OpenSearch v1.x is no longer supported. Upgrading to OpenSearch v2.x or later is required.
 
 .. tab:: On-Premises OpenSearch
   :parse-titles:
