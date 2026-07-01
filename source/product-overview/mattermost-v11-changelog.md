@@ -107,7 +107,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
   - Made ``SendBestEffort`` cluster messages fall back to using TCP when their length is larger than a UDP datagram.
   - Added a license preview and diff view when uploading a new license in the System Console, allowing administrators to compare the new license's features with the current license before applying.
   - Added a new ``mattermost_system_server_info`` Prometheus metric that exposes the server version and build hash as labels.
-  - Enabled the AttributeValueMasking, PermissionPolicies, ChannelPermissionPolicies, PolicySimulation and PropertyFieldRank feature flags by default.
+  - Enabled the ``AttributeValueMasking``, ``PermissionPolicies``, ``ChannelPermissionPolicies``, ``PolicySimulation`` and ``PropertyFieldRank`` feature flags by default.
 
 #### Performance
   - Improved the performance of concurrent logins by removing a global mutex in favour of database serialization for computing login attempts. This, in turn, fixed the semantics of the ``MaximumLoginAttempts`` setting, which is now honored across all nodes in the cluster: instead of allowing ``n*MaximumLoginAttempts`` attempts, with ``n`` the number of nodes, we now allow ``MaximumLoginAttempts`` attempts regardless of the number of nodes.
@@ -145,7 +145,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
   - Fixed an issue where channels with a permission-only access control policy (and no membership policy) were incorrectly hidden from the channel picker in the Invite People → Invite as Guest flow.
   - Tightened authorization on the OAuth deauthorization and personal access token management endpoints.
   - Tightened validation when updating channel member roles via the API.
-  - Fixed an issue where the Channel Settings Permissions Policy rule editor cleared all entered fields (role, conditions, and permissions) when a validation error was shown on save.
+  - Fixed an issue where the **Channel Settings Permissions Policy** rule editor cleared all entered fields (role, conditions, and permissions) when a validation error was shown on save.
 
 ### API Changes
   - Added ``POST /file/test`` (``testFileStore``) API endpoint for backend-agnostic file store connection testing.
