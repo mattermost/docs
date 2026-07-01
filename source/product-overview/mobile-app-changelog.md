@@ -21,7 +21,7 @@ Platform and OS scope reflects reported and tested environments and may not repr
  - iPhone 8+ devices and later with iOS 16.0+ are [required](https://support.apple.com/en-il/guide/iphone/iphe3fa5df43/16.0/ios/16.0).
 
 ### Bug Fixes
- - TBD.
+ - Fixed a random crash that occurred while using the keyboard.
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
