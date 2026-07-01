@@ -29,6 +29,14 @@ High availability
 
 A :doc:`high availability cluster-based deployment </administration-guide/scale/high-availability-cluster-based-deployment>` enables a Mattermost system to maintain service during outages and hardware failures through the use of redundant infrastructure.
 
+PostgreSQL high availability cluster
+--------------------------------------
+
+For self-hosted deployments on bare-metal or VMs, a
+:doc:`PostgreSQL HA cluster </administration-guide/scale/postgres-ha-cluster>`
+provides automatic database failover using repmgr, HAProxy, and Keepalived —
+without requiring a managed database service.
+
 Redis
 -----
 
@@ -45,7 +53,8 @@ Available reference architectures
     Deployment architecture at scale </administration-guide/scale/server-architecture>
     Backing storage benchmarks </administration-guide/scale/backing-storage-benchmarks>
     Enterprise search </administration-guide/scale/enterprise-search>
-    High availability </administration-guide/scale/high-availability-cluster-based-deployment> 
+    High availability </administration-guide/scale/high-availability-cluster-based-deployment>
+    PostgreSQL HA cluster </administration-guide/scale/postgres-ha-cluster>
     Redis </administration-guide/scale/redis>
     Scale up to 200 users </administration-guide/scale/scale-to-200-users>
     Scale up to 2000 users </administration-guide/scale/scale-to-2000-users>
