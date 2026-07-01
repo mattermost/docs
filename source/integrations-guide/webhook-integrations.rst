@@ -22,6 +22,7 @@ With webhooks, you can:
 
 - Receive updates in Mattermost from other systems via :doc:`Incoming Webhooks </integrations-guide/incoming-webhooks>`.
 - Send data out of Mattermost to external endpoints via :doc:`Outgoing Webhooks </integrations-guide/outgoing-webhooks>` based on channel activity.
+- Create rich, interactive posts with text, images, buttons, and menus using `MM Blocks <https://developers.mattermost.com/integrate/reference/mm-blocks/>`_—the recommended alternative to legacy `message attachments <https://developers.mattermost.com/integrate/reference/message-attachments/>`_.
 
 Because webhooks use lightweight HTTP POST requests with JSON payloads, they're easy to set up with virtually any tool or platform, whether you need quick notifications or deep integration with enterprise workflows.
 

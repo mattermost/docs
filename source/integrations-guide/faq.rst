@@ -48,7 +48,14 @@ What are attachments?
 
 When "attachments" are mentioned in Mattermost integrations documentation, it refers to Slack's message attachments functionality. These "attachments" can be optionally added as an array in the data sent by an integration, and are used to customize the formatting of the message.
 
-Mattermost doesn't currently support the ability to attach files to a post made via webhook. You can use the API to attach files to a message if needed. 
+Mattermost doesn't currently support the ability to attach files to a post made via webhook. You can use the API to attach files to a message if needed.
+
+What are MM Blocks?
+--------------------
+
+MM Blocks are Mattermost's structured format for rich, interactive integration posts. They are the recommended way to create richly formatted interactive messages with text, images, buttons, and menus.
+
+See the `MM Blocks reference <https://developers.mattermost.com/integrate/reference/mm-blocks/>`_ in the developer documentation for integration details. If content does not render as expected, see :doc:`Troubleshoot MM Blocks </get-help/mm-blocks-troubleshooting>`.
 
 Where can I find existing integrations?
 ---------------------------------------
