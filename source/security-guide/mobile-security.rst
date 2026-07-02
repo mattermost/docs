@@ -94,4 +94,11 @@ Burn-on-read messages reduce the window of exposure for sensitive content by aut
 
 Administrators can enable burn-on-read messaging and set the burn-on-read duration to align with organizational policies. Learn more about :ref:`sending burn-on-read messages <end-user-guide/collaborate/send-messages:send burn-on-read messages>` and :ref:`enabling burn-on-read messages <administration-guide/configure/site-configuration-settings:enable burn-on-read messages>`.
 
+Mobile Ephemeral Mode
+---------------------
+
+Mobile applications typically cache messages, files, and attachments indefinitely. Without data-age controls or a device-side deletion mechanism, a lost or stolen device retains all cached content — and MDM remote wipe cannot help when the device is offline. Mobile Ephemeral Mode addresses this by giving administrators timer-based controls that run on-device, independently of server connectivity, ensuring data is removed based on elapsed time rather than device reachability.
+
+Administrators can configure the maximum age of cached content and how long data persists after a device goes offline. A server-initiated wipe triggered by access revocation removes all data, including credentials, as soon as the device receives the command. Learn more about :ref:`Mobile Ephemeral Mode <deployment-guide/mobile/mobile-security-features:mobile ephemeral mode>`.
+
 `Book a live demo <https://mattermost.com/request-demo/>`_  or `talk to a Mattermost expert <https://mattermost.com/contact-sales/>`_ to explore tailored solutions for your organization's secure collaboration needs. Or try Mattermost yourself with a `1-hour preview <https://mattermost.com/sign-up/>`_ for instant access to a live sandbox environment.
