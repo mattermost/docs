@@ -31,6 +31,8 @@ Platform and OS scope reflects reported and tested environments and may not repr
    - Added ``rank``-type support to the ``AttributeView`` materialized view so ABAC policies can evaluate ranked property options; no performance impact expected on feature-flagged deployments.
    - Renamed ``system_classification`` and ``channel_classification`` entries in ``PropertyFields`` to the canonical name ``classification``; affects at most two rows with no performance impact.
    - Added an ``expiresat`` column and partial index to ``useraccesstokens`` to support PAT expiry enforcement, with no large-table impact or downtime required.
+   - Added a ``SchemaVersion`` column to ``PropertyGroups`` with no large-table impact or downtime required.
+   - Added a ``targetid`` column and ``idx_channelbookmarks_type_targetid`` index to ``channelbookmarks`` to support a new ``board`` bookmark type, with no impact to existing bookmarks or downtime required.
 
 #### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
