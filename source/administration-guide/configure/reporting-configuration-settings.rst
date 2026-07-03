@@ -6,18 +6,20 @@ Reporting configuration settings
 
 View the following statistics for your overall deployment and specific teams, as well as access server logs, in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Reporting**:
 
-- `Site statistics <#site-statistics>`__
+- `System statistics <#system-statistics>`__
 - `Team statistics <#team-statistics>`__
 - `Server logs <#server-logs>`__
 - `Statistics configuration settings <#statistics-configuration-settings>`__
 
 ----
 
-Site statistics
+.. _site-statistics:
+
+System statistics
 ---------------
 
 +----------------------------------------------------------------+---------------------------------------------------------------------+
-| View statistics on a wide variety of activities in Mattermost, | - System Config path: **Reporting > Site Statistics**               |
+| View statistics on a wide variety of activities in Mattermost, | - System Config path: **Reporting > System Statistics**             |
 | including: users, seats, teams, channels, posts, calls,        | - ``config.json setting``: N/A                                      |
 | sessions, commands, webhooks, websocket and database           | - Environment variable: N/A                                         |
 | connections, and collaborative playbooks.                      |                                                                     |

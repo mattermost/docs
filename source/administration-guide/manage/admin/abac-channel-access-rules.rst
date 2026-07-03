@@ -4,7 +4,7 @@ Channel-specific access rules
 .. include:: ../../../_static/badges/entry-adv.rst
   :start-after: :nosearch:
 
-Channel and Team Admins can self-manage access controls for their channels directly through the Channel Settings modal, without requiring System Admin intervention. For organization-wide policies created by System Admins, see :doc:`System-wide attribute-based access policies </administration-guide/manage/admin/abac-system-wide-policies>`.
+Channel and Team Admins can self-manage access controls for their channels directly through the Channel Settings modal, without requiring System Admin intervention. For organization-wide policies created by System Admins, see :doc:`System-wide attribute-based access policies </administration-guide/manage/admin/abac-system-wide-policies>`. For team-scoped policies that apply rules across multiple channels within a team, see :doc:`Team-level channel membership policies </administration-guide/manage/admin/abac-team-channel-policies>`.
 
 From Mattermost v11.8, channel access rules can be applied to **both private and public channels**. The two channel types behave differently under ABAC:
 
@@ -25,7 +25,7 @@ Prerequisites
 
 - :doc:`Attribute-Based Access Control (ABAC) </administration-guide/manage/admin/attribute-based-access-control>` must be enabled by a System Admin in **System Console > System Attributes > Attribute-Based Access**.
 - You need Channel Admin permissions and the ``manage_channel_access_rules`` permission.
-- Channel access rules are available for private and public channels. Default channels (such as Town Square and Off-Topic), shared channels, and group-synced channels remain ineligible.
+- Channel access rules are available for private and public channels, with behavior that varies by channel type. See :ref:`Public and private channel behavior <administration-guide/manage/admin/abac-channel-access-rules:public and private channel behavior>`. Default channels (such as Town Square and Off-Topic), shared channels, and group-synced channels remain ineligible.
 
 Access Channel Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -99,6 +99,84 @@ When you save changes that affect membership, a confirmation dialog shows you:
 - Confirmation required before applying changes.
 
 Once a policy is attached to a channel, the channel cannot be converted between public and private until the policy is removed. The two modes have different semantics (advisory vs. hard gate), so a silent conversion would change what an existing policy actually does to its members.
+
+Public and private channel behavior
+-----------------------------------
+
+Membership policies behave differently depending on the type of channel they're applied to:
+
+- **Private channels**: Membership policies are enforced. Users who match the policy's rules are added, and users who don't match the rules are removed during synchronization.
+- **Public channels**: Membership policies are advisory. Matching users may be automatically added when auto-add is enabled, but non-matching members are not removed.
+- When auto-add is disabled for a public channel, matching channels are surfaced as **recommended** rather than enforcing membership.
+- Direct messages and group messages aren't eligible for membership policies.
+- Default channels such as **Town Square** and **Off-Topic** are excluded.
+
+.. note::
+
+  Public channels with membership policies may appear in **Browse Channels** under **Recommended**, and matching users may be marked **Recommended** in the channel invite flow. See :doc:`Browse channels </end-user-guide/collaborate/browse-channels>` and :doc:`Manage channel members </end-user-guide/collaborate/manage-channel-members>` for the end-user experience.
+
+Channel-level permission policies
+---------------------------------
+
+From Mattermost v11.8.0, channel admins can define channel-level permission rules for file upload and file download based on user attributes and channel role. Applicable roles include **channel admin**, **channel member**, and **channel guest**.
+
+For system-wide permission policies that restrict file upload and download actions, see :ref:`Permission policies <administration-guide/manage/admin/abac-system-wide-policies:permission policies>`.
+
+Simulate access
+----------------
+
+From Mattermost v11.8.0, admins can use **Simulate access** in Channel Settings to preview whether selected users can perform actions such as uploading files or downloading files before saving policy changes.
+
+- Simulation can evaluate draft rules before they're saved, so you can confirm the intended scope without affecting live channel access.
+- Some denied results may indicate that the decision came from another policy. In that case, Mattermost shows that access was denied by another policy without exposing policy details you aren't authorized to see.
+
+.. note::
+
+  Channel-level permission policies and **Simulate access** are gated by the ``PermissionPolicies`` feature flag (``MM_FEATUREFLAGS_PERMISSIONPOLICIES``) and require a Mattermost Enterprise Advanced license. See the Mattermost developer documentation for details on `enabling feature flags in a self-hosted deployment <https://developers.mattermost.com/contribute/more-info/server/feature-flags/#self-hosted-and-local-development>`_. Mattermost Cloud customers can request this feature flag be enabled by contacting their Mattermost Account Manager or by `creating a support ticket <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=11184911962004>`_.
+
+Manage team-scoped membership policies in Team Settings
+-------------------------------------------------------
+
+From Mattermost v11.7, Team Admins can create, edit, and delete channel membership policies directly from Team Settings, scoped to channels within their team. This lets teams self-manage attribute-based membership for their own channels without requiring a System Admin to create or modify a system-wide policy.
+
+Prerequisites
+~~~~~~~~~~~~~
+
+- :doc:`Attribute-Based Access Control (ABAC) </administration-guide/manage/admin/attribute-based-access-control>` must be enabled by a System Admin in **System Console > System Attributes > Attribute-Based Access**.
+- You need Team Admin permissions for the team and the ``manage_team_access_rules`` permission.
+- Team-scoped membership policies can be assigned to both public and private channels within the team.
+
+Team Admin workflow
+~~~~~~~~~~~~~~~~~~~
+
+1. Open **Team Settings** from the team menu, and go to the **Membership Policies** tab. This tab is only visible to Team Admins with the ``manage_team_access_rules`` permission when ABAC is enabled system-wide.
+2. Select **Add Policy** and enter a name for the policy. Parent policy names must be unique; if you enter a name that's already in use, Mattermost displays a user-friendly error and prevents the policy from being saved.
+3. Define the attribute rules that determine which users can be members of channels assigned to this policy. Rules use the same attribute conditions available for channel-specific access rules.
+4. Assign the applicable private channels in the team to the policy.
+5. Select **Save** to create or update the policy. Team-scoped policies can be edited or deleted from the same tab at any time.
+
+Team Settings sync status footer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The **Membership Policies** tab includes a sync status footer that shows:
+
+- **Last sync time**: The time of the most recent membership synchronization for policies in this team.
+- **Sync now**: An on-demand action that triggers an immediate synchronization for the team's policies.
+
+Team-scoped sync is limited to the team admin's team scope. Triggering **Sync now** from Team Settings does not affect channels or policies outside the current team.
+
+Sync behavior by channel type
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Sync behavior for team-scoped membership policies depends on the type of channel the policy is assigned to:
+
+- **Public channels**: Sync is advisory and add-only. Users who match the policy's rules are added to the channel, but no users are removed if their attributes change.
+- **Private channels**: Sync is enforced. Users who match the policy's rules are added to the channel, and users who no longer match the rules are removed during the next synchronization.
+
+Automatic sync on policy changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost automatically runs a sync job whenever a team-scoped membership policy is created, or its rules, assigned channels, or active state change. Team Admins don't need to manually trigger **Sync now** for these updates; the sync runs as part of the change.
 
 Policy inheritance
 --------------------
