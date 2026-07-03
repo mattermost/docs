@@ -55,6 +55,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
   - Pre-packaged [Calls plugin](https://docs.mattermost.com/end-user-guide/collaborate/make-calls.html) version [v1.12.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.12.1).
   - Pre-packaged Boards plugin version [v9.3.0](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.3.0).
   - Pre-packaged GitLab plugin version [v1.13.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.13.0).
+  - Pre-packaged Boards plugin version [v9.3.0](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.3.0).
   - Added zoom and pan support to the image file preview: use the scroll wheel to zoom at the cursor, click-and-drag to pan, and +/-/0 keyboard shortcuts (reported on webapp).
   - Added a toast notification for plugin-rejected file uploads, consistent with the existing notification for rejected downloads.
   - Added a Data Spillage Handling feature discovery page in the System Console for lower-tier licenses.
@@ -162,7 +163,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
   - Added ``AuditEventRejectExpiredUserAccessToken`` audit log event.
 
 ### Go Version
- - v11.9 is built with Go ``v1.26.3``.
+ - v11.9 is built with Go ``v1.26.4``.
 
 (release-v11.8-feature-release)=
 ## Release v11.8 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
