@@ -16,6 +16,10 @@ Platform and OS scope reflects reported and tested environments and may not repr
 (release-v11.8-feature-release)=
 ## Release v11.8 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **11.8.3, released 2026-07-15**
+  - Mattermost v11.8.3 contains a low severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Tightened validation when updating channel member roles via the API.
+  - Mattermost v11.8.3 contains no database or functional changes.
 - **11.8.2, released 2026-06-26**
   - Mattermost v11.8.2 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Agents plugin version [v2.0.5](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v2.0.5).
@@ -189,6 +193,13 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
 (release-v11.7-extended-support-release)=
 ## Release v11.7 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **11.7.7, released 2026-07-15**
+  - Mattermost v11.7.7 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Playbooks plugin version [v2.9.2](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.9.2).
+  - Pre-packaged Jira plugin version [v4.7.1](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.7.1).
+  - Tightened validation when updating channel member roles via the API.
+  - Tightened authorization on the OAuth deauthorization and personal access token management endpoints.
+  - Mattermost v11.7.7 contains no database or functional changes.
 - **11.7.6, released 2026-06-26**
   - Mattermost v11.7.6 contains low severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged GitLab plugin version [v1.12.3](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.12.3).
