@@ -33,6 +33,7 @@ Platform and OS scope reflects reported and tested environments and may not repr
    - Added an ``expiresat`` column and partial index to ``useraccesstokens`` to support PAT expiry enforcement, with no large-table impact or downtime required.
    - Added a ``SchemaVersion`` column to ``PropertyGroups`` with no large-table impact or downtime required.
    - Added a ``targetid`` column and ``idx_channelbookmarks_type_targetid`` index to ``channelbookmarks`` to support a new ``board`` bookmark type, with no impact to existing bookmarks or downtime required.
+   - Added the ``ChannelGuards`` table and a ``PluginId`` index to support plugin-exclusive channel ownership, with no downtime or backwards-compatibility impact.
 
 #### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
