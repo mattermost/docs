@@ -37,7 +37,7 @@ Scope definition
 Rocket.Chat / MongoDB prerequisites
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- You need access to the Rocket.Chat MongoDB instance and the ``mongodump`` tool from the `MongoDB Database Tools <https://www.mongodb.com/docs/database-tools/mongodump/>`_.
+- You need access to the Rocket.Chat MongoDB instance and the ``mongodump`` tool from the `MongoDB Database Tools <https://www.mongodb.com/docs/database-tools/>`_.
 - Identify the database name (commonly ``meteor``) and the connection URI.
 - The transform reads these collections from the dump: ``users``, ``rocketchat_room``, ``rocketchat_message``, and ``rocketchat_subscription`` (all required), plus ``rocketchat_uploads`` and ``rocketchat_uploads.chunks`` (for attachments).
 
