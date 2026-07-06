@@ -6538,6 +6538,8 @@ If you upgrade from a release earlier than 5.23, please read the other [Importan
 #### Full-text search and indexing (Experimental)
  - Ability to use Bleve to execute search functionality instead of the database.
 
+### Improvements
+
 #### User Interface (UI)
  - Added a count for pinned posts header icon.
  - Added the ability to view user profile pop-over when clicking the profile picture or username from the **View Members** and **Manage Members** modals.
