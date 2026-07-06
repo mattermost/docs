@@ -116,7 +116,7 @@ Once you’ve started the renewal process, we'll be in contact with you to confi
 What happens when my subscription expires?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you don't renew before your subscription expires, your server is automatically downgraded to Mattermost Entry. Users can still access and use Mattermost; however, paid features will no longer be available.
+If you don't renew before your subscription expires, your server is automatically downgraded to :doc:`Mattermost Entry </product-overview/editions-and-offerings>`. Users can still access and use Mattermost; however, paid features will no longer be available.
 
 When you renew, the subscription features will become available with the previous configuration (provided no action such as user migration has been taken).
 
