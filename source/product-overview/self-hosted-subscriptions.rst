@@ -113,24 +113,17 @@ How long does it take to renew a subscription?
 
 Once you’ve started the renewal process, we'll be in contact with you to confirm your order and send you the order form. There may be additional paperwork required. Once we have the signed order form and (if applicable) the necessary paperwork from you, we're able to process the renewal and issue your license key within 24 hours.
 
-What happens to my subscription if I don't renew in time?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you don't renew within the 60-day renewal period, a 10-day grace period is provided. During this period your Mattermost installation runs as normal, with full access to commercial features. During the grace period, the notification banner is not dismissable.
-
-When the grace period expires, your Mattermost Professional, Enterprise, or Enterprise Advanced plan is downgraded to the Free plan and other plan features are disabled.
- 
 What happens when my subscription expires?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you don't renew within the 10-day grace period, your Mattermost version is automatically downgraded to Free plan so you can still access and use Mattermost. However, subscription features will no longer be available, and if you are currently using them, the functionality will no longer be accessible.
+If you don't renew before your subscription expires, your server is automatically downgraded to Mattermost Entry. Users can still access and use Mattermost; however, paid features will no longer be available.
 
 When you renew, the subscription features will become available with the previous configuration (provided no action such as user migration has been taken).
 
 Why can't I dismiss the expiry notification banner?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If there's a red expiry announcement banner stating: "Enterprise license is expired and some features may be disabled. Please contact your system admin for details." it means your grace period has expired. This announcement banner persists until the license is renewed, and is visible to all users.
+If there's a red expiry announcement banner stating: "Enterprise license is expired and some features may be disabled. Please contact your system admin for details." it means your subscription has expired. This announcement banner persists until the license is renewed, and is visible to all users.
 
 Once a new license is applied, the banner will no longer be visible.
 

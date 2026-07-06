@@ -6538,11 +6538,6 @@ If you upgrade from a release earlier than 5.23, please read the other [Importan
 #### Full-text search and indexing (Experimental)
  - Ability to use Bleve to execute search functionality instead of the database.
 
-### Improvements
-
-#### Enterprise Edition (EE)
- - Grace period after Enterprise Edition subscription expires was reduced from 15 days to 10 days. Moreover, Enterprise features are now disabled immediately after the grace period is over, instead of only after a server restart. Please see https://mattermost.com/pricing/#faq for more details.
-
 #### User Interface (UI)
  - Added a count for pinned posts header icon.
  - Added the ability to view user profile pop-over when clicking the profile picture or username from the **View Members** and **Manage Members** modals.
