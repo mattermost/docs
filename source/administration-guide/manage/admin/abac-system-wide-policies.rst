@@ -44,7 +44,15 @@ You can add multiple rules to a single policy, and each rule can include multipl
          - **Ends with**: The attribute value must end with the specified value.
          - **Contains**: The attribute value must exist somewhere with the specified value.
 
-     3. Specify the attribute values that users must have to be granted access to the channel. 
+         When the selected attribute is a **Ranked** attribute (an ordered list of values, such as clearance or classification levels), the match options are ordered comparisons instead. These let you match everyone at or above a threshold rather than only an exact value:
+
+         - **Is exactly** / **Is not**: The value must exactly match, or must not match, the specified value.
+         - **Is at least**: The value must be equal to or higher than the specified value - for example, clearance *is at least* Secret matches Secret and every higher level.
+         - **Is greater than**: The value must be higher than the specified value.
+         - **Is at most**: The value must be equal to or lower than the specified value.
+         - **Is less than**: The value must be lower than the specified value.
+
+     3. Specify the attribute values that users must have to be granted access to the channel.
 
    .. tab:: Advanced Mode
 

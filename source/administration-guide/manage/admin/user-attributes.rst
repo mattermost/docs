@@ -101,6 +101,7 @@ From Mattermost v11.8, user attributes include both a **Display Name** and a **N
       - **URL** for web site address-based profile attributes.
       - **Select** for a list of profile attribute values users can choose from. Specify each value followed by pressing **TAB** or **ENTER**. Values can be up to 64 characters long, and users can choose a single value.
       - **Multi-select** for a list of profile attribute values users can select from. Specify each value followed by pressing **TAB** or **ENTER**. Values can be up to 64 characters long, and users can choose multiple values.
+      - **Ranked** for an ordered list of values, where each value ranks higher or lower than the others - for example, clearance or classification levels such as *Public*, *Secret*, and *Top Secret*. Specify each value, then order the values from lowest to highest rank. Users can choose a single value. Because the values are ordered, :doc:`access control policies </administration-guide/manage/admin/abac-system-wide-policies>` can compare a ranked attribute against a threshold - for example, clearance *is at least* Secret - rather than only checking for an exact match.
 
 3. Specify the attribute's visibility as one of the following:
 
