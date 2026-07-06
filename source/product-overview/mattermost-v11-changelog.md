@@ -151,6 +151,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
   - Tightened validation when updating channel member roles via the API.
   - Fixed an issue where the **Channel Settings Permissions Policy** rule editor cleared all entered fields (role, conditions, and permissions) when a validation error was shown on save.
   - Avoided saving stale configurations from the System Console by refreshing a system admin's snapshot of the configuration whenever it changed.
+  - Fixed an issue where the Bot Accounts page loaded at most 200 bots, hiding newer bots from the list and search on servers with more than 200 bot accounts.
 
 ### API Changes
   - Added ``POST /file/test`` (``testFileStore``) API endpoint for backend-agnostic file store connection testing.
