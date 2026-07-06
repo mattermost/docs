@@ -150,6 +150,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
   - Tightened authorization on the OAuth deauthorization and personal access token management endpoints.
   - Tightened validation when updating channel member roles via the API.
   - Fixed an issue where the **Channel Settings Permissions Policy** rule editor cleared all entered fields (role, conditions, and permissions) when a validation error was shown on save.
+  - Avoid saving stale configurations from the system console by refreshing a system admin's snapshot of the config whenever it changes.
 
 ### API Changes
   - Added ``POST /file/test`` (``testFileStore``) API endpoint for backend-agnostic file store connection testing.
