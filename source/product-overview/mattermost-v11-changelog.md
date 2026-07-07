@@ -16,6 +16,14 @@ Platform and OS scope reflects reported and tested environments and may not repr
 (release-v11.8-feature-release)=
 ## Release v11.8 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **11.8.2, released 2026-06-26**
+  - Mattermost v11.8.2 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Agents plugin version [v2.0.5](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v2.0.5).
+  - Fixed custom emoji upload size and GIF frame limits.
+  - User Attributes can now be synced with AD/LDAP or SAML whether they are user-editable or admin-managed. When an attribute is synced, the "Editable by users" toggle is disabled; remove the link to change it again.
+  - Modified the ``SendBestEffort`` cluster messages logic to fall back to using TCP when their length is larger than a UDP datagram.
+  - Added a new ``ClusterReliableFallbackLength`` metric with the total length in bytes of the ``SendBestEffort`` calls (UDP) that had to fallback to TCP because of the message length.
+  - Mattermost v11.8.2 contains no database or functional changes.
 - **11.8.1, released 2026-06-17**
   - Mattermost v11.8.1 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed file moves and copies on S3 file stores failing for files larger than 5GiB (for example, finalizing an mmctl import upload of an import archive over 5GiB), by using a server-side multipart copy.
@@ -181,7 +189,16 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
 (release-v11.7-extended-support-release)=
 ## Release v11.7 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **11.7.6, released 2026-06-26**
+  - Mattermost v11.7.6 contains low severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged GitLab plugin version [v1.12.3](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.12.3).
+  - User Attributes can now be synced with AD/LDAP or SAML whether they are user-editable or admin-managed. When an attribute is synced, the "Editable by users" toggle is disabled; remove the link to change it again.
+  - Modified the ``SendBestEffort`` cluster messages logic to fall back to using TCP when their length is larger than a UDP datagram.
+  - Added a new ``ClusterReliableFallbackLength`` metric with the total length in bytes of the ``SendBestEffort`` calls (UDP) that had to fallback to TCP because of the message length.
+  - Mattermost v11.7.6 contains the following database changes:
+     - Removed orphaned ``threadmemberships`` rows where the user is no longer a channel member; irreversible data-only migration that may run slowly on large instances.
 - **11.7.5, released 2026-06-18**
+  - Mattermost v11.7.5 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed custom emoji upload size and GIF frame limits.
   - Mattermost v11.7.5 contains no database or functional changes.
 - **11.7.4, released 2026-06-17**
@@ -357,6 +374,11 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-7-is-now-availab
 (release-v11.6-feature-release)=
 ## Release v11.6 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **11.6.6, released 2026-06-26**
+  - Mattermost v11.6.6 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed custom emoji upload size and GIF frame limits.
+  - Mattermost v11.6.6 contains the following functional changes:
+    - Added a new ``FileSettings.ExtractContentTimeout`` setting (default 10 seconds) that limits how long a single uploaded document's content extraction occupies a worker, and moved document content extraction to a dedicated, non-blocking worker pool so it no longer delays file uploads for other users. Added ``FileSettings.ExtractContentTimeout`` configuration setting.
 - **11.6.5, released 2026-06-12**
   - Mattermost v11.6.5 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Playbooks plugin version [v2.9.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.9.0).
