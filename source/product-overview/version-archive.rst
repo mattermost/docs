@@ -13,7 +13,7 @@ If you want to check that the version of Mattermost you are installing is the of
 
   Mattermost Enterprise Edition v11.8.3 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-8-feature-release>`__ - `Download <https://releases.mattermost.com/11.8.3/mattermost-11.8.3-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/11.8.3/mattermost-11.8.3-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``TBD``
+    - SHA-256 Checksum: ``960131db16510e4b524a20775dad3ac42085445c2ef3b66e7a2809185a65cd5d``
     - GPG Signature: https://releases.mattermost.com/11.8.3/mattermost-11.8.3-linux-amd64.tar.gz.sig
     - SBOM Download Link: https://releases.mattermost.com/11.8.3/sbom-enterprise-v11.8.3.json
   Mattermost Enterprise Edition v11.7.7 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-7-extended-support-release>`__ - `Download <https://releases.mattermost.com/11.7.7/mattermost-11.7.7-linux-amd64.tar.gz?src=arc>`__
@@ -491,7 +491,7 @@ If you want to check that the version of Mattermost you are installing is the of
 
   Mattermost Team Edition v11.8.3 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-8-feature-release>`__ - `Download <https://releases.mattermost.com/11.8.3/mattermost-team-11.8.3-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/11.8.3/mattermost-team-11.8.3-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``TBD``
+    - SHA-256 Checksum: ``5c864ac5fc83f95f94d2c04a7f40eb9248e6118d84ec916f3e6290768e488aa9``
     - GPG Signature: https://releases.mattermost.com/11.8.3/mattermost-team-11.8.3-linux-amd64.tar.gz.sig
     - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v11.8.3/sbom-mattermost-v11.8.3.json
   Mattermost Team Edition v11.7.7 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-7-extended-support-release>`__ - `Download <https://releases.mattermost.com/11.7.7/mattermost-team-11.7.7-linux-amd64.tar.gz?src=arc>`__
