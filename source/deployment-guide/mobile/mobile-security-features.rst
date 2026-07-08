@@ -100,6 +100,20 @@ This approach allows organizations to extend zero-trust and data loss prevention
 
 See the :doc:`Microsoft Intune MAM configuration guide </deployment-guide/mobile/configure-microsoft-intune-mam>` for deployment and configuration details.
 
+Mobile Ephemeral Mode
+---------------------
+
+Mobile applications typically cache messages, files, and attachments on-device indefinitely. Two security concerns drive the need for administrator-controlled data lifecycle management on mobile devices:
+
+- **Unbounded sensitive data accumulation.** Without data-age controls, weeks or months of sensitive content can accumulate on any device a user has logged into — well beyond what operational need justifies.
+- **Offline exposure after device loss.** Remotely wiping a device requires it to be reachable — the condition least likely to hold when a device is lost, stolen, or in an adversarial environment. Unmanaged or personally-owned devices may not be enrolled in MDM at all, leaving cached content with no remote deletion path.
+
+Mobile Ephemeral Mode addresses both concerns by giving administrators direct, server-side control over how long data persists on mobile devices. The app enforces this policy locally — including while offline and across app and device restarts — so data is removed based on elapsed time, not device reachability.
+
+Mobile Ephemeral Mode generates an :ref:`audit log <administration-guide/manage/logging:audit logging>` event for each delete, purge, and wipe operation. Because these operations can execute on a device that is unreachable — where no administrator has direct visibility — audit logging provides verifiable proof that ephemeral policies were enforced. This supports compliance requirements for data lifecycle management and destruction accountability. Events that occur while the device is offline are reported to the server on reconnection.
+
+See the :ref:`Mobile Ephemeral Mode configuration settings <administration-guide/configure/environment-configuration-settings:mobile ephemeral mode>` to configure these controls.
+
 Mobile data isolation
 ------------------------
 
