@@ -11,11 +11,11 @@ If you want to check that the version of Mattermost you are installing is the of
 
 .. tab:: Mattermost Enterprise
 
-  Mattermost Enterprise Edition v11.8.2 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-8-feature-release>`__ - `Download <https://releases.mattermost.com/11.8.2/mattermost-11.8.2-linux-amd64.tar.gz?src=arc>`__
-    - ``https://releases.mattermost.com/11.8.2/mattermost-11.8.2-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``71c22f6c9c661145103dc99156dba39e95a61c7bb2013cff3757396ee565b873``
-    - GPG Signature: https://releases.mattermost.com/11.8.2/mattermost-11.8.2-linux-amd64.tar.gz.sig
-    - SBOM Download Link: https://releases.mattermost.com/11.8.2/sbom-enterprise-v11.8.2.json
+  Mattermost Enterprise Edition v11.8.3 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-8-feature-release>`__ - `Download <https://releases.mattermost.com/11.8.3/mattermost-11.8.3-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/11.8.3/mattermost-11.8.3-linux-amd64.tar.gz``
+    - SHA-256 Checksum: ``960131db16510e4b524a20775dad3ac42085445c2ef3b66e7a2809185a65cd5d``
+    - GPG Signature: https://releases.mattermost.com/11.8.3/mattermost-11.8.3-linux-amd64.tar.gz.sig
+    - SBOM Download Link: https://releases.mattermost.com/11.8.3/sbom-enterprise-v11.8.3.json
   Mattermost Enterprise Edition v11.7.6 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-7-extended-support-release>`__ - `Download <https://releases.mattermost.com/11.7.6/mattermost-11.7.6-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/11.7.6/mattermost-11.7.6-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``264fccda79d59d64874508ebe825cc2a59c1f68f1dae1d9bbee03525db3e3eda``
@@ -489,11 +489,11 @@ If you want to check that the version of Mattermost you are installing is the of
 
   We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to seamlessly unlock Enterprise features should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
 
-  Mattermost Team Edition v11.8.2 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-8-feature-release>`__ - `Download <https://releases.mattermost.com/11.8.2/mattermost-team-11.8.2-linux-amd64.tar.gz?src=arc>`__
-    - ``https://releases.mattermost.com/11.8.2/mattermost-team-11.8.2-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``de6d1ba83207ce6948588f851aa8ebdc15c3dfb21633867b67e9c822f960fd6d``
-    - GPG Signature: https://releases.mattermost.com/11.8.2/mattermost-team-11.8.2-linux-amd64.tar.gz.sig
-    - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v11.8.2/sbom-mattermost-v11.8.2.json
+  Mattermost Team Edition v11.8.3 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-8-feature-release>`__ - `Download <https://releases.mattermost.com/11.8.3/mattermost-team-11.8.3-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/11.8.3/mattermost-team-11.8.3-linux-amd64.tar.gz``
+    - SHA-256 Checksum: ``5c864ac5fc83f95f94d2c04a7f40eb9248e6118d84ec916f3e6290768e488aa9``
+    - GPG Signature: https://releases.mattermost.com/11.8.3/mattermost-team-11.8.3-linux-amd64.tar.gz.sig
+    - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v11.8.3/sbom-mattermost-v11.8.3.json
   Mattermost Team Edition v11.7.6 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-7-extended-support-release>`__ - `Download <https://releases.mattermost.com/11.7.6/mattermost-team-11.7.6-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/11.7.6/mattermost-team-11.7.6-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``70aef239d1ab5c4503ecbc89329fb74256472bcca1ee656a50a102899e589c44``
