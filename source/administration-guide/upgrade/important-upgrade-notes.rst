@@ -2714,6 +2714,7 @@ Additional upgrade notes
 
 .. note::
 
+  - See the `Deprecated Features <https://docs.mattermost.com/product-overview/deprecated-features.html>`__ document for upcoming deprecations in the v12.0 (October 2026) release.
   - Upgrading the Microsoft Teams Calling plugin to v2.0.0 requires users to reconnect their accounts.
   - Mattermost plugins built with Go versions 1.22.0 and 1.22.1 do not work. Plugin developers should use Go 1.22.2 or newer instead.
   - Keybase has stopped serving Mattermost's Ubuntu repository signing key. If you were using it, update your installation scripts to retrieve the key as mentioned in our :doc:`Linux deployment documentation </deployment-guide/server/deploy-linux>`.
