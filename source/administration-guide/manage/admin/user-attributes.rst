@@ -83,6 +83,8 @@ Add attributes
 
 You can define and manage up to 20 system attributes using the System Console. Each attribute becomes a user profile option users can populate, unless you disable the **Editable by Users** option, available from Mattermost v11. Once you reach the maximum of 20 attributes, you can't create new attributes until you `delete attributes <#manage-attributes>`__ you no longer need.
 
+From Mattermost v11.8, user attributes include both a **Display Name** and a **Name**. The Display Name is the label shown to users and admins in Mattermost. The Name is the internal attribute identifier used in API references and :doc:`attribute-based access control (ABAC) </administration-guide/manage/admin/attribute-based-access-control>` policy expressions. When you create a new user attribute, Mattermost can generate the Name from the Display Name, formatted as a CEL-safe identifier. Saved ABAC policies continue to reference the internal name using ``user.attributes.<name>``.
+
 .. note::
 
   When you disable the **Editable by Users** option for an attribute, only admins can set its value using :ref:`mmctl cpa <administration-guide/manage/mmctl-command-line-tool:mmctl cpa>` commands.
@@ -90,7 +92,8 @@ You can define and manage up to 20 system attributes using the System Console. E
 1. In the System Console, go to **Site Configuration > System Attributes > User Attributes** and select **Add Attribute**.
 2. Enter the following details:
 
-    - **Attribute name**: Enter a unique name for the attribute. Attribute names can be up to 40 characters long.
+    - **Display Name**: Enter a display name for the attribute that will be shown in any user facing UI.  
+    - **Attribute name**: Attribute name will be automatically generated from the provided Display Name. It can be overriden and with a preferred unique name for the attribute. Attribute names can be up to 40 characters long. The attribute name is used as the Common Expression Language (CEL) identifier in access control policies. It must start with a letter or underscore, and can contain only letters, numbers, and underscores. Reserved CEL words aren't allowed, including ``true``, ``false``, ``null``, ``in``, ``as``, ``break``, ``const``, ``continue``, ``else``, ``for``, ``function``, ``if``, ``import``, ``let``, ``loop``, ``package``, ``namespace``, ``return``, ``var``, ``void``, and ``while``. 
     - **Type**: Specify the type of attribute as one of the following:
 
       - **Text** for text-based profile attributes.
@@ -120,6 +123,9 @@ Manage attributes
 ------------------
 
 - **Modify**: Select the attribute fields to make inline changes to the attribute's name, type, or values. Select **More** |more-icon| to change a attribute's visibility.
+
+.. note::
+  From Mattermost v11.8, existing user attributes are backfilled so the Display Name initially matches the Name. If the Display Name is empty or unavailable, Mattermost falls back to showing the Name. Duplicate display names are permitted, but internal names remain unique.
 
 - **Order**: Control the order you want attributes to appear in user profiles by dragging and dropping them in the list.
 
