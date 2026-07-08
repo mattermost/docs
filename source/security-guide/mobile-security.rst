@@ -87,6 +87,15 @@ Additionally, administrators can control link navigation within PDF files when s
 
 Learn more about :ref:`enabling secure file preview on mobile <administration-guide/configure/environment-configuration-settings:enable secure file preview on mobile>` and :ref:`allow PDF link navigation on mobile <administration-guide/configure/environment-configuration-settings:allow pdf link navigation on mobile>` in the Mattermost mobile app.
 
+Mobile watermarking
+-------------------
+
+Mobile watermarking is an experimental Enterprise Advanced capability available from Mattermost v11.7 onward that helps organizations identify the source and timing of mobile screenshots or shared screen captures. When enabled by a system admin, authenticated Mattermost mobile sessions display a visible watermark overlay that includes the user's username, the server domain, and the current date and time. This supports data loss prevention (DLP) workflows by attributing any image taken of the Mattermost mobile app to a specific user, server, and point in time.
+
+The mobile watermark is a visual overlay only. It does not prevent screenshots, screen recordings, file exports, or content sharing through other means, and it is not a substitute for screen capture prevention or other mobile security controls. Mobile watermarking is disabled by default.
+
+Learn more about Mattermost :ref:`mobile watermarking <deployment-guide/mobile/mobile-security-features:mobile watermarking>` and how to :ref:`enable the experimental Mobile Watermark setting <administration-guide/configure/experimental-configuration-settings:enable mobile watermark>`.
+
 Burn-on-read messages
 ---------------------
 
