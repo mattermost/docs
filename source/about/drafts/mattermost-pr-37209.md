@@ -8,20 +8,21 @@
 
 === CAPABILITY SUMMARY ===
 
-**Capability change (one sentence):** Admins can now query Prometheus for `mattermost_system_server_info` to determine exactly which version and build each Mattermost server instance is running.
+Capability change (one sentence): Admins can now query a new `mattermost_system_server_info` Prometheus metric to determine the exact version and build information of each running Mattermost server instance.
 
-**PARITY or NET-NEW:** NET-NEW
+PARITY or NET-NEW: NET-NEW
 
-**Docs scope:** Update existing
+Docs scope: Update existing
 
-**Target personas:** System Admin, IT Service Operations
+Target personas: System Admin, IT Service Operations
 
 ---
 
 === DOCUMENTATION DRAFT ===
 
 **Recommended doc location:**
-- Mattermost Prometheus metrics reference page (likely: "Performance monitoring" or "Metrics reference" in the administration docs)
+- Primary: Mattermost Performance Monitoring / Metrics reference documentation (the page listing available Prometheus metrics)
+- Secondary: Any deployment monitoring or observability guide that references Mattermost Prometheus metrics
 
 ---
 
@@ -29,7 +30,7 @@
 
 ### `mattermost_system_server_info`
 
-From Mattermost v11.9.0, a new info-style Prometheus gauge is available:
+From Mattermost v11.9.0, a new info-style gauge metric is available:
 
 ```
 mattermost_system_server_info{version="...", build_number="...", build_hash="...", build_hash_enterprise="..."} 1
@@ -37,31 +38,35 @@ mattermost_system_server_info{version="...", build_number="...", build_hash="...
 
 **Subsystem:** `system`
 
-**Type:** Gauge (always `1`; version and build data are exposed as labels)
+**Type:** Gauge (always `1`; version and build data are encoded in labels)
 
 **Labels:**
 
 | Label | Description |
 |---|---|
-| `version` | The running server version (e.g., `11.9.0`) |
-| `build_number` | The CI build number |
+| `version` | The Mattermost server version string (e.g., `11.9.0`) |
+| `build_number` | The build number assigned at release |
 | `build_hash` | The Git commit hash of the server build |
 | `build_hash_enterprise` | The Git commit hash of the enterprise build |
 
-On cloud deployments, this metric also includes the standard cloud `ConstLabels` (installation ID, group, database cluster).
+On Cloud deployments, the metric also includes existing `ConstLabels` such as `installationId`, group, and database cluster identifiers.
 
-**Set:** Once at server startup; value does not change at runtime.
+The metric is registered once at server startup and does not change at runtime.
 
-**Example query:** To confirm which version is running across all instances in an environment:
+**Example query:**
+
+Use the following PromQL query to confirm deployment rollout across your fleet:
 
 ```promql
 count by (version) (mattermost_system_server_info)
 ```
 
+This returns a count of server instances grouped by version, which is useful for verifying that a deploy or rollout has reached all nodes.
+
 ---
 
 **Notes:**
 
-- This metric follows the standard [Prometheus info metric pattern](https://www.robustperception.io/exposing-the-software-version-to-prometheus/): the gauge value is always `1`; meaningful data is in the labels.
-- If the product's metrics reference docs organize metrics by subsystem, add this entry under the `system` subsystem alongside `mattermost_system_server_start_time`.
-- Verify the exact page name and existing table/list structure before inserting — the draft above is formatted to match a typical tabular metrics reference section. [NOT PRESENT IN PR — REQUIRES HUMAN JUDGMENT]
+- The metric follows the standard [Prometheus "info metric" pattern](https://www.robustperception.io/exposing-the-software-version-to-prometheus/): the gauge is always `1` and meaningful data is in the labels.
+- milestone.title: `v11.9.0` — version reference is confirmed.
+- [NOT PRESENT IN PR — REQUIRES HUMAN JUDGMENT]: Confirm whether Cloud-specific `ConstLabels` (installationId, etc.) should be documented in the public-facing metrics reference, or if that section is Cloud-internal only.
