@@ -493,7 +493,7 @@ If you want to check that the version of Mattermost you are installing is the of
     - ``https://releases.mattermost.com/11.8.4/mattermost-team-11.8.4-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``TBD``
     - GPG Signature: https://releases.mattermost.com/11.8.4/mattermost-team-11.8.4-linux-amd64.tar.gz.sig
-    - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v11.8.2/sbom-mattermost-v11.8.2.json
+    - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v11.8.4/sbom-mattermost-v11.8.4.json
   Mattermost Team Edition v11.7.7 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-7-extended-support-release>`__ - `Download <https://releases.mattermost.com/11.7.7/mattermost-team-11.7.7-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/11.7.7/mattermost-team-11.7.7-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``TBD``
