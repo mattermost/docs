@@ -20,7 +20,7 @@ Define access control policies
 You can add multiple rules to a single policy, and each rule can include multiple attribute values.
 
 1. In the System Console, go to **System Attributes > Attribute-Based Access** and select **Add Policy**.
-2. Enter a unique policy name.
+2. Enter a unique policy name. Parent access control policy names must be unique; if you enter a name that's already in use, Mattermost displays a user-friendly error message and prevents the policy from being saved until you choose a different name.
 3. Choose whether to automatically add users who match your configured attribute values as new members. Automatic synchronization is disabled by default. 
 
    * **True**: Automatically maintains channel membership according to the defined rules as user attributes change.
@@ -62,24 +62,47 @@ You can add multiple rules to a single policy, and each rule can include multipl
 
      Select the **Validate syntax** bar to check the syntax of your rule. If the syntax is valid, the bar will turn green and display a message indicating that the syntax is valid. If there are any issues, the bar will turn red and display an error message.
 
-Test rules
-~~~~~~~~~~
+Simulate access
+~~~~~~~~~~~~~~~~
 
 Select **Test access rule** to test the rule against your user base to return how many users would be granted access to the channel based on the current rule. Test your rules to ensure the intended scope and avoid unexpected access changes.
+
+From Mattermost v11.8.0, you can use **Simulate access** to preview allowed and denied outcomes for specific users before saving policy changes:
+
+1. Open the policy editor in the System Console.
+2. Select **Simulate access**.
+3. Choose the users you want to test.
+4. Review the allowed and denied outcomes by action, such as joining a channel or uploading and downloading files.
+5. Adjust the rules before saving.
+
+Simulation can test draft policy changes before they affect live channel access or file permissions. Detailed rule and attribute information is shown only when the denial comes from the policy or scope you're editing; otherwise, Mattermost may show that access was denied by another policy.
+
+.. note::
+
+  **Simulate access** and channel-level permission policies for file upload and file download are gated by the ``PermissionPolicies`` feature flag (``MM_FEATUREFLAGS_PERMISSIONPOLICIES``) and require a Mattermost Enterprise Advanced license. See the Mattermost developer documentation for details on `enabling feature flags in a self-hosted deployment <https://developers.mattermost.com/contribute/more-info/server/feature-flags/#self-hosted-and-local-development>`_. Mattermost Cloud customers can request this feature flag be enabled by contacting their Mattermost Account Manager or by `creating a support ticket <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=11184911962004>`_.
 
 Manage rules
 ~~~~~~~~~~~~
 
 You can apply changes to existing rules or remove rules at any time using either Simple Mode or Advanced Mode. Select **Save** to save your changes.
 
-Assign policies to private channels
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Assign policies to channels
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Specify the private channel that your access control policy applies to by selecting **Add channels** to search for and select the channels you want. You can assign the policy to multiple channels at once, or you can `assign it to individual channels <#define-access-controls-per-channel>`__ later. Select **Save** to save your changes.
+From Mattermost v11.8, system-wide policies can be assigned to **both private and public channels**. Select **Add channels** to search for and select the channels you want. You can assign the policy to multiple channels at once, or you can `assign it to individual channels <#define-access-controls-per-channel>`__ later. Select **Save** to save your changes.
+
+The two channel types behave differently under the same policy:
+
+- **Private channels** are hard-gated. The policy adds matching users (when auto-add is enabled), removes non-matching members during synchronization, and prevents non-matching users from being added or invited.
+- **Public channels** are advisory. The policy never removes members and never blocks anyone from joining. With auto-add enabled it automatically adds matching users; with auto-add disabled the channel appears under **Browse Channels > Recommended channels** for matching users.
+
+Before saving, you'll be prompted to confirm the impact of the change so you can review how it affects each channel type.
+
+Default channels (such as Town Square and Off-Topic), shared channels, and group-synced channels remain ineligible — they are excluded from the channel selector.
 
 .. note::
 
-  Private channels with attribute-based access control policies can't have guest users invited to them. Only users who match the defined attribute criteria can be added to ABAC-controlled channels, ensuring strict adherence to access control policies.
+  Private channels with attribute-based access control policies can't have guest users invited to them. Only users who match the defined attribute criteria can be added to ABAC-controlled private channels, ensuring strict adherence to access control policies. Public channels remain joinable by anyone regardless of the policy.
 
 Delete policies
 ~~~~~~~~~~~~~~~
@@ -89,11 +112,13 @@ To delete a policy, select the **Delete** button next to the policy you want to 
 Define access controls per channel
 ----------------------------------
 
-You can assign an existing access control policy to a private channels for more granular control over channel membership. This is useful when you need to apply different rules for different channels.
+You can assign an existing access control policy to a private or public channel for more granular control over channel membership. This is useful when you need to apply different rules for different channels.
 
-1. In the System Console, go to **User Management > Channels** to select the private channel you want to configure, and select **Edit**.
+1. In the System Console, go to **User Management > Channels** to select the private or public channel you want to configure, and select **Edit**.
 2. In the **Channel Management** section, enable the **Enable attribute-based channel access** option.
 3. Under **Access policy**, select **Link to a policy** to select an existing policy.
+
+Once a policy is attached, the channel's privacy can no longer be flipped between public and private until the policy is removed — see :ref:`Channel-specific access rules <administration-guide/manage/admin/abac-channel-access-rules:validation-and-safety>`.
 
 .. tip::
 
@@ -103,3 +128,17 @@ Remove channel policies
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 Disable the policy for the channel by selecting **Remove Policy**. You can then link the channel to a different policy if preferred.
+
+Permission policies
+-------------------
+
+From Mattermost v11.7, System Admins can define attribute-based **permission policies** that restrict specific user actions in addition to channel membership. Permission policies use the same attribute-based rules as access policies, but they apply to user actions rather than channel access.
+
+Permission policies can be used to restrict the following actions based on user attributes:
+
+- **File upload**: Prevent users who don't match the defined attribute rules from uploading file attachments.
+- **File download**: Prevent users who don't match the defined attribute rules from downloading file attachments.
+
+When a permission policy applies, users who don't match the configured attribute values can't perform the restricted action. Users may see file attachments as unavailable or redacted in messages they would otherwise have access to. See :ref:`Restricted file attachments <end-user-guide/collaborate/share-files-in-messages:restricted file attachments>` for the end-user-facing behavior.
+
+Permission policies follow the same unique-name requirement as access policies: each parent permission policy must have a unique name, and Mattermost surfaces a user-friendly error if a duplicate name is entered.

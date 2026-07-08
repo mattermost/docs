@@ -833,13 +833,31 @@ Maximum idle connections
 Query timeout
 ~~~~~~~~~~~~~
 
-+--------------------------------------------------------+-------------------------------------------------------------------------+
-| The amount of time to wait, in seconds, for a response | - System Config path: **Environment > Database**                        |
++--------------------------------------------------------+----------------------------------------------------------------------------------+
+| The amount of time to wait, in seconds, for a response | - System Config path: **Environment > Database**                                 |
 | from the database after opening a connection and       | - ``config.json`` setting: ``SqlSettings`` > ``QueryTimeout`` > ``30``  |
-| sending the query.                                     | - Environment variable: ``MM_SQLSETTINGS_QUERYTIMEOUT``                 |
-|                                                        |                                                                         |
-| Numerical input in seconds. Default is **30** seconds. |                                                                         |
-+--------------------------------------------------------+-------------------------------------------------------------------------+
+| sending the query.                                     | - Environment variable: ``MM_SQLSETTINGS_QUERYTIMEOUT``                          |
+|                                                        |                                                                                  |
+| Numerical input in seconds. Default is **30** seconds. |                                                                                  |
++--------------------------------------------------------+----------------------------------------------------------------------------------+
+
+.. config:setting:: analytics-query-timeout
+  :displayname: Analytics Query timeout (Database)
+  :systemconsole: Environment > Database
+  :configjson: .SqlSettings.AnalyticsQueryTimeout
+  :environment: MM_SQLSETTINGS_ANALYTICSQUERYTIMEOUT
+  :description: The number of seconds to wait for a response from the database after opening a connection and sending certain analytics queries. This setting only applies to long queries which are run in the background to populate some information in the Team and Site Statistics pages. Default is **300** seconds.
+
+Analytics query timeout
+~~~~~~~~~~~~~~~~~~~~~~~
+
++--------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| The number of seconds to wait for a response from the database after opening a connection  | - ``config.json`` setting: ``SqlSettings`` > ``AnalyticsQueryTimeout`` > ``300`` |
+| and sending certain analytics queries. This setting only applies to long queries which are | - System Config path: **Environment > Database**                                 |
+| run in the background to populate some information in the Team and Site Statistics pages.  | - Environment variable: ``MM_SQLSETTINGS_ANALYTICSQUERYTIMEOUT``                 |
+|                                                                                            |                                                                                  |
+| Numerical input in seconds. Default is **300** seconds.                                    |                                                                                  |
++--------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 .. config:setting:: maximum-connection-lifetime
   :displayname: Maximum connection lifetime (Database)
@@ -3306,47 +3324,24 @@ Maximum field size
   :systemconsole: Environment > Logging
   :configjson: .LogSettings.EnableDiagnostics
   :environment: MM_LOGSETTINGS_ENABLEDIAGNOSTICS
-  :description: Send general diagnostics and error reports to Mattermost, Inc.
+  :description: Controls whether server errors and crashes are reported to Mattermost via Sentry.
 
 Enable diagnostics and error reporting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +----------------------------------------------+--------------------------------------------------------------------------------+
-| Whether or not general diagnostics and error | - System Config path: **Environment > Logging**                                |
-| reports are sent to Mattermost, Inc.         | - ``config.json`` setting: ``LogSettings`` > ``EnableDiagnostics`` > ``""``    |
+| Controls whether server errors and crashes   | - System Config path: **Environment > Logging**                                |
+| are reported to Mattermost via Sentry.       | - ``config.json`` setting: ``LogSettings`` > ``EnableDiagnostics`` > ``true``  |
 |                                              | - Environment variable: ``MM_LOGSETTINGS_ENABLEDIAGNOSTICS``                   |
-| - **true**: **(Default)** Send diagnostics   |                                                                                |
-|   and error reports.                         |                                                                                |
-| - **false**: Diagnostics and error reports   |                                                                                |
-|   aren't sent.                               |                                                                                |
+| - **true**: **(Default)** Error and crash    |                                                                                |
+|   reports are sent to Mattermost's Sentry    |                                                                                |
+|   endpoint.                                  |                                                                                |
+| - **false**: No error or crash data is sent. |                                                                                |
 +----------------------------------------------+--------------------------------------------------------------------------------+
 
 .. note::
 
-  See the :ref:`telemetry <administration-guide/manage/telemetry:error and diagnostics reporting feature>` docummentation for details on the information Mattermost collects.
-
-.. config:setting:: enable-verbose-diagnostics
-  :displayname: Enable general verbose diagnostics (General Logging)
-  :systemconsole: N/A
-  :configjson: .LogSettings.VerboseDiagnostics
-  :environment: MM_LOGSETTINGS_VERBOSEDIAGNOSTICS
-  :description: Configure whether to send verbose general diagnostics information.
-
-  - **true**: Send verbose diagnostics information.
-  - **false**: **(Default)** Verbose diagnostics information isn't sent.
-
-Enable verbose diagnostics
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-+----------------------------------------------+---------------------------------------------------------------------------------+
-| Whether or not verbose general diagnostics   | - System Config path: N/A                                                       |
-| information is sent.                         | - ``config.json`` setting: ``LogSettings`` > ``VerboseDiagnostics`` > ``false`` |
-|                                              | - Environment variable: ``MM_LOGSETTINGS_VERBOSEDIAGNOSTICS``                   |
-| - **true**: Send verbose diagnostics         |                                                                                 |
-|   information.                               |                                                                                 |
-| - **false**: **(Default)** Verbose           |                                                                                 |
-|   diagnostics information isn't sent.        |                                                                                 |
-+----------------------------------------------+---------------------------------------------------------------------------------+
+  See the :ref:`telemetry <administration-guide/manage/telemetry:error and diagnostics reporting feature>` documentation for details on the information Mattermost collects.
 
 .. config:setting:: enable-sentry
   :displayname: Enable general Sentry reporting (General Logging)

@@ -118,6 +118,7 @@ Search metrics
 - ``mattermost_search_post_index_total``: The total number of posts indexes carried out.
 - ``mattermost_search_posts_searches_total``: The total number of post searches carried out.
 - ``mattermost_search_user_index_total``: The total number of user indexes carried out.
+- ``mattermost_search_engine_status``: Status of the configured search engine: ``1`` = healthy or not configured, ``0`` = configured but unavailable. Use this metric to set up alerts for search engine outages.
 
 WebSocket metrics
 ~~~~~~~~~~~~~~~~~
@@ -174,6 +175,11 @@ Plugin metrics
 - ``mattermost_plugin_hook_time``: Time to execute plugin hook handler in seconds.
 - ``mattermost_plugin_multi_hook_server_time``: Time for the server to execute multiple plugin hook handlers in seconds.
 - ``mattermost_plugin_multi_hook_time``: Time to execute multiple plugin hook handler in seconds.
+
+The metrics above are measured by the Mattermost server as it executes plugin code. From Mattermost v11.8.0, plugin-provided Prometheus metrics can also be exposed through the standard Mattermost ``/metrics`` endpoint when the ``AggregatePluginMetrics`` feature flag is enabled. Aggregated plugin metrics include a ``plugin_id`` label, based on the plugin's manifest ID, so admins can identify which plugin produced each metric.
+
+.. note::
+  ``AggregatePluginMetrics`` is disabled by default and must be enabled before plugin-provided metrics are included in the ``/metrics`` response.
 
 Shared metrics
 ~~~~~~~~~~~~~~

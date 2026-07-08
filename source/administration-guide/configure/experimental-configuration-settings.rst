@@ -315,6 +315,34 @@ Changes made when hardened mode is enabled:
 | This feature's ``config.json`` setting is ``"ExperimentalEnableHardenedMode": false`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: enable-mobile-watermark
+  :displayname: Enable Mobile Watermark (Experimental)
+  :systemconsole: Experimental > Features
+  :configjson: ExperimentalSettings.EnableMobileWatermark
+  :environment: N/A
+
+  - **true**: Authenticated Mattermost mobile sessions display a watermark overlay showing the user's username, the server domain, the current date (YYYY-MM-DD), and the current time (HH:mm) for data loss prevention (DLP) purposes.
+  - **false**: **(Default)** No watermark overlay is displayed in the Mattermost mobile app.
+
+Enable Mobile Watermark
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Available on `Enterprise Advanced <https://mattermost.com/pricing/>`__ from Mattermost v11.7 onward.
+
+**True**: Authenticated Mattermost mobile sessions display a watermark overlay showing the user's username, the server domain, the current date (YYYY-MM-DD), and the current time (HH:mm). This experimental capability is intended to support data loss prevention (DLP) workflows by helping identify the user, server, and time associated with mobile screenshots or shared screen captures.
+
+**False**: No watermark overlay is displayed in the Mattermost mobile app.
+
+.. note::
+
+  - This is an experimental setting. Behavior, defaults, and visual presentation may change in future releases.
+  - This setting only applies to the Mattermost mobile app. It does not add a watermark to the Mattermost web app or desktop apps.
+  - The watermark overlay is a visual aid and does not, by itself, prevent screenshots, screen recordings, file exports, or other forms of data extraction. Use it in combination with other mobile security controls, such as :ref:`screenshot and screen recording prevention <deployment-guide/mobile/mobile-security-features:screenshot and screen recording prevention>`, where appropriate.
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalSettings.EnableMobileWatermark": false`` with options ``true`` and ``false``. |
++--------------------------------------------------------------------------------------------------------------------------------------+
+
 .. config:setting:: enable-theme-selection
   :displayname: Enable theme selection (Experimental)
   :systemconsole: Experimental > Features
@@ -1519,6 +1547,9 @@ From Mattermost v10.10, when this :ref:`experimental <administration-guide/manag
 +------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalEnableChannelCategorySorting": false`` with options ``true`` and ``false``.     |
 +------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+  From Mattermost v11.8, channel category sorting is generally available and enabled by default. Configure it from **System Console > Site Configuration > Users and Teams** using the :ref:`Channel category sorting <administration-guide/configure/site-configuration-settings:channel category sorting>` setting (``TeamSettings.EnableChannelCategorySorting``).
 
 .. config:setting:: strict-csrf-token-enforcement
   :displayname: Strict CSRF token enforcement (Experimental)
