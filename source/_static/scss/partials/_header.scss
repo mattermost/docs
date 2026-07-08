@@ -35,11 +35,6 @@ body:not([data-custom-theme="light"]) {
 
 @media (max-width: 770px) {
     .notification-bar {
-        height: 48px;
         align-items: center;
-    }
-
-    .notification-bar__close {
-        top: 0;
     }
 }
