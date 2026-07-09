@@ -208,6 +208,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
   - Tightened authorization on the OAuth deauthorization and personal access token management endpoints.
   - Fixed an issue where a file read failure while building a Global Relay compliance export could crash the server.
   - Fixed an issue with plugin configuration loss on High Availability nodes with incomplete plugin sync.
+  - Fixed an issue where the **Bot Accounts** page loaded at most 200 bots, hiding newer bots from the list and search on servers with more than 200 bot accounts.
   - Mattermost v11.7.7 contains no database or functional changes.
 - **11.7.6, released 2026-06-26**
   - Mattermost v11.7.6 contains low severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
