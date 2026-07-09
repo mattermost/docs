@@ -82,7 +82,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
   - Added ``RegisterChannelGuard`` and ``UnregisterChannelGuard`` plugin api methods.
 
 #### Administration
-  - Added [Azure Blob Storage](ocs.mattermost.com/administration-guide/configure/azure-blob-storage.html) support.
+  - Added [Azure Blob Storage](https://docs.mattermost.com/administration-guide/configure/azure-blob-storage.html) support.
      - Added Azure Blob Storage as a selectable backend in the File Storage and Export Storage admin console panels. The S3 Test Connection control is now backend-agnostic and validates the active driver.
      - Added an Azure Cloud selector to the Azure Blob Storage admin panels with built-in support for Azure Commercial and Azure Government endpoints. Choose "Custom Endpoint" to point at Azurite, a reverse proxy, or any other Azure cloud by providing the full Blob service URL.
      - Added a Microsoft Entra ID / ``DefaultAzureCredential`` authentication mode to the Azure Blob Storage admin panels alongside the existing shared-key path. Select "Default credential (Microsoft Entra ID)" to authenticate via managed identity, workload identity, service principal environment variables, or ``az login`` — whichever the host environment provides — with no access key required.
@@ -98,7 +98,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
   - Enabled CJK (Chinese, Japanese, Korean) search by default for PostgreSQL.
   - Added support for OpenSearch v3, while continuing to support OpenSearch v2.
   - User attributes can now be synced with AD/LDAP or SAML whether they are user-editable or admin-managed. When an attribute is synced, the "Editable by users" toggle is disabled; remove the sync link to change it again.
-  - Added [attribute value masking](http://docs.mattermost.com/administration-guide/manage/admin/abac-system-wide-policies.html) for access control policies: admins who don't hold specific attribute values see a masked placeholder (``--------``) instead of the raw value, with affected rule rows set to read-only and save/delete actions disabled. Applies to the table editor, CEL editor, and team settings modal. Requires Enterprise Advanced license.
+  - Added [attribute value masking](https://docs.mattermost.com/administration-guide/manage/admin/abac-system-wide-policies.html) for access control policies: admins who don't hold specific attribute values see a masked placeholder (``--------``) instead of the raw value, with affected rule rows set to read-only and save/delete actions disabled. Applies to the table editor, CEL editor, and team settings modal. Requires Enterprise Advanced license.
   - Added support for iOS Calls ring for Direct/Group Message channels.
   - Expanded session attribute collection to include values provided by Desktop App and Mobile clients.
   - Removed legacy interactive dialog code path on webapp.
