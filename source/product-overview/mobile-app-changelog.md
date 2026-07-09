@@ -37,6 +37,7 @@ Platform and OS scope reflects reported and tested environments and may not repr
  - Fixed an issue where an archived-channel banner could briefly flicker when dismissing dialogs.
  - Fixed an issue where archiving a channel redirected users to the channel list instead of keeping users in the archived channel (reported on iOS and Android).
  - Fixes an issue with the audio selector for Calls on Android devices.
+ - Fixed an issue on Android where it was not possible to download logs or files from the gallery.
 
 ### Open Source Components
  - Removed ``@voximplant/react-native-foreground-service`` from https://github.com/mattermost/mattermost-mobile/.
