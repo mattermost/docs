@@ -25,16 +25,12 @@ body {
 
         .sidebar-sticky {
             @media (max-width: 770px) {
-                padding-top: 110px;
+                padding-top: 120px;
             }
         }
 
         .mobile-header {
             top: -15px;
-        }
-
-        header {
-            top: 45px;
         }
     }
 }
