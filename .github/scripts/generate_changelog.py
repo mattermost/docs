@@ -65,16 +65,15 @@ Here are your instructions:
  
     - `### Upgrade Impact` — for changes that affect upgrading, with subsections as applicable:
         - `#### Database Schema Changes` — schema migrations such as new tables, new columns, changed columns, or new indexes. Example items: "Added a new ``Watermarks`` table.", "Added a new column ``DeleteAt`` to the ``ChannelMembers`` table."
-        - `#### config.json` — new or changed configuration settings. Use this exact block format for each plan grouping:
+        - `#### config.json` — new or changed configuration settings. Use this exact block format for each plan grouping (no blank line between the `#### config.json` heading and the description paragraph, and no blank line between the description paragraph and the first bullet):
  
           New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
- 
           - **Changes to Enterprise Advanced plan:**
             - Under ``ExperimentalSettings`` in ``config.json``, added ``EnableWatermark`` configuration setting to add watermarking toggle in the server.
  
           Adapt the plan name (e.g. "Changes to All plans:", "Changes to Enterprise plan:", "Changes to Enterprise Advanced plan:") and list each setting change as a bullet under the appropriate plan heading.
         - `#### Compatibility` — minimum version requirement changes for browsers, OS, or clients. Example: "Updated minimum Edge and Chrome versions to 146+."
-    - `### Improvements` — for new features and enhancements only. Do NOT place items beginning with "Fixed..." here — those belong in Bug Fixes. Begin this section with the line `See [this blog post](BLOG_POST_URL) on the highlights in our latest release.` (use the exact placeholder `BLOG_POST_URL` — it will be replaced automatically). Then add subsections as applicable:
+    - `### Improvements` — for new features and enhancements only. Do NOT place items beginning with "Fixed..." here — those belong in Bug Fixes. Begin this section with the line `See [this blog post](BLOG_POST_URL) on the highlights in our latest release.` (use the exact placeholder `BLOG_POST_URL` — it will be replaced automatically), followed by a blank line before the first `####` subsection heading. Then add subsections as applicable:
         - `#### User Interface` — user interface and UX changes and new visual features. Pre-packaged plugin version updates go at the TOP of this subsection, before other items. Always write "user interface" in full — never abbreviate as "UI".
         - `#### Plugins/Integrations` — plugin and integration improvements (use as a separate subsection when there are enough items to warrant it)
         - `#### Administration` — System Console features, logging, support packet changes
@@ -94,7 +93,7 @@ Here are your instructions:
     - Improvements to existing things: "Improved [thing]..." or "Updated [thing]..."
     - Removals: "Removed [thing]..."
  
-3.  **Terminology:** Always write "user interface" in full — never use the abbreviation "UI".
+3.  **Terminology:** Always write "user interface" in full — never use the abbreviation "UI". Always spell out messaging abbreviations: "DM" → "Direct Message", "GM" → "Group Message", "DM/GM" → "Direct/Group Message".
  
 4.  **Code formatting:** Use double backticks for all of the following:
     - Configuration settings (e.g., ``ServiceSettings.EnableDynamicClientRegistration``)
@@ -106,15 +105,17 @@ Here are your instructions:
     - Feature flags (e.g., ``MM_FEATUREFLAGS_CJKSEARCH``)
     - Package names in Open Source Components (e.g., ``x/text``)
  
-5.  **Markdown formatting:** Indent each bullet point with two spaces (e.g., `  - item`). Ensure correct and clean Markdown syntax throughout. Do not insert horizontal rules (`---`) or any other separators between sections. Do not add a blank line between a heading and its first bullet.
+5.  **Markdown formatting:** Indent each bullet point with two spaces (e.g., `  - item`). Ensure correct and clean Markdown syntax throughout. Do not insert horizontal rules (`---`) or any other separators between sections. Do not add a blank line between a section/subsection heading and its first bullet point.
  
 6.  **License requirements:** When a feature requires a specific Mattermost license, note it inline at the end of the bullet point (e.g., "Requires Enterprise Advanced license" or "Requires Enterprise license").
  
-7.  **Proofreading:** Correct any typos, grammatical errors, awkward phrasing, or inconsistencies. Replace any instance of "Fixed a bug" with "Fixed an issue". Aim for clear, concise, and professional language.
+7.  **One section per release note:** Each raw release note must appear in exactly one section — whichever section best fits its primary purpose. Do not split a single release note across multiple sections or subsections, even if it touches more than one area (e.g. an admin feature that also introduces an API endpoint belongs entirely in Administration, not partially in Administration and partially in API Changes).
  
-8.  **Tone:** Maintain a neutral, informative, and professional tone consistent with technical documentation.
+8.  **Proofreading:** Correct any typos, grammatical errors, awkward phrasing, or inconsistencies. Replace any instance of "Fixed a bug" with "Fixed an issue". Aim for clear, concise, and professional language.
  
-9.  **Focus:** Output only the section content (headings and bullet points). Do not include the release version header line or any introductory or concluding remarks from yourself."""
+9.  **Tone:** Maintain a neutral, informative, and professional tone consistent with technical documentation.
+ 
+10.  **Focus:** Output only the section content (headings and bullet points). Do not include the release version header line or any introductory or concluding remarks from yourself."""
  
  
 def get_milestone_number(repo: str, title: str) -> int | None:
@@ -264,6 +265,37 @@ def polish_with_ai(raw_notes: list[str]) -> str:
     return response.content[0].text.strip()
  
  
+def normalize_go_version(go_version: str) -> str:
+    """Normalize a Go version string to v-prefixed form.
+ 
+    Accepts both "go1.22.5" (Go toolchain convention) and "v1.22.5"
+    (Mattermost changelog convention) and always returns the latter.
+    """
+    v = go_version.strip()
+    if v.startswith("go"):
+        v = v[2:]   # strip the "go" prefix
+    if not v.startswith("v"):
+        v = "v" + v
+    return v
+ 
+ 
+def extract_previous_go_version(changelog_path: str) -> str | None:
+    """Scan the changelog file for the most recently documented Go version.
+ 
+    Used when GO_VERSION is not supplied (i.e. unchanged from the previous
+    release) so the generated entry still shows a concrete version number
+    rather than a generic "unchanged" message.
+    """
+    if not os.path.exists(changelog_path):
+        return None
+    with open(changelog_path, "r", encoding="utf-8") as f:
+        content = f.read()
+    match = re.search(r"is built with Go\s+``(v?[\d.]+)``", content)
+    if match:
+        return normalize_go_version(match.group(1))
+    return None
+ 
+ 
 def insert_changelog_entry(entry: str, changelog_path: str = "CHANGELOG.md") -> None:
     """Insert a new version entry into the changelog after the static file header block."""
     existing = ""
@@ -323,6 +355,7 @@ def main():
     release_type = os.environ.get("RELEASE_TYPE", "feature").strip().lower()
     release_date = os.environ.get("RELEASE_DATE", "").strip() or date.today().strftime("%Y-%m-%d")
     go_version = os.environ.get("GO_VERSION", "").strip()
+    changelog_path = os.environ.get("CHANGELOG_PATH", "CHANGELOG.md")
  
     if release_type == "esr":
         anchor = f"(release-{version_short}-extended-support-release)="
@@ -332,16 +365,24 @@ def main():
             f"(https://docs.mattermost.com/product-overview/release-policy.html#release-types)"
         )
     else:
-        anchor = f"(release-{version_short})="
-        heading = f"## Release {version_short}"
+        anchor = f"(release-{version_short}-feature-release)="
+        heading = (
+            f"## Release {version_short} - "
+            f"[Feature Release]"
+            f"(https://docs.mattermost.com/product-overview/release-policy.html#release-types)"
+        )
  
     entry = f"{anchor}\n{heading}\n\n**Release day: {release_date}**\n\n"
  
-    # Build the Go Version section content
+    # Build the Go Version section content.
+    # Mattermost uses a bare sentence (not a bullet point) in this section.
+    # When GO_VERSION is not provided (unchanged from previous release), we look up
+    # the previous version from the changelog so the line still shows a concrete number.
     if go_version:
-        go_section = f"### Go Version\n  - Updated to ``{go_version}``."
+        formatted_go = normalize_go_version(go_version)
     else:
-        go_section = "### Go Version\n  - Go version is the same as in the previous release."
+        formatted_go = extract_previous_go_version(changelog_path) or "(see previous release)"
+    go_section = f"### Go Version\n  - {version_short} is built with Go ``{formatted_go}``."
  
     if all_notes:
         polished = polish_with_ai(all_notes)
@@ -376,7 +417,6 @@ def main():
         entry += go_section + "\n"
         entry += "\n_No other release notes for this version._\n"
  
-    changelog_path = os.environ.get("CHANGELOG_PATH", "CHANGELOG.md")
     insert_changelog_entry(entry, changelog_path)
  
     prs_with_notes = total_prs - len(no_notes_prs)
