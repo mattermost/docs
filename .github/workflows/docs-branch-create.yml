@@ -110,7 +110,11 @@ jobs:
           # Find open milestones with a version strictly greater than the merged
           # branch. Sort by due date (nulls last) then title; take the first.
           # --arg passes MERGED_MAJOR/MINOR as strings; tonumber converts inside jq.
+          # --paginate emits one JSON array per page. -s slurps all pages into
+          # a single outer array; add flattens [[page1...],[page2...]] → [...].
+          # Without -s, sort_by|first runs once per page — wrong across pages.
           JQ_FILTER='
+            add |
             [ .[] |
               select(
                 .state == "open" and
@@ -135,7 +139,7 @@ jobs:
           # Pipe to standalone jq with --arg — gh api does not support --arg.
           NEXT_TITLE=$(gh api repos/mattermost/mattermost/milestones \
             --paginate \
-            | jq -r --arg maj "$MERGED_MAJOR" --arg min "$MERGED_MINOR" \
+            | jq -rs --arg maj "$MERGED_MAJOR" --arg min "$MERGED_MINOR" \
                 "$JQ_FILTER")
 
           if [ -z "$NEXT_TITLE" ] || [ "$NEXT_TITLE" == "null" ]; then
