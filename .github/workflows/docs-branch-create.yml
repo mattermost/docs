@@ -25,9 +25,9 @@
 #   There is only one active docs branch at a time. This branch becomes the
 #   base target for all Docs/Needed PRs in the new cycle
 #   (see docs-needed.yml in the code repos).
- 
+
 name: Create Next Version Docs Branch
- 
+
 on:
   pull_request:
     types: [closed]
@@ -38,7 +38,7 @@ on:
         description: 'Branch name to simulate merging (e.g. v11.6-documentation)'
         required: true
         type: string
- 
+
 jobs:
   create-next-version-branch:
     name: Create docs branch for next milestone
@@ -57,7 +57,7 @@ jobs:
        github.event.pull_request.head.repo.full_name == github.repository &&
        startsWith(github.event.pull_request.head.ref, 'v') &&
        endsWith(github.event.pull_request.head.ref, '-documentation'))
- 
+
     steps:
       # 0. Generate a short-lived read token scoped to mattermost/mattermost
       #    for milestone reads. Uses the shared changelog read app so the token
@@ -66,10 +66,10 @@ jobs:
         id: token
         uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
         with:
-          app-id: ${{ vars.CHANGELOG_READ_CLIENT_ID }}
+          client-id: ${{ vars.CHANGELOG_READ_CLIENT_ID }}
           private-key: ${{ secrets.CHANGELOG_READ_PRIVATE_KEY }}
           repositories: mattermost
- 
+
       # 1. Strict branch name validation
       #    The job-level if: is a broad pre-filter (GitHub Actions expressions
       #    do not support regex). This step enforces the exact pattern
@@ -86,7 +86,7 @@ jobs:
           fi
           echo "Branch validated: ${MERGED_BRANCH}"
           echo "Looking for the next open milestone in mattermost/mattermost..."
- 
+
       # 2. Find the next open milestone in mattermost/mattermost
       #    "Next" means the earliest open milestone whose version is strictly
       #    greater than the branch that just merged. Filtering by version
@@ -106,7 +106,7 @@ jobs:
           MERGED_MAJOR="${BASH_REMATCH[1]}"
           MERGED_MINOR="${BASH_REMATCH[2]}"
           echo "Merged: v${MERGED_MAJOR}.${MERGED_MINOR} — looking for the next open milestone..."
- 
+
           # Find open milestones with a version strictly greater than the merged
           # branch. Sort by due date (nulls last) then title; take the first.
           # --arg passes MERGED_MAJOR/MINOR as strings; tonumber converts inside jq.
@@ -131,36 +131,36 @@ jobs:
             first |
             .title
           '
- 
+
+          # Pipe to standalone jq with --arg — gh api does not support --arg.
           NEXT_TITLE=$(gh api repos/mattermost/mattermost/milestones \
             --paginate \
-            --jq "$JQ_FILTER" \
-            --arg maj "$MERGED_MAJOR" \
-            --arg min "$MERGED_MINOR")
- 
+            | jq -r --arg maj "$MERGED_MAJOR" --arg min "$MERGED_MINOR" \
+                "$JQ_FILTER")
+
           if [ -z "$NEXT_TITLE" ] || [ "$NEXT_TITLE" == "null" ]; then
             echo "::warning::No open milestone found with version >" \
               "v${MERGED_MAJOR}.${MERGED_MINOR} in mattermost/mattermost - no branch created."
             echo "found=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
- 
+
           # Derive the docs branch name: extract vMAJOR.MINOR, append -documentation
           # e.g. "v11.7.0" -> "v11.7-documentation"
           VERSION=$(echo "$NEXT_TITLE" | grep -oE 'v[0-9]+\.[0-9]+' | head -1)
- 
+
           if [ -z "$VERSION" ]; then
             echo "::error::Could not parse a vMAJOR.MINOR version from milestone '${NEXT_TITLE}'."
             exit 1
           fi
- 
+
           DOCS_BRANCH="${VERSION}-documentation"
- 
+
           echo "found=true" >> "$GITHUB_OUTPUT"
           echo "title=$NEXT_TITLE" >> "$GITHUB_OUTPUT"
           echo "branch=$DOCS_BRANCH" >> "$GITHUB_OUTPUT"
           echo "Next milestone: $NEXT_TITLE -> docs branch: $DOCS_BRANCH"
- 
+
       # 3. Create the branch in mattermost/docs
       - name: Create docs branch
         id: create_branch
@@ -172,24 +172,24 @@ jobs:
           # Check whether the branch already exists (idempotent)
           EXISTS=$(gh api "repos/mattermost/docs/branches/${BRANCH}" \
             --jq '.name' 2>/dev/null || echo "")
- 
+
           if [ -n "$EXISTS" ]; then
             echo "created=false" >> "$GITHUB_OUTPUT"
             echo "::notice::Branch '${BRANCH}' already exists in mattermost/docs - nothing to do."
             exit 0
           fi
- 
+
           # Branch from the tip of master
           SHA=$(gh api repos/mattermost/docs/branches/master --jq '.commit.sha')
- 
+
           gh api repos/mattermost/docs/git/refs \
             --method POST \
             -f "ref=refs/heads/${BRANCH}" \
             -f "sha=${SHA}"
- 
+
           echo "created=true" >> "$GITHUB_OUTPUT"
           echo "Created branch '${BRANCH}' in mattermost/docs from master (${SHA})"
- 
+
       # 4. Post a summary
       - name: Summary
         if: steps.milestone.outputs.found == 'true'
