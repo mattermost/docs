@@ -18,6 +18,11 @@ Platform and OS scope reflects reported and tested environments and may not repr
 
 **Release day: 2026-07-16**
 
+```{Attention}
+**Breaking Changes**
+ - Mattermost v11.9 changes how redirect URI allowlist patterns are matched for OAuth Dynamic Client Registration (DCR). Patterns are now evaluated per URL component (scheme, host, path, and query) rather than as a whole-string glob. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
+```
+
 ### Upgrade Impact
 
 #### Database Schema Changes
@@ -45,6 +50,10 @@ New setting options were added to ``config.json``. Below is a list of the additi
     - Under ``FileSettings`` in ``config.json``, added ``AzureCloud``, ``ExportAzureCloud``, ``AzureAuthMode``, ``ExportAzureAuthMode``, and ``ExportAzurePresignExpiresSeconds`` configuration settings for Azure Blob Storage support.
     - Under ``FileSettings`` in ``config.json``, added ``ExtractContentTimeout`` configuration setting to limit how long a single uploaded document's content extraction occupies a worker (default 10 seconds).
     - Under ``ServiceSettings`` in ``config.json``, added ``MaximumPersonalAccessTokenLifetimeDays`` configuration setting to require personal access tokens to expire within a configured maximum lifetime (``0`` imposes no policy).
+
+```{Important}
+If you upgrade from a release earlier than v11.8, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html). In case of an upgrade failure, please check the [Downgrade Guide](https://docs.mattermost.com/administration-guide/upgrade/downgrading-mattermost-server.html) and the [Recovery Guide](https://docs.mattermost.com/deployment-guide/backup-disaster-recovery.html) for rollback steps and interim mitigation strategy.
+```
 
 ### Improvements
 See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-available/) on the highlights in our latest release.
@@ -205,6 +214,10 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - **Changes to Enterprise plans:**
    - Under ``ElasticsearchSettings`` in ``config.json``, added ``EnableSearchPublicChannelsWithoutMembership`` configuration setting to allow searching in public channels the user isn't a member of.
    - Under ``TeamSettings`` in ``config.json``, added ``EnableChannelCategorySorting`` configuration setting to add, edit, and remove managed categories.
+  
+```{Important}
+If you upgrade from a release earlier than v11.7, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html). In case of an upgrade failure, please check the [Downgrade Guide](https://docs.mattermost.com/administration-guide/upgrade/downgrading-mattermost-server.html) and the [Recovery Guide](https://docs.mattermost.com/deployment-guide/backup-disaster-recovery.html) for rollback steps and interim mitigation strategy.
+```
 
 ### Improvements
 
