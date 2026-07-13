@@ -8,7 +8,7 @@
 
 === CAPABILITY SUMMARY ===
 
-Capability change (one sentence): Admins can now query a new `mattermost_system_server_info` Prometheus metric to determine the exact version and build information of each running Mattermost server instance.
+Capability change (one sentence): Administrators can now query Prometheus for the exact server version and build details (version, build number, build hash, enterprise build hash) running on each Mattermost instance using the new `mattermost_system_server_info` metric.
 
 PARITY or NET-NEW: NET-NEW
 
@@ -21,52 +21,46 @@ Target personas: System Admin, IT Service Operations
 === DOCUMENTATION DRAFT ===
 
 **Recommended doc location:**
-- Primary: Mattermost Performance Monitoring / Metrics reference documentation (the page listing available Prometheus metrics)
-- Secondary: Any deployment monitoring or observability guide that references Mattermost Prometheus metrics
+- Mattermost Performance Monitoring / Metrics Reference page (the page documenting available Prometheus metrics)
 
 ---
 
 **Proposed content (ready to paste):**
 
-### `mattermost_system_server_info`
+#### Server info metric
 
-From Mattermost v11.9.0, a new info-style gauge metric is available:
+From Mattermost v11.9.0, a new Prometheus info metric is available:
 
 ```
-mattermost_system_server_info{version="...", build_number="...", build_hash="...", build_hash_enterprise="..."} 1
+mattermost_system_server_info
 ```
 
-**Subsystem:** `system`
-
-**Type:** Gauge (always `1`; version and build data are encoded in labels)
+This gauge is always set to `1` and exposes the running server's version and build details as labels. It is registered at server startup.
 
 **Labels:**
 
 | Label | Description |
 |---|---|
-| `version` | The Mattermost server version string (e.g., `11.9.0`) |
-| `build_number` | The build number assigned at release |
-| `build_hash` | The Git commit hash of the server build |
-| `build_hash_enterprise` | The Git commit hash of the enterprise build |
+| `version` | Current Mattermost server version |
+| `build_number` | Build number |
+| `build_hash` | Git commit hash of the server build |
+| `build_hash_enterprise` | Git commit hash of the enterprise build |
 
-On Cloud deployments, the metric also includes existing `ConstLabels` such as `installationId`, group, and database cluster identifiers.
-
-The metric is registered once at server startup and does not change at runtime.
+On cloud deployments, the metric also includes the existing cloud `ConstLabels` (installation ID, group, database cluster).
 
 **Example query:**
 
-Use the following PromQL query to confirm deployment rollout across your fleet:
+To confirm which version is running across all servers in an environment:
 
 ```promql
 count by (version) (mattermost_system_server_info)
 ```
 
-This returns a count of server instances grouped by version, which is useful for verifying that a deploy or rollout has reached all nodes.
+This is useful for verifying that a deployment or cherry-pick has fully rolled out.
 
 ---
 
 **Notes:**
-
-- The metric follows the standard [Prometheus "info metric" pattern](https://www.robustperception.io/exposing-the-software-version-to-prometheus/): the gauge is always `1` and meaningful data is in the labels.
-- milestone.title: `v11.9.0` — version reference is confirmed.
-- [NOT PRESENT IN PR — REQUIRES HUMAN JUDGMENT]: Confirm whether Cloud-specific `ConstLabels` (installationId, etc.) should be documented in the public-facing metrics reference, or if that section is Cloud-internal only.
+- This follows the standard [Prometheus info metric pattern](https://www.robustperception.io/how-to-have-labels-for-machine-roles-in-prometheus/) (fixed gauge value of `1`, data carried in labels).
+- The metric is registered once at startup; no ongoing collection cost.
+- milestone.title: `v11.9.0` — used as version reference per PR metadata.
