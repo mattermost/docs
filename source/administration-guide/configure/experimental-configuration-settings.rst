@@ -7,7 +7,6 @@ Experimental configuration settings
 Review and manage the following :ref:`experimental <administration-guide/manage/feature-labels:experimental>` configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Experimental > Features**:
 
 - `Experimental System Console configuration settings <#experimental-system-console-configuration-settings>`__
-- `Experimental audit logging configuration settings <#experimental-audit-logging-configuration-settings>`__
 - `Experimental job configuration settings <#experimental-job-configuration-settings>`__
 - `Experimental configuration settings for self-hosted deployments only <#experimental-configuration-settings-for-self-hosted-deployments-only>`__
 
@@ -314,6 +313,34 @@ Changes made when hardened mode is enabled:
 +----------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalEnableHardenedMode": false`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: enable-mobile-watermark
+  :displayname: Enable Mobile Watermark (Experimental)
+  :systemconsole: Experimental > Features
+  :configjson: ExperimentalSettings.EnableMobileWatermark
+  :environment: N/A
+
+  - **true**: Authenticated Mattermost mobile sessions display a watermark overlay showing the user's username, the server domain, the current date (YYYY-MM-DD), and the current time (HH:mm) for data loss prevention (DLP) purposes.
+  - **false**: **(Default)** No watermark overlay is displayed in the Mattermost mobile app.
+
+Enable Mobile Watermark
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Available on `Enterprise Advanced <https://mattermost.com/pricing/>`__ from Mattermost v11.7 onward.
+
+**True**: Authenticated Mattermost mobile sessions display a watermark overlay showing the user's username, the server domain, the current date (YYYY-MM-DD), and the current time (HH:mm). This experimental capability is intended to support data loss prevention (DLP) workflows by helping identify the user, server, and time associated with mobile screenshots or shared screen captures.
+
+**False**: No watermark overlay is displayed in the Mattermost mobile app.
+
+.. note::
+
+  - This is an experimental setting. Behavior, defaults, and visual presentation may change in future releases.
+  - This setting only applies to the Mattermost mobile app. It does not add a watermark to the Mattermost web app or desktop apps.
+  - The watermark overlay is a visual aid and does not, by itself, prevent screenshots, screen recordings, file exports, or other forms of data extraction. Use it in combination with other mobile security controls, such as :ref:`screenshot and screen recording prevention <deployment-guide/mobile/mobile-security-features:screenshot and screen recording prevention>`, where appropriate.
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalSettings.EnableMobileWatermark": false`` with options ``true`` and ``false``. |
++--------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: enable-theme-selection
   :displayname: Enable theme selection (Experimental)
@@ -727,191 +754,6 @@ Enable Bleve for autocomplete queries
 +-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableAutocomplete": false`` with options ``true`` and ``false``.  |
 +-----------------------------------------------------------------------------------------------------------------+
-
-----
-
-Experimental audit logging configuration settings
---------------------------------------------------------
-
-Enable the following settings to output audit events in the System Console by going to **Compliance > Audit Logging**, or in the ``config.json`` file. 
-
-.. note::
-
-  The ability to enable and configure audit logging is currently in :ref:`Beta <administration-guide/manage/feature-labels:beta>`.
-
-.. config:setting:: advanced-logging
-  :displayname: Advanced Logging (Audit Logging > Cloud)
-  :systemconsole: Experimental > Features
-  :configjson: AdvancedLoggingJSON
-  :environment: N/A
-  :description: Output log and audit records to any combination of console, local file, syslog, and TCP socket targets for a Mattermost Cloud deployment.
-
-Advanced logging
-~~~~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/entry-ent.rst
-  :start-after: :nosearch:
-
-Output log and audit records to any combination of console, local file, syslog, and TCP socket targets for a Mattermost Cloud deployment. See the :ref:`advanced logging <administration-guide/manage/logging:advanced logging>` documentation for details about logging options.
-
-.. config:setting:: enable-audit-logging
-  :displayname: Enable audit logging (Audit Logging > Self-Hosted)
-  :systemconsole: Experimental > Features
-  :configjson: FileEnabled
-  :environment: N/A
-  :description: Write audit files locally for a self-hosted deployment.
-
-Enable audit logging
-~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-plus.rst
-  :start-after: :nosearch:
-
-When audit logging is enabled in a self-hosted instance, you can specify size, backup interval, compression, maximium age to manage file rotation, and timestamps for audit logging, as defined below. You can specify these settings independently for audit events and AD/LDAP events. 
-
-**True**: Audit logging files are enabled, and audit files are written locally to a file for a self-hosted deployment.
-
-**False**: Audit logging files aren't enabled, and audit logs aren't written locally to a file for a self-hosted deployment.
-
-+--------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileEnabled": false",`` with options ``true`` and ``false``. |
-+--------------------------------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: file-name
-  :displayname: File name (Audit Logging > Self-Hosted)
-  :systemconsole: Experimental > Features
-  :configjson: FileName
-  :environment: N/A
-  :description: Specify the path to the audit file for a self-hosted deployment.
-
-File name
-~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-plus.rst
-  :start-after: :nosearch:
-
-Specify the path to the audit file for a self-hosted deployment.
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileName": ""`` with string input consisting of a user-defined path (e.g. ``/var/log/mattermost_audit.log``).         |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: max-file-size
-  :displayname: File max size MB (Audit Logging > Self-Hosted)
-  :systemconsole: Experimental > Features
-  :configjson: FileMaxSizeMB
-  :environment: N/A
-  :description: This is the maximum size (measured in megabytes) that the file can grow before triggering rotation for a self-hosted deployment.. Default is **100** MB.
-
-Max file size
-~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-plus.rst
-  :start-after: :nosearch:
-
-This is the maximum size, in megabytes, that the file can grow before triggering rotation for a self-hosted deployment. The default setting is ``100``.
-
-+---------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileMaxSizeMB": 100`` with numerical input. |
-+---------------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: max-file-age
-  :displayname: File max age days (Audit Logging > Self-Hosted)
-  :systemconsole: Experimental > Features
-  :configjson: FileMaxAgeDays
-  :environment: N/A
-  :description: This is the maximum age in days a file can reach before triggering rotation for a self-hosted deployment.. The default value is **0**, indicating no limit on the age.
-
-Max file age
-~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-plus.rst
-  :start-after: :nosearch:
-
-This is the maximum age, in days, a file can reach before triggering rotation for a self-hosted deployment. The default value is ``0``, indicating no limit on the age.
-
-+--------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileMaxAgeDays": 0`` with numerical input. |
-+--------------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: maximum-file-backups
-  :displayname: File max backups (Audit Logging > Self-Hosted)
-  :systemconsole: Experimental > Features
-  :configjson: FileMaxBackups
-  :environment: N/A
-  :description: This is the maximum number of rotated files kept for a self-hosted deployment. The oldest is deleted first. The default value is **0**, indicating no limit on the number of backups.
-
-Maximum file backups
-~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-plus.rst
-  :start-after: :nosearch:
-
-This is the maximum number of rotated files kept for a self-hosted deployment. The oldest is deleted first. The default value is ``0``, indicating no limit on the number of backups.
-
-+--------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileMaxBackups": 0`` with numerical input. |
-+--------------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: file-compression
-  :displayname: File compress (Audit Logging > Self-Hosted)
-  :systemconsole: Experimental > Features
-  :configjson: FileCompress
-  :environment: N/A
-  :description: When ``true``, rotated files are compressed using ``gzip`` in a self-hosted deployment. Default value is **false**.
-
-File compression
-~~~~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-plus.rst
-  :start-after: :nosearch:
-
-When ``true``, rotated files are compressed using ``gzip`` in a self-hosted deployment.
-
-+-------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileCompress": false`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: maximum-file-queue
-  :displayname: File max queue size (Audit Logging > Self-Hosted)
-  :systemconsole: Experimental > Features
-  :configjson: FileMaxQueueSize
-  :environment: N/A
-  :description: This setting determines how many audit records can be queued/buffered at any point in time when writing to a file for a self-hosted deployment. Default is **1000** records.
-
-Maximum file queue 
-~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../../_static/badges/ent-plus.rst
-  :start-after: :nosearch:
-
-This setting determines how many audit records can be queued/buffered at any point in time when writing to a file for a self-hosted deployment. The default is ``1000`` records.
-This setting can be left as default unless you are seeing audit write failures in the server log and need to adjust the number accordingly.
-
-+-------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileMaxQueueSize": 1000`` with numerical input. |
-+-------------------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: audit-logging-certificate
-  :displayname: Audit logging certificate upload (Audit Logging > Cloud Enterprise)
-  :systemconsole: Audit Log Settings > Certificate
-  :configjson: N/A
-  :environment: N/A
-  :description: Cloud Enterprise customers can upload and manage a certificate for audit logging encryption on Syslog or TCP logging targets.
-
-Certificate
-~~~~~~~~~~~~
-
-Cloud Enterprise customers can upload and manage a certificate for audit logging encryption on Syslog or TCP logging targets. The ability to upload a certificate is only available when the feature flag ``ExperimentalAuditSettingsSystemConsoleUI`` is enabled.
-
-Upload the certificate PEM file in the System Console by going to **System Console > Audit Log Settings > Certificate** and selecting **File/Remove Certificate**. The certificate file can be stored in the filestore or stored locally on the filesystem. 
-
-.. config:setting:: advanced-logging
-  :displayname: Advanced Logging (Audit Logging > Self-Hosted)
-  :systemconsole: Experimental > Features
-  :configjson: AdvancedLoggingJSON
-  :environment: N/A
-  :description: Output log and audit records to any combination of console, local file, syslog, and TCP socket targets for a Mattermost self-hosted deployment.
 
 Experimental configuration settings for self-hosted deployments only
 --------------------------------------------------------------------
@@ -1519,6 +1361,9 @@ From Mattermost v10.10, when this :ref:`experimental <administration-guide/manag
 +------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalEnableChannelCategorySorting": false`` with options ``true`` and ``false``.     |
 +------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+  From Mattermost v11.8, channel category sorting is generally available and enabled by default. Configure it from **System Console > Site Configuration > Users and Teams** using the :ref:`Channel category sorting <administration-guide/configure/site-configuration-settings:channel category sorting>` setting (``TeamSettings.EnableChannelCategorySorting``).
 
 .. config:setting:: strict-csrf-token-enforcement
   :displayname: Strict CSRF token enforcement (Experimental)

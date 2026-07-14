@@ -833,13 +833,31 @@ Maximum idle connections
 Query timeout
 ~~~~~~~~~~~~~
 
-+--------------------------------------------------------+-------------------------------------------------------------------------+
-| The amount of time to wait, in seconds, for a response | - System Config path: **Environment > Database**                        |
++--------------------------------------------------------+----------------------------------------------------------------------------------+
+| The amount of time to wait, in seconds, for a response | - System Config path: **Environment > Database**                                 |
 | from the database after opening a connection and       | - ``config.json`` setting: ``SqlSettings`` > ``QueryTimeout`` > ``30``  |
-| sending the query.                                     | - Environment variable: ``MM_SQLSETTINGS_QUERYTIMEOUT``                 |
-|                                                        |                                                                         |
-| Numerical input in seconds. Default is **30** seconds. |                                                                         |
-+--------------------------------------------------------+-------------------------------------------------------------------------+
+| sending the query.                                     | - Environment variable: ``MM_SQLSETTINGS_QUERYTIMEOUT``                          |
+|                                                        |                                                                                  |
+| Numerical input in seconds. Default is **30** seconds. |                                                                                  |
++--------------------------------------------------------+----------------------------------------------------------------------------------+
+
+.. config:setting:: analytics-query-timeout
+  :displayname: Analytics Query timeout (Database)
+  :systemconsole: Environment > Database
+  :configjson: .SqlSettings.AnalyticsQueryTimeout
+  :environment: MM_SQLSETTINGS_ANALYTICSQUERYTIMEOUT
+  :description: The number of seconds to wait for a response from the database after opening a connection and sending certain analytics queries. This setting only applies to long queries which are run in the background to populate some information in the Team and Site Statistics pages. Default is **300** seconds.
+
+Analytics query timeout
+~~~~~~~~~~~~~~~~~~~~~~~
+
++--------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| The number of seconds to wait for a response from the database after opening a connection  | - ``config.json`` setting: ``SqlSettings`` > ``AnalyticsQueryTimeout`` > ``300`` |
+| and sending certain analytics queries. This setting only applies to long queries which are | - System Config path: **Environment > Database**                                 |
+| run in the background to populate some information in the Team and Site Statistics pages.  | - Environment variable: ``MM_SQLSETTINGS_ANALYTICSQUERYTIMEOUT``                 |
+|                                                                                            |                                                                                  |
+| Numerical input in seconds. Default is **300** seconds.                                    |                                                                                  |
++--------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 .. config:setting:: maximum-connection-lifetime
   :displayname: Maximum connection lifetime (Database)
@@ -3306,47 +3324,24 @@ Maximum field size
   :systemconsole: Environment > Logging
   :configjson: .LogSettings.EnableDiagnostics
   :environment: MM_LOGSETTINGS_ENABLEDIAGNOSTICS
-  :description: Send general diagnostics and error reports to Mattermost, Inc.
+  :description: Controls whether server errors and crashes are reported to Mattermost via Sentry.
 
 Enable diagnostics and error reporting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +----------------------------------------------+--------------------------------------------------------------------------------+
-| Whether or not general diagnostics and error | - System Config path: **Environment > Logging**                                |
-| reports are sent to Mattermost, Inc.         | - ``config.json`` setting: ``LogSettings`` > ``EnableDiagnostics`` > ``""``    |
+| Controls whether server errors and crashes   | - System Config path: **Environment > Logging**                                |
+| are reported to Mattermost via Sentry.       | - ``config.json`` setting: ``LogSettings`` > ``EnableDiagnostics`` > ``true``  |
 |                                              | - Environment variable: ``MM_LOGSETTINGS_ENABLEDIAGNOSTICS``                   |
-| - **true**: **(Default)** Send diagnostics   |                                                                                |
-|   and error reports.                         |                                                                                |
-| - **false**: Diagnostics and error reports   |                                                                                |
-|   aren't sent.                               |                                                                                |
+| - **true**: **(Default)** Error and crash    |                                                                                |
+|   reports are sent to Mattermost's Sentry    |                                                                                |
+|   endpoint.                                  |                                                                                |
+| - **false**: No error or crash data is sent. |                                                                                |
 +----------------------------------------------+--------------------------------------------------------------------------------+
 
 .. note::
 
-  See the :ref:`telemetry <administration-guide/manage/telemetry:error and diagnostics reporting feature>` docummentation for details on the information Mattermost collects.
-
-.. config:setting:: enable-verbose-diagnostics
-  :displayname: Enable general verbose diagnostics (General Logging)
-  :systemconsole: N/A
-  :configjson: .LogSettings.VerboseDiagnostics
-  :environment: MM_LOGSETTINGS_VERBOSEDIAGNOSTICS
-  :description: Configure whether to send verbose general diagnostics information.
-
-  - **true**: Send verbose diagnostics information.
-  - **false**: **(Default)** Verbose diagnostics information isn't sent.
-
-Enable verbose diagnostics
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-+----------------------------------------------+---------------------------------------------------------------------------------+
-| Whether or not verbose general diagnostics   | - System Config path: N/A                                                       |
-| information is sent.                         | - ``config.json`` setting: ``LogSettings`` > ``VerboseDiagnostics`` > ``false`` |
-|                                              | - Environment variable: ``MM_LOGSETTINGS_VERBOSEDIAGNOSTICS``                   |
-| - **true**: Send verbose diagnostics         |                                                                                 |
-|   information.                               |                                                                                 |
-| - **false**: **(Default)** Verbose           |                                                                                 |
-|   diagnostics information isn't sent.        |                                                                                 |
-+----------------------------------------------+---------------------------------------------------------------------------------+
+  See the :ref:`telemetry <administration-guide/manage/telemetry:error and diagnostics reporting feature>` documentation for details on the information Mattermost collects.
 
 .. config:setting:: enable-sentry
   :displayname: Enable general Sentry reporting (General Logging)
@@ -3665,97 +3660,7 @@ Audit file name
 
 .. note::
 
-  The file name must be set to `enable <#auditlog-fileenabled>`__ audit logging.
-
-.. config:setting:: auditlog-filemaxsizemb
-  :displayname: Maximum audit file size (Audit Logging)
-  :systemconsole: Compliance > Audit Logging
-  :configjson: .ExperimentalAuditSettings.FileMaxSizeMB
-  :environment: MM_EXPERIMENTALAUDITSETTINGS_FILEMAXSIZEMB
-  :description: The maximum size in megabytes for audit log files before they are rotated. Default is 100 MB.
-
-Maximum file size
-^^^^^^^^^^^^^^^^^
-
-+--------------------------------------------------+----------------------------------------------------------------------------------------+
-| The maximum size in megabytes for audit log      | - System Config path: **Compliance > Audit Logging**                                   |
-| files before they are rotated.                   | - ``config.json`` setting: ``ExperimentalAuditSettings`` > ``FileMaxSizeMB`` > ``100`` |
-|                                                  | - Environment variable: ``MM_EXPERIMENTALAUDITSETTINGS_FILEMAXSIZEMB``                 |
-| Numerical input. Default is **100** MB.          |                                                                                        |
-+--------------------------------------------------+----------------------------------------------------------------------------------------+
-
-.. config:setting:: auditlog-filemaxagedays
-  :displayname: Maximum audit file age (Audit Logging)
-  :systemconsole: Compliance > Audit Logging
-  :configjson: .ExperimentalAuditSettings.FileMaxAgeDays
-  :environment: MM_EXPERIMENTALAUDITSETTINGS_FILEMAXAGEDAYS
-  :description: The maximum age in days for audit log files before they are deleted. Default is 0 (no limit).
-
-Maximum file age
-^^^^^^^^^^^^^^^^
-
-+--------------------------------------------------+----------------------------------------------------------------------------------------+
-| The maximum age in days for audit log files      | - System Config path: **Compliance > Audit Logging**                                   |
-| before they are deleted.                         | - ``config.json`` setting: ``ExperimentalAuditSettings`` > ``FileMaxAgeDays`` > ``0``  |
-|                                                  | - Environment variable: ``MM_EXPERIMENTALAUDITSETTINGS_FILEMAXAGEDAYS``                |
-| Numerical input. Default is **0** (no limit).    |                                                                                        |
-+--------------------------------------------------+----------------------------------------------------------------------------------------+
-
-.. config:setting:: auditlog-filemaxbackups
-  :displayname: Maximum audit file backups (Audit Logging)
-  :systemconsole: Compliance > Audit Logging
-  :configjson: .ExperimentalAuditSettings.FileMaxBackups
-  :environment: MM_EXPERIMENTALAUDITSETTINGS_FILEMAXBACKUPS
-  :description: The maximum number of audit log file backups to retain. Default is 0 (no limit).
-
-Maximum file backups
-^^^^^^^^^^^^^^^^^^^^
-
-+--------------------------------------------------+----------------------------------------------------------------------------------------+
-| The maximum number of audit log file backups     | - System Config path: **Compliance > Audit Logging**                                   |
-| to retain.                                       | - ``config.json`` setting: ``ExperimentalAuditSettings`` > ``FileMaxBackups`` > ``0``  |
-|                                                  | - Environment variable: ``MM_EXPERIMENTALAUDITSETTINGS_FILEMAXBACKUPS``                |
-| Numerical input. Default is **0** (no limit).    |                                                                                        |
-+--------------------------------------------------+----------------------------------------------------------------------------------------+
-
-.. config:setting:: auditlog-filecompress
-  :displayname: Compress audit log files (Audit Logging)
-  :systemconsole: Compliance > Audit Logging
-  :configjson: .ExperimentalAuditSettings.FileCompress
-  :environment: MM_EXPERIMENTALAUDITSETTINGS_FILECOMPRESS
-  :description: Whether to compress rotated audit log files.
-
-  - **true**: Rotated audit log files are compressed.
-  - **false**: **(Default)** Rotated audit log files aren't compressed.
-
-Compress audit log files
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-+--------------------------------------------------+-------------------------------------------------------------------------------------------+
-| Whether to compress rotated audit log files.     | - System Config path: **Compliance > Audit Logging**                                      |
-|                                                  | - ``config.json`` setting: ``ExperimentalAuditSettings`` > ``FileCompress`` > ``false``   |
-| - **true**: Rotated audit log files are          | - Environment variable: ``MM_EXPERIMENTALAUDITSETTINGS_FILECOMPRESS``                     |
-|   compressed.                                    |                                                                                           |
-| - **false**: **(Default)** Rotated audit log     |                                                                                           |
-|   files aren't compressed.                       |                                                                                           |
-+--------------------------------------------------+-------------------------------------------------------------------------------------------+
-
-.. config:setting:: auditlog-filemaxqueuesize
-  :displayname: Audit log queue size (Audit Logging)
-  :systemconsole: Compliance > Audit Logging
-  :configjson: .ExperimentalAuditSettings.FileMaxQueueSize
-  :environment: MM_EXPERIMENTALAUDITSETTINGS_FILEMAXQUEUESIZE
-  :description: The maximum number of audit log entries that can be queued. Default is 1000.
-
-Audit log queue size
-^^^^^^^^^^^^^^^^^^^^
-
-+--------------------------------------------------+--------------------------------------------------------------------------------------------+
-| The maximum number of audit log entries that     | - System Config path: **Compliance > Audit Logging**                                       |
-| can be queued.                                   | - ``config.json`` setting: ``ExperimentalAuditSettings`` > ``FileMaxQueueSize`` > ``1000`` |
-|                                                  | - Environment variable: ``MM_EXPERIMENTALAUDITSETTINGS_FILEMAXQUEUESIZE``                  |
-| Numerical input. Default is **1000**.            |                                                                                            |
-+--------------------------------------------------+--------------------------------------------------------------------------------------------+
+When `output audit logs to file <#auditlog-fileenabled>`__ is enabled, the file name must be set. To configure file rotation and advanced audit log output, use the :ref:`AdvancedLoggingJSON <administration-guide/configure/environment-configuration-settings:output audit logs to multiple targets>` setting.
 
 .. config:setting:: auditlog-certificate
   :displayname: Audit log certificate (Audit Logging)
@@ -4383,6 +4288,100 @@ Prevent screen capture
 .. note::
 
   Changing this configuration setting takes effect when mobile users restart their Mattermost mobile app or log out and log back in.
+
+Mobile ephemeral mode
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../../_static/badges/ent-adv.rst
+  :start-after: :nosearch:
+
+See :ref:`Mobile Ephemeral Mode in mobile security features <deployment-guide/mobile/mobile-security-features:mobile ephemeral mode>` for a full description of how the timers and operations interact.
+
+These settings apply globally to all mobile users. Changes are delivered to connected devices in real time; offline devices continue operating under their last-known configuration until they reconnect. Timer state persists across app and device restarts.
+
+When a timer expires, active cached content such as posts and file previews is purged, and the app notifies the user that data was removed due to policy enforcement. After a purge, users re-sync from the server on reconnection — server URLs are recoverable from keychain entries so server access is not lost.
+
+.. config:setting:: mobile-enable-ephemeral-mode
+  :displayname: Enable Mobile Ephemeral Mode (Mobile Security)
+  :systemconsole: Environment > Mobile Security
+  :configjson: .NativeAppSettings.MobileEnableEphemeralMode
+  :environment: MM_NATIVEAPPSETTINGS_MOBILEENABLEEPHEMERALMODE
+  :description: Controls whether mobile clients enforce server-configured ephemeral data policies. Default is **true**.
+
+    - **true**: **(Default)** Mobile clients enforce the server-configured ephemeral data policies.
+    - **false**: Ephemeral data policies are not enforced on mobile clients.
+
+Enable Mobile Ephemeral Mode
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| Controls whether mobile clients enforce the          | - System Config path: **Environment > Mobile Security**                                          |
+| server-configured ephemeral data policies.           | - ``config.json`` setting: ``NativeAppSettings`` > ``MobileEnableEphemeralMode`` > ``true``      |
+|                                                      | - Environment variable: ``MM_NATIVEAPPSETTINGS_MOBILEENABLEEPHEMERALMODE``                       |
+| - **true**: **(Default)** Ephemeral data policies    |                                                                                                  |
+|   are enforced.                                      |                                                                                                  |
+| - **false**: Ephemeral data policies are not         |                                                                                                  |
+|   enforced on mobile clients.                        |                                                                                                  |
++------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+
+.. config:setting:: mobile-disconnection-timeout-seconds
+  :displayname: Disconnection Timeout (Mobile Security)
+  :systemconsole: Environment > Mobile Security
+  :configjson: .NativeAppSettings.MobileDisconnectionTimeoutSeconds
+  :environment: MM_NATIVEAPPSETTINGS_MOBILEDISCONNECTIONTIMEOUTSECONDS
+
+  Grace period after the WebSocket drops before the device is considered offline. Default is **60** seconds. Values below 5 are not recommended.
+
+Disconnection timeout
+^^^^^^^^^^^^^^^^^^^^^
+
++------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+
+| Grace period in seconds after the WebSocket drops    | - System Config path: **Environment > Mobile Security**                                                          |
+| before the device is considered offline. Once        | - ``config.json`` setting: ``NativeAppSettings`` > ``MobileDisconnectionTimeoutSeconds`` > ``60``                |
+| elapsed, the Offline Persistence Timer begins        | - Environment variable: ``MM_NATIVEAPPSETTINGS_MOBILEDISCONNECTIONTIMEOUTSECONDS``                               |
+| counting down.                                       |                                                                                                                  |
+|                                                      |                                                                                                                  |
+| Numerical input in seconds. Default is **60**.       |                                                                                                                  |
+| Values below 5 are not recommended.                  |                                                                                                                  |
++------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: mobile-offline-persistence-timer-hours
+  :displayname: Offline Persistence Timer (Mobile Security)
+  :systemconsole: Environment > Mobile Security
+  :configjson: .NativeAppSettings.MobileOfflinePersistenceTimerHours
+  :environment: MM_NATIVEAPPSETTINGS_MOBILEOFFLINEPERSISTENCETIMERHOURS
+
+  How long cached content is retained after the device goes offline. Default is **2** hours. Set to **0** for immediate purge when the Disconnection Timeout elapses.
+
+Offline persistence timer
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
++------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| How long cached content is retained after the        | - System Config path: **Environment > Mobile Security**                                                             |
+| device is considered offline, in hours.              | - ``config.json`` setting: ``NativeAppSettings`` > ``MobileOfflinePersistenceTimerHours`` > ``2``                   |
+|                                                      | - Environment variable: ``MM_NATIVEAPPSETTINGS_MOBILEOFFLINEPERSISTENCETIMERHOURS``                                 |
+| Numerical input in hours. Default is **2**.          |                                                                                                                     |
+| Set to **0** for immediate purge on disconnect.      |                                                                                                                     |
++------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: mobile-auto-cache-cleanup-days
+  :displayname: Auto Cache Cleanup (Mobile Security)
+  :systemconsole: Environment > Mobile Security
+  :configjson: .NativeAppSettings.MobileAutoCacheCleanupDays
+  :environment: MM_NATIVEAPPSETTINGS_MOBILEAUTOCACHECLEANUPDAYS
+
+  Maximum age for content cached on the device, regardless of connection status. Default is **7** days. Set to **0** for zero-persistence mode.
+
+Auto cache cleanup
+^^^^^^^^^^^^^^^^^^
+
++------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
+| Maximum age in days for content cached on the        | - System Config path: **Environment > Mobile Security**                                                  |
+| device, regardless of connection status.             | - ``config.json`` setting: ``NativeAppSettings`` > ``MobileAutoCacheCleanupDays`` > ``7``                |
+|                                                      | - Environment variable: ``MM_NATIVEAPPSETTINGS_MOBILEAUTOCACHECLEANUPDAYS``                              |
+| Numerical input in days. Default is **7**.           |                                                                                                          |
+| Set to **0** for zero-persistence mode.              |                                                                                                          |
++------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: mobile-enable-secure-file-preview
   :displayname: Enable secure file preview on mobile (File sharing)
