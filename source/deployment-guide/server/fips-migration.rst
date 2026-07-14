@@ -1,14 +1,14 @@
-Migrate an existing deployment to FIPS-compliant containers
-============================================================
+Migrate an existing deployment to FIPS-compliant images
+=======================================================
 
-.. include:: ../../../_static/badges/entry-ent.rst
+.. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
 From Mattermost v11, each release ships in two image variants: a standard Enterprise build (``mattermost/mattermost-enterprise-edition``) and a FIPS-compliant build (``mattermost/mattermost-enterprise-fips-edition``). Migrating an existing deployment to the FIPS image is primarily a matter of replacing the image and restarting Mattermost. No data migration is required, and rollback is symmetric.
 
-This guide covers migrating an existing Mattermost Server deployment running on Docker or Kubernetes. FIPS images are only supported for Docker- and Kubernetes-based deployments; Linux package and tarball installations can't be migrated to FIPS in place.
+This guide covers migrating an existing Mattermost Server deployment running on Docker or Kubernetes. Linux package and tarball installations have no FIPS-compliant equivalent.
 
-Mattermost's FIPS offering also covers the Mattermost Operator and a self-hosted Push Proxy. Migrating those components is out of scope for this guide.
+Mattermost's FIPS offering also covers the Mattermost Operator controller and a self-hosted Push Proxy. Migrating those components to their FIPS variants is out of scope for this guide.
 
 For background on what the FIPS build is and how it's constructed, see the **FIPS/STIG** tab on :doc:`Deploy Mattermost using Containers </deployment-guide/server/deploy-containers>`.
 
@@ -42,19 +42,19 @@ Migrate a Kubernetes deployment
 
 These steps assume your deployment is managed by the Mattermost Operator using a ``Mattermost`` custom resource.
 
-In the steps below, replace ``[namespace]`` with the namespace your Mattermost installation runs in. If you omit ``-n [namespace]``, ``kubectl`` uses your current context's default namespace.
+In the steps below, replace ``<namespace>`` with the namespace your Mattermost installation runs in. If you omit ``-n <namespace>``, ``kubectl`` uses your current context's default namespace.
 
 1. Find the name of your Mattermost custom resource:
 
    .. code-block:: sh
 
-      kubectl -n [namespace] get mattermost
+      kubectl -n <namespace> get mattermost
 
 2. Edit the ``Mattermost`` custom resource to point at the FIPS image. You can edit the live resource directly:
 
    .. code-block:: sh
 
-      kubectl -n [namespace] edit mattermost [installation-name]
+      kubectl -n <namespace> edit mattermost <installation-name>
 
    Or update your manifest file and re-apply it.
 
@@ -70,19 +70,19 @@ In the steps below, replace ``[namespace]`` with the namespace your Mattermost i
 
    .. code-block:: sh
 
-      kubectl -n [namespace] apply -f <your-mattermost-manifest>.yaml
+      kubectl -n <namespace> apply -f <your-mattermost-manifest>.yaml
 
 5. Watch the Mattermost pods until the new ones reach ``Running`` and the old ones terminate:
 
    .. code-block:: sh
 
-      kubectl -n [namespace] get pods -w
+      kubectl -n <namespace> get pods -w
 
 6. Verify the running pods are using the FIPS image:
 
    .. code-block:: sh
 
-      kubectl -n [namespace] get pods -o jsonpath='{range .items[*]}{.metadata.name}{"\t"}{.spec.containers[*].image}{"\n"}{end}'
+      kubectl -n <namespace> get pods -o jsonpath='{range .items[*]}{.metadata.name}{"\t"}{.spec.containers[*].image}{"\n"}{end}'
 
 Migrate a Docker or Docker Compose deployment
 ---------------------------------------------
@@ -120,14 +120,14 @@ These steps are written for the official `Mattermost Docker deployment <https://
 
       docker inspect mattermost --format '{{.Config.Image}}'
 
-After migration
----------------
+Verify the migration
+--------------------
 
 1. Confirm Mattermost starts cleanly. Tail the logs and watch for startup errors. On Kubernetes, target a specific Mattermost pod:
 
    .. code-block:: sh
 
-      kubectl -n [namespace] logs -f [pod-name]
+      kubectl -n <namespace> logs -f <pod-name>
 
    On Docker:
 
