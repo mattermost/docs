@@ -170,4 +170,4 @@ If push notifications are not being delivered on the mobile device, confirm that
 Integration posts (MM Blocks) do not render or respond
 -------------------------------------------------------
 
-If buttons, menus, or structured content from an integration post is missing or unresponsive on mobile, see :doc:`Troubleshoot MM Blocks </get-help/mm-blocks-troubleshooting>`.
+If buttons, menus, or structured content from an integration post is missing or unresponsive on mobile, see the `MM Blocks reference <https://developers.mattermost.com/integrate/reference/mm-blocks/>`_ in the developer documentation.
