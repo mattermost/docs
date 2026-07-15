@@ -146,7 +146,7 @@ Configure SAML Sign-On for Mattermost
 11. Set **Enable Encryption** to **True**.
 12. Choose your **Service Provider Private Key** file then upload. If you used the Bash script referenced in the **Before you begin** section, this is the ``mattermost-x509.key`` file.
 13. Choose your **Service Provider Public Certificate** then upload. If you used the Bash script referenced in the **Before you begin** section, this is the ``mattermost-x509.crt`` file.
-14. Set **Sign Request** to suit your environment. The **Signature Algorithm** must match the algorithm set in Entra ID (**RSAwithSHA256** is recommended). 
+14. Set **Sign Request** to **True** if you want Mattermost to sign outbound AuthnRequests sent to Entra ID — this is distinct from Entra signing its SAML responses and assertions (configured in step 12 of the Entra setup). If enabled, set **Signature Algorithm** to **RSAwithSHA256** (Entra ID requires RSA-SHA256 for signed requests) and upload Mattermost's public certificate to Entra ID for request verification: in the enterprise application, select **SAML Certificates**, then upload the ``mattermost-x509.crt`` file under **Verification certificates**.
 
 .. note:: 
 
