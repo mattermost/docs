@@ -51,7 +51,7 @@ Plugin upload
 
 Upload a plugin bundle when you're installing a custom or third-party plugin that isn't in the Marketplace, or when your server runs in an air-gapped or restricted environment. Uploading requires the **Upload Plugin** setting to be enabled and the **Require plugin signature** (``PluginSettings.RequirePluginSignature``) setting to be disabled.
 
-1. Download the plugin bundle (a ``.tar.gz`` file), typically from the plugin's GitHub releases page. Most plugin bundles include the server binaries for all supported platforms, and Mattermost automatically selects the correct one for your server's operating system and architecture. If a plugin instead publishes a separate bundle for each platform, download the one that matches your server's OS and architecture.
+1. Download the plugin bundle (a ``.tar.gz`` file), typically from the plugin's GitHub releases page. Many plugins offer a separate, smaller bundle for each platform (for example, ``linux-amd64``) alongside a larger universal bundle that contains the binaries for all supported platforms. Download the bundle that matches your server's operating system and architecture; a bundle built for a different platform won't start. If you use the universal bundle instead, Mattermost automatically selects the correct binary for your server.
 2. Log in to your Mattermost System Console as a system admin.
 3. Go to **Plugins > Plugin Management**.
 4. In the **Upload Plugin** section, select **Choose File**, select the plugin bundle you downloaded, and then select **Upload**.
