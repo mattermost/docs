@@ -16,11 +16,10 @@ Before you begin
 
 Plugin availability and the actions you can take depend on a few configuration settings found in the System Console under **Plugins > Plugin Management**. Review these settings before installing or updating plugins:
 
-- **Enable plugins** must be set to **true** (the default) for the plugin system to work. When disabled, all plugins are turned off.
-- **Enable Marketplace** must be set to **true** (the default) to install plugins from the in-product Marketplace.
-- **Enable remote Marketplace** must be set to **true** (the default) for the Marketplace to connect to the remote endpoint and list community and Mattermost-provided plugins. Set this to **false** for servers that can't reach the internet; the Marketplace then shows only pre-packaged and installed plugins.
+- **Enable plugins** (``PluginSettings.Enable``) must be set to **true** (the default) for the plugin system to work. When disabled, all plugins are turned off.
+- **Enable Marketplace** (``PluginSettings.EnableMarketplace``) must be set to **true** (the default) to install plugins from the in-product Marketplace.
+- **Enable remote Marketplace** (``PluginSettings.EnableRemoteMarketplace``) must be set to **true** (the default) for the Marketplace to connect to the remote endpoint and list community and Mattermost-provided plugins. Set this to **false** for servers that can't reach the internet; the Marketplace then shows only pre-packaged and installed plugins.
 - **Upload Plugin** (``PluginSettings.EnableUploads``) must be set to **true** to upload plugin bundles from your local computer. This setting applies to self-hosted deployments only.
-- **Require plugin signature**, when enabled, validates plugin signatures and **disables plugin file uploads** in the System Console. With this setting enabled, install plugins from the Marketplace or as pre-packaged plugins instead.
 
 .. note::
 
@@ -28,39 +27,42 @@ Plugin availability and the actions you can take depend on a few configuration s
 
 See the :doc:`plugins configuration settings </administration-guide/configure/plugins-configuration-settings>` documentation for details on each of these settings, including their ``config.json`` paths and environment variables.
 
-Install a plugin
-----------------
+Plugin installation methods
+---------------------------
 
-You can install a plugin from the in-product Marketplace, by uploading a plugin bundle, or by using mmctl. Pre-packaged plugins that ship with the Mattermost Server are installed and upgraded automatically when **Automatic prepackaged plugins** is enabled (the default).
+You can install a plugin from the in-product Marketplace, by uploading a plugin bundle, or by using mmctl. Pre-packaged plugins that ship with the Mattermost Server are installed and upgraded automatically when **Automatic prepackaged plugins** (``PluginSettings.AutomaticPrepackagedPlugins``) is enabled (the default).
 
-From the Marketplace
-~~~~~~~~~~~~~~~~~~~~~
+App Marketplace
+~~~~~~~~~~~~~~~
 
 Installing from the Marketplace is the recommended method for pre-built plugins. The Marketplace always installs the latest compatible version, and plugins downloaded from the Marketplace are signature-validated.
 
 1. In Mattermost, from the Product menu |product-list|, select **App Marketplace**.
 2. Search for or scroll to the plugin you want, and then select **Install**.
 3. Once the plugin is installed, select **Configure** to open its settings in the System Console, or **Enable** to turn it on with the default configuration.
+4. Confirm the installation succeeded: the plugin appears in the **Installed Plugins** list under **Plugins > Plugin Management**, and its features are available in Mattermost.
 
 .. tip::
 
   The `Mattermost Marketplace <https://mattermost.com/marketplace/>`__ website offers an expanded selection of community-supported integrations.
 
-By uploading a plugin bundle
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Plugin upload
+~~~~~~~~~~~~~
 
-Upload a plugin bundle when you're installing a custom or third-party plugin that isn't in the Marketplace, or when your server runs in an air-gapped or restricted environment. Uploading requires the **Upload Plugin** setting to be enabled and the **Require plugin signature** setting to be disabled.
+Upload a plugin bundle when you're installing a custom or third-party plugin that isn't in the Marketplace, or when your server runs in an air-gapped or restricted environment. Uploading requires the **Upload Plugin** setting to be enabled and the **Require plugin signature** (``PluginSettings.RequirePluginSignature``) setting to be disabled.
 
-1. Download the plugin bundle. Mattermost plugins are distributed as ``.tar.gz`` files, typically from the plugin's GitHub releases page.
+1. Download the plugin bundle (a ``.tar.gz`` file), typically from the plugin's GitHub releases page. Most plugin bundles include the server binaries for all supported platforms, and Mattermost automatically selects the correct one for your server's operating system and architecture. If a plugin instead publishes a separate bundle for each platform, download the one that matches your server's OS and architecture.
 2. Log in to your Mattermost System Console as a system admin.
 3. Go to **Plugins > Plugin Management**.
 4. In the **Upload Plugin** section, select **Choose File**, select the plugin bundle you downloaded, and then select **Upload**.
 5. The plugin appears in the **Installed Plugins** list. Select **Enable** to turn it on.
 
-Using mmctl
-~~~~~~~~~~~
+mmctl
+~~~~~
 
 The :doc:`mmctl command line tool </administration-guide/manage/mmctl-command-line-tool>` is useful for scripted or remote plugin management. Plugins must be enabled in the server configuration first.
+
+Several commands take the plugin's ID, shown as ``<id>`` below. A plugin's ID is the ``id`` value in its ``plugin.json`` manifest. It's often the plugin's name, such as ``github`` or ``playbooks``, but some plugins use a reverse-DNS identifier, such as ``com.mattermost.calls`` for the Calls plugin. To list the IDs of installed plugins, run ``mmctl plugin list``.
 
 - Install the latest version from the Marketplace by plugin ID:
 
@@ -130,6 +132,8 @@ You can update a plugin using any of the following methods:
      mmctl plugin add myplugin.tar.gz --force
      mmctl plugin install-url https://example.com/myplugin.tar.gz --force
 
+  The ``--force`` flag overwrites the installed plugin without asking for confirmation, so verify the new bundle's compatibility (and ideally test it in a staging environment) before applying it in production.
+
   You can also reinstall the latest Marketplace version with ``mmctl plugin marketplace install <id>``.
 
 .. tip::
@@ -162,6 +166,8 @@ To remove a plugin with mmctl:
   - **Bot accounts**: Bot accounts the plugin created remain on the server and stay active. To remove them, deactivate the bot accounts manually in **System Console > Integrations > Bot Accounts**.
 
   Because the configuration and KV store data persist, removal is effectively reversible: reinstalling the plugin restores its prior configuration and data.
+
+  Mattermost doesn't provide a built-in way to fully delete a removed plugin's retained configuration or key-value data through the System Console or mmctl. If you must purge this data to meet a data-retention or compliance requirement, contact Mattermost support for guidance, as it requires direct changes to the Mattermost database.
 
 Air-gapped and restricted environments
 ---------------------------------------
