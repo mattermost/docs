@@ -32,7 +32,11 @@ Set up an enterprise app for Mattermost SSO in Entra ID
 5. In the **What's the name of your app?** field, enter **Mattermost**.
 6. Under **What are you looking to do with your application?**, select **Integrate any other application you don't find in the gallery (Non-gallery)**.
 7. Select **Create**. Entra provisions the application; this may take a few seconds.
-8. In the **Mattermost** enterprise application settings, select **Manage > Users and groups** to assign users and/or groups to the application, **or** select **Manage > Properties**, set **Assignment required?** to **No**, then select **Save**.
+8. In the **Mattermost** enterprise application settings, select **Manage > Users and groups**, then assign the approved users and/or groups that should have access to Mattermost.
+
+   .. warning::
+
+      Alternatively, you can select **Manage > Properties**, set **Assignment required?** to **No**, then select **Save**. This grants Mattermost access to **all users in your Entra tenant** — evaluate whether this aligns with your organization's access control requirements before proceeding.
 9. In the **Mattermost** enterprise application settings, select **Manage > Single sign-on**, then select **SAML** under **Select a single sign-on method**.
 10. Select **Edit** in the **Basic SAML Configuration** section, then set the fields below and select **Save**:
 
