@@ -72,17 +72,17 @@ In the steps below, replace ``<namespace>`` with the namespace your Mattermost i
 
       kubectl -n <namespace> apply -f <your-mattermost-manifest>.yaml
 
-5. Watch the Mattermost pods until the new ones reach ``Running`` and the old ones terminate:
+5. Watch the Mattermost pods until the new ones report ``Ready`` and the old ones terminate. A pod showing ``Running`` isn't necessarily serving traffic yet — wait until its ``READY`` column shows all containers ready (for example, ``1/1``):
 
    .. code-block:: sh
 
-      kubectl -n <namespace> get pods -w
+      kubectl -n <namespace> get pods -l app=mattermost -w
 
 6. Verify the running pods are using the FIPS image:
 
    .. code-block:: sh
 
-      kubectl -n <namespace> get pods -o jsonpath='{range .items[*]}{.metadata.name}{"\t"}{.spec.containers[*].image}{"\n"}{end}'
+      kubectl -n <namespace> get pods -l app=mattermost -o jsonpath='{range .items[*]}{.metadata.name}{"\t"}{.spec.containers[*].image}{"\n"}{end}'
 
 Migrate a Docker or Docker Compose deployment
 ---------------------------------------------
