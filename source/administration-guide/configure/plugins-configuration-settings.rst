@@ -1029,7 +1029,38 @@ Enable AV1 (Experimental)
 
 .. note::
 
-  Avoid enabling both this experimental configuration setting and the `Enable simulcast for screen sharing <#enable-simulcast-for-screen-sharing-experimental>`__ experimental configuration setting at the same time. 
+  Avoid enabling both this experimental configuration setting and the `Enable simulcast for screen sharing <#enable-simulcast-for-screen-sharing-experimental>`__ experimental configuration setting at the same time.
+
+.. config:setting:: enable-pluginsvideo
+  :displayname: Enable video calls in DMs (Experimental) (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.enablevideo
+  :environment: MM_CALLS_ENABLE_VIDEO
+
+  - **true**: Enables experimental video calls in direct message (DM) channels.
+  - **false**: **(Default)** Video calls are disabled.
+
+Enable video calls in DMs (Experimental)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
+| - **true**: Enables experimental video calls in direct message (DM)      | - System Config path: **Plugins > Calls**                                                                     |
+|   channels.                                                              | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``enablevideo``      |
+| - **false**: **(Default)** Video calls are disabled.                     | - Environment variable: ``MM_CALLS_ENABLE_VIDEO``                                                             |
+|                                                                          |                                                                                                               |
+| Video is supported in DM calls on the desktop and web apps only. Mobile  |                                                                                                               |
+| users can't start video calls; when joining a DM call that includes      |                                                                                                               |
+| video, they receive voice and screen sharing only. Call recordings       |                                                                                                               |
+| capture voice and screen sharing only — video isn't recorded.            |                                                                                                               |
++--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  The ability to enable video calls in DMs is currently :ref:`Experimental <administration-guide/manage/feature-labels:experimental>`.
+
+.. note::
+
+  If your deployment offloads calls to the :doc:`RTCD service </administration-guide/configure/calls-rtcd-setup>`, video in DM calls requires **rtcd v1.2.2 or later**. We recommend running the rtcd version that ships with your Calls plugin release (rtcd v1.2.5 for Calls v1.12.0) and keeping rtcd updated alongside the plugin. Deployments that use the plugin's built-in RTC server (no RTCD) support video without additional configuration.
 
 .. config:setting:: enable-pluginsdcsignaling
   :displayname: Use data channels for signaling media tracks (Plugins - Calls)
