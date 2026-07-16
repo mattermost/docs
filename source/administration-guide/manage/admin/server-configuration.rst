@@ -16,6 +16,7 @@ Whether you’re setting up email notifications, optimizing search capabilities,
     Set up Mattermost Agents </administration-guide/configure/agents-admin-guide>
     Set up auto-translation </administration-guide/manage/admin/autotranslation>
     Install Mattermost Boards </administration-guide/configure/install-boards>
+    Install and manage plugins </administration-guide/configure/manage-plugins>
     Manage user attributes </administration-guide/manage/admin/user-attributes>
     Enable content flagging </administration-guide/manage/admin/content-flagging>
     Environment variables </administration-guide/configure/environment-variables>
@@ -33,6 +34,7 @@ Whether you’re setting up email notifications, optimizing search capabilities,
 * :doc:`Set up Mattermost Agents</administration-guide/configure/agents-admin-guide>` - Learn how to enable AI-powered Agents for your Mattermost instance.
 * :doc:`Set up auto-translation </administration-guide/manage/admin/autotranslation>` - Learn how to enable and configure automatic message translation for your Mattermost instance.
 * :doc:`Install Mattermost Boards </administration-guide/configure/install-boards>` - Learn how to install and configure the Boards plugin for your Mattermost instance.
+* :doc:`Install and manage plugins </administration-guide/configure/manage-plugins>` - Learn how to install, enable, configure, update, and remove plugins for your Mattermost instance.
 * :doc:`Manage custom user attributes </administration-guide/manage/admin/user-attributes>` - Learn how to manage custom user attributes in user profiles in Mattermost.
 * :doc:`Environment variables </administration-guide/configure/environment-variables>` - Learn how to use environment variables for Mattermost configuration.
 * :doc:`Customize the server </administration-guide/manage/admin/customize-branding>` - Learn about customizing branding for Mattermost server.
