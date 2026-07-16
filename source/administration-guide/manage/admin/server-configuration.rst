@@ -44,3 +44,4 @@ Whether you’re setting up email notifications, optimizing search capabilities,
 * :doc:`SSL client certificate setup </administration-guide/onboard/ssl-client-certificate>` - Learn how to set up SSL client certificates for Mattermost.
 * :doc:`Connected workspaces </administration-guide/onboard/connected-workspaces>` - Learn how to connect Mattermost workspaces.
 * :doc:`Telemetry </administration-guide/manage/telemetry>` - Learn about Mattermost telemetry and data collection.
+* :doc:`Configure Azure Blob Storage as the Mattermost file store </administration-guide/configure/azure-blob-storage>` - Learn how to configure Azure Blob Storage as the Mattermost file store.
