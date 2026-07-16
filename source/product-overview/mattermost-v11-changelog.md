@@ -63,7 +63,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
   - Pre-packaged Playbooks plugin version [v2.10.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.10.0).
   - Pre-packaged Agents plugin version [v2.4.2](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v2.4.2).
   - Pre-packaged [Calls plugin](https://docs.mattermost.com/end-user-guide/collaborate/make-calls.html) version [v1.12.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.12.1).
-  - Pre-packaged Boards plugin version [v9.3.0](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.3.0).
+  - Pre-packaged Boards plugin version [v9.2.6](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.2.6).
   - Pre-packaged GitLab plugin version [v1.13.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.13.0).
   - Added zoom and pan support to the image file preview: use the scroll wheel to zoom at the cursor, click-and-drag to pan, and +/-/0 keyboard shortcuts (reported on webapp).
   - Added a toast notification for plugin-rejected file uploads, consistent with the existing notification for rejected downloads.
@@ -182,7 +182,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-0-is-now-avail
 
 - **11.8.4, released 2026-07-15**
   - Mattermost v11.8.4 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Pre-packaged Boards plugin version [v9.3.0](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.3.0).
+  - Pre-packaged Boards plugin version [v9.2.6](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.2.6).
   - Mattermost v11.8.4 contains no database or functional changes.
 - **11.8.3, released 2026-07-08**
   - Mattermost v11.8.3 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
