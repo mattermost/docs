@@ -392,11 +392,11 @@ def main():
         blog_url = os.environ.get("BLOG_POST_URL", "").strip()
         if not blog_url:
             # Auto-construct short URL (no patch suffix): v11.6.0 → mattermost-v11-6-is-now-available
-            version_slug = re.sub(r"-0$", "", VERSION.lstrip("v").replace(".", "-"))
+            version_slug = re.sub(r"-\d+$", "", VERSION.lstrip("v").replace(".", "-"))
             blog_url = f"https://mattermost.com/blog/mattermost-v{version_slug}-is-now-available/"
             print(f"ℹ️  No blog post URL provided — using auto-constructed URL: {blog_url}")
-        # Format as a Markdown link where the link text is the URL itself
-        blog_link = f"[{blog_url}]({blog_url})"
+        # Format as a Markdown link matching existing changelog style: [this blog post](url)
+        blog_link = f"[this blog post]({blog_url})"
         polished = polished.replace("BLOG_POST_LINK", blog_link)
         # Inject the Go Version section: replace the placeholder heading the AI outputs,
         # or insert it before ### Open Source Components / ### Security to preserve
