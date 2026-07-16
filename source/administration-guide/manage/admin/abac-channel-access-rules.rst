@@ -83,6 +83,10 @@ The **Auto-add members based on access rules** toggle controls automatic members
   - When no rules are configured, this toggle is automatically disabled.
   - On **private** channels, users who no longer meet required attribute rules are always removed during synchronization regardless of the auto-sync setting. On **public** channels, no member is ever removed by ABAC.
 
+.. note::
+
+  If a policy rule references attribute values from a ``shared_only`` or ``source_only`` attribute that you don't personally hold, those values appear as ``--------`` and the row is read-only. Test and Delete actions are also disabled for those rows. See :ref:`Attribute value masking <administration-guide/manage/admin/abac-system-wide-policies:attribute value masking>` for details.
+
 Validation and safety
 ~~~~~~~~~~~~~~~~~~~~~
 
