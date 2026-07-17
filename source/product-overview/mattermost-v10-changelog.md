@@ -85,7 +85,7 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
   - Customers should not upgrade from ``>=10.11.17`` to ``<=11.7.2`` due to a bug that causes an issue with database migration numbers. The bug is fixed in v11.7.3.
  ```
 
-- **10.11.22, released 2026-07-15**
+- **10.11.22, released 2026-07-17**
   - Mattermost v10.11.22 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Playbooks plugin version [v2.4.7](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.4.7).
   - Pre-packaged Jira plugin version [v4.7.1](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.7.1).
