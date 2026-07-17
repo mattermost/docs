@@ -72,7 +72,7 @@ Here are your instructions:
 
           Adapt the plan name (e.g. "Changes to All plans:", "Changes to Enterprise plan:", "Changes to Enterprise Advanced plan:") and list each setting change as a bullet under the appropriate plan heading.
         - `#### Compatibility` — minimum version requirement changes for browsers, OS, or clients. Example: "Updated minimum Edge and Chrome versions to 146+."
-    - `### Improvements` — for new features and enhancements only. Do NOT place items beginning with "Fixed..." here — those belong in Bug Fixes. Begin this section with the line `See [this blog post](BLOG_POST_URL) on the highlights in our latest release.` (use the exact placeholder `BLOG_POST_URL` — it will be replaced automatically), followed by a blank line before the first `####` subsection heading. Then add subsections as applicable:
+    - `### Improvements` — for new features and enhancements only. Do NOT place items beginning with "Fixed..." here — those belong in Bug Fixes. Begin this section with the line `See BLOG_POST_LINK on the highlights in our latest release.` (use the exact placeholder `BLOG_POST_LINK` — it will be replaced automatically with a Markdown link), followed by a blank line before the first `####` subsection heading. Then add subsections as applicable:
         - `#### User Interface` — user interface and UX changes and new visual features. Pre-packaged plugin version updates go at the TOP of this subsection, before other items. Always write "user interface" in full — never abbreviate as "UI".
         - `#### Plugins/Integrations` — plugin and integration improvements (use as a separate subsection when there are enough items to warrant it)
         - `#### Administration` — System Console features, logging, support packet changes
@@ -391,11 +391,13 @@ def main():
         polished = polish_with_ai(all_notes)
         blog_url = os.environ.get("BLOG_POST_URL", "").strip()
         if not blog_url:
-            # Auto-construct from version: v11.7.0 → https://mattermost.com/blog/mattermost-v11-7-0-is-now-available/
-            version_slug = VERSION.lstrip("v").replace(".", "-")
+            # Auto-construct short URL (no patch suffix): v11.6.0 → mattermost-v11-6-is-now-available
+            version_slug = re.sub(r"-\d+$", "", VERSION.lstrip("v").replace(".", "-"))
             blog_url = f"https://mattermost.com/blog/mattermost-v{version_slug}-is-now-available/"
             print(f"ℹ️  No blog post URL provided — using auto-constructed URL: {blog_url}")
-        polished = polished.replace("BLOG_POST_URL", blog_url)
+        # Format as a Markdown link matching existing changelog style: [this blog post](url)
+        blog_link = f"[this blog post]({blog_url})"
+        polished = polished.replace("BLOG_POST_LINK", blog_link)
         # Inject the Go Version section: replace the placeholder heading the AI outputs,
         # or insert it before ### Open Source Components / ### Security to preserve
         # section order, or append at the end if neither anchor exists.
