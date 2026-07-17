@@ -981,7 +981,18 @@ Database failover and disaster recovery
 
 If you need to manually promote a read replica to primary (for maintenance, disaster recovery, or other operational needs):
 
-1. **Promote the replica** to primary:
+1. **Verify the replica is synchronized** before promoting. Promoting a replica that hasn't caught up with the primary will lose any WAL data that wasn't replayed.
+
+   On the replica server, check replication status:
+
+   .. code-block:: sql
+
+      SELECT pg_last_wal_receive_lsn(), pg_last_wal_replay_lsn(),
+             pg_last_wal_replay_lsn() = pg_last_wal_receive_lsn() AS synced;
+
+   Wait until ``synced`` returns ``true`` before continuing. In an unplanned failover where the primary is already unreachable, this check confirms what was replicated before the primary failed rather than guaranteeing zero data loss.
+
+2. **Promote the replica** to primary:
 
    For self-managed PostgreSQL:
 
@@ -997,14 +1008,14 @@ If you need to manually promote a read replica to primary (for maintenance, disa
 
    Use the AWS Console or CLI to promote the read replica to a standalone instance.
 
-2. **Update Mattermost configuration** to point to the new primary:
+3. **Update Mattermost configuration** to point to the new primary:
 
    .. code-block:: bash
 
       # Update the DataSource to point to the new primary
       mmctl config set SqlSettings.DataSource "postgres://user:password@new-primary.example.com:5432/mattermost?sslmode=require"
 
-3. **Reload configuration without downtime:**
+4. **Reload configuration without downtime:**
 
    - Go to **System Console > Environment > Web Server** → **Reload Configuration from Disk**
    - Go to **System Console > Environment > Database** → **Recycle Database Connections**
