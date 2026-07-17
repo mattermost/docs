@@ -14,8 +14,8 @@ Platform and OS scope reflects reported and tested environments and may not repr
 ```
 
 
-(release-v11.0-feature-release)=
-## Release v11.0 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
+(release-v11.10-feature-release)=
+## Release v11.10 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
 **Release day: 2026-08-14**
 
@@ -27,7 +27,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
     - Under ``AccessControlSettings`` in ``config.json``, added ``EnableChannelPolicyIndicators`` configuration setting to control whether channel access attribute indicators are shown in the channel members list and invite dialog. Default is ``true``.
 
 ### Improvements
-See [this blog post](https://mattermost.com/blog/mattermost-v11-0-is-now-available/) on the highlights in our latest release.
+See [this blog post](https://mattermost.com/blog/mattermost-v11-10-is-now-available/) on the highlights in our latest release.
 
 #### User Interface
   - Updated Mattermost Calls to v1.12.2, fixing a stale join button on Desktop after WebSocket reconnect, guarding against concurrent join attempts, surfacing the deprecated ``MM_CALLS_RTCD_URL`` setting in the ``/env`` endpoint, and limiting decompressed SDP payload size to prevent potential denial-of-service.
@@ -138,12 +138,11 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-0-is-now-availab
   - Added ``obtained_user_email`` field to ``completeSaml`` audit log events.
 
 ### Go Version
-  - v11.0 is built with Go ``v1.26.4``.
+  - v11.10 is built with Go ``v1.26.4``.
 
 ### Open Source Components
   - Added ``@tiptap/extension-code-block-lowlight``, ``@tiptap/extension-link``, ``@tiptap/extension-placeholder``, ``@tiptap/extension-table``, ``@tiptap/extension-table-cell``, ``@tiptap/extension-table-header``, ``@tiptap/extension-table-row``, ``@tiptap/markdown``, ``@tiptap/react``, ``@tiptap/starter-kit``, and ``lowlight`` to https://github.com/mattermost/mattermost/.
   - Added ``Azure/azure-sdk-for-go`` to https://github.com/mattermost/mattermost/.
-
 
 (release-v11.9-feature-release)=
 ## Release v11.9 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
