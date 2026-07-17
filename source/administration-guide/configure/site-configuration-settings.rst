@@ -18,6 +18,7 @@ Review and manage the following site configuration options in the System Console
 - `Public Links <#public-links>`__
 - `Notices <#notices>`__
 - `Connected Workspaces <#connected-workspaces>`__
+- `Classification Markings <#classification-markings>`__
 
 .. tip::
 
@@ -253,7 +254,7 @@ Report a Problem
 
 With self-hosted deployments, you can specify how the **Report a Problem** option behaves in the Mattermost app via the **Help** menu:
 
-- **Default link**: Uses the default Mattermost URL to report a problem. Customers with a Mattermost subscription are directed to the `Mattermost Support Portal <https://support.mattermost.com/hc/en-us/requests/new>`_. Community deployments are directed to `create a new issue on the Mattermost GitHub repository <https://github.com/mattermost/mattermost/issues/new>`_.
+- **Default**: Customers with a Mattermost license can open a support case by email with the Mattermost support team. Unlicensed Mattermost deployments are directed to the `troubleshooting forums <https://mattermost.com/pl/report_a_problem_unlicensed>`_.
 - **Email address**: Enables you to :ref:`enter an email address <administration-guide/configure/site-configuration-settings:report a problem email address>` that users will be prompted to send a message to when they choose **Report a Problem** in Mattermost.
 - **Custom link**: Enables you to :ref:`enter a URL <administration-guide/configure/site-configuration-settings:report a problem link>` that users will be directed to when they choose **Report a Problem** in Mattermost.
 - **Hide link**: Removes the **Report a Problem** option from Mattermost.
@@ -282,7 +283,7 @@ Report a Problem link
   :displayname: Report a Problem email (Customization)
   :systemconsole: Site Configuration > Customization
   :configjson: .SupportSettings.ReportAProblemMail
-  :environment: MM_SUPPORTSETTINGS_REPORTAPROBLMEMAIL
+  :environment: MM_SUPPORTSETTINGS_REPORTAPROBLEMMAIL
   :description: Enter the email address that users will be prompted to send a message to when they choose Report a Problem in Mattermost.
 
 Report a Problem email address
@@ -291,7 +292,7 @@ Report a Problem email address
 +---------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 | This field sets the email address for the **Report a Problem** link in the channel                | - System Config path: **Site Configuration > Customization**            |
 | header **Help** menu.                                                                             | - ``config.json`` setting: ``SupportSettings`` > ``ReportAProblemMail`` |
-|                                                                                                   | - Environment variable: ``MM_SUPPORTSETTINGS_REPORTAPROBLMEMAIL``       |
+|                                                                                                   | - Environment variable: ``MM_SUPPORTSETTINGS_REPORTAPROBLEMMAIL``       |
 | String input. Cannot be left blank.                                                               |                                                                         |
 +---------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
@@ -1097,6 +1098,31 @@ User statistics update time
 | Must be a 24-hour time stamp in the form ``HH:MM`` based on the local time of the server.  |                                                                                          |
 | Default is **00:00**.                                                                      |                                                                                          |
 +--------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+
+.. config:setting:: channel-category-sorting
+  :displayname: Channel category sorting (Users and Teams)
+  :systemconsole: Site Configuration > Users and Teams
+  :configjson: .TeamSettings.EnableChannelCategorySorting
+  :environment: MM_TEAMSETTINGS_ENABLECHANNELCATEGORYSORTING
+  :description: This setting controls whether channel admins can choose a default sidebar category when creating or editing a channel. Default is **true**.
+
+  - **true**: **(Default)** When creating or editing supported channels, channel admins see a **Default category (optional)** field. Members who join the channel see it under that category in their sidebar.
+  - **false**: The default category selector is hidden.
+
+Channel category sorting
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+From Mattermost v11.8, channel category sorting is enabled by default. When enabled, channel admins can choose a default sidebar category when creating or editing a channel. Channel admins can select an existing category, type a new category name, or clear the default category from channel settings. Members who join the channel see it under that category in their sidebar. When disabled, the default category selector is hidden.
+
+.. list-table::
+  :widths: 55 45
+  :header-rows: 0
+
+  * - - **true**: **(Default)** When creating or editing supported channels, channel admins see a **Default category (optional)** field. They can select an existing category, enter a new category name, or clear the default category from channel settings. Members who join the channel see it under that category in their sidebar.
+      - **false**: The default category selector is hidden when creating or editing channels.
+    - - System Config path: **Site Configuration > Users and Teams**
+      - ``config.json`` setting: ``TeamSettings`` > ``EnableChannelCategorySorting`` > ``true``
+      - Environment variable: ``MM_TEAMSETTINGS_ENABLECHANNELCATEGORYSORTING``
 
 ----
 
@@ -2586,6 +2612,34 @@ Member sync batch size
 .. note::
 
   Enabling these features can increase the load on your Mattermost server’s CPU, memory, and database due to frequent updates, database queries, and API communication. Excessive sync frequency and retries can overwhelm system resources, potentially causing performance degradation or instability. Monitor your system carefully when enabling these features.
+
+----
+
+Classification Markings
+-----------------------
+
+From Mattermost v11.8, system admins can configure classification markings in the System Console by going to **Site Configuration > Classification Markings**.
+
+Classification markings define reusable classification levels that can be displayed as global or channel-level banners in the web and desktop apps. Each classification level includes a name, color, and rank order. You can select a preset, such as US DoD, NATO, UK GSCP, Canada, or Australia PSPF, or define custom classification levels. Levels are ordered using the same **Ranked** attribute type available for :doc:`user attributes </administration-guide/manage/admin/user-attributes>`, so each level sits at a defined position from lowest to highest.
+
+.. note::
+
+  Classification markings are informational only and aren't tied to access control decisions at this time.
+
+Configure classification markings:
+
+1. Go to **System Console > Site Configuration > Classification Markings**.
+2. Enable **Enable classification markings**.
+3. Select a **Classification preset**, or create custom classification levels.
+4. Configure classification level names, colors, and rank order.
+5. Optionally enable the **Global Classification Banner** under **Global Classification Indicators**.
+6. Select the **Banner visibility**:
+
+   - **Top only**
+   - **Top and bottom**
+
+7. Select the **Global classification level** to display.
+8. Select **Save**.
 
 ----
 

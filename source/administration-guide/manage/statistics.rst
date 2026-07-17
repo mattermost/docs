@@ -12,7 +12,7 @@ Statistics on users, posts, and channels are tracked for each system and team. E
 
 For advanced metrics for Entry, Enterprise, and Enterprise deployments, :doc:`see performance monitoring documentation to learn more </administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring>`.
 
-Site statistics
+System statistics
 ---------------
 
 System statistics are viewable under **System Console > Reporting**. The data shown here is a cumulative sum across all teams on the system.
@@ -140,12 +140,12 @@ To enable team admins to access their team's statistics:
 .. image:: ../../images/edit-viewer-system-admin-role.png
    :alt: Enable team admins to access their team's statistics in the System Console by going to User Management > System Roles, and making changes to the Viewer role.
 
-2. Under **Privileges**, expand the **Reporting** section, set **Team Statistics** to **Read only**, then set **Site Statistics** and **Server Logs** to **No access**.
+2. Under **Privileges**, expand the **Reporting** section, set **Team Statistics** to **Read only**, then set **System Statistics** and **Server Logs** to **No access**.
 
 3. Set all other privileges to **No access** to restrict all users with the **Viewer** role to access only the **Team Statistics** page in the System Console.   
 
 .. image:: ../../images/restrict-role-access.png
-   :alt: On the Viewer page, restrict user access to the Team Statistics page by expanding the Reporting section, setting Site Statistics and Server Logs to No Access, and setting all other privileges to No Access. 
+   :alt: On the Viewer page, restrict user access to the Team Statistics page by expanding the Reporting section, setting System Statistics and Server Logs to No Access, and setting all other privileges to No Access. 
 
 4. Under **Assigned People**, select **Add People** to assign team admins to the **Viewer** role, and enable them to access their team's statistics.
 

@@ -37,6 +37,7 @@ Cluster metrics
 - ``mattermost_cluster_cluster_health_score``: A score that gives an idea of how well it is meeting the soft-real time requirements of the gossip protocol.
 - ``mattermost_cluster_cluster_requests_total``: The total number of inter-node requests.
 - ``mattermost_cluster_cluster_event_type_totals``: The total number of cluster requests sent for any type.
+- ``mattermost_cluster_reliable_fallback_tcp``: The total length in bytes of the ``SendBestEffort`` calls (UDP) that had to fallback to ``SendReliable`` (TCP) because of the message length. This is a histogram with 8 buckets, from 32KiB to 4MiB. Ideally, the count of this metric should be always 0, but plugins may be misusing the websocket API and attempting to send large messages via UDP; in that case, plugins should be fixed to set `ReliableClusterSend <https://github.com/mattermost/mattermost/blob/4fe11a7d5d14616f3c31363762617ddfd99895df/server/public/model/websocket_message.go#L155-L157>`__ to true.
 
 Database metrics
 ~~~~~~~~~~~~~~~~
@@ -175,6 +176,11 @@ Plugin metrics
 - ``mattermost_plugin_hook_time``: Time to execute plugin hook handler in seconds.
 - ``mattermost_plugin_multi_hook_server_time``: Time for the server to execute multiple plugin hook handlers in seconds.
 - ``mattermost_plugin_multi_hook_time``: Time to execute multiple plugin hook handler in seconds.
+
+The metrics above are measured by the Mattermost server as it executes plugin code. From Mattermost v11.8.0, plugin-provided Prometheus metrics can also be exposed through the standard Mattermost ``/metrics`` endpoint when the ``AggregatePluginMetrics`` feature flag is enabled. Aggregated plugin metrics include a ``plugin_id`` label, based on the plugin's manifest ID, so admins can identify which plugin produced each metric.
+
+.. note::
+  ``AggregatePluginMetrics`` is disabled by default and must be enabled before plugin-provided metrics are included in the ``/metrics`` response.
 
 Shared metrics
 ~~~~~~~~~~~~~~

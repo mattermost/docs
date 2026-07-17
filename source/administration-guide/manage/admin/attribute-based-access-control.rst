@@ -24,6 +24,13 @@ Attribute-based access control (ABAC) can be used with the following policy type
 - **Team-scoped membership policies** (managed by Team Admins): Channel membership policies that Team Admins can create, edit, and delete directly from Team Settings for channels in their team. See :ref:`Manage team-scoped membership policies in Team Settings <administration-guide/manage/admin/abac-channel-access-rules:manage team-scoped membership policies in team settings>`.
 - **Channel-specific access rules** (managed by Channel Admins): Self-service access rules that Channel Admins can configure directly in Channel Settings for individual channels. See :doc:`Channel-specific access rules </administration-guide/manage/admin/abac-channel-access-rules>`.
 
+From Mattermost v11.8, ABAC policies can be applied to **both private and public channels**, with deliberately different semantics for each:
+
+- **Private channels** are hard-gated by the policy. Non-matching members are removed during synchronization and only matching users can be added or invited.
+- **Public channels** are advisory. Anyone can still join freely, no member is ever removed by ABAC, and the policy is used either to **auto-add** matching users (when enabled) or to **recommend** the channel under **Browse Channels > Recommended channels** (when auto-add is disabled).
+
+Default channels (Town Square, Off-Topic), shared channels, and group-synced channels remain ineligible.
+
 Before you begin
 ------------------
 
@@ -40,11 +47,14 @@ Configure access policies
 
 Once enabled, you have multiple ways to configure access policies in Mattermost:
 
+From Mattermost v11.8.0, admins can configure membership policies for both public and private channels, permission policies for file upload and file download, and simulate policy outcomes before saving.
+
 **System Admins can:**
 
-- Create :doc:`system-wide access policies </administration-guide/manage/admin/abac-system-wide-policies>` that can be assigned across multiple channels in the System Console.
+- Create :doc:`system-wide access policies </administration-guide/manage/admin/abac-system-wide-policies>` that can be assigned across multiple channels in the System Console. Membership policies can be applied to both public and private channels, with :ref:`advisory behavior on public channels <administration-guide/manage/admin/abac-channel-access-rules:public and private channel behavior>`.
 - Assign :ref:`individual channel policies <administration-guide/manage/admin/abac-system-wide-policies:define access controls per channel>` to specific channels in the System Console.
 - Define :ref:`permission policies <administration-guide/manage/admin/abac-system-wide-policies:permission policies>` that restrict actions such as file upload and file download based on user attributes.
+- :ref:`Simulate policy outcomes <administration-guide/manage/admin/abac-system-wide-policies:simulate access>` to preview whether selected users can perform actions such as joining a channel or uploading and downloading files before saving policy changes.
 
 **Team Admins can:**
 

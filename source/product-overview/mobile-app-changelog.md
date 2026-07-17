@@ -10,6 +10,138 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 Platform and OS scope reflects reported and tested environments and may not represent all affected configurations.
 ```
 
+(release-v2-42-1)=
+## 2.42.1 Release
+ - Release Date: July 17, 2026
+ - Server Versions Supported: Server v10.11.0+ is required. Self-Signed SSL certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v10.11.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#extended-support-releases) (ESR) v10.5.0 has ended and upgrading to server ESR v10.11.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
+ - iPhone 8+ devices and later with iOS 16.0+ are [required](https://support.apple.com/en-il/guide/iphone/iphe3fa5df43/16.0/ios/16.0).
+
+### Bug Fixes
+ - Fixed an issue when logging in with numeric only IDs.
+
+### Known Issues
+ - Users are unable to adjust the font size via the OS font size setting.
+ - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
+
+(release-v2-42-0)=
+## 2.42.0 Release
+ - Release Date: July 16, 2026
+ - Server Versions Supported: Server v10.11.0+ is required. Self-Signed SSL certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v10.11.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#extended-support-releases) (ESR) v10.5.0 has ended and upgrading to server ESR v10.11.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
+ - iPhone 8+ devices and later with iOS 16.0+ are [required](https://support.apple.com/en-il/guide/iphone/iphe3fa5df43/16.0/ios/16.0).
+
+### Improvements
+ - Added iOS PushKit + CallKit support for Mattermost Calls. The native iOS incoming-call UI now appears when a call is received while the app is backgrounded, locked, or closed; users can answer or decline from the lock screen, get lock-screen / control-center controls during an active call, and the system handles audio routing. The Android microphone foreground service was reimplemented as part of ``@mattermost/calls-native``, replacing the ``@voximplant/react-native-foreground-service`` dependency (no user-visible change on Android).
+ - Added support for inline action buttons in markdown messages on mobile via the ``mmaction://`` link scheme. Buttons render in posts from bots, webhooks and server plugins, and trigger the same interactive dialog flow as the webapp.
+ - Added Offline Persistence Timer support for Mobile Ephemeral Mode. Added settings for monitoring offline usage and honoring organizations to purge the mattermost app data when needed. Ephemeral mode on mobile depends on the feature flag turned on for the server side.
+ - Added support for conversation-entity backed agent posts (mattermost-plugin-agents v2.0), including server-computed approval state and per-requester tool call scoping.
+ - Removed legacy interactive dialog code path.
+
+### Bug Fixes
+ - Fixed a user interface issue where custom status appeared misaligned in the channel header.
+ - Fixed an issue with the copy code button color with header button theming across Sapphire and Denim themes.
+ - Fixed an issue where an unsaved post could briefly reappear in Saved Messages.
+ - Fixed an issue where pinned messages were displayed in the wrong order.
+ - Fixed an issue where opening an archived channel could hang, and joining an archived channel failed on iOS.
+ - Fixed an issue where scheduled messages with an invalid time displayed "Invalid Date".
+ - Fixed an issue where an archived-channel banner could briefly flicker when dismissing dialogs.
+ - Fixed an issue where archiving a channel redirected users to the channel list instead of keeping users in the archived channel (reported on iOS and Android).
+ - Fixes an issue with the audio selector for Calls on Android devices.
+ - Fixed an issue on Android where it was not possible to download logs or files from the gallery.
+
+### Open Source Components
+ - Removed ``@voximplant/react-native-foreground-service`` from https://github.com/mattermost/mattermost-mobile/.
+
+### Known Issues
+ - Users are unable to adjust the font size via the OS font size setting.
+ - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
+
+(release-v2-41-3)=
+## 2.41.3 Release
+ - Release Date: July 7, 2026
+ - Server Versions Supported: Server v10.11.0+ is required. Self-Signed SSL certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v10.11.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#extended-support-releases) (ESR) v10.5.0 has ended and upgrading to server ESR v10.11.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
+ - iPhone 8+ devices and later with iOS 16.0+ are [required](https://support.apple.com/en-il/guide/iphone/iphe3fa5df43/16.0/ios/16.0).
+
+### Bug Fixes
+ - Fixed a random crash on Android that occurred while using the keyboard.
+
+### Known Issues
+ - Users are unable to adjust the font size via the OS font size setting.
+ - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
+
+(release-v2-41-2)=
+## 2.41.2 Release
+ - Release Date: June 23, 2026
+ - Server Versions Supported: Server v10.11.0+ is required. Self-Signed SSL certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v10.11.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#extended-support-releases) (ESR) v10.5.0 has ended and upgrading to server ESR v10.11.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
+ - iPhone 8+ devices and later with iOS 16.0+ are [required](https://support.apple.com/en-il/guide/iphone/iphe3fa5df43/16.0/ios/16.0).
+
+### Bug Fixes
+ - Fixed a crash while showing the emoji reaction list.
+ - Fixed a crash on Android when the application started and also fixed other less common crashes.
+
+### Known Issues
+ - Users are unable to adjust the font size via the OS font size setting.
+ - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
+
+(release-v2-41-1)=
+## 2.41.1 Release
+ - Release Date: June 18, 2026
+ - Server Versions Supported: Server v10.11.0+ is required. Self-Signed SSL certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v10.11.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#extended-support-releases) (ESR) v10.5.0 has ended and upgrading to server ESR v10.11.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
+ - iPhone 8+ devices and later with iOS 16.0+ are [required](https://support.apple.com/en-il/guide/iphone/iphe3fa5df43/16.0/ios/16.0).
+
+### Bug Fixes
+ - Fixed an issue where a deleted message could cause a channel to show as blank.
+
+### Known Issues
+ - Users are unable to adjust the font size via the OS font size setting.
+ - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
+
+(release-v2-41-0)=
+## 2.41.0 Release
+ - Release Date: June 16, 2026
+ - Server Versions Supported: Server v10.11.0+ is required. Self-Signed SSL certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v10.11.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#extended-support-releases) (ESR) v10.5.0 has ended and upgrading to server ESR v10.11.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
+ - iPhone 8+ devices and later with iOS 16.0+ are [required](https://support.apple.com/en-il/guide/iphone/iphe3fa5df43/16.0/ios/16.0).
+
+### Improvements
+ - Added support for system messages for shared and unshared channels.
+ - Added mobile support for admin-managed sidebar channel categories.
+ - Updated the **About Mattermost** screen to show the correct edition or license name (including Enterprise Advanced and Entry).
+
+### Bug Fixes
+ - Fixed an issue on mobile where AI agents/bots flooded the at-mention and ``/invite`` autocomplete results regardless of the typed username.
+ - Fixed several iOS-specific issues in the Mobile Agents View: the input-box buttons no longer get cut off by the home indicator, typed text is no longer hidden by the keyboard, the back arrow now matches the standard iOS chevron used on other subpages, and the keyboard can now be dismissed with the standard swipe-down gesture.
+ - Fixed an issue with realtime UI updates when changing the settings for attaching logs for debugging functionality.
+ - Fixed an Android crash in push notification handling when the server returned an unexpected error response format.
+ - Fixed an issue where system admins could briefly see a join-team affordance when there were no additional teams to join, due to local team membership lagging behind server state.
+ - Fixed an issue with ``@mentions`` rendering incorrect font sizes when written as part of a heading in the **Threads** screen.
+
+### Known Issues
+ - Users are unable to adjust the font size via the OS font size setting.
+ - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
+
 (release-v2-40-0)=
 ## 2.40.0 Release
  - Release Date: May 15, 2026
