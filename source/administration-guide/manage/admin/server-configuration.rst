@@ -14,7 +14,9 @@ Whether you’re setting up email notifications, optimizing search capabilities,
     Server configuration options </administration-guide/configure/configuration-settings>
     Set up attribute-based access controls </administration-guide/manage/admin/attribute-based-access-control>
     Set up Mattermost Agents </administration-guide/configure/agents-admin-guide>
+    Set up auto-translation </administration-guide/manage/admin/autotranslation>
     Install Mattermost Boards </administration-guide/configure/install-boards>
+    Install and manage plugins </administration-guide/configure/manage-plugins>
     Manage user attributes </administration-guide/manage/admin/user-attributes>
     Enable content flagging </administration-guide/manage/admin/content-flagging>
     Environment variables </administration-guide/configure/environment-variables>
@@ -25,12 +27,15 @@ Whether you’re setting up email notifications, optimizing search capabilities,
     SSL client certificate setup </administration-guide/onboard/ssl-client-certificate>
     Connected workspaces </administration-guide/onboard/connected-workspaces>
     Telemetry </administration-guide/manage/telemetry>
+    Configure Azure Blob Storage as the Mattermost file store </administration-guide/configure/azure-blob-storage>
 
 * :doc:`Store configuration in your database </administration-guide/configure/configuration-in-your-database>` - Learn how to store configuration information in your Mattermost database rather than as a JSON file.
 * :doc:`Server configuration options </administration-guide/configure/configuration-settings>` - Learn about server configuration options for Mattermost.
 * :doc:`Set up attribute-based access controls </administration-guide/manage/admin/attribute-based-access-control>` - Learn how to set up attribute-based access controls for your Mattermost instance for Zero Trust Security.
 * :doc:`Set up Mattermost Agents</administration-guide/configure/agents-admin-guide>` - Learn how to enable AI-powered Agents for your Mattermost instance.
+* :doc:`Set up auto-translation </administration-guide/manage/admin/autotranslation>` - Learn how to enable and configure automatic message translation for your Mattermost instance.
 * :doc:`Install Mattermost Boards </administration-guide/configure/install-boards>` - Learn how to install and configure the Boards plugin for your Mattermost instance.
+* :doc:`Install and manage plugins </administration-guide/configure/manage-plugins>` - Learn how to install, enable, configure, update, and remove plugins for your Mattermost instance.
 * :doc:`Manage custom user attributes </administration-guide/manage/admin/user-attributes>` - Learn how to manage custom user attributes in user profiles in Mattermost.
 * :doc:`Environment variables </administration-guide/configure/environment-variables>` - Learn how to use environment variables for Mattermost configuration.
 * :doc:`Customize the server </administration-guide/manage/admin/customize-branding>` - Learn about customizing branding for Mattermost server.
@@ -40,3 +45,4 @@ Whether you’re setting up email notifications, optimizing search capabilities,
 * :doc:`SSL client certificate setup </administration-guide/onboard/ssl-client-certificate>` - Learn how to set up SSL client certificates for Mattermost.
 * :doc:`Connected workspaces </administration-guide/onboard/connected-workspaces>` - Learn how to connect Mattermost workspaces.
 * :doc:`Telemetry </administration-guide/manage/telemetry>` - Learn about Mattermost telemetry and data collection.
+* :doc:`Configure Azure Blob Storage as the Mattermost file store </administration-guide/configure/azure-blob-storage>` - Learn how to configure Azure Blob Storage as the Mattermost file store.

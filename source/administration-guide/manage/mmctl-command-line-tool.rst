@@ -30,7 +30,7 @@ mmctl commands
 - `mmctl bot`_ - Bot Management
 - `mmctl channel`_ - Channel Management
 - `mmctl command`_ - Command Management
-- `mmctl cpa`_ - Custom Profile Attribute Management
+- `mmctl cpa`_ - User Attribute Management
 - `mmctl completion`_ - Generate autocompletion scripts for bash, fish, powershell, and zsh
 - `mmctl compliance-export`_ - Compliance Export Management
 - `mmctl config`_ - Configuration Management
@@ -2013,7 +2013,7 @@ mmctl cpa
 Manage User Attributes for extended user profile information.
 
    Child Commands
-      - `mmctl cpa field`_ - Manage CPA fields
+      - `mmctl cpa field`_ - Manage User Attribute fields
 
 **Options**
 
@@ -2026,13 +2026,13 @@ mmctl cpa field
 
 **Description**
 
-Manage Custom Profile Attribute fields.
+Manage User Attribute fields.
 
    Child Commands
-      - `mmctl cpa field create`_ - Create a new CPA field
-      - `mmctl cpa field delete`_ - Delete a CPA field
-      - `mmctl cpa field edit`_ - Edit a CPA field
-      - `mmctl cpa field list`_ - List CPA fields
+      - `mmctl cpa field create`_ - Create a new User Attribute field
+      - `mmctl cpa field delete`_ - Delete a User Attribute field
+      - `mmctl cpa field edit`_ - Edit a User Attribute field
+      - `mmctl cpa field list`_ - List User Attribute fields
 
 **Options**
 
@@ -2045,7 +2045,7 @@ mmctl cpa field create
 
 **Description**
 
-Create a new Custom Profile Attribute field.
+Create a new User Attribute field.
 
 **Format**
 
@@ -2088,7 +2088,7 @@ mmctl cpa field delete
 
 **Description**
 
-Delete an existing Custom Profile Attribute field.
+Delete an existing User Attribute field.
 
 **Format**
 
@@ -2129,7 +2129,7 @@ mmctl cpa field edit
 
 **Description**
 
-Edit an existing Custom Profile Attribute field.
+Edit an existing User Attribute field.
 
 **Format**
 
@@ -2174,7 +2174,7 @@ mmctl cpa field list
 
 **Description**
 
-List all Custom Profile Attribute fields.
+List all User Attribute fields.
 
 **Format**
 
@@ -4159,6 +4159,9 @@ Start an import job.
    -h, --help          help for status
    --bypass-upload     File is read directly from the filesystem, instead of being processed from the server. Supported in --local mode only.
    --extract-content   Document attachments will be extracted and indexed during the import process. We recommend disabling this to improve performance.
+   --workers int       The number of concurrent import worker goroutines. Controls database load during import. When set to ``0`` (default), uses the number of CPUs available. Maximum allowed is 4x the CPU count.
+
+Use ``--workers`` to reduce concurrency, for example ``--workers 1``, when running imports against a live server to minimize database load at the cost of longer import duration.
 
 **Options inherited from parent commands**
 
@@ -4610,6 +4613,7 @@ mmctl license
 Manage the Mattermost license.
 
    Child Commands
+      -  `mmctl license get`_ - Get the current license
       -  `mmctl license remove`_ - Remove the current license
       -  `mmctl license upload`_ - Upload a new license
       -  `mmctl license upload-string`_ - Upload a license from a string
@@ -4619,6 +4623,45 @@ Manage the Mattermost license.
 .. code-block:: sh
 
    -h, --help   help for license
+
+mmctl license get
+~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Get the current Mattermost license.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl license get [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   mmctl license get
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for get
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
 
 mmctl license remove
 ~~~~~~~~~~~~~~~~~~~~
@@ -7439,31 +7482,6 @@ Migrate accounts from one authentication provider to another. For example, you c
 .. code-block:: sh
 
    mmctl user migrate-auth email saml users.json
-
-**user.json Example**
-
-.. code-block:: json
-
-  [
-    {
-      "email": "user1@example.com",
-      "auth_data": {
-        "saml": {
-          "idp_id": "saml_idp_1",
-          "saml_user_id": "user123"
-        }
-      }
-    },
-    {
-      "email": "user2@example.com",
-      "auth_data": {
-        "saml": {
-          "idp_id": "saml_idp_2",
-          "saml_user_id": "user456"
-        }
-      }
-    }
-  ]
 
 **Options**
 

@@ -22,7 +22,6 @@ Single team versus multiple teams
 Mattermost can be deployed both to a single team and to multiple teams. Currently, we recommend deploying to a single team for the following reasons:
 
 - Single team deployments promote communication across the organization. When you add multiple teams, groups can become isolated.
-- We don't yet support search or channels across teams, which can impact the cross-team user experience. This includes general searches, saved posts, and recent mentions.
 - Integrations (e.g., webhooks and slash commands) are only persistent across single team deployments.
 
 However, some Mattermost customers prefer multiple team deployments for the following reasons:
@@ -30,6 +29,7 @@ However, some Mattermost customers prefer multiple team deployments for the foll
 - Teams are useful when there is a purpose for each of them. For example, one team is used for staff members and another team for external users.
 - Performance is better when users are scattered across multiple teams instead of all in the same one. With multiple teams, there is less content to load per team or channel switch and database queries are faster.
 - Creating a shared team for all users, and using advanced permissions to control who can create channels and add members to the shared team, improves cross-team collaboration when using multiple teams. Additionally, an annoucement banner can be used to provide system-wide announcements.
+- The platform supports multiple team functionalities including general search, saved posts, and recent mentions across teams.
 
 Team sidebar
 ------------
@@ -52,6 +52,10 @@ Team name and URL selection
 
 There are a few details and restrictions to consider when selecting a team name and team URL.
 
+.. note::
+
+  If your system admin has enabled anonymous team and channel URLs (available in Mattermost Enterprise Advanced from v11.6.0), team creation becomes a single-step flow and you will not be prompted to choose a team URL. The URL is assigned automatically.
+
 Team name
 ^^^^^^^^^
 
@@ -64,7 +68,7 @@ This is the display name of your team that appears in menus and headings.
 Team URL
 ^^^^^^^^
 
-The team URL is part of the web address that navigates to your team on the system domain, ``https://domain.com/teamurl/``.
+If your system admin has not enabled anonymous URLs, you choose a team URL during team creation. The team URL is part of the web address that navigates to your team on the system domain, ``https://domain.com/teamurl/``.
 
 - Teams may contain only lowercase letters, numbers, and dashes.
 - Teams must start with a letter and cannot end in a dash.
@@ -83,10 +87,14 @@ You can be a member of multiple teams at the same time. To join additional teams
 .. image:: ../../images/join-team.png
   :alt: Select a team name to join another team.
 
+From Mattermost Mobile v2.40.0, you can join another team from the mobile app by tapping the team name in the channel list header, then tapping **Join Another Team**.
+
 Leave a team
 ------------
 
 Users can also choose to remove themselves from a team, from **Team menu > Leave Team**. This will remove the user from the team, and from all public channels and private channels on the team.
+
+From Mattermost Mobile v2.40.0, you can leave a team from the mobile app when you belong to more than one team. In the channel list, tap the team name, tap **Leave team**, then confirm.
 
 They will only be able to rejoin the team if it's open, or if they receive a new invitation. If they do rejoin, they will no longer be a part of their old channels.
 

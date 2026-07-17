@@ -8,6 +8,7 @@ Review and manage the following site configuration options in the System Console
 
 - `Customization <#customization>`__
 - `Localization <#localization>`__
+- `Auto-translation <#autotranslation>`__
 - `Users and Teams <#users-and-teams>`__
 - `Notifications <#notifications>`__
 - `System-wide notifications <#system-wide-notifications>`__
@@ -17,6 +18,7 @@ Review and manage the following site configuration options in the System Console
 - `Public Links <#public-links>`__
 - `Notices <#notices>`__
 - `Connected Workspaces <#connected-workspaces>`__
+- `Classification Markings <#classification-markings>`__
 
 .. tip::
 
@@ -252,7 +254,7 @@ Report a Problem
 
 With self-hosted deployments, you can specify how the **Report a Problem** option behaves in the Mattermost app via the **Help** menu:
 
-- **Default link**: Uses the default Mattermost URL to report a problem. Customers with a Mattermost subscription are directed to the `Mattermost Support Portal <https://support.mattermost.com/hc/en-us/requests/new>`_. Community deployments are directed to `create a new issue on the Mattermost GitHub repository <https://github.com/mattermost/mattermost/issues/new>`_.
+- **Default**: Customers with a Mattermost license can open a support case by email with the Mattermost support team. Unlicensed Mattermost deployments are directed to the `troubleshooting forums <https://mattermost.com/pl/report_a_problem_unlicensed>`_.
 - **Email address**: Enables you to :ref:`enter an email address <administration-guide/configure/site-configuration-settings:report a problem email address>` that users will be prompted to send a message to when they choose **Report a Problem** in Mattermost.
 - **Custom link**: Enables you to :ref:`enter a URL <administration-guide/configure/site-configuration-settings:report a problem link>` that users will be directed to when they choose **Report a Problem** in Mattermost.
 - **Hide link**: Removes the **Report a Problem** option from Mattermost.
@@ -281,7 +283,7 @@ Report a Problem link
   :displayname: Report a Problem email (Customization)
   :systemconsole: Site Configuration > Customization
   :configjson: .SupportSettings.ReportAProblemMail
-  :environment: MM_SUPPORTSETTINGS_REPORTAPROBLMEMAIL
+  :environment: MM_SUPPORTSETTINGS_REPORTAPROBLEMMAIL
   :description: Enter the email address that users will be prompted to send a message to when they choose Report a Problem in Mattermost.
 
 Report a Problem email address
@@ -290,7 +292,7 @@ Report a Problem email address
 +---------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 | This field sets the email address for the **Report a Problem** link in the channel                | - System Config path: **Site Configuration > Customization**            |
 | header **Help** menu.                                                                             | - ``config.json`` setting: ``SupportSettings`` > ``ReportAProblemMail`` |
-|                                                                                                   | - Environment variable: ``MM_SUPPORTSETTINGS_REPORTAPROBLMEMAIL``       |
+|                                                                                                   | - Environment variable: ``MM_SUPPORTSETTINGS_REPORTAPROBLEMMAIL``       |
 | String input. Cannot be left blank.                                                               |                                                                         |
 +---------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
@@ -400,6 +402,31 @@ Enable desktop app landing page
 | - **false**: Doesn't prompt users to use the desktop app.       | - ``config.json`` setting: ``ServiceSettings`` > ``EnableDesktopLandingPage`` > ``true`` |
 |                                                                 | - Environment variable: ``MM_SERVICESETTINGS_ENABLEDESKTOPLANDINGPAGE``                  |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------+
+
+.. config:setting:: minimum-desktop-app-version
+  :displayname: Minimum desktop app version (Customization)
+  :systemconsole: Site Configuration > Customization
+  :configjson: .ServiceSettings.MinimumDesktopAppVersion
+  :environment: MM_SERVICESETTINGS_MINIMUMDESKTOPAPPVERSION
+  :description: Available from Mattermost server v11.6.0. Enforce a minimum Mattermost Desktop App version required to connect to the server.
+
+Minimum desktop app version
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
+| Specify the minimum version of the Mattermost Desktop App required to connect to this server      | - System Config path: **Site Configuration > Customization**                                        |
+| (e.g., ``5.10.0``). Users connecting with a Desktop App version below this minimum are shown      | - ``config.json`` setting: ``ServiceSettings`` > ``MinimumDesktopAppVersion``                       |
+| an update required screen and cannot use the application until they update.                       | - Environment variable: ``MM_SERVICESETTINGS_MINIMUMDESKTOPAPPVERSION``                             |
+|                                                                                                   |                                                                                                     |
+| The update screen includes a download link configured via the                                     |                                                                                                     |
+| :ref:`Mattermost apps download page link <configure/site-configuration-settings:mattermost apps   |                                                                                                     |
+| download page link>` setting.                                                                     |                                                                                                     |
+|                                                                                                   |                                                                                                     |
+| Must be a valid semantic version (e.g., ``5.0.0``). Leave blank to allow all Desktop App          |                                                                                                     |
+| versions to connect.                                                                              |                                                                                                     |
+|                                                                                                   |                                                                                                     |
+| String input. Default is empty (no minimum enforced).                                             |                                                                                                     |
++---------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
 
 .. config:setting:: app-custom-url-schemes
   :displayname: App custom URL schemes (Customization)
@@ -565,6 +592,193 @@ Enable work in progress languages in Mattermost to review translations and ident
   - Work in progress languages may be incomplete. Strings missing translations display in US English.
   - Currently, only web and desktop app product strings are impacted by this configuration setting. Server and mobile product strings aren't impacted by this setting.
   - See the :ref:`language <end-user-guide/preferences/manage-your-display-options:language>` documentation for details on selecting a language preference in Mattermost.
+
+----
+
+.. _autotranslation:
+
+Auto-translation
+----------------
+
+.. include:: ../../_static/badges/ent-adv.rst
+  :start-after: :nosearch:
+
+Access the following configuration settings in the System Console by going to **Site Configuration > Localization**. These settings configure automatic translation of channel messages. See the :doc:`Auto-translation setup guide </administration-guide/manage/admin/autotranslation>` for deployment details.
+
+.. config:setting:: autotranslation-enable
+  :displayname: Enable autotranslation (Autotranslation)
+  :systemconsole: Site Configuration > Localization
+  :configjson: .AutoTranslationSettings.Enable
+  :environment: MM_AUTOTRANSLATIONSETTINGS_ENABLE
+  :description: Enable or disable automatic translation of channel messages. Default is **false**.
+
+  - **true**: Autotranslation is available and can be enabled per channel.
+  - **false**: **(Default)** Autotranslation is disabled.
+
+Enable auto-translation
+~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+| Enable or disable automatic translation of channel messages.  | - System Config path: **Site Configuration > Localization**                        |
+|                                                               | - ``config.json`` setting: ``AutoTranslationSettings`` > ``Enable`` > ``false``    |
+| - **true**: Autotranslation is available and can be enabled   | - Environment variable: ``MM_AUTOTRANSLATIONSETTINGS_ENABLE``                      |
+|   per channel.                                                |                                                                                    |
+| - **false**: **(Default)** Autotranslation is disabled.       |                                                                                    |
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+
+.. config:setting:: autotranslation-provider
+  :displayname: Translation provider (Autotranslation)
+  :systemconsole: Site Configuration > Localization
+  :configjson: .AutoTranslationSettings.Provider
+  :environment: MM_AUTOTRANSLATIONSETTINGS_PROVIDER
+  :description: The translation provider to use for autotranslation. Options are ``libretranslate`` and ``agents``. Default is empty (no provider selected).
+
+Translation provider
+~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+| The translation provider to use for autotranslation.          | - System Config path: **Site Configuration > Localization**                        |
+|                                                               | - ``config.json`` setting: ``AutoTranslationSettings`` > ``Provider``              |
+| - ``libretranslate``: Use a self-hosted LibreTranslate        | - Environment variable: ``MM_AUTOTRANSLATIONSETTINGS_PROVIDER``                    |
+|   server for translations.                                    |                                                                                    |
+| - ``agents``: Use the Mattermost Agents plugin with an        |                                                                                    |
+|   LLM backend for translations.                               |                                                                                    |
+|                                                               |                                                                                    |
+| Default is ``""`` (no provider selected).                     |                                                                                    |
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+
+.. config:setting:: autotranslation-libretranslate-url
+  :displayname: LibreTranslate URL (Autotranslation)
+  :systemconsole: Site Configuration > Localization
+  :configjson: .AutoTranslationSettings.LibreTranslate.URL
+  :environment: MM_AUTOTRANSLATIONSETTINGS_LIBRETRANSLATE_URL
+  :description: The URL of the LibreTranslate server used for translations.
+
+LibreTranslate URL
+~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+| The URL of the LibreTranslate server used for translations.   | - System Config path: **Site Configuration > Localization**                        |
+| The Mattermost server must be able to reach this URL.         | - ``config.json`` setting: ``AutoTranslationSettings`` > ``LibreTranslate``        |
+|                                                               |   > ``URL``                                                                        |
+| String value.                                                 | - Environment variable: ``MM_AUTOTRANSLATIONSETTINGS_LIBRETRANSLATE_URL``          |
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+
+.. config:setting:: autotranslation-libretranslate-apikey
+  :displayname: LibreTranslate API key (Autotranslation)
+  :systemconsole: Site Configuration > Localization
+  :configjson: .AutoTranslationSettings.LibreTranslate.APIKey
+  :environment: MM_AUTOTRANSLATIONSETTINGS_LIBRETRANSLATE_APIKEY
+  :description: The API key for authenticated access to the LibreTranslate server. Optional if the server doesn't require authentication.
+
+LibreTranslate API key
+~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+| The API key for authenticated access to the LibreTranslate    | - System Config path: **Site Configuration > Localization**                        |
+| server. Leave blank if the LibreTranslate server doesn't      | - ``config.json`` setting: ``AutoTranslationSettings`` > ``LibreTranslate``        |
+| require authentication.                                       |   > ``APIKey``                                                                     |
+|                                                               | - Environment variable: ``MM_AUTOTRANSLATIONSETTINGS_LIBRETRANSLATE_APIKEY``       |
+| String value.                                                 |                                                                                    |
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+
+.. config:setting:: autotranslation-agents-llmserviceid
+  :displayname: Agents LLM service ID (Autotranslation)
+  :systemconsole: Site Configuration > Localization
+  :configjson: .AutoTranslationSettings.Agents.LLMServiceID
+  :environment: MM_AUTOTRANSLATIONSETTINGS_AGENTS_LLMSERVICEID
+  :description: The service ID of the LLM configured in the Mattermost Agents plugin to use for translations.
+
+Agents LLM service ID
+~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+| The service ID of the LLM configured in the Mattermost        | - System Config path: **Site Configuration > Localization**                        |
+| Agents plugin to use for translations. Configure LLM          | - ``config.json`` setting: ``AutoTranslationSettings`` > ``Agents``                |
+| services in the Agents plugin settings.                       |   > ``LLMServiceID``                                                               |
+|                                                               | - Environment variable: ``MM_AUTOTRANSLATIONSETTINGS_AGENTS_LLMSERVICEID``         |
+| String value.                                                 |                                                                                    |
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+
+.. config:setting:: autotranslation-target-languages
+  :displayname: Languages allowed (Autotranslation)
+  :systemconsole: Site Configuration > Localization
+  :configjson: .AutoTranslationSettings.TargetLanguages
+  :environment: MM_AUTOTRANSLATIONSETTINGS_TARGETLANGUAGES
+  :description: The languages that all messages in autotranslation-enabled channels are translated into. Every message is translated into each language in this list. Default is **["en"]**.
+
+Languages allowed
+~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+| The languages that all messages in autotranslation-enabled    | - System Config path: **Site Configuration > Localization**                        |
+| channels are translated into. Every message is translated     | - ``config.json`` setting: ``AutoTranslationSettings`` > ``TargetLanguages``       |
+| into each language in this list, regardless of who is in      | - Environment variable: ``MM_AUTOTRANSLATIONSETTINGS_TARGETLANGUAGES``             |
+| the channel. Specify languages as an array of language codes. |                                                                                    |
+|                                                               |                                                                                    |
+| Default is ``["en"]``.                                        |                                                                                    |
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+
+.. config:setting:: autotranslation-timeout
+  :displayname: Translation timeout (Autotranslation)
+  :systemconsole: Site Configuration > Localization
+  :configjson: .AutoTranslationSettings.TimeoutMs
+  :environment: MM_AUTOTRANSLATIONSETTINGS_TIMEOUTMS
+  :description: The maximum time in milliseconds to wait for a translation to complete. Default is **5000**.
+
+Translation timeout
+~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+| The maximum time in milliseconds to wait for a translation    | - System Config path: **Site Configuration > Localization**                        |
+| to complete. If a translation exceeds this timeout, it is     | - ``config.json`` setting: ``AutoTranslationSettings`` > ``TimeoutMs`` > ``5000``  |
+| skipped.                                                      | - Environment variable: ``MM_AUTOTRANSLATIONSETTINGS_TIMEOUTMS``                   |
+|                                                               |                                                                                    |
+| Numerical value. Default is **5000** (5 seconds).             |                                                                                    |
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+
+.. config:setting:: autotranslation-restrict-dm-gm
+  :displayname: Restrict autotranslation in direct and group messages (Autotranslation)
+  :systemconsole: Site Configuration > Localization
+  :configjson: .AutoTranslationSettings.RestrictDMAndGM
+  :environment: MM_AUTOTRANSLATIONSETTINGS_RESTRICTDMANDGM
+  :description: Restrict autotranslation from being enabled in direct and group messages. Default is **false**.
+
+  - **true**: Autotranslation can't be enabled in direct or group messages.
+  - **false**: **(Default)** Autotranslation can be enabled in direct and group messages.
+
+Restrict autotranslation in direct and group messages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| Restrict autotranslation from being enabled in direct and     | - System Config path: **Site Configuration > Localization**                                 |
+| group messages.                                               | - ``config.json`` setting: ``AutoTranslationSettings`` > ``RestrictDMAndGM`` > ``false``    |
+|                                                               | - Environment variable: ``MM_AUTOTRANSLATIONSETTINGS_RESTRICTDMANDGM``                      |
+| - **true**: Autotranslation can't be enabled in direct or     |                                                                                             |
+|   group messages.                                             |                                                                                             |
+| - **false**: **(Default)** Autotranslation can be enabled     |                                                                                             |
+|   in direct and group messages.                               |                                                                                             |
++---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+
+.. config:setting:: autotranslation-workers
+  :displayname: Translation workers (Autotranslation)
+  :systemconsole: N/A
+  :configjson: .AutoTranslationSettings.Workers
+  :environment: MM_AUTOTRANSLATIONSETTINGS_WORKERS
+  :description: The number of concurrent translation workers per node. This setting is not available in the System Console and can only be set via ``mmctl``, ``config.json``, or environment variable. Default is **6**.
+
+Translation workers
+~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
+| The number of concurrent translation workers per node.        | - ``config.json`` setting: ``AutoTranslationSettings`` > ``Workers`` > ``6``       |
+| Higher values increase translation throughput but use         | - Environment variable: ``MM_AUTOTRANSLATIONSETTINGS_WORKERS``                     |
+| more resources. This setting is not available in the System   |                                                                                    |
+| Console and can only be set via ``mmctl``, ``config.json``,   |                                                                                    |
+| or environment variable.                                      |                                                                                    |
+|                                                               |                                                                                    |
+| Numerical value. Default is **6**.                            |                                                                                    |
++---------------------------------------------------------------+------------------------------------------------------------------------------------+
 
 ----
 
@@ -780,6 +994,36 @@ Show full name
 |                                                                                                                  | - Environment variable: ``MM_PRIVACYSETTINGS_SHOWFULLNAME``                  |
 +------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
 
+.. config:setting:: enable-anonymous-urls
+  :displayname: Enable anonymous team and channel URLs (Users and Teams)
+  :systemconsole: Site Configuration > Users and Teams
+  :configjson: .PrivacySettings.UseAnonymousURLs
+  :environment: MM_PRIVACYSETTINGS_USEANONYMOUSURLS
+  :description: Available in Mattermost Enterprise Advanced from v11.6.0. Controls whether team and channel URLs expose the team or channel name.
+
+  - **true**: Team and channel URLs are anonymized; the team or channel name is not visible in the URL.
+  - **false**: Team and channel URLs include the team or channel name.
+
+Enable anonymous team and channel URLs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../../_static/badges/ent-adv.rst
+  :start-after: :nosearch:
+
++------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+| From Mattermost v11.6.0, when enabled, team and channel URLs are anonymized,                                     | - System Config path: **Site Configuration > Users and Teams**               |
+| meaning the URL no longer contains the team or channel name. This prevents                                       | - ``config.json`` setting: ``PrivacySettings`` > ``UseAnonymousURLs``        |
+| team and channel names from being identified through web addresses.                                              | - Environment variable: ``MM_PRIVACYSETTINGS_USEANONYMOUSURLS``              |
+|                                                                                                                  |                                                                              |
+| When this setting is enabled, the team and channel creation workflows no longer                                  |                                                                              |
+| include a step for users to define a URL; teams and channels are created with                                    |                                                                              |
+| an automatically generated anonymous URL. This applies only to newly created                                     |                                                                              |
+| teams and channels; existing teams and channels are not affected.                                                |                                                                              |
+|                                                                                                                  |                                                                              |
+| - **true**: Team and channel URLs are anonymized.                                                                |                                                                              |
+| - **false**: Team and channel URLs include the team or channel name.                                             |                                                                              |
++------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+
 .. config:setting:: enable-custom-user-statuses
   :displayname: Enable custom user statuses (Users and Teams)
   :systemconsole: Site Configuration > Users and Teams
@@ -854,6 +1098,31 @@ User statistics update time
 | Must be a 24-hour time stamp in the form ``HH:MM`` based on the local time of the server.  |                                                                                          |
 | Default is **00:00**.                                                                      |                                                                                          |
 +--------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+
+.. config:setting:: channel-category-sorting
+  :displayname: Channel category sorting (Users and Teams)
+  :systemconsole: Site Configuration > Users and Teams
+  :configjson: .TeamSettings.EnableChannelCategorySorting
+  :environment: MM_TEAMSETTINGS_ENABLECHANNELCATEGORYSORTING
+  :description: This setting controls whether channel admins can choose a default sidebar category when creating or editing a channel. Default is **true**.
+
+  - **true**: **(Default)** When creating or editing supported channels, channel admins see a **Default category (optional)** field. Members who join the channel see it under that category in their sidebar.
+  - **false**: The default category selector is hidden.
+
+Channel category sorting
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+From Mattermost v11.8, channel category sorting is enabled by default. When enabled, channel admins can choose a default sidebar category when creating or editing a channel. Channel admins can select an existing category, type a new category name, or clear the default category from channel settings. Members who join the channel see it under that category in their sidebar. When disabled, the default category selector is hidden.
+
+.. list-table::
+  :widths: 55 45
+  :header-rows: 0
+
+  * - - **true**: **(Default)** When creating or editing supported channels, channel admins see a **Default category (optional)** field. They can select an existing category, enter a new category name, or clear the default category from channel settings. Members who join the channel see it under that category in their sidebar.
+      - **false**: The default category selector is hidden when creating or editing channels.
+    - - System Config path: **Site Configuration > Users and Teams**
+      - ``config.json`` setting: ``TeamSettings`` > ``EnableChannelCategorySorting`` > ``true``
+      - Environment variable: ``MM_TEAMSETTINGS_ENABLECHANNELCATEGORYSORTING``
 
 ----
 
@@ -2343,6 +2612,34 @@ Member sync batch size
 .. note::
 
   Enabling these features can increase the load on your Mattermost server’s CPU, memory, and database due to frequent updates, database queries, and API communication. Excessive sync frequency and retries can overwhelm system resources, potentially causing performance degradation or instability. Monitor your system carefully when enabling these features.
+
+----
+
+Classification Markings
+-----------------------
+
+From Mattermost v11.8, system admins can configure classification markings in the System Console by going to **Site Configuration > Classification Markings**.
+
+Classification markings define reusable classification levels that can be displayed as global or channel-level banners in the web and desktop apps. Each classification level includes a name, color, and rank order. You can select a preset, such as US DoD, NATO, UK GSCP, Canada, or Australia PSPF, or define custom classification levels. Levels are ordered using the same **Ranked** attribute type available for :doc:`user attributes </administration-guide/manage/admin/user-attributes>`, so each level sits at a defined position from lowest to highest.
+
+.. note::
+
+  Classification markings are informational only and aren't tied to access control decisions at this time.
+
+Configure classification markings:
+
+1. Go to **System Console > Site Configuration > Classification Markings**.
+2. Enable **Enable classification markings**.
+3. Select a **Classification preset**, or create custom classification levels.
+4. Configure classification level names, colors, and rank order.
+5. Optionally enable the **Global Classification Banner** under **Global Classification Indicators**.
+6. Select the **Banner visibility**:
+
+   - **Top only**
+   - **Top and bottom**
+
+7. Select the **Global classification level** to display.
+8. Select **Save**.
 
 ----
 

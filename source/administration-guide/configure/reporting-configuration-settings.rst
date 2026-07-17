@@ -6,18 +6,20 @@ Reporting configuration settings
 
 View the following statistics for your overall deployment and specific teams, as well as access server logs, in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Reporting**:
 
-- `Site statistics <#site-statistics>`__
+- `System statistics <#system-statistics>`__
 - `Team statistics <#team-statistics>`__
 - `Server logs <#server-logs>`__
 - `Statistics configuration settings <#statistics-configuration-settings>`__
 
 ----
 
-Site statistics
+.. _site-statistics:
+
+System statistics
 ---------------
 
 +----------------------------------------------------------------+---------------------------------------------------------------------+
-| View statistics on a wide variety of activities in Mattermost, | - System Config path: **Reporting > Site Statistics**               |
+| View statistics on a wide variety of activities in Mattermost, | - System Config path: **Reporting > System Statistics**             |
 | including: users, seats, teams, channels, posts, calls,        | - ``config.json setting``: N/A                                      |
 | sessions, commands, webhooks, websocket and database           | - Environment variable: N/A                                         |
 | connections, and collaborative playbooks.                      |                                                                     |
@@ -26,7 +28,8 @@ Site statistics
 .. note::
 
   - Bots, deactivated users, and synthetic users in :doc:`Microsoft Teams integrations </end-user-guide/collaborate/collaborate-within-connected-microsoft-teams>` and :doc:`connected workspaces </administration-guide/onboard/connected-workspaces>` users aren't counted towards the total number of activated users. 
-  - For billing purposes, activated guest accounts do consume a licensed seat, which is returned when the guest account is deactivated. This means that guest accounts count as a paid user in your Mattermost :doc:`workspace </end-user-guide/end-user-guide-index>`
+  - **Single-channel Guests** shows the number of active guest accounts that belong to exactly one channel. Direct messages and group messages don't affect whether a guest is counted as a single-channel guest. Single-channel guests are counted separately from the primary paid seat count and are free up to a 1:1 ratio with licensed seats. When this count exceeds the allowance, the statistic is highlighted as a warning for system admins.
+  - Guests in multiple channels continue to count as paid active users. See the :doc:`guest accounts </administration-guide/onboard/guest-accounts>` documentation for details.
 
 ----
 

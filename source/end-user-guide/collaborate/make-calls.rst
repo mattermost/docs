@@ -10,8 +10,11 @@ Using a web browser, the desktop app, or the mobile app, you can `join a call <#
 
   - All Mattermost customers can start, join, and participate in 1:1 audio calls with optional screen sharing.
   - For group calls up to 50 concurrent users, Mattermost Enterprise, Professional, or Mattermost Cloud is required.
-  - Enterprise customers can also `record calls <#record-a-call>`__, enable :ref:`live text captions <end-user-guide/collaborate/make-calls:live captions during calls>` during calls, and `transcribe recorded calls <#transcribe-recorded-calls>`__. We recommend that Enterprise self-hosted customers looking for group calls beyond 50 concurrent users consider using the :ref:`dedicated rtcd service <administration-guide/configure/calls-deployment:rtcd>`.
+  - Enterprise customers can also `record calls <#record-a-call>`__, enable :ref:`live text captions <end-user-guide/collaborate/make-calls:live captions during calls>` during calls, and `transcribe recorded calls <#transcribe-recorded-calls>`__. We recommend that Enterprise self-hosted customers looking for group calls beyond 50 concurrent users consider using the :doc:`dedicated RTCD service </administration-guide/configure/calls-deployment-guide>`.
   - Mattermost Cloud users can start calling right out of the box. For Mattermost self-hosted deployments, System admins need to enable and configure the plugin :ref:`using the System Console <administration-guide/configure/plugins-configuration-settings:calls>`.
+
+.. include:: ../../_static/badges/academy-calls.rst
+  :start-after: :nosearch:
 
 Join a call
 -----------
@@ -246,7 +249,11 @@ Yes! From Mattermost v8.0 and Calls v0.17.0, desktop app and web users can go to
 Is video supported?
 ~~~~~~~~~~~~~~~~~~~
 
-The integration currently supports only voice calling and screen sharing. We're considering video support in the future.
+From Mattermost Calls plugin v1.12.0, experimental video support is available in direct message (DM) calls on the desktop and web apps. It's disabled by default; a system admin can enable it using the :ref:`Enable video calls in DMs (Experimental) <administration-guide/configure/plugins-configuration-settings:enable video calls in dms (experimental)>` plugin setting in the System Console. The following limitations apply:
+
+- Video is available in DM calls only. All other calls continue to support voice calling and screen sharing only.
+- Video isn't available on the mobile app. Mobile users can't start a video call, and when they join a DM call that includes video, it behaves like an audio call — they hear voice and see shared screens, but don't see video.
+- Call recordings don't capture video. Recordings include voice and screen sharing only.
 
 Can I password-protect a call?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

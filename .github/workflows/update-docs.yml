@@ -1,0 +1,174 @@
+name: Update Docs
+ 
+# Only members with write access to this repo can trigger workflow_dispatch.
+# To further restrict (e.g. require a specific team), protect the branch or
+# add an environment with required reviewers in repo Settings -> Environments.
+on:
+  workflow_dispatch:
+    inputs:
+      component:
+        description: 'Which component is releasing?'
+        required: true
+        type: choice
+        options:
+          - Server
+          - Mobile
+          - Desktop
+      release_type:
+        description: 'Release type'
+        required: true
+        type: choice
+        options:
+          - Feature Release
+          - ESR
+          - Security Release
+          - Patch / Dot Release
+          - Other
+      version:
+        description: 'Version number(s), comma-separated (e.g., 11.7 or 10.11.20, 11.6.5, 11.7.3). For multi-version security releases enter oldest-to-newest.'
+        required: true
+        type: string
+      release_date:
+        description: 'Release date (e.g., May 15, 2026)'
+        required: true
+        type: string
+      esr_end_date:
+        description: 'ESR end-of-support date (ESR releases only, e.g., November 15, 2026)'
+        required: false
+        type: string
+      pr_draft:
+        description: 'Open PR as draft?'
+        required: false
+        type: boolean
+        default: false
+ 
+jobs:
+  update-docs:
+    runs-on: ubuntu-latest
+    # GITHUB_TOKEN is locked to read-only; all git and gh operations authenticate
+    # via a short-lived GitHub App installation token (generated in the first step).
+    # This matches the pattern used in generate-changelog.yml and avoids the
+    # org-level restriction that prevents GITHUB_TOKEN from pushing branches or
+    # opening PRs.
+    permissions:
+      contents: read
+ 
+    steps:
+      # Changelog Automation (docs) app -- read/write access to mattermost/docs.
+      # Reuses the same app and credentials as generate-changelog.yml.
+      # Credentials are already present in Settings -> Secrets and variables -> Actions:
+      #   CHANGELOG_WRITE_CLIENT_ID   (variable) -- Client ID from the docs GitHub App
+      #   CHANGELOG_WRITE_PRIVATE_KEY (secret)   -- Private key from the docs GitHub App
+      - name: Get write token (docs repo)
+        id: app-token
+        uses: actions/create-github-app-token@1b10c78c7865c340bc4f6099eb2f838309f1e8c3 # v3.1.1
+        with:
+          client-id: ${{ vars.CHANGELOG_WRITE_CLIENT_ID }}
+          private-key: ${{ secrets.CHANGELOG_WRITE_PRIVATE_KEY }}
+          owner: mattermost
+          repositories: docs
+ 
+      - name: Checkout repo
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          # Use the App token so that subsequent git push calls are authenticated.
+          # Credentials are persisted in the git config (default behaviour) so that
+          # the "Commit and push changes" step can push without extra auth setup.
+          token: ${{ steps.app-token.outputs.token }}
+ 
+      - name: Set up Python
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: '3.11'
+ 
+      - name: Install dependencies
+        run: pip install "anthropic==0.101.0"
+ 
+      - name: Run docs update script
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          COMPONENT: ${{ inputs.component }}
+          RELEASE_TYPE: ${{ inputs.release_type }}
+          VERSION: ${{ inputs.version }}
+          RELEASE_DATE: ${{ inputs.release_date }}
+          ESR_END_DATE: ${{ inputs.esr_end_date }}
+        run: python .github/scripts/update_docs.py
+ 
+      - name: Normalize version for branch naming
+        id: vars
+        shell: bash
+        env:
+          VERSION_INPUT: ${{ inputs.version }}
+        run: |
+          # Pass the version via an environment variable rather than direct template
+          # interpolation to prevent shell injection from crafted input values.
+          # Replace commas and spaces with hyphens, strip remaining special chars,
+          # then squeeze any consecutive hyphens to one.
+          # e.g. "10.11.20, 11.6.5, 11.7.3" -> "10.11.20-11.6.5-11.7.3"
+          safe_version="$(printf '%s' "$VERSION_INPUT" | tr ', ' '-' | tr -cd '[:alnum:]._-' | tr -s '-')"
+          test -n "$safe_version"
+          echo "safe_version=$safe_version" >> "$GITHUB_OUTPUT"
+ 
+      - name: Commit and push changes
+        id: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b "docs/${{ inputs.component }}-v${{ steps.vars.outputs.safe_version }}"
+          git add source/
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No files were modified -- skipping PR creation."
+          else
+            git commit -m "docs: update ${{ inputs.component }} files for v${{ inputs.version }} ${{ inputs.release_type }}"
+            # --force-with-lease safely overwrites the remote branch on re-runs
+            # without clobbering any concurrent pushes from other users.
+            git push --force-with-lease origin "docs/${{ inputs.component }}-v${{ steps.vars.outputs.safe_version }}"
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+ 
+      - name: Create pull request
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          COMPONENT: ${{ inputs.component }}
+          VERSION: ${{ inputs.version }}
+          RELEASE_TYPE: ${{ inputs.release_type }}
+          RELEASE_DATE: ${{ inputs.release_date }}
+          ESR_END_DATE: ${{ inputs.esr_end_date }}
+          PR_DRAFT: ${{ inputs.pr_draft }}
+        run: |
+          DRAFT_FLAG=""
+          [ "$PR_DRAFT" = "true" ] && DRAFT_FLAG="--draft"
+ 
+          BRANCH="docs/${{ inputs.component }}-v${{ steps.vars.outputs.safe_version }}"
+ 
+          # On re-runs the branch is force-pushed but the PR may already exist.
+          # Check before creating to avoid a duplicate-PR error.
+          existing_pr="$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')"
+          if [ -n "$existing_pr" ]; then
+            echo "PR #${existing_pr} already exists for ${BRANCH} -- skipping creation."
+          else
+            {
+              echo "## ${COMPONENT} v${VERSION} ${RELEASE_TYPE} Documentation Update"
+              echo ""
+              echo "Auto-generated by the **Update Docs** workflow."
+              echo ""
+              echo "**Release details:**"
+              echo "- Component: ${COMPONENT}"
+              echo "- Version: v${VERSION}"
+              echo "- Release type: ${RELEASE_TYPE}"
+              echo "- Release date: ${RELEASE_DATE}"
+              [ -n "${ESR_END_DATE}" ] && echo "- ESR end-of-support: ${ESR_END_DATE}"
+              echo ""
+              echo "Please review all changes carefully before merging."
+            } > pr_body.md
+ 
+            gh pr create \
+              --title "${COMPONENT} v${VERSION} ${RELEASE_TYPE} Docs" \
+              --body-file pr_body.md \
+              --base master \
+              --head "$BRANCH" \
+              --label "release-docs" \
+              $DRAFT_FLAG
+          fi

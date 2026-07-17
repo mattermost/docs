@@ -1,0 +1,217 @@
+# .github/workflows/docs-branch-create.yml
+#
+# Place this file in:
+#   mattermost/docs -> .github/workflows/docs-branch-create.yml
+#
+# Authentication — reuses the read app from changelog automation:
+#
+#   Read app (vars.CHANGELOG_READ_CLIENT_ID / secrets.CHANGELOG_READ_PRIVATE_KEY)
+#     Installed on mattermost/mattermost with contents: read.
+#     Used only to query open milestones (step 2).
+#     Branch creation in mattermost/docs uses the built-in GITHUB_TOKEN
+#     (the job already declares contents: write on that repo).
+#
+# Behaviour:
+#   When the current release docs branch (e.g. v11.6-documentation) is merged
+#   into master in mattermost/docs, this workflow:
+#     1. Validates the merged branch name matches ^v[0-9]+\.[0-9]+-documentation$
+#     2. Queries mattermost/mattermost for the next open milestone
+#        (sorted by due date, earliest first)
+#     3. Derives the new branch name by extracting vMAJOR.MINOR from the
+#        milestone title (e.g. "v11.7.0" -> "v11.7-documentation")
+#     4. Creates that branch in mattermost/docs from master if it doesn't exist
+#
+#   There is only one active docs branch at a time. This branch becomes the
+#   base target for all Docs/Needed PRs in the new cycle
+#   (see docs-needed.yml in the code repos).
+
+name: Create Next Version Docs Branch
+
+on:
+  pull_request:
+    types: [closed]
+    branches: [master]
+  workflow_dispatch:
+    inputs:
+      merged_branch:
+        description: 'Branch name to simulate merging (e.g. v11.6-documentation)'
+        required: true
+        type: string
+
+jobs:
+  create-next-version-branch:
+    name: Create docs branch for next milestone
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: read
+    # Broad pre-filter: only run when a docs release branch is merged from
+    # within this repository. The step below enforces the exact regex pattern
+    # because GitHub Actions expressions do not support regex matching.
+    # Fork guard prevents runs on PRs from external forks.
+    # workflow_dispatch bypasses both guards for manual testing.
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.pull_request.merged == true &&
+       github.event.pull_request.head.repo.full_name == github.repository &&
+       startsWith(github.event.pull_request.head.ref, 'v') &&
+       endsWith(github.event.pull_request.head.ref, '-documentation'))
+
+    steps:
+      # 0. Generate a short-lived read token scoped to mattermost/mattermost
+      #    for milestone reads. Uses the shared changelog read app so the token
+      #    is not tied to any individual user account and expires after 1 hour.
+      - name: Generate read token
+        id: token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        with:
+          client-id: ${{ vars.CHANGELOG_READ_CLIENT_ID }}
+          private-key: ${{ secrets.CHANGELOG_READ_PRIVATE_KEY }}
+          repositories: mattermost
+
+      # 1. Strict branch name validation
+      #    The job-level if: is a broad pre-filter (GitHub Actions expressions
+      #    do not support regex). This step enforces the exact pattern
+      #    ^v[0-9]+\.[0-9]+-documentation$ so that branches like
+      #    vTEST-documentation or v1-documentation are rejected early.
+      - name: Validate branch name
+        env:
+          MERGED_BRANCH: ${{ github.event_name == 'workflow_dispatch' && inputs.merged_branch || github.event.pull_request.head.ref }}
+        run: |
+          if ! [[ "$MERGED_BRANCH" =~ ^v[0-9]+\.[0-9]+-documentation$ ]]; then
+            echo "::error::Branch '${MERGED_BRANCH}' does not match the" \
+              "required pattern ^v[0-9]+\\.[0-9]+-documentation$ - skipping."
+            exit 1
+          fi
+          echo "Branch validated: ${MERGED_BRANCH}"
+          echo "Looking for the next open milestone in mattermost/mattermost..."
+
+      # 2. Find the next open milestone in mattermost/mattermost
+      #    "Next" means the earliest open milestone whose version is strictly
+      #    greater than the branch that just merged. Filtering by version
+      #    prevents a stale older milestone (still open) from winning the sort.
+      - name: Find next open milestone
+        id: milestone
+        env:
+          GH_TOKEN: ${{ steps.token.outputs.token }}
+          MERGED_BRANCH: ${{ github.event_name == 'workflow_dispatch' && inputs.merged_branch || github.event.pull_request.head.ref }}
+        run: |
+          # Re-parse the merged branch to establish the version floor.
+          # Step 1 already validated the pattern; this extracts the numbers.
+          if ! [[ "$MERGED_BRANCH" =~ ^v([0-9]+)\.([0-9]+)-documentation$ ]]; then
+            echo "::error::Could not parse version from '${MERGED_BRANCH}'."
+            exit 1
+          fi
+          MERGED_MAJOR="${BASH_REMATCH[1]}"
+          MERGED_MINOR="${BASH_REMATCH[2]}"
+          echo "Merged: v${MERGED_MAJOR}.${MERGED_MINOR} — looking for the next open milestone..."
+
+          # Find open milestones with a version strictly greater than the merged
+          # branch. Sort by due date (nulls last) then title; take the first.
+          # --arg passes MERGED_MAJOR/MINOR as strings; tonumber converts inside jq.
+          # --paginate emits one JSON array per page. -s slurps all pages into
+          # a single outer array; add flattens [[page1...],[page2...]] → [...].
+          # Without -s, sort_by|first runs once per page — wrong across pages.
+          JQ_FILTER='
+            add |
+            [ .[] |
+              select(
+                .state == "open" and
+                (.title | test("^v[0-9]+\\.[0-9]+"))
+              ) |
+              {
+                title: .title,
+                due: (.due_on // "9999-12-31T00:00:00Z"),
+                vmaj: (.title | capture("^v(?<m>[0-9]+)\\.") | .m | tonumber),
+                vmin: (.title | capture("^v[0-9]+\\.(?<m>[0-9]+)") | .m | tonumber)
+              }
+            ] |
+            map(select(
+              .vmaj > ($maj | tonumber) or
+              (.vmaj == ($maj | tonumber) and .vmin > ($min | tonumber))
+            )) |
+            sort_by(.due, .title) |
+            first |
+            .title
+          '
+
+          # Pipe to standalone jq with --arg — gh api does not support --arg.
+          NEXT_TITLE=$(gh api repos/mattermost/mattermost/milestones \
+            --paginate \
+            | jq -rs --arg maj "$MERGED_MAJOR" --arg min "$MERGED_MINOR" \
+                "$JQ_FILTER")
+
+          if [ -z "$NEXT_TITLE" ] || [ "$NEXT_TITLE" == "null" ]; then
+            echo "::warning::No open milestone found with version >" \
+              "v${MERGED_MAJOR}.${MERGED_MINOR} in mattermost/mattermost - no branch created."
+            echo "found=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # Derive the docs branch name: extract vMAJOR.MINOR, append -documentation
+          # e.g. "v11.7.0" -> "v11.7-documentation"
+          VERSION=$(echo "$NEXT_TITLE" | grep -oE 'v[0-9]+\.[0-9]+' | head -1)
+
+          if [ -z "$VERSION" ]; then
+            echo "::error::Could not parse a vMAJOR.MINOR version from milestone '${NEXT_TITLE}'."
+            exit 1
+          fi
+
+          DOCS_BRANCH="${VERSION}-documentation"
+
+          echo "found=true" >> "$GITHUB_OUTPUT"
+          echo "title=$NEXT_TITLE" >> "$GITHUB_OUTPUT"
+          echo "branch=$DOCS_BRANCH" >> "$GITHUB_OUTPUT"
+          echo "Next milestone: $NEXT_TITLE -> docs branch: $DOCS_BRANCH"
+
+      # 3. Create the branch in mattermost/docs
+      - name: Create docs branch
+        id: create_branch
+        if: steps.milestone.outputs.found == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: ${{ steps.milestone.outputs.branch }}
+        run: |
+          # Check whether the branch already exists (idempotent)
+          EXISTS=$(gh api "repos/mattermost/docs/branches/${BRANCH}" \
+            --jq '.name' 2>/dev/null || echo "")
+
+          if [ -n "$EXISTS" ]; then
+            echo "created=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Branch '${BRANCH}' already exists in mattermost/docs - nothing to do."
+            exit 0
+          fi
+
+          # Branch from the tip of master
+          SHA=$(gh api repos/mattermost/docs/branches/master --jq '.commit.sha')
+
+          gh api repos/mattermost/docs/git/refs \
+            --method POST \
+            -f "ref=refs/heads/${BRANCH}" \
+            -f "sha=${SHA}"
+
+          echo "created=true" >> "$GITHUB_OUTPUT"
+          echo "Created branch '${BRANCH}' in mattermost/docs from master (${SHA})"
+
+      # 4. Post a summary
+      - name: Summary
+        if: steps.milestone.outputs.found == 'true'
+        env:
+          MERGED_BRANCH: ${{ github.event_name == 'workflow_dispatch' && inputs.merged_branch || github.event.pull_request.head.ref }}
+          NEW_BRANCH: ${{ steps.milestone.outputs.branch }}
+          BRANCH_CREATED: ${{ steps.create_branch.outputs.created }}
+        run: |
+          if [ "$BRANCH_CREATED" = "true" ]; then
+            echo "### Docs Branch Created" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "### Docs Branch Already Exists" >> "$GITHUB_STEP_SUMMARY"
+          fi
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Item | Value |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|---|---|" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Merged branch | \`${MERGED_BRANCH}\` -> \`master\` |" \
+            >> "$GITHUB_STEP_SUMMARY"
+          echo "| New branch | \`${NEW_BRANCH}\` |" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "Docs PRs with the \`Docs/Needed\` label will now target \`${NEW_BRANCH}\`." \
+            >> "$GITHUB_STEP_SUMMARY"

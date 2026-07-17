@@ -3,16 +3,23 @@ Removed and Deprecated Features
 
 This page describes features that are removed from support for Mattermost, or will be removed in a future update (deprecated), and provides early notice about future changes that might affect your use of Mattermost. This information is subject to change with future releases, and might not include each deprecated feature.
 
-Removed features in upcoming versions
--------------------------------------
+Upcoming deprecations
+-----------------------
 
-Mattermost Desktop App v6.1 (February 2026)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Mattermost Server v12.0 (October 2026)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- The in-app auto-updater for Windows and Linux AppImage installations will be deprecated. See more details in `this forum post <https://forum.mattermost.com/t/important-update-changes-to-desktop-app-auto-updater/25657>`__.
+- Starting with Mattermost Server v12.0 (October 2026), RHEL 7 and RHEL 8 will no longer be supported deployment targets. This is due to Debian Bullseye reaching end-of-life in August 2026, which requires Mattermost to switch to a build environment with glibc 2.36 — incompatible with RHEL 7 (glibc 2.17) and RHEL 8 (glibc 2.28). Mattermost v11.11 (September 2026) is the last release to support RHEL 7 and RHEL 8. RHEL 9, Ubuntu 22.04/24.04 LTS, Debian Bookworm, and container-based deployments remain fully supported. Admins running RHEL 7 or RHEL 8 should plan to upgrade to RHEL 9 or migrate to another supported platform before the v12.0 release. See the `forum post <https://forum.mattermost.com/t/starting-with-mattermost-v12-0-october-2026-rhel-7-and-rhel-8-are-no-longer-supported-deployment-targets/25974>`__ for full details and migration options.
+- Starting with Mattermost Server v12.0 (October 2026), OpenSearch 1.x will no longer be a supported search backend. OpenSearch 1.x reached end-of-life on May 6, 2025, and Mattermost is setting a minimum supported version of OpenSearch 2.x going forward. Mattermost v12.0 (October 2026) is the first release that requires OpenSearch 2.x or newer; v11 releases will continue to work with 1.x while admins plan their migration. OpenSearch 2.x, 3.x, and Elasticsearch 8.x/9.x remain fully supported search backends. Admins running OpenSearch 1.x should plan to upgrade to 2.x (or migrate to Elasticsearch) before the v12.0 release. See the `forum post <https://forum.mattermost.com/t/starting-with-mattermost-v12-0-october-2026-opensearch-1-x-is-no-longer-a-supported-search-backend/25979>`__ for full details and migration options.
+- Starting with Mattermost Server v12.0 (October 2026), ``atmos/camo`` will no longer be supported as an image proxy. The ``atmos/camo`` project has been archived and is no longer maintained. If ``ImageProxySettings.ImageProxyType`` is set to ``atmos/camo``, the server will log a configuration error on startup and fail to start; the ``RemoteImageProxyURL`` and ``RemoteImageProxyOptions`` settings are also removed and will be ignored. Admins should switch to the built-in local image proxy (set ``ImageProxySettings.ImageProxyType`` to ``local``) or disable image proxying entirely (``ImageProxySettings.Enable`` set to ``false``) before upgrading. The local proxy requires no external service and includes SVG content blocking and security response headers. See the `forum post <https://forum.mattermost.com/t/starting-with-mattermost-v12-0-october-2026-atmos-camo-is-no-longer-supported-as-an-image-proxy/25980>`__ for full details and migration options.
 
 Removed features by Mattermost version
 ----------------------------------------
+
+Mattermost Desktop App v6.1 (March 2026)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- The in-app auto-updater for Windows and Linux AppImage installations has been deprecated. See more details in `this forum post <https://forum.mattermost.com/t/important-update-changes-to-desktop-app-auto-updater/25657>`__.
 
 Mattermost Server v11.4 (February 2026)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

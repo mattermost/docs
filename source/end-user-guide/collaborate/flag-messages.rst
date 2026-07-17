@@ -1,32 +1,32 @@
-Flag messages
-================
+Quarantine for Review
+=====================
 
 .. include:: ../../_static/badges/entry-adv.rst
   :start-after: :nosearch:
 
-Every Mattermost user contributes to data security. From Mattermost v11.1, you can help keep your workspace secure and prevent data spillage by flagging messages that may contain sensitive or restricted information for review by authorized moderators. Your quick actions can prevent accidental leaks before they spread, and build a culture of shared responsibility for secure communication.
+Every Mattermost user contributes to data security. From Mattermost v11.1, you can help keep your workspace secure and prevent data spillage by quarantining messages that may contain sensitive or restricted information for review by authorized moderators. Your quick actions can prevent accidental leaks before they spread, and build a culture of shared responsibility for secure communication.
 
-Flag a message
---------------
+Quarantine a message
+--------------------
 
-For example, you notice a public post in a channel that contains internal project details that not all users should have access to. You can flag that message as **Sensitive data** to alert designated content reviewers right away.
+For example, you notice a public post in a channel that contains internal project details that not all users should have access to. You can quarantine that message as **Sensitive data** to alert designated content reviewers right away.
 
-1. Hover over the message, select the **More actions** |more-icon| icon, and then select **Flag message**.
-2. Select a **reason** for flagging the message, and add a comment explaining why you're flagging it, when required.
+1. Hover over the message, select the **More actions** |more-icon| icon, and then select **Quarantine for Review**.
+2. Select a **reason** for quarantining the message, and add a comment explaining why you're quarantining it, when required.
 3. Select **Submit**.
 
-You’ll see a confirmation that your flag was submitted. Mattermost may hide the flagged message based on how your system admin has configured flagged content workflows. You can’t flag the same message twice.
+You’ll see a confirmation that your message was quarantined. Mattermost may hide the quarantined message based on how your system admin has configured Data Spillage Handling workflows. You can’t quarantine the same message twice.
 
-If your message is flagged
---------------------------
+If your message is quarantined
+------------------------------
 
-A message being flagged isn’t a disciplinary action. Flagged messages help to protect sensitive data across your organization.
+A message being quarantined isn’t a disciplinary action. Quarantined messages help to protect sensitive data across your organization.
 
-If another user flags one of your messages, you’ll receive a direct message from the **content-review** bot explaining which message was flagged and why. If Mattermost has hidden your message, the direct message won't contain the flagged message content.
+If another user quarantines one of your messages, you’ll receive a direct message from the **Data Spillage Bot** explaining which message was quarantined and why. If Mattermost has hidden your message, the direct message won’t contain the quarantined message content.
 
 You'll receive another direct message once reviewers take action.
 
-- If your message is removed, review the reason why it was flagged, and adjust how you share information in the future.
+- If your message is removed, review the reason why it was quarantined, and adjust how you share information in the future.
 - If your message is kept, no further action is required of you.
 
 Contact your reviewer or system admin if you need clarification about actions taken or next steps.

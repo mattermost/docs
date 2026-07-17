@@ -39,7 +39,7 @@ Important administration notes
 **DO NOT manipulate the Mattermost database**
 
 - In particular, DO NOT manually delete data from the database directly. Mattermost is designed as a continuous archive and cannot be supported after manual manipulation.
-- If you need to permanently delete a team or user, use the :ref:`mmctl user delete <administration-guide/manage/mmctl-command-line-tool:mmctl user delete>` command or the :ref:`mmctl user deletall <administration-guide/manage/mmctl-command-line-tool:mmctl user deleteall>` command.
+- If you need to permanently delete a team or user, use the :ref:`mmctl user delete <administration-guide/manage/mmctl-command-line-tool:mmctl user delete>` command or the :ref:`mmctl user deleteall <administration-guide/manage/mmctl-command-line-tool:mmctl user deleteall>` command.
 
 Common tasks
 ------------

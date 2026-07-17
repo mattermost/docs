@@ -72,17 +72,17 @@ Enable plugins
   :configjson: .PluginSettings.RequirePluginSignature
   :environment: MM_PLUGINSETTINGS_REQUIREPLUGINSIGNATURE
 
-  - **true**: **(Default)** Enables plugin signature validation for managed and unmanaged plugins.
-  - **false**: Disables plugin signature validation for managed and unmanaged plugins.
+  - **true**: Enables plugin signature validation for managed and unmanaged plugins.
+  - **false**: **(Default)** Disables plugin signature validation for managed and unmanaged plugins.
 
 Require plugin signature
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| - **true**: **(Default)** Enables plugin signature validation for managed and unmanaged plugins.                                                                                      | - System Config path: **Plugins > Plugin Management**                                  |
-| - **false**: Disables plugin signature validation for managed and unmanaged plugins.                                                                                                  | -  ``config.json`` setting: ``PluginSettings`` > ``RequirePluginSignature`` > ``true`` |
-|                                                                                                                                                                                       | - Environment variable: ``MM_PLUGINSETTINGS_REQUIREPLUGINSIGNATURE``                   |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| - **true**: Enables plugin signature validation for managed and unmanaged plugins.                                                                                                    | - System Config path: **Plugins > Plugin Management**                                   |
+| - **false**: **(Default)** Disables plugin signature validation for managed and unmanaged plugins.                                                                                    | -  ``config.json`` setting: ``PluginSettings`` > ``RequirePluginSignature`` > ``false`` |
+|                                                                                                                                                                                       | - Environment variable: ``MM_PLUGINSETTINGS_REQUIREPLUGINSIGNATURE``                    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 
 .. note::
   - This setting is applicable to self-hosted deployments only.
@@ -482,7 +482,7 @@ Max call participants
 .. note::
   - This setting is applicable only to self-hosted deployments.
   - The environment variable ``MM_CALLS_MAX_PARTICIPANTS`` is deprecated in favor of ``MM_CALLS_MAX_CALL_PARTICIPANTS``.
-  - This setting is optional, but the recommended maximum number of participants is **50**. Call participant limits greatly depends on instance resources. See the :doc:`Calls self-hosted deployment </administration-guide/configure/calls-deployment>` documentation for details.
+  - This setting is optional, but the recommended maximum number of participants is **50**. Call participant limits greatly depends on instance resources. See the :doc:`Calls deployment guide </administration-guide/configure/calls-deployment-guide>` documentation for details.
 
 
 .. config:setting:: ice-servers-configurations
@@ -510,7 +510,7 @@ ICE servers configurations
   - The configurations above, containing STUN and TURN servers, are sent to the clients and used to generate local candidates.
   - If hosting calls through the plugin (i.e. not using the |rtcd_service|) any configured STUN server may also be used to find the instance's public IP when none is provided through the |ice_host_override_link| option.
 
-.. |rtcd_service| replace:: :ref:`rtcd service <administration-guide/configure/calls-deployment:the rtcd service>`
+.. |rtcd_service| replace:: :doc:`RTCD service </administration-guide/configure/calls-deployment-guide>`
 
 **Example**
 
@@ -758,7 +758,7 @@ Call recording quality
 
 .. note::
   - This setting is applicable only to self-hosted deployments.
-  - The quality setting will affect the performance of the job service and the file size of recordings. Refer to the :ref:`deployment section <administration-guide/configure/calls-deployment:configure recording, transcriptions, and live captions>` for more information.
+  - The quality setting will affect the performance of the job service and the file size of recordings. Refer to the :doc:`Calls deployment guide </administration-guide/configure/calls-deployment-guide>` documentation for more information.
 
 .. config:setting:: enable-pluginscalltranscriptions
   :displayname: Enable call transcriptions (Plugins - Calls)
@@ -810,7 +810,7 @@ Transcriber model size
 
 .. note::
   - This setting is applicable only to self-hosted deployments.
-  - This setting is available starting in plugin version 0.22. The model size setting will affect the performance of the job service. Refer to the :ref:`configure call recordings, transcriptions, and live captions <administration-guide/configure/calls-deployment:configure recording, transcriptions, and live captions>` documentation for more information.
+  - This setting is available starting in plugin version 0.22. The model size setting will affect the performance of the job service. Refer to the :doc:`Calls deployment guide </administration-guide/configure/calls-deployment-guide>` documentation for more information.
 
 .. config:setting:: call-transcriber-threads
   :displayname: Call transcriber threads (Plugins - Calls)
@@ -834,7 +834,7 @@ Call transcriber threads
 
 .. note::
   - This setting is applicable only to self-hosted deployments.
-  - The call transcriber threads setting will affect the performance of the job service. Refer to the :ref:`configure call recordings, transcriptions, and live captions <administration-guide/configure/calls-deployment:configure recording, transcriptions, and live captions>` documentation for more information. This setting is available starting in plugin version 0.26.2.
+  - The call transcriber threads setting will affect the performance of the job service. Refer to the :doc:`Calls deployment guide </administration-guide/configure/calls-deployment-guide>` documentation for more information. This setting is available starting in plugin version 0.26.2.
 
 .. config:setting:: enable-pluginslivecaptions
   :displayname: (Experimental) Enable live captions (Plugins - Calls)
@@ -1029,7 +1029,38 @@ Enable AV1 (Experimental)
 
 .. note::
 
-  Avoid enabling both this experimental configuration setting and the `Enable simulcast for screen sharing <#enable-simulcast-for-screen-sharing-experimental>`__ experimental configuration setting at the same time. 
+  Avoid enabling both this experimental configuration setting and the `Enable simulcast for screen sharing <#enable-simulcast-for-screen-sharing-experimental>`__ experimental configuration setting at the same time.
+
+.. config:setting:: enable-pluginsvideo
+  :displayname: Enable video calls in DMs (Experimental) (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.enablevideo
+  :environment: MM_CALLS_ENABLE_VIDEO
+
+  - **true**: Enables experimental video calls in direct message (DM) channels.
+  - **false**: **(Default)** Video calls are disabled.
+
+Enable video calls in DMs (Experimental)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
+| - **true**: Enables experimental video calls in direct message (DM)      | - System Config path: **Plugins > Calls**                                                                     |
+|   channels.                                                              | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``enablevideo``      |
+| - **false**: **(Default)** Video calls are disabled.                     | - Environment variable: ``MM_CALLS_ENABLE_VIDEO``                                                             |
+|                                                                          |                                                                                                               |
+| Video is supported in DM calls on the desktop and web apps only. Mobile  |                                                                                                               |
+| users can't start video calls; when joining a DM call that includes      |                                                                                                               |
+| video, they receive voice and screen sharing only. Call recordings       |                                                                                                               |
+| capture voice and screen sharing only — video isn't recorded.            |                                                                                                               |
++--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  The ability to enable video calls in DMs is currently :ref:`Experimental <administration-guide/manage/feature-labels:experimental>`.
+
+.. note::
+
+  If your deployment offloads calls to the :doc:`RTCD service </administration-guide/configure/calls-rtcd-setup>`, video in DM calls requires **rtcd v1.2.2 or later**. We recommend running the rtcd version that ships with your Calls plugin release (rtcd v1.2.5 for Calls v1.12.0) and keeping rtcd updated alongside the plugin. Deployments that use the plugin's built-in RTC server (no RTCD) support video without additional configuration.
 
 .. config:setting:: enable-pluginsdcsignaling
   :displayname: Use data channels for signaling media tracks (Plugins - Calls)

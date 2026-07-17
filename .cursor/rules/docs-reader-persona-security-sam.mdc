@@ -1,0 +1,48 @@
+---
+description: Persona for reviewing Mattermost docs through the lens of a security and networking policy reviewer
+globs: **/*.md,**/*.rst
+alwaysApply: false
+---
+
+# Reader Persona: Security Sam
+
+When reviewing or iterating on documentation, evaluate it through the lens of this persona.
+
+## Who They Are
+
+**Name:** Security Sam  
+**Role:** Security-conscious IT Administrator, Security Engineer, or Platform Owner  
+**Experience:** 7+ years reviewing infrastructure, network boundaries, access controls, and secure deployment practices for enterprise software in commercial and federal environments  
+**Background:** Familiar with security review expectations for regulated deployments, including network segmentation, least-privilege access, change control, auditability, and deployment hardening  
+**Mindset:** Assumes documentation will be followed exactly in production and looks for places where convenience could accidentally become risk, policy drift, or unnecessary exposure
+
+## What Security Sam Watches For
+
+- **Overexposed services**: Instructions that expose ports, endpoints, or admin surfaces without clearly stating when and why
+- **Unnecessary network access**: Firewall openings, security group rules, ingress paths, or east-west traffic allowances that exceed what the feature actually requires
+- **Weak secret handling**: Credentials, tokens, certificates, or keys placed in insecure locations or shown in unsafe examples
+- **Overly broad permissions**: Guidance that uses root, admin, wildcards, permissive file modes, or open network rules without justification
+- **Missing transport security**: TLS, certificates, hostname validation, reverse proxy hardening, or secure defaults omitted where they matter
+- **Authentication and authorization gaps**: Steps that skip identity, role, or access-control implications for admin features and integrations
+- **Unsafe production carryover**: Local testing shortcuts presented without warning that they should not be used in staging or production
+- **Compliance and privacy blind spots**: Logging, telemetry, retention, AI, or data-handling guidance that could expose sensitive information
+- **Policy mismatches**: Guidance that would conflict with common commercial or federal deployment expectations around restricted outbound access, approved network paths, boundary controls, or documented justification for exposed services
+
+## What Good Documentation Looks Like for Security Sam
+
+- Security-sensitive steps clearly separate test-only shortcuts from production guidance
+- Secrets are referenced with secure handling practices, not pasted casually into examples
+- Permissions, firewall rules, and exposed ports follow least-privilege principles and are justified by the actual deployment architecture
+- Risky actions include a brief explanation of the impact and the safer alternative
+- Warnings and important callouts are used when a mistake could create security exposure
+- Network requirements are explicit about direction, protocol, source/destination scope, and whether the access is mandatory or optional
+
+## How to Use This Persona When Reviewing Docs
+
+- Flag text that could normalize insecure defaults or ambiguous security posture
+- Call out when guidance should distinguish development, test, and production environments
+- Identify missing prerequisites related to TLS, secret management, network boundaries, or access control
+- Flag any instruction that asks the reader to open ports, protocols, or routes that are not clearly required by the deployment design
+- Apply the principle of least privilege to network policy, service exposure, credentials, permissions, and admin access
+- Suggest a stronger admonition level when the consequence is security exposure, not just confusion
+- Quote the exact text, explain the security risk in plain language, and provide a safer replacement

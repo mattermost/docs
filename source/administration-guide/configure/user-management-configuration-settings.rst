@@ -18,7 +18,7 @@ Review and manage the following in the System Console by selecting the **Product
 Users
 -----
 
-Mattermost system admins can provision and manage user accounts, team membership, roles and permissions, and update user email addresses.
+Mattermost system admins can provision and manage user accounts, team membership, roles and permissions, and update user email addresses, usernames, and authentication data.
 
 Provision users
 ~~~~~~~~~~~~~~~
@@ -273,6 +273,25 @@ Update the emails of users using the System Console.
 
 .. tip::
   You can also update the email from the **Actions** column on the **Users** page. Select **Update email**, enter the new email for the user, and then select **Save**.
+
+Update user's username
+~~~~~~~~~~~~~~~~~~~~~~
+
+From Mattermost 11.6: Update the username of a user using the System Console.
+
+1. Go to **System Console > User Management > Users** to access all user accounts.
+2. Select the user, and enter a new username in the **Username** field.
+3. Select **Save**.
+
+Update user's authentication data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+From Mattermost 11.6: System admins can view and update the authentication data (AuthData) for a user directly in the System Console. AuthData is the external identifier associated with the user's authentication method, such as an LDAP Distinguished Name (DN), SAML NameID, or OAuth ID. Updating this field is useful when a user's external authentication identifier changes, for example after an identity provider migration.
+
+1. Go to **System Console > User Management > Users** to access all user accounts.
+2. Select the user to open their User Configuration page.
+3. In the **Authentication** section, view or update the user's authentication data value.
+4. Select **Save**.
 
 Reset user's password
 ~~~~~~~~~~~~~~~~~~~~~~
