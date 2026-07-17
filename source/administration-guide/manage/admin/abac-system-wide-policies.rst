@@ -4,7 +4,7 @@ System-wide attribute-based access policies
 .. include:: ../../../_static/badges/entry-adv.rst
   :start-after: :nosearch:
 
-Use this guide to create and manage organization-wide attribute-based access policies in the System Console. For channel-level rules managed by Channel Admins, see :doc:`Channel-specific access rules </administration-guide/manage/admin/abac-channel-access-rules>`.
+Use this guide to create and manage organization-wide attribute-based access policies in the System Console. Policies can be assigned to both channels and teams. For channel-level rules managed by Channel Admins, see :doc:`Channel-specific access rules </administration-guide/manage/admin/abac-channel-access-rules>`. For team membership policies, see :doc:`Team membership access policies </administration-guide/manage/admin/abac-team-membership>`.
 
 Prerequisites
 -------------
@@ -112,10 +112,22 @@ Default channels (such as Town Square and Off-Topic), shared channels, and group
 
   Private channels with attribute-based access control policies can't have guest users invited to them. Only users who match the defined attribute criteria can be added to ABAC-controlled private channels, ensuring strict adherence to access control policies. Public channels remain joinable by anyone regardless of the policy.
 
+Assign policies to teams
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+From Mattermost v11.10, system-wide policies can also be assigned to teams. Go to **System Console > User Management > Teams**, open the team you want to configure, and use the **Membership Policy** section to link an existing policy.
+
+The policy behaves differently depending on the team's privacy mode:
+
+- **Private teams** — strict enforcement: join is gated, non-qualifying members are removed at sync, and the team is hidden from non-qualifying non-members in Browse Teams.
+- **Public teams** — advisory: the policy is never a gate. Qualifying non-members see a **Recommended** chip in Browse Teams; anyone can still join freely.
+
+For a full description of team assignment, custom rules, sync configuration, and end-user surfaces, see :doc:`Team membership access policies </administration-guide/manage/admin/abac-team-membership>`.
+
 Delete policies
 ~~~~~~~~~~~~~~~
 
-To delete a policy, select the **Delete** button next to the policy you want to remove. You can only delete policies that are not currently assigned to any channels. If a policy is assigned to channels, you must first remove it from those channels before you can delete it.
+To delete a policy, select the **Delete** button next to the policy you want to remove. You can only delete policies that are not currently assigned to any channels or teams. If a policy is assigned to channels or teams, you must first remove it from all assigned resources before you can delete it.
 
 Define access controls per channel
 ----------------------------------
