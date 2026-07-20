@@ -25,6 +25,7 @@ Platform and OS scope reflects reported and tested environments and may not repr
  - Added support for Mattermost Blocks as a new way to create interactive messages.
  - Added timezone support and manual time entry for Interactive Dialog datetime fields. Plugins can now display times in specific timezones and allow text input for exact times.
  - Wipe notifications sent by the server are now processed.
+ - Applied **Zero Persistence Mode** server setting for Mobile Ephemeral Mode.
 
 ### Bug Fixes
  - Fixed an issue where the app did not automatically recover from database corruption errors.
