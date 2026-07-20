@@ -21,15 +21,16 @@ Platform and OS scope reflects reported and tested environments and may not repr
  - iPhone 8+ devices and later with iOS 16.0+ are [required](https://support.apple.com/en-il/guide/iphone/iphe3fa5df43/16.0/ios/16.0).
 
 ### Improvements
- - Added support for Mattermost Blocks as a new way to create Interactive Messages.
  - Added classification markings for global and per-channel banners.
- - Added timezone support and manual time entry for Interactive Dialog datetime fields. Plugins can display times in specific timezones and allow text input for exact times. Fixed critical timezone preservation bug.
- - Process wipe notifications sent by server.
+ - Added support for Mattermost Blocks as a new way to create interactive messages.
+ - Added timezone support and manual time entry for Interactive Dialog datetime fields. Plugins can now display times in specific timezones and allow text input for exact times.
+ - Wipe notifications sent by the server are now processed.
 
 ### Bug Fixes
  - Fixed an issue where the app did not automatically recover from database corruption errors.
- - Fix back button behavior, specially on newest android versions.
+ - Fixed an issue with the **Back** button behavior, specially on newest Android versions.
  - Fixed an issue where exported mobile logs could include personally identifiable information such as user display names and push notification tokens.
+ - Fixed a critical timezone preservation bug.
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
