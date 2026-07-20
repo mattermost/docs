@@ -805,6 +805,25 @@ Maximum open connections
 | Numerical input. Default is **100**.                   |                                                                         |
 +--------------------------------------------------------+-------------------------------------------------------------------------+
 
+.. note::
+
+  This limit applies **per data source, per Mattermost server node** - not as a cluster-wide total. Each
+  server node opens its own connection pool, sized to this value, for the master database (``DataSource``)
+  and separately for each entry configured under :ref:`read replicas
+  <administration-guide/configure/environment-configuration-settings:read replicas>` and :ref:`search replicas
+  <administration-guide/configure/environment-configuration-settings:search replicas>`.
+
+  To size ``max_connections`` on the database (or any connection-pooling proxy in front of it), first count
+  the data sources per node - the master database counts as 1, then add the number of read replicas and the
+  number of search replicas. Multiply that count by ``MaxOpenConns``, then multiply again by the number of
+  app server nodes (when deployed as a high availability cluster):
+
+    ``MaxOpenConns`` x (data sources per node) x (number of app nodes)
+
+  For example, in a 3-node HA cluster where each node is configured with 1 read replica and 1 search
+  replica, at the default ``MaxOpenConns`` of 100, each node has 3 data sources, so that's 3 x 3 x 100 = 900
+  possible connections across the cluster.
+
 .. config:setting:: maximum-idle-connections
   :displayname: Maximum idle connections (Database)
   :systemconsole: Environment > Database
@@ -1038,6 +1057,10 @@ Read replicas
 
   - Each database connection string in the array must be in the same form used for the `Data source <#data-source>`__ setting.
   - Space separate multiple read replicas in the array to allow Mattermost to load balance read queries across multiple database instances. For example, ``MM_SQLSETTINGS_DATASOURCEREPLICAS=dc-1 dc-2``
+  - Each entry added here opens its own connection pool, sized to :ref:`MaxOpenConns
+    <administration-guide/configure/environment-configuration-settings:maximum open connections>`, on every
+    Mattermost server node - it does not share a pool with the other entries. See that setting's note for
+    the full cluster-wide sizing calculation before adding replicas.
 
 AWS High Availability RDS cluster deployments
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1065,7 +1088,11 @@ Search replicas
 
 .. note::
 
-  Each database connection string in the array must be in the same form used for the `Data source <#data-source>`__ setting.
+  - Each database connection string in the array must be in the same form used for the `Data source <#data-source>`__ setting.
+  - Each entry added here opens its own connection pool, sized to :ref:`MaxOpenConns
+    <administration-guide/configure/environment-configuration-settings:maximum open connections>`, on every
+    Mattermost server node - it does not share a pool with the other entries. See that setting's note for
+    the full cluster-wide sizing calculation before adding search replicas.
 
 AWS High Availability RDS cluster deployments
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
