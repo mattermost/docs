@@ -28,7 +28,7 @@ Platform and OS scope reflects reported and tested environments and may not repr
 
 ### Bug Fixes
  - Fixed an issue where the app did not automatically recover from database corruption errors.
- - Fixed an issue with the **Back** button behavior, specially on newest Android versions.
+ - Fixed back-button behaviour, especially on newer Android versions.
  - Fixed an issue where exported mobile logs could include personally identifiable information such as user display names and push notification tokens.
  - Fixed a critical timezone preservation bug.
 
