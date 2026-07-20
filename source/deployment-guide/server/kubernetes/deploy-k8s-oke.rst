@@ -11,8 +11,8 @@ Before deploying, make sure you have the following:
 - **An Oracle Cloud tenancy and compartment** you have permission to create resources in (VCN, OKE, IAM policies, OCI Database with PostgreSQL, Object Storage, Resource Manager)
 - **Sufficient service limits** for a new OKE cluster and its default worker pool (3 nodes, ``VM.Standard.E5.Flex`` at 2 OCPUs/16GB each) and for an OCI Database with PostgreSQL system
 - **A registered domain name** you can create a DNS ``A`` record for, pointing to the Mattermost load balancer
-- **A TLS certificate for that domain, imported into OCI Certificate Service**, with its OCID ready before you deploy — the stack does not accept a raw PEM/private key, only a certificate OCID
-- **A Mattermost Enterprise license** if you plan to deploy for more than 100 users — larger sizes run Mattermost and PostgreSQL in high-availability mode, which requires a license
+- **A TLS certificate for that domain, imported into OCI Certificate Service**, with its OCID ready before you deploy. The stack does not accept a raw PEM/private key, only a certificate OCID.
+- **A Mattermost Enterprise license** if you plan to deploy for more than 100 users. Larger sizes run Mattermost and PostgreSQL in high-availability mode, which requires a license.
 
 Installation steps
 ~~~~~~~~~~~~~~~~~~~
@@ -51,7 +51,7 @@ General Configuration
   - Used as a prefix on all OCI resources created by the stack (default: ``mattermost``).
 - **Show Recovery Options:**
 
-  - Leave off for a normal deployment. Only enable this if a previous apply failed and left resources blocking re-apply — it reveals a **Deploy ID Revision** field that forces new resource names.
+  - Leave off for a normal deployment. Only enable this if a previous apply failed and left resources blocking re-apply; it reveals a **Deploy ID Revision** field that forces new resource names.
 
 Mattermost Installation
 ::::::::::::::::::::::::
@@ -61,13 +61,13 @@ Mattermost Installation
   - Name for this installation (default: ``mattermost-prod``).
 - **Mattermost Installation Size:**
 
-  - Choose the size that matches your expected active user count: ``100users``, ``1000users``, ``5000users``, ``10000users``, or ``25000users`` (default: ``100users``). This drives both the Mattermost pod resources and the PostgreSQL topology (instance count, shape). It's a **create-time-only setting** — changing it later requires deploying a new stack, because OCI can't modify PostgreSQL topology in place. Sizes above 100 users deploy Mattermost and PostgreSQL in high-availability mode and require an Enterprise license.
+  - Choose the size that matches your expected active user count: ``100users``, ``1000users``, ``5000users``, ``10000users``, or ``25000users`` (default: ``100users``). This drives both the Mattermost pod resources and the PostgreSQL topology (instance count, shape). It's a **create-time-only setting**: changing it later requires deploying a new stack, because OCI can't modify PostgreSQL topology in place. Sizes above 100 users deploy Mattermost and PostgreSQL in high-availability mode and require an Enterprise license.
 - **Mattermost Version:**
 
   - The Mattermost server version to install.
 - **Mattermost License Key:**
 
-  - Upload your Enterprise license file. Optional at ``100users`` — leave empty to start unlicensed and add a license later from **System Console > Edition and License**. Required for every larger size.
+  - Upload your Enterprise license file. Optional at ``100users``; leave empty to start unlicensed and add a license later from **System Console > Edition and License**. Required for every larger size.
 - **Mattermost FQDN:**
 
   - The hostname end users will browse to (e.g. ``mattermost.domain.com``). You'll point its DNS ``A`` record at the stack's output load balancer IP after deployment.
@@ -104,7 +104,7 @@ OKE Configuration
 
     - **Virtual Cloud Network (VCN) CIDR:** IP address range for the cluster's network (default: ``10.20.0.0/16``). Only change this if it conflicts with an existing network you need to peer with.
     - **API Endpoint Allowed CIDR Blocks:** IP ranges allowed to reach the Kubernetes API (default: ``0.0.0.0/0``, i.e. anywhere). Restrict this to your corporate gateway or VPN range for tighter security. Make sure the range you choose covers your own admin access, since there's no bastion host as a fallback path.
-    - **Cluster CNI:** The pod networking mode — ``OCI_VCN_IP_NATIVE`` (default, recommended for better performance and tighter VCN integration) or ``FLANNEL_OVERLAY``.
+    - **Cluster CNI:** The pod networking mode: ``OCI_VCN_IP_NATIVE`` (default, recommended for better performance and tighter VCN integration) or ``FLANNEL_OVERLAY``.
     - **Worker Shape:** Compute shape for each worker node (default: ``VM.Standard.E5.Flex`` with 2 OCPUs / 16 GB memory), suitable for most Mattermost deployments.
     - **Worker Pool Name:** The name for the worker node pool as it appears in the OCI Console and CLI.
 
@@ -116,7 +116,7 @@ Cluster Tools
   - Enables ``kubectl top`` and HPA support. On by default; recommended for all deployments.
 - **Create OKE IAM Policies:**
 
-  - Automatically creates the IAM policies OKE needs to manage cluster resources. On by default — disable only if these policies already exist in your compartment.
+  - Automatically creates the IAM policies OKE needs to manage cluster resources. On by default; disable only if these policies already exist in your compartment.
 
 PostgreSQL
 ::::::::::
@@ -181,9 +181,9 @@ When the job finishes, open the stack's **Application information** tab to revie
 .. image:: /images/oracle/application-information.png
    :alt: Application information tab showing deployment, Kubernetes, and Mattermost details
 
-- **Load Balancer IP Address** — the reserved OCI Public IP for the Mattermost load balancer. Create a DNS ``A`` record from your **Mattermost FQDN** to this IP; it stays stable across re-applies.
-- **Mattermost URL** (top-right button) — the public HTTPS URL, reachable once DNS propagates.
-- **OKE Cluster OCID** and **Deployed Kubernetes Version** — identify the OKE cluster if you need to connect with ``kubectl`` or the OCI CLI.
+- **Load Balancer IP Address**: the reserved OCI Public IP for the Mattermost load balancer. Create a DNS ``A`` record from your **Mattermost FQDN** to this IP; it stays stable across re-applies.
+- **Mattermost URL** (top-right button): the public HTTPS URL, reachable once DNS propagates.
+- **OKE Cluster OCID** and **Deployed Kubernetes Version**: identify the OKE cluster if you need to connect with ``kubectl`` or the OCI CLI.
 
 Once the ``A`` record resolves, open your browser and go to the Mattermost URL.
 
@@ -203,7 +203,7 @@ The Native Ingress Controller uses Pod Readiness Gates to hold new pods out of r
   **Tips for Success**
 
   - Make sure you have all the permissions you need before you start.
-  - Import your TLS certificate into OCI Certificate Service and have its OCID ready before configuring variables — the stack won't accept a raw certificate/key pair.
+  - Import your TLS certificate into OCI Certificate Service and have its OCID ready before configuring variables. The stack won't accept a raw certificate/key pair.
   - Choose your **Mattermost Installation Size** carefully: it can't be changed on an existing stack without recreating the PostgreSQL system.
   - To run ``kubectl`` against the cluster (e.g. from OCI Cloud Shell), pull a kubeconfig using the **OKE Cluster OCID** and **Deployment Region** from the Application Information tab: ``oci ce cluster create-kubeconfig --cluster-id <oke_cluster_ocid> --region <deployment_region> --file $HOME/.kube/config --kube-endpoint PUBLIC_ENDPOINT --token-version 2.0.0``. Run ``kubectl get nodes`` to confirm access.
   - Always monitor logs from the Resource Manager job and from pods with ``kubectl logs`` for more specific error messages.
@@ -219,7 +219,7 @@ Common Errors and How to Avoid Them
 
 - **Error: Plan fails because a Mattermost license is required**
 
-  - *Cause:* **Mattermost Installation Size** is set above ``100users`` without a license uploaded — larger sizes deploy in high-availability mode, which is Enterprise-licensed.
+  - *Cause:* **Mattermost Installation Size** is set above ``100users`` without a license uploaded; larger sizes deploy in high-availability mode, which is Enterprise-licensed.
   - *Solution:* Upload a valid Mattermost Enterprise license, or choose ``100users``.
 
 - **Error: Mattermost URL doesn't resolve after deployment**
