@@ -73,13 +73,18 @@ Mattermost Installation
   - The hostname end users will browse to (e.g. ``mattermost.domain.com``). You'll point its DNS ``A`` record at the stack's output load balancer IP after deployment.
 - **OCI Certificate Service OCID:**
 
-  - The OCID of the certificate you imported into OCI Certificate Service for that FQDN (see `Before you begin`_).
+  - The OCID of the certificate you imported into OCI Certificate Service for that FQDN.
 - **Mattermost LB Allowed CIDR Blocks:**
 
   - IP ranges allowed to reach Mattermost over HTTPS. Default (``0.0.0.0/0``) allows access from anywhere; restrict this for corporate or internal-only deployments.
 - **Show Advanced Mattermost Options:**
 
-  - Reveals the Kubernetes namespace (default ``mattermost``), the Helm repository URL (default ``https://helm.mattermost.com``), the Operator Helm chart version, and the NIC readiness wait timeout (default 180 seconds).
+  - Turn this on to reveal the following fields, all of which have sensible defaults for most deployments:
+
+    - **Kubernetes Namespace:** The namespace Mattermost is installed into (default: ``mattermost``).
+    - **Helm Repository URL:** Source of the Mattermost Operator Helm chart (default: ``https://helm.mattermost.com``).
+    - **Operator Helm Chart Version:** Leave empty to use the latest published chart version.
+    - **NIC Readiness Wait Timeout:** How long to wait for the Native Ingress Controller to become ready before failing the apply (default: 180 seconds).
 
 OKE Configuration
 ::::::::::::::::::
@@ -124,10 +129,10 @@ PostgreSQL
   - ``14``, ``15``, ``16``, or ``17`` (default: ``16``).
 - **PostgreSQL Admin Username / Password:**
 
-  - Admin credentials for the DB system. Passwords must be 8–32 characters with at least one uppercase letter, one lowercase letter, one number, and one special character.
+  - Admin credentials for the DB system. Passwords must be 8–32 characters with at least one uppercase letter, one lowercase letter, one number, and one special character, and cannot contain single quotes, double quotes, backslashes, or semicolons.
 - **Mattermost Database Name / User / Password:**
 
-  - The database, user, and password Mattermost itself connects with inside PostgreSQL (defaults: ``mattermost`` / ``mmuser``).
+  - The database, user, and password Mattermost itself connects with inside PostgreSQL (defaults: ``mattermost`` / ``mmuser``). The password follows the same rules as the PostgreSQL Admin Password above (8–32 characters, upper/lowercase, number, special character; no quotes, backslashes, or semicolons).
 - **Create a Subnet for the Mattermost Database:**
 
   - On by default, to create a dedicated subnet for the DB system. Disable to select an existing subnet instead.
@@ -136,7 +141,12 @@ PostgreSQL
   - Automatic-backup retention, 7–35 days (default: 30).
 - **Show Advanced PostgreSQL Options:**
 
-  - Reveals the PostgreSQL port (default ``5432``), the daily backup window and weekly maintenance window (both UTC), and per-tier overrides for instance count, OCPUs, and memory.
+  - Turn this on to reveal the following fields, all of which have sensible defaults for most deployments:
+
+    - **PostgreSQL Port:** The port PostgreSQL listens on (default: ``5432``).
+    - **Backup Window:** Daily UTC time window for automatic backups.
+    - **Maintenance Window:** Weekly UTC time window for maintenance operations.
+    - **Per-Tier Overrides:** Instance count, OCPUs, and memory overrides for each Mattermost Installation Size tier.
 
 Object Storage
 ::::::::::::::
@@ -186,7 +196,7 @@ To upgrade your Mattermost installation:
 2. Update the **Mattermost Version** variable to the target release.
 3. Save and run **Plan**, then **Apply**.
 
-The rolling update happens with no downtime — the Native Ingress Controller holds new pods out of rotation until their OCI load balancer backend reports healthy, so existing pods keep serving traffic throughout the rollout.
+The Native Ingress Controller uses Pod Readiness Gates to hold new pods out of rotation until their OCI load balancer backend reports healthy. On an HA-sized installation (above ``100users``, multiple Mattermost replicas), this minimizes disruption during the rollout since other replicas keep serving traffic. On the default ``100users`` size, which runs a single replica, a brief interruption while that pod restarts is expected.
 
 .. tip::
 
@@ -195,6 +205,7 @@ The rolling update happens with no downtime — the Native Ingress Controller ho
   - Make sure you have all the permissions you need before you start.
   - Import your TLS certificate into OCI Certificate Service and have its OCID ready before configuring variables — the stack won't accept a raw certificate/key pair.
   - Choose your **Mattermost Installation Size** carefully: it can't be changed on an existing stack without recreating the PostgreSQL system.
+  - To run ``kubectl`` against the cluster (e.g. from OCI Cloud Shell), pull a kubeconfig using the **OKE Cluster OCID** and **Deployment Region** from the Application Information tab: ``oci ce cluster create-kubeconfig --cluster-id <oke_cluster_ocid> --region <deployment_region> --file $HOME/.kube/config --kube-endpoint PUBLIC_ENDPOINT --token-version 2.0.0``. Run ``kubectl get nodes`` to confirm access.
   - Always monitor logs from the Resource Manager job and from pods with ``kubectl logs`` for more specific error messages.
   - For more details, see the official `OCI Database with PostgreSQL documentation <https://www.oracle.com/cloud/postgresql/>`_ and `OKE documentation <https://docs.oracle.com/en-us/iaas/Content/ContEng/Concepts/contengoverview.htm>`_.
 
@@ -223,7 +234,7 @@ Common Errors and How to Avoid Them
 
 - **Error: PostgreSQL password rejected**
 
-  - *Cause:* The password doesn't meet OCI's complexity rules (8–32 characters, upper/lowercase, number, special character; no quotes, backslashes, or semicolons).
+  - *Cause:* The **PostgreSQL Admin Password** or **Mattermost Database Password** doesn't meet the required complexity rules (8–32 characters, upper/lowercase, number, special character; no quotes, backslashes, or semicolons).
   - *Solution:* Re-enter a password that satisfies the pattern shown in the field description.
 
 - **Error: ``terraform destroy`` fails on the PostgreSQL system or the bucket**
