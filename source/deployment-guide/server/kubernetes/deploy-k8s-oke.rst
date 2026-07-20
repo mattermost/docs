@@ -1,7 +1,7 @@
 :orphan:
 :nosearch:
 
-You can use the supported `Oracle Cloud Marketplace listing <https://cloudmarketplace.oracle.com/marketplace/en_US/listing/188386963>`_, **Mattermost - OCI-Native (Kubernetes-based)**, to deploy a high-availability Mattermost environment on Oracle Cloud Infrastructure (OCI). One guided stack provisions a new Oracle Kubernetes Engine (OKE) cluster, a managed `OCI Database with PostgreSQL <https://www.oracle.com/cloud/postgresql/>`_ system, an Object Storage bucket for file attachments, the Mattermost Kubernetes Operator, and HTTPS ingress through the `OCI Native Ingress Controller <https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengsettingupnativeingresscontroller.htm>`_.
+You can use the supported `Oracle Cloud Marketplace listing <https://cloudmarketplace.oracle.com/marketplace/en_US/listing/188386963>`_, **Mattermost - OCI-Native (Kubernetes-based)**, to deploy a high-availability Mattermost environment on Oracle Cloud Infrastructure (OCI). One guided stack provisions a new Oracle Kubernetes Engine (OKE) cluster, a managed OCI Database with PostgreSQL system, an Object Storage bucket for file attachments, the Mattermost Kubernetes Operator, and HTTPS ingress through the OCI Native Ingress Controller.
 
 Before you begin
 ~~~~~~~~~~~~~~~~~
@@ -237,7 +237,7 @@ Common Errors and How to Avoid Them
   - *Cause:* The **PostgreSQL Admin Password** or **Mattermost Database Password** doesn't meet the required complexity rules (8–32 characters, upper/lowercase, number, special character; no quotes, backslashes, or semicolons).
   - *Solution:* Re-enter a password that satisfies the pattern shown in the field description.
 
-- **Error: ``terraform destroy`` fails on the PostgreSQL system or the bucket**
+- **Error: Terraform destroy fails on the PostgreSQL system or the bucket**
 
   - *Cause:* The database system has destroy protection enabled by design, and OCI refuses to delete a non-empty Object Storage bucket.
   - *Solution:* Empty the bucket first, then disable the database's lifecycle protection before destroying.
