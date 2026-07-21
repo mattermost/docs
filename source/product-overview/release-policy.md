@@ -49,7 +49,7 @@ gantt
 
     section Releases
     v10.10                 :done, 2025-07-16, 2025-10-15
-    v10.11 & Desktop App v5.13 Extended Support :crit,    2025-08-16, 2026-08-15
+    v10.11 & Desktop App v5.13 Extended Support :done,    2025-08-16, 2026-08-15
     v10.12                 :done, 2025-09-16, 2025-12-15
     v11.0                  :done, 2025-10-16, 2026-01-15
     v11.1                  :done, 2025-11-14, 2026-02-15
@@ -67,8 +67,9 @@ gantt
 **Timeline Legend:**
 The chart above shows both release dates and end-of-life dates for each version. ESRs provide longer-term stability for organizations preferring less frequent updates.
 - 🔵 **Blue bars**: Regular feature releases (monthly releases with standard support lifecycle)
+- ⚫ **Grey bars**: Regular feature releases that have reached end-of-life, and Extended Support Releases (ESRs) that have reached end-of-life
+  - v10.11 & Desktop App v5.13: Support ended August 15, 2026
 - 🔴 **Red bars**: Extended Support Releases (ESRs), released every 9 months with 12 months of support
-  - v10.11 & Desktop App v5.13: Supported until August 15, 2026
   - v11.7 & Desktop App v6.2: Supported until May 15, 2027
 
 (esr-notifications)=
@@ -84,7 +85,7 @@ For deprecated ESRs, an email announcement is sent 3 months in advance. We also 
 
 ### Legacy Releases
 
-The following table lists all releases across Mattermost v7.0, v8.0, and v9.0, including ESRs. See the [unsupported legacy releases](https://docs.mattermost.com/product-overview/unsupported-legacy-releases.html) documentation for comprehensive changelog details for these legacy releases.
+The following table lists all releases across Mattermost v7.0, v8.0, v9.0, and v10.0, including ESRs. See the [unsupported legacy releases](https://docs.mattermost.com/product-overview/unsupported-legacy-releases.html) documentation for comprehensive changelog details for these legacy releases.
 
 ```{Important}
 - If you're on a legacy Mattermost release prior to v7.1, in order to take advantage of newer Mattermost releases, you must upgrade to [v7.1 ESR](https://docs.mattermost.com/product-overview/unsupported-legacy-releases.html#release-v7-1-extended-support-release) at a minimum.
@@ -93,6 +94,7 @@ The following table lists all releases across Mattermost v7.0, v8.0, and v9.0, i
 
 | **Release** | **Release Type** | **Support ended** | 
 |:---|:---|:---|
+| v10.11 & Desktop App v5.13 | Extended | 2026-08-15 |
 | v9.11 | Extended | 2025-05-15 |
 | v9.10 | Feature | 2024-10-15 |
 | v9.9 | Feature | 2024-09-15 |
