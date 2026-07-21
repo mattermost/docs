@@ -6,6 +6,47 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 ```{include} common-esr-support.md
 ```
 
+(release-v6-3)=
+## Release v6.3
+
+- **v6.3.0, released 2026-XX-XX** <!-- TODO: confirm the v6.3.0 release date -->
+
+  - Original v6.3.0 release
+
+**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/v6.3.0)
+
+### Compatibility
+
+- Desktop App is supported on any currently supported [Mattermost server version](https://docs.mattermost.com/product-overview/mattermost-desktop-releases.html#latest-releases).
+- Updated Chromium minimum supported version to XXX+. <!-- TODO: confirm the Chromium minimum supported version -->
+
+### Improvements
+
+#### All Platforms
+
+- TODO: add v6.3 improvements from the release notes.
+
+### Architectural Changes
+
+- Major version upgrade of Electron to vXX.X.X. Electron is the underlying technology used to build the Desktop App. <!-- TODO: confirm the Electron version -->
+
+### Bug Fixes
+
+#### All Platforms
+
+- TODO: add v6.3 bug fixes from the release notes.
+
+### Known Issues
+
+- Sometimes during installation you may see this message: ``Warning 1946. Property 'System.AppUserModel.ID' for shortcut 'Mattermost.Ink' could not be set``. This message can be safely ignored.
+- Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually delete their cache directory. For macOS it is located in `/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost`, for Windows in `Users/<username>/AppData/Roaming/Mattermost` and for Linux in `~/config/Mattermost` (where `~` is the home directory).
+- On Linux, a left-click on the Mattermost tray icon doesn't open the app window but opens the tray menu.
+- Crashes might be experienced in some Linux desktop clients due to an upstream bug in the `libnotifyapp` library. A recommended workaround is to disable the Mattermost system tray icon via Desktop Settings.
+
+### Contributors
+
+- TODO: add v6.3 contributors from the release notes.
+
 (release-v6-2)=
 ## Release v6.2 (Extended Support Release)
 
