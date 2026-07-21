@@ -9,11 +9,9 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 (release-v6-3)=
 ## Release v6.3
 
-- **v6.3.0, released 2026-XX-XX** <!-- TODO: confirm the v6.3.0 release date -->
+**v6.3.0 Release Day: 2026-08-14**
 
-  - Original v6.3.0 release
-
-**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/v6.3.0)
+**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/latest)
 
 ### Compatibility
 
@@ -24,17 +22,32 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
 #### All Platforms
 
-- TODO: add v6.3 improvements from the release notes.
+- Added koffi native module, and added connectors for macOS and Windows native session attributes.
+- Added support for explicitly trusted embedded media origins for media permission requests.
+- Updated onboarding and server connection welcome messaging.
+- Added an advanced setting to enable or disable session attributes. Some resources may be inaccessible when disabled.
+- Enabled client-collected **Session Attributes** to be sent to enabled servers.
+- Added ``F12`` to open **Developer Tools** for current tab.
 
 ### Architectural Changes
 
-- Major version upgrade of Electron to vXX.X.X. Electron is the underlying technology used to build the Desktop App. <!-- TODO: confirm the Electron version -->
+- Major version upgrade of Electron to v43.0.0. Electron is the underlying technology used to build the Desktop App.
 
 ### Bug Fixes
 
+#### Linux
+- Fixed download URL construction in "Download Options" for Linux releases.
+- Fixed the association to the desktop launcher and the wrong icon being shown in Ubuntu.
+
 #### All Platforms
 
-- TODO: add v6.3 bug fixes from the release notes.
+- Fixed an issue where other views could end an active call.
+- Fixed a rare crash where closing a server tab or window while it was still loading could throw "Object has been destroyed" in the main process.
+- Fixed an issue where a ``mattermost://`` deep link could open the **Add Server** dialog.
+
+### Open Source Components
+
+- Added ``joi`` and ``fast-xml-parser`` to https://github.com/mattermost/desktop/.
 
 ### Known Issues
 
@@ -42,10 +55,6 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 - Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually delete their cache directory. For macOS it is located in `/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost`, for Windows in `Users/<username>/AppData/Roaming/Mattermost` and for Linux in `~/config/Mattermost` (where `~` is the home directory).
 - On Linux, a left-click on the Mattermost tray icon doesn't open the app window but opens the tray menu.
 - Crashes might be experienced in some Linux desktop clients due to an upstream bug in the `libnotifyapp` library. A recommended workaround is to disable the Mattermost system tray icon via Desktop Settings.
-
-### Contributors
-
-- TODO: add v6.3 contributors from the release notes.
 
 (release-v6-2)=
 ## Release v6.2 (Extended Support Release)
