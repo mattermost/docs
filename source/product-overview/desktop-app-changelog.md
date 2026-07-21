@@ -35,6 +35,9 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
 ### Bug Fixes
 
+#### macOS
+- Fixed an issue where a ``mattermost://`` deep link could open the **Add Server** dialog.
+
 #### Linux
 - Fixed download URL construction in "Download Options" for Linux releases.
 - Fixed the association to the desktop launcher and the wrong icon being shown in Ubuntu.
@@ -43,7 +46,6 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
 - Fixed an issue where other views could end an active call.
 - Fixed a rare crash where closing a server tab or window while it was still loading could throw "Object has been destroyed" in the main process.
-- Fixed an issue where a ``mattermost://`` deep link could open the **Add Server** dialog.
 
 ### Open Source Components
 
