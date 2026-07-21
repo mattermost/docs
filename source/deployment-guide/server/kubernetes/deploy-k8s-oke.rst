@@ -113,7 +113,7 @@ Cluster Tools
 
 - **Install Metrics Server:**
 
-  - Enables ``kubectl top`` and HPA support. On by default; recommended for all deployments.
+  - Enables ``kubectl top`` and the metrics API HPA relies on, if you add your own autoscaler later. On by default; recommended for all deployments.
 - **Create OKE IAM Policies:**
 
   - Automatically creates the IAM policies OKE needs to manage cluster resources. On by default; disable only if these policies already exist in your compartment.
