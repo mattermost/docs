@@ -83,7 +83,7 @@ Mattermost Installation
 
     - **Kubernetes Namespace:** The namespace Mattermost is installed into (default: ``mattermost``).
     - **Helm Repository URL:** Source of the Mattermost Operator Helm chart (default: ``https://helm.mattermost.com``).
-    - **Operator Helm Chart Version:** Leave empty to use the latest published chart version.
+    - **Operator Helm Chart Version:** Choose the Mattermost Operator Helm chart version to install from the list (default: the newest version offered).
     - **NIC Readiness Wait Timeout:** How long to wait for the Native Ingress Controller to become ready before failing the apply (default: 180 seconds).
 
 OKE Configuration
