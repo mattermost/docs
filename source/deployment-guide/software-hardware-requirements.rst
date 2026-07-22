@@ -141,8 +141,6 @@ When a PostgreSQL version reaches its end of life (EOL), Mattermost will require
 +------------------------------------------------------------+------------------+--------------------------------+
 | :ref:`v11.7 ESR <release-v11.7-extended-support-release>`  | 2026-5-15        | 14.x (EOL 2026-11-12)          |
 +------------------------------------------------------------+------------------+--------------------------------+
-| v12.0                                                      | 2026-10-16       | 15.x                           |
-+------------------------------------------------------------+------------------+--------------------------------+
 
 Customers will have 9 months to plan, test, and upgrade their PostgreSQL version before the new requirement takes effect. This policy aims to provide clarity and transparency so you can align database upgrades with the Mattermost release schedule. Contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_. to discuss your options.
 
