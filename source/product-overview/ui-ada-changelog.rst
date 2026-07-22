@@ -13,7 +13,7 @@ Changelog
    * - Version
      - Change Description
    * - v11.10
-     - (UI) Added a WYSIWYG editor option for message composition, allowing users to compose messages with rich-text formatting while preserving full Markdown round-trip.
+     - (UI) Added a WYSIWYG editor option for message composition, allowing users to compose messages with rich-text formatting while preserving full markdown round-trip.
    * - v11.10
      - (UI) Added a media gallery layout for posts with multiple images or videos, plus inline frame previews for single videos.
    * - v11.10
@@ -37,7 +37,7 @@ Changelog
    * - v11.10
      - (UI) Added a **Regenerate** option to Personal Access Tokens in **Account Settings > Security**.
    * - v11.10
-     - (UI) Changed Left-Hand-Side/Right-Hand-Side to only be resizable with the left mouse button.
+     - (UI) Changed left-hand-side/right-hand-side to only be resizable with the left mouse button.
    * - v11.9
      - (UI) Added zoom and pan support to the image file preview: use the scroll wheel to zoom at the cursor, click-and-drag to pan, and +/-/0 keyboard shortcuts (reported on webapp).
    * - v11.9
