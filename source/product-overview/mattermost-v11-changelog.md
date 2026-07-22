@@ -25,11 +25,18 @@ Platform and OS scope reflects reported and tested environments and may not repr
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
   - **Changes to Enterprise Advanced plan:**
     - Under ``AccessControlSettings`` in ``config.json``, added ``EnableChannelPolicyIndicators`` configuration setting to control whether channel access attribute indicators are shown in the channel members list and invite dialog. Default is ``true``.
+  - Added a new Enterprise configuration setting, TeamSettings.LockProfileFieldsForEmailUsers (System Console > Site Configuration > Users and Teams), which prevents users who sign in with email and password from changing their first name, last name, and username ("name_and_username"), or additionally their nickname, position, and profile picture ("all"). System Admins are exempt, and empty first/last names can be filled in once. When enabled, users with the Invite Users permission can pre-set the first name, last name, and username on email invitations; the POST /api/v4/teams/{team_id}/invite/email endpoint accepts a new optional "profiles" field, and the System Console user detail page now supports editing a user's first and last name.
+ - Added ``TeamSettings.LockProfileFieldsForEmailUsers`` configuration setting.
+
+### Compatibility
+ - Updated minimum Edge and Chrome versions to 150+.
 
 ### Improvements
 See [this blog post](https://mattermost.com/blog/mattermost-v11-10-is-now-available/) on the highlights in our latest release.
 
 #### User Interface
+  - Prepackaged the Mattermost Agents plugin at version 2.5.0-rc1 instead of 2.4.2.
+  - Prepackage MS Calendar plugin version [v1.7.0](https://github.com/mattermost/mattermost-plugin-mscalendar/releases/tag/v1.7.0).
   - Updated Mattermost Calls to v1.12.2, fixing a stale join button on Desktop after WebSocket reconnect, guarding against concurrent join attempts, surfacing the deprecated ``MM_CALLS_RTCD_URL`` setting in the ``/env`` endpoint, and limiting decompressed SDP payload size to prevent potential denial-of-service.
   - Added a WYSIWYG editor option for message composition, allowing users to compose messages with rich-text formatting while preserving full Markdown round-trip.
   - Added a media gallery layout for posts with multiple images or videos, plus inline frame previews for single videos.
@@ -76,6 +83,9 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-10-is-now-availa
   - Added delta support for the PSAv2 property fields and values endpoints, and a new fields search endpoint.
   - Added property owners, audit logs for all custom profile attribute value changes, and new plugin APIs for property values.
   - Improved performance of the Scheduled messages page by virtualizing the scheduled posts list, so opening the tab is no longer slow when there are many scheduled posts.
+  - Team membership can now be controlled by user attributes (department, program, etc.) — private  teams automatically enforce access rules, block non-qualifying joins, and remove ineligible members via sync; public teams use advisory mode, surfacing a "Recommended" tag to qualifying users without blocking anyone.
+  - Team admins and system admins can define per-team membership rules, configure auto-add, and trigger or monitor sync jobs directly from Team Settings and the System Console, with inline enforcement in the Invite People and Add Members modals.
+  - Property owners, audit logs for all CPA value changes and new plugin apis for property values
 
 #### mmctl
   - Added the ability to send direct messages with ``mmctl`` using ``mmctl post create @username --message <text>``.
@@ -116,6 +126,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-10-is-now-availa
   - Fixed an issue with plugins receiving hooks and logging errors after shutting down.
   - Fixed the Playbooks Become a Participant modal text alignment.
   - Fixed an issue where broken draft state occurred when uploads failed or were interrupted, preventing users from sending messages again.
+  - Fixed most layout shifts caused by images in posts loading
 
 ### API Changes
   - Added ``POST /actions/{action_id:[A-Za-z0-9_-]+}`` (``doPostAction``) API endpoint.
@@ -125,6 +136,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-10-is-now-availa
   - Added ``POST /tokens/rotate`` (``rotateUserAccessToken``) API endpoint.
   - Added ``GET /access_control/attributes`` (``getTeamAccessControlAttributes``) API endpoint.
   - Added ``POST /`` (``searchPropertyFields``) API endpoint.
+  - Added `GET /access_control/attributes` (`getTeamAccessControlAttributes`) API endpoint.
 
 ### WebSocket Event Changes
   - Added a ``job_updated`` WebSocket event that is pushed when a job changes status.
@@ -136,6 +148,9 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-10-is-now-availa
   - Added ``AuditEventTeamMembershipAdded`` audit log event.
   - Added ``AuditEventTeamMembershipRemoved`` audit log event.
   - Added ``obtained_user_email`` field to ``completeSaml`` audit log events.
+  - Added ``AuditEventTeamCascadedChannelRemoval`` audit log event.
+  - Added ``AuditEventTeamMembershipAdded`` audit log event.
+  - Added ``AuditEventTeamMembershipRemoved`` audit log event.
 
 ### Go Version
   - v11.10 is built with Go ``v1.26.4``.
@@ -143,6 +158,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-10-is-now-availa
 ### Open Source Components
   - Added ``@tiptap/extension-code-block-lowlight``, ``@tiptap/extension-link``, ``@tiptap/extension-placeholder``, ``@tiptap/extension-table``, ``@tiptap/extension-table-cell``, ``@tiptap/extension-table-header``, ``@tiptap/extension-table-row``, ``@tiptap/markdown``, ``@tiptap/react``, ``@tiptap/starter-kit``, and ``lowlight`` to https://github.com/mattermost/mattermost/.
   - Added ``Azure/azure-sdk-for-go`` to https://github.com/mattermost/mattermost/.
+  - Added ``jaytaylor/html2text`` and ``wneessen/go-mail``, and removed ``go-mail/mail`` from https://github.com/mattermost/mattermost/pull/.
 
 (release-v11.9-feature-release)=
 ## Release v11.9 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
