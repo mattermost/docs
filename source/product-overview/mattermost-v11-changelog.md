@@ -57,7 +57,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-10-is-now-availa
   - The agent selector now respects the configured default agent and remembers your last-selected agent.
   - Mattermost now proactively warns the owner of a personal access token with a direct message from the system bot as the token approaches expiry (7, 3, and 1 days before), so token-backed integrations no longer break without warning. Added the ``pat_expiry_notify`` job, which runs hourly when ``EnableUserAccessTokens`` is set and can also be triggered on demand by admins via the jobs API.
   - Token owners are now notified by a direct message from the system bot when one of their personal access tokens is removed after expiring.
-  - Added a "Regenerate" option to **Personal Access Tokens** in **Account Settings > Security** (including webapp).
+  - Added a **Regenerate** option to Personal Access Tokens in **Account Settings > Security** (including webapp).
 
 #### Plugins/Integrations
   - Added plugin support for pluggable tabs in the Channel Settings modal, including a new ``ChannelSettingsTab`` webapp registration surface.
