@@ -131,15 +131,17 @@ When a PostgreSQL version reaches its end of life (EOL), Mattermost will require
 +------------------------------------------------------------+------------------+--------------------------------+
 | **Mattermost Version**                                     | **Release Date** | **Minimum PostgreSQL Version** |
 +============================================================+==================+================================+
-| :ref:`v9.11 ESR <release-v9-11-extended-support-release>`  | 2024-8-15        | 11.x                           |
+| :ref:`v9.11 ESR <release-v9-11-extended-support-release>`  | 2024-8-16        | 11.x                           |
 +------------------------------------------------------------+------------------+--------------------------------+
-| :ref:`v10.5 ESR <release-v10.5-extended-support-release>`  | 2025-2-15        | 11.x                           |
+| :ref:`v10.5 ESR <release-v10.5-extended-support-release>`  | 2025-2-16        | 11.x                           |
 +------------------------------------------------------------+------------------+--------------------------------+
-| :ref:`v10.6 <release-v10.6-feature-release>`               | 2025-3-15        | 13.x                           |
+| :ref:`v10.6 <release-v10.6-feature-release>`               | 2025-3-16        | 13.x                           |
 +------------------------------------------------------------+------------------+--------------------------------+
-| :ref:`v10.11 ESR <release-v10.11-extended-support-release>`| 2025-8-15        | 13.x                           |
+| :ref:`v10.11 ESR <release-v10.11-extended-support-release>`| 2025-8-16        | 13.x                           |
 +------------------------------------------------------------+------------------+--------------------------------+
-| :ref:`v11.7 ESR <release-v11.7-extended-support-release>`  | 2026-5-15        | 14.x (EOL 2026-11-12)          |
+| :ref:`v11.7 ESR <release-v11.7-extended-support-release>`  | 2026-5-16        | 14.x (EOL 2026-11-12)          |
++------------------------------------------------------------+------------------+--------------------------------+
+| v12.0                                                      | 2026-10-16       | 15.x                           |
 +------------------------------------------------------------+------------------+--------------------------------+
 
 Customers will have 9 months to plan, test, and upgrade their PostgreSQL version before the new requirement takes effect. This policy aims to provide clarity and transparency so you can align database upgrades with the Mattermost release schedule. Contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_. to discuss your options.
