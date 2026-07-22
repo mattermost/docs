@@ -58,7 +58,7 @@ We strongly recommend that you:
 - Upgrade your instance of Mattermost to the latest :doc:`Extended Support Release (ESR) </product-overview/mattermost-server-releases>` first before attempting to run the Mattermost v6.0 upgrade.
 
 .. important::
-  Support for Mattermost Server v10.11 :doc:`Extended Support Release </product-overview/mattermost-server-releases>` is coming to the end of its life cycle on August 15, 2026. Upgrading to Mattermost Server v11.7 Extended Support Release or later is recommended. Upgrading from the previous Extended Support Release to the latest Extended Support Release is supported. Review the :doc:`important-upgrade-notes` for all intermediate versions in between to ensure you’re aware of the possible migrations that could affect your upgrade.
+  Support for Mattermost Server v10.11 :doc:`Extended Support Release </product-overview/mattermost-server-releases>` has come to the end of its life cycle on August 15, 2026. Upgrading to Mattermost Server v11.7 Extended Support Release or later is required. Upgrading from the previous Extended Support Release to the latest Extended Support Release is supported. Review the :doc:`important-upgrade-notes` for all intermediate versions in between to ensure you’re aware of the possible migrations that could affect your upgrade.
 
 v6.0 database schema migrations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -100,17 +100,17 @@ Ensure you review the :doc:`important-upgrade-notes` for all intermediate releas
     ALTER TABLE users ALTER COLUMN notifyprops TYPE jsonb USING notifyprops::jsonb;
     ALTER TABLE users ALTER COLUMN timezone TYPE jsonb USING timezone::jsonb;
 
-  Once you've identified the table being affected, verify how many invalid occurrences of `\u0000` you have using the following SELECT query:
+  Once you've identified the table being affected, verify how many invalid occurrences of ` ` you have using the following SELECT query:
 
   .. code-block:: sh
 
-    SELECT COUNT(*) FROM TableName WHERE ColumnName LIKE '%\u0000%';
+    SELECT COUNT(*) FROM TableName WHERE ColumnName LIKE '% %';
 
   Then select and fix the rows accordingly. If you prefer, you can also fix all occurrences at once in a given table or column using the following UPDATE query:
 
   .. code-block:: sh
 
-    UPDATE TableName SET ColumnName = regexp_replace(ColumnName, '\\u0000', '', 'g') WHERE ColumnName LIKE '%\u0000%';
+    UPDATE TableName SET ColumnName = regexp_replace(ColumnName, '\\u0000', '', 'g') WHERE ColumnName LIKE '% %';
 
 Upgrade high availability cluster-based deployments
 ---------------------------------------------------
