@@ -13,17 +13,16 @@
 Platform and OS scope reflects reported and tested environments and may not represent all affected configurations.
 ```
 
-
 (release-v11.10-feature-release)=
 ## Release v11.10 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
-**Release day: 2026-08-14**
+**Release Day: 2026-08-14**
 
 ### Upgrade Impact
 
 #### Database Schema Changes
  - The following schema changes are included in the v11.10 release. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
-   - Added nullable bigint column lastnotifiedat to the useraccesstokens table to support token notification tracking; catalog-only change with negligible production impact.
+   - Added nullable ``bigint`` column ``lastnotifiedat`` to the ``useraccesstokens`` table to support token notification tracking; catalog-only change with negligible production impact.
    - Adds composite index ``idx_propertyvalues_groupid_updateat_id`` on ``PropertyValues(GroupID, UpdateAt, ID)`` to improve Custom Attributes query performance with no downtime or DML impact.
 
 #### config.json
@@ -33,7 +32,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
   - **Changes to Enterprise plans:**
     - Under ``TeamSettings`` in ``config.json``, added a new Enterprise configuration setting, ``TeamSettings.LockProfileFieldsForEmailUsers`` (**System Console > Site Configuration > Users and Teams**), which prevents users who sign in with email and password from changing their first name, last name, and username ("name_and_username"), or additionally their nickname, position, and profile picture ("all"). System Admins are exempt, and empty first/last names can be filled in once. When enabled, users with the Invite Users permission can pre-set the first name, last name, and username on email invitations; the ``POST /api/v4/teams/{team_id}/invite/email`` endpoint accepts a new optional "profiles" field, and the System Console user detail page now supports editing a user's first and last name.
 
-### Compatibility
+#### Compatibility
  - Updated minimum Edge and Chrome versions to 150+.
 
 ```{Important}
@@ -44,138 +43,138 @@ If you upgrade from a release earlier than v11.9, please read the other [Importa
 See [this blog post](https://mattermost.com/blog/mattermost-v11-10-is-now-available/) on the highlights in our latest release.
 
 #### User Interface
-  - Pre-packaged Playbooks plugin version [v2.11.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.11.0).
-  - Pre-packaged Agents plugin version [v2.5.0](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v2.5.0).
-  - Pre-packaged Calls plugin version [v1.12.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.12.2).
-  - Pre-packaged MS Calendar plugin version [v1.7.0](https://github.com/mattermost/mattermost-plugin-mscalendar/releases/tag/v1.7.0).
-  - Added a WYSIWYG editor option for message composition, allowing users to compose messages with rich-text formatting while preserving full Markdown round-trip.
-  - Added a media gallery layout for posts with multiple images or videos, plus inline frame previews for single videos.
-  - Added support for a file upload element type in interactive dialogs.
-  - Added support for MM Blocks as a new way to create Interactive Messages (including webapp and mobile app).
-  - Plugins and integrations can now open stacked child dialogs from within an interactive dialog using the new ``action_button`` element type.
-  - Bot accounts, OAuth apps, incoming webhooks, and plugins can now deliver posts silently — visible in the channel without producing notifications, unread badges, or the "New Messages" separator (including desktop and mobile apps).
-  - Bot accounts managed by a plugin now display the managing plugin's ID in the Bot Accounts list instead of a generic "Managed by plugin" label.
-  - Added inline plugin metadata to the Plugin Management page and plugin settings page showing the plugin ID, version, and links to the website and release notes when available.
-  - The agent selector now respects the configured default agent and remembers your last-selected agent.
-  - Mattermost now proactively warns the owner of a personal access token with a direct message from the system bot as the token approaches expiry (7, 3, and 1 days before), so token-backed integrations no longer break without warning. Added the ``pat_expiry_notify`` job, which runs hourly when ``EnableUserAccessTokens`` is set and can also be triggered on demand by admins via the jobs API.
-  - Token owners are now notified by a direct message from the system bot when one of their personal access tokens is removed after expiring.
-  - Added a **Regenerate** option to Personal Access Tokens in **Account Settings > Security** (including webapp).
-  - Changed Left-Hand-Side/Right-Hand-Side to only be resizable with the left mouse button.
+ - Pre-packaged Playbooks plugin version [v2.11.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.11.0).
+ - Pre-packaged Agents plugin version [v2.5.0](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v2.5.0).
+ - Pre-packaged Calls plugin version [v1.12.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.12.2).
+ - Pre-packaged MS Calendar plugin version [v1.7.0](https://github.com/mattermost/mattermost-plugin-mscalendar/releases/tag/v1.7.0).
+ - Added a WYSIWYG editor option for message composition, allowing users to compose messages with rich-text formatting while preserving full Markdown round-trip.
+ - Added a media gallery layout for posts with multiple images or videos, plus inline frame previews for single videos.
+ - Added support for a file upload element type in interactive dialogs.
+ - Added support for Mattermost Blocks as a new way to create Interactive Messages (including webapp and mobile app).
+ - Plugins and integrations can now open stacked child dialogs from within an interactive dialog using the new ``action_button`` element type.
+ - Bot accounts, OAuth apps, incoming webhooks, and plugins can now deliver posts silently — visible in the channel without producing notifications, unread badges, or the "New Messages" separator (including desktop and mobile apps).
+ - Bot accounts managed by a plugin now display the managing plugin's ID in the **Bot Accounts** list instead of a generic "Managed by plugin" label.
+ - Added inline plugin metadata to the **Plugin Management** page and plugin settings page showing the plugin ID, version, and links to the website and release notes when available.
+ - The agent selector now respects the configured default agent and remembers your last-selected agent.
+ - Mattermost now proactively warns the owner of a personal access token with a direct message from the system bot as the token approaches expiry (7, 3, and 1 days before), so token-backed integrations no longer break without warning. Added the ``pat_expiry_notify`` job, which runs hourly when ``EnableUserAccessTokens`` is set and can also be triggered on demand by admins via the jobs API.
+ - Token owners are now notified by a direct message from the system bot when one of their personal access tokens is removed after expiring.
+ - Added a **Regenerate** option to Personal Access Tokens in **Account Settings > Security** (including webapp).
+ - Changed Left-Hand-Side/Right-Hand-Side to only be resizable with the left mouse button.
 
 #### Plugins/Integrations
-  - Added plugin support for pluggable tabs in the Channel Settings modal, including a new ``ChannelSettingsTab`` webapp registration surface.
-  - Allowed plugins to implement ``MessagesWillBeConsumed`` without requiring the feature flag.
-  - Outgoing integration requests for post action button and interactive dialog endpoints now surface upstream 429/503 responses verbatim (preserving retry semantics) and map other upstream 5xx responses to 502, instead of collapsing all non-200 responses to 400.
+ - Added plugin support for pluggable tabs in the **Channel Settings** modal, including a new ``ChannelSettingsTab`` webapp registration surface.
+ - Allowed plugins to implement ``MessagesWillBeConsumed`` without requiring the feature flag.
+ - Outgoing integration requests for post action button and interactive dialog endpoints now surface upstream 429/503 responses verbatim (preserving retry semantics) and map other upstream 5xx responses to 502, instead of collapsing all non-200 responses to 400.
 
 #### Administration
-  - Added a new Board Attributes panel under System Console > System Attributes for managing the default attributes shown on every board, including the locked Status and Assignee fields. Available when the ``IntegratedBoards`` feature flag is enabled.
-  - Added a "Revoke non-compliant tokens" action in System Console > Integrations > Integration Management that lets admins revoke existing personal access tokens that violate the configured Maximum Personal Access Token Lifetime (tokens that never expire or expire beyond the cap). Bot account tokens are exempt, and the number of affected tokens is shown for confirmation before revoking.
-  - Added a discovery page for Classification Markings in the System Console so the feature is surfaced with an upgrade path on licenses below Enterprise when the ``ClassificationMarkings`` feature flag is enabled.
-  - Added a new System Console setting (``AccessControlSettings.EnableChannelPolicyIndicators``, default ``true``) under Attribute-Based Access Control that lets admins hide channel access attribute indicators (the attribute tags shown in the channel members list and invite dialog) to avoid revealing policy details to end users. Requires Enterprise Advanced license.
-  - Added a Session Attributes management page under System Console > System Attributes, and made enabled session attributes selectable in Attribute-Based permission-policy editors (generating ``user.session.<name>`` conditions). Requires Enterprise Advanced license.
-  - Added the ability to edit a team's name and description from the System Console Team Configuration page.
-  - Added a Teams column to the System Console user data CSV export, listing each user's team memberships.
-  - Team membership can now be controlled by user attributes (department, program, etc.) — private teams automatically enforce access rules, block non-qualifying joins, and remove ineligible members via sync; public teams use advisory mode, surfacing a "Recommended" tag to qualifying users without blocking anyone. Team admins and system admins can define per-team membership rules, configure auto-add, and trigger or monitor sync jobs directly from Team Settings and the System Console, with inline enforcement in the Invite People and Add Members modals.
-  - Added a specific error message when uploading a license signed for a different service environment (a production license on a test/dev server, or vice versa) instead of the generic "Invalid license file." error.
-  - Corrected the System Console "Max Users Per Team" description to accurately state that only active members with active accounts count toward the limit; deactivated users and removed members are not counted.
-  - Improved accessibility of the Content Flagging "Content Reviewers" admin settings: each per-team enable/disable toggle now includes the team name in its ``aria-label``.
-  - Improved the precision of the OAuth Dynamic Client Registration (DCR) redirect URI allowlist by matching patterns per URL component.
-  - The server now pushes a ``job_updated`` WebSocket event when a job changes status. System Console job tables (LDAP sync, data retention, message export, etc.) now reflect job status changes in real time instead of polling every 15 seconds.
-  - Removed the ``ChannelBookmarks`` feature flag. The Channel Bookmarks feature is now always enabled (subject to licensing).
-  - Removed the ``WebSocketEventScope`` feature flag; scoping of typing and reaction WebSocket events to clients that have the relevant channel or thread open is now permanently enabled.
-  - Removed the ``ExperimentalAuditSettingsSystemConsoleUI`` feature flag. The experimental Audit Logging configuration page in the System Console (Enterprise, beta) is now permanently enabled.
-  - Removed the ``NotificationMonitoring`` feature flag for webapp/desktop app. Notification delivery metrics collection is now permanently enabled and controlled solely by the ``MetricsSettings.EnableNotificationMetrics`` setting.
-  - Removed the ``StreamlinedMarketplace`` feature flag; the streamlined plugin Marketplace is now always enabled.
-  - Removed the ``AttributeBasedAccessControl`` feature flag. Attribute-based access control is now exclusively controlled by the ``AccessControlSettings.EnableAttributeBasedAccessControl`` configuration setting.
-  - Removed ``CloudIPFiltering`` feature flag and enabled this functionality by default for licensed Cloud servers.
-  - Sent a wipe signal to mobile apps with open sessions when a session is revoked.
-  - Removed Google Fonts references from server email templates so notification emails no longer load fonts from external URLs when opened.
-  - Added ``ClusterGracefulDrain`` feature flag (default on) to reduce cluster message errors during rolling restarts of high-availability deployments.
-  - Added delta support for the PSAv2 property fields and values endpoints, and a new fields search endpoint (including mobile apps).
-  - Added property owners, audit logs for all custom profile attribute value changes, and new plugin APIs for property values.
-  - Improved performance of the Scheduled messages page by virtualizing the scheduled posts list, so opening the tab is no longer slow when there are many scheduled posts.
-  - Team admins and system admins can define per-team membership rules, configure auto-add, and trigger or monitor sync jobs directly from Team Settings and the System Console, with inline enforcement in the Invite People and Add Members modals.
-  - Added ``window.WebappUtils.modals.openModalById`` and ``canOpenModalId``, letting plugins open and feature-detect an allowlisted set of core modals by id. The plugin-facing modal types now ship from @mattermost/shared/types/global (including webapp).
-  - Made ``SendBestEffort`` cluster messages fall back to using TCP when their length is larger than a UDP datagram.
-  - Aligned the logic that updates a user's authentication method with other credential and authentication paths, so that all existing sessions of a user are revoked when their authentication method is changed.
-  - Plugins calling ``p.API.UpdateUserAuth`` to change a user's authentication method will now revoke all existing sessions for that user, logging them out of all active clients. Plugin developers should be aware of this new behavior.
-  - Replaced "Enable Concurrent React (Experimental)" user setting with a feature flag.
-  - Remove unused feature flag ``OnboardingTourTips``.
-  - Added audit trail for property values.
-  - Added support for team-scoped plugin products: a product registered via registerProduct with isTeamScoped set to true is now mounted under the team route with team context initialized from the URL. Products with global baseURLs are unaffected (including webapp).
+ - Added a new **Board Attributes** panel under **System Console > System Attributes** for managing the default attributes shown on every board, including the locked **Status** and **Assignee** fields. Available when the ``IntegratedBoards`` feature flag is enabled.
+ - Added a "Revoke non-compliant tokens" action in **System Console > Integrations > Integration Management** that lets admins revoke existing personal access tokens that violate the configured **Maximum Personal Access Token Lifetime** (tokens that never expire or expire beyond the cap). Bot account tokens are exempt, and the number of affected tokens is shown for confirmation before revoking.
+ - Added a discovery page for **Classification Markings** in the **System Console** so the feature is surfaced with an upgrade path on licenses below Enterprise when the ``ClassificationMarkings`` feature flag is enabled.
+ - Added a new System Console setting (``AccessControlSettings.EnableChannelPolicyIndicators``, default ``true``) under **Attribute-Based Access Control** that lets admins hide channel access attribute indicators (the attribute tags shown in the channel members list and invite dialog) to avoid revealing policy details to end users. Requires Enterprise Advanced license.
+ - Added a **Session Attributes** management page under **System Console > System Attributes**, and made enabled session attributes selectable in Attribute-Based permission-policy editors (generating ``user.session.<name>`` conditions). Requires Enterprise Advanced license.
+ - Added the ability to edit a team's name and description from the System Console **Team Configuration** page.
+ - Added a Teams column to the System Console user data CSV export, listing each user's team memberships.
+ - Team membership can now be controlled by user attributes (department, program, etc.) — private teams automatically enforce access rules, block non-qualifying joins, and remove ineligible members via sync; public teams use advisory mode, surfacing a "Recommended" tag to qualifying users without blocking anyone. Team admins and system admins can define per-team membership rules, configure auto-add, and trigger or monitor sync jobs directly from Team Settings and the System Console, with inline enforcement in the Invite People and Add Members modals.
+ - Added a specific error message when uploading a license signed for a different service environment (a production license on a test/dev server, or vice versa) instead of the generic "Invalid license file." error.
+ - Corrected the System Console "Max Users Per Team" description to accurately state that only active members with active accounts count toward the limit; deactivated users and removed members are not counted.
+ - Improved accessibility of the **Content Flagging** "Content Reviewers" admin settings: each per-team enable/disable toggle now includes the team name in its ``aria-label``.
+ - Improved the precision of the OAuth Dynamic Client Registration (DCR) redirect URI allowlist by matching patterns per URL component.
+ - The server now pushes a ``job_updated`` WebSocket event when a job changes status. System Console job tables (LDAP sync, data retention, message export, etc.) now reflect job status changes in real time instead of polling every 15 seconds.
+ - Removed the ``ChannelBookmarks`` feature flag. The Channel Bookmarks feature is now always enabled (subject to licensing).
+ - Removed the ``WebSocketEventScope`` feature flag; scoping of typing and reaction WebSocket events to clients that have the relevant channel or thread open is now permanently enabled.
+ - Removed the ``ExperimentalAuditSettingsSystemConsoleUI`` feature flag. The experimental **Audit Logging** configuration page in the System Console (Enterprise, beta) is now permanently enabled.
+ - Removed the ``NotificationMonitoring`` feature flag for webapp/desktop app. Notification delivery metrics collection is now permanently enabled and controlled solely by the ``MetricsSettings.EnableNotificationMetrics`` setting.
+ - Removed the ``StreamlinedMarketplace`` feature flag; the streamlined plugin Marketplace is now always enabled.
+ - Removed the ``AttributeBasedAccessControl`` feature flag. Attribute-based access control is now exclusively controlled by the ``AccessControlSettings.EnableAttributeBasedAccessControl`` configuration setting.
+ - Removed ``CloudIPFiltering`` feature flag and enabled this functionality by default for licensed Cloud servers.
+ - Sent a wipe signal to mobile apps with open sessions when a session is revoked.
+ - Removed Google Fonts references from server email templates so notification emails no longer load fonts from external URLs when opened.
+ - Added ``ClusterGracefulDrain`` feature flag (default on) to reduce cluster message errors during rolling restarts of high-availability deployments.
+ - Added delta support for the PSAv2 property fields and values endpoints, and a new fields search endpoint (including mobile apps).
+ - Added property owners, audit logs for all custom profile attribute value changes, and new plugin APIs for property values.
+ - Improved performance of the **Scheduled Messages** page by virtualizing the scheduled posts list, so opening the tab is no longer slow when there are many scheduled posts.
+ - Team admins and system admins can define per-team membership rules, configure auto-add, and trigger or monitor sync jobs directly from **Team Settings** and the System Console, with inline enforcement in the Invite People and Add Members modals.
+ - Added ``window.WebappUtils.modals.openModalById`` and ``canOpenModalId``, letting plugins open and feature-detect an allowlisted set of core modals by id. The plugin-facing modal types now ship from ``@mattermost/shared/types/global`` (including webapp).
+ - Made ``SendBestEffort`` cluster messages fall back to using TCP when their length is larger than a UDP datagram.
+ - Aligned the logic that updates a user's authentication method with other credential and authentication paths, so that all existing sessions of a user are revoked when their authentication method is changed.
+ - Plugins calling ``p.API.UpdateUserAuth`` to change a user's authentication method will now revoke all existing sessions for that user, logging them out of all active clients. Plugin developers should be aware of this new behavior.
+ - Replaced "Enable Concurrent React (Experimental)" user setting with a feature flag.
+ - Removed an unused feature flag ``OnboardingTourTips``.
+ - Added an audit trail for property values.
+ - Added support for team-scoped plugin products: a product registered via ``registerProduct`` with ``isTeamScoped`` set to true is now mounted under the team route with team context initialized from the URL. Products with global ``baseURLs`` are unaffected (including webapp).
 
 #### mmctl
-  - Added the ability to send direct messages with ``mmctl`` using ``mmctl post create @username --message <text>``.
-  - Added new ``mmctl`` commands: ``job create`` to create jobs with type-specific options, ``job show`` to display job details, and ``job cancel`` to cancel running jobs.
-  - Added a new ``--auto-add-users`` flag to the ``mmctl channel move`` command. The command now also lists the channel members that are missing from the destination team when a move is rejected.
-  - Added a new ``mmctl channel users list`` command that lists the members of a channel (ID, username, email, and roles), with ``--page``, ``--per-page``, and ``--all`` pagination flags.
-  - Added the ``mmctl user status`` and ``mmctl user status set`` commands to read and update a user's presence status (online, away, dnd, offline), with an optional ``--dnd-end-time`` flag. The user status GET/PUT endpoints are now also available over the ``mmctl`` local mode socket.
-  - Added a ``--show-ids`` flag to the ``mmctl channel list`` command to include channel IDs in the plain-text output.
-  - Added the user's roles to the plain-text output of the ``mmctl user search`` command.
-  - Moved the ``mmctl user deleteall`` command to ``mmctl system nuke users`` to reduce the risk of accidental invocation. The ``mmctl user deleteall`` command has been removed.
+ - Added the ability to send direct messages with ``mmctl`` using ``mmctl post create @username --message <text>``.
+ - Added new ``mmctl`` commands: ``job create`` to create jobs with type-specific options, ``job show`` to display job details, and ``job cancel`` to cancel running jobs.
+ - Added a new ``--auto-add-users`` flag to the ``mmctl channel move`` command. The command now also lists the channel members that are missing from the destination team when a move is rejected.
+ - Added a new ``mmctl channel users list`` command that lists the members of a channel (ID, username, email, and roles), with ``--page``, ``--per-page``, and ``--all`` pagination flags.
+ - Added the ``mmctl user status`` and ``mmctl user status set`` commands to read and update a user's presence status (online, away, dnd, offline), with an optional ``--dnd-end-time`` flag. The user status GET/PUT endpoints are now also available over the ``mmctl`` local mode socket.
+ - Added a ``--show-ids`` flag to the ``mmctl channel list`` command to include channel IDs in the plain-text output.
+ - Added the user's roles to the plain-text output of the ``mmctl user search`` command.
+ - Moved the ``mmctl user deleteall`` command to ``mmctl system nuke users`` to reduce the risk of accidental invocation. The ``mmctl user deleteall`` command has been removed.
 
 ### Bug Fixes
-  - Fixed an issue where reactions using emoji names with mixed case (e.g. ``:Mattermost:``) could not be added or removed.
-  - Fixed a webapp issue that caused private chat message content to be copied into the Web Notifications API ``tag`` option, where Chromium-based browsers can expose it through notification activation metadata (reported on webapp, Windows, and Chromium browsers).
-  - Fixed Markdown list items containing multiple paragraphs appearing as a single paragraph (reported on webapp, Firefox and Mac).
-  - Fixed code blocks in Markdown lists not being able to scroll horizontally (reported on webapp, Firefox and Mac).
-  - Fixed an issue where the Recaps sparkle icon in the left-hand sidebar appeared dimmer than the other sidebar item icons (reported on webapp).
-  - Fixed an issue where the AI-generated indicator was only shown on the first message when an agent posted multiple messages in a row.
-  - Fixed an issue where the W3C specification links in the Signature Algorithm and Canonicalization Algorithm help text on the SAML 2.0 System Console page were not clickable.
-  - Fixed an issue where action buttons in interactive message attachments could overflow horizontally instead of wrapping when they had long labels.
-  - Fixed the System Console permissions page to label the Playbook role as "Playbook Administrators" (plural), consistent with the other role headings.
-  - Fixed an issue where a GUEST tag could be shown next to bot and webhook posts when the webhook creator was demoted to a guest.
-  - Fixed a data race in ``pluginapi.ConfigureLogrus`` that could panic with "concurrent map read and map write" when a plugin configured logrus while logging was in flight. ``ConfigureLogrus`` now also applies ``SetReportCaller``/``SetLevel`` to the logger passed in rather than the global standard logger.
-  - Fixed an issue where the access control Job Details modal showed a confusing search-style empty state (and, in some cases, a blank body) when a sync job affected no channels; it now shows a neutral "No channels were affected by this job." message.
-  - Fixed the System Console feature discovery "Learn more" links for Auto-translation and Mobile Ephemeral Mode so they open the corresponding documentation pages instead of the generic documentation landing page.
-  - Fixed layout shift sometimes caused by post previews for posts in Direct Message channels.
-  - Fixed an issue where the "Upload files" permission was pre-selected by default when creating a new rule in a channel's Permissions Policy. New rules now start with no permissions selected.
-  - Fixed an issue where the Quarantine for Review modal could overflow its boundary when flagging a post with many file attachments on smaller screens.
-  - Fixed an issue where the System Console permission policy rule editor defaulted to advanced (CEL) mode instead of simple (table) mode when editing rules that used multiselect "has any of" conditions or ranked operators.
-  - Fixed an issue where the Last Sync column in the output of the ``/share-channel status`` command always showed "--" instead of the actual last sync time.
-  - Fixed an issue where the shared channel sync loop repeatedly logged a warning for orphaned ``SharedChannelRemotes`` rows whose ``RemoteCluster`` had been deleted. The sync loop now self-heals by soft-deleting the orphaned row.
-  - Fixed the ``/secure-connection status`` slash command so deleted connections are listed after active ones and the results render as a valid Markdown table.
-  - Fixed unquoted searches for hyphenated compound words (e.g. ``t-shirt``) on PostgreSQL to match the compound word instead of the individual words.
-  - Fixed an issue where the data retention policy teams endpoint returned more team information than intended.
-  - Fixed an issue with the wrong scroll position in the permalink view of channels with images.
-  - Fixed an issue where the Global Relay compliance export undercounted skipped-attachment warnings: the run-level warning count reflected only the last channel/batch processed instead of the sum across all channels and batches.
-  - Fixed an issue where the "save" button did not appear in some scenarios when updating connected workspaces in the channel settings.
-  - Fixed an issue with plugins receiving hooks and logging errors after shutting down.
-  - Fixed the Playbooks Become a Participant modal text alignment.
-  - Fixed an issue where broken draft state occurred when uploads failed or were interrupted, preventing users from sending messages again.
-  - Fixed most layout shifts caused by images in posts loading.
-  - Fixed an issue where shared channel messages sent while a remote connection was briefly interrupted would not sync until the next message was sent.
-  - Fixed an issue with plugin configuration loss on High Availability nodes with incomplete plugin sync.
+ - Fixed an issue where reactions using emoji names with mixed case (e.g. ``:Mattermost:``) could not be added or removed.
+ - Fixed a webapp issue that caused private chat message content to be copied into the Web Notifications API ``tag`` option, where Chromium-based browsers can expose it through notification activation metadata (reported on webapp, Windows, and Chromium browsers).
+ - Fixed Markdown list items containing multiple paragraphs appearing as a single paragraph (reported on webapp, Firefox and Mac).
+ - Fixed code blocks in Markdown lists not being able to scroll horizontally (reported on webapp, Firefox and Mac).
+ - Fixed an issue where the Recaps sparkle icon in the left-hand sidebar appeared dimmer than the other sidebar item icons (reported on webapp).
+ - Fixed an issue where the AI-generated indicator was only shown on the first message when an agent posted multiple messages in a row.
+ - Fixed an issue where the W3C specification links in the Signature Algorithm and Canonicalization Algorithm help text on the SAML 2.0 System Console page were not clickable.
+ - Fixed an issue where action buttons in interactive message attachments could overflow horizontally instead of wrapping when they had long labels.
+ - Fixed the System Console permissions page to label the Playbook role as "Playbook Administrators" (plural), consistent with the other role headings.
+ - Fixed an issue where a GUEST tag could be shown next to bot and webhook posts when the webhook creator was demoted to a guest.
+ - Fixed a data race in ``pluginapi.ConfigureLogrus`` that could panic with "concurrent map read and map write" when a plugin configured logrus while logging was in flight. ``ConfigureLogrus`` now also applies ``SetReportCaller``/``SetLevel`` to the logger passed in rather than the global standard logger.
+ - Fixed an issue where the access control Job Details modal showed a confusing search-style empty state (and, in some cases, a blank body) when a sync job affected no channels; it now shows a neutral "No channels were affected by this job." message.
+ - Fixed the System Console feature discovery "Learn more" links for Auto-translation and Mobile Ephemeral Mode so they open the corresponding documentation pages instead of the generic documentation landing page.
+ - Fixed layout shift sometimes caused by post previews for posts in Direct Message channels.
+ - Fixed an issue where the "Upload files" permission was pre-selected by default when creating a new rule in a channel's Permissions Policy. New rules now start with no permissions selected.
+ - Fixed an issue where the Quarantine for Review modal could overflow its boundary when flagging a post with many file attachments on smaller screens.
+ - Fixed an issue where the System Console permission policy rule editor defaulted to advanced (CEL) mode instead of simple (table) mode when editing rules that used multiselect "has any of" conditions or ranked operators.
+ - Fixed an issue where the Last Sync column in the output of the ``/share-channel status`` command always showed "--" instead of the actual last sync time.
+ - Fixed an issue where the shared channel sync loop repeatedly logged a warning for orphaned ``SharedChannelRemotes`` rows whose ``RemoteCluster`` had been deleted. The sync loop now self-heals by soft-deleting the orphaned row.
+ - Fixed the ``/secure-connection status`` slash command so deleted connections are listed after active ones and the results render as a valid Markdown table.
+ - Fixed unquoted searches for hyphenated compound words (e.g. ``t-shirt``) on PostgreSQL to match the compound word instead of the individual words.
+ - Fixed an issue where the data retention policy teams endpoint returned more team information than intended.
+ - Fixed an issue with the wrong scroll position in the permalink view of channels with images.
+ - Fixed an issue where the Global Relay compliance export undercounted skipped-attachment warnings: the run-level warning count reflected only the last channel/batch processed instead of the sum across all channels and batches.
+ - Fixed an issue where the "save" button did not appear in some scenarios when updating connected workspaces in the channel settings.
+ - Fixed an issue with plugins receiving hooks and logging errors after shutting down.
+ - Fixed the Playbooks Become a Participant modal text alignment.
+ - Fixed an issue where broken draft state occurred when uploads failed or were interrupted, preventing users from sending messages again.
+ - Fixed most layout shifts caused by images in posts loading.
+ - Fixed an issue where shared channel messages sent while a remote connection was briefly interrupted would not sync until the next message was sent.
+ - Fixed an issue with plugin configuration loss on High Availability nodes with incomplete plugin sync.
 
 ### API Changes
-  - Added ``POST /actions/{action_id:[A-Za-z0-9_-]+}`` (``doPostAction``) API endpoint.
-  - Removed ``POST /actions/{action_id:[A-Za-z0-9]+}`` (``doPostAction``) API endpoint.
-  - Added ``GET /tokens/non_compliant/count`` (``countNonCompliantUserAccessTokens``) API endpoint.
-  - Added ``POST /tokens/non_compliant/revoke`` (``revokeNonCompliantUserAccessTokens``) API endpoint.
-  - Added ``POST /tokens/rotate`` (``rotateUserAccessToken``) API endpoint.
-  - Added ``GET /access_control/attributes`` (``getTeamAccessControlAttributes``) API endpoint.
-  - Added ``POST /`` (``searchPropertyFields``) API endpoint.
-  - Added new API endpoint ``POST /api/v4/users/tokens/rotate`` to rotate (regenerate) the secret of an existing Personal Access Token. The old secret is invalidated immediately on rotation.
+ - Added ``POST /actions/{action_id:[A-Za-z0-9_-]+}`` (``doPostAction``) API endpoint.
+ - Removed ``POST /actions/{action_id:[A-Za-z0-9]+}`` (``doPostAction``) API endpoint.
+ - Added ``GET /tokens/non_compliant/count`` (``countNonCompliantUserAccessTokens``) API endpoint.
+ - Added ``POST /tokens/non_compliant/revoke`` (``revokeNonCompliantUserAccessTokens``) API endpoint.
+ - Added ``POST /tokens/rotate`` (``rotateUserAccessToken``) API endpoint.
+ - Added ``GET /access_control/attributes`` (``getTeamAccessControlAttributes``) API endpoint.
+ - Added ``POST /`` (``searchPropertyFields``) API endpoint.
+ - Added new API endpoint ``POST /api/v4/users/tokens/rotate`` to rotate (regenerate) the secret of an existing Personal Access Token. The old secret is invalidated immediately on rotation.
 
 ### WebSocket Event Changes
-  - Added a ``job_updated`` WebSocket event that is pushed when a job changes status. System Console job tables (LDAP sync, data retention, message export, etc.) now reflect job status changes in real time instead of polling every 15 seconds.
+ - Added a ``job_updated`` WebSocket event that is pushed when a job changes status. System Console job tables (LDAP sync, data retention, message export, etc.) now reflect job status changes in real time instead of polling every 15 seconds.
 
 ### Audit Log Event Changes
-  - Added ``AuditEventRevokeNonCompliantUserAccessTokens`` audit log event.
-  - Added ``AuditEventRotateUserAccessToken`` audit log event.
-  - Added ``AuditEventTeamMembershipRemoved`` audit log event.
-  - Added ``obtained_user_email`` field to ``completeSaml`` audit log events.
-  - Added ``AuditEventTeamCascadedChannelRemoval`` audit log event.
-  - Added ``AuditEventTeamMembershipAdded`` audit log event.
-  - Added ``AuditEventCPAValueChange`` audit log event.
+ - Added ``AuditEventRevokeNonCompliantUserAccessTokens`` audit log event.
+ - Added ``AuditEventRotateUserAccessToken`` audit log event.
+ - Added ``AuditEventTeamMembershipRemoved`` audit log event.
+ - Added ``obtained_user_email`` field to ``completeSaml`` audit log events.
+ - Added ``AuditEventTeamCascadedChannelRemoval`` audit log event.
+ - Added ``AuditEventTeamMembershipAdded`` audit log event.
+ - Added ``AuditEventCPAValueChange`` audit log event.
 
 ### Go Version
-  - v11.10 is built with Go ``v1.26.4``.
+ - v11.10 is built with Go ``v1.26.4``.
 
 ### Open Source Components
-  - Added ``@tiptap/extension-code-block-lowlight``, ``@tiptap/extension-link``, ``@tiptap/extension-placeholder``, ``@tiptap/extension-table``, ``@tiptap/extension-table-cell``, ``@tiptap/extension-table-header``, ``@tiptap/extension-table-row``, ``@tiptap/markdown``, ``@tiptap/react``, ``@tiptap/starter-kit``, and ``lowlight`` to https://github.com/mattermost/mattermost/.
-  - Added ``Azure/azure-sdk-for-go`` to https://github.com/mattermost/mattermost/.
-  - Added ``jaytaylor/html2text`` and ``wneessen/go-mail``, and removed ``go-mail/mail`` from https://github.com/mattermost/mattermost/pull/.
+ - Added ``@tiptap/extension-code-block-lowlight``, ``@tiptap/extension-link``, ``@tiptap/extension-placeholder``, ``@tiptap/extension-table``, ``@tiptap/extension-table-cell``, ``@tiptap/extension-table-header``, ``@tiptap/extension-table-row``, ``@tiptap/markdown``, ``@tiptap/react``, ``@tiptap/starter-kit``, and ``lowlight`` to https://github.com/mattermost/mattermost/.
+ - Added ``Azure/azure-sdk-for-go`` to https://github.com/mattermost/mattermost/.
+ - Added ``jaytaylor/html2text`` and ``wneessen/go-mail``, and removed ``go-mail/mail`` from https://github.com/mattermost/mattermost/pull/.
 
 (release-v11.9-feature-release)=
 ## Release v11.9 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
