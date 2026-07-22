@@ -49,15 +49,15 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-10-is-now-availa
   - Added a WYSIWYG editor option for message composition, allowing users to compose messages with rich-text formatting while preserving full Markdown round-trip.
   - Added a media gallery layout for posts with multiple images or videos, plus inline frame previews for single videos.
   - Added support for a file upload element type in interactive dialogs.
-  - Added support for MM Blocks as a new way to create Interactive Messages.
+  - Added support for MM Blocks as a new way to create Interactive Messages (including webapp and mobile app).
   - Plugins and integrations can now open stacked child dialogs from within an interactive dialog using the new ``action_button`` element type.
-  - Bot accounts, OAuth apps, incoming webhooks, and plugins can now deliver posts silently — visible in the channel without producing notifications, unread badges, or the "New Messages" separator.
+  - Bot accounts, OAuth apps, incoming webhooks, and plugins can now deliver posts silently — visible in the channel without producing notifications, unread badges, or the "New Messages" separator (including desktop and mobile apps).
   - Bot accounts managed by a plugin now display the managing plugin's ID in the Bot Accounts list instead of a generic "Managed by plugin" label.
   - Added inline plugin metadata to the Plugin Management page and plugin settings page showing the plugin ID, version, and links to the website and release notes when available.
   - The agent selector now respects the configured default agent and remembers your last-selected agent.
   - Mattermost now proactively warns the owner of a personal access token with a direct message from the system bot as the token approaches expiry (7, 3, and 1 days before), so token-backed integrations no longer break without warning. Added the ``pat_expiry_notify`` job, which runs hourly when ``EnableUserAccessTokens`` is set and can also be triggered on demand by admins via the jobs API.
   - Token owners are now notified by a direct message from the system bot when one of their personal access tokens is removed after expiring.
-  - Added a "Regenerate" option to Personal Access Tokens in Account Settings > Security.
+  - Added a "Regenerate" option to **Personal Access Tokens** in **Account Settings > Security** (including webapp).
 
 #### Plugins/Integrations
   - Added plugin support for pluggable tabs in the Channel Settings modal, including a new ``ChannelSettingsTab`` webapp registration surface.
@@ -81,14 +81,14 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-10-is-now-availa
   - Removed the ``ChannelBookmarks`` feature flag. The Channel Bookmarks feature is now always enabled (subject to licensing).
   - Removed the ``WebSocketEventScope`` feature flag; scoping of typing and reaction WebSocket events to clients that have the relevant channel or thread open is now permanently enabled.
   - Removed the ``ExperimentalAuditSettingsSystemConsoleUI`` feature flag. The experimental Audit Logging configuration page in the System Console (Enterprise, beta) is now permanently enabled.
-  - Removed the ``NotificationMonitoring`` feature flag. Notification delivery metrics collection is now permanently enabled and controlled solely by the ``MetricsSettings.EnableNotificationMetrics`` setting.
+  - Removed the ``NotificationMonitoring`` feature flag for webapp/desktop app. Notification delivery metrics collection is now permanently enabled and controlled solely by the ``MetricsSettings.EnableNotificationMetrics`` setting.
   - Removed the ``StreamlinedMarketplace`` feature flag; the streamlined plugin Marketplace is now always enabled.
   - Removed the ``AttributeBasedAccessControl`` feature flag. Attribute-based access control is now exclusively controlled by the ``AccessControlSettings.EnableAttributeBasedAccessControl`` configuration setting.
   - Removed ``CloudIPFiltering`` feature flag and enabled this functionality by default for licensed Cloud servers.
   - Sent a wipe signal to mobile apps with open sessions when a session is revoked.
   - Removed Google Fonts references from server email templates so notification emails no longer load fonts from external URLs when opened.
   - Added ``ClusterGracefulDrain`` feature flag (default on) to reduce cluster message errors during rolling restarts of high-availability deployments.
-  - Added delta support for the PSAv2 property fields and values endpoints, and a new fields search endpoint.
+  - Added delta support for the PSAv2 property fields and values endpoints, and a new fields search endpoint (including mobile apps).
   - Added property owners, audit logs for all custom profile attribute value changes, and new plugin APIs for property values.
   - Improved performance of the Scheduled messages page by virtualizing the scheduled posts list, so opening the tab is no longer slow when there are many scheduled posts.
   - Team membership can now be controlled by user attributes (department, program, etc.) — private  teams automatically enforce access rules, block non-qualifying joins, and remove ineligible members via sync; public teams use advisory mode, surfacing a "Recommended" tag to qualifying users without blocking anyone.
@@ -107,10 +107,10 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-10-is-now-availa
 
 ### Bug Fixes
   - Fixed an issue where reactions using emoji names with mixed case (e.g. ``:Mattermost:``) could not be added or removed.
-  - Fixed a webapp issue that caused private chat message content to be copied into the Web Notifications API ``tag`` option, where Chromium-based browsers can expose it through notification activation metadata.
-  - Fixed Markdown list items containing multiple paragraphs appearing as a single paragraph.
-  - Fixed code blocks in Markdown lists not being able to scroll horizontally.
-  - Fixed an issue where the Recaps sparkle icon in the left-hand sidebar appeared dimmer than the other sidebar item icons.
+  - Fixed a webapp issue that caused private chat message content to be copied into the Web Notifications API ``tag`` option, where Chromium-based browsers can expose it through notification activation metadata (reported on webapp, Windows, and Chromium browsers).
+  - Fixed Markdown list items containing multiple paragraphs appearing as a single paragraph (reported on webapp, Firefox and Mac).
+  - Fixed code blocks in Markdown lists not being able to scroll horizontally (reported on webapp, Firefox and Mac).
+  - Fixed an issue where the Recaps sparkle icon in the left-hand sidebar appeared dimmer than the other sidebar item icons (reported on webapp).
   - Fixed an issue where the AI-generated indicator was only shown on the first message when an agent posted multiple messages in a row.
   - Fixed an issue where the W3C specification links in the Signature Algorithm and Canonicalization Algorithm help text on the SAML 2.0 System Console page were not clickable.
   - Fixed an issue where action buttons in interactive message attachments could overflow horizontally instead of wrapping when they had long labels.
