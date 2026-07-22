@@ -91,7 +91,6 @@ The following table lists all releases across Mattermost v7.0, v8.0, v9.0, and v
 
 | **Release** | **Release Type** | **Support ended** | 
 |:---|:---|:---|
-| v10.11 & Desktop App v5.13 | Extended | 2026-08-15 |
 | v9.11 | Extended | 2025-05-15 |
 | v9.10 | Feature | 2024-10-15 |
 | v9.9 | Feature | 2024-09-15 |
