@@ -47,7 +47,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-10-is-now-availa
  - Pre-packaged Agents plugin version [v2.5.0](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v2.5.0).
  - Pre-packaged Calls plugin version [v1.12.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.12.2).
  - Pre-packaged MS Calendar plugin version [v1.7.0](https://github.com/mattermost/mattermost-plugin-mscalendar/releases/tag/v1.7.0).
- - Added a WYSIWYG editor option for message composition, allowing users to compose messages with rich-text formatting while preserving full Markdown round-trip.
+ - Added a WYSIWYG editor option for message composition, allowing users to compose messages with rich-text formatting while preserving full markdown round-trip.
  - Added a media gallery layout for posts with multiple images or videos, plus inline frame previews for single videos.
  - Added support for a file upload element type in interactive dialogs.
  - Added support for Mattermost Blocks as a new way to create Interactive Messages (including webapp and mobile app).
@@ -59,7 +59,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-10-is-now-availa
  - Mattermost now proactively warns the owner of a personal access token with a direct message from the system bot as the token approaches expiry (7, 3, and 1 days before), so token-backed integrations no longer break without warning. Added the ``pat_expiry_notify`` job, which runs hourly when ``EnableUserAccessTokens`` is set and can also be triggered on demand by admins via the jobs API.
  - Token owners are now notified by a direct message from the system bot when one of their personal access tokens is removed after expiring.
  - Added a **Regenerate** option to Personal Access Tokens in **Account Settings > Security** (including webapp).
- - Changed Left-Hand-Side/Right-Hand-Side to only be resizable with the left mouse button.
+ - Changed left-hand-side/right-hand-side to only be resizable with the left mouse button.
 
 #### Plugins/Integrations
  - Added plugin support for pluggable tabs in the **Channel Settings** modal, including a new ``ChannelSettingsTab`` webapp registration surface.
