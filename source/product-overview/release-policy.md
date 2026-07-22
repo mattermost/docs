@@ -82,7 +82,7 @@ For deprecated ESRs, an email announcement is sent 3 months in advance. We also 
 
 ### Legacy Releases
 
-The following table lists all releases across Mattermost v7.0, v8.0, v9.0, and v10.0, including ESRs. See the [unsupported legacy releases](https://docs.mattermost.com/product-overview/unsupported-legacy-releases.html) documentation for comprehensive changelog details for these legacy releases.
+The following table lists all releases across Mattermost v7.0, v8.0, and v9.0, including ESRs. See the [unsupported legacy releases](https://docs.mattermost.com/product-overview/unsupported-legacy-releases.html) documentation for comprehensive changelog details for these legacy releases.
 
 ```{Important}
 - If you're on a legacy Mattermost release prior to v7.1, in order to take advantage of newer Mattermost releases, you must upgrade to [v7.1 ESR](https://docs.mattermost.com/product-overview/unsupported-legacy-releases.html#release-v7-1-extended-support-release) at a minimum.
