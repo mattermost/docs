@@ -23,14 +23,15 @@ Platform and OS scope reflects reported and tested environments and may not repr
 
 #### Database Schema Changes
  - The following schema changes are included in the v11.10 release. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
-   - Added
+   - Added nullable bigint column lastnotifiedat to the useraccesstokens table to support token notification tracking; catalog-only change with negligible production impact.
+   - Adds composite index ``idx_propertyvalues_groupid_updateat_id`` on ``PropertyValues(GroupID, UpdateAt, ID)`` to improve Custom Attributes query performance with no downtime or DML impact.
 
 #### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
   - **Changes to Enterprise Advanced plan:**
     - Under ``AccessControlSettings`` in ``config.json``, added ``EnableChannelPolicyIndicators`` configuration setting to control whether channel access attribute indicators are shown in the channel members list and invite dialog. Default is ``true``.
-  - Added a new Enterprise configuration setting, TeamSettings.LockProfileFieldsForEmailUsers (System Console > Site Configuration > Users and Teams), which prevents users who sign in with email and password from changing their first name, last name, and username ("name_and_username"), or additionally their nickname, position, and profile picture ("all"). System Admins are exempt, and empty first/last names can be filled in once. When enabled, users with the Invite Users permission can pre-set the first name, last name, and username on email invitations; the POST /api/v4/teams/{team_id}/invite/email endpoint accepts a new optional "profiles" field, and the System Console user detail page now supports editing a user's first and last name.
- - Added ``TeamSettings.LockProfileFieldsForEmailUsers`` configuration setting.
+  - **Changes to Enterprise plans:**
+    - Under ``TeamSettings`` in ``config.json``, added a new Enterprise configuration setting, ``TeamSettings.LockProfileFieldsForEmailUsers`` (**System Console > Site Configuration > Users and Teams**), which prevents users who sign in with email and password from changing their first name, last name, and username ("name_and_username"), or additionally their nickname, position, and profile picture ("all"). System Admins are exempt, and empty first/last names can be filled in once. When enabled, users with the Invite Users permission can pre-set the first name, last name, and username on email invitations; the ``POST /api/v4/teams/{team_id}/invite/email`` endpoint accepts a new optional "profiles" field, and the System Console user detail page now supports editing a user's first and last name.
 
 ### Compatibility
  - Updated minimum Edge and Chrome versions to 150+.
@@ -59,6 +60,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-10-is-now-availa
   - Mattermost now proactively warns the owner of a personal access token with a direct message from the system bot as the token approaches expiry (7, 3, and 1 days before), so token-backed integrations no longer break without warning. Added the ``pat_expiry_notify`` job, which runs hourly when ``EnableUserAccessTokens`` is set and can also be triggered on demand by admins via the jobs API.
   - Token owners are now notified by a direct message from the system bot when one of their personal access tokens is removed after expiring.
   - Added a **Regenerate** option to Personal Access Tokens in **Account Settings > Security** (including webapp).
+  - Changed Left-Hand-Side/Right-Hand-Side to only be resizable with the left mouse button.
 
 #### Plugins/Integrations
   - Added plugin support for pluggable tabs in the Channel Settings modal, including a new ``ChannelSettingsTab`` webapp registration surface.
@@ -92,9 +94,15 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-10-is-now-availa
   - Added delta support for the PSAv2 property fields and values endpoints, and a new fields search endpoint (including mobile apps).
   - Added property owners, audit logs for all custom profile attribute value changes, and new plugin APIs for property values.
   - Improved performance of the Scheduled messages page by virtualizing the scheduled posts list, so opening the tab is no longer slow when there are many scheduled posts.
-  - Team membership can now be controlled by user attributes (department, program, etc.) — private  teams automatically enforce access rules, block non-qualifying joins, and remove ineligible members via sync; public teams use advisory mode, surfacing a "Recommended" tag to qualifying users without blocking anyone.
   - Team admins and system admins can define per-team membership rules, configure auto-add, and trigger or monitor sync jobs directly from Team Settings and the System Console, with inline enforcement in the Invite People and Add Members modals.
-  - Property owners, audit logs for all CPA value changes and new plugin apis for property values
+  - Added ``window.WebappUtils.modals.openModalById`` and ``canOpenModalId``, letting plugins open and feature-detect an allowlisted set of core modals by id. The plugin-facing modal types now ship from @mattermost/shared/types/global (including webapp).
+  - Made ``SendBestEffort`` cluster messages fall back to using TCP when their length is larger than a UDP datagram.
+  - Aligned the logic that updates a user's authentication method with other credential and authentication paths, so that all existing sessions of a user are revoked when their authentication method is changed.
+  - Plugins calling ``p.API.UpdateUserAuth`` to change a user's authentication method will now revoke all existing sessions for that user, logging them out of all active clients. Plugin developers should be aware of this new behavior.
+  - Replaced "Enable Concurrent React (Experimental)" user setting with a feature flag.
+  - Remove unused feature flag ``OnboardingTourTips``.
+  - Added audit trail for property values.
+  - Added support for team-scoped plugin products: a product registered via registerProduct with isTeamScoped set to true is now mounted under the team route with team context initialized from the URL. Products with global baseURLs are unaffected (including webapp).
 
 #### mmctl
   - Added the ability to send direct messages with ``mmctl`` using ``mmctl post create @username --message <text>``.
@@ -135,7 +143,9 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-10-is-now-availa
   - Fixed an issue with plugins receiving hooks and logging errors after shutting down.
   - Fixed the Playbooks Become a Participant modal text alignment.
   - Fixed an issue where broken draft state occurred when uploads failed or were interrupted, preventing users from sending messages again.
-  - Fixed most layout shifts caused by images in posts loading
+  - Fixed most layout shifts caused by images in posts loading.
+  - Fixed an issue where shared channel messages sent while a remote connection was briefly interrupted would not sync until the next message was sent.
+  - Fixed an issue with plugin configuration loss on High Availability nodes with incomplete plugin sync.
 
 ### API Changes
   - Added ``POST /actions/{action_id:[A-Za-z0-9_-]+}`` (``doPostAction``) API endpoint.
@@ -145,21 +155,19 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-10-is-now-availa
   - Added ``POST /tokens/rotate`` (``rotateUserAccessToken``) API endpoint.
   - Added ``GET /access_control/attributes`` (``getTeamAccessControlAttributes``) API endpoint.
   - Added ``POST /`` (``searchPropertyFields``) API endpoint.
-  - Added `GET /access_control/attributes` (`getTeamAccessControlAttributes`) API endpoint.
+  - Added new API endpoint ``POST /api/v4/users/tokens/rotate`` to rotate (regenerate) the secret of an existing Personal Access Token. The old secret is invalidated immediately on rotation.
 
 ### WebSocket Event Changes
-  - Added a ``job_updated`` WebSocket event that is pushed when a job changes status.
+  - Added a ``job_updated`` WebSocket event that is pushed when a job changes status. System Console job tables (LDAP sync, data retention, message export, etc.) now reflect job status changes in real time instead of polling every 15 seconds.
 
 ### Audit Log Event Changes
   - Added ``AuditEventRevokeNonCompliantUserAccessTokens`` audit log event.
   - Added ``AuditEventRotateUserAccessToken`` audit log event.
-  - Added ``AuditEventTeamCascadedChannelRemoval`` audit log event.
-  - Added ``AuditEventTeamMembershipAdded`` audit log event.
   - Added ``AuditEventTeamMembershipRemoved`` audit log event.
   - Added ``obtained_user_email`` field to ``completeSaml`` audit log events.
   - Added ``AuditEventTeamCascadedChannelRemoval`` audit log event.
   - Added ``AuditEventTeamMembershipAdded`` audit log event.
-  - Added ``AuditEventTeamMembershipRemoved`` audit log event.
+  - Added ``AuditEventCPAValueChange`` audit log event.
 
 ### Go Version
   - v11.10 is built with Go ``v1.26.4``.
