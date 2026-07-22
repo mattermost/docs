@@ -43,9 +43,10 @@ If you upgrade from a release earlier than v11.9, please read the other [Importa
 See [this blog post](https://mattermost.com/blog/mattermost-v11-10-is-now-available/) on the highlights in our latest release.
 
 #### User Interface
-  - Prepackaged the Mattermost Agents plugin at version 2.5.0-rc1 instead of 2.4.2.
-  - Prepackage MS Calendar plugin version [v1.7.0](https://github.com/mattermost/mattermost-plugin-mscalendar/releases/tag/v1.7.0).
-  - Updated Mattermost Calls to v1.12.2, fixing a stale join button on Desktop after WebSocket reconnect, guarding against concurrent join attempts, surfacing the deprecated ``MM_CALLS_RTCD_URL`` setting in the ``/env`` endpoint, and limiting decompressed SDP payload size to prevent potential denial-of-service.
+  - Pre-packaged Playbooks plugin version [v2.11.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.11.0).
+  - Pre-packaged Agents plugin version [v2.5.0](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v2.5.0).
+  - Pre-packaged Calls plugin version [v1.12.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.12.2).
+  - Pre-packaged MS Calendar plugin version [v1.7.0](https://github.com/mattermost/mattermost-plugin-mscalendar/releases/tag/v1.7.0).
   - Added a WYSIWYG editor option for message composition, allowing users to compose messages with rich-text formatting while preserving full Markdown round-trip.
   - Added a media gallery layout for posts with multiple images or videos, plus inline frame previews for single videos.
   - Added support for a file upload element type in interactive dialogs.
