@@ -97,7 +97,7 @@ redirects_map = {
 "about/mattermost-server-releases.html":
         "https://docs.mattermost.com/product-overview/mattermost-server-releases.html",
 "about/mattermost-v10-changelog.html":
-        "https://docs.mattermost.com/product-overview/unsupported-legacy-releases.html",
+        "https://docs.mattermost.com/product-overview/mattermost-v10-changelog.html",
 "about/mattermost-v9-changelog.html":
         "https://docs.mattermost.com/product-overview/mattermost-v9-changelog.html",
 "about/maximize-microsoft-investments.html":
@@ -4347,7 +4347,7 @@ redirects_map = {
 "welcome/manage-multiple-server-connections.html":
         "https://docs.mattermost.com/end-user-guide/preferences/connect-multiple-workspaces.html",
 "welcome/what-changed-in-v70.html":
-        "https://docs.mattermost.com/product-overview/unsupported-legacy-releases.html",
+        "https://docs.mattermost.com/product-overview/mattermost-v10-changelog.html",
 "welcome/what-changed-in-v60.html":
         "https://docs.mattermost.com/product-overview/mattermost-v9-changelog.html",
 "welcome/whats-new-in-v72.html":

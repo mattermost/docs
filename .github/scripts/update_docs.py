@@ -92,6 +92,7 @@ SERVER_BASE_FILES = [
 # The files can be very large; MAX_SEND_CHARS limits what is sent to Claude per version
 # pass to the most-recent portion where new entries are added.
 SERVER_CHANGELOG_FILES = [
+    "source/product-overview/mattermost-v10-changelog.md",
     "source/product-overview/mattermost-v11-changelog.md",
 ]
  
