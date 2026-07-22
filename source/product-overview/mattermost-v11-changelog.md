@@ -21,6 +21,10 @@ Platform and OS scope reflects reported and tested environments and may not repr
 
 ### Upgrade Impact
 
+#### Database Schema Changes
+ - The following schema changes are included in the v11.9 release. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
+   - Added
+
 #### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
   - **Changes to Enterprise Advanced plan:**
@@ -30,6 +34,10 @@ New setting options were added to ``config.json``. Below is a list of the additi
 
 ### Compatibility
  - Updated minimum Edge and Chrome versions to 150+.
+
+```{Important}
+If you upgrade from a release earlier than v11.9, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html). In case of an upgrade failure, please check the [Downgrade Guide](https://docs.mattermost.com/administration-guide/upgrade/downgrading-mattermost-server.html) and the [Recovery Guide](https://docs.mattermost.com/deployment-guide/backup-disaster-recovery.html) for rollback steps and interim mitigation strategy.
+```
 
 ### Improvements
 See [this blog post](https://mattermost.com/blog/mattermost-v11-10-is-now-available/) on the highlights in our latest release.
