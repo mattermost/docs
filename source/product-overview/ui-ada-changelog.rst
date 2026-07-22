@@ -13,12 +13,6 @@ Changelog
    * - Version
      - Change Description
    * - v11.10
-     - (UI) Prepackaged the Mattermost Agents plugin at version 2.5.0-rc1 instead of 2.4.2.
-   * - v11.10
-     - (UI) Prepackaged the MS Calendar plugin version v1.7.0.
-   * - v11.10
-     - (UI) Updated Mattermost Calls to v1.12.2, fixing a stale join button on Desktop after WebSocket reconnect, guarding against concurrent join attempts, surfacing the deprecated ``MM_CALLS_RTCD_URL`` setting in the ``/env`` endpoint, and limiting decompressed SDP payload size to prevent potential denial-of-service.
-   * - v11.10
      - (UI) Added a WYSIWYG editor option for message composition, allowing users to compose messages with rich-text formatting while preserving full Markdown round-trip.
    * - v11.10
      - (UI) Added a media gallery layout for posts with multiple images or videos, plus inline frame previews for single videos.
