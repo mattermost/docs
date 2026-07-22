@@ -100,17 +100,17 @@ Ensure you review the :doc:`important-upgrade-notes` for all intermediate releas
     ALTER TABLE users ALTER COLUMN notifyprops TYPE jsonb USING notifyprops::jsonb;
     ALTER TABLE users ALTER COLUMN timezone TYPE jsonb USING timezone::jsonb;
 
-  Once you've identified the table being affected, verify how many invalid occurrences of ` ` you have using the following SELECT query:
+  Once you've identified the table being affected, verify how many invalid occurrences of `\\u0000` you have using the following SELECT query:
 
   .. code-block:: sh
 
-    SELECT COUNT(*) FROM TableName WHERE ColumnName LIKE '% %';
+    SELECT COUNT(*) FROM TableName WHERE ColumnName LIKE '%\\u0000%';
 
   Then select and fix the rows accordingly. If you prefer, you can also fix all occurrences at once in a given table or column using the following UPDATE query:
 
   .. code-block:: sh
 
-    UPDATE TableName SET ColumnName = regexp_replace(ColumnName, '\\u0000', '', 'g') WHERE ColumnName LIKE '% %';
+    UPDATE TableName SET ColumnName = regexp_replace(ColumnName, '\\u0000', '', 'g') WHERE ColumnName LIKE '%\\u0000%';
 
 Upgrade high availability cluster-based deployments
 ---------------------------------------------------
