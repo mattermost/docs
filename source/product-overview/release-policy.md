@@ -69,7 +69,7 @@ The chart above shows both release dates and end-of-life dates for each version.
 - 🔵 **Blue bars**: Regular feature releases (monthly releases with standard support lifecycle)
 - 🔴 **Red bars**: Extended Support Releases (ESRs), released every 9 months with 12 months of support
   - v11.7 & Desktop App v6.2: Supported until May 15, 2027
-  - v10.11 & Desktop App v5.13: Support ended August 15, 2026
+  - v10.11 & Desktop App v5.13: Support ended August 14, 2026
 
 (esr-notifications)=
 ### ESR Notifications
