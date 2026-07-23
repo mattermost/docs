@@ -102,6 +102,8 @@ Before transforming, check the integrity of the dump:
 
 This reports structural issues (for example, missing required collections or invalid records) that would cause the transform or import to fail. Details are written to ``check-rocketchat.log``.
 
+``check rocketchat`` accepts the same ``--guest-handling`` flag as the transform, so you can preview how guest users will be treated before running the full transform.
+
 Run the transform
 ~~~~~~~~~~~~~~~~~~
 
@@ -135,6 +137,11 @@ Useful transform flags
 
 - ``--uploads-dir <PATH>``: Path to the Rocket.Chat FileSystem uploads directory. Required when attachments are not stored in GridFS.
 - ``--bot-owner <USERNAME>``: Username of the Mattermost user who will own all imported bots. **Required if the export contains any bot users** — the transform errors out otherwise.
+- ``--guest-handling <MODE>``: How to migrate Rocket.Chat guest users (default ``guest``):
+
+  - ``guest`` — migrate them as Mattermost guests. Highest fidelity, but the destination server must have Guest Accounts **licensed** (Professional/Enterprise) and **enabled** (``GuestAccountsSettings.Enable``); otherwise the accounts won't behave correctly.
+  - ``user`` — migrate them as regular Mattermost members. Works everywhere, but grants guests full member permissions.
+  - ``skip`` — drop guest users entirely, along with their memberships and authored posts.
 - ``--skip-attachments`` / ``-a``: Skip extracting file attachments. Useful for faster iteration while testing.
 - ``--attachments-dir <PATH>``: Directory for extracted attachments (default ``data``).
 - ``--default-email-domain <DOMAIN>``: When a user's email is missing, generate one from their username and this domain (for example ``example.com``).
@@ -292,8 +299,8 @@ For core collaboration data — posts, threads, reactions, attachments, users, a
      - No
      - Reaction *names* are preserved, but the emoji images are not imported (see below).
    * - Guest users
-     - Yes
-     - Rocket.Chat guest accounts are imported as Mattermost :doc:`guest users </administration-guide/onboard/guest-accounts>`. Ensure :ref:`guest access <administration-guide/configure/authentication-configuration-settings:guest access>` is enabled on the target server before importing, otherwise these accounts fail to import.
+     - Configurable
+     - Controlled by ``--guest-handling`` (default ``guest``). By default, Rocket.Chat guest accounts are imported as Mattermost :doc:`guest users </administration-guide/onboard/guest-accounts>` — this requires Guest Accounts to be **licensed** (Professional/Enterprise) and :ref:`guest access <administration-guide/configure/authentication-configuration-settings:guest access>` enabled on the target server. Use ``--guest-handling user`` to import them as regular members instead (no guest licensing needed), or ``--guest-handling skip`` to drop them entirely.
    * - Encrypted (E2E) channels
      - No
      - End-to-end encrypted rooms are skipped entirely, including their messages.
