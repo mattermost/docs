@@ -153,7 +153,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
   - Add SSL Cert
 
    - Resource: https://docs.mattermost.com/administration-guide/onboard/ssl-client-certificate.html
-   - Resource: https://docs.mattermost.com/administration-guide/scale/high-availability-cluster-based-deployment.html#proxy-server-configuration
+   - Resource: https://docs.mattermost.com/administration-guide/scale/high-availability-cluster-based-deployment.html#proxy-server
 
   - (Optional) Set up certificate-based authentication (CBA) for user or device-based authentication with a digital certificate
 

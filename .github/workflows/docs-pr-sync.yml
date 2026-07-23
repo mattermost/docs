@@ -1,4 +1,3 @@
----
 # .github/workflows/docs-pr-sync.yml
 #
 # Place this file in:
@@ -22,9 +21,9 @@
 #   and updates labels on the original dev PR:
 #     Removes Docs/Needed
 #     Adds    Docs/Done
- 
+
 name: "Docs PR Sync - Update Dev PR Labels on Close"
- 
+
 on:
   pull_request:
     types: [closed]
@@ -34,7 +33,7 @@ on:
         description: 'Docs branch name to simulate closing (e.g. docs/mattermost-pr-1234)'
         required: true
         type: string
- 
+
 jobs:
   sync-labels:
     name: "Remove Docs/Needed, Add Docs/Done on dev PR"
@@ -48,7 +47,7 @@ jobs:
       github.event_name == 'workflow_dispatch' ||
       (startsWith(github.event.pull_request.head.ref, 'docs/') &&
        github.event.pull_request.head.repo.full_name == github.repository)
- 
+
     steps:
       # 0. Generate a short-lived write token scoped to the three engineering
       #    repos. Uses the shared changelog write app so the token is not tied
@@ -57,13 +56,13 @@ jobs:
         id: token
         uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
         with:
-          app-id: ${{ vars.CHANGELOG_PR_CLIENT_ID }}
+          client-id: ${{ vars.CHANGELOG_PR_CLIENT_ID }}
           private-key: ${{ secrets.CHANGELOG_PR_PRIVATE_KEY }}
           repositories: >-
             mattermost,
             mattermost-mobile,
             desktop
- 
+
       # 1. Parse dev PR reference from branch name
       #    Branch format: docs/<repo-name>-pr-<number>
       #    e.g. docs/mattermost-pr-1234      -> mattermost/mattermost#1234
@@ -81,15 +80,15 @@ jobs:
           fi
           REPO_NAME="${BASH_REMATCH[1]}"
           PR_NUMBER="${BASH_REMATCH[2]}"
- 
+
           FULL_REPO="mattermost/${REPO_NAME}"
- 
+
           echo "repo_name=$REPO_NAME" >> "$GITHUB_OUTPUT"
           echo "full_repo=$FULL_REPO" >> "$GITHUB_OUTPUT"
           echo "pr_number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
- 
+
           echo "Dev PR resolved to: ${FULL_REPO}#${PR_NUMBER}"
- 
+
       # 2. Update labels on the dev PR
       #    Docs/Done is applied whether the docs PR was merged OR closed without
       #    merging. An abandoned docs PR means the developer is handling docs
@@ -104,7 +103,7 @@ jobs:
           DOCS_PR_MERGED: ${{ github.event.pull_request.merged }}
         run: |
           echo "Updating labels on ${DEV_REPO}#${DEV_PR}..."
- 
+
           # Remove Docs/Needed (soft-fail - label may already be absent)
           if gh pr edit "$DEV_PR" --repo "$DEV_REPO" \
                --remove-label "Docs/Needed" 2>/dev/null; then
@@ -112,12 +111,12 @@ jobs:
           else
             echo "  Docs/Needed not present or could not be removed - continuing"
           fi
- 
+
           # Add Docs/Done (hard-fail - this must succeed)
           # Applied for both merged and closed-without-merging; see comment above.
           gh pr edit "$DEV_PR" --repo "$DEV_REPO" --add-label "Docs/Done"
           echo "  Added Docs/Done"
- 
+
       # 3. Comment on the dev PR
       #    Skipped for workflow_dispatch: there is no real docs PR being closed,
       #    so github.event.pull_request.number is empty and the link would be broken.
@@ -135,10 +134,10 @@ jobs:
           else
             STATUS="closed without merging"
           fi
- 
+
           DOCS_LINK="[mattermost/docs#${DOCS_PR_NUMBER}]"
           DOCS_LINK="${DOCS_LINK}(https://github.com/mattermost/docs/pull/${DOCS_PR_NUMBER})"
- 
+
           gh pr comment "$DEV_PR" \
             --repo "$DEV_REPO" \
             --body "The associated docs PR ${DOCS_LINK} has been **${STATUS}**. Label updated: Docs/Needed -> Docs/Done."
