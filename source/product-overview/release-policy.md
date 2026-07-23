@@ -48,7 +48,7 @@ gantt
     axisFormat  %b %y
 
     section Releases
-    v10.11 & Desktop App v5.13 Extended Support :crit,    2025-08-16, 2026-08-15
+    v10.11 & Desktop App v5.13 Extended Support :crit,    2025-08-16, 2026-08-14
     v10.12                 :done, 2025-09-16, 2025-12-15
     v11.0                  :done, 2025-10-16, 2026-01-15
     v11.1                  :done, 2025-11-14, 2026-02-15
