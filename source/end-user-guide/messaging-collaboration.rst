@@ -36,4 +36,4 @@ Getting Started
 * :doc:`Communicate with messages and threads </end-user-guide/collaborate/communicate-with-messages>` Learn how to get started collaborating within Mattermost channels.
 * :doc:`Collaborate within Microsoft Teams </end-user-guide/collaborate/collaborate-within-connected-microsoft-teams>` - Learn how to get started collaborating within Microsoft Teams.
 * :doc:`Keyboard shortcuts </end-user-guide/collaborate/keyboard-shortcuts>` - Make a more efficient use of your keyboard with keyboard shortcuts.
-* :doc:`Extend Mattermost with integrations </end-user-guide/collaborate/extend-mattermost-with-integrations>` - Find open source integrations to common tools in the Mattermost Marketplace.
+* :doc:`Extend Mattermost with integrations </end-user-guide/collaborate/extend-mattermost-with-integrations>` - Find open source integrations to common tools in the Mattermost Marketplace, and learn how to interact with rich integration messages.
