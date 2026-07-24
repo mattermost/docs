@@ -21,7 +21,7 @@ Platform and OS scope reflects reported and tested environments and may not repr
  - iPhone 8+ devices and later with iOS 16.0+ are [required](https://support.apple.com/en-il/guide/iphone/iphe3fa5df43/16.0/ios/16.0).
 
 ### Improvements
- - Added classification markings for global and per-channel banners.
+ - Added classification markings for global and per-channel banners. Requires server v11.9.0+.
  - Added support for Mattermost Blocks as a new way to create interactive messages.
  - Added timezone support and manual time entry for Interactive Dialog datetime fields. Plugins can now display times in specific timezones and allow text input for exact times.
  - Wipe notifications sent by the server are now processed.
