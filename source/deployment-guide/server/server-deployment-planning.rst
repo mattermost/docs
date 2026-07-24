@@ -12,6 +12,7 @@ This section provides comprehensive guidance on deploying and managing your Matt
     Deploy with Kubernetes </deployment-guide/server/deploy-kubernetes>
     Deploy with Linux </deployment-guide/server/deploy-linux>
     Deploy with Containers </deployment-guide/server/deploy-containers>
+    Migrate to FIPS-compliant images </deployment-guide/server/fips-migration>
     Pre-authentication secrets </deployment-guide/server/pre-authentication-secrets>
     Deployment Solution Programs </deployment-guide/server/orchestration>
 
@@ -19,6 +20,7 @@ This section provides comprehensive guidance on deploying and managing your Matt
 * :doc:`Deploy with Kubernetes </deployment-guide/server/deploy-kubernetes>` - Scalable deployment on various Kubernetes platforms with high availability support.
 * :doc:`Deploy with Linux </deployment-guide/server/deploy-linux>` - Direct installation on Linux servers for full control over the deployment.
 * :doc:`Deploy with Containers </deployment-guide/server/deploy-containers>` - Docker-based deployment suitable for smaller installations.
+* :doc:`Migrate to FIPS-compliant images </deployment-guide/server/fips-migration>` - Switch an existing Docker or Kubernetes deployment to the FIPS-compliant Mattermost images.
 * :doc:`Pre-authentication secrets </deployment-guide/server/pre-authentication-secrets>` - Configure reverse proxy validation for mobile and desktop applications using pre-authentication headers.
 * :doc:`Deployment Solution Programs </deployment-guide/server/orchestration>` - Automated deployment tools and orchestration solutions.
 
