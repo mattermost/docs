@@ -43,7 +43,7 @@ If you upgrade from a release earlier than v11.9, please read the other [Importa
 See [this blog post](https://mattermost.com/blog/mattermost-v11-10-is-now-available/) on the highlights in our latest release.
 
 #### User Interface
- - Pre-packaged Playbooks plugin version [v2.11.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.11.0).
+ - Pre-packaged Playbooks plugin version [v2.11.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.11.1).
  - Pre-packaged Agents plugin version [v2.5.0](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v2.5.0).
  - Pre-packaged Calls plugin version [v1.12.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.12.2).
  - Pre-packaged MS Calendar plugin version [v1.7.0](https://github.com/mattermost/mattermost-plugin-mscalendar/releases/tag/v1.7.0).
