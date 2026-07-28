@@ -145,6 +145,8 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-10-is-now-availa
  - Fixed an issue where shared channel messages sent while a remote connection was briefly interrupted would not sync until the next message was sent.
  - Fixed an issue with plugin configuration loss on High Availability nodes with incomplete plugin sync.
  - Fixed an issue where bots and integrations could not update markdown action buttons (``mm_blocks_actions``) on their own posts via the API.
+ - Fixed an issue where the web app didn't load the channel header and post textbox earlier.
+ - Fixed an issue where editing a message could cause it to appear as a draft (reported on Chrome, webapp).
 
 ### API Changes
  - Added ``POST /actions/{action_id:[A-Za-z0-9_-]+}`` (``doPostAction``) API endpoint.
