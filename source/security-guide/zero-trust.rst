@@ -166,32 +166,13 @@ Progressing through Zero Trust maturity
 
 No organization starts at Optimal maturity, and no single product delivers Zero Trust in isolation. Mattermost is designed to meet organizations at their current maturity level and provide a concrete capability path forward.
 
-<table>
-    <thead>
-        <tr>
-            <th>Maturity Level</th>
-            <th>What Mattermost enables</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Traditional</td>
-            <td>MFA, SSO, guest accounts, role-based access, basic audit logging, and TLS encryption. A secure collaboration baseline without implicit perimeter trust.</td>
-        </tr>
-        <tr>
-            <td>Initial</td>
-            <td>AD/LDAP sync, RBAC with team override schemes, EMM mobile deployment, air-gapped and Kubernetes deployment, advanced logging, and compliance export. Automated access lifecycle with formal integration into security operations.</td>
-        </tr>
-        <tr>
-            <td>Advanced</td>
-            <td>ABAC with CEL syntax, HA cluster deployment, FIPS 140-3, STIG-hardened images, sovereign AI, legal hold, playbook-driven incident response, biometric mobile authentication, and federated cross-org channels. Context-aware access with security testing integrated throughout the deployment lifecycle.</td>
-        </tr>
-        <tr>
-            <td>Optimal</td>
-            <td>Dynamic ABAC with ICAM sync, Zero Trust channel access policies, User Authoritative Source integration, data spillage handling, burn-on-read messages, classified channel controls, and full mobile security hardening. Continuous, attribute-driven enforcement with no implicit trust at any layer.</td>
-        </tr>
-    </tbody>
-</table>
+.. csv-table::
+    :header: "Maturity Level", "What Mattermost enables"
+
+    "Traditional","MFA, SSO, guest accounts, role-based access, basic audit logging, and TLS encryption. A secure collaboration baseline without implicit perimeter trust."
+    "Initial","AD/LDAP sync, RBAC with team override schemes, EMM mobile deployment, air-gapped and Kubernetes deployment, advanced logging, and compliance export. Automated access lifecycle with formal integration into security operations."
+    "Advanced","ABAC with CEL syntax, HA cluster deployment, FIPS 140-3, STIG-hardened images, sovereign AI, legal hold, playbook-driven incident response, biometric mobile authentication, and federated cross-org channels. Context-aware access with security testing integrated throughout the deployment lifecycle."
+    "Optimal","Dynamic ABAC with ICAM sync, Zero Trust channel access policies, User Authoritative Source integration, data spillage handling, burn-on-read messages, classified channel controls, and full mobile security hardening. Continuous, attribute-driven enforcement with no implicit trust at any layer."
 
 Related resources
 -----------------
@@ -208,4 +189,4 @@ Related resources
 - :doc:`CMMC Compliance </security-guide/cmmc-compliance>`
 - :doc:`Mobile Security </security-guide/mobile-security>`
 
-To explore how Mattermost can support your organization's Zero Trust strategy, `contact a Mattermost Zero Trust Expert <https://mattermost.com/contact-sales/>`.
+To explore how Mattermost can support your organization's Zero Trust strategy, `contact a Mattermost Zero Trust Expert <https://mattermost.com/contact-sales/>`_.
