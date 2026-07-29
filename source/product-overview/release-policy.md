@@ -48,7 +48,7 @@ gantt
     axisFormat  %b %y
 
     section Releases
-    v10.11 & Desktop App v5.13 Extended Support :crit,    2025-08-16, 2026-08-14
+    v10.11 & Desktop App v5.13 Extended Support :crit,    2025-08-16, 2026-08-15
     v10.12                 :done, 2025-09-16, 2025-12-15
     v11.0                  :done, 2025-10-16, 2026-01-15
     v11.1                  :done, 2025-11-14, 2026-02-15
@@ -69,7 +69,7 @@ The chart above shows both release dates and end-of-life dates for each version.
 - 🔵 **Blue bars**: Regular feature releases (monthly releases with standard support lifecycle)
 - 🔴 **Red bars**: Extended Support Releases (ESRs), released every 9 months with 12 months of support
   - v11.7 & Desktop App v6.2: Supported until May 15, 2027
-  - v10.11 & Desktop App v5.13: Support ended August 14, 2026
+  - v10.11 & Desktop App v5.13: Support ended August 15, 2026
 
 (esr-notifications)=
 ### ESR Notifications
