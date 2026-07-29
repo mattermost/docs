@@ -209,7 +209,7 @@ Yes, push notifications are free if you compile your own `push-proxy service <ht
 
 TPNS, hosted at `https://push-test.mattermost.com <https://push-test.mattermost.com>`_, offers transport-level encryption, but not production-level service level agreements (SLAs).
 
-If you need production-level SLAs for push notifications, you can either compile your own push-proxy service, with your own key, or you can use a paid option and become a Mattermost Professional subscriber `agreeing to our Conditions of Use <https://mattermost.com/terms-of-use/>`_, which enables you to use a production-level Hosted Push Notification Service (HPNS) at ``https://push.mattermost.com``.
+If you need production-level SLAs for push notifications, you can either compile your own push-proxy service, with your own key, or you can use a paid option and become a Mattermost Professional subscriber `agreeing to our Conditions of Use <https://mattermost.com/terms-of-use/>`_, which enables you to use a production-level Hosted Push Notification Service (HPNS) at a regional URL such as ``https://global.push.mattermost.com`` — see the :ref:`push notification server location <administration-guide/configure/environment-configuration-settings:push notification server location>` setting for the full list of regions.
 
 Learn more about :ref:`our push notification service <administration-guide/configure/environment-configuration-settings:enable push notifications>`.
 
