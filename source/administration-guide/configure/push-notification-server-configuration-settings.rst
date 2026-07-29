@@ -95,19 +95,29 @@ See our :ref:`configuration settings <administration-guide/configure/site-config
   :systemconsole: Environment > Push Notification Server
   :configjson: .EmailSettings.PushNotificationServer
   :environment: MM_EMAILSETTINGS_PUSHNOTIFICATIONSERVER
-  :description: The physical location of the Mattermost Hosted Notification Service (HPNS) server.
+  :description: The region of the Mattermost Hosted Push Notification Service (HPNS) server.
 
 Push notification server location
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------+--------------------------------------------------------------------------------+
-| The physical location of the Mattermost Hosted Push             | - System Config path: **Environment > Push Notification Server**               |
-| Notification Service (HPNS) server.                             | - ``config.json`` setting: ``EmailSettings`` > ``PushNotificationServer``      |
-|                                                                 | - Environment variable: ``MM_EMAILSETTINGS_PUSHNOTIFICATIONSERVER``            |
-| Select from **US** **(Default)** or **Germany** to              |                                                                                |
-| automatically populate the **Push Notification Server**         |                                                                                |
-| field server URL.                                               |                                                                                |
-+-----------------------------------------------------------------+--------------------------------------------------------------------------------+
++--------------------------------------------------------+---------------------------------------------------------------------------+
+| The region of the Mattermost Hosted Push Notification  | - System Config path: **Environment > Push Notification Server**          |
+| Service (HPNS) server.                                 | - ``config.json`` setting: ``EmailSettings`` > ``PushNotificationServer`` |
+|                                                        | - Environment variable: ``MM_EMAILSETTINGS_PUSHNOTIFICATIONSERVER``       |
+| Select a region to automatically populate the          |                                                                           |
+| **Push Notification Server** field with the            |                                                                           |
+| corresponding URL:                                     |                                                                           |
+|                                                        |                                                                           |
+| - **Global**: ``https://global.push.mattermost.com``   |                                                                           |
+|   (load balances requests across the regional          |                                                                           |
+|   endpoints below)                                     |                                                                           |
+| - **US**: ``https://us.push.mattermost.com``           |                                                                           |
+| - **EU (Germany)**: ``https://eu.push.mattermost.com`` |                                                                           |
+| - **AP (Japan)**: ``https://ap.push.mattermost.com``   |                                                                           |
++--------------------------------------------------------+---------------------------------------------------------------------------+
+
+.. note::
+  ``https://us.push.mattermost.com`` supersedes the legacy ``https://push.mattermost.com`` URL, and ``https://eu.push.mattermost.com`` supersedes the legacy ``https://hpns-de.mattermost.com`` URL. The legacy URLs still work, but are deprecated and now point to the same new infrastructure as their replacements above.
 
 .. config:setting:: maximum-notifications-per-channel
   :displayname: Maximum notifications per channel (Push Notifications)
