@@ -44,7 +44,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-10-is-now-availa
 
 #### User Interface
  - Pre-packaged Playbooks plugin version [v2.11.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.11.1).
- - Pre-packaged Agents plugin version [v2.5.0](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v2.5.0).
+ - Pre-packaged Agents plugin version [v2.5.1](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v2.5.1).
  - Pre-packaged Calls plugin version [v1.12.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.12.2).
  - Pre-packaged MS Calendar plugin version [v1.7.0](https://github.com/mattermost/mattermost-plugin-mscalendar/releases/tag/v1.7.0).
  - Pre-packaged Boards plugin version [v9.3.1](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.3.1).
@@ -147,6 +147,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-10-is-now-availa
  - Fixed an issue where bots and integrations could not update markdown action buttons (``mm_blocks_actions``) on their own posts via the API.
  - Fixed an issue where the web app didn't load the channel header and post textbox earlier.
  - Fixed an issue where editing a message could cause it to appear as a draft (reported on Chrome, webapp).
+ - Fixed an issue with the focus outline on multi-image gallery thumbnails being clipped after closing the image preview.
 
 ### API Changes
  - Added ``POST /actions/{action_id:[A-Za-z0-9_-]+}`` (``doPostAction``) API endpoint.
