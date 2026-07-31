@@ -28,6 +28,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 - Added an advanced setting to enable or disable session attributes. Some resources may be inaccessible when disabled.
 - Enabled client-collected **Session Attributes** to be sent to enabled servers.
 - Added ``F12`` to open **Developer Tools** for current tab.
+- Improved how network requests and embedded content from connected servers are handled, keeping requests scoped to configured servers.
 
 ### Architectural Changes
 
