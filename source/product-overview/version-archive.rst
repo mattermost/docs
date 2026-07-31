@@ -21,11 +21,11 @@ If you want to check that the version of Mattermost you are installing is the of
     - SHA-256 Checksum: ``TBD``
     - GPG Signature: https://releases.mattermost.com/11.8.5/mattermost-11.8.5-linux-amd64.tar.gz.sig
     - SBOM Download Link: https://releases.mattermost.com/11.8.5/sbom-enterprise-v11.8.5.json
-  Mattermost Enterprise Edition v11.7.8 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-7-extended-support-release>`__ - `Download <https://releases.mattermost.com/11.7.8/mattermost-11.7.8-linux-amd64.tar.gz?src=arc>`__
-    - ``https://releases.mattermost.com/11.7.8/mattermost-11.7.8-linux-amd64.tar.gz``
+  Mattermost Enterprise Edition v11.7.9 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-7-extended-support-release>`__ - `Download <https://releases.mattermost.com/11.7.9/mattermost-11.7.9-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/11.7.9/mattermost-11.7.9-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``TBD``
-    - GPG Signature: https://releases.mattermost.com/11.7.8/mattermost-11.7.8-linux-amd64.tar.gz.sig
-    - SBOM Download Link: https://releases.mattermost.com/11.7.8/sbom-enterprise-v11.7.8.json
+    - GPG Signature: https://releases.mattermost.com/11.7.9/mattermost-11.7.9-linux-amd64.tar.gz.sig
+    - SBOM Download Link: https://releases.mattermost.com/11.7.9/sbom-enterprise-v11.7.9.json
   Mattermost Enterprise Edition v11.6.6 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-6-feature-release>`__ - `Download <https://releases.mattermost.com/11.6.6/mattermost-11.6.6-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/11.6.6/mattermost-11.6.6-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``2f4546070eb3a092f3e4c02ff67c7d832ce2d9c7d7858246133e5886978ef605``
@@ -504,11 +504,11 @@ If you want to check that the version of Mattermost you are installing is the of
     - SHA-256 Checksum: ``TBD``
     - GPG Signature: https://releases.mattermost.com/11.8.5/mattermost-team-11.8.5-linux-amd64.tar.gz.sig
     - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v11.8.5/sbom-mattermost-v11.8.5.json
-  Mattermost Team Edition v11.7.8 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-7-extended-support-release>`__ - `Download <https://releases.mattermost.com/11.7.8/mattermost-team-11.7.8-linux-amd64.tar.gz?src=arc>`__
-    - ``https://releases.mattermost.com/11.7.8/mattermost-team-11.7.8-linux-amd64.tar.gz``
+  Mattermost Team Edition v11.7.9 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-7-extended-support-release>`__ - `Download <https://releases.mattermost.com/11.7.9/mattermost-team-11.7.9-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/11.7.9/mattermost-team-11.7.9-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``TBD``
-    - GPG Signature: https://releases.mattermost.com/11.7.8/mattermost-team-11.7.8-linux-amd64.tar.gz.sig
-    - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v11.7.8/sbom-mattermost-v11.7.8.json
+    - GPG Signature: https://releases.mattermost.com/11.7.9/mattermost-team-11.7.9-linux-amd64.tar.gz.sig
+    - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v11.7.9/sbom-mattermost-v11.7.9.json
   Mattermost Team Edition v11.6.6 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-6-feature-release>`__ - `Download <https://releases.mattermost.com/11.6.6/mattermost-team-11.6.6-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/11.6.6/mattermost-team-11.6.6-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``809c63cd1ed1b877cea9fa5aae996380cfde2dc18733353586239f99f3e9bbbc``
