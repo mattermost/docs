@@ -396,6 +396,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
   - Improved the precision of the OAuth Dynamic Client Registration (DCR) redirect URI allowlist by matching patterns per URL component.
   - Fixed an issue with the wrong scroll position in the permalink view of channels with images.
   - Fixed incorrect encoding of image URLs containing query parameters when using an image proxy.
+  - Fixed a bot import panic when a user existed without a bot record.
   - Mattermost v11.7.8 contains no database or functional changes.
 - **11.7.7, released 2026-07-17**
   - Mattermost v11.7.7 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
