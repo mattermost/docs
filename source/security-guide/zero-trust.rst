@@ -5,7 +5,7 @@ Mattermost is designed from the ground up to blend seamlessly into an organizati
 
 For security teams, Mattermost’s zero-trust-first approach ensures consistent compliance with organizational risk policies by automating key governance processes like incident response or data lifecycle management.
 
-This guide maps Mattermost's security capabilities to the five pillars of the `CISA Zero Trust Maturity Model <https://www.cisa.gov/zero-trust-maturity-model>` and describes how organizations can progress from a traditional perimeter-based stance to full, dynamic Zero Trust enforcement. Features are available on Enterprise or Enterprise Advanced editions as noted.
+This guide maps Mattermost's security capabilities to the five pillars of the `CISA Zero Trust Maturity Model <https://www.cisa.gov/zero-trust-maturity-model>`_ and describes how organizations can progress from a traditional perimeter-based stance to full, dynamic Zero Trust enforcement. Features are available on Enterprise or Enterprise Advanced editions as noted.
 
 User Management / Identity
 --------------------------
