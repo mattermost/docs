@@ -22,6 +22,7 @@ Platform and OS scope reflects reported and tested environments and may not repr
 
 ### Bug Fixes
  - Fixed potential causes of rendering a channel empty.
+ - Fixed an issue where **Enter** did not work on channels.
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
