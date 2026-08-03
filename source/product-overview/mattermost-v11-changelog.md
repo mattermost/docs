@@ -63,6 +63,9 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-10-is-now-availa
  - Added a **Regenerate** option to Personal Access Tokens in **Account Settings > Security** (including webapp).
  - Changed left-hand-side/right-hand-side to only be resizable with the left mouse button.
 
+#### Performance
+ - Benchmarking test results showed no significant difference: a -2.61% decrease in the number of supported users for the new release, which lies within the ``[-5%, +5%]`` prediction interval. View the full raw data and methodology in our [Performance Reports repository](https://github.com/mattermost/performance-reports/tree/main/performance-comparisons/v11.10).
+
 #### Plugins/Integrations
  - Added plugin support for pluggable tabs in the **Channel Settings** modal, including a new ``ChannelSettingsTab`` webapp registration surface.
  - Allowed plugins to implement ``MessagesWillBeConsumed`` without requiring the feature flag.
