@@ -347,6 +347,19 @@ The email verification process during Slack import depends on who performs the i
 * Users must first verify their email addresses before they can reset their password.
 * Additional email verification steps are required before account access.
 
+Existing account matching
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Slack import handles a Slack user's email address that matches an existing Mattermost account differently depending on who performs the import:
+
+**System administrator imports:**
+
+* If a Slack user's email matches an existing Mattermost account, that account is used and joined to the team.
+
+**Non-administrator imports:**
+
+* If a Slack user's email matches an existing Mattermost account, a new account is created instead of using the existing one.
+
 Account activation
 ~~~~~~~~~~~~~~~~~~
 
