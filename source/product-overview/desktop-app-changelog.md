@@ -29,6 +29,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 - Enabled client-collected **Session Attributes** to be sent to enabled servers.
 - Added ``F12`` to open **Developer Tools** for current tab.
 - Improved how network requests and embedded content from connected servers are handled, keeping requests scoped to configured servers.
+- Improved handling of page redirects and embedded content navigation across Desktop App windows.
 
 ### Architectural Changes
 
