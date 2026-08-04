@@ -24,6 +24,7 @@ Platform and OS scope reflects reported and tested environments and may not repr
   - Pre-packaged Microsoft Calendar plugin version [v1.6.2](https://github.com/mattermost/mattermost-plugin-mscalendar/releases/tag/v1.6.2).
   - Fixed an issue where the data retention policy teams endpoint returned more team information than intended.
   - Improved the precision of the OAuth Dynamic Client Registration (DCR) redirect URI allowlist by matching patterns per URL component.
+  - Hard-coded a second plugin signing key from Mattermost.
   - Mattermost v11.9.1 contains no database or functional changes.
 - **11.9.0, released 2026-07-16**
   - Original 11.9.0 release.
