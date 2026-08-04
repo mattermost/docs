@@ -105,6 +105,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-10-is-now-availa
  - Removed an unused feature flag ``OnboardingTourTips``.
  - Added an audit trail for property values.
  - Added support for team-scoped plugin products: a product registered via ``registerProduct`` with ``isTeamScoped`` set to true is now mounted under the team route with team context initialized from the URL. Products with global ``baseURLs`` are unaffected (including webapp).
+ - Hard-coded a second plugin signing key from Mattermost.
 
 #### mmctl
  - Added the ability to send direct messages with ``mmctl`` using ``mmctl post create @username --message <text>``.
