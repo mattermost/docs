@@ -9,6 +9,10 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 (release-v6-2)=
 ## Release v6.2 (Extended Support Release)
 
+- **v6.2.3, released 2026-08-04**
+
+  - TBD: Add v6.2.3 release notes.
+
 - **v6.2.2, released 2026-06-23**
 
   - Fixed an issue where notifications were dropped when the web app sent empty fields for Direct Messages, Group Messages, or system notifications.
@@ -22,7 +26,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
   - Original v6.2.0 release
 
-**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/v6.2.2)
+**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/v6.2.3)
 
 ### Compatibility
 
