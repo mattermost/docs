@@ -6,11 +6,11 @@ on:
       start_date:
         description: 'Start date (YYYY-MM-DD)'
         required: true
-        default: '2026-02-01'
+        default: '2026-05-01'
       end_date:
         description: 'End date (YYYY-MM-DD)'
         required: true
-        default: '2026-04-30'
+        default: '2026-07-31'
 
 jobs:
   export:
