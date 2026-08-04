@@ -153,6 +153,8 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-10-is-now-availa
  - Fixed an issue where the web app didn't load the channel header and post textbox earlier.
  - Fixed an issue where editing a message could cause it to appear as a draft (reported on Chrome, webapp).
  - Fixed an issue with the focus outline on multi-image gallery thumbnails being clipped after closing the image preview.
+ - Fixed an issue where typing in a thread or the right-hand sidebar with rich text editing enabled moved focus to the center channel message box.
+ - Fixed an issue where pressing **Enter** inside a heading could crash the web app.
 
 ### API Changes
  - Added ``POST /actions/{action_id:[A-Za-z0-9_-]+}`` (``doPostAction``) API endpoint.
