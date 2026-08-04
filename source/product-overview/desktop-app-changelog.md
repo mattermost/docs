@@ -9,9 +9,12 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 (release-v6-2)=
 ## Release v6.2 (Extended Support Release)
 
-- **v6.2.3, released 2026-08-04**
+- **v6.2.3, released 2026-08-14**
 
-  - TBD: Add v6.2.3 release notes.
+  - Mattermost Desktop App v6.2.3 contains low to medium severity level security fixes. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue where other views could end an active call.
+  - Fixed an issue in the Desktop App's internal URL validation.
+  - Improved how network requests and embedded content from connected servers are handled, keeping requests scoped to your configured servers.
 
 - **v6.2.2, released 2026-06-23**
 
