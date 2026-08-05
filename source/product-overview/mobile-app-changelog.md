@@ -12,7 +12,7 @@ Platform and OS scope reflects reported and tested environments and may not repr
 
 (release-v2-42-3)=
 ## 2.42.3 Release
- - Release Date: August 3, 2026
+ - Release Date: August 5, 2026
  - Server Versions Supported: Server v10.11.0+ is required. Self-Signed SSL certificates are not supported unless the user installs the CA certificate on their device.
 
 ### Compatibility
