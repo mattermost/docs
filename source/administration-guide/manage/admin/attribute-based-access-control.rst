@@ -16,7 +16,7 @@ Attribute-Based Access Control
 
 From Mattermost v10.9, system admins in large or complex organizations who require Zero Trust Security when handling with sensitive information can prevent unauthorized access through attribute-based access controls.
 
-Enforcing strict access controls based on user attributes eliminates manual role adjustment processes that can lead to security risks, inefficiencies, or inappropriate access, while maintaining security and compliance by ensuring that only authorized users can access specific Mattermost channels and teams.
+Enforcing strict access controls based on user attributes eliminates manual role adjustment processes that can lead to security risks, inefficiencies, or inappropriate access, while maintaining security and compliance by ensuring that only authorized users can access specific private Mattermost channels and teams. On public channels and teams, policies are advisory rather than a gate — see the advisory and strict behaviour described below.
 
 Attribute-based access control (ABAC) can be used with the following policy types:
 

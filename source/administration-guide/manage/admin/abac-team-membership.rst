@@ -24,7 +24,7 @@ Access tab: Public/Private team cards
 
 .. important::
 
-   This change affects **all Mattermost teams on all deployments**, regardless of whether ABAC is enabled or whether your organization has an Enterprise Advanced license. Any team admin who opens **Team Settings > Access** after upgrading will see the new UI.
+   This change affects **all Mattermost teams on all deployments**, regardless of whether ABAC is enabled or whether your organization has an Enterprise Advanced license. Any team admin who opens **Team Settings > Access** after upgrading will see the new UI. The exception is teams managed by LDAP/AD group sync, which show a static message in place of the cards — see `Switching modes`_.
 
 **What changed:** The "Allow any user to join" checkbox has been permanently replaced by two selection cards:
 
@@ -123,10 +123,10 @@ Team membership ABAC is also gated by the ``TeamMembershipAccessControl`` featur
      - Team membership ABAC OFF
    * - Join gate (private teams)
      - Enforced — non-qualifying users denied
-     - Off — anyone can join as before
+     - Not evaluated — private teams stay invite-only, as before
    * - Browse Teams filter
      - Private+ABAC teams hidden from non-qualifying users
-     - All teams visible
+     - No attribute filtering — standard privacy rules apply
    * - Team Membership tab (Team Settings)
      - Visible to Team Admins and System Admins
      - Hidden — tab does not appear
@@ -143,8 +143,8 @@ Team membership ABAC is also gated by the ``TeamMembershipAccessControl`` featur
      - Filters on private+ABAC teams
      - All users shown, as before
    * - Public/Private cards (Access tab)
-     - **Always visible** — not gated
-     - **Still visible** — always rendered (see note above)
+     - **Visible** — not gated
+     - **Still visible** — rendered on every team except group-synced ones
    * - Channel ABAC
      - Unaffected
      - Unaffected
@@ -511,4 +511,4 @@ Email-domain restrictions (configured on the Access tab) and ABAC rules (Team Me
 Why does saving rules trigger a sync even when auto-add is off?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Auto-add controls only the **add pass** (whether sync adds qualifying non-members). The **enforcement pass** (removing non-qualifying members from private teams) runs whenever rules exist, regardless of auto-add. This ensures that newly saved or changed rules take effect immediately rather than waiting up to 30 minutes for the next scheduled sync.
+Auto-add controls only the **add pass** (whether sync adds qualifying non-members). The **enforcement pass** (removing non-qualifying members from private teams) runs whenever rules exist, regardless of auto-add. This ensures that newly saved or changed rules take effect immediately rather than waiting up to 60 minutes for the next scheduled sync.

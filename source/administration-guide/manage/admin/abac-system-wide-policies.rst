@@ -115,7 +115,9 @@ Default channels (such as Town Square and Off-Topic), shared channels, and group
 Assign policies to teams
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-From Mattermost v11.10, system-wide policies can also be assigned to teams. Go to **System Console > User Management > Teams**, open the team you want to configure, and use the **Membership Policy** section to link an existing policy.
+From Mattermost v11.10, system-wide policies can also be assigned to teams. Go to **System Console > User Management > Teams** and open the team you want to configure. In the **Team Management** section, enable **Manage membership with attribute based membership policies** — the **Membership policies** section only appears once this toggle is on. Then link an existing policy and select **Save**.
+
+Group-synced teams cannot use membership policies, so the toggle is unavailable on them.
 
 The policy behaves differently depending on the team's privacy mode:
 
