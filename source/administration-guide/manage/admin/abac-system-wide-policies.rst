@@ -127,7 +127,9 @@ For a full description of team assignment, custom rules, sync configuration, and
 Delete policies
 ~~~~~~~~~~~~~~~
 
-To delete a policy, select the **Delete** button next to the policy you want to remove. You can only delete policies that are not currently assigned to any channels or teams. If a policy is assigned to channels or teams, you must first remove it from all assigned resources before you can delete it.
+To delete a policy, select the **Delete** button next to the policy you want to remove. Policies that are still assigned to channels cannot be deleted — remove the policy from those channels first.
+
+Team assignments are not checked before deletion, so unlink the policy from every team that uses it before deleting it. Otherwise those teams keep a reference to a policy that no longer exists.
 
 Define access controls per channel
 ----------------------------------

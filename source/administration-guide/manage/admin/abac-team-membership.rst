@@ -42,18 +42,18 @@ Access tab: Public/Private team cards
 Switching modes
 ~~~~~~~~~~~~~~~~
 
-**Private → Public:** Always safe — relaxes enforcement. Saves directly with no confirmation modal. If a policy is applied, the team immediately transitions to advisory mode: no existing members are removed.
+**Private → Public:** Relaxes enforcement. Saves directly with no confirmation modal. If a policy is applied, the team immediately transitions to advisory mode: no existing members are removed.
 
-**Public → Private:** If team ABAC is enabled (both flags on) and the team has a membership policy assigned, clicking **Private Team** opens a confirmation modal before saving:
+**Public → Private:** If team ABAC is enabled (Enterprise Advanced license and **Enable Attribute-Based Access Control**) and the team has a membership policy assigned, clicking **Private Team** opens a confirmation modal before saving:
 
 - Title: **"Switch to Private Team?"**
-- Body shows how many current members do not meet the policy criteria and will be removed at the next sync. (If no count is available, a generic warning is shown instead.)
+- Body shows how many current members do not meet the policy criteria and will be removed at the next sync. If all current members meet the criteria, the modal says no one will be removed. If no count is available, a generic warning is shown instead.
 - **Cancel** — closes the modal, no changes made.
 - **Switch to Private** — saves the change and immediately creates a team sync job to enforce strict mode.
 
-If no policy is assigned, switching Public → Private saves directly with no modal.
+If the admin making the switch does not meet the policy criteria, a **"Cannot switch to Private Team"** error modal appears instead and the switch is blocked, since strict mode would remove them from the team. Update the rules to include yourself, or ask another admin to make the switch.
 
-**The cards stay interactive on ABAC-governed teams.** ABAC never disables the Public/Private cards. A public-to-private switch on a governed team is guarded by the mode-flip confirmation modal described above, not by locking the cards.
+If no policy is assigned, switching Public → Private saves directly with no modal.
 
 Other Access tab fields (Invite Code and Allowed Email Domain) are unaffected by this change. On teams managed by LDAP/AD group sync, the Access tab shows a static "Members of this team are added and removed by linked groups" message instead of the cards.
 
@@ -108,18 +108,19 @@ Before configuring team membership policies:
 
 1. :doc:`Configure user attributes </administration-guide/manage/admin/user-attributes>` in the System Console.
 2. Go to **System Console > System Attributes > Attribute-Based Access** and enable **Enable Attribute-Based Access Control**.
-3. Enable the ``TeamMembershipAccessControl`` feature flag. See the Mattermost developer documentation for details on `enabling feature flags in a self-hosted deployment <https://developers.mattermost.com/contribute/more-info/server/feature-flags/#self-hosted-and-local-development>`_. Mattermost Cloud customers can request this feature flag be enabled by contacting their Mattermost Account Manager or by `creating a support ticket <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=11184911962004>`_.
-4. For Team Admins configuring rules: the ``manage_team_access_rules`` permission is required. This permission is included in the Team Admin role by default.
+3. For Team Admins configuring rules: the ``manage_team_access_rules`` permission is required. This permission is included in the Team Admin role by default.
 
-**What changes when the flags are off:**
+Team membership ABAC is also gated by the ``TeamMembershipAccessControl`` feature flag, which is **enabled by default** from Mattermost v11.10. Disabling it turns off team enforcement without affecting channel ABAC. See the Mattermost developer documentation for details on `feature flags in a self-hosted deployment <https://developers.mattermost.com/contribute/more-info/server/feature-flags/#self-hosted-and-local-development>`_.
+
+**What changes when team membership ABAC is off:**
 
 .. list-table::
    :header-rows: 1
    :widths: 42 29 29
 
    * - Surface
-     - Both flags ON
-     - Either flag OFF
+     - Team membership ABAC ON
+     - Team membership ABAC OFF
    * - Join gate (private teams)
      - Enforced — non-qualifying users denied
      - Off — anyone can join as before
@@ -142,11 +143,11 @@ Before configuring team membership policies:
      - Filters on private+ABAC teams
      - All users shown, as before
    * - Public/Private cards (Access tab)
-     - **Always visible** — not gated by these flags
+     - **Always visible** — not gated
      - **Still visible** — always rendered (see note above)
    * - Channel ABAC
-     - Unaffected by team flag
-     - Unaffected by team flag
+     - Unaffected
+     - Unaffected
 
 System Admin configuration
 ---------------------------
@@ -157,35 +158,29 @@ Assign a membership policy to a team
 System Admins assign existing system-wide membership policies to teams via the per-team System Console page.
 
 1. Go to **System Console > User Management > Teams** and open the team you want to configure.
-2. Locate the **Membership Policy** section.
-3. Select **Link to a policy** and choose an existing policy from the picker.
+2. In the **Team Management** section, enable **Manage membership with attribute based membership policies**. The **Membership policies** and **Team-specific membership rules** sections appear only once this toggle is on. The toggle is unavailable on group-synced teams, and becomes read-only once a policy is linked.
+3. In the **Membership policies** section, select **Link to a policy** and choose an existing policy from the picker.
 4. Select **Save**.
 
-Before saving, a confirmation modal shows:
+Before saving, an **Apply membership policy** confirmation modal appears. It shows only the outcomes that apply to this team:
 
-- The number of workspace users who currently qualify for the policy.
-- The number of current team members who do not qualify (and will be affected at the next sync on private teams).
-- An **empty-team warning** if the team is private and no current member qualifies.
+- The number of current members who do not meet the policy criteria and will be removed at the next sync — private teams only, and only when that number is above zero.
+- The number of qualifying users who will be added at the next sync — only when auto-add is enabled and that number is above zero.
+- An **empty-team warning** if the team is private and no user matches the policy ("Saving may result in an empty private team").
+- A confirmation prompt: "Are you sure you want to apply the membership policy?"
 
-**To remove a policy:** Select the trash icon next to the policy row, then **Save**. The team's enforcement flag is cleared and the team reverts to standard access behavior.
+**To remove a policy:** Select the trash icon next to the policy row and confirm in the **"Remove this team from policy"** modal, then **Save**. Existing members are retained and the team returns to its standard access mode at the next sync.
 
 **Policy list team counts:** The **Membership Policies** list page shows the count of channels and teams each policy is applied to — for example, ``2 channels, 1 team``. A zero side is omitted (so ``1 team`` not ``0 channels, 1 team``).
 
-Enable auto-add from the Membership Policy section
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Configure team-specific membership rules
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When a parent policy is linked, the **Membership Policy** section shows an **Auto-add** checkbox per linked policy row. This checkbox is always enabled for any linked policy — it does not require custom rules to exist. Checking it and saving starts the backfill scan immediately.
-
-This is separate from the **Auto-add members based on access rules** checkbox in the Custom access rules panel (see below), which requires at least one custom rule before it can be checked.
-
-Configure custom access rules
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-In addition to a system-wide parent policy, System Admins can define team-specific custom rules directly on the per-team System Console page.
+In addition to a system-wide parent policy, System Admins can define team-specific rules directly on the per-team System Console page.
 
 1. Go to **System Console > User Management > Teams** and open the team.
 2. Enable the **Manage membership with attribute based membership policies** switch.
-3. Scroll to the **Custom access rules** panel.
+3. Scroll to the **Team-specific membership rules** panel.
 4. Select **Add attribute** to add a condition. For each condition, choose:
 
    - **Attribute**: The user profile attribute to evaluate.
@@ -194,8 +189,8 @@ In addition to a system-wide parent policy, System Admins can define team-specif
 
    All conditions are combined with a logical AND — users must satisfy all of them.
 
-5. Optionally, check **Auto-add members based on access rules**. This checkbox requires at least one rule to be defined before it can be enabled.
-6. Select **Save**. A confirmation modal shows qualifying and non-qualifying counts before changes are applied.
+5. Optionally, check **Auto-add members based on access rules**. This checkbox is enabled once the team has at least one rule **or** a linked parent policy. There is only one auto-add setting per team — it is not configured per linked policy.
+6. Select **Save**. The **Apply membership policy** modal shows the impact counts before changes are applied.
 
 .. important::
 
@@ -203,15 +198,15 @@ In addition to a system-wide parent policy, System Admins can define team-specif
 
 .. note::
 
-   Custom rules compose additively with any parent policy assigned to the team. A user must satisfy **both** the parent policy and the custom rules. Custom rules cannot weaken or bypass the parent.
+   Team-specific rules compose additively with any parent policy assigned to the team. A user must satisfy **both** the parent policy and the team-specific rules. Team-specific rules cannot weaken or bypass the parent.
 
 Sync status footer (System Console)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Below the Custom access rules panel, a sync status footer appears when membership policy enforcement is enabled. It is rendered inside the white-box Custom access rules panel — scroll down within the panel to find it.
+A sync status footer is rendered at the bottom of the **Team-specific membership rules** panel — scroll down within the panel to find it.
 
 - **"Never synced."** with a **Sync now** link — no sync has run for this team yet.
-- **"Last synced N minutes ago."** with a **Sync now** link — after a prior sync.
+- **"Last synced N minutes ago."** with a **Sync now** link — after a prior sync. Older syncs are reported in hours or days.
 - Clicking **Sync now** changes the link to **"Syncing…"** with a spinner while the job is in-flight, then updates to **"Last synced just now."** on completion.
 
 Monitor membership sync
@@ -219,7 +214,7 @@ Monitor membership sync
 
 System Admins can review the results of team sync jobs from the System Console.
 
-1. Go to **System Console > Access Control > Membership sync jobs**.
+1. Go to **System Console > System Attributes > Membership Policies** and scroll to the **Membership Sync Jobs** panel.
 2. Select a job row to open the **Sync Job Details** modal.
 3. Select the **Teams** tab.
 
@@ -231,11 +226,11 @@ The Teams tab shows per-team rows with:
 
 .. note::
 
-   The Teams tab appears only when viewing a team sync job directly, or a channel sync job that was chained from a team sync. The system console section heading was renamed from "Channel access control sync jobs" to **"Membership sync jobs"** to reflect both job types.
+   The Teams tab appears only when viewing a team sync job directly, or a channel sync job that was chained from a team sync. The system console section heading was renamed from "Channel access control sync jobs" to **"Membership Sync Jobs"** to reflect both job types.
 
 .. tip::
 
-   The **Run sync job** button on the Membership Policies list page runs a channel sync only, not a team sync. To trigger a team sync, use the **Sync now** link on the per-team System Console page or in Team Settings > Team Membership tab.
+   The **Run Channel Sync** button on the Membership Policies page runs a channel sync only, not a team sync. To trigger a team sync, use the **Sync now** link on the per-team System Console page or in Team Settings > Team Membership tab.
 
 Team Admin configuration
 -------------------------
@@ -254,7 +249,7 @@ The **Team Membership** tab lets Team Admins view the system policy applied to t
 The tab is visible only when:
 
 - **Enable Attribute-Based Access Control** is on.
-- The ``TeamMembershipAccessControl`` feature flag is on.
+- The ``TeamMembershipAccessControl`` feature flag is on (enabled by default).
 - The user has the ``manage_team_access_rules`` permission (Team Admin or System Admin).
 
 To open Team Settings: select the team name in the sidebar → **Team Settings** → **Team Membership** tab.
@@ -269,10 +264,12 @@ Configure custom rules
 
 Team Admins can add attribute rules that apply on top of any system policy. These rules use the same Basic Mode editor as channel rules.
 
-1. Select **Add attribute rule**.
+1. Select **Add attribute**.
 2. Choose the attribute, operator, and value for each condition.
 3. Add additional rules as needed. All rules are AND-combined.
 4. Select **Save** to open the save confirmation modal.
+
+Clearing every rule and saving opens a **"Remove membership rules?"** modal instead. Confirming removes the team's attribute enforcement; current members keep their access.
 
 Available operators: **Is**, **Is not**, **In**, **Starts with**, **Ends with**, **Contains**. For ranked attributes: **Is exactly**, **Is at least**, **Is greater than**, **Is at most**, **Is less than**.
 
@@ -294,30 +291,39 @@ The **Auto-add members based on access rules** checkbox controls whether the syn
 - Subsequent syncs continue to add newly qualifying users.
 - Turning auto-add **off** does not remove any members — it is additive only. Toggling auto-add off also does **not** trigger a sync job.
 
-Test matching users
-~~~~~~~~~~~~~~~~~~~~
+Test access rule
+~~~~~~~~~~~~~~~~~
 
-Select **Test matching users** to open a preview modal listing users who would match the current rules, before saving. This lets you verify your intended scope without applying the rules.
+Select **Test access rule** to open a preview modal listing users who match the current rules, before saving. This lets you verify your intended scope without applying the rules.
 
 .. note::
 
-   If the current rules would exclude the editing Team Admin, the result set is empty. This is intentional — the preview is fail-secure and does not leak information about restricted users.
+   If the current rules would exclude the editing Team Admin, the **Test access rule** button is disabled with an explanatory tooltip rather than returning results.
 
 Save confirmation and safety
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Selecting **Save** opens a confirmation modal before changes are applied. The modal shows:
+Selecting **Save** opens a confirmation modal before changes are applied. What it shows depends on the team's mode:
 
-- The number of workspace users who match the current rules.
-- The number of current team members who do not qualify (and will be removed at the next sync on private teams).
+**Private teams (strict):**
 
-**Empty-team warning**: For private teams, if no current member qualifies under the rules, the modal displays a highlighted warning. Save is not blocked, but the team will be empty until sync runs.
+- The number of users who match the current rules and will have access.
+- The number of current members who do not match the rules and may be affected — shown only when that number is above zero.
 
-**Self-exclusion hard block**: If the rules would exclude the editing Team Admin, a separate error modal appears *before* the confirmation modal and prevents saving. Select **Back to editing** to adjust the rules.
+**Public teams (advisory):**
+
+- A note that the rules are advisory: no one is blocked or removed.
+- The number of users who match the current rules.
+
+The counts are evaluated against the team's rules combined with any parent policy.
+
+**Empty-team warning**: For private teams, if no user matches the rules, the modal displays a highlighted warning. Save is not blocked, but the team will be empty until sync runs.
+
+**Self-exclusion hard block**: On private teams, if the rules would exclude the editing Team Admin, a separate error modal appears *before* the confirmation modal and prevents saving. Select **Back to editing** to adjust the rules. Public teams are exempt — advisory mode never removes anyone.
 
 .. note::
 
-   The self-exclusion block only applies to the editing admin's own custom rules. A system-level parent policy that happens to exclude all Team Admins is not blocked here — this is a known limitation.
+   By design, the self-exclusion block evaluates only the admin's own team rules. A system-level parent policy that excludes the admin is a System Admin decision and is not blocked here.
 
 Sync status footer (Team Settings)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -363,14 +369,15 @@ The Invite People modal adapts to the team's enforcement mode:
 **Private + ABAC team (strict mode):**
 
 - Only users who qualify for the team's membership policy appear in search results. Non-qualifying users are filtered out before any results are shown.
-- A section notice informs admins: *"Only users who meet the membership requirements can be added to this team."*
-- Qualifying users in the results show attribute value tags (for example, "Department: Engineering").
+- A notice titled **"Team access is restricted by user attributes"** informs admins: *"Only users who meet the membership requirements can be added to this team."*
+- The notice lists the policy's attribute value tags (for example, "Department: Engineering").
+- The invite link warns: *"People who use this link must meet the membership requirements to join."*
 
 **Public + ABAC team (advisory mode):**
 
 - All users appear in search results — there is no filtering because advisory mode never blocks access.
-- A section notice is still shown informing admins that the team has membership requirements.
-- A warning is shown when generating an invite link, noting that the link recipients will be subject to membership requirements.
+- A notice titled **"This team has membership requirements"** is still shown, explaining that users who do not meet them can still join but will not be automatically added.
+- The invite link warns: *"People who use this link can join even if they do not meet the membership requirements, but will not be automatically added."*
 
 **Team without a policy:**
 
@@ -379,22 +386,21 @@ The Invite People modal adapts to the team's enforcement mode:
 Add Members flow (admin)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When a System Admin or Team Admin uses the **Add Members** admin flow on a private + ABAC team and selects multiple users, ABAC denials are reported per user without aborting the batch:
+When a System Admin or Team Admin uses the **Add Members** admin flow on a private + ABAC team, non-qualifying users are blocked at selection time rather than at submission:
 
-- Qualifying users in the selection are added successfully.
-- Non-qualifying users show an inline **"Does not meet membership requirements"** indicator on their row.
-- The batch continues — qualifying users are not affected by a co-selected user's denial.
+- Non-qualifying candidates show an inline **"Does not meet membership requirements"** indicator on their row and cannot be selected, including by keyboard.
+- Only qualifying users can be added to the selection, so the add never fails partway through.
 
 On a public + ABAC team (advisory mode), all users can be added without restriction.
 
 Team Members modal
 ~~~~~~~~~~~~~~~~~~~
 
-When a team has an active membership policy:
+When a team has an active membership policy, a notice banner appears at the top of the Team Members modal:
 
-- A requirements notice banner appears at the top of the Team Members modal explaining that membership is controlled by access rules.
-- Qualifying members see attribute value tags on their own user entry (for example, "Department: Engineering").
-- Members without the matching attributes see only the generic notice — attribute values are never shown to non-holders.
+- On private teams: **"Team access is restricted by user attributes"** — only people who meet the membership requirements can be members.
+- On public teams: **"This team has membership requirements"** — people who do not meet them can still join, but will not be automatically added.
+- The banner lists the policy's attribute value tags (for example, "Department: Engineering"). Values the viewer is not permitted to see are stripped server-side, so a non-holder sees only the notice.
 
 Membership notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -411,7 +417,7 @@ When a parent (system-level) policy and custom team rules both apply:
 - The parent policy is shown in a non-dismissible info banner at the top of the Team Membership tab (read-only).
 - The user must satisfy **both** the parent policy and the custom team rules to be admitted.
 - Custom rules can only add restrictions — they cannot weaken or bypass the parent policy.
-- If a parent policy is deleted, the deletion cascades to unlink it from the team. Child (team-scoped) policies are not cascade-deleted.
+- Deleting a parent policy does not unlink it from the team or delete the team's own rules. Unlink the policy from each team before deleting it.
 
 Sync behavior
 --------------
@@ -425,7 +431,7 @@ A team sync batch runs in the following order:
 
 **Mass-removal guardrail**: If a sync pass would remove more than 50% of a team's current members, the job sets a warning flag visible in the Sync Job Details > Teams tab. The job is not blocked — all removals proceed — but the warning is surfaced for admin review.
 
-Team sync also runs automatically every 30 minutes to handle attribute changes propagated from LDAP or SAML.
+Team sync also runs automatically on a schedule to handle attribute changes propagated from LDAP or SAML. The interval is set by ``AccessControlSettings.SyncJobIntervalSeconds`` and defaults to 3600 seconds (60 minutes). The minimum accepted value is 60 seconds, and a change requires a server restart to take effect. The same interval governs channel membership sync.
 
 Mutual exclusivity with group sync
 ------------------------------------
@@ -448,10 +454,10 @@ Why is the Team Membership tab not visible in Team Settings?
 The tab requires all of the following:
 
 - **Enable Attribute-Based Access Control** is ON in System Console > System Attributes > Attribute-Based Access.
-- The ``TeamMembershipAccessControl`` feature flag is ON.
+- The ``TeamMembershipAccessControl`` feature flag is ON (enabled by default).
 - The user has the ``manage_team_access_rules`` permission (Team Admin or System Admin).
 
-If all three conditions are met but the tab is still missing, confirm the feature flag is actually enabled by checking **System Console > Environment > Feature Flags** or the server configuration.
+If all three conditions are met but the tab is still missing, confirm the feature flag has not been disabled by checking **System Console > Experimental > Feature Flags** or the server configuration.
 
 Why are private ABAC teams not appearing in Browse Teams for some users?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -471,7 +477,7 @@ No. Group sync and ABAC are mutually exclusive on a per-team basis. If a team is
 How quickly are membership changes applied?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Saving rules in Team Settings or the System Console triggers an immediate team sync — **including when auto-add is off**, because enforcement (removal on private teams) runs regardless of the auto-add setting. Changes are applied as soon as the sync completes. An automatic sync also runs every 30 minutes to process attribute changes from LDAP or SAML.
+Saving rules in Team Settings or the System Console triggers an immediate team sync — **including when auto-add is off**, because enforcement (removal on private teams) runs regardless of the auto-add setting. Changes are applied as soon as the sync completes. A scheduled sync also runs on the interval set by ``AccessControlSettings.SyncJobIntervalSeconds`` (60 minutes by default) to process attribute changes from LDAP or SAML.
 
 Does System Admin role bypass team ABAC enforcement?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -481,7 +487,9 @@ No. All roles — including System Admin — are subject to team ABAC policy eva
 What happens when I switch a team from public to private while a policy is assigned?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If team ABAC is enabled (both flags on) and a policy is assigned to the team, clicking **Private Team** opens a confirmation modal — **"Switch to Private Team?"** — showing how many current members do not meet the policy criteria. Confirming the switch saves the change and triggers an immediate sync to enforce strict mode. Members who don't qualify are removed at that sync.
+If team ABAC is enabled (Enterprise Advanced license and **Enable Attribute-Based Access Control**) and a policy is assigned to the team, clicking **Private Team** opens a confirmation modal — **"Switch to Private Team?"** — showing how many current members do not meet the policy criteria. Confirming the switch saves the change and triggers an immediate sync to enforce strict mode. Members who don't qualify are removed at that sync.
+
+If the admin making the switch does not meet the criteria themselves, the switch is blocked with a **"Cannot switch to Private Team"** modal.
 
 If no policy is assigned, the switch saves directly with no confirmation.
 
@@ -493,12 +501,12 @@ Switching from Private to Public always saves directly with no confirmation moda
 Can I add a non-qualifying user to a private ABAC team?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-No. The enforcement gate applies to all add paths: the Invite People modal (non-qualifying users are filtered from search results entirely), the Add Members admin flow (inline denial per user), and direct API calls. The error message is generic and does not expose policy names or attribute details. Qualifying users in the same batch request are still added — a denial for one user does not abort the rest.
+No. The enforcement gate applies to all add paths: the Invite People modal (non-qualifying users are filtered from search results entirely), the Add Members admin flow (non-qualifying users cannot be selected), and direct API calls. The error message is generic and does not expose policy names or attribute details.
 
 How does ABAC interact with email-domain restrictions?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Email-domain restrictions (configured on the Access tab) and ABAC rules (Team Membership tab) apply independently. A user must satisfy both to join the team. If both are configured and they conflict — for example, an email-domain rule and an attribute rule that together make the team unreachable — no warning is shown at configuration time. Review both settings together when debugging unexpected access denials.
+Email-domain restrictions (configured on the Access tab) and ABAC rules (Team Membership tab) apply independently, and a user must satisfy both to join the team. The domain check runs first, so a user rejected on domain grounds never reaches policy evaluation. The two settings are not cross-validated at configuration time, so review them together when debugging unexpected access denials.
 
 Why does saving rules trigger a sync even when auto-add is off?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
