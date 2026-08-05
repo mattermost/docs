@@ -13,7 +13,7 @@ For example, you notice a public post in a channel that contains internal projec
 
 .. note::
 
-  You can only quarantine messages posted in public and private channels. The **Quarantine for Review** action isn't available in direct messages and group messages.
+  You can only quarantine messages posted in public or private channels. The **Quarantine for Review** action isn't available in direct messages or group messages.
 
 1. Hover over the message, select the **More actions** |more-icon| icon, and then select **Quarantine for Review**.
 2. Select a **reason** for quarantining the message, and add a comment explaining why you're quarantining it, when required.
