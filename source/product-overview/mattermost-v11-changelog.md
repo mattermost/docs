@@ -49,7 +49,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-10-is-now-availa
  - Pre-packaged Calls plugin version [v1.12.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.12.2).
  - Pre-packaged MS Calendar plugin version [v1.7.0](https://github.com/mattermost/mattermost-plugin-mscalendar/releases/tag/v1.7.0).
  - Pre-packaged Boards plugin version [v9.3.1](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.3.1).
- - Added a WYSIWYG editor option for message composition, allowing users to compose messages with rich-text formatting while preserving full markdown round-trip.
+ - Added a WYSIWYG editor option for message composition, allowing users to compose messages with rich-text formatting while preserving full markdown round-trip (in Beta and behind a feature flag).
  - Added a media gallery layout for posts with multiple images or videos, plus inline frame previews for single videos.
  - Added support for a file upload element type in interactive dialogs.
  - Added support for Mattermost Blocks as a new way to create Interactive Messages (including webapp and mobile app).
