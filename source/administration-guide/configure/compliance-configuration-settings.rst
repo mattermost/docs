@@ -140,6 +140,150 @@ Run deletion job now
 
 Start a Data Retention deletion job immediately. You can monitor the status of the job in the data deletion job table within the Policy Log section.
 
+.. config:setting:: time-between-batches-milliseconds
+  :displayname: Time between batches (Data Retention)
+  :systemconsole: Compliance > Data Retention Policies
+  :configjson: .DataRetentionSettings.TimeBetweenBatchesMilliseconds
+  :environment: MM_DATARETENTIONSETTINGS_TIMEBETWEENBATCHESMILLISECONDS
+  :description: The time in milliseconds between batches processed during data retention job execution. Used to control the rate at which data is deleted to reduce database load. Default is 100 milliseconds.
+
+Time between batches
+~~~~~~~~~~~~~~~~~~~~~
+
+The time in milliseconds between batches processed during data retention job execution. This setting helps control the rate at which data is deleted to reduce database load during retention operations.
+
+Default is 100 milliseconds. Possible values are any non-negative integer (≥ 0).
+
++--------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"TimeBetweenBatchesMilliseconds": 100`` with numerical input.                |
++--------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: retention-ids-batch-size
+  :displayname: Retention IDs batch size (Data Retention)
+  :systemconsole: Compliance > Data Retention Policies
+  :configjson: .DataRetentionSettings.RetentionIdsBatchSize
+  :environment: MM_DATARETENTIONSETTINGS_RETENTIONIDSBATCHSIZE
+  :description: The number of retention IDs to process in a single batch during data retention job execution. Default is 100.
+
+Retention IDs batch size
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The number of retention IDs to process in a single batch during data retention job execution. This setting controls how many items are processed together for optimal performance.
+
+Default is 100. Possible values are any non-negative integer (≥ 0).
+
++-----------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RetentionIdsBatchSize": 100`` with numerical input.          |
++-----------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: boards-retention-days
+  :displayname: Boards retention days (Data Retention)
+  :systemconsole: Compliance > Data Retention Policies
+  :configjson: .DataRetentionSettings.BoardsRetentionDays
+  :environment: MM_DATARETENTIONSETTINGS_BOARDSRETENTIONDAYS
+  :description: Set how long Mattermost keeps boards data. Default is 365 days.
+
+Boards retention days
+~~~~~~~~~~~~~~~~~~~~~
+
+Set how long Mattermost keeps boards data. When set to a value greater than 0, boards data older than the specified number of days will be deleted during retention job execution only when boards deletion is enabled via ``EnableBoardsDeletion``.
+
+Default is 365 days. Possible values are any non-negative integer (≥ 0).
+
++-----------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"BoardsRetentionDays": 365`` with numerical input.      |
++-----------------------------------------------------------------------------------------------------+
+
+.. config:setting:: enable-message-deletion
+  :displayname: Enable message deletion (Data Retention)
+  :systemconsole: Compliance > Data Retention Policies
+  :configjson: .DataRetentionSettings.EnableMessageDeletion
+  :environment: MM_DATARETENTIONSETTINGS_ENABLEMESSAGEDELETION
+
+  - **true**: Message deletion is enabled during data retention job execution.
+  - **false**: **(Default)** Messages are not deleted during data retention job execution.
+
+Enable message deletion
+~~~~~~~~~~~~~~~~~~~~~~~
+
+**True**: Message deletion is enabled during data retention job execution.
+
+**False**: Messages are not deleted during data retention job execution.
+
++-------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableMessageDeletion": false`` with options ``true`` and ``false``. |
++-------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  When ``EnableMessageDeletion`` is set to ``false``, messages will not be deleted regardless of other retention policy settings.
+
+.. config:setting:: enable-file-deletion
+  :displayname: Enable file deletion (Data Retention)
+  :systemconsole: Compliance > Data Retention Policies
+  :configjson: .DataRetentionSettings.EnableFileDeletion
+  :environment: MM_DATARETENTIONSETTINGS_ENABLEFILEDELETION
+
+  - **true**: File deletion is enabled during data retention job execution.
+  - **false**: **(Default)** Files are not deleted during data retention job execution.
+
+Enable file deletion
+~~~~~~~~~~~~~~~~~~~~
+
+**True**: File deletion is enabled during data retention job execution.
+
+**False**: Files are not deleted during data retention job execution.
+
++----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableFileDeletion": false`` with options ``true`` and ``false``. |
++----------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  When ``EnableFileDeletion`` is set to ``false``, files will not be deleted regardless of other retention policy settings.
+
+.. config:setting:: enable-boards-deletion
+  :displayname: Enable boards deletion (Data Retention)
+  :systemconsole: Compliance > Data Retention Policies
+  :configjson: .DataRetentionSettings.EnableBoardsDeletion
+  :environment: MM_DATARETENTIONSETTINGS_ENABLEBOARDSDELETION
+
+  - **true**: Boards deletion is enabled during data retention job execution.
+  - **false**: **(Default)** Boards data is not deleted during data retention job execution.
+
+Enable boards deletion
+~~~~~~~~~~~~~~~~~~~~~~
+
+**True**: Boards deletion is enabled during data retention job execution.
+
+**False**: Boards data is not deleted during data retention job execution.
+
++------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableBoardsDeletion": false`` with options ``true`` and ``false``. |
++------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  When ``EnableBoardsDeletion`` is set to ``false``, boards data will not be deleted regardless of other retention policy settings.
+
+.. config:setting:: batch-size-data-retention
+  :displayname: Batch size (Data Retention)
+  :systemconsole: Compliance > Data Retention Policies
+  :configjson: .DataRetentionSettings.BatchSize
+  :environment: MM_DATARETENTIONSETTINGS_BATCHSIZE
+  :description: The number of records to process in a single batch during data retention job execution. Default is 3000.
+
+Batch size
+~~~~~~~~~~
+
+The number of records to process in a single batch during data retention job execution. This setting controls how many records are processed together for optimal performance.
+
+Default is 3000. Possible values are any non-negative integer (≥ 0).
+
++-------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"BatchSize": 3000`` with numerical input.           |
++-------------------------------------------------------------------------------------------------+
+
 ----
 
 Compliance export

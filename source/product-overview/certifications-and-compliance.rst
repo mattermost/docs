@@ -231,7 +231,7 @@ Are you IPv6 compliant?
 
 Yes, the Mattermost platform is compliant with IPv6 when Audio & Screen Sharing is disabled, both for our :doc:`self-hosted and Cloud offerings </product-overview/editions-and-offerings>`.
 
-We plan to add IPv6 compliance for :doc:`Audio & Screen Sharing </administration-guide/configure/calls-deployment>` in future.
+We plan to add IPv6 compliance for :doc:`Audio & Screen Sharing </administration-guide/configure/calls-deployment-guide>` in future.
 
 Are you 508 compliant?
 ~~~~~~~~~~~~~~~~~~~~~~

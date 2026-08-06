@@ -2346,7 +2346,7 @@ If you upgrade from a release earlier than v7.5, please read the other [Importan
 ### Highlights
 
 #### Calls
- - [Audio calling and screen sharing](https://docs.mattermost.com/configure/calls-deployment.html) in channels is now generally available to all Mattermost customers.
+- [Audio calling and screen sharing](https://docs.mattermost.com/configure/calls-deployment-guide.html) in channels is now generally available to all Mattermost customers.
  - Updated [the keyboard shortcut](https://docs.mattermost.com/channels/keyboard-shortcuts-for-channels.html#calls-shortcuts) to start and join calls.
  - Please see [the docs](https://docs.mattermost.com/configure/plugins-configuration-settings.html#calls) for additional details on configuration setting updates.
 
@@ -6539,9 +6539,6 @@ If you upgrade from a release earlier than 5.23, please read the other [Importan
  - Ability to use Bleve to execute search functionality instead of the database.
 
 ### Improvements
-
-#### Enterprise Edition (EE)
- - Grace period after Enterprise Edition subscription expires was reduced from 15 days to 10 days. Moreover, Enterprise features are now disabled immediately after the grace period is over, instead of only after a server restart. Please see https://mattermost.com/pricing/#faq for more details.
 
 #### User Interface (UI)
  - Added a count for pinned posts header icon.

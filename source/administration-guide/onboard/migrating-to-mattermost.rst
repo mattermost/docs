@@ -37,6 +37,11 @@ Move from Slack
 
 See the :doc:`Migrate from Slack </administration-guide/onboard/migrate-from-slack>` documentation for details on migrating from Slack to Mattermost.
 
+Move from Rocket.Chat
+---------------------
+
+See the :doc:`Migrate from Rocket.Chat </administration-guide/onboard/migrate-from-rocketchat>` documentation for details on migrating from Rocket.Chat to Mattermost.
+
 Move from Jabber
 -------------------
 

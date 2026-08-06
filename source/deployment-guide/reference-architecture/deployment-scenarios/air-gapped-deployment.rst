@@ -60,7 +60,7 @@ On an internet connected machine, you must gather all required packages, contain
     **(Optional) Supporting Services**
     Consider downloading these additional resources if you plan to enable these optional components:
 
-    - :doc:`Mattermost Calls </administration-guide/configure/calls-deployment>`: `mattermost-calls-offloader <https://github.com/mattermost/calls-offloader/releases>`__ (required for recording, transcription and live captions) and `mattermost-rtcd <https://github.com/mattermost/rtcd/releases>`__ (required for performance and scalability).
+    - :doc:`Mattermost Calls </administration-guide/configure/calls-deployment-guide>`: `mattermost-calls-offloader <https://github.com/mattermost/calls-offloader/releases>`__ (required for recording, transcription and live captions) and `mattermost-rtcd <https://github.com/mattermost/rtcd/releases>`__ (required for performance and scalability).
     - `Elasticsearch <https://www.elastic.co/downloads/elasticsearch>`__ can be `deployed <https://www.elastic.co/docs/deploy-manage/deploy/self-managed/installing-elasticsearch>`__ for enhanced search performance at scale.
     - `Prometheus <https://prometheus.io/download/>`_ and `Grafana <https://grafana.com/grafana/download>`__ for monitoring and observability
 
@@ -76,10 +76,32 @@ On an internet connected machine, you must gather all required packages, contain
     - Load balancer: If you already have a load balancer running in your air-gapped environment you can skip this resource, otherwise we recommend deploying :doc:`NGINX </deployment-guide/server/setup-nginx-proxy>`, using the `NGINX Ingress Controller operator <https://docs.nginx.com/nginx-ingress-controller/installation/installing-nic/installation-with-operator/>`__.
     - Desktop app: Download the `required package <https://github.com/mattermost/desktop/releases>`_ based on your deployment method.
 
+    .. note::
+
+      **Database readiness check (air-gapped recommendation)**
+
+      If your installed Mattermost Operator supports ``spec.database.readinessCheck.mode``, it can run the database-readiness init container from the same Mattermost image as the main container by setting ``spec.database.readinessCheck.mode: builtin`` on the ``Mattermost`` custom resource. The init container then invokes the in-image ``mattermost db ping`` command instead of pulling ``postgres:13`` and running ``pg_isready``.
+
+      We recommend this mode for air-gapped clusters because it removes the requirement to mirror ``postgres:13`` into your private registry; the only image needed for the readiness check is the Mattermost image you're already mirroring. Before using ``builtin`` mode, confirm that your installed operator version includes the ``readinessCheck.mode`` field in the Mattermost CRD or in the operator release notes. ``builtin`` mode also requires a Mattermost release that ships the ``mattermost db ping`` command (see the `Mattermost server release notes <https://github.com/mattermost/mattermost/pull/36406>`__ for availability).
+
+      Example:
+
+      .. code-block:: yaml
+
+        spec:
+          database:
+            external:
+              secret: <my-db-secret>
+            readinessCheck:
+              mode: builtin
+              timeout: 5m   # optional; default is 5m
+
+      The legacy ``external`` mode (which uses ``postgres:13`` + ``pg_isready``) remains the default for backward compatibility and is still selectable for users on older Mattermost versions, but it is slated for deprecation in a future operator release. See the `Mattermost CRD reference <https://github.com/mattermost/mattermost-operator/blob/master/docs/mattermost_v1beta1_crd.md>`__ for the full ``readinessCheck`` field schema.
+
     **(Optional) Supporting Services**
     Consider downloading these additional resources if you plan to enable these optional components:
 
-    - :doc:`Mattermost Calls </administration-guide/configure/calls-deployment>` helm charts: `mattermost-calls-offloader <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-calls-offloader>`__ and `values <https://github.com/mattermost/mattermost-helm/blob/master/charts/mattermost-calls-offloader/values.yaml>`__ (required for recording, transcription and live captions), `mattermost-rtcd <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-rtcd>`__ and `values <https://github.com/mattermost/mattermost-helm/blob/master/charts/mattermost-rtcd/values.yaml>`__ (required for performance and scalability).
+    - :doc:`Mattermost Calls </administration-guide/configure/calls-deployment-guide>` helm charts: `mattermost-calls-offloader <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-calls-offloader>`__ and `values <https://github.com/mattermost/mattermost-helm/blob/master/charts/mattermost-calls-offloader/values.yaml>`__ (required for recording, transcription and live captions), `mattermost-rtcd <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-rtcd>`__ and `values <https://github.com/mattermost/mattermost-helm/blob/master/charts/mattermost-rtcd/values.yaml>`__ (required for performance and scalability).
     - `Elasticsearch <https://www.elastic.co/docs/deploy-manage/deploy/cloud-on-k8s>`__ can be `deployed in air-gapped k8 environments <https://www.elastic.co/guide/en/cloud-on-k8s/2.8/k8s-air-gapped.html>`__ for enhanced search performance at scale.
     - `Prometheus <https://github.com/prometheus-operator/prometheus-operator>`__ and `Grafana <https://github.com/grafana/grafana-operator>`__ operators for monitoring and observability
 
@@ -97,7 +119,7 @@ On an internet connected machine, you must gather all required packages, contain
     **(Optional) Supporting Services**
     Consider downloading these additional resources if you plan to enable these optional components:
 
-    - :doc:`Mattermost Calls </administration-guide/configure/calls-deployment>` images: `calls-offloader <https://hub.docker.com/r/mattermost/calls-offloader>`__ (required for recording, transcription and live captions) and `rtcd <https://hub.docker.com/r/mattermost/rtcd>`__ (required for performance and scalability).
+    - :doc:`Mattermost Calls </administration-guide/configure/calls-deployment-guide>` images: `calls-offloader <https://hub.docker.com/r/mattermost/calls-offloader>`__ (required for recording, transcription and live captions) and `rtcd <https://hub.docker.com/r/mattermost/rtcd>`__ (required for performance and scalability).
     - `Elasticsearch <https://hub.docker.com/_/elasticsearch>`__ image for enhanced search performance at scale.
     - `Prometheus <https://hub.docker.com/r/prom/prometheus>`__ and `Grafana <https://hub.docker.com/r/grafana/grafana>`__ images for monitoring and observability.
 

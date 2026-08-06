@@ -20,6 +20,24 @@ Login with ADFS/Office365 is not working
 
 In line with Microsoft guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_. 
 
+How do I attach mobile app logs to a message?
+---------------------------------------------
+
+Use ``/mobile-logs`` during mobile troubleshooting to let users attach Mattermost mobile app logs to messages. Running ``/mobile-logs on`` shows the **Attach app logs** option in the attachment menu of the message composer, so users can include device-side logs when messaging an administrator or support engineer. Users can also turn this option on or off from the **Report a problem** screen in the mobile app. The command responds with an ephemeral message visible only to the user who ran it.
+
+.. important::
+
+    This command requires Mattermost mobile app v2.38 or later.
+
+- Enable **Attach app logs** for yourself using ``/mobile-logs on``.
+- Disable **Attach app logs** for yourself using ``/mobile-logs off``.
+- Check whether **Attach app logs** is enabled using ``/mobile-logs status``.
+- System admins can manage the setting for another user by appending a username, such as ``/mobile-logs on @username``, ``/mobile-logs off @username``, or ``/mobile-logs status @username``.
+
+.. important::
+
+    Non-admin users can only manage their own preference. Attempts to target another account return a neutral **Unable to change mobile log settings for that user** message to avoid username enumeration. Preference changes made through this command are recorded in the audit log.
+
 I see a “Connecting…” bar that does not go away
 -----------------------------------------------
 
@@ -33,13 +51,13 @@ All my outbound connections need to go through a proxy. How can I connect to the
 You can set up an internal server to proxy the connection out of their network to the Mattermost Hosted Push Notification Service (HPNS) by following the steps below:
 
 1. Make sure your proxy server is properly configured to support SSL. Confirm it works by checking the URL at https://www.digicert.com/help/.
-2. Setup a proxy to forward requests to ``https://push.mattermost.com``.
+2. Setup a proxy to forward requests to the HPNS URL matching your server's :ref:`push notification server location <administration-guide/configure/environment-configuration-settings:push notification server location>`: ``https://global.push.mattermost.com``, ``https://us.push.mattermost.com``, ``https://eu.push.mattermost.com``, or ``https://ap.push.mattermost.com``.
 3. In Mattermost set **System Console** > **Notification Settings** > **Mobile Push** > **Enable Push Notifications** in prior versions or **System Console > Environment > Push Notification Server > Enable Push Notifications** in versions after 5.12 to "Manually enter Push Notification Service location"
 4. Enter the URL of your proxy in the **Push Notification Server** field.
 
-.. Note:: 
+.. Note::
 
-  Depending on how your proxy is configured you may need to add a port number and create a URL like ``https://push.internalproxy.com:8000`` mapped to ``https://push.mattermost.com``
+  Depending on how your proxy is configured you may need to add a port number and create a URL like ``https://push.internalproxy.com:8000`` mapped to your region's HPNS URL, such as ``https://us.push.mattermost.com``.
 
 Build gets stuck at ``bundleReleaseJsAndAssets``
 ------------------------------------------------
@@ -147,4 +165,4 @@ If you did not receive a push notification when testing push notifications, use 
 
   To conserve disk space, once your push notification issue is resolved, go to  **System Console > Environment > Logging > File Log Level**, then select **ERROR** to switch your logging detail level from **DEBUG** to **Errors Only**.
 
-If push notifications are not being delivered on the mobile device, confirm that you're logged in to the **Native** mobile app session through **Profile > Security > View and Log Out of Active Sessions**. Otherwise, the `DeviceId` won't get registered in the `Sessions` table and notifications won't be delivered.
+If push notifications are not being delivered on the mobile device, confirm that you're logged in to the **Native** mobile app session through **Profile > Security > View and Log Out of Active Sessions**. Otherwise, the ``DeviceId`` won't get registered in the ``Sessions`` table and notifications won't be delivered.

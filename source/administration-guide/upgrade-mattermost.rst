@@ -14,6 +14,7 @@ Upgrade Mattermost
     Communicate scheduled maintenance best practices </administration-guide/upgrade/communicate-scheduled-maintenance>
     Upgrade Mattermost Server </administration-guide/upgrade/upgrading-mattermost-server>
     Upgrade Mattermost in Kubernetes and High Availability environments </administration-guide/upgrade/upgrade-mattermost-kubernetes-ha>
+    Upgrade PostgreSQL </administration-guide/upgrade/upgrading-postgres>
     Upgrade Team Edition to Enterprise Edition </administration-guide/upgrade/enterprise-install-upgrade>
     Administrator onboarding tasks </administration-guide/upgrade/admin-onboarding-tasks>
     Enterprise roll-out-checklist </administration-guide/upgrade/enterprise-roll-out-checklist>
@@ -28,6 +29,7 @@ Stay up to date with the latest features and improvements.
 * :doc:`Communicate scheduled maintenance best practices </administration-guide/upgrade/communicate-scheduled-maintenance>` - Learn best practices for communicating scheduled server maintenance in advance of a service maintenance window.
 * :doc:`Upgrade Mattermost Server </administration-guide/upgrade/upgrading-mattermost-server>` - Learn the basics of upgrading your Mattermost server to the latest version.
 * :doc:`Upgrade Mattermost in Kubernetes and High Availability environments </administration-guide/upgrade/upgrade-mattermost-kubernetes-ha>` - Learn how to upgrade Mattermost in Kubernetes and High Availability environments.
+* :doc:`Upgrade PostgreSQL </administration-guide/upgrade/upgrading-postgres>` - Learn how to upgrade your PostgreSQL database server.
 * :doc:`Upgrade Team Edition to Enterprise Edition </administration-guide/upgrade/enterprise-install-upgrade>` - Learn how to upgrade your Mattermost Team Edition server to Enterprise Edition.
 * :doc:`Administrator onboarding tasks </administration-guide/upgrade/admin-onboarding-tasks>` - Learn about the onboarding tasks for administrators after an upgrade.
 * :doc:`Enterprise roll-out-checklist </administration-guide/upgrade/enterprise-roll-out-checklist>` - Learn about the roll-out checklist for enterprise users.

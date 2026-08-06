@@ -8,6 +8,10 @@ You can send messages in public and private channels as well as to other users i
 
 Mattermost may notify you when a recipient's availability is set to :ref:`Do Not Disturb <end-user-guide/preferences/set-your-status-availability:set your availability>`, and the recipient's local time is outside of regular business hours (between 10PM and 6AM). This warning displays directly above the message text field.
 
+.. note::
+
+  From Mattermost v11.5, you can access help resources for message formatting by selecting the **Help** link below the message text field.
+
 .. tab:: Web/Desktop
 
   Enter a message in the text field, then select **Send** |send-icon| to send the message. 
@@ -36,12 +40,16 @@ Mattermost may notify you when a recipient's availability is set to :ref:`Do Not
 Rewrite messages with AI
 -------------------------
 
-From Mattermost v11.2, you can use AI to enhance your messages before sending them. This feature helps you improve writing quality, fix spelling, adjust message length, or transform your text based on specific needs.
+You can use AI to enhance your messages before sending them. This feature helps you improve writing quality, fix spelling, adjust message length, or transform your text based on specific needs.
 
-.. tab:: Web/Desktop
+From Mattermost v11.5, when you use AI Rewrite while composing a reply in a thread, the AI incorporates context from the thread to generate suggestions that better fit the ongoing conversation.
+
+From Mattermost v11.7, Rewrite is accessed through the **AI Actions** |ai-actions-icon| menu, alongside any custom prompts your system admin has made available.
+
+On Web/Desktop or Mobile:
 
   1. Type your message in the message compose field.
-  2. Select the **Rewrite** |ai-rewrite| option from the message actions.
+  2. Open the **AI Actions** |ai-actions-icon| menu from the message actions, then select **Rewrite**.
   3. Select a bot from the list of available AI agents.
   4. Choose from available rewrite options:
 
@@ -56,9 +64,9 @@ From Mattermost v11.2, you can use AI to enhance your messages before sending th
   5. Review the AI-generated suggestion. Select **Regenerate** to try again or **Discard** to return to your original message.
   6. Select **Send** |send-icon|
 
-.. tab:: Mobile
+.. tip::
 
-  AI rewriting functionality is available in the mobile app with the same rewrite options as the desktop and web experience.
+  From Mattermost v11.7, system admins can publish custom prompts that appear alongside Rewrite in the **AI Actions** |ai-actions-icon| menu. If you don't see a custom prompt you expect, check with your system admin.
 
 .. note::
 
@@ -80,7 +88,11 @@ From Mattermost v11.3, burn-on-read messages stay concealed until recipients rev
 
 .. tab:: Mobile
 
-  Users can receive and interact with burn-on-read messages, but can't send them using the mobile app.
+  From Mattermost mobile v2.38.0, you can send burn-on-read messages from the mobile app.
+
+  1. Compose your message.
+  2. Tap the **Burn-on-read** |burn-on-read-icon| icon in the message toolbar.
+  3. Tap **Send** |send-icon|
 
 Recipients see a concealed placeholder with **Reveal**. After revealing, a timer shows when the message will be deleted. 
 

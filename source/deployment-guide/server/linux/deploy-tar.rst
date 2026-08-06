@@ -45,13 +45,13 @@ In a terminal window, ssh onto the system that will host the Mattermost Server. 
 
   .. code-block:: sh
 
-    wget https://releases.mattermost.com/11.3.0/mattermost-11.3.0-linux-amd64.tar.gz
+    wget https://releases.mattermost.com/11.9.0/mattermost-11.9.0-linux-amd64.tar.gz
 
 .. tab:: Current ESR
 
   .. code-block:: sh
 
-    wget https://releases.mattermost.com/10.11.10/mattermost-10.11.10-linux-amd64.tar.gz
+    wget https://releases.mattermost.com/11.7.8/mattermost-11.7.8-linux-amd64.tar.gz
 
 .. tab:: Older releases
 
@@ -112,9 +112,13 @@ Install the Mattermost Server by extracting the tarball, creating users and grou
 
   .. code-block:: sh
 
-    sudo touch /lib/systemd/system/mattermost.service
+    sudo touch /etc/systemd/system/mattermost.service
 
-8. As root, edit the systemd unit file at ``/lib/systemd/system/mattermost.service`` to add the following lines:
+  .. note::
+
+     Earlier versions of this guide had you create the unit file under ``/lib/systemd/system/``, which is reserved for unit files installed and owned by a package manager.
+
+8. As root, edit the systemd unit file at ``/etc/systemd/system/mattermost.service`` to add the following lines:
 
   .. code-block:: text
 
@@ -182,7 +186,7 @@ To remove the Mattermost Server for any reason, you must stop the Mattermost Ser
 
 .. code-block:: sh
 
-  sudo rm - rf /opt/mattermost
+  sudo rm -rf /opt/mattermost
 
 .. note::
 

@@ -66,14 +66,15 @@ Channel checklists
 
 From Playbooks v2.6.0, you can additionally create and manage channel-based checklists directly within :ref:`public <end-user-guide/collaborate/channel-types:public channels>` and :ref:`private <end-user-guide/collaborate/channel-types:private channels>` channels without requiring a playbook template or a run. Channel checklists use existing Mattermost channel permissions to control access, so any channel member who can manage channel names, headers, and purpose can create, edit, and manage channel checklists.
 
-To create a new channel checklist or modify an existing checklist, select the **Checklists** option in the right-hand sidebar.
+To create a new channel checklist or modify an existing checklist, select the **Checklists** option in the top left corner of the Mattermost interface.
 
 .. note::
 
-  - Channel checklists aren't available in :ref:`direct message <end-user-guide/collaborate/channel-types:direct message channels>` or :ref:`group message <end-user-guide/collaborate/channel-types:group message channels>`.
+  - Channel checklists aren't available in :ref:`direct messages <end-user-guide/collaborate/channel-types:direct message channels>` or :ref:`group messages <end-user-guide/collaborate/channel-types:group message channels>`.
   - To create a channel checklist, you must be a channel :ref:`Member <end-user-guide/collaborate/learn-about-roles:member>` (not a :ref:`Guest <end-user-guide/collaborate/learn-about-roles:guest>`). To edit a channel checklist, any channel member who can post to the channel can do so, including guests.
   - Channel checklists in :ref:`archived <end-user-guide/collaborate/channel-types:archived channels>` channels can't be modified. Archived channels must be :ref:`unarchived <end-user-guide/collaborate/archive-unarchive-channels:unarchive a channel>` to access and edit their channel checklists.
   - A single channel can contain both playbook runs and channel checklists.
+  - When using Mattermost in a web browser or the Desktop app, you can convert a channel checklist into a playbook by selecting the checklist name and then selecting **Save as a Playbook**.
 
 Multiple runs in a channel
 --------------------------
@@ -132,7 +133,11 @@ Playbook attributes
 .. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
-From Mattermost v11.1, using Mattermost in a web browser or the desktop app, you can define custom attributes for your playbooks to create adaptive workflows that respond to changing mission or operational context. Attributes such as severity, category, or linked ticket ID can be configured to trigger context-aware tasks and enable intelligent adaptation to situational conditions.
+From Mattermost v11.1, using Mattermost in a web browser or the desktop app, you can define custom attributes for your playbooks to create adaptive workflows that respond to changing mission or operational context. From Mattermost mobile v2.37.0, you can view and edit playbook run attributes on mobile devices, including text fields, select, and multi-select types. Attributes such as severity, category, or linked ticket ID can be configured to trigger context-aware tasks and enable intelligent adaptation to situational conditions.
+
+.. note::
+
+  This feature requires Mattermost Playbook v2.5.0 or later.
 
 Attributes enable you to:
 
@@ -142,6 +147,10 @@ Attributes enable you to:
 - Maintain consistent data collection across runs.
 
 Playbook attributes are visible to all run participants and can be referenced in status updates.
+
+.. note::
+
+  When viewing and editing playbook run attributes on mobile devices, color formatting and URL links in attributes are not supported and display as plain text.
 
 Configure attributes
 ~~~~~~~~~~~~~~~~~~~~~
@@ -177,7 +186,7 @@ Conditional playbooks
 .. include:: ../../_static/badges/entry-ent.rst
   :start-after: :nosearch:
 
-From Mattermost v11.1, using Mattermost in a web browser or the desktop app, you can create conditional playbooks with more sophisticated workflows that respond intelligently to changing circumstances. By leveraging playbook attributes, you can define conditions that determine which tasks and checklists are included in a playbook run based on real-time data.
+From Mattermost v11.1, using Mattermost in a web browser or the desktop app, you can create conditional playbooks with more sophisticated workflows that respond intelligently to changing circumstances. From Mattermost mobile v2.37.0, you can also view and edit playbook run attributes on mobile devices. By leveraging playbook attributes, you can define conditions that determine which tasks and checklists are included in a playbook run based on real-time data.
 
 Conditional playbooks enable you to:
 

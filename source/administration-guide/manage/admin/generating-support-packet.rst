@@ -11,7 +11,8 @@ Generate
 
 .. important::
 
-   Before generating a Support Packet, go to **System Console > Environment > Logging** and ensure **Output logs to file** is set to **true**, and set **File Log Level** to **DEBUG**.
+   - Before generating a Support Packet, go to **System Console > Environment > Logging** and ensure **Output logs to file** is set to **true**, and set **File Log Level** to **DEBUG**
+   - From Mattermost v11.4, support packet generation is recorded in the audit log (when :ref:`audit logging is enabled and configured <administration-guide/manage/logging:audit logging>`). The audit event includes the username, timestamp, success/failure status, whether logs were included, plugin packets requested, and the output filename. This audit trail helps track access to potentially sensitive log data for compliance purposes.
 
 .. tab:: Web/Desktop
 
@@ -35,12 +36,12 @@ Generate
     Downloading Support Packet
     Downloaded Support Packet to mattermost_support_packet_.zip
 
-Santitize confidential data
+Sanitize confidential data
 ---------------------------
 
 Please sanitize any confidential data you wish to exclude before sharing the packet with Mattermost. 
 
-When present, the following information is automatically santized during packet generation: ``LdapSettings.BindPassword``, ``FileSettings.PublicLinkSalt``, ``FileSettings.AmazonS3SecretAccessKey``, ``EmailSettings.SMTPPassword``, ``GitLabSettings.Secret``, ``GoogleSettings.Secret``, ``Office365Settings.Secret``, ``OpenIdSettings.Secret``, ``SqlSettings.DataSource``, ``SqlSettings.AtRestEncryptKey``, ``ElasticsearchSettings.Password``, ``All SqlSettings.DataSourceReplicas``, ``All SqlSettings.DataSourceSearchReplicas``, ``MessageExportSettings.GlobalRelaySettings.SmtpPassword``, and ``ServiceSettings.SplitKey``. 
+When present, the following information is automatically sanitized during packet generation: ``LdapSettings.BindPassword``, ``FileSettings.PublicLinkSalt``, ``FileSettings.AmazonS3SecretAccessKey``, ``EmailSettings.SMTPPassword``, ``GitLabSettings.Secret``, ``GoogleSettings.Secret``, ``Office365Settings.Secret``, ``OpenIdSettings.Secret``, ``SqlSettings.DataSource``, ``SqlSettings.AtRestEncryptKey``, ``ElasticsearchSettings.Password``, ``All SqlSettings.DataSourceReplicas``, ``All SqlSettings.DataSourceSearchReplicas``, ``MessageExportSettings.GlobalRelaySettings.SmtpPassword``, ``ServiceSettings.SplitKey``, ``FileSettings.ExportAmazonS3SecretAccessKey``, ``ServiceSettings.GoogleDeveloperKey``, and ``ServiceSettings.GiphySdkKey`` (from Mattermost v11.6.0).
 
 .. important::
 
@@ -56,7 +57,7 @@ Add the generated Support Packet to a `standard support request <https://support
 
 .. important::
 
-   Disable debug logging once you've generated the Support Packet. Debug logging can cause log files to expand substantially, and may adversely impact server performance. We recommend enabling it temporarily, or in development environments, but not production enviornments.
+   Disable debug logging once you've generated the Support Packet. Debug logging can cause log files to expand substantially, and may adversely impact server performance. We recommend enabling it temporarily, or in development environments, but not production environments.
 
 Contents of a Support Packet
 ----------------------------
