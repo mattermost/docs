@@ -2648,7 +2648,7 @@ Enable guest access
 +----------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 .. note::
-  Guest billing depends on channel access. Guests in exactly one active channel are treated as single-channel guests and don't count toward the primary paid seat count. They're free up to a 1:1 ratio with licensed seats. Guests in multiple active channels continue to count as paid active users. Direct messages and group messages don't affect whether a guest is counted as a single-channel guest. Only active channels count toward guest channel access for billing. Archived channels are excluded. See the :doc:`guest accounts </administration-guide/onboard/guest-accounts>` documentation for full details.
+  Guest billing depends on channel access. Guests in exactly one active channel are treated as single-channel guests and don't count toward the primary paid seat count. They're free up to a 1:1 ratio with licensed seats. Guests in multiple active channels continue to count as activated users for billing purposes. Direct messages and group messages don't affect whether a guest is counted as a single-channel guest. Only active channels count toward guest channel access for billing. Archived channels are excluded. See the :doc:`guest accounts </administration-guide/onboard/guest-accounts>` documentation for full details.
 
 .. config:setting:: whitelisted-guest-domains
   :displayname: Whitelisted guest domains (Guest Access)
