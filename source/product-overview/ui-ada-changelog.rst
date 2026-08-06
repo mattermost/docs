@@ -12,6 +12,22 @@ Changelog
 
    * - Version
      - Change Description
+   * - v11.9
+     - (UI) Added zoom and pan support to the image file preview: use the scroll wheel to zoom at the cursor, click-and-drag to pan, and +/-/0 keyboard shortcuts (reported on webapp).
+   * - v11.9
+     - (UI) Added a toast notification for plugin-rejected file uploads, consistent with the existing notification for rejected downloads.
+   * - v11.9
+     - (UI) Added a Data Spillage Handling feature discovery page in the System Console for lower-tier licenses.
+   * - v11.9
+     - (UI) Added clearer validation messaging for invalid user attribute names in the System Console.
+   * - v11.9
+     - (UI) Incoming webhooks now show information about the last time they were triggered.
+   * - v11.9
+     - (UI) Threads started by a webhook are no longer highlighted for the user who owns the webhook.
+   * - v11.9
+     - (UI) Added user setting "Auto-follow threads on channel-wide mentions" (Settings → Notifications). When disabled, @channel/@all/@here mentions no longer force thread membership; users still receive mention notifications but must manually follow the thread.
+   * - v11.9
+     - (UI) Hardened the web app against crashes caused by components rendered by a plugin.
    * - v11.8
      - (UI) Added a new keyboard shortcut, ``Shift`` + ``ESC``, that marks all channels, threads, and direct messages as read for a team on webapp / desktop app.
    * - v11.8

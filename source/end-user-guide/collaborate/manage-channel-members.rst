@@ -9,10 +9,10 @@ Add members to a channel
 
 Any member of a channel can add other members to public or private channels, unless your system admin has restricted access to do so.
 
-When a channel has :doc:`attribute-based access controls </administration-guide/manage/admin/attribute-based-access-control>` enabled, you'll see details about which user attributes are permitted access to the channel. Behavior when adding members depends on the channel type:
+When a channel has :doc:`attribute-based access controls </administration-guide/manage/admin/attribute-based-access-control>` enabled, you'll see details about which user attributes are permitted access to the channel. Behavior differs by channel type:
 
-- **Private channels with membership policies**: Only users who meet the policy requirements are available to add.
-- **Public channels with membership policies**: Users who match the policy may be shown with a **Recommended** tag, but the invite list isn't restricted by the policy.
+- **Private channels**: Only users who meet the requirements appear in search results when adding members, and only those users can be added.
+- **Public channels**: All eligible team members appear in search results, and users who meet the recommended attributes are labeled **Recommended**. Anyone can still be added because public-channel access controls are advisory and never remove existing members.
 
 .. tab:: Web/Desktop
 

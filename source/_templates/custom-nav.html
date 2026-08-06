@@ -1,18 +1,18 @@
-<div data-swiftype-index=false class="notification-bar sticky-top">
-    <div class="notification-bar__content">
-        <a class="notification-bar__close" data-ol-has-click-handler="">
-            <span aria-hidden="true">×</span>
-        </a>
-	    <div class="notification-bar__wrapper">
-		<a href="https://mattermost.com/blog/mattermost-v11-powering-more-mission-critical-collaboration/" target="_blank" class="notification-bar__link"><img src="{{ pathto('_static/images/notification-bar/icon-megaphone.svg', 1) }}" alt="">Mattermost v11.0 is now available! Learn what's new »</a>
-		</div>
-    </div>
-</div>
 {%- if pagename == 'index' %}
 <header class="site-header" itemscope="" itemtype="https://schema.org/WebSite">
 {%- else %}
 <header class="site-header site-header--not-home" itemscope="" itemtype="https://schema.org/WebSite">
 {% endif %}
+	<div data-swiftype-index=false class="notification-bar">
+		<div class="notification-bar__content">
+			<a class="notification-bar__close" data-ol-has-click-handler="">
+				<span aria-hidden="true">×</span>
+			</a>
+			<div class="notification-bar__wrapper">
+				<a href="https://mattermost.com/blog/mattermost-v11-powering-more-mission-critical-collaboration/" target="_blank" class="notification-bar__link"><img src="{{ pathto('_static/images/notification-bar/icon-megaphone.svg', 1) }}" alt="">Mattermost v11.0 is now available! Learn what's new »</a>
+			</div>
+		</div>
+	</div>
 	<div class="nav-container site-header__container">
 		<div class="site-header__row">
 			<div class="site-header__col--logo">

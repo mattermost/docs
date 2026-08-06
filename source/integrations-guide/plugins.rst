@@ -17,6 +17,8 @@ Mattermost's pre-built plugins make it simple for teams to extend Mattermost wit
 
 Learn more about what popular :doc:`pre-built integrations are available and how to install them </integrations-guide/popular-integrations>`.
 
+As a system admin, see the :doc:`install and manage plugins </administration-guide/configure/manage-plugins>` documentation for step-by-step instructions on installing, enabling, configuring, updating, and removing plugins.
+
 .. tip::
   The `Mattermost Marketplace <https://mattermost.com/marketplace/>`_ offers an expanded selection of community supported integrations.
 

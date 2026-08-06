@@ -44,7 +44,15 @@ You can add multiple rules to a single policy, and each rule can include multipl
          - **Ends with**: The attribute value must end with the specified value.
          - **Contains**: The attribute value must exist somewhere with the specified value.
 
-     3. Specify the attribute values that users must have to be granted access to the channel. 
+         When the selected attribute is a **Ranked** attribute (an ordered list of values, such as clearance or classification levels), the match options are ordered comparisons instead. These let you match everyone at or above a threshold rather than only an exact value:
+
+         - **Is exactly** / **Is not**: The value must exactly match, or must not match, the specified value.
+         - **Is at least**: The value must be equal to or higher than the specified value - for example, clearance *is at least* Secret matches Secret and every higher level.
+         - **Is greater than**: The value must be higher than the specified value.
+         - **Is at most**: The value must be equal to or lower than the specified value.
+         - **Is less than**: The value must be lower than the specified value.
+
+     3. Specify the attribute values that users must have to be granted access to the channel.
 
    .. tab:: Advanced Mode
 
@@ -86,14 +94,23 @@ Manage rules
 
 You can apply changes to existing rules or remove rules at any time using either Simple Mode or Advanced Mode. Select **Save** to save your changes.
 
-Assign policies to private channels
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Assign policies to channels
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Specify the private channel that your access control policy applies to by selecting **Add channels** to search for and select the channels you want. You can assign the policy to multiple channels at once, or you can `assign it to individual channels <#define-access-controls-per-channel>`__ later. Select **Save** to save your changes.
+From Mattermost v11.8, system-wide policies can be assigned to **both private and public channels**. Select **Add channels** to search for and select the channels you want. You can assign the policy to multiple channels at once, or you can `assign it to individual channels <#define-access-controls-per-channel>`__ later. Select **Save** to save your changes.
+
+The two channel types behave differently under the same policy:
+
+- **Private channels** are hard-gated. The policy adds matching users (when auto-add is enabled), removes non-matching members during synchronization, and prevents non-matching users from being added or invited.
+- **Public channels** are advisory. The policy never removes members and never blocks anyone from joining. With auto-add enabled it automatically adds matching users; with auto-add disabled the channel appears under **Browse Channels > Recommended channels** for matching users.
+
+Before saving, you'll be prompted to confirm the impact of the change so you can review how it affects each channel type.
+
+Default channels (such as Town Square and Off-Topic), shared channels, and group-synced channels remain ineligible — they are excluded from the channel selector.
 
 .. note::
 
-  Private channels with attribute-based access control policies can't have guest users invited to them. Only users who match the defined attribute criteria can be added to ABAC-controlled channels, ensuring strict adherence to access control policies.
+  Private channels with attribute-based access control policies can't have guest users invited to them. Only users who match the defined attribute criteria can be added to ABAC-controlled private channels, ensuring strict adherence to access control policies. Public channels remain joinable by anyone regardless of the policy.
 
 Delete policies
 ~~~~~~~~~~~~~~~
@@ -103,11 +120,13 @@ To delete a policy, select the **Delete** button next to the policy you want to 
 Define access controls per channel
 ----------------------------------
 
-You can assign an existing access control policy to a private channels for more granular control over channel membership. This is useful when you need to apply different rules for different channels.
+You can assign an existing access control policy to a private or public channel for more granular control over channel membership. This is useful when you need to apply different rules for different channels.
 
-1. In the System Console, go to **User Management > Channels** to select the private channel you want to configure, and select **Edit**.
+1. In the System Console, go to **User Management > Channels** to select the private or public channel you want to configure, and select **Edit**.
 2. In the **Channel Management** section, enable the **Enable attribute-based channel access** option.
 3. Under **Access policy**, select **Link to a policy** to select an existing policy.
+
+Once a policy is attached, the channel's privacy can no longer be flipped between public and private until the policy is removed — see :ref:`Channel-specific access rules <administration-guide/manage/admin/abac-channel-access-rules:validation-and-safety>`.
 
 .. tip::
 
@@ -131,3 +150,22 @@ Permission policies can be used to restrict the following actions based on user 
 When a permission policy applies, users who don't match the configured attribute values can't perform the restricted action. Users may see file attachments as unavailable or redacted in messages they would otherwise have access to. See :ref:`Restricted file attachments <end-user-guide/collaborate/share-files-in-messages:restricted file attachments>` for the end-user-facing behavior.
 
 Permission policies follow the same unique-name requirement as access policies: each parent permission policy must have a unique name, and Mattermost surfaces a user-friendly error if a duplicate name is entered.
+
+Attribute value masking
+-----------------------
+
+From Mattermost v11.8, when a policy references attribute values that the editing admin doesn't personally hold, those values are hidden in the policy editor. This prevents admins from reading or copying sensitive attribute values they're not authorized to see, while still allowing the policy to enforce access control normally.
+
+Masking only applies to attributes configured with a ``shared_only`` or ``source_only`` access mode. Attributes with a ``public`` access mode are always visible to all admins. See :ref:`Attribute access modes <administration-guide/manage/admin/user-attributes:attribute access modes>` for details on how each mode controls value visibility.
+
+**What you'll see:**
+
+- Masked values appear as ``--------`` in the rule editor instead of the raw value.
+- Rows containing masked values are **read-only** and cannot be modified.
+- **Test rule** and **Delete** actions are disabled for rules that contain masked values.
+
+**Enforcement is unaffected:** masking applies to the editing UI only. The underlying rules continue to control channel access and permissions as configured.
+
+**To edit a masked rule**, ask the policy owner or another System Admin who holds the relevant attribute values to make the change.
+
+This behavior applies to both the table editor and the CEL editor, and also to Team Admin and Channel Admin policy editors in Team Settings and Channel Settings. Requires Enterprise Advanced license and the ``AttributeValueMasking`` feature flag.

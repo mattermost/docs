@@ -86,7 +86,7 @@ Below is additional information on how to configure the database for different l
 .. code-block:: sql
 
     -- 创建 extension
-    CREATE EXTENSION zhparser
+    CREATE EXTENSION zhparser;
     -- 创建 text search configuration
     CREATE TEXT SEARCH CONFIGURATION simple_zh_cfg (PARSER = zhparser);
     -- 配置 token mapping

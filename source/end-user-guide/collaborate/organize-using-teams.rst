@@ -22,7 +22,6 @@ Single team versus multiple teams
 Mattermost can be deployed both to a single team and to multiple teams. Currently, we recommend deploying to a single team for the following reasons:
 
 - Single team deployments promote communication across the organization. When you add multiple teams, groups can become isolated.
-- We don't yet support search or channels across teams, which can impact the cross-team user experience. This includes general searches, saved posts, and recent mentions.
 - Integrations (e.g., webhooks and slash commands) are only persistent across single team deployments.
 
 However, some Mattermost customers prefer multiple team deployments for the following reasons:
@@ -30,6 +29,7 @@ However, some Mattermost customers prefer multiple team deployments for the foll
 - Teams are useful when there is a purpose for each of them. For example, one team is used for staff members and another team for external users.
 - Performance is better when users are scattered across multiple teams instead of all in the same one. With multiple teams, there is less content to load per team or channel switch and database queries are faster.
 - Creating a shared team for all users, and using advanced permissions to control who can create channels and add members to the shared team, improves cross-team collaboration when using multiple teams. Additionally, an annoucement banner can be used to provide system-wide announcements.
+- The platform supports multiple team functionalities including general search, saved posts, and recent mentions across teams.
 
 Team sidebar
 ------------

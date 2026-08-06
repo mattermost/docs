@@ -51,13 +51,13 @@ All my outbound connections need to go through a proxy. How can I connect to the
 You can set up an internal server to proxy the connection out of their network to the Mattermost Hosted Push Notification Service (HPNS) by following the steps below:
 
 1. Make sure your proxy server is properly configured to support SSL. Confirm it works by checking the URL at https://www.digicert.com/help/.
-2. Setup a proxy to forward requests to ``https://push.mattermost.com``.
+2. Setup a proxy to forward requests to the HPNS URL matching your server's :ref:`push notification server location <administration-guide/configure/environment-configuration-settings:push notification server location>`: ``https://global.push.mattermost.com``, ``https://us.push.mattermost.com``, ``https://eu.push.mattermost.com``, or ``https://ap.push.mattermost.com``.
 3. In Mattermost set **System Console** > **Notification Settings** > **Mobile Push** > **Enable Push Notifications** in prior versions or **System Console > Environment > Push Notification Server > Enable Push Notifications** in versions after 5.12 to "Manually enter Push Notification Service location"
 4. Enter the URL of your proxy in the **Push Notification Server** field.
 
-.. Note:: 
+.. Note::
 
-  Depending on how your proxy is configured you may need to add a port number and create a URL like ``https://push.internalproxy.com:8000`` mapped to ``https://push.mattermost.com``
+  Depending on how your proxy is configured you may need to add a port number and create a URL like ``https://push.internalproxy.com:8000`` mapped to your region's HPNS URL, such as ``https://us.push.mattermost.com``.
 
 Build gets stuck at ``bundleReleaseJsAndAssets``
 ------------------------------------------------

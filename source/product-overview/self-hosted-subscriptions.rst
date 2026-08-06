@@ -38,7 +38,7 @@ Quarterly true-up reports
 
 When you buy an annual Mattermost subscription, you agree to provide Mattermost with quarterly reports of the actual number of activated users within your system. An activated user is a user who has a Mattermost account and doesn't show as **Deactivated** in **System Console > User Management > Users**.
 
-Single-channel guests are tracked separately from activated users. Guests in exactly one channel are free up to a 1:1 ratio with licensed seats, while guests in multiple channels continue to count as activated users. Direct messages and group messages don't affect whether a guest is counted as a single-channel guest.
+Single-channel guests are tracked separately from activated users. Guests in exactly one active channel are free up to a 1:1 ratio with licensed seats, while guests in multiple active channels continue to count as activated users. Direct messages and group messages don't affect whether a guest is counted as a single-channel guest. Only active channels count toward guest channel access for billing. Archived channels are excluded.
 
 We'll send you an email notice around the end of the quarter reminding you to send us your report.
 
@@ -77,7 +77,7 @@ A true-up report is our quarterly request for you to provide us with the actual 
 
 As your organization grows, you may need to add additional users during your subscription period. Mattermost needs to have insight into changes in your activated user count so that we can charge you appropriately for your self-hosted license usage. Additionally, we don’t want to over estimate/charge activated users at your renewal time.
 
-Single-channel guests are visible separately in reporting and on the **Edition and License** page. They don't count toward the primary paid seat count up to a 1:1 ratio with licensed seats, and exceeding that allowance generates system-admin warnings rather than hard limits.
+Single-channel guests are visible separately in reporting and on the **Edition and License** page. They don't count toward the primary paid seat count up to a 1:1 ratio with licensed seats, and exceeding that allowance generates system-admin warnings rather than hard limits. Only active channels count toward guest channel access for billing. Archived channels are excluded.
 
 When you receive the quarterly true-up notice from Mattermost, please share your activated user count with us.
 
@@ -113,24 +113,17 @@ How long does it take to renew a subscription?
 
 Once you’ve started the renewal process, we'll be in contact with you to confirm your order and send you the order form. There may be additional paperwork required. Once we have the signed order form and (if applicable) the necessary paperwork from you, we're able to process the renewal and issue your license key within 24 hours.
 
-What happens to my subscription if I don't renew in time?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you don't renew within the 60-day renewal period, a 10-day grace period is provided. During this period your Mattermost installation runs as normal, with full access to commercial features. During the grace period, the notification banner is not dismissable.
-
-When the grace period expires, your Mattermost Professional, Enterprise, or Enterprise Advanced plan is downgraded to the Free plan and other plan features are disabled.
- 
 What happens when my subscription expires?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you don't renew within the 10-day grace period, your Mattermost version is automatically downgraded to Free plan so you can still access and use Mattermost. However, subscription features will no longer be available, and if you are currently using them, the functionality will no longer be accessible.
+If you don't renew before your subscription expires, your server is automatically downgraded to :doc:`Mattermost Entry </product-overview/editions-and-offerings>`. Users can still access and use Mattermost; however, paid features will no longer be available.
 
 When you renew, the subscription features will become available with the previous configuration (provided no action such as user migration has been taken).
 
 Why can't I dismiss the expiry notification banner?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If there's a red expiry announcement banner stating: "Enterprise license is expired and some features may be disabled. Please contact your system admin for details." it means your grace period has expired. This announcement banner persists until the license is renewed, and is visible to all users.
+If there's a red expiry announcement banner stating ``Enterprise license is expired and some features may be disabled. Please contact your system admin for details.``, it means your subscription has expired. This announcement banner persists until the license is renewed, and is visible to all users.
 
 Once a new license is applied, the banner will no longer be visible.
 
