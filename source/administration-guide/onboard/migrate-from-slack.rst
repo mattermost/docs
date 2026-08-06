@@ -328,7 +328,7 @@ After importing, all messages may appear as unread for users. To resolve this is
 Address placeholder emails
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-During the import process, the emails and usernames from Slack are used to create new Mattermost accounts. If emails are not present in the Slack export archive, then placeholder values will be generated and the system admin will need to update these manually. We recommend administrators search the final import ``jsonl`` file for ``user`` lines with ``@example.com`` in the email property to address and resolve the missing information prior to import.
+During the import process, the emails and usernames from Slack are used to create Mattermost accounts when no existing account is matched. If emails are not present in the Slack export archive, then placeholder values will be generated and the system admin will need to update these manually. We recommend administrators search the final import ``jsonl`` file for ``user`` lines with ``@example.com`` in the email property to address and resolve the missing information prior to import.
 
 Email verification behavior
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -347,10 +347,23 @@ The email verification process during Slack import depends on who performs the i
 * Users must first verify their email addresses before they can reset their password.
 * Additional email verification steps are required before account access.
 
+Existing account matching
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Slack import handles a Slack user's email address that matches an existing Mattermost account differently depending on who performs the import:
+
+**System administrator imports:**
+
+* If a Slack user's email matches an existing Mattermost account, that account is used and joined to the team.
+
+**Non-administrator imports:**
+
+* If a Slack user's email matches an existing Mattermost account, a new account is created instead of using the existing one.
+
 Account activation
 ~~~~~~~~~~~~~~~~~~
 
-* Slack users activate their new Mattermost accounts by using Mattermost's **Password Reset** screen with their email addresses from Slack to set new passwords for their Mattermost accounts. See the instructions on how to :ref:`migrate user authenticatation to LDAP or SAML <administration-guide/manage/mmctl-command-line-tool:mmctl user migrate-auth>`.
+* Slack users activate or access their Mattermost accounts by using Mattermost's **Password Reset** screen with their email addresses from Slack to set new passwords for their Mattermost accounts. See the instructions on how to :ref:`migrate user authenticatation to LDAP or SAML <administration-guide/manage/mmctl-command-line-tool:mmctl user migrate-auth>`.
 
   * For imports performed by System Admins: Users can immediately use the **Password Reset** feature (no email verification is required).
   * For imports performed by non-administrators: Users must first verify their email addresses, then use the **Password Reset** feature.
