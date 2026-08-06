@@ -114,7 +114,7 @@ Restart the Mattermost server and ensure it's up and running:
 .. code-block:: text
 
   ● mattermost.service - Mattermost
-     Loaded: loaded (/lib/systemd/system/mattermost.service; static; vendor preset: enabled)
+     Loaded: loaded (/etc/systemd/system/mattermost.service; static; vendor preset: enabled)
      Active: active (running) since Mon 2019-10-28 16:45:29 UTC; 1h 15min ago
      [...]
 
@@ -223,7 +223,7 @@ Once complete, restart the Mattermost server and ensure the system is operationa
 .. code-block:: text
 
   ● mattermost.service - Mattermost
-     Loaded: loaded (/lib/systemd/system/mattermost.service; static; vendor preset: enabled)
+     Loaded: loaded (/etc/systemd/system/mattermost.service; static; vendor preset: enabled)
      Active: active (running) since Fri 2019-10-18 16:47:08 UTC; 3s ago
     Process: 3424 ExecStartPre=/opt/mattermost/bin/pre_start.sh (code=exited, status=0/SUCCESS)
    Main PID: 3443 (mattermost)
@@ -458,7 +458,7 @@ Once each node is configured, restart the service on each cluster and confirm th
 .. code-block:: text
 
   ● mattermost.service - Mattermost
-     Loaded: loaded (/lib/systemd/system/mattermost.service; static; vendor preset: enabled)
+     Loaded: loaded (/etc/systemd/system/mattermost.service; static; vendor preset: enabled)
      Active: active (running) since Fri 2019-10-04 19:44:20 UTC; 5min ago
     Process: 16734 ExecStartPre=/opt/mattermost/bin/pre_start.sh (code=exited, status=0/SUCCESS)
 
