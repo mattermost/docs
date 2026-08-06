@@ -147,6 +147,8 @@ Integrations
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 | `Outgoing webhooks <https://developers.mattermost.com/integrate/webhooks/outgoing/>`_                           | |checkmark| | |checkmark| | |checkmark|     |
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
+| `MM Blocks <https://developers.mattermost.com/integrate/reference/mm-blocks/>`_ [1]_                             | Conditional | Conditional | Conditional     |
++-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 | `Message attachments <https://developers.mattermost.com/integrate/reference/message-attachments/>`_             | |checkmark| | |checkmark| | |checkmark|     |
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 | `Message buttons <https://developers.mattermost.com/integrate/plugins/interactive-messages/#message-buttons>`_  | |checkmark| | |checkmark| | |checkmark|     |
@@ -157,6 +159,8 @@ Integrations
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 | `Right-hand sidebar <https://developers.mattermost.com/integrate/reference/server/server-reference/>`_          | |checkmark| | |checkmark| |                 |
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
+
+.. [1] Requires ``MM_FEATUREFLAGS_MMBLOCKSENABLED`` to be enabled on the Mattermost server (defaults to ``true``). When set to ``false``, clients do not render native MM Blocks payloads and the server rejects MM Blocks action requests.
 
 Authentication
 ~~~~~~~~~~~~~~
