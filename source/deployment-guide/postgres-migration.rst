@@ -89,7 +89,7 @@ If you encounter errors during the execution of the ``pgloader`` command, ensure
 
 .. note::
 
-  For experienced users, it is recoverable to run the ``pgloader`` without requiring a restart of the migration from scratch. In this case, you will need to manually fix the issues with the table, and run the ``pgloader`` command with a tailored configuration specifically for those tables. Also ensure that the schema name is reverted back to ``public``, and the ``search_path`` is restored (or remove necessary clauses from the configuration).
+  For experienced users, it is possible to reload only the failed table without restarting the entire migration. See :ref:`Reloading a single failed table <deployment-guide/postgres-migration:reloading a single failed table>` for step-by-step instructions.
 
 The following sections detail how to resolve some common errors you may encounter during the execution of the ``pgloader`` command:
 
@@ -117,9 +117,29 @@ If you receive an error message similar to the following:
 
 .. code-block:: text
 
-   pgloader failed to find column
+   KABOOM! SIMPLE-ERROR: pgloader failed to find column
+     "mattermost"."Roles"."schemeid" in target table "\"mattermost\".\"roles\""
 
-The column or table is missing in the PostgreSQL database. You can fix this issue by checking whether you have created the correct version of Postgres schema. After re-creating the schema, you can run the ``pgloader`` command again.
+The column exists in the source MySQL database but is absent from the target PostgreSQL schema. This is almost always caused by passing an older ``--mattermost-version`` to ``migration-assist postgres --run-migrations`` than the version actually running on your source server.
+
+``--run-migrations`` builds the PostgreSQL schema by replaying that version's migration scripts — it does not copy the schema from MySQL. If the version you specify predates a migration that adds a column your source database already has (for example, a column added in a recent patch release), pgloader finds a source column with no target counterpart and aborts.
+
+**To resolve:**
+
+1. Confirm your actual Mattermost version (the version running against the source MySQL database):
+
+   - **Mattermost**: click the grid menu in the top left and select **About Mattermost**.
+   - **CLI**: run ``mattermost version`` on the server.
+
+2. Drop and recreate the target PostgreSQL database, then rebuild the schema using the correct version:
+
+   .. code-block:: sh
+
+      migration-assist postgres "<POSTGRES_DSN>" \
+        --run-migrations \
+        --mattermost-version="<ACTUAL_VERSION>"
+
+3. Re-run pgloader against the freshly built schema.
 
 Fell through ECASE expression
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -135,6 +155,75 @@ It is a `known issue <https://github.com/dimitri/pgloader/issues/1183>`__ with p
 .. note::
 
   Also, there may be cases where pgloader continues to migrate remaining tables and skip one or more tables during migration. In such cases, we recommend identifying issues with the table and fixing them before running the ``pgloader`` command again with a clean database. It is possible to run the ``pgloader`` command with the ``--debug`` flag to get more information about the errors.
+
+Duplicate key errors on a fresh target
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you receive an error message similar to the following:
+
+.. code-block:: text
+
+   ERROR Database error 23505: duplicate key value violates unique constraint
+     "pluginkeyvaluestore_pkey"
+     mattermost.pluginkeyvaluestore   errors=1   rows=0
+
+The target table already contains rows before pgloader attempts to insert. On a freshly built PostgreSQL database (one created with ``--run-migrations`` and nothing else), this is caused by one of:
+
+- The **Mattermost server was started against the target database** before pgloader ran. Starting the app causes plugins to write key-value entries and other initial data into target tables.
+- The ``--run-migrations`` step was **run more than once**, which seeds duplicate rows on some table types.
+
+**Prevention:** Stop the Mattermost server before the migration and do not start it against the target PostgreSQL database until after pgloader completes successfully.
+
+**Resolution:** If only one or a few tables have errors and the rest of the migration succeeded, truncate the affected table(s) and reload them — see :ref:`Reloading a single failed table <deployment-guide/postgres-migration:reloading a single failed table>` below. If multiple tables are affected, the cleanest path is to rebuild the target from scratch: drop and recreate the PostgreSQL database, re-run ``--run-migrations`` without starting the Mattermost server, then run pgloader again.
+
+Reloading a single failed table
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If pgloader failed on one table but succeeded on the rest, you can reload only that table without restarting the full migration:
+
+1. Generate the pgloader configuration file (if you don't have one already):
+
+   .. code-block:: sh
+
+      migration-assist pgloader \
+        --mysql="<MYSQL_DSN>" \
+        --postgres="<POSTGRES_DSN>" \
+        --remove-null-chars \
+        --output=migration.load
+
+2. Open ``migration.load`` and replace the ``EXCLUDING TABLE NAMES MATCHING`` clause with an ``INCLUDING ONLY TABLE NAMES MATCHING`` clause that names only the failed table:
+
+   .. code-block:: text
+
+      -- Change from:
+      EXCLUDING TABLE NAMES MATCHING 'schema_migrations', ...
+
+      -- To (use your actual table name):
+      INCLUDING ONLY TABLE NAMES MATCHING 'pluginkeyvaluestore'
+
+3. If the table already has partial data on the target, truncate it first:
+
+   .. code-block:: sql
+
+      TRUNCATE <table_name>;
+
+4. Re-run pgloader with the modified configuration:
+
+   .. code-block:: sh
+
+      pgloader migration.load
+
+5. Verify that the load succeeded by comparing row counts between source and target:
+
+   .. code-block:: sql
+
+      -- MySQL (source)
+      SELECT COUNT(*) FROM <TableName>;
+
+      -- PostgreSQL (target)
+      SELECT COUNT(*) FROM <table_name>;
+
+   Also check the pgloader summary at the end of the run — the ``errors`` column for the reloaded table should be ``0``.
 
 
 Mattermost can't connect to the PostgreSQL database
