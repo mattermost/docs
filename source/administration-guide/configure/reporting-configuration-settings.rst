@@ -28,8 +28,8 @@ System statistics
 .. note::
 
   - Bots, deactivated users, and synthetic users in :doc:`Microsoft Teams integrations </end-user-guide/collaborate/collaborate-within-connected-microsoft-teams>` and :doc:`connected workspaces </administration-guide/onboard/connected-workspaces>` users aren't counted towards the total number of activated users. 
-  - **Single-channel Guests** shows the number of active guest accounts that belong to exactly one channel. Direct messages and group messages don't affect whether a guest is counted as a single-channel guest. Single-channel guests are counted separately from the primary paid seat count and are free up to a 1:1 ratio with licensed seats. When this count exceeds the allowance, the statistic is highlighted as a warning for system admins.
-  - Guests in multiple channels continue to count as paid active users. See the :doc:`guest accounts </administration-guide/onboard/guest-accounts>` documentation for details.
+  - **Single-channel Guests** shows the number of active guest accounts that belong to exactly one active channel. Direct messages and group messages don't affect whether a guest is counted as a single-channel guest. Archived channels are excluded. Single-channel guests are counted separately from the primary paid seat count and are free up to a 1:1 ratio with licensed seats. When this count exceeds the allowance, the statistic is highlighted as a warning for system admins.
+  - Guests in multiple active channels continue to count as activated users for billing purposes. See the :doc:`guest accounts </administration-guide/onboard/guest-accounts>` documentation for details.
 
 ----
 
