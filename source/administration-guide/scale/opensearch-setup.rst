@@ -105,7 +105,7 @@ We highly recommend that you set up an AWS OpenSearch server on a separate machi
 
       sudo /usr/share/opensearch/bin/opensearch-plugin install analysis-icu
 
-    Restart OpenSearch on each node to load the newly installed plugin before verifying it; ``_cat/plugins`` only reports active plugins, so a restart is required first. For production clusters, restart nodes one at a time (rolling restart) rather than all at once. Confirm the plugin is installed and active on every node before continuing, replacing ``<your-opensearch-host>`` with your cluster endpoint:
+    Restart OpenSearch on each node to load the newly installed plugin before verifying it; ``_cat/plugins`` only reports active plugins, so a restart is required first. For production clusters, restart nodes one at a time (rolling restart) rather than all at once. The OpenSearch Security plugin might need to be set to ``plugins.security.disabled: true`` in ``opensearch.yml`` (disables the auth plugin, for testing) for the following check to run over plain HTTP. Confirm the plugin is installed and active on every node before continuing, replacing ``<your-opensearch-host>`` with your cluster endpoint:
 
     .. code-block:: sh
 
