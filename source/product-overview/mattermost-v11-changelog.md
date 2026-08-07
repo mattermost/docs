@@ -157,7 +157,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-10-is-now-availa
  - Fixed an issue where pressing **Enter** inside a heading could crash the web app.
 
 ### API Changes
- - Added ``POST /actions/{action_id:[A-Za-z0-9_-]+}`` (``doPostAction``) API endpoint.
+ - Modified ``POST /actions/{action_id:[A-Za-z0-9_-]+}`` (``doPostAction``) API endpoint to accept underscore and hyphen in the ``action_id`` parameter.
  - Added ``GET /tokens/non_compliant/count`` (``countNonCompliantUserAccessTokens``) API endpoint.
  - Added ``POST /tokens/non_compliant/revoke`` (``revokeNonCompliantUserAccessTokens``) API endpoint.
  - Added ``GET /access_control/attributes`` (``getTeamAccessControlAttributes``) API endpoint.
@@ -180,7 +180,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-10-is-now-availa
  - v11.10 is built with Go ``v1.26.4``.
 
 ### Open Source Components
- - Added ``@tiptap/extension-code-block-lowlight``, ``@tiptap/extension-link``, ``@tiptap/extension-placeholder``, ``@tiptap/extension-table``, ``@tiptap/extension-table-cell``, ``@tiptap/extension-table-header``, ``@tiptap/extension-table-row``, ``@tiptap/markdown``, ``@tiptap/react``, ``@tiptap/starter-kit``, ``lowlight``, ``Azure/azure-sdk-for-go``, ``jaytaylor/html2text`` and ``wneessen/go-mail``, and removed ``go-mail/mail`` from https://github.com/mattermost/mattermost/pull repository.
+ - Added ``@tiptap/extension-code-block-lowlight``, ``@tiptap/extension-link``, ``@tiptap/extension-placeholder``, ``@tiptap/extension-table``, ``@tiptap/extension-table-cell``, ``@tiptap/extension-table-header``, ``@tiptap/extension-table-row``, ``@tiptap/markdown``, ``@tiptap/react``, ``@tiptap/starter-kit``, ``lowlight``, ``Azure/azure-sdk-for-go``, ``jaytaylor/html2text`` and ``wneessen/go-mail``, and removed ``go-mail/mail``.
 
 (release-v11.9-feature-release)=
 ## Release v11.9 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
