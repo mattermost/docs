@@ -28,7 +28,7 @@ Platform and OS scope reflects reported and tested environments and may not repr
 #### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
   - **Changes to Enterprise Advanced plan:**
-    - Under ``AccessControlSettings`` in ``config.json``, added ``EnableChannelPolicyIndicators`` configuration setting (default ``true``) under **Attribute-Based Access Control** that lets admins hide channel access attribute indicators (the attribute tags shown in the channel members list and invite dialog) to avoid revealing policy details to end users. Requires Enterprise Advanced license.
+    - Under ``AccessControlSettings`` in ``config.json``, added ``EnableChannelPolicyIndicators`` configuration setting (enabled by default) that controls whether channel access attribute indicators (the attribute tags shown in the channel members list and invite dialog) are displayed. Admins who don't want to reveal policy details to end users can disable this setting to hide the indicators.
     - Under ``AccessControlSettings`` in ``config.json``, added ``SyncJobIntervalSeconds`` configuration setting to configure how often the ABAC membership sync jobs run.
   - **Changes to Enterprise plans:**
     - Under ``TeamSettings`` in ``config.json``, added a new Enterprise configuration setting, ``TeamSettings.LockProfileFieldsForEmailUsers`` (**System Console > Site Configuration > Users and Teams**), which prevents users who sign in with email and password from changing their first name, last name, and username ("name_and_username"), or additionally their nickname, position, and profile picture ("all"). System Admins are exempt, and empty first/last names can be filled in once. When enabled, users with the Invite Users permission can pre-set the first name, last name, and username on email invitations; the ``POST /api/v4/teams/{team_id}/invite/email`` endpoint accepts a new optional "profiles" field, and the System Console user detail page now supports editing a user's first and last name.
@@ -158,12 +158,10 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-10-is-now-availa
 
 ### API Changes
  - Added ``POST /actions/{action_id:[A-Za-z0-9_-]+}`` (``doPostAction``) API endpoint.
- - Removed ``POST /actions/{action_id:[A-Za-z0-9]+}`` (``doPostAction``) API endpoint.
  - Added ``GET /tokens/non_compliant/count`` (``countNonCompliantUserAccessTokens``) API endpoint.
  - Added ``POST /tokens/non_compliant/revoke`` (``revokeNonCompliantUserAccessTokens``) API endpoint.
- - Added ``POST /tokens/rotate`` (``rotateUserAccessToken``) API endpoint.
  - Added ``GET /access_control/attributes`` (``getTeamAccessControlAttributes``) API endpoint.
- - Added ``POST /`` (``searchPropertyFields``) API endpoint.
+ - Added ``POST /properties/groups/{group_name}/fields/search`` API endpoint.
  - Added new API endpoint ``POST /api/v4/users/tokens/rotate`` to rotate (regenerate) the secret of an existing Personal Access Token. The old secret is invalidated immediately on rotation.
 
 ### WebSocket Event Changes
@@ -182,9 +180,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-10-is-now-availa
  - v11.10 is built with Go ``v1.26.4``.
 
 ### Open Source Components
- - Added ``@tiptap/extension-code-block-lowlight``, ``@tiptap/extension-link``, ``@tiptap/extension-placeholder``, ``@tiptap/extension-table``, ``@tiptap/extension-table-cell``, ``@tiptap/extension-table-header``, ``@tiptap/extension-table-row``, ``@tiptap/markdown``, ``@tiptap/react``, ``@tiptap/starter-kit``, and ``lowlight`` to https://github.com/mattermost/mattermost/.
- - Added ``Azure/azure-sdk-for-go`` to https://github.com/mattermost/mattermost/.
- - Added ``jaytaylor/html2text`` and ``wneessen/go-mail``, and removed ``go-mail/mail`` from https://github.com/mattermost/mattermost/pull/.
+ - Added ``@tiptap/extension-code-block-lowlight``, ``@tiptap/extension-link``, ``@tiptap/extension-placeholder``, ``@tiptap/extension-table``, ``@tiptap/extension-table-cell``, ``@tiptap/extension-table-header``, ``@tiptap/extension-table-row``, ``@tiptap/markdown``, ``@tiptap/react``, ``@tiptap/starter-kit``, ``lowlight``, ``Azure/azure-sdk-for-go``, ``jaytaylor/html2text`` and ``wneessen/go-mail``, and removed ``go-mail/mail`` from https://github.com/mattermost/mattermost/pull repository.
 
 (release-v11.9-feature-release)=
 ## Release v11.9 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
