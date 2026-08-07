@@ -6,6 +6,10 @@ Team-level channel membership policies
 
 Team Admins can create and manage attribute-based membership policies for private channels within their team, directly from Team Settings, without requiring System Admin involvement. For organization-wide policies managed by System Admins, see :doc:`System-wide attribute-based access policies </administration-guide/manage/admin/abac-system-wide-policies>`.
 
+.. note::
+
+   From Mattermost v11.10, Team Settings has four tabs: **Info**, **Access**, **Team Membership**, and **Channel Membership**. This page covers the **Channel Membership** tab — policies that Team Admins configure for *channels* within their team. For team-level membership policies (controlling who can join the team itself), see :doc:`Team membership access policies </administration-guide/manage/admin/abac-team-membership>`.
+
 With team-level channel membership policies, Team Admins can:
 
 - Create policies that apply attribute-based access rules to one or more private channels within their team.
@@ -31,23 +35,23 @@ Access Team Settings
 
 1. Select the team name in the sidebar to open the team menu.
 2. Select **Team Settings**.
-3. Navigate to the **Membership Policies** tab. This tab is only visible when ABAC is enabled system-wide and you have Team Admin permissions.
+3. Navigate to the **Channel Membership** tab (the fourth tab in Team Settings). This tab is only visible when ABAC is enabled system-wide and you have Team Admin permissions.
 
 .. note::
 
-  System Admins also have access to the **Membership Policies** tab in Team Settings and see the same policies as Team Admins.
+  System Admins also have access to the **Channel Membership** tab in Team Settings and see the same policies as Team Admins.
 
 Manage membership policies
 --------------------------
 
-The **Membership Policies** tab shows policies scoped to the team. Each policy displays its name and the number of private channels it applies to.
+The **Channel Membership** tab shows policies scoped to the team. Each policy displays its name and the number of private channels it applies to.
 
 Team Admins only see policies whose access rules their own user attributes satisfy. If a policy has rules that exclude the Team Admin's attributes (for example, a policy requiring ``Department=Engineering`` and the Team Admin has ``Department=Finance``), that policy will not appear in their list. This is a self-inclusion safety mechanism to prevent admins from being locked out of policies they manage.
 
 Create a policy
 ~~~~~~~~~~~~~~~
 
-1. In the **Membership Policies** tab, select **Add policy**.
+1. In the **Channel Membership** tab, select **Add policy**.
 2. Enter a unique policy name.
 3. Define access rules under **Access rules**:
 
@@ -111,9 +115,9 @@ When both a system-wide policy and a team-level policy apply to the same channel
 Cross-team policies
 ~~~~~~~~~~~~~~~~~~~
 
-A policy that has private channels from more than one team is considered a cross-team policy. Cross-team policies are not visible in any team's **Membership Policies** tab — they are managed exclusively through the System Console.
+A policy that has private channels from more than one team is considered a cross-team policy. Cross-team policies are not visible in any team's **Channel Membership** tab — they are managed exclusively through the System Console.
 
-If a System Admin adds a channel from another team to a policy that was previously scoped to one team, that policy will no longer appear in any team's **Membership Policies** tab.
+If a System Admin adds a channel from another team to a policy that was previously scoped to one team, that policy will no longer appear in any team's **Channel Membership** tab.
 
 Synchronization
 ---------------
@@ -123,10 +127,10 @@ When you save a policy or modify channel assignments, Mattermost creates a membe
 Troubleshooting and FAQs
 --------------------------
 
-Why can't I see the Membership Policies tab in Team Settings?
+Why can't I see the Channel Membership tab in Team Settings?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The **Membership Policies** tab is only visible when:
+The **Channel Membership** tab is only visible when:
 
 - You have Team Admin permissions.
 - ABAC is enabled system-wide by a System Admin in **System Console > System Attributes > Attribute-Based Access**.
@@ -134,7 +138,7 @@ The **Membership Policies** tab is only visible when:
 Why can't I see a policy that I know exists?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-There are two reasons a policy may not appear in your **Membership Policies** tab:
+There are two reasons a policy may not appear in your **Channel Membership** tab:
 
 - **Cross-team policy**: The policy includes private channels from more than one team. Cross-team policies are not visible in Team Settings for anyone and must be managed through the System Console.
 - **Self-inclusion filter**: Your own user attributes do not satisfy the policy's access rules. For example, if a policy requires ``Department=Engineering`` and your profile has ``Department=Finance``, you will not see that policy. A System Admin or another Team Admin whose attributes do satisfy the rules would need to manage it instead.
