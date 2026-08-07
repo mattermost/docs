@@ -118,9 +118,13 @@ Step 4: Install Mattermost server
 
   .. code-block:: sh
 
-    sudo touch /lib/systemd/system/mattermost.service
+    sudo touch /etc/systemd/system/mattermost.service
 
-7. As root, edit the systemd unit file at ``/lib/systemd/system/mattermost.service`` to add the following lines:
+  .. note::
+
+     Earlier versions of this guide had you create the unit file under ``/lib/systemd/system/``, which is reserved for unit files installed and owned by a package manager.
+
+7. As root, edit the systemd unit file at ``/etc/systemd/system/mattermost.service`` to add the following lines:
 
   .. code-block:: text
 
