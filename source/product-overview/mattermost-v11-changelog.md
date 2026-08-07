@@ -16,7 +16,19 @@ Platform and OS scope reflects reported and tested environments and may not repr
 (release-v11.9-feature-release)=
 ## Release v11.9 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
-**Release day: 2026-07-16**
+- **11.9.1, released 2026-08-14**
+  - Mattermost v11.9.1 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Boards plugin version [v9.3.1](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.3.1).
+  - Pre-packaged Playbooks plugin version [v2.10.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.10.1).
+  - Pre-packaged Calls plugin version [v1.12.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.12.2).
+  - Pre-packaged Microsoft Calendar plugin version [v1.6.2](https://github.com/mattermost/mattermost-plugin-mscalendar/releases/tag/v1.6.2).
+  - Fixed an issue where the data retention policy teams endpoint returned more team information than intended.
+  - Improved the precision of the OAuth Dynamic Client Registration (DCR) redirect URI allowlist by matching patterns per URL component.
+  - Hard-coded a second plugin signing key from Mattermost.
+  - Fixed an issue where the **Classification Markings** section in the **System Console** was accessible and configurable under an Enterprise license; it is now correctly gated behind an Enterprise Advanced license and shows an upgrade prompt for lower tiers.
+  - Mattermost v11.9.1 contains no database or functional changes.
+- **11.9.0, released 2026-07-16**
+  - Original 11.9.0 release.
 
 ```{Attention}
 **Breaking Changes**
@@ -180,6 +192,16 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-is-now-availab
 (release-v11.8-feature-release)=
 ## Release v11.8 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **11.8.5, released 2026-08-14**
+  - Mattermost v11.8.5 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Boards plugin version [v9.2.7](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.2.7).
+  - Pre-packaged Playbooks plugin version [v2.9.4](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.9.4).
+  - Pre-packaged Calls plugin version [v1.11.6](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.11.6).
+  - Pre-packaged Microsoft Calendar plugin version [v1.6.2](https://github.com/mattermost/mattermost-plugin-mscalendar/releases/tag/v1.6.2).
+  - Fixed an issue where the data retention policy teams endpoint returned more team information than intended.
+  - Improved the precision of the OAuth Dynamic Client Registration (DCR) redirect URI allowlist by matching patterns per URL component.
+  - Fixed an issue where the **Classification Markings** section in the **System Console** was accessible and configurable under an Enterprise license; it is now correctly gated behind an Enterprise Advanced license and shows an upgrade prompt for lower tiers.
+  - Mattermost v11.8.5 contains no database or functional changes.
 - **11.8.4, released 2026-07-17**
   - Mattermost v11.8.4 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Boards plugin version [v9.2.6](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.2.6).
@@ -367,6 +389,9 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
 (release-v11.7-extended-support-release)=
 ## Release v11.7 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+- **11.7.9, released 2026-08-14**
+  - Mattermost v11.7.9 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v11.7.9 contains no database or functional changes.
 - **11.7.8, released 2026-07-31**
   - Mattermost v11.7.8 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Boards plugin version [v9.2.7](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.2.7).
