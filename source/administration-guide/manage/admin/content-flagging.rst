@@ -88,7 +88,7 @@ Reviewers can select **View details** to take action as follows:
 - **Keep message**: Dismiss the quarantine and restore the message if it was hidden. The status of the quarantined message changes to **Retained**.
 - **Add a comment**: Record the reason for the decision when required.
 - **Generate a report**: Download a report of the quarantined message and review activity for record-keeping or incident response. See :ref:`administration-guide/manage/admin/content-flagging:generate a quarantined message report` for details.
-- **Generate an exposure report**: Download a report of the users who may have been exposed to the quarantined message while it was visible in its channel. See :ref:`administration-guide/manage/admin/content-flagging:generate a post exposure report` for details.
+- **Download exposure report**: Download a report of the users who may have been exposed to the quarantined message while it was visible in its channel. See :ref:`administration-guide/manage/admin/content-flagging:generate a post exposure report` for details.
 
 Once an action is taken, the **Status** field updates automatically. The **Data Spillage Bot** sends follow-up notifications to the reporter, author, and other reviewers based on how Data Spillage Handling is configured.
 
