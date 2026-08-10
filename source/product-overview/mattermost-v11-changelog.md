@@ -89,6 +89,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-is-now-availab
 #### Plugins/Integrations
   - Implemented clickable action buttons inside post markdown for bots, webhooks, and plugins. Integrations bind ``mmaction://`` markdown links to actions defined in a new ``mm_blocks_actions`` post property.
   - Added channel bookmark type ``board`` with an optional ``target_id``. The bookmarks API rejects creating, updating, or deleting board bookmarks but allows reordering them when the caller has bookmark order permission.
+  - The ``MessagesWillBeConsumed`` plugin hook now fires on the edit path in addition to the create path, making ``UpdatePost`` symmetric with ``CreatePost``. Plugins implementing the hook will see their ``Message`` transformations applied to the editor's HTTP response and the ``post_edited`` websocket event. This aligns the runtime behaviour with the documented contract ("before it is returned to the client"); plugins relying on the prior edit-path no-op may observe a behaviour change.
   - Added a webapp hook ``registerChannelTypeOption``.
   - Added a ``MessagesWillBeConsumedWithContext`` plugin hook.
   - Added a ``ChannelWillBeUpdated`` plugin hook.
@@ -124,7 +125,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-9-is-now-availab
   - Expanded session attribute collection to include values provided by Desktop App and Mobile clients.
   - Removed legacy interactive dialog code path on webapp.
   - Added a channel-guard enforcement for scheduled posts and drafts.
-  - Added Phase 8b, 8c, 8d, 8e, 8f, 8h, 12, and 12e of the ``mbe-tech-preview``.
+  - Added Phase 2, 3, 4, 5, 8b, 8c, 8d, 8e, 8f, 8h, 12, and 12e of the ``mbe-tech-preview``.
   - Added a ``mattermost db ping`` [subcommand](https://docs.mattermost.com/deployment-guide/reference-architecture/deployment-scenarios/air-gapped-deployment.html) that waits for the database to become reachable, with configurable ``--timeout`` and ``--retry-interval`` flags.
   - Added a new "rank" [custom profile attribute](https://docs.mattermost.com/administration-guide/manage/admin/abac-system-wide-policies.html#define-access-control-policies) type whose options carry an explicit ordering. System Admins can create and manage ranked attributes in the **System Console** and assign ranked values to users, enabling attribute-based access control policies that compare clearance- or classification-style attributes with ordinal operators (for example, "is at least Secret") instead of enumerating every qualifying value.
   - Added a new ``ClusterReliableFallbackLength`` [metric](https://docs.mattermost.com/administration-guide/scale/performance-monitoring-metrics.html) with the total length in bytes of the ``SendBestEffort`` calls (UDP) that had to fallback to TCP because of the message length.
