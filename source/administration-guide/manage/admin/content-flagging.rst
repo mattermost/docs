@@ -115,7 +115,7 @@ Each time a reviewer generates a quarantined message report or a :ref:`post expo
 Report contents and format
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Each report is a ZIP archive containing YAML metadata files, a CSV exposure report, and the original file attachments. YAML is used for the metadata files because it's both human-readable and machine-parseable, which makes the report suitable for manual review and for ingestion by downstream compliance or incident-response tooling. The exposure report is CSV so that reviewers can open it directly in a spreadsheet.
+Each quarantined message report is a ZIP archive containing YAML metadata files, a CSV exposure report, and the original file attachments. YAML is used for the metadata files because it's both human-readable and machine-parseable, which makes the report suitable for manual review and for ingestion by downstream compliance or incident-response tooling. The exposure report is CSV so that reviewers can open it directly in a spreadsheet.
 
 The archive has the following structure:
 
@@ -213,7 +213,7 @@ To scope who needs follow-up, compare each row's **Last viewed channel at** valu
 .. tip::
    Generate the exposure report early in the review. **Last viewed channel at** reflects live channel read state, so it moves whenever a user opens the channel again, including after the quarantine is resolved.
 
-Rows are sorted by username, then by user ID, so the same report generated twice produces identical output. Column headings and values, including ``Yes``, ``No``, ``Unknown``, ``N/A``, and ``No sessions found``, are localized to the language of the reviewer who generated the report. Downstream tooling shouldn't match on the English strings.
+Rows are sorted by username, then by user ID, so row order is the same every time the report is generated. The cell values aren't: **Last viewed channel at** and **User last activity time** both reflect live state, so two reports generated at different times can differ. Column headings and values, including ``Yes``, ``No``, ``Unknown``, ``N/A``, and ``No sessions found``, are localized to the language of the reviewer who generated the report. Downstream tooling shouldn't match on the English strings.
 
 Exposure report limitations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -221,7 +221,7 @@ Exposure report limitations
 The report is derived from channel membership history and channel read state, which constrains what it can establish:
 
 - **Notification delivery isn't covered**: A user can be exposed to message content without ever opening the channel. Push and email notifications can include the message text, depending on your :ref:`push notification contents <administration-guide/configure/site-configuration-settings:push notification contents>` and :ref:`email notification contents <administration-guide/configure/site-configuration-settings:email notification contents>` settings. Notifications aren't reflected in the report, so an early **Last viewed channel at** value doesn't rule out exposure.
-- **Access to public channels without membership isn't covered**: The report lists channel members only. In a public channel, a message can also reach users who never joined the channel — through a :doc:`post permalink preview </end-user-guide/collaborate/share-links>` rendered when a link to the message is shared in another channel, by browsing and joining the channel while the message was still visible, or through search when :ref:`searching public channels without membership <administration-guide/configure/environment-configuration-settings:allow searching public channels without membership>` is enabled. None of these users appear in the report.
+- **Access to public channels without membership isn't covered**: The report lists channel members only. In a public channel, a message can also reach users who never joined the channel — through a :doc:`post permalink preview </end-user-guide/collaborate/share-links>` rendered when a link to the message is shared in another channel, or through search when :ref:`searching public channels without membership <administration-guide/configure/environment-configuration-settings:allow searching public channels without membership>` is enabled. None of these users appear in the report.
 - **Bots are excluded**: Bot accounts are omitted from the report.
 - **Users who joined after the message was quarantined are excluded**: Membership is resolved against the reporting window only.
 - **Users who left and rejoined appear once**: The report is a list of users, so multiple membership periods are collapsed into a single row. Individual join and leave times aren't reported.
