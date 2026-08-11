@@ -5,7 +5,7 @@ Mattermost is designed from the ground up to blend seamlessly into an organizati
 
 For security teams, Mattermost’s zero-trust-first approach ensures consistent compliance with organizational risk policies by automating key governance processes like incident response or data lifecycle management.
 
-This guide maps Mattermost's security capabilities to the five pillars of the `CISA Zero Trust Maturity Model <https://www.cisa.gov/zero-trust-maturity-model>` and describes how organizations can progress from a traditional perimeter-based stance to full, dynamic Zero Trust enforcement. Features are available on Enterprise or Enterprise Advanced editions as noted.
+This guide maps Mattermost's security capabilities to the five pillars of the `CISA Zero Trust Maturity Model <https://www.cisa.gov/zero-trust-maturity-model>`_ and describes how organizations can progress from a traditional perimeter-based stance to full, dynamic Zero Trust enforcement. Features are available on Enterprise or Enterprise Advanced editions as noted.
 
 User Management / Identity
 --------------------------
@@ -21,7 +21,7 @@ At the most basic level, Mattermost replaces standalone passwords with enterpris
 - :doc:`AD/LDAP User Sync </administration-guide/onboard/ad-ldap>` [Enterprise] — Continuously synchronizes user attributes and group memberships from Active Directory or LDAP. When a user is disabled in the directory, their Mattermost access is revoked automatically on the next sync cycle.
 - :doc:`Role-Based Granular Access Controls </administration-guide/onboard/advanced-permissions>` [Enterprise] — Defines System, Team, and Channel Admin roles with fine-grained permission scopes. Roles can be synchronized from AD/LDAP and updated automatically, keeping permissions current with organizational policy.
 - :doc:`Multifactor Authentication (MFA) </administration-guide/onboard/multi-factor-authentication>` [Enterprise] — TOTP-based second factor compatible with Google Authenticator, Microsoft Authenticator, and FreeOTP. Admins can enforce MFA across all users or delegate enforcement to the identity provider.
-- :doc:`Session Management </administration-guide/configure/environment-configuration-settings::session-lengths>` [Enterprise] — Controls session lifetimes and revokes sessions on inactivity or policy violation, limiting the window of exposure from stolen tokens.
+- :ref:`Session Management <administration-guide/configure/environment-configuration-settings:session lengths>` [Enterprise] — Controls session lifetimes and revokes sessions on inactivity or policy violation, limiting the window of exposure from stolen tokens.
 - :doc:`Custom Profile Attributes </administration-guide/manage/admin/user-attributes>` [Enterprise] — Admin-managed user metadata (clearance level, program affiliation, location, role) displayed on profiles and available for use in access policy definitions.
 - :doc:`Guest Accounts </administration-guide/onboard/guest-accounts>` [Enterprise] — External users receive scoped access limited to specific channels. Single-channel guests are free up to a 1:1 ratio with licensed seats. Guests cannot discover other channels or teams.
 - :doc:`Magic Link for Guests </administration-guide/onboard/guest-accounts>` [Enterprise] — Passwordless, expiring access links for external users eliminate shared credential risk. Links expire after 48 hours; guests can request a new link with the same email address.
@@ -56,15 +56,15 @@ Foundation: managed device deployment
 Advanced: device posture enforcement
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- :doc:`Mobile Biometrics </deployment-guide/mobile/mobile-security-features::biometric-authentication>` [Enterprise Advanced] — Requires biometric authentication (Face ID or fingerprint) via the device OS at each app launch. Administrators can enforce this requirement, adding a hardware-anchored second factor that cannot be bypassed at the software level.
+- :ref:`Mobile Biometrics <security-guide/mobile-security:biometric authentication>` [Enterprise Advanced] — Requires biometric authentication (Face ID or fingerprint) via the device OS at each app launch. Administrators can enforce this requirement, adding a hardware-anchored second factor that cannot be bypassed at the software level.
 - :doc:`Intune MAM for iOS </deployment-guide/mobile/configure-microsoft-intune-mam>` [Enterprise Advanced] — Applies Microsoft Intune App Protection Policies to the Mattermost iOS app with identity-based controls, without requiring full device enrollment. Prevents data leakage between work and personal apps.
 
 Optimal: real-time device integrity verification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- :doc:`Mobile Jailbreak / Root Detection </deployment-guide/mobile/mobile-security-features::jailbreak-and-root-detection>` [Enterprise Advanced] — Detects jailbroken iOS and rooted Android devices at runtime and blocks access automatically. Access from tampered devices is denied regardless of valid credentials.
-- :doc:`Mobile Data-at-Rest Encryption </deployment-guide/mobile/mobile-security-features::data-at-rest-encryption>` [Enterprise Advanced] — Mandatory OS-level encryption using Apple iOS and Android native security architecture. Data is confined to the app's private sandboxed storage container. Users cannot disable this protection.
-- :doc:`Mobile Screenshot Prevention </deployment-guide/mobile/mobile-security-features::screenshot-prevention>` [Enterprise Advanced] — Blocks screenshots and screen recordings on the Mattermost mobile app. Enforceable by administrators via mobile security policies.
+- :ref:`Mobile Jailbreak / Root Detection <security-guide/mobile-security:jailbreak and root detection>` [Enterprise Advanced] — Detects jailbroken iOS and rooted Android devices at runtime and blocks access automatically. Access from tampered devices is denied regardless of valid credentials.
+- :ref:`Mobile Data-at-Rest Encryption <deployment-guide/mobile/mobile-security-features:data at rest encryption>` [Enterprise Advanced] — Mandatory OS-level encryption using Apple iOS and Android native security architecture. Data is confined to the app's private sandboxed storage container. Users cannot disable this protection.
+- :ref:`Mobile Screenshot Prevention <security-guide/mobile-security:screenshot and screen recording prevention>` [Enterprise Advanced] — Blocks screenshots and screen recordings on the Mattermost mobile app. Enforceable by administrators via mobile security policies.
 - :doc:`Secure File Viewer (Mobile) </deployment-guide/mobile/secure-mobile-file-storage>` [Enterprise Advanced] — Allows users to view PDFs, images, and videos without downloading files to the device. Sensitive and classified documents remain under organizational control at all times.
 
 Networks
@@ -76,7 +76,7 @@ Foundation: self-hosted and encrypted transport
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - :doc:`Self-Hosting Mattermost </deployment-guide/deployment-guide-index>` [Enterprise] — Complete data sovereignty with no dependence on public cloud infrastructure. Administrators retain full control over network placement, access controls, and configuration.
-- :doc:`Transport Layer Security (TLS) </deployment-guide/encryption-options::encryption-in-transit>` [Enterprise] — All data in transit is encrypted. TLS configuration is documented for both direct server deployments and NGINX proxy deployments.
+- :ref:`Transport Layer Security (TLS) <deployment-guide/encryption-options:encryption in transit>` [Enterprise] — All data in transit is encrypted. TLS configuration is documented for both direct server deployments and NGINX proxy deployments.
 - :doc:`Cloud IP Filtering </administration-guide/manage/cloud-ip-filtering>` [Enterprise] — Restricts platform access to trusted network ranges for cloud deployments, ensuring every inbound connection is evaluated against an allowlist.
 
 Advanced: resilient, distributed, and isolated deployment
@@ -139,7 +139,7 @@ Zero Trust treats data protection as a continuous obligation—not a perimeter d
 Foundation: encryption and basic inventory
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- :doc:`Database Encryption </deployment-guide/encryption-options::database>` [Enterprise] — Protects user and organizational data at rest. Encryption configuration options are documented for PostgreSQL deployments.
+- :ref:`Database Encryption <deployment-guide/encryption-options:encryption at rest>` [Enterprise] — Protects user and organizational data at rest. Encryption configuration options are documented for PostgreSQL deployments.
 - :doc:`Channel Export </administration-guide/comply/export-mattermost-channel-data>` [Enterprise] — Exports channel message data to CSV. Restricted to system, team, and channel admins. Provides an initial mechanism for data inventory and auditability.
 - :doc:`Custom End-User Terms of Service </administration-guide/comply/custom-terms-of-service>` [Enterprise] — Enforces acceptance of organization-specific terms before platform access. Configurable re-acceptance periods ensure terms remain current and users are regularly reminded of data handling obligations.
 
@@ -157,9 +157,9 @@ Optimal: classified data controls, spillage handling, and cryptographic enforcem
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - :doc:`Data Spillage Handling </administration-guide/manage/admin/content-flagging>` [Enterprise Advanced] — Any user can flag potentially sensitive content. Flagged content is immediately suppressed and a designated security team is notified with context, including a list of users who may have seen it. After review, content can be cleared or permanently deleted.
-- :doc:`Burn-on-Read Messages </administration-guide/configure/site-configuration-settings::enable-burn-on-read-messages>` [Enterprise Advanced] — Messages are concealed until recipients reveal them and are automatically deleted after a configurable timer expires. Deletion is permanent and prevents recovery. Senders can track read status and delete for all recipients before expiration.
+- :ref:`Burn-on-Read Messages <administration-guide/configure/site-configuration-settings:enable burn on read messages>` [Enterprise Advanced] — Messages are concealed until recipients reveal them and are automatically deleted after a configurable timer expires. Deletion is permanent and prevents recovery. Senders can track read status and delete for all recipients before expiration.
 - :doc:`FIPS 140-3 Compliant </deployment-guide/server/containers/fips-stig>` [Enterprise] — FIPS 140-3 validated cryptographic modules used throughout the product for all cryptographic operations. Satisfies NIST 800-53 standards for agencies processing sensitive, classified, or regulated data.
-- :doc:`Mobile Data-at-Rest Encryption </deployment-guide/mobile/mobile-security-features::mobile-data-isolation>` [Enterprise Advanced] — Mandatory OS-level encryption on iOS and Android. Data stored in the app's private container cannot be accessed outside the sandboxed environment, even on a lost or stolen device.
+- :ref:`Mobile Data-at-Rest Encryption <deployment-guide/mobile/mobile-security-features:mobile data isolation>` [Enterprise Advanced] — Mandatory OS-level encryption on iOS and Android. Data stored in the app's private container cannot be accessed outside the sandboxed environment, even on a lost or stolen device.
 
 Progressing through Zero Trust maturity
 ---------------------------------------
