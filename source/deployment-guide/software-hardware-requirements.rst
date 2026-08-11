@@ -50,10 +50,10 @@ PC web
 .. csv-table::
     :header: "Browser", "Self-Hosted Technical Requirement", "Cloud Technical Requirement"
 
-    "Chrome", "v146+", "v146+"
+    "Chrome", "v150+", "v150+"
     "Firefox", "v140+", "v140+"
     "Safari", "v26.2+", "v26.2+"
-    "Edge", "v146+", "v146+"
+    "Edge", "v150+", "v150+"
 
 `*` Internet Explorer (IE11) is no longer supported. We recommend using the `Mattermost desktop app <https://mattermost.com/apps/>`_ or another supported browser. See `this forum post <https://forum.mattermost.com/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`__ to learn more.
 
@@ -78,8 +78,8 @@ Mobile web
 .. csv-table::
     :header: "Browser", "Technical Requirement"
 
-    "iOS", "iOS 16.0+ with Safari 26.2+ or Chrome 146+"
-    "Android", "Android 7+ with Chrome 146+"
+    "iOS", "iOS 16.0+ with Safari 26.2+ or Chrome 150+"
+    "Android", "Android 7+ with Chrome 150+"
 
 Email client
 ^^^^^^^^^^^^
@@ -131,11 +131,11 @@ When a PostgreSQL version reaches its end of life (EOL), Mattermost will require
 +------------------------------------------------------------+------------------+--------------------------------+
 | **Mattermost Version**                                     | **Release Date** | **Minimum PostgreSQL Version** |
 +============================================================+==================+================================+
-| :ref:`v9.11 ESR <release-v9-11-extended-support-release>`  | 2024-8-15        | 11.x                           |
+| :ref:`v9.11 ESR <release-v9-11-extended-support-release>`  | 2024-8-16        | 11.x                           |
 +------------------------------------------------------------+------------------+--------------------------------+
-| :ref:`v10.5 ESR <release-v10.5-extended-support-release>`  | 2025-2-15        | 11.x                           |
+| :ref:`v10.5 ESR <release-v10.5-extended-support-release>`  | 2025-2-16        | 11.x                           |
 +------------------------------------------------------------+------------------+--------------------------------+
-| :ref:`v10.6 <release-v10.6-feature-release>`               | 2025-3-15        | 13.x                           |
+| :ref:`v10.6 <release-v10.6-feature-release>`               | 2025-3-16        | 13.x                           |
 +------------------------------------------------------------+------------------+--------------------------------+
 | :ref:`v10.11 ESR <release-v10.11-extended-support-release>`| 2025-8-15        | 13.x                           |
 +------------------------------------------------------------+------------------+--------------------------------+
