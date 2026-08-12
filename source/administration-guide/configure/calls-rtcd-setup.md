@@ -386,9 +386,12 @@ If the store is lost, the credentials the Calls plugin holds no longer match any
 ```
 
 ```{important}
-The Calls plugin opens its connection to RTCD when the plugin starts, and fails to start if the service isn't reachable. The same applies to the `calls-offloader` service when recording, transcription, or live captions are configured.
+The Calls plugin opens its connection to RTCD when the plugin starts, and fails to start if the service isn't reachable. The same applies to the `calls-offloader` service when recording, transcription, or live captions are configured. RTCD therefore has to be up and running before the Mattermost server starts, or before Calls is re-enabled.
 
-This means RTCD has to be up and running before the Mattermost server starts, or before Calls is re-enabled. Restarting the Mattermost server while RTCD is down leaves Calls unavailable until RTCD is back and the plugin has been restarted.
+Failures at startup and failures later on behave differently:
+
+- **During plugin activation**, an initial connection failure leaves Calls deactivated, and the server's plugin health check doesn't retry it, because it only monitors plugins that activated successfully. Once RTCD is reachable, restart the Calls plugin to bring it back.
+- **After a connection is established**, later disconnections are retried automatically, so a brief RTCD restart needs no action on the Mattermost side. The plugin makes up to 8 reconnection attempts for a host before dropping it, and a dropped host that's still advertised in DNS is picked up again by the 10 second host check.
 ```
 
 ### Version Compatibility
