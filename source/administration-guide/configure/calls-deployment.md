@@ -664,7 +664,17 @@ When `rtcd` receives a `SIGTERM` or `SIGINT` signal, it drains instead of exitin
 Two things follow from this behavior:
 
 - The HTTP and WebSocket API listeners stay open while the service drains, so a draining instance can still be assigned new calls. Remove the instance from the DNS record *before* signalling the process, otherwise the plugin can keep sending new calls to it and the drain may never complete.
-- Any process supervisor that force-kills the service after a timeout cuts off the calls still running on it. Set the stop timeout generously (`TimeoutStopSec` with systemd, `terminationGracePeriodSeconds` with Kubernetes), since meetings can run for hours.
+- Any process supervisor that force-kills the service after a timeout cuts off the calls still running on it. The stop timeout has to be long enough to outlast a call, and the defaults generally aren't.
+
+With systemd, `systemctl stop rtcd` sends `SIGTERM` to the service, and with the default `KillMode=control-group`, to every process in the unit's control group. systemd then waits for `TimeoutStopSec` before escalating to `SIGKILL`. The [unit file recommended in the rtcd documentation](https://github.com/mattermost/rtcd/blob/master/docs/getting_started.md#as-a-systemd-service) doesn't set that value, so it inherits `DefaultTimeoutStopSec`, which is 90 seconds on a stock systemd installation. Calls still running 90 seconds after the stop command was issued are dropped.
+
+To let the service drain fully, set a generous stop timeout in the `[Service]` section of the unit file:
+
+```
+TimeoutStopSec=18000
+```
+
+This matches the 5 hour grace period the Helm chart uses. Use `TimeoutStopSec=infinity` to wait for the drain however long it takes.
 
 #### Rolling upgrade with multiple instances
 
@@ -673,7 +683,7 @@ When [horizontal scalability](#horizontal-scalability) is configured, instances 
 1. Remove the instance's IP address from the DNS record that the [RTCD Service URL](https://docs.mattermost.com/configure/plugins-configuration-settings.html#rtcd-service-url) resolves to.
 2. Wait for the Calls plugin to pick up the change. The plugin re-resolves the hostname every 10 seconds and flags hosts that are no longer advertised. A flagged host is excluded from new calls, while the calls already running on it continue uninterrupted.
 3. Wait for the instance to go idle. Its `rtcd_rtc_sessions_total` metric, exposed through the `/metrics` endpoint described in [Monitoring](#monitoring), reports the number of active RTC sessions. The instance can be restarted safely once this reaches zero.
-4. Stop the service, for example with `systemctl stop rtcd`, so that it receives `SIGTERM`.
+4. Stop the service, for example with `systemctl stop rtcd`. Because the instance is already idle at this point, it exits immediately and the stop timeout doesn't come into play.
 5. Replace the binary or container image with the new version and start the service again.
 6. Confirm the new version is running with `curl http://<rtcd-host>:8045/version`.
 7. Add the IP address back to the DNS record. The plugin creates a client for the host on its next resolution cycle and starts assigning new calls to it.
@@ -689,7 +699,7 @@ Once the instance is back in rotation, repeat the process for the next one.
 
 With a single `rtcd` instance, an upgrade interrupts the service: no new calls can be started while the process is down, and because the service drains on shutdown, the restart doesn't complete until the existing calls end. There are two options:
 
-- **Wait for the drain to complete.** Send `SIGTERM` and let the service exit after the last call ends. No call is dropped, but the length of the outage depends on how long those calls run, and new calls fail in the meantime.
+- **Wait for the drain to complete.** Send `SIGTERM` and let the service exit after the last call ends. No call is dropped, but the length of the outage depends on how long those calls run, and new calls fail in the meantime. This requires a stop timeout long enough to cover the drain, as described above, otherwise the supervisor kills the service partway through and the calls are dropped anyway.
 - **Stop the service at a set time.** Notify participants, then force the process down with `SIGKILL` after a fixed period. Any calls still running are dropped and clients see those calls end.
 
 Scheduling the upgrade for a period of low usage keeps either option short. See [Communicate scheduled maintenance](https://docs.mattermost.com/administration-guide/upgrade/communicate-scheduled-maintenance.html) for templates to notify your users.
