@@ -395,17 +395,17 @@ When RTCD receives a `SIGTERM` or `SIGINT` signal, it drains instead of exiting 
 Two things follow from this behavior:
 
 - The HTTP and WebSocket API listeners stay open while the service drains, so a draining server can still be assigned new calls. Remove the server from the DNS record *before* signalling the process, otherwise the plugin can keep sending new calls to it and the drain may never complete.
-- Any process supervisor that force-kills the service after a timeout cuts off the calls still running on it. The stop timeout has to be long enough to outlast a call, and the defaults generally aren't.
+- Any process supervisor that force-kills the service after a timeout cuts off the calls still running on it, and the default timeouts are generally shorter than a call.
 
 `systemctl stop rtcd` sends `SIGTERM` to the service, and with the default `KillMode=control-group`, to every process in the unit's control group. systemd then waits for `TimeoutStopSec` before escalating to `SIGKILL`. When that value isn't set explicitly it inherits `DefaultTimeoutStopSec`, which is 90 seconds on a stock systemd installation, so calls still running 90 seconds after the stop command was issued are dropped.
 
-If you want a full drain on `systemctl stop`, raise the stop timeout in the `[Service]` section of the service file, for example `TimeoutStopSec=18000` (5 hours, matching the grace period the Helm chart uses) or `TimeoutStopSec=infinity` to wait however long the last call takes. Otherwise, follow the rolling upgrade below, which drains a server through DNS before stopping it, so the timeout never comes into play.
+The rolling upgrade below avoids this entirely by draining a server through DNS before stopping it, so the server is already idle by the time the service is stopped and the timeout never comes into play.
 
 ### Upgrading a Single Server
 
 With a single RTCD server, an upgrade interrupts the service: no new calls can be started while the process is down, and because the service drains on shutdown, the restart doesn't complete until the existing calls end. There are two options:
 
-- **Wait for the drain to complete.** Send `SIGTERM` and let the service exit after the last call ends. No call is dropped, but the length of the outage depends on how long those calls run, and new calls fail in the meantime. This requires a stop timeout long enough to cover the drain, as described above, otherwise the supervisor kills the service partway through and the calls are dropped anyway.
+- **Wait for the drain to complete.** Send `SIGTERM` and let the service exit after the last call ends. No call is dropped, but the length of the outage depends on how long those calls run, and new calls fail in the meantime. Note that the drain only runs to completion if the process supervisor allows it: with systemd's 90 second default stop timeout, a longer drain is cut short and the remaining calls are dropped.
 - **Stop the service at a set time.** Notify participants, then force the process down with `SIGKILL` after a fixed period. Any calls still running are dropped and clients see those calls end.
 
 Scheduling the upgrade for a period of low usage keeps either option short. See [Communicate scheduled maintenance](https://docs.mattermost.com/administration-guide/upgrade/communicate-scheduled-maintenance.html) for templates to notify your users.
