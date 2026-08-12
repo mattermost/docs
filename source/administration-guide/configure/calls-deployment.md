@@ -633,6 +633,77 @@ The expected requirements are the following:
 - There's currently no support for spreading sessions belonging to the same call across a fleet of instances.
 ```
 
+### Upgrade the `rtcd` service
+
+```{include} ../../_static/badges/ent-plus.md
+```
+
+The `rtcd` service is released and upgraded independently of the Mattermost server. An upgrade consists of replacing the binary or container image and restarting the process. There's no database or schema migration involved, since `rtcd` holds no persistent state beyond the credentials it uses to authenticate the Calls plugin. The main consideration is timing the restart so that calls in progress aren't dropped.
+
+Releases are published to the [rtcd repository](https://github.com/mattermost/rtcd/releases) as `rtcd-linux-amd64` and `rtcd-linux-arm64` binaries, and to Docker Hub as the [mattermost/rtcd](https://hub.docker.com/r/mattermost/rtcd) image.
+
+#### Version compatibility
+
+The Calls plugin enforces a minimum `rtcd` version and won't use a host running an older one. All Calls versions from v1.5.0 onwards require `rtcd` v0.17.0 or later.
+
+For this reason, upgrade `rtcd` **before** upgrading the Mattermost server to a release shipping a newer version of Calls. When the plugin finds a host below the minimum version:
+
+- On plugin activation, such as after a Mattermost server restart or upgrade, the failed version check prevents the Calls plugin from starting at all. This happens if *any* of the hosts resolved by the RTCD Service URL fails the check, not only if all of them do.
+- On a host discovered through DNS while the plugin is already running, the failure is logged as an error and the host isn't used. Calls continue to be routed to the remaining hosts.
+
+This means an `rtcd` host below the minimum version that's left in the DNS record can prevent Calls from starting the next time the Mattermost server restarts, even if calls are working at the time.
+
+See [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html) for version-specific requirements.
+
+To check the version an instance is running, query it directly with `curl http://<rtcd-host>:8045/version`.
+
+#### How `rtcd` shuts down
+
+When `rtcd` receives a `SIGTERM` or `SIGINT` signal, it drains instead of exiting immediately: it waits for all active call sessions to end before shutting down. Calls in progress are never force-closed, and there's no drain timeout, so the process waits for as long as the last call lasts.
+
+Two things follow from this behavior:
+
+- The HTTP and WebSocket API listeners stay open while the service drains, so a draining instance can still be assigned new calls. Remove the instance from the DNS record *before* signalling the process, otherwise the plugin can keep sending new calls to it and the drain may never complete.
+- Any process supervisor that force-kills the service after a timeout cuts off the calls still running on it. Set the stop timeout generously (`TimeoutStopSec` with systemd, `terminationGracePeriodSeconds` with Kubernetes), since meetings can run for hours.
+
+#### Rolling upgrade with multiple instances
+
+When [horizontal scalability](#horizontal-scalability) is configured, instances can be upgraded one at a time without dropping calls. For each instance in turn:
+
+1. Remove the instance's IP address from the DNS record that the [RTCD Service URL](https://docs.mattermost.com/configure/plugins-configuration-settings.html#rtcd-service-url) resolves to.
+2. Wait for the Calls plugin to pick up the change. The plugin re-resolves the hostname every 10 seconds and flags hosts that are no longer advertised. A flagged host is excluded from new calls, while the calls already running on it continue uninterrupted.
+3. Wait for the instance to go idle. Its `rtcd_rtc_sessions_total` metric, exposed through the `/metrics` endpoint described in [Monitoring](#monitoring), reports the number of active RTC sessions. The instance can be restarted safely once this reaches zero.
+4. Stop the service, for example with `systemctl stop rtcd`, so that it receives `SIGTERM`.
+5. Replace the binary or container image with the new version and start the service again.
+6. Confirm the new version is running with `curl http://<rtcd-host>:8045/version`.
+7. Add the IP address back to the DNS record. The plugin creates a client for the host on its next resolution cycle and starts assigning new calls to it.
+
+Once the instance is back in rotation, repeat the process for the next one.
+
+```{note}
+- Since a call always lives entirely on a single instance, restarting one instance only ever affects the calls hosted on that instance.
+- Keep enough capacity in the fleet to absorb new calls while an instance is out of rotation. Waiting for a host to reach zero sessions can take a while when calls are long-running.
+```
+
+#### Upgrading a single instance
+
+With a single `rtcd` instance, an upgrade interrupts the service: no new calls can be started while the process is down, and because the service drains on shutdown, the restart doesn't complete until the existing calls end. There are two options:
+
+- **Wait for the drain to complete.** Send `SIGTERM` and let the service exit after the last call ends. No call is dropped, but the length of the outage depends on how long those calls run, and new calls fail in the meantime.
+- **Stop the service at a set time.** Notify participants, then force the process down with `SIGKILL` after a fixed period. Any calls still running are dropped and clients see those calls end.
+
+Scheduling the upgrade for a period of low usage keeps either option short. See [Communicate scheduled maintenance](https://docs.mattermost.com/administration-guide/upgrade/communicate-scheduled-maintenance.html) for templates to notify your users.
+
+#### Upgrading in Kubernetes
+
+The [rtcd Helm chart](#helm-charts) is configured for this workflow out of the box. It defaults to a `RollingUpdate` strategy with `maxUnavailable: 1`, so pods are replaced one at a time, and it sets `terminationGracePeriod` to `18000` seconds (5 hours) so that Kubernetes doesn't kill a pod that's still draining calls.
+
+To upgrade, set `image.tag` to the new version in your values file and apply the chart. Kubernetes then replaces each pod in turn, sending `SIGTERM` to let it drain first.
+
+```{warning}
+Don't reduce `terminationGracePeriod` to a conventional value such as 30 or 60 seconds. When the grace period expires, Kubernetes sends `SIGKILL` and every call still running on that pod is dropped. The default of 5 hours is deliberately long enough to outlast extended meetings.
+```
+
 ## Configure recording, transcriptions, and live captions
 
 ```{include} ../../_static/badges/ent-plus.md
