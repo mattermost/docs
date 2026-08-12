@@ -365,9 +365,25 @@ When a call starts, the Mattermost server examines the available RTCD servers (v
 
 ## Upgrading RTCD
 
-RTCD is released and upgraded independently of the Mattermost server. An upgrade consists of replacing the binary or container image and restarting the service. There's no database or schema migration involved, since RTCD holds no persistent state beyond the credentials it uses to authenticate the Calls plugin. The main consideration is timing the restart so that calls in progress aren't dropped.
+RTCD is released and upgraded independently of the Mattermost server. An upgrade consists of replacing the binary or container image and restarting the service. There's no database or schema migration involved. The two things to plan for are preserving the data store and timing the restart so that calls in progress aren't dropped.
 
 Releases are published to the [RTCD GitHub repository](https://github.com/mattermost/rtcd/releases) as `rtcd-linux-amd64` and `rtcd-linux-arm64` binaries, and to Docker Hub as the [mattermost/rtcd](https://hub.docker.com/r/mattermost/rtcd) image.
+
+### Preserve the Data Store
+
+RTCD keeps a small local store at the path set by `data_source` in the `[store]` section of the configuration file, which defaults to `/tmp/rtcd_db`. It holds the client IDs registered by Mattermost servers along with a bcrypt hash of each client's authentication key. This is the only state RTCD persists, and it has to survive the upgrade:
+
+- **Bare metal or VM.** The store lives outside the binary, so replacing the binary in place preserves it. Verify that `data_source` doesn't point at a location cleared on reboot: the default `/tmp/rtcd_db` is on a temporary filesystem on many distributions.
+- **Docker.** The store is inside the container filesystem unless it's mounted, so recreating the container discards it. Mount a volume over the `data_source` path to keep it across image replacements.
+
+Back the store up by copying its directory while the service is stopped.
+
+```{note}
+If the store is lost, the credentials the Calls plugin holds no longer match anything on the RTCD side, and the plugin can't authenticate. Recovery depends on `allow_self_registration` under `[api.security]`:
+
+- When it's disabled, which is the default, registration itself requires authenticating first, so the plugin can neither authenticate nor re-register. Calls stays broken until the store is restored or new credentials are provisioned.
+- When it's enabled, the plugin detects the failure and registers again automatically, so a lost store recovers on its own.
+```
 
 ```{important}
 The Calls plugin opens its connection to RTCD when the plugin starts, and fails to start if the service isn't reachable. The same applies to the `calls-offloader` service when recording, transcription, or live captions are configured.
@@ -386,7 +402,7 @@ For this reason, upgrade RTCD **before** upgrading the Mattermost server to a re
 
 This means an RTCD server below the minimum version that's left in the DNS record can prevent Calls from starting the next time the Mattermost server restarts, even if calls are working at the time.
 
-See [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html) for version-specific requirements. To check the version a server is running, query it directly with `curl http://YOUR_RTCD_SERVER:8045/version`.
+See {doc}`Important Upgrade Notes <../../administration-guide/upgrade/important-upgrade-notes>` for version-specific requirements. To check the version a server is running, query it directly with `curl http://YOUR_RTCD_SERVER:8045/version`.
 
 ### How RTCD Shuts Down
 
@@ -394,7 +410,7 @@ When RTCD receives a `SIGTERM` or `SIGINT` signal, it drains instead of exiting 
 
 Two things follow from this behavior:
 
-- The HTTP and WebSocket API listeners stay open while the service drains, so a draining server can still be assigned new calls. Remove the server from the DNS record *before* signalling the process, otherwise the plugin can keep sending new calls to it and the drain may never complete.
+- The HTTP and WebSocket API listeners stay open while the service drains, so a draining server can still be assigned new calls. Remove the server from the DNS record *before* signalling the process; otherwise the plugin can keep sending new calls to it, and the drain may never complete.
 - Any process supervisor that force-kills the service after a timeout cuts off the calls still running on it, and the default timeouts are generally shorter than a call.
 
 `systemctl stop rtcd` sends `SIGTERM` to the service, and with the default `KillMode=control-group`, to every process in the unit's control group. systemd then waits for `TimeoutStopSec` before escalating to `SIGKILL`. When that value isn't set explicitly it inherits `DefaultTimeoutStopSec`, which is 90 seconds on a stock systemd installation, so calls still running 90 seconds after the stop command was issued are dropped.
@@ -408,7 +424,7 @@ With a single RTCD server, an upgrade interrupts the service: no new calls can b
 - **Wait for the drain to complete.** Send `SIGTERM` and let the service exit after the last call ends. No call is dropped, but the length of the outage depends on how long those calls run, and new calls fail in the meantime. Note that the drain only runs to completion if the process supervisor allows it: with systemd's 90 second default stop timeout, a longer drain is cut short and the remaining calls are dropped.
 - **Stop the service at a set time.** Notify participants, then force the process down with `SIGKILL` after a fixed period. Any calls still running are dropped and clients see those calls end.
 
-Scheduling the upgrade for a period of low usage keeps either option short. See [Communicate scheduled maintenance](https://docs.mattermost.com/administration-guide/upgrade/communicate-scheduled-maintenance.html) for templates to notify your users.
+Scheduling the upgrade for a period of low usage keeps either option short. See {doc}`Communicate scheduled maintenance <../../administration-guide/upgrade/communicate-scheduled-maintenance>` for templates to notify your users.
 
 ### Rolling Upgrade with Multiple Servers
 
@@ -457,9 +473,11 @@ Once the server is back in rotation, repeat the process for the next one.
 
 ### Upgrading in Kubernetes
 
-The [RTCD Helm chart](calls-kubernetes.md#rtcd-helm-chart) is configured for this workflow out of the box. It defaults to a `RollingUpdate` strategy with `maxUnavailable: 1`, so pods are replaced one at a time, and it sets `terminationGracePeriod` to `18000` seconds (5 hours) so that Kubernetes doesn't kill a pod that's still draining calls.
+The [RTCD Helm chart](calls-kubernetes.md#rtcd-helm-chart) defaults to a `RollingUpdate` strategy with `maxUnavailable: 1`, and sets `configuration.terminationGracePeriod` to `18000` seconds (5 hours). That value maps to the pod's `terminationGracePeriodSeconds`, so Kubernetes allows a pod 5 hours to drain its calls before killing it.
 
-To upgrade, set `image.tag` to the new version in your values file and apply the chart. Kubernetes then replaces each pod in turn, sending `SIGTERM` to let it drain first.
+To upgrade, set `image.tag` to the new version in your values file and apply the chart. Kubernetes sends `SIGTERM` to each pod it replaces, which starts the drain described above.
+
+The chart doesn't set `maxSurge`, so a `Deployment` rollout uses the Kubernetes default and new pods can be created before the draining ones have exited. Expect old and new pods to run side by side for as long as the drains take, and size the node pool accordingly. `maxUnavailable: 1` bounds how many pods can be unavailable at once; it doesn't serialize the replacements.
 
 ```{warning}
 Don't reduce `terminationGracePeriod` to a conventional value such as 30 or 60 seconds. When the grace period expires, Kubernetes sends `SIGKILL` and every call still running on that pod is dropped. The default of 5 hours is deliberately long enough to outlast extended meetings.
