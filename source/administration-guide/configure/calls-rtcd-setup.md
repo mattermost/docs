@@ -401,6 +401,15 @@ Two things follow from this behavior:
 
 If you want a full drain on `systemctl stop`, raise the stop timeout in the `[Service]` section of the service file, for example `TimeoutStopSec=18000` (5 hours, matching the grace period the Helm chart uses) or `TimeoutStopSec=infinity` to wait however long the last call takes. Otherwise, follow the rolling upgrade below, which drains a server through DNS before stopping it, so the timeout never comes into play.
 
+### Upgrading a Single Server
+
+With a single RTCD server, an upgrade interrupts the service: no new calls can be started while the process is down, and because the service drains on shutdown, the restart doesn't complete until the existing calls end. There are two options:
+
+- **Wait for the drain to complete.** Send `SIGTERM` and let the service exit after the last call ends. No call is dropped, but the length of the outage depends on how long those calls run, and new calls fail in the meantime. This requires a stop timeout long enough to cover the drain, as described above, otherwise the supervisor kills the service partway through and the calls are dropped anyway.
+- **Stop the service at a set time.** Notify participants, then force the process down with `SIGKILL` after a fixed period. Any calls still running are dropped and clients see those calls end.
+
+Scheduling the upgrade for a period of low usage keeps either option short. See [Communicate scheduled maintenance](https://docs.mattermost.com/administration-guide/upgrade/communicate-scheduled-maintenance.html) for templates to notify your users.
+
 ### Rolling Upgrade with Multiple Servers
 
 When [horizontal scaling](#horizontal-scaling) is configured, servers can be upgraded one at a time without dropping calls. For each server in turn:
@@ -445,15 +454,6 @@ Once the server is back in rotation, repeat the process for the next one.
 - Since a call always lives entirely on a single server, restarting one server only ever affects the calls hosted on that server.
 - Keep enough capacity in the fleet to absorb new calls while a server is out of rotation. Waiting for a server to reach zero sessions can take a while when calls are long-running.
 ```
-
-### Upgrading a Single Server
-
-With a single RTCD server, an upgrade interrupts the service: no new calls can be started while the process is down, and because the service drains on shutdown, the restart doesn't complete until the existing calls end. There are two options:
-
-- **Wait for the drain to complete.** Send `SIGTERM` and let the service exit after the last call ends. No call is dropped, but the length of the outage depends on how long those calls run, and new calls fail in the meantime. This requires a stop timeout long enough to cover the drain, as described above, otherwise the supervisor kills the service partway through and the calls are dropped anyway.
-- **Stop the service at a set time.** Notify participants, then force the process down with `SIGKILL` after a fixed period. Any calls still running are dropped and clients see those calls end.
-
-Scheduling the upgrade for a period of low usage keeps either option short. See [Communicate scheduled maintenance](https://docs.mattermost.com/administration-guide/upgrade/communicate-scheduled-maintenance.html) for templates to notify your users.
 
 ### Upgrading in Kubernetes
 
