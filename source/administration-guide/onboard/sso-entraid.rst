@@ -19,7 +19,7 @@ Step 1: Register an application in Azure Portal
 
 1. Log in to the `Azure Portal <https://portal.azure.com/>`_ with the account that relates to the Azure Active Directory tenant where you want to register the application. You can confirm the tenant in the top right corner of the portal.
 
-2. In the left-hand navigation pane, select the **Azure Active Directory service**, then select **App registrations > New registration**.
+2. In the left-hand navigation pane, select the **Microsoft EntraID**, then toward the bottom select **Add application registrations**.
 
 3. Give your new registration a **Name**.
 
@@ -36,19 +36,27 @@ Once the App Registration has been created, you can configure it further. See th
 Step 2: Generate a new client secret in Azure Portal
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. In the Azure Portal, select **Certificates and Secrets** from the menu, then select the button to generate a **New Client secret**. 
+1. From the overview page of the newly created **Registered App**, select **Certificates and Secrets** from the menu, then select the button to generate a **New Client secret**. 
+
+.. image:: /images/AzureApp_Client_Secret_Setup.png
 
 2. Provide a description, define the expiry for the token, then select **Add**.
 
-3. In Azure Portal, select **Overview** from the menu, then copy and paste both the Application (client) ID and the Directory (tenant) ID to a temporary location. You will enter these values as an **Application ID** and as part of an **Auth Endpoint** and **Token Endpoint** URL in the Mattermost System Console.
-
 .. image:: /images/AzureApp_Client_Secret_Expiry.png
+
+3. Store the **value** of the new secret somewhere secure.
+
+4. In Azure Portal, select **Overview** from the menu, then copy and paste both the Application (client) ID and the Directory (tenant) ID to a temporary location. You will enter these values as an **Application ID** and as part of an **Auth Endpoint** and **Token Endpoint** URL in the Mattermost System Console.
 
 .. image:: /images/AzureApp_App_Directory_IDsv2.png
 
+5. Grant admin concent for the configured permissions under **App Registrations > <Your App> > Manage > API Permissions**
+
+.. image:: /images/AzureApp_App_Directory_Grant_Admin_Consent.png
+
+
 Step 3: Configure Mattermost for Entra ID SSO
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 1. Log in to Mattermost, then go to **System Console > Authentication > OpenID Connect**.
 
 2. Select **Entra ID** as the service provider.
@@ -69,7 +77,7 @@ Step 3: Configure Mattermost for Entra ID SSO
 Note about Microsoft Active Directory Tenants
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A Microsoft Active Directory (AD) tenant is a dedicated instance of Azure Active Directory (Azure AD) that you own and would have received when signing up for a Microsoft cloud service, such as Azure or Entra ID. Tenants are commonly used by organizations who want to store information about their users, such as passwords, user profile data, and permissions. See the Microsoft Entra ID <https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-create-new-tenant>`_ documentation to learn more about getting an Azure AD tenant.
+A Microsoft Active Directory (AD) tenant is a dedicated instance of Azure Active Directory (Azure AD) that you own and would have received when signing up for a Microsoft cloud service, such as Azure or Entra ID. Tenants are commonly used by organizations who want to store information about their users, such as passwords, user profile data, and permissions. See the `Microsoft Entra ID <https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-create-new-tenant>`_ documentation to learn more about getting an Azure AD tenant.
 
 To allow your Azure AD users to log in to Mattermost using Entra ID SSO, you must register Mattermost in the Microsoft Azure AD tenant that contains the users' information. The registration can be done from the `Microsoft Azure portal <https://portal.azure.com>`__. The steps to register the Mattermost account in the tenant should be similar to those provided above, and you can find more information about `integrating apps with Azure AD here <https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-create-new-tenant>`_.
 

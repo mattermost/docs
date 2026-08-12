@@ -48,7 +48,7 @@ Step 1: Deploy Mattermost
     :alt: An example of the Azure AKS Database setup screen.
 
 
-5. Specify Deployment Details including Deployment Name and Deployment Size. Click the checkbox to Deploy Minio, a required utility for this installation that will provide filestore functionality for your Mattermost instance.
+5. Specify Deployment Details including Deployment Name and Deployment Size. You will need to configure file storage for your Mattermost instance. We recommend using an S3-compatible storage service or an NFS-compatible server.
 
   .. image:: /_static/images/azure/deployment-details.png
     :alt: An example of the Azure AKS Deployment Details setup screen.
@@ -104,7 +104,7 @@ Step 2: Upgrade Mattermost via your AKS cluster
 Looking for a sovereign deployment on Azure Local?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For organizations requiring on-premises deployments with data sovereignty, **Azure Local** (formerly Azure Stack HCI) provides a hybrid cloud platform that enables you to run Mattermost on-premises while maintaining integration with Microsoft Teams and M365. 
+For organizations requiring on-premises deployments with data sovereignty, **Azure Local** (formerly Azure Stack HCI) provides a hybrid cloud platform that enables you to run Mattermost on-premises while maintaining integration with Microsoft Teams and M365.
 
 We recommend engaging **Mattermost Professional Services** for Azure Local deployments to ensure optimal configuration and compliance with your security requirements. `Talk to an Expert <https://mattermost.com/contact-sales/>`_ to discuss your Azure Local deployment needs.
 

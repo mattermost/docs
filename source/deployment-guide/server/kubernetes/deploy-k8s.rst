@@ -44,7 +44,7 @@ The Mattermost Kubernetes Operator can be installed using Helm.
 
     kubectl create ns mattermost-operator
 
-5. Install the Mattermost Operator. If you don't specify a version, the latest version of the Mattermost Operator will be installed. We recommend using the latest version of the Mattermost Operator. 
+5. Install the Mattermost Operator. If you don't specify a version, the latest version of the Mattermost Operator will be installed. We recommend using the latest version of the Mattermost Operator.
 
   .. code-block:: sh
 
@@ -130,18 +130,22 @@ Step 3: Deploy Mattermost
 
     apiVersion: v1
     data:
-      DB_CONNECTION_CHECK_URL: cG9zdGdyZXM6Ly91c2VyOnN1cGVyX3NlY3JldF9wYXNzd29yZEBteS1kYXRhYmFzZS5jbHVzdGVyLWFiY2QudXMtZWFzdC0xLnJkcy5hbWF6b25hd3MuY29tOjU0MzIvbWF0dGVybW9zdD9jb25uZWN0X3RpbWVvdXQ9MTAK
-      DB_CONNECTION_STRING: cG9zdGdyZXM6Ly91c2VyOnN1cGVyX3NlY3JldF9wYXNzd29yZEBteS1kYXRhYmFzZS5jbHVzdGVyLWFiY2QudXMtZWFzdC0xLnJkcy5hbWF6b25hd3MuY29tOjU0MzIvbWF0dGVybW9zdD9jb25uZWN0X3RpbWVvdXQ9MTAK
-      MM_SQLSETTINGS_DATASOURCEREPLICAS: cG9zdGdyZXM6Ly91c2VyOnN1cGVyX3NlY3JldF9wYXNzd29yZEBteS1kYXRhYmFzZS5jbHVzdGVyLXJvLWFiY2QudXMtZWFzdC0xLnJkcy5hbWF6b25hd3MuY29tOjU0MzIvbWF0dGVybW9zdD9jb25uZWN0X3RpbWVvdXQ9MTAK
+      DB_CONNECTION_CHECK_URL: cG9zdGdyZXM6Ly91c2VyOnN1cGVyX3NlY3JldF9wYXNzd29yZEBteS1kYXRhYmFzZS5jbHVzdGVyLWFiY2QudXMtZWFzdC0xLnJkcy5hbWF6b25hd3MuY29tOjU0MzIvbWF0dGVybW9zdD9jb25uZWN0X3RpbWVvdXQ9MTA=
+      DB_CONNECTION_STRING: cG9zdGdyZXM6Ly91c2VyOnN1cGVyX3NlY3JldF9wYXNzd29yZEBteS1kYXRhYmFzZS5jbHVzdGVyLWFiY2QudXMtZWFzdC0xLnJkcy5hbWF6b25hd3MuY29tOjU0MzIvbWF0dGVybW9zdD9jb25uZWN0X3RpbWVvdXQ9MTA=
+      MM_SQLSETTINGS_DATASOURCEREPLICAS: cG9zdGdyZXM6Ly91c2VyOnN1cGVyX3NlY3JldF9wYXNzd29yZEBteS1kYXRhYmFzZS5jbHVzdGVyLXJvLWFiY2QudXMtZWFzdC0xLnJkcy5hbWF6b25hd3MuY29tOjU0MzIvbWF0dGVybW9zdD9jb25uZWN0X3RpbWVvdXQ9MTA=
     kind: Secret
     metadata:
       name: my-postgres-connection
     type: Opaque
 
+  .. note::
+
+    The ``DB_CONNECTION_CHECK_URL`` value is consumed by the operator's legacy ``postgres:13`` + ``pg_isready`` readiness init container (the default ``external`` mode of ``spec.database.readinessCheck``). New deployments are encouraged to set ``spec.database.readinessCheck.mode: builtin`` (see Step 5 below), in which case the readiness init container runs the in-image ``mattermost db ping`` command and the ``DB_CONNECTION_CHECK_URL`` field is no longer required. The legacy ``external`` mode remains the default for backward compatibility but is slated for deprecation in a future operator release.
+
 Step 4: Create the Filestore Secret
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Create a file named ``mattermost-filestore-secret.yaml`` to store the credentials for your object storage service (e.g., AWS S3, MinIO). This secret must be created in the same namespace where you intend to install Mattermost. The file should contain the following YAML structure:
+Create a file named ``mattermost-filestore-secret.yaml`` to store the credentials for your object storage service (e.g., AWS S3 or any S3-compatible service). This secret must be created in the same namespace where you intend to install Mattermost. The file should contain the following YAML structure:
 
 .. code-block:: yaml
 
@@ -193,6 +197,22 @@ Step 5: Configure the Mattermost Installation Manifest
         database:
           external:
             secret: <database-secret-name>  # The name of the database secret (e.g., my-postgres-connection)
+
+  b. **(Recommended)** Configure the database-readiness init container to use the in-image ``mattermost db ping`` command instead of the legacy ``postgres:13`` + ``pg_isready`` flow. This avoids the need to pull a separate ``postgres:13`` image (the primary motivation for air-gapped clusters that can't mirror it) and keeps your readiness check in sync with the Mattermost release you're running.
+
+    .. code-block:: yaml
+
+      spec:
+        database:
+          external:
+            secret: <database-secret-name>
+          readinessCheck:
+            mode: builtin
+            timeout: 5m   # optional; default is 5m
+
+    Using ``builtin`` mode requires a Mattermost release that ships the ``mattermost db ping`` command (see the `Mattermost server pull request <https://github.com/mattermost/mattermost/pull/36406>`__ for availability).
+
+    Omitting ``readinessCheck`` (or setting ``mode: external``) preserves the legacy ``postgres:13`` + ``pg_isready`` behavior. The legacy mode is the current default for backward compatibility and will be deprecated in a future operator release. See the `Mattermost CRD reference <https://github.com/mattermost/mattermost-operator/blob/master/docs/mattermost_v1beta1_crd.md>`__ for the full ``readinessCheck`` field schema.
 
 3. Connect to Object Storage:
 
@@ -246,8 +266,8 @@ This command can be used to review the Mattermost Operator or Mattermost server 
 
 .. note::
 
-  - If you're new to Kubernetes or prefer a managed solution, consider using a service like `Amazon EKS <https://aws.amazon.com/eks/>`_, `Azure Kubernetes Service <https://azure.microsoft.com/en-ca/products/kubernetes-service/>`_, `Google Kubernetes Engine <https://cloud.google.com/kubernetes-engine/>`_, or `DigitalOcean Kubernetes <https://www.digitalocean.com/products/kubernetes/>`_.- While this guidance focuses on using external, managed services for your database and file storage, the Mattermost Operator *does* offer the flexibility to use other solutions. For example, you could choose to deploy a PostgreSQL database within your Kubernetes cluster using the CloudNative PG operator (or externally however you wish), or use a self-hosted MinIO instance for object storage.
-  - While using managed cloud services is generally simpler to maintain and our recommended approach for production deployments, using self-managed services like MinIO for storage and CloudNative PG for PostgreSQL are also valid options if you have the expertise to manage them.
+  - If you're new to Kubernetes or prefer a managed solution, consider using a service like `Amazon EKS <https://aws.amazon.com/eks/>`_, `Azure Kubernetes Service <https://azure.microsoft.com/en-ca/products/kubernetes-service/>`_, `Google Kubernetes Engine <https://cloud.google.com/kubernetes-engine/>`_, or `DigitalOcean Kubernetes <https://www.digitalocean.com/products/kubernetes/>`_. While this guidance focuses on using external, managed services for your database and file storage, the Mattermost Operator *does* offer the flexibility to use other solutions. For example, you could choose to deploy a PostgreSQL database within your Kubernetes cluster using the CloudNative PG operator (or externally however you wish), or use any self-hosted S3-compatible storage service.
+  - While using managed cloud services is generally simpler to maintain and our recommended approach for production deployments, using self-managed S3-compatible storage services and CloudNative PG for PostgreSQL are also valid options if you have the expertise to manage them.
   - If you choose to use self-managed components, you'll need to adapt the instructions accordingly, pointing to your internal services instead.
   - To customize your production deployment, refer to the :doc:`configuration settings documentation </administration-guide/configure/configuration-settings>`.
   - If you encounter issues during deployment, consult the :doc:`deployment troubleshooting guide </deployment-guide/deployment-troubleshooting>`.

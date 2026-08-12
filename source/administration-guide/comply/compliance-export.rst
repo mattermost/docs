@@ -4,7 +4,7 @@ Compliance export
 .. include:: ../../_static/badges/ent-plus.rst
   :start-after: :nosearch:
 
-Mattermost Enterprise customers can archive history or transfer message data to third-party systems for auditing and compliance purposes with compliance exports. Supported integrations include `Actiance Vantage <#actiance-xml>`__, `Global Relay <#global-relay-eml>`__, and `Proofpoint <#proofpoint>`__. 
+Mattermost Enterprise customers can archive history or transfer message data to third-party systems for auditing and compliance purposes with compliance exports. Supported integrations include `Smarsh (Actiance) Vantage <#actiance-xml>`__, `Global Relay <#global-relay-eml>`__, and `Proofpoint <#proofpoint>`__. 
 
 From Mattermost v10.5, compliance exports include performance improvements for large daily data sets with changes affecting output formats, system performance, and logic. Compliance exports provide compliance teams complete information to reconstruct the state of a channel, and to determine who had visibility on an initial message, or when the message was edited or deleted. Compliance teams can track a message by its MessageId as it is edited or deleted, and across batches and exports periods.
 
@@ -23,7 +23,7 @@ Exports include information on channel member history at the time the message wa
 Set up guide
 ------------
 
-Use the following guides to configure exports for `CSV <#csv>`__, `Actiance XML <#actiance-xml>`__, `Global Relay EML <#global-relay-eml>`__, or `Proofpoint <#proofpoint>`__.
+Use the following guides to configure exports for `CSV <#csv>`__, `Smarsh / Actiance XML <#actiance-xml>`__, `Global Relay EML <#global-relay-eml>`__, or `Proofpoint <#proofpoint>`__.
 
 .. note::
 
@@ -85,8 +85,9 @@ CSV
 
    For a sample CSV output, `download a CSV export file here <https://github.com/mattermost/docs/blob/master/source/samples/csv_export.zip>`__.
 
-Actiance XML
+Actiance XML 
 ~~~~~~~~~~~~
+Actiance XML is the supported format for the 'Smarsh Vantage product <https://central.smarsh.com/s/product/vantage>`_.
 
 1. Go to **System Console > Compliance > Compliance Export**.
 2. Set **Enable Compliance Exports** to **true**.  

@@ -26,6 +26,7 @@ Learn more about messages and threads:
    Set message reminders </end-user-guide/collaborate/message-reminders>
    Search for messages </end-user-guide/collaborate/search-for-messages>
    Schedule messages </end-user-guide/collaborate/schedule-messages>
+   Flag messages </end-user-guide/collaborate/flag-messages>
 
 * :doc:`Send messages </end-user-guide/collaborate/send-messages>` - Send messages to other Mattermost users.
 * :doc:`Reply to messages </end-user-guide/collaborate/reply-to-messages>` - Communicate with your team in Mattermost.
@@ -38,6 +39,7 @@ Learn more about messages and threads:
 * :doc:`Set message reminders </end-user-guide/collaborate/message-reminders>` - Set reminders to follow up on messages.
 * :doc:`Search for messages </end-user-guide/collaborate/search-for-messages>` - Use search to find messages, replies, and file contents across Mattermost channels.
 * :doc:`Schedule messages </end-user-guide/collaborate/schedule-messages>` - Schedule messages to be sent in the future.
+* :doc:`Flag messages </end-user-guide/collaborate/flag-messages>` - Flag messages that may contain sensitive or restricted information for review by authorized moderators.
 
 Make your messages stand out
 ----------------------------

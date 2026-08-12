@@ -13,7 +13,7 @@ Set up Elasticsearch
 
 We highly recommend that you set up Elasticsearch server on a dedicated machine separate from the Mattermost Server. 
 
-1. Download and install the latest release of `Elasticsearch v8 <https://www.elastic.co/guide/en/elasticsearch/reference/8.15/install-elasticsearch.html>`_, or `Elasticsearch v7.17+ <https://www.elastic.co/guide/en/elasticsearch/reference/7.17/install-elasticsearch.html>`_. See the Elasticsearch documentation for installation details.
+1. Download and install the latest release of `Elasticsearch v9 <https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html>`_ or `Elasticsearch v8 <https://www.elastic.co/guide/en/elasticsearch/reference/8.19/install-elasticsearch.html>`_. See the Elasticsearch documentation for installation details.
 
 2. Set up Elasticsearch with ``systemd`` by running the following commands:
 
@@ -43,7 +43,7 @@ We highly recommend that you set up Elasticsearch server on a dedicated machine 
 
 6. In this file, replace the ``network.host`` value of ``_eth0_`` with your network interface name, and save your changes.
 
-7. When using Elasticsearch v8, ensure you set ``action.destructive_requires_name`` to ``false`` in ``elasticsearch.yml`` to allow for wildcard operations to work.
+7. Ensure you set ``action.destructive_requires_name`` to ``false`` in ``elasticsearch.yml`` to allow for wildcard operations to work.
 
 8. Restart Elasticsearch by running the following commands:
 
@@ -64,9 +64,39 @@ We highly recommend that you set up Elasticsearch server on a dedicated machine 
 
 11. Install the `icu-analyzer plugin <https://www.elastic.co/guide/en/elasticsearch/plugins/current/analysis-icu.html>`__ to the ``/usr/share/elasticsearch/plugins`` directory by running the following command:
 
+  .. important::
+     The ``analysis-icu`` plugin is **required on every node in the cluster**, not optional. Mattermost's post and file index templates depend on it. Without the plugin, Mattermost cannot create these templates.
+
   .. code-block:: sh
 
     sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-icu
+
+  Restart Elasticsearch on each node to load the newly installed plugin before verifying it; ``_cat/plugins`` only reports active plugins, so a restart is required first. For production clusters, restart nodes one at a time (rolling restart) rather than all at once. Confirm the plugin is installed and active on every node before continuing, replacing ``<your-elasticsearch-host>`` with your cluster endpoint:
+
+  .. code-block:: sh
+
+    curl --silent --show-error --fail-with-body --user elastic 'http://<your-elasticsearch-host>:9200/_cat/plugins?v&h=name,component,version&s=name,component'
+
+  Running this command should show ``analysis-icu`` once per node in the cluster. If the ``analysis-icu`` line is missing for any node, the plugin is not installed there.
+
+  **(Optional) CJK language analyzer plugins**: To improve search for Korean, Japanese, or Chinese content, install one or more of the following language-specific analyzer plugins: ``analysis-nori`` (Korean), ``analysis-kuromoji`` (Japanese), and ``analysis-smartcn`` (Chinese).
+
+  .. code-block:: sh
+
+    sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-nori
+    sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-kuromoji
+    sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-smartcn
+
+  After installing the CJK plugins, restart Elasticsearch to load them:
+
+  .. code-block:: sh
+
+    sudo systemctl restart elasticsearch
+
+  Then enable the :ref:`EnableCJKAnalyzers <administration-guide/configure/environment-configuration-settings:enable cjk analyzers>` configuration setting. See :doc:`Enabling Chinese, Japanese, and Korean Search </administration-guide/configure/enabling-chinese-japanese-korean-search>` for additional CJK search configuration options.
+
+  .. important::
+     If you enable CJK analyzers on a server with existing indexed content, you must purge and rebuild the search index in **System Console > Environment > Elasticsearch** for the CJK analyzers to take effect on existing posts.
 
 12. Test the connection from Mattermost to Elasticsearch by running the following command:
 

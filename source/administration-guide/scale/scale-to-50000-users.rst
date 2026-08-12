@@ -77,14 +77,14 @@ Requirements
    <td>1</td>
    <td>8/64</td>
    <td>db.r7g.2xlarge</td>
-   <td>E8as v6</td>
+   <td>E8ds v5</td>
    </tr>
    <tr>
    <td>RDS Reader</td>
    <td>4</td>
    <td>8/64</td>
    <td>db.r7g.2xlarge</td>
-   <td>E8as v6</td>
+   <td>E8ds v5</td>
    </tr>
    <tr>
    <td>Elasticsearch cluster</td>

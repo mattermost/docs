@@ -6,14 +6,19 @@ If you have any questions, create an account on the [Mattermost Community server
 
 # Table of Contents
 
- * [Contributing](#contribute-to-mattermost-product-documentation)
-     * [Get started](#get-started)
-     * [Edit content directly on GitHub](#edit-content-directly-on-github)
-     * [Create documentation PRs](#create-documentation-pull-requests)
-     * [Use GitHub PR Labels](#use-github-pr-labels)
-     * [Comment on Pull Requests](#comment-on-pull-requests)
-     * [Review Pull Requests](#review-pull-requests)
- * [Build locally](#build-locally)
+- [Mattermost Documentation](#mattermost-documentation)
+- [Table of Contents](#table-of-contents)
+  - [Contribute to Mattermost product documentation](#contribute-to-mattermost-product-documentation)
+    - [Get started](#get-started)
+    - [Edit content directly on GitHub](#edit-content-directly-on-github)
+    - [Create Documentation pull requests](#create-documentation-pull-requests)
+    - [Comment on pull requests](#comment-on-pull-requests)
+    - [Review pull requests](#review-pull-requests)
+  - [Build locally](#build-locally)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Build commands](#build-commands)
+    - [Troubleshooting](#troubleshooting)
 
 ## Contribute to Mattermost product documentation
 
@@ -56,78 +61,63 @@ If you've downloaded the `mattermost/docs` repository to edit Mattermost documen
 > [!NOTE]
 > You can generate the docs on Linux, Mac, and Windows (using PowerShell); however, builds on Windows are considerably slower because only a single processing core is used.
 > 
-> For faster local docs builds on Windows, we strongly recommend [installing WSL](https://learn.microsoft.com/en-us/windows/wsl/install) to create an Ubuntu virtual machine (VM), where you'll configure the following prerequisites. An Ubuntu VM will use all available processing cores, resulting in faster local builds.
+> For faster local docs builds on Windows, we strongly recommend [installing WSL](https://learn.microsoft.com/en-us/windows/wsl/install) to create an Ubuntu virtual machine (VM), where you'll configure the following prerequisites. This VM will be using all available processing cores, resulting in faster local builds.
 
-### Build prerequisites
-
-The following software is required to build the documentation:
+### Prerequisites
 
 - Git [[download]](https://git-scm.com/downloads)
 - Python 3.11 or later [[download]](https://www.python.org/downloads)
 - Pipenv [[download]](https://pipenv.pypa.io)
 - GNU Make 3.82 or later
 
-### Build instructions
-
-1. Open a native or VM terminal window, then clone a forked copy of the documentation repository:
-    ```shell
-    git clone https://github.com/mattermost/docs.git
-    ```
-
-2. In the terminal window, navigate into the cloned repository:
-    ```shell
-    cd docs
-    ```
-
-3. Install [pipenv](https://docs.pipenv.org/) by using one of the following commands based on your operating system:
-
-    For Mac users and Ubuntu VM users where Homebrew is installed:
-    ```shell
-    brew install pipenv
-    ```
-
-    For other operating systems:
-    ```shell
-    pip install --user pipenv
-    ```
-
-4. Install required Python packages. You have two options:
-
-   Use `pipenv sync --dev` when:
-    - You need exact reproducibility of the production build environment.
-    - You're setting up a CI/CD pipeline.
-    - You want to avoid accidentally updating dependency versions.
-    - You're working in a team where everyone should use identical package versions.
-
-   Use `pipenv install --dev` when:
-    - You're setting up a local development environment for the first time.
-    - You want to allow minor package updates within the version constraints.
-    - You're working independently from production and want the most recent compatible versions.
-
-5. Run ``git submodule update --init --recursive`` to ensure that the Git submodules for Mattermost Agents are initialized and updated.
-
-6. Build the documentation set. You have three build commands available at the terminal:
-
-    - Use `gmake html` to generate HTML files in the `/build` directory. Only file you've modified are re-built.
-    - Use `gmake clean html` to delete all static HTML output in the `/build` directory and re-build all files. This command is particularly useful when you're making changes to the left navigation pane and want to ensure you're not reviewing cached results.
-    - Use `gmake livehtml` to review a live preview published to `http://127.0.0.1:8000` that automatically updates as new changes are saved in your local IDE. Always run `gmake clean html` first before reviewing a live preview.
-
 > [!NOTE]
-> Windows users who aren't building the docs in an Ubuntu VM also require `make` installed for the build commands above to work correctly. To install `make` via Chocolatey:
->
-> 1. Install [chocolatey](https://chocolatey.org/).
-> 2. In a Windows terminal, select the downward chevron, and hold `CTRL` while selecting **PowerShell** to run commands as an admin.
-> 3. Accept the admin prompt.
-> 4. Run the following command: `choco install make`
-> 5. Exit the terminal.
->
-> When building the Mattermost Product Documentation locally, Windows users will see slower build speeds because only a single processing core is used to build the docs. Mac & Linux users will see faster build speeds because multiple cores are used to build. This is a limitation of Sphinx on Windows platforms.
+> Windows users who aren't using WSL require `make` installed. To install via Chocolatey: run `choco install make` in an admin PowerShell terminal after installing [chocolatey](https://chocolatey.org/).
 
-7. When working with static build results, navigate to the `build` directory:
-    ```sh
-    cd build
-    ```
-   
-8. Then, preview your changes by opening the `build/html/index.html` file.
+### Setup
 
-Build errors are written to the `build/warnings.log` file. Errors regarding redirects are written to the `build/redirect-warnings.log` file.
+1. Clone the repository and navigate to it:
+   ```shell
+   git clone https://github.com/mattermost/docs.git
+   cd docs
+   ```
+
+2. Install pipenv:
+   ```shell
+   # Using Homebrew
+   brew install pipenv
+
+   # Using pip
+   pip install --user pipenv
+   ```
+
+3. Install dependencies (choose one):
+   ```shell
+   # For local development (recommended for first-time setup)
+   pipenv install --dev
+
+   # For exact reproducibility (CI/CD or team environments)
+   pipenv sync --dev
+   ```
+
+4. Initialize Git submodules:
+   ```shell
+   git submodule update --init --recursive
+   ```
+
+### Build commands
+
+- **`gmake html`** - Build only modified files (fastest for iterative changes)
+- **`gmake clean html`** - Clean build directory and rebuild all files
+- **`gmake livehtml`** - Start live preview server at `http://127.0.0.1:8000` (auto-updates on save)
+
+Static build output is located in `build/html/index.html`. Build errors are logged to `build/warnings.log` and redirect issues are logged to `build/redirect-warnings.log`.
+
+### Troubleshooting
+
+**What if my local build starts becoming slow?**
+
+Run `make clean` and rebuild the repository from scratch:
+```shell
+gmake clean
+gmake html
+```

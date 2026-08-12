@@ -19,7 +19,7 @@ Mattermost Entry
 
 Mattermost Entry gives small, forward-leaning teams a **free self-hosted Intelligent Mission Environment** to get started on improving their mission-critical secure collaborative workflows. Entry has all features of **Enterprise Advanced** with the following server-wide limitations and omissions: 
 
-- 10,000 Channel message history 
+- 10,000 Channel messages history across all channels (older messages remain in the database but aren't viewable or searchable)
 - 1000 Board cards\*
 - 5 Active Playbook runs / month\*
 - 250 Agent queries/ month\*
@@ -77,7 +77,7 @@ Mattermost Enterprise supports large-scale, mission-critical **secure collaborat
 Mattermost Professional 
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Professional best serves technical and operational teams of up to 500 users looking to run **Sovereign ChatOps workflows**, with advanced collaboration and security controls. This offering provides robust collaboration and administration tools including:  
+Professional best serves technical and operational teams of up to 250 users looking to run **Sovereign ChatOps workflows**, with advanced collaboration and security controls. This offering provides robust collaboration and administration tools including:  
 
 - Teams and channels for one-to-one and group messaging, file sharing, and unlimited search history with threaded messaging, emoji, and custom emoji.
 - Native apps for iOS, Android, Windows, macOS, and Linux.
@@ -106,7 +106,7 @@ See a complete list of Mattermost features for all paid offerings at https://mat
 Mattermost Team Edition
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Team Edition is a free-to-use, open source, self-hosted collaboration platform that offers the core productivity benefits of competing SaaS ChatOps solutions. It is deployed as a single Linux binary with PostgreSQL and is licensed under MIT. Team Edition is intended for small teams, hobbyists, or personal use under 250 users where single sign-on (SSO) is not required. It is not recommended for government or sensitive commercial workloads. 
+Team Edition is a free-to-use, open source, self-hosted collaboration platform that offers the core productivity benefits of competing SaaS ChatOps solutions. It is deployed as a single Linux binary with PostgreSQL and is licensed under MIT. Team Edition is intended for small teams, hobbyists, or personal use under 250 activated users where single sign-on (SSO) is not required. It is not recommended for government or sensitive commercial workloads. 
 
 Since 2016, Mattermost has partnered with GitLab to include Team Edition in the GitLab Omnibus package. Originally designed for teams of 25–50 users, it included GitLab SSO and DevSecOps integrations. Over time, Team Edition was widely over-deployed, sometimes to thousands of users, leading to performance issues and confusion between free and commercial offerings. Additionally, GitLab SSO was used as a gateway to other identity providers, overlapping with SSO capabilities reserved for paid Enterprise editions. 
 

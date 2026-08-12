@@ -21,7 +21,8 @@ About dialog information
 
 The About dialog displays key information about your Mattermost instance, including:
 
-- **Mattermost Version**: The current version of the Mattermost server
+- **Mattermost Version**: The current version of the Mattermost server. Click to copy the version number.
+- **Desktop App Version**: The current version of the Mattermost Desktop App (when using Desktop App). Click to copy the version number.
 - **Database Schema Version**: The version of the database schema in use
 - **License**: Information about your Mattermost license (if applicable)
 - **Build Information**: Details about the server build

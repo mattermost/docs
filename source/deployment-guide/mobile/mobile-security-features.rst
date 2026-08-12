@@ -53,6 +53,67 @@ Preventing file downloads protects sensitive information from being inadvertentl
 
 See the :ref:`secure file preview <administration-guide/configure/environment-configuration-settings:enable secure file preview on mobile>` and :ref:`managing PDF link navigation <administration-guide/configure/environment-configuration-settings:allow pdf link navigation on mobile>` configuration settings documentation for details on enabling these features.
 
+Mobile watermarking
+-------------------
+
+Mobile watermarking is an experimental Enterprise Advanced capability <https://mattermost.com/pricing/>`__ from Mattermost v11.7 onward, that helps organizations attribute mobile screenshots and shared screen captures to a specific user, server, and point in time. When this setting is enabled by a system admin, authenticated Mattermost mobile sessions display a visible watermark overlay on top of the app interface that includes:
+
+- The user's username.
+- The server domain.
+- The current date in ``YYYY-MM-DD`` format.
+- The current time in ``HH:mm`` format.
+
+The watermark is intended to support data loss prevention (DLP) workflows by making it easier to identify the source and timing of any image taken of the Mattermost mobile app. Mobile watermarking is disabled by default.
+
+See the :ref:`Enable Mobile Watermark <administration-guide/configure/experimental-configuration-settings:enable mobile watermark>` configuration setting documentation for details on enabling this experimental feature.
+
+.. note::
+
+  - The mobile watermark is a visual overlay only. It does not prevent users from taking screenshots, recording the screen, exporting files, or sharing content through other means. For controls that block screen capture on the device itself, see :ref:`screenshot and screen recording prevention <deployment-guide/mobile/mobile-security-features:screenshot and screen recording prevention>`.
+  - This feature applies only to the Mattermost mobile app. It does not add a watermark to the Mattermost web app or desktop apps.
+  - This is an experimental capability. Its behavior, defaults, and visual presentation may change in future releases based on customer feedback.
+
+Microsoft Intune Mobile Application Management (MAM)
+----------------------------------------------------
+
+Mattermost supports Microsoft Intune MAM to enforce identity-based, app-level data protection on iOS devices without requiring full device enrollment in a mobile device management (MDM) solution.
+
+.. important::
+
+   Microsoft Intune MAM enforcement for Mattermost is currently supported on **iOS** only. We recommend using Android for Work profiles until Android Intune support is available.
+
+Intune MAM applies security policies directly to the Mattermost mobile app using Microsoft Entra ID as the identity authority. This enables organizations to protect corporate or mission-sensitive data on Bring Your Own Device (BYOD) and mixed-use devices while preserving user privacy.
+
+Key security capabilities enabled through Intune MAM include:
+
+* **Mandatory enrollment** before accessing Mattermost on mobile
+* **Identity-based enforcement** using Microsoft Entra ID
+* **Selective wipe** of Mattermost work data without affecting personal apps or device data
+* **Clipboard, file sharing, and data transfer restrictions**
+* **Screenshot and screen recording prevention**
+* **Managed browser enforcement** and controlled link handling
+* **Immediate enforcement** when policies or licensing change, including during active sessions
+
+Intune MAM enforcement is applied **per Mattermost workspace** and evaluated continuously at runtime. If a device becomes non-compliant, enrollment fails, or required policies are not met, access to protected content is blocked automatically.
+
+This approach allows organizations to extend zero-trust and data loss prevention (DLP) controls to mobile users without assuming ownership or management of the underlying device.
+
+See the :doc:`Microsoft Intune MAM configuration guide </deployment-guide/mobile/configure-microsoft-intune-mam>` for deployment and configuration details.
+
+Mobile Ephemeral Mode
+---------------------
+
+Mobile applications typically cache messages, files, and attachments on-device indefinitely. Two security concerns drive the need for administrator-controlled data lifecycle management on mobile devices:
+
+- **Unbounded sensitive data accumulation.** Without data-age controls, weeks or months of sensitive content can accumulate on any device a user has logged into — well beyond what operational need justifies.
+- **Offline exposure after device loss.** Remotely wiping a device requires it to be reachable — the condition least likely to hold when a device is lost, stolen, or in an adversarial environment. Unmanaged or personally-owned devices may not be enrolled in MDM at all, leaving cached content with no remote deletion path.
+
+Mobile Ephemeral Mode addresses both concerns by giving administrators direct, server-side control over how long data persists on mobile devices. The app enforces this policy locally — including while offline and across app and device restarts — so data is removed based on elapsed time, not device reachability.
+
+Mobile Ephemeral Mode generates an :ref:`audit log <administration-guide/manage/logging:audit logging>` event for each delete, purge, and wipe operation. Because these operations can execute on a device that is unreachable — where no administrator has direct visibility — audit logging provides verifiable proof that ephemeral policies were enforced. This supports compliance requirements for data lifecycle management and destruction accountability. Events that occur while the device is offline are reported to the server on reconnection.
+
+See the :ref:`Mobile Ephemeral Mode configuration settings <administration-guide/configure/environment-configuration-settings:mobile ephemeral mode>` to configure these controls.
+
 Mobile data isolation
 ------------------------
 

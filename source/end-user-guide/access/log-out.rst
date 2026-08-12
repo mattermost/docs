@@ -34,3 +34,10 @@ When you log out, the following additional data is also deleted:
 - All files saved in the cache directory for that server.
 - All thumbnails and data saved to the clipboard for all servers (not just the server you've logged out of).
 - The ``image_cache`` cache directory (Android mobile app)
+
+If you have multiple Mattermost accounts on the same server, logging out of one account will not log you out of the other accounts.
+
+What happens if I log out while my device is enrolled in Intune MAM?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If your device is enrolled in Intune MAM (Mobile Application Management), logging out of Mattermost will remove all workspace data and Intune protection for that workspace from your iOS device. You can sign back in with Microsoft if you need access again. Learn more about `accessing your workspace with Intune MAM <https://docs.mattermost.com/end-user-guide/access/access-your-workspace.html#itab--Mobile-via-Microsoft-Intune-MaM--0_1-Mobile-via-Microsoft-Intune-MaM>`_.

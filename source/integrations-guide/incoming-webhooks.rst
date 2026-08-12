@@ -45,7 +45,7 @@ Create
   .. image:: ../images/select-add-incoming-webhook.png
     :alt: Dialog box showing the option to add an incoming webhook.
 
-4. Enter a name and description for the webhook, and then select the channel. You can optionally limit bot posts to a specific channel by selecting **Lock to this channel**, or you can allow the webhook to post to any public channel or private channel the incoming webhook creator is a member of. Select **Save**.
+4. Enter a name and description for the webhook, and then select the channel. You can optionally limit bot posts to a specific channel by selecting **Lock to this channel**, or you can allow the webhook to post to any public channel or private channel the incoming webhook creator is a member of. Note that administrators can enforce channel locking for all incoming webhooks through **System Console > Integrations > Integration Management**. Select **Save**.
 
   .. image:: ../images/create-incoming-webhook-details.png
     :alt: Dialog box showing the incoming webhook details.

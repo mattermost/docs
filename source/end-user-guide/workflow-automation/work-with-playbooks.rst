@@ -6,10 +6,6 @@ Work with collaborative playbooks
 
 A collaborative playbook is a checklist of the tasks that make up your processes. Collaborative playbooks allow you to take codified knowledge and processes and make them accessible and editable by your organization and team. When you're setting up your playbook, you'll be able to break tasks down, and assign actions to them - such as using a slash command to start a Zoom call. You can also decide whether to use the same channel every time your playbook is run, or a new one.
 
-.. tip::
-
-  Watch this `on-demand webinar on securing your mission-critical work <https://mattermost.com/webinar/cybersecurity-incident-response/>`_ to learn about the key features and functionality to look for in your incident response tooling.
-
 There are other parts of a playbook, such as automation settings, and metrics. Playbook configuration applies both to the execution of the playbook as well as to its management and improvement.
 
 But the very first thing you’ll want to set up is a checklist.
@@ -59,23 +55,26 @@ You can change a playbook’s configuration at any time, but changes will only b
 Make checklists
 ----------------
 
-1. In channels, select **Toggle Playbook List** from the Apps Bar.
-2. Select **Blank Playbook**, or use the built-in template.
-3. Name your playbook and provide a description.
-4. Select the **Checklists** tab.
+Checklists in a playbook or run are restricted to playbook participants and owners.
 
-  You can start with the default checklist and edit it, or you can delete it and select **+ New checklist**.
+To create a checklist in a playbook, go to the **Tasks** section. Start from templated tasks or create your own. Select **Add a task** or **Add a section** to build out checklists in the playbook. Drag and drop to reorder tasks and sections as needed. Task descriptions support a limited form of Markdown, including text styling and hyperlinks.
 
-  * Within each checklist, select **+ New task** to add tasks that are meant to be completed together.
+Playbook tasks consist of text rendered in Markdown (when present). You can't run commands directly from a task in a playbook, but you can trigger :doc:`built-in slash commands </integrations-guide/built-in-slash-commands>` and `custom slash commands <https://developers.mattermost.com/integrate/slash-commands/custom/>`_, or outgoing webhooks, to run as part of the task action by starting the task with ``/``.
 
-    * Drag and drop to reorganize checklists and tasks.
-    * Add task descriptions to give additional context to members of the playbook. Descriptions support a limited form of Markdown, including text styling and hyperlinks.
+Channel checklists
+~~~~~~~~~~~~~~~~~~
 
-5. Choose **Save**.
+From Playbooks v2.6.0, you can additionally create and manage channel-based checklists directly within :ref:`public <end-user-guide/collaborate/channel-types:public channels>` and :ref:`private <end-user-guide/collaborate/channel-types:private channels>` channels without requiring a playbook template or a run. Channel checklists use existing Mattermost channel permissions to control access, so any channel member who can manage channel names, headers, and purpose can create, edit, and manage channel checklists.
+
+To create a new channel checklist or modify an existing checklist, select the **Checklists** option in the top left corner of the Mattermost interface.
 
 .. note::
 
-  Tasks in a playbook consists of text rendered in Markdown (when present). You can't run commands directly from a task in a playbook, but you can trigger :doc:`built-in slash commands </integrations-guide/built-in-slash-commands>` and `custom slash commands <https://developers.mattermost.com/integrate/slash-commands/custom/>`_, or outgoing webhooks, to run as part of the task action by starting the task with ``/``.
+  - Channel checklists aren't available in :ref:`direct messages <end-user-guide/collaborate/channel-types:direct message channels>` or :ref:`group messages <end-user-guide/collaborate/channel-types:group message channels>`.
+  - To create a channel checklist, you must be a channel :ref:`Member <end-user-guide/collaborate/learn-about-roles:member>` (not a :ref:`Guest <end-user-guide/collaborate/learn-about-roles:guest>`). To edit a channel checklist, any channel member who can post to the channel can do so, including guests.
+  - Channel checklists in :ref:`archived <end-user-guide/collaborate/channel-types:archived channels>` channels can't be modified. Archived channels must be :ref:`unarchived <end-user-guide/collaborate/archive-unarchive-channels:unarchive a channel>` to access and edit their channel checklists.
+  - A single channel can contain both playbook runs and channel checklists.
+  - When using Mattermost in a web browser or the Desktop app, you can convert a channel checklist into a playbook by selecting the checklist name and then selecting **Save as a Playbook**.
 
 Multiple runs in a channel
 --------------------------
@@ -126,9 +125,76 @@ Options include:
 
 Actions such as channel creation and adding the channel to a sidebar category are set per-playbook and applied to each run that uses that playbook.
 
-If you’re a system admin or channel admin of the run channel you can also edit these settings in the run channel, via the channel menu, in **Channel Actions**. Editing the settings in the run channel will only affect that channel and the changes aren’t applied to the playbook. Only channel admins can edit the **Channel Actions** items (such as the welcome message) but members who have access to the playbook can edit the welcome message and run behavior settings. Editing these won’t change the welcome message of a run that’s in progress - it only applies going forward.
+If you’re a system admin or channel admin of the run channel you can also edit these settings in the run channel, via the channel menu, in **Channel Actions**. Editing the settings in the run channel will only affect that channel and the changes aren’t applied to the playbook. Only channel admins can edit the **Channel Actions** items (such as the welcome message) but members who have access to the playbook can edit the welcome message and run behavior settings. Editing these won’t change the welcome message of a run that’s in progress - it only applies going forward. If you want to change the behavior of all future runs associated with the playbook, edit the playbook directly in the **Actions** menu.
 
-If you want to change the behavior of all future runs associated with the playbook, edit the playbook directly in the **Actions** menu.
+Playbook attributes
+-------------------
+
+.. include:: ../../_static/badges/entry-ent.rst
+  :start-after: :nosearch:
+
+From Mattermost v11.1, using Mattermost in a web browser or the desktop app, you can define custom attributes for your playbooks to create adaptive workflows that respond to changing mission or operational context. From Mattermost mobile v2.37.0, you can view and edit playbook run attributes on mobile devices, including text fields, select, and multi-select types. Attributes such as severity, category, or linked ticket ID can be configured to trigger context-aware tasks and enable intelligent adaptation to situational conditions.
+
+.. note::
+
+  This feature requires Mattermost Playbook v2.5.0 or later.
+
+Attributes enable you to:
+
+- Define contextual information that varies between runs (e.g., incident severity, priority level, customer type).
+- Trigger different tasks or workflows based on attribute values.
+- Create conditional logic in your playbooks for more sophisticated automation.
+- Maintain consistent data collection across runs.
+
+Playbook attributes are visible to all run participants and can be referenced in status updates.
+
+.. note::
+
+  When viewing and editing playbook run attributes on mobile devices, color formatting and URL links in attributes are not supported and display as plain text.
+
+Configure attributes
+~~~~~~~~~~~~~~~~~~~~~
+
+To configure attributes:
+
+1. Go to the **Product** |product-list| icon and select **Playbooks**.
+2. Select the playbook you want to define attributes for.
+3. Select the **Attributes** tab.
+4. Select **Add your first attribute**.
+
+   .. image:: ../../images/playbook-attributes-create-first.png
+     :alt: An example of the Playbooks Attributes tab with no attributes defined.
+
+5. Enter an attribute name and specify its type as **Text**, **URL**, **Select**, or **Multi-Select**.
+6. For **Select** and **Multi-Select** types, define the available values.
+7. Select **Add attribute** to add additional attributes and values.
+
+   .. image:: ../../images/playbook-attributes-create-second.png
+     :alt: An example of the Playbooks Attributes tab with one attribute and multiple values defined.
+
+.. tip::
+
+  - Control how attribute-based conditions appear in a playbook outline by dragging and dropping them into your preferred order.
+  - Use the **Actions** menu to rename, duplicate, or delete attributes.
+
+  .. image:: ../../images/playbook-attribute-actions.png
+     :alt: An example of the Playbooks Attributes tab with the Actions menu open.
+
+Conditional playbooks
+---------------------
+
+.. include:: ../../_static/badges/entry-ent.rst
+  :start-after: :nosearch:
+
+From Mattermost v11.1, using Mattermost in a web browser or the desktop app, you can create conditional playbooks with more sophisticated workflows that respond intelligently to changing circumstances. From Mattermost mobile v2.37.0, you can also view and edit playbook run attributes on mobile devices. By leveraging playbook attributes, you can define conditions that determine which tasks and checklists are included in a playbook run based on real-time data.
+
+Conditional playbooks enable you to:
+
+- Add tasks that only apply when specific conditions are met.
+- Define tasks and checklists that change based on attribute values.
+- Create adaptive workflows that change based on real-time data.
+
+See the :ref:`conditional tasks <end-user-guide/workflow-automation/work-with-tasks:conditional tasks>` documentation for details on configuring conditional tasks within playbooks.
 
 Run metrics
 -----------
@@ -140,3 +206,7 @@ Webhooks
 
 - For information about the webhook payload for ``run start``, see the `PlaybookRunWebhookPayload <https://github.com/mattermost/mattermost-plugin-playbooks/blob/b4c8058d8660efe35050bc7eb080e3819c7ab09c/server/app/playbook_run_service.go#L176-L185>`_ struct. An example of the JSON payload for a run start `is available <https://gist.github.com/icelander/b68f2bf2b4ffefec93400cb050211cf1>`__.
 - For information about the webhook payload for ``status update``, see the `PlaybookRunWebhookPayload <https://github.com/mattermost/mattermost-plugin-playbooks/blob/b4c8058d8660efe35050bc7eb080e3819c7ab09c/server/app/playbook_run_service.go#L176-L185>`_ struct. An example JSON payload for a status update `is available <https://gist.github.com/icelander/2f9938ad68d1e0aa656f97969895d080>`__.
+
+.. tip::
+
+  Watch this `on-demand webinar on securing your mission-critical work <https://mattermost.com/webinar/cybersecurity-incident-response/>`_ to learn about the key features and functionality to look for in your incident response tooling.

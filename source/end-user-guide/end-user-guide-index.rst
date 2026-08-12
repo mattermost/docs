@@ -10,6 +10,7 @@ In this documentation, you'll learn about using Mattermost. Your Mattermost syst
   :hidden:
   :titlesonly:
 
+  Access Your Workspace </end-user-guide/access/access-your-workspace>
   Messaging Collaboration </end-user-guide/messaging-collaboration>
   Workflow Automation </end-user-guide/workflow-automation>
   Audio and Screensharing </end-user-guide/collaborate/audio-and-screensharing>
@@ -17,6 +18,7 @@ In this documentation, you'll learn about using Mattermost. Your Mattermost syst
   AI Agents </end-user-guide/agents>
   Customize Your Preferences </end-user-guide/preferences>
 
+* :doc:`Access Your Workspace </end-user-guide/access/access-your-workspace>` - Learn how to access Mattermost using web, desktop, or mobile apps, and authenticate with your credentials.
 * :doc:`Messaging Collaboration </end-user-guide/messaging-collaboration>` - Learn how to use Mattermost to connect and collaborate with your teammates.
 * :doc:`Workflow Automation </end-user-guide/workflow-automation>` - Learn how to use Mattermost Playbooks to build repeatable processes, move faster, and make fewer mistakes with checklist-based automations.
 * :doc:`Audio and Screensharing </end-user-guide/collaborate/audio-and-screensharing>` - Learn about Mattermost's self-hosted audio calls plugin with screen sharing and the many video conferencing integrations Mattermost supports.

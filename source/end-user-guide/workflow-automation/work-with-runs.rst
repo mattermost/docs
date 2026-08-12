@@ -23,12 +23,10 @@ When you’re in a channel with an active run, select the **Toggle Run Details**
 
 Some run actions can be edited while the run is in progress. This increases visibility into the run's progress and can improve accountability.
 
-Playbooks on mobile
-~~~~~~~~~~~~~~~~~~~~
+Playbook runs on mobile
+------------------------
 
-From Mattermost server v11.0 and mobile app v2.23.0, mobile users can :ref:`interact with playbook tasks <end-user-guide/workflow-automation/work-with-tasks:interact with playbook tasks>` and :ref:`update tasks <end-user-guide/workflow-automation/work-with-tasks:update tasks>`.
-
-Mattermost v10.11 and mobile app v2.31.0 introduced a read-only mobile interface and :ref:`playbooks slash commands <end-user-guide/workflow-automation/interact-with-playbooks:slash commands>`. Advanced playbook editing and management actions require the desktop or a web browser.
+From Mattermost server v11.0 and mobile app v2.34.0, mobile users can create and manage playbook runs for operational command at the edge.
 
 Runs and channel behavior
 -------------------------

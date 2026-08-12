@@ -77,7 +77,7 @@ To summarize unread Mattermost channels:
 2. Select **Ask AI**.
 3. Select **Summarize new messages**. 
 
-The channel summary is generated in the Agents pane, and only you can view the summary.
+The channel summary is generated in the Agents pane, and only you can view the summary. Channel summaries include citation links that reference specific messages from the channel. Select a citation link to open a popover preview of the referenced message without navigating away from the channel.
 
 ## Search with AI
 
@@ -93,7 +93,7 @@ Contact your system admin if this feature isn't available for your Mattermost in
 
 For AI models with vision capabilities, attach an image file to your message when chatting with an Agent to ask questions about the image or request analysis. The Agent responds based on the visual content.
 
-Image analysis is a [Beta](https://docs.mattermost.com/manage/feature-labels.html#beta) feature. Your system admin must enable vision capabilities for your bot, and the underlying AI model must support vision features.
+Your system admin must enable vision capabilities for your bot, and the underlying AI model must support vision features.
 
 ## Record calls to summarize meetings
 

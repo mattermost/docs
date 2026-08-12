@@ -8,6 +8,10 @@ You can send messages in public and private channels as well as to other users i
 
 Mattermost may notify you when a recipient's availability is set to :ref:`Do Not Disturb <end-user-guide/preferences/set-your-status-availability:set your availability>`, and the recipient's local time is outside of regular business hours (between 10PM and 6AM). This warning displays directly above the message text field.
 
+.. note::
+
+  From Mattermost v11.5, you can access help resources for message formatting by selecting the **Help** link below the message text field.
+
 .. tab:: Web/Desktop
 
   Enter a message in the text field, then select **Send** |send-icon| to send the message. 
@@ -32,6 +36,67 @@ Mattermost may notify you when a recipient's availability is set to :ref:`Do Not
   .. image:: ../../images/mobile-sending-a-message.gif
     :alt: Tap on the send icon to send the message in the channel.
     :scale: 50
+
+Rewrite messages with AI
+-------------------------
+
+You can use AI to enhance your messages before sending them. This feature helps you improve writing quality, fix spelling, adjust message length, or transform your text based on specific needs.
+
+From Mattermost v11.5, when you use AI Rewrite while composing a reply in a thread, the AI incorporates context from the thread to generate suggestions that better fit the ongoing conversation.
+
+From Mattermost v11.7, Rewrite is accessed through the **AI Actions** |ai-actions-icon| menu, alongside any custom prompts your system admin has made available.
+
+On Web/Desktop or Mobile:
+
+  1. Type your message in the message compose field.
+  2. Open the **AI Actions** |ai-actions-icon| menu from the message actions, then select **Rewrite**.
+  3. Select a bot from the list of available AI agents.
+  4. Choose from available rewrite options:
+
+     - **Improve writing**: Enhance clarity and professionalism
+     - **Fix spelling**: Correct spelling and grammar errors
+     - **Shorten**: Make your message more concise
+     - **Elaborate**: Add more detail and context
+     - **Simplify**: Use clearer, easier-to-understand language
+     - **Summarize**: Condense your message to key points
+     - **Custom prompt**: Specify your own transformation instructions
+
+  5. Review the AI-generated suggestion. Select **Regenerate** to try again or **Discard** to return to your original message.
+  6. Select **Send** |send-icon|
+
+.. tip::
+
+  From Mattermost v11.7, system admins can publish custom prompts that appear alongside Rewrite in the **AI Actions** |ai-actions-icon| menu. If you don't see a custom prompt you expect, check with your system admin.
+
+.. note::
+
+  Messages that have been rewritten using AI are automatically marked as AI-generated content for transparency. Your system admin must :doc:`configure AI agents </administration-guide/configure/agents-admin-guide>` for the rewrite feature to be available.
+
+Send burn-on-read messages
+---------------------------
+
+.. include:: ../../_static/badges/entry-adv.rst
+  :start-after: :nosearch:
+
+From Mattermost v11.3, burn-on-read messages stay concealed until recipients reveal them. After revealing, the message is deleted for that recipient when the timer expires. Burn-on-read messages can't be replied to or edited. You can send burn-on-read messages unless your system admin has :ref:`disabled the ability to do so <administration-guide/configure/site-configuration-settings:enable burn-on-read messages>` in your Mattermost instance.
+
+.. tab:: Web/Desktop
+
+  1. Compose your message.
+  2. Select the **Burn-on-read** |burn-on-read-icon| icon in the message toolbar.
+  3. Select **Send** |send-icon|
+
+.. tab:: Mobile
+
+  From Mattermost mobile v2.38.0, you can send burn-on-read messages from the mobile app.
+
+  1. Compose your message.
+  2. Tap the **Burn-on-read** |burn-on-read-icon| icon in the message toolbar.
+  3. Tap **Send** |send-icon|
+
+Recipients see a concealed placeholder with **Reveal**. After revealing, a timer shows when the message will be deleted. 
+
+As the message sender, hover over the **Burn-on-read** |burn-on-read-icon| icon above the sent message to see how many recipients have read the message. You can also delete the burn-on-read message for all recipients before the timer expires by selecting the **Burn-on-read** |burn-on-read-icon| icon above the sent message.
 
 Draft messages
 --------------
@@ -94,6 +159,25 @@ All users can edit their own sent messages, unless the system admin has :doc:`re
 
     From Mattermost v10.11 and mobile app v2.31.0, when editing messages on mobile, you can also view, delete, and save message attachments as you would when using Mattermost in a web browser or the desktop app.
 
+Restore a previous version of an edited message
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+From Mattermost v7.9, `Mattermost Enterprise or Professional <https://mattermost.com/pricing>`__ customers can `edit or delete messages <#edit-or-delete-messages>`__ after sending them if your system admin hasn't restricted the ability to do so using :doc:`advanced permissions </administration-guide/onboard/advanced-permissions>`.
+
+Message recipients can't see your message edit history, and restoring a previous message version won't trigger new :doc:`@mention notifications </end-user-guide/collaborate/mention-people>`.
+
+.. note::
+  
+  Restoring a previous version of the message is available in the Mattermost desktop app or a web browser. The ability to restore using the mobile app isn't supported.
+
+1. Select the word **Edited** next to your message. 
+2. In the right pane, review all previous versions of the message.
+3. Select the **Restore** |restore-edit| icon next to the version you want to restore.
+4. Select **Confirm**.
+
+.. image:: ../../images/restore-previous-edited-message.gif
+  :alt: Select Edited next to an edited message, and then select the version you want to restore.
+
 Delete messages
 ----------------
 
@@ -117,25 +201,6 @@ Delete messages
   .. image:: ../../images/mobile-confirm-delete-a-message.jpg
     :alt: Confirm your choice to delete the message.
     :scale: 30
-
-Restore a previous version of an edited message
------------------------------------------------
-
-From Mattermost v7.9, `Mattermost Enterprise or Professional <https://mattermost.com/pricing>`__ customers can `edit or delete messages <#edit-or-delete-messages>`__ after sending them if your system admin hasn't restricted the ability to do so using :doc:`advanced permissions </administration-guide/onboard/advanced-permissions>`.
-
-Message recipients can't see your message edit history, and restoring a previous message version won't trigger new :doc:`@mention notifications </end-user-guide/collaborate/mention-people>`.
-
-.. note::
-  
-  Restoring a previous version of the message is available in the Mattermost desktop app or a web browser. The ability to restore using the mobile app isn't supported.
-
-1. Select the word **Edited** next to your message. 
-2. In the right pane, review all previous versions of the message.
-3. Select the **Restore** |restore-edit| icon next to the version you want to restore.
-4. Select **Confirm**.
-
-.. image:: ../../images/restore-previous-edited-message.gif
-  :alt: Select Edited next to an edited message, and then select the version you want to restore.
 
 Do more with your messages
 --------------------------

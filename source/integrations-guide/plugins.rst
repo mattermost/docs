@@ -17,6 +17,8 @@ Mattermost's pre-built plugins make it simple for teams to extend Mattermost wit
 
 Learn more about what popular :doc:`pre-built integrations are available and how to install them </integrations-guide/popular-integrations>`.
 
+As a system admin, see the :doc:`install and manage plugins </administration-guide/configure/manage-plugins>` documentation for step-by-step instructions on installing, enabling, configuring, updating, and removing plugins.
+
 .. tip::
   The `Mattermost Marketplace <https://mattermost.com/marketplace/>`_ offers an expanded selection of community supported integrations.
 
@@ -28,5 +30,7 @@ Custom-built plugins
 Building a custom plugin for your self-hosted deployment is a **software development** task, using ``Go`` for the server-side functionality and optionally ``TypeScript/React`` for UI components. Developers should be comfortable with Git, modern build tooling, and the `Mattermost Plugin API <https://developers.mattermost.com/integrate/reference/server/server-reference/>`_, including lifecycle hooks, KV storage, slash commands, and interactivity. Knowledge of testing, logging, and security best practices is essential for production-ready plugins, along with experience packaging and deploying plugins through the System Console or CLI. For teams without these skills, simpler options like webhooks, slash commands, or no-code workflow tools may be more practical.
 
 Plugins can authenticate and interact with Mattermost through `bot accounts <https://developers.mattermost.com/integrate/reference/bot-accounts/>`_, utilizing the `RESTful API <https://developers.mattermost.com/api-documentation/>`_.
+
+From Mattermost v11.5, plugins can register a Channel Header Icon component that places an icon next to the **Files** button in the channel header. This pluggable location is designed for channel-level actions such as custom workflows, analysis, or summarization tools.
 
 Learn more about `building your own plugin <https://developers.mattermost.com/integrate/plugins/>`_.

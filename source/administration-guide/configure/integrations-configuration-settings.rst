@@ -132,21 +132,82 @@ Enable OAuth 2.0 service provider
 
   Cloud admins can't modify this configuration setting.
 
+.. config:setting:: enable-dynamic-client-registration
+  :displayname: Enable dynamic client registration (Integrations)
+  :systemconsole: Integrations > Integration Management
+  :configjson: .ServiceSettings.EnableDynamicClientRegistration
+  :environment: MM_SERVICESETTINGS_ENABLEDYNAMICCLIENTREGISTRATION
+
+  - **true**: Enables Dynamic Client Registration (DCR) per RFC 7591, allowing applications to programmatically register OAuth 2.0 clients via the public API endpoint.
+  - **false**: **(Default)** Dynamic Client Registration is disabled.
+
+Enable dynamic client registration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**True**: Enables Dynamic Client Registration (DCR) allowing applications to programmatically register OAuth 2.0 clients without manual admin intervention via the ``POST /api/v4/oauth/apps/register`` endpoint.
+
+**False**: Dynamic Client Registration is disabled. OAuth 2.0 applications must be registered manually through the System Console.
+
++-------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableDynamicClientRegistration": false`` with options ``true`` and ``false``.   |
++-------------------------------------------------------------------------------------------------------------------------------+
+
+.. important::
+
+  **Security Warning**: When enabled, the DCR endpoint (``/api/v4/oauth/apps/register``) is **publicly accessible without authentication**. Any user or application can register OAuth clients on your Mattermost server. Only enable this setting if you understand and accept this security model, or have additional network-level access controls in place.
+
+.. note::
+
+  Cloud admins can't modify this configuration setting.
+
+.. config:setting:: dcr-redirect-uri-allowlist
+  :displayname: DCR redirect URI allowlist (Integrations)
+  :systemconsole: Integrations > Integration Management
+  :configjson: .ServiceSettings.DCRRedirectURIAllowlist
+  :environment: MM_SERVICESETTINGS_DCRREDIRECTURIALLOWLIST
+  :description: A comma-separated list of permitted redirect URIs for OAuth Dynamic Client Registration (DCR). When configured, only OAuth clients that register with a redirect URI matching an entry in this list are accepted. Leave blank to allow any redirect URI.
+
+DCR redirect URI allowlist
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A comma-separated list of permitted redirect URIs for OAuth Dynamic Client Registration (DCR). When configured, only OAuth clients that register via the DCR endpoint (``POST /api/v4/oauth/apps/register``) with a redirect URI matching an entry in this list will be accepted. Leave blank to allow any redirect URI.
+
+In the System Console, enter URIs as a comma-separated list. When setting this value directly in ``config.json`` or via environment variable, provide URIs as a JSON string array (for example, ``["https://example.com/callback", "https://app.example.com/oauth"]``).
+
+This setting applies only when :ref:`Enable dynamic client registration <administration-guide/configure/integrations-configuration-settings:enable dynamic client registration>` is enabled.
+
+Redirect URIs are matched per URL component. Patterns support two wildcards:
+
+- ``*`` matches any characters except ``/`` (for example, a single path segment or a hostname label).
+- ``**`` matches any characters including ``/`` (for example, a multi-segment path).
+
+Wildcards are applied within URL components only: host wildcards match against the host, path wildcards match against the path, and a wildcard in one component can't satisfy another component. For example, ``https://*.example.com/**`` matches ``https://app.example.com/callback`` but not ``https://attacker.example.net``.
+
+Query strings are matched only when the pattern explicitly includes one. A pattern without a query string (such as ``https://app.example.com/callback`` or ``https://app.example.com/**``) matches only redirect URIs that have no query string. To allow redirect URIs that carry query parameters, include a query component in the pattern, for example ``https://app.example.com/callback?tenant=*``. To allow a callback both with and without a query string, add both patterns.
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DCRRedirectURIAllowlist": []`` with string array input, such as ``["https://example.com/callback", "https://app.example.com/oauth"]``.                 |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  Cloud admins can't modify this configuration setting.
+
 .. config:setting:: integration-request-timeout
   :displayname: Integration request timeout (Integrations)
   :systemconsole: Integrations > Integration Management
-  :configjson: .ServiceSettings.OutgoingIntegrationRequestsDefaultTimeout
-  :environment: MM_SERVICESETTINGS_OUTGOINGINTEGRATIONREQUESTDEFAULTTIMEOUT
-  :description: The number of seconds to wait for external integration HTTP requests, before timing out. Default value is **3 seconds**.
+  :configjson: .ServiceSettings.OutgoingIntegrationRequestsTimeout
+  :environment: MM_SERVICESETTINGS_OUTGOINGINTEGRATIONREQUESTSTIMEOUT
+  :description: The number of seconds to wait for external integration HTTP requests before timing out. Default value is **30 seconds**.
 
 Integration request timeout
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The number of seconds to wait for external integration HTTP requests, before timing out, including `custom slash commands <https://developers.mattermost.com/integrate/slash-commands/custom/>`_, `outgoing webhooks <https://developers.mattermost.com/integrate/webhooks/outgoing/>`_, `interactive messages <https://developers.mattermost.com/integrate/plugins/interactive-messages/>`_, and `interactive dialogs <https://developers.mattermost.com/integrate/plugins/interactive-dialogs/>`_. Increase this value if you have external integrations that can take some time to generate an HTTP response, or experience delayed responses due to latency.
+The number of seconds to wait for external integration HTTP requests before timing out, including `custom slash commands <https://developers.mattermost.com/integrate/slash-commands/custom/>`_, `outgoing webhooks <https://developers.mattermost.com/integrate/webhooks/outgoing/>`_, `interactive messages <https://developers.mattermost.com/integrate/plugins/interactive-messages/>`_, and `interactive dialogs <https://developers.mattermost.com/integrate/plugins/interactive-dialogs/>`_. Increase this value if you have external integrations that can take some time to generate an HTTP response, or experience delayed responses due to latency.
 
-+------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"OutgoingIntegrationRequestsDefaultTimeout": 3``.  |
-+------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"OutgoingIntegrationRequestsTimeout": 30``.    |
++---------------------------------------------------------------------------------------------+
 
 .. config:setting:: enable-integrations-to-override-usernames
   :displayname: Enable integrations to override usernames (Integrations)
@@ -209,6 +270,28 @@ To manage who can create personal access tokens or to search users by token ID, 
 +--------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableUserAccessTokens": false`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: enforce-incoming-webhook-channel-locking
+  :displayname: Enforce incoming webhook channel locking (Integrations)
+  :systemconsole: Integrations > Integration Management
+  :configjson: .ServiceSettings.EnforceIncomingWebhookChannelLocking
+  :environment: MM_SERVICESETTINGS_ENFORCEINCOMINGWEBHOOKCHANNELLOCKING
+
+  - **true**: Incoming webhooks are required to be locked to their specific channel and cannot post to other channels.
+  - **false**: **(Default)** Incoming webhook creators can choose whether to lock webhooks to a specific channel or allow posting to any channel they have access to.
+
+Enforce incoming webhook channel locking
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When enabled, this setting enforces that all incoming webhooks must be locked to their designated channel and cannot post messages to other channels. This provides administrators with greater control over webhook security and ensures that webhooks can only post to their intended channels.
+
+**True**: Incoming webhooks are required to be locked to their specific channel. The **Lock to this channel** option is automatically enabled and cannot be disabled when creating or editing webhooks.
+
+**False**: **(Default)** Incoming webhook creators can choose whether to lock webhooks to a specific channel by selecting **Lock to this channel**, or allow the webhook to post to any public channel or private channel the webhook creator is a member of.
+
++----------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnforceIncomingWebhookChannelLocking": false`` with options ``true`` and ``false``. |
++----------------------------------------------------------------------------------------------------------------------------------+
 
 ----
 

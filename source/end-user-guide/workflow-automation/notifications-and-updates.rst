@@ -9,37 +9,67 @@ There are multiple ways to receive collaborative playbook updates and notificati
 Status updates
 --------------
 
-Status updates ensure that stakeholders remain informed about the playbook run’s progress. 
+Status updates ensure that stakeholders remain informed about the playbook run's progress. 
 
 You can post a status update from the run channel and you can also configure the playbook to send a reminder to post a status update.
 
-To post a status update, access the **Playbooks** tab in Mattermost. Select the run you want to post the update for. In the run details page, select **Post update**.
+.. tab:: Web and Desktop
 
-   - If this is the first status update and the playbook has a defined template, that template will be pre-populated here.
-   - If this is a subsequent status update, the message from the last status update will be pre-populated here.
+   1. To post a status update, access the **Playbooks** tab in Mattermost. Select the run you want to post the update for. In the run details page, select **Post update**.
 
-3. Optionally set a reminder to prompt for the next status update.
+      - If this is the first status update and the playbook has a defined template, that template will be pre-populated here.
+      - If this is a subsequent status update, the message from the last status update will be pre-populated here.
 
-   - If this is the first status update and the playbook has a defined default reminder timer, that timer will be pre-selected here.
-   - If this is a subsequent status update, the last reminder timer will be pre-populated here.
+   2. Optionally set a reminder to prompt for the next status update.
 
-4. Select **Post update** to post your status update.
+      - If this is the first status update and the playbook has a defined default reminder timer, that timer will be pre-selected here.
+      - If this is a subsequent status update, the last reminder timer will be pre-populated here.
 
-If the playbook has a defined broadcast channel, status updates are copied to the broadcast channel as a message from the Playbooks bot.
+   3. Select **Post update** to post your status update.
 
-The most recent status post will also appear in the right-hand sidebar of the run channel and in the timeline. To correct or remove a status post, edit or delete the post as needed. Note that status updates that are broadcast to another channel won’t be updated or removed if the original post is edited or deleted.
+.. tab:: Mobile
+
+   From Mattermost v11.1 and mobile v2.34.0, mobile users can post status updates directly from the Mattermost mobile app:
+
+   1. Open a playbook run from your mobile app.
+   2. Select the status update button that appears when viewing the run details.
+   3. In the status update modal:
+
+      - If this is your first status update and the playbook has a status update template, the template content will be pre-populated.
+      - For subsequent updates, your most recent status update content will be pre-populated.
+      - The modal header shows how many people and channels will receive your status update.
+
+   4. Select your reminder timing from the predefined options available in the mobile app.
+   5. Select **Post update** to share your status update.
+
+   .. note::
+
+      - The status update button is only available to participants in the playbook run and is disabled when the run is finished. 
+      - Mobile time selector options are limited to predefined choices, unlike the web interface which allows custom date entry.
+
+When the playbook has a defined broadcast channel, status updates are copied to the broadcast channel as a message from the Playbooks bot. Status updates broadcast to another channel won’t be updated or removed if the original post is edited or deleted.
+
+The most recent status post alsos displays in the right-hand sidebar of the run channel and in the timeline. To correct or remove a status post, edit or delete the post as needed. 
 
 Request an update
 -----------------
 
 To request a status update, access the **Playbooks** tab in Mattermost. Select the run you want an update for. In the run details page, select the |more-icon-vertical| menu next to **Post update** and select **Request update**.
 
+.. note::
+
+   Requesting updates is only available in the web browser and desktop app. This functionality is not available on mobile.
+
 Follow runs and playbooks
 -------------------------
 
-Follow specific playbooks to receive updates on important events such as when a run is started and finished, as well as status and retrospective updates every time that playbook is run. This is a good option if you’re interested in all instances of a specific workflow, such as an outage resolution playbook.
+Follow specific playbooks to receive updates on important events such as when a run is started and finished, as well as status and retrospective updates every time that playbook is run. This is a good option if you're interested in all instances of a specific workflow, such as an outage resolution playbook.
 
-As a stakeholder, you can also choose to follow only a specific run. This means that while you don’t have to participate in the run, you’ll receive updates and can decide what, if any, actions to take. This is a good option if you’re only interested in a single instance of a procedure. For example, you may want to only follow customer onboarding for one specific customer instead of all onboarding runs.
+You can also choose to follow a specific run without actively participating. You’ll receive updates for that run only and can take action if needed. This is useful when you’re only interested in a single instance of a procedure—for example, following onboarding for one specific customer rather than every onboarding run.
+
+.. note::
+
+   Following playbooks and runs is only available in the web browser and desktop app. This functionality is not available on mobile.
 
 Daily digest
 ------------
