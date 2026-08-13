@@ -21,7 +21,7 @@ Mattermost Server v12.0 (October 2026)
 Mattermost Desktop App v6.4 (November 2026)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Starting with Mattermost Desktop App v6.4 (November 2026), servers configured with a subpath in their Site URL will require Boards v9.4.0 or later. The Desktop App will no longer strip the server subpath from paths sent by Boards, a workaround that caused "Team not found" errors when a team name matched the subpath, so older Boards versions may show navigation errors. Update Boards from the Marketplace before updating the Desktop App. Deployments without a subpath will be unaffected.
+- Starting with Mattermost Desktop App v6.4 (November 2026), servers configured with a subpath in their Site URL will require Boards v9.4.0 or later. The Desktop App will no longer strip the server subpath from paths sent by Boards, a workaround that caused "Team not found" errors when a team name matched the subpath, so older Boards versions may show navigation errors. Update the Boards plugin to v9.4.0 or later before updating the Desktop App. Follow the `Boards installation instructions <https://docs.mattermost.com/administration-guide/configure/install-boards.html>`__. Deployments without a subpath will be unaffected.
 
 Removed features by Mattermost version
 ----------------------------------------
