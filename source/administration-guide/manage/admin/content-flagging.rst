@@ -88,7 +88,7 @@ Reviewers can select **View details** to take action as follows:
 - **Keep message**: Dismiss the quarantine and restore the message if it was hidden. The status of the quarantined message changes to **Retained**.
 - **Add a comment**: Record the reason for the decision when required.
 - **Generate a report**: Download a report of the quarantined message and review activity for record-keeping or incident response. See :ref:`administration-guide/manage/admin/content-flagging:generate a quarantined message report` for details.
-- **Download exposure report**: Download a report of the users who may have been exposed to the quarantined message while it was visible in its channel. See :ref:`administration-guide/manage/admin/content-flagging:generate a post exposure report` for details.
+- **Download exposure report**: From Mattermost v11.11, download a report of the users who may have been exposed to the quarantined message while it was visible in its channel. See :ref:`administration-guide/manage/admin/content-flagging:generate a post exposure report` for details.
 
 Once an action is taken, the **Status** field updates automatically. The **Data Spillage Bot** sends follow-up notifications to the reporter, author, and other reviewers based on how Data Spillage Handling is configured.
 
@@ -115,7 +115,11 @@ Each time a reviewer generates a quarantined message report or a :ref:`post expo
 Report contents and format
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Each quarantined message report is a ZIP archive containing YAML metadata files, a CSV exposure report, and the original file attachments. YAML is used for the metadata files because it's both human-readable and machine-parseable, which makes the report suitable for manual review and for ingestion by downstream compliance or incident-response tooling. The exposure report is CSV so that reviewers can open it directly in a spreadsheet.
+Each quarantined message report is a ZIP archive containing YAML metadata files, the original file attachments, and, from Mattermost v11.11, a CSV exposure report. YAML is used for the metadata files because it's both human-readable and machine-parseable, which makes the report suitable for manual review and for ingestion by downstream compliance or incident-response tooling. The exposure report is CSV so that reviewers can open it directly in a spreadsheet.
+
+.. warning::
+
+   Report archives contain the quarantined message content, its attachments, and the user IDs, usernames, and email addresses of the users involved. Store and transfer downloaded reports only through locations approved for data of that sensitivity, restrict access to the people who need it, and apply your organization's retention and secure-deletion requirements.
 
 The archive has the following structure:
 
@@ -135,9 +139,9 @@ The archive has the following structure:
            └── attachments/
                └── <original attachment files>
 
-- **report_metadata.yaml**: Identifies the report itself, including the user ID and username of the reviewer who generated the report, the generation timestamp, and the report format version (used for forward compatibility if the report format changes in future releases). Report format version 1.1 added ``exposure_report.csv`` to the archive.
+- **report_metadata.yaml**: Identifies the report itself, including the user ID and username of the reviewer who generated the report, the generation timestamp, and the archive format version (used for forward compatibility if the archive format changes in future releases). Archive format version 1.1, introduced in Mattermost v11.11, added ``exposure_report.csv`` to the archive.
 - **content_review.yaml**: Captures the data spillage event, including the reporter's user ID, username, selected reason, and comment; the report timestamp; whether the message was hidden during review; and, once the quarantine is resolved, the reviewer's user ID, username, comment, and action timestamp. For unresolved quarantines, reviewer fields are omitted.
-- **exposure_report.csv**: Lists the users who may have been exposed to the quarantined message while it was visible in its channel. This is the same report that reviewers can download on its own, in the same format. See :ref:`administration-guide/manage/admin/content-flagging:exposure report contents` for the columns and how to interpret them.
+- **exposure_report.csv**: Lists the users who may have been exposed to the quarantined message while it was visible in its channel. This is the same report that reviewers can download on its own, in the same format, including its own ``Report version`` metadata line. The exposure report version is a separate contract from the archive format version: archive format version 1.1 carries exposure report version 1.0. See :ref:`administration-guide/manage/admin/content-flagging:exposure report contents` for the columns and how to interpret them.
 - **post/post.yaml**: Describes the quarantined message, including the post ID, author ID, author name, author email, message content, channel ID, channel display name, team ID, team display name, creation and update timestamps, pinned status, root ID, post properties, post metadata, reply count (for root posts), and the ordered list of edit history post IDs.
 - **post/attachments/**: The original files attached to the quarantined message, included verbatim.
 - **edit_history/<edit_post_id>/**: One subdirectory per previous version of the message, each containing a ``post.yaml`` and an ``attachments/`` directory in the same format as the base post directory.
@@ -149,7 +153,7 @@ Generate a post exposure report
 
 From Mattermost v11.11, reviewers can generate a post exposure report: a CSV file listing the users who may have been exposed to a quarantined message while it was visible in its channel. The report helps a reviewer scope the impact of a potential data spill and decide who needs follow-up.
 
-.. important::
+.. warning::
 
    A post exposure report identifies who *may* have been exposed to a quarantined message. It isn't evidence that anyone read the message.
 
@@ -165,7 +169,7 @@ A post exposure report can be obtained from either of the following entry points
 - **From the quarantined message details**: Select **View details**, then select **Download exposure report** in the **Exposure report** row. The file downloads as ``post-exposure-<post_id>-<timestamp>.csv``.
 - **From the quarantined message report**: The ZIP archive produced by **Download report** includes the same data as ``exposure_report.csv``.
 
-Only content reviewers can generate a post exposure report.
+Only content reviewers can generate a post exposure report. A downloaded exposure report lists the username and email address of every reported user, so handle it under the same requirements as a :ref:`quarantined message report archive <administration-guide/manage/admin/content-flagging:report contents and format>`.
 
 Exposure report contents
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -174,7 +178,7 @@ Every row in the report is one user who was a member of the channel at some poin
 
 The report doesn't produce a separate list of users who probably saw the message. Instead, every row carries the channel read state and account activity timestamps needed to judge likelihood, so reviewers triage a single table by sorting and filtering rather than reconciling two overlapping lists.
 
-Report metadata is written as ``#``-prefixed comment lines above the header row, so the file describes itself without a separate metadata file. Most tools can skip these lines — for example, Go's ``csv.Reader`` with ``Comment: '#'``, or pandas with ``comment='#'``.
+Report metadata is written as ``#``-prefixed comment lines above the header row, so the file describes itself without a separate metadata file. Most tools can skip these lines — for example, Go's ``csv.Reader`` with its ``Comment`` field set to ``'#'``, or pandas with ``comment='#'``.
 
 .. code-block:: text
 
@@ -200,20 +204,21 @@ The report includes the following columns:
 - **Guest**: ``Yes`` if the user is a guest account.
 - **Remote user**: ``Yes`` if the user belongs to a remote server through a shared channel. Content on a remote server is beyond the reach of hiding or removing the message locally.
 - **Deactivated**: ``Yes`` if the user's account is deactivated. Deactivating a user doesn't undo their exposure, so deactivated accounts are still reported.
-- **Was channel member**: Always ``Yes`` in report version 1.0. Every row is a channel member by definition, and the column is reserved for future report versions that may add other exposure paths.
+- **Was channel member**: Always ``Yes`` in exposure report version 1.0. Every row is a channel member by definition, and the column is reserved for future report versions that may add other exposure paths.
 - **Last viewed channel at (YYYY-MM-DDTHH:MM:SSZ)**: The user's *current* last-viewed timestamp for the channel, not a snapshot taken when the message was quarantined. ``Unknown`` means no read state exists because the user is no longer a channel member. ``N/A`` means the user is a member who has never opened the channel.
 - **User last activity time (YYYY-MM-DDTHH:MM:SSZ)**: The user's most recent session activity anywhere in Mattermost, not in this channel. ``No sessions found`` means no session records exist for the user, which is always the case for deactivated accounts.
 
-To scope who needs follow-up, compare each row's **Last viewed channel at** value against the **Post created at** value in the report metadata:
+To scope who needs follow-up, compare each row's **Last viewed channel at** value against the **Post created at** and **Flagged at** values in the report metadata:
 
-- **At or after Post created at**: The user opened the channel while the message was visible. This is a possible exposure, and should be prioritized for follow-up.
+- **Between Post created at and Flagged at**: The user opened the channel while the message was visible. This is a possible exposure, and should be prioritized for follow-up.
+- **After Flagged at**: The user's most recent channel open falls outside the reporting window, so it doesn't establish that they opened the channel while the message was visible. Because only the most recent open is recorded, it doesn't rule one out either. If quarantined messages aren't hidden while under review in your configuration, the message may also have still been visible at this timestamp.
 - **Before Post created at**: The user was a channel member, but hadn't opened the channel since before the message was posted. Exposure in the channel is less probable, but not ruled out — the message content may still have reached the user through a push or email notification.
 - **Unknown or N/A**: No channel read state exists for the user. Exposure is undetermined. Don't read these values as confirmation that the user didn't see the message.
 
 .. tip::
    Generate the exposure report early in the review. **Last viewed channel at** reflects live channel read state, so it moves whenever a user opens the channel again, including after the quarantine is resolved.
 
-Rows are sorted by username, then by user ID, so row order is the same every time the report is generated. The cell values aren't: **Last viewed channel at** and **User last activity time** both reflect live state, so two reports generated at different times can differ. Column headings and values, including ``Yes``, ``No``, ``Unknown``, ``N/A``, and ``No sessions found``, are localized to the language of the reviewer who generated the report. Downstream tooling shouldn't match on the English strings.
+Rows are sorted by username, then by user ID. That order is only stable while the reported user population and their usernames are unchanged — a username change or a deleted account can shift row order or row count between two reports for the same message, so downstream tooling should match users by **User ID** rather than by row position. The cell values aren't stable either: **Last viewed channel at** and **User last activity time** both reflect live state, so two reports generated at different times can differ. Column headings and values, including ``Yes``, ``No``, ``Unknown``, ``N/A``, and ``No sessions found``, are localized to the language of the reviewer who generated the report. Downstream tooling shouldn't match on the English strings.
 
 Exposure report limitations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
