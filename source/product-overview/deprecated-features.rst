@@ -18,6 +18,11 @@ Mattermost Server v12.0 (October 2026)
 - Starting with Mattermost Server v12.0 (October 2026), deprecated interactive dialog ``date/datetime`` fields will be removed. Top-level ``min_date``, ``max_date``, and ``time_interval``, and ``datetime_config.allow_manual_time_entry``, will no longer be accepted; use ``datetime_config`` (with ``manual_time_entry``) instead. Legacy keys will be silently ignored.
 - Starting with Mattermost Server v12.0 (October 2026), deprecated Slack compatibility type aliases and functions will be removed (``SlackAttachment``, ``SlackAttachmentField``, ``ParseSlackAttachment``, ``StringifySlackFieldValue``) from the go package. Use ``MessageAttachment``, ``MessageAttachmentField``, ``ParseMessageAttachment``, and ``StringifyMessageAttachmentFieldValue`` instead.
 
+Mattermost Desktop App v6.4 (November 2026)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Starting with Mattermost Desktop App v6.4 (November 2026), servers configured with a subpath in their Site URL will require Boards v9.4.0 or later. The Desktop App will no longer strip the server subpath from paths sent by Boards, a workaround that caused "Team not found" errors when a team name matched the subpath, so older Boards versions may show navigation errors. Update the Boards plugin to v9.4.0 or later before updating the Desktop App. Follow the `Boards installation instructions <https://docs.mattermost.com/administration-guide/configure/install-boards.html>`__. Deployments without a subpath will be unaffected.
+
 Removed features by Mattermost version
 ----------------------------------------
 
