@@ -378,11 +378,13 @@ RTCD keeps a small local store at the path set by `data_source` in the `[store]`
 
 Back the store up by copying its directory while the service is stopped.
 
-```{note}
+```{warning}
 If the store is lost, the credentials the Calls plugin holds no longer match anything on the RTCD side, and the plugin can't authenticate. Recovery depends on `allow_self_registration` under `[api.security]`:
 
 - When it's disabled, which is the default, registration itself requires authenticating first, so the plugin can neither authenticate nor re-register. Calls stays broken until the store is restored or new credentials are provisioned.
 - When it's enabled, the plugin detects the failure and registers again automatically, so a lost store recovers on its own.
+
+Enabling `allow_self_registration` lets any client that can reach the API port register without authenticating. Leave it disabled on any RTCD service reachable from the internet, and enable it only on a private, access-controlled network.
 ```
 
 ```{important}
@@ -465,7 +467,7 @@ When [horizontal scaling](#horizontal-scaling) is configured, servers can be upg
 
 7. **Return the server to DNS**:
 
-   Add its IP address back to the DNS record. The plugin creates a client for the server on its next resolution cycle and starts assigning new calls to it.
+   Add its IP address back to the DNS record. The plugin picks the server up on its next resolution cycle and starts assigning new calls to it again.
 
 Once the server is back in rotation, repeat the process for the next one.
 
@@ -477,6 +479,11 @@ Once the server is back in rotation, repeat the process for the next one.
 ### Upgrading in Kubernetes
 
 The [RTCD Helm chart](calls-kubernetes.md#rtcd-helm-chart) defaults to a `RollingUpdate` strategy with `maxUnavailable: 1`, and sets `configuration.terminationGracePeriod` to `18000` seconds (5 hours). That value maps to the pod's `terminationGracePeriodSeconds`, so Kubernetes allows a pod 5 hours to drain its calls before killing it.
+
+Before changing the image, decide how the data store is handled. The chart ships no `PersistentVolumeClaim` template, and the store defaults to a path inside the container, so each replaced pod starts with an empty store. Since the store is a local embedded database with one instance per pod, a single volume can't be shared across replicas. There are two workable approaches:
+
+- **Let pods re-register.** Enable `allow_self_registration` on a private, access-controlled network, as described in the warning above, and the plugin re-registers against each new pod automatically. This is the simpler option and needs no storage configuration.
+- **Give each pod its own storage.** With `deploymentType: daemonset`, one pod runs per node, so a per-node `hostPath` mounted at the `data_source` path through `configuration.extraVolumes` and `configuration.extraVolumeMounts` gives each pod a store that survives image replacement.
 
 To upgrade, set `image.tag` to the new version in your values file and apply the chart. Kubernetes sends `SIGTERM` to each pod it replaces, which starts the drain described above.
 
