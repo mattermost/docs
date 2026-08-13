@@ -38,6 +38,10 @@ Access Channel Settings
 
   You can also assign ABAC rules to a channel directly from a channel's details page in the System Console under **Channel Management** by enabling the **Enable attribute-based channel access** option. Under **Access policy**, select **Link to a policy** to select an existing policy.
 
+.. important::
+
+  **Changes aren't applied until you save the tab.** Editing rules in either the **Membership Policy** or **Permissions Policy** tab stages your changes locally - nothing reaches the channel until you select **Save** in the **Save Changes** panel at the bottom of the tab. Permission rules take one more step than membership rules: selecting **Add rule** or **Save rule** in the rule editor only commits the rule to the list, and you still need to save the tab afterwards.
+
 Configure access rules
 ----------------------
 
@@ -126,6 +130,8 @@ From Mattermost v11.8.0, channel admins can define channel-level permission rule
 
 For system-wide permission policies that restrict file upload and download actions, see :ref:`Permission policies <administration-guide/manage/admin/abac-system-wide-policies:permission policies>`.
 
+From Mattermost v11.11, permission rules can also use any :doc:`session attributes </administration-guide/manage/admin/session-attributes>` a System Admin has enabled, letting you restrict file actions by device or network rather than by who the user is. Because a rule that references a session attribute denies anyone whose client doesn't report it - including everyone working in a web browser - review :ref:`platform availability <administration-guide/manage/admin/session-attributes:platform availability>` and simulate the rule before saving it.
+
 Simulate access
 ----------------
 
@@ -133,6 +139,11 @@ From Mattermost v11.8.0, admins can use **Simulate access** in Channel Settings 
 
 - Simulation can evaluate draft rules before they're saved, so you can confirm the intended scope without affecting live channel access.
 - Some denied results may indicate that the decision came from another policy. In that case, Mattermost shows that access was denied by another policy without exposing policy details you aren't authorized to see.
+- From Mattermost v11.11, a neutral **No recent session** result indicates that the rules reference :doc:`session attributes </administration-guide/manage/admin/session-attributes>` and the selected user has no cached session data to evaluate.
+
+.. note::
+
+  Detailed evaluation traces showing how each rule contributed to a decision are only available to System Admins. Channel Admins and Team Admins see the contributing rule expressions without the underlying trace.
 
 .. note::
 

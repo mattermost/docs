@@ -18,6 +18,7 @@ Whether you’re setting up email notifications, optimizing search capabilities,
     Install Mattermost Boards </administration-guide/configure/install-boards>
     Install and manage plugins </administration-guide/configure/manage-plugins>
     Manage user attributes </administration-guide/manage/admin/user-attributes>
+    Manage session attributes </administration-guide/manage/admin/session-attributes>
     Enable content flagging </administration-guide/manage/admin/content-flagging>
     Environment variables </administration-guide/configure/environment-variables>
     Customize the server </administration-guide/manage/admin/customize-branding>
@@ -37,6 +38,7 @@ Whether you’re setting up email notifications, optimizing search capabilities,
 * :doc:`Install Mattermost Boards </administration-guide/configure/install-boards>` - Learn how to install and configure the Boards plugin for your Mattermost instance.
 * :doc:`Install and manage plugins </administration-guide/configure/manage-plugins>` - Learn how to install, enable, configure, update, and remove plugins for your Mattermost instance.
 * :doc:`Manage custom user attributes </administration-guide/manage/admin/user-attributes>` - Learn how to manage custom user attributes in user profiles in Mattermost.
+* :doc:`Manage session attributes </administration-guide/manage/admin/session-attributes>` - Learn how to collect and use per-session device and network context in access control policies.
 * :doc:`Environment variables </administration-guide/configure/environment-variables>` - Learn how to use environment variables for Mattermost configuration.
 * :doc:`Customize the server </administration-guide/manage/admin/customize-branding>` - Learn about customizing branding for Mattermost server.
 * :doc:`SMTP email setup </administration-guide/configure/smtp-email>` - Learn how to set up SMTP email for Mattermost.

@@ -80,3 +80,29 @@ Error reports include:
 Error reporting is **enabled by default**. Users can disable it at any time by going to **Settings > Advanced > Send error reports to help improve the app**. Restart the app to apply the change.
 
 Organizations with data handling policies should inform users about this feature and provide guidance on whether to disable it. For organizations building the Desktop app from source, error reporting can be disabled at build time by omitting the ``MM_DESKTOP_BUILD_SENTRYDSN`` environment variable.
+
+Session attribute collection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+From Mattermost Desktop v6.3, the desktop app can report device and network context - such as hardware and network identifiers, VPN status, and MDM enrollment - to the servers it's connected to, for use in :doc:`attribute-based access control policies </administration-guide/manage/admin/session-attributes>`. This is separate from error reporting and from anonymous usage data. See the :ref:`session attribute reference <administration-guide/manage/admin/session-attributes:session attribute reference>` for every value that can be reported and how each one is measured, and :ref:`platform availability <administration-guide/manage/admin/session-attributes:platform availability>` for the differences between macOS, Windows, and Linux.
+
+**When collection happens**
+
+Collection occurs according to a manifest sent by the server. The server specifies which attributes it wants (based on admin configuration), and the desktop app collects and sends them only as often as the server's configured time-to-live requires.
+
+**What is NOT sent**
+
+- Message content or user communications
+- Credentials, passwords, or authentication tokens
+- Browsing history, running processes, or installed applications
+- Contents of network traffic. VPN status is determined by inspecting the *types* of network interfaces present on the device, not by inspecting traffic.
+
+**Privacy and user control**
+
+Session attribute reporting is **enabled by default**. Users can disable it at any time by clearing **Settings > Advanced > Enable session attributes**. While it's enabled, a read-only table beneath the setting shows each attribute the app can collect and the value it currently reports, so users can see exactly what's being sent, and admins have somewhere to look first when a user is unexpectedly denied access.
+
+.. important::
+
+  Disabling this setting stops the desktop app from reporting attributes, which means the user will be **denied access** to any channel, file upload, or file download governed by a policy that depends on a client-reported session attribute. Organizations that rely on session attributes for access control should inform users of this before rolling the policies out.
+
+Values reported by the desktop app are held only in the server's in-memory per-session cache. They aren't written to the database, aren't included in compliance exports, and are discarded when the session ends.
