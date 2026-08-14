@@ -4,7 +4,7 @@ Session attributes
 .. include:: ../../../_static/badges/ent-adv.rst
   :start-after: :nosearch:
 
-From Mattermost v11.11, :ref:`permission policies <administration-guide/manage/admin/abac-system-wide-policies:permission policies>` can evaluate **session attributes** in addition to user attributes. Where a user attribute describes *who* someone is, a session attribute describes *how they're connecting right now* (eg. the network they're on, the client they're using, and the posture of the device in front of them).
+From Mattermost v11.11, :ref:`permission policies <administration-guide/manage/admin/abac-system-wide-policies:permission policies>` can evaluate **session attributes** in addition to user attributes. Where a user attribute describes *who* someone is, a session attribute describes *how they're connecting right now* (e.g., the network they're on, the client they're using, and the posture of the device in front of them).
 
 This lets you write policies such as "only allow file downloads from a corporate IP range" or "block uploads from jailbroken mobile devices" - conditions that can't be expressed with user attributes alone. 
 
