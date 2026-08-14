@@ -15,6 +15,7 @@ Mattermost is purpose-built to help enterprises keep sensitive data safe and com
     Export channel data </administration-guide/comply/export-mattermost-channel-data>
     Legal Hold </administration-guide/comply/legal-hold>
     JSON audit log schema </administration-guide/comply/embedded-json-audit-log-schema>
+    Post delivery audit logging </administration-guide/comply/post-delivery-audit-logging>
 
 * :doc:`Compliance exports </administration-guide/comply/compliance-export>` - Export compliance reports to third-party systems to archive history.
 * :doc:`Compliance monitoring </administration-guide/comply/compliance-monitoring>` - Enable oversight and prevent unauthorized queries with compliance exports.
@@ -23,3 +24,4 @@ Mattermost is purpose-built to help enterprises keep sensitive data safe and com
 * :doc:`Export channel data </administration-guide/comply/export-mattermost-channel-data>` - Migrate data between systems and back data up for operational continuity.
 * :doc:`Legal Hold </administration-guide/comply/legal-hold>` - Preserve relevant Mattermost information when litigation is anticipated.
 * :doc:`JSON audit log schema </administration-guide/comply/embedded-json-audit-log-schema>` - Learn how to configure Mattermost audit logging using a JSON object.
+* :doc:`Post delivery audit logging </administration-guide/comply/post-delivery-audit-logging>` - Record an audit log entry each time a message is delivered to a user, to establish which users a given message reached.

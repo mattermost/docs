@@ -2259,6 +2259,84 @@ Team administrators as reviewers
 |   as reviewers.                                       |                                                                                                                      |
 +-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
 
+From Mattermost v12.0, the following settings control post delivery audit logging, which records an audit log entry each time a message is delivered to a user. Delivery records require an audit log target that consumes the ``audit-delivery`` log level. See :doc:`Post delivery audit logging </administration-guide/comply/post-delivery-audit-logging>` for details.
+
+.. note::
+
+  Post delivery audit logging is currently in :ref:`Beta <administration-guide/manage/feature-labels:beta>`, and requires the `feature flag <https://developers.mattermost.com/contribute/more-info/server/feature-flags/#changing-feature-flag-values>`_ ``MM_FEATUREFLAGS_POSTDELIVERYTRACKING``. Restart the server after enabling the feature flag.
+
+.. config:setting:: delivery-tracking-enable
+  :displayname: Enable post delivery audit logging (Content flagging)
+  :systemconsole: Site Configuration > Content Flagging
+  :configjson: .DeliveryTrackingSettings.Enable
+  :environment: MM_DELIVERYTRACKINGSETTINGS_ENABLE
+  :description: Record an audit log entry each time a message is delivered to a user. Default is **false**.
+
+  - **true**: An audit log entry is recorded each time a message is delivered to a user.
+  - **false**: **(Default)** Message deliveries aren't recorded.
+
+Enable post delivery audit logging
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| - **true**: An audit log entry is recorded each time  | - System Config path: **Site Configuration > Content Flagging**                                                      |
+|   a message is delivered to a user.                   | - ``config.json`` setting: ``DeliveryTrackingSettings`` > ``Enable`` > ``false``                                     |
+| - **false**: **(Default)** Message deliveries aren't  | - Environment variable: ``MM_DELIVERYTRACKINGSETTINGS_ENABLE``                                                       |
+|   recorded.                                           |                                                                                                                      |
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  Delivery records are written to the audit log only, and aren't surfaced anywhere in the Mattermost interface. They're discarded unless an audit log target consumes the ``audit-delivery`` log level.
+
+.. config:setting:: delivery-tracking-all-channels
+  :displayname: Record deliveries in (Content flagging)
+  :systemconsole: Site Configuration > Content Flagging
+  :configjson: .DeliveryTrackingSettings.EnableForAllChannels
+  :environment: MM_DELIVERYTRACKINGSETTINGS_ENABLEFORALLCHANNELS
+  :description: Record message deliveries in all eligible channels, or only in selected channels. Default is **true**.
+
+  - **true**: **(Default)** Deliveries are recorded in all eligible channels.
+  - **false**: Deliveries are recorded only in the selected channels.
+
+Record deliveries in
+~~~~~~~~~~~~~~~~~~~~
+
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| - **true**: **(Default)** Deliveries are recorded in  | - System Config path: **Site Configuration > Content Flagging**                                                      |
+|   all eligible channels.                              | - ``config.json`` setting: ``DeliveryTrackingSettings`` > ``EnableForAllChannels`` > ``true``                        |
+| - **false**: Deliveries are recorded only in the      | - Environment variable: ``MM_DELIVERYTRACKINGSETTINGS_ENABLEFORALLCHANNELS``                                         |
+|   selected channels.                                  |                                                                                                                      |
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  Recording deliveries in all channels is the most complete option, and also the most expensive. Direct and group messages are never eligible, regardless of this setting.
+
+.. config:setting:: delivery-tracking-channels
+  :displayname: Channels to record deliveries in (Content flagging)
+  :systemconsole: Site Configuration > Content Flagging
+  :configjson: N/A
+  :environment: N/A
+  :description: The channels in which message deliveries are recorded when deliveries aren't recorded in all channels. The list is stored in the database, so there's no ``config.json`` setting and no environment variable. Manage it in the System Console, or through the ``/api/v4/delivery_tracking/config`` API endpoints.
+
+Channels to record deliveries in
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| The channels in which message deliveries are          | - System Config path: **Site Configuration > Content Flagging**                                                      |
+| recorded. Applies only when **Record deliveries in**  | - ``config.json`` setting: N/A                                                                                       |
+| is set to **Selected channels**, in which case at     | - Environment variable: N/A                                                                                          |
+| least one channel is required.                        |                                                                                                                      |
+|                                                       |                                                                                                                      |
+| Stored in the database, so there's no                 |                                                                                                                      |
+| ``config.json`` setting and no environment variable.  |                                                                                                                      |
+| Manage the list in the System Console, or through the |                                                                                                                      |
+| ``/api/v4/delivery_tracking/config`` API endpoints.   |                                                                                                                      |
+|                                                       |                                                                                                                      |
+| Direct and group message channels can't be selected.  |                                                                                                                      |
++-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+
 ----
 
 File sharing and downloads

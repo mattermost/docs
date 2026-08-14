@@ -356,6 +356,19 @@ Posts & Content Events
 .. note::
    From Mattermost v11.5.0, audit log entries for posts and content access events include a ``non_channel_member_access`` field in the ``meta`` object. When a user accesses posts or content in a channel they are not a member of, this field is set to ``true``. Admins can use this indicator to identify and review unauthorized or unexpected content access in their audit logs.
 
+Post Delivery Events
+~~~~~~~~~~~~~~~~~~~~
+
+From Mattermost v12.0, ``postDelivered`` is written at the ``audit-delivery`` log level rather than alongside the other audit log levels, and only when :doc:`post delivery audit logging </administration-guide/comply/post-delivery-audit-logging>` is enabled. See that page for the record format, the payload fields, and the full set of delivery mechanisms.
+
++----------------------------------+-------------------------------------------------------------------+
+| **Event Name**                   | **Description**                                                   |
++==================================+===================================================================+
+| ``postDelivered``                | Delivering post content to a user or integration                  |
++----------------------------------+-------------------------------------------------------------------+
+| ``updateDeliveryTrackingConfig`` | Updating the post delivery audit logging configuration            |
++----------------------------------+-------------------------------------------------------------------+
+
 Authentication and Security Events
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
