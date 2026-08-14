@@ -84,7 +84,7 @@ Organizations with data handling policies should inform users about this feature
 Session attribute collection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-From Mattermost Desktop v6.3, the desktop app can report device and network context - such as hardware and network identifiers, VPN status, and MDM enrollment - to the servers it's connected to, for use in :doc:`attribute-based access control policies </administration-guide/manage/admin/session-attributes>`. This is separate from error reporting and from anonymous usage data. See the :ref:`session attribute reference <administration-guide/manage/admin/session-attributes:session attribute reference>` for every value that can be reported and how each one is measured, and :ref:`platform availability <administration-guide/manage/admin/session-attributes:platform availability>` for the differences between platforms.
+From Mattermost Desktop v6.3, the desktop app can report device and network context - such as hardware and network identifiers, VPN status, and MDM enrollment - to the servers it's connected to, for use in :ref:`permission policies <administration-guide/manage/admin/abac-system-wide-policies:permission policies>`. This is separate from error reporting and from anonymous usage data. See the :doc:`session attributes </administration-guide/manage/admin/session-attributes>` documentation for every value that can be reported and how each one is measured, and :ref:`platform availability <administration-guide/manage/admin/session-attributes:platform availability>` for the differences between platforms.
 
 **When collection happens**
 
