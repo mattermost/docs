@@ -130,7 +130,7 @@ You can assign an existing access control policy to a private or public channel 
 2. In the **Channel Management** section, enable the **Enable attribute-based channel access** option.
 3. Under **Access policy**, select **Link to a policy** to select an existing policy.
 
-Once a policy is attached, the channel's privacy can no longer be flipped between public and private until the policy is removed — see :ref:`Channel-specific access rules <administration-guide/manage/admin/abac-channel-access-rules:validation-and-safety>`.
+Once a policy is attached, the channel's privacy can no longer be flipped between public and private until the policy is removed — see :ref:`Channel-specific access rules <administration-guide/manage/admin/abac-channel-access-rules:validation and safety>`.
 
 .. tip::
 
@@ -155,7 +155,7 @@ When a permission policy applies, users who don't match the configured attribute
 
 Permission policies follow the same unique-name requirement as access policies: each parent permission policy must have a unique name, and Mattermost surfaces a user-friendly error if a duplicate name is entered.
 
-From Mattermost v11.11, permission policy rules can also evaluate :doc:`session attributes </administration-guide/manage/admin/session-attributes>` - for example, restricting file downloads to devices on a corporate IP range or to MDM-enrolled devices. Because a rule that references a session attribute denies any session that doesn't report it, review the platform availability of each attribute before applying it to a file action your users depend on.
+From Mattermost v11.11, permission policy rules can also evaluate :doc:`session attributes </administration-guide/manage/admin/session-attributes>` - for example, restricting file downloads to devices on a corporate IP range or to MDM-enrolled devices. Because a rule that references a session attribute denies any session that doesn't report it, review the platform availability of each attribute before applying it to a file action your users depend on. Client-reported attributes such as ``mdm_enrolled`` are self-attested posture signals rather than proof; for stronger assurance, gate on server-measured values instead - ``ip_address`` with an IP range check, or ``tls_device_id`` asserted by your reverse proxy.
 
 Attribute value masking
 -----------------------

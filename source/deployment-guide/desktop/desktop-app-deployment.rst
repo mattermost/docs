@@ -103,6 +103,6 @@ Session attribute reporting is **enabled by default**. Users can disable it at a
 
 .. important::
 
-  Disabling this setting stops the desktop app from reporting attributes, which means the user will be **denied access** to any channel, file upload, or file download governed by a policy that depends on a client-reported session attribute. Organizations that rely on session attributes for access control should inform users of this before rolling the policies out.
+  Disabling this setting stops the desktop app from reporting attributes, which means the user will be **denied** any file upload or file download governed by a policy that depends on a client-reported session attribute. Organizations that rely on session attributes for access control should inform users of this before rolling the policies out.
 
 Values reported by the desktop app are held only in the server's in-memory per-session cache. They aren't written to the database, aren't included in compliance exports, and are discarded when the session ends.

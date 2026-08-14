@@ -134,7 +134,7 @@ From Mattermost v11.11, permission rules can also use any :doc:`session attribut
 
 .. warning::
 
-  A rule that references a session attribute denies anyone whose client doesn't report it. Browsers report the IP address and user agent the server measures from the request, but never device attributes such as ``os_platform`` or ``vpn_active``, so a rule using one of those denies everyone working in a web browser. Review :ref:`platform availability <administration-guide/manage/admin/session-attributes:platform availability>` and simulate the rule before saving it.
+  A rule that references a session attribute denies any session that doesn't have it. The server measures ``ip_address`` and the ``user_agent_*`` values from every request, but device attributes such as ``os_platform`` and ``vpn_active`` are reported only by the Desktop and mobile apps, so a rule using one of those denies everyone working in a web browser. Review :ref:`platform availability <administration-guide/manage/admin/session-attributes:platform availability>` and simulate the rule before saving it.
 
 Simulate access
 ----------------
