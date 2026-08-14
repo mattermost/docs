@@ -99,7 +99,7 @@ Session attribute reference
   * - ``ip_address``
     - The IP address the request arrived from, as measured by the server.
     - Desktop, mobile, browser
-    - Read from the request connection. Honors ``ServiceSettings.TrustedProxyIPHeader`` when a reverse proxy is configured.
+    - Read from the request connection, or from ``ServiceSettings.TrustedProxyIPHeader`` when that setting is configured. See `Trusted proxy headers and inCIDR rules <#trusted-proxy-headers-and-incidr-rules>`__.
     - 15s / 15s
   * - ``user_agent_platform``
     - Hardware platform. One of ``Windows``, ``Macintosh``, ``Linux``, ``iPad``, ``iPhone``, ``iPod``, ``BlackBerry``, ``Windows Phone``, or ``Unknown``.
@@ -139,12 +139,12 @@ Session attribute reference
   * - ``ssid``
     - Name of the Wi-Fi network the device is connected to. Empty when the device isn't on Wi-Fi.
     - Desktop, mobile
-    - Windows: WLAN API. iOS and Android: platform Wi-Fi APIs, which require the user to grant location access. Not collected on macOS or Linux desktop.
+    - Windows: WLAN API. iOS and Android: platform Wi-Fi APIs, which require the user to grant location access. Not collected on macOS desktop.
     - 15s / 15s
   * - ``mdm_enrolled``
     - Whether the device is enrolled in mobile device management. ``true`` or ``false``.
     - Desktop, mobile
-    - Windows: presence of MDM enrollment registry entries. iOS: managed app configuration. Android: managed profile or managed app restrictions. Always reports ``false`` on macOS desktop, and isn't collected on Linux desktop.
+    - Windows: presence of MDM enrollment registry entries. iOS: managed app configuration. Android: managed profile or managed app restrictions. Always reports ``false`` on macOS desktop.
     - 60s / 60s
   * - ``jailbreak_detected``
     - Whether the mobile device appears to be jailbroken or rooted. ``true`` or ``false``.
@@ -189,7 +189,7 @@ Session attribute reference
   * - ``client_fqdn``
     - The device's own fully qualified domain name.
     - Desktop
-    - macOS: local hostname combined with the primary DNS search domain. Windows: ``GetComputerNameExW``. Not collected on Linux desktop.
+    - macOS: local hostname combined with the primary DNS search domain. Windows: ``GetComputerNameExW``.
     - 300s / 300s
 
 .. important::
@@ -204,6 +204,11 @@ IPv4 and IPv6
 ~~~~~~~~~~~~~
 
 ``client_ip_address`` prefers IPv4. When the device's primary interface has no usable IPv4 address, the client reports its IPv6 address instead. Write CIDR rules to cover both cases if your network is dual-stack, otherwise a user whose interface falls back to IPv6 will be denied by an IPv4-only rule. ``ip_address`` reflects whatever address the connection actually arrived from, which may be IPv4 or IPv6 depending on your network and reverse proxy configuration.
+
+Trusted proxy headers and inCIDR rules
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When ``ServiceSettings.TrustedProxyIPHeader`` is configured, Mattermost takes ``ip_address`` from that header instead of the connection. An ``inCIDR`` rule on ``ip_address`` is only trustworthy when clients can't reach the Mattermost server directly **and** your reverse proxy overwrites the header with the real client address on every inbound request. If the proxy appends to a client-supplied value, or a client can bypass the proxy, the address is attacker-controlled and any network rule built on it can be satisfied at will.
 
 VPN detection
 ~~~~~~~~~~~~~
@@ -281,11 +286,11 @@ These operators return true or false, so in the CEL editor you can combine them 
 
   user.session.ip_address.inCIDR("10.0.0.0/8") || user.session.ip_address.inCIDR("192.168.0.0/16")
 
-To require a managed desktop client on a corporate subnet running a supported version:
+To require a managed Windows desktop client on a corporate subnet running a supported version:
 
 .. code-block:: none
 
-  user.session.mdm_enrolled == "true" && user.session.ip_address.inCIDR("10.0.0.0/8") && user.session.client_version.versionGTE("6.3.0")
+  user.session.os_platform == "windows" && user.session.mdm_enrolled == "true" && user.session.ip_address.inCIDR("10.0.0.0/8") && user.session.client_version.versionGTE("6.3.0")
 
 Keep the following in mind:
 
@@ -307,7 +312,7 @@ The practical consequence is that **a session attribute rule is also a client re
 
 - ``user.session.os_platform == "windows"`` denies every browser and mobile session, not just non-Windows desktops.
 - ``user.session.vpn_active == "false"`` denies browser sessions, because they never report ``vpn_active`` at all.
-- ``user.session.hardware_id != ""`` denies every mobile and browser session, and every Linux desktop session.
+- ``user.session.hardware_id != ""`` denies every mobile and browser session, and any desktop session on a platform without native collection.
 
 Use **Simulate access** to check the outcome for real users on the clients they actually use before you save. See `Simulate access with session attributes <#simulate-access-with-session-attributes>`__.
 
@@ -368,7 +373,7 @@ Why is a user denied access when their attributes look correct?
 
 Work through these in order:
 
-1. **Check the client.** Confirm the user is on a client that can report the attribute. Browser sessions can't report device or network attributes, and Linux desktop sessions report only ``os_platform``, ``os_version``, ``client_version``, and ``server_fqdn``.
+1. **Check the client.** Confirm the user is on a client that can report the attribute, using the **Platforms** column in the `session attribute reference <#session-attribute-reference>`__. Server-derived attributes such as ``ip_address`` and the ``user_agent_*`` values are available on every client, including browsers; client-reported attributes need a Desktop or mobile app on a supported platform.
 2. **Check the attribute is enabled.** A disabled attribute is never collected, so any rule referencing it denies. Go to **System Console > System Attributes > Session Attributes** to confirm the status.
 3. **Check value casing.** Values are case-sensitive, so a free-text value such as ``ssid`` must match exactly what the client reports.
 4. **Check freshness.** If the attribute's TTL plus grace period has elapsed without a fresh report, it's treated as absent. Very short grace periods make this more likely on unstable connections.
@@ -383,9 +388,9 @@ The selected user has no cached session attributes for the simulator to evaluate
 Can users spoof session attributes?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Client-reported attributes are self-attested by the client, so treat them as posture signals rather than as cryptographic proof. Mattermost limits the exposure in several ways: server-derived attributes such as ``ip_address`` and the ``user_agent_*`` values are measured from the request and can't be overridden by a client; ``tls_device_id`` is only ever accepted from a trusted proxy, never from a client; incoming values are validated against the schema and dropped when they're unknown, disabled, or not valid for the requesting platform; and `Enforce device ID consistency <#enforce-device-id-consistency>`__ terminates sessions whose device identity changes.
+Client-reported attributes are self-attested by the client, so treat them as posture signals rather than as cryptographic proof. Mattermost limits the exposure in several ways: server-derived attributes are measured from the request rather than accepted from the client; ``tls_device_id`` is only ever accepted from a trusted proxy, never from a client; incoming values are validated against the schema and dropped when they're unknown, disabled, or not valid for the requesting platform; and `Enforce device ID consistency <#enforce-device-id-consistency>`__ terminates sessions whose device identity changes.
 
-For controls that must not be self-attested, prefer ``ip_address`` with ``inCIDR`` (measured by the server) or ``tls_device_id`` backed by mutual TLS at your proxy.
+For controls that must not be self-attested, prefer ``ip_address`` with ``inCIDR`` or ``tls_device_id`` backed by mutual TLS at your proxy. Both depend on your proxy being correctly configured - see `Trusted proxy headers and inCIDR rules <#trusted-proxy-headers-and-incidr-rules>`__ and `Trust proxy device identity header <#trust-proxy-device-identity-header>`__.
 
 Are session attributes collected for bots, personal access tokens, or integrations?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

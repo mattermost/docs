@@ -84,7 +84,7 @@ Organizations with data handling policies should inform users about this feature
 Session attribute collection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-From Mattermost Desktop v6.3, the desktop app can report device and network context - such as hardware and network identifiers, VPN status, and MDM enrollment - to the servers it's connected to, for use in :doc:`attribute-based access control policies </administration-guide/manage/admin/session-attributes>`. This is separate from error reporting and from anonymous usage data. See the :ref:`session attribute reference <administration-guide/manage/admin/session-attributes:session attribute reference>` for every value that can be reported and how each one is measured, and :ref:`platform availability <administration-guide/manage/admin/session-attributes:platform availability>` for the differences between macOS, Windows, and Linux.
+From Mattermost Desktop v6.3, the desktop app can report device and network context - such as hardware and network identifiers, VPN status, and MDM enrollment - to the servers it's connected to, for use in :doc:`attribute-based access control policies </administration-guide/manage/admin/session-attributes>`. This is separate from error reporting and from anonymous usage data. See the :ref:`session attribute reference <administration-guide/manage/admin/session-attributes:session attribute reference>` for every value that can be reported and how each one is measured, and :ref:`platform availability <administration-guide/manage/admin/session-attributes:platform availability>` for the differences between platforms.
 
 **When collection happens**
 
@@ -99,7 +99,7 @@ Collection occurs according to a manifest sent by the server. The server specifi
 
 **Privacy and user control**
 
-Session attribute reporting is **enabled by default**. Users can disable it at any time by clearing **Settings > Advanced > Enable session attributes**. While it's enabled, a read-only table beneath the setting shows each attribute the app can collect and the value it currently reports, so users can see exactly what's being sent, and admins have somewhere to look first when a user is unexpectedly denied access.
+Session attribute reporting is **enabled by default**. Users can disable it at any time by clearing **Settings > Advanced > Enable session attributes**. While it's enabled, a read-only table beneath the setting shows each attribute the app can collect on that device and the value it currently reports, which tells users what the app is capable of sending and gives admins somewhere to look first when a user is unexpectedly denied access. Only the attributes the server asks for are actually sent.
 
 .. important::
 

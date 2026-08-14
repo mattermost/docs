@@ -130,7 +130,11 @@ From Mattermost v11.8.0, channel admins can define channel-level permission rule
 
 For system-wide permission policies that restrict file upload and download actions, see :ref:`Permission policies <administration-guide/manage/admin/abac-system-wide-policies:permission policies>`.
 
-From Mattermost v11.11, permission rules can also use any :doc:`session attributes </administration-guide/manage/admin/session-attributes>` a System Admin has enabled, letting you restrict file actions by device or network rather than by who the user is. Because a rule that references a session attribute denies anyone whose client doesn't report it - including everyone working in a web browser - review :ref:`platform availability <administration-guide/manage/admin/session-attributes:platform availability>` and simulate the rule before saving it.
+From Mattermost v11.11, permission rules can also use any :doc:`session attributes </administration-guide/manage/admin/session-attributes>` a System Admin has enabled, letting you restrict file actions by device or network rather than by who the user is.
+
+.. warning::
+
+  A rule that references a session attribute denies anyone whose client doesn't report it. Browsers report the IP address and user agent the server measures from the request, but never device attributes such as ``os_platform`` or ``vpn_active``, so a rule using one of those denies everyone working in a web browser. Review :ref:`platform availability <administration-guide/manage/admin/session-attributes:platform availability>` and simulate the rule before saving it.
 
 Simulate access
 ----------------
