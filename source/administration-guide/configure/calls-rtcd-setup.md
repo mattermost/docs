@@ -398,7 +398,7 @@ Failures at startup and failures later on behave differently:
 
 ### Version Compatibility
 
-The Calls plugin enforces a minimum RTCD version and won't use a server running an older one. All Calls versions from v1.5.0 onwards require RTCD v0.17.0 or later.
+The Calls plugin enforces a minimum RTCD version and won't use a server running an older one.
 
 For this reason, upgrade RTCD **before** upgrading the Mattermost server to a release shipping a newer version of Calls. When the plugin finds a server below the minimum version:
 
@@ -445,7 +445,7 @@ When [horizontal scaling](#horizontal-scaling) is configured, servers can be upg
 
 3. **Wait for the server to go idle**:
 
-   The `rtcd_rtc_sessions_total` metric reports the number of active RTC sessions (see [RTCD Metrics](calls-metrics-monitoring.md#rtcd-metrics)). The server can be restarted safely once this reaches zero.
+   The `rtcd_rtc_sessions_total` metric reports the number of active RTC sessions per call group (see [RTCD Metrics](calls-metrics-monitoring.md#rtcd-metrics)). The server can be restarted safely once the sum across all groups reaches zero.
 
 4. **Stop the service**:
 
