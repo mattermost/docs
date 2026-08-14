@@ -461,7 +461,9 @@ Manage membership with attribute based membership policies
 .. include:: ../../_static/badges/entry-adv.rst
   :start-after: :nosearch:
 
-From Mattermost v11.10, restrict which users can be members of this team based on their user attributes.
+From Mattermost v11.10, control who can be a member of this team based on their user attributes.
+
+On private teams the rules are enforced: users who don't match can't join, and members who no longer match are removed at the next sync. On public teams the rules are advisory — the team is recommended to qualifying users, but anyone can still join.
 
 1. Go to **System Console > User Management > Teams** to access all available teams.
 2. Select the team from the list to view its configuration page.

@@ -67,7 +67,7 @@ Discoverability
 
 System and team administrators control whether the team is public or private using two selection cards:
 
-- **Public Team** — anyone on the server can find and join. The team appears on the server landing page and in the **Teams you can join** page.
+- **Public Team** — anyone on the server can find the team, and join it if they meet any other join restrictions, such as approved email domains. The team appears on the server landing page and in the **Teams you can join** page.
 - **Private Team** — only invited members can join. The team isn't listed for users who aren't already members.
 
 .. note::
@@ -119,7 +119,7 @@ Channel Membership
 .. include:: ../../_static/badges/entry-adv.rst
   :start-after: :nosearch:
 
-The **Channel Membership** tab is available to Team Admins when :doc:`Attribute-Based Access Control (ABAC) </administration-guide/manage/admin/attribute-based-access-control>` is enabled by a System Admin. It allows Team Admins to create and manage attribute-based membership policies that control access to private channels within the team.
+The **Channel Membership** tab is available to Team Admins when :doc:`Attribute-Based Access Control (ABAC) </administration-guide/manage/admin/attribute-based-access-control>` is enabled by a System Admin. It allows Team Admins to create and manage attribute-based membership policies for private and public channels within the team. On private channels the policies are enforced. On public channels they're advisory — matching users can be added automatically or shown the channel as recommended, but no one is removed.
 
 .. note::
 
