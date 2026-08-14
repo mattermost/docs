@@ -80,7 +80,7 @@ Not every client can report every attribute. A user connecting from a **web brow
 
 The **Platform** column in **System Console > System Attributes > Session Attributes** shows the supported clients for each attribute. The `Session attribute reference <#session-attribute-reference>`__ below lists them as well.
 
-Native device and network collection is only implemented on Windows and macOS, so ``hardware_id``, ``client_ip_address``, ``client_fqdn``, ``network_interface_type``, ``vpn_active``, ``ssid``, and ``mdm_enrolled`` are absent on desktop sessions for other platforms.
+For desktop sessions, native device and network collection is implemented only on Windows and macOS. These attributes are absent on desktop sessions for other platforms; mobile clients use the native APIs listed in the reference table.
 
 For mobile users, enabling ``ssid`` prompts mobile users for location access, because both iOS and Android put Wi-Fi network information behind that permission. Mattermost reads only the current network's name and doesn't collect device location, but a user who declines the prompt reports no SSID and is denied by any policy that requires it. See :ref:`Session attribute collection <deployment-guide/mobile/mobile-security-features:session attribute collection>` for what the mobile app declares and why.
 
