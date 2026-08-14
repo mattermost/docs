@@ -12,7 +12,7 @@ Platform and OS scope reflects reported and tested environments and may not repr
 
 (release-v2-43-1)=
 ## 2.43.1 Release
- - Release Date: August 14, 2026
+ - Release Date: 
  - Server Versions Supported: Server v11.7.0+ is required. Self-Signed SSL certificates are not supported unless the user installs the CA certificate on their device.
 
 ### Compatibility
@@ -21,7 +21,7 @@ Platform and OS scope reflects reported and tested environments and may not repr
  - iPhone 8+ devices and later with iOS 16.0+ are [required](https://support.apple.com/en-il/guide/iphone/iphe3fa5df43/16.0/ios/16.0).
 
 ### Bug Fixes
- - TBD
+ - Fixed an issue with switching audio output on the Phone call interface and made sure that audio routing follows the user expectations.
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
