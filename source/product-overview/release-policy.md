@@ -25,9 +25,9 @@ See the full list of all Mattermost Server and desktop app releases and life cyc
 
 Mattermost Extended Support Releases (ESRs) are a strategic choice for organizations looking for stability and reduced frequency of updates. Using ESRs can minimize disruptions associated with frequent upgrades, making them an attractive option for environments where stability is paramount.
 
-Starting with the August 2025 Mattermost server and desktop app releases (server v10.11 and desktop app v5.13), Mattermost has adjusted the ESR life cycle as follows: 
- - **Extended Cadence**: ESRs are released every 9 months.
- - **Prolonged Support**: ESRs are supported for 12 months.
+The lifecycle for Mattermost server and desktop app Extended Support Releases is as follows: 
+ - **Cadence**: ESRs are released every 9 months.
+ - **Support**: ESRs are supported for 12 months.
 
 We strongly recommend planning ahead for upgrades before the end of an ESR's life cycle to ensure continuity in receiving security updates.
 
@@ -48,7 +48,6 @@ gantt
     axisFormat  %b %y
 
     section Releases
-    v10.10                 :done, 2025-07-16, 2025-10-15
     v10.11 & Desktop App v5.13 Extended Support :crit,    2025-08-16, 2026-08-15
     v10.12                 :done, 2025-09-16, 2025-12-15
     v11.0                  :done, 2025-10-16, 2026-01-15
@@ -61,7 +60,8 @@ gantt
     v11.7 & Desktop App v6.2 Extended Support :crit,    2026-05-15, 2027-05-15
     v11.8                  :active, 2026-06-16, 2026-09-15
     v11.9                  :active, 2026-07-16, 2026-10-15
-    v11.10                 :active, 2026-08-16, 2026-11-15
+    v11.10                 :active, 2026-08-14, 2026-11-15
+    v11.11                 :active, 2026-09-16, 2026-12-15
 ```
 
 **Timeline Legend:**

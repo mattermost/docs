@@ -12,6 +12,32 @@ Changelog
 
    * - Version
      - Change Description
+   * - v11.10
+     - (UI) Added a WYSIWYG editor option for message composition, allowing users to compose messages with rich-text formatting while preserving full markdown round-trip.
+   * - v11.10
+     - (UI) Added a media gallery layout for posts with multiple images or videos, plus inline frame previews for single videos.
+   * - v11.10
+     - (UI) Added support for a file upload element type in interactive dialogs.
+   * - v11.10
+     - (UI) Added support for MM Blocks as a new way to create Interactive Messages.
+   * - v11.10
+     - (UI) Plugins and integrations can now open stacked child dialogs from within an interactive dialog using the new ``action_button`` element type.
+   * - v11.10
+     - (UI) Bot accounts, OAuth apps, incoming webhooks, and plugins can now deliver posts silently — visible in the channel without producing notifications, unread badges, or the "New Messages" separator.
+   * - v11.10
+     - (UI) Bot accounts managed by a plugin now display the managing plugin's ID in the Bot Accounts list instead of a generic "Managed by plugin" label.
+   * - v11.10
+     - (UI) Added inline plugin metadata to the Plugin Management page and plugin settings page showing the plugin ID, version, and links to the website and release notes when available.
+   * - v11.10
+     - (UI) The agent selector now respects the configured default agent and remembers your last-selected agent.
+   * - v11.10
+     - (UI) Mattermost now proactively warns the owner of a personal access token with a direct message from the system bot as the token approaches expiry (7, 3, and 1 days before), so token-backed integrations no longer break without warning.
+   * - v11.10
+     - (UI) Token owners are now notified by a direct message from the system bot when one of their personal access tokens is removed after expiring.
+   * - v11.10
+     - (UI) Added a **Regenerate** option to Personal Access Tokens in **Account Settings > Security**.
+   * - v11.10
+     - (UI) Changed left-hand-side/right-hand-side to only be resizable with the left mouse button.
    * - v11.9
      - (UI) Added zoom and pan support to the image file preview: use the scroll wheel to zoom at the cursor, click-and-drag to pan, and +/-/0 keyboard shortcuts (reported on webapp).
    * - v11.9
