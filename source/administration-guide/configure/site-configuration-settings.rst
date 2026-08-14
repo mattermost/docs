@@ -2259,39 +2259,41 @@ Team administrators as reviewers
 |   as reviewers.                                       |                                                                                                                      |
 +-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
 
-From Mattermost v12.0, the following settings control post delivery audit logging, which records an audit log entry each time a message is delivered to a user. Delivery records require an audit log target that consumes the ``audit-delivery`` log level. See :doc:`Post delivery audit logging </administration-guide/comply/post-delivery-audit-logging>` for details.
+From Mattermost v12.0, the following settings control post delivery audit logging, which records an audit log entry for each delivery of a message in an eligible channel. Delivery records require an audit log target that consumes the ``audit-delivery`` log level. See :doc:`Post delivery audit logging </administration-guide/comply/post-delivery-audit-logging>` for details.
 
-.. note::
+.. important::
 
-  Post delivery audit logging is currently in :ref:`Beta <administration-guide/manage/feature-labels:beta>`, and requires the `feature flag <https://developers.mattermost.com/contribute/more-info/server/feature-flags/#changing-feature-flag-values>`_ ``MM_FEATUREFLAGS_POSTDELIVERYTRACKING``. Restart the server after enabling the feature flag.
+  Post delivery audit logging is currently in :ref:`Beta <administration-guide/manage/feature-labels:beta>`. It requires the `feature flag <https://developers.mattermost.com/contribute/more-info/server/feature-flags/#changing-feature-flag-values>`_ ``MM_FEATUREFLAGS_POSTDELIVERYTRACKING``, which is disabled by default, and a server restart after you enable it. It also requires an audit log target that consumes the ``audit-delivery`` log level.
 
 .. config:setting:: delivery-tracking-enable
-  :displayname: Enable post delivery audit logging (Content flagging)
-  :systemconsole: Site Configuration > Content Flagging
+  :displayname: Enable post delivery audit logging (Data Spillage Handling)
+  :systemconsole: Site Configuration > Data Spillage Handling
   :configjson: .DeliveryTrackingSettings.Enable
   :environment: MM_DELIVERYTRACKINGSETTINGS_ENABLE
-  :description: Record an audit log entry each time a message is delivered to a user. Default is **false**.
+  :description: Record an audit log entry for each delivery of a message in an eligible channel. Default is **false**.
 
-  - **true**: An audit log entry is recorded each time a message is delivered to a user.
+  - **true**: An audit log entry is recorded for each delivery of a message in an eligible channel.
   - **false**: **(Default)** Message deliveries aren't recorded.
 
 Enable post delivery audit logging
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| - **true**: An audit log entry is recorded each time  | - System Config path: **Site Configuration > Content Flagging**                                                      |
+| - **true**: An audit log entry is recorded each time  | - System Config path: **Site Configuration > Data Spillage Handling**                                                |
 |   a message is delivered to a user.                   | - ``config.json`` setting: ``DeliveryTrackingSettings`` > ``Enable`` > ``false``                                     |
 | - **false**: **(Default)** Message deliveries aren't  | - Environment variable: ``MM_DELIVERYTRACKINGSETTINGS_ENABLE``                                                       |
 |   recorded.                                           |                                                                                                                      |
 +-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
 
-.. note::
+Delivery records are written to the audit log only, and aren't surfaced anywhere in the Mattermost interface.
 
-  Delivery records are written to the audit log only, and aren't surfaced anywhere in the Mattermost interface. They're discarded unless an audit log target consumes the ``audit-delivery`` log level.
+.. warning::
+
+  Delivery records are discarded unless an audit log target consumes the ``audit-delivery`` log level. Setting this to **true** without configuring such a target records nothing, and Mattermost doesn't block the configuration. See :doc:`Post delivery audit logging </administration-guide/comply/post-delivery-audit-logging>`.
 
 .. config:setting:: delivery-tracking-all-channels
-  :displayname: Record deliveries in (Content flagging)
-  :systemconsole: Site Configuration > Content Flagging
+  :displayname: Record deliveries in (Data Spillage Handling)
+  :systemconsole: Site Configuration > Data Spillage Handling
   :configjson: .DeliveryTrackingSettings.EnableForAllChannels
   :environment: MM_DELIVERYTRACKINGSETTINGS_ENABLEFORALLCHANNELS
   :description: Record message deliveries in all eligible channels, or only in selected channels. Default is **true**.
@@ -2303,7 +2305,7 @@ Record deliveries in
 ~~~~~~~~~~~~~~~~~~~~
 
 +-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| - **true**: **(Default)** Deliveries are recorded in  | - System Config path: **Site Configuration > Content Flagging**                                                      |
+| - **true**: **(Default)** Deliveries are recorded in  | - System Config path: **Site Configuration > Data Spillage Handling**                                                |
 |   all eligible channels.                              | - ``config.json`` setting: ``DeliveryTrackingSettings`` > ``EnableForAllChannels`` > ``true``                        |
 | - **false**: Deliveries are recorded only in the      | - Environment variable: ``MM_DELIVERYTRACKINGSETTINGS_ENABLEFORALLCHANNELS``                                         |
 |   selected channels.                                  |                                                                                                                      |
@@ -2311,11 +2313,11 @@ Record deliveries in
 
 .. note::
 
-  Recording deliveries in all channels is the most complete option, and also the most expensive. Direct and group messages are never eligible, regardless of this setting.
+  Recording deliveries in all eligible channels is the most complete option, and also the most expensive. Direct and group messages are never eligible, regardless of this setting.
 
 .. config:setting:: delivery-tracking-channels
-  :displayname: Channels to record deliveries in (Content flagging)
-  :systemconsole: Site Configuration > Content Flagging
+  :displayname: Channels to record deliveries in (Data Spillage Handling)
+  :systemconsole: Site Configuration > Data Spillage Handling
   :configjson: N/A
   :environment: N/A
   :description: The channels in which message deliveries are recorded when deliveries aren't recorded in all channels. The list is stored in the database, so there's no ``config.json`` setting and no environment variable. Manage it in the System Console, or through the ``/api/v4/delivery_tracking/config`` API endpoints.
@@ -2324,7 +2326,7 @@ Channels to record deliveries in
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +-------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| The channels in which message deliveries are          | - System Config path: **Site Configuration > Content Flagging**                                                      |
+| The channels in which message deliveries are          | - System Config path: **Site Configuration > Data Spillage Handling**                                                |
 | recorded. Applies only when **Record deliveries in**  | - ``config.json`` setting: N/A                                                                                       |
 | is set to **Selected channels**, in which case at     | - Environment variable: N/A                                                                                          |
 | least one channel is required.                        |                                                                                                                      |

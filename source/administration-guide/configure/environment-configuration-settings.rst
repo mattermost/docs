@@ -3932,7 +3932,7 @@ Output audit logs to multiple targets
   - See the :doc:`Mattermost logging </administration-guide/manage/logging>` documentation for details on advanced logging configuration. These targets have been chosen as they support the vast majority of log aggregators, and other log analysis tools, without needing additional software installed.
   - Audit logs are recorded asynchronously to reduce latency to the caller.
   - Advanced audit logging supports hot-reloading of logger configuration.
-  - From Mattermost v12.0, the ``audit-delivery`` log level (ID ``104``) isn't written by the built-in audit log file target. To capture :doc:`post delivery audit records </administration-guide/comply/post-delivery-audit-logging>`, add a target for the level here.
+  - From Mattermost v12.0, the ``audit-delivery`` log level isn't written by the built-in audit log file target, so :ref:`post delivery audit records <administration-guide/comply/post-delivery-audit-logging:configure an audit log target>` are discarded unless you add a target here whose ``levels`` list includes ``{"id": 104, "name": "audit-delivery"}``.
 
 ----
 

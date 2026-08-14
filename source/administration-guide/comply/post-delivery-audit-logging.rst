@@ -202,7 +202,9 @@ Mattermost records one entry for each message delivered to each recipient, with 
 
 Delivery records are an append-only event stream, not a deduplicated list of who has seen a message. The same combination of user, message, and mechanism recurs, because every time a user revisits a channel the same page of messages is delivered again. Each record is a genuine delivery with its own timestamp.
 
-To build a distinct list of the users a message was delivered to, deduplicate on ``actor.user_id``, ``meta.post_id``, and ``meta.mechanism``, and treat the earliest timestamp in each group as the first delivery.
+Deduplicate on ``actor.user_id``, ``meta.post_id``, and ``meta.mechanism`` to get one entry per recipient, message, and delivery mechanism, taking the earliest timestamp in each group as the first delivery by that mechanism. A recipient who received the same message by more than one mechanism — for example ``push`` and then ``product`` — has one entry per mechanism.
+
+To reduce that to a distinct list of the users a message reached, drop ``meta.mechanism`` from the key and deduplicate on ``actor.user_id`` and ``meta.post_id`` alone.
 
 Keep the following in mind when working with delivery records:
 
