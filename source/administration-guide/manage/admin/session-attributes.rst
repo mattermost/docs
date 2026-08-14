@@ -52,8 +52,10 @@ TTL and grace period
 
 Each attribute has two timers that together control how fresh its value must be:
 
-- **TTL (time-to-live)**: How long a client waits before re-reporting the attribute. A short TTL keeps the value current at the cost of slightly larger requests; a long TTL reduces overhead but lets the value go stale.
+- **TTL (time-to-live)**: For a client-reported attribute, how long the client waits before reporting it again. A short TTL keeps the value current at the cost of slightly larger requests; a long TTL reduces overhead but lets the value go stale.
 - **Grace period**: How long after the TTL elapses Mattermost will still evaluate the last reported value. Once TTL + grace period has passed without a fresh report, the attribute is treated as absent and policies referencing it deny access.
+
+Clients never report server-derived attributes, so these timers don't govern their freshness. Mattermost measures ``ip_address`` and the ``user_agent_*`` values from each incoming request, which keeps them current for as long as the session is making requests.
 
 Defaults vary by attribute - see the `session attribute reference <#session-attribute-reference>`__. Presets of 30 seconds, 1 minute, 5 minutes, 1 hour, and 24 hours are available for both timers.
 
@@ -179,7 +181,7 @@ Session attribute reference
   * - ``tls_device_id``
     - A device identity asserted by your reverse proxy, typically derived from a client TLS certificate.
     - Desktop, browser
-    - Read from the ``X-Mattermost-Session-Attribute-Device-Id`` header, and only when ``TrustProxyDeviceIdentityHeader`` is enabled. Never accepted from a client in the header.
+    - Read from the ``X-Mattermost-Session-Attribute-Device-Id`` header, and only when ``TrustProxyDeviceIdentityHeader`` is enabled. Any caller that can set that header can set this value, so it's only trustworthy when clients can't bypass your proxy - see `Trust proxy device identity header <#trust-proxy-device-identity-header>`__.
     - 300s / 300s
   * - ``server_fqdn``
     - The hostname of the Mattermost server the client is connected to. Useful when a client connects to multiple servers.
@@ -335,7 +337,7 @@ Trust proxy device identity header
 
 Populates the ``tls_device_id`` session attribute from the ``X-Mattermost-Session-Attribute-Device-Id`` request header, allowing a reverse proxy that performs mutual TLS to assert a device identity that the client itself can't forge.
 
-- ``config.json`` setting: ``".AccessControlSettings.TrustProxyDeviceIdentityHeader: false",`` with options ``true`` and ``false``.
+- ``config.json`` setting: ``"AccessControlSettings.TrustProxyDeviceIdentityHeader": false`` with options ``true`` and ``false``.
 - Environment variable: ``MM_ACCESSCONTROLSETTINGS_TRUSTPROXYDEVICEIDENTITYHEADER``
 
 .. warning::
@@ -345,14 +347,14 @@ Populates the ``tls_device_id`` session attribute from the ``X-Mattermost-Sessio
 Enforce device ID consistency
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Revokes a session when the device identity reported on it changes mid-session. Mattermost compares the ``tls_device_id``, ``client_device_id``, and ``hardware_id`` attributes against the values previously cached for the session; if a value changes, the session is revoked and the user must log in again. Successful revocations are recorded in the audit log.
+Revokes a session when the device identity reported on it changes mid-session. Mattermost compares the ``tls_device_id``, ``client_device_id``, and ``hardware_id`` attributes against the values previously cached for the session. When one of them was already cached and then arrives with a different value, the session is revoked, the user must log in again, and the revocation is recorded in the audit log.
 
-- ``config.json`` setting: ``".AccessControlSettings.EnforceDeviceIDConsistency: false",`` with options ``true`` and ``false``.
+- ``config.json`` setting: ``"AccessControlSettings.EnforceDeviceIDConsistency": false`` with options ``true`` and ``false``.
 - Environment variable: ``MM_ACCESSCONTROLSETTINGS_ENFORCEDEVICEIDCONSISTENCY``
 
 When disabled, a changed device identity simply overwrites the cached value without revoking the session.
 
-This setting mitigates session token theft: a stolen token replayed from a different device reports a different device identifier and the session is terminated. Enable it once you've confirmed that the device identity attributes you rely on report stable values across your fleet, since an identifier that legitimately changes will log users out.
+This setting mitigates session token theft: a stolen token replayed from a device that reports a different identifier has its session revoked. Detection depends on there being a usable signal to compare, so a replay that reports no device identifier at all, or one on a session that never cached one, isn't revoked. ``tls_device_id`` is only present when `Trust proxy device identity header <#trust-proxy-device-identity-header>`__ is enabled, and the other two identifiers depend on `platform availability <#platform-availability>`__. Enable this setting once you've confirmed that the device identity attributes you rely on report stable values across your fleet, since an identifier that legitimately changes will log users out.
 
 Privacy considerations
 ----------------------
@@ -395,7 +397,7 @@ For controls that must not be self-attested, prefer ``ip_address`` with ``inCIDR
 Are session attributes collected for bots, personal access tokens, or integrations?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-No. Collection is limited to interactive end-user sessions. Personal access token sessions, OAuth app sessions, local mode sessions, and remote cluster tokens don't correspond to a physical device with a security posture, so they can't report session attributes. Policies that reference session attributes will deny these callers.
+No. Collection is limited to interactive end-user sessions. Personal access token sessions, OAuth app sessions, local mode sessions, and remote cluster tokens don't correspond to a physical device with a security posture, so Mattermost collects nothing for them - not even the server-derived attributes it measures from ordinary requests. Policies that reference session attributes will deny these callers.
 
 Do session attributes work in a high availability cluster?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
