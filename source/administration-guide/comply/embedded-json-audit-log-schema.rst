@@ -359,7 +359,7 @@ Posts & Content Events
 Post Delivery Events
 ~~~~~~~~~~~~~~~~~~~~
 
-From Mattermost v12.0, ``postDelivered`` is written at the ``audit-delivery`` log level rather than alongside the other audit log levels, and only when :doc:`post delivery audit logging </administration-guide/comply/post-delivery-audit-logging>` is enabled. See that page for the record format, the payload fields, and the full set of delivery mechanisms.
+Mattermost v12.0 introduces the ``postDelivered`` audit log event, which records each delivery of a message's content to a user or an integration. It's emitted only when :doc:`post delivery audit logging </administration-guide/comply/post-delivery-audit-logging>` is enabled, which is disabled by default. Unlike the other audit log events on this page, ``postDelivered`` is emitted at the dedicated ``audit-delivery`` log level and so requires its own audit log target. See that page for the record format, the payload fields, and the full set of delivery mechanisms.
 
 +----------------------------------+-------------------------------------------------------------------+
 | **Event Name**                   | **Description**                                                   |

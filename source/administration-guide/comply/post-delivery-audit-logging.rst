@@ -10,7 +10,7 @@ From Mattermost v12.0, Mattermost can record an audit log entry each time a mess
 
   Post delivery audit logging is currently in :ref:`Beta <administration-guide/manage/feature-labels:beta>`.
 
-Delivery records are ordinary audit log records, written through the existing audit logging pipeline to whichever audit log targets you've configured. Mattermost never reads them back. They're not shown anywhere in the Mattermost interface, they're not included in any report, and there's no REST API for retrieving them. Consuming delivery records is your responsibility, using whatever tooling already ingests your Mattermost audit logs. Retention is whatever your audit log pipeline provides.
+Delivery records are ordinary audit log records, written through the existing audit logging pipeline to whichever audit log targets you've configured.
 
 Before you begin
 ----------------
@@ -18,12 +18,12 @@ Before you begin
 Post delivery audit logging requires all of the following:
 
 - A Mattermost Enterprise Advanced license.
-- The `feature flag <https://developers.mattermost.com/contribute/more-info/server/feature-flags/#changing-feature-flag-values>`_ ``MM_FEATUREFLAGS_POSTDELIVERYTRACKING``, which is disabled by default. **Restart the server after enabling the feature flag**, because the delivery tracking API endpoints are registered only at startup.
+- The `feature flag <https://developers.mattermost.com/contribute/more-info/server/feature-flags/#changing-feature-flag-values>`_ ``MM_FEATUREFLAGS_POSTDELIVERYTRACKING``, which is disabled by default. **Restart the server after enabling the feature flag**.
 - An audit log target that consumes the ``audit-delivery`` log level.
 
 .. important::
 
-  Enabling post delivery audit logging on its own produces no output. Delivery records are discarded until an audit log target consumes the ``audit-delivery`` log level, and log volume increases substantially once one does. Configure the target before you enable the feature.
+  Enabling post delivery audit logging on its own produces no output. Delivery records are discarded until an audit log target consumes the ``audit-delivery`` log level. Configure the target before you enable the feature. The log volume increases substantially once these audit logs are enabled.
 
 Configure an audit log target
 -----------------------------
