@@ -46,7 +46,7 @@ By detecting such devices, Mattermost ensures that only secure, uncompromised de
 Session attribute collection
 ----------------------------
 
-Session attributes let the mobile app report the posture of the current connection - the device, the network it's on, and how it's managed - so administrators can require a specific posture before a user uploads or downloads a file. Reported values are held only in the server's in-memory session cache and are refreshed on a per-attribute interval that administrators control, so a device that falls out of compliance loses access once the data is considered stale.
+Session attributes let the mobile app report the posture of the current connection - the device, the network it's on, and how it's managed - so administrators can require a specific posture before a user uploads or downloads a file. Reported values are held only in the server's in-memory session cache and are refreshed on a per-attribute interval that administrators control. After the TTL expires, Mattermost can continue to evaluate the last value during the grace period. If no fresh report arrives before TTL plus grace period, the attribute is treated as absent and policies that require it deny access.
 
 Reporting the Wi-Fi network name requires the user to grant location access, because both iOS and Android gate Wi-Fi information behind that permission. Learn more about Mattermost :ref:`mobile session attribute collection <deployment-guide/mobile/mobile-security-features:session attribute collection>` and how administrators :doc:`enable and use session attributes </administration-guide/manage/admin/session-attributes>`.
 
