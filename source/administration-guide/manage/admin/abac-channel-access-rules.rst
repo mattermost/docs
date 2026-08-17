@@ -345,7 +345,7 @@ Synchronization and membership
 How quickly are membership changes applied?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When you save access rules, membership sync job is created and changes are applied as soon as the job is completed. Additionally, Mattermost runs synchronization jobs every 30 minutes to handle attribute changes from external systems (LDAP, SAML).
+When you save access rules, membership sync job is created and changes are applied as soon as the job is completed. Additionally, Mattermost runs synchronization jobs on a schedule to handle attribute changes from external systems (LDAP, SAML). The interval is set by ``AccessControlSettings.SyncJobIntervalSeconds`` and defaults to 3600 seconds (60 minutes).
 
 Will users be notified when they're removed from a channel?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -368,7 +368,7 @@ You can use any user attributes either synchronized via LDAP/SAML or manually co
 What happens if a user attribute changes?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-During the next synchronization (every 30 minutes), users who no longer match the access rules will be removed from the channel, and new users who now match will be added (if auto-sync is enabled).
+During the next scheduled synchronization (every 60 minutes by default), users who no longer match the access rules will be removed from the channel, and new users who now match will be added (if auto-sync is enabled).
 
 Do guest users work with ABAC channels?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
