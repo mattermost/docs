@@ -71,9 +71,31 @@ Set up Keycloak for Mattermost SSO
     .. image:: ../../images/keycloak_2_saml_keys.png
         :alt: In Keycloak, on the Keys tab, generate new keys for encryption.
 
-    .. warning:: 
-        Mattermost does not support request signing with Keycloak so make sure to disable the Client signature setting as mentioned above.
-    
+    .. warning::
+        Leave **Client signature required** off, as shown above. Mattermost does sign its authentication requests when you enable **Sign Request** in step 4 of the Mattermost section below, but Keycloak validates those signatures only if you also import the Mattermost service provider certificate as a signing key on this tab. Turning **Client signature required** on without importing that certificate causes Keycloak to reject Mattermost's authentication requests.
+
+    .. note::
+
+        **If your Keycloak server runs in FIPS mode**, the **Archive Format** list offers only ``BCFKS``, because ``PKCS12`` and ``JKS`` are unavailable. Export the ``BCFKS`` keystore, then convert it to ``PKCS12`` before you continue:
+
+        .. code-block:: console
+
+            keytool -importkeystore -srckeystore keystore.bcfks -srcstoretype BCFKS -providerclass org.bouncycastle.jcajce.provider.BouncyCastleFipsProvider -providerpath /path/to/bc-fips-<version>.jar -destkeystore keystore.p12 -deststoretype PKCS12
+
+        Point ``-providerpath`` at your Bouncy Castle FIPS JAR. ``keytool`` prompts for the source and destination store passwords. The converted ``keystore.p12`` then works with the extraction commands in step 4 of :ref:`Configure SAML in Mattermost <administration-guide/onboard/sso-saml-keycloak:configure saml in mattermost>` below.
+
+        Convert the whole keystore as shown above rather than looking for a way to export the key on its own, because ``keytool`` has no command that exports a private key by itself.
+
+        As an alternative, generating the keypair locally and importing only the certificate into Keycloak avoids the keystore conversion entirely, and works on FIPS and non-FIPS servers alike:
+
+        .. code-block:: console
+
+            openssl req -x509 -newkey rsa:2048 -nodes -days 1095 -subj "/CN=mattermost" -keyout mattermost.key -out mattermost.crt
+
+        Keep ``-nodes``, because Mattermost can't read a passphrase-protected private key. Set ``-days`` explicitly, because it defaults to 30. Keep ``-keyout`` and ``-out``, because without them the certificate goes to standard output and the private key goes to a configuration-dependent default filename.
+
+        Import only ``mattermost.crt`` into the encryption keys section of this tab, then upload both files in step 4 below and skip the ``openssl pkcs12`` extraction commands, since you already have the files those commands would have produced.
+
     Next, click **Export** and update the following values and download the keystore.p12 file.
  
     - **Archive Format**: ``PKCS12``
