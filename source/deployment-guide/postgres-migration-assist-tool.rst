@@ -25,7 +25,7 @@ Usage
   - If you encounter heap exhaustion errors in ``pgloader``, edit your generated ``migration.load`` and under the ``WITH`` block set: ``prefetch rows = 1000`` and consider reducing it if the issue persists.
   - Please make sure you have the necessary environment to perform the migration. Ensure that the MySQL and PostgreSQL databases are running and accessible. To set up a PostgreSQL instance, see the :doc:`prepare your Mattermost database </deployment-guide/server/preparations>` documentation for details.
   - If you were previously utilizing a database for handling the :doc:`Mattermost configuration </administration-guide/configure/configuration-in-your-database>`, those tables will not be migrated from your MySQL database with the migration `script <#migrate-the-data>`__. You will need to manually migrate those configuration settings to your PostgreSQL database after completing the migration process. See the :ref:`configuration in database <deployment-guide/manual-postgres-migration:configuration in database>` documentation for details.
-  - Stop the Mattermost server before beginning these steps and do **not** start it against the target PostgreSQL database until after pgloader has completed. Starting the app between schema creation and data transfer writes rows to the target (for example, plugin key-value store entries) that will conflict with pgloader's inserts and produce ``duplicate key value violates unique constraint`` errors.
+  - This migration requires a maintenance window. Mattermost must be taken offline on the MySQL host before pgloader runs, and must not be started against the target PostgreSQL database until the migration is complete.
 
 Step 1 - Check the MySQL database schema
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -75,6 +75,12 @@ Then run:
 
   If you are migrating multiple environments, use the same ``--mattermost-version`` value across all of them. Version skew between nodes produces inconsistent target schemas and is a common source of pgloader failures.
 
+  When using ``--mattermost-version``, the tool fetches migration scripts directly from GitHub.com. If your environment is air-gapped or does not have internet access, see :ref:`Air-gapped environments <deployment-guide/postgres-migration-assist-tool:air-gapped environments>` for an alternative approach.
+
+.. note::
+
+  Once this step completes, do not start Mattermost against the new PostgreSQL database until pgloader has finished. Starting the app writes initial data to the target (for example, plugin key-value store entries) that will conflict with pgloader's inserts and produce ``duplicate key value violates unique constraint`` errors.
+
 By default, two pre-checks run before migration:
 
 - ``--check-schema-owner=true``
@@ -109,6 +115,8 @@ Run the following command to emit a pgloader configuration file:
 
 Step 4 - Run pgloader
 ~~~~~~~~~~~~~~~~~~~~~
+
+Before running pgloader, confirm that Mattermost is offline on the MySQL host so that no new data is written to the source database during the transfer.
 
 :ref:`Run pgloader <deployment-guide/manual-postgres-migration:pgloader>` with the generated configuration file:
 
