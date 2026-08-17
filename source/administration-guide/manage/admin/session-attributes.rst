@@ -99,7 +99,7 @@ Session attribute reference
     - How it's collected
     - Default TTL / grace
   * - ``ip_address``
-    - The IP address the request arrived from, as measured by the server.
+    - The IP address the request arrived from, as measured by the server, such as ``203.0.113.42``.
     - Desktop, mobile, browser
     - Read from the request connection, or from ``ServiceSettings.TrustedProxyIPHeader`` when that setting is configured. See `Trusted proxy headers and inCIDR rules <#trusted-proxy-headers-and-incidr-rules>`__.
     - 15s / 15s
@@ -124,7 +124,7 @@ Session attribute reference
     - Parsed from the ``User-Agent`` header.
     - 300s / 300s
   * - ``client_ip_address``
-    - The IP address of the device's own primary network interface, as the device sees it. Differs from ``ip_address`` when the user is behind NAT or a proxy.
+    - The IP address of the device's own primary network interface, as the device sees it, such as ``10.0.12.34``. Differs from ``ip_address`` when the user is behind NAT or a proxy.
     - Desktop, mobile
     - Read from the primary network interface using native OS APIs. IPv4 is used when available; the client falls back to IPv6 when no IPv4 address is present.
     - 15s / 15s
