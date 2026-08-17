@@ -17,18 +17,18 @@ Platform and OS scope reflects reported and tested environments and may not repr
 
 ### Compatibility
  - **Upgrade to server version v11.7.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#extended-support-releases) (ESR) v10.11.0 has ended and upgrading to server ESR v11.7.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
- - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
+ - Android 7.0+ or later is required.
  - iPhone 8+ devices and later with iOS 16.0+ are [required](https://support.apple.com/en-il/guide/iphone/iphe3fa5df43/16.0/ios/16.0).
 
 ### Improvements
  - Classification markings now load via a single property fields request on servers running v11.10+ (with backward-compatible fallback).
- - Updated the Agents feature to match the webapp experience: multi-step agent answers now render text, tool calls, and per-round reasoning in order; agent conversations display inline in the agent chat screen; added "Accept all" / "Reject all" buttons for tool approvals; added the interactive agent ``@mention`` reminder post; and late streaming updates are ignored after stopping generation.
+ - Updated the Agents feature to match the webapp experience: multi-step agent answers now render text, tool calls, and per-round reasoning in order; agent conversations display inline in the agent chat screen; added **Accept all** / **Reject all** buttons for tool approvals; added the interactive agent ``@mention`` reminder post; and late streaming updates are ignored after stopping generation.
  - Kept Channel Bookmarks and Custom Profile Attributes working against server versions that no longer sent the corresponding feature flags.
 
 ### Bug Fixes
  - Fixed cases where the system-wide classification banner rendered on top of the navigation menu in the **Table** and **Code** preview screens.
- - Fixed an issue where the "Report a Problem" screen was skipped on Entry and unlicensed servers, preventing users from viewing troubleshooting details, downloading app logs or enabling app log attachments.
- - Fixed keyboard rotation handling when the message input rerendered.
+ - Fixed an issue where the **Report a Problem** screen was skipped on Entry and unlicensed servers, preventing users from viewing troubleshooting details, downloading app logs or enabling app log attachments.
+ - Fixed keyboard rotation handling when the message input re-rendered.
  - Fixed a 1-2px offset in consecutive threaded replies when Collapsed Reply Threads view was disabled.
 
 ### Open Source Components
