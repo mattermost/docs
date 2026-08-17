@@ -63,7 +63,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 (release-v6-2)=
 ## Release v6.2 (Extended Support Release)
 
-- **v6.2.3, released 2026-08-14**
+- **v6.2.3, released 2026-08-17**
 
   - Mattermost Desktop App v6.2.3 contains low to medium severity level security fixes. Upgrading is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Major version upgrade of Electron to v43.3.0. Electron is the underlying technology used to build the Desktop App.
