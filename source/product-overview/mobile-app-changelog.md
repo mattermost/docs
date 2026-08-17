@@ -26,7 +26,7 @@ Platform and OS scope reflects reported and tested environments and may not repr
  - Kept Channel Bookmarks and Custom Profile Attributes working against server versions that no longer sent the corresponding feature flags.
 
 ### Bug Fixes
- - Fixed cases where the system-wide classification banner rendered on top of the navigation menu in the **Table** and **Code** preview screens.
+ - Fixed cases on iOS where the system-wide classification banner rendered on top of the navigation menu in the **Table** and **Code** preview screens.
  - Fixed an issue where the **Report a Problem** screen was skipped on Entry and unlicensed servers, preventing users from viewing troubleshooting details, downloading app logs or enabling app log attachments.
  - Fixed keyboard rotation handling when the message input re-rendered.
  - Fixed a 1-2px offset in consecutive threaded replies when Collapsed Reply Threads view was disabled.
