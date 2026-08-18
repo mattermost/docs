@@ -53,6 +53,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-11-is-now-availa
  - Adjusted user interface style for the post component's button for non-US environments.
 
 #### Administration
+ - [Prevented](https://docs.mattermost.com/end-user-guide/collaborate/flag-messages.html) a post belonging to a Direct Message or Group Message from being quarantined.
  - Added ``user_access_token_id`` field to server logs and audit log actor records for requests authenticated via Personal Access Token, enabling direct token traceability without manual database lookups.
  - Prevented system-owned bots (system-bot, content-review) from being disabled; the system bot now automatically re-enables itself if it was previously disabled.
  - Removed the ``CustomProfileAttributes`` feature flag. Custom profile attributes are now always enabled (Enterprise license still required) and can no longer be toggled via the feature flag.
@@ -94,7 +95,6 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-11-is-now-availa
  - Fixed an issue with a bug in the Attribute-Based Access Control policy editor where an attribute value containing a quote character (such as an apostrophe) prevented switching from Advanced back to Simple Mode.
  - Fixed an issue where email notification links opened the desktop app landing page even when the Enable Desktop App Landing Page setting was disabled.
  - Fixed an issue where the Classification Markings section in the System Console was accessible and configurable under an Enterprise license; it is now correctly gated behind an Enterprise Advanced license and shows an upgrade prompt for lower tiers.
- - Fixed an issue where a post belonging to a Direct Message or Group Message could be quarantined.
  - Fixed an issue where the original author's profile picture appeared squished in the Content Flagging (Data Spillage) review card in the right-hand sidebar.
  - Fixed an issue where collapsed single video attachments disappeared from posts with no way to expand them.
  - Fixed an issue where the Permission Policy simulator failed to run if the policy had not been named yet.
