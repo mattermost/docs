@@ -20,112 +20,114 @@ Platform and OS scope reflects reported and tested environments and may not repr
 
 ### Upgrade Impact
 #### Database Schema Changes
-  - Removed ``LdapSettings.LoginButtonColor``, ``LdapSettings.LoginButtonBorderColor``, and ``LdapSettings.LoginButtonTextColor`` configuration settings from the database (unused experimental AD/LDAP login button color settings).
+ - 
 
 #### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
-  - **Changes to Enterprise Advanced plan:**
-    - Under ``AccessControlSettings`` in ``config.json``, added ``EnableAccessControlAuditLogging`` configuration setting to enable audit logging for ABAC policy decisions. Defaults to off; only available when server audit logging is active.
-    - Under ``AccessControlSettings`` in ``config.json``, added ``AttributeRefreshIntervalSeconds`` configuration setting.
+ - **Changes to Enterprise Advanced plan:**
+   - Added a new opt-in System Console setting, ``AccessControlSettings.EnableAccessControlAuditLogging`` (Attribute-Based Access Control), to enable audit logging for ABAC policy decisions. The setting defaults to off and is only available when server audit logging is active. Requires an Enterprise Advanced license
+ - Under ``AccessControlSettings`` in ``config.json``, added ``AttributeRefreshIntervalSeconds`` configuration setting.
+ - Removed ``LdapSettings.LoginButtonColor``, ``LdapSettings.LoginButtonBorderColor``, and ``LdapSettings.LoginButtonTextColor`` configuration settings from the database (unused experimental AD/LDAP login button color settings).
 
 ### Improvements
 See [this blog post](https://mattermost.com/blog/mattermost-v11-11-is-now-available/) on the highlights in our latest release.
 
 #### User Interface
-  - Pre-packaged GitHub plugin version [v2.8.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.8.0).
-  - Pre-packaged Jira plugin version [v4.8.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.8.0).
-  - Mattermost Calls was updated to v1.12.3.
-  - Added a "Hide Archived" toggle to the Browse Channels modal that hides archived channels by default.
-  - Added a red warning callout in the System Console that appears beneath certain settings (SAML Verify Signature/Enable Encryption, Enable Insecure Outgoing Connections, Enable Developer Mode, Enable Testing Commands, wildcard CORS, and skipping SMTP/AD-LDAP certificate verification) when they are configured to a value that is not recommended for production.
-  - Added weekly recurring scheduled posts so users can schedule messages that repeat weekly and keep their recurring schedule when rescheduled.
-  - Added tooltips (Desktop, Mobile, Web Browser) to the platform icons shown for session attributes in the access control policy attribute picker.
-  - Added operators for CIDR and version checks to the simple policy editor.
-  - Licenses marked as non-production (``is_non_production``) now display a permanent, non-dismissible banner stating the server is licensed with a developer key and is not for use in production environments. The flag is exposed in the client license, support packet, and ``GET /api/v4/license/client`` response.
-  - The invite modal now returns an error and does not send an invitation email when the invited email address belongs to a deactivated user account.
-  - Policy simulation now evaluates draft rules against each selected user's recent sessions, including their session attributes.
-  - Updated the local image proxy to enforce a maximum size limit when fetching images directly.
-  - Adjusted user interface style for the post component's button for non-US environments.
+ - Pre-packaged GitHub plugin version [v2.8.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.8.0).
+ - Pre-packaged Jira plugin version [v4.8.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.8.0).
+ - Mattermost Calls was updated to v1.12.3.
+ - Added a "Hide Archived" toggle to the Browse Channels modal that hides archived channels by default.
+ - Added a red warning callout in the System Console that appears beneath certain settings (SAML Verify Signature/Enable Encryption, Enable Insecure Outgoing Connections, Enable Developer Mode, Enable Testing Commands, wildcard CORS, and skipping SMTP/AD-LDAP certificate verification) when they are configured to a value that is not recommended for production.
+ - Added weekly recurring scheduled posts so users can schedule messages that repeat weekly and keep their recurring schedule when rescheduled.
+ - Added tooltips (Desktop, Mobile, Web Browser) to the platform icons shown for session attributes in the access control policy attribute picker.
+ - Added operators for CIDR and version checks to the simple policy editor.
+ - Licenses marked as non-production (``is_non_production``) now display a permanent, non-dismissible banner stating the server is licensed with a developer key and is not for use in production environments. The flag is exposed in the client license, support packet, and ``GET /api/v4/license/client`` response.
+ - The invite modal now returns an error and does not send an invitation email when the invited email address belongs to a deactivated user account.
+ - Policy simulation now evaluates draft rules against each selected user's recent sessions, including their session attributes.
+ - Updated the local image proxy to enforce a maximum size limit when fetching images directly.
+ - Adjusted user interface style for the post component's button for non-US environments.
 
 #### Administration
-  - Added a new opt-in System Console setting, ``AccessControlSettings.EnableAccessControlAuditLogging`` (Attribute-Based Access Control), to enable audit logging for ABAC policy decisions. The setting defaults to off and is only available when server audit logging is active. Requires an Enterprise Advanced license.
-  - Added ``user_access_token_id`` field to server logs and audit log actor records for requests authenticated via Personal Access Token, enabling direct token traceability without manual database lookups.
-  - Prevented system-owned bots (system-bot, content-review) from being disabled; the system bot now automatically re-enables itself if it was previously disabled.
-  - Removed the ``CustomProfileAttributes`` feature flag. Custom profile attributes are now always enabled (Enterprise license still required) and can no longer be toggled via the feature flag.
-  - Removed the ``EnableExportDirectDownload`` feature flag. Export direct download (the ``/exportlink`` slash command and the export generate-presigned-url API) is now available in Mattermost Cloud whenever a dedicated export store with presigned-link support is configured, and no longer requires a flag or setting to enable.
-  - Removed the unused ``CloudDedicatedExportUI`` feature flag.
-  - Removed the unused experimental AD/LDAP login button color settings (``LdapSettings.LoginButtonColor``, ``LdapSettings.LoginButtonBorderColor``, and ``LdapSettings.LoginButtonTextColor``), which had no effect on the web or mobile clients.
-  - Removed the unused experimental SAML login button color settings (``SamlSettings.LoginButtonColor``, ``SamlSettings.LoginButtonBorderColor``, and ``SamlSettings.LoginButtonTextColor``), which had no effect on any client. The SAML login button label setting is unchanged.
-  - The server now logs an error and continues to start when connected to an unsupported Postgres, Elasticsearch, or OpenSearch version, instead of refusing to start.
-  - Enhanced team search to only display teams relevant and accessible to the requesting user.
-  - Added signing and verification for RelayState in the SAML flow.
-  - Updated SAML single sign-on signup handling to no longer derive team membership from the SAML relay state.
-  - Fixed policy simulation to show "No recent session" when session attributes are unavailable, and restricted detailed evaluation traces in simulation results to system administrators.
+ - Added ``user_access_token_id`` field to server logs and audit log actor records for requests authenticated via Personal Access Token, enabling direct token traceability without manual database lookups.
+ - Prevented system-owned bots (system-bot, content-review) from being disabled; the system bot now automatically re-enables itself if it was previously disabled.
+ - Removed the ``CustomProfileAttributes`` feature flag. Custom profile attributes are now always enabled (Enterprise license still required) and can no longer be toggled via the feature flag.
+ - Removed the ``EnableExportDirectDownload`` feature flag. Export direct download (the ``/exportlink`` slash command and the export generate-presigned-url API) is now available in Mattermost Cloud whenever a dedicated export store with presigned-link support is configured, and no longer requires a flag or setting to enable.
+ - Removed the unused ``CloudDedicatedExportUI`` feature flag.
+ - The server now logs an error and continues to start when connected to an unsupported Postgres, Elasticsearch, or OpenSearch version, instead of refusing to start.
+ - Enhanced team search to only display teams relevant and accessible to the requesting user.
+ - Added signing and verification for RelayState in the SAML flow.
+ - Updated SAML single sign-on signup handling to no longer derive team membership from the SAML relay state.
+ - Fixed policy simulation to show "No recent session" when session attributes are unavailable, and restricted detailed evaluation traces in simulation results to system administrators.
 
 #### Plugins/Integrations
-  - Added plugin APIs for attribute-based access control: plugins can evaluate access decisions (``EvaluateAccessControl``) and manage policies for plugin-owned resource types (``SaveAccessControlPolicy``, ``GetAccessControlPolicy``, ``DeleteAccessControlPolicy``, ``CheckAccessControlExpression``, ``QueryUsersForAccessControlExpression``, ``GetAccessControlFieldsAutocomplete``, ``GetAccessControlVisualAST``). Plugin resource types are keyed as ``<plugin ID>:<resource type>`` with plugin-defined actions, and access decisions follow the AuthZEN shape (boolean decision plus context) with a no-policy fallback reported via the decision context. Requires an Enterprise Advanced license with attribute-based access control enabled.
-  - Attribute-based access control policies can now be evaluated for plugin-owned resource types keyed as ``<plugin ID>:<resource type>``. Decisions follow the AuthZEN shape (boolean decision plus context), reporting a no-policy fallback via the decision context. Requires an Enterprise Advanced license.
+ - Added plugin APIs for attribute-based access control: plugins can evaluate access decisions (``EvaluateAccessControl``) and manage policies for plugin-owned resource types (``SaveAccessControlPolicy``, ``GetAccessControlPolicy``, ``DeleteAccessControlPolicy``, ``CheckAccessControlExpression``, ``QueryUsersForAccessControlExpression``, ``GetAccessControlFieldsAutocomplete``, ``GetAccessControlVisualAST``). Plugin resource types are keyed as ``<plugin ID>:<resource type>`` with plugin-defined actions, and access decisions follow the AuthZEN shape (boolean decision plus context) with a no-policy fallback reported via the decision context. Requires an Enterprise Advanced license with attribute-based access control enabled.
+ - Attribute-based access control policies can now be evaluated for plugin-owned resource types keyed as ``<plugin ID>:<resource type>``. Decisions follow the AuthZEN shape (boolean decision plus context), reporting a no-policy fallback via the decision context. Requires an Enterprise Advanced license.
 
 #### mmctl
-  - Added a ``--name`` flag to the ``mmctl team rename`` command to change a team's name (its URL slug).
-  - Added a repeatable ``--file`` flag to the ``mmctl post create`` command to attach one or more local files to a post.
-  - Added ``--active`` flag to ``mmctl user list`` to filter for active users only.
+ - Added a ``--name`` flag to the ``mmctl team rename`` command to change a team's name (its URL slug). The team update API (``PUT /api/v4/teams/{team_id}``) now applies a changed team name when the requester has the manage team permission.
+ - Added a repeatable ``--file`` flag to the ``mmctl post create`` command to attach one or more local files to a post.
+ - Added ``--active`` flag to ``mmctl user list`` to filter for active users only.
 
 #### Performance
-  - Fixed a memory leak due to Elasticsearch starting bulk indexers and not stopping them, leading to an out-of-memory condition. Added logging to alert system administrators when the required ``analysis-icu`` Elasticsearch/OpenSearch plugin is missing.
-  - Skip cluster sends after closing the gossip socket, avoiding unnecessary ERROR logs on shutdown.
-  - Fixed a bug where Shared Channels / Secured Connections remote cluster pings could fail intermittently by reusing stale keep-alive connections; the remote cluster HTTP transport idle-connection timeout is now kept below the ping frequency.
+ - Fixed a memory leak due to Elasticsearch starting bulk indexers and not stopping them, leading to an out-of-memory condition. Added logging to alert system administrators when the required ``analysis-icu`` Elasticsearch/OpenSearch plugin is missing.
+ - Skip cluster sends after closing the gossip socket, avoiding unnecessary ERROR logs on shutdown.
+ - Fixed a bug where Shared Channels / Secured Connections remote cluster pings could fail intermittently by reusing stale keep-alive connections; the remote cluster HTTP transport idle-connection timeout is now kept below the ping frequency.
 
 ### Bug Fixes
-  - Fixed an issue where the user interface briefly flashed when closing a stacked modal, such as the Decision details modal in a permission policy rule simulation.
-  - Fixed an issue where value chips in the channel membership policy table wrapped onto multiple lines and expanded the table row height.
-  - Fixed a scroll issue caused by open graph previews in channel and permalink views.
-  - Fixed an issue where the post actions ("…") menu did not close when clicking outside of it in the mobile/narrow-width view.
-  - Fixed an issue where the post Message actions menu could display off screen in a narrow, single-column window.
-  - Fixed an issue where the role dropdown in the System Console Manage Teams modal could render outside the modal for users who belong to many teams.
-  - Fixed an issue where tapping the backdrop area on mobile devices failed to close the channel header dropdown menu modal.
-  - Fixed an issue with confidential OAuth applications that kept rotated tokens in memory during the session cache window (configured by ``SessionCacheInMinutes``).
-  - Fixed an issue where clicking outside an image in a post but within the post area would open the image preview instead of interacting with the post.
-  - Fixed an issue where edited posts appeared slightly taller than unedited ones.
-  - Fixed an issue where OAuth and SSO logins on a root SiteURL dropped the ``redirect_to`` parameter, which prevented the login from returning to the OAuth authorize/callback (e.g. the Agents/MCP OAuth flow).
-  - Fixed an edge case in team invitation handling.
-  - Fixed an issue where certain role update requests for channel and team members were not fully validated.
-  - Fixed an issue with a bug in the Attribute-Based Access Control policy editor where an attribute value containing a quote character (such as an apostrophe) prevented switching from Advanced back to Simple Mode.
-  - Fixed an issue where email notification links opened the desktop app landing page even when the Enable Desktop App Landing Page setting was disabled.
-  - Fixed an issue where the Classification Markings section in the System Console was accessible and configurable under an Enterprise license; it is now correctly gated behind an Enterprise Advanced license and shows an upgrade prompt for lower tiers.
-  - Fixed an issue where a post belonging to a Direct Message or Group Message could be quarantined.
-  - Fixed an issue where the original author's profile picture appeared squished in the Content Flagging (Data Spillage) review card in the right-hand sidebar.
-  - Fixed an issue where collapsed single video attachments disappeared from posts with no way to expand them.
-  - Fixed an issue where the Permission Policy simulator failed to run if the policy had not been named yet.
-  - Fixed an issue where the "Edit session attribute values" popover in the access policy simulation modal could grow taller than the screen and hide the Apply and Cancel buttons when many environmental attributes were enabled.
-  - Fixed an issue where an error ("Unable to save access control policy.") occurred when deleting the only remaining rule in a channel's Permissions Policy tab.
-  - Fixed an issue where role and permission dropdown descriptions in the channel Permissions Policy editor could overflow horizontally instead of wrapping.
-  - Fixed an issue where long attribute names could overflow their column in the Channel Settings Permissions Policy table editor instead of being truncated.
-  - Fixed an error when retrieving ``post_persistent_notifications`` and ``delete_expired_posts`` jobs from the jobs API.
-  - Fixed an issue where the rich text editor sent URLs as Markdown links, which broke slash commands taking a URL argument, and fixed the "Execute Current Command" autocomplete option inserting text instead of running the command.
-  - Fixed an issue where permanently deleting a bot account left the bot's personal access tokens and their sessions orphaned in the database.
-  - Fixed an issue where ``mmctl sampledata`` generated passwords shorter than the FIPS minimum length of 14 characters.
-  - Fixed an issue where members added to a channel could be missing from the channel members list until the user manually reloaded, including after a WebSocket reconnect.
+ - Fixed an issue where the user interface briefly flashed when closing a stacked modal, such as the Decision details modal in a permission policy rule simulation.
+ - Fixed an issue where value chips in the channel membership policy table wrapped onto multiple lines and expanded the table row height.
+ - Fixed a scroll issue caused by open graph previews in channel and permalink views.
+ - Fixed an issue where the post actions ("…") menu did not close when clicking outside of it in the mobile/narrow-width view.
+ - Fixed an issue where the post Message actions menu could display off screen in a narrow, single-column window.
+ - Fixed an issue where the role dropdown in the System Console Manage Teams modal could render outside the modal for users who belong to many teams.
+ - Fixed an issue where tapping the backdrop area on mobile devices failed to close the channel header dropdown menu modal.
+ - Fixed an issue with confidential OAuth applications that kept rotated tokens in memory during the session cache window (configured by ``SessionCacheInMinutes``).
+ - Fixed an issue where clicking outside an image in a post but within the post area would open the image preview instead of interacting with the post.
+ - Fixed an issue where edited posts appeared slightly taller than unedited ones.
+ - Fixed an issue where OAuth and SSO logins on a root SiteURL dropped the ``redirect_to`` parameter, which prevented the login from returning to the OAuth authorize/callback (e.g. the Agents/MCP OAuth flow).
+ - Fixed an edge case in team invitation handling.
+ - Fixed an issue where certain role update requests for channel and team members were not fully validated.
+ - Fixed an issue with a bug in the Attribute-Based Access Control policy editor where an attribute value containing a quote character (such as an apostrophe) prevented switching from Advanced back to Simple Mode.
+ - Fixed an issue where email notification links opened the desktop app landing page even when the Enable Desktop App Landing Page setting was disabled.
+ - Fixed an issue where the Classification Markings section in the System Console was accessible and configurable under an Enterprise license; it is now correctly gated behind an Enterprise Advanced license and shows an upgrade prompt for lower tiers.
+ - Fixed an issue where a post belonging to a Direct Message or Group Message could be quarantined.
+ - Fixed an issue where the original author's profile picture appeared squished in the Content Flagging (Data Spillage) review card in the right-hand sidebar.
+ - Fixed an issue where collapsed single video attachments disappeared from posts with no way to expand them.
+ - Fixed an issue where the Permission Policy simulator failed to run if the policy had not been named yet.
+ - Fixed an issue where the "Edit session attribute values" popover in the access policy simulation modal could grow taller than the screen and hide the Apply and Cancel buttons when many environmental attributes were enabled.
+ - Fixed an issue where an error ("Unable to save access control policy.") occurred when deleting the only remaining rule in a channel's Permissions Policy tab.
+ - Fixed an issue where role and permission dropdown descriptions in the channel Permissions Policy editor could overflow horizontally instead of wrapping.
+ - Fixed an issue where long attribute names could overflow their column in the Channel Settings Permissions Policy table editor instead of being truncated.
+ - Fixed an error when retrieving ``post_persistent_notifications`` and ``delete_expired_posts`` jobs from the jobs API.
+ - Fixed an issue where the rich text editor sent URLs as Markdown links, which broke slash commands taking a URL argument, and fixed the "Execute Current Command" autocomplete option inserting text instead of running the command.
+ - Fixed an issue where permanently deleting a bot account left the bot's personal access tokens and their sessions orphaned in the database.
+ - Fixed an issue where ``mmctl sampledata`` generated passwords shorter than the FIPS minimum length of 14 characters.
+ - Fixed an issue where members added to a channel could be missing from the channel members list until the user manually reloaded, including after a WebSocket reconnect.
 
 ### API Changes
-  - The team update API (``PUT /api/v4/teams/{team_id}``) now applies a changed team name when the requester has the manage team permission.
-  - Updated ``getFile`` API validation to check for content reviewer earlier.
-  - Updated how post and thread payloads handle interactive-message action data.
-  - Updated how team admin status is assigned when a user joins a team.
-  - Updated account type switch handling.
-  - Updated Slack import to handle user matching differently depending on the import type.
+ - Updated ``getFile`` API validation to check for content reviewer earlier.
+ - Updated how post and thread payloads handle interactive-message action data.
+ - Updated how team admin status is assigned when a user joins a team.
+ - Updated account type switch handling.
+ - Updated Slack import to handle user matching differently depending on the import type.
+ - Added DELETE / (deleteScheduledRecap) API endpoint.
+ - Added GET / (getScheduledRecap) API endpoint.
+ - Added GET /limit_status (getRecapLimitStatus) API endpoint.
+ - Added POST / (createScheduledRecap) API endpoint.
+ - Added POST /pause (pauseScheduledRecap) API endpoint.
+ - Added POST /resume (resumeScheduledRecap) API endpoint.
+ - Added PUT / (updateScheduledRecap) API endpoint.
+ - New API file: scheduled_recap.go
 
 ### WebSocket Event Changes
-  - Added permission-scoped WebSocket delivery for ``job_updated`` events.
+ - Added permission-scoped WebSocket delivery for ``job_updated`` events.
 
 ### Audit Log Event Changes
-  - Added ``AuditEventDeletePluginAccessControlPolicy`` audit log event.
-  - Added ``AuditEventSavePluginAccessControlPolicy`` audit log event.
+ - Added ``AuditEventDeletePluginAccessControlPolicy`` audit log event.
+ - Added ``AuditEventSavePluginAccessControlPolicy`` audit log event.
 
 ### Go Version
-  - v11.11 is built with Go ``v1.26.4``.
-
-### Open Source Components
-
+ - v11.11 is built with Go ``v1.26.4``.
 
 (release-v11.10-feature-release)=
 ## Release v11.10 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
