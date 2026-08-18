@@ -68,7 +68,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-11-is-now-availa
 #### Administration
  - [Prevented](https://docs.mattermost.com/end-user-guide/collaborate/flag-messages.html) a post belonging to a Direct Message or Group Message from being quarantined.
  - Added ``user_access_token_id`` field to server logs and audit log actor records for requests authenticated via Personal Access Token, enabling direct token traceability without manual database lookups.
- - Prevented system-owned bots (system-bot, content-review) from being disabled; the system bot now automatically re-enables itself if it was previously disabled.
+ - Prevented system-owned bots (system-bot, content-review) from being disabled; the system bot now automatically re-enables itself if it was previously disabled (webapp).
  - Removed the ``CustomProfileAttributes`` feature flag. Custom profile attributes are now always enabled (Enterprise license still required) and can no longer be toggled via the feature flag.
  - Removed the ``EnableExportDirectDownload`` feature flag. Export direct download (the ``/exportlink`` slash command and the export generate-presigned-url API) is now available in Mattermost Cloud whenever a dedicated export store with presigned-link support is configured, and no longer requires a flag or setting to enable.
  - Removed the unused ``CloudDedicatedExportUI`` feature flag.
@@ -94,9 +94,9 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-11-is-now-availa
 ### Bug Fixes
  - Fixed an issue where the user interface briefly flashed when closing a stacked modal, such as the Decision details modal in a permission policy rule simulation.
  - Fixed an issue where value chips in the channel membership policy table wrapped onto multiple lines and expanded the table row height.
- - Fixed a scroll issue caused by open graph previews in channel and permalink views.
- - Fixed an issue where the post actions ("…") menu did not close when clicking outside of it in the mobile/narrow-width view.
- - Fixed an issue where the post Message actions menu could display off screen in a narrow, single-column window.
+ - Fixed a scroll issue caused by open graph previews in channel and permalink views (reported on webapp and Firefox).
+ - Fixed an issue where the post actions ("…") menu did not close when clicking outside of it in the mobile/narrow-width view (reported on web browser and desktop app).
+ - Fixed an issue where the post Message actions menu could display off screen in a narrow, single-column window (reported on webapp and desktop app).
  - Fixed an issue where the role dropdown in the System Console Manage Teams modal could render outside the modal for users who belong to many teams.
  - Fixed an issue where tapping the backdrop area on mobile devices failed to close the channel header dropdown menu modal.
  - Fixed an issue with confidential OAuth applications that kept rotated tokens in memory during the session cache window (configured by ``SessionCacheInMinutes``).
@@ -109,7 +109,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-11-is-now-availa
  - Fixed an issue where email notification links opened the desktop app landing page even when the Enable Desktop App Landing Page setting was disabled.
  - Fixed an issue where the Classification Markings section in the System Console was accessible and configurable under an Enterprise license; it is now correctly gated behind an Enterprise Advanced license and shows an upgrade prompt for lower tiers.
  - Fixed an issue where the original author's profile picture appeared squished in the Content Flagging (Data Spillage) review card in the right-hand sidebar.
- - Fixed an issue where collapsed single video attachments disappeared from posts with no way to expand them.
+ - Fixed an issue where collapsed single video attachments disappeared from posts with no way to expand them (reported on webapp and desktop app).
  - Fixed an issue where the Permission Policy simulator failed to run if the policy had not been named yet.
  - Fixed an issue where the "Edit session attribute values" popover in the access policy simulation modal could grow taller than the screen and hide the Apply and Cancel buttons when many environmental attributes were enabled.
  - Fixed an issue where an error ("Unable to save access control policy.") occurred when deleting the only remaining rule in a channel's Permissions Policy tab.
