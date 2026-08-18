@@ -38,7 +38,10 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - **Changes to Enterprise Advanced plan:**
    - Under ``AccessControlSettings`` in ``config.json``, added a new opt-in System Console setting, ``EnableAccessControlAuditLogging`` (Attribute-Based Access Control), to enable audit logging for ABAC policy decisions. The setting defaults to off and is only available when server audit logging is active. Requires an Enterprise Advanced license
    - Under ``AccessControlSettings`` in ``config.json``, added ``AttributeRefreshIntervalSeconds`` configuration setting to allow more control over how much to throttle refreshing the ``AttributeView`` when managing ABAC policies and channels.
-   - Removed ``LdapSettings.LoginButtonColor``, ``LdapSettings.LoginButtonBorderColor``, and ``LdapSettings.LoginButtonTextColor`` configuration settings from the database (unused experimental AD/LDAP login button colour settings).
+ - **Changes to Enterprise plans:**
+   - 
+ - Removed ``LdapSettings.LoginButtonColor``, ``LdapSettings.LoginButtonBorderColor``, and ``LdapSettings.LoginButtonTextColor`` configuration settings from the database (unused experimental AD/LDAP login button colour settings).
+ - Removed ``SamlSettings.LoginButtonColor``, ``LoginButtonBorderColor``, and ``LoginButtonTextColor`` configuration settings from the database (unused experimental SAML login button colour settings).
 
 ```{Important}
 If you upgrade from a release earlier than v11.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html). In case of an upgrade failure, please check the [Downgrade Guide](https://docs.mattermost.com/administration-guide/upgrade/downgrading-mattermost-server.html) and the [Recovery Guide](https://docs.mattermost.com/deployment-guide/backup-disaster-recovery.html) for rollback steps and interim mitigation strategy.
