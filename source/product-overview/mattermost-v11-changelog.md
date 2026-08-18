@@ -19,6 +19,7 @@ Platform and OS scope reflects reported and tested environments and may not repr
 **Release day: 2026-09-16**
 
 ### Upgrade Impact
+
 #### Database Schema Changes
  - 
 
@@ -29,6 +30,10 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - Under ``AccessControlSettings`` in ``config.json``, added ``AttributeRefreshIntervalSeconds`` configuration setting.
  - Removed ``LdapSettings.LoginButtonColor``, ``LdapSettings.LoginButtonBorderColor``, and ``LdapSettings.LoginButtonTextColor`` configuration settings from the database (unused experimental AD/LDAP login button color settings).
 
+```{Important}
+If you upgrade from a release earlier than v11.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html). In case of an upgrade failure, please check the [Downgrade Guide](https://docs.mattermost.com/administration-guide/upgrade/downgrading-mattermost-server.html) and the [Recovery Guide](https://docs.mattermost.com/deployment-guide/backup-disaster-recovery.html) for rollback steps and interim mitigation strategy.
+```
+
 ### Improvements
 See [this blog post](https://mattermost.com/blog/mattermost-v11-11-is-now-available/) on the highlights in our latest release.
 
@@ -36,7 +41,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-11-is-now-availa
  - Pre-packaged GitHub plugin version [v2.8.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.8.0).
  - Pre-packaged Jira plugin version [v4.8.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.8.0).
  - Pre-packaged Calls plugin version [v1.12.3](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.12.3).
- - Added a "Hide Archived" toggle to the Browse Channels modal that hides archived channels by default.
+ - Added a "Hide Archived" toggle to the **Browse Channels** modal that hides archived channels by default.
  - Added a red warning callout in the System Console that appears beneath certain settings (SAML Verify Signature/Enable Encryption, Enable Insecure Outgoing Connections, Enable Developer Mode, Enable Testing Commands, wildcard CORS, and skipping SMTP/AD-LDAP certificate verification) when they are configured to a value that is not recommended for production.
  - Added weekly recurring scheduled posts so users can schedule messages that repeat weekly and keep their recurring schedule when rescheduled.
  - Added tooltips (Desktop, Mobile, Web Browser) to the platform icons shown for session attributes in the access control policy attribute picker.
@@ -57,21 +62,20 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-11-is-now-availa
  - Enhanced team search to only display teams relevant and accessible to the requesting user.
  - Added signing and verification for RelayState in the SAML flow.
  - Updated SAML single sign-on signup handling to no longer derive team membership from the SAML relay state.
- - Fixed policy simulation to show "No recent session" when session attributes are unavailable, and restricted detailed evaluation traces in simulation results to system administrators.
+ - Updated how post and thread payloads handle interactive-message action data.
+ - Updated how team admin status is assigned when a user joins a team.
+ - Updated account type switch handling.
+ - Updated Slack import to handle user matching differently depending on the import type.
 
 #### Plugins/Integrations
  - Added plugin APIs for attribute-based access control: plugins can evaluate access decisions (``EvaluateAccessControl``) and manage policies for plugin-owned resource types (``SaveAccessControlPolicy``, ``GetAccessControlPolicy``, ``DeleteAccessControlPolicy``, ``CheckAccessControlExpression``, ``QueryUsersForAccessControlExpression``, ``GetAccessControlFieldsAutocomplete``, ``GetAccessControlVisualAST``). Plugin resource types are keyed as ``<plugin ID>:<resource type>`` with plugin-defined actions, and access decisions follow the AuthZEN shape (boolean decision plus context) with a no-policy fallback reported via the decision context. Requires an Enterprise Advanced license with attribute-based access control enabled.
  - Attribute-based access control policies can now be evaluated for plugin-owned resource types keyed as ``<plugin ID>:<resource type>``. Decisions follow the AuthZEN shape (boolean decision plus context), reporting a no-policy fallback via the decision context. Requires an Enterprise Advanced license.
+ - Skip cluster sends after closing the gossip socket, avoiding unnecessary ERROR logs on shutdown.
 
 #### mmctl
  - Added a ``--name`` flag to the ``mmctl team rename`` command to change a team's name (its URL slug). The team update API (``PUT /api/v4/teams/{team_id}``) now applies a changed team name when the requester has the manage team permission.
  - Added a repeatable ``--file`` flag to the ``mmctl post create`` command to attach one or more local files to a post.
  - Added ``--active`` flag to ``mmctl user list`` to filter for active users only.
-
-#### Performance
- - Fixed a memory leak due to Elasticsearch starting bulk indexers and not stopping them, leading to an out-of-memory condition. Added logging to alert system administrators when the required ``analysis-icu`` Elasticsearch/OpenSearch plugin is missing.
- - Skip cluster sends after closing the gossip socket, avoiding unnecessary ERROR logs on shutdown.
- - Fixed a bug where Shared Channels / Secured Connections remote cluster pings could fail intermittently by reusing stale keep-alive connections; the remote cluster HTTP transport idle-connection timeout is now kept below the ping frequency.
 
 ### Bug Fixes
  - Fixed an issue where the user interface briefly flashed when closing a stacked modal, such as the Decision details modal in a permission policy rule simulation.
@@ -103,21 +107,20 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-11-is-now-availa
  - Fixed an issue where permanently deleting a bot account left the bot's personal access tokens and their sessions orphaned in the database.
  - Fixed an issue where ``mmctl sampledata`` generated passwords shorter than the FIPS minimum length of 14 characters.
  - Fixed an issue where members added to a channel could be missing from the channel members list until the user manually reloaded, including after a WebSocket reconnect.
+ - Fixed policy simulation to show "No recent session" when session attributes are unavailable, and restricted detailed evaluation traces in simulation results to system administrators.
+ - Fixed a memory leak due to Elasticsearch starting bulk indexers and not stopping them, leading to an out-of-memory condition. Added logging to alert system administrators when the required ``analysis-icu`` Elasticsearch/OpenSearch plugin is missing.
+ - Fixed a bug where Shared Channels / Secured Connections remote cluster pings could fail intermittently by reusing stale keep-alive connections; the remote cluster HTTP transport idle-connection timeout is now kept below the ping frequency.
 
 ### API Changes
  - Updated ``getFile`` API validation to check for content reviewer earlier.
- - Updated how post and thread payloads handle interactive-message action data.
- - Updated how team admin status is assigned when a user joins a team.
- - Updated account type switch handling.
- - Updated Slack import to handle user matching differently depending on the import type.
- - Added DELETE / (deleteScheduledRecap) API endpoint.
- - Added GET / (getScheduledRecap) API endpoint.
- - Added GET /limit_status (getRecapLimitStatus) API endpoint.
- - Added POST / (createScheduledRecap) API endpoint.
- - Added POST /pause (pauseScheduledRecap) API endpoint.
- - Added POST /resume (resumeScheduledRecap) API endpoint.
- - Added PUT / (updateScheduledRecap) API endpoint.
- - New API file: scheduled_recap.go
+ - Added ``DELETE / (deleteScheduledRecap)`` API endpoint.
+ - Added ``GET / (getScheduledRecap)`` API endpoint.
+ - Added ``GET /limit_status (getRecapLimitStatus)`` API endpoint.
+ - Added ``POST / (createScheduledRecap)`` API endpoint.
+ - Added ``POST /pause (pauseScheduledRecap)`` API endpoint.
+ - Added ``POST /resume (resumeScheduledRecap)`` API endpoint.
+ - Added ``PUT / (updateScheduledRecap)`` API endpoint.
+ - Added a new API file ``scheduled_recap.go``.
 
 ### WebSocket Event Changes
  - Added permission-scoped WebSocket delivery for ``job_updated`` events.
