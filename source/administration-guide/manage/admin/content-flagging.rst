@@ -225,7 +225,7 @@ To enable post delivery audit logging:
    - **All channels**: Deliveries are recorded in every eligible channel. This is the most complete option, and the most expensive.
    - **Selected channels**: Deliveries are recorded only in the eligible channels you select. At least one channel is required.
 
-5. With **Selected channels** set, use **Channels to record deliveries in** to select the channels. Direct and group message channels can't be selected. Recording starts when you save, and applies to messages sent from then on.
+5. With **Selected channels** set, use **Channels to record deliveries in** to select the channels. Direct and group message channels can't be selected. Recording starts when you save and applies to eligible message content delivered from then on, including existing messages delivered through later channel loads, searches, and fetches.
 
 **Enable post delivery audit logging** and **Record deliveries in** can also be configured via the :ref:`config.json file or through environment variables <administration-guide/configure/site-configuration-settings:content flagging>`.
 
