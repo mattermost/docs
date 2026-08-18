@@ -35,7 +35,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-11-is-now-availa
 #### User Interface
  - Pre-packaged GitHub plugin version [v2.8.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.8.0).
  - Pre-packaged Jira plugin version [v4.8.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.8.0).
- - Mattermost Calls was updated to v1.12.3.
+ - Pre-packaged Calls plugin version [v1.12.3](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.12.3).
  - Added a "Hide Archived" toggle to the Browse Channels modal that hides archived channels by default.
  - Added a red warning callout in the System Console that appears beneath certain settings (SAML Verify Signature/Enable Encryption, Enable Insecure Outgoing Connections, Enable Developer Mode, Enable Testing Commands, wildcard CORS, and skipping SMTP/AD-LDAP certificate verification) when they are configured to a value that is not recommended for production.
  - Added weekly recurring scheduled posts so users can schedule messages that repeat weekly and keep their recurring schedule when rescheduled.
