@@ -471,7 +471,11 @@ On private teams the rules are enforced: users who don't match can't join, and m
 4. Link a system-wide policy, define team-specific rules, or both.
 5. Select **Save**.
 
-This option is unavailable on group-synced teams, because group sync and attribute-based membership are mutually exclusive. See :doc:`Team membership access policies </administration-guide/manage/admin/abac-team-membership>` for full details.
+This option is unavailable on group-synced teams, because group sync and attribute-based membership are mutually exclusive.
+
+Team Admins with the **Manage Team Access Rules** permission can also define team membership rules from the **Team Membership** tab in :doc:`Team Settings </end-user-guide/collaborate/team-settings>`, without access to the System Console.
+
+See :doc:`Team membership access policies </administration-guide/manage/admin/abac-team-membership>` for full details.
 
 Synchronize team members
 ~~~~~~~~~~~~~~~~~~~~~~~~~
