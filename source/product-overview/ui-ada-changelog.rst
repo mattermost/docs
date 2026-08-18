@@ -12,6 +12,26 @@ Changelog
 
    * - Version
      - Change Description
+   * - v11.11
+     - (UI) Added a "Hide Archived" toggle to the **Browse Channels** modal that hides archived channels by default.
+   * - v11.11
+     - (UI) Added a red warning callout in the System Console that appears beneath certain settings (SAML Verify Signature/Enable Encryption, Enable Insecure Outgoing Connections, Enable Developer Mode, Enable Testing Commands, wildcard CORS, and skipping SMTP/AD-LDAP certificate verification) when they are configured to a value that is not recommended for production.
+   * - v11.11
+     - (UI) Added weekly recurring scheduled posts so users can schedule messages that repeat weekly and keep their recurring schedule when rescheduled.
+   * - v11.11
+     - (UI) Added tooltips (Desktop, Mobile, Web Browser) to the platform icons shown for session attributes in the access control policy attribute picker.
+   * - v11.11
+     - (UI) Added operators for CIDR and version checks to the simple policy editor.
+   * - v11.11
+     - (UI) Licenses marked as non-production (``is_non_production``) now display a permanent, non-dismissible banner stating the server is licensed with a developer key and is not for use in production environments. The flag is exposed in the client license, support packet, and ``GET /api/v4/license/client`` response.
+   * - v11.11
+     - (UI) The invite modal now returns an error and does not send an invitation email when the invited email address belongs to a deactivated user account.
+   * - v11.11
+     - (UI) Policy simulation now evaluates draft rules against each selected user's recent sessions, including their session attributes.
+   * - v11.11
+     - (UI) Updated the local image proxy to enforce a maximum size limit when fetching images directly.
+   * - v11.11
+     - (UI) Adjusted user interface style for the post component's button for non-US environments.
    * - v11.10
      - (UI) Added a WYSIWYG editor option for message composition, allowing users to compose messages with rich-text formatting while preserving full markdown round-trip.
    * - v11.10
