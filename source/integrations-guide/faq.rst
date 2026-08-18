@@ -50,16 +50,16 @@ When "attachments" are mentioned in Mattermost integrations documentation, it re
 
 Mattermost doesn't currently support the ability to attach files to a post made via webhook. You can use the API to attach files to a message if needed.
 
-What are MM Blocks?
---------------------
+What are Mattermost Blocks?
+---------------------------
 
-MM Blocks are Mattermost's structured format for rich, interactive integration posts. Integrations can extend messages with text, images, buttons, menus, collapsible sections, and different layout options.
+Mattermost Blocks are the structured format for rich, interactive integration posts. Integrations can extend messages with text, images, buttons, menus, collapsible sections, and different layout options.
 
-Starting in Mattermost v11.10, MM Blocks are the recommended replacement for `message attachments <https://developers.mattermost.com/integrate/reference/message-attachments/>`_. They are the preferred way to create interactive messages for integrations such as :doc:`incoming webhooks </integrations-guide/incoming-webhooks>`, plugins, and bot accounts.
+Starting in Mattermost v11.10, Mattermost Blocks are the recommended replacement for `message attachments <https://developers.mattermost.com/integrate/reference/message-attachments/>`_. They are the preferred way to create interactive messages for integrations such as :doc:`incoming webhooks </integrations-guide/incoming-webhooks>`, plugins, and bot accounts.
 
-Legacy message attachments and other interactive message formats continue to work; clients translate them into the MM Blocks format at render time. We encourage new and updated integrations to use MM Blocks instead.
+Legacy message attachments and other interactive message formats continue to work; clients translate them into the Mattermost Blocks format at render time. We encourage new and updated integrations to use Mattermost Blocks instead.
 
-For payload structure, block types, action handling, migration guidance, and troubleshooting, see the `MM Blocks reference <https://developers.mattermost.com/integrate/reference/mm-blocks/>`_ in the developer documentation.
+For payload structure, block types, action handling, migration guidance, and troubleshooting, see the `Mattermost Blocks reference <https://developers.mattermost.com/integrate/reference/mm-blocks/>`_ in the developer documentation.
 
 Where can I find existing integrations?
 ---------------------------------------
