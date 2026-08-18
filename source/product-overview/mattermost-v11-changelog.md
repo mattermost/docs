@@ -39,7 +39,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
    - Under ``AccessControlSettings`` in ``config.json``, added a new opt-in System Console setting, ``EnableAccessControlAuditLogging`` (Attribute-Based Access Control), to enable audit logging for ABAC policy decisions. The setting defaults to off and is only available when server audit logging is active. Requires an Enterprise Advanced license
    - Under ``AccessControlSettings`` in ``config.json``, added ``AttributeRefreshIntervalSeconds`` configuration setting to allow more control over how much to throttle refreshing the ``AttributeView`` when managing ABAC policies and channels.
  - **Changes to Enterprise plans:**
-   - 
+   - Added a new ``AIRecapSettings`` configuration section for scheduled recaps.
  - Removed ``LdapSettings.LoginButtonColor``, ``LdapSettings.LoginButtonBorderColor``, and ``LdapSettings.LoginButtonTextColor`` configuration settings from the database (unused experimental AD/LDAP login button colour settings).
  - Removed ``SamlSettings.LoginButtonColor``, ``LoginButtonBorderColor``, and ``LoginButtonTextColor`` configuration settings from the database (unused experimental SAML login button colour settings).
 
