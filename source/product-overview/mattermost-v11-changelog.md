@@ -21,7 +21,17 @@ Platform and OS scope reflects reported and tested environments and may not repr
 ### Upgrade Impact
 
 #### Database Schema Changes
- - 
+ - The following schema changes are included in the v11.11 release. No database downtime is expected for this upgrade.
+   - Added an enum value ``'S'`` (Space) to the ``channel_type`` type in PostgreSQL; catalog-only, no table locks, no downtime expected.
+   - Added ``repeattype`` and ``repeattimezone`` columns to ``scheduledposts`` to support recurring scheduled posts; migration is metadata-only with negligible performance impact.
+   - Added partial index ``idx_scheduledposts_pending_scheduled_at_id`` on ``scheduledposts(scheduledat DESC, id) WHERE errorcode = ''`` to speed up pending scheduled post lookups with no downtime impact.
+   - Added a new ``ScheduledRecaps`` table to support per-user AI scheduled recap configurations; migration is instantaneous with no impact on existing data.
+   - Added ``index idx_scheduled_recaps_user_id`` on ``ScheduledRecaps(UserId)`` via ``CONCURRENTLY`` to improve per-user queries with no downtime or table locking impact.
+   - Added index ``idx_scheduled_recaps_next_run_at`` on ``ScheduledRecaps(NextRunAt)`` to speed up scheduled recap job lookups with no downtime or locking impact.
+   - Added composite ``index idx_scheduled_recaps_enabled_next_run`` on ``ScheduledRecaps(Enabled, DeleteAt, NextRunAt)`` to improve recap scheduling query performance with no downtime.
+   - Added composite index ``idx_scheduled_recaps_user_delete`` on ``ScheduledRecaps(UserId, DeleteAt)`` to improve user-scoped recap queries with no downtime or locking impact.
+   - Added ``ScheduledRecapId`` and ``SkipReason`` columns to the ``Recaps`` table to support scheduled recap linking and skip tracking; metadata-only change with negligible locking impact.
+   - Added index ``idx_recaps_scheduled_recap_id`` on ``Recaps(ScheduledRecapId)`` to improve scheduled recap lookups; no downtime or performance impact expected.
 
 #### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
