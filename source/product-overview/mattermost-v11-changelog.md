@@ -128,6 +128,12 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-11-is-now-availa
 ### Audit Log Event Changes
  - Added ``AuditEventDeletePluginAccessControlPolicy`` audit log event.
  - Added ``AuditEventSavePluginAccessControlPolicy`` audit log event.
+ - Added ``AuditEventCreateScheduledRecap`` audit log event.
+ - Added ``AuditEventDeleteScheduledRecap`` audit log event.
+ - Added ``AuditEventGetScheduledRecap`` audit log event.
+ - Added ``AuditEventPauseScheduledRecap`` audit log event.
+ - Added ``AuditEventResumeScheduledRecap`` audit log event.
+ - Added ``AuditEventUpdateScheduledRecap`` audit log event.
 
 ### Go Version
  - v11.11 is built with Go ``v1.26.4``.
