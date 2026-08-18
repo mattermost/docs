@@ -13,7 +13,6 @@
 Platform and OS scope reflects reported and tested environments and may not represent all affected configurations.
 ```
 
-
 (release-v11.11-feature-release)=
 ## Release v11.11 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
@@ -22,6 +21,7 @@ Platform and OS scope reflects reported and tested environments and may not repr
 ### Upgrade Impact
 #### Database Schema Changes
   - Removed ``LdapSettings.LoginButtonColor``, ``LdapSettings.LoginButtonBorderColor``, and ``LdapSettings.LoginButtonTextColor`` configuration settings from the database (unused experimental AD/LDAP login button color settings).
+
 #### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
   - **Changes to Enterprise Advanced plan:**
