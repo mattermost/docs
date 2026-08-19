@@ -16,7 +16,11 @@ Platform and OS scope reflects reported and tested environments and may not repr
 (release-v11.10-feature-release)=
 ## Release v11.10 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
-**Release Day: 2026-08-14**
+- **11.10.1, released 2026-08-TBD**
+  - TBD: Add the v11.10.1 release notes here (pre-packaged plugin version bumps, bug fixes, and any security-fix statement).
+  - Mattermost v11.10.1 contains no database or functional changes.
+- **11.10.0, released 2026-08-14**
+  - Original 11.10.0 release.
 
 ### Upgrade Impact
 
