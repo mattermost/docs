@@ -19,7 +19,7 @@ Changelog
    * - v11.10
      - (UI) Added support for a file upload element type in interactive dialogs.
    * - v11.10
-     - (UI) Added support for MM Blocks as a new way to create Interactive Messages.
+     - (UI) Added support for Mattermost Blocks as a new way to create Interactive Messages.
    * - v11.10
      - (UI) Plugins and integrations can now open stacked child dialogs from within an interactive dialog using the new ``action_button`` element type.
    * - v11.10
