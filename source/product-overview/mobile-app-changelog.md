@@ -21,6 +21,8 @@ Platform and OS scope reflects reported and tested environments and may not repr
  - iPhone 8+ devices and later with iOS 16.0+ are [required](https://support.apple.com/en-il/guide/iphone/iphe3fa5df43/16.0/ios/16.0).
 
 ### Improvements
+ - Added support for reporting client session attributes to the server.
+ - Enabled "location when in use" permissions on both iOS/Android to fetch the SSID when requested.
  - Classification markings now load via a single property fields request on servers running v11.10+ (with backward-compatible fallback).
  - Updated the Agents feature to match the webapp experience: multi-step agent answers now render text, tool calls, and per-round reasoning in order; agent conversations display inline in the agent chat screen; added **Accept all** / **Reject all** buttons for tool approvals; added the interactive agent ``@mention`` reminder post; and late streaming updates are ignored after stopping generation.
  - Kept Channel Bookmarks and Custom Profile Attributes working against server versions that no longer sent the corresponding feature flags.
