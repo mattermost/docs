@@ -16,9 +16,20 @@ Platform and OS scope reflects reported and tested environments and may not repr
 (release-v11.10-feature-release)=
 ## Release v11.10 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
-- **11.10.1, released 2026-08-TBD**
-  - TBD: Add the v11.10.1 release notes here (pre-packaged plugin version bumps, bug fixes, and any security-fix statement).
-  - Mattermost v11.10.1 contains no database or functional changes.
+- **11.10.1, released 2026-08-21**
+  - Fixed an issue where the **Classification Markings** section in the **System Console** was accessible and configurable under an Enterprise license; it is now correctly gated behind an Enterprise Advanced license and shows an upgrade prompt for lower tiers.
+  - Fixed an issue where a single video attachment was hidden from a post when image previews were set to collapsed, leaving no filename, thumbnail, or expand control.
+  - Updated ``getFile`` API validation to check for content reviewer earlier.
+  - Updated Slack import to handle user matching differently depending on the import type.
+  - Updated the local image proxy to enforce a maximum size limit when fetching images directly.
+  - Added signing/verification for RelayState in SAML flow.
+  - Updated how team admin status is assigned when a user joins a team.
+  - Prevented a post belonging to Direct/Group Message from being quarantined.
+  - Updated how post and thread payloads handle interactive-message action data.
+  - Fixed an edge case in team invitation handling.
+  - Fixed an issue where certain role update requests for channel and team members were not fully validated.
+  - Enhanced team search to only display teams relevant and accessible to the requesting user.
+  - Updated account type switch handling.
 - **11.10.0, released 2026-08-14**
   - Original 11.10.0 release.
 
