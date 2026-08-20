@@ -66,8 +66,8 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-11-is-now-availa
  - Adjusted user interface style for the post component's button for non-US environments.
 
 #### Administration
+ - Added a new [Post Exposure Report](https://docs.mattermost.com/administration-guide/manage/admin/content-flagging.html) feature to Data Spillage Handling workflow for content reviewers.
  - [Prevented](https://docs.mattermost.com/end-user-guide/collaborate/flag-messages.html) a post belonging to a Direct Message or Group Message from being quarantined.
- - Added a new Post Exposure Report feature to Data Spillage Handling workflow for content reviewers.
  - Added ``user_access_token_id`` field to server logs and audit log actor records for requests authenticated via Personal Access Token, enabling direct token traceability without manual database lookups.
  - Prevented system-owned bots from being disabled; the system bot now automatically re-enables itself if it was previously disabled.
  - Removed the ``CustomProfileAttributes`` feature flag. Custom profile attributes are now always enabled (Enterprise license still required) and can no longer be toggled via the feature flag.
