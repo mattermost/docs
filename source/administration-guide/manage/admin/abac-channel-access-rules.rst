@@ -153,7 +153,7 @@ Prerequisites
 Team Admin workflow
 ~~~~~~~~~~~~~~~~~~~
 
-1. Open **Team Settings** from the team menu, and go to the **Membership Policies** tab. This tab is only visible to Team Admins with the ``manage_team_access_rules`` permission when ABAC is enabled system-wide.
+1. Open **Team Settings** from the team menu, and go to the **Channel Membership** tab. This tab is only visible to Team Admins with the ``manage_team_access_rules`` permission when ABAC is enabled system-wide.
 2. Select **Add Policy** and enter a name for the policy. Parent policy names must be unique; if you enter a name that's already in use, Mattermost displays a user-friendly error and prevents the policy from being saved.
 3. Define the attribute rules that determine which users can be members of channels assigned to this policy. Rules use the same attribute conditions available for channel-specific access rules.
 4. Assign the applicable private channels in the team to the policy.
@@ -162,7 +162,7 @@ Team Admin workflow
 Team Settings sync status footer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The **Membership Policies** tab includes a sync status footer that shows:
+The **Channel Membership** tab includes a sync status footer that shows:
 
 - **Last sync time**: The time of the most recent membership synchronization for policies in this team.
 - **Sync now**: An on-demand action that triggers an immediate synchronization for the team's policies.
