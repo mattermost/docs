@@ -80,7 +80,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-11-is-now-availa
  - Updated how post and thread payloads handle interactive-message action data.
  - Updated how team admin status is assigned when a user joins a team.
  - Updated account type switch handling.
- - Updated Slack import to handle user matching differently depending on the import type.
+ - Updated [Slack import](https://docs.mattermost.com/administration-guide/onboard/migrate-from-slack.html) to handle user matching differently depending on the import type.
  - Servers whose license includes the hosted push notification service (HPNS) now automatically switch the Push Notification Server setting from the test endpoint (https://push-test.mattermost.com) to the hosted endpoint (https://global.push.mattermost.com). When the license no longer includes HPNS, any Mattermost-hosted endpoint (global, regional, or legacy) is switched back to the test endpoint. Custom endpoints and environment-variable-managed values are never modified.
 
 #### Plugins/Integrations
