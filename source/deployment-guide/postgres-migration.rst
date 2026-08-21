@@ -131,7 +131,13 @@ The column exists in the source MySQL database but is absent from the target Pos
    - **Mattermost**: click the grid menu in the top left and select **About Mattermost**.
    - **CLI**: run ``mattermost version`` on the server.
 
-2. Drop and recreate the target PostgreSQL database, then rebuild the schema using the correct version:
+2. Drop and recreate the target PostgreSQL database. Before running ``--run-migrations``, restore the schema-owner setup — dropping the database resets public schema ownership and the pre-check will fail without it:
+
+   .. code-block:: sh
+
+      sudo -u postgres psql -d mattermost -c "ALTER SCHEMA public OWNER TO mmuser; GRANT ALL ON SCHEMA public TO mmuser;"
+
+   Then rebuild the schema using the correct version:
 
    .. code-block:: sh
 
@@ -174,7 +180,7 @@ The target table already contains rows before pgloader attempts to insert. On a 
 
 **Prevention:** Stop the Mattermost server before the migration and do not start it against the target PostgreSQL database until after pgloader completes successfully.
 
-**Resolution:** If only one or a few tables have errors and the rest of the migration succeeded, truncate the affected table(s) and reload them — see :ref:`Reloading a single failed table <deployment-guide/postgres-migration:reloading a single failed table>` below. If multiple tables are affected, the cleanest path is to rebuild the target from scratch: drop and recreate the PostgreSQL database, re-run ``--run-migrations`` without starting the Mattermost server, then run pgloader again.
+**Resolution:** If only one or a few tables have errors and the rest of the migration succeeded, truncate the affected table(s) and reload them — see :ref:`Reloading a single failed table <deployment-guide/postgres-migration:reloading a single failed table>` below. If multiple tables are affected, the cleanest path is to rebuild the target from scratch: drop and recreate the PostgreSQL database, re-run the schema-owner setup commands from Step 2 of the migration guide, then re-run ``--run-migrations`` without starting the Mattermost server, and run pgloader again.
 
 Reloading a single failed table
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -201,7 +207,7 @@ If pgloader failed on one table but succeeded on the rest, you can reload only t
       -- To (use your actual table name):
       INCLUDING ONLY TABLE NAMES MATCHING 'pluginkeyvaluestore'
 
-3. If the table already has partial data on the target, truncate it first:
+3. If the table already has partial data on the target, truncate it first. Ensure Mattermost is stopped and confirm this is your dedicated migration target database before proceeding:
 
    .. code-block:: sql
 
