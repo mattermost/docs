@@ -16,6 +16,11 @@ Platform and OS scope reflects reported and tested environments and may not repr
 (release-v11.10-feature-release)=
 ## Release v11.10 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+```{Attention}
+**Breaking Changes**
+ - Starting with v11.10.1, the updated ``glibc-openssl-fips`` bundle includes a new OpenSSL build that enforces the FIPS minimum key length of 112 bits for HMAC operations. The PostgreSQL driver (lib/pq) passes the database password as the HMAC key during SCRAM authentication, so a password shorter than 112 bits, or 14 ASCII characters, now causes a panic on connect rather than a graceful failure. Before upgrading, FIPS deployments should verify that the password in ``SqlSettings.DataSource`` is at least 14 characters and rotate it in PostgreSQL if it is shorter. Standard, non-FIPS builds are unaffected.
+```
+
 - **11.10.1, released 2026-08-21**
   - Fixed an issue where the **Classification Markings** section in the **System Console** was accessible and configurable under an Enterprise license; it is now correctly gated behind an Enterprise Advanced license and shows an upgrade prompt for lower tiers.
   - Fixed an issue where a single video attachment was hidden from a post when image previews were set to collapsed, leaving no filename, thumbnail, or expand control.
