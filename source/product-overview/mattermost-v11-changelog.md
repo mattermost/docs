@@ -81,6 +81,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-11-is-now-availa
  - Updated how team admin status is assigned when a user joins a team.
  - Updated account type switch handling.
  - Updated Slack import to handle user matching differently depending on the import type.
+ - Servers whose license includes the hosted push notification service (HPNS) now automatically switch the Push Notification Server setting from the test endpoint (https://push-test.mattermost.com) to the hosted endpoint (https://global.push.mattermost.com). When the license no longer includes HPNS, any Mattermost-hosted endpoint (global, regional, or legacy) is switched back to the test endpoint. Custom endpoints and environment-variable-managed values are never modified.
 
 #### Plugins/Integrations
  - Added plugin APIs for attribute-based access control: plugins can evaluate access decisions (``EvaluateAccessControl``) and manage policies for plugin-owned resource types (``SaveAccessControlPolicy``, ``GetAccessControlPolicy``, ``DeleteAccessControlPolicy``, ``CheckAccessControlExpression``, ``QueryUsersForAccessControlExpression``, ``GetAccessControlFieldsAutocomplete``, ``GetAccessControlVisualAST``). Plugin resource types are keyed as ``<plugin ID>:<resource type>`` with plugin-defined actions, and access decisions follow the AuthZEN shape (boolean decision plus context) with a no-policy fallback reported via the decision context. Requires an Enterprise Advanced license with attribute-based access control enabled.
@@ -149,6 +150,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-11-is-now-availa
  - Added ``AuditEventResumeScheduledRecap`` audit log event.
  - Added ``AuditEventUpdateScheduledRecap`` audit log event.
  - Added ``AuditEventGeneratePostExposureReport`` audit log event.
+ - Added ``AuditEventAutoSelectPushNotificationServer`` audit log event.
 
 ### Go Version
  - v11.11 is built with Go ``v1.26.4``.
