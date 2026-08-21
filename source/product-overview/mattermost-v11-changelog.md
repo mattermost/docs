@@ -16,7 +16,28 @@ Platform and OS scope reflects reported and tested environments and may not repr
 (release-v11.10-feature-release)=
 ## Release v11.10 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
-**Release Day: 2026-08-14**
+```{Attention}
+**Breaking Changes**
+ - Starting with v11.10.1, the updated ``glibc-openssl-fips`` bundle includes a new OpenSSL build that enforces the FIPS minimum key length of 112 bits for HMAC operations. The PostgreSQL driver (lib/pq) passes the database password as the HMAC key during SCRAM authentication, so a password shorter than 112 bits, or 14 ASCII characters, now causes a panic on connect rather than a graceful failure. Before upgrading, FIPS deployments should verify that the password in ``SqlSettings.DataSource`` is at least 14 characters and rotate it in PostgreSQL if it is shorter. Standard, non-FIPS builds are unaffected.
+```
+
+- **11.10.1, released 2026-08-21**
+  - Go runtime was updated from 1.26.4 to 1.26.7.
+  - Fixed an issue where the **Classification Markings** section in the **System Console** was accessible and configurable under an Enterprise license; it is now correctly gated behind an Enterprise Advanced license and shows an upgrade prompt for lower tiers.
+  - Fixed an issue where a single video attachment was hidden from a post when image previews were set to collapsed, leaving no filename, thumbnail, or expand control.
+  - Updated ``getFile`` API validation to check for content reviewer earlier.
+  - Updated Slack import to handle user matching differently depending on the import type.
+  - Updated the local image proxy to enforce a maximum size limit when fetching images directly.
+  - Added signing/verification for RelayState in SAML flow.
+  - Updated how team admin status is assigned when a user joins a team.
+  - Prevented a post belonging to Direct/Group Message from being quarantined.
+  - Updated how post and thread payloads handle interactive-message action data.
+  - Fixed an edge case in team invitation handling.
+  - Fixed an issue where certain role update requests for channel and team members were not fully validated.
+  - Enhanced team search to only display teams relevant and accessible to the requesting user.
+  - Updated account type switch handling.
+- **11.10.0, released 2026-08-14**
+  - Original 11.10.0 release.
 
 ### Upgrade Impact
 
