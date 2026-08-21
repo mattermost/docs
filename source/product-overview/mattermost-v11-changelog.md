@@ -22,6 +22,7 @@ Platform and OS scope reflects reported and tested environments and may not repr
 ```
 
 - **11.10.1, released 2026-08-21**
+  - Go runtime was updated from 1.26.4 to 1.26.7.
   - Fixed an issue where the **Classification Markings** section in the **System Console** was accessible and configurable under an Enterprise license; it is now correctly gated behind an Enterprise Advanced license and shows an upgrade prompt for lower tiers.
   - Fixed an issue where a single video attachment was hidden from a post when image previews were set to collapsed, leaving no filename, thumbnail, or expand control.
   - Updated ``getFile`` API validation to check for content reviewer earlier.
