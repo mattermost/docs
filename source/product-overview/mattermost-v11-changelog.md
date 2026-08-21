@@ -18,6 +18,11 @@ Platform and OS scope reflects reported and tested environments and may not repr
 
 **Release day: 2026-09-16**
 
+```{Attention}
+**Breaking Changes**
+ - The updated ``glibc-openssl-fips`` bundle includes a new OpenSSL build that enforces the FIPS minimum key length of 112 bits for HMAC operations. The PostgreSQL driver (lib/pq) passes the database password as the HMAC key during SCRAM authentication, so a password shorter than 112 bits, or 14 ASCII characters, now causes a panic on connect rather than a graceful failure. Before upgrading, FIPS deployments should verify that the password in ``SqlSettings.DataSource`` is at least 14 characters and rotate it in PostgreSQL if it is shorter. Standard, non-FIPS builds are unaffected.
+```
+
 ### Upgrade Impact
 
 #### Database Schema Changes
