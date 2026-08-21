@@ -158,7 +158,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-11-is-now-availa
  - Added ``AuditEventAutoSelectPushNotificationServer`` audit log event.
 
 ### Go Version
- - v11.11 is built with Go ``v1.26.4``.
+ - v11.11 is built with Go ``v1.26.7``.
 
 (release-v11.10-feature-release)=
 ## Release v11.10 - [Feature Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
