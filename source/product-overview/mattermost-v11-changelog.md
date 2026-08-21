@@ -130,6 +130,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-11-is-now-availa
  - Fixed policy simulation to show "No recent session" when session attributes are unavailable, and restricted detailed evaluation traces in simulation results to system administrators.
  - Fixed a memory leak due to Elasticsearch starting bulk indexers and not stopping them, leading to an out-of-memory condition. Added logging to alert system administrators when the required ``analysis-icu`` Elasticsearch/OpenSearch plugin is missing.
  - Fixed a bug where Shared Channels / Secured Connections remote cluster pings could fail intermittently by reusing stale keep-alive connections; the remote cluster HTTP transport idle-connection timeout is now kept below the ping frequency.
+ - Fixed profile pictures appearing squished or cramped in the agent selector, scheduled/drafts list, and other constrained avatar layouts.
 
 ### API Changes
  - Updated ``getFile`` API validation to check for content reviewer earlier.
