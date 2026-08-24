@@ -31,8 +31,6 @@ As Skype for Business reaches end-of-life, secure organizations require an alter
 - **Integrate Mattermost with Microsoft tools** such as Outlook, Teams, and :doc:`Entra ID Single Sign-On </administration-guide/onboard/sso-entraid>` to retain user workflows while centralizing identity and access control. See :doc:`Mattermost for M365, Teams, and Outlook </integrations-guide/mattermost-mission-collaboration-for-m365>`.
 - **Deploy in sovereign, air-gapped, or private cloud environments** such as `Azure Deployment <https://azuremarketplace.microsoft.com/en-us/marketplace/apps/mattermost.mattermost-operator?tab=overview>`_ or **Azure Local** (formerly Azure Stack HCI) for on-premises hybrid cloud scenarios while maintaining compliance with STIG, FedRAMP, and NIST 800-53 standards. For Azure Local deployments, we recommend engaging **Mattermost Professional Services** for deployment support. `Talk to an Expert <https://mattermost.com/contact-sales/>`_ to learn more.
 
-:doc:`Learn more </use-case-guide/on-prem-skype-for-business-replacement>` about replacing Skype for Business with Mattermost.
-
 Out-of-Band Incident Response for Microsoft-Centric Environments
 -----------------------------------------------------------------
 
