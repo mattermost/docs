@@ -19,18 +19,6 @@ Agencies and critical infrastructure organizations must often comply with strict
 - **Enable secure Microsoft Teams interactions via embedded Mattermost collaboration**, supporting operations within familiar interfaces while enforcing regulatory compliance. See :doc:`Mattermost for M365, Teams, and Outlook </integrations-guide/mattermost-mission-collaboration-for-m365>`.
 - **Enforce agency-specific policies** with :doc:`legal hold </administration-guide/comply/legal-hold>`, :doc:`retention policies </administration-guide/comply/data-retention-policy>`, and :doc:`user access controls </administration-guide/onboard/advanced-permissions>` that align with national or sectoral mandates.
 
-On-Premises Skype for Business Replacement
--------------------------------------------
-
-As Skype for Business reaches end-of-life, secure organizations require an alternative that preserves on-premises control, integrates into Microsoft workflows, and meets the security standards of air-gapped and classified environments. Cloud-first replacements like Microsoft Teams are not always viable due to network segmentation, compliance restrictions, or data sovereignty mandates.
-
-.. image:: /images/On-Prem-Skype-for-Business-replace.png
-    :alt: Extend Microsoft Enterprise IT investments for edge-based, highly tailored Mission IT workflows with Mattermost.
-
-- **Preserve mission-critical communication workflows** with a self-hosted Mattermost deployment that supports :doc:`1:1 calls </end-user-guide/collaborate/make-calls>`, :ref:`screen sharing <end-user-guide/collaborate/make-calls:share your screen>`, and :doc:`threaded messaging </end-user-guide/collaborate/organize-conversations>` within secure environments.
-- **Integrate Mattermost with Microsoft tools** such as Outlook, Teams, and :doc:`Entra ID Single Sign-On </administration-guide/onboard/sso-entraid>` to retain user workflows while centralizing identity and access control. See :doc:`Mattermost for M365, Teams, and Outlook </integrations-guide/mattermost-mission-collaboration-for-m365>`.
-- **Deploy in sovereign, air-gapped, or private cloud environments** such as `Azure Deployment <https://azuremarketplace.microsoft.com/en-us/marketplace/apps/mattermost.mattermost-operator?tab=overview>`_ or **Azure Local** (formerly Azure Stack HCI) for on-premises hybrid cloud scenarios while maintaining compliance with STIG, FedRAMP, and NIST 800-53 standards. For Azure Local deployments, we recommend engaging **Mattermost Professional Services** for deployment support. `Talk to an Expert <https://mattermost.com/contact-sales/>`_ to learn more.
-
 Out-of-Band Incident Response for Microsoft-Centric Environments
 -----------------------------------------------------------------
 
