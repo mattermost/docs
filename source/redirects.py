@@ -109,7 +109,7 @@ redirects_map = {
 "about/non-profit-subscriptions.html":
         "https://docs.mattermost.com/product-overview/non-profit-subscriptions.html",
 "about/on-prem-skype-for-business-replacement.html":
-        "https://docs.mattermost.com/use-case-guide/",
+        "https://docs.mattermost.com/use-case-guide/use-cases-index.html",
 "about/out-of-band-incident-response.html":
         "https://docs.mattermost.com/use-case-guide/out-of-band-incident-response.html",
 "about/plans.html":
