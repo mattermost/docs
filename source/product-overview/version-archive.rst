@@ -13,7 +13,7 @@ If you want to check that the version of Mattermost you are installing is the of
 
   Mattermost Enterprise Edition v11.10.1 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-10-feature-release>`__ - `Download <https://releases.mattermost.com/11.10.1/mattermost-11.10.1-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/11.10.1/mattermost-11.10.1-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``TBD``
+    - SHA-256 Checksum: ``43259570cc109c674f18db5b4a2b9f5a0b5dcd0eead65ef6df62bf286333e8de``
     - GPG Signature: https://releases.mattermost.com/11.10.1/mattermost-11.10.1-linux-amd64.tar.gz.sig
     - SBOM Download Link: https://releases.mattermost.com/11.10.1/sbom-enterprise-v11.10.1.json
   Mattermost Enterprise Edition v11.9.1 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-9-feature-release>`__ - `Download <https://releases.mattermost.com/11.9.1/mattermost-11.9.1-linux-amd64.tar.gz?src=arc>`__
@@ -501,7 +501,7 @@ If you want to check that the version of Mattermost you are installing is the of
 
   Mattermost Team Edition v11.10.1 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-10-feature-release>`__ - `Download <https://releases.mattermost.com/11.10.1/mattermost-team-11.10.1-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/11.10.1/mattermost-team-11.10.1-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``TBD``
+    - SHA-256 Checksum: ``df0c8fe41c1dbae8110be71d0db40bccdba17120e3e30da20ab1dee8b9354503``
     - GPG Signature: https://releases.mattermost.com/11.10.1/mattermost-team-11.10.1-linux-amd64.tar.gz.sig
     - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v11.10.1/sbom-mattermost-v11.10.1.json
   Mattermost Team Edition v11.9.1 - `View Changelog <https://docs.mattermost.com/product-overview/mattermost-v11-changelog.html#release-v11-9-feature-release>`__ - `Download <https://releases.mattermost.com/11.9.1/mattermost-team-11.9.1-linux-amd64.tar.gz?src=arc>`__
