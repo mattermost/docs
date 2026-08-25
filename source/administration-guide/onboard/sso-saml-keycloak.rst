@@ -45,7 +45,7 @@ Set up Keycloak for Mattermost SSO
 
   - **Sign Documents**: **Off**
   - **Sign Assertions**: **On**
-  - **Signature Algorithm**: ``RSA_SHA1``
+  - **Signature Algorithm**: ``RSA_SHA256``
   - **SAML signature key name**: ``NONE``
   - **Canonicalization Method**: ``EXCLUSIVE``
   - **Encryption Algorithm**: ``AES_256_GCM``
@@ -55,9 +55,9 @@ Set up Keycloak for Mattermost SSO
   .. image:: ../../images/keycloak_1_client_signature_encryption.png
         :alt: In Keycloak, configure the Signature and Encryption settings for the Mattermost client.
 
-  .. warning:: 
+  .. note::
 
-    Mattermost only supports ``RSA_SHA1`` for Keycloak SAML, because Keycloak is using ``xmlenc`` for ``RSA_SHA512`` and ``RSA_SHA256``, wheras Mattermost currently only supports ``xmldsig``. So make sure to use ``RSA_SHA1`` as the *Signature Algorithm* and *Digest Method* as described in this section.
+    Earlier versions of this documentation recommended ``RSA_SHA1``. Use ``RSA_SHA256`` instead. `NIST SP 800-131A <https://csrc.nist.gov/pubs/sp/800/131/a/r2/final>`__ set December 31, 2013 as the deadline after which SHA-1 is disallowed for digital signature generation. Revision 2 of that publication, published in March 2019, allows SHA-1 signature generation only where NIST protocol-specific guidance specifically permits it. A Keycloak server running in FIPS mode returns a ``500`` error when it tries to sign the assertion with ``RSA_SHA1``. Mattermost validates ``RSA_SHA256``-signed assertions, and Keycloak derives the signature digest method from the signature algorithm you select here.
 
 7. Navigate to the **Keys** tab.
 
