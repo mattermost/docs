@@ -821,6 +821,9 @@ ID attribute
 .. note::
   If a user's ID Attribute changes, a new Mattermost account is created that is not associated with the previous account. If you need to change this field after users have signed-in, use the :ref:`mmctl ldap idmigrate <administration-guide/manage/mmctl-command-line-tool:mmctl ldap idmigrate>` command.
 
+.. note::
+  The ID attribute value is matched verbatim - Mattermost applies no case normalization. With PostgreSQL's default case-sensitive collation, a change in casing is treated as a new user and a separate account is created. Ensure your AD/LDAP server returns this attribute with consistent casing.
+
 .. config:setting:: login-id-attribute
   :displayname: Login ID attribute (AD/LDAP > Account Synchronization)
   :systemconsole: Authentication > AD/LDAP
@@ -1028,6 +1031,9 @@ Group ID attribute
 
 .. note::
   This attribute is only used when AD/LDAP Group Sync is enabled and it is **required**.  See the :doc:`AD/LDAP Group Sync documentation </administration-guide/onboard/ad-ldap-groups-synchronization>` for more information.
+
+.. note::
+  The Group ID attribute value is matched verbatim - Mattermost applies no case normalization. With PostgreSQL's default case-sensitive collation, a change in casing means Mattermost no longer recognizes the previously synced group and treats it as a new, unlinked group. Ensure your AD/LDAP server returns this attribute with consistent casing.
 
 Synchronization performance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1554,6 +1560,9 @@ Id attribute
 |                                                                                                                      | - ``config.json`` setting: ``SamlSettings`` > ``IdAttribute``|
 | String input.                                                                                                        | - Environment variable: ``MM_SAMLSETTINGS_IDATTRIBUTE``      |
 +----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+
+.. note::
+  The ID attribute value is matched verbatim - Mattermost applies no case normalization. With PostgreSQL's default case-sensitive collation, a change in casing is treated as a new user and a separate account is created. Ensure your identity provider returns this attribute with consistent casing.
 
 .. config:setting:: guest-attribute
   :displayname: Guest attribute (SAML)
@@ -2639,7 +2648,7 @@ Enable guest access
 +----------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 .. note::
-  Guest billing depends on channel access. Guests in exactly one channel are treated as single-channel guests and don't count toward the primary paid seat count. They're free up to a 1:1 ratio with licensed seats. Guests in multiple channels continue to count as paid active users. Direct messages and group messages don't affect whether a guest is counted as a single-channel guest. See the :doc:`guest accounts </administration-guide/onboard/guest-accounts>` documentation for full details.
+  Guest billing depends on channel access. Guests in exactly one active channel are treated as single-channel guests and don't count toward the primary paid seat count. They're free up to a 1:1 ratio with licensed seats. Guests in multiple active channels continue to count as activated users for billing purposes. Direct messages and group messages don't affect whether a guest is counted as a single-channel guest. Only active channels count toward guest channel access for billing. Archived channels are excluded. See the :doc:`guest accounts </administration-guide/onboard/guest-accounts>` documentation for full details.
 
 .. config:setting:: whitelisted-guest-domains
   :displayname: Whitelisted guest domains (Guest Access)

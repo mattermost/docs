@@ -13,6 +13,7 @@ Whether you’re migrating from another platform, upgrading your database, or us
     Migrate from MySQL to PostgreSQL </deployment-guide/postgres-migration>
     Server migration guide </administration-guide/onboard/migrating-to-mattermost>
     Migrate from Slack </administration-guide/onboard/migrate-from-slack>
+    Migrate from Rocket.Chat </administration-guide/onboard/migrate-from-rocketchat>
     Migrate from Gitlab Omnibus </administration-guide/onboard/migrate-gitlab-omnibus>
     Bulk export tool </administration-guide/manage/bulk-export-tool>
     Bulk loading tool </administration-guide/onboard/bulk-loading-data>
@@ -21,6 +22,7 @@ Whether you’re migrating from another platform, upgrading your database, or us
 * :doc:`Migrate from MySQL to PostgreSQL </deployment-guide/postgres-migration>` - Learn how to migrate from MySQL to PostgreSQL.
 * :doc:`Server migration guide </administration-guide/onboard/migrating-to-mattermost>` - Learn about about migrating to Mattermost.
 * :doc:`Migrate from Slack </administration-guide/onboard/migrate-from-slack>` - Learn how to migrate from Slack to Mattermost.
+* :doc:`Migrate from Rocket.Chat </administration-guide/onboard/migrate-from-rocketchat>` - Learn how to migrate from Rocket.Chat to Mattermost.
 * :doc:`Migrate from Gitlab Omnibus </administration-guide/onboard/migrate-gitlab-omnibus>` - Learn how to migrate from GitLab Omnibus to a standalone Mattermost installation.
 * :doc:`Bulk export tool </administration-guide/manage/bulk-export-tool>` - Learn about the bulk export tool for Mattermost.
 * :doc:`Bulk loading tool </administration-guide/onboard/bulk-loading-data>` - Learn about the bulk loading tool for Mattermost.
