@@ -153,7 +153,7 @@ Prerequisites
 Team Admin workflow
 ~~~~~~~~~~~~~~~~~~~
 
-1. Open **Team Settings** from the team menu, and go to the **Membership Policies** tab. This tab is only visible to Team Admins with the ``manage_team_access_rules`` permission when ABAC is enabled system-wide.
+1. Open **Team Settings** from the team menu, and go to the **Channel Membership** tab. This tab is only visible to Team Admins with the ``manage_team_access_rules`` permission when ABAC is enabled system-wide.
 2. Select **Add Policy** and enter a name for the policy. Parent policy names must be unique; if you enter a name that's already in use, Mattermost displays a user-friendly error and prevents the policy from being saved.
 3. Define the attribute rules that determine which users can be members of channels assigned to this policy. Rules use the same attribute conditions available for channel-specific access rules.
 4. Assign the applicable private channels in the team to the policy.
@@ -162,7 +162,7 @@ Team Admin workflow
 Team Settings sync status footer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The **Membership Policies** tab includes a sync status footer that shows:
+The **Channel Membership** tab includes a sync status footer that shows:
 
 - **Last sync time**: The time of the most recent membership synchronization for policies in this team.
 - **Sync now**: An on-demand action that triggers an immediate synchronization for the team's policies.
@@ -330,7 +330,7 @@ Synchronization and membership
 How quickly are membership changes applied?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When you save access rules, membership sync job is created and changes are applied as soon as the job is completed. Additionally, Mattermost runs synchronization jobs every 30 minutes to handle attribute changes from external systems (LDAP, SAML).
+When you save access rules, membership sync job is created and changes are applied as soon as the job is completed. Additionally, Mattermost runs synchronization jobs on a schedule to handle attribute changes from external systems (LDAP, SAML). The interval is set by ``AccessControlSettings.SyncJobIntervalSeconds`` and defaults to 3600 seconds (60 minutes).
 
 Will users be notified when they're removed from a channel?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -353,7 +353,7 @@ You can use any user attributes either synchronized via LDAP/SAML or manually co
 What happens if a user attribute changes?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-During the next synchronization (every 30 minutes), users who no longer match the access rules will be removed from the channel, and new users who now match will be added (if auto-sync is enabled).
+During the next scheduled synchronization (every 60 minutes by default), users who no longer match the access rules will be removed from the channel, and new users who now match will be added (if auto-sync is enabled).
 
 Do guest users work with ABAC channels?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
