@@ -45,6 +45,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
    - Under ``AccessControlSettings`` in ``config.json``, added ``AttributeRefreshIntervalSeconds`` configuration setting to allow more control over how much to throttle refreshing the ``AttributeView`` when managing ABAC policies and channels.
  - **Changes to Enterprise plans:**
    - Added a new ``AIRecapSettings`` configuration section for scheduled recaps.
+   - Under ``GlobalRelaySettings`` in ``config.json``, added ``CustomHeaderName`` and ``CustomHeaderValue`` configuration settings to attach an optional custom header to Global Relay EML compliance exports for the Custom customer type.
  - Removed ``LdapSettings.LoginButtonColor``, ``LdapSettings.LoginButtonBorderColor``, and ``LdapSettings.LoginButtonTextColor`` configuration settings from the database (unused experimental AD/LDAP login button colour settings).
  - Removed ``SamlSettings.LoginButtonColor``, ``LoginButtonBorderColor``, and ``LoginButtonTextColor`` configuration settings from the database (unused experimental SAML login button colour settings).
 
@@ -131,6 +132,8 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-11-is-now-availa
  - Fixed a memory leak due to Elasticsearch starting bulk indexers and not stopping them, leading to an out-of-memory condition. Added logging to alert system administrators when the required ``analysis-icu`` Elasticsearch/OpenSearch plugin is missing.
  - Fixed a bug where Shared Channels / Secured Connections remote cluster pings could fail intermittently by reusing stale keep-alive connections; the remote cluster HTTP transport idle-connection timeout is now kept below the ping frequency.
  - Fixed profile pictures appearing squished or cramped in the agent selector, scheduled/drafts list, and other constrained avatar layouts (reported on Chrome and macOS).
+ - Fixed an issue where the **Channel Settings** dialog reported unsaved changes as soon as it opened, and refused to close on the first attempt, for channels whose stored purpose or header contained leading or trailing whitespace.
+ - Added Android as a selectable value of the ``user_agent_platform`` session attribute, and fixed Android sessions being reported with the Linux platform.
 
 ### API Changes
  - Updated ``getFile`` API validation to check for content reviewer earlier.
