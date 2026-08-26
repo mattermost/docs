@@ -455,6 +455,28 @@ Users can only join the team if their email matches one of the specified domains
 .. image:: ../../images/specific-email-domains-can-join-a-team.png
   :alt: Enable Only specific email domains can join this team option for a team using the System Console.
 
+Manage membership with attribute based membership policies
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../../_static/badges/entry-adv.rst
+  :start-after: :nosearch:
+
+From Mattermost v11.10, control who can be a member of this team based on their user attributes.
+
+On private teams the rules are enforced: users who don't match can't join, and members who no longer match are removed at the next sync. On public teams the rules are advisory — the team is recommended to qualifying users, but anyone can still join.
+
+1. Go to **System Console > User Management > Teams** to access all available teams.
+2. Select the team from the list to view its configuration page.
+3. In the **Team Management** section, enable the **Manage membership with attribute based membership policies** option. The **Membership policies** and **Team-specific membership rules** sections appear once this option is enabled.
+4. Link a system-wide policy, define team-specific rules, or both.
+5. Select **Save**.
+
+This option is unavailable on group-synced teams, because group sync and attribute-based membership are mutually exclusive.
+
+Team Admins with the **Manage Team Access Rules** permission can also define team membership rules from the **Team Membership** tab in :doc:`Team Settings </end-user-guide/collaborate/team-settings>`, without access to the System Console.
+
+See :doc:`Team membership access policies </administration-guide/manage/admin/abac-team-membership>` for full details.
+
 Synchronize team members
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
