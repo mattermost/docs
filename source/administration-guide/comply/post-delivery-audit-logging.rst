@@ -19,7 +19,8 @@ Post delivery audit logging requires all of the following:
 
 - A Mattermost Enterprise Advanced license.
 - The `feature flag <https://developers.mattermost.com/contribute/more-info/server/feature-flags/#changing-feature-flag-values>`_ ``MM_FEATUREFLAGS_POSTDELIVERYTRACKING``, which is disabled by default. **Restart the server after enabling the feature flag**.
-- An audit log target that consumes the ``audit-delivery`` log level.
+- Advanced Logging > Advanced Logging to be enabled
+- An audit log target that consumes the ``audit-delivery`` log level in the advanced audit log config.
 
 .. important::
 
