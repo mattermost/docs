@@ -12,7 +12,6 @@ This section provides comprehensive guidance on deploying and managing your Matt
     Deploy with Kubernetes </deployment-guide/server/deploy-kubernetes>
     Deploy with Linux </deployment-guide/server/deploy-linux>
     Deploy with Containers </deployment-guide/server/deploy-containers>
-    Migrate to FIPS-compliant images </deployment-guide/server/fips-migration>
     Pre-authentication secrets </deployment-guide/server/pre-authentication-secrets>
     Deployment Solution Programs </deployment-guide/server/orchestration>
 
