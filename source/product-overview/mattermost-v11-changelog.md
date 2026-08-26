@@ -22,6 +22,7 @@ Platform and OS scope reflects reported and tested environments and may not repr
 ```
 
 - **11.10.1, released 2026-08-25**
+  - Mattermost v11.10.1 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Go runtime was updated from 1.26.4 to 1.26.7.
   - Fixed an issue where the **Classification Markings** section in the **System Console** was accessible and configurable under an Enterprise license; it is now correctly gated behind an Enterprise Advanced license and shows an upgrade prompt for lower tiers.
   - Fixed an issue where a single video attachment was hidden from a post when image previews were set to collapsed, leaving no filename, thumbnail, or expand control.
@@ -604,9 +605,8 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
   - Improved post notification processing performance by computing the set of multibyte mention keywords once per parser instead of once per word.
   - Fixed an issue where emoji reactions were not matched case-insensitively.
   - Fixed most of the layout shift caused by images in posts.
-  - Mattermost v11.7.10 contains no database changes.
-  - Mattermost v11.7.10 contains the following functional changes:
-     - The server now logs an error instead of refusing to start when it detects an unsupported PostgreSQL, Elasticsearch, or OpenSearch version.
+  - The server now logs an error instead of refusing to start when it detects an unsupported PostgreSQL, Elasticsearch, or OpenSearch version.
+  - Mattermost v11.7.10 contains no database or functional changes.
 - **11.7.9, released 2026-08-13**
   - Mattermost v11.7.9 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed a memory leak due to Elasticsearch starting bulk indexers and not stopping them, leading to an Out Of Memory. Added logging to alert System Admins when they are missing the required ``analysis-icu`` Elasticsearch/OS plugin.
