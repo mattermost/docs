@@ -580,6 +580,33 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
 (release-v11.7-extended-support-release)=
 ## Release v11.7 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
+```{Attention}
+**Breaking Changes**
+ - Starting with v11.7.10, the updated ``glibc-openssl-fips`` bundle includes a new OpenSSL build that enforces the FIPS minimum key length of 112 bits for HMAC operations. The PostgreSQL driver (lib/pq) passes the database password as the HMAC key during SCRAM authentication, so a password shorter than 112 bits, or 14 ASCII characters, now causes a panic on connect rather than a graceful failure. Before upgrading, FIPS deployments should verify that the password in ``SqlSettings.DataSource`` is at least 14 characters and rotate it in PostgreSQL if it is shorter. Standard, non-FIPS builds are unaffected.
+```
+
+- **11.7.10, released 2026-08-26**
+  - Mattermost v11.7.10 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Go runtime was updated from 1.25.10 to 1.26.7.
+  - Pre-packaged Agents plugin version [v2.0.7](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v2.0.7).
+  - Updated ``getFile`` API validation to check for content reviewer earlier.
+  - Updated Slack import to handle user matching differently depending on the import type.
+  - Updated the local image proxy to enforce a maximum size limit when fetching images directly.
+  - Added signing/verification for RelayState in SAML flow.
+  - Updated how team admin status is assigned when a user joins a team.
+  - Prevented a post belonging to Direct/Group Message from being quarantined.
+  - Updated how post and thread payloads handle interactive-message action data.
+  - Fixed an edge case in team invitation handling.
+  - Fixed an issue where certain role update requests for channel and team members were not fully validated.
+  - Enhanced team search to only display teams relevant and accessible to the requesting user.
+  - Updated account type switch handling.
+  - Stopped desktop notification content from being used as the Web Notifications API tag, which could copy message bodies into endpoint telemetry on Chromium-based browsers.
+  - Improved post notification processing performance by computing the set of multibyte mention keywords once per parser instead of once per word.
+  - Fixed an issue where emoji reactions were not matched case-insensitively.
+  - Fixed most of the layout shift caused by images in posts.
+  - Mattermost v11.7.10 contains no database changes.
+  - Mattermost v11.7.10 contains the following functional changes:
+     - The server now logs an error instead of refusing to start when it detects an unsupported PostgreSQL, Elasticsearch, or OpenSearch version.
 - **11.7.9, released 2026-08-13**
   - Mattermost v11.7.9 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed a memory leak due to Elasticsearch starting bulk indexers and not stopping them, leading to an Out Of Memory. Added logging to alert System Admins when they are missing the required ``analysis-icu`` Elasticsearch/OS plugin.
