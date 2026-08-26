@@ -602,8 +602,7 @@ See [this blog post](https://mattermost.com/blog/mattermost-v11-8-0-is-now-avail
   - Enhanced team search to only display teams relevant and accessible to the requesting user.
   - Updated account type switch handling.
   - Stopped desktop notification content from being used as the Web Notifications API tag, which could copy message bodies into endpoint telemetry on Chromium-based browsers.
-  - Improved post notification processing performance by computing the set of multibyte mention keywords once per parser instead of once per word.
-  - Fixed an issue where emoji reactions were not matched case-insensitively.
+  - Fixed an issue where reactions using emoji names with mixed case (e.g. ``:Mattermost:``) could not be added or removed.
   - Fixed most of the layout shift caused by images in posts.
   - The server now logs an error instead of refusing to start when it detects an unsupported PostgreSQL, Elasticsearch, or OpenSearch version.
   - Mattermost v11.7.10 contains no database or functional changes.
