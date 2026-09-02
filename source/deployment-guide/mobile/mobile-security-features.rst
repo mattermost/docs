@@ -20,6 +20,13 @@ See the :ref:`jailbreak/root protection configuration setting <administration-gu
 
   Client-side detection methods are not bulletproof and can be bypassed by a sufficiently motivated user with root or jailbreak access. Determined users can employ reverse engineering to disable or modify these checks to produce false positives/negatives or even modify and recompile the source code to remove them entirely, allowing app usage on rooted/jailbroken devices. 
 
+Session attribute collection
+----------------------------
+
+From Mattermost mobile app v2.44 (when connected to Mattermost server v11.11 or later), the app can report device and network context - such as device identifiers, network interface type, VPN status, MDM enrollment, and jailbreak or root status - to its configured servers for use in :ref:`permission policies <administration-guide/manage/admin/abac-system-wide-policies:permission policies>`. Collection is server-initiated and controlled entirely by the System Admin: the app reports only the attributes an admin has explicitly enabled, and only as often as each attribute's time-to-live requires. Message content, credentials, device location, and the contents of network traffic are never included, and reported values are never written to the database or included in compliance exports.
+
+Reading the Wi-Fi network name requires location access on both platforms, so enabling the ``ssid`` attribute prompts users for that permission. The app declares ``ACCESS_WIFI_STATE`` and ``ACCESS_FINE_LOCATION`` on Android and the ``com.apple.developer.networking.wifi-info`` entitlement on iOS, on both the main app and the share extension. A user who declines the prompt, or who isn't on Wi-Fi, reports no network name and is denied by any policy that requires it.
+
 Biometric authentication
 ------------------------
 

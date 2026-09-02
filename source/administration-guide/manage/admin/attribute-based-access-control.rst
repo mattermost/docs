@@ -13,6 +13,7 @@ Attribute-Based Access Control
   /administration-guide/manage/admin/abac-team-membership
   /administration-guide/manage/admin/abac-team-channel-policies
   /administration-guide/manage/admin/abac-channel-access-rules
+  /administration-guide/manage/admin/session-attributes
 
 From Mattermost v10.9, system admins in large or complex organizations who require Zero Trust Security when handling with sensitive information can prevent unauthorized access through attribute-based access controls.
 
@@ -45,6 +46,8 @@ Each attribute becomes a user profile option users can populate, unless you disa
 Once user attributes are defined, go to **System Console > System Attributes > Attribute-Based Access** to enable attribute-based access controls for your Mattermost instance. This functionality requires a Mattermost Enterprise Advanced license.
 
 From Mattermost v10.11, user-managed attributes are excluded from attribute-based access control (ABAC) rules by default for security reasons. This prevents access control policies from being circumvented by users editing their own profile attributes. To include user-managed attributes in ABAC rules, a system admin must explicitly enable the ``EnableUserManagedAttributes`` configuration setting. See the :ref:`user attribute <administration-guide/manage/admin/user-attributes:before you begin>` documentation for details on enabling this feature. This configuration setting is available only in Enterprise Edition Advanced and is disabled by default.
+
+From Mattermost v11.11, permission policies can also evaluate :doc:`session attributes </administration-guide/manage/admin/session-attributes>` - per-session context such as the client's IP address, network interface type, VPN status, and device posture - alongside user attributes. Each session attribute must be enabled in **System Console > System Attributes > Session Attributes** before a rule can reference it.
 
 Configure access policies
 --------------------------
