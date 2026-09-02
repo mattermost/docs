@@ -48,7 +48,7 @@ If you're not seeing in-app update notifications when new versions are available
    - On Windows: Go to **… > File > Settings** and ensure **Automatically check for updates** is enabled.
    - On macOS: Go to **Mattermost > Settings** and ensure **Automatically check for updates** is enabled.
 
-4. **Check Group Policy settings** (Enterprise deployments): Your system administrator may have disabled update notifications via the ``EnableAutoUpdates`` Group Policy. Contact your IT department for clarification.
+4. **Check Group Policy settings** (Enterprise deployments): Your system administrator may have disabled update notifications via the ``EnableAutoUpdater`` Group Policy. Contact your IT department for clarification.
 
 5. **Version previously skipped**: If you selected **Skip This Version** for the current release, manually check for updates to see it again.
 
