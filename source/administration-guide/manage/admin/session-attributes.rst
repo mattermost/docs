@@ -297,6 +297,7 @@ To require a managed Windows desktop client on a corporate subnet running a supp
 Keep the following in mind:
 
 - **Version comparisons follow semantic versioning**, so ``6.10.0`` is correctly treated as newer than ``6.9.0``. A leading ``v`` and shortened versions such as ``6.3`` are accepted. Pre-release versions such as ``6.3.0-rc1`` sort before the matching release.
+- **Avoid exact-matching** ``client_version``. Client versions may include a build number, and different clients can format it differently, so a rule such as ``client_version == "2.44.0+807"`` can match one client but deny another that reports the same release as ``2.44.0+6000807``. Use a version operator such as **version is at least**, or compare against a shortened version such as ``2.44``, so the build number doesn't have to match.
 - **IP family must match.** An IP range condition only matches when the address and the CIDR block are the same IP version. An IPv4-only rule denies a session that reported an IPv6 address, so cover both families on a dual-stack network. See `IPv4 and IPv6 <#ipv4-and-ipv6>`__.
 - **An unparseable value denies access.** If the attribute doesn't hold a valid IP address or version, the condition can't produce a result and the user is denied rather than allowed.
 - **Select Validate syntax** before saving in the CEL editor. Validation catches misspelled function names and malformed CIDR blocks or version strings.
