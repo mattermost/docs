@@ -38,6 +38,8 @@ System admins can customize the following logging options based on your business
     - Audit logging configurations reject standard log levels (``debug``, ``info``, ``warn``, ``error``, ``fatal``, ``panic``, etc.)
     - Configuration validation occurs at startup and when updating settings, preventing invalid log level combinations
 
+    From Mattermost v12.0, standard logging configurations also reject the ``audit-delivery`` log level.
+
 Console logs
 ------------
 
@@ -212,7 +214,7 @@ Audit logging
 
 By default, Mattermost doesn't write audit logs locally to a file on the server, and the ability to enable audit logging in Mattermost is currently in :ref:`Beta <administration-guide/manage/feature-labels:beta>`.
 
-You can enable and customize advanced audit logging in Mattermost to record activities and events performed within Mattermost, such as user access to the Mattermost REST API or mmctl. Audit logs are recorded asynchronously to reduce latency to the caller, and are stored separately from general logging. During short spans of inability to write to targets, the audit records buffer in memory with a configurable maximum record cap. Based on typical audit record volumes, it could take many minutes to fill the buffer. After that, the records are dropped, and the record drop event is logged.
+You can enable and customize advanced audit logging in Mattermost to record activities and events performed within Mattermost, such as user access to the Mattermost REST API or mmctl. Audit logs are recorded asynchronously to reduce latency to the caller, and are stored separately from general logging. During short spans of inability to write to targets, the audit records buffer in memory with a configurable maximum record cap. Based on typical audit record volumes, it could take many minutes to fill the buffer. After that, the records are dropped, and the record drop event is logged. From Mattermost v12.0, this shared audit queue holds up to 10,000 records, increased from 1,000. It's separate from the per-target ``maxqueuesize`` option, which caps the queue of an individual output target and is unchanged.
 
 .. note::
 
@@ -690,6 +692,15 @@ The following log levels support audit logs:
 +--------+-----------------------+------------------------------------------------------------------------+
 | 103    | ``audit-cli``         | CLI operations                                                         |
 +--------+-----------------------+------------------------------------------------------------------------+
+| 104    | ``audit-delivery``    | Deliveries of message content to users, plugins, and outgoing          |
+|        |                       | webhooks in eligible channels. Direct and group message channels are   |
+|        |                       | never eligible. Available from Mattermost v12.0. This log level        |
+|        |                       | generates considerably more records than any other audit log level.    |
++--------+-----------------------+------------------------------------------------------------------------+
+
+.. warning::
+
+  The ``audit-delivery`` log level isn't written by the built-in audit log file target, so enabling ``ExperimentalAuditSettings.FileEnabled`` doesn't capture delivery records — they're discarded. To capture them, add a target whose ``levels`` list includes ``{"id": 104, "name": "audit-delivery"}`` to ``ExperimentalAuditSettings.AdvancedLoggingJSON``. See :doc:`Post delivery audit logging </administration-guide/comply/post-delivery-audit-logging>`.
 
 The following log levels support application logs: 
 
