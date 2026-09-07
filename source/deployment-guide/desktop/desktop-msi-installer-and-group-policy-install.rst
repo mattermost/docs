@@ -67,7 +67,7 @@ The following group policies are available supporting a state option of Not Conf
   +--------------------------+------------------------------------------------------------+----------------------+----------------------------+
   | Default Server List      | Define one or more default, permanent servers.             | v4.3 or later        | ``DefaultServerList``      |
   +--------------------------+------------------------------------------------------------+----------------------+----------------------------+
-  | Update Notifications     | If disabled, in-app update notifications are not shown.    | v5.1 or later        | ``EnableAutoUpdates``      |
+  | Update Notifications     | If disabled, in-app update notifications are not shown.    | v5.1 or later        | ``EnableAutoUpdater``      |
   +--------------------------+------------------------------------------------------------+----------------------+----------------------------+
 
 1. Browse to the folder the above files were downloaded to and unzip the ``desktop-6.3.0.zip`` file in place.
@@ -144,7 +144,7 @@ From desktop v6.0, users can run multiple Mattermost workspaces at the same time
 - On Windows, seed the approved list using the ``DefaultServerList`` Group Policy.
 - For scripted installs, seed ``config.json`` on first run to include multiple entries in the ``teams`` array. See the :doc:`Silent Windows desktop distribution </deployment-guide/desktop/silent-windows-desktop-distribution>` documentation for details.
 - To prevent users from adding or removing workspaces, use the existing ``EnableServerManagement`` Group Policy.
-- Disable ``EnableAutoUpdates`` to turn off update notifications.
+- Disable ``EnableAutoUpdater`` to turn off update notifications.
 
 Verify group policy settings have been applied
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

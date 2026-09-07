@@ -11,6 +11,7 @@ Whether you’re migrating from another platform, upgrading your database, or us
    :titlesonly:
 
     Migrate from MySQL to PostgreSQL </deployment-guide/postgres-migration>
+    Migrate to FIPS-compliant images </deployment-guide/server/fips-migration>
     Server migration guide </administration-guide/onboard/migrating-to-mattermost>
     Migrate from Slack </administration-guide/onboard/migrate-from-slack>
     Migrate from Rocket.Chat </administration-guide/onboard/migrate-from-rocketchat>
@@ -20,6 +21,7 @@ Whether you’re migrating from another platform, upgrading your database, or us
     Migration announcement email template </administration-guide/onboard/migration-announcement-email>
 
 * :doc:`Migrate from MySQL to PostgreSQL </deployment-guide/postgres-migration>` - Learn how to migrate from MySQL to PostgreSQL.
+* :doc:`Migrate to FIPS-compliant images </deployment-guide/server/fips-migration>` - Learn how to switch an existing Docker or Kubernetes deployment to the FIPS-compliant Mattermost images.
 * :doc:`Server migration guide </administration-guide/onboard/migrating-to-mattermost>` - Learn about about migrating to Mattermost.
 * :doc:`Migrate from Slack </administration-guide/onboard/migrate-from-slack>` - Learn how to migrate from Slack to Mattermost.
 * :doc:`Migrate from Rocket.Chat </administration-guide/onboard/migrate-from-rocketchat>` - Learn how to migrate from Rocket.Chat to Mattermost.
