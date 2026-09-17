@@ -1,3 +1,13 @@
+# ⚠️ This repository is archived
+
+The Mattermost documentation has moved to the main Mattermost repository. Please see:
+
+**https://github.com/mattermost/mattermost/tree/master/docs/main**
+
+This repository is no longer maintained. Please open issues and pull requests against the new location.
+
+---
+
 # Mattermost Documentation
 
 This repository generates the documentation available at https://docs.mattermost.com/. All documentation is available under the terms of a [Creative Commons License](https://creativecommons.org/licenses/by-nc-sa/3.0/).
